@@ -10,6 +10,6 @@ List of Cross-chain Apps Supporting Binance Smart Chain
 |Fungible Token| Poly.network	| https://bridge.poly.network/ | [link](https://medium.com/poly-network/poly-network-now-supports-cross-chain-transfer-of-eth-neo-heco-assets-to-bsc-fed6880d5681) |
 |Fungible Token| allbridge	| https://allbridge.io/	| [link](https://docs.allbridge.io/) |
 |Fungible Token| renbridge	| https://bridge.renproject.io/ | [link](https://docs.renproject.io/developers/) |
-|Fungible Token| cBridge	https://cbridge.celer.network/	| [link](https://cbridge-docs.celer.network/) |
+|Fungible Token| cBridge	| https://cbridge.celer.network/	| [link](https://cbridge-docs.celer.network/) |
 |NFT |	pNetwork |	https://dapp.ptokens.io/	| [link](https://www.binance.org/en/blog/pnetworks-ethereum-bsc-bridge-now-live-on-the-binance-smart-chain/) |
 |NFT |	curvegrid |	https://www.curvegrid.com/	| [link](https://www.curvegrid.com/docss) |
