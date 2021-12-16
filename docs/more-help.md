@@ -19,7 +19,7 @@ There is a [\#validator-support](http://discord.com/invite/binancesmartchain) **
   - [\#validator-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** General support channel for any Validator related queries
   - [\#node-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** General support channel for any node related queries     
 
-- [\#testnet-announcements]()[**_Link confirmation requied_**] The single source of truth for critical information relating Testnet 
+- [\#testnet-announcements] [**_Link confirmation requied_**] The single source of truth for critical information relating Testnet 
   
 - [\#Dev-announcements](https://discord.com/channels/789402563035660308/912296661081006100) Can be accessed for any information related to development announcements.
 
