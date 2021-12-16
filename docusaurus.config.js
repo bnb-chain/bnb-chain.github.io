@@ -66,7 +66,7 @@ const config = {
         style: 'primary',
         logo: {
           alt: 'BSC',
-          src: 'img/logo.svg',
+          src: 'img/image.png',
         },
         items: [
           {
