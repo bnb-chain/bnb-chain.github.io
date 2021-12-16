@@ -9,16 +9,16 @@ const config = {
   title: 'Binance Smart Chain Documentation',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Binance', // Usually your GitHub org/user name.
   //projectName: 'binance documentation', // Usually your repo name.
     
-  i18n: {
+  /*i18n: {
       defaultLocale: 'en',
       locales: ['en', 'fr', 'zh'],
-    },
+    },*/
   presets: [
     [
       '@docusaurus/preset-classic',

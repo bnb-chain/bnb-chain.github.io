@@ -17,15 +17,15 @@ If for some reason you forgot to record your 12 word seed phrase or you lost the
 
 **Select Dropdown Menu (on top-right corner) --> Manage Accounts**
 
-<img src="https://lh4.googleusercontent.com/ZXAj9X9TFTunfCJfZjHoJQm9eQZxog61rmZ0zWL4AbQlwhQRe0qj74bHvhnarwHobVbRgaBIKyyDPxQZx4acgAeFPaWN6tloNIiIuRMmDUw2mniafpqfc5RS59Nic-_KXVL64sC6" alt="img" style="zoom:33%;" />
+<img src="https://lh4.googleusercontent.com/ZXAj9X9TFTunfCJfZjHoJQm9eQZxog61rmZ0zWL4AbQlwhQRe0qj74bHvhnarwHobVbRgaBIKyyDPxQZx4acgAeFPaWN6tloNIiIuRMmDUw2mniafpqfc5RS59Nic-_KXVL64sC6" alt="img" style={{zoom:"33%"}} />
 
 **click on Download button**
 
-<img src="https://lh5.googleusercontent.com/2t3UwpFojwMSh4_stRc9wdaOdbm2UqmtYxVL2SdLVfiCSoqF2gcOhHl3Qys6pZXJFG_7CsK2IkFOEdgpuSTiHR1_OOEi0pF_uy3nvsLhibC0vxQjGXLI0aV5gcdts3pML4xmNc4y" alt="img" style="zoom:33%;" />
+<img src="https://lh5.googleusercontent.com/2t3UwpFojwMSh4_stRc9wdaOdbm2UqmtYxVL2SdLVfiCSoqF2gcOhHl3Qys6pZXJFG_7CsK2IkFOEdgpuSTiHR1_OOEi0pF_uy3nvsLhibC0vxQjGXLI0aV5gcdts3pML4xmNc4y" alt="img" style={{zoom:"33%"}} />
 
 **Enter your password to reveal your seed words.**
 
 
 
-<img src="https://lh5.googleusercontent.com/9WatFdbEVc8A92-6g5zfaHQRZgqrce1EPEQMdpWnHYyEwab9iZqcwz02cal5om_97oni1fSdh-dTJHHqsVqD74K3umO2SlGl3F9f9vQDSeUF4r0fnLOQbMiHdNSwhgbN33Nmg_U2" alt="img" style="zoom:75%;" />
+<img src="https://lh5.googleusercontent.com/9WatFdbEVc8A92-6g5zfaHQRZgqrce1EPEQMdpWnHYyEwab9iZqcwz02cal5om_97oni1fSdh-dTJHHqsVqD74K3umO2SlGl3F9f9vQDSeUF4r0fnLOQbMiHdNSwhgbN33Nmg_U2" alt="img" style={{zoom:"75%"}} />
 

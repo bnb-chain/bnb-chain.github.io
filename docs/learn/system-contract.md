@@ -19,16 +19,16 @@ GitHub Implementation link: <https://github.com/binance-chain/bsc-genesis-contra
 
 | Contract Name         | Contract Address  | ABI file |
 | --------------------- | ----------------- | ------------- |
-| BSCValidatorSet Contract | 0x0000000000000000000000000000000000001000 | [bscvalidatorset](../../system-smart-contract/bscvalidatorset.abi)|
-| Liveness Slash Contract | 0x0000000000000000000000000000000000001001 | [slashindicator](../../system-smart-contract/slashindicator.abi)|
-| SystemReward Contract | 0x0000000000000000000000000000000000001002 | [systemreward](../../system-smart-contract/systemreward.abi)|
-| TendermintLightClient Contract | 0x0000000000000000000000000000000000001003 | [tendermintlightclient](../../system-smart-contract/tendermintlightclient.abi) |
-| TokenHub Contract | 0x0000000000000000000000000000000000001004 | [tokenhub](../../system-smart-contract/tokenhub.abi)|
-| RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](../../system-smart-contract/relayerincentivize.abi)|
-| RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](../../system-smart-contract/relayerhub.abi) |
-| GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](../../system-smart-contract/govhub.abi)                               |
-| TokenManager Contract |0x0000000000000000000000000000000000001008 |[tokenmanager](../../system-smart-contract/tokenmanager.abi) |
-| CrossChain Contract |0x0000000000000000000000000000000000002000 |[crosschain](../../system-smart-contract/crosschain.abi) |
+| BSCValidatorSet Contract | 0x0000000000000000000000000000000000001000 | [bscvalidatorset](system-smart-contract/bscvalidatorset.abi)|
+| Liveness Slash Contract | 0x0000000000000000000000000000000000001001 | [slashindicator](system-smart-contract/slashindicator.abi)|
+| SystemReward Contract | 0x0000000000000000000000000000000000001002 | [systemreward](system-smart-contract/systemreward.abi)|
+| TendermintLightClient Contract | 0x0000000000000000000000000000000000001003 | [tendermintlightclient](system-smart-contract/tendermintlightclient.abi) |
+| TokenHub Contract | 0x0000000000000000000000000000000000001004 | [tokenhub](system-smart-contract/tokenhub.abi)|
+| RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](system-smart-contract/relayerincentivize.abi)|
+| RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](system-smart-contract/relayerhub.abi) |
+| GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](system-smart-contract/govhub.abi)                               |
+| TokenManager Contract |0x0000000000000000000000000000000000001008 |[tokenmanager](system-smart-contract/tokenmanager.abi) |
+| CrossChain Contract |0x0000000000000000000000000000000000002000 |[crosschain](system-smart-contract/crosschain.abi) |
 
 ## On-Chain Light Client
 

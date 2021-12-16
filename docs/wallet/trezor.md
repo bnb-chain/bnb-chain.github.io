@@ -28,15 +28,15 @@ Binance Smart Chain is compatible with MetaMask. Users can use MetaMask as a bri
     * Symbol: BNB
     * Block Explorer](https://bscscan.com)
 
-<img src="https://lh5.googleusercontent.com/rKKpjCDqHacvAPuSZwdMlaD7bGcpN3QRNvcDieBpm3WHCsOWlFDTZN4j3LFw9R1VJ5zGfqoUW3U61GpN4WdfOeSoviSs6NldK4Ypt2O6wnbl-O8wJbpG6uMKBxdNRiH0B5yqRLP1" alt="img" style="zoom:50%;" />
+<img src="https://lh5.googleusercontent.com/rKKpjCDqHacvAPuSZwdMlaD7bGcpN3QRNvcDieBpm3WHCsOWlFDTZN4j3LFw9R1VJ5zGfqoUW3U61GpN4WdfOeSoviSs6NldK4Ypt2O6wnbl-O8wJbpG6uMKBxdNRiH0B5yqRLP1" alt="img" style={{zoom:"50%"}} />
 
 ### Unlock your Metamask
 
-<img src="https://lh5.googleusercontent.com/EpbHPRV-ycTSYYNdDi67wqB5GKpiYUj4AOSLr0dTNV3vbTBP377YM75f5iYFeKzHu_6ykJr7UEZ81xds2czCXe4qOtBgekIJGdAwdnh_UGPggujVHxHHrTqHTLgmgLh0HFgiAJgp" alt="img" style="zoom:33%;" />
+<img src="https://lh5.googleusercontent.com/EpbHPRV-ycTSYYNdDi67wqB5GKpiYUj4AOSLr0dTNV3vbTBP377YM75f5iYFeKzHu_6ykJr7UEZ81xds2czCXe4qOtBgekIJGdAwdnh_UGPggujVHxHHrTqHTLgmgLh0HFgiAJgp" alt="img" style={{zoom:"33%"}} />
 
 ### Click on “Connect Hardware Wallet”
 
-<img src="https://lh6.googleusercontent.com/1gb3-LE3KVM-rnFBHr3MMrdYrtsknZ3LqRFOanx_LHPyi6wTFpi7qwyIfH0ftwrE8zTN0ossizTk7ddBBGLod-r3JR948XgSFJuIDGzXvMUh-Wp4jLrGdmVGcadhynrv-YFdPuNd" alt="img" style="zoom:33%;" />
+<img src="https://lh6.googleusercontent.com/1gb3-LE3KVM-rnFBHr3MMrdYrtsknZ3LqRFOanx_LHPyi6wTFpi7qwyIfH0ftwrE8zTN0ossizTk7ddBBGLod-r3JR948XgSFJuIDGzXvMUh-Wp4jLrGdmVGcadhynrv-YFdPuNd" alt="img"style={{zoom:"33%"}} />
 
 ### Choose an address in your Trezor
 
@@ -50,7 +50,7 @@ You should see a new account
 
 ### Initiate a transfer transaction, then click on next
 
-<img src="https://lh4.googleusercontent.com/vuylKsIqqTMl1SORH1gd7QbAiL6fywTwIOT40asaYjDnYAArTL7cZZon3ozzSylgqwmySun-pBEq__jVaML-Y_mEu5kaSuoZM5i2d7M9utoCCtUmQogW2vQ4wY7GRjN-ACu4Yqxc" alt="img" style="zoom:33%;" />
+<img src="https://lh4.googleusercontent.com/vuylKsIqqTMl1SORH1gd7QbAiL6fywTwIOT40asaYjDnYAArTL7cZZon3ozzSylgqwmySun-pBEq__jVaML-Y_mEu5kaSuoZM5i2d7M9utoCCtUmQogW2vQ4wY7GRjN-ACu4Yqxc" alt="img"style={{zoom:"33%"}} />
 
 ### Review the transaction details, then confirm the same info in your Trezor device
 
@@ -61,4 +61,4 @@ You should see a new account
 
 ### Track the transaction status in “Activity” tab
 
-<img src="https://lh4.googleusercontent.com/ejb2jVBsYnFHctelQtR9gS36Z96td60sQ1yVFYdSbLr_jCTkyv2Im2P1wkHxS3JGAYHRXQTiac3FO9dUH1GX0eKHG1Vwk764tSMERGza_vmQcxxm32S66-kFi18wTifSrF-uD9tL" alt="img" style="zoom:33%;" />
+<img src="https://lh4.googleusercontent.com/ejb2jVBsYnFHctelQtR9gS36Z96td60sQ1yVFYdSbLr_jCTkyv2Im2P1wkHxS3JGAYHRXQTiac3FO9dUH1GX0eKHG1Vwk764tSMERGza_vmQcxxm32S66-kFi18wTifSrF-uD9tL" alt="img"style={{zoom:"33%"}} />

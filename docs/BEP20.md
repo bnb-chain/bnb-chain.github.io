@@ -17,7 +17,7 @@ A BEP20 token must implement the interface `IBEP20` in [IBEP20.sol](IBEP20.sol).
   }
 ```
 
-Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](../wallet/metamask.md) to compile and deploy the BEP20 contract to BSC.
+Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](wallet/metamask.md) to compile and deploy the BEP20 contract to BSC.
 
 ## Interact with Contract with [Web3](https://www.npmjs.com/package/web3) and NodeJS.
 

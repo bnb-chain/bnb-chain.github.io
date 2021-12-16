@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 # Open Source BSC Ecosystem [WIP!]
 
-In order to check the latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
+In order to check te latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
 
 The goal of this page is to provide the current status of the open-source Binance Smart Chain Tech  Stack and highlight the potential interesting projects that are most demanded by the BSC community and ecosystem.  
 
@@ -28,7 +28,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | Desktop Wallets | [Wise Safe](https://smart-binance.portonvictor.org/) (a port of Gnosis Safe), [Mycrypto](https://download.mycrypto.com/), [Tokenpocket](https://www.tokenpocket.pro/en/download/pc)
 | Browser Extensions | [Binance Wallet](https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp),[MetaMask](https://metamask.io/), [MathWallet](https://mathwallet.xyz/en/), [SafePal](https://www.safepal.io/)  
 | Mobile Wallets|  [MathWallet](https://mathwallet.xyz/en/), [TrustWallet](https://trustwallet.com/), [BitKeep](https://bitkeep.com/), [TokenPocket](https://www.tokenpocket.pro/), [SafePal](https://www.safepal.io/), [ONTO Wallet](https://www.onto.app/en), [Hyperpay](https://hyperpay.tech/), [AlphaWallet](https://alphawallet.com/), [Cobo](https://cobo.com/), [Bridge Wallet](https://www.mtpelerin.com/bridge-wallet)
-| Web (burner) Wallets| [Torus](https://toruswallet.io/),[MyEtherWallet](myetherwallet.com)
+| Web (burner) Wallets| [Torus](https://toruswallet.io/),[MyEtherWallet](https://www.myetherwallet.com/)
 | CLI Wallet | [geth](https://github.com/binance-chain/bsc), [Seth](https://github.com/dapphub/dapptools/tree/master/src/seth)
 | Multisignature Wallets| [MultiSigWallet](https://github.com/gnosis/MultiSigWallet) | gnosis
 | Hardware Wallets | [Ledger](https://www.ledger.com/ethereum-wallet), [trezor](https://trezor.io/)
@@ -88,12 +88,12 @@ Goto [BSC Developer Ecosystem](https://github.com/binance-chain/bsc-ecosystem/bl
 | Social Networking | [prometeus](https://prometeus.io/)|
 | Governance/DAO| [snapshot](https://snapshot.page/) [KOGE](https://www.bnb48.club)| [Aragon](https://aragon.org/), [DaoStack](https://daostack.io/)
 | Gaming | [RocketGame](https://rocketgame.vip/), [BambooSwap](https://bambooswap.org/), [Blink](https://blink.wink.org/), [Battle Pets](https://www.battlepets.finance/), [Arkane](https://arkane.network/), Curvegrid
-| NFT/Collectibles| [Alpaca.City](https://alpaca.city/), [Juggernaut JGN](https://jgndefi.com/), [Thugs.Fi](http://thugs.fi/), [Dego](https://dego.finance/), [NFTForGood.org](NFTForGood.org), [Bounce](https://bounce.finance/), [Arkane](https://arkane.network/), Curvegrid, ATTN, [XWorld Games](https://xwg.games/)| [Knownorigin](https://knownorigin.io/), [Rarible](https://rarible.com/), [Opensea](https://opensea.io/)
+| NFT/Collectibles| [Alpaca.City](https://alpaca.city/), [Juggernaut JGN](https://jgndefi.com/), [Thugs.Fi](http://thugs.fi/), [Dego](https://dego.finance/), [NFTForGood.org](https://www.NFTForGood.org), [Bounce](https://bounce.finance/), [Arkane](https://arkane.network/), Curvegrid, ATTN, [XWorld Games](https://xwg.games/)| [Knownorigin](https://knownorigin.io/), [Rarible](https://rarible.com/), [Opensea](https://opensea.io/)
 | Community & Fans | Realy, [Chilz](https://cryptologos.cc/chiliz)
 | BTC | Binance BTC, [renBTC](https://renproject.io/), [anyBTC](https://anyswap.exchange/dashboard)|
-| Stablecoins | BUSD, [VAI](https://venus.io/), [QIAN](https://bsc.qian.finance/qian/home), [Ditto](https://ditto.money/), [bDollar](bdollar.fi)
-| Credit & Lending | [7up.finance](https://7up.finance/), [Cream.finance](Cream.finance), [ForTube](https://bsc.for.tube/), [Venus](https://venus.io/), [CokeFinance](https://cokefinance.com/)
-| Exchange & Liquidity | [BakerySwap](https://www.bakeryswap.org/), [Bounce.Finance](https://bsc.bounce.finance/), [BurgerSwap](https://burgerswap.org/), [DODO](https://app-bsc.dodoex.io/), [Equator.Finance](https://equator.finance/), [PancakeSwap](https://pancakeswap.finance/), [Spartan Protocol](https://spartanswap.com/), [bStable.finance](https://bstable.finance), [StableXSwap](https://stablexswap.com/), [Thugs.Fi](https://thugs.fi/), [Unisave](https://info.y3d.finance/home), [BestSwap](https://bsc.bestswap.com/swap/swap), [UniFi](https://www.unifiprotocol.com/), [Tenet](https://bsc.tenet.farm/), [UniTrade](https://unitrade.app/), [Rubic](https://rubic.exchange/), [Jetfuel](Jetfuel.Finance), [Belt.fi](https://belt.fi/), [Yogi](https://yogi.fi/)
+| Stablecoins | BUSD, [VAI](https://venus.io/), [QIAN](https://bsc.qian.finance/qian/home), [Ditto](https://ditto.money/), [bDollar](https://www.bdollar.fi)
+| Credit & Lending | [7up.finance](https://7up.finance/), [Cream.finance](https://app.cream.finance/), [ForTube](https://bsc.for.tube/), [Venus](https://venus.io/), [CokeFinance](https://cokefinance.com/)
+| Exchange & Liquidity | [BakerySwap](https://www.bakeryswap.org/), [Bounce.Finance](https://bsc.bounce.finance/), [BurgerSwap](https://burgerswap.org/), [DODO](https://app-bsc.dodoex.io/), [Equator.Finance](https://equator.finance/), [PancakeSwap](https://pancakeswap.finance/), [Spartan Protocol](https://spartanswap.com/), [bStable.finance](https://bstable.finance), [StableXSwap](https://stablexswap.com/), [Thugs.Fi](https://thugs.fi/), [Unisave](https://info.y3d.finance/home), [BestSwap](https://bsc.bestswap.com/swap/swap), [UniFi](https://www.unifiprotocol.com/), [Tenet](https://bsc.tenet.farm/), [UniTrade](https://unitrade.app/), [Rubic](https://rubic.exchange/), [Jetfuel](https://jetfuel.finance/), [Belt.fi](https://belt.fi/), [Yogi](https://yogi.fi/)
 | Earn & Aggregators | [Defi.money(YFII)](https://bsc.dfi.money/),[Dego](http://bsc.dego.finance/),[fry.World](https://fry.world/),[Xend Finance](https://xend.finance/),[OpenOcean](https://openocean.finance/network/bsc),[BeefyFinance](https://beefy.finance/),[dForce](https://staking.dforce.network/),[Pancakebunny](https://pancakebunny.finance/),[Reef.finance](https://reef.finance/),[Bearn.fi](https://bearn.fi/),[ACryptoS](https://acryptos.com/), [Dexguru](https://dex.guru/),[Cross Pool](https://crosspool.hotcross.com/)
 | Insurance | [Certik](https://www.certik.foundation/),[Helmet](https://app.helmet.insure/),[Soteria](https://soteria.finance/) | [Cover Protocol](https://www.coverprotocol.com/)
 | Derivatives | [Hedget](https://www.hedget.com/), [Mettalex](https://mettalex.com/), [Injective Protocol](https://injectiveprotocol.com/)| [Hegic](https://www.hegic.co/), [FinNexus Options](https://options.finnexus.io/)

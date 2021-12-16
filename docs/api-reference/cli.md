@@ -189,7 +189,7 @@ To solve this issue, you need to set `--trust-node` to `true`
 ## CLI Reference
 
 For detailed usage, you can refer to:
-
+<!--
 - [transfer](../transfer.md)
 - [trade](../trade.md)
 - [issue](../tokens.md)
@@ -201,8 +201,8 @@ For detailed usage, you can refer to:
 - [memo validation](../memo-validation.md)
 - [staking](../guides/concepts/bc-staking.md)
 - [slashing](../guides/concepts/bc-slashing.md)
-- [bridge](../guides/concepts/bc-bridge.md)
 - [Binance Smart Chain Governance](../guides/concepts/bsc-gov.md)
+   -->
 
 
 
