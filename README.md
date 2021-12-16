@@ -23,10 +23,6 @@ The easiest way to install Docusaurus is to use the command line tool that helps
 npx create-docusaurus@latest [name] [template]
 ```
 
-### Structure
-
-
-
 ### How to Run Locally
 
 Clone the reository and run the following commands.
