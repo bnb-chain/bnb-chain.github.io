@@ -1,0 +1,64 @@
+@import url(../css/custom.css);
+
+
+/* Float  columns side by side */
+.column {
+  float: center;
+  width: 40%;
+  padding: 10px 10px;
+  margin-top: 50px;
+}
+.columnn {
+  float: left;
+  width: 40%;
+  padding: 10px 10px;
+  align-content: center;
+  margin-Bottom: 50px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px; 
+  display: flex; /* Where the mobile part begins */
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+    .columnn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(102, 101, 98,3);
+  padding: 16px;
+  text-align: center;
+  /*background-color: #f1f1f1;*/
+  box-shadow: 0 4px 8px 0 rgba(102, 101, 98,3);
+  border-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(249,191,66, 3);
+}

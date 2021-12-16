@@ -1,0 +1,59 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+@font-face {
+  font-family: "IBMPlexSans-Regular";
+  src: url('../../static/IBM Plex Sans Font/IBM-Plex-Sans/IBMPlexSans-Regular.otf') format('otf');
+}
+@font-face {
+  font-family: "IBM-Plex-Mono-Regular";
+  src: url('../../static/IBM Plex Sans Font/IBM-Plex-Mono/IBMPlexMono-Regular.otf') format('otf');
+}
+
+
+:root {
+  --ifm-color-primary: #f0b90b;
+  --ifm-color-primary-dark: #d8a60a;
+  --ifm-color-primary-darker: #cc9d09;
+  --ifm-color-primary-darkest: #D0980B;
+  --ifm-color-primary-light: #F8D33A;
+  --ifm-color-primary-lighter: #f5c52b;
+  --ifm-color-primary-lightest: #f7cf4f;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-mono: "IBMPlexMono-Regular"
+  --ifm-font-family-base: "IBMPlexSans-Regular";
+
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(44, 39, 39, 0.3);
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary-dark: #e6aa00;
+  /* any other colors you wish to overwrite */
+}
+
+html[data-theme='light'] .navbar {
+  --ifm-color-primary-dark: #0a0a0a;
+  /* any other colors you wish to overwrite */
+}
+html[data-theme='light'] .navbar dropdown {
+  --ifm-color-primary-dark: #0a0a0a;
+  /* any other colors you wish to overwrite */
+}
+/*color: #ffffff;*/
+
+

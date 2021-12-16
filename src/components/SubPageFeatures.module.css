@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+.flexboard{
+    display: flex; justify-content: center; 
+    background-color:"#ffff99";
+    margin-top:100px; margin-right:150px; margin-left: 150px;
+    width: fit-content;
+    border-radius: 15px;
+}
+.featureSvg {
+  height: 100%;
+  width: 100%;
+  align-content: left;
+  box-shadow: 0 8px 28px 4px rgb(250,178,10 / 35%);
+}
+.clearfix{
+	clear: both;
+}
+
+/* Float  columns side by side */
+.column {
+  float: center;
+  width: 30%;
+  padding: 10px 10px;
+  margin-top: 50px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px; 
+  display: flex; /* Where the mobile part begins */
+  justify-content: center;
+  text-align: left;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width:997px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(102, 101, 98,3);
+  padding: 10px;
+  text-align: left;
+  /*background-color: #f1f1f1;*/
+  box-shadow: 0 4px 8px 0 rgba(102, 101, 98,3);
+  border-radius: 15px;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(249,191,66, 3);
+}
+
+.container {
+  padding: 2px 16px;
+
+}
