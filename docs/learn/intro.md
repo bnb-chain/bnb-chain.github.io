@@ -27,4 +27,4 @@ The Binance Smart Chain also supports EVM-compatible smart contracts and protoco
 
 
 ## Resources
-[White Paper](http://binance.org/en#smartChains) **_linnk confirmation required_**
+[White Paper](https://github.com/binance-chain/whitepaper/blob/master/WHITEPAPER.md)
