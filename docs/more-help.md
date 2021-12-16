@@ -8,19 +8,20 @@ There is a [\#validator-support](http://discord.com/invite/binancesmartchain) **
 
 - To keep track of the latest news in Binance Chain/DEX, visit [Online Forum](https://community.binance.org).
 
-- Network Explorer - [BSCScan](https://bscscan.com/)
+- Network Explorer - [BSCScan Explorer](https://bscscan.com/)
 
-- Testnet Metrics Dashboard [**_Link requied_** ]
+- Testnet Metrics Dashboard- [Testnet BscScan Explorer](https://testnet.bscscan.com/) [**_Link confirmation requied_** ]
 
-- Binance DEX does not have Customer Support Service on [Telegram](**_Link requied_** )!
+- Binance Dex Support: Go to page <https://www.binance.org/en>, click on the ``help`` button then click ``contact us``. It will generate a ticket to Customer Service team.
 
 - Validator chat channels
   
   - [\#validator-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** General support channel for any Validator related queries
   - [\#node-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** General support channel for any node related queries     
-  - \#testnet-announcements[**_Link confirmation requied_**] The single source of truth for critical information relating Testnet 
+
+- [\#testnet-announcements]()[**_Link confirmation requied_**] The single source of truth for critical information relating Testnet 
   
-- (\#Dev-announcements)[https://discord.com/channels/789402563035660308/912296661081006100] for any information related to development announcements.
+- [\#Dev-announcements](https://discord.com/channels/789402563035660308/912296661081006100) Can be accessed for any information related to development announcements.
 
 - [Core software repo](https://github.com/binance-chain/docs-site) [**_Link confirmation requied_**]
 
