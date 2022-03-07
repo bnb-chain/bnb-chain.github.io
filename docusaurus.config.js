@@ -62,7 +62,7 @@ const config = {
         theme: 'default',
       },
       navbar: {
-        title: 'Build N\' Build Documentation',
+        title: 'BNB Documentation',
         style: 'primary',
         logo: {
           alt: 'BNB',

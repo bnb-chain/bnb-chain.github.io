@@ -78,7 +78,8 @@ const sidebars = {
                     items: ['learn/cross-chain', 'learn/system-contract',
                             'learn/cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
                             'learn/oracle-module','learn/oracle-relayer']},
-                            'learn/bsc-gov-workflow','learn/bsc-gov']
+                            //'learn/bsc-gov-workflow',
+                            'learn/bsc-gov']
           },
           {
             type: 'doc', label: 'Tools', id:'learn/ecosystem'
