@@ -4,7 +4,7 @@ hide_table_of_contents: true
 sidebar_position: 2
 ---
 
-# Binance Smart Chain Validator FAQs
+# BNB Smart Chain  Validator FAQs
 
 ### How does a validator node work?
 
@@ -65,7 +65,7 @@ Slashing is a punitive function that is triggered by a validator ’s bad action
 
 ### What is the process of getting selected as a validator node on BSC?
 
-On Binance Smart Chain (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 21 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 21 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.binance.org/smart-chain/validator/overview.html).
+On BNB Smart Chain  (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 21 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 21 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.binance.org/smart-chain/validator/overview.html).
 
 ### How is the bad or malicious behavior of the validator nodes controlled in the BSC?
 

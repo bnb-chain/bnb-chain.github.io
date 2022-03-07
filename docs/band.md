@@ -1,14 +1,14 @@
 ---
-sidebar_label: Band Protocol Price Feed on Binance Smart Chains
+sidebar_label: Band Protocol Price Feed on BNB Smart Chain s
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Band Protocol Price Feed on Binance Smart Chain
+# Band Protocol Price Feed on BNB Smart Chain 
 
 ## Introduction
 
-Developers building on Binance Smart Chain can now leverage Band’s decentralized oracle infrastructure. With Band’s oracle, they now have access to various cryptocurrency price data to integrate into their applications.
+Developers building on BNB Smart Chain can now leverage Band’s decentralized oracle infrastructure. With Band’s oracle, they now have access to various cryptocurrency price data to integrate into their applications.
 
 ## Supported Tokens
 
@@ -49,7 +49,7 @@ For example, you can use the APIs in Javascripts and Solidity to query the follo
 
 ## Querying Prices
 
-Currently, there are two methods for developers to query prices from Band’s oracle: through Band’s `StdReference` smart contract on Binance Smart Chain and through their [`bandchain.js`](https://www.npmjs.com/package/%40bandprotocol%2Fbandchain.js) JavaScript helper library.
+Currently, there are two methods for developers to query prices from Band’s oracle: through Band’s `StdReference` smart contract on BNB Smart Chain  and through their [`bandchain.js`](https://www.npmjs.com/package/%40bandprotocol%2Fbandchain.js) JavaScript helper library.
 
 ### Solidity Smart Contract
 

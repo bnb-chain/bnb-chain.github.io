@@ -7,7 +7,7 @@ BNB
 ## Max Validator Count
 
 - 11 validators on Testnet
-- 21 validators on Mainnet
+- 21 active validators on Mainnet [20 additional candidate vaidators]
 
 
 ## Validator Candidate

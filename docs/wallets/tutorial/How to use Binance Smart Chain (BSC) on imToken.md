@@ -1,4 +1,4 @@
-# How to use Binance Smart Chain (BSC) on imToken? 
+# How to use BNB Smart Chain (BSC) on imToken? 
 An introduction on how to start with using BSC on the imToken wallet
 
 ## How to download the imToken wallet?
@@ -17,7 +17,7 @@ An introduction on how to start with using BSC on the imToken wallet
 2. Fill in your identity name and wallet password. Next, click "Create", copy the backup mnemonic phrase with pen and paper and keep it in a safe place. Confirm the mnemonic words in order again and click "Next" to successfully create a wallet.
 
 ## What is BSC?
-BSC is the abbreviation of Binance Smart Chain. The chain adopts PoSA (Proof of Staked Authority), which means holders of BNB (BSC's native token) vote to select 21 validators that are responsible for on-chain transaction verification and block production.
+BSC is the abbreviation of BNB Smart Chain. The chain adopts PoSA (Proof of Staked Authority), which means holders of BNB (BSC's native token) vote to select 21 validators that are responsible for on-chain transaction verification and block production.
  
 Since BSC is EMV-compatible, developers can easily deploy smart contracts and build DApps on the chain. Compared with Ethereum, BSC has lower gas fees and faster transaction settlement with lower security guarantees.
  
@@ -26,7 +26,7 @@ With imToken wallet we do not only support BSC DApps and watching token balances
 
 ## How to start using BSC in imToken?
 ### Switch to BSC
-Open imToken's ETH wallet and click "Ethereum Mainnet" under "Wallet" to enter the network switching page, and select "Binance Smart Chain".
+Open imToken's ETH wallet and click "Ethereum Mainnet" under "Wallet" to enter the network switching page, and select "BNB Smart Chain".
 
 After the switch is successful, you can transfer and collect funds on the BSC chain in imToken, and experience its ecosystem DApps.
 

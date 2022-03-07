@@ -10,11 +10,11 @@ There are two main ways to connect to a node to send RPC commands.
 
 This page assumes that you have your own node running locally, so examples here use `localhost:27146` to represent using RPC commands on a local node.
 
-Alternatively, you are able to use a node that is hosted in the Binance Chain network.
+Alternatively, you are able to use a node that is hosted in the Beacon Chain  network.
 
 ### 1.2 Use an existing node on the network
 
-The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
+The Beacon Chain  infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
 
 Here is an example of a node that is available for RPC access. The following is the output of `localhost:27147/status`:
 
@@ -685,7 +685,7 @@ genesis, err := client.Genesis()
       "app_state": {
         "tokens": [
           {
-            "name": "Binance Chain Native Token",
+            "name": "Beacon Chain  Native Token",
             "symbol": "BNB",
             "total_supply": "20000000000000000",
             "owner": "tbnb12hlquylu78cjylk5zshxpdj6hf3t0tahwjt3ex",
@@ -2368,7 +2368,7 @@ You need to enable indexer in `config.tml`. You can modify the `index_tags` to i
 
 **Available Query Path**
 
-Right now, you can only query by transaction height: `tx.height`. Please note that on Binance Chain testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
+Right now, you can only query by transaction height: `tx.height`. Please note that on Beacon Chain  testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
 
 **Example**
 

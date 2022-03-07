@@ -6,7 +6,7 @@ There is a [\#validator-support](http://discord.com/invite/binancesmartchain) **
 
 - Main portal to get community support is our [Online Forum](https://community.binance.org).
 
-- To keep track of the latest news in Binance Chain/DEX, visit [Online Forum](https://community.binance.org).
+- To keep track of the latest news in Beacon Chain/DEX, visit [Online Forum](https://community.binance.org).
 
 - Network Explorer - [BSCScan Explorer](https://bscscan.com/)
 

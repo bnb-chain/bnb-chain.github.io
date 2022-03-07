@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 ## How to delegate your BNB with extension wallet
 
-- [Install Binance Chain extension wallet](binance.md)
+- [Install BNB Chain extension wallet](binance.md)
   
 - Go to the staking page:
 
@@ -49,7 +49,7 @@ You can see the staking history here
 
 ## How to redelegate your BNB with extension wallet
 
-By staking you BNB, you participate in the selection process of Binance Smart Chain validators and earn rewards. Staking BNB is critical for securing the network. Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders.
+By staking you BNB, you participate in the selection process of BNB Smart Chain validators and earn rewards. Staking BNB is critical for securing the network. Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders.
 
 Redelegations between a unique delegator, source validator, and destination validator can only happen once every 7 days
 

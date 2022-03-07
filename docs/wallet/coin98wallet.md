@@ -1,15 +1,15 @@
-### How to create Binance Smart Chain Wallet on Coin98 Wallet
+### How to create BNB Smart Chain Wallet on Coin98 Wallet
 
 ----
 
-Users are able to store, send & receive BNB, the native token of Binance Smart Chain and BEP20 tokens on Coin98 Wallet
+Users are able to store, send & receive BNB, the native token of BNB Smart Chain and BEP20 tokens on Coin98 Wallet
 
 ----
 
 ## Coin98 Mobile Wallet
 **Step 1:** Open Coin98 Mobile Wallet & click **Manage** on the home screen.
 
-**Step 2:** Click **Add Wallet**, choose **Binance Smart Chain (BNB BEP20)** icon, and click **Create**.
+**Step 2:** Click **Add Wallet**, choose **BNB Smart Chain (BNB BEP20)** icon, and click **Create**.
 
 ![img](https://gblobscdn.gitbook.com/assets%2F-MLfdRENhXE4S22AEr9Q%2F-Mk69AiKEZ6C97-F0VnH%2F-Mk6Dbtv22lBBOknsrv8%2F%E1%BA%A3nh.png?alt=media&token=c2234532-8071-474a-b171-86e086b5bf73)
 
@@ -54,14 +54,14 @@ Your BNB Wallet will instantly be displayed on the home screen. You can also cli
 
 - The default gas fee on Coin98 Wallet has been set at the standard rate that offers the most optimized speed at a reasonable cost.
 
-- The gas fee is approximately 0.000105 BNB for each transaction on Binance Smart Chain.
+- The gas fee is approximately 0.000105 BNB for each transaction on BNB Smart Chain.
 ---
 ### Coin98 Extension Wallet
 Users are also able to store, send & receive BNB and BEP20 tokens directly on Coin98 Extension Wallet.
 
 **Step 1:** Open Coin98 Extension Wallet, enter your password, and click **Manage** on the home screen → Click **Add Wallet.**
 
-**Step 2:** Choose **Binance Smart Chain (BNB BEP20)** wallet icon, then click **Create Wallet**.
+**Step 2:** Choose **BNB Smart Chain (BNB BEP20)** wallet icon, then click **Create Wallet**.
 
 ![img](https://gblobscdn.gitbook.com/assets%2F-MLfdRENhXE4S22AEr9Q%2F-Mk69AiKEZ6C97-F0VnH%2F-Mk6K7tOICfM_nx40r5t%2FPicture168.png?alt=media&token=384c3153-db4b-4095-8a0d-daf86d4fdc37)
 
@@ -103,4 +103,4 @@ Transfer BEP20 tokens to the address copied on step 3.
 
 - The default gas fee on Coin98 Wallet has been set at the standard rate that offers the most optimized speed with a reasonable cost.
 
-- The gas fee is approximately 0.000105 BNB for each transaction on Binance Smart Chain.
+- The gas fee is approximately 0.000105 BNB for each transaction on BNB Smart Chain.

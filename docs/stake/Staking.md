@@ -6,11 +6,11 @@ hide_table_of_contents: false
 
 # Staking
 
-[Binance Smart Chain](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [Binance Chain](https://www.binance.org). Binance Smart Chain relies on a system of 21 validators with Proof of [Staked Authority (PoSA) consensus](./learn/consensus.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+[BNB Smart Chain](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [Beacon Chain](https://www.binance.org). BNB Smart Chain relies on a system of 21 validators with Proof of [Staked Authority (PoSA) consensus](./learn/consensus.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
-Ideally, Binance Smart Chain should build such staking and reward logic into the blockchain, and automatically distribute rewards as the blocking happens. [Cosmos Hub](https://hub.cosmos.network/), who also build on top of Tendermint consensus like Binance Chain, works in this way.
+Ideally, BNB Smart Chain should build such staking and reward logic into the blockchain, and automatically distribute rewards as the blocking happens. [Cosmos Hub](https://hub.cosmos.network/), who also build on top of Tendermint consensus like Beacon Chain, works in this way.
 
-However, as BSC wants to remain compatible with Ethereum as much as possible. On the other side, Binance Chain already has a staking module and could be extended to support both BC and BSC. In this way, all the staking related operations are recorded in BC. Once there are any changes about BSC's validator set or voting power, the new message will be transferred to BSC through cross-chain communication.
+However, as BSC wants to remain compatible with Ethereum as much as possible. On the other side, Beacon Chain already has a staking module and could be extended to support both BC and BSC. In this way, all the staking related operations are recorded in BC. Once there are any changes about BSC's validator set or voting power, the new message will be transferred to BSC through cross-chain communication.
 
 ## Staking Economics
 

@@ -1,0 +1,762 @@
+asyncapi: 2.0.0
+info:
+  title: Binance DEX Websocket API
+  version: '1.0'
+  description: >-
+    Binance DEX exposes several data streams over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
+servers:
+  default:
+    url:  wss://dex.binance.org/api/
+    description: >-
+      Once the socket is open you can subscribe to a channel by sending an "op"
+      message.
+    protocol: wss
+  testnet:
+    url:  wss://testnet-dex.binance.org/api/
+    description: >-
+      Once the socket is open you can subscribe to a channel by sending an "op"
+      message.
+    protocol: wss
+channels:
+  /{address}:
+    parameters:
+      address:
+        description: address to listen.
+        schema:
+          type: string
+          examples:
+            - bnb1m4m9etgf3ca5wpgkqe5nr6r33a4ynxfln3yz4v
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+        oneOf:
+          - $ref: '#/components/messages/orderMessage'
+          - $ref: '#/components/messages/accountsMessage'
+          - $ref: '#/components/messages/transferMessage'
+
+  /{symbol}@trades:
+    parameters:
+      symbol:
+        description: trading pair to listen.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/tradeMessage'
+
+  /{symbol}@marketDepth:
+    parameters:
+      symbol:
+        description: Order book price and quantity depth updates used to locally keep an order book.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/marketDepthMessage'
+
+  /{symbol}@marketDiff:
+    parameters:
+      symbol:
+        description: Order book price and quantity depth updates used to locally keep an order book.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/marketDiffMessage'
+  /{symbol}@allTickers:
+    parameters:
+      symbol:
+        description: 24hr Ticker statistics for a all symbols are pushed every second.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/allTickersMessage'
+   
+  /{symbol}@miniTickers:
+    parameters:
+      symbol:
+        description: A ticker for a single symbol is pushed every second.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/miniTickersMessage'
+  
+  
+  /{symbol}@allMiniTickers:
+    parameters:
+      symbol:
+        description: Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/allMiniTickersMessage'
+      
+  /$all@blockheight:
+    parameters:
+      symbol:
+        description: Streams the latest block height.
+        schema:
+          type: string
+          examples:
+            - BNB_BTCB-1DE
+    subscribe:
+      bindings:
+        http:
+          type: response
+      message:
+          $ref: '#/components/messages/blockheightMessage'
+          
+components:
+  securitySchemes:
+    httpBearerToken:
+      type: http
+      scheme: bearer
+  messages:
+    orderMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: >-
+        A message represents an individual order transaction
+      payload:
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type.
+            example: executionReport
+          E:
+            type: string
+            description: Event height.
+            example: 1499405658658
+          s:
+            type: string
+            description: symbol
+            example: ETH_BTC
+          S:
+            type: string
+            description: Side, 1 for Buy; 2 for Sell
+            example: 1
+          o:
+            type: string
+            description: Order type, 2 for LIMIT (only)
+            example: 2
+          f:
+            type: string
+            description: Time in force,  1 for Good Till Expire (GTE); 3 for Immediate Or Cancel (IOC)
+            example: 1
+          q:
+            type: string
+            description: Order quantity
+            example: 1.00000000
+          p:
+            type: string
+            description: Order price
+            example: 0.10264410
+          x:
+            type: string
+            description: Current execution type
+            example: NEW
+          X:
+            type: string
+            description: Current order status, possible values Ack, Canceled, Expired, IocNoFill, PartialFill, FullyFill, FailedBlocking, FailedMatching, Unknown
+            example: Ack
+          i:
+            type: string
+            description: Order ID
+            example: 91D9...7E18-2317
+
+          l:
+            type: string
+            description: Last executed quantity
+            example: 0.00000000
+
+          z:
+            type: string
+            description: Cumulative filled quantity
+            example: 0.00000000
+          L:
+            type: string
+            description: Last executed price
+            example: 0.00020000
+          n:
+            type: string
+            description:  Fees for all user trades within a given block. Fees will be displayed with each order but will be charged once. Fee can be composed of a single symbol, ex, "10000BNB" or multiple symbols if the available "BNB" balance is not enough to cover the whole fees, ex "1.00000000BNB;0.00001000BTC;0.00050000ETH"
+            example: 10000BNB
+          T:
+            type: string
+            description: Transaction time
+            example: 1499405658657
+          t:
+            type: string
+            description: Trade ID
+            example: TRD1
+          O:
+            type: string
+            description: Order creation time
+            example: 1499405658657
+
+
+    accountsMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: >-
+        A message represents updates of listening address.
+      payload:
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type
+            example: outboundAccountInfo
+          E:
+            type: string
+            description: Event height.
+            example: 1499405658849
+          B:
+            type: Array
+            description: Balances array
+            items:
+               type: object
+            properties:
+              a:
+                type: string
+                description: asser
+                example: LTC
+              f:
+                type: string
+                description: free balance
+                example: 17366.18538083
+              l:
+                type: string
+                description: locked balance
+                example: 0.00000000
+              r:
+                type: string
+                description: frozen balance
+                example: 0.00000000
+
+    transferMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: >-
+        A message represents transfer updates of listening address.
+      payload:
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type
+            example: outboundTransferInfo
+          E:
+            type: string
+            description: Event height.
+            example: 12893
+          H:
+            type: string
+            description: Transaction hash.
+            example: 0434786487A1F4AE35D49FAE3C6F012A2AAF8DD59EC860DC7E77123B761DD91B
+          M:
+            type: string
+            description: Transaction memo, added for BEP39.
+            example: 123456789
+          f:
+            type: string
+            description: From addr.
+            example: bnb1z220ps26qlwfgz5dew9hdxe8m5malre3qy6zr9
+          t:
+            type: Array
+            description: transfer array
+            items:
+               type: object
+            properties:
+              o:
+                type: string
+                description: To addr
+                example: bnb1xngdalruw8g23eqvpx9klmtttwvnlk2x4lfccu
+              c:
+                type: Array
+                description: free balance
+                items:
+                   type: object
+                properties:
+                      a:
+                       type: string
+                       description: Asset
+                      A:
+                       type: string
+                       description: Amount
+
+    tradeMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: >-
+        A message represents an individual trade info.
+      payload:
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type.
+            example: executionReport
+          E:
+            type: string
+            description: Event height.
+            example: 1499405658658
+          s:
+            type: string
+            description: symbol
+            example: ETH_BTC
+          t:
+            type: string
+            description: Trade ID
+            example: TRD1
+          p:
+            type: string
+            description: Order price
+            example: 0.10264410
+          q:
+            type: string
+            description: Order quantity
+            example: 1.00000000
+          b:
+            type: string
+            description: Buyer order ID
+            example: FFD9BBF5DD31A58BBB69DC8E99092B63855905B7-222018
+          a:
+            type: string
+            description: eller Order ID
+            example: 43D9BBF5DD31A58BBB69DC8E99092B63855905B7-2317
+          T:
+            type: string
+            description: Transaction time
+            example: 1499405658657
+          sa:
+            type: string
+            description: SellerAddress
+            example: bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp
+
+          ba:
+            type: string
+            description: BuyerAddress
+            example: bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5
+          tickertypw:
+            type: string
+            description: tiekertype 0 - Unknown 1-SellTaker 2-BuyTaker 3-BuySurplus 4- SellSurplus 5-Neutral
+            example: 1
+
+    marketDiffMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: >-
+           Order book price and quantity depth updates used to locally keep an order book.
+      payload:
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type
+            example: outboundTransferInfo
+          E:
+            type: string
+            description: Event height.
+            example: 12893
+          s:
+            type: string
+            description: symbol
+            example: ETH_BTC
+          b:
+            type: Array
+            description: Bids to be updated
+            items:
+               type: object
+            properties:
+              p:
+                type: string
+                description: Price level to be updated
+                example: 0.0024
+              q:
+                type: string
+                description: Price level to be updated
+                example: 10
+          a:
+             type: Array
+             description: Asks to be updated
+             items:
+                type: object
+             properties:
+               p:
+                type: string
+                description: Price level to be updated
+                example: 0.0024
+               q:
+                type: string
+                description: Price level to be updated
+                example: 10
+
+    marketDepthMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: |
+           Top 20 (could extend to 100, 500, 1000) levels of bids and asks. If you want subscribe topic marketDepth1000,your client must enable compression： https://tools.ietf.org/html/rfc7692.
+      payload:
+        type: object
+        properties:
+          lastUpdateId:
+            type: string
+            description: Last update ID
+            example: 160
+          symbol:
+            type: string
+            description: symbol
+            example: ETH_BTC
+          bids:
+            type: Array
+            description: Bids to be updated
+            items:
+               type: object
+            properties:
+              price:
+                type: string
+                description: Price level to be updated
+                example: 0.0024
+              quantity:
+                type: string
+                description: Price level to be updated
+                example: 10
+          asks:
+             type: Array
+             description: Asks to be updated
+             items:
+                type: object
+             properties:
+               price:
+                type: string
+                description: Price level to be updated
+                example: 0.0024
+               quantity:
+                type: string
+                description: Price level to be updated
+                example: 10
+
+    marketKlineMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: |
+           The kline/candlestick stream pushes updates to the current klines/candlestick every second.
+           m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
+           1m;3m;5m;15m;30m;1h;2h;4h;6h;8h;12h;1d;3d;1w;1M.
+      payload:
+
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type
+            example: outboundTransferInfo
+          E:
+            type: string
+            description: Event height.
+            example: 12893
+          s:
+            type: string
+            description: symbol
+            example: ETH_BTC
+          k:
+            type: Array
+            description: Kline data to be updated
+            items:
+               type: object
+            properties:
+               t:
+                type: string
+                description: Kline start time
+                example: 123400000
+               T:
+                type: string
+                description: Kline close time
+                example: 123460000
+               s:
+                type: string
+                description: symbol
+                example: ABC_0DX-BNB
+               i:
+                type: string
+                description: Interval
+                example: 1m
+               f:
+                type: string
+                description: First trade ID
+                example: 100
+               L:
+                type: string
+                description: Last trade ID
+                example: 100
+               o:
+                type: string
+                description: Open price
+                example: 0.0010
+               c:
+                type: string
+                description: Close price
+                example: 0.0020
+               h:
+                type: string
+                description: High price
+                example: 0.0025
+               l:
+                type: string
+                description: Low price
+                example: 0.0015
+               v:
+                type: string
+                description: Base asset volume
+                example: 1000
+               n:
+                type: string
+                description: Number of trades
+                example: 100
+
+    allTickersMessage:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: >-
+        24hr Ticker statistics for a all symbols are pushed every second.
+      payload:
+        type: object
+        properties:
+          e:
+            type: string
+            description: Event type.
+            example: 24hrTicker
+          E:
+            type: string
+            description: Event height.
+            example: 12893
+          s:
+            type: string
+            description: symbol
+            example: ETH_BTC
+          p:
+            type: string
+            description: Price level to be updated
+            example: 0.0024
+          P:
+            type: string
+            description: Price change percent
+            example: 50.00
+          w:
+            type: string
+            description: Weighted average price
+            example: 0.0018
+          x:
+            type: string
+            description: Previous day's close price
+            example: 0.0009
+          c:
+            type: string
+            description: Current day's close price
+            example: 0.0025
+          Q:
+            type: string
+            description: Close trade's quantity
+            example: 10
+          b:
+            type: string
+            description: Best bid price
+            example: 0.0024
+          B:
+            type: string
+            description: Best bid quantity
+            example: 10
+          a:
+            type: string
+            description: Best ask price
+            example: 0.0024
+          A:
+            type: string
+            description: Best ask quantity
+            example: 100
+          o:
+            type: string
+            description: Open price
+            example: 0.0025
+          h:
+            type: string
+            description: High price
+            example: 0.0025
+          l:
+            type: string
+            description: Low price
+            example: 0.0015
+          v:
+            type: string
+            description: Total traded base asset volume
+            example: 1000
+          q:
+            type: string
+            description: Total traded quote asset volume
+            example: 1000
+          O:
+            type: string
+            description: Statistics open time
+            example: 0
+          C:
+            type: string
+            description: Statistics close time
+            example: 86400000
+          F:
+            type: string
+            description: First trade ID
+            example: 0
+          L:
+            type: string
+            description: Last trade ID
+            example: 18150
+          n:
+            type: string
+            description: Total number of trades
+            example: 18150
+    
+    miniTickersMessage:
+        schemaFormat: 'application/schema+yaml;version=draft-07'
+        summary: >-
+          24hr Ticker statistics for a all symbols are pushed every second.
+        payload:
+          type: object
+          properties:
+            e:
+              type: string
+              description: Event type.
+              example: 24hrTicker
+            E:
+              type: string
+              description: Event height.
+              example: 12893
+            s:
+              type: string
+              description: symbol
+              example: ETH_BTC
+            c:
+              type: string
+              description: Current day's close price
+              example: 0.0025
+            o:
+              type: string
+              description: Open price
+              example: 0.0025
+            h:
+              type: string
+              description: High price
+              example: 0.0025
+            l:
+              type: string
+              description: Low price
+              example: 0.0015
+            v:
+              type: string
+              description: Total traded base asset volume
+              example: 1000
+            q:
+              type: string
+              description: Total traded quote asset volume
+              example: 1000
+    allMiniTickersMessage:
+        schemaFormat: 'application/schema+yaml;version=draft-07'
+        summary: |
+          Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
+        payload:
+          type: object
+          properties:
+            e:
+              type: string
+              description: 24hrMiniTicker.
+              example: 24hrTicker
+            E:
+              type: string
+              description: Event height.
+              example: 12893
+            s:
+              type: string
+              description: symbol
+              example: ETH_BTC
+            c:
+              type: string
+              description: Current day's close price
+              example: 0.0025
+            o:
+              type: string
+              description: Open price
+              example: 0.0025
+            h:
+              type: string
+              description: High price
+              example: 0.0025
+            l:
+              type: string
+              description: Low price
+              example: 0.0015
+            v:
+              type: string
+              description: Total traded base asset volume
+              example: 1000
+            q:
+              type: string
+              description: Total traded quote asset volume
+              example: 1000
+    
+    blockheightMessage:
+        schemaFormat: 'application/schema+yaml;version=draft-07'
+        summary: |
+          Streams the latest block height.
+        payload:
+          type: object
+          properties:
+            h:
+              type: integer
+              description: block height.
+              example: 1234567
+    
+    heartbeat:
+      schemaFormat: 'application/schema+yaml;version=draft-07'
+      summary: Its purpose is to keep the connection alive.
+      payload:
+        type: string
+        enum: ["\r\n"]
+      bindings:
+        http:
+          $ref: '#/components/messageBindings/streamingHeaders'
+
+
+  messageBindings:
+    streamingHeaders:
+      http:
+        headers:
+          'Transfer-Encoding': 'chunked'
+          Trailer: '\r\n'

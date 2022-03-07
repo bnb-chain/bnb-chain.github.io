@@ -4,10 +4,10 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Consensus Engine of Binance Smart Chain
+# Consensus Engine of BNB Smart Chain
 
 ## Abstract
-We target to design the consensus engine of BSC(Binance Smart Chain) to achieve the following goals:
+We target to design the consensus engine of BSC(BNB Smart Chain) to achieve the following goals:
 
 1. Wait a few blocks to confirm(should be less than Ethereum 1.0), better no fork in most cases.
 2. Blocking time should be shorter than Ethereum 1.0, i.e. 5 seconds or less.
@@ -16,9 +16,9 @@ We target to design the consensus engine of BSC(Binance Smart Chain) to achieve 
 5. With staking and governance as powerful as cosmos.
 
 
-[Geth](https://github.com/ethereum/go-ethereum/wiki/geth) implements two kinds of consensus engine: ethash(based on PoW) and [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)(base on PoA). Ethash is not a fit option for BSC because BSC gives up PoW. Clique has smaller blocking time and is invulnerable to 51% attack while doing as little to the core data structure as possible to preserve existing Ethereum client compatibility. The shortcoming of PoA is centralization, and the lack of meaningful staking and governance capability on-chain.  On the other hand, the Binance chain is built on Cosmos which does have a deployed staking and governance mechanism. Thus here we try to propose a consensus engine that:
+[Geth](https://github.com/ethereum/go-ethereum/wiki/geth) implements two kinds of consensus engine: ethash(based on PoW) and [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)(base on PoA). Ethash is not a fit option for BSC because BSC gives up PoW. Clique has smaller blocking time and is invulnerable to 51% attack while doing as little to the core data structure as possible to preserve existing Ethereum client compatibility. The shortcoming of PoA is centralization, and the lack of meaningful staking and governance capability on-chain.  On the other hand, the Beacon Chain is built on Cosmos which does have a deployed staking and governance mechanism. Thus here we try to propose a consensus engine that:
 
-* Binance chain does the staking and governance parts for BSC.
+* Beacon Chain does the staking and governance parts for BSC.
 * ValidatorSet change, double sign slash of BSC is updated through interchain communication.
 * Consensus engine of BSC keeps as simple as clique.
 
@@ -26,17 +26,17 @@ We investigated some popular implementations of PoA consensus and find out that 
 
 ## Infrastructure Components
 
-1. **Binance Chain**. It is responsible for holding the staking function to determine validators of BSC through independent election, and the election workflow are performed via staking procedure.
+1. **Beacon Chain**. It is responsible for holding the staking function to determine validators of BSC through independent election, and the election workflow are performed via staking procedure.
 2. **BSC validators**. Validators are responsible for validating transactions and generating blocks, ensuring the network’s security and the consistency of the ledger. In return, they receive rewards from the gas consumption of transactions.
 3. **Staking dApps on BSC(also named as system contract)**. There are several genesis contracts to help implement staking on BSC. Six classification groups of them:
-    - **Light client contract**. It is a watcher of distributed consensus process implemented by contract that only validates the consensus algorithm of Binance Chain.
+    - **Light client contract**. It is a watcher of distributed consensus process implemented by contract that only validates the consensus algorithm of Beacon Chain.
     - **Cross Chain Contract**. It is the cross chain communication layer. It will verify the sequence and merkle proof of a cross chain package.
-    - **BSCValidatorSet contract**. It is a watcher of validators change of BSC on Binance Chain. It will apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute revenue to validators when receiving cross chain package of validatorSet change.
+    - **BSCValidatorSet contract**. It is a watcher of validators change of BSC on Beacon Chain. It will apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute revenue to validators when receiving cross chain package of validatorSet change.
     - **System Reward contract**. The incentive mechanism for relayers to maintain system contracts. They will get rewards from system reward contract.
     - **Liveness Slash Contract**. The liveness of BSC relies on validator set can produce blocks timely when it is their turn. Validators can miss their turns due to any reason. This instability of the operation will hurt the performance of the network and introduce more non-deterministic into the system. This contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators.
-    - **Other contracts**. The BSC may take advantage of powerful governance of Binance Chain, for example, propose to change a parameter of system contracts.
+    - **Other contracts**. The BSC may take advantage of powerful governance of Beacon Chain, for example, propose to change a parameter of system contracts.
 
-Staking and Governance on Binance Chain is at a higher layer upon consensus. As for Relayer, it is a standalone process and is open about how to implement it. The detail of them will not be included in this doc.
+Staking and Governance on Beacon Chain is at a higher layer upon consensus. As for Relayer, it is a standalone process and is open about how to implement it. The detail of them will not be included in this doc.
 
 This doc only focus on the **BSC validators** and **Staking dApps** on BSC parts which are more closely to consensus engine.
 
@@ -53,7 +53,7 @@ The coming section will explain how these contracts distributing reward.
 ## Staking dApps on BSC
 
 ### [BSCValidatorSet contract](https://bscscan.com/address/0x0000000000000000000000000000000000001000)
-It is a watcher of validators change of BSC on Binance chain. It implement the following interfaces:
+It is a watcher of validators change of BSC on Beacon Chain. It implement the following interfaces:
 
 - **handleSynPackage(uint8, bytes calldata msgBytes)**
 

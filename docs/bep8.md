@@ -1,7 +1,7 @@
 In this article, we are going to take a tour about how to manage your BEP8 tokens in Binance Testnet [web wallet](https://testnet.binance.org/en/tokens).
 
 ## What is BEP8 Token
-Since the [Nightingale upgrade](https://community.binance.org/topic/2828) of Binance Chain testnet, a new token protocol [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is introduced. BEP8 protocol targets a different marketplace and provides several potential business cases in areas like micro-financing.
+Since the [Nightingale upgrade](https://community.binance.org/topic/2828) of Beacon Chain  testnet, a new token protocol [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is introduced. BEP8 protocol targets a different marketplace and provides several potential business cases in areas like micro-financing.
 
 Currently, the cost to get a BEP2 token listed on Binance DEX is quite expensive, as it takes more system resources, which is more suitable for the mature and large scale projects with enough recognition in the markets.  At the same time, more micro-financing cases like copyright owners, peer production, and community incentive points are looking for flexible tokenization and trading platforms to support their current works and share their potential future success.  New BEP8 tokens market is introduced to meet these demands and will increase the liquidity of utility tokens, which is similar to Small and Medium Enterprise (SME) board in the traditional stock markets
 
@@ -34,7 +34,7 @@ You should wait for a little time before this token appears at your token list.
 
 ## List BEP8 Token
 
-The listing process is different from BEP2 token list. BEP8 token issuer can list the BEP8 token without the agreement of Binance Chain validators. The BEP8 token can only be listed against BNB or BUSD and they cannot be listed as a quote symbol.
+The listing process is different from BEP2 token list. BEP8 token issuer can list the BEP8 token without the agreement of BNB Chain  validators. The BEP8 token can only be listed against BNB or BUSD and they cannot be listed as a quote symbol.
 
 1. Click on the list button
 

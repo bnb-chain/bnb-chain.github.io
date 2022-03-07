@@ -1,6 +1,6 @@
 # Trezor
 
-BNB and coins on Binance Smart Chain are supported by the Trezor hardware wallet. The following describes how to use Trezor to connect to BSC.
+BNB and coins on BNB Smart Chain are supported by the Trezor hardware wallet. The following describes how to use Trezor to connect to BSC.
 
 ## Requirements
 * Visit <https://wallet.trezor.io> and initialize your Trezor
@@ -12,7 +12,7 @@ BNB and coins on Binance Smart Chain are supported by the Trezor hardware wallet
 
 ## Connect with MetaMask
 
-Binance Smart Chain is compatible with MetaMask. Users can use MetaMask as a bridge between Trezor and Binance Smart Chain to make transactions to the Binance Smart Chain testnet.
+BNB Smart Chain is compatible with MetaMask. Users can use MetaMask as a bridge between Trezor and BNB Smart Chain to make transactions to the BNB Smart Chain testnet.
 
 1) Connect [MetaMask](./metamask.md) to BSC Testnet by following this guide to add a custom network
 

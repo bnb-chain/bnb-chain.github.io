@@ -4,19 +4,19 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Tokens in Binance Chain and Binance Smart Chain
+# Tokens in Beacon Chain  and BNB Smart Chain 
 
-## What role does BNB play in securing Binance Smart Chain?
+## What role does BNB play in securing BNB Smart Chain ?
 
 BNB is the token used to prevent `nothing-at-stake` problem.
 
-## What are tokens on Binance Smart Chain?
+## What are tokens on BNB Smart Chain ?
 
 BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP20.
 
 ## What is BEP2?
 
-A simple token protocol for easy management of asset on Binance chain <https://github.com/binance-chain/BEPs/blob/master/BEP2.md>
+A simple token protocol for easy management of asset on Beacon Chain  <https://github.com/binance-chain/BEPs/blob/master/BEP2.md>
 
 BNB is BEP2
 
@@ -57,7 +57,7 @@ The [minimum delegated amount](validator/Parameters.md) is **1BNB**.
 You can use:
 
 * [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
-* [Binance Chain extension wallet](wallet/binance.md)
+* [BNB Chain  extension wallet](wallet/binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 
 ## Where can I find out more about staking economics and rewards?

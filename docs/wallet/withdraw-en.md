@@ -1,7 +1,7 @@
 # How to recover if you choose the wrong network type?
 
 ## Background
-Since Binance Smart Chain and Ethereum follow the same address generation algorithm. In some cases, users may mistakenly choose the wrong network type when withdrawing tokens to Binance Smart Chain network. 
+Since BNB Smart Chain and Ethereum follow the same address generation algorithm. In some cases, users may mistakenly choose the wrong network type when withdrawing tokens to BNB Smart Chain network. 
 
 ## Steps to Recover
 - Metamask Setup

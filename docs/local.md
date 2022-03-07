@@ -1,10 +1,10 @@
 ---
-sidebar_label: Using Local BSC Network
+sidebar_label: Local BNB Smart Chain Network
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Local Binance Smart Chain Network
+# Local BNB Smart Chain Network
 
 See also : [https://github.com/ethereum/go-ethereum/wiki/Private-network](https://github.com/ethereum/go-ethereum/wiki/Private-network)
 

@@ -4,14 +4,14 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Open Source BSC Ecosystem [WIP!]
+# Open Source BSC Ecosystem
 
 In order to check te latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
 
-The goal of this page is to provide the current status of the open-source Binance Smart Chain Tech  Stack and highlight the potential interesting projects that are most demanded by the BSC community and ecosystem.  
+The goal of this page is to provide the current status of the open-source BNB Smart Chain Tech  Stack and highlight the potential interesting projects that are most demanded by the BSC community and ecosystem.  
 
 ## About
-Binance Smart Chain is an Ethereum EVM 100% compatible blockchain, and is very good at decentralized application (Dapp) development within many possible verticals including DeFi, NFT, Gaming, and many others.
+BNB Smart Chain is an Ethereum EVM 100% compatible blockchain, and is very good at decentralized application (Dapp) development within many possible verticals including DeFi, NFT, Gaming, and many others.
 
 To get a better understanding of the current BSC landscope, we divide each of the layers into the various components which we feel are most important. We then highlight some of the existing projects as well as **some potentially interesting** projects that we would like to fund by Binance Accelerator Funds. If you see a component with 0 or 1 existing projects then it's likely that we would consider grant support in this area. By describing our areas of priority in detail we do not wish to preclude grant applications that address different areas that we may not have thought of. We would like to fund all projects that bring value to the ecosystem.
 

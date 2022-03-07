@@ -7,7 +7,7 @@ sidebar_position: 2
 In this section, we have compied the different FAQs for providing a quick guide to our users' queries.
 
 ### BC FAQs
-* [Binance Chain & DEX](BC-FAQs.md)
+* [Beacon Chain & DEX](BC-FAQs.md)
 
 ## BSC FAQs
 * [General](BSC-FAQs-general.md)

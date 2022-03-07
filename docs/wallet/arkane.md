@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # How to create a BSC wallet in Arkane
 
-If you are looking for a user-friendly Binance Smart Chain wallet, consider creating an Arkane wallet. It allows you to enable recovery mechanism and comes with end-user support via their in-app chat, making sure you are never lost in the wonderful land of cryptocurrency.
+If you are looking for a user-friendly BNB Smart Chain wallet, consider creating an Arkane wallet. It allows you to enable recovery mechanism and comes with end-user support via their in-app chat, making sure you are never lost in the wonderful land of cryptocurrency.
 
 ## Key features
 - Cloud wallet, offers support Web and mobile
@@ -35,7 +35,7 @@ To secure your wallet you need to configure a PIN. You PIN should be between 4 a
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/04.png?raw=true)
 
 ## Step 2. Create your wallet
-Now that you've configured your PIN, you are ready to create a Binance Smart Chain wallet. Just select Binance Smart Chain from the list.
+Now that you've configured your PIN, you are ready to create a BNB Smart Chain wallet. Just select BNB Smart Chain from the list.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/05.png?raw=true)
 
@@ -49,7 +49,7 @@ Once you've press the button, Arkane will ask you to confirm using your PIN (the
 
 ## 🥳 Congratulations! 
 
-You have now created your Binance Smart Chain wallet to manage your digital assets on the Binance Smart Chain blockchain. 
+You have now created your BNB Smart Chain wallet to manage your digital assets on the BNB Smart Chain blockchain. 
 
 
 
@@ -61,7 +61,7 @@ Every BSC wallet in Arkane is able to send and receive BNB or BEP20 tokens. They
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/09.png?raw=true)
 
 ## Resources:
-* [Binance Smart Chain partners with Arkane](https://arkane.network/blog/binance-smart-chain-partners-with-arkane?utm_source=binance&utm_medium=documentation)
+* [BNB Smart Chain partners with Arkane](https://arkane.network/blog/binance-smart-chain-partners-with-arkane?utm_source=binance&utm_medium=documentation)
 * [Arkane Developer Introduction Video (25min)](https://www.youtube.com/watch?v=F5yFvIKHCPk)
 * [Use Arkane in your DApp](arkane-developer.md)
 

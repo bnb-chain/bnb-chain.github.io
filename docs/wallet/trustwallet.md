@@ -1,4 +1,4 @@
-# Using Trust Wallet for Binance Smart Chain
+# Using Trust Wallet for BNB Smart Chain
 
 ## Install Trust Wallet
 ### Go to [https://trustwallet.com](https://trustwallet.com/) to install the most recent version of Trust Wallet. 

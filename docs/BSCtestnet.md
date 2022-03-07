@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 ### What is a Testnet?
 
-The testnet is a test environment for Binance Chain network, run by the Binance Chain development community, which is open to developers.
+The testnet is a test environment for BNB Smart Chain network, run by the BNB Chain development community, which is open to developers.
 
 The validators on the testnet are from development team.
 
@@ -28,13 +28,13 @@ There is also a [web wallet](https://testnet.binance.org/en/) that can directly 
 
 **Steps to claim testnet BNB:**
 
-1. Create a new Wallet of Binance Smart Chain testnet with [MetaMask or MathWallet](https://docs.binance.org/wallets/bsc-wallets.html)
+1. Create a new Wallet of BNB Smart Chain testnet with [MetaMask or MathWallet](https://docs.binance.org/wallets/bsc-wallets.html)
 2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
 
-To request funds, please make a tweet with your Binance Smart Chain address pasted into the contents. Then, copy-paste the tweets URL!
+To request funds, please make a tweet with your BNB Smart Chain address pasted into the contents. Then, copy-paste the tweets URL!
 **BNB** will be sent to your BSC wallet right away.
 
-3. Transfer From Binance Smart Chain to Binance Chain
+3. Transfer From BNB Smart Chain to Binance Chain
 
 You can use [Binance Extension Wallet](https://docs.binance.org/smart-chain/wallet/binance.html#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
 

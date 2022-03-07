@@ -1,3 +1,8 @@
+---
+sidebar_label: RPC
+sidebar_position: 2
+hide_table_of_contents: false
+---
 # JSON-RPC Endpoint
 
 ## Available Resources

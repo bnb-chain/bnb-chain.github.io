@@ -1,8 +1,8 @@
-# DIA Data Oracles on Binance Smart Chain
+# DIA Data Oracles on BNB Smart Chain
 
 ## Introduction
 
-DApp developers who want to leverage DIA oracles can access the published data on Binance Smart Chain. DIA offers cryptocurrency and data about traditional financial assets.
+DApp developers who want to leverage DIA oracles can access the published data on BNB Smart Chain. DIA offers cryptocurrency and data about traditional financial assets.
 
 ## Supported Assets
 

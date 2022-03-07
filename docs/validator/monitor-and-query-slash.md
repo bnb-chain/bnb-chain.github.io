@@ -11,7 +11,7 @@ As best practise, it is advisable to  keep monitoring the event log of the slash
 
 | **parameter name** | **example**       | **comments**                                         | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX | the chain id of bnb chain                       | Yes          |
 | --side-chain-id    | BSC-XXX           | chain-id of the side  chain the validator belongs to | Yes          |
 
 #### Example
@@ -25,7 +25,7 @@ bnbcli slashing side-signing-info 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --s
 
 | **parameter name**  | **example**       | **comments**                                         | **required** |
 | ------------------- | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of bnb chain                       | Yes          |
 | --infraction-height | 100               | infraction height                                    | Yes          |
 | --infraction-type   | DoubleSign        | infraction type, 'DoubleSign;Downtime'               | Yes          |
 | --side-chain-id     | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
@@ -42,7 +42,7 @@ bnbcli slashing side-slash-history 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --
 
 | **parameter name** | **example**       | **comments**                                         | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX | the chain id of bnb chain                       | Yes          |
 | --infraction-type  | DoubleSign        | infraction type, 'DoubleSign;Downtime'               | Option       |
 | --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
 
@@ -58,7 +58,7 @@ bnbcli slashing side-slash-histories 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F 
 
 | **parameter name** | **example**       | **comments**                                         | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance chain                        | Yes          |
+| --chan-id          | Binance-Chain-XXX | the chain id of bnb chain                        | Yes          |
 | --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
 
 #### Example

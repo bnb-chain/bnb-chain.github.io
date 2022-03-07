@@ -4,7 +4,7 @@ hide_table_of_contents: true
 sidebar_position: 2
 ---
 
-# Binance Smart Chain Delegator
+# BNB Smart Chain Delegator
 
 ### What's the role of a delegator?
 
@@ -19,7 +19,7 @@ Please read the guide [here](del-guide.md)
 
 You can use:
 
-* [Binance Chain extension wallet](binance.md)
+* [BNB Chain extension wallet](binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 * [Trust Wallet](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
 * [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
@@ -30,7 +30,7 @@ You can use:
 
 Delegates and validators themselves may choose to unbond their BNB for a variety of reasons. It is important to note that these BNB are subject to what is known as the **UnbondingTime**, an on-chain parameterized period of time upon which all delegates, including validators, must wait for their BNB to become fully unbonded. In addition, these BNB are still subject to be potentially slashed upon commitment of any byzantine behavior. The **UnbondingTime** ensures a variety of security measures in the network, such as accounting for network synchrony assumptions, providing a lower bound for the length of a [long-range attack](https://cosmos.network/docs/spec/ibc/references.html#3) and solving the “nothing-at-stake” problem.
 
-The current  **UnbondingTime**  in Binance Smart Chain mainnet is **7 days**.
+The current  **UnbondingTime**  in BNB Smart Chain mainnet is **7 days**.
 
 ### How to redelegate my BNB?
 

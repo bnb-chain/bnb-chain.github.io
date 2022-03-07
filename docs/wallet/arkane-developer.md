@@ -2,9 +2,9 @@
 
 A wallet provider is a service that allows DApps to provide wallets to their end-users without having to deal with the security concerns of key management. It is a great way to make your Dapp ready to onboard a more mainstream audience.
 
-[Arkane](https://arkane.network/?utm_source=binance&utm_medium=documentation) allows you to easily integrate your app with the Binance Smart Chain, whether you already have an Dapp integrated with web3 or are building a new application from scratch. Arkane provides a smooth and delightful experience for you, your users on both web and mobile.
+[Arkane](https://arkane.network/?utm_source=binance&utm_medium=documentation) allows you to easily integrate your app with the BNB Smart Chain, whether you already have an Dapp integrated with web3 or are building a new application from scratch. Arkane provides a smooth and delightful experience for you, your users on both web and mobile.
 
-Arkane will help you interact with the Binance Smart Chain, create blockchain wallets, create different asset types such as fungible (BEP20, ERC20), and non-fungible tokens - NFTs - (ERC721, and ERC1155) and interact with smart contracts. Next to a superior developer experience, you can give your users a user-friendly interface.
+Arkane will help you interact with the BNB Smart Chain, create blockchain wallets, create different asset types such as fungible (BEP20, ERC20), and non-fungible tokens - NFTs - (ERC721, and ERC1155) and interact with smart contracts. Next to a superior developer experience, you can give your users a user-friendly interface.
 
 Each application is unique and has different needs, therefore they provide different ways of interacting with Arkane. Applications that have support for Web3 are recommendated to integrate the [Arkane Web3 provider](https://docs.arkane.network/widget/web3-provider/getting-started), others are suggested to use the [Arkane Widget](https://docs.arkane.network/widget/widget/introduction).
 
@@ -13,7 +13,7 @@ Each application is unique and has different needs, therefore they provide diffe
 - Support for Web and mobile applications
 - Offers social logins
 - Offers a fiat-on-ramp
-- Only wallet that supports NFTs (ERC721 and ERC1155) on Binance Smart Chain
+- Only wallet that supports NFTs (ERC721 and ERC1155) on BNB Smart Chain
 - Multichain, supports both BSC and Ethereum
 - Easy to integrate using web3 
 - Build for a mainstream audience
@@ -74,7 +74,7 @@ Every BSC wallet in Arkane is able to send and receive BNB or BEP20 tokens. They
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/09.png?raw=true)
 
 ## Resources:
-* [Binance Smart Chain partners with Arkane](https://arkane.network/blog/binance-smart-chain-partners-with-arkane?utm_source=binance&utm_medium=documentation)
+* [BNB Smart Chain partners with Arkane](https://arkane.network/blog/binance-smart-chain-partners-with-arkane?utm_source=binance&utm_medium=documentation)
 * [Arkane Developer Introduction Video (25min)](https://www.youtube.com/watch?v=F5yFvIKHCPk)
 
 

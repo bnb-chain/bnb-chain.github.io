@@ -47,7 +47,7 @@ A contract in the sense of Solidity is a collection of code (its functions) and 
 
 <img src="https://lh6.googleusercontent.com/qY_5g3ZMnJca6n84W2JxIoBvd8iHRQ0qkOQuJ60pRIcKvgZB5-bXcGq6gS7dFwA5rYXbiS2NyaUQ1Qptcagqa0pb7kmq_S-Dh8drA4R-hDg9_NVp1zPl-tmqIDanlcgLibaR3CV7" alt="img" style={{zoom:"50%"}}/>
 
-Now, We have to deploy our smart contract on Binance Smart Chain Network. For that, we have to connect to web3 world, this can be done my many services like Metamask, Brave, Portis etc. We will be using Metamask. Please follow this [tutorial to setup a Metamask Account](wallet/metamask.md).
+Now, We have to deploy our smart contract on BNB Smart Chain Network. For that, we have to connect to web3 world, this can be done my many services like Metamask, Brave, Portis etc. We will be using Metamask. Please follow this [tutorial to setup a Metamask Account](wallet/metamask.md).
 
 - Open Metamask and select Custom RPC from the networks dropdown
 
@@ -77,7 +77,7 @@ Now, We have to deploy our smart contract on Binance Smart Chain Network. For th
 
 - Head over to [Faucet](https://testnet.binance.org/faucet-smart) and request test BNB
 
-- Now, let's Deploy the Smart Contract on Binance Smart Chain Testnet
+- Now, let's Deploy the Smart Contract on BNB Smart Chain Testnet
 - Select Injected Web3 in the Environment dropdown and your contract
 
 <img src="https://lh5.googleusercontent.com/Z4XBNJcsMWk5SzSKB8no5vAzv8ie46p4dbv4sh0_9FxIyMfEFlCj2z_a_ZUWR6l3fH9OIr3B2A0_Puh89FzbxlkLMVsTo9diSbLGdbp2Swml0afc7Unl10hBw9jsAY6Ozgbe6HqE" alt="img" style={{zoom:"30%"}}/>

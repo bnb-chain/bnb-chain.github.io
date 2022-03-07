@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 # Genesis File
 
-In this section, we explain how the genesis file of the Binance Smart Chain is structured.
+In this section, we explain how the genesis file of the BNB Smart Chain is structured.
 
 
 ## What is a Genesis File
@@ -37,7 +37,7 @@ Number of blocks after which to checkpoint and reset the pending votes. Suggeste
 
 The nonce is the cryptographically secure mining proof-of-work that proves beyond reasonable doubt that a particular amount of computation has been expended in the determination of this token value.
 
-In Binance Smart Chain, this value is always set to 0x0.
+In BNB Smart Chain, this value is always set to 0x0.
 
 
 * **timestamp**
@@ -96,11 +96,11 @@ Block height in the chain, where the height of the genesis is block 0.
 The Keccak 256-bit hash of the entire parent block’s header (including its nonce and mixhash). Pointer to the parent block, thus effectively building the chain of blocks. In the case of the Genesis block, and only in this case, it's 0.
 
 
-## Binance Smart Chain Initialization
+## BNB Smart Chain Initialization
 
 There are two requirements we need to meet:
 1. There are already some BNBs in the BC network when it starts up.
-2. All the initial validators of Binance Smart Chain should be recorded in the BC.
+2. All the initial validators of BNB Smart Chain should be recorded in the BC.
 
 The first one is a must, because if we want to transfer some BNB to BSC, we will consume some gas in BSC. So we must ensure there are already some BNBs in BSC. That means the first interchain transfer should be done in the genesis block of side chain.
 

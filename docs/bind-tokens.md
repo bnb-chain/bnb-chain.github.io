@@ -91,7 +91,7 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
 ### Case 1: Lock non-zero in bind transaction
 
 Suppose you have 20 million on your treasure, you decide to lock some tokens via the bind tx:
-1. Send bind transfer on Binance Chain and specify the 20 million as the lock amount.
+1. Send bind transfer on BNB Chain and specify the 20 million as the lock amount.
 2. Your BEP20 has 100 million supplies, you need to run the `approve` to grant allowance to the tokenHub contract, then you run `approveBind`, along these step, you don't have to specify how much exactly you need to transfer to the tokenHub contract, it will figure it out (here actually it is 80 million), as long as you `approve` it with enough amount.
 3. If your `approveBind` runs successfully, the bind is done. Your 20 million treasures actually will be on your owner address on BSC, and this is your **CHOICE**.
 4. After your bind, you can spend your 20 million whatever you want (including transferring back to BC), and for other holders of your token on BC, they can transfer their token to BSC at their own choice without your help or your permission.

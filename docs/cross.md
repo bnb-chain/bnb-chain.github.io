@@ -10,7 +10,7 @@ sidebar_position: 2
 
 The total cost of transfer from BC to BSC is composed of 2 parts:
 
-* Fee for executing `bridge transfer-out` transaction is 0.004BNB,  pay validators on Binance Chain
+* Fee for executing `bridge transfer-out` transaction is 0.004BNB, pay validators on Beacon Chain
 
 * Fee for BSC-relayers 0.004BNB. it will cover the fees of calling TokenHub Contract on BSC.
 
@@ -22,11 +22,11 @@ The total cost of transfer from BSC to BC is composed of 2 parts:
 
 ### What's is a BSC relayer?
 
-BSC relayer monitors cross chain packages on Binance Chain, builds and broadcasts transactions to BSC to deliver these packages, which is the key of cross chain communication from Binance Chain to BSC.
+BSC relayer monitors cross chain packages on Beacon Chain, builds and broadcasts transactions to BSC to deliver these packages, which is the key of cross chain communication from Beacon Chain to BSC.
 
 ### What's is an Oracle relayer?
 
-Oracle Relayer watches the state change of Binance Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of Binance Chain are eligible to run Oracle relayers.
+Oracle Relayer watches the state change of Binance Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of Beacon Chain are eligible to run Oracle relayers.
 
 ### What's an oracle?
 
@@ -34,12 +34,12 @@ In blockchain network, an oracle refers to the element that connects smart contr
 
 ### Which wallet support cross-chain transfer?
 
-You need to use [MyEtherWallet](wallet/myetherwallet.md)to call contracts and use Binance Chain commandline client: `bnbcli`/ `tbnbcli` for complementary commands
+You need to use [MyEtherWallet](wallet/myetherwallet.md)to call contracts and use Beacon Chain commandline client: `bnbcli`/ `tbnbcli` for complementary commands
 
 Please refer to this [guide](cross-chain-transfer.md) for details
 
 ### How to send cross-chain transfer?
 
-You can use [Binance Chain extension wallet](wallet/binance.md) or
+You can use [BNB Chain extension wallet](wallet/binance.md) or
 
 use [Trust wallet](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)

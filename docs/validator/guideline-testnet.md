@@ -3,7 +3,7 @@ sidebar_label: Joining Test
 sidebar_position: 2
 hide_table_of_contents: false
 ---
-# How to join Binance Smart Chain Testnet as Validator?
+# How to join BNB Smart Chain Testnet as Validator?
 
 ### Before You Start
 
@@ -57,7 +57,7 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 
 ### Get Testnet Token from Faucet
 
-You can get testnet BNB from <https://testnet.binance.org/faucet-smart>, but the BNB is on Binance Smart Chain.
+You can get testnet BNB from <https://testnet.binance.org/faucet-smart>, but the BNB is on BNB Smart Chain.
 
 Download `tbnbcli `from [GitHub](https://github.com/binance-chain/node-binary/tree/master/cli/testnet/0.8.1). Use `tbnbcli` to create an account or recover an account.
 

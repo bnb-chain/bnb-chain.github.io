@@ -4,11 +4,11 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# How to Contribute to Binance Chain Documentations Project
+# How to Contribute to BNB Chain Documentations Project
 
-Your contributions to the Binance Chain will help build a fast and secure decentralized digital asset exchange.
+Your contributions to the BNB Chain will help build a fast and secure decentralized digital asset exchange.
 
-We want to make it as easy as possible to contribute changes that help the Binance Chain grow and thrive. There are a few guidelines that we ask contributors to follow so that we can merge your changes quickly.
+We want to make it as easy as possible to contribute changes that help the BNB Chain grow and thrive. There are a few guidelines that we ask contributors to follow so that we can merge your changes quickly.
 
 Getting Started
 Make sure you have a GitHub account.
@@ -31,7 +31,7 @@ Please avoid working directly on the master branch.
 Make sure you have added the necessary tests for your changes and make sure all tests pass.
 Submitting Changes
 Push your changes to a topic branch in your fork of the repository.
-Submit a pull request to the docs repository in the Binance Chain organization.
+Submit a pull request to the docs repository in the BNB Chain organization.
 Include a descriptive [commit message][commit-msg].
 Changes contributed via pull request should focus on a single issue at a time.
 Rebase your local changes against the master branch. Resolve any conflicts that arise.

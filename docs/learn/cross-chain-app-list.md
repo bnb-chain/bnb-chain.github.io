@@ -1,6 +1,6 @@
 # Cross Chain Apps
 
-List of Cross-chain Apps Supporting Binance Smart Chain
+List of Cross-chain Apps Supporting BNB Smart Chain
 
 |Type	|Name	|Website	|Tutorial|
 |---------|----------|--------------------|----------|

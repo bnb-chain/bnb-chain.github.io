@@ -39,7 +39,7 @@ If a validator missed more than 50 blocks in 24h, the blocking reward for valida
 ## Unjail
 The malicious validators who are slashed by the previous cases will be set to `jailed` along with a duration setting as well due to the malicious or negative behaviors. We can set it to ‘unjailed’ by sending a side-unjail transaction if the validation passed.
 
-When your validator is `unjailed` on binance chain, it must wait for the next UTC 0:00 to join validatorsest again.
+When your validator is `unjailed` on BNB Chain, it must wait for the next UTC 0:00 to join validatorsest again.
 
 ### Transaction Validation
 * validator address must not be empty
@@ -163,7 +163,7 @@ bnbcli slashing side-slash-histories 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F 
 
 | **parameter name** | **example**       | **comments**                                         | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance chain                        | Yes          |
+| --chan-id          | Binance-Chain-XXX | the chain id of BNB Chain                        | Yes          |
 | --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
 
 #### For example

@@ -1,6 +1,6 @@
-# Binance Chain Transaction Encoding Specification
+# BNB Chain Transaction Encoding Specification
 
-Binance Chain transactions are protocol-based data types and can only be submitted in a compatible encoded frame.
+BNB Chain transactions are protocol-based data types and can only be submitted in a compatible encoded frame.
 
 The fundamental encoding logic is from [Tendermint Amino](https://github.com/tendermint/go-amino), which derives from and is "largely compatible with" Google protocol-buffer's Proto3.
 
@@ -8,7 +8,7 @@ However the client sides only needs to stick to the specifications outlined belo
 
 ## Encoding Output
 
-Binance Chain (Amino) encoding logic may encode a data structure into two output formats: Binary and JSON.
+BNB Chain (Amino) encoding logic may encode a data structure into two output formats: Binary and JSON.
 
 ### JSON Marshal
 Amino supports JSON encoding natively, which is the same as other usual json marshalers. Except that it can add one more `type` info for registered type, as shown below.
@@ -31,9 +31,9 @@ Binary encoding is a variant of Google's protobuf. The bytes are laid out in the
     - to encode data field of some specific types, an object type prefix for the field will be added ahead of the real encoding.
 4. repeated (array) Encoding - it is the same as google protocol buffer, while encoding of the object/struct may contain the type prefix as shown below.
 
-## Binance Chain Transaction Encoding
+## BNB Chain Transaction Encoding
 
-Below are the data types that can be sent to Binance Chain as requests, and their encoding layout. To simplify the presentation, we will use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, other fields will use the default `proto3` encoding logic.
+Below are the data types that can be sent to BNB Chain as requests, and their encoding layout. To simplify the presentation, we will use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, other fields will use the default `proto3` encoding logic.
 
 
 ### Standard Transaction
@@ -140,7 +140,7 @@ message StdSignature {
 ```
 
 ### Message Types
-Messages represent the individual operations possible on Binance Chain, and these can be inserted into the `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangebly in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
+Messages represent the individual operations possible on BNB Chain, and these can be inserted into the `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangebly in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
 
 #### Transfer
 Transfer is the transaction used for transferring funds to different addresses.
@@ -254,7 +254,7 @@ OptionNoWithVeto    = 0x04  // no with veto
 ```
 
 #### Issue
-Issue (create) new asset on Binance chain.
+Issue (create) new asset on BNB Chain.
 ```go
 message IssueTokenValue  {
   0x17EFAB80 // hardcoded, object type prefix in 4 bytes
@@ -387,7 +387,7 @@ message Timerelock{
 
 #### HTLT
 
-Hash Timer Locked Transfer (HTLT) is a new transaction type on Binance Chain, to serve as HTLC in the first step of Atomic Swap
+Hash Timer Locked Transfer (HTLT) is a new transaction type on BNB Chain, to serve as HTLC in the first step of Atomic Swap
 
 ```go
 message HTLT{

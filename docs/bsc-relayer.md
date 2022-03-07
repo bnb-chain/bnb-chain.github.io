@@ -39,9 +39,9 @@ Get example config from this url: <https://github.com/binance-chain/bsc-relayer/
 
 Edit`config.json` and fill your BSC private key to bsc_config.private_key, example private key: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
-* Binance Chain Configuration:
+* Beacon Chain Configuration:
 	* `mnemonic`: Paste the recovery phrase here. Since bsc-relayer will automaticly submit `double-sign` evidence, if it's committed, the reward will be sent to this address
-* Binance Smart Chain Configuration:
+* BNB Smart Chain Configuration:
 *
 
 ## Start Relayer

@@ -1,11 +1,11 @@
 ---
-sidebar_label: Integrate
+sidebar_label: Integration
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 ## Public Services
-There are public nodes running by Binance Chain community which will allow you to interact with the blockchain.
+There are public nodes running by BNB Chain community which will allow you to interact with the blockchain.
 
 ### REST API
 [Accelerated nodes](https://docs.binance.org/faq.html#what-is-the-accelerated-node) provide advanced API services for the public.<br/>
@@ -25,12 +25,12 @@ Command Line Interface is currently available for Linux, Mac and Windows.<br/>
 Please refer to the [CLI Reference](api-reference/cli.md).
 
 ## SDKs
-There are multiple advanced SDK solutions available for Binance chain.<br/>
+There are multiple advanced SDK solutions available for Beacon Chain.<br/>
 Majority of SDKs provide simplified functions to:
 
 - Create wallets and manage keys
-- Encode/sign transactions and submit to Binance Chain/DEX, including Transfer, New Order, Cancel Order, etc.
-- Communicate with Binance Chain/DEX via Node RPC calls through public node RPC services or your own private full nodes
+- Encode/sign transactions and submit to Beacon Chain/DEX, including Transfer, New Order, Cancel Order, etc.
+- Communicate with Beacon Chain/DEX via Node RPC calls through public node RPC services or your own private full nodes
 
 List of currently available SDKs and their respective documentations:
 

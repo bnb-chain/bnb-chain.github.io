@@ -4,7 +4,7 @@ hide_table_of_contents: true
 sidebar_position: 2
 ---
 
-# Binance Smart Chain Staking Parameters
+# BNB Smart Chain Staking Parameters
 
 ### Staking Token
 

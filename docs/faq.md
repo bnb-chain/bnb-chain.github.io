@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Binance Extension Wallet FAQs
+# BNB Extension Wallet FAQs
 
 ## How to stay safe
 
@@ -38,9 +38,9 @@ Remember transactions can’t be reversed and wallets can’t be easily recovere
 
 Many users who interact with a centralized exchange like Binance eventually want to withdraw to a wallet that they fully control, like MetaMask. So once you've used their withdraw form, what could be scarier than not seeing your tokens?
 
-First, you'll need to use the MetaMask add Custom Network feature to add the Binance Chain or Binance Smart Chain's RPC URLs endpoints to your MetaMask.
+First, you'll need to use the MetaMask add Custom Network feature to add the Beacon Chain or BNB Smart Chain's RPC URLs endpoints to your MetaMask.
 
-Once you've added the Binance Chain or the Binance Smart Chain to your MetaMask, you will be able to select different networks to view the assets (you may need to add Custom Tokens too) held by your selected account on that network.
+Once you've added the Beacon Chain or the BNB Smart Chain to your MetaMask, you will be able to select different networks to view the assets (you may need to add Custom Tokens too) held by your selected account on that network.
 
 
 ## How Much BNB You Need To Send Tokens

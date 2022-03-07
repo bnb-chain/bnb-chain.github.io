@@ -18,7 +18,7 @@ Anyone can call the `mirror` [method](https://github.com/binance-chain/bsc-genes
 
 - Verify there is no pending mirror request
 - Check the total supply and token symbol is valid
-- Send a cross-chain package to issue a BEP2 token on Binance Chain
+- Send a cross-chain package to issue a BEP2 token on Beacon Chain
 - The newly created BEP2 token is locked until token holder send cross-chain transfer
 
 After binding, all liquid circulation is on BSC.

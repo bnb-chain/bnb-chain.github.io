@@ -1,15 +1,15 @@
 ---
-sidebar_label: Gnosis Safe Multisig on Binance Smart Chain
+sidebar_label: Gnosis Safe Multisig on BNB Smart Chain
 sidebar_position: 2
 hide_table_of_contents: false
 ---
-#  Gnosis Safe Multisig on Binance Smart Chain
+#  Gnosis Safe Multisig on BNB Smart Chain
 
 ## Introduction
 
 First deployed in early 2017, Gnosis multi-signature wallet became the foundational infrastructure for storing funds on Ethereum. The Gnosis Safe is the most secure way to manage your crypto funds.
 
-Today, you can set up the Gnosis Safe Multisig on Binance Smart chain in less than 60 seconds, and you can use wallets including Ledger, Trezor,  Wallet Connect, Torus, and browser wallets like Metamask as signing keys so that you can manage your crypto collectively and inter-operably.
+Today, you can set up the Gnosis Safe Multisig on BNB Smart Chain in less than 60 seconds, and you can use wallets including Ledger, Trezor,  Wallet Connect, Torus, and browser wallets like Metamask as signing keys so that you can manage your crypto collectively and inter-operably.
 
 ## Advantages of Gnosis Safe contracts
 

@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# How to manually install the Binance Chain Extension Wallet
+# How to manually install the BNB Chain Extension Wallet
 
 ## Download the zip file
 

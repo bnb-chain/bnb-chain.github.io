@@ -1,6 +1,6 @@
 # Ledger
 
-BNB and coins on Binance Smart Chain are supported by the Ledger Nano S hardware wallet. The following describes how to use Ledger Nano S to connect to BSC
+BNB and coins on BNB Smart Chain are supported by the Ledger Nano S hardware wallet. The following describes how to use Ledger Nano S to connect to BSC
 
 ## Requirements
 * A Ledger Nano S hardware wallet with latest firmware.
@@ -11,7 +11,7 @@ BNB and coins on Binance Smart Chain are supported by the Ledger Nano S hardware
 ## App Installation Instructions
 
 !!! Tip
-		The existing Ethereum App is compatible with Binance Smart Chain
+		The existing Ethereum App is compatible with BNB Smart Chain
 
 1) Plug in and unlock your Ledger device, open Ledger Live on your computer, then open the "Manager" panel.
 
@@ -43,7 +43,7 @@ Steps:
 
 ## Connect with MetaMask
 
-Binance Smart Chain is compatible with MetaMask. Users can use MetaMask as a bridge between Ledger Nano S and Binance Smart Chain to make transactions to the Binance Smart Chain testnet.
+BNB Smart Chain is compatible with MetaMask. Users can use MetaMask as a bridge between Ledger Nano S and BNB Smart Chain to make transactions to the BNB Smart Chain testnet.
 
 1) Connect [MetaMask](./metamask.md) to BSC Testnet by following this guide to add a custom network
 

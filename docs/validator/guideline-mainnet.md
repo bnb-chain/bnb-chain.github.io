@@ -3,7 +3,7 @@ sidebar_label: Joining Mainnet
 sidebar_position: 2
 hide_table_of_contents: false
 ---
-# How to join Binance Smart Chain Mainnet as Validator?
+# How to join BNB Smart Chain Mainnet as Validator?
 
 ### Before You Start
 

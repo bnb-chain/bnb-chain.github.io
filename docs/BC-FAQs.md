@@ -4,16 +4,16 @@ sidebar_position: 2
 hide_table_of_contents: true
 ---
 
-# Binance Chain FAQ
+# Beacon Chain FAQ
 
-### What is Binance Chain, or Binance DEX?
+### What is Beacon Chain , or Binance DEX?
 
-Binance Chain is the blockchain initially developed by Binance and community. Binance DEX is the
-decentralized exchange module developed on top of the Binance Chain blockchain.
+Beacon Chain  is the blockchain initially developed by Binance and community. Binance DEX is the
+decentralized exchange module developed on top of the Beacon Chain  blockchain.
 
-### What is the design principle of Binance Chain?
+### What is the design principle of Beacon Chain ?
 
-The main focuses for the design of Binance Chain are:
+The main focuses for the design of Beacon Chain  are:
 
 - No custody of funds: traders maintain control of their private keys and funds.
 - High performance: low latency, high throughput for a large user base, and high liquidity trading.
@@ -23,7 +23,7 @@ The main focuses for the design of Binance Chain are:
 - Fair trading: minimize front-running, to the extent possible.
 - Evolvable: able to develop with forever-improving technology stack, architecture, and ideas.
 
-### What can you do on Binance Chain?
+### What can you do on Beacon Chain ?
 
 You can:
 
@@ -33,27 +33,27 @@ You can:
 - Propose to create trading pairs between two different tokens
 - Send orders to buy or sell assets through trading pairs created on the chain
 
-### Will Binance Chain introduce more features and transaction types in the future?
+### Will Beacon Chain  introduce more features and transaction types in the future?
 
-Yes, Binance Chain team and community would cherish the technology advancements and recommended trends and strive to make circulation of assets and value easier and easier.
+Yes, Beacon Chain  team and community would cherish the technology advancements and recommended trends and strive to make circulation of assets and value easier and easier.
 
-### What is the native coin on Binance Chain?
+### What is the native coin on Beacon Chain ?
 
-The Binance Coin, BNB, is the native asset on Binance Chain. There are 200MM BNB coins in total.
+The Binance Coin, BNB, is the native asset on Beacon Chain . There are 200MM BNB coins in total.
 There will be no mining. The existing coin burns and freezes will still be in effect on the new
-Binance Chain blockchain.
+Beacon Chain  blockchain.
 
 The exact number of BNB coins will be destroyed based on the same number of BNB ERC20 tokens
 that have already been destroyed.
 
-Since Binance Chain is live, all BNB ERC20 tokens will be swapped for Binance Chain coins. All
+Since Beacon Chain  is live, all BNB ERC20 tokens will be swapped for Beacon Chain  coins. All
 users who hold BNB ERC20 tokens can deposit them to Binance.com, and upon withdrawal, the new
-Binance Chain native coins will be sent to their new wallets.
+Beacon Chain  native coins will be sent to their new wallets.
 
-### How can I register on Binance Chain/DEX and start trading?
+### How can I register on Beacon Chain /DEX and start trading?
 
-There is no need to register. All you need is a Binance Chain address, which can be generated with
-any [wallet](https://github.com/binance-chain/docs-site/blob/master/docs/wallets.md) that supports Binance Chain. Then you can trade BNB or other assets stored on that address.
+There is no need to register. All you need is a Beacon Chain  address, which can be generated with
+any [wallet](https://github.com/binance-chain/docs-site/blob/master/docs/wallets.md) that supports Beacon Chain . Then you can trade BNB or other assets stored on that address.
 
 ### How can I send orders on Binance DEX?
 #### Order
@@ -67,7 +67,7 @@ In Binance DEX v1.0, the order message contains:
 
 - Symbol: trading pair on the chain
 - Side: buy or sell
-- Price: only limit price orders are supported in Binance Chain v1.0
+- Price: only limit price orders are supported in Beacon Chain  v1.0
 - Amount
 - Time In Force: Binance DEX supports `Immediate Or Cancel` (IOC) and `Good Till Expiry` (GTE)
 orders. GTE orders can quote on the exchange until they are filled by the opposite orders satisfying
@@ -111,8 +111,8 @@ will be charged for the network usage, if there is no fill at all for the order 
 
 #### Where can I see my assets and trades?
 
-You can always use wallets that support Binance Chain to check your asset balances, open orders,
-and (optionally) order/trade history. Binance Chain Explorer is another tool to check balances
+You can always use wallets that support Beacon Chain  to check your asset balances, open orders,
+and (optionally) order/trade history. Beacon Chain  Explorer is another tool to check balances
 and transactions.
 
 #### When can I see my order on the blockchain after I send it?
@@ -150,7 +150,7 @@ be used, otherwise, non-BNB fee structure will be used instead.
 - If the whole order value and free balance for the receiving asset are not enough to pay the fee,
 all the receiving asset and its residual balance will be charged.
 
-### What is the current Fee Table on Binance Chain Mainnet?
+### What is the current Fee Table on Beacon Chain  Mainnet?
 
 Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2021-03-21** is as follows:
 
@@ -196,7 +196,7 @@ Smart Chain Proposal Vote   | N/A| 0 BNB   | N
 Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 
 
-### What is the current Fee Table on Binance Chain Testnet?
+### What is the current Fee Table on Beacon Chain  Testnet?
 
 Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2021-03-17** is as follows:
 
@@ -245,7 +245,7 @@ Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 ### Can I see orders/balances of others or can other people see my orders/balances?
 
 Yes, anyone can see anyone's orders and balances if they know the corresponding addresses.
-Binance Chain is 100% transparent for transactions and balances.
+Beacon Chain  is 100% transparent for transactions and balances.
 
 ### Information provided through API and their usage
 
@@ -270,14 +270,14 @@ Tick size is the minimum unit to increase or decrease for the price (in quote as
 while lot size is the minimum unit to increase or decrease for the quantity (in base asset) of an order.<br/>
 They are not the same as on Binance.com. They can be queried from API or checked from Wallet UI.
 
-Tick Size and lot size are not fixed. Binance Chain will automatically/periodically review the values to make
+Tick Size and lot size are not fixed. Beacon Chain  will automatically/periodically review the values to make
 sure proper order size and notional is applied.
 
 #### Are there limits on notional value of an order?
 
 The smallest order you can send for a trading pair is 1 lot size quantity at 1 tick size price. No other limits.
 
-### What is the decimal precision for prices and quantities on Binance Chain/DEX?
+### What is the decimal precision for prices and quantities on Beacon Chain /DEX?
 
 Amounts are represented as integers, and all coins have a fixed scale of 8.<br/>
 This means that if a balance of 100000000 were to be exposed to a wallet integrator, this will represent a balance of 1 coin.
@@ -285,17 +285,17 @@ This means that if a balance of 100000000 were to be exposed to a wallet integra
 ### I forgot the private key for my address, how can I get it back?
 
 Sorry, you cannot. Owner of the address takes full responsibility for the private key protection.
-Binance Chain and official wallets do not have your private key.
+Beacon Chain  and official wallets do not have your private key.
 
 ### My private key got stolen by hackers, how can I recover my assets?
 
-Sorry, you take full responsibility of your private key ownership and protection. Binance Chain
+Sorry, you take full responsibility of your private key ownership and protection. Beacon Chain 
 and official wallets will not record, or transfer out your private key.
 
 ### What is the Accelerated Node?
 
 While users can submit transactions and most of the queries via normal, self-run full nodes.<br/>
-Accelerated Node provides more secure and faster lines to access Binance Chain.
+Accelerated Node provides more secure and faster lines to access Beacon Chain .
 
 Accelerated Node is special infrastructure built around Validator to facilitate accelerated transaction
 routing and provide richer, faster user interfaces. There are always several Accelerated Nodes running
@@ -305,7 +305,7 @@ For rapid API access, you'd better stay with one Accelerated Node to get better 
 
 ### How can I issue an asset?
 
-Anyone can pay a fee and issue an asset as Token on Binance Chain, as long as they provide
+Anyone can pay a fee and issue an asset as Token on Beacon Chain , as long as they provide
 proper information for the fields below, and then execute the command through the command line or http interfaces.
 
 - Name: a description string of less than 21 characters
@@ -313,20 +313,20 @@ proper information for the fields below, and then execute the command through th
 - Total Supply: a positive number less than or equal to 90 billions
 - Mint-able: whether the token can increase Total Supply in later time or not
 
-### What is the consensus algorithm used on Binance Chain?
+### What is the consensus algorithm used on Beacon Chain ?
 
-Binance Chain uses BFT and PoS (upcoming) based consensus mechanism to produce blocks among
+Beacon Chain  uses BFT and PoS (upcoming) based consensus mechanism to produce blocks among
 a series of qualified Validators. This is similar to the architectures of several existing
 popular blockchain platforms such as EOS and NEO.
-The process for setting up validators among different entities on Binance Chain is currently being defined. More details will be shared at a later date.
+The process for setting up validators among different entities on Beacon Chain  is currently being defined. More details will be shared at a later date.
 
-### Can I run a full node for Binance Chain?
+### Can I run a full node for Beacon Chain ?
 
-Yes, you can. A full node contains all the information and application logic for Binance Chain.
+Yes, you can. A full node contains all the information and application logic for Beacon Chain .
 It can receive and broadcast blocks and transactions with other full nodes and even validators.
 The only exception is it will not participate in the consensus if the full node is not a Validator.
 
-### Does Binance Chain support Smart Contracts?
+### Does Beacon Chain  support Smart Contracts?
 
 No. This was an intentional design decision to improve the performance of the system and eliminate
 having to support unnecessary features.
@@ -334,21 +334,21 @@ having to support unnecessary features.
 If you have certain must-have feature-s, it might be added as a native implementation instead of using smart contract.<br/>
 Feel free to talk to Binance community.
 
-### How can I transfer tokens, such as Bitcoin, from other block chains onto Binance Chain?
+### How can I transfer tokens, such as Bitcoin, from other block chains onto Beacon Chain ?
 
 Right now, there are 2 ways to transfer tokens cross-chain:
 
-1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Binance Chain and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Binance Chain development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
+1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Beacon Chain  and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Beacon Chain  development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
 *  [smart-contract solution](https://github.com/binance-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
 * [deputy process](https://github.com/binance-chain/bep3-deputy) written in GoLang that handles swap activities
 
 Any developer is welcome to test the solutions in testnet and then use them in mainnet.
 
-2. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Binance Chain (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
+2. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Beacon Chain  (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
 
 Atomic swap and this centralized approach are not exclusive to other decentralized approaches, which can also be implemented in parallel. There are many cross-chain solutions being developed and we are very interested in them.
 
-Please do __NOT__ try to transfer anything on existing network to Binance Chain testnet, you may experience loss by doing so, because testnet doesn't run with real coins.
+Please do __NOT__ try to transfer anything on existing network to Beacon Chain  testnet, you may experience loss by doing so, because testnet doesn't run with real coins.
 
 ### How is a trading pair created on Binance DEX?
 
@@ -358,7 +358,7 @@ full nodes with the same, deterministic matching logic.
 
 Simply allowing trading between two assets seems easy enough, however it is expensive for not only the network
 but also its users in long term (and liquidity costs can be much larger). In order to efficiently use the
-network, Binance Chain only list assets against BNB and other widely accepted market quote assets.
+network, Beacon Chain  only list assets against BNB and other widely accepted market quote assets.
 
 After an asset is issued, which costs a small fee,
 anyone can "propose" to all validators to list it against particular quote assets.
@@ -368,8 +368,8 @@ Once the proposal is accepted, the owner of the base asset can list the trading 
 
 For more information about this process please check the [listing guide](https://github.com/binance-chain/docs-site/blob/master/docs/list.md).
 
-### How would a third-party integrate with Binance Chain and Binance DEX?
+### How would a third-party integrate with Beacon Chain  and Binance DEX?
 
-A wallet provider may choose to only support the feature set of Binance Chain, which would just
+A wallet provider may choose to only support the feature set of Beacon Chain , which would just
 cover wallets, addresses, balances and transfers.<br/>
 To improve their implementation further, they could choose to integrate Binance DEX which would add trading (order placement and cancellation), historical order and trade views, charts, etc.

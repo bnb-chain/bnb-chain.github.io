@@ -20,7 +20,7 @@ If you want to be able to receive BNB and other supported tokens on the Binance 
 
 ## Supported Wallets 
 
-* List of Wallets Supporting Binance Smart Chain
+* List of Wallets Supporting BNB Chain
 
 | Number | Wallet Name              | Website | Staking Support|
 |------ | ------------------- | ------------------------------ |-----|

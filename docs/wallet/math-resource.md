@@ -1,6 +1,6 @@
 # Math Wallet Tutorials
 
-1. Binance Smart Chain 新手指南
+1. BNB Smart Chain 新手指南
 
 Link: <http://blog.mathwallet.xyz/?p=3895>
 

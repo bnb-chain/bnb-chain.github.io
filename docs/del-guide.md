@@ -6,13 +6,13 @@ hide_table_of_contents: true
 
 # How to Delegate
 
-## Delegate with Binance Extension Wallet
+## Delegate with BNB Extension Wallet
 
 Detailed user guide is [here](staking-with-ext-wallet.md)
 
 ### Create an account if necessary
 
-Please refer to this guide on [how to create a wallet](binance.md) with Binance Extension Wallet
+Please refer to this guide on [how to create a wallet](binance.md) with BNB Extension Wallet
 
 ### Go to the staking page:
 

@@ -1,6 +1,6 @@
 HTTP API
 ========
-Within the ecosystem of Binance Chain, there are several accelerated nodes which provides more secure and faster lines to access Binance Chain and DEX data service including HTTP API.
+Within the ecosystem of Beacon Chain, there are several accelerated nodes which provides more secure and faster lines to access Beacon Chain and DEX data service including HTTP API.
 
 For mainnet, there are more accelerated nodes.
 

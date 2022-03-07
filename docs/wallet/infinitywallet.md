@@ -1,4 +1,4 @@
-# Using Infinity Wallet on the Binance Smart Chain
+# Using Infinity Wallet on the BNB Smart Chain
 
 ## What is it?
 Infinity Wallet is the ultimate easy to use, secure, multicurrency, practical and convenient self-custodial cryptocurrency wallet, that provides all a user will ever need in one platform. With a wide range of new and innovative features to access digital assets, empowering financial freedom. 
@@ -72,16 +72,16 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 ![img](https://i.gyazo.com/2a64e2946fc9c058f7b40b0b5ab1a92a.png)
 
 
-## Using Binance Smart Chain
+## Using BNB Smart Chain
 
-* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet, including BNB and Binance Smart Chain Tokens
+* Now that you have created your wallet you can monitor and manage a wide range of different cryptos within the Infinity Wallet, including BNB and BNB Smart Chain Tokens
 
 ![img](https://i.gyazo.com/814d36df8afb29864b27df93ee50f095.png)
 
 
-### Receive BNB on the Binance Smart Chain
+### Receive BNB on the BNB Smart Chain
 
-* To receive BNB on the Binance Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)**. All **BSC** tokens on the Infinity Wallet will use the same address as **BNB BSC**
+* To receive BNB on the BNB Smart Chain you will have to enable it by going to **My Wallet** and clicking on **+ Add asset**, then select to enable **Binance Coin (BSC)**. All **BSC** tokens on the Infinity Wallet will use the same address as **BNB BSC**
 
 ![img](https://i.gyazo.com/033512c5c7d929596017243c05ad6648.png)
 
@@ -96,7 +96,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 ![img](https://i.gyazo.com/e4bdf9d357925d72b433d84f2bf76808.png)
 
 
-### Send BNB on the Binance Smart Chain
+### Send BNB on the BNB Smart Chain
 
 * To send go to **My Wallet**, select **Binance Coin (BSC)** and then click on the send button
 
@@ -131,7 +131,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 ## Connect to DeFi Platforms and Dapps
 
-Infinity Wallet supports the ability for users to connect securely to decentralized application on the Binance Smart Chain, Binance Chain and Ethereum.
+Infinity Wallet supports the ability for users to connect securely to decentralized application on the BNB Smart Chain, Beacon Chain and Ethereum.
 
 To connect your wallet make sure the platform you are connecting to supports Wallet Connect, then go to your Infinity Wallet and click **WalletConnect** in the bottom left corner.
 
@@ -172,4 +172,4 @@ To connect your wallet make sure the platform you are connecting to supports Wal
 ![img](https://i.gyazo.com/f964f8520c7ffd1826d02a55908a7940.png)
 
 
-The Infinity Wallet is aiming to push crypto innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on Binance Smart Chain and Ethereum.
+The Infinity Wallet is aiming to push crypto innovation to its limits and has a wide range of future features and UI enhancements on the roadmap, to further expedite global adoption of cryptocurrency. Along with its companion platform Infinity Crypto, which is revolutionizing the DeFi and exchange space on BNB Smart Chain and Ethereum.

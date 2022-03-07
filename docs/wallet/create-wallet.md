@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 # Key Management
 
-This article is a guide about key management strategy on client side of your Decentralised Application on Binance Smart Chain
+This article is a guide about key management strategy on client side of your Decentralised Application on BNB Smart Chain
 
 ## Setup Web3
 
