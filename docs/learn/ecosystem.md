@@ -1,5 +1,5 @@
 ---
-sidebar_label: Ecosystem
+sidebar_label: Tools 
 sidebar_position: 2
 hide_table_of_contents: false
 ---

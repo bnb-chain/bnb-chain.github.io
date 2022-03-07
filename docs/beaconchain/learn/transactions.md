@@ -1,4 +1,9 @@
-## Beacon Chain Transaction Basics
+---
+sidebar_label: Transactions
+hide_table_of_contents: false
+---
+
+# Beacon Chain Transaction Basics
 
 A blockchain is a globally shared, transactional database. This means that everyone can read entries in the database just by participating in the network. If you want to change something in the database, you have to create a so-called transaction which has to be accepted by all others. The word transaction implies that the change you want to make (assume you want to change two values at the same time) is either not done at all or completely applied. Furthermore, while your transaction is being applied to the database, no other transaction can alter it.
 

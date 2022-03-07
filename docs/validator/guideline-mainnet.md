@@ -1,5 +1,5 @@
 ---
-sidebar_label: Joining Mainnet
+sidebar_label: Join Mainnet
 sidebar_position: 2
 hide_table_of_contents: false
 ---

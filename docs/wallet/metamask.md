@@ -1,8 +1,7 @@
 # Use MetaMask For BNB Smart Chain
 
 !!! Tip
-    You may encounter a network configuration issue in recent releases of MetaMask, Please go to "Upgrade" section for solution
-
+    If you encounter any network configuration issues in MetaMask, please make sure you ahve the latest version running.
 
 ## What is it?
 

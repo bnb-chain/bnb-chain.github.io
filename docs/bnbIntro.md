@@ -29,7 +29,7 @@ BSC 2021 (current version) introduces a considerable block size of **__100m gas 
   - Distributed nodes 
   - 20 more validators to join the block production of BSC 2022
 
-![BSC 2022](/img/assets/new-eco.jpg)
+![BSC 2022](../static/img/assets/bsc2022.jpg)
 
 ## Future Goal 
 Innovation never sleeps, and it’s clear that the future goes Beyond Binance into a world of over 1 billion users. MetaFi is also a key part of this too, helping to create a future where interoperability makes lives easier. BNB Chain’s mission is to build the infrastructure powering the world’s parallel virtual ecosystem, and BNB Chain’s commitment to the community is that it will be: 

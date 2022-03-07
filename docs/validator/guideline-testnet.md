@@ -1,5 +1,5 @@
 ---
-sidebar_label: Joining Test
+sidebar_label: As Validator
 sidebar_position: 2
 hide_table_of_contents: false
 ---

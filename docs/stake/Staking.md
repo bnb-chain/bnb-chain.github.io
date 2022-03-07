@@ -1,5 +1,5 @@
 ---
-sidebar_label: Staking
+sidebar_label: Overview
 sidebar_position: 2
 hide_table_of_contents: false
 ---

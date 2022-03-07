@@ -1,5 +1,5 @@
 ---
-sidebar_label: Upgradable BEB20 Contracts on BSC
+sidebar_label: Upgradable BEP20 Contracts on BSC
 hide_table_of_contents: false
 sidebar_position: 2
 ---

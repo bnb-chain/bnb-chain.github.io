@@ -55,7 +55,7 @@ const sidebars = {
       label: 'Build N\' Build',
      // collapsible: true,
       collapsed: true,
-      items: ['bnbIntro'],
+      items: ['bnbIntro', 'getting-started'],
     },
 
     {
@@ -105,8 +105,11 @@ const sidebars = {
                   label: 'Deploy Smart Contract',
                   items: ['remix', 'truffle', 'hardhat', 'verify']
                 },
-                'nft-metadata-standard', 
-                'ERC721',
+                {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Deploy NFTs',
+                  items:['nft-metadata-standard', 'ERC721']},
                 {
                   type: 'category',
                   //collapsible: true,
@@ -132,7 +135,7 @@ const sidebars = {
                          ]
                 }, 
                 
-                 'bsc-relayer', 'cross-chain-tech',
+                 'bsc-relayer', //'cross-chain-tech',
                 {
                   type: 'category',
                   //collapsible: true,
@@ -154,8 +157,15 @@ const sidebars = {
                   //collapsible: true,
                   collapsed: true,
                   label: 'Running as Validator on BSC',
-                  items:['validator/guideline-mainnet', 'validator/guideline-testnet',
-                   'validator/testnet', 'validator/snapshot', ]
+                  items:['validator/guideline-mainnet',
+                  {
+                    type: 'category',
+                  collapsed: true,
+                  label: 'Join Testnet',
+                  items:['validator/guideline-testnet', 'validator/testnet']
+                  },
+                   
+                   'validator/snapshot', ]
                 },
                 //'validator/security', 
                 'validator/best-practice','validator/node-maintenance',
@@ -196,7 +206,7 @@ const sidebars = {
           label: 'Beacon Extension Wallet',
           items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
         },
-        'wallet/arkane', 'wallet/math-resource',
+        'wallet/metamask','wallet/arkane', 'wallet/math-resource',
              'wallet/trustwallet', 'wallet/ezdefi', 'wallet/infinitywallet'],
       },
     
@@ -219,7 +229,8 @@ const sidebars = {
                       type: 'category',
                       label: 'Encoding',
                       collapsed: true,
-                      items: ['beaconchain/learn/encoding/encoding', 'beaconchain/learn/encoding/amino-example']
+                      items: [ 'encoding', 'beaconchain/learn/encoding/encoding',
+                      'beaconchain/learn/encoding/amino-example']
                   },
                   ]
                 },
