@@ -52,7 +52,6 @@ and produce blocks, they take care of:
 - They receive transactions and broadcast them to all other nodes including Validator nodes.
 
 ### What is an Accelerated Node?
-
 Please check [here](faq/faq.md#what-is-the-accelerated-node).
 
 For testnet, there are 2 accelerated nodes setup as below. API users should try to use them directly.

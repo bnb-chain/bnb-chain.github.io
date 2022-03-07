@@ -6,11 +6,11 @@ sidebar_position: 2
 
 [Beacon Chain](https://www.binance.org) is a blockchain developed by [Binance](https://www.binance.com) and its community that implements a vision of a decentralized exchange (DEX) for digital assets.
 
-At the heart of Beacon Chain is a highly performant [matching engine](../../../beaconchain/learn/matching-engine.md) built on [distributed consensus](../../../beaconchain/learn/architecture.md) that aims to replicate the <1 second trading efficiency of current centralized exchanges.
+At the heart of Beacon Chain is a highly performant [matching engine](../beaconchain/learn/matching-engine.md) built on [distributed consensus](../beaconchain/learn/architecture.md) that aims to replicate the <1 second trading efficiency of current centralized exchanges.
 
 Beacon Chain transactions burns BNB (the native token of the Binance ecosystem), according to a fee schedule.
 
-Beacon Chain also includes efforts to implement [listing assets from other chains](../../../beaconchain/atomic-swap.md), and cryptographic primitives such as [threshold signatures](../../../beaconchain/learn/threshold-signature-scheme.md).
+Beacon Chain also includes efforts to implement [listing assets from other chains](../beaconchain/atomic-swap.md), and cryptographic primitives such as [threshold signatures](../beaconchain/learn/threshold-signature-scheme.md).
 
 ## Functionality
 

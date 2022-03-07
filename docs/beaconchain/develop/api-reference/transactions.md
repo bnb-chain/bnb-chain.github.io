@@ -90,7 +90,7 @@ Amino uses 4-byte type prefixes to encode type information. This list was obtain
 
 There is an example on how this prefix is used in JavaScript [here](https://github.com/mappum/js-tendermint/blob/51f4a8601e5e1a697c905bb0612be21ad46ec484/src/types.js#L87). We should use [varstruct](https://www.npmjs.com/package/varstruct) to encode binary structures.
 
-More documentation is available [here](../encoding.md)
+More documentation is available [here](../../learn/encoding/encoding.md)
 
 Binance Chain JavaScript SDK Amino API [example](https://github.com/binance-chain/javascript-sdk/wiki/API-Examples#amino-js-amino)
 

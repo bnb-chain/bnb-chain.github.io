@@ -297,24 +297,21 @@ const sidebars = {
       //collapsible: true,
       collapsed: true,
       label: 'FAQs',
-      items: [ 
-        /*{
+      items: [      
+        {
           type: 'category',
-          //collapsible: true,
           collapsed: true,
-          label: 'BC FAQs',
-          items: ['BC-FAQs'], //add the names of the docs as per the list to create
-        },*/
-        
-      {
-        type: 'category',
-        //collapsible: true,
-        collapsed: true,
-        label: 'BNB Smart Chain FAQs',
-        items: ['BSC-FAQs-general', 'BSC-FAQs-tokens', 
-                'BSC-FAQs-validator', 'BSC-FAQs-delegator', 
-                'parameters', 'cross',  'faq'],
-      }, 
+          label: 'BNB Smart Chain FAQs',
+          items: ['BSC-FAQs-general', 'BSC-FAQs-tokens', 
+                  'BSC-FAQs-validator', 'BSC-FAQs-delegator', 
+                  'parameters', 'cross',  'faq'],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Beacon Chain FAQs',
+          items: ['beaconchain/faq/faq'],
+        }, 
      ],
 
     },
