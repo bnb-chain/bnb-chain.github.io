@@ -4,7 +4,7 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Open Source BSC Ecosystem
+# Tools and Ecosystem of BNB Smart Chain
 
 In order to check te latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
 

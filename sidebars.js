@@ -69,7 +69,7 @@ const sidebars = {
           type: 'category',
           //collapsible: true,
           collapsed: true,
-          label: 'Learn',
+          label: 'Core Concepts',
           items: ['learn/consensus', //'learn/genesis',
                     {type: 'category',
                     //collapsible: true,
@@ -81,7 +81,7 @@ const sidebars = {
                             'learn/bsc-gov-workflow','learn/bsc-gov']
           },
           {
-            type: 'doc', label: 'Ecosystem', id:'learn/ecosystem'
+            type: 'doc', label: 'Tools', id:'learn/ecosystem'
           },
 
         {type: 'category',

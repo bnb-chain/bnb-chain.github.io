@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Build N Build Documentation',
+  title: 'BNB Documentation',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
@@ -27,7 +27,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/bnb-chain',
+          editUrl: 'https://github.com/RumeelHussainbnb/beta_BSC_Docs',
         },
         blog: {
           showReadingTime: true,
