@@ -1,7 +1,11 @@
+---
+sidebar_label: Metamask 
+hide_table_of_contents: false
+---
 # Use MetaMask For BNB Smart Chain
 
 !!! Tip
-    If you encounter any network configuration issues in MetaMask, please make sure you ahve the latest version running.
+    If you encounter any network configuration issues in MetaMask, please make sure you have the latest version running.
 
 ## What is it?
 

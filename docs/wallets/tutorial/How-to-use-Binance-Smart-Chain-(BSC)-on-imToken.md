@@ -1,3 +1,8 @@
+---
+sidebar_label: imToken
+hide_table_of_contents: false
+---
+
 # How to use BNB Smart Chain (BSC) on imToken? 
 An introduction on how to start with using BSC on the imToken wallet
 

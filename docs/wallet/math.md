@@ -1,3 +1,8 @@
+---
+sidebar_label: Math Wallet
+hide_table_of_contents: false
+---
+
 # How to use Math Wallet for BNB Smart Chain
 ## Install
 ### 1. Get App from Chrome web store

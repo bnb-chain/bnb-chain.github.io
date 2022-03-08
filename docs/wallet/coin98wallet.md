@@ -1,10 +1,10 @@
-### How to create BNB Smart Chain Wallet on Coin98 Wallet
+---
+sidebar_label: Coin98 Wallet
+hide_table_of_contents: false
+---
 
-----
-
+# How to create BNB Smart Chain Wallet on Coin98 Wallet
 Users are able to store, send & receive BNB, the native token of BNB Smart Chain and BEP20 tokens on Coin98 Wallet
-
-----
 
 ## Coin98 Mobile Wallet
 **Step 1:** Open Coin98 Mobile Wallet & click **Manage** on the home screen.

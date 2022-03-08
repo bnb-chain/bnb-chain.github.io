@@ -1,3 +1,8 @@
+---
+sidebar_label: infinity Wallet
+hide_table_of_contents: false
+---
+
 # Using Infinity Wallet on the BNB Smart Chain
 
 ## What is it?

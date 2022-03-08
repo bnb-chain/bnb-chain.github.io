@@ -1,3 +1,8 @@
+---
+sidebar_label: MyEtherWallet
+hide_table_of_contents: false
+---
+
 # MyEtherWallet
 ## Connect to MetaMask on MEW
 Unlock your MetaMask first

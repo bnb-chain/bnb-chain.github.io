@@ -8,7 +8,14 @@ The purpose of this tutorial is to give a general overview of BNB Chain and to s
 
 We recommend reading this document entirely before using BNB Chain so that you can avoid common pitfalls and problems that new users run into. There are many multiple components of the BNB Chain, so it's best to get a full picture of things before diving in to save yourself confusion. 
 
-You can find a general overview of BNB Chain here. It will be useful in understanding similarities and differences between BNB Chain and other platforms.
+You can find a general overview of BNB Chain [here](bnbIntro). It will be useful in understanding similarities and differences between BNB Chain and other platforms.
+
+## BNB Chain: Beacon Chain and BNB Smart Chain
+BNB Chain is composed of two blockchains - Beacon Chain (BC) and BNB Smart Chain (BSC). The [Beacon Chain](learn/beaconIntro.md) is the blockchain component that is responsible for the governance of the BNB Chain and manages staking and voting on the BNB Chain. Whereas, the [BNB Smart Chain](learn/intro.md) is the blokchain component that is EVM compatible, consensus layers, and with hubs to multi-chains.
+
+### What can you do with Beacon Chain(BC)?
+
+### What can you do with BNB Smart Chain (BSC)?
 
 ## BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 

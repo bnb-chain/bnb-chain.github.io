@@ -1,4 +1,9 @@
-# Trezor
+---
+sidebar_label: Trezor Wallet
+hide_table_of_contents: false
+---
+
+# Using Trezor Wallet with BNB Smart Chain
 
 BNB and coins on BNB Smart Chain are supported by the Trezor hardware wallet. The following describes how to use Trezor to connect to BSC.
 

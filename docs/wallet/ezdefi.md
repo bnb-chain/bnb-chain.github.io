@@ -1,3 +1,8 @@
+---
+sidebar_label: ezDeFi Wallet
+hide_table_of_contents: false
+---
+
 # Using ezDeFi for BNB Smart Chain
 
 ## Install ezDeFi

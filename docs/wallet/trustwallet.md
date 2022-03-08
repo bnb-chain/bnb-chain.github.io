@@ -1,4 +1,12 @@
+---
+sidebar_label: Trust Wallet
+hide_table_of_contents: false
+---
+
 # Using Trust Wallet for BNB Smart Chain
+
+## What is Trust Wallet?
+Trust Wallet (trustwallet.com ) is a secure, open source, decentralized and anonymous Ethereum wallet application that supports Ethereum and over 20,000 different Ethereum based tokens (ERC20, ERC223 and ERC721), seeing significant user adoption since its launch in November 2017. The company has built a reputation for security and has held itself to the guiding principles that it will never access user wallets, hold private keys, and ask for personal information.
 
 ## Install Trust Wallet
 ### Go to [https://trustwallet.com](https://trustwallet.com/) to install the most recent version of Trust Wallet. 
@@ -33,7 +41,7 @@
 
 ### Your Smart Chain address is able to receive BNB or BEP20 tokens.
 
-#### Withdraw Binance Coin (BNB) from [Binance](https://www.binance.com/). 
+#### Withdraw BNB Tokens from [Binance](https://www.binance.com/). 
 
 ![img](https://community.trustwallet.com/uploads/default/original/2X/5/5e1d002bd14ffbdbf320ce3655e1e43584977e3a.png)![img](https://community.trustwallet.com/uploads/default/original/2X/e/ed6cb30198e9e090fcd0221c135b908488fc30fd.png)
 

@@ -1,4 +1,9 @@
-# Ledger
+---
+sidebar_label: Ledger Hardware Wallet
+hide_table_of_contents: false
+---
+
+# Ledger Hardware Wallet
 
 BNB and coins on BNB Smart Chain are supported by the Ledger Nano S hardware wallet. The following describes how to use Ledger Nano S to connect to BSC
 

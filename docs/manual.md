@@ -1,5 +1,5 @@
 ---
-sidebar_label: Manual Installation
+sidebar_label: Manually Install BNB Chain Extension Wallet
 hide_table_of_contents: false
 sidebar_position: 2
 ---

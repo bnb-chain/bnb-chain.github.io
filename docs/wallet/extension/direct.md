@@ -6,9 +6,6 @@ Transfer tokens (which support BC/BSC) between paired Binance.com account and Bi
 - BNB Holding
 The BNB  positions of your Binance.com account will not change.
 
-
-
-
 ## User Guide
 ### Prerequisites
 - Binance.com Account SetupEnable two-factor authentication for your Binance.com account (The balance cannot be zero)

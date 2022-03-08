@@ -1,3 +1,8 @@
+---
+sidebar_label: AlphaWallet
+hide_table_of_contents: false
+---
+
 # How to use AlphaWallet for BNB Smart Chain on your mobile
 ## Install
 ### 1. Get App from Andriod Play Store, iOS app Store, Andriod APK file or iOS TestFlight https://alphawallet.com/download-alphawallet-app/

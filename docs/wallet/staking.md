@@ -1,4 +1,9 @@
-# Staking with extension wallet
+---
+sidebar_label: Staking with BNB Chain Extension Wallet
+hide_table_of_contents: false
+---
+
+# Staking with BNB Chain Extension Wallet
 
 ## How to delegate your BNB with extension wallet
 

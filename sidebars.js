@@ -106,7 +106,7 @@ const sidebars = {
                   //collapsible: true,
                   collapsed: true,
                   label: 'Deploy Smart Contract',
-                  items: ['remix', 'truffle', 'hardhat', 'verify']
+                  items: ['remix', 'truffle-new', 'hardhat-new', 'verify']
                 },
                 {
                   type: 'category',
@@ -173,7 +173,8 @@ const sidebars = {
                 },
                 //'validator/security', 
                 'validator/best-practice','validator/node-maintenance',
-                'validator/commonproblems', 'validator/troubleshoot'], 
+                'validator/commonproblems', //'validator/troubleshoot'
+              ], 
        },
        {
         type: 'category',
@@ -214,8 +215,9 @@ const sidebars = {
           type: 'category',
           collapsed: true,
           label: 'Tutorials on Third Party Wallets',
-          items:['wallets/wallet-tutorial-overview','wallet/metamask','wallet/arkane', 'wallet/math-resource',
-             'wallet/trustwallet', 'wallet/ezdefi', 'wallet/infinitywallet']
+          items:['wallets/wallet-tutorial-overview','wallet/metamask','wallet/arkane', 'wallet/math',
+             'wallet/trustwallet', 'wallet/ezdefi', 'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
+             'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/How-to-use-Binance-Smart-Chain-(BSC)-on-imToken']
        },
         ]
       },
