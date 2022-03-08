@@ -52,7 +52,7 @@ const sidebars = {
   bscSideBar: [
     {
       type: 'category',
-      label: 'Build N\' Build',
+      label: 'BNB Chain',
      // collapsible: true,
       collapsed: true,
       items: ['bnbIntro', 'getting-started'],
@@ -82,6 +82,9 @@ const sidebars = {
                             'learn/bsc-gov']
           },
           {
+            type: 'doc', label: 'Tutorials', id:'tutorials'
+          },
+          {
             type: 'doc', label: 'Tools', id:'learn/ecosystem'
           },
 
@@ -109,14 +112,9 @@ const sidebars = {
                   type: 'category',
                   collapsed: true,
                   label: 'Deploy NFTs',
-                  items:['nft-metadata-standard', 'ERC721']},
-                {
-                  type: 'category',
-                  //collapsible: true,
-                  collapsed: true,
-                  label: 'BEP20 Contracts',
-                  items: ['proxy', 'verify-proxy']
+                  items:['nft-metadata-standard', 'ERC721']
                 },
+                
                 {
                   type: 'category',
                   //collapsible: true,
@@ -131,7 +129,14 @@ const sidebars = {
                               items: ['tokens-cross-chain', 'bind-tokens', 'mirror', 
                               'circulation-model', 'sync' ]
                             },
-                            'cross-chain-transfer'
+                            'cross-chain-transfer',
+                            {
+                              type: 'category',
+                              //collapsible: true,
+                              collapsed: true,
+                              label: 'BEP20 Contracts',
+                              items: ['proxy', 'verify-proxy']
+                            },
                          ]
                 }, 
                 
@@ -151,10 +156,9 @@ const sidebars = {
         //collapsible: true,
         collapsed: true,
         label: 'Validator',
-        items: ['validator/overview', 'validator/requirements', 
+        items: ['validator/overview','del-guide', 'validator/requirements', 
                 {
                   type: 'category',
-                  //collapsible: true,
                   collapsed: true,
                   label: 'Running as Validator on BSC',
                   items:['validator/guideline-mainnet',
@@ -181,12 +185,12 @@ const sidebars = {
           type: 'category',
           collapsed: true,
           label: 'Slashing',
-          items:['validator/Penalty-overview', 'validator/send-slash-evidence', 
+          items:['validator/Penalty-overview',  'validator/send-slash-evidence', 
                  'validator/scenarios-slash', 'validator/slash-fee', 'validator/unjail',
                  'validator/monitor-and-query-slash'
           ]
         },
-        'del-guide']
+        ]
       },
       /*{type:'doc', id:'Staking', label:'Staking on BSC'},*/
       //{type: 'doc',   id: 'del-guide',   label: 'Delegator Guide'},
@@ -206,8 +210,14 @@ const sidebars = {
           label: 'Beacon Extension Wallet',
           items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
         },
-        'wallet/metamask','wallet/arkane', 'wallet/math-resource',
-             'wallet/trustwallet', 'wallet/ezdefi', 'wallet/infinitywallet'],
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Tutorials on Third Party Wallets',
+          items:['wallets/wallet-tutorial-overview','wallet/metamask','wallet/arkane', 'wallet/math-resource',
+             'wallet/trustwallet', 'wallet/ezdefi', 'wallet/infinitywallet']
+       },
+        ]
       },
     
     ],

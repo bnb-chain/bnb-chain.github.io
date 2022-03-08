@@ -1,5 +1,5 @@
 ---
-sidebar_label: As Validator Candidate
+sidebar_label: Create a Validator on Testnet
 sidebar_position: 2
 hide_table_of_contents: true
 ---

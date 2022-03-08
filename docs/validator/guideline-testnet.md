@@ -1,5 +1,5 @@
 ---
-sidebar_label: As Validator
+sidebar_label: Run Validator on Testnet
 sidebar_position: 2
 hide_table_of_contents: false
 ---

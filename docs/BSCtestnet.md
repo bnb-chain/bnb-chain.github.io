@@ -24,7 +24,8 @@ There is also a [web wallet](https://testnet.binance.org/en/) that can directly 
 
 ### How to get Testnet Fund?
 
-> Note: The previous Binance Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: https://testnet.binance.org/faucet-smart
+<!-- Note: The previous Binance Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). -->
+The testnet faucet for BNB Chain can be accessed [here](https://testnet.binance.org/faucet-smart).
 
 **Steps to claim testnet BNB:**
 

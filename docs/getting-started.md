@@ -13,20 +13,22 @@ You can find a general overview of BNB Chain here. It will be useful in understa
 ## BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 
 
-Although initially based on the Ethereum network, the ERC-20 BNB tokens were later swapped with [BEP-2]( https://academy.binance.com/en/glossary/bep-2) BNB at a 1:1 ratio. The BEP-2 BNB is the native coin of the Beacon Chain, and the mainnet.
+Although initially based on the Ethereum network, the ERC-20 BNB tokens were later swapped with [BEP-2](https://academy.binance.com/en/glossary/bep-2) BNB at a 1:1 ratio. The BEP-2 BNB is the native coin of the Beacon Chain, and the mainnet.
 In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network that runs in parallel with the BNB Beacon Chain. This means that BNB can be found in three different forms:
 
 - BNB BEP-2 on the BNB Beacon Chain.
 - BNB BEP-20 on the BNB Smart Chain.
 - BNB ERC-20 on the Ethereum network.
 
-As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Chain network you will need to have some BNB tokens. The BNB token is available for purchase on multiple leading exchanges. Other ways are explained below.
+## How to Buy BNB Tokens
+As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Chain network you will need to have some BNB tokens. 
+- BNB tokens can also be received for usage on testnet through the [testnet faucet](https://testnet.binance.org/faucet-smart).
+- The BNB tokens for usage on mainnet are available for purchase on multiple leading exchanges and wallets as explained [here](#wallet). You can also refer [here][wallets/wallet-tutorial-overview] for tutorials on ho to use different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
 
 ## Wallet
-
 The easiest way to use BNB Beacon and BNB Smart Chain is through a wallet with support for accounts and transfers on these chains.
 
-BNB Chain provides a Web Wallet at [https://www.binance.org](https://www.binance.org). BNB Chain also provides Web Wallet for testnet at [https://testnet.binance.org](https://testnet.binance.org). Both provide the functions described below:
+BNB Chain provides a Web Wallet at [https://www.bnbchain.world/en](https://www.bnbchain.world/en). BNB Chain also provides Web Wallet for testnet at [https://testnet.binance.org](https://testnet.binance.org). Both provide the functions described below:
 
 - Generating crypto keys and addresses, which serves as the base of a wallet
 - Showing the balances of assets on the addresses
@@ -38,20 +40,20 @@ Binance Web Wallet also presents a trading UI, where you can examine market data
 Chain Explorer provides a portal to explore blocks and transaction details. On [Beacon Chain Explorer](https://explorer.binance.org/) and [BNB Smart Chain Explorer](https://bscscan.com/), you can also check different asset types, the distribution of their ownerships, and owners' transactions.
 
 ## REST API
-There are [Accelerated Nodes](beaconchain/faq/faq.md#what-is-the-accelerated-node) which provide advanced API services for the public. Here is a list of all the Rest API information Accelerated Node provides: [paths](api-reference/dex-api/paths.md)
+There are [Accelerated Nodes](beaconchain/develop/node/nodetypes.md) which provide advanced API services for the public. Here is a list of all the Rest API information Accelerated Node provides: [paths](api-reference/dex-api/paths.md). For information regarding RPC Endpoints for BSC, refer [here](rpc.md).
 
 ### Node RPC
 There are data seed nodes in the network which allow users to perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
-If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: [node-rpc](api-reference/node-rpc.md)
+If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: for Beacon Chain refer [here](api-reference/node-rpc.md) and for BNB Smart Chain refer [here](rpc.md).
 
 ## Advanced Ways To Use BNB Chain
 ### Run your own full node
 
-Please refer to this guide about [how to run your own node](beaconchain/fullnode.md).
+Please refer to this guide about how to run your own full node on [Beacon Chain](beaconchain/fullnode.md) and [BNB Smart Chain](validator/fullnode.md).
 
-### Run your own light client
+### Run your own Light Client
 
-Please refer to this guide about [how to run your own light client](beaconchain/light-client.md).
+Please refer to this guide about [how to run your own light client on Beacon Chain](beaconchain/light-client.md).
 
 ### Access via Node Command Line Interface (CLI)
 
@@ -61,7 +63,7 @@ A Command Line Interface is available for Linux and Mac platforms. Please refer 
 
 SDKs are also provided as a starting point for your apps.
 
-There are two advanced SDK solutions for Binance chain: [Java](<https://github.com/binance-chain/java-sdk>) and [Golang](<https://github.com/binance-chain/go-sdk>).
+There are two advanced SDK solutions for Beacon chain: [Java](<https://github.com/binance-chain/java-sdk>) and [Golang](<https://github.com/binance-chain/go-sdk>).
 
 Both solutions provide functions for:
 
