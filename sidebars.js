@@ -55,7 +55,12 @@ const sidebars = {
       label: 'BNB Chain',
      // collapsible: true,
       collapsed: true,
-      items: ['bnbIntro', 'getting-started'],
+      items: ['bnbIntro', 'getting-started',
+    
+      {
+        type: 'doc', label: 'Tutorials', id:'tutorials'
+      },
+    ],
     },
 
     {
@@ -80,9 +85,6 @@ const sidebars = {
                             'learn/oracle-module','learn/oracle-relayer']},
                             //'learn/bsc-gov-workflow',
                             'learn/bsc-gov']
-          },
-          {
-            type: 'doc', label: 'Tutorials', id:'tutorials'
           },
           {
             type: 'doc', label: 'Tools', id:'learn/ecosystem'
