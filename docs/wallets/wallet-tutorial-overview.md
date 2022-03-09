@@ -21,7 +21,7 @@ BNB Smart Chain offers an extensive support of third-party wallets that can be u
 | Math Wallet | [How to use Math Wallet with BNB Smart Chain](../wallet/math.md) |
 | MyEtherWallet | [How to use Metamask with BNB Smart Chain](../wallet/myetherwallet.md) |
 | Trezor Wallet | [How to use Metamask with BNB Smart Chain](../wallet/trezor.md) |
-| imtoken | [How to use imToken with BNB Smart Chain](tutorial/How-to-use-Binance-Smart-Chain-(BSC)-on-imToken.md) |
+| imtoken | [How to use imToken with BNB Smart Chain](tutorial/BSCimToken.md) |
 
 
  
