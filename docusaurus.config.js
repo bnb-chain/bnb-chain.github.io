@@ -6,13 +6,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'BNB Documentation',
+  title: 'BNB Chain Documentation',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'Binance', // Usually your GitHub org/user name.
+  organizationName: 'BNB Chain', // Usually your GitHub org/user name.
   //projectName: 'binance documentation', // Usually your repo name.
     
   /*i18n: {
