@@ -1,6 +1,6 @@
 # More Help
 
-There is a [\#validator-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** Discord channel available to reach other testnet participants.
+There is a [\#validator-support](http://discord.com/invite/bnbchain) **_Link confirmation requied_** Discord channel available to reach other testnet participants.
 
 ## Useful Links & Discussion
 
@@ -16,8 +16,8 @@ There is a [\#validator-support](http://discord.com/invite/binancesmartchain) **
 
 - Validator chat channels
   
-  - [\#validator-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** General support channel for any Validator related queries
-  - [\#node-support](http://discord.com/invite/binancesmartchain) **_Link confirmation requied_** General support channel for any node related queries     
+  - [\#validator-support](http://discord.com/invite/bnbchain) **_Link confirmation requied_** General support channel for any Validator related queries
+  - [\#node-support](http://discord.com/invite/bnbchain) **_Link confirmation requied_** General support channel for any node related queries     
 
 - [\#testnet-announcements] [**_Link confirmation requied_**] The single source of truth for critical information relating Testnet 
   
