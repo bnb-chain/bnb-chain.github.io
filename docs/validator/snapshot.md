@@ -4,10 +4,11 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Chaindata Snapshot
+# Chaindata Snapshot 
 
-### _ UPDATED DATA REQUIRED _
-For v1.1.0:
+For latest chaindata snapshots visit [here](https://github.com/binance-chain/bsc-snapshots)
+
+### For v1.1.0:
 
 * [Latest Snapshot](https://github.com/binance-chain/bsc-snapshots)
 
@@ -19,7 +20,7 @@ checksum: 39e311c37a9844b4dd7fb218553cc99f
 
 * [2021-05-02 snapshot](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/geth.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1646568179&Signature=DaVl4clXyVS%2F65GEUHTqWOfD2DA%3D) (Size: 175G)
 
-For v1.0.7:
+### For v1.0.7:
 
 * [2021-04-15 snapshot](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata-2021-04-15.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1644459350&Signature=a4vfmga8%2BRwNZl3boisIMEdSWbA%3D) (271 GB, md5sum 3ace16d3e2a52100025da387c73861a3f00de833)
 

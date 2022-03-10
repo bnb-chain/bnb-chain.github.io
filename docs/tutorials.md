@@ -46,7 +46,7 @@ In this section, we have provided tutorials on usage of different components of 
   * Tutorial on [How to perform Cross-Chain Transfer of BEP2 and BEP20 Tokens Between BC and BSC](cross-chain-transfer.md)
 
 - **NFT**
-  * Tutorial on [How to implement Toekn URI](develop/../nft-metadata-standard.md)
+  * Tutorial on [How to implement Token URI](develop/../nft-metadata-standard.md)
   * Tutorial on [How to deploy NFTs on BSC](ERC721.md)
 
 ## Wallets

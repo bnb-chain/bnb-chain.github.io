@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 # Tools and Ecosystem of BNB Smart Chain
 
-In order to check te latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
+In order to check the latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
 
 The goal of this page is to provide the current status of the open-source BNB Smart Chain Tech  Stack and highlight the potential interesting projects that are most demanded by the BSC community and ecosystem.  
 
@@ -39,8 +39,8 @@ In the below sections you can find a list of different layers of the BSC Stack.
 ### Infrastructure
 | Components | Existing projects | Potentially interesting projects
 |-|-|-
-|API/Node access| [Ankr](https://www.ankr.com/), [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [NowNodes](https://nownodes.io/blog/binance-smart-chain-an-introduction), [QuickNode](https://www.quicknode.com/)
-|Archive Node Service| [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/)
+|API/Node access| [Ankr](https://www.ankr.com/), [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [NowNodes](https://nownodes.io/blog/binance-smart-chain-an-introduction), [QuickNode](https://www.quicknode.com/), [Nodereal’s Meganode](https://docs.nodereal.io/nodereal/meganode/introduction)
+|Archive Node Service| [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/), [Nodereal’s Meganode](https://docs.nodereal.io/nodereal/meganode/archive-node)
 |Public RPC Endpoints| [RPC Endpoints](https://docs.binance.org/smart-chain/developer/rpc.html)| More public nodes are encouraged
 |Community Polling Dashboard| [snapshot](https://snapshot.page/)
 |Gas Station Network| [opengsn](https://opengsn.org/)

@@ -99,7 +99,7 @@ const config = {
               },
               {
                 label: 'Discord',
-                href: 'http://discord.com/invite/binancesmartchain',
+                href: 'https://discord.com/invite/bnbchain',
               },
               {
                 label: 'Twitter',
