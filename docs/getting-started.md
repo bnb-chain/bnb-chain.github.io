@@ -14,8 +14,51 @@ You can find a general overview of BNB Chain [here](bnbIntro). It will be useful
 BNB Chain is composed of two blockchains - Beacon Chain (BC) and BNB Smart Chain (BSC). The [Beacon Chain](learn/beaconIntro.md) is the blockchain component that is responsible for the governance of the BNB Chain and manages staking and voting on the BNB Chain. Whereas, the [BNB Smart Chain](learn/intro.md) is the blokchain component that is EVM compatible, consensus layers, and with hubs to multi-chains.
 
 ### What can you do with Beacon Chain(BC)?
+The purpose of the Beacon Chain is to provide an efficient blockchain ecosystem that works along a DEX to provide an alternative marketplace for issuing and exchanging digital assets in a decentralized manner.
+
+You can:
+
+- [Send and receive BNB](beaconchain/wallet/../transfer.md#web-wallet)
+- [Issue new tokens to digitalize assets](https://community.binance.org/topic/2487), and use Beacon Chain as underlying exchange/transfer
+network for the assets
+- Send, receive, [burn](beaconchain/tokens.md#burn)/[mint](beaconchain/tokens.md#mint) and [freeze/unfreeze](beaconchain/tokens.md#freeze-unfreeze) tokens
+- [Sumbit an on-chain governance proposal for BNB Smart Chain](learn/bsc-gov.md)
+
+
+**For traders**, you can:
+
+- [Propose to create trading pairs](beaconchain/list_instruction.md) between two different tokens
+- [Send orders](beaconchain/learn/trading-interface.md) to buy or sell assets through trading pairs created on the chain with[SDK](beaconchain/exchange-integration.md#sdks)
+- [Watch the DEX market](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets) to confirm price and market activity of certain assets
+
+**For developers**, you can also:
+
+- Explore the transaction history and blocks on the chain, via [Binance Chain Explore](https://explorer.binance.org), [API](beaconchain/develop/api-reference/dex-api/paths.md)
+and [node RPC](beaconchain/develop/api-reference/node-rpc.md) interfaces.
+- Run a [full node](beaconchain/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
+- Extract other data of Binance Chain via full node or [APIs](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets)
+- [Develop tools](Integrate.md#sdks) and application to help users use Binance Chain and Binance DEX
 
 ### What can you do with BNB Smart Chain (BSC)?
+
+BNB Smart Chain (BSC) is best described as a blockchain that runs in parallel to the Beacon Chain. Unlike Beacon Chain, BSC boasts smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM). The design goal here was to leave the high throughput of Beacon Chain intact while introducing smart contracts into its ecosystem.
+
+Because BSC is EVM-compatible, it launched with support for the rich universe of [Ethereum](https://academy.binance.com/en/articles/what-is-ethereum) tools and DApps. In theory, this makes it easy for developers to port their projects over from Ethereum. For users, it means that applications like [MetaMask](wallet/metamask.md) can be easily configured to work with BSC. Seriously – it’s just a matter of tweaking a couple of settings. Check out [Use MetaMask for BNB Smart Chain](wallet/metamask.md) to get started.
+
+You can:
+
+- Send and receive [BNB](wallet/binance.html#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](wallet/binance.html#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
+- Explore the transaction history and blocks on the chain, via [bscscan](https://bscscan.com), API
+and node RPC interfaces.
+- [Stake you BNB](wallet/staking.md) to earn some block rewards
+
+**Developers** can also:
+
+- [Issue](issue-BEP20.md) new tokens to digitalize assets
+- [Migrate](https://github.com/binance-chain/bsc-develop-ecosystem) existing DApps
+- Run a [full node](validator/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
+- Become a validator of BSC - [testnet]](/validator/guideline-testnet.md) and [mainnet]](/validator/guideline-mainnet.md)
+- [Develop wallets](wallet/wallet_api.md) and tools to help users use Dapps
 
 ## BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 
