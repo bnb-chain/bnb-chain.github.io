@@ -57,7 +57,7 @@ and node RPC interfaces.
 - [Issue](issue-BEP20.md) new tokens to digitalize assets
 - [Migrate](https://github.com/binance-chain/bsc-develop-ecosystem) existing DApps
 - Run a [full node](validator/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-- Become a validator of BSC - [testnet]](/validator/guideline-testnet.md) and [mainnet]](/validator/guideline-mainnet.md)
+- Become a validator of BSC - [testnet](/validator/guideline-testnet.md) and [mainnet]](/validator/guideline-mainnet.md)
 - [Develop wallets](wallet/wallet_api.md) and tools to help users use Dapps
 
 ## BNB Token and Fees
