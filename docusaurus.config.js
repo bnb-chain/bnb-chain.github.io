@@ -7,13 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BNB Chain Documentation',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://bnb-chain.github.io',
+  baseUrl: '/docs-site-v2/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'BNB Chain', // Usually your GitHub org/user name.
-  //projectName: 'binance documentation', // Usually your repo name.
+  organizationName: 'bnb-chain', // Usually your GitHub org/user name.
+  projectName: 'docs-site-v2', // Usually your repo name.
     
   /*i18n: {
       defaultLocale: 'en',
@@ -27,7 +27,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/RumeelHussainbnb/beta_BSC_Docs/blob/master/docs',
+          editUrl: 'https://github.com/bnb-chain/docs-site-v2/docs',
         },
         blog: {
           showReadingTime: true,
