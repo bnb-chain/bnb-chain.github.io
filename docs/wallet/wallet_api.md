@@ -109,7 +109,7 @@ render(
     connectors={{
       bsc: {
         web3ReactConnector() {
-          return new BscConnector({ supportedChainIds: [56, 97] })
+          return new BscConnector( { supportedChainIds: [56, 97] } )
         },
         handleActivationError(err) {
           if (err instanceof UserRejectedRequestError) {
