@@ -107,7 +107,6 @@ function App() {
     </div>
   )
 }
-
 render(
   <UseWalletProvider
     connectors={ {
