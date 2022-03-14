@@ -1,9 +1,4 @@
----
-sidebar_label: Cross-Chain Token Transfer
-sidebar_position: 2
-hide_table_of_contents: false
----
-# Cross-Chain Transfer
+# Cross-Chain Transfer Token Transfer
 
 Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and BEP20 tokens on BSC.
 
@@ -63,7 +58,7 @@ Committed at block 465899 (tx hash: 68FFF82197E27A3EC14AFF8C99A035FA9CA7120312AA
 
 Call **transferOut** of [TokenHub contract](https://raw.githubusercontent.com/binance-chain/bsc-genesis-contract/master/abi/tokenhub.abi) in [MyEtherWallet](https://www.myetherwallet.com/):
 
-<img src="https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m"  alt="img" style={{zoom:"20%"}} />
+<img src="https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m"  alt="img" style= { { zoom:"20%" } } />
 
 
 
@@ -89,7 +84,7 @@ After all the above parameters have been set to proper values, users can click t
 
 Call **batchTransferOutBNB** of TokenHub contract in MyEtherWallet:
 
-<img src="https://github.com/binance-chain/docs-site/raw/master/docs/assets/batchTransferOutBNB.png" alt="img" style={{zoom:"20%"}}/>
+<img src="https://github.com/binance-chain/docs-site/raw/master/docs/assets/batchTransferOutBNB.png" alt="img" style= { { zoom:"20%" } } />
 
 | Parameter Name | Type      | Description                                                  |
 | -------------- | --------- | ------------------------------------------------------------ |
@@ -119,7 +114,7 @@ Before calling **transferOut** or **batchTransferOut**, users need to call **app
 
 ### transferOut
 
-<img src="https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m" alt="img" style={{zoom:"25%"}}/>
+<img src="https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m" alt="img" style= { { zoom:"25%" } } />
 
 | Parameter Name | Type    | Description                                                  |
 | ------------   | ------- | ------------------------------------------------------------ |
