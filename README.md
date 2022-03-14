@@ -1,7 +1,7 @@
 # Proposal for Revision of Binance Smart Chain Documentation 
 
 ## Overview
-This is a proposal for the revision of the Binance Smart Chain documentation for a better user experience and navigation. This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. Navigation bar are updated providing a better division of topics and easier navigation for the users. Multiple files have been re-formatted and new files are also included.
+This is the updated documentation for BNB Chain for a better user experience and navigation. This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. Navigation bar are updated providing a better division of topics and easier navigation for the users. Multiple files have been re-formatted and new files are also included.
 
 ### Prerequisites
   - **Node** _version >= 14 or above_
