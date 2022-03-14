@@ -13,7 +13,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'bnb-chain', // Usually your GitHub org/user name.
-  projectName: 'docs-site-v2', // Usually your repo name.
+  projectName: 'docs-site-v2/docs', // Usually your repo name.
     
   /*i18n: {
       defaultLocale: 'en',
