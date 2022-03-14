@@ -1,7 +1,4 @@
----
-sidebar_label: BNB Chain Wallet API
-hide_table_of_contents: false
----
+# BNB Chain Wallet API 
 
 BNB Chain Wallet injects a global API into websites visited by its users at `window.BinanceChain`.
 
@@ -74,9 +71,7 @@ We made a tiny lib [bsc-connector](https://www.npmjs.com/package/@binance-chain/
 ```
 import { BscConnector } from '@binance-chain/bsc-connector'
 
-export const bsc = new BscConnector({
-  supportedChainIds: [56, 97] // later on 1 ethereum mainnet and 3 ethereum ropsten will be supported
-})
+export const bsc = new BscConnector( { supportedChainIds: [56, 97] // later on 1 ethereum mainnet and 3 ethereum ropsten will be supported } )
 
 // invoke method on bsc e.g.
 await bsc.activate();
@@ -106,7 +101,7 @@ function App() {
 
 render(
   <UseWalletProvider
-    connectors={{
+    connectors={ {
       bsc: {
         web3ReactConnector() {
           return new BscConnector( { supportedChainIds: [56, 97] } )
@@ -117,7 +112,7 @@ render(
           }
         },
       },
-    }}
+    } }
   >
   <App />
   </UseWalletProvider>,
