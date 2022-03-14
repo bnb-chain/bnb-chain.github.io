@@ -90,7 +90,43 @@ await bsc.getChainId();
 * use-wallet
 
 There is an [example](https://github.com/aragon/use-wallet/tree/master/examples/binance-chain) in use-wallet origin repo shows how to 'inject' a customized web3-react connector to `UseWalletProvider`:
+```js
+function App( ) {
+  const { account, connect, reset, status } = useWallet()
+  return (
+    <div>
+      <h1>Beacon Chain Connector</h1>
+      {status === 'disconnected' ? (
+        <button onClick={() => connect('bsc')}>Connect</button>
+      ) : (
+        <button onClick={() => reset()}>Disconnect</button>
+      )}
+      {account && <p>Connected as {account}</p>}
+    </div>
+  )
+}
 
+render(
+  <UseWalletProvider
+    connectors={ {
+      bsc: {
+        web3ReactConnector( ) {
+          return new BscConnector( { supportedChainIds: [56, 97] } )
+        },
+        handleActivationError(err) {
+          if (err instanceof UserRejectedRequestError) {
+            return new ConnectionRejectedError()
+          }
+        },
+      },
+    } }
+  >
+  <App />
+  </UseWalletProvider>,
+  document.getElementById('root')
+)
+
+```
 ## Chain IDs
 
 !!! warning
