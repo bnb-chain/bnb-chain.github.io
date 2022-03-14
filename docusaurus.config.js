@@ -8,12 +8,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'BNB Chain Documentation',
   url: 'https://bnb-chain.github.io',
-  baseUrl: '/docs-site-v2/docs/',
+  baseUrl: '/docs-site-v2/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'bnb-chain', // Usually your GitHub org/user name.
-  projectName: 'docs-site-v2/docs', // Usually your repo name.
+  projectName: 'docs-site-v2', // Usually your repo name.
     
   /*i18n: {
       defaultLocale: 'en',
