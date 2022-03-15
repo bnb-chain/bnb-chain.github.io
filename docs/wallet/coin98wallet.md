@@ -10,7 +10,7 @@ Users are able to store, send & receive BNB, the native token of BNB Smart Chain
 **Step 1:** Open Coin98 Mobile Wallet & click **Manage** on the home screen.
 
 **Step 2:** Click **Add Wallet**, choose **BNB Smart Chain (BNB BEP20)** icon, and click **Create**.
-![img](../assets/anh.png)
+![img](../assets/anh10.png)
 
 **Step 3**: Name the wallet. Click **Next**
 
