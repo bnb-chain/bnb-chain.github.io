@@ -46,7 +46,7 @@ Your BNB Wallet will instantly be displayed on the home screen. You can also cli
 
 **Step 4:** Slide **Send** to complete.
 
-![img](../assets/anh4.png)
+![img](../assets/picture4.png)
 
 
 **Note:**
