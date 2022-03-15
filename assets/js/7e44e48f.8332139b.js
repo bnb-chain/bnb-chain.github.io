@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbeta_BNB_Docs=self.webpackChunkbeta_BNB_Docs||[]).push([[7503],{19474:function(s){s.exports=JSON.parse('{"allTagsPath":"/bnb-chain.github.io/blog/tags","slug":"/bnb-chain.github.io/blog/tags/docusaurus","name":"docusaurus","count":4,"permalink":"/bnb-chain.github.io/blog/tags/docusaurus"}')}}]);
