@@ -6,11 +6,11 @@ sidebar_position: 2
  # Upgradeable BEP20 Contracts on BSC
 
 ## What are Upgradeable Contracts?
-Smart contracts in EVM are designed to be immutable. Once you create them there is no way to modify them, effectively acting as an unbreakable contract among participants.What do I do if I want to expand the functionality of my contracts? What if there is a bug in the contract that leads to a loss of funds? What if a vulnerability in the Solidity compiler is discovered?
+Smart contracts in EVM are designed to be immutable. Once you create them there is no way to modify them, effectively acting as an unbreakable contract among participants. What do I do if I want to expand the functionality of my contracts? What if there is a bug in the contract that leads to a loss of funds? What if a vulnerability in the Solidity compiler is discovered?
 Here’s what you’d need to do to fix a bug in a contract you cannot upgrade:
 
 - Deploy a new version of the contract
-- Manually migrate all state from the old one contract to the new one (which can be very expensive in terms of gas fees!)
+- Manually migrate all the states from the old one contract to the new one (which can be very expensive in terms of gas fees!)
 - Update all contracts that interacted with the old contract to use the address of the new one
 - Reach out to all your users and convince them to start using the new deployment (and handle both contracts being used simultaneously, as users are slow to migrate)
 
@@ -18,7 +18,7 @@ There are several approaches that allow us to make some changes to smart contrac
 
 **Separate logic and data**
 
-By using this approach, data will be read from a designated data contract directly. This is a rather common approach that is also used outside of Solidity. One of the main disadvantages of this approach is that you cannot change the interface of contracts external to the entire system, and you cannot add or remove functions.
+By using this approach, data will be read from a designated data contract directly. This is a relatively common approach that is also used outside of Solidity. One of the main disadvantages of this approach is that you cannot change the interface of contracts external to the entire system, and you cannot add or remove functions.
 
 **Delegatecall Proxy**
 

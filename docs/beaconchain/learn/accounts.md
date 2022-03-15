@@ -32,6 +32,6 @@ After Account is created, besides the balances, Account also contains:
 - Account Number: an internal identifier for the account
 - Sequence Number: an ever-changing integer.
 
-The `Sequence Number` is the way how Beacon Chain  prevents Replay Attack (the idea is borrowed from Cosmos network, but varies a bit in handling). Every transaction should have a new Sequence Number increased by 1 from the current latest sequence number of the Account, and after this transaction is recorded on the block chain, the Sequence Number will be set to the same number as the one of latest transaction.
+The `Sequence Number` is the way how Beacon Chain  prevents Replay Attack (the idea is borrowed from Cosmos network, but varies a bit in handling). Every transaction should have a new Sequence Number increased by 1 from the current latest sequence number of the Account, and after this transaction is recorded on the blockchain, the Sequence Number will be set to the same number as the one of latest transaction.
 
 This logic forces the client to be aware of the current Sequence Number, either by reading from the blockchain via API, or keep the counting locally by themselves. The recommended way is to keep counting locally and re-synchronize from the blockchain periodically.

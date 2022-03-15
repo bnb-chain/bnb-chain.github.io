@@ -48,7 +48,7 @@ To see the existing RPC endpoints provided by witness node, check the list  [her
 While users can submit transactions and most of the queries via normal, self-run full nodes.<br/>
 Accelerated Node provides more secure and faster lines to access Beacon Chain .
 
-Accelerated Node is special infrastructure built around Validator to facilitate accelerated transaction
+Accelerated Node is a special infrastructure built around Validator to facilitate accelerated transaction
 routing and provide richer, faster user interfaces. There are always several Accelerated Nodes running
 at the same time around the world (owned by different organizations) and you are encouraged to choose
 one of them to use, or allow your Wallet choose one randomly.<br/>

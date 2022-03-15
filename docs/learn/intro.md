@@ -11,13 +11,13 @@ Other than the 21 active validators, BSC will introduce more validators, e.g. an
 
 Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 21 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 
-In an extreme case, if a majority of the active 21 validators get attacked and offline, Candidate Validators can report to Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
+In an extreme case, if a majority of the active 21 validators get attacked and offline, Candidate Validators can report to Beacon Chain about the stale blocking, resume it and eventually propose a re-election of the active validator set.
 
 The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. Cross-chain transfer and other communication are possible due to native support of interoperability. Binance DEX remains a liquid venue of the exchange of assets on both chains. This dual-chain architecture will be ideal for users to take advantage of the fast trading on one side and build their decentralized apps on the other side. The Binance Smart Chain will be:
 
 * **A self-sovereign blockchain**: Provides security and safety with elected [validators](consensus.md).
 * **EVM-compatible**: Supports all the existing Ethereum tooling along with faster finality and cheaper transaction fees.
-* **Interoperable**: Comes with efficient native dual chain communication; Optimized for scaling high-performance dApps that require fast and smooth user experience.
+* **Interoperable**: Comes with efficient native dual chain communication; Optimized for scaling high-performance dApps that require a fast and smooth user experience.
 * **Distributed with on-chain governance**: Proof of Staked Authority (PoSA) brings in decentralization and community participants. As the native token, BNB will serve as both the gas of smart contract execution and tokens for staking.
 
 <!--## Comparision Between Beacon Chain and BNB Smart Chain
@@ -31,7 +31,7 @@ The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. 
 | Cross Chain       |[BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md) introduces *Hash Timer Locked Contract functions* and further [mechanism](https://community.binance.org/topic/1892) to handle inter-blockchain tokens peg.    | BSC comes with efficient [native dual chain communication](cross-chain.md); Optimized for scaling high-performance dApps that require fast and smooth user experience.                    |
 -->
 ## Ecosystem of cross-chains and multi-chains
-The big lesson learned from BSC 2021 is that “one chain” cannot cover all angles.  At peak time, BSC had more than 2M daily active users (DAU), with a single GameFi reaching up to 1M DAU. This introduced significant challenges for both the network itself and its supporting infrastructure like RPC/API nodes. For dApps with massive user bases, multi-chains and cross-chain should be the solution.  
+The big lesson learned from BSC 2021 is that “one chain” cannot cover all angles. At the peak time, BSC had more than 2M daily active users (DAU), with a single GameFi reaching up to 1M DAU. This introduced significant challenges for both the network itself and its supporting infrastructure like RPC/API nodes. For dApps with massive user bases, multi-chains and cross-chain should be the solution.  
 
 The BSC Core Team strongly believes in partition chains and a multi-chain future as it can sustain the ever-increasing demand for decentralized computing power and storage. This is consistent with many other blockchains in the industry, such as ETH2.0 and multi-chain strategies in Polkadot, Cosmos, and Avalanche.
 

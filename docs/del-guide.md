@@ -4,9 +4,7 @@ sidebar_position: 2
 hide_table_of_contents: true
 ---
 
-# How to Delegate
-
-## Delegate with BNB Extension Wallet
+# How to Delegate your BNB tokens with the BNB Extension Wallet
 
 Detailed user guide is [here](staking-with-ext-wallet.md)
 
@@ -16,8 +14,8 @@ Please refer to this guide on [how to create a wallet](binance.md) with BNB Exte
 
 ### Go to the staking page:
 
-- Mainnet: <https://www.binance.org/en/staking>
-- Testnet: <https://testnet-staking.binance.org/en/staking >
+- Mainnet: <https://www.bnbchain.world/en/staking>
+- Testnet: <https://testnet-staking.binance.org/en/staking>
 
 ### Unlock your wallet
 <img src="https://lh4.googleusercontent.com/rCFd8jPzCspJDYEKO02JvZTVhNPWL1UGZIENnhIJ9_7h-8UXp20PhGxg2xzwNmRKQiFRLnrmMVaTDd1dYAmVk1b2WVG9DBnsuFFYOlpI-xCeZhtObAfgjzVUlmqQ43BWCyPKhwjl" alt="img" style={{zoom:"80%"}} /> 

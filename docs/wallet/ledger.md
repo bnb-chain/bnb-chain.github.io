@@ -8,8 +8,8 @@ hide_table_of_contents: false
 BNB and coins on BNB Smart Chain are supported by the Ledger Nano S hardware wallet. The following describes how to use Ledger Nano S to connect to BSC
 
 ## Requirements
-* A Ledger Nano S hardware wallet with latest firmware.
-* Latest version of Ethereum app installed
+* A Ledger Nano S hardware wallet with the latest firmware.
+* The latest version of Ethereum app installed
 * An internet connection and an available USB port. Use an adapter for USB-C ports
 * U2F compatible browsers: Google Chrome, Opera, FireFox, Brave
 

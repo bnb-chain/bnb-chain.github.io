@@ -14,9 +14,7 @@ If you are syncing slowly, please check the speed of your disk.
 
 ## Use Chaindata Snapshot
 
-Please download the chain data [snapshot](https://github.com/binance-chain/bsc-snapshots) and extract to your home folder to speed up
-
-
+Please download the chain data [snapshot](https://github.com/bnb-chain/bsc-snapshots) and extract to your home folder to speed up
 
 ## Store your BNB with a hardware wallet
 
@@ -96,13 +94,13 @@ Sentry nodes can be quickly spun up or change their IP addresses. Because the li
 
 To setup your sentry node architecture you can follow the instructions below:
 
-1. Build a private network and setup trusted private connections between validator node and it sentry
+1. Build a private network and setup trusted private connections between the validator node and its sentry
 
-Please do not expose your validator fullnode RPC endpoints to public network.
+Please do not expose your validator fullnode RPC endpoints to the public network.
 
 Install your [fullnode](fullnode.md)
 
-2. Set sentry as peers  for validator node
+2. Set sentry as peers for the validator node
 
 In the console of the sentry node, run `admin.nodeInfo.enode` You should get something similar to this.
 

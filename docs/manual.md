@@ -21,11 +21,7 @@ Open the **Developer mode**
 
 ![img](https://lh4.googleusercontent.com/ffFKR28yRqbarsFLSvRhJR6XRVw85VUCM260joofaSIIAGED_xZOmEqjkY9TZH_7oBiH8XdFum9rJRyOaXlqtPWCrJy1PaBzYIfrfgKGZA8B1Qs6V8rUVWZ7sSkgCG6v6b3WfSKU)
 
-Drag and drop the mathwallet.zip file into the Extension window.
-
-Then the install is completed.
-
-
+Drag and drop the `mathwallet.zip` file into the Extension window. Then the installation is completed.
 
 ## Other browsers
 

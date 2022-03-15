@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # How to Upgrade Geth
 
-Updating `geth` is as easy as it gets. You just need to download and install the newer version of `geth`, shutdown your node and restart with the new software. Geth will automatically use the data of your old node and sync the latest blocks that were mined since you shutdown the old software.
+Updating `geth` is as easy as it gets. You just need to download and install the newer version of `geth`, shutdown your node and restart with the new software. Geth will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
 
 ## Step 1: Compile the new version
 

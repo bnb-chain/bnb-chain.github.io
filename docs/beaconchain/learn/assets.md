@@ -22,7 +22,7 @@ Explanations: Suffix is the first 3 bytes of the issue transaction’s hash, for
 
 ### Issue Process:
 
-1. Issuer signed an issue transaction and make it broadcasted to one of Beacon Chain  nodes
+1. Issuer signed an issue transaction and broadcast it to one of Beacon Chain nodes
 2. This Beacon Chain  node will check this transaction. If there is no error, then this transaction will be broadcasted to other Beacon Chain  nodes
 3. Issue transaction is committed on the blockchain by block proposer
 4. Validators will verify the constraints on total supply and symbol and deduct the fee from issuer’s account

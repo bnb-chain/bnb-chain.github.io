@@ -9,7 +9,7 @@ BNB Beacon Chain transactions are protocol-based data types and can only be subm
 
 The fundamental encoding logic is from [Tendermint Amino](https://github.com/tendermint/go-amino), which derives from and is "largely compatible with" Google protocol-buffer's Proto3.
 
-However the client sides only needs to stick to the specifications outlined below for the most frequently used transactions.
+However, the client sides only needs to stick to the specifications outlined below for the most frequently used transactions.
 
 ## Encoding Output
 

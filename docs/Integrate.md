@@ -9,10 +9,10 @@ There are public nodes running by BNB Chain community which will allow you to in
 
 ### REST API
 [Accelerated nodes](https://docs.binance.org/faq.html#what-is-the-accelerated-node) provide advanced API services for the public.<br/>
-List of all the Rest API information available on accelerated node can be found: [here](api-reference/dex-api/paths.md)
+The list of all the Rest API information available on accelerated node can be found: [here](api-reference/dex-api/paths.md)
 
 ### Node RPC
-There are multiple data seed node in the network which allow users to  perform low-level operations like executing ABCI queries, broadcasting a transaction or viewing network/consensus state.<br/>
+There are multiple data seed nodes in the network which allow users to  perform low-level operations like executing ABCI queries, broadcasting a transaction or viewing network/consensus state.<br/>
 If you run a full node by yourself, you can also use those RPC functions.<br/>
 List of all endpoints Node RPC service provides can be found: [here](api-reference/node-rpc.md)
 
@@ -25,8 +25,7 @@ Command Line Interface is currently available for Linux, Mac and Windows.<br/>
 Please refer to the [CLI Reference](api-reference/cli.md).
 
 ## SDKs
-There are multiple advanced SDK solutions available for Beacon Chain.<br/>
-Majority of SDKs provide simplified functions to:
+There are multiple advanced SDK solutions available for BNB Chain. The majority of SDKs provide simplified functions to:
 
 - Create wallets and manage keys
 - Encode/sign transactions and submit to Beacon Chain/DEX, including Transfer, New Order, Cancel Order, etc.

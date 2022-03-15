@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 # Use BNB Chain Extension Wallet
 ## What is it?
-BNB Chain Extension Wallet is a Crypto Wallet for Beacon Chain, BNB Smart Chain . You can send and receive funds on Beacon Chain, BNB Smart Chain  and cross-chain transfers between both of Binance’s blockchains.
+BNB Chain Extension Wallet is a Crypto Wallet for Beacon Chain, BNB Smart Chain. You can send and receive funds on Beacon Chain, BNB Smart Chain  and cross-chain transfers between both of Binance’s blockchains.
 
 In the future, BNB Chain Extension Wallet will add support for Ethereum blockchain and enable access for distributed applications, or "Dapps" in your browser!
 

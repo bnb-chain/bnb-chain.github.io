@@ -58,19 +58,19 @@ With the following contents :
 ```
 ([info about the genesis file](https://ethereum.stackexchange.com/a/2377/2040))
 
-### Initialise an Ethereum node
+### Initialize an Ethereum node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node1 init /projects/local_ethereum_blockchain/genesis.json
 ```
 
-### Start that Ethereum node
+### Start the Ethereum node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node1 --networkid 1000 console
 ```
 
-### Initialise another Ethereum node
+### Initialize another Ethereum node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node-2 init /projects/local_ethereum_blockchain/genesis.json
@@ -127,7 +127,7 @@ You need an account to do be able to do things like mining
 > personal.newAccount()
 ```
 
-*And make sure your remember/save the password!*
+*And make sure you remember/save the password!*
 
 ### Unlock account
 

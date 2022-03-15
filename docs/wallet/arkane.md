@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # How to create a BSC wallet in Arkane
 
-If you are looking for a user-friendly BNB Smart Chain wallet, consider creating an Arkane wallet. It allows you to enable recovery mechanism and comes with end-user support via their in-app chat, making sure you are never lost in the wonderful land of cryptocurrency.
+If you are looking for a user-friendly BNB Smart Chain wallet, consider creating an Arkane wallet. It allows you to enable the recovery mechanism and comes with end-user support via their in-app chat, making sure you are never lost in the wonderful land of cryptocurrency.
 
 ## Key features
 - Cloud wallet, offers support Web and mobile

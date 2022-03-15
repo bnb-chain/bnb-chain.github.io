@@ -73,16 +73,14 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 ## Gov Contract
 Implement the cross chain contract interface: **handlePackage(bytes calldata msgBytes, bytes calldata proof, uint64 height, uint64 packageSequence)**
 
-And do following step:
+And do the following steps:
 - Basic check. Sequence check, Relayer sender check, block header sync check, merkel proof check.
-- Check the msg type according to the first byte of msgBytes, only param change msg type supported for now. Check and parse the msg bytes.
+- Check the msg type according to the first byte of msgBytes, only param change msg type is supported for now. Check and parse the msg bytes.
 - Use a fixed gas to invoke the  updateParam interface of target contract. Catch any exception and emit fail event if necessary, but let the process go on.
 - Claim reward for the relayer and increase sequence.
 
 
 ## Workflow
-
-
 
  There are many system parameters to control the behavior of the BSC:
 
@@ -90,7 +88,7 @@ And do following step:
 
 - params of Staking/Slash/Oracle/IBC modules on BC
 
-All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such process will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.
+All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such processes will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.
 
 ## Fee Table
 

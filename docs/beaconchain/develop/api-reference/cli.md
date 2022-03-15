@@ -5,8 +5,8 @@ Beacon Chain CLI is one of several ways to interact with Beacon Chain.
 Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
 key or restore your key from mnemonic words. And you can list your keys and show specified key info.
 
-With Beacon Chain CLI, you can send transactions to Beacon Chain, like placing an order, transferring token,
-issuing token and so on. Actually you can do almost everything you can do with Beacon Chain web wallet. What is
+With Beacon Chain CLI, you can send transactions to Beacon Chain, like placing an order, transferring tokens,
+issuing tokens and so on. Actually you can do almost everything you can do with Beacon Chain web wallet. What is
 more, you can propose to list trading pairs and join chain governance.
 
 In addition, you can do some simple queries through CLI. For example, you can query your account's
@@ -52,11 +52,11 @@ C:\> tbnbcli.exe
 
 ## Where to connect
 
-You can manage you keys locally without connecting to any node. But if you want to interact with Beacon Chain, you need to connect to one of Beacon Chain full nodes.
+You can manage your keys locally without connecting to any node. But if you want to interact with Beacon Chain, you need to connect to one of Beacon Chain full nodes.
 
 You can run your own full node, which may automatically connect to Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
 
-You could query this API for for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
+You could query this API for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
 
 For testnet, visit  <https://testnet-dex.binance.org/api/v1/peers>.
 

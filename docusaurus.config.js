@@ -28,7 +28,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/bnb-chain/bnb-chain.github.io/docs',
+          editUrl: 'https://github.com/bnb-chain/bnb-chain.github.io/',
         },
         blog: {
           showReadingTime: true,

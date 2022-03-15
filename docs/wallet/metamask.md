@@ -35,15 +35,14 @@ That’s it! You have successfully installed MetaMask extension in Brave!
 1. Click on the “Create a wallet” button
 
 ![img](https://lh5.googleusercontent.com/Tnz34GivDYUUsCfoi4GZvJ-XXcACX2m5BamPzlQZ7nI71XBVrYYoCv-Kot4E24QHz3P3tzt31O9OeeV-Lbtn_ZrvYGNpp-GWIMWN82MdPslljJZMCwkfPM8SmsBGWL7bFcPTKWG-)
-1. Create Password of at least 8 characters
+
+2. Create Password of at least 8 characters
 ![img](https://lh6.googleusercontent.com/q2Yq_dtl38CD2V41amALyCSr2IjrLeEYgpEQh1LKrI7iVWjzkWse0FdLPNlCb_qqjR6mI3vfkKxYgHemCBgHLkEPwPErBXb0ioGxC0GGEzGyh_JYz8kL3MukPll-xhgMpjZmDNXp)
 
 3. Click on “Create” and then write down your backup phrase.
-
-![img](https://lh5.googleusercontent.com/hluBiNbCN4-8J31jX_5j2OqoNZZxb1WoApMr8RnxQ68FswgpD5D0WCZLb01nMVxDR57k-7WlDndvHEIgpB9pVHCr6O9KgenSPG6ayZrZ3D2wtZuWfTiu5Pbi_mDM19414i5FUDl4")
+![img](https://lh5.googleusercontent.com/hluBiNbCN4-8J31jX_5j2OqoNZZxb1WoApMr8RnxQ68FswgpD5D0WCZLb01nMVxDR57k-7WlDndvHEIgpB9pVHCr6O9KgenSPG6ayZrZ3D2wtZuWfTiu5Pbi_mDM19414i5FUDl4)
 
 4. Select each phrase in order to make sure it is correct then click “Confirm”.
-
 ![img](https://lh5.googleusercontent.com/rokxHmh0CZCjyIQqrngQm7qfEGRXbBvHoHuiZHvAon4_k0DLirngnQKqzucSJfrGdyVf-42IhwtDhz2C4PLm4dUjWH3rMrOTPqNC0kUYMSQEflF1ltbGwtiAYFQoxvyKfcNFGJCj)
 
 Congratulations! you have create your MetaMask account!

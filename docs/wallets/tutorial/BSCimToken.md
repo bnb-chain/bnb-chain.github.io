@@ -7,13 +7,13 @@ hide_table_of_contents: false
 An introduction on how to start with using BSC on the imToken wallet
 
 ## How to download the imToken wallet?
-1.To get started, download imToken wallet via our official website [token.im](https://token.im/), the Apple App Store or Google Play.
+1. To get started, download imToken wallet via our official website [token.im](https://token.im/), the Apple App Store or Google Play.
 
-2.Android phone users best download via Google Play or the official website.
+2. Android phone users best download via Google Play or the official website.
 
-3.Make sure to download the official, genuine App, since there are scammers out there providing fake apps.
+3. Make sure to download the official, genuine App, since there are scammers out there providing fake apps.
 
-4.Apple users can use the App Store. Here as well, please double check the app developer being IMTOKEN PTE.LTD. Be aware of scam apps.
+4. Apple users can use the App Store. Here as well, please double check the app developer being IMTOKEN PTE.LTD. Be aware of scam apps.
 ![img](assets/10.png)
 
 ## How to create an imToken identity wallet?
@@ -26,7 +26,7 @@ BSC is the abbreviation of BNB Smart Chain. The chain adopts PoSA (Proof of Stak
  
 Since BSC is EMV-compatible, developers can easily deploy smart contracts and build DApps on the chain. Compared with Ethereum, BSC has lower gas fees and faster transaction settlement with lower security guarantees.
  
-With imToken wallet we do not only support BSC DApps and watching token balances but also the DeFi Portfolio feature, providing a holistic BSC experience.
+With imToken wallet, we do not only support BSC DApps and watching token balances but also the DeFi Portfolio feature, providing a holistic BSC experience.
 
 
 ## How to start using BSC in imToken?

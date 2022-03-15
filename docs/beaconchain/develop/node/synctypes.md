@@ -8,8 +8,7 @@ There are three ways for you to get synced with other peers in blockchain networ
 
 ## Fast Sync
 
-In fast sync, you need to download all the blocks from your peers and execute all the transaction in every block.
-The sync speed is about 20 blocks/s, which is slower than state sync.
+In fast sync, you need to download all the blocks from your peers and execute all the transactions in every block. The sync speed is about 20 blocks/sec, which is slower than state sync.
 
 Configuration is located in `$BNCHOME/config/config.toml`:
 

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Implementing token URI
 
-To facilitate a marketplace on BSC to pull in off-chain metadata for BEP721 assets, the NFT contract will need to return a URI where the metadata can be found. To find this URI, the tokenURI method in ERC721 and the uri method in ERC1155 is used to track your NFT. You should implement the function in the Contract:
+To facilitate a marketplace on BSC to pull in off-chain metadata for BEP721 assets, the NFT contract will need to return a URI where the metadata can be found. To find this URI, the tokenURI method in ERC721 and the uri method in ERC1155 are used to track your NFT. You should implement the function in the Contract:
 
 ```
 
@@ -46,7 +46,7 @@ Here's how each of these properties work:
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     name         | Name of the item. Max 200 characters.                                                                                                                                                        |
 | description      | A human-readable description of the item. Markdown is supported. Max 500 characters.                                                                                                         |
-| image            | This is the URL to the image of the item. Can be just about any type of image. A 350 x 350 image is recommended.                                                                             |
+| image            | This is the URL to the image of the item. It can be just about any type of image. A 350 x 350 image is recommended.                                                                             |
 | animation_url    | This is the URL to a multi-media attachment for the item. The file extensions GLTF, GLB, WEBM, MP4, M4V, OGV, and OGG are supported, along with the audio-only extensions MP3, WAV, and OGA. |
 | animation_type   | This is the file format of the multi-media attachment provided from animation_url.                                                                                                           |
 | external_url     | This is the URL that will appear below the asset's image on the marketplace and will allow users to leave the marketplace and view the item on your site.                                    |

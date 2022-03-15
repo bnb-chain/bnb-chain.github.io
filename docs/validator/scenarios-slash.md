@@ -8,8 +8,7 @@ sidebar_position: 2
 
 ### Double Signing
 
-Double signing refers to an event when the validator node proposes two different blocks at the same block height. Validator will be removed from the validator set, if they try signing two different blocks and broadcasting them. For BSC slash request on double signing the supporting evidence should indicate two block headers having the same
-block height and same parent block hash sealed by the same validator. The time of these two blocks must be within the validity of the evidence, which is 24 hours. Rewards for successful submission of double-sign evidence is 100 BNB. In the event evidence and slash request is valid, the validators will face a slashing of **_10,000 BNB_** from their self-delegated BNB and will be 'jailed' for a time period of 292 years.
+Double signing refers to an event when the validator node proposes two different blocks at the same block height. The validator will be removed from the validator set, if they try signing two different blocks and broadcasting them. For BSC slash request on double signing, the supporting evidence should indicate two block headers having the same block height and the same parent block hash sealed by the same validator. The time of these two blocks must be within the validity of the evidence, which is 24 hours. Rewards for successful submission of double-sign evidence is 100 BNB. In the event evidence and slash request is valid, the validators will face a slashing of **_10,000 BNB_** from their self-delegated BNB and will be 'jailed' for a time period of 292 years.
 
 ### Unavailability/Downtime
 

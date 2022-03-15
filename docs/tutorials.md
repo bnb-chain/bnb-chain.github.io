@@ -11,8 +11,8 @@ In this section, we have provided tutorials on usage of different components of 
   * Tutorial on [How to Join BNB Smart Chain Mainnet as Validator](validator/guideline-mainnet.md)
   * Tutorial on [How to Join BNB Smart Chain Testnet as Validator](validator/guideline-testnet.md)
   * Tutorial on [How to Create a Validator on BNB Smart Chain Testnet](validator/testnet.md)
-  * Tutorial on [How to run a Full Node on BNB Smart Chain](validator/fullnode.md)
-  * Tutorial on [How to run a Local BNB Smart Chain Network](local.md)
+  * Tutorial on [How to Run a Full Node on BNB Smart Chain](validator/fullnode.md)
+  * Tutorial on [How to Run a Local BNB Smart Chain Network](local.md)
   * Tutorial on [How to Upgrade Geth (Full Node) on BNB Smart Chain](validator/upgrade-fullnode.md)
 
 - **BNB Beacon Chain**
@@ -51,11 +51,11 @@ In this section, we have provided tutorials on usage of different components of 
 
 ## Wallets
 - **BNB Smart Chain**
-  * Please refer [here](wallets/wallet-tutorial-overview.md) for list of tutorials on different supported wallets.
+  * Please refer [here](wallets/wallet-tutorial-overview.md) for a list of tutorials on different supported wallets.
 
 - **BNB Beacon Chain**
   * [List of Supported Wallets](beaconchain/wallets)
-  * Tutorial on [How to Use Trust Wallet with Beaon Chain](beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet)
+  * Tutorial on [How to Use Trust Wallet with Beacon Chain](beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet)
   * Tutorial on [How to Use Ledger Nano S Hardware Wallet with Beacon Chain](beaconchain/wallet/tutorial/ledger-nano-s-usage-guide)
   * Tutorial on [How to Use Trezor Hardware Wallet with Beacon Chain](beaconchain/wallet/tutorial/trezor-model-t-user-guide)
   * Tutorial on [How to manage your BEP8 tokens in BNB Chain Testnet Web Wallet](beaconchain/wallet/tutorial/bep8)

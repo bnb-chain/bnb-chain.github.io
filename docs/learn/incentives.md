@@ -15,10 +15,10 @@ It is tough hard to achieve all these goals; we make some trade-off on robustnes
 
 ## Rewards Source and Allocation
 
-We have three reward source:
+We have three reward sources:
 
-1. Users paid reward: Users who send `bind` or `cross chain transfer` transactions need to pay extra fee as bsc-relayer rewards.
-2. System reward: Rewards comes from `SystemReward` contract.
+1. Users paid rewards: Users who send `bind` or `cross chain transfer` transactions need to pay extra fee as BSC relayer rewards.
+2. System rewards: Rewards comes from `SystemReward` contract.
 
 The role of relayers and their rewards comes from:
 
@@ -54,12 +54,12 @@ To prevent the relayer who has the best network always winning the game, we gath
 ### We consider setting these parameters a reasonable value:
 
 1. S to be 100. Some rewards come from gas fee, we can not guarantee enough rewards during a small round, a large round may dismiss deviation and let relayer give up relaying when it has made its max profit.
-2. N to be 40. We think the redundancy of relayer around 3-5 is best. If N is too large, the redundancy will decrease, if too small there are no enough relayers. Set N as 40 may be a reasonable value, at least 3 relayers can compete.
+2. N to be 40. We think the redundancy of relayer around 3-5 is best. If N is too large, the redundancy will decrease. If N is too small, then there will not be enough relayers. Set N as 40 may be a reasonable value, at least 3 relayers can compete.
 3. The relayFee of a single package and the ratio of reward for header relayer can be modified by governance on Beacon Chain.
 
 ### Distribution And Claim Reward
 
-In each round, the last package delivery transaction will trigger the reward distribution. Both the header reward pool and package reward pool will be distributed. However, the reward won't be paid directly to relayer accounts. The distribution algorithm just calculates rewards for all relayers and write down the amounts. Relayers are required to actively send transactions to claim their own accumulated rewards.
+In each round, the last package delivery transaction will trigger the reward distribution. Both the header reward pool and package reward pool will be distributed. However, the reward won't be paid directly to relayer accounts. The distribution algorithm just calculates rewards for all relayers and writes down the amounts. Relayers are required to actively send transactions to claim their own accumulated rewards.
 
 ## Other Consideration
 
@@ -77,7 +77,7 @@ Block header sync transaction with `validatorSet` change will claim reward to re
 
 For example, a relayer may deliver packages using a different address in round robin, we can’t recognize this. We try to introduce registration and BNB deposit for relayer to raise the cost of cheat.  How it works:
 
-* A BSC account needs call `register` of [RelayerHub](https://bscscan.com/address/0x0000000000000000000000000000000000001006) contract to deposit 100BNB(more or less than 100 BNB will be rejected) to become a BSC relayer.
+* A BSC account needs to call the `register` of [RelayerHub](https://bscscan.com/address/0x0000000000000000000000000000000000001006) contract to deposit 100BNB(more or less than 100 BNB will be rejected) to become a BSC relayer.
 * Only a valid relayer can sync Beacon Chain Headers and deliver cross-chain packages.
 * Relayer can withdraw its deposit, but we will charge 0.1 BNB as the transaction fee so that it will receive 99.9 BNB back.
-* The charged fee will directly go to system reward pool.
+* The charged fee will directly go to the system reward pool.

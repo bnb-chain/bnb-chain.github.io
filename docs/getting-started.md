@@ -37,7 +37,7 @@ network for the assets
 and [node RPC](beaconchain/develop/api-reference/node-rpc.md) interfaces.
 - Run a [full node](beaconchain/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
 - Extract other data of Binance Chain via full node or [APIs](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets)
-- [Develop tools](Integrate.md#sdks) and application to help users use Binance Chain and Binance DEX
+- [Develop tools](Integrate.md#sdks) and applications to help users use Binance Chain and Binance DEX
 
 ### What can you do with BNB Smart Chain (BSC)?
 
@@ -50,7 +50,7 @@ You can:
 - Send and receive [BNB](wallet/binance.html#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](wallet/binance.html#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
 - Explore the transaction history and blocks on the chain, via [bscscan](https://bscscan.com), API
 and node RPC interfaces.
-- [Stake you BNB](wallet/staking.md) to earn some block rewards
+- [Stake your BNB](wallet/staking.md) to earn some block rewards
 
 **Developers** can also:
 
@@ -73,7 +73,7 @@ In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network tha
 ## How to Buy BNB Tokens
 As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Chain network you will need to have some BNB tokens. 
 - BNB tokens can also be received for usage on testnet through the [testnet faucet](https://testnet.binance.org/faucet-smart).
-- The BNB tokens for usage on mainnet are available for purchase on multiple leading exchanges and wallets as explained [here](#wallet). You can also refer [here][wallets/wallet-tutorial-overview] for tutorials on ho to use different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
+- The BNB tokens for usage on mainnet are available for purchase on multiple leading exchanges and wallets as explained [here](#wallet). You can also refer [here][wallets/wallet-tutorial-overview] for tutorials on how to use different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
 
 ## Wallet
 The easiest way to use BNB Beacon and BNB Smart Chain is through a wallet with support for accounts and transfers on these chains.

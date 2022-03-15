@@ -6,11 +6,11 @@ hide_table_of_contents: false
 
 # Chaindata Snapshot 
 
-For latest chaindata snapshots visit [here](https://github.com/binance-chain/bsc-snapshots)
+For latest chaindata snapshots visit [here](https://github.com/bnb-chain/bsc-snapshots)
 
 ### For v1.1.0:
 
-* [Latest Snapshot](https://github.com/binance-chain/bsc-snapshots)
+* [Latest Snapshot](https://github.com/bnb-chain/bsc-snapshots)
 
 * [2021-05-15 snapshot](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/geth-20210515.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1623905351&Signature=w1hPMeDxB68aJ2qUM74YbUufCPo%3D) (size 220GB)
 
@@ -48,7 +48,7 @@ Download March Snapshot from CLI using wget
 wget --no-check-certificate --no-proxy 'https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata_202103.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1641450253&Signature=hOC8I8HSpCOytlYMVQwKRc5oUaI%3D'
 ```
 
-> Tip: extract the data in background
+> Tip: extract the data in the background
 
 In case you can not wait for the extraction to finish, you can run it in the background
 

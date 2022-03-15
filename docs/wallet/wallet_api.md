@@ -1,4 +1,10 @@
-# BNB Chain Wallet API 
+---
+sidebar_label: API
+hide_table_of_contents: true
+sidebar_position: 2
+---
+
+# BNB Wallet API
 
 BNB Chain Wallet injects a global API into websites visited by its users at `window.BinanceChain`.
 
@@ -6,7 +12,7 @@ This API specification borrows heavily from API MetaMask provided, considering t
 
 The presence of the provider object `window.BinanceChain` indicates a Beacon Chain/BNB Smart Chain user.
 
-The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied legacy ones).
+The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied on legacy ones).
 
 ## Development Progress
 Currently (version 1.112.8) as BNB Chain Wallet natively supports Beacon Chain, we are planning to open a series of APIs for dApp developers to interact with Beacon Chain. At the end of the day, most [APIs available in Beacon Chain javascript sdk](https://github.com/binance-chain/javascript-sdk/tree/master/docs) would be available.
@@ -18,11 +24,11 @@ Currently, only the following is supported:
 
 !!! warning
 
-    Please read through this section if you are a web3 developer who has integrated with MetaMask and interested in integrating with BNB Chain Wallet.
+    Please read through this section if you are a Web3 developer who has integrated with MetaMask and are interested in integrating with BNB Chain Wallet.
 
 ### Inpage injected object
 
-The biggest difference between BNB Chain Wallet and MetaMask is we inject `BinanceChain` rather than `ethereum` (or `web3`) to the web page. So user could keep two extensions at the same time.
+The biggest difference between BNB Chain Wallet and MetaMask is we inject `BinanceChain` rather than `ethereum` (or `web3`) to the web page. So, users could keep two extensions at the same time.
 
 ### BinanceChain.request({method: "eth_sign", params: ["address", "message"])
 
@@ -32,9 +38,7 @@ The `message` item in params for this request on MetaMask has to be hex-encoded 
 
 ### BinanceChain.request({method: "eth_accounts"})
 
-When this API is invoked without the user's approval, MetaMask would return an empty array.
-
-In contrast, we would ask the user to unlock his wallet and return the address user connected to.
+When this API is invoked without the user's approval, Metamask would return an empty array. In contrast, we would ask the user to unlock his wallet and return the address user connected to.
 
 ## Upcoming Breaking Changes
 
@@ -42,7 +46,7 @@ In contrast, we would ask the user to unlock his wallet and return the address u
 
     Important Information
 
-    On **November 16, 2020**, MetaMask is making changes to their provider API that will be breaking for some web3 sites.
+    On **November 16, 2020**, Metamask is making changes to their provider API that will be breaking for some web3 sites.
     These changes are _upcoming_, but you can prepare for them today.
     Follow [this GitHub issue](https://github.com/MetaMask/metamask-extension/issues/8077) for updates.
 
@@ -71,7 +75,9 @@ We made a tiny lib [bsc-connector](https://www.npmjs.com/package/@binance-chain/
 ```
 import { BscConnector } from '@binance-chain/bsc-connector'
 
-export const bsc = new BscConnector( { supportedChainIds: [56, 97] // later on 1 ethereum mainnet and 3 ethereum ropsten will be supported } )
+export const bsc = new BscConnector({
+  supportedChainIds: [56, 97] // later on 1 ethereum mainnet and 3 ethereum ropsten will be supported
+})
 
 // invoke method on bsc e.g.
 await bsc.activate();
@@ -82,9 +88,8 @@ await bsc.getChainId();
 * use-wallet
 
 There is an [example](https://github.com/aragon/use-wallet/tree/master/examples/binance-chain) in use-wallet origin repo shows how to 'inject' a customized web3-react connector to `UseWalletProvider`:
-
-```
-function App() {
+```js
+function App( ) {
   const { account, connect, reset, status } = useWallet()
   return (
     <div>
@@ -103,7 +108,7 @@ render(
   <UseWalletProvider
     connectors={ {
       bsc: {
-        web3ReactConnector() {
+        web3ReactConnector( ) {
           return new BscConnector( { supportedChainIds: [56, 97] } )
         },
         handleActivationError(err) {
@@ -118,8 +123,8 @@ render(
   </UseWalletProvider>,
   document.getElementById('root')
 )
-```
 
+```
 ## Chain IDs
 
 !!! warning
@@ -240,11 +245,11 @@ BinanceChain
 
 *We prepared an example for this API, please check out: https://github.com/binance-chain/js-eth-personal-sign-examples for more detail*
 
-Like `eth_sign` enable dapp to verify a user has control over an ethereum address by signing an arbitrary message. We provide this method for dapp developers to request the signature of arbitrary messages for Beacon Chain (BC) and BNB Smart Chain (BSC).
+Like `eth_sign` enable dApp to verify a user has control over an ethereum address by signing an arbitrary message. We provide this method for dApp developers to request the signature of arbitrary messages for Beacon Chain (BC) and BNB Smart Chain (BSC).
 
-If `address` parameter is a Beacon Chain address (start with `bnb` or `tbnb`), we will simply **calculate sha256 hash of the message** and let user sign the hash with his Beacon Chain address' private key. Note: Beacon Chain uses the same elliptic curve (`secp256k1`) as Ethereum.
+If `address` parameter is a Beacon Chain address (start with `bnb` or `tbnb`), we will simply **calculate sha256 hash of the message** and let the user sign the hash with their BNB Beacon Chain address' private key. Note: Beacon Chain uses the same elliptic curve (`secp256k1`) as Ethereum.
 
-If `address` parameter is a BNB Smart Chain address (start with `0x`), the message would be hashed in the same way with [`eth_sign`](https://eth.wiki/json-rpc/API#eth_sign).
+If `address` parameter is a BNB Smart Chain address (start with `0x`), the message would be hashed in the same way as with [`eth_sign`](https://eth.wiki/json-rpc/API#eth_sign).
 
 The returned `publicKey` would be a compressed encoded format (a hex string encoded 33 bytes starting with "0x02", "0x03") for Beacon Chain. And uncompressed encoded format (a hex string encoded 65 bytes starting with "0x04").
 
@@ -252,7 +257,7 @@ The returned `signature` would be bytes encoded in hex string starting with `0x`
 
 !!! warning
 
-    DApp developers should verify whether the returned public key can be converted into the address user claimed in addition to an ECDSA signature verification. Because any plugin can inject the same object `BinanceChain` as BNB Chain Wallet.
+    dApp developers should verify whether the returned public key can be converted into the address user claimed in addition to an ECDSA signature verification because any plugin can inject the same object `BinanceChain` as BNB Chain Wallet.
 
 ### BinanceChain.switchNetwork(networkId: string): Promise<{networkId: string}>
 

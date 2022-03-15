@@ -2,7 +2,7 @@
 
 ## Monitoring Slash Contract
 
-As best practise, it is advisable to  keep monitoring the event log of the slash contract on the BSC scanner at 
+As best practice, it is advisable to  keep monitoring the event log of the slash contract on the BSC scanner at 
 <https://bscscan.com/address/0x0000000000000000000000000000000000001001#events>. Additionally, you can also check the slash indicator by reading the contract and pay attention to those above 30. Once it exceeds 150, the validator contract will be jailed.
 
 ## Query Side Chain Signing Info

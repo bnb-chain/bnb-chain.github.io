@@ -12,7 +12,6 @@ Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and BEP20 tok
 
 First, you should make sure that it's already bound. For example, you could see the binding info of **BNB**:
 
-
 ```shell
 ## mainnet
 bnbcli token info --symbol BNB --trust-node --node http://dataseed4.binance.org:80
@@ -71,7 +70,7 @@ Call **transferOut** of [TokenHub contract](https://raw.githubusercontent.com/bi
 | Parameter Name | Type    | Description                                                  |
 | -------------- | ------- | ------------------------------------------------------------ |
 | contractAddr   | address | for BNB, the value must be 0x0000000000000000000000000000000000000000 |
-| recipient      | address | decode bech32 address, starting with `0x` . To transfer to hex string. This is a online too to decode bech32: https://slowli.github.io/bech32-buffer/ |
+| recipient      | address | decode bech32 address, starting with `0x` . To transfer to hex string. This is an online tool to decode bech32: https://slowli.github.io/bech32-buffer/ |
 | amount         | uint256 | The BNB decimals on  BSC is 18. If you want to transfer one BNB, then the value should be 1e18. Besides, the value must be N * 1e10 |
 | expireTime     | uint256 | Timestamp, counted by  second                                |
 
@@ -83,7 +82,7 @@ txValue = (amount + RelayFee)/1e18
 
 `RelayFee` should be 0.01BNB and it can be updated by on-chain governance. For example, if you transfer 1BNB from BSC to BC, the value should be at least 1.01BNB.
 
-After all the above parameters have been set to proper values, users can click the transact button to build transactions, and metamask plugin will be ejected. Then users can click the confirm button in metamask to sign and broadcast transactions.
+After all the above parameters have been set to proper values, users can click the transact button to build transactions, and Metamask plugin will be ejected. Then users can click the confirm button in the Metamask to sign and broadcast transactions.
 
 
 ### batchTransferOutBNB
@@ -133,7 +132,7 @@ The value here should be RelayFee.
 
 ### Mint
 
-If both the BEP20 token and bep2 token are mintable, then token owners can still mint their tokens even after token binding. Besides, token owners need to ensure the total supply and the locked amount on both chains are still matched, otherwise, users might can’t transfer their tokens to another chain.
+If both the BEP20 token and BEP2 token are mintable, then token owners can still mint their tokens even after token binding. Besides, token owners need to ensure the total supply and the locked amount on both chains are still matched. Otherwise, users might can’t transfer their tokens to another chain.
 
 #### Mint token on BC
 

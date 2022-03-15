@@ -1,7 +1,7 @@
 ---
 sidebar_label: Create a Validator on Testnet
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to become a Validator Candidate
@@ -25,7 +25,7 @@ If you already have an account, use the seed phrase to recover it:
 geth account import --datadir ./node
 ```
 
-### Get some testnet fund from faucet
+### Get some testnet funds from faucet
 
 Go to this faucet page: <https://testnet.binance.org/faucet-smart>
 

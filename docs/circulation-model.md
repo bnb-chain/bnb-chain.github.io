@@ -29,8 +29,7 @@ Let's walk through an example:
 1. Bob issues BTC on BC with a total supply of 10, and he sends Alice 2 BTC.
 2. Bob issues BTC on BSC with a total supply of 10, and he sends Tom 1 BTC.
 
-Now Bob wants BTC to flow between BC and BSC, but the total circulation on BC and BSC is 20=10+10 BTC which is not correct, so he decided to bind these two tokens.
-He made a decision that 8 BTC circulation on BC and 2 BTC circulation on BSC, then he started a bind transaction.
+Now Bob wants BTC to flow between BC and BSC, but the total circulation on BC and BSC is 20=10+10 BTC which is not correct, so he decided to bind these two tokens. He made a decision that 8 BTC circulation on BC and 2 BTC circulation on BSC, then he started a bind transaction.
 
 The BC execution engine will:
 1. Transfer 2 BTC from Bob's account to `Peg Account`. 
@@ -38,7 +37,7 @@ The BC execution engine will:
 
 For now, on BC, Bob has 6 BTC, Alice has 2 BTC, 2 BTC is locked in `Peg Account`, circulation on BC is 8 BTC.
 
-Relayer watches the cross-chain event on BC, and send a transaction to [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) contract on BSC.
+The Relayer watches the cross-chain event on BC, and sends a transaction to [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) contract on BSC.
 
 Then Bob invokes the BTC contract on BSC to approve [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) to spend 8 BTC of his account.
 After that Bob approves the bind request by invoking [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008). 
@@ -66,9 +65,7 @@ Let's walk through an example:
 
 
 ## Mint
-
-When user mint token on the native chain, but do not mint on the parallel chain, it may cause an issue that user can not cross transfer all token from 
-native chain to parallel chain.
+When a user mints a token on the native chain, but does not mint it on the parallel chain, it may cause an issue that users can not cross transfer all tokens from the native chain to the parallel chain.
 
 Let's walk through an example:
 

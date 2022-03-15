@@ -15,6 +15,6 @@ A native cross chain communication protocol is developed between BC (Beacon Chai
 
 
 ## Architecture Diagram
-The following diagram depicts the architecture of cross-transfer mechanism.
+The following diagram depicts the architecture of the cross-transfer mechanism.
 
 ![img](../../static/img/cross-transfer-architecture.png)

@@ -21,7 +21,7 @@ The state defined in the genesis file contains all the necessary information, li
 
 ### Genesis Time and Chain_id
 
-The `genesis_time` is defined at the top of the genesis file. It is a `UTC` timestamps which specifies when the blockchain is due to start. At this time, genesis validators are supposed to come online and start participating in the consensus process. The blockchain starts when more than 2/3rd of the genesis validators (weighted by voting power) are online.
+The `genesis_time` is defined at the top of the genesis file. It is a `UTC` timestamp which specifies when the blockchain is due to start. At this time, genesis validators are supposed to come online and start participating in the consensus process. The blockchain starts when more than 2/3rd of the genesis validators (weighted by voting power) are online.
 
 ```
 "genesis_time": "2019-04-18T05:59:26.228734998Z"

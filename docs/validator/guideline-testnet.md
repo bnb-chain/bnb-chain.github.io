@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 ### Before You Start
 
-Before you start make sure you meet the hardware requirements for the validators nodes.
+Before you start, make sure you meet the hardware requirements for the validators nodes.
 
 #### Choose Your Validator hardware
 
@@ -24,7 +24,7 @@ Before you start make sure you meet the hardware requirements for the validators
 
 **Install BSC Fullnode**
 
-you can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions [here to set up a full node](fullnode.md).
+You can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions [here to set up a full node](fullnode.md).
 
 **Download the config files**
 
@@ -48,7 +48,7 @@ geth account new --datadir ./node
 ### Start Validator Node
 
 !!! Warning
-	Please do not expose your RPC endpoints to public network.
+	Please do not expose your RPC endpoints to the public network.
 
 ```bash
 echo {your-password} > password.txt

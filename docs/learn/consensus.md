@@ -9,24 +9,24 @@ hide_table_of_contents: false
 ## Abstract
 We target to design the consensus engine of BSC(BNB Smart Chain) to achieve the following goals:
 
-1. Wait a few blocks to confirm(should be less than Ethereum 1.0), better no fork in most cases.
+1. Wait for a few blocks to confirm (should be less than Ethereum 1.0), better no fork in most cases.
 2. Blocking time should be shorter than Ethereum 1.0, i.e. 5 seconds or less.
 3. No inflation, the block reward is transaction gas fees.
 4. As much as compatible as Ethereum.
 5. With staking and governance as powerful as cosmos.
 
 
-[Geth](https://github.com/ethereum/go-ethereum/wiki/geth) implements two kinds of consensus engine: ethash(based on PoW) and [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)(base on PoA). Ethash is not a fit option for BSC because BSC gives up PoW. Clique has smaller blocking time and is invulnerable to 51% attack while doing as little to the core data structure as possible to preserve existing Ethereum client compatibility. The shortcoming of PoA is centralization, and the lack of meaningful staking and governance capability on-chain.  On the other hand, the Beacon Chain is built on Cosmos which does have a deployed staking and governance mechanism. Thus here we try to propose a consensus engine that:
+[Geth](https://github.com/ethereum/go-ethereum/wiki/geth) implements two kinds of consensus engines: ethash(based on PoW) and [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)(based on PoA). Ethash is not a fit option for BSC because BSC gives up PoW. Clique has a shorter blocking time and is invulnerable to 51% attack while doing as little to the core data structure as possible to preserve existing Ethereum client compatibility. The shortcoming of PoA is centralization, and the lack of meaningful staking and governance capability on-chain.  On the other hand, the Beacon Chain is built on Cosmos which does have a deployed staking and governance mechanism. Thus here we try to propose a consensus engine that:
 
 * Beacon Chain does the staking and governance parts for BSC.
 * ValidatorSet change, double sign slash of BSC is updated through interchain communication.
 * Consensus engine of BSC keeps as simple as clique.
 
-We investigated some popular implementations of PoA consensus and find out that [Bor](https://blog.matic.network/heimdall-and-bor-matic-validator-and-block-production-layers/) follows a similar design as above. We will borrow a few parts from Bor and propose a new consensus engine to achieve all these goals.
+We investigated some popular implementations of PoA consensus and found out that [Bor](https://blog.matic.network/heimdall-and-bor-matic-validator-and-block-production-layers/) follows a similar design as above. We will borrow a few parts from Bor and propose a new consensus engine to achieve all these goals.
 
 ## Infrastructure Components
 
-1. **Beacon Chain**. It is responsible for holding the staking function to determine validators of BSC through independent election, and the election workflow are performed via staking procedure.
+1. **Beacon Chain**. It is responsible for holding the staking function to determine validators of BSC through an independent election, and the election workflow are performed via staking procedure.
 2. **BSC validators**. Validators are responsible for validating transactions and generating blocks, ensuring the network’s security and the consistency of the ledger. In return, they receive rewards from the gas consumption of transactions.
 3. **Staking dApps on BSC(also named as system contract)**. There are several genesis contracts to help implement staking on BSC. Six classification groups of them:
     - **Light client contract**. It is a watcher of distributed consensus process implemented by contract that only validates the consensus algorithm of Beacon Chain.

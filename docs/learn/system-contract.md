@@ -6,12 +6,9 @@ hide_table_of_contents: false
 
 # Build-in System Contract
 
-## Disclaimer
+### Disclaimer
 
-**The software and related documentation are under active development,
-all subject to potential future change without notification and not ready for production use.
-The code and security audit have not been fully completed and not ready for any bug bounty.
-We advise you to be careful and experiment on the network at your own risk. Stay safe out there.**
+**The software and related documentation are under active development, all subject to potential future change without notification and not ready for production use. The code and security audit have not been fully completed and are not ready for any bug bounty. We advise you to be careful and experiment on the network at your own risk. Stay safe out there.**
 
 
 GitHub Implementation link: <https://github.com/binance-chain/bsc-genesis-contract>
@@ -38,7 +35,7 @@ In Tendermint, validators agree on a block before processing it. This means that
 
 Unlike Proof-of-Work, the light-client protocol does not need to download and check all the headers in the blockchain - the client can always jump straight to the latest header available, so long as the validator set has not changed much. If the validator set is changing, the client needs to track these changes, which requires downloading headers for each block in which there is a significant change. Here, we will assume the validator set is constant, and postpone handling validator set changes for another time.
 
-Ethereum platform supports stateless precompiled contract implemented with golang and normal contract implemented with solidity. Comparing with normal contract, precompiled contracts are more efficient and costs less gas, but they are stateless. However, on-chain light client must be stateful. So here we will try to a mixed approach: precompiled implemented contract(stateless calculation, such as signature verification) and normal contract (store validator set and trusted appHash).
+Ethereum platform supports stateless precompiled contract implemented with golang and normal contract implemented with solidity. As compared to normal contracts, precompiled contracts are more efficient and costs less gas, but they are stateless. However, on-chain light client must be stateful. So here we will try to a mixed approach: precompiled implemented contract(stateless calculation, such as signature verification) and normal contract (store validator set and trusted appHash).
 
 ![img](../../static/img/lightclient.png)
 
@@ -82,7 +79,7 @@ This contract implements the following four methods:
 
 2. function **getAppHash**(uint64 height) returns(bytes32)
 
-    **getAppHash** provides a method to get the verified appHash at the specified height. Besides, If the header the specified height have not be verified, then zero value will be returned.
+    **getAppHash** provides a method to get the verified appHash at the specified height. Besides, If the header of the specified height have not be verified, then zero value will be returned.
 
 3. function **isHeaderSynced**(uint64 height) returns (bool)
 
@@ -93,11 +90,11 @@ This contract implements the following four methods:
     **getSubmitter** provides a method to get the submitter address of the specified header.
 
 #### Merkle Proof Verification Library
-This library provides an util to to verify merkle proof from BC. Contracts which need to verify Merkle proof just need to import this library.
+This library provides an util to verify merkle proof from BC. Contracts which need to verify Merkle proof just need to import this library.
 
 function **verifyMerkleProof**(int64 height, byte[] key, byte[] value, byte[] proof) bool
 
-**verifyMerkleProof** reassembles user parameters and call the the above precompiled contract to validate the proof.
+**verifyMerkleProof** reassembles user parameters and calls the above precompiled contract to validate the proof.
 
 ## Other Build-in System Contract
 
@@ -131,8 +128,8 @@ function **verifyMerkleProof**(int64 height, byte[] key, byte[] value, byte[] pr
 
 * **Governance Contract**
 
-    This contract handles governance package from BC. A governance package contains target contract address, parameter name and new parameter value. Once the package is verified, this contract will call the parameter update method of the target contract to update the parameter to new value.
+    This contract handles the governance package from BC. The governance package contains the target contract address, parameter name and new parameter value. Once the package is verified, this contract will call the parameter update method of the target contract to update the parameter to new value.
 
 * **Cross Chain Contract**
 
-    This contract focuses on cross chain packages pretreatment and sending cross chain packages to BC by emit event. The packages pretreatment includes sequence validation and the merkle proof verification. Once they are passed, the package will be routed to application build-in system contract, such as tokenhub or bscvalidator. Besides, if tokenhub or bscvalidator want to send packages to BC, they need to encode their packages with rlp and call this contract to send them.
+    This contract focuses on cross chain packages pretreatment and sending cross chain packages to BC by emit event. The packages pretreatment includes sequence validation and the merkle proof verification. Once they are passed, the package will be routed to application build-in system contract, such as tokenhub or bscvalidator. Besides, if tokenhub or bscvalidator wants to send packages to BC, they need to encode their packages with rlp and call this contract to send them.

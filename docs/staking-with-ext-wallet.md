@@ -57,7 +57,7 @@ Redelegations between a unique delegator, source validator, and destination vali
 
 ![img](https://lh3.googleusercontent.com/mgnbGGdmvIfMyj5_cWTwOtaN-8uQn8t7hBaP5cZ297MH6-KE-v_pWRNl-sGjecPRp-K7eoKa4BvEFLYBvOxoPlO9Weq6RDijN2xvGC6-VhS8poycBwkOSOKGjtmw0jj-S1NdWsB-)
 
-- Select a new validator and redegelate amount
+- Select a new validator and the redegelation amount
 
 ![img](https://lh4.googleusercontent.com/sQ23rDrcUIccCmjwHp0jgHRqgkJwm_nkPH2cvHiL5guqj3Xk-1VfPxbM_Okx_zCrJswFoaWq03fwFh0ATLKvEvVM-OmgVheFCNHbrK9Plw4tmilNO7UFSLYVBUjExSyrskiuNsPs)
 
