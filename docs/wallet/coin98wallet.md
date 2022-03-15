@@ -21,7 +21,7 @@ Users are able to store, send & receive BNB, the native token of BNB Smart Chain
 - Tick the remaining boxes to confirm you’re aware of the risks.
 
 - Click **Create Wallet**.
-![img](../assets/anh2.png)
+![img](../assets/picture2.png)
 
 Your BNB Wallet will instantly be displayed on the home screen. You can also click **Manage** to check your wallets.
 
@@ -74,7 +74,7 @@ Users are also able to store, send & receive BNB and BEP20 tokens directly on Co
 
 **Step 4:** Paste the provided Passphrase into the confirmation box, then click **Create.**
 
-![img](../assets/anh5.png)
+![img](../assets/picture5.png)
 
 Your BNB Wallet will instantly be displayed on the home screen. You can also click **Manage** to check your wallets.
 
@@ -87,7 +87,7 @@ Your BNB Wallet will instantly be displayed on the home screen. You can also cli
 
 Transfer BEP20 tokens to the address copied on step 3.
 
-![img](../assets/anh6.png)
+![img](../assets/picture6.png)
 
 ### How to send BNB and BEP20 tokens
 **Step 1:** Click on your **BNB** wallet on the home screen.
@@ -96,7 +96,7 @@ Transfer BEP20 tokens to the address copied on step 3.
 
 **Step 3:** Enter the amount and the recipient's wallet address, adjust the gas setting, then click **Send** to complete the transaction.
 
-![img](../assets/anh7.png)
+![img](../assets/picture7.png)
 
 **Note:**
 
