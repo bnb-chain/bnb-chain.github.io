@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbeta_BNB_Docs=self.webpackChunkbeta_BNB_Docs||[]).push([[4195],{62841:function(e,t,n){n.r(t),n.d(t,{default:function(){return r}});var c=n(67294),u=n(76775);function r(){return c.createElement(u.l_,{to:"/docs/bnbIntro"})}}}]);

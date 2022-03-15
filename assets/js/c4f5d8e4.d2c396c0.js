@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbeta_BNB_Docs=self.webpackChunkbeta_BNB_Docs||[]).push([[4195],{62841:function(n,t,e){e.r(t),e.d(t,{default:function(){return b}});var c=e(67294),u=e(76775);function b(){return c.createElement(u.l_,{to:"/bnb-chain.github.io/docs/bnbIntro"})}}}]);
