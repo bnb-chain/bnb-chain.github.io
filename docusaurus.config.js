@@ -14,7 +14,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'bnb-chain', // Usually your GitHub org/user name.
   projectName: 'bnb-chain.github.io', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
+  //deploymentBranch: 'gh-pages',
     
   /*i18n: {
       defaultLocale: 'en',
