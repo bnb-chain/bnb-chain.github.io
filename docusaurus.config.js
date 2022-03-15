@@ -12,8 +12,8 @@ const config = {
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'bnb-chain', // Usually your GitHub org/user name.
-  projectName: 'bnb-chain.github.io', // Usually your repo name.
+  organizationName: 'bnb-chain', 
+  projectName: 'bnb-chain.github.io', 
   deploymentBranch: 'gh-pages',
     
   /*i18n: {
@@ -27,12 +27,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/bnb-chain/bnb-chain.github.io/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
             'https://www.bnbchain.world/en/blog/',
         },
