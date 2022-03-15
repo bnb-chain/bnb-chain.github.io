@@ -34,7 +34,7 @@ Your BNB Wallet will instantly be displayed on the home screen. You can also cli
 
 **Step 4:** Send BNB tokens to this address.
 
-![img](../assets/anh3.png)
+![img](../assets/picture3.png)
 
 
 ## How to send BNB and BEP20 tokens from Coin98 Mobile Wallet
