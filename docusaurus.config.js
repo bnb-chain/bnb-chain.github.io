@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BNB Chain Documentation',
-  url: 'https://bnb-chain.github.io/bnb-chain.github.io/',
+  url: 'https://bnb-chain.github.io/',
   baseUrl: '/bnb-chain.github.io/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
