@@ -1,6 +1,5 @@
 ---
 sidebar_label: Getting Started
-hide_table_of_contents: false
 ---
 
 # Getting Started
@@ -60,6 +59,17 @@ and node RPC interfaces.
 - Become a validator of BSC - [testnet](/validator/guideline-testnet.md) and [mainnet]](/validator/guideline-mainnet.md)
 - [Develop wallets](wallet/wallet_api.md) and tools to help users use Dapps
 
+## Wallet
+The easiest way to use BNB Beacon and BNB Smart Chain is through a wallet with support for accounts and transfers on these chains.
+
+BNB Chain provides a Web Wallet at [https://www.bnbchain.world/en](https://www.bnbchain.world/en). BNB Chain also provides Web Wallet for testnet at [https://testnet.binance.org](https://testnet.binance.org). Both provide the functions described below:
+
+- Generating crypto keys and addresses, which serves as the base of a wallet
+- Showing the balances of assets on the addresses
+- Sending and receiving assets
+
+Binance Web Wallet also presents a trading UI, where you can examine market data and manage your orders to trade among the listed assets. BNB Smart Chain supports several popular wallets like [MetaMask](wallet/metamask.md) and [TrustWallet](wallet/trustwallet), to learn more about the supported wallets refer [here](Wallet.md). For a list of tutorials on how to use other supported wallets with BNB Smart Chain, refer [here](wallets/wallet-tutorial-overview).
+
 ## BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 
 
@@ -74,17 +84,6 @@ In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network tha
 As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Chain network you will need to have some BNB tokens. 
 - BNB tokens can also be received for usage on testnet through the [testnet faucet](https://testnet.binance.org/faucet-smart).
 - The BNB tokens for usage on mainnet are available for purchase on multiple leading exchanges and wallets as explained [here](#wallet). You can also refer [here][wallets/wallet-tutorial-overview] for tutorials on how to use different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
-
-## Wallet
-The easiest way to use BNB Beacon and BNB Smart Chain is through a wallet with support for accounts and transfers on these chains.
-
-BNB Chain provides a Web Wallet at [https://www.bnbchain.world/en](https://www.bnbchain.world/en). BNB Chain also provides Web Wallet for testnet at [https://testnet.binance.org](https://testnet.binance.org). Both provide the functions described below:
-
-- Generating crypto keys and addresses, which serves as the base of a wallet
-- Showing the balances of assets on the addresses
-- Sending and receiving assets
-
-Binance Web Wallet also presents a trading UI, where you can examine market data and manage your orders to trade among the listed assets. Learn about the list of wallets available [here](Wallet.md).
 
 ## Chain Explorer
 Chain Explorer provides a portal to explore blocks and transaction details. On [Beacon Chain Explorer](https://explorer.binance.org/) and [BNB Smart Chain Explorer](https://bscscan.com/), you can also check different asset types, the distribution of their ownerships, and owners' transactions.
