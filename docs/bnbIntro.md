@@ -1,13 +1,13 @@
 ---
 sidebar_label: BNB Chain Platform Overview
-sidebar_position: 1
 ---
+
 # Introduction 
 BNB Chain, one of the most popular blockchains in the world, dedicates to delivering its core infrastructure necessary for future public adoption, and always remains as a community-first and open-source ecosystem built on a permissionless and decentralized environment.
 
 Binance Chain and Binance Smart Chain have formed together as BNB Chain since February 15, 2022. BNB Chain comprises BNB Beacon Chain (previously Binance Chain) and BNB Smart Chain (previously Binance Smart Chain). While BNB (formerly called “Binance Coin”) has also been renamed as “Build and Build.” The name change is not merely for welcoming the crypto world with more than 1 billion users but also to strengthen the delivery of the core infrastructure necessary for future public adoption and, most importantly, to build a better ecosystem for embracing the MetaFi. 
 
-MetaFi is a concept that provides advanced and sophisticated DeFi Infra to all the different types of projects such as metaverse, GameFi, SocialFi, Web3, and NFTs and puts them under one umbrella – MetaFi.
+[MetaFi](https://www.bnbchain.world/en/blog/metafi-when-defi-meets-meta/) is a concept that provides advanced and sophisticated DeFi Infra to all the different types of projects such as metaverse, GameFi, SocialFi, Web3, and NFTs and puts them under one umbrella – MetaFi.
 
 This document will show the whole picture of the BNB Chain, how it works, and what it benefits.
 
