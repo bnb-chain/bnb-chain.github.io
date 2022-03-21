@@ -44,6 +44,7 @@ $ yarn start
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Build
+We recommend to use the yarn package for building and deploying this website.
 
 Using `npm`
 
