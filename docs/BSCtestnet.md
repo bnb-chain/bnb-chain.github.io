@@ -1,8 +1,7 @@
 ---
 sidebar_label: BSC Testnet
-sidebar_position: 2
-hide_table_of_contents: false
 ---
+
 # BSC Testnet
 
 ### What is a Testnet?
@@ -13,7 +12,7 @@ The validators on the testnet are from the development team.
 
 You can connect a node to the testnet by downloading the [node binary](https://github.com/binance-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix) to use this [configuration](https://github.com/binance-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix/config).
 
-There is also a [web wallet](https://testnet.binance.org/en/) that can directly interact with the DEX. testnet.
+There is also a [web wallet](https://testnet.binance.org/en/) that can directly interact with the DEX testnet.
 
 ### What is the Testnet good for?
 
