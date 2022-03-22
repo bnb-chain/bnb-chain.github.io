@@ -13,13 +13,13 @@ BNB Smart Chain's mainnet can be used for deploying actual dApps on the BSC bloc
 There are multiple ways to purchase BNB Tokens for use on the mainnet. Other than the official [BNB Extension Wallet](binance.md), BNB Smart Chain supports several popular wallets like [MetaMask](wallet/metamask.md) and [TrustWallet](wallet/trustwallet.md), to learn more about the supported wallets refer [here](Wallet.md). For a list of tutorials on how to use different supported wallets with BNB Smart Chain, refer [here](wallets/wallet-tutorial-overview). 
 
 ## How to Access BSC
-There are multiple ways to access the BSC mainnet. One possible method is to join the mainnet as a [full node](validator/guideline-mainnet.md). You can also use the RPC endpoints specified [here](rpc.md) to connect to the mainnet.
+There are multiple ways to access the BSC mainnet. One possible method is to join the mainnet as a [full node](validator/guideline-mainnet.md). You can also use the RPC endpoints specified [here](rpc.md) to connect to the mainnet. RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction. RPC endpoints are also used with web wallets like [MetaMask](wallet/metamask.md) to connect to the BSC mainnet.
 
 ## How to Know BSC Ecosystem
-To get an overview of the ecosystem and working of BNB Smart Chain, refer [here](learn/intro.md). Refer to [here](learn/consensus.md), to learn about the working of the consensus engine of BSC. To learn about the governance mechanism of BSC, refer [here](learn/bsc-gov.md)
+To get an overview of the BNB Smart Chain, refer [here](learn/intro.md). To get a better understanding of the tools and ecosystem of the BSC, refer [here](learn/ecosystem). To learn about the working of the consensus engine of BSC, refer [here](learn/consensus.md). To learn about the governance mechanism of BSC, refer [here](learn/bsc-gov.md). To learn about the different projects currently deployed on BSC, refer [here](https://bnbproject.org/#/). To get an overview of the portfolio of BSC, refer [here](https://dappradar.com/rankings/protocol/binance-smart-chain).
 
 ## How to Build on BSC
-You can build deploy [smart contracts](remix.md), [NFTs](nft-metadata-standard.md), [BEP20 Tokens](BEP20.md), and (BEP20 Upgradable Contracts)(proxy.md) on the BNB Smart Chain.
+You can build deploy [smart contracts](remix.md), [NFTs](nft-metadata-standard.md), [BEP20 Tokens](BEP20.md), and [BEP20 Upgradable Contracts](proxy.md) on the BNB Smart Chain.
 
 ## BSC today
 To get an overview of what is the current state and the future developements that BSC's team is working refer [here](dev-outlook-2022.md).
