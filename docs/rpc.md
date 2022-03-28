@@ -1,8 +1,7 @@
 ---
 sidebar_label: RPC
-sidebar_position: 2
-hide_table_of_contents: false
 ---
+
 # JSON-RPC Endpoint
 
 ## Available Resources
@@ -20,8 +19,9 @@ Recommend
 * https://bsc-dataseed.binance.org/
 * https://bsc-dataseed1.defibit.io/
 * https://bsc-dataseed1.ninicoin.io/
+* https://bsc.nodereal.io
 
-
+<!--
 Backups
 
 * https://bsc-dataseed2.defibit.io/
@@ -40,7 +40,7 @@ BSC Websocket Endpoints:
 *Note: provided by community with no quality promised, building your node should be always the long term goal*
 
 * wss://bsc-ws-node.nariox.org:443
-
+-->
 
 BC RPC Endpoints:
 
@@ -79,7 +79,7 @@ BC RPC Endpoints:
 
 ### Rate limit
 
-The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
+The rate limit of BSC endpoint on Testnet and Mainnet is 8K/5min.
 
 ### 3rd Party Provider
 
