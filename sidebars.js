@@ -39,10 +39,8 @@ const sidebars = {
       collapsed: true,
       label: 'BNB Smart Chain',
       items: ['learn/intro', 'learn/bas',
-        //{type: 'category', collapsed:true,  label: 'About',   items: ['learn/intro', 'learn/terminology']},
           {
           type: 'category',
-          //collapsible: true,
           collapsed: true,
           label: 'Core Concepts',
           items: ['learn/consensus', 
@@ -53,7 +51,6 @@ const sidebars = {
                     items: ['learn/cross-chain', 'learn/system-contract',
                             'learn/cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
                             'learn/oracle-module','learn/oracle-relayer']},
-                            //'learn/bsc-gov-workflow',
                             'learn/bsc-gov']
           },
           {
