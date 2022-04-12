@@ -19,36 +19,6 @@ const sidebars = {
   // But you can create a sidebar manually
 
 
- /* faqSideBar:[{type: 'doc',   id: 'cat-FAQs',   label: 'FAQs'}],*/
-  
-  /*bcSidebar:[    
-    {
-    type: 'category',
-    label: 'Beacon Chain',
-   // collapsible: true,
-    collapsed: true,
-    items: ['bcdevelop'],//'develop','Learn','Validate','Integrate','Wallet', 'FAQs'],
-     /* {
-        type: 'category',
-        collapsible: true,
-        collapsed: false,
-        label: 'Develop',
-        items: ['develop'], //add the names of the docs as per the list to create
-      },
-      'Learn','Validate','Integrate','Wallet', 'FAQs'],
-      },
-     ],
-*/
-/*  beaconSideBar :[
-    {
-      type: 'category',
-      label: 'Beacon Chain',
-     // collapsible: true,
-      collapsed: true,
-      items: ['beacon-intro' ],
-    },
-  ],*/
-
   bscSideBar: [
     {
       type: 'category',
@@ -68,14 +38,14 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       label: 'BNB Smart Chain',
-      items: ['learn/intro',
+      items: ['learn/intro', 'learn/bas',
         //{type: 'category', collapsed:true,  label: 'About',   items: ['learn/intro', 'learn/terminology']},
           {
           type: 'category',
           //collapsible: true,
           collapsed: true,
           label: 'Core Concepts',
-          items: ['learn/consensus', //'learn/genesis',
+          items: ['learn/consensus', 
                     {type: 'category',
                     //collapsible: true,
                     collapsed: true,
