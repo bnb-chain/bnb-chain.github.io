@@ -25,7 +25,7 @@ const sidebars = {
       label: 'BNB Chain',
      // collapsible: true,
       collapsed: true,
-      items: ['bnbIntro', 'getting-started',
+      items: ['bnbIntro', 'getting-started, 'learn/bas',
     
       {
         type: 'doc', label: 'Tutorials', id:'tutorials'
@@ -38,7 +38,7 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       label: 'BNB Smart Chain',
-      items: ['learn/intro', 'learn/bas',
+      items: ['learn/intro', 
           {
           type: 'category',
           collapsed: true,
