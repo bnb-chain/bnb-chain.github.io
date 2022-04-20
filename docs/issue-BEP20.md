@@ -3,6 +3,8 @@ sidebar_label: Issue BEP20 Tokens
 sidebar_position: 2
 ---
 
+# Issue BEP20 Tokens
+
 **Compile and Deploy BEP20 Contract**
 
 1. Open Remix IDE: [https://remix.ethereum.org](https://remix.ethereum.org/)
