@@ -27,7 +27,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/bnb-chain/bnb-chain.github.io/blob/master/',
+          editUrl: 'https://github.com/bnb-chain/bnb-chain.github.io/',
         },
         blog: {
           showReadingTime: true,
