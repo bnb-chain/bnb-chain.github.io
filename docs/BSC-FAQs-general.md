@@ -16,7 +16,7 @@ The execution of a Smart Contract may slow down the esxchange function and add n
 
 ### Where will the published whitepaper be found?
 
-<https://binance.org/whitepaper.pdf> and also <https://github.com/binance-chain/whitepaper>, where feedback is more than welcome.
+The whitepaper can be found at <https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md>. Your feedback is more than welcome.
 
 ### Where can I take a look at BNB Smart Chain  code? Is there a GitHub repository?
 
