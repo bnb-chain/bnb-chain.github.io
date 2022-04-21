@@ -25,6 +25,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 
 | Components | Existing projects | Potentially interesting projects
 |-|-|-
+| BNBChain List Explorer | [BNBChain List](https://www.bnbchainlist.org/) 
 | Desktop Wallets | [Wise Safe](https://smart-binance.portonvictor.org/) (a port of Gnosis Safe), [Mycrypto](https://download.mycrypto.com/), [Tokenpocket](https://www.tokenpocket.pro/en/download/pc)
 | Browser Extensions | [Binance Wallet](https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp),[MetaMask](https://metamask.io/), [MathWallet](https://mathwallet.xyz/en/), [SafePal](https://www.safepal.io/)  
 | Mobile Wallets|  [MathWallet](https://mathwallet.xyz/en/), [TrustWallet](https://trustwallet.com/), [BitKeep](https://bitkeep.com/), [TokenPocket](https://www.tokenpocket.pro/), [SafePal](https://www.safepal.io/), [ONTO Wallet](https://www.onto.app/en), [Hyperpay](https://hyperpay.tech/), [AlphaWallet](https://alphawallet.com/), [Cobo](https://cobo.com/), [Bridge Wallet](https://www.mtpelerin.com/bridge-wallet)
