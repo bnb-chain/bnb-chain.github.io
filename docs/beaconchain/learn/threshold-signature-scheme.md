@@ -44,7 +44,7 @@ Let’s take a look at the major steps in TSS:
 
 You can download tss client and Beacon Chain  Commandline here:
 * Mainnet: <https://github.com/bnb-chain/node/releases>
-* Testnet: <https://github.com/binance-chain/node-binary/tree/master/cli/testnet/0.6.3>
+* Testnet: <https://github.com/bnb-chain/node/releases>
 
 ## How to Use
 * **Warning**: Please test your TSS setup before use this on mainnet.

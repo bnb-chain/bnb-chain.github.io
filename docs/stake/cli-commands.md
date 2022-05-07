@@ -7,7 +7,7 @@ In order to run the CLI commands related to staking and delegation, it important
 Please download `bnbcli` binary from [here](https://github.com/bnb-chain/node/releases)
 
 ### For Testnet
-Please download `tbnbcli` binary from [here](https://github.com/binance-chain/node-binary/tree/master/cli/testnet)
+Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/node/releases)
 
 ## Create BSC Validator
 
