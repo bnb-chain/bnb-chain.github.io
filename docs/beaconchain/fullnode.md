@@ -28,8 +28,7 @@ https://github.com/bnb-chain/node/releases
 
 Please go to [changelog](https://github.com/bnb-chain/node/releases) to get the information about the latest release of full node version.
 
-Go to directory according to the network you want to join in.<br/>
-Replace the `network` variable with `testnet` or `prod` in the following command:
+Download the configuration files according to the network you want to join in (mainnet_config.zip/testnet_config.zip).
 
 ```bash
 upzip linux_binary.zip

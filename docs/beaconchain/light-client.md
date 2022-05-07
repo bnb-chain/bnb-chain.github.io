@@ -29,8 +29,7 @@ The light client will soon be open sourced, afterwards you can cross compile lig
 Download:
 [node repo](https://github.com/bnb-chain/node/releases)
 
-Go to directory according to the network you want to join in.<br/>
-Replace the `network` variable with `testnet` or `prod` in the following command:
+Download the configuration files according to the network you want to join in (mainnet_config.zip/testnet_config.zip).
 
 Help info:
 

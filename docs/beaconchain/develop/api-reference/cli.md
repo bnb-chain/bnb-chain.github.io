@@ -16,7 +16,7 @@ balance, transaction detail by transaction hash and etc.
 
 You can download Beacon Chain CLI releases here: [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases)
 
-You can choose to download the version for testnet or mainnet. Replace the network var with `testnet` or` prod` in the following command:
+You can choose to download the version for testnet (`tbnbcli`) or mainnet (`bnblci`).
 
 ### CLI installation
 
