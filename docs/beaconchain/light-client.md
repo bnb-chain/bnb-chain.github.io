@@ -27,16 +27,10 @@ The light client will soon be open sourced, afterwards you can cross compile lig
 ## Run a light client node
 
 Download:
-```bash
-git clone https://github.com/binance-chain/node-binary.git
-```
+[node repo](https://github.com/bnb-chain/node/releases)
 
 Go to directory according to the network you want to join in.<br/>
 Replace the `network` variable with `testnet` or `prod` in the following command:
-
-```bash
-cd node-binary/lightd/{network}/{version}
-```
 
 Help info:
 
@@ -72,8 +66,8 @@ Start the light client node according to the Platform. Replace the `platform` va
 
 There are two required parameters to start a light client node: `chain id` and `full node addr`.<br/>
 The `chain id` of the network that you want join in.<br/>
-You can find chain id at [genesis file in test network](https://github.com/binance-chain/node-binary/blob/master/fullnode/testnet/0.5.8/config/genesis.json)
-or [genesis file in prod network](https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/0.5.8/config/genesis.json).<br/>
+You can find chain id at [genesis file in test network](https://github.com/bnb-chain/node/releases/download/v0.9.1/testnet_config.zip)
+or [genesis file in prod network](https://github.com/bnb-chain/node/releases/download/v0.9.1/mainnet_config.zip).<br/>
 The `full node addr` field can be an address of any full node that you have deployed.<br/>
 You can refer to [Run a Beacon Chain  full node](fullnode.md) to get more details.<br/>
 

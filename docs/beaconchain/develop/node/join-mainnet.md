@@ -1,7 +1,7 @@
 # Join Mainnet
 
 !!! Tip
-    See the [node-binary repo](https://github.com/binance-chain/node-binary/blob/master/README.md) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
+    See the [node repo](https://github.com/binance-chain/node) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
 
 !!! warning
     You need to install [bnbchaind](install.md) before you go further
@@ -10,7 +10,7 @@
 The hardware must meet certain requirements to run a Full Node.
 
 * Desktop or laptop hardware running recent versions of Mac OS X, Windows, or Linux.
-* 500 GB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
+* 1 TB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
 * 4 cores of CPU and 8 gigabytes of memory (RAM).
 * A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
 * Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain  More hours will be better, run your node continuously for best results.
@@ -25,7 +25,7 @@ You can setup this by:
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-Then, download `app.toml` and `config.toml` from `node-binary/fullnode/{network}/{version}/config/` into `$BNCHOME/config`
+Then, download `app.toml` and `config.toml` from mainnet_config.zip/testnet_config.zip into `$BNCHOME/config`
 
 You can edit this moniker later, in the ~/.gaiad/config/config.toml file:
 ```toml
@@ -45,9 +45,11 @@ Now your Full Node has been initialized!
 Fetch the mainnet's genesis.json file into node-binary's config directory.
 ```
 cd -p $HOME/.bnbchaind/config
-wget https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/0.6.3-hotfix/config/genesis.json
+wget https://github.com/bnb-chain/node/releases/download/v0.9.1/mainnet_config.zip
+unzip mainnet_config.zip
+cp mainnet_config/genesis.json .
 ```
-Note we use the latest directory in the node-binary repo which contains details for the mainnet like the latest version and the genesis file.
+Note the releases of node repo contain details of the latest version and the genesis file.
 
 ::: tip If you want to understand genesis file, click [here](../../learn/genesis.md) :::
 

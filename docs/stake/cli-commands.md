@@ -4,7 +4,7 @@
 In order to run the CLI commands related to staking and delegation, it important to first download the `bnbcli` and   `tbnbcli` binaries.
 ### Download Binaries
 ### For Mainnet
-Please download `bnbcli` binary from [here](https://github.com/binance-chain/node-binary/tree/master/cli/prod)
+Please download `bnbcli` binary from [here](https://github.com/bnb-chain/node/releases)
 
 ### For Testnet
 Please download `tbnbcli` binary from [here](https://github.com/binance-chain/node-binary/tree/master/cli/testnet)
