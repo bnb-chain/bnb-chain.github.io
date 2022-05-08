@@ -156,21 +156,23 @@ This error occurs due to data corruption. You can run geth snapshot verify-state
 *_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap –diffsync --txlookuplimit 0_*
 ~~~~
 
-Try pruning the state -- stop geth, then run geth --datadir=node snapshot prune-state. Assuming that datadir is node, change that if it's elsewhere then restart after it's done. Follow https://github.com/binance-chain/bsc/issues/502 to get more tips about how to maintain a synced node.
+Try pruning the state -- stop geth, then run geth --datadir=node - prune-state. Assuming that datadir is node, change that if it's elsewhere then restart after it's done. Follow https://github.com/binance-chain/bsc/issues/502 to get more tips about how to maintain a synced node.
 
 ### How to start the geth node through snapshot to get node synced?
 
-The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows: download geth 1.1.5 and make it executable, optionally move it `/usr/local/bin/geth`
+The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows: 
+
+  * Download the latest version of geth from the [official site](https://github.com/bnb-chain/bsc-snapshots) and make it executable, optionally move it `/usr/local/bin/geth`
   
-  * download mainnet.zip and unzip
+  * Download mainnet.zip and unzip
   
-  * generate genesis using command below, will also create a mainnet folder for blockchain data ./geth_linux --datadir mainnet init genesis.json
+  * Generate genesis using command below, will also create a mainnet folder for blockchain data ./geth_linux --datadir mainnet init genesis.json
   
-  * download the 14 nov 2021 snapshot
+  * Download the latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots)
    
-  * extract snapshot
+  * Extract the snapshot
  
-  * move snapshot data to mainnet folder
+  * Move the snapshot data to mainnet folder
 
       `rm -rf mainnet/geth/chaindata`  
 
