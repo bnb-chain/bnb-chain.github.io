@@ -3,13 +3,13 @@ sidebar_label: Sharding and Multi-chain
 sidebar_position: 2
 ---
 
-## Sharding and Multi-chain
+# Sharding and Multi-chain
 The BNB community has never believed in the “one-chain-fits-all” theory. As the decentralized computing infrastructure, the blockchain will bear the same principle of diversification among generalization and specialization. Also the blockchain is a computing resource, which is scarce as other resources. No users will expect their favorite games and/or social media applications to contend computing resources from their financial ledger and business transactions, let alone they expect all these applications to charge the same price.
 
 The team strongly believe sharding and multiple blockchain are the future for the non-stop increasing demand for decentralized computing power and storage. The cross-shard and cross-chain communication will be the key topic. Here 2 types of sub-chains are discussed below, which are both initial proposals and call for comments.
 
-## BSC Application Sidechain (BAS)
-BSC Application SideChain is an infrastructure introduced to help developers and practitioners to build and run their own blockchain as their internal value system for a massive user application, while still maintaining a close connection with BSC.
+## BNB Application Sidechain (BAS)
+BNB Application SideChain (BAS) is an infrastructure introduced to help developers and practitioners to build and run their own blockchain as their internal value system for a massive user application, while still maintaining a close connection with BSC.
 
 The “massive user application” here means a sustainable dApp with 1 million daily active users (DAU). dApps with such size are expected to have an obviously endogenous economic and social ecosystem, and can run on a standalone base system. The typical types of such applications that have been seen so far are GameFi and SocialFi.
 
