@@ -3,6 +3,8 @@ sidebar_label: Scaling
 sidebar_position: 2
 ---
 
+# Scaling 
+
 ## BSC Throughput Boost
 
 Though many have challenged that BSC chose to scale up the capacity by shorter block time and larger block gas limit. There is strong faith that there is still room to improve the capacity of the current PoSA based BSC.
