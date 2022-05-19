@@ -3,7 +3,7 @@ sidebar_label: Community
 sidebar_position: 2
 ---
 
-## Buidling For the Community, With the Community, and By the Community
+# Buidling For the Community, With the Community, and By the Community
 
 BNB has been on a journey. BSC is not the end, but another start. BSC is a testimony on how a great ecosystem can be co-built by the community. The same as other blockchain projects, the secret sauce of the success always includes the attitude to be more open, inclusive, collaborative, persistent and down-to-earth.
 
