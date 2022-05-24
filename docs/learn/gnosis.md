@@ -1,5 +1,5 @@
 ---
-sidebar_label: Gnosis Safe Multisig on BNB Smart Chain
+sidebar_label: Gnosis Safe Multisig
 sidebar_position: 2
 hide_table_of_contents: false
 ---
