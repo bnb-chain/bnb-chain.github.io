@@ -186,7 +186,7 @@ const sidebars = {
           label: 'Tutorials on Third Party Wallets',
           items:['wallets/wallet-tutorial-overview','wallet/metamask','wallet/arkane', 'wallet/math', 'wallet/myetherwallet',
              'wallet/trustwallet', 'wallet/ezdefi', 'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
-             'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken']
+             'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken', 'learn/gnosis']
        },
         ]
       },
