@@ -161,8 +161,7 @@ If you do not download the binaries completely, you will see the following messa
 ./bnbchaind: line 1: version: command not found ./bnbchaind: line 2: oid: command not found /Library/Developer/CommandLineTools/usr/bin/size: 45160816 No such file or directory
 ```
 
-Since all the binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please use this [script](https://github.com/binance-chain/node-binary/blob/master/install.sh) to download the binaries or use `git lfs clone`.
-
+Since the old binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please use this [repo](https://github.com/bnb-chain/node/releases) to download the binaries.
 #### Cannot query a specific block
 
 Once you have your own node running, you can start querying from it. But sometimes you may not be ablt to get the information you want. For example:
