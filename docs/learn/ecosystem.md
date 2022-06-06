@@ -73,7 +73,7 @@ Goto [BSC Developer Ecosystem](https://github.com/binance-chain/bsc-ecosystem/bl
 | Oracle | [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Sphinx](https://m.sphinx.finance/)
 | Archive Data |[InfStones](https://infstones.com/)
 | File Storage, Cloud | |
-| Cross Chain Bridges | [Binance Bridge](https://www.binance.org/en/bridge), [AnySwap](https://anyswap.exchange/dashboard), [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/), [JellySwap](https://jelly.market/), [PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/) | Decentralized, trustless, Open Access|
+| Cross Chain Bridges | [AnySwap](https://anyswap.exchange/dashboard), [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/), [JellySwap](https://jelly.market/), [PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/) | Decentralized, trustless, Open Access|
 | Randomness | | Trusless, Decentralized Randomness solution
 | Licensing |
 | Computation |
