@@ -33,7 +33,7 @@ const config = {
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://www.bnbchain.world/en/blog/',
+            'https://www.bnbchain.org/en/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -115,7 +115,7 @@ const config = {
               },
               {
                 label: 'Blog',
-                href: 'https://www.bnbchain.world/en/blog/',
+                href: 'https://www.bnbchain.org/en/blog/',
               },
               {
                 label: 'GitHub',
