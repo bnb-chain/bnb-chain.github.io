@@ -37,7 +37,7 @@ The BSC Core Team strongly believes in partition chains and a multi-chain future
 
 The cross-shard and cross-chain/multi-chain interoperability will be the key topic of 2022. The BSC validators and developers community is dedicated to fulfilling BSC’s vision to operate at the crossroads of a decentralized blockchain future. Specifically, we aim to achieve this by implementing new technologies on BSC via BSC Application Side Chain (BAS) and BSC Partition Chain (BPC) infrastructure layers.
 
-![BSC 2022](/img/assets/new-eco.jpg)
+![BSC 2022](/img/assets/BNBChain2022.jpg)
 
 ### BSC Application Side Chain (BAS)
 The BAS is an infrastructure introduced to help developers and node operators build and run their own blockchain as their internal value system for a massive number of users while still maintaining a close connection with BSC. Any project developer will be able to deploy their own BAS with its unique specifications and validator set. This validator set can run with fewer validators than BSC, depending on the BAS deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS. The typical usage of BAS is like the Ronin chain for the Axie Infinity.  However, to minimize the potential risks of the side chain, a new protocol (including built-in asset types and cross-chain) should be introduced to ensure seamless liquidity between BAS and BSC.
