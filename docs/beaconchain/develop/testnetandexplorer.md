@@ -7,7 +7,7 @@ The testnet is a test environment for BNB Chain network, run by the BNB Chain de
 
 The validators on the testnet are from development team.
 
-You can connect a node to the testnet by downloading the [node binary](https://github.com/binance-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix) to use this [configuration](https://github.com/binance-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix/config).
+You can connect a node to the testnet by downloading the [node binary](https://github.com/bnb-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix) to use this [configuration](https://github.com/bnb-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix/config).
 
 There is also a [web wallet](https://testnet.binance.org/en/) that can directly interact with the DEX. testnet.
 
@@ -24,7 +24,7 @@ There is also a [web wallet](https://testnet.binance.org/en/) that can directly 
 
 **Steps to claim testnet BNB:**
 
-1. Create a new Wallet of Binance Smart Chain testnet with [MetaMask or MathWallet](https://docs.binance.org/wallets/bsc-wallets.html)
+1. Create a new Wallet of Binance Smart Chain testnet with [MetaMask or MathWallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
 2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
 
 To request funds, please make a tweet with your Binance Smart Chain address pasted into the contents. Then, copy-paste the tweets URL!
@@ -32,10 +32,10 @@ To request funds, please make a tweet with your Binance Smart Chain address past
 
 3. Transfer From BNB Smart Chain to Beacon Chain
 
-You can use [Binance Extension Wallet](https://docs.binance.org/smart-chain/wallet/binance.html#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
+You can use [Binance Extension Wallet](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
 
 If you wish to test Beacon Chain features, you could transfer BNB cross-chain with MathWallet dApp:
-https://docs.binance.org/smart-chain/wallet/math.html#transfer-bnb-from-bsc-to-bc
+https://docs.bnbchain.org/docs/wallet/math#transfer-bnb-from-bsc-to-bc-in-testnet
 
 
 ### Explorers for Testnet

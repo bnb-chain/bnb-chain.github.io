@@ -16,7 +16,7 @@ Please read the [FAQ](faq/faq.md) to get started.
 
 ## What is BNB Smart Chain?
 
-[BNB Smart Chain ](https://www.binance.org/en/smartChain) is an innovative solution to bring programmability and interoperability to Beacon Chain . BNB Smart Chain relies on a system of [41 validators with Proof of Staked Authority (PoSA)](https://github.com/binance-chain/whitepaper/blob/master/WHITEPAPER.md) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+[BNB Smart Chain](https://www.binance.org/en/smartChain) is an innovative solution to bring programmability and interoperability to Beacon Chain . BNB Smart Chain relies on a system of [41 validators with Proof of Staked Authority (PoSA)](https://https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
 Please read the [FAQ](faq/bsc/general.md) to get started.
 
@@ -56,7 +56,7 @@ Because BSC is EVM-compatible, it launched with support for the rich universe of
 
 You can:
 
-- Send and receive [BNB](https://docs.binance.org/smart-chain/wallet/binance.html#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](https://docs.binance.org/smart-chain/wallet/binance.html#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
+- Send and receive [BNB](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](https://docs.bnbchain.org/docs/binance#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
 - Explore the transaction history and blocks on the chain, via [bscscan](https://bscscan.com), API
 and node RPC interfaces.
 - [Stake you BNB](../wallet/staking.md) to earn some block rewards

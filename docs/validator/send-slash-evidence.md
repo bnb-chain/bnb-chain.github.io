@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # How to send BSC Slash Evidence
 
-To submit BSC slash evidence, download the [bnbcli](https://github.com/binance-chain/node-binary/tree/master/cli/prod/0.8.2) binary.
+To submit BSC slash evidence, download the [bnbcli](https://github.com/bnb-chain/node-binary/tree/master/cli/prod/0.8.2) binary.
 
 ### Command for submitting evidence
 ```

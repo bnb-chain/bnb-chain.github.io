@@ -31,7 +31,7 @@ Go to this faucet page: <https://testnet.binance.org/faucet-smart>
 
 ### Transfer BNB from BSC to BC
 
-Please refer to this [guide](https://binance-wallet.gitbook.io/binance-chain-extension-wallet/best-practice/transfer-testnet-bnb-from-bsc-to-bc) to transfer BNB with Binance Chain extension wallet.
+Please refer to this [guide](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) to transfer BNB with Binance Chain extension wallet.
 
 
 ### Become a validator candidate
@@ -42,7 +42,7 @@ Go to [testnet explorer](https://testnet-explorer.binance.org/) to verify your t
 
 ### Get Genesis file and Config file
 ```bash
-wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+wget --no-check-certificate  $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
 unzip testnet.zip
 ```
 

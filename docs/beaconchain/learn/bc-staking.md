@@ -82,10 +82,10 @@ Undelegate Smart Chain Validator | 0.002 |
 
 ### Download
 #### Mainnet
-Please download `bnbcli` binary from [here](https://github.com/binance-chain/node-binary/tree/master/cli/prod)
+Please download `bnbcli` binary from [here](https://github.com/bnb-chain/node-binary/tree/master/cli/prod)
 
 #### Testnet
-Please download `tbnbcli` binary from [here](https://github.com/binance-chain/node-binary/tree/master/cli/testnet)
+Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/node-binary/tree/master/cli/testnet)
 
 ### Create BSC Validator
 

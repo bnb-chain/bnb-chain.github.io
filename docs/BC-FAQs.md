@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 ### What is Beacon Chain , or Binance DEX?
 
-Beacon Chain  is the blockchain initially developed by Binance and community. Binance DEX is the
+Beacon Chain is the blockchain initially developed by Binance and community. Binance DEX is the
 decentralized exchange module developed on top of the Beacon Chain  blockchain.
 
 ### What is the design principle of Beacon Chain ?
@@ -19,7 +19,7 @@ The main focuses for the design of Beacon Chain  are:
 - High performance: low latency, high throughput for a large user base, and high liquidity trading.
    We target to achieve 1 second block times, with 1 confirmation finality.
 - Low cost: in both fees and liquidity cost.
-- Easy user experience: as friendly as Binance.com.
+- Easy user experience <!-- : as friendly as Binance.com. -->
 - Fair trading: minimize front-running, to the extent possible.
 - Evolvable: able to develop with forever-improving technology stack, architecture, and ideas.
 
@@ -53,7 +53,7 @@ Beacon Chain  native coins will be sent to their new wallets.
 ### How can I register on Beacon Chain /DEX and start trading?
 
 There is no need to register. All you need is a Beacon Chain  address, which can be generated with
-any [wallet](https://github.com/binance-chain/docs-site/blob/master/docs/wallets.md) that supports Beacon Chain . Then you can trade BNB or other assets stored on that address.
+any [wallet](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/wallets.md) that supports Beacon Chain . Then you can trade BNB or other assets stored on that address.
 
 ### How can I send orders on Binance DEX?
 #### Order
@@ -338,13 +338,13 @@ Feel free to talk to Binance community.
 
 Right now, there are 2 ways to transfer tokens cross-chain:
 
-1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Beacon Chain  and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Beacon Chain  development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
-*  [smart-contract solution](https://github.com/binance-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
-* [deputy process](https://github.com/binance-chain/bep3-deputy) written in GoLang that handles swap activities
+1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://https://github.com/bnb-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Beacon Chain  and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Beacon Chain  development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
+*  [smart-contract solution](https://github.com/bnb-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
+* [deputy process](https://github.com/bnb-chain/bep3-deputy) written in GoLang that handles swap activities
 
 Any developer is welcome to test the solutions in testnet and then use them in mainnet.
 
-2. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Beacon Chain  (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
+1. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Beacon Chain  (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
 
 Atomic swap and this centralized approach are not exclusive to other decentralized approaches, which can also be implemented in parallel. There are many cross-chain solutions being developed and we are very interested in them.
 
@@ -366,7 +366,7 @@ Validators then vote to accept the proposal.
 A deposit is taken to prevent network abuse.
 Once the proposal is accepted, the owner of the base asset can list the trading pair.
 
-For more information about this process please check the [listing guide](https://github.com/binance-chain/docs-site/blob/master/docs/list.md).
+For more information about this process please check the [listing guide](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/list.md).
 
 ### How would a third-party integrate with Beacon Chain  and Binance DEX?
 

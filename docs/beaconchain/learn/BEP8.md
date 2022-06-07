@@ -1,6 +1,12 @@
-## Introduction
+---
+sidebar_label: BEP8 Token Protocol
+hide_table_of_contents: false
+sidebar_position: 2
+---
 
-Currently, the cost to get a BEP2 token listed on Binance DEX is about 1500BNB, which is a big barrier to many small, promising projects. As explained in [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md),the idea of BEP8 Tokens is raised to accommodate the small or micro projects, intellectual properties, and other small token economies to build a more comprehensive venue for token trading.
+# Introduction
+
+Currently, the cost to get a BEP2 token listed on Binance DEX is about 1500BNB, which is a big barrier to many small, promising projects. As explained in [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md),the idea of BEP8 Tokens is raised to accommodate the small or micro projects, intellectual properties, and other small token economies to build a more comprehensive venue for token trading.
 
 Based on the limitation usage of the network, the cost of issuing and listing of such BEP8 tokens are minimized to a different magnitude. Besides, any BEP8 token issuer can choose to directly list against BNB and BUSD without the voting process of validators. Stablecoin pairs of BEP8 will provide a UX advantage and make any two BEP82 tokens exchangeable.
 

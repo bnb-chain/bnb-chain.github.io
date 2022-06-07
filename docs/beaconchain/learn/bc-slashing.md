@@ -61,7 +61,7 @@ Submit Byzaitine Behavior Evidence of A Smart Chain Validator | 10 |
 
 ### Download Binary
 
-Please download `tbnbcli` binary from [here](https://github.com/binance-chain/smart-chain-binary/tree/master/bc/cli)
+Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/smart-chain-binary/tree/master/bc/cli)
 
 ### Submit BSC evidence
 

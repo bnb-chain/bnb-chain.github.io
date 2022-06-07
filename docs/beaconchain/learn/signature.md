@@ -12,7 +12,7 @@ Signature is the evidence to prove the sender owns the transaction. It will be c
     - `source`: a string for a 64 bits integer, which is an identifier for transaction incoming tools
     - `data`: byte array, reserved for future use
 
- Here is an example in [go-sdk](https://github.com/binance-chain/go-sdk/blob/master/types/tx/stdsign.go#L22):
+ Here is an example in [go-sdk](https://github.com/bnb-chain/go-sdk/blob/master/types/tx/stdsign.go#L22):
  ```golang
  // StdSignMsg def
 type StdSignMsg struct {

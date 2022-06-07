@@ -16,7 +16,7 @@ You can use:
 * [Binance Chain extension wallet](../../../wallet/binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 * [Trust Wallet](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
-* [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
+* [command line tool](https://github.com/bnb-chain/node/releases/tag/v0.8.1)
 
 
 

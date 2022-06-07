@@ -8,7 +8,7 @@ hide_table_of_contents: false
 There are public nodes running by BNB Chain community which will allow you to interact with the blockchain.
 
 ### REST API
-[Accelerated nodes](https://docs.binance.org/faq.html#what-is-the-accelerated-node) provide advanced API services for the public.<br/>
+[Accelerated nodes](https://docs.bnbchain.org/docs/beaconchain/faq/faq#what-is-the-accelerated-node) provide advanced API services for the public.<br/>
 The list of all the Rest API information available on accelerated node can be found: [here](api-reference/dex-api/paths.md)
 
 ### Node RPC
@@ -33,13 +33,13 @@ There are multiple advanced SDK solutions available for BNB Chain. The majority 
 
 List of currently available SDKs and their respective documentations:
 
-- [Go](https://github.com/binance-chain/go-sdk) - [Documentation](https://github.com/binance-chain/go-sdk/wiki)
-- [Java](https://github.com/binance-chain/java-sdk) - [Documentation](https://github.com/binance-chain/java-sdk/wiki)
-- [JavaScript](https://github.com/binance-chain/javascript-sdk) - [Documentation](https://github.com/binance-chain/javascript-sdk/wiki)
-- [C++](https://github.com/binance-chain/cplusplus-sdk) - [Documentation](https://github.com/binance-chain/cplusplus-sdk/wiki)
-- [C#](https://github.com/binance-chain/csharp-sdk) - [Documentation](https://github.com/binance-chain/csharp-sdk)
-- [Python](https://github.com/binance-chain/python-sdk) - [Documentation](https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain)
-- [Swift](https://github.com/binance-chain/swift-sdk) - [Documentation](https://github.com/binance-chain/swift-sdk/blob/master/README.md)
+- [Go](https://github.com/bnb-chain/go-sdk) - [Documentation](https://github.com/bnb-chain/go-sdk/wiki)
+- [Java](https://github.com/bnb-chain/java-sdk) - [Documentation](https://github.com/bnb-chain/java-sdk/wiki)
+- [JavaScript](https://github.com/bnb-chain/javascript-sdk) - [Documentation](https://github.com/bnb-chain/javascript-sdk/wiki)
+- [C++](https://github.com/bnb-chain/cplusplus-sdk) - [Documentation](https://github.com/bnb-chain/cplusplus-sdk/wiki)
+- [C#](https://github.com/bnb-chain/csharp-sdk) - [Documentation](https://github.com/bnb-chain/csharp-sdk)
+- [Python](https://github.com/bnb-chain/python-sdk) - [Documentation](https://python-bnb-chain.readthedocs.io/en/latest/bnb-chain.html#module-binance_chain)
+- [Swift](https://github.com/bnb-chain/swift-sdk) - [Documentation](https://github.com/bnb-chain/swift-sdk/blob/master/README.md)
 
 ## Important: Ensuring Transaction Finality
 
@@ -101,7 +101,7 @@ If you haven't received anything after a couple of blocks, resend the transactio
 
 ### The Recommended Way (via WebSocket)
 
-If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSONRPC via a websocket. See [Subscribing to Events via WebSocket](https://docs.binance.org/api-reference/node-rpc.html#631-subscribe).
+If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSONRPC via a websocket. See [Subscribing to Events via WebSocket](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/node-rpc#631-subscribe).
 
 ### The Alternative Way (via RPC Polling)
 

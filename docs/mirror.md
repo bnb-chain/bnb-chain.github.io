@@ -12,7 +12,7 @@ This BEP20 token is not bonded to any BEP2 token
 
 ## Motivation
 
-Anyone can call the `mirror` [method](https://github.com/binance-chain/bsc-genesis-contract/blob/af4f3993303213052222f55c721e661862d19638/contracts/TokenManager.sol#L331) to issue a BEP2 token automatically and bind them.
+Anyone can call the `mirror` [method](https://github.com/bnb-chain/bsc-genesis-contract/blob/af4f3993303213052222f55c721e661862d19638/contracts/TokenManager.sol#L331) to issue a BEP2 token automatically and bind them.
 
 ## What happens under the hood
 
@@ -34,7 +34,7 @@ Both `mirrorFee` and `relayFee` can be changed by on-chain governance
 
 To query `mirrorFee` from system contract;
 
-- Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+- Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
 
 - Query `mirrorFee` function
 
@@ -42,7 +42,7 @@ Fee= result/1e18
 
 To query `relayFee` from system contract;
 
-- Call `TokenHub` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi )
+- Call `TokenHub` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi )
 
 - Query `getMiniRelayFee` function
 
@@ -52,7 +52,7 @@ Fee= result/1e18
 
 - Call `Tokenmanager` Contract
 
-Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+Use the latest [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
 
 ![img](https://lh5.googleusercontent.com/SYyvWVcLHELSE72JSXqBwMJB6Y50jMz5HgH6irmCbyxGwr-W_Hz-vbm4IqWXAqE2hvCAXaqNKfs28ZhGFtMrMrDgWvDfEkHPunnSuxSKPpLBtuxmiX-b5yRjfczENJxKDrqSAYWy)
 
@@ -72,7 +72,7 @@ All set!
 
 You can query BEP2 Token symbol from `tokenhub` contract.
 
-Use the latest [ABI](https://raw.githubusercontent.com/binance-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
+Use the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
 
 Select `getBoundBep2Symbol` function
 

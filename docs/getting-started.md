@@ -54,7 +54,7 @@ and node RPC interfaces.
 **Developers** can also:
 
 - [Issue](issue-BEP20.md) new tokens to digitalize assets
-- [Migrate](https://github.com/binance-chain/bsc-develop-ecosystem) existing DApps
+- [Migrate](https://github.com/bnb-chain/bsc-develop-ecosystem) existing DApps
 - Run a [full node](validator/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
 - Become a validator of BSC - [testnet](/validator/guideline-testnet.md) and [mainnet]](/validator/guideline-mainnet.md)
 - [Develop wallets](wallet/wallet_api.md) and tools to help users use Dapps
@@ -112,7 +112,7 @@ A Command Line Interface is available for Linux and Mac platforms. Please refer 
 
 SDKs are also provided as a starting point for your apps.
 
-There are two advanced SDK solutions for Beacon chain: [Java](<https://github.com/binance-chain/java-sdk>) and [Golang](<https://github.com/binance-chain/go-sdk>).
+There are two advanced SDK solutions for Beacon chain: [Java](<https://github.com/bnb-chain/java-sdk>) and [Golang](<https://github.com/bnb-chain/go-sdk>).
 
 Both solutions provide functions for:
 
@@ -122,13 +122,13 @@ Both solutions provide functions for:
 
 Please refer to specific SDK documentation for more information:
 
-- [Go](https://github.com/binance-chain/go-sdk)([Documentation](https://github.com/binance-chain/go-sdk/wiki))
-- [Java](https://github.com/binance-chain/java-sdk)([Documentation](https://github.com/binance-chain/java-sdk/wiki))
-- [Javascript](https://github.com/binance-chain/javascript-sdk) ([Documentation](https://github.com/binance-chain/javascript-sdk/wiki))
-- [C++](https://github.com/binance-chain/cplusplus-sdk)([Documentation](https://github.com/binance-chain/cplusplus-sdk/wiki))
-- [C#](https://github.com/binance-chain/csharp-sdk)([Documentation](https://github.com/binance-chain/csharp-sdk))
-- [Python](https://github.com/binance-chain/python-sdk)([Documentation](https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain))
-- [Swift](https://github.com/binance-chain/swift-sdk)([Documentation](https://github.com/binance-chain/swift-sdk/blob/master/README.md))
+- [Go](https://github.com/bnb-chain/go-sdk)([Documentation](https://github.com/bnb-chain/go-sdk/wiki))
+- [Java](https://github.com/bnb-chain/java-sdk)([Documentation](https://github.com/bnb-chain/java-sdk/wiki))
+- [Javascript](https://github.com/bnb-chain/javascript-sdk) ([Documentation](https://github.com/bnb-chain/javascript-sdk/wiki))
+- [C++](https://github.com/bnb-chain/cplusplus-sdk)([Documentation](https://github.com/bnb-chain/cplusplus-sdk/wiki))
+- [C#](https://github.com/bnb-chain/csharp-sdk)([Documentation](https://github.com/bnb-chain/csharp-sdk))
+- [Python](https://github.com/bnb-chain/python-sdk)([Documentation](https://python-bnb-chain.readthedocs.io/en/latest/bnb-chain.html#module-binance_chain))
+- [Swift](https://github.com/bnb-chain/swift-sdk)([Documentation](https://github.com/bnb-chain/swift-sdk/blob/master/README.md))
 
 
 ## Blockchain Details

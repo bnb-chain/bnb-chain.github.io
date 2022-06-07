@@ -1,4 +1,4 @@
-In this article, we are going to take a tour about how to manage your BEP8 tokens in Binance Testnet [web wallet](https://testnet.binance.org/en/tokens).
+In this article, we are going to take a tour about how to manage your BEP8 tokens in BNB Chain Testnet [web wallet](https://testnet.binance.org/en/tokens).
 
 ## What is BEP8 Token
 Since the [Nightingale upgrade](https://community.binance.org/topic/2828) of Beacon Chain  testnet, a new token protocol [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is introduced. BEP8 protocol targets a different marketplace and provides several potential business cases in areas like micro-financing.

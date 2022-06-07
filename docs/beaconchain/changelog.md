@@ -482,7 +482,7 @@ In the `AtomicSwap` data structure:
 
 ### WebSocket
 
-As described in https://docs.binance.org/api-reference/dex-api/ws-streams.html#6-book-depth-streams, you can now customize the returned level from orderbook. The default level is 20 and you can extend the level to 100, 500, or 1000 with compression enabled.
+As described in https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/ws-streams#6-book-depth-streams, you can now customize the returned level from orderbook. The default level is 20 and you can extend the level to 100, 500, or 1000 with compression enabled.
 
 * Example on mainnet:
 ```
@@ -676,7 +676,7 @@ This new function is for getting the timelock history of an address by id.
 
 ### HTTP API
 
-As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.binance.org/api-reference/dex-api/paths.html
+As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths
 
 In the latest update of HTTP API for testnet, there are the following changes:
 
@@ -702,7 +702,7 @@ In the `Account` data structure, a new field `flags` is added to indicate the co
 
 ### HTTP API
 
-As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.binance.org/api-reference/dex-api/paths.html
+As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths 
 
 In the latest update of HTTP API for testnet, there are the following changes:
 
@@ -838,7 +838,7 @@ In received Payload of `trades`, a new filed `tt` is added. Its enumerate values
 
 ### Extra data from your fullnode
 
-All those [extra info](https://docs.binance.org/get-extra-data-from-fullnode.html#publish-different-messages-to-local-files ) can also be found in exported data from your fullnode.
+All those [extra info](get-extra-data-from-fullnode.md#publish-different-messages-to-local-files ) can also be found in exported data from your fullnode.
 
 ***Changes***
 

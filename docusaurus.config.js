@@ -127,7 +127,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/binance',
+                href: 'https://twitter.com/BNBCHAIN',
               },
               {
                 label: 'Telegram',

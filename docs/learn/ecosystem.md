@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 # Tools and Ecosystem of BNB Smart Chain
 
-In order to check the latest updates on the ecosystem of the [official GitHub Page](https://github.com/binance-chain/bsc-ecosystem).
+In order to check the latest updates on the ecosystem of the [official GitHub Page](https://github.com/bnb-chain/bsc-ecosystem).
 
 The goal of this page is to provide the current status of the open-source BNB Smart Chain Tech  Stack and highlight the potential interesting projects that are most demanded by the BSC community and ecosystem.  
 
@@ -30,7 +30,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | Browser Extensions | [Binance Wallet](https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp),[MetaMask](https://metamask.io/), [MathWallet](https://mathwallet.xyz/en/), [SafePal](https://www.safepal.io/)  
 | Mobile Wallets|  [MathWallet](https://mathwallet.xyz/en/), [TrustWallet](https://trustwallet.com/), [BitKeep](https://bitkeep.com/), [TokenPocket](https://www.tokenpocket.pro/), [SafePal](https://www.safepal.io/), [ONTO Wallet](https://www.onto.app/en), [Hyperpay](https://hyperpay.tech/), [AlphaWallet](https://alphawallet.com/), [Cobo](https://cobo.com/), [Bridge Wallet](https://www.mtpelerin.com/bridge-wallet)
 | Web (burner) Wallets| [Torus](https://toruswallet.io/),[MyEtherWallet](https://www.myetherwallet.com/)
-| CLI Wallet | [geth](https://github.com/binance-chain/bsc), [Seth](https://github.com/dapphub/dapptools/tree/master/src/seth)
+| CLI Wallet | [geth](https://github.com/bnb-chain/bsc), [Seth](https://github.com/dapphub/dapptools/tree/master/src/seth)
 | Multisignature Wallets| [MultiSigWallet](https://github.com/gnosis/MultiSigWallet) | gnosis
 | Hardware Wallets | [Ledger](https://www.ledger.com/ethereum-wallet), [trezor](https://trezor.io/)
 | Block Explorers | [BSCScan](https://bscscan.com/), [BitQuery](https://explorer.bitquery.io/bsc)
@@ -64,7 +64,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | Frontend BSC APIs | [Web3.js](https://github.com/ethereum/web3.js/), [Eth.js](https://github.com/ethjs), [Ethers.js](https://github.com/ethers-io/ethers.js/), [light.js](https://github.com/paritytech/js-libs/tree/master/packages/light.js)
 | Backend BSC APIs | [Web3.py](https://github.com/ethereum/web3.py), [Web3.php](https://github.com/sc0Vu/web3.php), [Java Web3](https://github.com/web3j/web3j), [Net Web3](https://nethereum.com/), [Ruby Web3](https://github.com/EthWorks/ethereum.rb)
 
-Goto [BSC Developer Ecosystem](https://github.com/binance-chain/bsc-ecosystem/blob/master/BSC_Develop_Ecosystem.md) to navigate the full list.
+Goto [BSC Developer Ecosystem](https://github.com/bnb-chain/bsc-ecosystem/blob/master/BSC_Develop_Ecosystem.md) to navigate the full list.
 
 ### Dapps infra
 | Components | Existing projects | Potentially interesting projects
@@ -108,7 +108,7 @@ Goto [BSC Developer Ecosystem](https://github.com/binance-chain/bsc-ecosystem/bl
 | Components | Existing projects | Potentially interesting projects
 |-|-|-
 | Rust |
-| Go | [BSC](https://github.com/binance-chain/bsc)
+| Go | [BSC](https://github.com/bnb-chain/bsc)
 
 
 ### Signatures

@@ -16,7 +16,7 @@ Amino supports JSON encoding natively, which is the same as other usual json mar
 
 ### Examples in Go-SDK
 
-Let's take a look at an [example function](https://github.com/binance-chain/go-sdk/blob/fe7524098533a6ce6077cf5f28f677329963d17b/client/rpc/dex_client.go#L373) of Beacon Chain  go-sdk.
+Let's take a look at an [example function](https://github.com/bnb-chain/go-sdk/blob/fe7524098533a6ce6077cf5f28f677329963d17b/client/rpc/dex_client.go#L373) of Beacon Chain  go-sdk.
 
 ```golang
 func (c *HTTP) GetProposal(proposalId int64) (types.Proposal, error) {
@@ -85,7 +85,7 @@ rawBz, err := c.keyManager.Sign(*signMsg)
 
 ```
 
-## Beacon Chain  Transaction Encoding
+## Beacon Chain Transaction Encoding
 
 Below are the data types that can be sent to Beacon Chain  as requests, and their encoding layout. To simplify the presentation, we will use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, other fields will use the default `proto3` encoding logic.
 

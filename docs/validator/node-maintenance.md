@@ -9,7 +9,7 @@ sidebar_position: 2
 The bootstrap nodes will be enhanced in the short future. So far, a discovery http service will provide some stable public p2p peers for syncing. Please visit https://api.binance.org/v1/discovery/peers to get dynamic peer info. You can append the peer info to the `StaticNodes` in the config.toml to enhance the networking of the full nodes. To avoid crowded networking, the discovery service will change the peer info from time to time and try fetch new ones if the connected peers of full node are too few.
 
 ### Binary
-All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/binance-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
+All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
 
 ### Storage
 According to the test, the performance of a fullnode will degrade when the storage size exceeds 1.5T. We suggest the fullnode always keep light storage by pruning the storage. 

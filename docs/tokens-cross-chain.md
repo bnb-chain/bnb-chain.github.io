@@ -14,7 +14,7 @@ BNB Smart Chain and Beacon Chain work together to ensure that one token can circ
 
 If you are BEP2/BEP9 token owner, please follow this [guideline](./bind-tokens.md) to complete `Bind` process when you wish to migrate to BSC.
 
-You can also use this [tool](https://github.com/binance-chain/token-bind-tool).
+You can also use this [tool](https://github.com/bnb-chain/token-bind-tool).
 
 
 

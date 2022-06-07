@@ -332,9 +332,9 @@ Feel free to talk to Binance community.
 
 Right now, there are 2 ways to transfer tokens cross-chain:
 
-1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Beacon Chain and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Beacon Chain development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
-*  [smart-contract solution](https://github.com/binance-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
-* [deputy process](https://github.com/binance-chain/bep3-deputy) written in GoLang that handles swap activities
+1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Beacon Chain and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Beacon Chain development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
+*  [smart-contract solution](https://github.com/bnb-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
+* [deputy process](https://github.com/bnb-chain/bep3-deputy) written in GoLang that handles swap activities
 
 Any developer is welcome to test the solutions in testnet and then use them in mainnet.
 

@@ -22,7 +22,7 @@ Before you start, make sure you meet the hardware requirements for the validator
 
 ### 1. Install BSC Fullnode
 
-You can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions [here to set up a full node](fullnode.md).
+You can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions [here to set up a full node](fullnode.md).
 
 **Download the config files**
 
@@ -106,7 +106,7 @@ If you are connecting to an existing network for which you have a data backup (f
 You can use `bnbcli` binary to sen `create-validator` transaction, thus you can declare your candidacy.
 
 
-* Download `bnbcli` from [GitHub](https://github.com/binance-chain/node-binary/tree/master/cli/prod/0.8.2)
+* Download `bnbcli` from [GitHub](https://github.com/bnb-chain/node-binary/tree/master/cli/prod/0.8.2)
 
 Use `bnbcli` to create an account or recover an account, make sure the account get more than 10000 BNB.
 
@@ -155,13 +155,13 @@ docker run -it -d -p 9090:9090 \
 
 ### 2. Update validator profile
 
-You can submit a PullRequest to this repository to update your information: <https://github.com/binance-chain/validator-directory>
+You can submit a PullRequest to this repository to update your information: <https://github.com/bnb-chain/validator-directory>
 Reference: <https://grafana.com/grafana/dashboards/6976>
 
 
 ### 3. Publish Validator Information
 
-Please submit a Pull Request to this repo <https://github.com/binance-chain/validator-directory>
+Please submit a Pull Request to this repo <https://github.com/bnb-chain/validator-directory>
 
 This repository is a place for validator candidates to give potential delegators a brief introduction about your team and infrastructure, and present your ecosystem contributions.
 

@@ -1,6 +1,12 @@
-# WalletConnect
+---
+sidebar_label: Wallet Connect
+hide_table_of_contents: false
+sidebar_position: 2
+---
+
+# Wallet Connect
 <!--<img src="../assets/walletconnect.svg" width="60"> -->
-The Beacon Chain   Web Wallet supports connecting with external wallet providers via the [WalletConnect protocol](https://docs.walletconnect.org/tech-spec).
+The Beacon Chain Web Wallet supports connecting with external wallet providers via the [WalletConnect protocol](https://docs.walletconnect.org/tech-spec).
 
 WalletConnect allows the user to scan a QR code from the wallet app to unlock and use their wallet seamlessly in the web UI.
 

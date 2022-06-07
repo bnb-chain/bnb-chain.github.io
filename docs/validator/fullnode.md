@@ -98,13 +98,13 @@ Synchronizes a full node starting at genesis, verifying all blocks and executing
 
 ### Sync From Snapshot (Recommended)
 
-1. Download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions below:
+1. Download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below:
 
 ```bash
 # Linux
-wget   $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
 # MacOS
-wget   $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
 ```
 
 2. Download the config files
@@ -112,13 +112,13 @@ wget   $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest 
 Download `genesis.json` and `config.toml` by:
 
 ```bash
-wget   $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
 ```
 
 3. Download snapshot
 
-Download latest snapshot from [Download site](https://github.com/binance-chain/bsc-snapshots)
+Download latest snapshot from [Download site](https://github.com/bnb-chain/bsc-snapshots)
 Follow the guide to structure the files.
 
 4. Start a full node
@@ -133,14 +133,14 @@ geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow
 Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
 
 ```bash
-git clone https://github.com/binance-chain/bsc
+git clone https://github.com/bnb-chain/bsc
 # Enter the folder bsc was cloned into
 cd bsc
 # Compile and install bsc
 make geth
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions below:
+or you can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below:
 
 ```bash
 # Linux
@@ -216,7 +216,7 @@ you can monitor the log from `/node/bsc.log` by default.
 The bootstrap nodes will be enhanced in the short future. So far, a discovery http service will provide some stable public p2p peers for syncing. Please visit https://api.binance.org/v1/discovery/peers to get dynamic peer info. You can append the peer info to the `StaticNodes` in the config.toml to enhance the networking of the full nodes. To avoid crowded networking, the discovery service will change the peer info from time to time, try fetch new ones if the connected peers of full node are too few.
 
 ### Binary
-All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/binance-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
+All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
 
 ### Storage
 According to the test, the performance of a fullnode will degrade when the storage size exceeds 1.5T. We suggest the fullnode always keep light storage by pruning the storage. 

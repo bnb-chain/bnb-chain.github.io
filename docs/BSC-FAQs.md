@@ -14,18 +14,18 @@ The execution of a Smart Contract may slow down the exchange function and add no
 
 ## Where will the published whitepaper be found?
 
-<https://binance.org/whitepaper.pdf> and also <https://github.com/binance-chain/whitepaper>, where feedback is more than welcome.
+<https://binance.org/whitepaper.pdf> and also <https://github.com/bnb-chain/whitepaper>, where feedback is more than welcome.
 
 ## Where can I take a look at BNB Smart Chain  code? Is there a GitHub repository?
 
 The codebase of BSC is open-sourced here:
 
-* <https://github.com/binance-chain/bsc>
-* <https://github.com/binance-chain/bsc-relayer>
-* <https://github.com/binance-chain/bsc-relayer-config>
-* <https://github.com/binance-chain/bsc-genesis-contract>
-* <https://github.com/binance-chain/bsc-double-sign-sdk>
-* <https://github.com/binance-chain/oracle-relayer>
+* <https://github.com/bnb-chain/bsc>
+* <https://github.com/bnb-chain/bsc-relayer>
+* <https://github.com/bnb-chain/bsc-relayer-config>
+* <https://github.com/bnb-chain/bsc-genesis-contract>
+* <https://github.com/bnb-chain/bsc-double-sign-sdk>
+* <https://github.com/bnb-chain/oracle-relayer>
 
 ## Where can I find some support?
 
@@ -36,7 +36,7 @@ The codebase of BSC is open-sourced here:
 ## Which are BNB Smart Chain 's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
-* Twitter: <https://twitter.com/binancechain>
+* Twitter: <https://twitter.com/bnbchain>
 * BNB Chain  Forum: <https://community.binance.org>
 
 ## Wallet support for BNB Smart Chain 
@@ -78,7 +78,7 @@ BNB Chain opens the gate for users to take advantage of the fast transferring an
 
 There are already [140 assets](https://explorer.binance.org/assets/bep2) on BNB Chain 
 
-The introduction of [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
+The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
 
 ## What make BNB Smart Chain  different?
 

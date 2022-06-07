@@ -118,16 +118,16 @@ The Beacon Chain has a hardfork upgrade and if you failed to upgrade your fullno
 ```
 panic: Tendermint state.AppHash does not match AppHash after replay. Got , expected 393887B67F69B19CAB5C48FB87B4966018ABA893FB3FFD241C0A94D2C8668DD2
 goroutine 1 [running]:
-github.com/binance-chain/node/vendor/github.com/tendermint/tendermint/consensus.checkAppHash(0xa, 0x0, 0xc000bd8c56, 0x6, 0xc000b247c0, 0x12, 0x14e7bf9, 0x8592eb, 0xc000b247e0, 0x20, ...)
-/Users/huangsuyu/go/src/github.com/binance-chain/node/vendor/github.com/tendermint/tendermint/consensus/replay.go:464 +0x213
-github.com/binance-chain/node/vendor/github.com/tendermint/tendermint/consensus.(*Handshaker).ReplayBlocks(0xc000b37980, 0xa, 0x0, 0xc000bd8c56, 0x6, 0xc000b247c0, 0x12, 0x14e7bf9, 0x8592eb, 0xc000b247e0, ...)
+github.com/bnb-chain/node/vendor/github.com/tendermint/tendermint/consensus.checkAppHash(0xa, 0x0, 0xc000bd8c56, 0x6, 0xc000b247c0, 0x12, 0x14e7bf9, 0x8592eb, 0xc000b247e0, 0x20, ...)
+/Users/huangsuyu/go/src/github.com/bnb-chain/node/vendor/github.com/tendermint/tendermint/consensus/replay.go:464 +0x213
+github.com/bnb-chain/node/vendor/github.com/tendermint/tendermint/consensus.(*Handshaker).ReplayBlocks(0xc000b37980, 0xa, 0x0, 0xc000bd8c56, 0x6, 0xc000b247c0, 0x12, 0x14e7bf9, 0x8592eb, 0xc000b247e0, ...)
 ```
 
 To recover from the `state` conflict error, you need to:
 
 * Backup your home directory,  (default is ~/.bnbchaind)
 
-* Download the tool: [state-recover](https://github.com/binance-chain/node-binary/tree/master/tools/recover)
+* Download the tool: [state-recover](https://github.com/bnb-chain/node-binary/tree/master/tools/recover)
 
 * Get the height of upgrade, this height will be announced in the upgrade announcement on the forum.  For example, if it's announced as 5000 in the forum and run the following command will make your full node recover to the last block before the upgrade, and that is 4999 :
 ```
@@ -161,7 +161,7 @@ If you do not download the binaries completely, you will see the following messa
 ./bnbchaind: line 1: version: command not found ./bnbchaind: line 2: oid: command not found /Library/Developer/CommandLineTools/usr/bin/size: 45160816 No such file or directory
 ```
 
-Since all the binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please use this [script](https://github.com/binance-chain/node-binary/blob/master/install.sh) to download the binaries or use `git lfs clone`.
+Since all the binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please use this [script](https://github.com/bnb-chain/node-binary/blob/master/install.sh) to download the binaries or use `git lfs clone`.
 
 #### Cannot query a specific block
 

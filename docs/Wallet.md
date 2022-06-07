@@ -24,10 +24,10 @@ If you want to be able to receive BNB and other supported tokens on the Binance 
 
 | Number | Wallet Name              | Website | Staking Support|
 |------ | ------------------- | ------------------------------ |-----|
-| 1    | Binance Extension Wallet | <https://binance-wallet.gitbook.io/binance-chain-wallet/> | Yes  |
+| 1    | BNB Chain Extension Wallet | <https://binance-wallet.gitbook.io/binance-chain-wallet/> | Yes  |
 | 2    | [Trust Wallet](wallet/trustwallet.md) | <https://trustwallet.com/> | Yes   |
 |3     | [Math Wallet](wallet/math.md)|<https://mathwallet.org/en-us/>| Yes  |
-|4s     |  [SafePal](https://blog.safepal.io/binance-smart-chain-x-safepal/)|  <https://safepal.io/> | No  |
+|4     |  [SafePal](https://blog.safepal.io/binance-smart-chain-x-safepal/)|  <https://safepal.io/> | No  |
 |5     |[TokenPocket](https://tokenpocket-gm.medium.com/defi-with-tokenpocket-how-to-use-binance-smart-chain-swap-with-tokenpocket-e76d6cd7986)|<https://www.tokenpocket.pro/> |  No  |
 |6 | [Arkane](wallet/arkane.md)|<https://arkane.network/>|No|
 |7|[MetaMask](wallet/metamask.md)|<https://metamask.zendesk.com/hc/en-us>|No|

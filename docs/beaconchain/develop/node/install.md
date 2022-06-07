@@ -14,7 +14,7 @@ We have a community-maintained installer script (`install.sh`) that takes care o
 
 ```
 # One-line install
-sh <(wget -qO- https://raw.githubusercontent.com/binance-chain/node-binary/master/install.sh)
+sh <(wget -qO- https://raw.githubusercontent.com/bnb-chain/node-binary/master/install.sh)
 ```
 The script will install the `bnbchain`, `bnbcli` and `tbnbcli` binaries. Verify that everything is OK:
 ```shell
@@ -34,14 +34,14 @@ Please go to https://git-lfs.github.com/ and install `git lfs`.
 2. Download Binary with Git LFS:
 
 ```
-git lfs clone https://github.com/binance-chain/node-binary.git
+git lfs clone https://github.com/bnb-chain/node-binary.git
 ```
 
-Please go to [changelog](https://github.com/binance-chain/node-binary/blob/master/fullnode/Changelog.md) to get the information about the latest release of full node version.
+Please go to [changelog](https://github.com/bnb-chain/node-binary/blob/master/fullnode/Changelog.md) to get the information about the latest release of full node version.
 
 Go to directory according to the network you want to join in.
 
-3. Replace the `network` variable with `testnet` or `prod` in the following command:
+1. Replace the `network` variable with `testnet` or `prod` in the following command:
 
 ```
 cd node-binary/fullnode/{network}/{version}

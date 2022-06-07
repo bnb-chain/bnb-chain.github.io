@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Tokens in Beacon Chain  and BNB Smart Chain 
+# Tokens in Beacon Chain and BNB Smart Chain 
 
 ## What role does BNB play in securing BNB Smart Chain ?
 
@@ -16,7 +16,7 @@ BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP20.
 
 ## What is BEP2?
 
-A simple token protocol for easy management of asset on Beacon Chain  <https://github.com/binance-chain/BEPs/blob/master/BEP2.md>
+A simple token protocol for easy management of asset on Beacon Chain  <https://github.com/bnb-chain/BEPs/blob/master/BEP2.md>
 
 BNB is BEP2
 
@@ -25,7 +25,7 @@ BNB is BEP2
 A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`.
 
 
-Read the full proposal here: <https://github.com/binance-chain/BEPs/blob/master/BEP20.md>
+Read the full proposal here: <https://github.com/bnb-chain/BEPs/blob/master/BEP20.md>
 
 ## What is BEP8?
 
@@ -33,8 +33,8 @@ It is proposed to accommodate the small or micro projects, intellectual properti
 
 Details:
 
-* [BEP8 Proposal](https://github.com/binance-chain/BEPs/blob/master/BEP8.md)
-* [Commandline Instructions](bep8.md)
+* [BEP8 Proposal](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md)
+* [Commandline Instructions](beaconchain/learn/BEP8.md)
 
 ## How to issue BEP2 tokens?
 
@@ -56,13 +56,13 @@ The [minimum delegated amount](validator/Parameters.md) is **1BNB**.
 
 You can use:
 
-* [command line tool](https://github.com/binance-chain/node/releases/tag/v0.8.1)
+* [command line tool](https://github.com/bnb-chain/node/releases/tag/v0.8.1)
 * [BNB Chain  extension wallet](wallet/binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 
 ## Where can I find out more about staking economics and rewards?
 
-You can read details in White Paper: <https://github.com/binance-chain/whitepaper/blob/master/WHITEPAPER.md#rewarding>
+You can read details in White Paper: <https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#rewarding>
 
 ## Where do network rewards come from?
 

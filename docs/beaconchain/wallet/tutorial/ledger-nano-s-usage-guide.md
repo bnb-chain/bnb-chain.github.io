@@ -7,7 +7,7 @@ Therefore, using a hardware wallet device such as the Ledger Nano S is strongly 
 
 ## Requirements
 
-In order to use a Ledger device with Beacon Chain  and Binance DEX, you will need:
+In order to use a Ledger device with Beacon Chain and Binance DEX, you will need:
 
 - Supported web browser: Chrome (including Brave, Vivaldi, and other Chromium variants), Opera or Firefox
 - Access to the Beacon Chain  web wallet (https://binance.org/unlock) using your web browser
@@ -61,7 +61,7 @@ You will then be redirected to the Trading Interface.
 For your security, please read the information displayed in the following popup and confirm that the address shown on your Ledger device matches the one shown on-screen.<br/>
 Press the right button on your device to confirm that the address matches (You must do this to continue).
 
-## How to send Beacon Chain  crypto assets
+## How to send Beacon Chain Crypto Assets
 
 Confirming a trade on a Ledger Wallet:
 

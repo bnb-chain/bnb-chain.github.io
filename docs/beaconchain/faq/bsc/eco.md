@@ -1,8 +1,8 @@
-# Binance Smart Chain Ecosystem
+# BNB Smart Chain Ecosystem
 
-## How is Binance Smart Chain Ecosystem?
+## How is BNB Smart Chain Ecosystem?
 
-<https://github.com/binance-chain/bsc-ecosystem>
+<https://github.com/bnb-chain/bsc-ecosystem>
 
 ## What are the incentives for developers to build on BSC Chain?
 
@@ -11,9 +11,9 @@ Future coding competitions; Hackathons
 * Gitcoin: https://gitcoin.co/binancex
 * Dorahacks: https://hackerlink.io/en/grant/1
 
-## What are Pegged tokens on Binance Smart chain?
+## What are Pegged tokens on BNB Smart chain?
 
-Soon after the launch of Binance Chain, Binance issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses, and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Binance Chain.
+Soon after the launch of Beacon Chain, Binance issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses, and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Beacon Chain.
 
 Current list:
 

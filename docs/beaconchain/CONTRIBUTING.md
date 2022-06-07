@@ -1,6 +1,6 @@
 # How to Contribute to BNB Chain  Documentations Project
 
-Your contributions to the [BNB Chain ](https://www.binance.org/) will help build a fast and secure decentralized digital asset exchange.
+Your contributions to the [BNB Chain](https://www.binance.org/en) will help build a fast and secure decentralized digital asset exchange.
 
 We want to make it as easy as possible to contribute changes that help the BNB Chain  grow and thrive. There are a few guidelines that we ask contributors to follow so that we can merge your changes quickly.
 
@@ -39,7 +39,7 @@ Of course, feel free to create a new issue if you think something needs to be ad
 
 
 * Push your changes to a topic branch in your fork of the repository.
-* Submit a pull request to the [docs repository](https://github.com/binance-chain/docs-site) in the BNB Chain  organization.
+* Submit a pull request to the [docs repository](https://github.com/bnb-chain/bnb-chain.github.io) in the BNB Chain  organization.
   * Include a descriptive [commit message][commit-msg].
   * Changes contributed via pull request should focus on a single issue at a time.
   * Rebase your local changes against the master branch. Resolve any conflicts that arise.

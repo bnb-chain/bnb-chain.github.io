@@ -61,7 +61,7 @@ Committed at block 465899 (tx hash: 68FFF82197E27A3EC14AFF8C99A035FA9CA7120312AA
 
 ### transferOut
 
-Call **transferOut** of [TokenHub contract](https://raw.githubusercontent.com/binance-chain/bsc-genesis-contract/master/abi/tokenhub.abi) in [MyEtherWallet](https://www.myetherwallet.com/):
+Call **transferOut** of [TokenHub contract](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi) in [MyEtherWallet](https://www.myetherwallet.com/):
 
 ![img](https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m)
 
@@ -89,7 +89,7 @@ After all the above parameters have been set to proper values, users can click t
 
 Call **batchTransferOutBNB** of TokenHub contract in MyEtherWallet:
 
-![img](https://github.com/binance-chain/docs-site/raw/master/docs/assets/batchTransferOutBNB.png)s
+![img](https://github.com/bnb-chain/docs-site/raw/master/docs/assets/batchTransferOutBNB.png)
 
 | Parameter Name | Type      | Description                                                  |
 | -------------- | --------- | ------------------------------------------------------------ |

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Binance Extension Wallet FAQs
+sidebar_label: BNB Extension Wallet FAQs
 hide_table_of_contents: false
 sidebar_position: 2
 ---

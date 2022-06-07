@@ -5,7 +5,7 @@ Updating `geth` is as easy as it gets. You just need to download and install the
 ## Step 1: Compile the new version
 
 ```bash
-git clone https://github.com/binance-chain/bsc
+git clone https://github.com/bnb-chain/bsc
 # Enter the folder bsc was cloned into
 cd bsc
 # Comile and install bsc

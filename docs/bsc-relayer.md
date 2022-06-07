@@ -25,17 +25,17 @@ If you haven't created your account yet, please follow these [guides](wallet/met
 Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
 
 ```bash
-git clone https://github.com/binance-chain/bsc-relayer
+git clone https://github.com/bnb-chain/bsc-relayer
 # Enter the folder bsc was cloned into
 cd bsc-relayer
 # Comile and install bsc
 make build
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc-relayer/releases/tag/v1.1.0)
+or you can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc-relayer/releases/tag/v1.1.0)
 
 ## Get Example Config File
-Get example config from this url: <https://github.com/binance-chain/bsc-relayer/blob/master/config/config.json>
+Get example config from this url: <https://github.com/bnb-chain/bsc-relayer/blob/master/config/config.json>
 
 Edit`config.json` and fill your BSC private key to bsc_config.private_key, example private key: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
@@ -57,7 +57,7 @@ Output:
 ```
 (base) huangsuyudeMacBook-Pro:mac huangsuyu$ bsc-relayer --config-type local --config-path config.json
 2020-05-27 17:01:16 INFO main Start relayer
-2020-05-27 17:01:16 INFO SyncProtocol Sync cross chain protocol from https://github.com/binance-chain/bsc-relayer-config.git
+2020-05-27 17:01:16 INFO SyncProtocol Sync cross chain protocol from https://github.com/bnb-chain/bsc-relayer-config.git
 2020-05-27 17:01:18 INFO RegisterRelayerHub This relayer has already been registered
 2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 1, next deliver sequence 55 on BSC, next sequence 55 on BC
 2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 2, next deliver sequence 1273 on BSC, next sequence 1273 on BC
@@ -67,9 +67,9 @@ Output:
 2020-05-27 17:01:19 INFO Serve start admin server at 0.0.0.0:8080
 ```
 
-Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/binance-chain/bsc-relayer-config>
+Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/bnb-chain/bsc-relayer-config>
 
-* Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: <https://github.com/binance-chain/bsc-relayer-config>
+* Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: <https://github.com/bnb-chain/bsc-relayer-config>
 * Start relayer service
 
 ```shell

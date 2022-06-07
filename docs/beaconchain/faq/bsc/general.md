@@ -8,12 +8,12 @@ The white paper can be found at <https://github.com/bnb-chain/whitepaper/blob/ma
 
 The codebase of BSC is open-sourced here:
 
-* <https://github.com/binance-chain/bsc>
-* <https://github.com/binance-chain/bsc-relayer>
-* <https://github.com/binance-chain/bsc-relayer-config>
-* <https://github.com/binance-chain/bsc-genesis-contract>
-* <https://github.com/binance-chain/bsc-double-sign-sdk>
-* <https://github.com/binance-chain/oracle-relayer>
+* <https://github.com/bnb-chain/bsc>
+* <https://github.com/bnb-chain/bsc-relayer>
+* <https://github.com/bnb-chain/bsc-relayer-config>
+* <https://github.com/bnb-chain/bsc-genesis-contract>
+* <https://github.com/bnb-chain/bsc-double-sign-sdk>
+* <https://github.com/bnb-chain/oracle-relayer>
 
 ## Where can I find some support?
 
@@ -21,13 +21,13 @@ The codebase of BSC is open-sourced here:
 * Bugs or technical contributions: GitHub
 * General discussion regarding our blockchain: Telegram <https://t.me/BinanceDEXchange>
 
-## Which are Binance Smart Chain's official channels for communication and information?
+## Which are BNB Smart Chain's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
-* Twitter: <https://twitter.com/binancechain>
+* Twitter: <https://twitter.com/bnbchain>
 * Binance Chain Forum: <https://community.binance.org>
 
-## Wallet support for Binance Smart Chain
+## Wallet support for BNB Smart Chain
 
   - [BNB Extension Wallet ](../../../wallet/binance.md)
   - [MetaMask](../../../wallet/metamask.md)

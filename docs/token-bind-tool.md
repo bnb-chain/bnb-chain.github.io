@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # token-bind-tool
 
-Tool to bind BEP2 tokens and BEP20 tokens. please refer to [document](https://docs.binance.org/smart-chain/developer/bind-tokens.html) for detail bind mechanism. Github repo for bind token tool [here](https://github.com/binance-chain/token-bind-tool.git).
+Tool to bind BEP2 tokens and BEP20 tokens. please refer to [document](https://docs.bnbchain.org/docs/bind-tokens) for detail bind mechanism. Github repo for bind token tool [here](https://github.com/bnb-chain/token-bind-tool.git).
 
 ## Compile
 
@@ -62,7 +62,7 @@ Suppose you have already issued a BEP2 token, and you want to deploy a BEP20 tok
 
 2. Prepare BEP20 contract code
 
-    2.1 You can refer to [BEP20 Template](https://github.com/binance-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template) and modify it according to your own requirements.
+    2.1 You can refer to [BEP20 Template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template) and modify it according to your own requirements.
         
     **NOTE 1:** Ensure the BEP20 symbol is identical to the prefix of a BEP2 token symbol. Suppose a BEP2 token symbol is `ABC-123`, then the BEP20 symbol must be `ABC`.
     
@@ -71,7 +71,7 @@ Suppose you have already issued a BEP2 token, and you want to deploy a BEP20 tok
     **NOTE 3:** If your BEP2 token is mintable, then you'd better implement `mint` in BEP20 contract. Otherwise, you'd better remove `mint` in BEP20 contract.
    
     2.2 Compile your contract with [Remix](https://remix.ethereum.org) and get contract byte code:
-    ![img](https://github.com/binance-chain/token-bind-tool/blob/master/pictures/compile.png?raw=true)
+    ![img](https://github.com/bnb-chain/token-bind-tool/blob/master/pictures/compile.png?raw=true)
     
 3. Edit `script/contract.json` to add contract byte code:
 

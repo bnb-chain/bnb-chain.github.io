@@ -7,13 +7,13 @@ sidebar_position: 2
 
 BSC and BC work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases. Token Binding can happen at any time after BEP2/BEP8 and BEP20 are ready. The token owners of either BEP2/BEP8 or BEP20 only need to complete the **Binding** process when a cross-chain feature is necessary.
 
-You can use this [tool](https://github.com/binance-chain/token-bind-tool).
+You can use this [tool](https://github.com/bnb-chain/token-bind-tool).
 
 ## Issue BEP2 or BEP8 Token
 
 Please refer to this [doc](tokens.md) to issue BEP2
 
-Please refer to this [doc](bep8.md) to issue BEP8
+Please refer to this [doc](beaconchain/learn/BEP8.md) to issue BEP8
 
 
 **Example**

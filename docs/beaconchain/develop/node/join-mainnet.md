@@ -1,7 +1,7 @@
 # Join Mainnet
 
 !!! Tip
-    See the [node-binary repo](https://github.com/binance-chain/node-binary/blob/master/README.md) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
+    See the [node-binary repo](https://github.com/bnb-chain/node-binary/blob/master/README.md) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
 
 !!! warning
     You need to install [bnbchaind](install.md) before you go further
@@ -45,7 +45,7 @@ Now your Full Node has been initialized!
 Fetch the mainnet's genesis.json file into node-binary's config directory.
 ```
 cd -p $HOME/.bnbchaind/config
-wget https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/0.6.3-hotfix/config/genesis.json
+wget https://raw.githubusercontent.com/bnb-chain/node-binary/master/fullnode/prod/0.6.3-hotfix/config/genesis.json
 ```
 Note we use the latest directory in the node-binary repo which contains details for the mainnet like the latest version and the genesis file.
 

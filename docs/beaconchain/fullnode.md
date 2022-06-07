@@ -44,10 +44,10 @@ Please go to <https://git-lfs.github.com/> and install `git lfs`.
 2. Download Binary with Git LFS:
 
 ```bash
-git lfs clone https://github.com/binance-chain/node-binary.git
+git lfs clone https://github.com/bnb-chain/node-binary.git
 ```
 
-Please go to [changelog](https://github.com/binance-chain/node-binary/blob/master/fullnode/Changelog.md) to get the information about the latest release of full node version.
+Please go to [changelog](https://github.com/bnb-chain/node-binary/blob/master/fullnode/Changelog.md) to get the information about the latest release of full node version.
 
 Go to directory according to the network you want to join in.<br/>
 Replace the `network` variable with `testnet` or `prod` in the following command:
@@ -56,7 +56,7 @@ Replace the `network` variable with `testnet` or `prod` in the following command
 cd node-binary/fullnode/{network}/{version}
 ```
 
-3. Copy the executables (i.e.`bnbchaind` or `bnbcli`) to `/usr/local/bin`
+1. Copy the executables (i.e.`bnbchaind` or `bnbcli`) to `/usr/local/bin`
 
 ### Initialize Home Folder
 
@@ -137,7 +137,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 
 ##### State Sync
 
-As explained in [BEP18](https://github.com/binance-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
+As explained in [BEP18](https://github.com/bnb-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
 Now you do not need to allocate more memories to your full node for this feature to work.
 
 Configuration is located in `$BNCHOME/config/config.toml`:

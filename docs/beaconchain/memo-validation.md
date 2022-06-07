@@ -1,10 +1,10 @@
 #  Customized Scripts and Transfer Memo Validation
 
 ## Memo Validation
-As explained in [BEP12](https://github.com/binance-chain/BEPs/blob/master/BEP12.md), In some circumstances, users may want to specify additional functions or/and validations on some transactions. With BEP12, exchanges can reject deposits that have no valid digits-only memo.
+As explained in [BEP12](https://github.com/bnb-chain/BEPs/blob/master/BEP12.md), In some circumstances, users may want to specify additional functions or/and validations on some transactions. With BEP12, exchanges can reject deposits that have no valid digits-only memo.
 
 ## Enable account scripts for cross-chain transfer
-[BEP12](https://github.com/binance-chain/BEPs/blob/master/BEP12.md) was introduced to check whether the memo field of any transfer transaction is empty. Since [version 0.8.2](https://github.com/binance-chain/node-binary/releases/tag/v0.8.2), the memo of cross-chain transfer is also checked. From now on, the deposit transaction without memo to exchanges be returned automatically.
+[BEP12](https://github.com/bnb-chain/BEPs/blob/master/BEP12.md) was introduced to check whether the memo field of any transfer transaction is empty. Since [version 0.8.2](https://github.com/bnb-chain/node-binary/releases/tag/v0.8.2), the memo of cross-chain transfer is also checked. From now on, the deposit transaction without memo to exchanges be returned automatically.
 
 
 ## What is a customized script?

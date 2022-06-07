@@ -22,12 +22,12 @@ The whitepaper can be found at <https://github.com/bnb-chain/whitepaper/blob/mas
 
 The codebase of BSC is open-sourced here:
 
-* <https://github.com/binance-chain/bsc>
-* <https://github.com/binance-chain/bsc-relayer>
-* <https://github.com/binance-chain/bsc-relayer-config>
-* <https://github.com/binance-chain/bsc-genesis-contract>
-* <https://github.com/binance-chain/bsc-double-sign-sdk>
-* <https://github.com/binance-chain/oracle-relayer>
+* <https://github.com/bnb-chain/bsc>
+* <https://github.com/bnb-chain/bsc-relayer>
+* <https://github.com/bnb-chain/bsc-relayer-config>
+* <https://github.com/bnb-chain/bsc-genesis-contract>
+* <https://github.com/bnb-chain/bsc-double-sign-sdk>
+* <https://github.com/bnb-chain/oracle-relayer>
 
 ### Where can I find some support?
 
@@ -82,7 +82,7 @@ BNB Chain opens the gate for users to take advantage of the fast transferring an
 
 There are already [140 assets](https://explorer.binance.org/assets/bep2) on BNB Chain
 
-The introduction of [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
+The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
 
 ### What make BNB Smart Chain  different?
 
@@ -127,7 +127,7 @@ bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binan
 
 ### How is BNB Smart Chain  Ecosystem?
 
-<https://github.com/binance-chain/bsc-ecosystem>
+<https://github.com/bnb-chain/bsc-ecosystem>
 
 ### What are the incentives for developers to build on BSC Chain?
 

@@ -14,7 +14,7 @@ Please refer to this guide on [how to create a wallet](binance.md) with BNB Exte
 
 ### Go to the staking page:
 
-- Mainnet: <https://www.bnbchain.world/en/staking>
+- Mainnet: <https://www.bnbchain.org/en/staking>
 - Testnet: <https://testnet-staking.binance.org/en/staking>
 
 ### Unlock your wallet

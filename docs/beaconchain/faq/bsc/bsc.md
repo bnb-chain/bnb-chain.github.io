@@ -32,7 +32,7 @@ Beacon Chain opens the gate for users to take advantage of the fast transferring
 
 There are already [140 assets](https://explorer.binance.org/assets/bep2) on Beacon Chain
 
-The introduction of [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
+The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
 
 ## What make BNB Smart Chain different?
 

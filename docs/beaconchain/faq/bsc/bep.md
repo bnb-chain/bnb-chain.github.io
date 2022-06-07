@@ -1,8 +1,8 @@
-# Binance Evolution Proposal
+# Binance Evolution Proposal (BEP)
 
 ## What is BEP2?
 
-A simple token protocol for easy management of asset on Binance chain <https://github.com/binance-chain/BEPs/blob/master/BEP2.md>
+A simple token protocol for easy management of asset on Binance chain <https://github.com/bnb-chain/BEPs/blob/master/BEP2.md>
 
 BNB is BEP2
 
@@ -11,7 +11,7 @@ BNB is BEP2
 A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`.
 
 
-Read the full proposal here: <https://github.com/binance-chain/BEPs/blob/master/BEP20.md>
+Read the full proposal here: <https://github.com/bnb-chain/BEPs/blob/master/BEP20.md>
 
 ## What is BEP8?
 
@@ -19,5 +19,5 @@ It is proposed to accommodate the small or micro projects, intellectual properti
 
 Details:
 
-* [BEP8 Proposal](https://github.com/binance-chain/BEPs/blob/master/BEP8.md)
+* [BEP8 Proposal](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md)
 * [Commandline Instructions](../../learn/BEP8.md)

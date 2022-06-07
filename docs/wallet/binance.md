@@ -22,7 +22,7 @@ Firefox App Store Link: <https://addons.mozilla.org/en-US/firefox/addon/binance-
 
 ## Install
 
-**Example: Install Binance Chain Wallet in Firefox browser**
+**Example: Install BNB Chain Wallet in Firefox browser**
 
 * Open Extension in Firefox: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
@@ -37,7 +37,7 @@ Note: Make sure it’s offered by Binance Chain
 
 <img src="https://lh4.googleusercontent.com/BxNDhV2jxT9B7D8cbS7Fh8XY1TVeh_45Sm18xn_sBCTSUGtQzFI086TBS61QHXquLxmikpSpILOAlpE-azn9EWgdwU0kraW1VrCbjqXK8liCylFw_IBfyW40yOk5aNCX34oRi_sX" alt="img" style= { { zoom:"33%" } } />
 
-That’s it! You have successfully installed the Binance Chain Wallet extension in Firefox!
+That’s it! You have successfully installed the BNB chain Wallet extension in Firefox!
 
 
 The workflow is the same for all browsers

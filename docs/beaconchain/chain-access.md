@@ -1,6 +1,6 @@
 # How to Access Beacon Chain 
 
-[Get Started](get-started.md) pages already show how to access Beacon Chain  and DEX via
+[Get Started](get-started.md) pages already show how to access Beacon Chain and DEX via
 Wallet and Explorers. Here we would like to dive into some technology details for access
 in a programming way.
 

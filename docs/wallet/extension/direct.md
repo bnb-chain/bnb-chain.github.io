@@ -2,14 +2,14 @@
 
 ## Key Features
 - Seamless Token Transfer
-Transfer tokens (which support BC/BSC) between paired Binance.com account and Binance Chain Wallet. Without the trouble of copy/paste address and memo every time
+Transfer tokens (which support BC/BSC) between paired Binance.com account and BNB Chain Wallet. Without the trouble of copy/paste address and memo every time
 - BNB Holding
 The BNB  positions of your Binance.com account will not change.
 
 ## User Guide
 ### Prerequisites
 - Binance.com Account SetupEnable two-factor authentication for your Binance.com account (The balance cannot be zero)
-- Install Binance Chain Extension WalletInstall the latest **v1.126.11** :
+- Install BNB Chain Extension WalletInstall the latest **v1.126.11** :
 	- Chrome App Store Link: https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp
 	- Firefox App Store Link: https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search
 - Create an account. You cannot use the accounts imported from your Ledger hardware wallet.
@@ -103,9 +103,9 @@ Wait for your tokens to come
 <img src="https://lh3.googleusercontent.com/GtUHs9J1IbvLRhVCuPG0xCCzDEI9KjiZpVXGxRXfnukl6OxHG7GqCaUI5K6Zew4OByG1mNobgfjzjOjJGlae0LI_dpgL-1VNGsxzf39HMzS3QzXABhsTyEWya50LdX91fdeNjpco" alt="img" style={{zoom:"50%"}} />
 
 
-### How to Deposit Tokens from your Binance Extension wallet account to a paired Binance.com account?
+### How to Deposit Tokens from your BNB Chain Extension wallet account to a paired Binance.com account?
 
-1. Unlock your pairs account of Binance Extension wallet
+1. Unlock your pairs account of BNB Chain Extension wallet
 Click on the “Send” button.
 
 <img src="https://lh6.googleusercontent.com/NppXCGw5R4sWIEdMc9cItLhFLWY2cO5nz3U45bb2l1_WWtBkAm_6u09kok0MroESlFh5qDjBX54vyAJaYIzj2pBEfYNr7Gk8MdjoU8JM4BWk8vv-fE1y468qy-YjeVV3inUMFcmW" alt="img" style={{zoom:"50%"}} />

@@ -177,7 +177,7 @@ const sidebars = {
           type: 'category',
           //collapsible: true,
           collapsed: true,
-          label: 'Beacon Extension Wallet',
+          label: 'BNB Chain Extension Wallet',
           items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
         },
         {
@@ -264,7 +264,9 @@ const sidebars = {
                       {type:'doc', id:'beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet', label:'Trust Wallet Guide'},
                       {type:'doc', id:'beaconchain/wallet/tutorial/ledger-nano-s-usage-guide', label:'Ledger Wallet Guide'},
                       {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'Trezor Wallet Guide'},
+                      {type:'doc', id:'beaconchain/learn/BEP8', label:'Trezor Wallet Guide'},
                       {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'How to manage BEP8 token with Web Wallet'},
+                      {type:'doc', id:'beaconchain/walletconnect', label:'Wallet Connect'},
                     ]
                     }
                   ]

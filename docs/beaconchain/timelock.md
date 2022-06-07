@@ -1,6 +1,6 @@
 # TimeLock
 
-As explained in [BEP9](https://github.com/binance-chain/BEPs/blob/master/BEP9.md), some business plans decide to lock certain amount tokens for pre-defined periods of time, and the only vest in the future according to the schedules. For example, some projects may lock some allocation of the issued tokens as a commitment by the founding team; some business scenarios also need to lock some tokens as collateral for value.
+As explained in [BEP9](https://github.com/bnb-chain/BEPs/blob/master/BEP9.md), some business plans decide to lock certain amount tokens for pre-defined periods of time, and the only vest in the future according to the schedules. For example, some projects may lock some allocation of the issued tokens as a commitment by the founding team; some business scenarios also need to lock some tokens as collateral for value.
 
 
 ## TimeLock
