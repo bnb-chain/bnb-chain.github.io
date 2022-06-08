@@ -302,8 +302,16 @@ const sidebars = {
                           collapsed: true,
                           label: 'BAS Testnet',
                           items: ['bas/develop/BAS-Testnet/development-tools', 'bas/develop/BAS-Testnet/metamask-with-bas-testnet',
-                              'bas/develop/BAS-Testnet/launch-bas', 'bas/develop/BAS-Testnet/tutorials/deploy-erc20-tokens',
-                              'bas/develop/BAS-Testnet/tutorials/deploy-erc721-tokens']
+                              'bas/develop/BAS-Testnet/launch-bas', 
+                              { 
+                                type:'category',
+                                label: 'Tutorials',
+                                collapsed: true,
+                                items:[
+                                'bas/develop/BAS-Testnet/tutorials/deploy-erc20-tokens',
+                                'bas/develop/BAS-Testnet/tutorials/deploy-erc721-tokens']
+                              },
+                            ]
                         },
                  
                         {
@@ -311,8 +319,16 @@ const sidebars = {
                         collapsed: true,
                         label: 'Aries Testnet',
                         items: ['bas/develop/Aries-Testnet/development-tools', 'bas/develop/Aries-Testnet/metamask-with-aries-testnet',
+                        'bas/develop/Aries-Testnet/key-management',
+                          { 
+                            type:'category',
+                            label: 'Tutorials',
+                            collapsed: true,
+                            items:[
                             'bas/develop/Aries-Testnet/tutorials/deploy-erc20-tokens',
                             'bas/develop/Aries-Testnet/tutorials/deploy-erc721-tokens']
+                          },
+                           ]
                         },
                  ], 
               },

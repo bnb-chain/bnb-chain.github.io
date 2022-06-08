@@ -31,6 +31,16 @@ Beacon Chain also implements new features, such as
 - Threshold Signatures (an alternative to multisig)
 - Smart Contracts sidechain (in-progress)
 
+## Technology Details
+Continue reading below if you are interested in what is happening under the hood!
+
+- [Beacon Chain  as a Block Chain](../beaconchain/blockchain.md): about consensus, software stack, network layout and roles.
+- [Connect to Beacon Chain ](../beaconchain/chain-access.md): how to connect to Beacon Chain  and DEX via different ways.
+- [Run a Beacon Chain  full node](../beaconchain/fullnode.md): how to run a full node and become part of the p2p network of Beacon Chain .
+- [Run a Beacon Chain  light client](../beaconchain/light-client.md): how to run a light client.
+- [Beacon Chain  Governance](../beaconchain/governance.md): about proposal, vote, and join as a validator.
+
+
 ## Participate
 
 There are different ways to participate in the network, from light nodes to full validators. Beacon Chain follows a philosophy of progressive decentralization. We envision a future where organizations and individuals can run validator nodes, and BNB can be staked to join governance.

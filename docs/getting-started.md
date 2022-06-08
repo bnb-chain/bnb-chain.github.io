@@ -132,4 +132,4 @@ Please refer to specific SDK documentation for more information:
 
 
 ## Blockchain Details
-Please check the [technical details](beaconchain/index.md#technology-details) for more technical information.
+Please check the [technical details](learn/beaconIntro.md#technology-details) for more technical information.

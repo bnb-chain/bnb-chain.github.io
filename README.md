@@ -29,6 +29,20 @@ Clone the reository and run the following commands.
 
 ### Local Development
 
+Install the packages.
+
+Using `npm`
+
+```
+npm install
+```
+
+Using Yarn
+
+```
+$ yarn install
+```
+
 Using `npm`
 
 ```

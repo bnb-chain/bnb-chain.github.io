@@ -1,13 +1,13 @@
-# Beacon Chain  Documentation
+# Beacon Chain Documentation
 
-Welcome to the Beacon Chain  documentation site!
+Welcome to the Beacon Chain documentation site!
 
-Please note that both the Beacon Chain  software and this documentation site will improve over time and is still a work-in-progress.<br/>
+Please note that both the Beacon Chain software and this documentation site will improve over time and is still a work-in-progress.<br/>
 Be sure to engage with our community channels to stay updated.
 
 Have fun trading and see you on chain!
 
-## What are Beacon Chain  and Binance DEX?
+## What are Beacon Chain and Binance DEX?
 
 [Beacon Chain](https://www.binance.org) is a blockchain software system developed by Binance and its community.
 Binance DEX refers to the decentralized exchange features developed on top of Beacon Chain .
