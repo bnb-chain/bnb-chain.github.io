@@ -28,6 +28,10 @@ In this section, we have provided tutorials on usage of different components of 
 - Tutorial on [How to Stake BNB Tokens on BSC](staking-with-ext-wallet.md)
 - Tutorial on [How to Delegate BNB Tokens on BSC](del-guide.md)
   
+## Build on BNB Chain
+- Tutorial on [How to Build on BNB Chain](https://www.youtube.com/watch?v=TsraNMHENIE&list=PLD2Yls_M04XPTdEBGmTu6A-atFn3_mmCZ)
+
+
 ## Smart Contracts
 - Tutorial on [How to Write BEP20 (Proxy) Contacts](proxy.md)
 - Tutorial on [How to Verify BEP20 (Proxy) Contacts](verify-proxy.md)
