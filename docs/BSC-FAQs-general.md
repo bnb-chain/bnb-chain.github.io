@@ -33,13 +33,13 @@ The codebase of BSC is open-sourced here:
 
 * Technical talk and support running our software: Telegram <https://t.me/joinchat/IuVfSlYWC5seijz6a0Bjww>
 * Bugs or technical contributions: GitHub
-* General discussion regarding our blockchain: Telegram <https://t.me/BinanceDEXchange>
+* General discussion regarding our blockchain: Telegram <https://t.me/BNBChainCommunity>
 
 ### Which are BNB Smart Chain 's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
 * Twitter: <https://twitter.com/binancechain>
-* BNB Chain Forum: <https://community.binance.org>
+* BNB Chain Forum: <https://www.buildnbuild.dev/>
 
 ### Wallet support for BNB Smart Chain 
 
