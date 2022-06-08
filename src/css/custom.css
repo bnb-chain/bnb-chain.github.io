@@ -14,6 +14,16 @@
   src: url('../../static/IBM Plex Sans Font/IBM-Plex-Mono/IBMPlexMono-Regular.otf') format('otf');
 }
 
+img{
+  max-width: 80%;
+  height: 80%;
+  justify-content: center;
+}
+
+img[bnblogo]{
+  height: 100%;
+  width: 100%
+}
 
 :root {
   --ifm-color-primary: #f0b90b;

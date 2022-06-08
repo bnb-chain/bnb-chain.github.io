@@ -1,7 +1,7 @@
 ---
 sidebar_label: Arkane 
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to create a BSC wallet in Arkane

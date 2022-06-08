@@ -12,7 +12,7 @@ function CardPrint() {
       <div className={styles.column}>
         <div className={styles.card}>
         <Link to="/bc-start">
-              <img src={bclogo} style={{width: "100%"}}/>
+              <img alt={bnblogo} src={bclogo} style={{width: "100%", height: "100%"}}/>
           </Link>
         </div>
       </div>

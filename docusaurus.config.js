@@ -20,6 +20,8 @@ const config = {
       defaultLocale: 'en',
       locales: ['en', 'fr', 'zh'],
     },*/
+  
+  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -54,6 +56,17 @@ const config = {
         textColor: '#091E42',
         isCloseable: false,
       },*/
+      
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          }
+        }
+      },
       
       algolia: {
         // The application ID provided by Algolia

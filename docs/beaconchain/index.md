@@ -9,16 +9,16 @@ Have fun trading and see you on chain!
 
 ## What are Beacon Chain  and Binance DEX?
 
-[Beacon Chain ](https://www.binance.org) is a blockchain software system developed by Binance and its community.
+[Beacon Chain](https://www.binance.org) is a blockchain software system developed by Binance and its community.
 Binance DEX refers to the decentralized exchange features developed on top of Beacon Chain .
 
 Please read the [FAQ](faq/faq.md) to get started.
 
 ## What is BNB Smart Chain?
 
-[BNB Smart Chain](https://www.binance.org/en/smartChain) is an innovative solution to bring programmability and interoperability to Beacon Chain . BNB Smart Chain relies on a system of [41 validators with Proof of Staked Authority (PoSA)](https://https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+[BNB Smart Chain](https://www.bnbchain.org/en/smartChain) is an innovative solution to bring programmability and interoperability to Beacon Chain . BNB Smart Chain relies on a system of [41 validators with Proof of Staked Authority (PoSA)](https://https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
-Please read the [FAQ](faq/bsc/general.md) to get started.
+Please read the [FAQ](../BSC-FAQs-general.md) to get started.
 
 
 ## What can I do with Beacon Chain ?
@@ -84,7 +84,7 @@ and node RPC interfaces.
 Want to try it **Beacon Chain **? Just give a peek at the first few of pages of the [getting started guide](get-started.md).<br/>
 You could also have a read through the [FAQ](faq/faq.md).
 
-Want to develop on **BNB Smart Chain **? First, read through the [FAQ](faq/bsc/general.md) and learn about tokens [here](../BEP20.md).
+Want to develop on **BNB Smart Chain **? First, read through the [FAQ](../BSC-FAQs-general.md) and learn about tokens [here](../BEP20.md).
 
 ## Asset Management
 

@@ -1,10 +1,10 @@
 ---
-sidebar_label: BNB Extension Wallet FAQs
+sidebar_label: BNB Chain Extension Wallet FAQs
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB Extension Wallet FAQs
+# BNB Chain Extension Wallet FAQs
 
 ## How to stay safe
 

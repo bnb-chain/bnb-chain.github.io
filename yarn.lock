@@ -2541,9 +2541,9 @@
     "lodash.uniq" "^4.5.0"
 
 "caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001272", "caniuse-lite@^1.0.30001280":
-  "integrity" "sha512-t28SKa7g6kiIQi6NHeOcKrOrGMzCRrXvlasPwWC26TH2QNdglgzQIRUuJ0cR3NeQPH+5jpuveeeSFDLm2zbkEw=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001284.tgz"
-  "version" "1.0.30001284"
+  "integrity" "sha512-VFaWW3jeo6DLU5rwdiasosxhYSduJgSGil4cSyX3/85fbctlE58pXAkWyuRmVA0r2RxsOSVYUTZcySJ8WpbTxw=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001349.tgz"
+  "version" "1.0.30001349"
 
 "ccount@^1.0.0", "ccount@^1.0.3":
   "integrity" "sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg=="
@@ -3278,6 +3278,13 @@
   "version" "2.0.2"
   dependencies:
     "buffer-indexof" "^1.0.0"
+
+"docusaurus-plugin-image-zoom@^0.1.1":
+  "integrity" "sha512-cJXo5TKh9OR1gE4B5iS5ovLWYYDFwatqRm00iXFPOaShZG99l5tgkDKgbQPAwSL9wg4I+wz3aMwkOtDhMIpKDQ=="
+  "resolved" "https://registry.npmjs.org/docusaurus-plugin-image-zoom/-/docusaurus-plugin-image-zoom-0.1.1.tgz"
+  "version" "0.1.1"
+  dependencies:
+    "medium-zoom" "^1.0.6"
 
 "dom-converter@^0.2.0":
   "integrity" "sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA=="
@@ -5125,6 +5132,11 @@
   "integrity" "sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g="
   "resolved" "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz"
   "version" "0.3.0"
+
+"medium-zoom@^1.0.6":
+  "integrity" "sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg=="
+  "resolved" "https://registry.npmjs.org/medium-zoom/-/medium-zoom-1.0.6.tgz"
+  "version" "1.0.6"
 
 "memfs@^3.1.2", "memfs@^3.2.2":
   "integrity" "sha512-o/RfP0J1d03YwsAxyHxAYs2kyJp55AFkMazlFAZFR2I2IXkxiUTXRabJ6RmNNCQ83LAD2jy52Khj0m3OffpNdA=="
