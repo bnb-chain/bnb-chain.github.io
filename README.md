@@ -43,6 +43,8 @@ Using Yarn
 $ yarn install
 ```
 
+Start local development server
+
 Using `npm`
 
 ```
