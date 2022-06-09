@@ -2,7 +2,7 @@
 sidebar_label: Deploy NFTs
 ---
 
-# Deploy NFTs on BAS Aries Network
+# Deploy NFTs on Aries Network
 
 > This work is inspired by ​[this blog](https://forum.openzeppelin.com/t/draft-create-an-nft-and-deploy-to-a-public-testnet-using-truffle/2961).
 
@@ -309,7 +309,7 @@ The `truffle-config.js` has the following testnet configuration:
     }
 ```
 
-## Deploy to BAS Testnet
+## Deploy to Aries Testnet
 ```
 $ npx truffle migrate --network testnet
 

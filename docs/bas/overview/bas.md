@@ -10,8 +10,8 @@ hide_table_of_contents: false
 To overcome network scalability problems of BSC in 2021, the BSC community has proposed the use of BAS in their [Outlook 2022](https://www.bnbchain.world/en/blog/bsc-2022-build-and-build/) paper. These sidechains can be designed for much higher throughput and lower (even zero) gas fees. We want to define a protocol for consensus management and messaging between BAS and BSC so that it is easier for developers to use a ready-made solution and it is easier for BSC to integrate with them. Briefly speaking, the typical usage of BAS is like that of the Ronin chain for the Axie Infinity on Ethereum. However, unlike Ronin, BAS is designed with better architecture and security in mind. The idea of BAS is to allow you to expand and reuse existing modules, and by using the architecture on smart contracts, painlessly modify existing contracts. 
 
 ## What is BAS?
-BAS (BNB Application Side-Chain) is a framework for creating sidechains in the BSC (BNB Smart Chain) ecosystem. It is an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users while still maintaining a close connection with the BSC. 
-The main task of BAS is to facilitate any project developer to be able to deploy their own blockchains with their unique specifications and validator set but still be connected to the BSC infrastructure. The validator set can run with fewer validators than BNB Chain, depending on the BAS deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS.
+BAS (BNB Application Side-Chain) is a framework for creating sidechains in the BSC (BNB Smart Chain) ecosystem. It is an infrastructure to help developers and node operators build and run their custom blockchains as their internal value system and for a massive number of users while still maintaining a close connection with the BSC. 
+The main task of BAS is to facilitate any project developer to be able to deploy their blockchains with their unique specifications and validator set but still be connected to the BSC infrastructure. The validator set can run with fewer validators than BNB Chain, depending on the BAS deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS.
 We can rightfully claim that BAS is a lightweight framework on which one can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality of the BNB Chain (BSC). 
 
 ## Architecture
@@ -24,7 +24,7 @@ The current implementation of BAS is based on a modified version of BSC, but thi
 
 ## How to Launch a BAS?
 To launch a BAS, follow these steps defined in [Ankr documentation](https://docs.ankr.com/bnb-application-sidechain/how-to-launch-a-bas). Celer has also provided a [testnet BAS bridge]( https://test-bas-bridge.celer.network/#/transfer).
-If you want to setup your own testnet, you can reach [NodeReal Support](https://docs.google.com/forms/d/e/1FAIpQLSer9JzrvzVzkpm4NsHPM1QzNMMZTfchehnTOY8CSysI0RvVAQ/viewform) or [Ankr](https://docs.ankr.com/blockchain-apis/getting-support) to get professional support there. 
+If you want to set up your own testnet, you can reach [NodeReal Support](https://docs.google.com/forms/d/e/1FAIpQLSer9JzrvzVzkpm4NsHPM1QzNMMZTfchehnTOY8CSysI0RvVAQ/viewform) or [Ankr](https://docs.ankr.com/blockchain-apis/getting-support) to get professional support there. 
 
 ### Testnets
 There are two testnets where you can try BAS. It already contains pre-deployed API gateways, block explorer, UI for the staking, and a faucet.

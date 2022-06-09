@@ -12,7 +12,7 @@ sidebar_label: Development Tools
  <https://bas-aries-public.nodereal.io/>
 
 ### Rate limit
-The rate limit of BAS endpoint on Testnet is 10K/5min.
+The rate limit of the BAS endpoint on Testnet is 10K/5min.
 
 ### Starting HTTP JSON-RPC
 You can start the HTTP JSON-RPC with the --rpc flag
@@ -36,14 +36,14 @@ Please refer to the [official documentation of Solidity](https://docs.solidityla
 
 Multiple IDEs and libraries can be used for developing and deploying smart contracts.
 
-- [Remix IDE](https://remix.ethereum.org/): powerful open source tool that helps you write Solidity contracts straight from the browser. It is written in JavaScript and supports both usage in the browser, but runs locally and in a desktop version. Remix IDE has modules for testing, debugging and deploying of smart contracts and much more.
+- [Remix IDE](https://remix.ethereum.org/): powerful open-source tool that helps you write Solidity contracts straight from the browser. It is written in JavaScript and supports both usages in the browser, but runs locally and in a desktop version. Remix IDE has modules for testing, debugging, deploying smart contracts, and much more.
 
 - [Truffle](https://www.trufflesuite.com/docs/teams/quickstart): development tool that allows users to compile, test, debug and deploy smart contracts.
 
-- [Web3JS](https://web3js.readthedocs.io/en/v1.2.11/): collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.
+- [Web3JS](https://web3js.readthedocs.io/en/v1.2.11/): collection of libraries that allow you to interact with a local or remote Ethereum node using HTTP, IPC, or WebSocket.
 
 ## Faucet
-To get test Token, developers can use the [faucet](https://faucet-bas-testnet.ankr.com/).
+To get test BAS Tokens, developers can use the [faucet](https://faucet-bas-testnet.ankr.com/).
 
 ## Explorer
 View blocks and transactions on [BAS Aries Explorer](https://explorer.dev-01.bas.ankr.com/).

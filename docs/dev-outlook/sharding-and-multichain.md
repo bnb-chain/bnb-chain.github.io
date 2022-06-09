@@ -50,6 +50,21 @@ If BAS supports EVM, the openness and programmability can enable the application
 2. Reuse the existing DeFi lego to centralize token liquidity
 3. Channel to connect with other cross-chain bridges and centralized exchanges
 
+## ZkBAS - a trustless and scaling solution
+   
+ZkBAS is a trustless and scaling solution for BNB Smart Chain. zkBAS is built on ZK Rollup architecture. ZkBAS bundle (or “roll-up”) hundreds of transactions off-chain and generates cryptographic proof. These proofs can come in the form of SNARKs (succinct non-interactive argument of knowledge) which can prove the validity of every single transaction in the Rollup Block. It means all funds are held on the BSC, while computation and storage are performed on BAS with less cost and fast speed.
+
+ZkBAS achieves the following goals:
+
+No sacrificing on decentralization or security; The ZkBAS share the same security as BSC does. Thanks to zkSNARK proofs, the security is guaranteed by cryptographic. Users do not have to trust any third parties or keep monitoring the Rollup blocks in order to prevent fraud.
+Fast transaction speed, faster finality, much lower gas fee.
+BNB, and BEP20/BEP721/BEP1155 created on BSC or zkBAS can flow freely between BSC and zkBAS.
+The gas token on the zkBAS can be either BEP20 or BNB.
+Users can trigger a “full exit” on BSC. The user can request this operation to withdraw funds if he thinks that his transactions are censored by zkBAS.
+Built-in instant AMM swap.
+Built-in NFT marketplace.
+
+
 ## BSC Partition Chain (BPC)
 A BPC introduces another sub space with a new validator set, a new computing engine, and a new ledger. Essentially it works as a “shard” or a “layer 2” to off load part of the data, computing and transactions from BSC.
 

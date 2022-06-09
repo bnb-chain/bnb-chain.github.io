@@ -265,7 +265,7 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'BNB Application Sidechains (BAS)', 
+            label: 'BNB Application Sidechain (BAS)', 
             //link: {type: "doc", id: 'learn/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
             items:[
                 {

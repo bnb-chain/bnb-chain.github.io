@@ -4,12 +4,10 @@ sidebar_label: Deploy NFT
 
 # Deploy ERC-721 token
 
-Deployment of ERC-721 token can be done though Remix IDE of locally using truffle. 
-Since BAS has EVM & Web3 support, it is compatible with Ethereum development toolsets. 
-Remix is the easiest way to deploy the ERC-721 smart contract into a BAS network.
+Deployment of ERC-20 token can be done through Remix IDE locally using truffle. As BAS supports both EVM & Web3JS, it is compatible with Ethereum development toolsets. The Remix IDE is the easiest way to deploy the ERC-20 smart contract into a BAS network.
 
 To deploy an ERC-721 token using Remix IDE go to the [remix page](https://remix.ethereum.org/). 
-In the deploy section choose `Injected Web3` and make sure your MetaMask is connected to one of the BAS networks. 
+In the deploy section, choose `Injected Web3` and make sure your MetaMask is connected to one of the BAS networks. 
 To get connected to the BAS network, go to one of the BAS devnet's staking pages, for example, https://staking.dev-01.bas.ankr.com/, and it will create a new MetaMask network automatically for you. 
 You can also configure your MetaMask manually.
 
