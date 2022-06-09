@@ -7,19 +7,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BNB Chain Documentation',
-  url: 'https://bnb-chain.github.io/',
+  url: 'https://github.com/RumeelHussainbnb/beta_BSC_Docs',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'bnb-chain', 
-  projectName: 'bnb-chain.github.io', 
+  organizationName: 'RumeelHussainbnb', 
+  projectName: 'beta_BSC_Docs/docs', 
   deploymentBranch: 'gh-pages',
-    
-  /*i18n: {
-      defaultLocale: 'en',
-      locales: ['en', 'fr', 'zh'],
-    },*/
+ 
   
   plugins: [require.resolve("docusaurus-plugin-image-zoom")],
   presets: [
@@ -29,7 +25,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/bnb-chain/bnb-chain.github.io/blob/master/',
+          editUrl: 'https://github.com/RumeelHussainbnb/beta_BSC_Docs',
           editCurrentVersion: true,
         },
         blog: {
@@ -48,14 +44,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     
     ({
-      /*announcementBar: {
-        id: 'support_us',
-        content:
-          'Binance Chain and Binance Smart Chain are entering a new development era with a new brand. The documentations and the web pages are under reconstruction.',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: false,
-      },*/
       
       zoom: {
         selector: '.markdown :not(em) > img',
@@ -68,29 +56,6 @@ const config = {
         }
       },
       
-      algolia: {
-        // The application ID provided by Algolia
-        appId: '3LF005YNGZ',
-  
-        // Public API key: it is safe to commit it
-        apiKey: 'dbc11ec6638f9c767ef6ed2856871f58',
-  
-        indexName: 'bnbchain',
-  
-        // Optional: see doc section below
-        // contextualSearch: true,
-  
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        //externalUrlRegex: 'external\\.com|domain\\.com',
-  
-        // Optional: Algolia search parameters
-        //searchParameters: {},
-  
-        // Optional: path for search page that enabled by default (`false` to disable it)
-      //  searchPagePath: 'search',
-  
-        //... other Algolia params
-      },
       colorMode: {
         defaultMode: 'light',
       },
