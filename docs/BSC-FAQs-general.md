@@ -1,6 +1,6 @@
 ---
 sidebar_label: BSC General FAQs
-hide_table_of_contents: true
+hide_table_of_contents: false
 sidebar_position: 2
 ---
 
@@ -29,17 +29,23 @@ The codebase of BSC is open-sourced here:
 * <https://github.com/bnb-chain/bsc-double-sign-sdk>
 * <https://github.com/bnb-chain/oracle-relayer>
 
-### Where can I find some support?
+## What is consensus model of BSC?
 
-* Technical talk and support running our software: Telegram <https://t.me/joinchat/IuVfSlYWC5seijz6a0Bjww>
-* Bugs or technical contributions: GitHub
-* General discussion regarding our blockchain: Telegram <https://t.me/BNBChainCommunity>
+Binance Smart Chain is an innovative solution to bring programmability and interoperability to Binance Chain. Binance Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
 
-### Which are BNB Smart Chain 's official channels for communication and information?
+## Where can I find some support?
+* Technical talk and support running our software: 
+  * Telegram: <https://t.me/joinchat/IuVfSlYWC5seijz6a0Bjww>
+  * Discord: <https://discord.com/channels/789402563035660308/912296662834241597>
+* Bugs or technical contributions: GitHub <https://github.com/bnb-chain>
+* General discussion regarding our blockchain: Telegram <https://t.me/BinanceDEXchange>
+
+## Which are BNB Smart Chain's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
-* Twitter: <https://twitter.com/binancechain>
-* BNB Chain Forum: <https://www.buildnbuild.dev/>
+* Twitter: <https://twitter.com/bnbchain>
+* BNB Chain Forum: <https://buildnbuild.dev/>
+
 
 ### Wallet support for BNB Smart Chain 
 
@@ -49,6 +55,11 @@ The codebase of BSC is open-sourced here:
   - [Arkane](wallet/arkane.md)
   - [Ledger](wallet/ledger.md)
   - [MEW](wallet/myetherwallet.md)
+  - [Trust Wallet](wallet/trustwallet.md)
+  - [ezDeFi](wallet/ezdefi.md)
+  - [SafePal](https://blog.safepal.io/pre-announcement-trade-on-dex-with-safepal/)
+  - [TokenPocket](https://tokenpocket-gm.medium.com/defi-with-tokenpocket-how-to-use-binance-smart-chain-swap-with-tokenpocket-e76d6cd7986)
+  
 
 ###  How to recover if you choose the wrong network type?
 
@@ -161,7 +172,8 @@ Current list:
 * YFII: <https://bscscan.com/token/0x7f70642d88cf1c4a3a7abb072b53b929b653eda5>
 * ZEC: <https://bscscan.com/token/0x1ba42e5193dfa8b03d15dd1b86a3113bbbef8eeb>
 
-Details are [here](https://www.binance.org/en/blog/binance-presents-project-token-canal-2/)
+Details are [here](https://www.bnbchain.org/en/blog/binance-presents-project-token-canal-2/)
+
 
 ### How to Send and Receive BNB on Smart Chain?
 
@@ -190,3 +202,60 @@ Details are [here](https://www.binance.org/en/blog/binance-presents-project-toke
 3. Complete the steps to withdraw
 
 4. Wait for the exchange to process your request. Once it is confirmed, you will immediately receive BNB to your Smart Chain address.
+
+## Which dApps are deployed on BSC?
+Refer to [here](https://bnbproject.org/) to learn about the different projects deployed on BSC.
+
+## What to do if I transferred funds to exchange wallet but exchange doesn't support BSC chain?
+
+Please be careful while doing transaction to other exchanges check if they support or accept deposit through BSC or not. The confirmed transaction on blockchain cannot be reverted as we also don't have any access to the wallet address.
+
+## What to do in case of wrong network withdrawal issue?
+
+Please try to use wallet app which support both BSC and ETH network in it. So that you can access any network with same address and transfer your funds out of the wrong network.
+
+
+## What to do in case of Missing memo or wrong memo?
+Please try to contact support of the receiver address to help with the deposit. If it's an exchange wallet address then contact them with the correct memo.
+
+## How to track Cross-chain transfer tx From BC to BSC?
+
+1. Get Cross-chain transfer transaction hash of Binance Chain
+
+For example: https://explorer.binance.org/tx/8B9B066BAF9DC1C233A9D316C75E8139B985518868C1120B656C5B3EBAC7C498 
+
+Please make sure the “Transaction Type” is “Crosschain transfer out”
+
+![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020215774/original/qZ5KzDcOjCyKO2H42HftM15NEtcZTHwjfw.png?1629968129)
+
+2. Get Destination Address
+
+The “TxHash on BSC” is linked to Binance smart chain explorer
+
+![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216076/original/YdIbat5IAnpWgQO0SuNX4zHY_rsF97fErA.png?1629968302)
+
+For example: https://www.bscscan.com/tx/0x43980b4f9ae4c03685dd61172d23ccae07eb8abb0d677c579bfc7059e447ead9
+
+If "status" is success, it means this transaction is successful. 
+
+The tokens were sent from "BSC: Token Hub" to receiver address . 
+
+![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216406/original/FsSI7rAvaRuwQ-60br8EmVgrWoFvxYN-_Q.png?1629968479)
+
+## How to connect Metamask to BNB Smart Chain?
+Please refer [here](wallet/metamask.md)
+
+## How can I report a scam/ rug pull?
+
+If you meet any potential Scams, Phishing, Rug Pulls, and Hacks, please report through this portal:
+https://forms.coinholmes.com
+
+Coinholmes.com is supported by Peckshield team (Professional security company)
+
+## How to reset BNB Chain Extention Wallet?
+If user has seed phrase then user can refer [here](wallet/extension/reset.md) to reset wallet.
+
+## How to apply for Pioneer Burn Refunding?
+
+The [self-service window](https://www.binance.com/en/my/wallet/uncredited_deposit/form?&coin=&network=&amount=&txId=tx) for [BNB Pioneer Burn Program](https://www.binance.com/en/support/announcement/7bcf4da5671d44a0a5118c2277773bb4) is now live. Eligible users who lose tokens as part of mistakes they made while making transactions on BNB Smart Chain can access this page and fill in the application form. We will investigate your case and help retrieve the assets if your case is qualified for the Program. 
+

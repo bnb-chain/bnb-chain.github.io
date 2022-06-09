@@ -1,7 +1,7 @@
 ---
 sidebar_label: Staking
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Staking with extension wallet

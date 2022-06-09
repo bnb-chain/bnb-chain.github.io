@@ -167,7 +167,7 @@ const sidebars = {
                 type: 'category',
                 //collapsible: true,
                 collapsed: true,
-                label: 'Beacon Extension Wallet',
+                label: 'BNB Chain Extension Wallet',
                 items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
               },
               {

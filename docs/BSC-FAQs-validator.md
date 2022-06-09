@@ -1,13 +1,12 @@
 ---
 sidebar_label: BSC Validator FAQs
-hide_table_of_contents: true
+hide_table_of_contents: false
 sidebar_position: 2
 ---
 
 # BNB Smart Chain Validator FAQs
 
-### How does a validator node work?
-
+### What is the role of BNB Smart Chain Validators?
 It powers the blockchain network by processing transactions and signing blocks.
 
 ### What are the incentives to run a validator node?

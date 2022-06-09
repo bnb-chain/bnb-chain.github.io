@@ -74,3 +74,35 @@ Validators and delegators will earn rewards from the following sources:
 ## Which wallets can I use to store BNB?
 
 You can see the list [here](Wallet.md)
+
+## How to track Cross-chain transfer tx From BSC to BC?
+
+1. Get Cross-chain transfer tx hash of Binance Smart Chain
+
+For example:  https://bscscan.com/tx/0xb6b941a3d44fec69902ea632eb96c6ffa51b3098576629c26ab34ce10deaf357 
+
+Please make sure the “Transaction Action” is “Transfer out”
+
+The transfer amount is denoted in the  “value” field. 
+
+![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67013598745/original/zeVlALl0chXv_LpHGv0OmGqH8eudFy0utg.png?1622611333)
+
+2. Get Destination Address
+
+The “Cross Chain Package” is linked to BNB chain explorer
+
+![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67013598743/original/-2gMcowNwo2VQNEAatHSzYBrlSfp0vsbxQ.png?1622611332)
+
+For example: https://api.binance.org/cross_chain/v1/tx/0xb6b941a3d44fec69902ea632eb96c6ffa51b3098576629c26ab34ce10deaf357 
+
+
+If "has_refund" is false, it means this transaction is successful. 
+
+The corresponding transaction hash on Binance chain is “cross_chain_tx_hash"
+
+The tokens were sent to “receiverAddresses”. 
+
+![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67013598744/original/yma7MlpuPQljanX3WFerZNukdQEPOiuy_A.png?1622611332)
+
+
+
