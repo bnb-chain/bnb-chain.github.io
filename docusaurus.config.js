@@ -25,7 +25,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/RumeelHussainbnb/beta_BSC_Docs/blob/master/docs/',
+          editUrl: 'https://github.com/RumeelHussainbnb/beta_BSC_Docs/blob/master/',
           editCurrentVersion: true,
         },
         blog: {
