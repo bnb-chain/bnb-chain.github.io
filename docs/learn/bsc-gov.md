@@ -80,7 +80,7 @@ And do the following steps:
 - Claim reward for the relayer and increase sequence.
 
 
-## Workflow
+##  Parameters that control the behavior of BSC
 
  There are many system parameters to control the behavior of the BSC:
 

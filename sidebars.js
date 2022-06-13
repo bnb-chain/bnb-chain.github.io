@@ -265,77 +265,39 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'BNB Application Sidechain (BAS)', 
+            label: 'BNB Sidechain', 
             //link: {type: "doc", id: 'learn/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
             items:[
                 {
                   type: 'category',
                   collapsed: true,
                   label: 'Overview',
-                  items:['bas/overview/bas', 'bas/overview/relationBSCandBAS',
-                          'bas/overview/bas-advantages', 'bas/overview/whentochooseBAS']
+                  items:['BNBSidechain/overview/bas', 'BNBSidechain/overview/relationBSCandBAS',
+                          'BNBSidechain/overview/whentochooseBAS']
                },
                
                {
-                  type: 'category',
-                  collapsed: true,
+                  type: 'doc',
                   label: 'Architecture',
-                  items:['bas/architecture/overview', 'bas/architecture/circulation-model-and-native-asset-bridge',
-                        'bas/architecture/native-asset-bridge']
+                  id: 'BNBSidechain/architecture/overview'
                },
              
                {
                   type: 'category',
                   collapsed: true,
                   label: 'Security',
-                  items:['bas/security/blockchain-and-evm-security', 'bas/security/on-chain-security',
-                        'bas/security/bridge-security']
+                  items:['BNBSidechain/security/blockchain-and-evm-security', 
+                        'BNBSidechain/security/bridge-security']
                },
              
               {
-                type: 'category',
-                collapsed: true,
-                label: 'Development',
-                items:[
-                        {
-                          type: 'category',
-                          collapsed: true,
-                          label: 'BAS Testnet',
-                          items: ['bas/develop/BAS-Testnet/development-tools', 'bas/develop/BAS-Testnet/metamask-with-bas-testnet',
-                              'bas/develop/BAS-Testnet/launch-bas', 
-                              { 
-                                type:'category',
-                                label: 'Tutorials',
-                                collapsed: true,
-                                items:[
-                                'bas/develop/BAS-Testnet/tutorials/deploy-erc20-tokens',
-                                'bas/develop/BAS-Testnet/tutorials/deploy-erc721-tokens']
-                              },
-                            ]
-                        },
-                 
-                        {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'Aries Testnet',
-                        items: ['bas/develop/Aries-Testnet/development-tools', 'bas/develop/Aries-Testnet/metamask-with-aries-testnet',
-                        'bas/develop/Aries-Testnet/key-management',
-                          { 
-                            type:'category',
-                            label: 'Tutorials',
-                            collapsed: true,
-                            items:[
-                            'bas/develop/Aries-Testnet/tutorials/deploy-erc20-tokens',
-                            'bas/develop/Aries-Testnet/tutorials/deploy-erc721-tokens']
-                          },
-                           ]
-                        },
-                 ], 
+                type: 'doc',
+                label: 'Development Tools',
+                id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
               },
-              {type: 'doc', label: 'Build BAS Demo App', id:'bas/bas-demo-app'},
-              {type: 'doc', label: 'BAS Pilot Projects', id:'bas/bas-pilot-projects'},
-              //{type: 'doc', label: 'FAQs', id:'bas/faqs-bas'},
-          
+              
+              {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bas-pilot-projects'},
+            
             ]
           },
     ],
@@ -375,17 +337,12 @@ const sidebars = {
                   'parameters', 'cross',  'faq'],
         },
         {
-          type: 'doc',
-          //collapsed: true,
-          label: 'Beacon Chain FAQs',
-          //items: ['beaconchain/faq/faq'],
-          id: 'beaconchain/faq/faq',
+          type: 'doc', label: 'Beacon Chain FAQs', id: 'beaconchain/faq/faq',
         },
         {
           type: 'doc',
-
-          id: 'bas/faqs-bas',
-          label: 'BNB Side Chain (BAS) FAQs',
+          id: 'BNBSidechain/faqs-bas',
+          label: 'BNB Sidechain FAQs',
         },  
      ],
 

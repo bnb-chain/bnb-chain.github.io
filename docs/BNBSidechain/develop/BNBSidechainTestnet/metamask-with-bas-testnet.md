@@ -1,9 +1,9 @@
 ---
-sidebar_label: Use MetaMask For BAS
+sidebar_label: Use MetaMask For BNB Sidechain
 ---
 
-# Using MetaMask Wallet with BAS Test Network
-> !!! Tip You may encounter a network configuration issue in recent releases of MetaMask. If so, please make sure you have the recent version installed.
+# Using MetaMask Wallet with BNB Sidechain Test Network
+!!! Tip You may encounter a network configuration issue in recent releases of MetaMask. If so, please make sure you have the recent version installed.
 
 ## What is MetaMask?
 MetaMask was created out of the need for creating more secure and usable Ethereum-based websites. In particular, it handles account management and connecting users to the blockchain. It’s supported in Chrome, Brave, and Safari browsers.
@@ -21,7 +21,7 @@ Navigate to the Metamask extension in the Chrome Webstore's Extension Category: 
 
 That’s it! You have successfully installed the MetaMask extension on Chrome! 
 
-## Create an account in MetaMask for BAS
+## Create an account in MetaMask for BNB Sidechain
 1. Click on the “Create a wallet” button
 
 ![img](../../../../static/img/assets/create-wallet-for-bas.png)
@@ -40,7 +40,7 @@ That’s it! You have successfully installed the MetaMask extension on Chrome!
 
 _Congratulations_! You have created your MetaMask account!
 
-## Connect Your MetaMask With BAS
+## Connect Your MetaMask With BNB Sidechain
 
 1. Go to the setting page
 
@@ -48,27 +48,26 @@ _Congratulations_! You have created your MetaMask account!
 
 2. Add a new network
    
-<img src="https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FN1UetvVGZzPTugoahHse%2F1-add-network-4.png?alt=media&token=e6bcb4bf-075f-46b6-8718-e035f8ed3baf" alt="img" style={{zoom:"50%"}}/>
+![img](../../../../static/img/assets/bnb-sidechain-metamsk-config.JPG)
 
-### MetaMask Network Configuration for BAS Testnet
+### MetaMask Network Configuration for BNB Sidechain Testnet
 
 **RPC URL**:  https://rpc.dev-01.bas.ankr.com/
 **ChainID**: 14000
 **Symbol**: BAS
 
-3. Claim some testnet BAS tokens to your account then click on your address to copy
+3. Claim some testnet BNB Sidechain tokens to your account then click on your address to copy
+![img](../../../../static/img/assets/bnb-sidechain-metamsk-config-2.JPG)
 
-<img src="https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FxsMhw1jUFHr9aq7AFiPB%2FCOPY.png?alt=media&token=8bfa09e2-ca5d-4492-9169-49ac34b2c240" alt="img" style={{zoom:"50%"}}/>
-
-4. Go to the faucet page: <https://bas-aries-faucet.nodereal.io/>, then paste your address in the box and click on “Give me BAS”
+4. Go to the faucet page: <https://faucet.dev-01.bas.ankr.com/>, then paste your address in the box and click on “Give Me Native Token”
 
 !!! Tip: Please note that you can only claim once every minute 
 
 After the transfer transaction is sent, you will see an increase in your balance.
 
-<img src="https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2F7JVjMOJwf8cOcx738JbX%2FGOT-TOKEN.png?alt=media&token=75f1a868-a66f-4dfa-83fa-b27117384c6d" alt="img" style={{zoom:"50%"}}/>
+![img](../../../../static/img/assets/bnb-sidechain-faucet.JPG)
 
-## Transfer BAS to other address on BAS Network
+## Transfer BNB Sidechain Tokens to other address on BNB Sidechain Network
 
 1. Log in to your MetaMask 
    
@@ -76,31 +75,31 @@ After the transfer transaction is sent, you will see an increase in your balance
 
 2. Click on the "Send" button
 
-![img](https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FDGVcSQKVwHeYoxxPSttI%2F7-transfer.png?alt=media&token=3319ff4a-2132-452f-b3b2-d07e9372d118)
+![img](../../../../static/img/assets/send-bas-token-1.JPG)
 
 3. Copy the receiver’s address in the box
 
-![img](https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FjjPhjcboRrwd7J9HQmNV%2F8-transfer.png?alt=media&token=8844cccc-3ffe-4f2f-ac19-e1043ba4061f)
+![img](../../../../static/img/assets/send-bas-token-2.JPG)
 
 4. Input the amount
 
-![img](https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FbkIwNUYPZ8IBCjawRpjw%2F9-transfer.png?alt=media&token=9f86ee71-b84f-45bc-a0d0-c372e19ed434)
+![img](../../../../static/img/assets/send-bas-token-3.JPG)
 
 5. Confirm your transaction, then click Next
    
 6. Click Confirm to send your transaction
 
-![img](https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FYWPFbPfedOT5HrtJq8QB%2F10-transfer-confirm.png?alt=media&token=b2842a5e-e0c7-4004-b946-3387430d895a)
+![img](../../../../static/img/assets/send-bas-token-4.JPG)
 
 7. Wait for your transaction to be included in the new block
 
-![img](https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FleD0AkSvjSqruUWKIhbf%2F11-waiting.png?alt=media&token=5759ba49-b9e4-4618-992e-13d944b972f3)
+![img](../../../../static/img/assets/send-bas-token-5.JPG)
 
-8. Once your transaction is confirmed, check it on block explorer by clicking Details
+1. Once your transaction is confirmed, check it on block explorer by clicking Details
 
-9. Click on your account to see "Details''
+2. Click on your account to see "Details''
 
-![img](https://3273513804-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoXY90dh2y66ykYGiiavc%2Fuploads%2FZEE2JA4SWJpvJl5z9oge%2F12-details.png?alt=media&token=fcfe5491-ded4-43cf-8868-4df567cb9c0d)
+![img](../../../../static/img/assets/send-bas-token-6.JPG)
 
 ## Import BEP20 Tokens to MetaMask Wallet
 

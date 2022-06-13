@@ -2,9 +2,9 @@
 sidebar_label: BAS Pilot Projects
 ---
 
-# BAS Pilot Projects
+# BNB Sidechain Pilot Projects
 
-Following is the list of pilot projects powered by the BNB Application SideChain (BAS).
+Following is the list of pilot projects powered by the BNB SideChain.
 
 * **[Cube](https://cube.store/)**: brings entertainment powered by blockchain on the Metaverse.
 

@@ -31,7 +31,6 @@ In this section, we have provided tutorials on usage of different components of 
 ## Build on BNB Chain
 - Tutorial on [How to Build on BNB Chain](https://www.youtube.com/watch?v=TsraNMHENIE&list=PLD2Yls_M04XPTdEBGmTu6A-atFn3_mmCZ)
 
-
 ## Smart Contracts
 - Tutorial on [How to Write BEP20 (Proxy) Contacts](proxy.md)
 - Tutorial on [How to Verify BEP20 (Proxy) Contacts](verify-proxy.md)
@@ -43,15 +42,15 @@ In this section, we have provided tutorials on usage of different components of 
 
 ## Smart Digital Assets
 - **BEP Tokens**
-  * Tutorial on [How to issue BEP20 Tokens](issue-BEP20.md)
+  * Tutorial on [How to Issue BEP20 Tokens](issue-BEP20.md)
   * Tutorial on [How to Bind BEP2 and BEP20 Tokens](bind-tokens.md)
   * Tutorial on [How to Mirror BEP2 and BEP20 Tokens](mirror.md)
   * Tutorial on [How to Sync BEP2 and BEP20 Supply](sync.md)
-  * Tutorial on [How to perform Cross-Chain Transfer of BEP2 and BEP20 Tokens Between BC and BSC](cross-chain-transfer.md)
+  * Tutorial on [How to Perform Cross-Chain Transfer of BEP2 and BEP20 Tokens Between BC and BSC](cross-chain-transfer.md)
 
 - **NFT**
-  * Tutorial on [How to implement Token URI](develop/../nft-metadata-standard.md)
-  * Tutorial on [How to deploy NFTs on BSC](ERC721.md)
+  * Tutorial on [How to Implement Token URI](develop/../nft-metadata-standard.md)
+  * Tutorial on [How to Deploy NFTs on BSC](ERC721.md)
 
 ## Wallets
 - **BNB Smart Chain**
@@ -64,3 +63,15 @@ In this section, we have provided tutorials on usage of different components of 
   * Tutorial on [How to Use Trezor Hardware Wallet with Beacon Chain](beaconchain/wallet/tutorial/trezor-model-t-user-guide)
   * Tutorial on [How to manage your BEP8 tokens in BNB Chain Testnet Web Wallet](beaconchain/wallet/tutorial/bep8)
 
+## Build on BNB Sidechains
+
+- Tutorial on [How to Use Metamask with BNB Sidechain Test Network](https://docs.nodereal.io/nodereal/bas/wallet/use-metamask-for-bas)
+- Tutorial on [Key Management using Web3JS using BNB Sidechain Test Network](https://docs.nodereal.io/nodereal/bas/wallet/key-management)
+- Tutorial on [How to Deploy ERC20 Tokens on BNB Sidechain BAS Devnet Test Network](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/deploy-erc20-token)
+- Tutorial on [How to Deploy ERC721 Tokens on BNB Sidechain BAS Devnet Test Network](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/deploy-erc721-token)
+- Tutorial on [How to Get Test Tokens on BNB Sidechain Aries Test Network](https://docs.nodereal.io/nodereal/bas/build-on-bas/get-token-from-bas-aries-testnet)
+- Tutorial on [How to Issue BEP20 Token on BNB Sidechain Aries Test Network](https://docs.nodereal.io/nodereal/bas/build-on-bas/issue-bep20-tokens)
+- Tutorial on [How to Issue BEP20 Tokens on BNB Sidechain Aries Test Network using Black IDE](https://blog.nodereal.io/en/how-to-issue-fungible-bep20tokens-on-bas-aries-testnet-using-black-ide/)
+- Tutorial on [How to Issue NFTs on BNB Sidechain Aries Test Network](https://blog.nodereal.io/en/issuing-nft-erc-721-1155-on-bas-testnet/)
+- Tutorial on [How to Issue NFTs on BNB Sidechain Aries Test Network using Black IDE](https://blog.nodereal.io/en/how-to-issue-nft-on-bsc-bas-aries-testnetusing-the-black-ide/) 
+- Tutorial on [How to Deploy NFTs on BNB Sidechain Aries Test Network Using OpenZeppelin Contracts and Truffle](https://docs.nodereal.io/nodereal/bas/build-on-bas/deploy-nft-on-bas)

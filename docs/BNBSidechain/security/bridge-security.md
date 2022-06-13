@@ -3,7 +3,7 @@ sidebar_label: Bridge Security
 ---
 # Bridge Security 
 
-cBridge introduces the best-in-class cross-chain token bridging experience for BAS. cBridge for bridging assets from BAS to BSC and vice-versa can be accessed [here](https://test-bas-bridge.celer.network/#/transfer) 
+cBridge introduces the best-in-class cross-chain token bridging experience for BNB Sidechain. cBridge for bridging assets from BNB Sidechain to BSC and vice-versa can be accessed [here](https://test-bas-bridge.celer.network/#/transfer) 
 
 Time and again several news headlines have resurfaced about the compromise and hacking of different cross-chain bridges resulting in a loss of million of dollars. The development teams at BNB Chain and Celer understand the importance for our community, users, and developers to have a clear understanding of the security models of the Celer Inter-chain Message Framework (Celer IM). 
 
