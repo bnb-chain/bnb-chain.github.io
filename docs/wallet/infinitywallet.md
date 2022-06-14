@@ -18,7 +18,7 @@ Connect to DeFi protocols and Dapps directly on desktop or mobile from within th
 
 
 ## Install Infinity Wallet
-### Go to [https://infinitywallet.io](https://infinitywallet.io/) to install the most recent version of the Infinity Wallet. 
+Go to [https://infinitywallet.io](https://infinitywallet.io/) to install the most recent version of the Infinity Wallet. 
 
 The **Infinity Wallet** is currently available to be downloaded for desktop devices on **Windows**, **macOS** and **Linux**. In the coming months there will be a mobile wallet released to accompany our revolutionary desktop wallet.
 

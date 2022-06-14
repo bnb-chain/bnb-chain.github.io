@@ -209,6 +209,6 @@ Since the release of v8.1.3, MetaMask sometimes displays the warning message "In
 
 To solve this issue, click on "'Settings" and enter Chain ID of BNB Smart Chain network again. If **56** doesn’t work, try **0x38**. 
 
-<img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ" alt="img" style={{zoom:"30%"}}/>
+<img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ"/>
 
 ![img](https://lh6.googleusercontent.com/vKWf01WY7u0bFp1Iww2VgFzqnk_Zw2yhBQfBCfG2UAE5aHJOZouYGNGGS1C1w5yvEMzmynwRcE1gwZS9VZ1akfyQItzF6-2Sw5I9M33w4caHqnKoAN2GhajkqqQYBnc-IiOkGrMg)

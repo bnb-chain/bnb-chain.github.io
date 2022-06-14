@@ -1,5 +1,5 @@
 ---
-sidebar_label: BAS Pilot Projects
+sidebar_label: BNB Sidechain Pilot Projects
 ---
 
 # BNB Sidechain Pilot Projects
