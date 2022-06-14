@@ -1,4 +1,5 @@
 # How to use Ledger with Binance Extension Wallet
+
 Binance Extension Wallet v1.121.1 is released and verified on **Firefox and Chrome** with Ledger Nano S
 
 ## **Connect to Ledger Nano S Hardware Wallet**
