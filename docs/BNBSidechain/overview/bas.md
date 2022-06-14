@@ -23,7 +23,7 @@ In essence, BNB Sidechain defines the primary structure and configuration of the
 The current implementation of BNB Sidechain is BNB Sidechained on a modified version of BSC, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended. 
 
 ## Launch a BNB Sidechain
-If you want to set up your own testnet, follow these steps defined in the [Ankr documentation](https://www.ankr.com/docs/build-blockchain/bas/overview). Celer has also provided a testnet BNB Sidechain [bridge](https://test-bas-bridge.celer.network/#/transfer) for use with BNB Sidechain.
+If you want to set up your own testnet, follow the steps defined [here](https://www.ankr.com/docs/build-blockchain/bas/overview). Celer has also provided a testnet BNB Sidechain [bridge](https://test-bas-bridge.celer.network/#/transfer) for use with BNB Sidechain.
 
 If you want to leverage third party services, you can reach [NodeReal Support](https://nodereal.io/semita) or [Ankr](https://docs.ankr.com/blockchain-apis/getting-support) to get professional support there. 
 
