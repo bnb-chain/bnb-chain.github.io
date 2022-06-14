@@ -20,7 +20,7 @@ It defines requirements for integration with the BSC ecosystem and brings develo
 
 Technically, BNB Sidechain is a set of smart contracts written in any possible programming language. The contract executor itself can be anyone and work in any way; BNB Sidechain does not require the use of any specific set of programming languages or API standards. 
 In essence, BNB Sidechain defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BSC infrastructure. With this integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
-The current implementation of BNB Sidechain is BNB Sidechained on a modified version of BSC, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended. For more details, please refer to [Ankr documentation](https://docs.ankr.com/bnb-application-sidechain/architecture).
+The current implementation of BNB Sidechain is BNB Sidechained on a modified version of BSC, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended. 
 
 ## Launch a BNB Sidechain
 If you want to set up your own testnet, follow these steps defined in the [Ankr documentation](https://www.ankr.com/docs/build-blockchain/bas/overview). Celer has also provided a testnet BNB Sidechain [bridge](https://test-bas-bridge.celer.network/#/transfer) for use with BNB Sidechain.

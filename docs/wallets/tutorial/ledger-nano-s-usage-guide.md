@@ -10,7 +10,7 @@ Therefore, using a hardware wallet device such as the Ledger Nano S is strongly 
 In order to use a Ledger device with Binance Chain and Binance DEX, you will need:
 
 - Supported web browser: Chrome (including Brave, Vivaldi, and other Chromium variants), Opera or Firefox
-- Access to the Binance Chain web wallet (https://binance.org/unlock) using your web browser
+- Access to the Binance Extension Web Wallet (https://binance.org/unlock) using your web browser
 - Initialized Ledger Nano S device with firmware version 1.5.5 or newer
 - The Ledger Live application installed on your computer for app installation
 
@@ -61,7 +61,7 @@ You will then be redirected to the Trading Interface.
 For your security, please read the information displayed in the following popup and confirm that the address shown on your Ledger device matches the one shown on-screen.<br/>
 Press the right button on your device to confirm that the address matches (You must do this to continue).
 
-## How to send Binance Chain crypto assets
+## How to send Beacon Chain crypto assets
 
 Confirming a trade on a Ledger Wallet:
 

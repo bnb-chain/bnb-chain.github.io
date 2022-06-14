@@ -25,7 +25,7 @@ In this section, we have provided tutorials on usage of different components of 
   * Tutorial on [How to Run BNB Beacon Chain Client](beaconchain/develop/api-reference/cli.md)
   * Tutorial on [How to Run Light Client on BNB Beacon Chain](beaconchain/light-client.md)
 
-- **BNB Sidechains**
+- **BNB Sidechain**
   * Tutorial on [How to Use Metamask with BNB Sidechain Test Network](https://docs.nodereal.io/nodereal/bas/wallet/use-metamask-for-bas)
   * Tutorial on [Key Management using Web3JS using BNB Sidechain Test Network](https://docs.nodereal.io/nodereal/bas/wallet/key-management)
   * Tutorial on [How to Deploy ERC20 Tokens on BNB Sidechain BAS Devnet Test Network](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/deploy-erc20-token)
