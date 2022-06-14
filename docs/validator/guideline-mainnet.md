@@ -30,7 +30,7 @@ Download `genesis.json` and `config.toml` by:
 
 ```bash
 ## mainet
-wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+wget --no-check-certificate  $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
 ```
 
@@ -137,7 +137,7 @@ Make sure that the `side-cons-addr` is the address you unlock when start the val
 
 Read the detailed manual [here](../stake/Staking.md) to understand other parameters.
 
-Go to [explorer](https://explorer.binance.org/) to verify your transactions.
+Go to [explorer](https://explorer.bnbchain.org/) to verify your transactions.
 
 ## After Declaring Your Candidacy
 

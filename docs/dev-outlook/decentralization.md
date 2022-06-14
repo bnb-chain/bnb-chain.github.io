@@ -14,7 +14,7 @@ BSC will introduce more validators, e.g. another 20 inactive validators, into th
 
 Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 21 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 
-In an extreme case, if a majority of the active 21 validators get attacked and offline, Candidate Validators can report to Binance Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
+In an extreme case, if a majority of the active 21 validators get attacked and offline, Candidate Validators can report to Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
 
 ## Temporary Maintenance Mode for Validators
 Due to the design of ‘Parlia’ consensus, the absence of the validator, even if it is due to scheduled maintenance, will cause instability and capacity of BSC due to the extra waiting time and chain reorganization.

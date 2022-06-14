@@ -29,6 +29,9 @@ const sidebars = {
             collapsed: true,
             label: 'BNB Smart Chain',
             items: ['learn/intro', 
+
+                {type: 'doc', label: 'Tutorials', id:'bsc-tutorials'},
+
                 {
                 type: 'category',
                 collapsed: true,
@@ -170,6 +173,7 @@ const sidebars = {
                 label: 'BNB Chain Extension Wallet',
                 items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
               },
+              {type:'doc', id:'wallet/wallet_api', label:'Binance Extension Wallet API'},
               {
                 type: 'category',
                 collapsed: true,
@@ -190,6 +194,7 @@ const sidebars = {
           // collapsible: true,
             collapsed: true,
             items: ['learn/beaconIntro',
+                      {type: 'doc', label: 'Tutorials', id:'beaconchain/bc-tutorials'},
                       {
                         type:'category',
                         label: 'Learn',
@@ -222,12 +227,16 @@ const sidebars = {
                         }, 
                         {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'Beacon Chain Client'},
                         {type:'doc', id: 'beaconchain/light-client', label:'Light Client'},
+                        {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
+                        {type:'doc', id: 'beaconchain/list_instruction', label:'List Instructions'},
+                        {type:'doc', id: 'beaconchain/list', label:'List Transaction'},
+                        {type:'doc', id: 'beaconchain/learn/trading-interface', label:'Trading Interface'},
                         {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'Simple API Server'},
                         {type:'doc', id: 'beaconchain/develop/bcsdk', label:'Beacon Chain SDK'},
                         {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'Beacon Chain Testnet & SDK'},
                         {
                           type: 'category',
-                          label:'Beacon Chain API Reference',
+                          label:'Beacon Chain and DEX API Reference',
                           items:[
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
@@ -240,7 +249,8 @@ const sidebars = {
                             {type:'doc', id:'beaconchain/changelog', label:'CHANGELOG'}
       
                           ]
-                        }
+                        },
+                        
                         ]
                       },
                       {
@@ -268,14 +278,7 @@ const sidebars = {
             label: 'BNB Sidechain', 
             //link: {type: "doc", id: 'BNBSidechain/overview/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
             items:[
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: 'Overview',
-                  items:['BNBSidechain/overview/bas', 'BNBSidechain/overview/relationBSCandBAS',
-                          'BNBSidechain/overview/whentochooseBAS']
-               },
-               
+               'BNBSidechain/overview/bas', 'BNBSidechain/overview/whentochooseBAS',
                {
                   type: 'doc',
                   label: 'Architecture',
@@ -295,7 +298,7 @@ const sidebars = {
                 label: 'Development Tools',
                 id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
               },
-              
+              'BNBSidechain/bs-tutorials',
               {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bas-pilot-projects'},
             
             ]
@@ -303,9 +306,6 @@ const sidebars = {
     ],
     },
 
-    {
-      type: 'doc', label: 'Tutorials', id:'tutorials'
-    },
 
     {
       type: 'category',

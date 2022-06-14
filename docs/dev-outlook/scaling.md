@@ -16,7 +16,7 @@ Based on the past research and investigation, storage has been commonly consider
 ## Erigon Based BSC Client or Another Storage Model
 [Erigon](https://github.com/ledgerwatch/erigon), a.k.a the previous “turbo-geth”, has been striving hard to improve the storage system of Ethereum/Geth in the past 3 years and now blossomed into beta status. Its new storage model with the new database, MPT generation methodology and staged sync has been proven to run much more efficiently than Geth for the large storage. Creating a BSC client based on Erigon will certainly improve the efficiency of the BSC archive node by reducing the storage size and improving the sync time.
 
-[Ankr is already contributing to the task](https://github.com/binance-chain/bsc-erigon). The full node binary is ready to run while the validator mode is being worked on.
+[Ankr is already contributing to the task](https://github.com/bnb-chain/bsc-erigon). The full node binary is ready to run while the validator mode is being worked on.
 
 Besides the instant benefits, the new storage model of Erigon may also set a better cornerstone for the other storage related optimizations.
 

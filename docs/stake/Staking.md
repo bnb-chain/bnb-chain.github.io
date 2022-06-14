@@ -25,11 +25,7 @@ Validators are ranked by their power and operator address. The more its delegati
 
 ## Reward Distrubution
 
-Since BSC uses PoSA as its consensus engine, all the delegators of validators can receive some share of the validators’ reward.
-
-However, the rewards(fees) are collected on BSC while the staking info is stored on BC.
-
-So the main idea is we transfer all the rewards from BSC to BC once every day and execute the distribution on BC.
+Since BSC uses PoSA as its consensus engine, all the delegators of validators can receive some share of the validators’ reward. However, the rewards(fees) are collected on BSC while the staking info is stored on BC. So, the main idea is we transfer all the rewards from BSC to BC once every day and execute the distribution on BC.
 
 ### Main Workflow:
 1. ValidatorSet is updated in BreatheBlock, the frequency is once a day. let’s assume it happens on day N.

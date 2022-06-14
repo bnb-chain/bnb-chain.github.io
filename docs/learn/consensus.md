@@ -132,20 +132,20 @@ Before introducing, we would like to clarify some terms:
 
 ### Key features
 
-#### Light client security
+#### Light Client Security
 Validators set changes take place at the (epoch+N/2) blocks. (N is the size of validatorset before epoch block). Considering the security of light client, we delay N/2 block to let validatorSet change take place.
 
 Every epoch block, validator will query the validatorset from contract and fill it in the extra_data field of block header. Full node will verify it against the validatorset in contract. A light client will use it as the validatorSet for next epoch blocks, however, it can not verify it against contract, it have to believe the signer of the epoch block. If the signer of the epoch block write a wrong extra_data, the light client may just go to a wrong chain. If we delay N/2 block to let validatorSet change take place, the wrong
 epoch block won’t get another N/2 subsequent blocks that signed by other validators, so that the light client are free of such attack.
 
-#### System transaction
+#### System Transaction
 The consensus engine may invoke system contracts, such transactions are called system transactions. System transactions is signed by the the validator who is producing the block. For the witness node, will generate the system transactions(without signature) according to its intrinsic logic and compare them with the system transactions in the block before applying them.
 
-#### Enforce backoff
+#### Enforce Backoff
 In Clique consensus protocol, out-of-turn validators have to wait a randomized amount of time before sealing the block. It is implemented in the client-side node software and works with the assumption that validators would run the canonical version.
 However, given that validators would be economically incentivized to seal blocks as soon as possible, it would be possible that the validators would run a modified version of the node software to ignore such a delay. To prevent validator rushing to seal a block, every out-turn validator will get a specified time slot to seal the block. Any block with a earlier blocking time produced by a out-turn validator will be discarded by other witness node.
 
-### How to Produce a new block
+### How to Produce a New Block
 
 #### Step 1: Prepare
 A validator node prepares the block header of next block.
@@ -155,7 +155,7 @@ A validator node prepares the block header of next block.
 *  Every epoch block, will store validators set message in `extraData` field of block header to facilitate the implement of light client.
 * The coinbase is the address of the validator
 
-#### Step2: FinalizeAndAssemble
+#### Step2: Finalize And Assemble
 
 * If the validator is not the in turn validator, will call liveness slash contract to slash the expected validator and generate a slashing transaction.
 * If there is gas-fee in the block, will distribute **1/16** to system reward contract, the rest go to validator contract.
@@ -168,7 +168,7 @@ The final step before a validator broadcast the new block.
 
 ### How to Validate/Replay a block
 
-#### Step1: VerifyHeader
+#### Step1: Verify Header
 Verify the block header when receiving a new block.
 
 * Verify the signature of the coinbase is in `extraData` of the `blockheader`

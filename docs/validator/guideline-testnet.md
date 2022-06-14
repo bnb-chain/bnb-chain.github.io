@@ -90,7 +90,7 @@ tbnbcli staking bsc-create-validator \
 --node=http://data-seed-pre-1-s3.binance.org:80
 ```
 
-Go to [explorer](https://explorer.binance.org/) to verify your transactions.
+Go to [explorer](https://explorer.bnbchain.org/) to verify your transactions.
 
 Check your validator's status at this [page](https://testnet-staking.binance.org/en/staking)
 

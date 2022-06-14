@@ -50,7 +50,7 @@ Please follow the guide [here](del-guide.md)
 
 ## How many tokens are required to stake BNB?
 
-The [minimum delegated amount](validator/Parameters.md) is **1BNB**.
+The [minimum delegated amount](parameters.md) is **1BNB**.
 
 ## Which wallets can be used to stake BNB?
 

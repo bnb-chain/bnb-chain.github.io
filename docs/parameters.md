@@ -15,7 +15,6 @@ sidebar_position: 2
 - **11** validators on Testnet
 - **21** validators on Mainnet
 
-
 ### Validator Candidate
 
 #### Mainnet
@@ -63,4 +62,5 @@ sidebar_position: 2
 * **Double-Sign Jail time**: 2^63-1 seconds
 * **Downtime Jail time**: 4h
 * **Too Low self-delegation Jail time**: 4h
+
 

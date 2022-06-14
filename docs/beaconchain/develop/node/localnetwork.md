@@ -1,6 +1,6 @@
 # Run a Local Testnet
 
-## Single-node Local Testnet
+## Single-node on Local Testnet
 
 This guide helps you create a single validator node that runs a network locally for testing and other development related uses.
 

@@ -27,12 +27,12 @@ network for the assets
 **For traders**, you can:
 
 - [Propose to create trading pairs](beaconchain/list_instruction.md) between two different tokens
-- [Send orders](beaconchain/learn/trading-interface.md) to buy or sell assets through trading pairs created on the chain with[SDK](beaconchain/exchange-integration.md#sdks)
+- [Send orders](beaconchain/learn/trading-interface.md) to buy or sell assets through trading pairs created on the chain with [SDK](beaconchain/exchange-integration.md#sdks)
 - [Watch the DEX market](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets) to confirm price and market activity of certain assets
 
 **For developers**, you can also:
 
-- Explore the transaction history and blocks on the chain, via [Binance Chain Explore](https://explorer.binance.org), [API](beaconchain/develop/api-reference/dex-api/paths.md)
+- Explore the transaction history and blocks on the chain, via [BNB Chain Explorer](https://explorer.bnbchain.org/), [API](beaconchain/develop/api-reference/dex-api/paths.md)
 and [node RPC](beaconchain/develop/api-reference/node-rpc.md) interfaces.
 - Run a [full node](beaconchain/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
 - Extract other data of Binance Chain via full node or [APIs](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets)
@@ -56,7 +56,7 @@ and node RPC interfaces.
 - [Issue](issue-BEP20.md) new tokens to digitalize assets
 - [Migrate](https://github.com/bnb-chain/bsc-develop-ecosystem) existing DApps
 - Run a [full node](validator/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-- Become a validator of BSC - [testnet](/validator/guideline-testnet.md) and [mainnet]](/validator/guideline-mainnet.md)
+- Become a validator of BSC - [testnet](validator/guideline-testnet.md) and [mainnet](validator/guideline-mainnet.md)
 - [Develop wallets](wallet/wallet_api.md) and tools to help users use Dapps
 
 ## Wallet
@@ -68,7 +68,7 @@ BNB Chain provides a Web Wallet at [https://www.bnbchain.org/en](https://www.bnb
 - Showing the balances of assets on the addresses
 - Sending and receiving assets
 
-Binance Web Extension Wallet also presents a trading UI, where you can examine market data and manage your orders to trade among the listed assets. BNB Smart Chain supports several popular wallets like [MetaMask](wallet/metamask.md) and [TrustWallet](wallet/trustwallet.md), to learn more about the supported wallets refer [here](Wallet.md). For a list of tutorials on how to use other supported wallets with BNB Smart Chain, refer [here](wallets/wallet-tutorial-overview.md).
+Binance Extension Wallet also presents a trading UI, where you can examine market data and manage your orders to trade among the listed assets. BNB Smart Chain supports several popular wallets like [MetaMask](wallet/metamask.md) and [TrustWallet](wallet/trustwallet.md), to learn more about the supported wallets refer [here](Wallet.md). For a list of tutorials on how to use other supported wallets with BNB Smart Chain, refer [here](wallets/wallet-tutorial-overview.md).
 
 ## BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 
@@ -83,17 +83,17 @@ In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network tha
 ## How to Buy BNB Tokens
 As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Chain network you will need to have some BNB tokens. 
 - BNB tokens can also be received for usage on testnet through the [testnet faucet](https://testnet.binance.org/faucet-smart).
-- The BNB tokens for usage on mainnet are available for purchase on multiple leading exchanges and wallets as explained [here](#wallet). You can also refer [here][wallets/wallet-tutorial-overview] for tutorials on how to use different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
+- The BNB tokens for usage on mainnet are available for purchase on multiple leading exchanges and wallets as explained [here](#wallet). You can also refer [here](wallets/wallet-tutorial-overview) for tutorials on how to use different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
 
 ## Chain Explorer
-Chain Explorer provides a portal to explore blocks and transaction details. On [Beacon Chain Explorer](https://explorer.binance.org/) and [BNB Smart Chain Explorer](https://bscscan.com/), you can also check different asset types, the distribution of their ownerships, and owners' transactions.
+Chain Explorer provides a portal to explore blocks and transaction details. On [BNB Chain Explorer](https://explorer.bnbchain.org/) and [BscScan](https://bscscan.com/), you can also check different asset types, the distribution of their ownerships, and owners' transactions.
 
 ## REST API
-There are [Accelerated Nodes](beaconchain/develop/node/nodetypes.md) which provide advanced API services for the public. Here is a list of all the Rest API information Accelerated Node provides: [paths](api-reference/dex-api/paths.md). For information regarding RPC Endpoints for BSC, refer [here](rpc.md).
+There are [Accelerated Nodes](beaconchain/develop/node/nodetypes.md) which provide advanced API services for the public. Here is a list of all the Rest API information Accelerated Node provides: [paths](beaconchain/develop/api-reference/dex-api/paths). For information regarding RPC Endpoints for BSC, refer [here](rpc.md).
 
 ### Node RPC
 There are data seed nodes in the network which allow users to perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
-If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: for Beacon Chain refer [here](api-reference/node-rpc.md) and for BNB Smart Chain refer [here](rpc.md).
+If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: for Beacon Chain refer [here](beaconchain/develop/api-reference/node-rpc.md) and for BNB Smart Chain refer [here](rpc.md).
 
 ## Advanced Ways To Use BNB Chain
 ### Run your own full node
@@ -106,7 +106,7 @@ Please refer to this guide about [how to run your own light client on Beacon Cha
 
 ### Access via Node Command Line Interface (CLI)
 
-A Command Line Interface is available for Linux and Mac platforms. Please refer to the [CLI Reference](api-reference/cli.md).
+A Command Line Interface is available for Linux and Mac platforms. Please refer to the [CLI Reference](beaconchain/develop/api-reference/cli).
 
 ### Use SDKs
 

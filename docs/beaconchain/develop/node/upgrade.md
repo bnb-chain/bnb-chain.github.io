@@ -13,7 +13,7 @@ Many of Beacon Chain  upgrades are hardfork ones. If so, you have to finish the 
 bnbchaind start --home <home-path>
 ```
 
-## Forget to Upgrade
+## Forgot to Upgrade
 
 The Beacon Chain  has a hardfork upgrade and if you failed to upgrade your fullnode to the latest version, `bnbchaind` process will stop and even if you restart with the latest version, the following error will appear:
 ```

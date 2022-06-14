@@ -83,7 +83,7 @@ Instead their reward will be distributed amongst other better performing validat
 
 ### What is the minimum amount for self-delegation to avoid being jailed?
 
-The [minimum self-delegated amount](validator/Parameters.md) is **10000BNB**.
+The [minimum self-delegated amount](parameters.md) is **10000BNB**.
 
 ### What is the unbounding time period?
 
