@@ -10,7 +10,7 @@ BNB Sidechain is a modular framework for creating BSC-compatible sidechains. It 
 
 ## BNB Sidechain Structure and Integration
 
-BNB Sidechain specifies the primary structure and configuration of the blockchain, using special templates. A **template** is a ready-made blockchain solution that is **already integrated into the BSC infrastructure**. With this integration, developers automatically get access to products like a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
+BNB Sidechain specifies the primary structure and configuration of the blockchain, using special templates. A **template** is a ready-made blockchain solution that is **already integrated into the BSC infrastructure**. With this integration, developers automatically get access to products like a ready-made staking system, block explorer, API gateways, interfaces for governance, etc. 
 
 After applying templates, BNB Sidechain can be customized using programmable and configurable **modules**.
 
