@@ -5,16 +5,16 @@
 Orders are the requests for client to buy or sell tokens into other tokens on Binance DEX.
 It is a standard type of Beacon Chain transaction. Orders are composed of the below parameters.
 
-0. Symbol Pairs: the list pair the order wants to trade.
-1. Order Type: Binance DEX only accept LIMIT orders, which is adhering to SEC definitions of LIMIT orders
-2. Price: price users would like to pay for the specified token quantity, presented as a float
+1. Symbol Pairs: the list pair the order wants to trade.
+2. Order Type: Binance DEX only accept LIMIT orders, which is adhering to SEC definitions of LIMIT orders
+3. Price: price users would like to pay for the specified token quantity, presented as a float
 number of quote currency. This must be rounded by tick size. Internally it can be multiplied by 1e8(10^8) in order to store as an integer
 in the range of int64.
-3. Quantity: number of tokens users want to buy or sell. That must be rounded by lot size. Internally it can be multiplied by
+4. Quantity: number of tokens users want to buy or sell. That must be rounded by lot size. Internally it can be multiplied by
 1e8(10^8) in order to store as an integer in the range of int64.
-4. Side: buy or sell
-5. Time: entry time of the order, which is the block number(height) the order gets booked in.
-6. TimeInForce:
+5. Side: buy or sell
+6. Time: entry time of the order, which is the block number(height) the order gets booked in.
+7. TimeInForce:
 
     * GTE: Good Till Expire. Order would stay effective until expire time. Order may expire in the UTC midnight after more than 259, 200 blocks, which is 72 hours in term of blocking time.
     * IOC: Immediate or Cancel. Orders would be executed as much as it can in the booking block

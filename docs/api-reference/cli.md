@@ -14,9 +14,9 @@ balance, transaction detail by transaction hash and etc.
 
 ## Where can I download the BNB CLI?
 
-You can download BNB CLI releases here: [https://github.com/binance-chain/node-binary](https://github.com/binance-chain/node-binary/tree/master/cli)
+You can download BNB CLI releases from [here] (https://github.com/bnb-chain/node-binary/tree/master/cli)
 ```
-git clone https://github.com/binance-chain/node-binary.git
+git clone https://github.com/bnb-chain/node-binary.git
 ```
 You can choose to download the version for testnet or mainnet. Replace the network var with `testnet` or` prod` in the following command:
 ```

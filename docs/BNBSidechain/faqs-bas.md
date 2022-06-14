@@ -41,7 +41,7 @@ Also, read [BNB Chain 2022: Build N’ Build](https://www.bnbchain.org/en/blog/b
 
 ### If developers have questions about BNB Sidechain deployment, where can they ask them?
 We will soon set up a Discord channel for questions and organize a Twitter space to share more details. 
-For now, they can read [How to Launch a BNB Sidechain](develop/BNB Sidechain-Testnet/launch-BNB Sidechain.md).
+For now, they can read [How to Launch a BNB Sidechain](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/launch-bas).
 
 ### I have read the proposal and want to take the next step toward deployment. Whom can I talk to? 
 For now, read [How to Launch a BNB Sidechain](develop/BNB Sidechain-Testnet/launch-BNB Sidechain.md). For other business and technical details, wait till the Discord channel for BNB Sidechain is set up. You'll be able to ask your questions there.

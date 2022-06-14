@@ -23,8 +23,9 @@ In essence, BNB Sidechain defines the primary structure and configuration of the
 The current implementation of BNB Sidechain is BNB Sidechained on a modified version of BSC, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended. For more details, please refer to [Ankr documentation](https://docs.ankr.com/bnb-application-sidechain/architecture).
 
 ## How to Launch a BNB Sidechain?
-If you want to set up your own testnet, follow these steps defined in [Ankr documentation](https://www.ankr.com/docs/build-blockchain/bas/overview). Celer has also provided a [testnet BNB Sidechain bridge](https://test-BNB Sidechain-bridge.celer.network/#/transfer).
-If you want to leverage third party services, you can reach [NodeReal Support](https://docs.google.com/forms/d/e/1FAIpQLSer9JzrvzVzkpm4NsHPM1QzNMMZTfchehnTOY8CSysI0RvVAQ/viewform) or [Ankr](https://docs.ankr.com/blockchain-apis/getting-support) to get professional support there. 
+If you want to set up your own testnet, follow these steps defined in the [Ankr documentation](https://www.ankr.com/docs/build-blockchain/bas/overview). Celer has also provided a testnet BNB Sidechain [bridge](https://test-bas-bridge.celer.network/#/transfer) for use with BNB Sidechain.
+
+If you want to leverage third party services, you can reach [NodeReal Support](https://nodereal.io/semita) or [Ankr](https://docs.ankr.com/blockchain-apis/getting-support) to get professional support there. 
 
 ### Testnets
 There are two testnets where you can try BNB Sidechain. It already contains pre-deployed API gateways, block explorer, UI for the staking, and a faucet.
@@ -36,5 +37,5 @@ There are two testnets where you can try BNB Sidechain. It already contains pre-
   * Documentation: <https://docs.nodereal.io/nodereal/bas/build-on-bas>.
 
 ## FAQ
-For more questions, refer to [Ankr documentation](https://docs.ankr.com/bnb-application-sidechain/faq).
+For more questions, refer to the [FAQs](../faqs-bas.md) section.
 

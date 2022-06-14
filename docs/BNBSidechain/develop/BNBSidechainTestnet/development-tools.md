@@ -21,8 +21,8 @@ Multiple IDEs and libraries can be used for developing and deploying smart contr
 
 ## JSON RPC Endpoints and Other Dev Tools
 
-* For details on BNB Sidechain BAS Devnet, refer [here](https://www.ankr.com/docs/build-blockchain/bas/demo) for details on JSON RPC endpoints and other development tools.
+* For details on BNB Sidechain BAS Devnet, refer [here](https://www.ankr.com/docs/build-blockchain/bas/demo) for details on JSON RPC endpoints and other development tools like faucet and explorer.
   
-* For details on BNB Sidechain Aries Testnet, refer [here](https://docs.nodereal.io/nodereal/bas/build-on-bas/json-rpc-endpoint) for JSON RPC endpoints and [here](https://docs.nodereal.io/nodereal/bas/build-on-bas/development-tools-used-on-bas) for details on other development tools.
+* For details on BNB Sidechain Aries Testnet, refer [here](https://docs.nodereal.io/nodereal/bas/build-on-bas/json-rpc-endpoint) for JSON RPC endpoints and [here](https://docs.nodereal.io/nodereal/bas/build-on-bas/development-tools-used-on-bas#faucet) for details on other development tools like faucet and explorer.
 
 * JSON-RPC methods: Please refer to this [wiki page](https://github.com/ethereum/wiki/wiki/JSON-RPC) or use [Postman](https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest).

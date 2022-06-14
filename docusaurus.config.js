@@ -11,7 +11,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon/favicon.ico',
   organizationName: 'RumeelHussainbnb', 
   projectName: 'beta_BSC_Docs/docs', 
   deploymentBranch: 'gh-pages',

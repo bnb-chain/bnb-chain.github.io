@@ -4,11 +4,10 @@ sidebar_label: Blockchain and EVM Security
 
 # Blockchain and EVM security
 
-> Provided by Ankr
 
 ## Blockchain
 
-BNB Sidechain solves the blockchain security problem by using the BSC code BNB Sidechain for its default template applied when creating a BNB Sidechain instance, which is audited by _Provide names_.
+BNB Sidechain solves the blockchain security problem by using the BSC code BNB Sidechain for its default template applied when creating a BNB Sidechain instance, which is audited by [Beosin](https://github.com/Ankr-network/bas-genesis-config/blob/master/audit/2022-04-27-Beosin.pdf) and Certik.
 
 ## EVM
 

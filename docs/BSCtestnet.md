@@ -36,7 +36,7 @@ To request funds, please make a tweet with your BNB Smart Chain address pasted i
 
 3. Transfer From BNB Smart Chain to Beacon Chain
 
-You can use [BNB Chain Extension Wallet](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
+You can use [Binance Extension Wallet](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
 
 If you wish to test Beacon Chain features, you could transfer BNB cross-chain with MathWallet dApp:
 https://docs.bnbchain.org/docs/wallet/math#transfer-bnb-from-bsc-to-bc-in-testnet

@@ -9,14 +9,14 @@ sidebar_position: 2
 See also : [https://github.com/ethereum/go-ethereum/wiki/Private-network](https://github.com/ethereum/go-ethereum/wiki/Private-network)
 
 
-## Setting up your BSC Node(s)
+## Setting Up Your BSC Node(s)
 
 ### Pre-Requisites
 #### Install Geth
 
 Review the guide [here](validator/fullnode.md)
 
-#### Create /projects
+#### Create /projects Symbolic Link 
 
 Create a `/projects` symbolic link
 *(Note:  This step is simply so "/projects" can be used in all other commands, instead you could use full paths, or set an env var)*
@@ -32,7 +32,7 @@ $ sudo ln -s <my projects folder> /projects
 $ mkdir /projects/local_ethereum_blockchain
 ```
 
-### Create the genesis block config
+### Create the Genesis Block Config
 
 Create this file :  `/projects/local_ethereum_blockchain/genesis.json`
 
@@ -58,31 +58,31 @@ With the following contents :
 ```
 ([info about the genesis file](https://ethereum.stackexchange.com/a/2377/2040))
 
-### Initialize an Ethereum node
+### Initialize an Ethereum Node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node1 init /projects/local_ethereum_blockchain/genesis.json
 ```
 
-### Start the Ethereum node
+### Start the Ethereum Node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node1 --networkid 1000 console
 ```
 
-### Initialize another Ethereum node
+### Initialize Another Ethereum Node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node-2 init /projects/local_ethereum_blockchain/genesis.json
 ```
 
-### Start the 2nd Ethereum node
+### Start the 2nd Ethereum Node
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node-2 --port 30304 --nodiscover --networkid 1000 console
 ```
 
-### Connect one node to the other
+### Connect One Node to the Other
 
 In one geth console :
 
@@ -97,7 +97,7 @@ In the other console :
 ```
 
 
-## Useful geth commands
+## Useful geth Commands
 
 ### Node info
 
@@ -119,7 +119,7 @@ How many peers ?
 > admin.peers.length
 ```
 
-### Create an account
+### Create an Account
 
 You need an account to do be able to do things like mining
 
@@ -129,7 +129,7 @@ You need an account to do be able to do things like mining
 
 *And make sure you remember/save the password!*
 
-### Unlock account
+### Unlock Account
 
 Neccessary before some actions
 
@@ -137,7 +137,7 @@ Neccessary before some actions
 > personal.unlockAccount( eth.accounts[0] )
 ```
 
-### Start mining
+### Start Mining
 
 ```
 > miner.start(1)
@@ -145,38 +145,38 @@ Neccessary before some actions
 
 The first block may take a while to mine, allow a few minutes
 
-### Stop mining
+### Stop Mining
 
 ```
 > miner.stop()
 ```
 
-### Current block number
+### Current Block Number
 
 ```
 > eth.blockNumber
 ```
 
-### Details of current block
+### Details of Current Block
 
 ```
 > eth.getBlock( eth.blockNumber )
 ```
 
 
-### Which node minded the last block
+### Which Node had Mined the Last Block
 
 ```
 > eth.getBlock(eth.blockNumber).miner
 ```
 
-### Account balance, in ether
+### Account Balance in Ether
 
 ```
 > web3.fromWei(eth.getBalance(eth.accounts[0]))
 ```
 
-### Transfer ether between accounts
+### Transfer Ether Between Accounts
 
 First get the account numbers by doing
 
@@ -207,7 +207,7 @@ Finally transfer 1 ether
 
 
 
-## Connect to other nodes on your network
+## Connect to Other Nodes on Your Network
 
 1. Get the IP of the node : `$ ifconfig|grep netmask|awk '{print $2}'`
 

@@ -6,10 +6,9 @@ hide_table_of_contents: true
 
 # Beacon Chain FAQs
 
-### What is Beacon Chain , or Binance DEX?
+### What is Beacon Chain and Binance DEX?
 
-Beacon Chain is the blockchain initially developed by Binance and community. Binance DEX is the
-decentralized exchange module developed on top of the Beacon Chain blockchain.
+Beacon Chain is the blockchain initially developed by Binance and community. Binance DEX is the decentralized exchange module developed on top of the Beacon Chain blockchain.
 
 ### What is the design principle of Beacon Chain ?
 

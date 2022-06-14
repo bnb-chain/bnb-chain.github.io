@@ -10,7 +10,7 @@ Deploys a BEP20 smart contract with a message, and renders it in the front-end. 
 
 This dapp implements a "Hello World" style application that echoes a message passed to the contract to the front end. This tutorial is intended to be followed using the online IDE available at [Remix IDE](https://remix.ethereum.org/).
 
-### Setting up [Remix IDE](https://remix.ethereum.org/)
+### Setting Up [Remix IDE](https://remix.ethereum.org/)
 
 - Remix is an online IDE to develop smart contracts.
 - You need to choose Solidity Compiler and Deploy and Run Transactions.
@@ -23,7 +23,7 @@ This dapp implements a "Hello World" style application that echoes a message pas
 
 - Copy/Paste the Smart contract below into the newly created file `MegaCoin.sol`
 
-## The smart contract
+## Writing the Smart Contract
 
 - Create new contract BEP20Token.sol and copy contract code from the bep20 token template [here](../BEP20Token.template)
 

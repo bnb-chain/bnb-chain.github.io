@@ -4,12 +4,12 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Use BNB Chain Extension Wallet
+# Use Binance Extension Wallet 
 
 ## What is it?
-BNB Chain Extension Wallet is a Crypto Wallet for Beacon Chain, BNB Smart Chain. You can send and receive funds on Beacon Chain, BNB Smart Chain  and cross-chain transfers between both of BNB Chain’s blockchains.
+Binance Extension Wallet is a Crypto Wallet for Beacon Chain, BNB Smart Chain. You can send and receive funds on Beacon Chain, BNB Smart Chain  and cross-chain transfers between both of BNB Chain’s blockchains.
 
-In the future, BNB Chain Extension Wallet will add support for Ethereum blockchain and enable access for distributed applications, or "Dapps" in your browser!
+In the future, Binance Extension Wallet will add support for Ethereum blockchain and enable access for distributed applications, or "Dapps" in your browser!
 
 It’s supported in Firefox and Chrome browsers.
 
@@ -22,7 +22,7 @@ Chrome App Store Link: <https://chrome.google.com/webstore/detail/binance-chain-
 
 Firefox App Store Link: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
-[How to manually install the BNB Chain Extension Wallet](manual.md)
+[How to manually install the Binance Extension Wallet](manual.md)
 
 
 ## Install
@@ -145,7 +145,7 @@ After the transfer transaction is sent, you will see an increase in your balance
 
 ## Swap Testnet BEP2 token to its BEP20 equivalent
 
-* Follow the instructions above to Install BNB Chain Extension Wallet if not ready
+* Follow the instructions above to Install Binance Extension Wallet if not ready
 * Follow the instructions above to create or Recover your account
 * Switch to BNB Chain testnet after unlock your extension wallet and Click at “+” to add your BEP2 token if necessary
 
@@ -175,7 +175,7 @@ Click at “+” to add your BEP20 token if necessary
 
 ## Swap Testnet BEP20 token to its BEP2 equivalent
 
-* Follow the instructions above to Install BNB Chain Extension Wallet if not ready
+* Follow the instructions above to Install Binance Extension Wallet if not ready
 * Follow the instructions above to create or Recover your account
 * Switch to BNB Smart Chain  testnet and Click at “+” to add your BEP20 token if necessary
 

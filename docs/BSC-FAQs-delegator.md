@@ -16,7 +16,7 @@ Please read the guide [here](del-guide.md)
 
 You can use:
 
-* [BNB Chain extension wallet](binance.md)
+* [Binance Extension Wallet](binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 * [Trust Wallet](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
 * [Command Line Tool](https://github.com/bnb-chain/node/releases/tag/v0.8.1)

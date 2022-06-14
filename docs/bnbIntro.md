@@ -23,7 +23,6 @@ BNB stands for “**Build and Build**”. Along with _fueling_ transactions on B
 BSC 2021 (current version) introduces a considerable block size of **__100m gas ceiling__**. We plan to introduce a more advanced logic for blockchain storage and BSC client to cover it and allow further expansion.  Currently, to fully sync the BSC blockchain, validators need extensive storage and time. Scaling down the validator and node operator requirements is necessary to enable a seamless BSC experience.
 
 - New technologies, like Erigon, are being verified to decrease both time and storage demands for validators nodes while performing full sync. 
-  
 - Working with validators and infrastructure providers to deploy new solutions to address this issue, such as  
   - Parallel EVM
   - Better block process pipeline

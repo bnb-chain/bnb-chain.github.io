@@ -35,7 +35,7 @@ The codebase of BSC is open-sourced here:
 * Bugs or technical contributions: GitHub <https://github.com/bnb-chain>
 * General discussion regarding our blockchain: Telegram <https://t.me/BinanceDEXchange>
 
-## Which are BNB Smart Chain 's official channels for communication and information?
+## Which are BNB Smart Chain's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
 * Twitter: <https://twitter.com/bnbchain>
@@ -43,7 +43,7 @@ The codebase of BSC is open-sourced here:
 
 ## Wallet support for BNB Smart Chain 
 
-  - [BNB Chain Extension Wallet ](wallet/binance.md)
+  - [Binance Extension Wallet ](wallet/binance.md)
   - [MetaMask](wallet/metamask.md)
   - [Math Wallet](wallet/math.md)
   - [Arkane](wallet/arkane.md)

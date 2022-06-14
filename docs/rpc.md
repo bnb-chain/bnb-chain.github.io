@@ -21,26 +21,6 @@ Recommend
 * https://bsc-dataseed1.ninicoin.io/
 * https://bsc.nodereal.io
 
-<!--
-Backups
-
-* https://bsc-dataseed2.defibit.io/
-* https://bsc-dataseed3.defibit.io/
-* https://bsc-dataseed4.defibit.io/
-* https://bsc-dataseed2.ninicoin.io/
-* https://bsc-dataseed3.ninicoin.io/
-* https://bsc-dataseed4.ninicoin.io/
-* https://bsc-dataseed1.binance.org/
-* https://bsc-dataseed2.binance.org/
-* https://bsc-dataseed3.binance.org/
-* https://bsc-dataseed4.binance.org/
-
-BSC Websocket Endpoints:
-
-*Note: provided by community with no quality promised, building your node should be always the long term goal*
-
-* wss://bsc-ws-node.nariox.org:443
--->
 
 BC RPC Endpoints:
 
@@ -98,7 +78,7 @@ The rate limit of BSC endpoint on Testnet and Mainnet is 8K/5min.
 * [BlockVision](https://docs.blockvision.org/blockvision/): <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
 
 
-## Start
+## Start HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --rpc flag
 ```bash

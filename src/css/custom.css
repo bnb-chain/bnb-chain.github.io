@@ -15,14 +15,14 @@
 }
 
 img{
-  max-width: 80%;
-  height: 80%;
+  /*max-width: 80%;
+  max-height: auto;*/
   justify-content: center;
 }
 
-img[bnblogo]{
-  height: 100%;
-  width: 100%
+img[BNB]{
+  max-height: 100%;
+  max-width: 100%
 }
 
 :root {
@@ -106,5 +106,3 @@ html[data-theme='light'] .navbar dropdown {
     var(--ifm-color-emphasis-100) 100%
   );
 }
-
-

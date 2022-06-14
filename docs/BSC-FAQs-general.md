@@ -31,7 +31,7 @@ The codebase of BSC is open-sourced here:
 
 ## What is consensus model of BSC?
 
-Binance Smart Chain is an innovative solution to bring programmability and interoperability to Binance Chain. Binance Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
 
 ## Where can I find some support?
 * Technical talk and support running our software: 
@@ -49,7 +49,7 @@ Binance Smart Chain is an innovative solution to bring programmability and inter
 
 ### Wallet support for BNB Smart Chain 
 
-  - [Binance Extension Wallet ](wallet/binance.md)
+  - [Binance Extension Wallet](wallet/binance.md)
   - [MetaMask](wallet/metamask.md)
   - [Math Wallet](wallet/math.md)
   - [Arkane](wallet/arkane.md)
@@ -181,7 +181,7 @@ Details are [here](https://www.bnbchain.org/en/blog/binance-presents-project-tok
 
 1. If you don't have an existing address of BNB Smart Chain , please use these [wallets](Wallet.md) to create one.
 
-2. On your Binance account, open your BNB wallet then tap on Withdraw. Select BEP20 as the Network. Indicate the amount and paste your BSC address.
+2. On your Binance account, open your Binance Extension wallet then tap on Withdraw. Select BEP20 as the Network. Indicate the amount and paste your BSC address.
 
 3. Complete the steps to withdraw
 
@@ -191,7 +191,7 @@ Details are [here](https://www.bnbchain.org/en/blog/binance-presents-project-tok
 
 [Binance.com](https:/www.binance.com) can withdraw those pegged tokens to BSC.
 
-1. If you don't have an existing address of BNB Smart Chain , please use these [wallets](Wallet.md) to create one.
+1. If you don't have an existing address of BNB Smart Chain, please use these [wallets](Wallet.md) to create one.
 
 2. On your Binance account, open your wallet then tap on Withdraw. Select BEP20 as the Network. Indicate the amount and paste your BSC address.
 
@@ -252,7 +252,7 @@ https://forms.coinholmes.com
 
 Coinholmes.com is supported by Peckshield team (Professional security company)
 
-## How to reset BNB Chain Extention Wallet?
+## How to reset Binance Extention Wallet?
 If user has seed phrase then user can refer [here](wallet/extension/reset.md) to reset wallet.
 
 ## How to apply for Pioneer Burn Refunding?

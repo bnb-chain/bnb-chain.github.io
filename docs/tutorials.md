@@ -6,7 +6,8 @@ hide_table_of_contents: false
 # Tutorials
 In this section, we have provided tutorials on usage of different components of BNB Chain.
 
-## Platform
+## BNB Chain 
+
 - **BNB Smart Chain**
   * Tutorial on [How to Join BNB Smart Chain Mainnet as Validator](validator/guideline-mainnet.md)
   * Tutorial on [How to Join BNB Smart Chain Testnet as Validator](validator/guideline-testnet.md)
@@ -28,7 +29,7 @@ In this section, we have provided tutorials on usage of different components of 
 - Tutorial on [How to Stake BNB Tokens on BSC](staking-with-ext-wallet.md)
 - Tutorial on [How to Delegate BNB Tokens on BSC](del-guide.md)
   
-## Build on BNB Chain
+## BNB Chain Development Video Series
 - Tutorial on [How to Build on BNB Chain](https://www.youtube.com/watch?v=TsraNMHENIE&list=PLD2Yls_M04XPTdEBGmTu6A-atFn3_mmCZ)
 
 ## Smart Contracts
@@ -40,7 +41,7 @@ In this section, we have provided tutorials on usage of different components of 
     * [Using HardHat](hardhat-new.md)
 - Tutorial on [How to Verify Deployed Smart Contract on bscScan](verify.md)
 
-## Smart Digital Assets
+## Tokens
 - **BEP Tokens**
   * Tutorial on [How to Issue BEP20 Tokens](issue-BEP20.md)
   * Tutorial on [How to Bind BEP2 and BEP20 Tokens](bind-tokens.md)

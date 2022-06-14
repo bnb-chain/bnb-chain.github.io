@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Mirror BEP2 and BEP20 Token
 
-## Prerequisite
+## Pre-requisites
 
 This BEP20 token is not bonded to any BEP2 token
 
@@ -14,7 +14,7 @@ This BEP20 token is not bonded to any BEP2 token
 
 Anyone can call the `mirror` [method](https://github.com/bnb-chain/bsc-genesis-contract/blob/af4f3993303213052222f55c721e661862d19638/contracts/TokenManager.sol#L331) to issue a BEP2 token automatically and bind them.
 
-## What happens under the hood
+## What Happens Under the Hood
 
 - Verify there is no pending mirror request
 - Check the total supply and token symbol is valid

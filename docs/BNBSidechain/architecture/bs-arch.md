@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 BNB Sidechain is a modular framework for creating BSC-compatible sidechains. It defines requirements for integration with the BSC ecosystem and brings development-ready EVM-compatible features like staking, RPC-API, and smart contracts. Since BSC doesn’t rely on the BNB Sidechain security model, there is no default embedded production-ready bridge solution between the BSC and BNB Sidechain networks. Instead, BNB Sidechain can provide protocols and standards for integrating third-party bridges like Multichain or Celer Network cBridge.
 
-## BNB Sidechain structure & integration
+## BNB Sidechain Structure and Integration
 
 BNB Sidechain specifies the primary structure and configuration of the blockchain, using special templates. A **template** is a ready-made blockchain solution that is **already integrated into the BSC infrastructure**. With this integration, developers automatically get access to products like a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. 
 
@@ -17,7 +17,7 @@ After applying templates, BNB Sidechain can be customized using programmable and
 <p>
 &nbsp;
 
-![img](../../../static/img/assets/bas-architecture1.png)
+![img](../../../static/img/assets/bs-architecture.png)
 
 </p>
 
@@ -35,7 +35,7 @@ BNB Sidechain brings with it programmable and configurable modules that can be u
 * PoSA Consensus — for users to be able to stake to the authorized validators in the BNB Sidechain network and guarantee the safeness of actions applied on the chain.
 * Storage & State — for persisting local data.
 
-Internally, BNB Sidechain implements the following modules: Parlia consensus engine, staking pools, governance, dynamic runtime upgrades, reward management, manageable blockchain params, EVM hooks, and deployment proxy.
+Internally, BNB Sidechain implements the following modules: Parlia consensus engine, staking pools, governance, dynamic runtime upgrades, reward management, manageable blockchain params, and EVM hooks.
 
 This modular architecture allows to re-use or enable/disable different modules. All modules are runtime-upgradable by on-chain governance.
 

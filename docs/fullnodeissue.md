@@ -1,6 +1,6 @@
 # Common Issues When Running a Full Node
 
-### How to monitor your full node syncing process?
+### How to Monitor Your Full Node Syncing Process?
 
 * You can check the current height of full node by visiting `localhost:26657/status`
 * You can check the log info in your log under your $BNCHOME.<br/>
@@ -57,7 +57,7 @@ Dialing failed module=pex addr=2c1fa9c1698961da38d8cd50da9fe8b4bc433c50@34.202.2
 
 Check your internet connection and make sure it is stable.
 
-#### Out of memory
+#### Out of Memory
 
 * Error Log
 ```
@@ -68,7 +68,7 @@ fatal error: out of memory
 
 Your machine must have more than `8 GB of memory`, otherwise, it will not handle DB restoration during state sync.
 
-#### No priv_validator_state.json after reset
+#### No priv_validator_state.json After Reset
 
 * Error log
 ```
@@ -78,7 +78,7 @@ open /Users/.bnbchaind/data/priv_validator_state.json: no such file or directory
 
 Delete both `priv_validator_state.json` & `node_key.json` file and `data` folder if you want to reset your full node.
 
-#### `bnbchaind` crashes because of `too many open files`
+#### `bnbchaind` Crashes Because of `too many open files`
 
 The default number of files Linux can open (per-process) is `1024`.<br/>
 `bnbchaind` is likely to open more than `1024` files.<br/>
@@ -112,7 +112,7 @@ file locks                      (-x) unlimited
 Please note that open files are different now.
 
 
-#### Forget to Upgrade
+#### Forgot to Upgrade
 
 The Beacon Chain has a hardfork upgrade and if you failed to upgrade your fullnode to the latest version, `bnbchaind` process will stop and even if you restart with the latest version, the following error will appear:
 ```
@@ -140,7 +140,7 @@ To recover from the `state` conflict error, you need to:
 bnbchaind start &
 ```
 
-#### `bnbchaind` is not properly killed
+#### `bnbchaind` is Not Properly Killed
 
 If you started your `bnbchaind` process after it was not properly killed. You will see the following error:
 ```
@@ -154,7 +154,7 @@ To recover, please reset your node and restart:
 bnbchaind unsafe-reset-all --home<your-home-dir>
 ```
 
-#### Cannot start `bnbchaind`
+#### Cannot Start `bnbchaind`
 
 If you do not download the binaries completely, you will see the following message:
 ```
@@ -163,7 +163,7 @@ If you do not download the binaries completely, you will see the following messa
 
 Since all the binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please use this [script](https://github.com/bnb-chain/node-binary/blob/master/install.sh) to download the binaries or use `git lfs clone`.
 
-#### Cannot query a specific block
+#### Cannot Query a Specific Block
 
 Once you have your own node running, you can start querying from it. But sometimes you may not be ablt to get the information you want. For example:
 ```

@@ -1,17 +1,17 @@
 ---
-sidebar_label: BNB Chain Extension Wallet FAQs
+sidebar_label: Binance Extension Wallet FAQs
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB Chain Extension Wallet FAQs
+# Binance Extension Wallet FAQs
 
-## How can I download BEW?
+## How can I download Binance Extension Wallet (BEW)?
 **Chrome App Store Link**: <https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp>
 
 **Firefox App Store Link**: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
-Install BNB Chain Wallet 
+Install Binance Extension Wallet 
 :::info
  This is an example to install BNB Chain Extension Waller on Firefox browser. However, workflow is same for all browsers.
 :::
@@ -121,7 +121,7 @@ You can write your seed phrase down on a piece of paper, store it on a flash dri
 ![img](https://lh3.googleusercontent.com/n2FtIpBGm0rfQC1WHDUbL44LhT6VVizzV4uBhzOkFCblCIXFdOISvy-OzCF5rEeU6q0suuW8Z6noqgYWW5_u8AU7mjat3ayEzU031SLjULoFSh0pdQOO_spRwGfqBEbSl8TIVOfa)
 
 
-## Backing Up After You Install BNB Chain Extension Wallet
+## Backing Up After You Install Binance Extension Wallet
 If for some reason you forgot to record your 12 word seed phrase or you lost the original copy, you can reveal your seed phrase so you can back it up again.
 
 **Select Dropdown Menu (on top-right corner) --> Manage Accounts**
@@ -162,7 +162,7 @@ When resetting your password for your Binance Extension wallet, you will need yo
 ## Why my Tokens are not visible?
 !!! Note : By default each wallet/network will shows the the main token they support. You will need to add additional token to your list. 
 
-**For BNB chain extension wallet users**
+**For Binance Extension Wallet users**
 You'll need to switch to Beacon Chain Mainnet (BC) mainnet or BNB Smart Chain (BSC) mainnet
 
 Once you've added the asset to your wallet, you will be able to select different networks to view the assets held by your selected account on that network.
@@ -244,7 +244,7 @@ If it's sent to accounts in a different wallet, please
 * Then you should see your tokens in asset list.
 
 ## Why should I use Wallet Direct?
-* **Seamless Token Transfer**:  Transfer tokens (which support Beacon Chain, BNB Smart Chain and Ethereum) between paired Binance.com account and BNB Chain Wallet. Without the trouble of copy/paste address and memo every time
+* **Seamless Token Transfer**:  Transfer tokens (which support Beacon Chain, BNB Smart Chain and Ethereum) between paired Binance.com account and Binance Extension Wallet. Without the trouble of copy/paste address and memo every time
 
 * **BNB Holding**: The BNB  positions of your Binance.com account will not change.
 

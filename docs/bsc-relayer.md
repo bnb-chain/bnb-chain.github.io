@@ -35,6 +35,7 @@ make build
 or you can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc-relayer/releases/tag/v1.1.0)
 
 ## Get Example Config File
+
 Get example config from this url: <https://github.com/bnb-chain/bsc-relayer/blob/master/config/config.json>
 
 Edit`config.json` and fill your BSC private key to bsc_config.private_key, example private key: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
@@ -79,7 +80,6 @@ Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/bnb
 ### Verify Status
 
 You could call [RelayerHub Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006) to verify that your relayer is registered. Go to [read contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006#readContract) and call **isRelayer** function. If it returns **true**, then your relayer is working properly.
-
 
 ## Relayer Rewards
 

@@ -22,7 +22,4 @@ The main task of BNB Sidechain is to facilitate any project developer to be able
 * ### **Extend Existing Functionality of BSC**
 We can rightfully claim that BNB Sidechain is a lightweight framework on which one can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality of the BNB Smart Chain (BSC). 
 
-:::info
-For more questions, refer to [Ankr documentation](https://docs.ankr.com/bnb-application-sidechain/faq).
-:::
 

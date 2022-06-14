@@ -266,7 +266,7 @@ const sidebars = {
             type: 'category',
             collapsed: true,
             label: 'BNB Sidechain', 
-            //link: {type: "doc", id: 'learn/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
+            //link: {type: "doc", id: 'BNBSidechain/overview/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
             items:[
                 {
                   type: 'category',
@@ -279,7 +279,7 @@ const sidebars = {
                {
                   type: 'doc',
                   label: 'Architecture',
-                  id: 'BNBSidechain/architecture/overview'
+                  id: 'BNBSidechain/architecture/bs-arch'
                },
              
                {
