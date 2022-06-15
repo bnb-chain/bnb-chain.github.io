@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bnb-chain.github.io/blog"/>
     <subtitle>BNB Chain Documentation Blog</subtitle>
-    <icon>https://bnb-chain.github.io/img/favicon.ico</icon>
+    <icon>https://bnb-chain.github.io/img/icon/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
