@@ -230,7 +230,7 @@ const sidebars = {
                         {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
                         {type:'doc', id: 'beaconchain/list_instruction', label:'List Instructions'},
                         {type:'doc', id: 'beaconchain/list', label:'List Transaction'},
-                        {type:'doc', id: 'beaconchain/learn/trading-interface', label:'Trading Interface'},
+                        {type:'doc', id: 'beaconchain/trading-spec', label:'Trading Specification'},
                         {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'Simple API Server'},
                         {type:'doc', id: 'beaconchain/develop/bcsdk', label:'Beacon Chain SDK'},
                         {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'Beacon Chain Testnet & SDK'},
