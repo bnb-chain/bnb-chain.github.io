@@ -325,13 +325,12 @@ Yes, you can. A full node contains all the information and application logic for
 It can receive and broadcast blocks and transactions with other full nodes and even validators.
 The only exception is it will not participate in the consensus if the full node is not a Validator.
 
-### Does Beacon Chain  support Smart Contracts?
+### Does Beacon Chain support Smart Contracts?
 
-No. This was an intentional design decision to improve the performance of the system and eliminate
-having to support unnecessary features.
+No. This was an intentional design decision to improve the performance of the system and eliminate having to support unnecessary features.
 
-If you have certain must-have feature-s, it might be added as a native implementation instead of using smart contract.<br/>
-Feel free to talk to Binance community.
+If you have certain must-have features, it might be added as a native implementation instead of using smart contract.<br/>
+Feel free to talk to [BNB Chain Community](https://www.buildnbuild.dev/).
 
 ### How can I transfer tokens, such as Bitcoin, from other block chains onto Beacon Chain ?
 
