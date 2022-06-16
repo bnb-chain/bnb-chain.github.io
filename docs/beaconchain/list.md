@@ -3,7 +3,7 @@
 Only [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) tokens issued on Beacon Chain  can be listed. Learn how to issue BEP2 tokens [here](tokens.md). If a token's listing proposal has been passed by valdiators, then a `list` transaction must be sent before `expire-time`.
 
 ## List Fee
-Fees will be charge when issuing a token, creating a proposal, depositing and listing. You can refer to [fee table in trading spec](./trading-spec.md).
+Fees will be charge when issuing a token, creating a proposal, depositing and listing. You can refer to [fee table in trading spec](trading-spec.md).
 
 ## List Transaction
 
