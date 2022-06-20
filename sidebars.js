@@ -46,15 +46,16 @@ const sidebars = {
                                   'learn/oracle-module','learn/oracle-relayer']},
                                   'learn/bsc-gov']
                 },
-                {
-                  type: 'doc', label: 'Tools', id:'learn/ecosystem'
-                },
+
       
               {type: 'category',
               //collapsible: true,
               collapsed: true,
               label: 'Develop',
-              items: ['BSCmainnet', 'BSCtestnet', 'BSCexplorers',
+              items: [
+                      {type: 'doc', label: 'Tools', id:'learn/ecosystem'},
+                      {type:'doc', id:'rpc', label:'RPC'},
+                      'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
                       {
                         type: 'category',
                                   //collapsible: true,
@@ -62,7 +63,6 @@ const sidebars = {
                                   label: 'Running Fullnode',
                                   items: ['validator/fullnode','validator/snapshot','local', 'validator/upgrade-fullnode']
                       },
-                      {type:'doc', id:'rpc', label:'RPC'},
                       {
                         type: 'category',
                         //collapsible: true,
