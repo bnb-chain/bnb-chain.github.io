@@ -6,19 +6,19 @@ sidebar_position: 2
 
 # BNB Smart Chain  FAQs
 
-### What is BNB Smart Chain ?
+### What is BNB Smart Chain?
 
-BNB Smart Chain  brings EVM-compatible programmability and native cross-chain communication with Beacon Chain using an innovative consensus of Proof of Staked Authority (PoSA).
+BNB Smart Chain brings EVM-compatible programmability and native cross-chain communication with Beacon Chain using an innovative consensus of Proof of Staked Authority (PoSA).
 
-### Why is BNB Smart Chain  designed as a separate chain from Beacon Chain ?
+### Why is BNB Smart Chain designed as a separate chain from Beacon Chain?
 
-The execution of a Smart Contract may slow down the esxchange function and add non-deterministic factors to trading. Even if that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on Tendermint, based on the current underlying consensus protocol and major RPC implementation of Beacon Chain . But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
+The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. Even if that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on Tendermint, based on the current underlying consensus protocol and major RPC implementation of Beacon Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
 
 ### Where will the published whitepaper be found?
 
 The whitepaper can be found at <https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md>. Your feedback is more than welcome.
 
-### Where can I take a look at BNB Smart Chain  code? Is there a GitHub repository?
+### Where can I take a look at the BNB Smart Chain code? Is there a GitHub repository?
 
 The codebase of BSC is open-sourced here:
 
@@ -29,7 +29,7 @@ The codebase of BSC is open-sourced here:
 * <https://github.com/bnb-chain/bsc-double-sign-sdk>
 * <https://github.com/bnb-chain/oracle-relayer>
 
-## What is consensus model of BSC?
+## What is the consensus model of BSC?
 
 BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
 
@@ -67,23 +67,23 @@ Please read this [guide](./wallet/withdraw-en.md)
 
 清阅读以下 [说明](./wallet/withdraw-cn.md)
 
-### How does BNB Smart Chain  work? What is the architecture and consensus used?
+### How does BNB Smart Chain work? What are the architecture and consensus used?
 
-BNB Smart Chain  relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.
+BNB Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.
 
-There will be fewer validators on BNB Smart Chain  testnet.
+There will be fewer validators on the BNB Smart Chain testnet.
 
-### Can you tell more about Proof of Staked Authority(PoSA)? What is it?
+### Can you tell me more about Proof of Staked Authority(PoSA)? What is it?
 
-PoSA is a combination of PoA and PoS. Blocks are produced by a limited set of validators, they are elected in and out based on a staking based governance. Validators take turns to produce blocks in a PoA manner
+PoSA is a combination of PoA and PoS. Blocks are produced by a limited set of validators, they are elected in and out based on staking-based governance. Validators take turns to produce blocks in a PoA manner
 
-### What are the benefits for developers to build on BNB Smart Chain ?
+### What are the benefits for developers to build on BNB Smart Chain?
 
 * EVM-compatible: BNB Smart Chain  supports all the existing Ethereum tooling
 
 * Fast block time, cheaper cost
 
-* Native cross-chain trasfer & communication: Binance DEX remains a liquid venue of exchange of assets on Beacon Chain and BNB Smart Chain "
+* Native cross-chain transfer & communication: Binance DEX remains a liquid venue of exchange of assets on Beacon Chain and BNB Smart Chain "
 
 ### What are the benefits for developers to build on BNB Chain?
 
@@ -95,7 +95,7 @@ There are already [140 assets](https://explorer.binance.org/assets/bep2) on BNB 
 
 The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
 
-### What make BNB Smart Chain  different?
+### What makes BNB Smart Chain different?
 
 Key Innovations:
 
@@ -103,13 +103,13 @@ Key Innovations:
 
 * Native Cross-Chain Communication
 
-* Expand the use cases of BNB token
+* Expand the use cases of the BNB token
 
-### BNB Smart Chain  is EVM-compatible. What does that mean?
+### BNB Smart Chain is EVM-compatible. What does that mean?
 
-EVM means Ethereum Virtual Machine. Any smart-contract written to run in EVM can be easily ported to BNB Smart Chain .
+EVM means Ethereum Virtual Machine. Any smart contract written to run in EVM can be easily ported to BNB Smart Chain.
 
-### Can developers make hybrid Dapps using both Beacon Chain  and BNB Smart Chain  in one single Dapp?
+### Can developers make hybrid Dapps using both Beacon Chain and BNB Smart Chain in one single Dapp?
 
 Yes, with the help of native cross-chain functions
 
@@ -147,9 +147,9 @@ Future coding competitions; Hackathons
 * Gitcoin: https://gitcoin.co/binancex
 * Dorahacks: https://hackerlink.io/en/grant/1
 
-### What are Pegged tokens on BNB Smart Chain ?
+### What are Pegged tokens on BNB Smart Chain?
 
-Soon after the launch of Beacon Chain , Binance issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses, and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Beacon Chain .
+Soon after the launch of Beacon Chain, Binance issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Beacon Chain.
 
 Current list:
 
@@ -179,7 +179,7 @@ Details are [here](https://www.bnbchain.org/en/blog/binance-presents-project-tok
 
 [Binance.com](https:/www.binance.com) can withdraw BNB to BSC.
 
-1. If you don't have an existing address of BNB Smart Chain , please use these [wallets](Wallet.md) to create one.
+1. If you don't have an existing address of BNB Smart Chain, please use these [wallets](Wallet.md) to create one.
 
 2. On your Binance account, open your Binance Extension wallet then tap on Withdraw. Select BEP20 as the Network. Indicate the amount and paste your BSC address.
 
@@ -206,25 +206,25 @@ Details are [here](https://www.bnbchain.org/en/blog/binance-presents-project-tok
 ## Which dApps are deployed on BSC?
 Refer to [here](https://bnbproject.org/) to learn about the different projects deployed on BSC.
 
-## What to do if I transferred funds to exchange wallet but exchange doesn't support BSC chain?
+## What to do if I transferred funds to the exchange wallet but the exchange doesn't support the BSC chain?
 
-Please be careful while doing transaction to other exchanges check if they support or accept deposit through BSC or not. The confirmed transaction on blockchain cannot be reverted as we also don't have any access to the wallet address.
+Please be careful while doing transactions to other exchanges to check if they support or accept deposits through BSC or not. The confirmed transaction on the blockchain cannot be reverted as we also don't have any access to the wallet address.
 
-## What to do in case of wrong network withdrawal issue?
+## What to do in case of a wrong network withdrawal issue?
 
-Please try to use wallet app which support both BSC and ETH network in it. So that you can access any network with same address and transfer your funds out of the wrong network.
+Please try to use the wallet app which supports both BSC and ETH networks in it. So that you can access any network with the same address and transfer your funds out of the wrong network.
 
 
-## What to do in case of Missing memo or wrong memo?
-Please try to contact support of the receiver address to help with the deposit. If it's an exchange wallet address then contact them with the correct memo.
+## What to do in case of a Missing memo or wrong memo?
+Please try to contact the support of the receiver address to help with the deposit. If it's an exchange wallet address then contact them with the correct memo.
 
 ## How to track Cross-chain transfer tx From BC to BSC?
 
-1. Get Cross-chain transfer transaction hash of Binance Chain
+1. Get the Cross-chain transfer transaction hash of the Binance Chain
 
-For example: https://explorer.binance.org/tx/8B9B066BAF9DC1C233A9D316C75E8139B985518868C1120B656C5B3EBAC7C498 
+For example https://explorer.binance.org/tx/8B9B066BAF9DC1C233A9D316C75E8139B985518868C1120B656C5B3EBAC7C498 
 
-Please make sure the “Transaction Type” is “Crosschain transfer out”
+Please make sure the “Transaction Type” is “Cross-chain transfer out”
 
 ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020215774/original/qZ5KzDcOjCyKO2H42HftM15NEtcZTHwjfw.png?1629968129)
 
@@ -234,11 +234,11 @@ The “TxHash on BSC” is linked to Binance smart chain explorer
 
 ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216076/original/YdIbat5IAnpWgQO0SuNX4zHY_rsF97fErA.png?1629968302)
 
-For example: https://www.bscscan.com/tx/0x43980b4f9ae4c03685dd61172d23ccae07eb8abb0d677c579bfc7059e447ead9
+For example https://www.bscscan.com/tx/0x43980b4f9ae4c03685dd61172d23ccae07eb8abb0d677c579bfc7059e447ead9
 
-If "status" is success, it means this transaction is successful. 
+If "status" is a success, it means this transaction is successful. 
 
-The tokens were sent from "BSC: Token Hub" to receiver address . 
+The tokens were sent from "BSC: Token Hub" to the receiver address. 
 
 ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216406/original/FsSI7rAvaRuwQ-60br8EmVgrWoFvxYN-_Q.png?1629968479)
 
@@ -250,10 +250,10 @@ Please refer [here](wallet/metamask.md)
 If you meet any potential Scams, Phishing, Rug Pulls, and Hacks, please report through this portal:
 https://forms.coinholmes.com
 
-Coinholmes.com is supported by Peckshield team (Professional security company)
+Coinholmes.com is supported by the Peckshield team (A professional security company)
 
 ## How to reset Binance Extention Wallet?
-If user has seed phrase then user can refer [here](wallet/extension/reset.md) to reset wallet.
+If the user has a seed phrase then the user can refer to [here](wallet/extension/reset.md) to reset the wallet.
 
 ## How to apply for Pioneer Burn Refunding?
 
