@@ -4,7 +4,7 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Tools and Ecosystem of BNB Smart Chain
+# Development Tools
 
 In order to check the latest updates on the ecosystem of the [official GitHub Page](https://github.com/bnb-chain/bsc-ecosystem).
 
