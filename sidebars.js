@@ -53,8 +53,8 @@ const sidebars = {
               collapsed: true,
               label: 'Develop',
               items: [
-                      {type: 'doc', label: 'Tools', id:'learn/ecosystem'},
-                      {type:'doc', id:'rpc', label:'RPC'},
+                      {type: 'doc', label: 'Development Tools', id:'learn/ecosystem'},
+                      {type:'doc', id:'rpc', label:'RPC Endpoints'},
                       'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
                       {
                         type: 'category',
