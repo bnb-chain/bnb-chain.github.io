@@ -14,7 +14,7 @@ BNB Chain is comprised of:
 3. **[BNB Sidechain](BNBSidechain/overview/bs-overview.md)** - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
 4. **BNB ZkRolllup _(Coming soon)_** - ZkRollup solution to scale BSC as an super high performance blockchains. 
 
-![BSC 2022](../static/img/assets/BNBChain2022.jpg)
+![BSC 2022](../static/img/assets/BNBChain2022.png)
 
 ## BNB Token
 BNB stands for “**Build and Build**”. Along with _fueling_ transactions on BNB Chain (similar to gas on Ethereum), BNB also acts as a governance token. Holding BNB gives you the right to make your voice heard and is necessary for participation in BNB Chain’s decentralized on-chain governance. With this name change also comes more advancements to benefit users, projects and developers connected to the BNB Chain community.
