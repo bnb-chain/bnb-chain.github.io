@@ -299,7 +299,7 @@ const sidebars = {
                 id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
               },
               'BNBSidechain/bs-tutorials',
-              {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bas-pilot-projects'},
+              {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bs-pilot-projects'},
             
             ]
           },

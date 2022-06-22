@@ -13,5 +13,5 @@
 | 6      | [CoolWallet](https://www.coolwallet.io/)       | Mainnet                          |
 | 7      | [XWallet](https://support.pundix.com/hc/en-us/categories/360001370531-XWallet-FAQ)    | Mainnet     |
 | 8      | [Atomic Wallet](https://atomicwallet.io/)      | Mainnet                          |
-| 8      | [Infinity Wallet](https://infinitywallet.io/)  | Mainnet                          |
-| 9      | [imToken](https://token.im/)                   | Mainnet                          |
+| 9      | [Infinity Wallet](https://infinitywallet.io/)  | Mainnet                          |
+| 10     | [imToken](https://token.im/)                   | Mainnet                          |
