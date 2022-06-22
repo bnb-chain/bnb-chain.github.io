@@ -5,7 +5,7 @@ sidebar_label: Development Tools
 
 ## Smart Contracts
 
-Smart contracts development with BAS enables you to build your smart contracts for any use, including cryptocurrency exchanges, smart contract-based dApps, Decentralized Finance, and more. Smart contracts are programming logic that are executed automatically when a certain condition(s) are met. In BAS, smart contracts can be written in Solidity programming language. 
+Smart contracts development with BNB Sidechain enables you to build your smart contracts for any use, including cryptocurrency exchanges, smart contract-based dApps, Decentralized Finance, and more. Smart contracts are programming logic that are executed automatically when a certain condition(s) are met. In BNB Sidechain, smart contracts can be written in Solidity programming language. 
 Please refer to the [official documentation of Solidity](https://docs.soliditylang.org/) for any queries.
 
 

@@ -5,13 +5,13 @@
 
 | Number | Wallet Name                                    | Network                          |
 | ------ | -----------------------------------------------| -------------------------------- |
-| 1      | [Trust Wallet](trust-wallet.md)                | Mainnet                          |
-| 2      | [Math Wallet](math-wallet.md)                  | Mainnet                          |
-| 3      | [Meet.One Wallet](meet.md)                     | Mainnet                          |
-| 4      | [Equal Wallet](equal.md)                       | Mainnet&Testnet                  |
-| 5      | [SafePal Wallet](safepal.md)                   | Mainnet                          |
-| 6      | [CoolWallet](cool-wallet.md)                   | Mainnet                          |
-| 7      | [XWallet](xwallet.md)                          | Mainnet                          |
-| 8      | [Atomic Wallet](atomic-wallet.md)              | Mainnet                          |
-| 8      | [Infinity Wallet](infinitywallet.md)           | Mainnet                          |
-| 9      | [imToken](imToken.md)           | Mainnet                          |
+| 1      | [Trust Wallet](https://trustwallet.com/)       | Mainnet                          |
+| 2      | [Math Wallet](https://mathwallet.org/en-us/)   | Mainnet                          |
+| 3      | [Meet.One Wallet](https://github.com/meet-one) | Mainnet                          |
+| 4      | [Equal Wallet](https://equal.tech/)            | Mainnet & Testnet                |
+| 5      | [SafePal Wallet](https://safepal.io/)          | Mainnet                          |
+| 6      | [CoolWallet](https://www.coolwallet.io/)       | Mainnet                          |
+| 7      | [XWallet](https://support.pundix.com/hc/en-us/categories/360001370531-XWallet-FAQ)    | Mainnet     |
+| 8      | [Atomic Wallet](https://atomicwallet.io/)      | Mainnet                          |
+| 8      | [Infinity Wallet](https://infinitywallet.io/)  | Mainnet                          |
+| 9      | [imToken](https://token.im/)                   | Mainnet                          |

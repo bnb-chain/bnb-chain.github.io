@@ -278,7 +278,7 @@ const sidebars = {
             label: 'BNB Sidechain', 
             //link: {type: "doc", id: 'BNBSidechain/overview/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
             items:[
-               'BNBSidechain/overview/bas', 'BNBSidechain/overview/whentochooseBAS',
+               'BNBSidechain/overview/bs-overview', 'BNBSidechain/overview/whenBNBSidechain',
                {
                   type: 'doc',
                   label: 'Architecture',
