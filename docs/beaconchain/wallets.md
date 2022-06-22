@@ -4,7 +4,7 @@
 
 | Number | Wallet Name                                            | Website                          |DEX Feature Available|Testnet Support|WalletConnect Support|
 | ------ | ------------------------------------------------------ | -------------------------------- |-----| -----|-----|
-| 1      | [Trust Wallet](wallets/trust-wallet.md)                | <https://trustwallet.com/>       |Yes  | Yes|Yes|
+| 1      | Trust Wallet             | <https://trustwallet.com/>       |Yes  | Yes|Yes|
 | 2      | Trubi Wallet                      | <https://trubi.io/>              |Yes| No|Yes|
 | 3      | Ledger (Hardware Wallet)          | <https://www.ledger.com/>        |Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|
 | 4      | CoolWallet (Hardware Wallet) | <https://coolwallet.io/>         |Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|
