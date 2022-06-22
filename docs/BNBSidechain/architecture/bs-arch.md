@@ -29,9 +29,9 @@ As the current implementation of BNB Sidechain is built on BSC, all existing mod
 
 BNB Sidechain brings with it programmable and configurable modules that can be used or modified by developers to reach their business goals, for example:
 
-- Cross Chain — BAS is designed to provide cross chain functionality for the native assets. Since native assets are fully managed by BAS developers they can compromise token supply or mint/burn tokens.
+- Cross Chain — BNB Sidechain is designed to provide cross chain functionality for the native assets. Since native assets are fully managed by BAS developers they can compromise token supply or mint/burn tokens.
 
-- Staking & Staking Pool— BAS supports on-chain staking system and uses the PoSA (proof-of-stake-of-authority) staking model. It allows users to delegate their tokens to the specific validator and share validator's rewards based on the total staked amount.
+- Staking & Staking Pool— BNB Sidechain supports on-chain staking system and uses the PoSA (proof-of-stake-of-authority) staking model. It allows users to delegate their tokens to the specific validator and share validator's rewards based on the total staked amount.
 
 - Runtime Upgrade — Runtime upgrade system smart contract allows to modify the existing byte code for the system smart contracts. However, it doesn't allow to modify user's smart contracts. To apply any modification to the sources, the user must create a proposal, and changes can only be applied once a quorum is reached on the governance. This scheme is much simpler compared to hard forks, as it doesn't require all validators to upgrade their nodes.
 
