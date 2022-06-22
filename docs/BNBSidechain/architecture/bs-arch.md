@@ -28,16 +28,26 @@ The main goal of BNB Sidechain is to build such a multi-modular blockchain archi
 As the current implementation of BNB Sidechain is built on BSC, all existing modules are built into the system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
 
 BNB Sidechain brings with it programmable and configurable modules that can be used or modified by developers to reach their business goals, for example:
-* Networking — for p2p communication between different BNB Sidechain nodes.
-* Blockchain & EVM — for block producing and EVM transaction execution, of course, each BNB Sidechain can define their own runtime execution environment based, for example, on WebAssembly in future.
-* Web3 API — for BNB Sidechainic compatibility with Web3 ecosystem including MetaMask and other applications.
-* Transaction Pool — for managing internal BNB Sidechain policies for transaction filtering and for charging fees for the system operational.
-* PoSA Consensus — for users to be able to stake to the authorized validators in the BNB Sidechain network and guarantee the safeness of actions applied on the chain.
-* Storage & State — for persisting local data.
+
+- Cross Chain — BAS is designed to provide cross chain functionality for the native assets. Since native assets are fully managed by BAS developers they can compromise token supply or mint/burn tokens.
+
+- Staking & Staking Pool— BAS supports on-chain staking system and uses the PoSA (proof-of-stake-of-authority) staking model. It allows users to delegate their tokens to the specific validator and share validator's rewards based on the total staked amount.
+
+- Runtime Upgrade — Runtime upgrade system smart contract allows to modify the existing byte code for the system smart contracts. However, it doesn't allow to modify user's smart contracts. To apply any modification to the sources, the user must create a proposal, and changes can only be applied once a quorum is reached on the governance. This scheme is much simpler compared to hard forks, as it doesn't require all validators to upgrade their nodes.
+
+- Blockchain & EVM — for block producing and EVM transaction execution, of course, each BNB Sidechain can define their own runtime execution environment based, for example, on WebAssembly in future.
+
+- Web3 API — for BNB Sidechainic compatibility with Web3 ecosystem including MetaMask and other applications.
+
+- Transaction Pool — for managing internal BNB Sidechain policies for transaction filtering and for charging fees for the system operational.
+
+- PoSA Consensus & Staking — for users to be able to stake to the authorized validators in the BNB Sidechain network and guarantee the safeness of actions applied on the chain.
+
+- Governance — A decentralized voting system for managing and implementing changes to cryptocurrency blockchains.
+
+- Storage & State — for persisting local data.
 
 Internally, BNB Sidechain implements the following modules: Parlia consensus engine, staking pools, governance, dynamic runtime upgrades, reward management, manageable blockchain params, and EVM hooks.
-
-This modular architecture allows to re-use or enable/disable different modules. All modules are runtime-upgradable by on-chain governance.
 
 ## Repositories
 
