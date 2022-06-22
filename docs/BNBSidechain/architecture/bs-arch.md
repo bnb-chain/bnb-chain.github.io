@@ -37,7 +37,7 @@ BNB Sidechain brings with it programmable and configurable modules that can be u
 
 - Blockchain & EVM — for block producing and EVM transaction execution, of course, each BNB Sidechain can define their own runtime execution environment based, for example, on WebAssembly in future.
 
-- Web3 API — for BNB Sidechainic compatibility with Web3 ecosystem including MetaMask and other applications.
+- Web3 API — for BNB Sidechain compatibility with Web3 ecosystem including MetaMask and other applications.
 
 - Transaction Pool — for managing internal BNB Sidechain policies for transaction filtering and for charging fees for the system operational.
 
