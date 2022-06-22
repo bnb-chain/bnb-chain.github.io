@@ -11,7 +11,7 @@ Binance Chain and Binance Smart Chain have formed together as BNB Chain since Fe
 BNB Chain is comprised of:
 1. **[BNB Beacon Chain](learn/beaconIntro.md) _(previously Binance Chain)_** - BNB Chain Governance (Staking, Voting)
 2. **[BNB Smart Chain (BSC)](learn/intro.md) (_previously Binance Smart Chain)_** - EVM compatible, consensus layers, and with hubs to multi-chains
-3. **[BNB Sidechain](BNBSidechain/overview/bas.md)** - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
+3. **[BNB Sidechain](BNBSidechain/overview/bs-overview.md)** - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
 4. **BNB ZkRolllup _(Coming soon)_** - ZkRollup solution to scale BSC as an super high performance blockchains. 
 
 ![BSC 2022](../static/img/assets/BNBChain2022.jpg)
