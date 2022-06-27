@@ -37,7 +37,7 @@ BNB Sidechain Mainnet will be ready at least 2 months after that.
 ### Where can we find more docs for BNB Sidechain for our developers to read through? 
 Refer to [BNB Sidechain Architecture](../BNB Sidechain/architecture/overview). 
 
-Also, read [BNB Chain 2022: Build N’ Build](https://www.bnbchain.org/en/blog/bsc-2022-build-and-build/) and [BEP100 proposal for Binance Application Sidechain (BNB Sidechain)](https://github.com/bnb-chain/BEPs/pull/132). 
+Also, read [BNB Chain 2022: Build N’ Build](https://www.bnbchain.org/en/blog/bsc-2022-build-and-build/) and [BEP100 proposal for BNB Sidechain](https://github.com/bnb-chain/BEPs/pull/132). 
 
 ### If developers have questions about BNB Sidechain deployment, where can they ask them?
 We will soon set up a Discord channel for questions and organize a Twitter space to share more details. 
