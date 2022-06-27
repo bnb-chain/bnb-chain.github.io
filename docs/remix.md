@@ -25,7 +25,7 @@ This dapp implements a "Hello World" style application that echoes a message pas
 
 ## Writing the Smart Contract
 
-- Create new contract BEP20Token.sol and copy contract code from the bep20 token template [here](../BEP20Token.template)
+- Create new contract BEP20Token.sol and copy contract code from the bep20 token template [here](BEP20Token.template)
 
 - Modify “name”, “symbol”, “decimals” and “totalSupply” according to your requirements.
 
