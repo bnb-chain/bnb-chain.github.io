@@ -18,8 +18,7 @@ The purpose of the Beacon Chain is to provide an efficient blockchain ecosystem 
 You can:
 
 - [Send and receive BNB](beaconchain/wallet/../transfer.md#web-wallet)
-- [Issue new tokens to digitalize assets](https://community.binance.org/topic/2487), and use Beacon Chain as underlying exchange/transfer
-network for the assets
+- [Issue new tokens to digitalize assets](https://community.binance.org/topic/2487), and use Beacon Chain as underlying exchange/transfer network for the assets
 - Send, receive, [burn](beaconchain/tokens.md#burn)/[mint](beaconchain/tokens.md#mint) and [freeze/unfreeze](beaconchain/tokens.md#freeze-unfreeze) tokens
 - [Sumbit an on-chain governance proposal for BNB Smart Chain](learn/bsc-gov.md)
 
@@ -46,7 +45,7 @@ Because BSC is EVM-compatible, it launched with support for the rich universe of
 
 You can:
 
-- Send and receive [BNB](wallet/binance.html#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](wallet/binance.html#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
+- Send and receive [BNB](binance.md#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](binance.md#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
 - Explore the transaction history and blocks on the chain, via [bscscan](https://bscscan.com), API
 and node RPC interfaces.
 - [Stake your BNB](wallet/staking.md) to earn some block rewards
