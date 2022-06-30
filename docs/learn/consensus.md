@@ -22,7 +22,7 @@ We target to design the consensus engine of BSC(BNB Smart Chain) to achieve the 
 * ValidatorSet change, double sign slash of BSC is updated through interchain communication.
 * Consensus engine of BSC keeps as simple as clique.
 
-We investigated some popular implementations of PoA consensus and found out that [Bor](https://blog.matic.network/heimdall-and-bor-matic-validator-and-block-production-layers/) follows a similar design as above. We will borrow a few parts from Bor and propose a new consensus engine to achieve all these goals.
+We investigated some popular implementations of PoA consensus and found out that [Bor](https://blog.polygon.technology/heimdall-and-bor/) follows a similar design as above. We will borrow a few parts from Bor and propose a new consensus engine to achieve all these goals.
 
 ## Infrastructure Components
 
