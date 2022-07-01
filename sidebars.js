@@ -68,7 +68,7 @@ const sidebars = {
                         //collapsible: true,
                         collapsed: true,
                         label: 'Deploy Smart Contract',
-                        items: ['remix', 'truffle-new', 'hardhat-new', 'verify']
+                        items: ['chainide', 'remix', 'truffle-new', 'hardhat-new', 'verify']
                       },
                       {
                         type: 'category',
