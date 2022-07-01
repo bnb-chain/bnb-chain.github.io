@@ -42,13 +42,20 @@ The cross-shard and cross-chain/multi-chain interoperability will be the key top
 ### BNB Sidechain
 The BNB Sidechain is an infrastructure introduced to help developers and node operators build and run their own blockchain as their internal value system for a massive number of users while still maintaining a close connection with BSC. Any project developer will be able to deploy their own BNB Sidechain with its unique specifications and validator set. This validator set can run with fewer validators than BSC, depending on the BNB Sidechain deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BNB Sidechain. The typical usage of BNB Sidechain is like the Ronin chain for the Axie Infinity.  However, to minimize the potential risks of the side chain, a new protocol (including built-in asset types and cross-chain) should be introduced to ensure seamless liquidity between BNB Sidechain and BSC.
 
-### BSC Partition Chain (BPC)
-The BPC will introduce another subspace with a new validator set, a new computing engine, and a new ledger. Essentially it works as a “shard” or a “layer 2” to offload part of the data, computing, and transactions from the BSC Mainnet to other smaller parallel blockchains.
+### BNB ZkRollup - A Trustless Scaling Solution
+   
+BNB ZkRollup is a trustless and scaling solution for BNB Smart Chain. BNB ZkRollup is built on ZK Rollup architecture. BNB ZkRollup bundles (or “roll-up”) hundreds of transactions off-chain and generates cryptographic proof. These proofs can come in the form of SNARKs (succinct non-interactive argument of knowledge) which can prove the validity of every single transaction in the Rollup Block. It means all funds are held on the BSC, while computation and storage are performed on BNB Sidechain with less cost and fast speed.
 
-BPC will be a PoSA based blockchain like BSC. Anyone can become a validator for one or more particular BPC on Beacon Chain, which will serve as the beacon chain. The validators can call for delegation to be elected into the validator set of BPC. The election could work on the same principles as the validator elections on BSC – validators are elected every 24 hours based on their staking power (staked BNB).
+BNB ZkRollup achieves the following goals:
 
-Deployment of BPCs will decrease the number of data stored by dividing it across multiple BPC blockchains.
-
+* No sacrificing on decentralization or security; 
+* The BNB ZkRollup share the same security as BSC does. Thanks to zkSNARK proofs, the security is guaranteed by cryptographic. Users do not have to trust any third parties or keep monitoring the Rollup blocks in order to prevent fraud.
+* Fast transaction speed, faster finality, much lower gas fee.
+* BNB, and BEP20/BEP721/BEP1155 created on BSC or BNB ZkRollup can flow freely between BSC and ZkRollup.
+* The gas token on the BNB ZkRollup can be either BEP20 or BNB. 
+* Users can trigger a “full exit” on BSC. The user can request this operation to withdraw funds if he thinks that his transactions are censored by BNB ZkRollup.
+* Built-in instant AMM swap.
+* Built-in NFT marketplace.
 
 ## Resources
 [White Paper](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md)
