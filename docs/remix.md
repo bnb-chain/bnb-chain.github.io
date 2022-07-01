@@ -17,12 +17,6 @@ This dapp implements a "Hello World" style application that echoes a message pas
 
 <img src="https://lh3.googleusercontent.com/BUilfLHVuRsIwaPDCry2yk8g58oMZfq65Nf-Ihc7g8rYtp7BjlxJWiwBQj0BK8e8ZsWET4zPcwdKYCcOn1mdsnFaH60E2Uhj5JEyhMz1-f-_aGwupbPbwaoMRZvB0NATWjPQadNT" alt="img" style={{zoom:"30%"}}/>
 
-- Go to File Explorers, And Create a new file, Name it MegaCoin.sol
-
-
-
-- Copy/Paste the Smart contract below into the newly created file `MegaCoin.sol`
-
 ## Writing the Smart Contract
 
 - Create new contract BEP20Token.sol and copy contract code from the bep20 token template [here](BEP20Token.template)
