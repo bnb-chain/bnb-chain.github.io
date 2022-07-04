@@ -1,7 +1,7 @@
 ---
 sidebar_label: Hello World dApp
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Develop Full Stack dApp on BNB Smart Chain in 5 minutes
