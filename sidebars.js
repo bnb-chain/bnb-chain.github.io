@@ -102,8 +102,8 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'dApp Development',
-                        items: ['tokens-cross-chain']
+                        label: 'Dapp Development',
+                        items: ['dapp-dev/Hello-World.md', ''dapp-dev/web3js-tutorial']
                       },
                       
                       'bsc-relayer', 
