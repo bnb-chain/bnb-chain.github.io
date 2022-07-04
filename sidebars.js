@@ -103,7 +103,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Dapp Development',
-                        items: ['dapp-dev/Hello-World.md', ''dapp-dev/web3js-tutorial']
+                        items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       
                       'bsc-relayer', 
