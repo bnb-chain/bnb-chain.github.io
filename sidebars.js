@@ -103,13 +103,12 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'dApp Development',
-                        items: ['']
+                        items: ['dapp-dev/Hello-World.md']
                       },
                       
                       'bsc-relayer', 
                       {
                         type: 'category',
-                        //collapsible: true,
                         collapsed: true,
                         label: 'Oracles',
                         items: ['band',  'link']
