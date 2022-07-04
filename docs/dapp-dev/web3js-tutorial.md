@@ -6,7 +6,6 @@ hide_table_of_contents: false
 
 # Using Web3.js Library on BNB Smart Chain
 Designed for anyone wanting to learn development on the BNB Smart Chain, this tutorial provides a step-by-step guide on how to use web3.js library along with Nodereal API to fetch transaction details from the BNB Smart Chain blockchain for the given transaction hash. The technology stack used in this tutorial includes Web3.js, Nodereal MegaNode, and http-server. 
->Note: This tutorial is based on Windows OS
 
 ## Learning Takeaways:
 This tutorial will help you gain knowledge on the following learning points:
