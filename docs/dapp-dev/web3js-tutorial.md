@@ -63,7 +63,7 @@ This tutorial will help you gain knowledge on the following learning points:
 
 
 ## Conclusion
-In this tutorial, we developed a dapp that has both backend and front-end integration that uses Web3.js library that can be used for fetching details of transactions on the BSC testnet by given a transaction hash. The tech stack includes Web3.js, Nodereal MegaNode, and http-server. Check out our GitHub for more tutorials on how to develop on BSC. If you have any questions or are stuck, reach out to us on our Discord.
+In this tutorial, we developed a dapp that has both backend and front-end integration that uses Web3.js library that can be used for fetching details of transactions on the BSC testnet by given a transaction hash. The tech stack includes Web3.js, Nodereal MegaNode, and http-server. Check out our [GitHub](https://github.com/bnb-chain/bnb-chain-tutorial) for more tutorials on how to develop on BSC. If you have any questions or are stuck, reach out to us on our [Discord Channel](https://discord.com/channels/789402563035660308/912296662834241597).
 
 
 
