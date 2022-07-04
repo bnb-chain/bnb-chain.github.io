@@ -76,10 +76,8 @@ const sidebars = {
                         label: 'Deploy NFTs',
                         items:['nft-metadata-standard', 'ERC721']
                       },
-                      
                       {
                         type: 'category',
-                        //collapsible: true,
                         collapsed: true,
                         label: 'BEP20 Tokens',
                         items: ['BEP20', 'issue-BEP20',
@@ -101,8 +99,14 @@ const sidebars = {
                                   },
                               ]
                       }, 
+                      {
+                        type: 'category',
+                        collapsed: true,
+                        label: 'dApp Development',
+                        items: ['']
+                      },
                       
-                      'bsc-relayer', //'cross-chain-tech',
+                      'bsc-relayer', 
                       {
                         type: 'category',
                         //collapsible: true,
