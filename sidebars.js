@@ -99,12 +99,7 @@ const sidebars = {
                                   },
                               ]
                       }, 
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'dApp Development',
-                        items: ['dapp-dev/Hello-World.md']
-                      },
+                      
                       
                       'bsc-relayer', 
                       {
