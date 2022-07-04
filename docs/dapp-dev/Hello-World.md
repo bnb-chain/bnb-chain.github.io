@@ -18,7 +18,7 @@ This tutorial will help you gain knowledge on the following learning points:
 - node v16.13.0
 - npm v8.1.0
 - Truffle v5.5.19 (core: 5.5.19)
-- Ganache v7.2.0
+- Ganache CLI v6.12.2 (ganache-core: 2.13.2)
 - Solidity ^0.8.0 (solc-js)
 - Web3.js v1.5.3
 - MetaMask Wallet v10.16.1
