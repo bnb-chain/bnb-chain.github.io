@@ -1,5 +1,5 @@
 ---
-sidebar_label: Hello World dApp
+sidebar_label: Full Stack Hello World dApp
 sidebar_position: 2
 hide_table_of_contents: false
 ---
@@ -19,7 +19,7 @@ This tutorial will help you gain knowledge on the following learning points:
 - Deploying smart contracts on BSC Testnet;
 - Front-end integration with the smart contract using web3.js library;
 
-## Technology Stack Details**
+## Technology Stack Details
 
 - node v16.13.0
 - npm v8.1.0
@@ -29,7 +29,7 @@ This tutorial will help you gain knowledge on the following learning points:
 - Web3.js v1.5.3
 - MetaMask Wallet v10.16.1
 
-### Brief Introduction Tech Stack**
+### Brief Introduction Tech Stack
 
 1. _**Truffle Framework:**_ set of tools for smart contract development, testing, and asset pipelining for any blockchain that uses the Ethereum Virtual Machine (EVM).
 2. _**Ganache:**_ available as both desktop application and CLI, it is a personal blockchain that can be used for local blockchain development.
