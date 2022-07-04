@@ -99,7 +99,12 @@ const sidebars = {
                                   },
                               ]
                       }, 
-                      
+                      {
+                        type: 'category',
+                        collapsed: true,
+                        label: 'dApp Development',
+                        items: ['tokens-cross-chain']
+                      },
                       
                       'bsc-relayer', 
                       {
