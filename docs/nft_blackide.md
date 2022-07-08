@@ -62,7 +62,7 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 ## Smart Contract Creation 
 6.	Expand the contracts menu and delete the default files. 
 
-![image](https://user-images.githubusercontent.com/93580180/177943029-5e11be86-0cc2-4c3b-9de1-c0c5a9678c75.png)
+![image](https://user-images.githubusercontent.com/93580180/177948005-436776e5-07b4-4109-8b19-897925e623e4.png)
 
 7.	Right-click on the contracts menu and select New File. Specify a name for your file, e.g., BSC-NFT.sol, and then click Create button.
 
@@ -79,13 +79,12 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 ## Edit default project settings
 10.	Click on the config.json file to change the default setting. Change the main file name to the name of your contract, BSC-NFT.sol in our case. Similarly, change the name of the smart contract to deploy, BSCNFT.json in our case. 
 
-![image](https://user-images.githubusercontent.com/93580180/177943506-346d9600-2b5d-4301-848f-d5551e7c2988.png)
+![image](https://user-images.githubusercontent.com/93580180/177948095-b6a905da-792c-47da-86d6-8a5d5db6a40b.png)
  
 ## Connect the Black IDE to the BSC Testnet
 11.	In order to connect the Black IDE to the BSC Testnet, click on the dropdown icon on the network menu in the top right corner and then select Testnet under the BNB Chain label.
 
-![image](https://user-images.githubusercontent.com/93580180/177943754-3125e6b2-c474-486a-bab7-9d1e0cc2dae6.png)
-
+![image](https://user-images.githubusercontent.com/93580180/177948186-e052e522-7069-4072-abae-fd0e6c819ee6.png)
 
 12.	Click on the ![image](https://user-images.githubusercontent.com/93580180/177943789-3557fde5-8805-4b03-ace8-05d2ace216c0.png) icon in the bottom left corner of the IDE to generate new keypair to perform transactions. You can skip this step if you already have generated a keypair. On the Keypair Manager, click on the CREATE button to generate new keypair.
 
@@ -114,7 +113,7 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 in our case. 
 2.	Click on the Build icon ![image](https://user-images.githubusercontent.com/93580180/177944483-ff523eed-017d-4265-b722-78ded06fe826.png) to build your smart contract. Upon successful build, the project navigation pane reflects a new folder named build. This folder contains contracts folder that has json files of the contracts built. All of the contracts imported in our BSCNFT contract are also built and imported as json files. 
 
-![image](https://user-images.githubusercontent.com/93580180/177944457-416259a4-0e47-4822-a82d-af1d37fd309f.png)
+![image](https://user-images.githubusercontent.com/93580180/177948331-ece850ae-01fd-479b-b25f-d1f28c3400f6.png)
 
 3.	After successfully building your contract, it’s time to deploy the contract. Click on the Deploy icon ![image](https://user-images.githubusercontent.com/93580180/177944540-10d86198-03f2-40d8-8ac0-c013483c6458.png) for deploying your smart contract. Specify the details for your contract, as shown below, then click on the Estimate & Deploy button. The wizard will auto-estimate and fill the gas limit for your contract. Then click the Deploy button. 
 
@@ -136,9 +135,7 @@ in our case.
 ## Interact with deployed smart contract and Mint NFTs
 1.	You can also interact with the contract using the different functions. Click on the Transactions Icon on the bottom-left corner of the IDE and then transaction of deployment of your smart contract. On the transaction details, click on the contract address to access the functions to interact with the smart contract. The left most column has all the Write Functions. The middle column has the View Functions and the right most column has the Events details.
 
-![image](https://user-images.githubusercontent.com/93580180/177944868-7bc00613-e609-4788-bcfc-baed5f4b968e.png)
-
-![image](https://user-images.githubusercontent.com/93580180/177945027-d858b41a-28ec-41cd-a8bf-b7848bda48c7.png)
+![image](https://user-images.githubusercontent.com/93580180/177948835-197860e5-8f25-4692-bc34-467a997f98a1.png)
  
 ## Mint NFTs
 1.	As per our smart contract, when the contract is deployed, unless the NFTs are minted they won’t be visible in the wallet. 
@@ -146,7 +143,7 @@ in our case.
 3.	To mint i.e. issue an NFT to a specific user we use the “safeMint” function of the deployed smart contract. As shown in Steps 1 and 2 in the figure below, navigate to the deployed contracts, then in the left-most column click the drop-down menu to view the list of write functions available for use with the deployed contract. Select the “safeMint” function. 
 4.	Use the safeMint function to mint new NFTs to a specific user address. As shown in figure above, steps 3 to 6, enter the “ETH to send” as the minting price of NFT, as per our smart contract the minting price is 50000000000000000 Wei, i.e., 0.05 ETH. We entered 0.06 ETH to cover the transaction charges as well. Then select the address to whom you want to issue (mint) an NFT to. Here, for the To address use the newly generated keypair in the section above. After this, click the transact button  to execute the safeMint function. For the Signer, ensure that you are using the account that was used to deploy the smart contract. 
 
-![image](https://user-images.githubusercontent.com/93580180/177945135-8e366734-5e98-4c60-87d8-68951ea612ef.png)
+![image](https://user-images.githubusercontent.com/93580180/177949113-3de5d538-852f-4a21-aa75-47d0231b6521.png)
 
 5.	To confirm what transfers have occurred, execute the Transfer event from the right most column. This will display the list of NFT transfers along with NFT token id, as shown in the figure below.
 
@@ -168,7 +165,7 @@ in our case.
 
 4.	After importing account, the next step is to add the BSC Testnet configuration to the wallet. Ensure that you are using the same account whose pubic address was issued the NFT.
 
-![image](https://user-images.githubusercontent.com/93580180/177945372-e9777109-8d67-49a3-8e77-552ce6666098.png) 
+![image](https://user-images.githubusercontent.com/93580180/177949239-f7a5bbdf-be7d-429d-8368-275bc9b972c6.png)
 
 5.	Ensure that your account is connected to the BSC Testnet. Also, ensure that you have enough BNB test tokens in your account. If not, you can use the BSC Testnet Faucet to acquire some, as mentioned earlier.
 
@@ -176,7 +173,7 @@ in our case.
  
 6.	To view the owned NFT assets your Metamask Mobile Wallet, click on the NFTs tab and then on the Import Tokens. Fill in the NFT details. In the address field, pass the address of the deployed contract and in the Id field pass the tokenID. Then click the Import button.
 
-![image](https://user-images.githubusercontent.com/93580180/177945510-6b8b6e9c-b7aa-4553-a80f-3d5c315654b8.png)
+![image](https://user-images.githubusercontent.com/93580180/177949365-52efd22c-25ac-4eac-b47e-82349d6b0a5c.png)
 
 ## Conclusion 
 In this tutorial, we provided a step-to-step guide on how to issue, mint and transfer NFTs on the BSC Testnet using the BlackIDE from Obsidian Labs.. The technology stack used in this tutorial includes Solidity, Truffle, MetaMask, and BlackIDE. Check out our [GitHub](https://github.com/bnb-chain/bnb-chain-tutorial) for more tutorials on how to develop on BSC. If you have any questions or are stuck, reach out to us on our [Discord Channel](https://discord.com/channels/789402563035660308/912296662834241597).
