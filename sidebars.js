@@ -58,14 +58,12 @@ const sidebars = {
                       'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
                       {
                         type: 'category',
-                                  //collapsible: true,
-                                  collapsed: true,
-                                  label: 'Running Fullnode',
-                                  items: ['validator/fullnode','validator/snapshot','local', 'validator/upgrade-fullnode']
+                        collapsed: true,
+                        label: 'Running Fullnode',
+                        items: ['validator/fullnode','validator/snapshot','local', 'validator/upgrade-fullnode']
                       },
                       {
                         type: 'category',
-                        //collapsible: true,
                         collapsed: true,
                         label: 'Deploy Smart Contract',
                         items: ['chainide', 'remix', 'truffle-new', 'hardhat-new', 'verify']
@@ -74,7 +72,12 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Deploy NFTs',
-                        items:['nft-metadata-standard', 'ERC721']
+                        items:['nft-metadata-standard', 
+                               type: 'category',
+                               collapsed: true,
+                               label: 'Deploy NFTs',
+                               items:['ERC721', 'nft_blackide']
+                             ]
                       },
                       {
                         type: 'category',
