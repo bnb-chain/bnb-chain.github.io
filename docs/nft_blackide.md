@@ -70,11 +70,9 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 
 ## Write your smart contract code
 8.	Copy the following code into your smart contract file. We have used the contract code from this [repo](https://github.com/RumeelHussainbnb/ERC721_NFT/blob/main/BSC-NFT.sol).
-9.	Remember to change the MINT_PRICE, MAX_SUPPLY, name, and symbol of the token as per your need. Also, remember to change the _baseURI as per your token.
-
-![image](https://user-images.githubusercontent.com/93580180/177943428-cf80cf2f-7968-4c0a-b908-ba852f8b80f1.png)
-
-![image](https://user-images.githubusercontent.com/93580180/177943473-bee12baf-4c7d-405c-b490-7e60d082f5f2.png)
+9.	Remember to change the ```MINT_PRICE```, ```MAX_SUPPLY```, ```name```, and ```symbol``` of the token as per your need. Also, remember to change the ```_baseURI``` as per your token.
+10.	
+![image](https://user-images.githubusercontent.com/93580180/177949895-a095fdb5-f770-4530-84f6-8854a0d7a5eb.png)
 
 ## Edit default project settings
 10.	Click on the config.json file to change the default setting. Change the main file name to the name of your contract, BSC-NFT.sol in our case. Similarly, change the name of the smart contract to deploy, BSCNFT.json in our case. 
