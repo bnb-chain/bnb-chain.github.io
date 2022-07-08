@@ -71,12 +71,7 @@ const sidebars = {
                       {
                         type: 'category',
                         label: 'Deploy NFTs on BSC',
-                        items:['nft-metadata-standard', 
-                               {type: 'category',
-                               collapsed: true,
-                               label: 'Tutorials',
-                               items:['ERC721', 'nft_blackide']},
-                             ]
+                        items:['nft-metadata-standard', 'ERC721', 'nft_blackide']
                       },
                       {
                         type: 'category',
