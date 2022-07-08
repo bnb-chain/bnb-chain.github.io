@@ -159,7 +159,7 @@ in our case.
 
 3.	On the Metamask wallet mobile app, import an account using this key pair. Enter the private key copied in the previous step and click import.
 
-![image](https://user-images.githubusercontent.com/93580180/177945328-7cf596c6-d84d-4270-a0a4-7099a0cc233e.png)
+![image](https://user-images.githubusercontent.com/93580180/177954799-b86dae87-5274-4408-9d0b-5b52682549d1.png)
 
 4.	After importing account, the next step is to add the BSC Testnet configuration to the wallet. Ensure that you are using the same account whose pubic address was issued the NFT.
 
