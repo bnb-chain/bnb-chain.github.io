@@ -70,13 +70,12 @@ const sidebars = {
                       },
                       {
                         type: 'category',
-                        collapsed: true,
                         label: 'Deploy NFTs',
                         items:['nft-metadata-standard', 
-                               type: 'category',
+                               {type: 'category',
                                collapsed: true,
                                label: 'Deploy NFTs',
-                               items:['ERC721', 'nft_blackide']
+                               items:['ERC721', 'nft_blackide']},
                              ]
                       },
                       {
