@@ -70,11 +70,11 @@ const sidebars = {
                       },
                       {
                         type: 'category',
-                        label: 'Deploy NFTs',
+                        label: 'Deploy NFTs on BSC',
                         items:['nft-metadata-standard', 
                                {type: 'category',
                                collapsed: true,
-                               label: 'Deploy NFTs',
+                               label: 'Tutorials',
                                items:['ERC721', 'nft_blackide']},
                              ]
                       },
