@@ -163,7 +163,7 @@ in our case.
 
 4.	After importing account, the next step is to add the BSC Testnet configuration to the wallet. Ensure that you are using the same account whose pubic address was issued the NFT.
 
-![image](https://user-images.githubusercontent.com/93580180/177949239-f7a5bbdf-be7d-429d-8368-275bc9b972c6.png)
+![image](https://user-images.githubusercontent.com/93580180/177950571-4674930b-c8c6-4480-8808-ea587af2bb2d.png)
 
 5.	Ensure that your account is connected to the BSC Testnet. Also, ensure that you have enough BNB test tokens in your account. If not, you can use the BSC Testnet Faucet to acquire some, as mentioned earlier.
 
