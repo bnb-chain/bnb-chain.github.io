@@ -14,12 +14,7 @@ BNB Sidechain specifies the primary structure and configuration of the blockchai
 
 After applying templates, BNB Sidechain can be customized using programmable and configurable **modules**.
 
-<p>
-&nbsp;
-
 ![img](../../../static/img/assets/bas-architecture1.png)
-
-</p>
 
 ## Modules
 
@@ -52,7 +47,7 @@ Internally, BNB Sidechain implements the following modules: Parlia consensus eng
 ## Repositories
 
 Here is the list repositories provided by Ankr for development on BNB Sidechain:
-* [BNB Sidechain-genesis-config](https://github.com/Ankr-network/bas-genesis-config) — genesis smart contracts and scripts for building the genesis config.
-* [BNB Sidechain-template-bsc](https://github.com/Ankr-network/bas-template-bsc) — BNB Sidechain-compatible BSC-BNB Sidechained template.
+* [BNB Sidechain-genesis-config](https://github.com/bnb-chain/bas-genesis-config) — genesis smart contracts and scripts for building the genesis config.
+* [BNB Sidechain-template-bsc](https://github.com/bnb-chain/bas-template-bsc) — BNB Sidechain-compatible based template.
 * [BNB Sidechain-javascript-monorepo](https://github.com/Ankr-network/bas-javascript-monorepo) — mono-repository with all frontend-related packages and SDKs.
-* [BNB Sidechain-devnet-setup](https://github.com/Ankr-network/bas-devnet-setup) — scripts for running BNB Sidechain devnet.
+* [BNB Sidechain-devnet-setup](https://github.com/bnb-chain/bas-devnet-setup) — scripts for running BNB Sidechain devnet.
