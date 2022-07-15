@@ -49,5 +49,4 @@ Internally, BNB Sidechain implements the following modules: Parlia consensus eng
 Here is the list repositories provided by Ankr for development on BNB Sidechain:
 * [BNB Sidechain-genesis-config](https://github.com/bnb-chain/bas-genesis-config) — genesis smart contracts and scripts for building the genesis config.
 * [BNB Sidechain-template-bsc](https://github.com/bnb-chain/bas-template-bsc) — BNB Sidechain-compatible based template.
-* [BNB Sidechain-javascript-monorepo](https://github.com/Ankr-network/bas-javascript-monorepo) — mono-repository with all frontend-related packages and SDKs.
 * [BNB Sidechain-devnet-setup](https://github.com/bnb-chain/bas-devnet-setup) — scripts for running BNB Sidechain devnet.
