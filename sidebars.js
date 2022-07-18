@@ -284,7 +284,13 @@ const sidebars = {
                   label: 'Architecture',
                   id: 'BNBSidechain/architecture/bs-arch'
                },
-             
+              {
+                type: 'doc',
+                label: 'Development Tools',
+                id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
+              },
+              'BNBSidechain/develop/BNBSidechainTestnet/launch-bs.md',
+              'BNBSidechain/bs-tutorials',
                {
                   type: 'category',
                   collapsed: true,
@@ -292,13 +298,6 @@ const sidebars = {
                   items:['BNBSidechain/security/blockchain-and-evm-security', 
                         'BNBSidechain/security/bridge-security']
                },
-             
-              {
-                type: 'doc',
-                label: 'Development Tools',
-                id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
-              },
-              'BNBSidechain/bs-tutorials',
               {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bs-pilot-projects'},
             
             ]
