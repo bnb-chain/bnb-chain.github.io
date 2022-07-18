@@ -11,7 +11,7 @@ Though many have challenged that BSC chose to scale up the capacity by shorter b
 
 Based on the past research and investigation, storage has been commonly considered as the major bottleneck. The 17TB data of a BSC archive node / 2TB for a full node on one machine is not sustainable. As a result, storage optimization is the main focus as well.
 
-![storage-stats](https://aws1.discourse-cdn.com/standard11/uploads/binancesmartchain1/original/1X/d177780f6baa8cfe6c6b5761b08b980d51cabcee.jpeg)
+![storage-stats](https://global.discourse-cdn.com/standard11/uploads/binancesmartchain1/original/1X/d177780f6baa8cfe6c6b5761b08b980d51cabcee.jpeg)
 
 ## Erigon Based BSC Client or Another Storage Model
 [Erigon](https://github.com/ledgerwatch/erigon), a.k.a the previous “turbo-geth”, has been striving hard to improve the storage system of Ethereum/Geth in the past 3 years and now blossomed into beta status. Its new storage model with the new database, MPT generation methodology and staged sync has been proven to run much more efficiently than Geth for the large storage. Creating a BSC client based on Erigon will certainly improve the efficiency of the BSC archive node by reducing the storage size and improving the sync time.
