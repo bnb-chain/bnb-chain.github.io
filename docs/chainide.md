@@ -38,7 +38,11 @@ Visit [ChainIDE]((https://chainide.com/)), create a project, and click on the "u
 
 ### Enabling the BNB Smart Chain Test Network to Binance Wallet
 If you want to continue with Binance Wallet, install Binance Wallet, and After installing Binance Wallet, you need to enable "Show Test Networks" and switch to the "BNB Smart Chain Test Network". 
-![](https://chainide-doc.s3.amazonaws.com/Using+ChainIDE+BNB+Smart+Chain/16.png)
+
+<img src="https://chainide-doc.s3.amazonaws.com/Using+ChainIDE+BNB+Smart+Chain/16.png" alt="img" style={{zoom:"30%"}}/>
+
+<img src="https://lh6.googleusercontent.com/AbMd49RFlERw1E_OpmURgZxqYHqHOXpPJLtT-ysIB2oAwmVf054jzQndDxJOfqj-FFCR_Beb1LTXvw6T7TvO03aVlHGmEaE1N2J5mg5kUm-dbcaXnlLH-0RLM-SGV0brrlweEyrQ" alt="img" style={{zoom:"30%"}}/>
+
 
 ### Obtaining Test BNB tokens
 
