@@ -289,7 +289,7 @@ const sidebars = {
                 label: 'Development Tools',
                 id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
               },
-              'BNBSidechain/develop/BNBSidechainTestnet/launch-bs.md',
+              'BNBSidechain/develop/BNBSidechainTestnet/launch-bs',
               'BNBSidechain/bs-tutorials',
                {
                   type: 'category',
