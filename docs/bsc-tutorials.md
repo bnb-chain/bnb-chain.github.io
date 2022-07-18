@@ -35,6 +35,7 @@ In this section, we have provided tutorials on usage of different components of 
 #### NFT
 * Tutorial on [How to Implement Token URI](develop/../nft-metadata-standard.md)
 * Tutorial on [How to Deploy NFTs on BSC](ERC721.md)
+* Tutorial on [How to Deploy NFTs on BSC using BlackIDE](https://github.com/bnb-chain/bnb-chain-tutorial/tree/main/03-Using-BlackIDE-for-Deploying-NFTs)
 ### Dapp Development
 * Tutorial on [How to implement a Full Stack Hello World dApp on BSC](dapp-dev/Hello-World.md)
 * Tutorial on [How to use Web3.js Library on BSC to Fetch Blockchain Data](dapp-dev/web3js-tutorial.md)
