@@ -1,6 +1,6 @@
 ---
 title: Launch BNB Sidechain
-id: launch-bas
+id: launch-bs
 ---
 
 # Launch BNB Sidechain
