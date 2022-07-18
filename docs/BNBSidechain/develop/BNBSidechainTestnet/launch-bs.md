@@ -45,7 +45,7 @@ You can check the Makefile to choose more interesting commands, but if you just 
 ```
 apt update
 apt install build-essential socat
-git clone https://github.com/Ankr-network/bas-devnet-setup bas --recursive
+git clone https://github.com/bnb-chain/bas-devnet-setup bas --recursive
 cd bas
 DOMAIN_NAME=dev-02.bas.ankr.com make all
 ```
