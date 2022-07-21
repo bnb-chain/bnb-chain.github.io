@@ -1,0 +1,3348 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "RPC client for Tendermint",
+    "description" : "A REST interface for state queries, transaction generation and broadcasting.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "https://github.com/tendermint/tendermint/blob/master/LICENSE"
+    },
+    "version" : "1.0.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "http://dataseed1.binance.org",
+    "description" : "Binance Chain mainnet node to interact with the Tendermint RPC"
+  }, {
+    "url" : "http://data-seed-pre-0-s3.binance.org",
+    "description" : "Binance Chain testnet node to interact with the Tendermint RPC"
+  }, {
+    "url" : "http://localhost:26657",
+    "description" : "Interact with the Tendermint RPC locally on your device"
+  } ],
+  "tags" : [ {
+    "name" : "ABCI",
+    "description" : "ABCI APIs"
+  }, {
+    "name" : "Info",
+    "description" : "Information about the node APIs"
+  }, {
+    "name" : "Tx",
+    "description" : "Transactions broadcast APIs"
+  }, {
+    "name" : "Evidence",
+    "description" : "Evidence APIs"
+  }, {
+    "name" : "Websocket",
+    "description" : "Subscribe/unsubscribe are reserved for websocket events."
+  } ],
+  "paths" : {
+    "/status" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Node Status",
+        "description" : "Get Tendermint status including node info, pubkey, latest block hash, app hash, block height and time.\n",
+        "operationId" : "status",
+        "responses" : {
+          "200" : {
+            "description" : "Status of the node",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StatusResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/net_info" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Network information",
+        "description" : "Get network info.\n",
+        "operationId" : "net_info",
+        "responses" : {
+          "200" : {
+            "description" : "empty answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NetInfoResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Node heartbeat",
+        "description" : "Get node health. Returns empty result (200 OK) on success, no response - in case of an error.\n",
+        "operationId" : "health",
+        "responses" : {
+          "200" : {
+            "description" : "Gets Node Health",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EmptyResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/blockchain" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get block headers for minHeight <= height <= maxHeight.",
+        "description" : "Get Blockchain info.\n",
+        "operationId" : "blockchain",
+        "parameters" : [ {
+          "name" : "minHeight",
+          "in" : "query",
+          "description" : "Minimum block height to return",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }, {
+          "name" : "maxHeight",
+          "in" : "query",
+          "description" : "Maximum block height to return",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 2
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Block headers, returned in descending order (highest first).",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BlockchainResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/block" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get block at a specified height",
+        "description" : "Get Block.\n",
+        "operationId" : "block",
+        "parameters" : [ {
+          "name" : "height",
+          "in" : "query",
+          "description" : "height to return. If no height is provided, it will fetch the latest block.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Block information.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BlockResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/block_results" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get block results at a specified height",
+        "description" : "Get block_results.\n",
+        "operationId" : "block_results",
+        "parameters" : [ {
+          "name" : "height",
+          "in" : "query",
+          "description" : "height to return. If no height is provided, it will fetch information regarding the latest block.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Block results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BlockResultsResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commit" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get commit results at a specified height",
+        "description" : "Get Commit.\n",
+        "operationId" : "commit",
+        "parameters" : [ {
+          "name" : "height",
+          "in" : "query",
+          "description" : "height to return. If no height is provided, it will fetch commit information regarding the latest block.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Commit results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CommitResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/validators" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get validator set at a specified height",
+        "description" : "Get Validators.\n",
+        "operationId" : "validators",
+        "parameters" : [ {
+          "name" : "height",
+          "in" : "query",
+          "description" : "height to return. If no height is provided, it will fetch validator set which corresponds to the latest block.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Page number (1-based)",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Number of entries per page (max: 100)",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 30,
+            "default" : 30
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Commit results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ValidatorsResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/genesis" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get Genesis",
+        "description" : "Get genesis.\n",
+        "operationId" : "genesis",
+        "responses" : {
+          "200" : {
+            "description" : "Genesis results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/GenesisResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dump_consensus_state" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get consensus state",
+        "description" : "Get consensus state.\n",
+        "operationId" : "dump_consensus_state",
+        "responses" : {
+          "200" : {
+            "description" : "consensus state results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DumpConsensusResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/consensus_state" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get consensus state",
+        "description" : "Get consensus state.\n",
+        "operationId" : "consensus_state",
+        "responses" : {
+          "200" : {
+            "description" : "consensus state results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ConsensusStateResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/consensus_params" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get consensus parameters",
+        "description" : "Get consensus parameters.\n",
+        "operationId" : "consensus_params",
+        "parameters" : [ {
+          "name" : "height",
+          "in" : "query",
+          "description" : "height to return. If no height is provided, it will fetch commit information regarding the latest block.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "consensus parameters results.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ConsensusParamsResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/unconfirmed_txs" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get the list of unconfirmed transactions",
+        "description" : "Get list of unconfirmed transactions\n",
+        "operationId" : "unconfirmed_txs",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Maximum number of unconfirmed transactions to return",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "List of unconfirmed transactions",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UnconfirmedTransactionsResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/num_unconfirmed_txs" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get data about unconfirmed transactions",
+        "description" : "Get data about unconfirmed transactions\n",
+        "operationId" : "num_unconfirmed_txs",
+        "responses" : {
+          "200" : {
+            "description" : "status about unconfirmed transactions",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NumUnconfirmedTransactionsResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tx_search" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Search for transactions",
+        "description" : "Get list of unconfirmed transactions\n",
+        "operationId" : "tx_search",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "tx.height=7772995"
+          }
+        }, {
+          "name" : "prove",
+          "in" : "query",
+          "description" : "Include proofs of the transactions inclusion in the block",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : true,
+            "default" : false
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Page number (1-based)",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Number of entries per page (max: 100)",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 30,
+            "default" : 30
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "List of unconfirmed transactions",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TxSearchResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tx" : {
+      "get" : {
+        "tags" : [ "Info" ],
+        "summary" : "Get transactions by hash",
+        "description" : "Get a trasasction\n",
+        "operationId" : "tx",
+        "parameters" : [ {
+          "name" : "hash",
+          "in" : "query",
+          "description" : "transaction Hash to retrieve",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED"
+          }
+        }, {
+          "name" : "prove",
+          "in" : "query",
+          "description" : "Include proofs of the transactions inclusion in the block",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : true,
+            "default" : false
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get a transaction`",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TxResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/abci_info" : {
+      "get" : {
+        "tags" : [ "ABCI" ],
+        "summary" : "Get some info about the application.",
+        "description" : "Get some info about the application.\n",
+        "operationId" : "abci_info",
+        "responses" : {
+          "200" : {
+            "description" : "Get some info about the application.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ABCIInfoResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/abci_query" : {
+      "get" : {
+        "tags" : [ "ABCI" ],
+        "summary" : "Query the application for some information.",
+        "description" : "Query the application for some information.\n",
+        "operationId" : "abci_query",
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "query",
+          "description" : "Path to the data (\"/a/b/c\")",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "/a/b/c"
+          }
+        }, {
+          "name" : "data",
+          "in" : "query",
+          "description" : "Data",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "IHAVENOIDEA"
+          }
+        }, {
+          "name" : "height",
+          "in" : "query",
+          "description" : "Height (0 means latest)",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 1,
+            "default" : 0
+          }
+        }, {
+          "name" : "prove",
+          "in" : "query",
+          "description" : "Include proofs of the transactions inclusion in the block",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "example" : true,
+            "default" : false
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Response of the submitted query",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ABCIQueryResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcast_evidence" : {
+      "get" : {
+        "tags" : [ "Evidence" ],
+        "summary" : "Broadcast evidence of the misbehavior.",
+        "description" : "Broadcast evidence of the misbehavior.\n",
+        "operationId" : "broadcast_evidence",
+        "parameters" : [ {
+          "name" : "evidence",
+          "in" : "query",
+          "description" : "Amino-encoded JSON evidence",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "JSON_EVIDENCE_Amino_encoded"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Broadcast evidence of the misbehavior.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BroadcastEvidenceResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcast_tx_sync" : {
+      "get" : {
+        "tags" : [ "Tx" ],
+        "summary" : "Returns with the response from CheckTx. Does not wait for DeliverTx result.",
+        "description" : "If you haven't received anything after a couple of blocks, resend it. If the\nsame happens again, send it to some other node. A few reasons why it could\nhappen:\n1. Your transaction is not valid \n2. node can be offline\n\nIf you want to be sure that the transaction is included in a block, you can\nsubscribe for the result using JSONRPC via a websocket.\n",
+        "operationId" : "broadcast_tx_sync",
+        "parameters" : [ {
+          "name" : "tx",
+          "in" : "query",
+          "description" : "The transaction",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "456"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Empty",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BroadcastTxResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscribe" : {
+      "get" : {
+        "tags" : [ "Websocket" ],
+        "summary" : "Subscribe for events via WebSocket.",
+        "description" : "To tell which events you want, you need to provide a query. \n\nquery is a string, which has a form: \"condition AND condition ...\" (no OR at the moment). condition has a form: \"key operation operand\". key is a string with a restricted set of possible symbols ( \\t\\n\\r\\\\()\"'=>< are not allowed).\n\noperation can be \"=\", \"<\", \"<=\", \">\", \">=\", \"CONTAINS\" AND \"EXISTS\". operand\ncan be a string (escaped with single quotes), number, date or time.\n",
+        "operationId" : "subscribe",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "query is a string, which has a form: \"condition AND condition ...\" (no OR at the\nmoment). condition has a form: \"key operation operand\". key is a string with\na restricted set of possible symbols ( \\t\\n\\r\\\\()\"'=>< are not allowed).\noperation can be \"=\", \"<\", \"<=\", \">\", \">=\", \"CONTAINS\". operand can be a\nstring (escaped with single quotes), number, date or time.\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "tm.event = 'Tx' AND tx.height = 5"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "empty answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EmptyResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/unsubscribe" : {
+      "get" : {
+        "tags" : [ "Websocket" ],
+        "summary" : "Unsubscribe from event on Websocket",
+        "description" : "\n```go\nclient := client.NewHTTP(\"tcp:0.0.0.0:26657\", \"/websocket\")\nerr := client.Start()\nif err != nil {\n   handle error\n}\ndefer client.Stop()\nquery := \"tm.event = 'Tx' AND tx.height = 3\"\nerr = client.Unsubscribe(context.Background(), \"test-client\", query)\nif err != nil {\n   handle error\n}\n```\n",
+        "operationId" : "unsubscribe",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "query is a string, which has a form: \"condition AND condition ...\" (no OR at the\nmoment). condition has a form: \"key operation operand\". key is a string with\na restricted set of possible symbols ( \\t\\n\\r\\\\()\"'=>< are not allowed).\noperation can be \"=\", \"<\", \"<=\", \">\", \">=\", \"CONTAINS\". operand can be a\nstring (escaped with single quotes), number, date or time.\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "tm.event = 'Tx' AND tx.height = 5"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EmptyResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/unsubscribe_all" : {
+      "get" : {
+        "tags" : [ "Websocket" ],
+        "summary" : "Unsubscribe from all events via WebSocket",
+        "description" : "Unsubscribe from all events via WebSocket\n",
+        "operationId" : "unsubscribe_all",
+        "responses" : {
+          "200" : {
+            "description" : "empty answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EmptyResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcast_tx_async" : {
+      "get" : {
+        "tags" : [ "Tx" ],
+        "summary" : "Returns right away, with no response. Does not wait for CheckTx nor DeliverTx results.",
+        "description" : "If you haven't received anything after a couple of blocks, resend it. If the\nsame happens again, send it to some other node. A few reasons why it could\nhappen:\n1. Your transaction is not valid \n2. node can be offline\n\nIf you want to be sure that the transaction is included in a block, you can\nsubscribe for the result using JSONRPC via a websocket. \n",
+        "operationId" : "broadcast_tx_async",
+        "parameters" : [ {
+          "name" : "tx",
+          "in" : "query",
+          "description" : "The transaction",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "123"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "empty answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BroadcastTxResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcast_tx_commit" : {
+      "get" : {
+        "tags" : [ "Tx" ],
+        "summary" : "Returns with the responses from CheckTx and DeliverTx.",
+        "description" : "The transaction will be broadcasted and returns with the response from `CheckTx` and `DeliverTx`.\n\nThis method will wait for both `CheckTx` and  `DeliverTx`, so it is the slowest way to broadcast through RPC but offers the most accurate success/failure response.\n\n**CONTRACT** only returns error if mempool.CheckTx() errs or if we timeout waiting for tx to commit.\n\nIf `CheckTx` or `DeliverTx` fail, no error will be returned, but the returned result will contain a non-OK ABCI code.\n",
+        "operationId" : "broadcast_tx_commit",
+        "parameters" : [ {
+          "name" : "tx",
+          "in" : "query",
+          "description" : "The transaction",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "785"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "empty answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BroadcastTxCommitResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "empty error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "JSONRPC" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          }
+        }
+      },
+      "EmptyResponse" : {
+        "description" : "Empty Response",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/JSONRPC"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "result" : {
+              "type" : "object",
+              "additionalProperties" : { }
+            }
+          }
+        } ]
+      },
+      "ErrorResponse" : {
+        "description" : "Error Response",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/JSONRPC"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "error" : {
+              "type" : "string",
+              "example" : "Description of failure"
+            }
+          }
+        } ]
+      },
+      "ProtocolVersion" : {
+        "type" : "object",
+        "properties" : {
+          "p2p" : {
+            "type" : "string",
+            "example" : "7"
+          },
+          "block" : {
+            "type" : "string",
+            "example" : "10"
+          },
+          "app" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "PubKey" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "tendermint/PubKeyEd25519"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "jAXPwM0xV1iwn7XJz6H0Zk8RxgELUAfjStxzIYKxaEk="
+          }
+        }
+      },
+      "NodeInfo" : {
+        "type" : "object",
+        "properties" : {
+          "protocol_version" : {
+            "$ref" : "#/components/schemas/ProtocolVersion"
+          },
+          "id" : {
+            "type" : "string",
+            "example" : "7156d461742e2a1e569fd68426009c4194830c93"
+          },
+          "listen_addr" : {
+            "type" : "string",
+            "example" : "aa841c226243a11e9a951063f6065739-eee556e439dc6a3b.elb.ap-northeast-1.amazonaws.com:27146"
+          },
+          "network" : {
+            "type" : "string",
+            "example" : "Binance-Chain-Ganges"
+          },
+          "version" : {
+            "type" : "string",
+            "example" : "0.32.1"
+          },
+          "channels" : {
+            "type" : "string",
+            "example" : "4020212223303800"
+          },
+          "moniker" : {
+            "type" : "string",
+            "example" : "moniker-node"
+          },
+          "other" : {
+            "$ref" : "#/components/schemas/NodeInfo_other"
+          }
+        }
+      },
+      "SyncInfo" : {
+        "type" : "object",
+        "properties" : {
+          "latest_block_hash" : {
+            "type" : "string",
+            "example" : "790BA84C3545FCCC49A5C629CEE6EA58A6E875C3862175BDC11EE7AF54703501"
+          },
+          "latest_app_hash" : {
+            "type" : "string",
+            "example" : "C9AEBB441B787D9F1D846DE51F3826F4FD386108B59B08239653ABF59455C3F8"
+          },
+          "latest_block_height" : {
+            "type" : "string",
+            "example" : "1262196"
+          },
+          "latest_block_time" : {
+            "type" : "string",
+            "example" : "2019-08-01T11:52:22.818762194Z"
+          },
+          "catching_up" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }
+      },
+      "ValidatorInfo" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "32B88CEB9CE3EF1EABB840EC1556A5B4A5FD7FDB"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/PubKey"
+          },
+          "voting_power" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "Status" : {
+        "type" : "object",
+        "properties" : {
+          "node_info" : {
+            "$ref" : "#/components/schemas/NodeInfo"
+          },
+          "sync_info" : {
+            "$ref" : "#/components/schemas/SyncInfo"
+          },
+          "validator_info" : {
+            "$ref" : "#/components/schemas/ValidatorInfo"
+          }
+        },
+        "description" : "Status Response"
+      },
+      "StatusResponse" : {
+        "description" : "Status Response",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/JSONRPC"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "result" : {
+              "$ref" : "#/components/schemas/Status"
+            }
+          }
+        } ]
+      },
+      "Monitor" : {
+        "type" : "object",
+        "properties" : {
+          "Active" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "Start" : {
+            "type" : "string",
+            "example" : "2019-07-31T14:31:28.66Z"
+          },
+          "Duration" : {
+            "type" : "string",
+            "example" : "168901060000000"
+          },
+          "Idle" : {
+            "type" : "string",
+            "example" : "168901040000000"
+          },
+          "Bytes" : {
+            "type" : "string",
+            "example" : "5"
+          },
+          "Samples" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "InstRate" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "CurRate" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "AvgRate" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "PeakRate" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "BytesRem" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "TimeRem" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "Progress" : {
+            "type" : "number",
+            "example" : 0
+          }
+        }
+      },
+      "Channel" : {
+        "type" : "object",
+        "properties" : {
+          "ID" : {
+            "type" : "number",
+            "example" : 48
+          },
+          "SendQueueCapacity" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "SendQueueSize" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "Priority" : {
+            "type" : "string",
+            "example" : "5"
+          },
+          "RecentlySent" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "ConnectionStatus" : {
+        "type" : "object",
+        "properties" : {
+          "Duration" : {
+            "type" : "string",
+            "example" : "168901057956119"
+          },
+          "SendMonitor" : {
+            "$ref" : "#/components/schemas/Monitor"
+          },
+          "RecvMonitor" : {
+            "$ref" : "#/components/schemas/Monitor"
+          },
+          "Channels" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Channel"
+            }
+          }
+        }
+      },
+      "Peer" : {
+        "type" : "object",
+        "properties" : {
+          "node_info" : {
+            "$ref" : "#/components/schemas/NodeInfo"
+          },
+          "is_outbound" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "connection_status" : {
+            "$ref" : "#/components/schemas/ConnectionStatus"
+          },
+          "remote_ip" : {
+            "type" : "string",
+            "example" : "95.179.155.35"
+          }
+        }
+      },
+      "NetInfo" : {
+        "type" : "object",
+        "properties" : {
+          "listening" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "listeners" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "Listener(@)"
+            }
+          },
+          "n_peers" : {
+            "type" : "number",
+            "example" : 5
+          },
+          "peers" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Peer"
+            }
+          }
+        }
+      },
+      "NetInfoResponse" : {
+        "description" : "NetInfo Response",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/JSONRPC"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "result" : {
+              "$ref" : "#/components/schemas/NetInfo"
+            }
+          }
+        } ]
+      },
+      "BlockID" : {
+        "required" : [ "hash", "parts" ],
+        "type" : "object",
+        "properties" : {
+          "hash" : {
+            "type" : "string",
+            "example" : "D82C2734BB0E76C772A10994B210EF9D11505D1B98CB189D9CF7F9A5488672A5"
+          },
+          "parts" : {
+            "$ref" : "#/components/schemas/BlockID_parts"
+          }
+        }
+      },
+      "BlockHeader" : {
+        "required" : [ "app_hash", "chain_id", "consensus_hash", "data_hash", "evidence_hash", "height", "last_block_id", "last_commit_hash", "last_results_hash", "next_validators_hash", "proposer_address", "time", "validators_hash", "version" ],
+        "type" : "object",
+        "properties" : {
+          "version" : {
+            "$ref" : "#/components/schemas/BlockHeader_version"
+          },
+          "chain_id" : {
+            "type" : "string",
+            "example" : "Binance-Chain-Tigris"
+          },
+          "height" : {
+            "type" : "string",
+            "example" : "12"
+          },
+          "time" : {
+            "type" : "string",
+            "example" : "2019-04-22T17:01:51.701356223Z"
+          },
+          "last_block_id" : {
+            "$ref" : "#/components/schemas/BlockID"
+          },
+          "last_commit_hash" : {
+            "type" : "string",
+            "example" : "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812"
+          },
+          "data_hash" : {
+            "type" : "string",
+            "example" : "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73"
+          },
+          "validators_hash" : {
+            "type" : "string",
+            "example" : "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0"
+          },
+          "next_validators_hash" : {
+            "type" : "string",
+            "example" : "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0"
+          },
+          "consensus_hash" : {
+            "type" : "string",
+            "example" : "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8"
+          },
+          "app_hash" : {
+            "type" : "string",
+            "example" : "7FA96E41E3FCA5AED55C86F4495C3E98A89D3B3EAE53B3E4A2A6A83957E50681"
+          },
+          "last_results_hash" : {
+            "type" : "string"
+          },
+          "evidence_hash" : {
+            "type" : "string"
+          },
+          "proposer_address" : {
+            "type" : "string",
+            "example" : "B0FBB52FF7EE93CC476DFE6B74FA1FC88584F30D"
+          }
+        }
+      },
+      "BlockId" : {
+        "required" : [ "hash", "parts" ],
+        "type" : "object",
+        "properties" : {
+          "hash" : {
+            "type" : "string",
+            "example" : "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7"
+          },
+          "parts" : {
+            "$ref" : "#/components/schemas/BlockId_parts"
+          }
+        }
+      },
+      "BlockMeta" : {
+        "type" : "object",
+        "properties" : {
+          "block_id" : {
+            "$ref" : "#/components/schemas/BlockId"
+          },
+          "block_size" : {
+            "type" : "number",
+            "example" : 1000000
+          },
+          "header" : {
+            "$ref" : "#/components/schemas/BlockHeader"
+          },
+          "num_txs" : {
+            "type" : "string",
+            "example" : "54"
+          }
+        }
+      },
+      "Blockchain" : {
+        "required" : [ "block_metas", "last_height" ],
+        "type" : "object",
+        "properties" : {
+          "last_height" : {
+            "type" : "string",
+            "example" : "1276718"
+          },
+          "block_metas" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/BlockMeta"
+            }
+          }
+        }
+      },
+      "BlockchainResponse" : {
+        "description" : "Blockchain info",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/JSONRPC"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "result" : {
+              "$ref" : "#/components/schemas/Blockchain"
+            }
+          }
+        } ]
+      },
+      "Commit" : {
+        "required" : [ "block_id", "height", "round", "signature", "timestamp", "type", "validator_address", "validator_index" ],
+        "properties" : {
+          "type" : {
+            "type" : "number",
+            "example" : 2
+          },
+          "height" : {
+            "type" : "string",
+            "example" : "1262085"
+          },
+          "round" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "block_id" : {
+            "$ref" : "#/components/schemas/BlockID"
+          },
+          "timestamp" : {
+            "type" : "string",
+            "example" : "2019-08-01T11:39:38.867269833Z"
+          },
+          "validator_address" : {
+            "type" : "string",
+            "example" : "000001E443FD237E4B616E2FA69DF4EE3D49A94F"
+          },
+          "validator_index" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "signature" : {
+            "type" : "string",
+            "example" : "DBchvucTzAUEJnGYpNvMdqLhBAHG4Px8BsOBB3J3mAFCLGeuG7uJqy+nVngKzZdPhPi8RhmE/xcw/M9DOJjEDg=="
+          }
+        }
+      },
+      "Block" : {
+        "type" : "object",
+        "properties" : {
+          "header" : {
+            "$ref" : "#/components/schemas/BlockHeader"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "yQHwYl3uCkKoo2GaChRnd+THLQ2RM87nEZrE19910Z28ABIUWW/t8AtIMwcyU0sT32RcMDI9GF0aEAoFdWF0b20SBzEwMDAwMDASEwoNCgV1YXRvbRIEMzEwMRCd8gEaagom61rphyEDoJPxlcjRoNDtZ9xMdvs+lRzFaHe2dl2P5R2yVCWrsHISQKkqX5H1zXAIJuC57yw0Yb03Fwy75VRip0ZBtLiYsUqkOsPUoQZAhDNP+6LY+RUwz/nVzedkF0S29NZ32QXdGv0="
+            }
+          },
+          "evidence" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Evidence"
+            }
+          },
+          "last_commit" : {
+            "$ref" : "#/components/schemas/Block_last_commit"
+          }
+        }
+      },
+      "Validator" : {
+        "type" : "object",
+        "properties" : {
+          "pub_key" : {
+            "$ref" : "#/components/schemas/PubKey"
+          },
+          "voting_power" : {
+            "type" : "number"
+          },
+          "address" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Evidence" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "height" : {
+            "type" : "number"
+          },
+          "time" : {
+            "type" : "number"
+          },
+          "total_voting_power" : {
+            "type" : "number"
+          },
+          "validator" : {
+            "$ref" : "#/components/schemas/Validator"
+          }
+        }
+      },
+      "BlockComplete" : {
+        "type" : "object",
+        "properties" : {
+          "block_id" : {
+            "$ref" : "#/components/schemas/BlockID"
+          },
+          "block" : {
+            "$ref" : "#/components/schemas/Block"
+          }
+        }
+      },
+      "BlockResponse" : {
+        "description" : "Blockc info",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/JSONRPC"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "result" : {
+              "$ref" : "#/components/schemas/BlockComplete"
+            }
+          }
+        } ]
+      },
+      "Tag" : {
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string",
+            "example" : "YWN0aW9u"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "c2VuZA=="
+          }
+        }
+      },
+      "BlockResultsResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/BlockResultsResponse_result"
+          }
+        }
+      },
+      "CommitResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/CommitResponse_result"
+          }
+        }
+      },
+      "ValidatorsResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/ValidatorsResponse_result"
+          }
+        }
+      },
+      "GenesisResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result"
+          }
+        }
+      },
+      "DumpConsensusResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result"
+          }
+        }
+      },
+      "ConsensusStateResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/ConsensusStateResponse_result"
+          }
+        }
+      },
+      "ConsensusParamsResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/ConsensusParamsResponse_result"
+          }
+        }
+      },
+      "NumUnconfirmedTransactionsResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/NumUnconfirmedTransactionsResponse_result"
+          }
+        }
+      },
+      "UnconfirmedTransactionsResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/UnconfirmedTransactionsResponse_result"
+          }
+        }
+      },
+      "TxSearchResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/TxSearchResponse_result"
+          }
+        }
+      },
+      "TxResponse" : {
+        "required" : [ "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/TxResponse_result"
+          }
+        }
+      },
+      "ABCIInfoResponse" : {
+        "required" : [ "id", "jsonrpc" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/ABCIInfoResponse_result"
+          }
+        }
+      },
+      "ABCIQueryResponse" : {
+        "required" : [ "error", "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "type" : "string"
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/ABCIQueryResponse_result"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          }
+        }
+      },
+      "BroadcastEvidenceResponse" : {
+        "required" : [ "id", "jsonrpc" ],
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "type" : "string"
+          },
+          "result" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          }
+        }
+      },
+      "BroadcastTxCommitResponse" : {
+        "required" : [ "error", "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "type" : "string"
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/BroadcastTxCommitResponse_result"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          }
+        }
+      },
+      "BroadcastTxResponse" : {
+        "required" : [ "error", "id", "jsonrpc", "result" ],
+        "type" : "object",
+        "properties" : {
+          "jsonrpc" : {
+            "type" : "string",
+            "example" : "2.0"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "result" : {
+            "$ref" : "#/components/schemas/BroadcastTxResponse_result"
+          },
+          "error" : {
+            "type" : "string"
+          }
+        }
+      },
+      "dialPeersPost" : {
+        "type" : "object",
+        "properties" : {
+          "Persistent" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "Peers" : {
+            "type" : "array",
+            "example" : [ "6f172048b821e3b1ab98ffb0973ba737966eecf8@192.168.1.2:26656" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "dialSeedsPost" : {
+        "type" : "object",
+        "properties" : {
+          "Peers" : {
+            "type" : "array",
+            "example" : [ "6f172048b821e3b1ab98ffb0973ba737966eecf8@192.168.1.2:26656" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "dialResp" : {
+        "type" : "object",
+        "properties" : {
+          "Log" : {
+            "type" : "string",
+            "example" : "Dialing seeds in progress. See /net_info for details"
+          }
+        }
+      },
+      "NodeInfo_other" : {
+        "type" : "object",
+        "properties" : {
+          "tx_index" : {
+            "type" : "string",
+            "example" : "on"
+          },
+          "rpc_address" : {
+            "type" : "string",
+            "example" : "tcp:0.0.0.0:27147"
+          }
+        },
+        "example" : "data-seed-2"
+      },
+      "BlockID_parts" : {
+        "required" : [ "hash", "total" ],
+        "type" : "object",
+        "properties" : {
+          "total" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "hash" : {
+            "type" : "string",
+            "example" : "CB02DCAA7FB46BF874052EC2273FD0B1F2CF2E1593298D9781E60FE9C3DB8638"
+          }
+        }
+      },
+      "BlockHeader_version" : {
+        "required" : [ "app", "block" ],
+        "type" : "object",
+        "properties" : {
+          "block" : {
+            "type" : "string",
+            "example" : "10"
+          },
+          "app" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "BlockId_parts" : {
+        "required" : [ "hash", "total" ],
+        "type" : "object",
+        "properties" : {
+          "total" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "hash" : {
+            "type" : "string",
+            "example" : "38D4B26B5B725C4F13571EFE022C030390E4C33C8CF6F88EDD142EA769642DBD"
+          }
+        }
+      },
+      "Block_last_commit" : {
+        "type" : "object",
+        "properties" : {
+          "height" : {
+            "type" : "number"
+          },
+          "round" : {
+            "type" : "number"
+          },
+          "block_id" : {
+            "$ref" : "#/components/schemas/BlockID"
+          },
+          "signatures" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Commit"
+            }
+          }
+        }
+      },
+      "BlockResultsResponse_result_attributes" : {
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string",
+            "example" : "Y3JlYXRvcg=="
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "Q29zbW9zaGkgTmV0b3dva28="
+          }
+        }
+      },
+      "BlockResultsResponse_result_begin_block_events" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "app"
+          },
+          "attributes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/BlockResultsResponse_result_attributes"
+            },
+            "x-nullable" : false
+          }
+        }
+      },
+      "BlockResultsResponse_result_pub_key" : {
+        "required" : [ "type", "value" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "value" : {
+            "type" : "string"
+          }
+        }
+      },
+      "BlockResultsResponse_result_validator_updates" : {
+        "type" : "object",
+        "properties" : {
+          "pub_key" : {
+            "$ref" : "#/components/schemas/BlockResultsResponse_result_pub_key"
+          },
+          "power" : {
+            "type" : "string"
+          }
+        }
+      },
+      "BlockResultsResponse_result" : {
+        "required" : [ "height" ],
+        "type" : "object",
+        "properties" : {
+          "height" : {
+            "type" : "string",
+            "example" : "12"
+          },
+          "begin_block_events" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/BlockResultsResponse_result_begin_block_events"
+            },
+            "x-nullable" : true
+          },
+          "end_block" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/BlockResultsResponse_result_begin_block_events"
+            },
+            "x-nullable" : true
+          },
+          "validator_updates" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/BlockResultsResponse_result_validator_updates"
+            },
+            "x-nullable" : true
+          }
+        }
+      },
+      "CommitResponse_result_signed_header_header_last_block_id" : {
+        "required" : [ "hash", "parts" ],
+        "type" : "object",
+        "properties" : {
+          "hash" : {
+            "type" : "string",
+            "example" : "D82C2734BB0E76C772A10994B210EF9D11505D1B98CB189D9CF7F9A5488672A5"
+          },
+          "parts" : {
+            "$ref" : "#/components/schemas/BlockID_parts"
+          }
+        }
+      },
+      "CommitResponse_result_signed_header_header" : {
+        "required" : [ "app_hash", "chain_id", "consensus_hash", "data_hash", "evidence_hash", "height", "last_block_id", "last_commit_hash", "last_results_hash", "next_validators_hash", "proposer_address", "time", "validators_hash", "version" ],
+        "type" : "object",
+        "properties" : {
+          "version" : {
+            "$ref" : "#/components/schemas/BlockHeader_version"
+          },
+          "chain_id" : {
+            "type" : "string",
+            "example" : "Binance-Chain-Tigris"
+          },
+          "height" : {
+            "type" : "string",
+            "example" : "12"
+          },
+          "time" : {
+            "type" : "string",
+            "example" : "2019-09-12T17:01:51.701356223Z"
+          },
+          "last_block_id" : {
+            "$ref" : "#/components/schemas/CommitResponse_result_signed_header_header_last_block_id"
+          },
+          "last_commit_hash" : {
+            "type" : "string",
+            "example" : "21B9BC845AD2CB2C4193CDD17BFC506F1EBE5A7402E84AD96E64171287A34812"
+          },
+          "data_hash" : {
+            "type" : "string",
+            "example" : "970886F99E77ED0D60DA8FCE0447C2676E59F2F77302B0C4AA10E1D02F18EF73"
+          },
+          "validators_hash" : {
+            "type" : "string",
+            "example" : "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0"
+          },
+          "next_validators_hash" : {
+            "type" : "string",
+            "example" : "D658BFD100CA8025CFD3BECFE86194322731D387286FBD26E059115FD5F2BCA0"
+          },
+          "consensus_hash" : {
+            "type" : "string",
+            "example" : "0F2908883A105C793B74495EB7D6DF2EEA479ED7FC9349206A65CB0F9987A0B8"
+          },
+          "app_hash" : {
+            "type" : "string",
+            "example" : "223BF64D4A01074DC523A80E76B9BBC786C791FB0A1893AC5B14866356FCFD6C"
+          },
+          "last_results_hash" : {
+            "type" : "string"
+          },
+          "evidence_hash" : {
+            "type" : "string"
+          },
+          "proposer_address" : {
+            "type" : "string",
+            "example" : "D540AB022088612AC74B287D076DBFBC4A377A2E"
+          }
+        }
+      },
+      "CommitResponse_result_signed_header_commit_block_id" : {
+        "required" : [ "hash", "parts" ],
+        "type" : "object",
+        "properties" : {
+          "hash" : {
+            "type" : "string",
+            "example" : "112BC173FD838FB68EB43476816CD7B4C6661B6884A9E357B417EE957E1CF8F7"
+          },
+          "parts" : {
+            "$ref" : "#/components/schemas/BlockId_parts"
+          }
+        }
+      },
+      "CommitResponse_result_signed_header_commit_signatures" : {
+        "type" : "object",
+        "properties" : {
+          "block_id_flag" : {
+            "type" : "number",
+            "example" : 2
+          },
+          "validator_address" : {
+            "type" : "string",
+            "example" : "000001E443FD237E4B616E2FA69DF4EE3D49A94F"
+          },
+          "timestamp" : {
+            "type" : "string",
+            "example" : "2019-04-22T17:01:58.376629719Z"
+          },
+          "signature" : {
+            "type" : "string",
+            "example" : "14jaTQXYRt8kbLKEhdHq7AXycrFImiLuZx50uOjs2+Zv+2i7RTG/jnObD07Jo2ubZ8xd7bNBJMqkgtkd0oQHAw=="
+          }
+        }
+      },
+      "CommitResponse_result_signed_header_commit" : {
+        "required" : [ "block_id", "height", "round", "signatures" ],
+        "type" : "object",
+        "properties" : {
+          "height" : {
+            "type" : "string",
+            "example" : "1311801"
+          },
+          "round" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "block_id" : {
+            "$ref" : "#/components/schemas/CommitResponse_result_signed_header_commit_block_id"
+          },
+          "signatures" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommitResponse_result_signed_header_commit_signatures"
+            }
+          }
+        }
+      },
+      "CommitResponse_result_signed_header" : {
+        "required" : [ "commit", "header" ],
+        "type" : "object",
+        "properties" : {
+          "header" : {
+            "$ref" : "#/components/schemas/CommitResponse_result_signed_header_header"
+          },
+          "commit" : {
+            "$ref" : "#/components/schemas/CommitResponse_result_signed_header_commit"
+          }
+        }
+      },
+      "CommitResponse_result" : {
+        "required" : [ "canonical", "signed_header" ],
+        "type" : "object",
+        "properties" : {
+          "signed_header" : {
+            "$ref" : "#/components/schemas/CommitResponse_result_signed_header"
+          },
+          "canonical" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "ValidatorsResponse_result_pub_key" : {
+        "required" : [ "type", "value" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "tendermint/PubKeyEd25519"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+          }
+        }
+      },
+      "ValidatorsResponse_result_validators" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "000001E443FD237E4B616E2FA69DF4EE3D49A94F"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/ValidatorsResponse_result_pub_key"
+          },
+          "voting_power" : {
+            "type" : "string",
+            "example" : "1000000000000"
+          },
+          "proposer_priority" : {
+            "type" : "string",
+            "example" : "-1000000000000"
+          }
+        }
+      },
+      "ValidatorsResponse_result" : {
+        "required" : [ "block_height", "validators" ],
+        "type" : "object",
+        "properties" : {
+          "block_height" : {
+            "type" : "string",
+            "example" : "55"
+          },
+          "validators" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ValidatorsResponse_result_validators"
+            }
+          }
+        }
+      },
+      "GenesisResponse_result_genesis_consensus_params_block" : {
+        "required" : [ "max_bytes", "max_gas", "time_iota_ms" ],
+        "type" : "object",
+        "properties" : {
+          "max_bytes" : {
+            "type" : "string",
+            "example" : "22020096"
+          },
+          "max_gas" : {
+            "type" : "string",
+            "example" : "1000"
+          },
+          "time_iota_ms" : {
+            "type" : "string",
+            "example" : "1000"
+          }
+        }
+      },
+      "GenesisResponse_result_genesis_consensus_params_evidence" : {
+        "required" : [ "max_age" ],
+        "type" : "object",
+        "properties" : {
+          "max_age" : {
+            "type" : "string",
+            "example" : "100000"
+          }
+        }
+      },
+      "GenesisResponse_result_genesis_consensus_params_validator" : {
+        "required" : [ "pub_key_types" ],
+        "type" : "object",
+        "properties" : {
+          "pub_key_types" : {
+            "type" : "array",
+            "example" : [ "ed25519" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "GenesisResponse_result_genesis_consensus_params" : {
+        "required" : [ "block", "evidence", "validator" ],
+        "type" : "object",
+        "properties" : {
+          "block" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_consensus_params_block"
+          },
+          "evidence" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_consensus_params_evidence"
+          },
+          "validator" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_consensus_params_validator"
+          }
+        }
+      },
+      "GenesisResponse_result_genesis_pub_key" : {
+        "required" : [ "type", "value" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "tendermint/PubKeyEd25519"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "cOQZvh/h9ZioSeUMZB/1Vy1Xo5x2sjrVjlE/qHnYifM="
+          }
+        }
+      },
+      "GenesisResponse_result_genesis_validators" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "B00A6323737F321EB0B8D59C6FD497A14B60938A"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_pub_key"
+          },
+          "power" : {
+            "type" : "string",
+            "example" : "1000000000000"
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Aconcagua"
+          }
+        }
+      },
+      "GenesisResponse_result_genesis" : {
+        "required" : [ "app_hash", "chain_id", "consensus_params", "genesis_time", "validators" ],
+        "type" : "object",
+        "properties" : {
+          "genesis_time" : {
+            "type" : "string",
+            "example" : "2019-04-18T05:59:26.228734998Z"
+          },
+          "chain_id" : {
+            "type" : "string",
+            "example" : "Binance-Chain-Tigris"
+          },
+          "consensus_params" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_consensus_params"
+          },
+          "validators" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GenesisResponse_result_genesis_validators"
+            }
+          },
+          "app_hash" : {
+            "type" : "string"
+          },
+          "app_state" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        }
+      },
+      "GenesisResponse_result" : {
+        "required" : [ "genesis" ],
+        "type" : "object",
+        "properties" : {
+          "genesis" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_validators_validators" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "000001E443FD237E4B616E2FA69DF4EE3D49A94F"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/ValidatorsResponse_result_pub_key"
+          },
+          "voting_power" : {
+            "type" : "string",
+            "example" : "239727"
+          },
+          "proposer_priority" : {
+            "type" : "string",
+            "example" : "-11896414"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_validators_proposer_pub_key" : {
+        "required" : [ "type", "value" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "tendermint/PubKeyEd25519"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "VNMNfw7mrQBSpEvCtA9ykOe6BoR00RM9b/a9v3vXZhY="
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_validators_proposer" : {
+        "required" : [ "address", "proposer_priority", "pub_key", "voting_power" ],
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "708FDDCE121CDADA502F2B0252FEF13FDAA31E50"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_validators_proposer_pub_key"
+          },
+          "voting_power" : {
+            "type" : "string",
+            "example" : "295360"
+          },
+          "proposer_priority" : {
+            "type" : "string",
+            "example" : "-88886833"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_validators" : {
+        "required" : [ "proposer", "validators" ],
+        "type" : "object",
+        "properties" : {
+          "validators" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_validators_validators"
+            }
+          },
+          "proposer" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_validators_proposer"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_votes" : {
+        "type" : "object",
+        "properties" : {
+          "round" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "prevotes" : {
+            "type" : "array",
+            "example" : [ "nil-Vote", "Vote{19:46A3F8B8393B 1311801/00/1(Prevote) 000000000000 64CE682305CB @ 2019-08-05T11:28:47.374703444Z}" ],
+            "items" : {
+              "type" : "string"
+            },
+            "x-nullable" : true
+          },
+          "prevotes_bit_array" : {
+            "type" : "string",
+            "example" : "BA{100:___________________x________________________________________________________________________________} 209706/170220253 = 0.00"
+          },
+          "precommits" : {
+            "type" : "array",
+            "example" : [ "nil-Vote" ],
+            "items" : {
+              "type" : "string"
+            },
+            "x-nullable" : true
+          },
+          "precommits_bit_array" : {
+            "type" : "string",
+            "example" : "BA{100:____________________________________________________________________________________________________} 0/170220253 = 0.00"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_last_commit" : {
+        "required" : [ "peer_maj_23s", "votes", "votes_bit_array" ],
+        "type" : "object",
+        "properties" : {
+          "votes" : {
+            "type" : "array",
+            "example" : [ "Vote{0:000001E443FD 1311800/00/2(Precommit) 3071ADB27D1A 77EE1B6B6847 @ 2019-08-05T11:28:43.810128139Z}" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "votes_bit_array" : {
+            "type" : "string",
+            "example" : "BA{100:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} 170220253/170220253 = 1.00"
+          },
+          "peer_maj_23s" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_last_validators_validators" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "000001E443FD237E4B616E2FA69DF4EE3D49A94F"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/ValidatorsResponse_result_pub_key"
+          },
+          "voting_power" : {
+            "type" : "string",
+            "example" : "239727"
+          },
+          "proposer_priority" : {
+            "type" : "string",
+            "example" : "-12136141"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_last_validators_proposer" : {
+        "required" : [ "address", "proposer_priority", "pub_key", "voting_power" ],
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "B00A6323737F321EB0B8D59C6FD497A14B60938A"
+          },
+          "pub_key" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_pub_key"
+          },
+          "voting_power" : {
+            "type" : "string",
+            "example" : "8590153"
+          },
+          "proposer_priority" : {
+            "type" : "string",
+            "example" : "-79515145"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state_last_validators" : {
+        "required" : [ "proposer", "validators" ],
+        "type" : "object",
+        "properties" : {
+          "validators" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_last_validators_validators"
+            }
+          },
+          "proposer" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_last_validators_proposer"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_round_state" : {
+        "required" : [ "commit_round", "commit_time", "height", "last_commit", "last_validators", "locked_block", "locked_block_parts", "locked_round", "proposal", "proposal_block", "proposal_block_parts", "round", "start_time", "step", "triggered_timeout_precommit", "valid_block", "valid_block_parts", "valid_round", "validators", "votes" ],
+        "type" : "object",
+        "properties" : {
+          "height" : {
+            "type" : "string",
+            "example" : "1311801"
+          },
+          "round" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "step" : {
+            "type" : "number",
+            "example" : 3
+          },
+          "start_time" : {
+            "type" : "string",
+            "example" : "2019-08-05T11:28:49.064658805Z"
+          },
+          "commit_time" : {
+            "type" : "string",
+            "example" : "2019-08-05T11:28:44.064658805Z"
+          },
+          "validators" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_validators"
+          },
+          "locked_round" : {
+            "type" : "string",
+            "example" : "-1"
+          },
+          "valid_round" : {
+            "type" : "string",
+            "example" : "-1"
+          },
+          "votes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_votes"
+            }
+          },
+          "commit_round" : {
+            "type" : "string",
+            "example" : "-1"
+          },
+          "last_commit" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_last_commit"
+          },
+          "last_validators" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state_last_validators"
+          },
+          "triggered_timeout_precommit" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }
+      },
+      "DumpConsensusResponse_result_peer_state_round_state_proposal_block_parts_header" : {
+        "required" : [ "hash", "total" ],
+        "type" : "object",
+        "properties" : {
+          "total" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "hash" : {
+            "type" : "string"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_peer_state_round_state" : {
+        "required" : [ "catchup_commit", "catchup_commit_round", "height", "last_commit", "last_commit_round", "precommits", "prevotes", "proposal", "proposal_block_parts", "proposal_block_parts_header", "proposal_pol", "proposal_pol_round", "round", "start_time", "step" ],
+        "type" : "object",
+        "properties" : {
+          "height" : {
+            "type" : "string",
+            "example" : "1311801"
+          },
+          "round" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "step" : {
+            "type" : "number",
+            "example" : 3
+          },
+          "start_time" : {
+            "type" : "string",
+            "example" : "2019-08-05T11:28:49.21730864Z"
+          },
+          "proposal" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "proposal_block_parts_header" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_peer_state_round_state_proposal_block_parts_header"
+          },
+          "proposal_pol_round" : {
+            "type" : "string",
+            "example" : "-1",
+            "x-nullable" : true
+          },
+          "proposal_pol" : {
+            "type" : "string",
+            "example" : "____________________________________________________________________________________________________",
+            "x-nullable" : true
+          },
+          "prevotes" : {
+            "type" : "string",
+            "example" : "___________________x________________________________________________________________________________",
+            "x-nullable" : true
+          },
+          "precommits" : {
+            "type" : "string",
+            "example" : "____________________________________________________________________________________________________",
+            "x-nullable" : true
+          },
+          "last_commit_round" : {
+            "type" : "string",
+            "example" : "0",
+            "x-nullable" : true
+          },
+          "last_commit" : {
+            "type" : "string",
+            "example" : "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "x-nullable" : true
+          },
+          "catchup_commit_round" : {
+            "type" : "string",
+            "example" : "-1",
+            "x-nullable" : true
+          },
+          "catchup_commit" : {
+            "type" : "string",
+            "example" : "____________________________________________________________________________________________________",
+            "x-nullable" : true
+          }
+        }
+      },
+      "DumpConsensusResponse_result_peer_state_stats" : {
+        "required" : [ "block_parts", "votes" ],
+        "type" : "object",
+        "properties" : {
+          "votes" : {
+            "type" : "string",
+            "example" : "1159558"
+          },
+          "block_parts" : {
+            "type" : "string",
+            "example" : "4786"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_peer_state" : {
+        "required" : [ "round_state", "stats" ],
+        "type" : "object",
+        "properties" : {
+          "round_state" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_peer_state_round_state"
+          },
+          "stats" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_peer_state_stats"
+          }
+        }
+      },
+      "DumpConsensusResponse_result_peers" : {
+        "type" : "object",
+        "properties" : {
+          "node_address" : {
+            "type" : "string",
+            "example" : "357f6a6c1d27414579a8185060aa8adf9815c43c@68.183.41.207:26656"
+          },
+          "peer_state" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_peer_state"
+          }
+        }
+      },
+      "DumpConsensusResponse_result" : {
+        "required" : [ "peers", "round_state" ],
+        "type" : "object",
+        "properties" : {
+          "round_state" : {
+            "$ref" : "#/components/schemas/DumpConsensusResponse_result_round_state"
+          },
+          "peers" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DumpConsensusResponse_result_peers"
+            }
+          }
+        }
+      },
+      "ConsensusStateResponse_result_round_state_height_vote_set" : {
+        "type" : "object",
+        "properties" : {
+          "round" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "prevotes" : {
+            "type" : "array",
+            "example" : [ "Vote{0:000001E443FD 1262197/00/1(Prevote) 634ADAF1F402 7BB974E1BA40 @ 2019-08-01T11:52:35.513572509Z}", "nil-Vote" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "prevotes_bit_array" : {
+            "type" : "string",
+            "example" : "BA{100:xxxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx} 169753436/170151262 = 1.00"
+          },
+          "precommits" : {
+            "type" : "array",
+            "example" : [ "Vote{5:18C78D135C9D 1262197/00/2(Precommit) 634ADAF1F402 8B5EFFFEABCD @ 2019-08-01T11:52:36.25600005Z}", "nil-Vote" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "precommits_bit_array" : {
+            "type" : "string",
+            "example" : "BA{100:xxxxxx_xxxxx_xxxx_x_xxx_xx_xx_xx__x_x_x__xxxxxxxxxxxxxx_xxxx_xx_xxxxxx_xxxxxxxx_xxxx_xxx_x_xxxx__xxx} 118726247/170151262 = 0.70"
+          }
+        }
+      },
+      "ConsensusStateResponse_result_round_state_proposer" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "type" : "string",
+            "example" : "D540AB022088612AC74B287D076DBFBC4A377A2E"
+          },
+          "index" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "ConsensusStateResponse_result_round_state" : {
+        "required" : [ "height/round/step", "height_vote_set", "locked_block_hash", "proposal_block_hash", "proposer", "start_time", "valid_block_hash" ],
+        "type" : "object",
+        "properties" : {
+          "height/round/step" : {
+            "type" : "string",
+            "example" : "1262197/0/8"
+          },
+          "start_time" : {
+            "type" : "string",
+            "example" : "2019-08-01T11:52:38.962730289Z"
+          },
+          "proposal_block_hash" : {
+            "type" : "string",
+            "example" : "634ADAF1F402663BEC2ABC340ECE8B4B45AA906FA603272ACC5F5EED3097E009"
+          },
+          "locked_block_hash" : {
+            "type" : "string",
+            "example" : "634ADAF1F402663BEC2ABC340ECE8B4B45AA906FA603272ACC5F5EED3097E009"
+          },
+          "valid_block_hash" : {
+            "type" : "string",
+            "example" : "634ADAF1F402663BEC2ABC340ECE8B4B45AA906FA603272ACC5F5EED3097E009"
+          },
+          "height_vote_set" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ConsensusStateResponse_result_round_state_height_vote_set"
+            }
+          },
+          "proposer" : {
+            "$ref" : "#/components/schemas/ConsensusStateResponse_result_round_state_proposer"
+          }
+        }
+      },
+      "ConsensusStateResponse_result" : {
+        "required" : [ "round_state" ],
+        "type" : "object",
+        "properties" : {
+          "round_state" : {
+            "$ref" : "#/components/schemas/ConsensusStateResponse_result_round_state"
+          }
+        }
+      },
+      "ConsensusParamsResponse_result_consensus_params_block" : {
+        "required" : [ "max_bytes", "max_gas", "time_iota_ms" ],
+        "type" : "object",
+        "properties" : {
+          "max_bytes" : {
+            "type" : "string",
+            "example" : "1048576"
+          },
+          "max_gas" : {
+            "type" : "string",
+            "example" : "1000"
+          },
+          "time_iota_ms" : {
+            "type" : "string",
+            "example" : "1000"
+          }
+        }
+      },
+      "ConsensusParamsResponse_result_consensus_params" : {
+        "required" : [ "block", "evidence", "validator" ],
+        "type" : "object",
+        "properties" : {
+          "block" : {
+            "$ref" : "#/components/schemas/ConsensusParamsResponse_result_consensus_params_block"
+          },
+          "evidence" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_consensus_params_evidence"
+          },
+          "validator" : {
+            "$ref" : "#/components/schemas/GenesisResponse_result_genesis_consensus_params_validator"
+          }
+        }
+      },
+      "ConsensusParamsResponse_result" : {
+        "required" : [ "block_height", "consensus_params" ],
+        "type" : "object",
+        "properties" : {
+          "block_height" : {
+            "type" : "string",
+            "example" : "1313448"
+          },
+          "consensus_params" : {
+            "$ref" : "#/components/schemas/ConsensusParamsResponse_result_consensus_params"
+          }
+        }
+      },
+      "NumUnconfirmedTransactionsResponse_result" : {
+        "required" : [ "n_txs", "total", "total_bytes" ],
+        "type" : "object",
+        "properties" : {
+          "n_txs" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "total" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "total_bytes" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "UnconfirmedTransactionsResponse_result" : {
+        "required" : [ "n_txs", "total", "total_bytes", "txs" ],
+        "type" : "object",
+        "properties" : {
+          "n_txs" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "total" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "total_bytes" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "txs" : {
+            "type" : "array",
+            "example" : [ "" ],
+            "items" : {
+              "type" : "string",
+              "x-nullable" : true
+            },
+            "x-nullable" : true
+          }
+        }
+      },
+      "TxSearchResponse_result_tx_result_tags" : {
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string",
+            "example" : "YWN0aW9u"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "c2VuZA=="
+          }
+        }
+      },
+      "TxSearchResponse_result_tx_result" : {
+        "required" : [ "gasUsed", "gasWanted", "log", "tags" ],
+        "type" : "object",
+        "properties" : {
+          "log" : {
+            "type" : "string",
+            "example" : "[{\"msg_index\":\"0\",\"success\":true,\"log\":\"\"}]"
+          },
+          "gasWanted" : {
+            "type" : "string",
+            "example" : "200000"
+          },
+          "gasUsed" : {
+            "type" : "string",
+            "example" : "28596"
+          },
+          "tags" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/TxSearchResponse_result_tx_result_tags"
+            }
+          }
+        }
+      },
+      "TxSearchResponse_result_proof_Proof" : {
+        "required" : [ "aunts", "index", "leaf_hash", "total" ],
+        "type" : "object",
+        "properties" : {
+          "total" : {
+            "type" : "string",
+            "example" : "2"
+          },
+          "index" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "leaf_hash" : {
+            "type" : "string",
+            "example" : "eoJxKCzF3m72Xiwb/Q43vJ37/2Sx8sfNS9JKJohlsYI="
+          },
+          "aunts" : {
+            "type" : "array",
+            "example" : [ "eWb+HG/eMmukrQj4vNGyFYb3nKQncAWacq4HF5eFzDY=" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "TxSearchResponse_result_proof" : {
+        "required" : [ "Data", "Proof", "RootHash" ],
+        "type" : "object",
+        "properties" : {
+          "RootHash" : {
+            "type" : "string",
+            "example" : "72FE6BF6D4109105357AECE0A82E99D0F6288854D16D8767C5E72C57F876A14D"
+          },
+          "Data" : {
+            "type" : "string",
+            "example" : "5wHwYl3uCkaoo2GaChQmSIu8hxpJxLcCuIi8fiHN4TMwrRIU/Af1cEG7Rcs/6LjTl7YjRSymJfYaFAoFdWF0b20SCzE0OTk5OTk1MDAwEhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAwswBShaB1wkZBctLIhYqBC3JrAI28XGzxP+rVEticGEEkAc+khTkKL9CDE47aDvjEHvUNt+izJfT4KVF2v2JkC+bmlH9K08q3PqHeMI9Z5up+XMusnTqlP985KF+SI5J3ZOIhhNYWRlIGJ5IENpcmNsZSB3aXRoIGxvdmU="
+          },
+          "Proof" : {
+            "$ref" : "#/components/schemas/TxSearchResponse_result_proof_Proof"
+          }
+        }
+      },
+      "TxSearchResponse_result_txs" : {
+        "type" : "object",
+        "properties" : {
+          "hash" : {
+            "type" : "string",
+            "example" : "D70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED"
+          },
+          "height" : {
+            "type" : "string",
+            "example" : "1000"
+          },
+          "index" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "tx_result" : {
+            "$ref" : "#/components/schemas/TxSearchResponse_result_tx_result"
+          },
+          "tx" : {
+            "type" : "string",
+            "example" : "5wHwYl3uCkaoo2GaChQmSIu8hxpJxLcCuIi8fiHN4TMwrRIU/Af1cEG7Rcs/6LjTl7YjRSymJfYaFAoFdWF0b20SCzE0OTk5OTk1MDAwEhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAwswBShaB1wkZBctLIhYqBC3JrAI28XGzxP+rVEticGEEkAc+khTkKL9CDE47aDvjEHvUNt+izJfT4KVF2v2JkC+bmlH9K08q3PqHeMI9Z5up+XMusnTqlP985KF+SI5J3ZOIhhNYWRlIGJ5IENpcmNsZSB3aXRoIGxvdmU="
+          },
+          "proof" : {
+            "$ref" : "#/components/schemas/TxSearchResponse_result_proof"
+          }
+        }
+      },
+      "TxSearchResponse_result" : {
+        "required" : [ "total_count", "txs" ],
+        "type" : "object",
+        "properties" : {
+          "txs" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/TxSearchResponse_result_txs"
+            }
+          },
+          "total_count" : {
+            "type" : "string",
+            "example" : "2"
+          }
+        }
+      },
+      "TxResponse_result" : {
+        "required" : [ "hash", "height", "index", "tx", "tx_result" ],
+        "type" : "object",
+        "properties" : {
+          "hash" : {
+            "type" : "string",
+            "example" : "D70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED"
+          },
+          "height" : {
+            "type" : "string",
+            "example" : "1000"
+          },
+          "index" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "tx_result" : {
+            "$ref" : "#/components/schemas/TxSearchResponse_result_tx_result"
+          },
+          "tx" : {
+            "type" : "string",
+            "example" : "5wHwYl3uCkaoo2GaChQmSIu8hxpJxLcCuIi8fiHN4TMwrRIU/Af1cEG7Rcs/6LjTl7YjRSymJfYaFAoFdWF0b20SCzE0OTk5OTk1MDAwEhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAwswBShaB1wkZBctLIhYqBC3JrAI28XGzxP+rVEticGEEkAc+khTkKL9CDE47aDvjEHvUNt+izJfT4KVF2v2JkC+bmlH9K08q3PqHeMI9Z5up+XMusnTqlP985KF+SI5J3ZOIhhNYWRlIGJ5IENpcmNsZSB3aXRoIGxvdmU="
+          }
+        }
+      },
+      "ABCIInfoResponse_result_response" : {
+        "required" : [ "app_version", "data", "version" ],
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "string",
+            "example" : "BNBChain"
+          },
+          "last_block_height" : {
+            "type" : "number",
+            "example" : 1314126
+          },
+          "last_block_app_hash" : {
+            "type" : "string",
+            "example" : "XaGIw+RhlVjLA5QxGeRd/KH0Jp8o5JpGTSMxoaZfWjI="
+          }
+        }
+      },
+      "ABCIInfoResponse_result" : {
+        "required" : [ "response" ],
+        "type" : "object",
+        "properties" : {
+          "response" : {
+            "$ref" : "#/components/schemas/ABCIInfoResponse_result_response"
+          }
+        }
+      },
+      "ABCIQueryResponse_result_response" : {
+        "required" : [ "code", "height", "index", "key", "log", "proof", "value" ],
+        "type" : "object",
+        "properties" : {
+          "log" : {
+            "type" : "string",
+            "example" : "exists"
+          },
+          "height" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "proof" : {
+            "type" : "string",
+            "example" : "010114FED0DAD959F36091AD761C922ABA3CBF1D8349990101020103011406AA2262E2F448242DF2C2607C3CDC705313EE3B0001149D16177BC71E445476174622EA559715C293740C"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "61626364"
+          },
+          "key" : {
+            "type" : "string",
+            "example" : "61626364"
+          },
+          "index" : {
+            "type" : "string",
+            "example" : "-1"
+          },
+          "code" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "ABCIQueryResponse_result" : {
+        "required" : [ "response" ],
+        "type" : "object",
+        "properties" : {
+          "response" : {
+            "$ref" : "#/components/schemas/ABCIQueryResponse_result_response"
+          }
+        }
+      },
+      "BroadcastTxCommitResponse_result_check_tx" : {
+        "required" : [ "code", "data", "log" ],
+        "type" : "object",
+        "properties" : {
+          "log" : {
+            "type" : "string",
+            "example" : "Msg 0: "
+          },
+          "data" : {
+            "type" : "string",
+            "example" : "eyJvcmRlcl9pZCI6IjgxM0U0OTM5RjE1NjdCMjE5NzA0RkZDMkFENERGNThCREUwMTA4NzktNDYifQ=="
+          },
+          "code" : {
+            "type" : "string",
+            "example" : "0"
+          }
+        }
+      },
+      "BroadcastTxCommitResponse_result" : {
+        "required" : [ "check_tx", "deliver_tx", "hash", "height" ],
+        "type" : "object",
+        "properties" : {
+          "height" : {
+            "type" : "string",
+            "example" : "7734637"
+          },
+          "hash" : {
+            "type" : "string",
+            "example" : "008EA3C57B15E34B045F69DCEB2A5589B979B2B58BA282C15DF2AEA8B441AB6B"
+          },
+          "check_tx" : {
+            "$ref" : "#/components/schemas/BroadcastTxCommitResponse_result_check_tx"
+          },
+          "deliver_tx" : {
+            "$ref" : "#/components/schemas/BroadcastTxCommitResponse_result_check_tx"
+          }
+        }
+      },
+      "BroadcastTxResponse_result" : {
+        "required" : [ "code", "data", "hash", "log" ],
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "data" : {
+            "type" : "string",
+            "example" : "7B226F726465725F6964223A22383133453439333946313536374232313937303446464332414434444635384244453031303837392D3438227D"
+          },
+          "log" : {
+            "type" : "string",
+            "example" : "Msg 0: "
+          },
+          "hash" : {
+            "type" : "string",
+            "example" : "008EA3C57B15E34B045F69DCEB2A5589B979B2B58BA282C15DF2AEA8B441AB6B"
+          }
+        }
+      }
+    }
+  }
+}

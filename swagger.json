@@ -1,0 +1,3336 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "HTTP API",
+    "description": "The Binance Chain HTTP API provides access to a Binance Chain node deployment and market data services.",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dex.binance.org",
+      "description": "Binance Chain mainnet HTTP API server url"
+    },
+    {
+      "url": "https://testnet-dex.binance.org",
+      "description": "Binance Chain testnet HTTP API server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "info",
+      "description": "Access to runtime metadata"
+    },
+    {
+      "name": "account",
+      "description": "Access to an individual user's trading activity"
+    },
+    {
+      "name": "tx",
+      "description": "Access to transactions metadata"
+    },
+    {
+      "name": "tokens",
+      "description": "Access to tokens metadata"
+    },
+    {
+      "name": "market",
+      "description": "Access to DEX market data"
+    },
+    {
+      "name": "order",
+      "description": "Access to historical orders"
+    },
+    {
+      "name": "trade",
+      "description": "Access to historical trading activity"
+    },
+    {
+      "name": "userdata",
+      "description": "Access to an individual user's trading activity"
+    },
+    {
+      "name": "node",
+      "description": "Access to the node RPC functions"
+    },
+    {
+      "name": "frontier",
+      "description": "Access to the frontier services"
+    },
+    {
+      "name": "misc",
+      "description": "Others"
+    }
+  ],
+  "paths": {
+    "/api/v1/time": {
+      "get": {
+        "tags": [
+          "misc"
+        ],
+        "summary": "Get the block time.",
+        "description": "Gets the latest block time and the current time according to the HTTP service.\n\n**Destination:** Validator node.\n\n**Rate Limit:** 1 request per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/time](https://dex.binance.org/api/v1/time)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)\n",
+        "operationId": "getTime",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Times"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/node-info": {
+      "get": {
+        "tags": [
+          "info",
+          "node"
+        ],
+        "summary": "Get node information.",
+        "description": "Gets runtime information about the node.\n\nReturn block height, current timestamp and the number of connected peers.\n\n**Destination:** Validator node.\n\n**Rate Limit:** 1 request per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/node-info](https://dex.binance.org/api/v1/node-info)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)\n",
+        "operationId": "getNodeInfo",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/validators": {
+      "get": {
+        "tags": [
+          "info",
+          "node"
+        ],
+        "summary": "Get validators.",
+        "description": "Gets the list of validators used in consensus.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 10 requests per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/validators](https://dex.binance.org/api/v1/validators)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)\n",
+        "operationId": "getValidators",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Validators"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/peers": {
+      "get": {
+        "tags": [
+          "info",
+          "node"
+        ],
+        "summary": "Get network peers.",
+        "description": "Gets the list of network peers.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 1 request per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/peers](https://dex.binance.org/api/v1/peers)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)\n",
+        "operationId": "getPeers",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Peer"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/account/{address}": {
+      "get": {
+        "tags": [
+          "node",
+          "account"
+        ],
+        "summary": "Get an account.",
+        "description": "Gets account metadata for an address.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 5 requests per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)\n",
+        "operationId": "getAccount",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "description": "The account address to query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Account"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/account/{address}/sequence": {
+      "get": {
+        "tags": [
+          "node",
+          "account"
+        ],
+        "summary": "Get an account sequence.",
+        "description": "Gets an account sequence for an address.\n\n**Destination:** Validator node.\n\n**Rate Limit:** 5 requests per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)\n",
+        "operationId": "getAccountSequence",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "description": "The account address to query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSequence"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tx/{hash}": {
+      "get": {
+        "tags": [
+          "node",
+          "tx"
+        ],
+        "summary": "Get a transaction.",
+        "description": "Gets transaction metadata by transaction ID. By default, transactions are returned in a raw format. You may add `?format=json` to the end of the path to obtain a more readable response.\n\n**Destination:** Seed node.\n\n**Rate Limit:** 10 requests per IP per second.\n\n**Example:**\n\nBelow is an example response of a send transaction when `?format=json` is used.\n```\n    {\n     code:0,\n     hash:\"433806D6A4AB6359CB56EC55BA99896DFAB2AF11326B74881A2ABA7049C492D3\",\n     height:\"7850389\",\n     log:\"Msg 0: \",\n     ok:true,\n     tx:{\n        type:\"auth/StdTx\",\n        value:{\n           data:null,\n           memo:\"101192150\",\n           msg:[\n              {\n                 type:\"cosmos-sdk/Send\",\n                 value:{\n                    inputs:[\n                       {\n                          address:\"bnb1jafs33u9u6f7w7wzfmm4rr9rzy2cgqzp78kwaw\",\n                          coins:[\n                             {\n                                amount:\"496429373\",\n                                denom:\"BNB\",\n\n                             }\n                          ],\n\n                       }\n                    ],\n                    outputs:[\n                       {\n                          address:\"bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23\",\n                          coins:[\n                             {\n                                amount:\"496429373\",\n                                denom:\"BNB\",\n\n                             }\n                          ],\n\n                       }\n                    ],\n\n                 },\n\n              }\n           ],\n           signatures:[\n              {\n                 account_number:\"438\",\n                 pub_key:{\n                    type:\"tendermint/PubKeySecp256k1\",\n                    value:\"A3mfgg/i12XNyy9esqCjI7yrkrOs9dngP7c9cDUEJly5\",\n\n                 },\n                 sequence:\"0\",\n                 signature:\"VvvGz3qbyirJ7vv01Df8tuAd7K4I+HK+yEBfep+qwtMKuHWQQH3XtMB9Pqtc2jlia0AtDe+BUEMtIyh3/N66IQ==\",\n\n              }\n           ],\n           source:\"1\",\n\n        },\n\n     },\n\n  }\n```\n",
+        "operationId": "getTransaction",
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "path",
+            "description": "The transaction hash to query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (`json` or amino)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transaction"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tokens": {
+      "get": {
+        "tags": [
+          "tokens"
+        ],
+        "summary": "Get tokens list.",
+        "description": "Gets a list of tokens that have been issued.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 1 request per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/tokens](https://dex.binance.org/api/v1/tokens)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)\n",
+        "operationId": "getTokens",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 100.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Token"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/markets": {
+      "get": {
+        "tags": [
+          "market"
+        ],
+        "summary": "Get market pairs.",
+        "description": "Gets the list of market pairs that have been listed.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 1 request per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/markets](https://dex.binance.org/api/v1/markets)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)\n",
+        "operationId": "getPairs",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 500; max 1000.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 500
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Market"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fees": {
+      "get": {
+        "tags": [
+          "info",
+          "market"
+        ],
+        "summary": "Obtain trading fees information.",
+        "description": "Gets the current trading fees settings.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 1 request per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/fees](https://dex.binance.org/api/v1/fees)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)\n",
+        "operationId": "getFees",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Fee"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/depth": {
+      "get": {
+        "tags": [
+          "market"
+        ],
+        "summary": "Get the order book.",
+        "description": "Gets the order book depth data for a given pair symbol.\n\nThe given _limit_ must be one of the allowed limits below.\n\n**Destination:** Validator node.\n\n**Rate Limit:** 10 requests per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)\n",
+        "operationId": "getDepth",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "Market pair symbol, e.g. NNB-0AD_BNB",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000]",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "enum": [
+                5,
+                10,
+                20,
+                50,
+                100,
+                500,
+                1000
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketDepth"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/broadcast": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Broadcast a transaction.",
+        "description": "Broadcasts a signed transaction. A single transaction must be sent hex-encoded with a `content-type` of `text/plain`.\n\n**Destination:** Witness node.\n\n**Rate Limit:** 5 requests per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/broadcast](https://dex.binance.org/api/v1/broadcast)\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)\n",
+        "operationId": "broadcastTx",
+        "parameters": [
+          {
+            "name": "sync",
+            "in": "query",
+            "description": "Synchronous broadcast (wait for [DeliverTx](https://github.com/tendermint/tendermint/wiki/Application-Developers#delivertx))?\n",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "maxLength": 100000,
+                "minLength": 1,
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Transaction"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bad Signature",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/v1/klines": {
+      "get": {
+        "tags": [
+          "market"
+        ],
+        "summary": "Get candlestick bars.",
+        "description": "Gets candlestick/kline bars for a symbol. Bars are uniquely identified by their open time.\n\nIf the time window is larger than limits, only the first n klines will return. In this case, please either shrink the window or increase the limit to get proper amount of klines.\n\n**Rate Limit:** 10 requests per IP per second.\n\n**URL for mainnet:** [https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)\n\n\n**URL for testnet:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)\n\n**Example**\n\n```\n[\n  1499040000000,      // Open time\n  \"0.01634790\",       // Open\n  \"0.80000000\",       // High\n  \"0.01575800\",       // Low\n  \"0.01577100\",       // Close\n  \"148976.11427815\",  // Volume\n  1499644799999,      // Close time\n  \"2434.19055334\",    // Quote asset volume\n  308                // Number of trades\n]\n```\n",
+        "operationId": "getCandlestickBars",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "symbol",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "interval",
+            "in": "query",
+            "description": "interval. Allowed value: [1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "1m",
+                "3m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "4h",
+                "6h",
+                "8h",
+                "12h",
+                "1d",
+                "3d",
+                "1w",
+                "1M"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 300; max 1000.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "start time in Milliseconds",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "end time in Milliseconds",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "example": " [[\n1499040000000,      // Open time\n\"0.01634790\",       // Open\n\"0.80000000\",       // High\n\"0.01575800\",       // Low\n\"0.01577100\",       // Close\n\"148976.11427815\",  // Volume\n1499644799999,      // Close time\n\"2434.19055334\",    // Quote asset volume\n308                // Number of trades\n]] ",
+                  "items": {
+                    "$ref": "#/components/schemas/Candlestick"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/orders/closed": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get closed orders.",
+        "description": "Gets closed (filled and cancelled) orders for a given address.\n\n**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.\n\n**Rate Limit:** 5 requests per IP per second.\n",
+        "operationId": "getClosedOrders",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "the owner address",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "end time in Milliseconds",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 500; max 1000.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 500
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "side",
+            "in": "query",
+            "description": "order side. 1 for buy and 2 for sell.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start time in Milliseconds",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "order status list. \nAllowed value: [Ack, IocExpire, IocNoFill,\nFullyFill, Canceled, Expired, FailedBlocking, FailedMatching]\n",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "description": "total number required, 0 for not required and 1 for required; default not required, return total=-1 in response",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "enum": [
+                0,
+                1
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderList"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/orders/open": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get open orders.",
+        "description": "Gets open orders for a given address.\n\n**Rate Limit:** 5 requests per IP per second.\n",
+        "operationId": "getOpenOrders",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "the owner address",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 500; max 1000.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 500
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "description": "total number required, 0 for not required and 1 for required; default not required, return total=-1 in response",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "enum": [
+                0,
+                1
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/orders/{id}": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get an order.",
+        "description": "Gets metadata for an individual order by its ID.\n\n**Rate Limit:** 5 requests per IP per second.\n",
+        "operationId": "getOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "order id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/ticker/24hr": {
+      "get": {
+        "tags": [
+          "market"
+        ],
+        "summary": "Get a market ticker.",
+        "description": "Gets 24 hour price change statistics for a market pair symbol. Updated every second.\n\n**Rate Limit:** 5 requests per IP per second.\n",
+        "operationId": "get24HrPriceStatistics",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "symbol",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TickerStatistics"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/trades": {
+      "get": {
+        "tags": [
+          "trade"
+        ],
+        "summary": "Get market trades.",
+        "description": "Gets a list of historical trades.\n\n**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.\n\n**Rate Limit:** 5 requests per IP per second.\n",
+        "operationId": "getTrades",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "the buyer/seller address",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "buyerOrderId",
+            "in": "query",
+            "description": "buyer order id",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "end time in Milliseconds",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "height",
+            "in": "query",
+            "description": "block height",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 500; max 1000.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 500
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "quoteAsset",
+            "in": "query",
+            "description": "quote asset",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sellerOrderId",
+            "in": "query",
+            "description": "seller order id",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "side",
+            "in": "query",
+            "description": "order side. 1 for buy and 2 for sell.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start time in Milliseconds",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "symbol",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "description": "total number required, 0 for not required and 1 for required; default not required, return total=-1 in response",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "enum": [
+                0,
+                1
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TradePage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/block-exchange-fee": {
+      "get": {
+        "tags": [
+          "trading fee"
+        ],
+        "summary": "Trading fee of the address grouped by block",
+        "description": "Get historical trading fees of the address, including fees of trade/canceled order/expired order. Transfer and other transaction fees are not included. Order by block height DESC.\n**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.\n**Rate Limit:** 5 requests per IP per second.\n",
+        "operationId": "getBlockExchangeFee",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "the seller/buyer address",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "end time",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 50; max 1000.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "start time",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "total",
+            "in": "query",
+            "description": "total number required, 0 for not required and 1 for required; default not required, return total=-1 in response",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "enum": [
+                0,
+                1
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockExchangeFeePage"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/transactions": {
+      "get": {
+        "tags": [
+          "transaction"
+        ],
+        "summary": "Get transactions.",
+        "description": "Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.\n\n**Query Window:** Default query window is latest 24 hours; The maximum start - end query window is 3 months.\n\n**Rate Limit:** 60 requests per IP per minute.\n",
+        "operationId": "txns",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "address",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockHeight",
+            "in": "query",
+            "description": "blockHeight",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "endTime in Milliseconds",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 500
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "side",
+            "in": "query",
+            "description": "transaction side. Allowed value: [ RECEIVE, SEND]",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "RECEIVE",
+                "SEND"
+              ]
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "start time in Milliseconds",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "txAsset",
+            "in": "query",
+            "description": "txAsset",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txType",
+            "in": "query",
+            "description": "transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL]",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "NEW_ORDER",
+                "ISSUE_TOKEN",
+                "BURN_TOKEN",
+                "LIST_TOKEN",
+                "CANCEL_ORDER",
+                "FREEZE_TOKEN",
+                "UN_FREEZE_TOKEN",
+                "TRANSFER",
+                "PROPOSAL",
+                "VOTE",
+                "MINT",
+                "DEPOSIT",
+                "CREATE_VALIDATOR",
+                "REMOVE_VALIDATOR",
+                "TIME_LOCK",
+                "TIME_UNLOCK",
+                "TIME_RELOCK",
+                "SET_ACCOUNT_FLAG",
+                "HTL_TRANSFER",
+                "CLAIM_HTL",
+                "DEPOSIT_HTL",
+                "REFUND_HTL"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TxPage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/transactions-in-block/{blockHeight}": {
+      "get": {
+        "tags": [
+          "transaction in block"
+        ],
+        "summary": "Get transactions in the specific block.",
+        "description": "Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.\n\n**Rate Limit:** 5 requests per IP per second.\n\n**Rate Limit:** 60 requests per IP per minute.\n",
+        "operationId": "getTransactionsInBlock",
+        "parameters": [
+          {
+            "name": "blockHeight",
+            "in": "path",
+            "description": "block height",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockTx"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The block to query is higher than current highest block.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "default": {
+            "description": "Generic error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/api/v2/transactions-in-block/{blockHeight}": {
+      "get": {
+        "tags": [
+          "transaction"
+        ],
+        "summary": "transactions in Block",
+        "description": "Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.\n**Rate Limit:** 5 request per IP per second.\n",
+        "operationId": "getTransactionsInBlockV2",
+        "parameters": [
+          {
+            "name": "blockHeight",
+            "in": "path",
+            "description": "blockHeight",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockTxV2"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. The block queried is higher than current highest block.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/atomic-swaps": {
+      "get": {
+        "tags": [
+          "atomicSwap"
+        ],
+        "summary": "AtomicSwap",
+        "description": "Get atomic swaps by address.\n\n**Rate Limit:** 5 request per IP per second.\n\n**Rate Limit:** 60 requests per IP per minute.\n",
+        "operationId": "getAtomicSwapsByAddrUsingGET",
+        "parameters": [
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "end time of blockTimestamp",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "fromAddress",
+            "in": "query",
+            "description": "At least one of toAddress and fromAddress should be provided as parameter",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "default 25; max 1000.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "start with 0; default 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "start time of blockTimestamp; The maximum start - end query window is 3 months; Default query window is the latest 30 days.",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "toAddress",
+            "in": "query",
+            "description": "At least one of toAddress and fromAddress should be provided as parameter",
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AtomicSwapPage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AtomicSwapPage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/atomic-swaps/{id}": {
+      "get": {
+        "tags": [
+          "atomicSwap"
+        ],
+        "summary": "AtomicSwap",
+        "description": "Get an AtomicSwap by swap id\n\n**Rate Limit:** 5 request per IP per second.\n\n**Rate Limit:** 60 request per IP per minute.\n",
+        "operationId": "getAtomicSwapUsingGET",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "swap id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AtomicSwap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/timelocks/{address}": {
+      "get": {
+        "tags": [
+          "node",
+          "account"
+        ],
+        "summary": "Gets time lock records given an address",
+        "operationId": "getTimeLocks",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "description": "The account address to query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "the record id of timelock to query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeLocks"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/timelock/{account_addr}": {
+      "get": {
+        "tags": [
+          "timelock records"
+        ],
+        "summary": "Get timelock records of an address.",
+        "description": "Get the timelock history of an address.\n**Rate Limit:** 60 requests per IP per minute.\n",
+        "operationId": "getTimeLock",
+        "parameters": [
+          {
+            "name": "account_addr",
+            "in": "path",
+            "description": "The account address to query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "the record id of timelock to query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeLocks"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          },
+          "500": {
+            "description": "internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "error code",
+            "format": "int64",
+            "example": 400
+          },
+          "message": {
+            "type": "string",
+            "description": "error message"
+          }
+        }
+      },
+      "Times": {
+        "title": "Times",
+        "type": "object",
+        "properties": {
+          "ap_time": {
+            "type": "string",
+            "description": "event time, e.g. 2019-01-21T10:30:00Z"
+          },
+          "block_time": {
+            "type": "string",
+            "description": "the time of latest block,e.g. 2019-01-21T10:30:00Z"
+          }
+        }
+      },
+      "Validators": {
+        "required": [
+          "block_height",
+          "validators"
+        ],
+        "type": "object",
+        "properties": {
+          "block_height": {
+            "type": "integer",
+            "description": "Current block height",
+            "format": "int64",
+            "example": 12345
+          },
+          "validators": {
+            "title": "Validators",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Validator"
+            }
+          }
+        }
+      },
+      "Validator": {
+        "required": [
+          "accum",
+          "address",
+          "pub_key",
+          "voting_power"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "Address",
+            "format": "hex address"
+          },
+          "pub_key": {
+            "title": "Public key",
+            "type": "array",
+            "description": "Public key bytes",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "voting_power": {
+            "type": "integer",
+            "description": "validator's voting power"
+          },
+          "accum": {
+            "type": "integer",
+            "description": "validator's accumulated voting power"
+          }
+        }
+      },
+      "Peer": {
+        "required": [
+          "accelerated",
+          "access_addr",
+          "capabilities",
+          "id",
+          "listen_addr",
+          "moniker",
+          "network",
+          "original_listen_addr",
+          "stream_addr",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Authenticated identifier",
+            "example": "8c379d4d3b9995c712665dc9a9414dbde5b30483"
+          },
+          "original_listen_addr": {
+            "type": "string",
+            "description": "Original listen address before PeersService changed it",
+            "format": "RemoteAddr"
+          },
+          "listen_addr": {
+            "type": "string",
+            "description": "Listen address",
+            "format": "RemoteAddr"
+          },
+          "access_addr": {
+            "type": "string",
+            "description": "Access address (HTTP)",
+            "format": "RemoteAddr"
+          },
+          "stream_addr": {
+            "type": "string",
+            "description": "Stream address (WS)",
+            "format": "RemoteAddr"
+          },
+          "network": {
+            "type": "string",
+            "description": "Chain ID",
+            "example": "Binance-Chain-Ganges"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version",
+            "example": "0.30.1"
+          },
+          "moniker": {
+            "type": "string",
+            "description": "Moniker (Name)",
+            "example": "data-seed-1"
+          },
+          "capabilities": {
+            "type": "array",
+            "description": "Array of capability tags: node, qs, ap, ws",
+            "example": [
+              "node",
+              "ap"
+            ],
+            "items": {
+              "type": "string",
+              "enum": [
+                "node",
+                "qs",
+                "ap",
+                "ws"
+              ]
+            }
+          },
+          "accelerated": {
+            "type": "boolean",
+            "description": "Is an accelerated path to a validator node"
+          }
+        }
+      },
+      "Transaction": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "title": "Hash",
+            "type": "string",
+            "description": "Hash of transaction, it returned as bytes before, and now it returns as hex string",
+            "format": "hex"
+          },
+          "log": {
+            "title": "Log",
+            "type": "string",
+            "description": "Log of transaction"
+          },
+          "data": {
+            "title": "Data",
+            "type": "string",
+            "description": "Data of transaction"
+          },
+          "height": {
+            "title": "Height",
+            "type": "string",
+            "description": "Height of transaction"
+          },
+          "code": {
+            "title": "Code",
+            "type": "integer",
+            "description": "Result code of transaction",
+            "format": "int32",
+            "default": 0
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "tx": {
+            "title": "Tx",
+            "type": "object",
+            "properties": {},
+            "description": "Detail of transaction, like transaction type, messages and signature\n\nFor example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg\nvaries with msg type, if you query with --format=json.\n\n```\n{\n    \"type\": \"auth/StdTx\", // fixed, type of transaction\n    \"value\": {            // fixed, detail of the transaction\n        \"data\": null,     // fixed, data of the transaction\n        \"memo\": \"\",       // fixed, memo\n        \"msg\": [          // fixed, msgs of the transaction\n            {\n                \"type\": \"cosmos-sdk/Send\",  // vary with msg type\n                \"value\": {                  // value content vary with mst type\n                    \"inputs\": [\n                        {\n                            \"address\": \"bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp\",\n                            \"coins\": [\n                                {\n                                    \"amount\": \"100000000000000\",\n                                    \"denom\": \"BNB\"\n                                }\n                            ]\n                        }\n                    ],\n                    \"outputs\": [\n                        {\n                            \"address\": \"bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv\",\n                            \"coins\": [\n                                {\n                                    \"amount\": \"100000000000000\",\n                                    \"denom\": \"BNB\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ],\n        \"signatures\": [ // fixed, signatures of the transaction\n            {\n                \"account_number\": \"0\",\n                \"pub_key\": {\n                    \"type\": \"tendermint/PubKeySecp256k1\",\n                    \"value\": \"AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR\"\n                },\n                \"sequence\": \"1\",\n                \"signature\": \"6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw==\"\n            }\n        ],\n        \"source\": \"0\"  // fixed, source of the transaction\n    }\n}\n```\n"
+          }
+        }
+      },
+      "Account": {
+        "required": [
+          "account_number",
+          "address",
+          "balances",
+          "public_key",
+          "sequence"
+        ],
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "title": "Account number",
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "title": "Address",
+            "type": "string",
+            "format": "address"
+          },
+          "balances": {
+            "title": "Balances",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Balance"
+            }
+          },
+          "public_key": {
+            "title": "Public key",
+            "type": "array",
+            "description": "Public key bytes",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "integer",
+            "description": "sequence is for preventing replay attack",
+            "format": "int64"
+          }
+        }
+      },
+      "AccountSequence": {
+        "required": [
+          "sequence"
+        ],
+        "type": "object",
+        "properties": {
+          "sequence": {
+            "title": "Sequence",
+            "type": "integer",
+            "description": "number used for preventing replay attack",
+            "format": "int64",
+            "example": 1
+          }
+        }
+      },
+      "Balance": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "description": "asset symbol",
+            "format": "currency",
+            "example": "BNB"
+          },
+          "free": {
+            "title": "Free",
+            "type": "string",
+            "description": "In decimal form, e.g. 0.00000000",
+            "format": "fixed8",
+            "example": "0.00000000"
+          },
+          "locked": {
+            "title": "Locked",
+            "type": "string",
+            "description": "In decimal form, e.g. 0.00000000",
+            "format": "fixed8",
+            "example": "0.00000000"
+          },
+          "frozen": {
+            "title": "Frozen",
+            "type": "string",
+            "description": "In decimal form, e.g. 0.00000000",
+            "format": "fixed8",
+            "example": "0.00000000"
+          }
+        }
+      },
+      "Token": {
+        "required": [
+          "name",
+          "original_symbol",
+          "owner",
+          "symbol",
+          "total_supply"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "token name",
+            "example": "Binance Chain Native Token"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "unique token trade symbol",
+            "example": "BTC-000"
+          },
+          "original_symbol": {
+            "type": "string",
+            "description": "token symbol",
+            "example": "BTC"
+          },
+          "total_supply": {
+            "type": "string",
+            "description": "total token supply in decimal form, e.g. 1.00000000",
+            "format": "fixed8",
+            "example": "0.00000000"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Address which issue the token",
+            "format": "address"
+          }
+        }
+      },
+      "Market": {
+        "required": [
+          "base_asset_symbol",
+          "list_price",
+          "lot_size",
+          "quote_asset_symbol",
+          "tick_size"
+        ],
+        "type": "object",
+        "properties": {
+          "base_asset_symbol": {
+            "type": "string",
+            "description": "symbol of base asset",
+            "format": "currency",
+            "example": "BNB"
+          },
+          "quote_asset_symbol": {
+            "type": "string",
+            "description": "symbol of quote asset",
+            "format": "currency",
+            "example": "ABC-5CA"
+          },
+          "list_price": {
+            "type": "string",
+            "description": "In decimal form",
+            "format": "fixed8",
+            "example": "1.00000000"
+          },
+          "tick_size": {
+            "type": "string",
+            "description": "Minimium price change in decimal form",
+            "format": "fixed8",
+            "example": "0.00000001"
+          },
+          "lot_size": {
+            "type": "string",
+            "description": "Minimium trading quantity in decimal form",
+            "format": "fixed8",
+            "example": "1.00000000"
+          }
+        }
+      },
+      "Fee": {
+        "type": "object",
+        "properties": {
+          "msg_type": {
+            "type": "string",
+            "description": "Transaction msg type that this fee applies to",
+            "example": "submit_proposal"
+          },
+          "fee": {
+            "type": "number",
+            "description": "The fee amount",
+            "example": 1000000000
+          },
+          "fee_for": {
+            "type": "integer",
+            "description": "1 = proposer, 2 = all, 3 = free",
+            "example": 1
+          },
+          "multi_transfer_fee": {
+            "type": "string",
+            "description": "Fee for multi-transfer",
+            "example": "200000"
+          },
+          "lower_limit_as_multi": {
+            "type": "string",
+            "description": "e.g. 2",
+            "example": "2"
+          },
+          "fixed_fee_params": {
+            "type": "object",
+            "description": "Set if the fee is fixed",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FixedFeeParams"
+              }
+            ]
+          },
+          "dex_fee_fields": {
+            "type": "object",
+            "description": "dex fee",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DexFeeFieldParams"
+              }
+            ]
+          }
+        }
+      },
+      "FixedFeeParams": {
+        "type": "object",
+        "properties": {
+          "msg_type": {
+            "type": "string",
+            "description": "Transaction msg type that this fee applies to",
+            "example": "submit_proposal"
+          },
+          "fee": {
+            "type": "number",
+            "description": "The fixed fee amount",
+            "example": 1000000000
+          },
+          "fee_for": {
+            "type": "integer",
+            "description": "1 = proposer, 2 = all, 3 = free",
+            "example": 1
+          }
+        }
+      },
+      "DexFeeFieldParams": {
+        "type": "object",
+        "properties": {
+          "fee_name": {
+            "type": "string",
+            "description": "fee name"
+          },
+          "fee_value": {
+            "type": "integer",
+            "description": "fee value"
+          }
+        }
+      },
+      "MarketDepth": {
+        "required": [
+          "asks",
+          "bids"
+        ],
+        "type": "object",
+        "properties": {
+          "asks": {
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array",
+            "description": "Price and qty in decimal form, e.g. 1.00000000",
+            "example": "[\"1.00000000\",\"800.00000000\"]",
+            "items": {
+              "type": "string",
+              "format": "fixed8"
+            }
+          },
+          "bids": {
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array",
+            "description": "Price and qty in decimal form, e.g. 1.00000000",
+            "example": "[\"1.00000000\",\"800.00000000\"]",
+            "items": {
+              "type": "string",
+              "format": "fixed8"
+            }
+          }
+        }
+      },
+      "Candlestick": {
+        "type": "object",
+        "properties": {
+          "close": {
+            "type": "number",
+            "description": "closing price"
+          },
+          "closeTime": {
+            "type": "integer",
+            "description": "time of closing trade",
+            "format": "int64"
+          },
+          "high": {
+            "type": "number",
+            "description": "the highest price"
+          },
+          "low": {
+            "type": "number",
+            "description": "the lowest price"
+          },
+          "numberOfTrades": {
+            "type": "integer",
+            "description": "total trades",
+            "format": "int32"
+          },
+          "open": {
+            "type": "number",
+            "description": "open price"
+          },
+          "openTime": {
+            "type": "integer",
+            "description": "time of open trade",
+            "format": "int64"
+          },
+          "quoteAssetVolume": {
+            "type": "number",
+            "description": "the total trading volume in quote asset"
+          },
+          "volume": {
+            "type": "number",
+            "description": "the total trading volume"
+          }
+        }
+      },
+      "OrderList": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "array",
+            "description": "list of orders",
+            "items": {
+              "$ref": "#/components/schemas/Order"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Order": {
+        "title": "Order",
+        "type": "object",
+        "properties": {
+          "cumulateQuantity": {
+            "type": "string",
+            "description": "total amount of trades that have made"
+          },
+          "fee": {
+            "type": "string",
+            "description": "trading fee on the latest updated block of this order. Multiple assets are split by semicolon."
+          },
+          "lastExecutedPrice": {
+            "type": "string",
+            "description": "price of last execution"
+          },
+          "lastExecutedQuantity": {
+            "type": "string",
+            "description": "quantity of last execution"
+          },
+          "orderCreateTime": {
+            "type": "string",
+            "description": "time of order creation",
+            "format": "date-time"
+          },
+          "orderId": {
+            "type": "string",
+            "description": "order ID"
+          },
+          "owner": {
+            "type": "string",
+            "description": "order issuer"
+          },
+          "price": {
+            "type": "string",
+            "description": "order price"
+          },
+          "quantity": {
+            "type": "string",
+            "description": "order quantity"
+          },
+          "side": {
+            "type": "integer",
+            "description": "1 for buy and 2 for sell",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "description": "enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire]"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "trading pair symbol"
+          },
+          "timeInForce": {
+            "type": "integer",
+            "description": "1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)",
+            "format": "int32"
+          },
+          "tradeId": {
+            "type": "string",
+            "description": "trade ID"
+          },
+          "transactionHash": {
+            "type": "string",
+            "description": "hash of transaction"
+          },
+          "transactionTime": {
+            "type": "string",
+            "description": "time of latest order update, for example, cancel, expire",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "integer",
+            "description": "only 2 is available for now, meaning limit order",
+            "format": "int32"
+          }
+        }
+      },
+      "SubTx": {
+        "title": "SubTx",
+        "type": "object",
+        "properties": {
+          "blockHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fromAddr": {
+            "type": "string"
+          },
+          "toAddr": {
+            "type": "string"
+          },
+          "txAsset": {
+            "type": "string"
+          },
+          "txFee": {
+            "type": "string"
+          },
+          "txHash": {
+            "type": "string"
+          },
+          "txType": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "TickerStatistics": {
+        "title": "TickerStatistics",
+        "type": "object",
+        "properties": {
+          "askPrice": {
+            "type": "string",
+            "description": "sell price"
+          },
+          "askQuantity": {
+            "type": "string",
+            "description": "sell quantity"
+          },
+          "bidPrice": {
+            "type": "string",
+            "description": "buy price"
+          },
+          "bidQuantity": {
+            "type": "string",
+            "description": "buy quantity"
+          },
+          "closeTime": {
+            "type": "integer",
+            "description": "time of closing",
+            "format": "int64"
+          },
+          "count": {
+            "type": "integer",
+            "description": "total trade count",
+            "format": "int64"
+          },
+          "firstId": {
+            "type": "string",
+            "description": "ID of first trade"
+          },
+          "highPrice": {
+            "type": "string",
+            "description": "highest price"
+          },
+          "lastId": {
+            "type": "string",
+            "description": "ID of last trade"
+          },
+          "lastPrice": {
+            "type": "string",
+            "description": "last price"
+          },
+          "lastQuantity": {
+            "type": "string",
+            "description": "last quantity"
+          },
+          "lowPrice": {
+            "type": "string",
+            "description": "lowest price"
+          },
+          "openPrice": {
+            "type": "string",
+            "description": "open price"
+          },
+          "openTime": {
+            "type": "integer",
+            "description": "open time",
+            "format": "int64"
+          },
+          "prevClosePrice": {
+            "type": "string",
+            "description": "last close price"
+          },
+          "priceChange": {
+            "type": "string",
+            "description": "change of price"
+          },
+          "priceChangePercent": {
+            "type": "string",
+            "description": "change of price in percentage"
+          },
+          "quoteVolume": {
+            "type": "string",
+            "description": "trading volume in quote asset"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "trading symbol"
+          },
+          "volume": {
+            "type": "string",
+            "description": "trading volume"
+          },
+          "weightedAvgPrice": {
+            "type": "string",
+            "description": "weighted average price"
+          }
+        }
+      },
+      "TradePage": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "total number of trades",
+            "format": "int64"
+          },
+          "trade": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Trade"
+            }
+          }
+        }
+      },
+      "Trade": {
+        "type": "object",
+        "properties": {
+          "baseAsset": {
+            "type": "string",
+            "description": "base asset symbol"
+          },
+          "blockHeight": {
+            "type": "integer",
+            "description": "block height",
+            "format": "int64"
+          },
+          "buyFee": {
+            "type": "string",
+            "description": "trading fee for the buyer address on the block of this trade"
+          },
+          "buyerId": {
+            "type": "string",
+            "description": "id of buyer"
+          },
+          "buyerOrderId": {
+            "type": "string",
+            "description": "order id for buyer"
+          },
+          "buySingleFee": {
+            "type": "string",
+            "description": "trading fee for the buyer address on this single trade",
+            "example": "BNB:0.00000172;"
+          },
+          "buyerSource": {
+            "type": "integer",
+            "description": "tx source of buy order",
+            "example": 1
+          },
+          "price": {
+            "type": "string",
+            "description": "trade price"
+          },
+          "quantity": {
+            "type": "string",
+            "description": "trade quantity"
+          },
+          "quoteAsset": {
+            "type": "string",
+            "description": "quote asset symbol"
+          },
+          "sellFee": {
+            "type": "string",
+            "description": "trading fee for the seller address on the block of this trade"
+          },
+          "sellerId": {
+            "type": "string",
+            "description": "seller ID"
+          },
+          "sellerOrderId": {
+            "type": "string",
+            "description": "seller order ID"
+          },
+          "sellSingleFee": {
+            "type": "string",
+            "description": "trading fee for the seller address on this single trade",
+            "example": "BNB:0.00000216;"
+          },
+          "sellerSource": {
+            "type": "integer",
+            "description": "tx source of sell order",
+            "example": 1
+          },
+          "symbol": {
+            "type": "string",
+            "description": "asset symbol"
+          },
+          "tickType": {
+            "type": "string",
+            "description": "enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral]"
+          },
+          "time": {
+            "type": "integer",
+            "description": "trade time",
+            "format": "int64"
+          },
+          "tradeId": {
+            "type": "string",
+            "description": "trade ID"
+          }
+        }
+      },
+      "BlockExchangeFeePage": {
+        "title": "BlockExchangeFeePage",
+        "type": "object",
+        "properties": {
+          "blockExchangeFee": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockExchangeFee"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "BlockExchangeFee": {
+        "title": "BlockExchangeFee",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "blockHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blockTime": {
+            "type": "integer",
+            "description": "timestamp of a block",
+            "format": "int64"
+          },
+          "fee": {
+            "type": "string",
+            "description": "total fee collected. Multiple assets are split by semicolon."
+          },
+          "tradeCount": {
+            "type": "integer",
+            "description": "trade count of the address on the block",
+            "format": "int64"
+          }
+        }
+      },
+      "TxPage": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "total sum of transactions",
+            "format": "int64"
+          },
+          "tx": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tx"
+            }
+          }
+        }
+      },
+      "BlockTx": {
+        "type": "object",
+        "properties": {
+          "blockHeight": {
+            "type": "integer",
+            "description": "block height",
+            "format": "int64"
+          },
+          "tx": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tx"
+            }
+          }
+        }
+      },
+      "BlockTxV2": {
+        "type": "object",
+        "properties": {
+          "blockHeight": {
+            "type": "integer",
+            "description": "block height",
+            "format": "int64"
+          },
+          "tx": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TxV2"
+            }
+          }
+        }
+      },
+      "Tx": {
+        "title": "Tx",
+        "type": "object",
+        "properties": {
+          "blockHeight": {
+            "type": "integer",
+            "description": "block height",
+            "format": "int64"
+          },
+          "code": {
+            "type": "integer",
+            "description": "transaction result code",
+            "format": "int32",
+            "example": 0
+          },
+          "confirmBlocks": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "data": {
+            "type": "string"
+          },
+          "fromAddr": {
+            "type": "string",
+            "description": "from address"
+          },
+          "orderId": {
+            "type": "string",
+            "description": "order ID"
+          },
+          "timeStamp": {
+            "type": "string",
+            "description": "time of transaction",
+            "format": "date-time"
+          },
+          "toAddr": {
+            "type": "string",
+            "description": "to address"
+          },
+          "txAge": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "txAsset": {
+            "type": "string"
+          },
+          "txFee": {
+            "type": "string"
+          },
+          "txHash": {
+            "type": "string",
+            "description": "hash of transaction"
+          },
+          "txType": {
+            "type": "string",
+            "description": "type of transaction"
+          },
+          "value": {
+            "type": "string",
+            "description": "value of transaction"
+          },
+          "source": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "swapId": {
+            "type": "string",
+            "description": "Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL"
+          },
+          "proposalId": {
+            "type": "string"
+          }
+        }
+      },
+      "ResultStatus": {
+        "type": "object",
+        "properties": {
+          "validator_info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidatorInfo"
+            }
+          },
+          "sync_info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SyncInfo"
+            }
+          },
+          "node_info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeInfo"
+            }
+          }
+        }
+      },
+      "NodeInfo": {
+        "type": "object",
+        "properties": {
+          "Protocol_Version": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProtocolVersion"
+            }
+          },
+          "ID": {
+            "type": "string"
+          },
+          "listen_addr": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "channels": {
+            "type": "string"
+          },
+          "moniker": {
+            "type": "string"
+          },
+          "other": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "SyncInfo": {
+        "type": "object",
+        "properties": {
+          "latest_block_hash": {
+            "type": "string",
+            "format": "hex"
+          },
+          "latest_app_hash": {
+            "type": "string",
+            "format": "hex"
+          },
+          "latest_block_height": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "latest_block_time": {
+            "type": "string"
+          },
+          "catching_up": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProtocolVersion": {
+        "type": "object",
+        "properties": {
+          "P2P": {
+            "type": "integer",
+            "format": "uint64"
+          },
+          "block": {
+            "type": "integer",
+            "format": "uint64"
+          },
+          "app": {
+            "type": "integer",
+            "format": "uint64"
+          }
+        }
+      },
+      "ValidatorInfo": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "hex address"
+          },
+          "pub_key": {
+            "type": "string",
+            "description": "hex-encoded"
+          },
+          "voting_power": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "AtomicSwapPage": {
+        "title": "AtomicSwapPage",
+        "type": "object",
+        "properties": {
+          "atomicSwaps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AtomicSwap"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "AtomicSwap": {
+        "title": "AtomicSwap",
+        "type": "object",
+        "properties": {
+          "blockTimestamp": {
+            "type": "integer",
+            "description": "Timestamp of block in which the swap is initiated. The unit is millisecond.",
+            "format": "int64"
+          },
+          "closedTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "crossChain": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "expectedIncome": {
+            "type": "string"
+          },
+          "expireHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fromAddr": {
+            "type": "string"
+          },
+          "inAmount": {
+            "type": "string"
+          },
+          "outAmount": {
+            "type": "string"
+          },
+          "randomNumber": {
+            "type": "string"
+          },
+          "randomNumberHash": {
+            "type": "string"
+          },
+          "recipientOtherChain": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "swapId": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second.",
+            "format": "int64"
+          },
+          "toAddr": {
+            "type": "string"
+          }
+        }
+      },
+      "TxV2": {
+        "title": "TxV2",
+        "required": [
+          "blockHeight",
+          "code",
+          "data",
+          "fromAddr",
+          "memo",
+          "sequence",
+          "source",
+          "timeStamp",
+          "toAddr",
+          "txAsset",
+          "txFee",
+          "txHash",
+          "txType",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "blockHeight": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "example": 0
+          },
+          "data": {
+            "type": "string"
+          },
+          "fromAddr": {
+            "type": "string"
+          },
+          "memo": {
+            "type": "string"
+          },
+          "orderId": {
+            "type": "string",
+            "description": "Optional. Available when the transaction type is NEW_ORDER"
+          },
+          "proposalId": {
+            "type": "string",
+            "description": "Optional. Available when the transaction type is PROPOSAL"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "source": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "subTransactions": {
+            "type": "array",
+            "description": "Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets",
+            "items": {
+              "$ref": "#/components/schemas/SubTx"
+            }
+          },
+          "swapId": {
+            "type": "string",
+            "description": "Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL"
+          },
+          "timeStamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "toAddr": {
+            "type": "string"
+          },
+          "txAsset": {
+            "type": "string"
+          },
+          "txFee": {
+            "type": "string"
+          },
+          "txHash": {
+            "type": "string"
+          },
+          "txType": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "TimeLocks": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TimeLock"
+        }
+      },
+      "TimeLock": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "description": "The record id of the timelock transaction",
+            "format": "int64",
+            "x-omitempty": false
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "The description of the timelock transaction",
+            "x-omitempty": false
+          },
+          "amount": {
+            "title": "Locked coins",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeLock_amount"
+            },
+            "x-omitempty": false
+          },
+          "locktime": {
+            "title": "LockTime",
+            "type": "string",
+            "description": "The available unlock time",
+            "x-omitempty": false
+          }
+        }
+      },
+      "TimeLock_amount": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "format": "currency",
+            "example": "BNB"
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "string",
+            "description": "In decimal form, e.g. 0.00000000",
+            "format": "fixed8",
+            "example": "0.00000000",
+            "x-omitempty": false
+          }
+        }
+      }
+    }
+  }
+}
