@@ -240,12 +240,12 @@ const sidebars = {
                           items:[
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
-                            {type:'doc', id:'api-swagger/index.html', label: 'Accelerated Node HTTP API Swagger'},
+                            {type:'doc', id:'api-swagger/index', label: 'Accelerated Node HTTP API Swagger'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: 'Accelerated Node HTTP API Testnet- Paths and Models'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},
                             {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: 'Node RPC - Paths and Models'},
-                            {type:'doc', id:'rpc-swagger/index.html', label: 'Node RPC Swagger'},
+                            {type:'doc', id:'rpc-swagger/index', label: 'Node RPC Swagger'},
                             {type:'doc', id:'beaconchain/changelog', label:'CHANGELOG'}
       
                           ]
