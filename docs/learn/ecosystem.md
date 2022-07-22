@@ -41,7 +41,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | Components | Existing projects | Potentially interesting projects
 |-|-|-
 |API/Node access| [Ankr](https://www.ankr.com/), [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [NowNodes](https://nownodes.io/blog/binance-smart-chain-an-introduction), [QuickNode](https://www.quicknode.com/), [Nodereal](https://nodereal.io/)
-| NFT APIs| [NFTScan](https://bnb.nftscan.com/), [BlockVision](https://blockvision.org/), [Venly](https://www.venly.io/)
+| NFT APIs| [NFTScan](https://bnb.nftscan.com/), [BlockVision](https://blockvision.org/), [Venly](https://www.venly.io/), [Covalent](https://www.covalenthq.com/)
 |Archive Node Service| [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/), [Nodereal’s Meganode](https://docs.nodereal.io/nodereal/meganode/archive-node)
 |Public RPC Endpoints| [RPC Endpoints](https://docs.binance.org/smart-chain/developer/rpc.html)| More public nodes are encouraged
 |Community Polling Dashboard| |
@@ -70,7 +70,7 @@ Goto [BSC Developer Ecosystem](https://github.com/bnb-chain/bsc-ecosystem/blob/m
 ### Dapps infra
 | Components | Existing projects | Potentially interesting projects
 |-|-|-
-| Data Analytics & Visualization| [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/)
+| Data Analytics & Visualization| [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/), [Covalent](https://www.covalenthq.com)
 | Oracle | [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Pyth](https://pyth.network/)
 | Archive Data |[InfStones](https://infstones.com/)
 | File Storage, Cloud | [IPFS](https://ipfs.io/) 
