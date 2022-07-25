@@ -14,6 +14,8 @@ In this section, we have provided tutorials on usage of different components of 
 * Tutorial on [How to Run a Full Node on BNB Smart Chain](validator/fullnode.md)
 * Tutorial on [How to Run a Local BNB Smart Chain Network](local.md)
 * Tutorial on [How to Upgrade Geth (Full Node) on BNB Smart Chain](validator/upgrade-fullnode.md)
+### Archive Node
+* Tutorial on [How to Run an Archive Node on BNB Smart Chain](archivenode.md)
 ### Staking and Delegation
 * Tutorial on [How to Stake BNB Tokens on BSC](staking-with-ext-wallet.md)
 * Tutorial on [How to Delegate BNB Tokens on BSC](del-guide.md)
