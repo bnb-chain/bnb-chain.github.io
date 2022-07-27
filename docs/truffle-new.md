@@ -54,7 +54,7 @@ Once this operation is completed, you'll now have a project structure with the f
 
 ### Create Contract
 
-You can write your own smart contract or download the BEP20 token smart contract template.
+You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template).
 
 ### Compile Contract
 
@@ -62,7 +62,6 @@ To compile a Truffle project, change to the root of the directory where the proj
 ```
 truffle compile
 ```
-
 
 ### Config Truffle for BSC
 
