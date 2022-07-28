@@ -3,7 +3,10 @@ sidebar_label: BNB Smart Chain Separate Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
-# Introduce
+
+# How to Run Separate Node on BNB Smart Chain
+
+## Introduce
 
 ![img](../static/img/separate-node-architecture.png)
 
@@ -15,10 +18,9 @@ The fast node doesn’t need to store MPT, so the storage and computation requir
 
 ## Roles
 
-- Fast Node
-  It does full sync using only Snapshot and generates difflayer. It needs the confirm message from the verify node before freezing the blocks, it has to wait until it receives a confirm message from the verify node for the ancestor block before inserting new blocks.
-- Verify Node
-  It is a normal BSC full node that does full sync using Snapshot and MPT, and generates difflayer. It receives diffhash from fast nodes, finds the corresponding difflayer whose diffhash is matched, then responds MPT root message to the fast node.
+- **Fast Node**: It does full sync using only Snapshot and generates difflayer. It needs the confirm message from the verify node before freezing the blocks, it has to wait until it receives a confirm message from the verify node for the ancestor block before inserting new blocks.
+
+- **Verify Node**: It is a normal BSC full node that does full sync using Snapshot and MPT, and generates difflayer. It receives diffhash from fast nodes, finds the corresponding difflayer whose diffhash is matched, then responds MPT root message to the fast node.
 
 
 ## Related Commands
