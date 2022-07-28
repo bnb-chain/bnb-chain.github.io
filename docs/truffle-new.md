@@ -1,7 +1,6 @@
 ---
 sidebar_label: Using Truffle
 hide_table_of_contents: false
-sidebar_position: 2
 ---
 
 # Using Truffle
