@@ -65,6 +65,12 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
+                        label: 'Separate Node',
+                        items: ['BSC-separate-node','BSC-verify-node', 'BSC-fast-node']
+                      },
+                      {
+                        type: 'category',
+                        collapsed: true,
                         label: 'Deploy Smart Contract',
                         items: ['chainide', 'remix', 'truffle-new', 'hardhat-new', 'verify']
                       },
