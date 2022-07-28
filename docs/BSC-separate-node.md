@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # How to Run Separate Node on BNB Smart Chain
 
-## Introduce
+## Introduction
 
 ![img](../static/img/separate-node-architecture.png)
 
