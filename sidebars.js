@@ -68,7 +68,12 @@ const sidebars = {
                         label: 'Running Archive Node',
                         items: ['archivenode']
                       },
-
+                      {
+                        type: 'category',
+                        collapsed: true,
+                        label: 'Separate Node',
+                        items: ['BSC-separate-node','BSC-verify-node', 'BSC-fast-node']
+                      },
                       {
                         type: 'category',
                         collapsed: true,
