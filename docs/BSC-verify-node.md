@@ -12,9 +12,8 @@ sidebar_position: 2
 * Verifies the states of every accounts.
 * Verifies the stated of Fast Node.
 
-## Suggested Requirements
+## Suggested Requirements for Verify Node
 
-### Verify Node
 - VPS running recent versions of Mac OS X or Linux.
 - **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
 - 16 cores of CPU and 64 gigabytes of memory (RAM)
@@ -25,7 +24,7 @@ sidebar_position: 2
 
 ## Chaindata Snapshot
 
-Please download the chain data [snapshot](./snapshot) and extract to your home folder to speed up
+Please download the chain data [snapshot](https://github.com/bnb-chain/bsc-snapshots) and extract to your home folder to speed up
 
 ```
 ## Extract the data
@@ -159,4 +158,4 @@ When the node crashes or been force killed, the node will sync from a block that
 
 ## Upgrade Geth
 
-Please read [this guide](./upgrade-fullnode.md)
+Please read [this guide](./validator/upgrade-fullnode.md)
