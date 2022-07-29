@@ -45,8 +45,9 @@ unzip mainnet.zip
 
 3. Download snapshot
 
-Download latest snapshot from [Download site](https://github.com/bnb-chain/bsc-snapshots)
-Follow the guide to structure the files.
+  Download latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots).
+
+  Follow the guide to structure the files.
 
 4. Prune all trie data
 
