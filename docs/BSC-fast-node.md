@@ -11,9 +11,8 @@ sidebar_position: 2
 * Receives and validates the new blocks and transactions.
 * Verifies the states of every accounts.
 
-## Suggested Requirements
+## Suggested Requirements for Fast Node
 
-### Fast Node
 - VPS running recent versions of Mac OS X or Linux.
 - **IMPORTANT** 1T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if start with snap/fast sync, it will need NVMe SSD)
 - 16 cores of CPU and 64 gigabytes of memory (RAM).
@@ -151,4 +150,4 @@ All the clients are suggested to upgrade to the latest release. The [latest vers
 
 ## Upgrade Geth
 
-Please read [this guide](./upgrade-fullnode.md)
+Please read [this guide](./validator/upgrade-fullnode.md)
