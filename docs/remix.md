@@ -34,7 +34,7 @@ You must set up all of the following Pre-requisites to be able to deploy your so
 
 - Remember to modify “name”, “symbol”, “decimals” and “totalSupply” according to your requirements.
 
-<img src="https://user-images.githubusercontent.com/93580180/182832302-2e9bb7b7-9b54-49d8-888e-d03613ce59b1.png" alt="img" style={{zoom:"30%"}}/> 
+<img src="https://user-images.githubusercontent.com/93580180/182832302-2e9bb7b7-9b54-49d8-888e-d03613ce59b1.png"/> 
 
 The first line, `pragma solidity ^0.8.4` specifies that the source code is for a Solidity version greater than 0.8.4. [Pragmas](https://solidity.readthedocs.io/en/latest/layout-of-source-files.html#pragma) are common instructions for compilers about how to treat the source code (e.g., pragma once).
 
