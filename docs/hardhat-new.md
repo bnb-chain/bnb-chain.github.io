@@ -4,7 +4,8 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Using Hardhat
+# Using Hardhat for Deploying Smart Contracts on BSC
+
 In this tutorial, we explain step-by-step how to create, compile and deploy a simple smart contract on the BSC Testnet using Hardhat.
 
 ## What is Hardhat
