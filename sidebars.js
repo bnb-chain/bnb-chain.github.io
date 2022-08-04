@@ -78,7 +78,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Deploy Smart Contract',
-                        items: ['chainide', 'remix', 'truffle-new', 'hardhat-new', 'verify']
+                        items: ['chainide', 'remix-new', 'truffle-new', 'hardhat-new', 'verify']
                       },
                       {
                         type: 'category',
@@ -89,7 +89,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'BEP20 Tokens',
-                        items: ['BEP20', 'issue-BEP20',
+                        items: ['BEP20', 'issue-BEP20', 'remix',
                                   {
                                     type: 'category',
                                     //collapsible: true,
