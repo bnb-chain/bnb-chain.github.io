@@ -25,7 +25,7 @@ You must set up all of the following Pre-requisites to be able to deploy your so
 - Remix is an online IDE to develop smart contracts.
 - You need to choose Solidity Compiler, Choose the appropriate compiler version. We used 0.8.4 for this tutorial.
 
-<img src="https://user-images.githubusercontent.com/93580180/182832093-0229df42-6f44-4027-b418-b8045208a30f.png" alt="img" style={{zoom:"30%"}}/>
+<img src="https://user-images.githubusercontent.com/93580180/182832093-0229df42-6f44-4027-b418-b8045208a30f.png" alt="img" style={{zoom:"100%"}}/>
 
 
 ## Writing the Smart Contract
@@ -52,7 +52,7 @@ A contract in the sense of Solidity is a collection of code (its functions) and 
 
 - Step5: Click "ABI" to copy the contract ABI and save it.
 
-<img src="https://user-images.githubusercontent.com/93580180/182832411-56a76672-40c9-490b-85a3-46eeecf7b911.png" alt="img" style={{zoom:"30%"}}/>
+<img src="https://user-images.githubusercontent.com/93580180/182832411-56a76672-40c9-490b-85a3-46eeecf7b911.png" alt="img" style={{zoom:"100%"}}/>
 
 ## Configure MetaMask and Fund Your Account
 
