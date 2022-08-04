@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Using Remix IDE for Deploying Smart Contracts on BSC
+# Using Remix IDE for Issuing BEP20 Tokens on BSC
 
 In this tutorial, we provide guidelines on how to create, compile, and deploy a smart contract for deploying BEP020 tokens on BSC using the [Remix IDE](https://remix.ethereum.org/).
 
@@ -93,7 +93,7 @@ Let's Deploy the Smart Contract on BNB Smart Chain Testnet.
 
 - Select Injected Web3 in the Environment dropdown and your contract
 
-<img src="https://lh5.googleusercontent.com/Z4XBNJcsMWk5SzSKB8no5vAzv8ie46p4dbv4sh0_9FxIyMfEFlCj2z_a_ZUWR6l3fH9OIr3B2A0_Puh89FzbxlkLMVsTo9diSbLGdbp2Swml0afc7Unl10hBw9jsAY6Ozgbe6HqE" alt="img" style={{zoom:"30%"}}/>
+<img src="https://lh5.googleusercontent.com/Z4XBNJcsMWk5SzSKB8no5vAzv8ie46p4dbv4sh0_9FxIyMfEFlCj2z_a_ZUWR6l3fH9OIr3B2A0_Puh89FzbxlkLMVsTo9diSbLGdbp2Swml0afc7Unl10hBw9jsAY6Ozgbe6HqE" alt="img" style={{zoom:"20%"}}/>
 
 - Accept the Connection Request!
 
@@ -101,7 +101,7 @@ Let's Deploy the Smart Contract on BNB Smart Chain Testnet.
 
 - Once Metamask is connected to Remix, the ‘Deploy’ transaction would generate another metamask popup that requires transaction confirmation.
 
-<img src="https://lh4.googleusercontent.com/9awuDudNSuUOZDQAlW5FPZ5SbRkWsKPlJSYWGUL7R4raJ5o2mprRP7jt87hP_wbuYeoJy75ErwDcKVC7_spf8YkumCkwOP4Eak9SfcV6dZvyVhy84JqKfVUvmEeLw5mWEZ3-aCED" alt="img" style={{zoom:"30%"}}/>
+<img src="https://lh4.googleusercontent.com/9awuDudNSuUOZDQAlW5FPZ5SbRkWsKPlJSYWGUL7R4raJ5o2mprRP7jt87hP_wbuYeoJy75ErwDcKVC7_spf8YkumCkwOP4Eak9SfcV6dZvyVhy84JqKfVUvmEeLw5mWEZ3-aCED" alt="img" style={{zoom:"20%"}}/>
 
 **Congratulations!** You have successfully deployed a BEP20 Contract. Now you can interact with the Smart Contract. Check the deployment status here: <https://testnet.bscscan.com/>
 
