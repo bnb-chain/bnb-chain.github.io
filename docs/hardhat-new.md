@@ -5,6 +5,7 @@ sidebar_position: 2
 ---
 
 # Using Hardhat
+In this tutorial, we explain step-by-step how to create, compile and deploy a simple smart contract on the BSC Testnet using Hardhat.
 
 ## What is Hardhat
 
@@ -12,42 +13,23 @@ Hardhat is a development environment to compile, deploy, test, and debug your sm
 
 ## Setting up the development environment
 
-There are a few technical requirements before we start. Please install the following:
-Requirements:
+There are a few technical requirements before we start. 
 
-## Installing
+### Pre-requisites
 
-There are a few technical requirements before we start. Please install the following:
-Requirements:
+There are a few technical requirements before we start as listed below:
 
-- Windows, Linux or Mac OS X
-- [Node.js v8.9.4 LTS or later](https://nodejs.org/en/)
+- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (comes with Node)
 - [Git](https://git-scm.com/)
-
-First, you need to create an empty project `npm init --yes`
-
-Once your project is ready, you should run
-
-```
-npm install --save-dev hardhat
-```
-It's recommeded to install some dependencies.
-
-```
-npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
-```
-To use your local installation of Hardhat, you need to use `npx` to run it (i.e. `npx hardhat`).
+- Create an empty project ```npm init --yes```
+- Once your project is ready, run ```npm install --save-dev hardhat``` to install Hardhat.
+- Install hardhat toolbox ```npm install @nomicfoundation/hardhat-toolbox```
+- To use your local installation of Hardhat, you need to use `npx` to run it (i.e. `npx hardhat`).
 
 ## Create A Project
 
-To create your Hardhat project run npx hardhat in your project folder:
-
-```
-mkdir MegaCoin
-cd MegaCoin
-```
-
-- Intialize your project:
+- To create your Hardhat project run ```npx hardhat``` in your project folder to intialize your project. 
+- Select ```Create an empty hardhat.config.js``` with your keyboard and hit enter.
 
 ```
 $ npx hardhat
@@ -60,34 +42,40 @@ $ npx hardhat
 888    888 888  888 888    Y88b 888 888  888 888  888 Y88b.
 888    888 "Y888888 888     "Y88888 888  888 "Y888888  "Y888
 
-Welcome to Hardhat v2.0.8
+Welcome to Hardhat v2.10.1
 
-? What do you want to do? …
-❯ Create a sample project
-  Create an empty hardhat.config.js
-  Quit
+√ What do you want to do? · Create a JavaScript project
+√ Hardhat project root: ·  Project-Directory
+√ Do you want to add a .gitignore? (Y/n) · y
+
+You need to install these dependencies to run the sample project:
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+  npm install --save-dev "hardhat@^2.10.1" "@nomicfoundation/hardhat-toolbox@^1.0.1"
+
+Project created
+
+See the README.md file for some example tasks you can run
+
+Give Hardhat a star on Github if you're enjoying it!
+
+     https://github.com/NomicFoundation/hardhat
 ```
 
-Once this project is initialized, you'll now have a project structure with the following items:
-
-* contracts/: Directory for Solidity contracts
-* scripts/: Directory for scriptable deployment files
-* test/: Directory for test files for testing your application and contracts
-* hardhat-config.js: Hardhat configuration file
+When Hardhat is run, it searches for the closest ```hardhat.config.js``` file starting from the current working directory. This file normally lives in the root of your project and an empty ```hardhat.config.js``` is enough for Hardhat to work. The entirety of your setup is contained in this file.
 
 
-### Create Contract
+## Create Smart Contract
 
-You can write your own smart contract or download the [BEP20 token smart contract template](../BEP20Token.template).
+You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template), place it in the ```contracts``` directory of your project and remane it as ```BEP20Token.sol```.
 
-### Config Hardhat for BSC
+## Configure Hardhat for BSC
 
-- Go to hardhat.config.js
+- Go to ```hardhat.config.js```
 - Update the  config with bsc-network-crendentials.
 
 ```js
-require("@nomiclabs/hardhat-waffle");
-require('@nomiclabs/hardhat-ethers');
+require("@nomicfoundation/hardhat-toolbox");
+
 const { mnemonic } = require('./secrets.json');
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -128,7 +116,7 @@ module.exports = {
     }
   },
   solidity: {
-  version: "0.5.16",
+  version: "0.8.9",
   settings: {
     optimizer: {
       enabled: true
@@ -148,53 +136,92 @@ module.exports = {
 
 ```
 
-!!! Note
-		It requires mnemonic to be passed in for Provider, this is the seed phrase for the account you'd like to deploy from. Create a new `.secret` file in root directory and enter your 12 word mnemonic seed phrase to get started. To get the seedwords from metamask wallet you can go to Metamask Settings, then from the menu choose Security and Privacy where you will see a button that says reveal seed words.
+:::note
+		It requires mnemonic to be passed in for Provider, this is the seed phrase for the account you'd like to deploy from. Create a new `secrets.json` file in root directory and enter your 12 word mnemonic seed phrase to get started. To get the seedwords from metamask wallet you can go to Metamask Settings, then from the menu choose Security and Privacy where you will see a button that says reveal seed words.
+```
+Sample secrets.json
 
-### Compile Contract
+{
+    "mnemonic": "Your_12_Word_MetaMask_Seed_Phrase"
+}
+```
+:::
+
+## Compile Smart Contract
 
 To compile a Hardhat project, change to the root of the directory where the project is located and then type the following into a terminal:
+
 ```
 npx hardhat compile
 ```
 
+## Deploy Smart Contract on BSC Network
 
-## Deploying on BSC Network
+- Copy and paste the following content into the ```scripts/deploy.js``` file.
 
-Run this command in root of the project directory:
+```js
+async function main() {
+  const [deployer] = await ethers.getSigners();
+
+  console.log("Deploying contracts with the account:", deployer.address);
+
+  console.log("Account balance:", (await deployer.getBalance()).toString());
+
+  const Token = await ethers.getContractFactory("BEP20Token");
+  const token = await Token.deploy();
+
+  console.log("Token address:", token.address);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+
+```
+
+- Run this command in root of the project directory:
+
 ```js
 $  npx hardhat run --network testnet scripts/deploy.js
 ```
+- Sample Output
 
+```
+$ npx hardhat run --network testnet scripts/deploy.js
+Deploying contracts with the account: 0x27cf2CEAcdedce834f1673005Ed1C60efA63c081
+Account balance: 100721709119999208161
+Token address: 0xbF39886B4F91F5170934191b0d96Dd277147FBB2
+```
 > Remember your address, transaction_hash and other details provided would differ, Above is just to provide an idea of structure.
 
 **Congratulations!** You have successfully deployed BEP20 Smart Contract. Now you can interact with the Smart Contract.
 
 You can check the deployment status here: <https://bscscan.com/> or <https://testnet.bscscan.com/>
 
-
-# Verify with Hardhat
+## Verify with Hardhat
 
 Hardhat has an Etherscan plugin: [Hardhat Etherscan plugin](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html)
 
 > Note: Hardhat was previously Buidler.
 
-## Install the plugin
+### Install the plugin
 
 ```
 npm install --save-dev @nomiclabs/hardhat-etherscan
 ```
-## Configure the plugin in buidler.config.js
 
-- Add require("@nomiclabs/hardhat-etherscan");
-- Add Bscscan API key
+### Configure the EthereScan plugin in hardhat.config.js
+
+- Step1: Add ```require("@nomiclabs/hardhat-etherscan");```
+- Step2: Add your Bscscan API key. Register and obtain your API key from <https://bscscan.com/myapikey> .
+- Step3: Always remember to set the solidity compiler version to match what was used for deploying the smart contract.
 
 !!! warning
-    keep secret and don’t commit to version control)
+    Keep your API key as secret and never it commit to version control
 
-Go to register and get API key: <https://bscscan.com/myapikey>
-
-- Set compiler version to match what was deployed
 
 ```js
 // hardhat.config.js
@@ -221,12 +248,12 @@ module.exports = {
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://bscscan.com/
-    apiKey: bscscanApiKey
+    apiKey: bscscanApiKey 
   },
-  solidity: "0.5.12"
+  solidity: "0.8.9"
 };
 ```
-## Verify 
+### Verify Command
 !!! warning
     Remove any unnecessary contracts and clear the artifacts otherwise these will also be part of the verified contract.
 
@@ -249,3 +276,6 @@ for verification on Etherscan. Waiting for verification result...
 Successfully verified contract BEP20Token on Etherscan.
 https://testnet.bscscan.com/address/0xbF39886B4F91F5170934191b0d96Dd277147FBB2#code
 ```
+
+## Conclusion
+This tutorial guided you through the basics of creating and deploying a simple smart contract using the Hardhat IDE. It also provides step-by-step guide on how to verify your deployed smart contract. This tutorial uses testnet, however, the exact same instructions and sequence will work on the mainnet as well.
