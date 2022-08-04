@@ -25,7 +25,8 @@ You must set up all of the following Pre-requisites to be able to deploy your so
 - Remix is an online IDE to develop smart contracts.
 - You need to choose Solidity Compiler, Choose the appropriate compiler version. We used 0.8.4 for this tutorial.
 
-<img src="/static/img/RemixIDE/Picture1.PNG" alt="img" style={{zoom:"30%"}}/>
+<img src="https://user-images.githubusercontent.com/93580180/182832093-0229df42-6f44-4027-b418-b8045208a30f.png" alt="img" style={{zoom:"30%"}}/>
+
 
 ## Writing the Smart Contract
 
@@ -33,7 +34,7 @@ You must set up all of the following Pre-requisites to be able to deploy your so
 
 - Remember to modify “name”, “symbol”, “decimals” and “totalSupply” according to your requirements.
 
-<img src="/static/img/RemixIDE/Picture2.PNG" alt="img" style={{zoom:"30%"}}/> 
+<img src="https://user-images.githubusercontent.com/93580180/182832302-2e9bb7b7-9b54-49d8-888e-d03613ce59b1.png" alt="img" style={{zoom:"30%"}}/> 
 
 The first line, `pragma solidity ^0.8.4` specifies that the source code is for a Solidity version greater than 0.8.4. [Pragmas](https://solidity.readthedocs.io/en/latest/layout-of-source-files.html#pragma) are common instructions for compilers about how to treat the source code (e.g., pragma once).
 
@@ -51,7 +52,7 @@ A contract in the sense of Solidity is a collection of code (its functions) and 
 
 - Step5: Click "ABI" to copy the contract ABI and save it.
 
-<img src="/static/img/RemixIDE/Picture3.PNG" alt="img" style={{zoom:"30%"}}/>
+<img src="https://user-images.githubusercontent.com/93580180/182832411-56a76672-40c9-490b-85a3-46eeecf7b911.png" alt="img" style={{zoom:"30%"}}/>
 
 ## Configure MetaMask and Fund Your Account
 
