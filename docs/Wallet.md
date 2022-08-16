@@ -40,3 +40,4 @@ If you want to be able to receive BNB and other supported tokens on the Binance 
 |14     | BitKeep (App&Chrome)|<https://bitkeep.com>|No|
 |15     | Coin98 Wallet (App Web Extension)|<https://coin98.com/wallet>|No|
 |16     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|No|
+|17     | Rabby Wallet |<https://rabby.io/>|No|
