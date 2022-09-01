@@ -65,7 +65,7 @@ You can follow the [guide](https://docs.bnbchain.org/docs/binance#transfer-testn
 
 ### Declare Your Candidacy
 
-Use `tbnbcli` to create an account or recover an account, make sure the account get more than 10000 BNB.
+Use `tbnbcli` to create an account or recover an account, make sure the account get more than 10,000 BNB for Mainnet and 100 BNB for Testnet.
 
 Before sending `create-validator` transaction, make sure your bsc validator have already catched up.
 
