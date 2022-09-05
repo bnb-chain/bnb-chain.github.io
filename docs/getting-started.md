@@ -126,7 +126,7 @@ Please refer to specific SDK documentation for more information:
 - [Javascript](https://github.com/bnb-chain/javascript-sdk) ([Documentation](https://github.com/bnb-chain/javascript-sdk/wiki))
 - [C++](https://github.com/bnb-chain/cplusplus-sdk)([Documentation](https://github.com/bnb-chain/cplusplus-sdk/wiki))
 - [C#](https://github.com/bnb-chain/csharp-sdk)([Documentation](https://github.com/bnb-chain/csharp-sdk))
-- [Python](https://github.com/bnb-chain/python-sdk)([Documentation](https://python-bnb-chain.readthedocs.io/en/latest/bnb-chain.html#module-binance_chain))
+- [Python](https://github.com/bnb-chain/python-sdk)([Documentation](https://github.com/bnb-chain/python-sdk))
 - [Swift](https://github.com/bnb-chain/swift-sdk)([Documentation](https://github.com/bnb-chain/swift-sdk/blob/master/README.md))
 
 
