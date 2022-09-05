@@ -53,7 +53,7 @@ unzip mainnet.zip
 
 Fast node does not need trie data anymore, prune the trie data by the following command.
 ```
-geth snapshot insecure-prune-all --datadir ./node ./config.toml
+geth snapshot insecure-prune-all ./genesis.json --datadir ./node --config ./config.toml
 ```
 
 ### Sync From Genesis Block (Not Recommended)
