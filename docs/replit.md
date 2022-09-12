@@ -49,7 +49,7 @@ Delete the contents of the contract.sol file and paste the following solidity co
 Make sure that you have followed the list of Pre-requisites above so that you are ready to deploy and interact with your smart contract:
  
 1. Click on **Run** (at the Top) to install all relevant packages and start up the contract deployment UI.
-2. Click on ![img](./Picture4.png) icon to open the web interface for deloyment in a new browser tab.
+2. Click on ![image](https://user-images.githubusercontent.com/93580180/189651036-d5c68e4d-9154-4f36-a9b1-09ddb75bf64c.png) icon to open the web interface for deloyment in a new browser tab.
 3. Connect your MetaMask wallet to the web interface and switch to the [BSC Testnet](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain).
 4. Click on **Connect wallet**, select your account, then choose Connect.
 
