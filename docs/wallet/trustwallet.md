@@ -14,8 +14,8 @@ Trust Wallet (trustwallet.com) is a self-custodial wallet that is secure, open s
 
 **Trust Wallet** can be downloded from the [Apple Appstore](https://apps.apple.com/app/trust-ethereum-wallet/id1288339409) or from the [Google PlayStore](https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp).
 
+![image](https://user-images.githubusercontent.com/93580180/189655243-6e00c499-b7fd-4adb-992f-0e381a6b74b3.png)
 
-![img](https://community.trustwallet.com/uploads/default/original/2X/6/6b642949b5dd4eebe98e7aa167e7ff04cc70b892.jpeg)
 
 2. Launch the app in order to create a new wallet and accept the terms of use.
 
