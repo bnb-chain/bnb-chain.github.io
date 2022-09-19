@@ -103,8 +103,11 @@ Synchronizes a full node starting at genesis, verifying all blocks and executing
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
 ```
 
 2. Download the config files
@@ -123,8 +126,10 @@ Follow the guide to structure the files.
 
 4. Start a full node
 ```
-geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
+
+Note: Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
 
 ### Sync From Genesis Block (Not Recommended)
 
