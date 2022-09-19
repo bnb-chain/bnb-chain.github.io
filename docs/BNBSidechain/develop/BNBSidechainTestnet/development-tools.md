@@ -75,6 +75,8 @@ Multiple IDEs and libraries can be used for developing and deploying smart contr
 
 - [BSC Connector](https://github.com/aragon/use-wallet/tree/master/examples): This examples demonstrates how to support the Binance Chain Wallet through a custom connector.
 
+- [Etherspot](https://etherspot.io): MultiChain SmartWallet SDK
+
 
 ## Multisig
 
@@ -286,3 +288,5 @@ Multiple IDEs and libraries can be used for developing and deploying smart contr
 | Coin98 Wallet (App Web Extension) | https://coin98.com/wallet                               | No              |
 | Guarda Wallet                     | https://guarda.com/coins/binance-coin-wallet/           | No              |
 | Rabby Wallet                      | https://rabby.io/                                       | No              |
+| Pillar Wallet                     | https://pillar.fi/                                      | No              |
+
