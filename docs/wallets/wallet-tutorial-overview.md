@@ -10,8 +10,8 @@ BNB Smart Chain offers extensive support of third-party wallets that can be used
 |--------------|---------------|
 | Binance Extension Wallet| [How to use Binance Extension Wallet with BNB Smart Chain](../binance.md) |
 | Staking with Binance Extension Wallet | [How to Stake BNB Tokens using Binance Extension Wallet](../wallet/staking.md)    
-| Metamask| [How to use Metamask with BNB Smart Chain](../wallet/metamask.md)|
 | Trust Wallet | [How to use Trust Wallet with BNB Smart Chain](../wallet/trustwallet.md) |
+| Metamask| [How to use Metamask with BNB Smart Chain](../wallet/metamask.md)|
 | Alpha Wallet | [How to use Alpha Wallet with BNB Smart Chain](../wallet/AlphaWallet.md) |
 | Arkane Wallet | [How to use Arkane Wallet with BNB Smart Chain](../wallet/arkane.md) |
 | Coin98 Wallet | [How to use Coin98 Wallet with BNB Smart Chain](../wallet/coin98wallet.md) |
