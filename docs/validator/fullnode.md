@@ -3,33 +3,33 @@ sidebar_label: BNB Smart Chain Full Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
-# How to Run A Fullnode on BNB Smart Chain
+# How to Run a Fullnode on BNB Smart Chain
 
-## Fullnodes Functions
+## Fullnode Functions
 
-* Stores the full blockchain history on disk and can answer the data request from the network.
+* Stores the full blockchain history on the disk and can answer the data request from the network.
 * Receives and validates the new blocks and transactions.
 * Verifies the states of every accounts.
 
 ## Supported Platforms
 
-We support running a full node on `Mac OS X`and `Linux`.
+We support running a full node on `Mac OS X` or `Linux`.
 
 ## Suggested Requirements
 
 ### Fullnode
 - VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if start with snap/fast sync, it will need NVMe SSD)
-- 16 cores of CPU and 64 gigabytes of memory (RAM).
-- Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 5 megabyte per second
+- **IMPORTANT** 2T of free disk space, solid-state drive (SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (If it starts with snap/fast sync, it will need NVMe SSD)
+- 16 cores of CPU and 64GB of memory (RAM).
+- We suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
+- A broadband internet connection with upload/download speeds of 5MB/S.
 
 ### Validator
 - VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
-- 16 cores of CPU and 64 gigabytes of memory (RAM)
-- Suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 10 megabyte per second
+- **IMPORTANT** 2T of free disk space, solid-state drive (SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms.
+- 16 cores of CPU and 64GB of memory (RAM).
+- We suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
+- A broadband internet connection with upload/download speeds of 10MB/S.
 
 ## Settings
 
@@ -37,7 +37,7 @@ We support running a full node on `Mac OS X`and `Linux`.
 
 Sometimes you just can’t get synced. The most common reasons are as follows:
 
-* You have started `geth` without the discovery protocol, you can set the `--nodiscover` parameter to `False`. You only want this if you are running full node with fixed nodes.
+* You have started `geth` without the discovery protocol, you can set the `--nodiscover` parameter to `false`. You only want this if you are running full node with fixed nodes.
 
 - Update `BootstrapNodes`
 
@@ -47,7 +47,7 @@ BootstrapNodes = ["enode://1cc4534b14cfe351ab740a1418ab944a234ca2f702915eadb7e55
 
 - Add `Static nodes`
 
-Geth also supports a feature called static nodes if you have certain peers you always want to connect to. Static nodes are re-connected on disconnects. You can configure permanent static nodes by putting something like the following into `<datadir>/geth/static-nodes.json`:
+`geth` also supports a feature called static nodes if you have certain peers you always want to connect to. Static nodes are re-connected on disconnects. You can configure permanent static nodes by putting something like the following into `<datadir>/geth/static-nodes.json`:
 
 ```
 [
@@ -63,7 +63,7 @@ Geth also supports a feature called static nodes if you have certain peers you a
 ]
 ```
 
-You can also add static nodes at runtime via the js console using admin.addPeer():
+You can also add static nodes at runtime via the js console using `admin.addPeer()`:
 
 ```
 admin.addPeer( "enode://8fb5dd1259e0672efb8c141434bf0c24c73b338f7c2da15efc2def7403b952d453814230eeb97f555aaed46ee0b0b6e2a8568b518f88bd328729031746114dd2@3.0.236.154:30311"
@@ -72,7 +72,7 @@ admin.addPeer( "enode://8fb5dd1259e0672efb8c141434bf0c24c73b338f7c2da15efc2def74
 
 - Add `Trusted nodes`
 
-Geth supports trusted nodes that are always allowed to reconnect, even if the peer limit is reached. They can be added permanently via a config file `<datadir>/geth/trusted-nodes.json` or temporary via RPC call.
+`geth` supports trusted nodes that are always allowed to reconnect, even if the peer limit is reached. They can be added permanently via a config file `<datadir>/geth/trusted-nodes.json` or temporary via RPC call.
 
 ## Chaindata Snapshot
 
@@ -102,11 +102,11 @@ Synchronizes a full node starting at genesis, verifying all blocks and executing
 
 ```bash
 # Linux
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep geth_linux | cut -d\" -f4)
 mv geth_linux geth
 
 # MacOS
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep geth_mac | cut -d\" -f4)
 mv geth_mac geth
 ```
 
@@ -115,13 +115,13 @@ mv geth_mac geth
 Download `genesis.json` and `config.toml` by:
 
 ```bash
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep mainnet | cut -d\" -f4)
 unzip mainnet.zip
 ```
 
 3. Download snapshot
 
-Download latest snapshot from [Download site](https://github.com/bnb-chain/bsc-snapshots)
+Download latest snapshot from the [download site](https://github.com/bnb-chain/bsc-snapshots)
 Follow the guide to structure the files.
 
 4. Start a full node
@@ -129,11 +129,11 @@ Follow the guide to structure the files.
 ./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
-Note: Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
+Note: Make sure you use the version of `geth` you downloaded with `wget` above, and not your local installation of `geth`, which might be the wrong version.
 
 ### Sync From Genesis Block (Not Recommended)
 
-1.Build from source code
+1. Build from source code
 
 Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
 
@@ -149,26 +149,26 @@ or you can download the pre-build binaries from [release page](https://github.co
 
 ```bash
 # Linux
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep geth_linux | cut -d\" -f4)
 # MacOS
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep geth_mac | cut -d\" -f4)
 ```
 
-2.Download the config files
+2. Download the config files
 
 Download `genesis.json` and `config.toml` by:
 
 ```bash
 ## mainet
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep mainnet | cut -d\" -f4)
 unzip mainnet.zip
 
 ## testnet
-wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest | grep browser_ | grep testnet | cut -d\" -f4)
 unzip testnet.zip
 ```
 
-3.Write genesis state locally
+3. Write genesis state locally
 
 ```bash
 geth --datadir node init genesis.json
@@ -187,8 +187,7 @@ INFO [05-19|14:53:17.525] Persisted trie from memory database      nodes=21 size
 INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=lightchaindata hash=7d79cc…fb0d1e
 ```
 
-4.Start your fullnode
-
+4. Start your Fullnode
 
 !!! Note
     BREAKING CHANGE: Non-EIP155 transactions (i.e. transactions which are not replay-protected) are now rejected by the RPC API. You can disable this restriction using the --rpc.allow-unprotected-txs command-line flag.
@@ -211,9 +210,9 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 !!! Note
 	Because the default value of `TrieTimeout` in config.toml is large, it means `geth` will not persist state into database until reach this time threshold, if the node has been force shutdown, it will start syncing from last state which may take long time. The recommended setting for valiidators is `TrieTimeout = 100000000000`
 
-5.Monitor node status
+5. Monitor node status
 
-you can monitor the log from `/node/bsc.log` by default.
+You can monitor the log from `/node/bsc.log` by default.
 
 ## Node Maintainence
 
@@ -234,7 +233,7 @@ How to prune:
 
 The maintainers should always have a few backup nodes.
 
-The hardware is also important, **make sure the SSD meets: 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms**.
+The hardware is also important, **make sure the SSD meets: 2T GB of free disk space, solid-state drive (SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms**.
 
 ### Diff Sync
 The diffsync protocol rolled out as a stable feature in release v1.1.5. Diff sync improves the syncing speed by 60%～70% approximately according to the test. All full nodes are suggested to enable it by adding `--diffsync` in the starting command.  
@@ -244,5 +243,5 @@ When the node crashes or been force killed, the node will sync from a block that
 
 ## Upgrade Geth
 
-Please read [this guide](./upgrade-fullnode.md)
+Please read [this guide](./upgrade-fullnode.md).
 
