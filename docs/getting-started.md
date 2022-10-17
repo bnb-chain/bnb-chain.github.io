@@ -20,7 +20,7 @@ You can:
 - [Send and receive BNB](beaconchain/wallet/../transfer.md#web-wallet)
 - [Issue new tokens to digitalize assets](https://community.binance.org/topic/2487), and use Beacon Chain as underlying exchange/transfer network for the assets
 - Send, receive, [burn](beaconchain/tokens.md#burn)/[mint](beaconchain/tokens.md#mint) and [freeze/unfreeze](beaconchain/tokens.md#freeze-unfreeze) tokens
-- [Sumbit an on-chain governance proposal for BNB Smart Chain](learn/bsc-gov.md)
+- [Submit an on-chain governance proposal for BNB Smart Chain](learn/bsc-gov.md)
 
 
 **For traders**, you can:
