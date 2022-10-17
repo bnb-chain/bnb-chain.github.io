@@ -656,7 +656,7 @@ If the time window is larger than limits, only the first n klines will return. I
 ### /api/v1/transactions
 ---
 
-**Note:** This endpoint will be retired soon, use [this api](https://docs.binance.org/api-reference/dex-api/block-service.html#apiv1txs) instead (please read the migration guide).
+**Note:** This endpoint will be retired soon, use [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1txs) instead (please read the migration guide).
 
 ##### ***GET***
 **Summary:** Get transactions.
@@ -694,7 +694,7 @@ If the time window is larger than limits, only the first n klines will return. I
 
 ### /api/v1/transactions-in-block/{blockHeight}
 ---
-**Note:** This endpoint will be retired soon, use [this api](https://docs.binance.org/api-reference/dex-api/block-service.html#apiv1blocksblockheighttxs) instead (please read the migration guide).
+**Note:** This endpoint will be retired soon, use [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1blocksblockheighttxs) instead (please read the migration guide).
 
 ##### ***GET***
 **Summary:** Get transactions in the specific block.
@@ -723,7 +723,7 @@ If the time window is larger than limits, only the first n klines will return. I
 
 ### /api/v2/transactions-in-block/{blockHeight}
 
-**Note:** This endpoint will be retired soon, use [this api](https://docs.binance.org/api-reference/dex-api/block-service.html#apiv1blocksblockheighttxs) instead (please read the migration guide).
+**Note:** This endpoint will be retired soon, use [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1blocksblockheighttxs) instead (please read the migration guide).
 
 ---
 ##### ***GET***
