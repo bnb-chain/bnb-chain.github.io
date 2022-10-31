@@ -19,12 +19,14 @@ const config = {
   
   plugins: [
              require.resolve("docusaurus-plugin-image-zoom"),
-             require.resolve('docusaurus-gtm-plugin'),
+              
+              [require.resolve('docusaurus-gtm-plugin'),
               {
-                id: 'GTM-W9BVQXM',
-              }
-           ],
-  
+                  id: 'GTM-W9BVQXM', // GTM Container ID
+              }],
+              
+            ],
+
   presets: [
     [
       '@docusaurus/preset-classic',
