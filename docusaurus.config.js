@@ -17,7 +17,14 @@ const config = {
   deploymentBranch: 'gh-pages',
  
   
-  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
+  plugins: [
+             require.resolve("docusaurus-plugin-image-zoom"),
+             require.resolve('docusaurus-gtm-plugin'),
+              {
+                id: 'GTM-W9BVQXM',
+              }
+           ],
+  
   presets: [
     [
       '@docusaurus/preset-classic',
