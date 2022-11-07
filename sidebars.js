@@ -42,7 +42,7 @@ const sidebars = {
                           collapsed: true,
                           label: 'BC and BSC Cross-Chain Mechanism',
                           items: ['learn/cross-chain', 'learn/system-contract',
-                                  'learn/cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
+                                  'cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
                                   'learn/oracle-module','learn/oracle-relayer']},
                                   'learn/bsc-gov']
                 },
@@ -89,7 +89,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'BEP20 Tokens',
-                        items: ['BEP20', 'issue-BEP20', 'remix',
+                        items: ['BEP20', 'issue-BEP20', 
                                   {
                                     type: 'category',
                                     //collapsible: true,
