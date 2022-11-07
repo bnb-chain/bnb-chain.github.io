@@ -211,8 +211,9 @@ const sidebars = {
                         type:'category',
                         label: 'Learn',
                         collapsed: true,
-                        items:[ 'beaconchain/learn/architecture', 'beaconchain/learn/accounts', 'beaconchain/learn/assets',
-                        'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature',
+                        items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/assets',
+                        'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8', 
+                        
                         {
                             type: 'category',
                             label: 'Encoding',
