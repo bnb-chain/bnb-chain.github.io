@@ -23,6 +23,7 @@ const config = {
               [require.resolve('docusaurus-gtm-plugin'),
               {
                   id: 'GTM-W9BVQXM', // GTM Container ID
+                  preview: 'live',
               }],
               
             ],
