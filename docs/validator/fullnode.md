@@ -13,25 +13,23 @@ sidebar_position: 2
 
 ## Supported Platforms
 
-We support running a full node on `Mac OS X`and `Linux`.
+We support running a full node on `Mac OS X`, `Linux`, and `Windows`.
 
 ## Suggested Requirements
 
 ### Fullnode
-- VPS running recent versions of Mac OS X or Linux.
+- VPS running recent versions of Mac OS X, Linux, or Windows.
 - **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if start with snap/fast sync, it will need NVMe SSD)
 - 16 cores of CPU and 64 gigabytes of memory (RAM).
 - Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
 - A broadband Internet connection with upload/download speeds of 5 megabyte per second
 
 ### Validator
-- VPS running recent versions of Mac OS X or Linux.
+- VPS running recent versions of Mac OS X, Linux, or Windows.
 - **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
 - 16 cores of CPU and 64 gigabytes of memory (RAM)
 - Suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
 - A broadband Internet connection with upload/download speeds of 10 megabyte per second
-
-## Settings
 
 ## Steps to Run a Fullnode
 
@@ -68,8 +66,9 @@ Download latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots)
 ```
 ./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
-
-Note: Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
+:::note
+Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
+:::
 
 ### Sync From Genesis Block (Not Recommended)
 
@@ -134,9 +133,11 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 
 4.Start your fullnode
 
+:::note
+    BREAKING CHANGE: Non-EIP155 transactions (i.e. transactions which are not replay-protected) are now rejected by the RPC API. 
+    You can disable this restriction using the --rpc.allow-unprotected-txs command-line flag.
+:::
 
-!!! Note
-    BREAKING CHANGE: Non-EIP155 transactions (i.e. transactions which are not replay-protected) are now rejected by the RPC API. You can disable this restriction using the --rpc.allow-unprotected-txs command-line flag.
 
 ```bash
 ## start a full node
@@ -145,7 +146,7 @@ geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotect
 
 5.Monitor node status
 
-You can monitor the log from `/node/bsc.log` by default. When your node has started syncing, you should be able see the following output:
+You can monitor the log from `/node/bsc.log` by default. When your node has started syncing, you should be able to see the following output:
 
 ```
 t=2022-09-08T13:00:27+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=177   mgas=17.317   elapsed=31.131ms    mgasps=556.259  number=21,153,429 hash=0x42e6b54ba7106387f0650defc62c9ace3160b427702dab7bd1c5abb83a32d8db dirty="0.00 B"

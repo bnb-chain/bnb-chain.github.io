@@ -45,10 +45,11 @@ $ kill  $pid
 
 
 ## Step 3: Restart
-
-
+:::note
+Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our [tutorial](./validator/fullnode.md) 
+:::
 
 ```bash
-## Start your node. Make sure to use the same start-up command you used before the upgrade.
-geth --config ./config.toml --datadir ./node --syncmode snap
+##
+./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
