@@ -48,7 +48,7 @@ BNB Chain is an ecosystem comprising two major blockchains that serve different 
 
 ![image](https://user-images.githubusercontent.com/93580180/201683059-ef7983fa-6828-4c66-a87c-bf62ba4456b9.png)
 
-**Solana Architecture Overview**
+### Solana Architecture Overview
 
 ![image](https://user-images.githubusercontent.com/93580180/201683132-8302d96b-57be-4722-ac81-90c655b125fd.png)
 
@@ -63,7 +63,7 @@ In order to create a decentralized and permissionless network, the Solana ecosys
 - [**Cloudbreak**](https://medium.com/solana-labs/cloudbreak-solanas-horizontally-scaled-state-architecture-9a86679dcbb1?source=post_page---------------------------) — Horizontally-Scaled Accounts Database; and
 - [**Archivers**](https://medium.com/solana-labs/announcing-the-solar-bridge-c90718a49fa2) — Distributed ledger storage
 
-**Architectural Differences**
+## Architectural Differences
 
 In this section, we discuss and compare the differences in the architecture and underlying working mechanisms of both BSC and the Solana network.
 
@@ -90,7 +90,7 @@ In this section, we discuss and compare the differences in the architecture and 
   
 - **Reliability:** Throughout this year, Solana displayed several reliability issues and outages. The network has suffered up to 10 partial or complete outages in 2022 and some slow block times. Whereas, BSC, on the other hand, it has never faced slow block times due to uncontrolled outages. BSC has rolled out several breakthrough features to further strengthen its scalability and reliability.
 
-**Architectural differences that affect programmability**
+### Architectural differences that affect programmability
 
 Other than the underlying working mechanism like consensus and security, architectural differences affect the way dApps are programmed on either of the blockchain networks.
 
