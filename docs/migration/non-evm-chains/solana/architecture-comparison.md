@@ -2,7 +2,10 @@
 sidebar_label: Architecture
 sidebar_position: 2
 ---
-# Solana VS BNB Chain
+
+# BNB Chain and Solana Architecture Differences 
+
+This document covers the architectural differences between BNB Chain and Solana blockchain, providing an overview to developers aiming to migrate their projects from Solana to BNB Chain ecosytem.
 
 ## Architectural and Technical Comparisons
 
@@ -55,6 +58,8 @@ BNB Chain is an ecosystem comprising two major blockchains that serve different 
 ### Solana Architecture Overview
 
 ![image](https://user-images.githubusercontent.com/93580180/201683132-8302d96b-57be-4722-ac81-90c655b125fd.png)
+
+[Image Source](https://www.immunebytes.com/blog/solanas-architecture-the-top-8-innovations-that-make-it-unique/)
 
 In order to create a decentralized and permissionless network, the Solana ecosystem comprises 8 key technologies:
 
@@ -130,7 +135,7 @@ In this section, we highlight some of these major differences that a web3 develo
 
       ![image](https://user-images.githubusercontent.com/93580180/201683595-dc786a17-eebc-4d51-a51e-74988e2d0c91.png)
       
-      [**Image Source**](https://solanacookbook.com/assets/account_example.5b70d95a.jpeg)
+      [Image Source](https://solanacookbook.com/assets/account_example.5b70d95a.jpeg)
 
   3. **EVM Contracts vs Solana PDA**
      On BSC, smart contracts are EVM compatible. On EVM, smart contracts are stored on the contract accounts. A contract account is controlled by code executed by the EVM. Contract accounts have associated code and data storage, controlled by the code itself. The controlling behavior is defined in the smart contract stored in them. Creating a contract account has a cost due to network storage. A contract account can only send transactions in response to receiving a transaction. Transactions from an external account (user account) to a contract account can trigger code, which can execute many different actions.
