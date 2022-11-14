@@ -169,7 +169,28 @@ const sidebars = {
             },
             /*{type:'doc', id:'Staking', label:'Staking on BSC'},*/
             //{type: 'doc',   id: 'del-guide',   label: 'Delegator Guide'},
-        
+                    
+            {
+              type: 'category',
+              collapsed: true,
+              label: 'Migrating to BNB Chain',
+              items: [
+              {
+                type: 'category',
+                collapsed: true,
+                label: 'From Non-EVM Chain',
+                items:[
+                 {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Solana',
+                  items:['migration/non-evm-chains/solana/architecture-comparison']
+              },
+                ]
+              },
+              ]
+            },
+           
             {type: 'doc',   id: 'Integrate',   label: 'Integration'},
       
             {
