@@ -1,3 +1,7 @@
+---
+sidebar_label: Architecture
+sidebar_position: 2
+---
 # Solana VS BNB Chain
 
 ## Architectural and Technical Comparisons
