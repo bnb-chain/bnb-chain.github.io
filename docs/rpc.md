@@ -77,6 +77,8 @@ The rate limit of BSC endpoint on Testnet and Mainnet is 8K/5min.
   
 * [BlockVision](https://docs.blockvision.org/blockvision/): <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
 
+* [NOWNodes](http://bit.do/nownodes-bsc): <http://bit.do/nownodes-bsc>
+
 
 ## Start HTTP JSON-RPC
 
