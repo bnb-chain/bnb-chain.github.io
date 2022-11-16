@@ -26,7 +26,7 @@ $ mkdir <my projects folder>
 $ sudo ln -s <my projects folder> /projects
 ```
 
-###s Create local\_ethereum\_blockchain folder
+### Create local\_ethereum\_blockchain folder
 
 ```
 $ mkdir /projects/local_ethereum_blockchain
