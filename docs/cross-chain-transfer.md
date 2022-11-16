@@ -1,10 +1,10 @@
 ---
-sidebar_label: Cross-Chain Transfer Token Transfer
+sidebar_label: Cross-Chain Token Transfer
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Cross-Chain Transfer Token Transfer
+# Cross-Chain Token Transfer
 
 Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and BEP20 tokens on BSC.
 
