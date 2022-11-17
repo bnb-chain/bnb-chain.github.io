@@ -2,7 +2,6 @@
 sidebar_label: Introduction
 sidebar_position: 2
 ---
-
 # 소개
 
 [비컨 체인](https://www.binance.org) 은 [바이낸스](https://www.binance.com)와 BNB 커뮤니티에서 가상 자산을 위한 DEX(탈중앙화 거래소)를 구현하기 위해 개발되었습니다.
