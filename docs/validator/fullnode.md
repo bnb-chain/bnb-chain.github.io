@@ -19,17 +19,29 @@ We support running a full node on `Mac OS X`, `Linux`, and `Windows`.
 
 ### Fullnode
 - VPS running recent versions of Mac OS X, Linux, or Windows.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if start with snap/fast sync, it will need NVMe SSD)
-- 16 cores of CPU and 64 gigabytes of memory (RAM).
+- **IMPORTANT** 2 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250 MB/S throughput, read latency <1ms. (if node is started with snap sync, it will need NVMe SSD)
+- 16 cores of CPU and 64 GB of memory (RAM)
 - Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 5 megabyte per second
+- A broadband Internet connection with upload/download speeds of 5 MB/S
 
 ### Validator
 - VPS running recent versions of Mac OS X, Linux, or Windows.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
-- 16 cores of CPU and 64 gigabytes of memory (RAM)
+- **IMPORTANT** 2 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
+- 16 cores of CPU and 64 GB of memory (RAM)
 - Suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 10 megabyte per second
+- A broadband Internet connection with upload/download speeds of 10 MB/S
+
+## Settings
+
+### Sync Mode
+
+There are two sync modes for running a full node: `snap` and `full` which can be specified by flag `--syncmode`.
+
+The `snap` sync mode is used for initial sync, which will download the latest states rather than apply the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.
+
+The `full` sync mode can also be used to do initial sync, which will apply all the blocks since genesis.
+
+Since the amount of historical data is too large, the initial sync is not recommended for running a full node. Instead, you can download a snapshot from the official repo and start from the snapshot. Default value is `full` when you start geth with an existing data folder so no need there is no need to explicitly add it when syncing from snapshot.
 
 ## Steps to Run a Fullnode
 
@@ -60,7 +72,11 @@ unzip mainnet.zip
 
 3. Download snapshot
 
-Download latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure the files.
+Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
+
+:::note
+Your --datadir flag should point to the extracted chaindata folder path
+:::
 
 4. Start a full node
 ```

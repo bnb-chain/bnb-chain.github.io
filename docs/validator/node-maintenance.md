@@ -12,7 +12,7 @@ The bootstrap nodes will be enhanced in the short future. So far, a discovery ht
 All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
 
 ### Storage
-According to the test, the performance of a fullnode will degrade when the storage size exceeds 1.5T. We suggest the fullnode always keep light storage by pruning the storage. 
+According to the test, the performance of a fullnode will degrade when the storage size exceeds 1.5 TB. We suggest the fullnode always keep light storage by pruning the storage. 
 
 How to prune:
 
@@ -22,7 +22,7 @@ How to prune:
 
 The maintainers should always have a few backup nodes.
 
-The hardware is also important, **make sure the SSD meets: 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms**.
+The hardware is also important, **make sure the SSD meets: 2 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms**.
 
 ### Diff Sync
 The diffsync protocol rolled out as a stable feature in release v1.1.5. Diff sync improves the syncing speed by 60%～70% approximately according to the test. All full nodes are suggested to enable it by adding `--diffsync` in the starting command.  
