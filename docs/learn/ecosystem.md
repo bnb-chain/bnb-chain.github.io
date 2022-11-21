@@ -83,5 +83,5 @@ Goto [BSC Developer Ecosystem](https://github.com/bnb-chain/bsc-ecosystem/blob/m
 | Governance/DAO | 
 | Gaming Related Infrastructure | [Carv (Gaming Credential)](https://carv.io/), [Community Gaming (Tournament)](https://www.communitygaming.io/)
 | Security Audit |	[Certik](https://www.certik.com/), [PeckShield](https://peckshield.com/)
-| Payment | [SWFT](https://www.swft.pro/zh-pc/#/home), [MultiSender](https://multisender.app/) | [Celer Network](https://www.celer.network/), [Connext](https://connext.network/)
+| Payment | [SWFT](https://www.swft.pro/zh-pc/#/home), [MultiSender](https://multisender.app/), [Crypto Multisender](https://cryptomultisender.com/)| [Celer Network](https://www.celer.network/), [Connext](https://connext.network/)
 | Payment Gateway | [Bifinity](https://bifinity.com), [MoonPay](https://www.moonpay.com/), [Transak](https://transak.com/)
