@@ -80,4 +80,4 @@ Address_Bech32 = HRP + '1' + bech32.encode(convert8BitsTo5Bits(RIPEMD160(SHA256(
 
 #### 서명
 
-비컨 체인은 바이트 배열의 JSON 인코딩 트랜잭션 표준 표현으로 도출한 `SHA256` 해시값을 secp256k1 곡선에서 ECDSA 서명하는데 사용합니다. 자세한 정보는 [이 페이지](encoding/encoding.md#canonical-bytes-for-signing)를 참고하세요.
+비컨 체인은 바이트 배열의 JSON 인코딩 트랜잭션 표준 표현으로 `SHA256` 해시값을 도출하고, 이 값을 secp256k1 곡선에서 ECDSA 서명하는데 사용합니다. 자세한 정보는 [이 페이지](encoding/encoding.md#canonical-bytes-for-signing)를 참고하세요.
