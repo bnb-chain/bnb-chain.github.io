@@ -4,21 +4,21 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# BNB Sidechain Architecture
+# BNB 사이드체인 구성
 
-BNB Sidechain is a modular framework for creating BSC-compatible sidechains. It defines requirements for integration with the BSC ecosystem and brings development-ready EVM-compatible features like staking, RPC-API, and smart contracts. Since BSC doesn’t rely on the BNB Sidechain security model, there is no default embedded production-ready bridge solution between the BSC and BNB Sidechain networks. Instead, BNB Sidechain can provide protocols and standards for integrating third-party bridges like Multichain or Celer Network cBridge.
+BNB 사이드체인은 BSC-호환 사이드체인을 만드는 모듈식 프레임워크입니다. BSC 생태계와 통합하기 위한 요구사항을 정의하고 스테이킹이나 RPC-API, 스마트 컨트랙트 같이 개발된 EVM-호환 기능들을 제공합니다. BSC는 BNB 사이드체인 보안 모델에 의존하지 않으므로, BSC와 BNB 사이드체인 네트워크 간의 표준 브릿지 솔루션이 없습니다. 대신 BNB 사이드체인은 Multichain이나 Celer Network cBridge같은 서드 파티 브릿지와 통합하기 위한 프로토콜과 표준을 제공할 수 있습니다.
 
-## BNB Sidechain Structure and Integration
+## BNB 사이드체인 구조와 통합
 
 BNB Sidechain specifies the primary structure and configuration of the blockchain, using special templates. A **template** is a ready-made blockchain solution that is **already integrated into the BSC infrastructure**. With this integration, developers automatically get access to products like a ready-made staking system, block explorer, API gateways, interfaces for governance, etc. 
 
-After applying templates, BNB Sidechain can be customized using programmable and configurable **modules**.
+템플릿을 적용한 후, BNB 사이트체인은 프로그램 가능 및 설정 가능한 **모듈**을 통해 쉽게 커스터마이징이 가능하다,
 
 ![img](../../../static/img/assets/bas-architecture1.png)
 
-## Modules
+## 모듈
 
-The main goal of BNB Sidechain is to build such a multi-modular blockchain architecture that it is flexible, convenient, and easy to use.
+BNB 사이드체인의 주요 목표는 다중 모듈식 블록체인 구조를 구현하고, 누구나 사용이 편리하고 유연하게 만드는 것입니다.
 
 As the current implementation of BNB Sidechain is built on BSC, all existing modules are built into the system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
 
@@ -38,15 +38,15 @@ BNB Sidechain brings with it programmable and configurable modules that can be u
 
 - PoSA Consensus & Staking — for users to be able to stake to the authorized validators in the BNB Sidechain network and guarantee the safeness of actions applied on the chain.
 
-- Governance — A decentralized voting system for managing and implementing changes to cryptocurrency blockchains.
+- 거버넌스 — A decentralized voting system for managing and implementing changes to cryptocurrency blockchains.
 
-- Storage & State — for persisting local data.
+- 저장 및 상태 — 로컬 데이터를 유지하기 위해.
 
-Internally, BNB Sidechain implements the following modules: Parlia consensus engine, staking pools, governance, dynamic runtime upgrades, reward management, manageable blockchain params, and EVM hooks.
+내부적으로 BNB 사이드체인은 다음과 같은 모듈을 구현하고 있습니다: Parlia 합의 엔진, 스테이킹 풀, 거버넌스, 동적 런타임 업그레이드, 보상 관리, 관리 가능한 블록체인 변수와 EVM 후크.
 
-## Repositories
+## 리포지토리
 
-Here is the list repositories provided by Ankr for development on BNB Sidechain:
-* [BNB Sidechain-genesis-config](https://github.com/bnb-chain/bas-genesis-config) — genesis smart contracts and scripts for building the genesis config.
-* [BNB Sidechain-template-bsc](https://github.com/bnb-chain/bas-template-bsc) — BNB Sidechain-compatible based template.
-* [BNB Sidechain-devnet-setup](https://github.com/bnb-chain/bas-devnet-setup) — scripts for running BNB Sidechain devnet.
+다음은 앵커(Ankr)에서 제공하는 BNB 사이드체인 개발을 위한 리포지토리입니다:
+* [BNB Sidechain-genesis-config](https://github.com/bnb-chain/bas-genesis-config) — 최초 스마트 컨트랙트 및 최초 구성 파일 생성을 위한 스크립트.
+* [BNB Sidechain-template-bsc](https://github.com/bnb-chain/bas-template-bsc) — BNB 사이드체인 호환 기반 형식.
+* [BNB Sidechain-devnet-setup](https://github.com/bnb-chain/bas-devnet-setup) — BNB 사이드체인 개발넷(devnet)을 실행하기 위한 스크립트.
