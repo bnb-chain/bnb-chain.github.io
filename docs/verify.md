@@ -4,38 +4,38 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# How to Verify Your Contract on BscScan
+# BscScan에서 컨트랙트 확인하기
 
-**Step 1:** Deploy your contract on BNB Smart Chain
+**Step 1:** BNB 스마트 체인에 컨트랙트를 배포합니다
 
-**Step 2:** Go to [BSC Explorer](https://bscscan.com/) or [Testnet Explorer](https://testnet.bscscan.com/)
+**Step 2:** [BSC 익스플로러](https://bscscan.com/) 또는 [테스트넷 익스플로러](https://testnet.bscscan.com/)에 들어갑니다.
 
-Click on "Verify and Publish"
+"Verify and Publish"를 클릭합니다.
 
 ![img](https://lh3.googleusercontent.com/SHt9Cf6Nw2lvVK2rVkiOkpwlM876wW4ZwzEg34DWOgjkeXrRgBuMxnTOjLcEYimPBmKAfC860nu6iM3pfrUKif7lZdp3e_fUwNWtzSuVlOwlVrwJP9K-npvvKGclWFIZsUcrzvsu)
 
-**Step 3:** Fill in the correct information of your contract
+**Step 3:** 컨트랙트 정보를 입력합니다.
 
 
 ![img](https://lh4.googleusercontent.com/XnMmBoBQQMcPNogOjRG4ebUkWf5R0rztarXd7DmgKgw2wi82s4OX_pG6kxVMNHblM1zxI04aL78LZiYCeDWOqKBjeQVuy2RYVlBOTSF8LqcPSZWrVhbcWus4lhVPzQyXgwluN535)
 
 
-* Contract Address
-* Compiler Type you chose in Remix or other complier
-* Select Open Source License Type
+* 컨트랙트 주소
+* Remix나 다른 컴파일러에서 선택한 컴파일러 타입
+* 오픈소스 라이선스 타입 선택
 
-**Step 4:**  Enter the Solidity Contract Code
+**Step 4:**  솔리디티 컨트랙트 코드 입력하기
 
 
 ![img](https://lh4.googleusercontent.com/vzkUcj-_WH3_XN8FH81lQ7Ha_2_xPZAP-VT0pM_KzWUA9tRKhG9Ha-gaeZeSCClHUWE4CTv9wslSFtbAaJVVwfDWIjgXyF50ZxCbVEjsZ9yLYavB-5BuyGmd1t1LR875rIQj7sCu)
 
-You need to select "Yes" for Optimization, if that's enabled.
+최적화가 활성화되어 있다면 Optimization에 "Yes"를 선택합니다.
 
-Contructor arguement is optional. If your contract do have one, you can go to [this page](https://abi.hashex.org/#) to generate the encoded ABI json.
+Contructor argument는 선택 사항입니다. 이것이 컨트랙트에 있다면, [이 페이지](https://abi.hashex.org/#)로 가서 인코딩된 ABI json을 생성하세요.
 
-!!! info
+!!! 정보
 
-	The default BEP20 contract template does not have a constructor method
+	기본 BEP20 컨트랙트 템플릿은 constructor 메서드를 가지고 있지 않습니다.
 
 
-Click on "Verify and Publish" to finish this process. Now you are all set!
+"Verify and Publish"를 클릭하여 이 프로세스를 종료합니다. 이제 모든 준비가 완료되었습니다!

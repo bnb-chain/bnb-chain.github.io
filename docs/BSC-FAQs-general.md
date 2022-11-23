@@ -65,6 +65,8 @@ BNB Smart Chain is an innovative solution to bring programmability and interoper
 
 Please read this [guide](./wallet/withdraw-en.md)
 
+清阅读以下 [说明](./wallet/withdraw-cn.md)
+
 ### How does BNB Smart Chain work? What are the architecture and consensus used?
 
 BNB Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.

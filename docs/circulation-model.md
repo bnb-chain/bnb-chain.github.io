@@ -4,78 +4,78 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Circulation Model
+# 유통 모델
 
-BC and BSC share the same token universe for BNB and BEP8/BEP2/BEP20 tokens. This defines:
+BC 및 BSC는 BNB 및 BEP8/BEP2/BEP20 토큰에 대해 동일한 토큰 유니버스를 공유합니다. 이는 다음을 정의합니다.
 
-- The same token can circulate on both networks, and flow between them bi-directionally via a cross-chain communication mechanism. 
-- The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the token’s total effective supply on both BSC and BC.
-- The tokens can be initially created on BSC as a BEP20, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
+- 동일한 토큰이 두 네트워크에서 유통될 수 있으며, 체인 간 통신 메커니즘을 통해 두 네트워크 간에 양방향으로 흐릅니다. 
+- 동일한 토큰의 총 발행량은 두 네트워크에서 관리되어야 합니다. 즉, 토큰의 총 유효 공급은 BSC와 BC 모두에서 토큰의 총 유효 공급의 합이어야 합니다.
+- 토큰은 처음에 BSC에서 BEP20으로, BC에서 BEP2로 생성한 후 다른 쪽에서 생성할 수 있습니다. 두 네트워크를 모두 연결하여 토큰의 총 공급을 확보할 수 있는 자체적 방법들이 있습니다.
 
-## Peg Account
-To secure the total circulation of the token on both chains, we introduce `Peg Account` to lock tokens on chain.
-`Peg Account` is a pure-code-controlled account that no one has the right to access to the account.
+## Peg 계정
+두 체인 모두에서 토큰의 총 유통량을 확보하기 위해 토큰을 체인에 고정하는 `Peg Account`를 도입합니다.
+`Peg Account`는 순수 코드로 제어되는 계정으로서 누구도 해당 계정에 접근할 수 있는 권한이 없습니다.
  
-- For BC, the `Peg Account` is `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`. (`tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr` for testnet) 
-- For BSC, the `Peg Account` is [TokenHub](https://bscscan.com/address/0x0000000000000000000000000000000000001004) contract.
+- BC의 경우 'Peg 계정'은 `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`. (테스트넷은 `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`)
+- BSC의 경우 `Peg Account`은 [TokenHub](https://bscscan.com/address/0x0000000000000000000000000000000000001004) 컨트랙트입니다.
 
-## Bind
-Token Binding can happen at any time after BEP2/BEP8 and BEP20 are ready. The token owners of either BEP2/BEP8 or BEP20 only need to complete the **Binding** process when a cross-chain feature is necessary.
+## 바인딩
+토큰 바인딩은 BEP2/BEP8 및 BEP20이 준비된 후 언제든지 수행될 수 있습니다. BEP2/BEP8 또는 BEP20의 토큰 소유자는 크로스 체인 기능이 필요한 경우에만 **바인딩** 프로세스를 수행하면 됩니다.
 
-**Binding** process helps to build the relationship between the two tokens on BC and BSC. It will ensure that the two tokens share the same symbol and same total supply. The most important part is that it will reallocate the circulation on both chains to ensure the total circulation equals the total supply. 
+**바인딩** 프로세스는 BC와 BSC에서 두 토큰 간의 관계를 구축하는 데 도움이 됩니다. 두 토큰이 동일한 심볼과 총 공급을 공유하도록 합니다. 가장 중요한 부분은 총 유통량이 총 공급량과 동일하도록 하기 위해 두 체인 모두에서 유통량을 재배분한다는 것입니다. 
 
-Let's walk through an example:
+예를 들어 보겠습니다.
 
-1. Bob issues BTC on BC with a total supply of 10, and he sends Alice 2 BTC.
-2. Bob issues BTC on BSC with a total supply of 10, and he sends Tom 1 BTC.
+1. Bob은 BC에서 총 10개의 BTC를 발행하여 Alice에게 2 BTC를 보냅니다.
+2. Bob은 BSC에서 총 10개의 BTC를 발행하여 Tom에게 1 BTC를 보냅니다.
 
-Now Bob wants BTC to flow between BC and BSC, but the total circulation on BC and BSC is 20=10+10 BTC which is not correct, so he decided to bind these two tokens. He made a decision that 8 BTC circulation on BC and 2 BTC circulation on BSC, then he started a bind transaction.
+이제 밥은 BC와 BSC 사이에 BTC가 유통되기를 원하지만 BC와 BSC의 총 물량은 20=10+10 BTC로, 옳지 않습니다. 이 두 토큰을 바인딩하기로 결정합니다. 그는 BC에서 8 BTC가 유통되고 BSC에서 2 BTC가 유통될 것이라 결정한 후 바인드 트랜잭션을 시작했습니다.
 
-The BC execution engine will:
-1. Transfer 2 BTC from Bob's account to `Peg Account`. 
-2. Emit a cross-chain event.
+BC 실행 엔진은:
+1. Bob의 계정에서 2 BTC를 `Peg Account`로 이체합니다. 
+2. 크로스체인 체인 이벤트를 발생시킵니다.
 
-For now, on BC, Bob has 6 BTC, Alice has 2 BTC, 2 BTC is locked in `Peg Account`, circulation on BC is 8 BTC.
+현재 BC에서 Bob은 6 BTC, Alice는 2 BTC, 2 BTC는 `Peg Account`에 잠겨 있으며, BC에서의 유통량은 8 BTC입니다.
 
-The Relayer watches the cross-chain event on BC, and sends a transaction to [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) contract on BSC.
+릴레이어는 BC에서 크로스 체인 이벤트를 관찰하고 BSC에서 [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) 컨트랙트로 트랜잭션을 전송합니다.
 
-Then Bob invokes the BTC contract on BSC to approve [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) to spend 8 BTC of his account.
-After that Bob approves the bind request by invoking [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008). 
-The [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008) will transfer 8 BTC from Bob's account to `Peg Account`.
+그런 다음 Bob은 BSC에서 BTC 컨트랙트를 실행하여 자신의 계정 중 8 BTC를 지출하도록 [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008)를 승인합니다.
+그런 다음 Bob은 [TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008)를 호출하여 바인딩 요청을 승인합니다. 
+[TokenManager](https://bscscan.com/address/0x0000000000000000000000000000000000001008)가 Bob의 계정에서 `Peg Account`로 8 BTC를 이체합니다.
  
-For now, on BSC, Bob has 1 BTC, Tom has 1 BTC, 8 BTC is locked in `Peg Account`, circulation on BSC is 2 BTC.
+현재 BSC에서는 Bob이 BTC 1개, Tom이 BTC 1개를 가지고 있으며 8개의 BTC가 `Peg Account`에 잠겨 있고, BSC의 유통량은 2 BTC입니다.
 
-The binding process ends here, and the total circulation on both chains is 10 BTC which equals to its total supply.
+바인딩 프로세스는 여기서 종료되며, 두 체인의 총 순환량은 총 공급량과 동일한 10 BTC입니다.
 
-## Cross Chain Transfer
+## 크로스 체인 전송
 
-When one token transfer from the native chain to the parallel chain, the process is:
-1. Token transfer from the sender to `Peg Account` on the native chain.  
-2. Token transfer from `Peg Account` to the receiver on the parallel chain.
+하나의 토큰이 네이티브 체인에서 병렬 체인으로 전송될 때 프로세스는 다음과 같습니다.
+1. 발신자에서 네이티브 체인의 `Peg Account`로 토큰이 전송됩니다.  
+2. `Peg Account`에서 병렬 체인의 수신기로 토큰이 전송됩니다.
 
-## Burn
-When a user burns a certain amount of token on the native chain, there is no need to burn on the parallel chain.
+## 소각
+사용자가 네이티브 체인에 일정량의 토큰을 소각할 때 병렬 체인에서 소각할 필요가 없습니다.
 
-Let's walk through an example:
+예를 들어 보겠습니다.
 
-1. The circulation on BC is 5 BTC, and 5 BTC on BSC.
-2. User burns 2 BTC on BC.
-3. Now circulation on BC is 3 BTC, and 5 BTC on BSC. 
-4. The total circulation is 8 now which is expected.
+1. BC에서의 유통량은 5 BTC이고, BSC에서의 유통량은 5 BTC입니다.
+2. 사용자가 BC에서 2 BTC를 소각합니다.
+3. 현재 BC의 유통량은 3 BTC이고, BSC의 유통량은 5 BTC입니다. 
+4. 현재 총 유통량은 예상된 대로 8입니다.
 
 
-## Mint
-When a user mints a token on the native chain, but does not mint it on the parallel chain, it may cause an issue that users can not cross transfer all tokens from the native chain to the parallel chain.
+## 발행
+사용자가 네이티브 체인에 토큰을 발행하지만 병렬 체인에 토큰을 발행하지 않을 경우, 사용자가 네이티브 체인에서 병렬 체인으로 모든 토큰을 교차 전송할 수 없는 문제가 발생할 수 있습니다.
 
-Let's walk through an example:
+예를 들어 보겠습니다.
 
-1. The circulation on BC is 5 BTC, and the locked token is 5 BTC.
-2. The circulation on BSC is 5 BTC, and the locked token is 5 BTC.
-3. User mint 2 BTC on BC.
-4. It will fail if the user tries to transfer 7 BTC from BC to BSC, because the balance of `Peg Account` on BSC is 5 BTC and can’t afford to unlock 7 BTC.
+1. BC의 유통량은 5 BTC이고, 예치된 토큰은 5 BTC입니다.
+2. BSC의 유통량은 5 BTC이고, 예치된 토큰은 5 BTC입니다.
+3. 사용자가 BC에서 2 BTC를 발행합니다.
+4. BSC의 `Peg Account` 잔액이 5 BTC이고, 7 BTC를 언락할 수 없기 때문에 사용자가 BC에서 BSC로 7 BTC를 전송하려고 하면 실패합니다.
 
-The best practice for mint is:
+발행 모범 사례는 다음과 같습니다.
 
-1. Mint token on the native chain.
-2. Mint token on the parallel chain.
-3. Transfer the mint token to `Peg Account` on the parallel chain.   
+1. 네이티브 체인에서 토큰을 발행합니다.
+2. 병렬 체인에서 토큰을 발행합니다.
+3. 병렬 체인의 `Peg Account`에 발행된 토큰을 이체합니다.

@@ -4,25 +4,25 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BSC Relayer Guides
+# BSC 릴레이어 가이드
 
-## Prepare Fund
+## 자금 준비하기
 
-1. Make sure that you have enough BNB in your account. You can get from [faucet](https://testnet.binance.org/faucet-smart)
+1. 계정에 충분한 BNB가 있는지 확인합니다. [포셋](https://testnet.binance.org/faucet-smart)에서 구할 수 있습니다.
 
-If you haven't created your account yet, please follow these [guides](wallet/metamask.md) to create one first.
+계정을 아직 만들지 않은 경우 [가이드](wallet/metamask.md)를 따라 먼저 계정을 만드세요.
 
-* **100BNB** for relayer register
-* More than **50BNB** for transaction fee
+* 릴레이어 등록 **100BNB**
+* 트랜잭션 수수료로 **500BNB** 이상
 
-!!! Tip
-		Currently the bsc-relayer code is not fully prepared. Some features like `db persistence`, `alert`, `prometheus monitor` are still under development. So please don’t modify the configuration about db_config, alert_config, instrumentation_config, admin_config
+!!! 팁
+		현재 BSC 릴레이어 코드가 완전히 준비되지 않았습니다. `db persistence`, `alert`, `prometheus monitor 등 일부 기능은 아직 개발 중입니다. 따라서 db_config, alert_config, instrumentation_config, admin_config에 대한 설정을 수정하지 마십시오.
 
-## Steps to Install BSC Relayer
+## BSC 릴레이어 설치 방법
 
-1.Build from source code
+1. 소스 코드에서 빌드하기
 
-Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
+[Go 1.13+](https://golang.org/doc/install)가 설치되어 있고, `PATH` 환경 변수에 `GOPATH`를 다운 받았음을 확인하세요.
 
 ```bash
 git clone https://github.com/bnb-chain/bsc-relayer
@@ -32,28 +32,27 @@ cd bsc-relayer
 make build
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc-relayer/releases/tag/v1.1.0)
+[릴리즈 페이지](https://github.com/bnb-chain/bsc-relayer/releases/tag/v1.1.0)에서 이미 빌드된 바이너리를 다운받을 수 있습니다.
 
-## Get Example Config File
+## 예시 config file 받기
 
-Get example config from this url: <https://github.com/bnb-chain/bsc-relayer/blob/master/config/config.json>
+이 url 에서 예시 config file을 다운 받습니다: <https://github.com/bnb-chain/bsc-relayer/blob/master/config/config.json>
 
-Edit`config.json` and fill your BSC private key to bsc_config.private_key, example private key: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
+`config.json`을 수정하고 bsc_config.private_key에 BSC 개인키를 입력합니다. 개인키의 예시는 다음과 같습니다: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
-* Beacon Chain Configuration:
-	* `mnemonic`: Paste the recovery phrase here. Since bsc-relayer will automaticly submit `double-sign` evidence, if it's committed, the reward will be sent to this address
-* BNB Smart Chain Configuration:
-*
+* 비콘 체인 구성:
+	* `mnemonic`: 복구 프레이즈를 여기에 붙여넣기 하세요. bsc-relayer가 자동적으로 `double-sign` 증거를 제출할 것이기 때문에, 커밋된 후 보상이 이 주소로 보내질 것입니다
+* BNB 스마트 체인 구성:
 
-## Start Relayer
+## 릴레이어 시작하기
 
-You can start Locally
+로컬 환경에서 시작할 수 있습니다.
 
 ```shell
 ./bsc-relayer --config-type local --config-path config.json
 ```
 
-Output:
+결과:
 
 ```
 (base) huangsuyudeMacBook-Pro:mac huangsuyu$ bsc-relayer --config-type local --config-path config.json
@@ -68,33 +67,33 @@ Output:
 2020-05-27 17:01:19 INFO Serve start admin server at 0.0.0.0:8080
 ```
 
-Or, dynamic Sync Cross Chain Protocol Configuration from <https://github.com/bnb-chain/bsc-relayer-config>
+또는 <https://github.com/bnb-chain/bsc-relayer-config>의 동적인 크로스 체인 프로토콜 구성 동기화
 
-* Edit config.json and change "cross_chain_config.protocol_config_type" to "remote". Then relayer will dynamically sync cross chain protocol configuration from this repository: <https://github.com/bnb-chain/bsc-relayer-config>
-* Start relayer service
+* config.json을 수정하고 "cross_chain_config.protocol_config_type"를 "remote"로 변경합니다. 릴레이어는 동적으로 이 레포지토리 <https://github.com/bnb-chain/bsc-relayer-config>에서 크로스 체인 프로토콜 구성을 동기화하 것입니다.
+* 릴레이어 서비스 시작
 
 ```shell
 ./bsc-relayer --config-type local --config-path config.json
 ```
 
-### Verify Status
+### 상태 확인
 
-You could call [RelayerHub Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006) to verify that your relayer is registered. Go to [read contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006#readContract) and call **isRelayer** function. If it returns **true**, then your relayer is working properly.
+[RelayerHub 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001006)를 호출하여 릴레이어가 등록된 것을 확인할 수 있습니다. [컨트랙트 읽기](https://bscscan.com/address/0x0000000000000000000000000000000000001006#readContract)로 가서 **isRelayer** 함수를 호출합니다. **true**를 반환하면 릴레이어는 제대로 작동하는 것입니다.
 
-## Relayer Rewards
+## 릴레이어 보상
 
-1. You can witness the distribution of relayer rewards in the log of system contract:  <https://bscscan.com/address/0x0000000000000000000000000000000000001005#events>. According to the design of [Relayer Incentive](learn/incentives.md), the rewards will be distributed every 1000 data packages. The total accumulated rewards can be read from [contract](https://bscscan.com/address/0x0000000000000000000000000000000000001005#readContract)the value of `_collectedRewardForHeaderRelayer` and `_collectedRewardForTransferRelayer`.
+1. 시스템 컨트랙트 로그에서 릴레이어 보상 분배를 확인할 수 있습니다: <https://bscscan.com/address/0x0000000000000000000000000000000000001005#events>. [릴레이어 인센티브](learn/incentives.md)에 따르면, 보상은 매 1000 개의 데이터 패키지 마다 분배됩니다. 총 축적된 보상은 [컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001005#readContract)의 `_collectedRewardForHeaderRelayer`와 `_collectedRewardForTransferRelayer` 값에서 읽을 수 있습니다.
 
-2. Query your relayer's status
+2. 릴레이어 상태 쿼리하기
 
-The total accumulated relayed count can be read from [contract](https://bscscan.com/address/0x0000000000000000000000000000000000001005#readContract)the value of `_transferRelayersSubmitCount`
+총 축적된 릴레이 횟수는 [컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001005#readContract)의 `_transferRelayersSubmitCount`에서 읽을 수 있습니다.
 
 
-## Stop Relayer
+## 릴레이어 중단
 
-To get your locked **100BNB** back, you need to call [RelayerHub Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001006) to unregister your relayer. The fee is **0.1BNB**
+예치된 **100BNB**를 돌려 받기 위해서는 [RelayerHub 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001006)를 호출하여 릴레이어 등록을 취소해야 합니다. 수수료는 **0.1BNB**입니다.
 
-* Go to MyEtherWallet and [interact with contract](https://www.myetherwallet.com/interface/interact-with-contract)
-* Fill in the contract addresss: **0x0000000000000000000000000000000000001006** with [abi](relayerhub.abi) interface
-* Call **unregister** function and leave value in ETH as 0
-* Sign your transaction in **MetaMask**
+* 마이이더월렛으로 가서 [컨트랙트 사용하기](https://www.myetherwallet.com/interface/interact-with-contract)로 갑니다.
+* 컨트랙트 주소 **0x0000000000000000000000000000000000001006**를 [abi](relayerhub.abi) 인터페이스로 채워 넣습니다.
+* **unregister** 함수를 호출하고 ETH 값을 0로 둡니다.
+* **메타마스크**에서 트랜잭션에 서명합니다.

@@ -4,17 +4,17 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Band Protocol Price Feed on BNB Smart Chain 
+# BNB 스마트 체인의 밴드 프로토콜 가격 피드
 
-## Introduction
+## 개요
 
-Developers building on BNB Smart Chain can now leverage Band’s decentralized oracle infrastructure. With Band’s oracle, they now have access to various cryptocurrency price data to integrate into their applications.
+BNB 스마트 체인의 개발자들은 이제 밴드의 탈중앙화 오라클 인프라를 이용할 수 있습니다. 밴드의 오라클을 사용해 다양한 암호화폐 가격 데이텨를 애플리케이션에 연동시킬 수 있습니다.
 
-## Supported Tokens
+## 지원 토큰
 
-Currently, the following token symbols are supported. Going forward, this list will continue to expand based on developer needs and community feedback.
+현재 지원되는 토큰들은 다음과 같습니다. 앞으로도 개발자들의 필요나 커뮤니티 피드백에 근거해 확장될 예정입니다.
 
-|              Token Name               | Symbol |
+|              토큰 이름              | 심볼 |
 | :-----------------------------------: | :----: |
 |             Binance Coin              |  BNB   |
 |              Binance USD              |  BUSD  |
@@ -38,24 +38,24 @@ Currently, the following token symbols are supported. Going forward, this list w
 |                  OKB                  |  OKB   |
 |                 Swipe                 |  SXP   |
 
-### Price Pairs
+### 가격 페어
 
-The method provided below supports price query with any denomination as long as the base and quote symbols are supported in the list above.
+아래 제공되는 메서드는 `base` 및 `quote` 토큰 심볼이 위 목록에 포함되어 있다면 모든 가격 쿼리를 지원할 수 있습니다.
 
-For example, you can use the APIs in Javascripts and Solidity to query the following price pairs:
+예를 들어 자바스크립트 API와 솔리디티를 사용하여 다음과 같은 가격 페어를 쿼리할 수 있습니다.
 
 - `BTC/USD`
 - `BNB/ETH`
 
-## Querying Prices
+## 가격 쿼리하기
 
-Currently, there are two methods for developers to query prices from Band’s oracle: through Band’s `StdReference` smart contract on BNB Smart Chain  and through their [`bandchain.js`](https://www.npmjs.com/package/%40bandprotocol%2Fbandchain.js) JavaScript helper library.
+현재 개발자들이 밴드 오라클로부터 가격을 쿼리할 수 있는 두 가지 방법이 있습니다. BNB 스마트 체인에서 밴드의 `StdReference` 스마트 컨트랙트 그리고 자바스크립트 헬퍼 라이브러리 [`bandchain.js`](https://www.npmjs.com/package/%40bandprotocol%2Fbandchain.js)를 사용하는 것입니다..
 
-### Solidity Smart Contract
+### 솔리디티 스마트 컨트랙트
 
-To query prices from Band’s oracle through smart contracts, the contract looking to use the price values should reference Band’s `StdReference` contract. This contract exposes `getReferenceData` and `getReferenceDataBulk` functions.
+스마트 컨트랙트를 통해 밴드 오라클의 가격 피드를 가져오기 위해서는 가격 값들을 사용하려는 컨트랙트가 밴드의 `StdReference` 컨트랙트를 참조해야 합니다. 이 컨트랙트에는 `getReferenceData`와 `getReferenceDataBulk` 함수가 있습니다.
 
-`getReferenceData` takes two strings as the inputs, the base and quote symbol, respectively. It then queries the `StdReference` contract for the latest rates for those two tokens, and returns a `ReferenceData` struct, shown below.
+`getReferenceData`는 입력값으로 `base`와 `quote` 심볼 두 문자열을 받습니다. 그리고 나서 그 후 두 토큰의 최신 가격을 불러오기 위해 `StdReference` 컨트랙트를 쿼리하고, `ReferenceData` 구조체를 아래와 같이 반환합니다.
 
 ```
 struct ReferenceData {
@@ -65,17 +65,17 @@ struct ReferenceData {
 }
 ```
 
-`getReferenceDataBulk` instead takes two lists, one of the `base` tokens, and one of the `quotes`. It then proceeds to similarly queries the price for each base/quote pair at each index, and returns an array of `ReferenceData` structs.
+`getReferenceDataBulk`는 `base` 토큰 그리고 `quotes`에 대한 리스트를 받습니다. 그리고 각 인덱스에서의 base/quote 페어 가격을 쿼리하며 `ReferenceData` 구조체의 배열을 반환합니다.
 
-For example, if we call `getReferenceDataBulk` with `['BTC','BTC','ETH']` and `['USD','ETH','BNB']`, the returned `ReferenceData` array will contain information regarding the pairs:
+예를 들어 `['BTC','BTC','ETH']`와 `['USD','ETH','BNB']`로 `getReferenceDataBulk`를 호출하면, 반환된 `ReferenceData` 배열은 다음 페어에 대한 정보를 포함하고 있을 것입니다.
 
 - `BTC/USD`
 - `BTC/ETH`
 - `ETH/BNB`
 
-#### Example Usage
+#### 예시
 
-The contract code below demonstrates a simple usage of the new `StdReference` contract and the `getReferenceData` function.
+아래 컨트랙트 코드는 새로운 `StdReference` 컨트랙트와 `getReferenceData` 함수의 사용 예시를 보여줍니다.
 
 ```
 pragma solidity 0.6.11;
@@ -140,20 +140,20 @@ contract DemoOracle {
 }
 ```
 
-#### Contract Addresses
+#### 컨트랙트 주소
 
-| Blockchain    |         Aggregator Contract Address          | Update Every |                           Explorer                           |
+| 블록체인    |        애그리게이터 컨트랙트 주소         | 업데이트 주기 |                           익스플로러                           |
 | :------------ | :------------------------------------------: | :----------: | :----------------------------------------------------------: |
-| BSC (Testnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    | [link](https://testnet.bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
-| BSC (Mainnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    | [link](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
+| BSC (Testnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 분    | [link](https://testnet.bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
+| BSC (Mainnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 분    | [link](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
 
 ### BandChain.JS
 
-Band’s node helper library [`bandchain.js`](https://www.npmjs.com/package/@bandprotocol/bandchain.js) also supports a similar `getReferenceData` function. This function takes one argument, a list of token pairs to query the result of. It then returns a list of corresponding rate values.
+밴드 노드 헬퍼 라이브러리[`bandchain.js`](https://www.npmjs.com/package/@bandprotocol/bandchain.js)는 또한 유사한 `getReferenceData` 함수를 지원합니다. 이 함수는 하나의 인수, 즉 결과를 쿼리할 토큰 페어 리스트를 받습니다. 그리고 상응하는 값들의 리스트를 반환합니다.
 
-#### Example Usage
+#### 사용 예시
 
-The code below shows an example usage of the function
+아래 코드는 함수의 사용 예시를 보여줍니다.
 
 ```
 const BandChain = require('@bandprotocol/bandchain.js');
@@ -167,7 +167,7 @@ const BandChain = require('@bandprotocol/bandchain.js');
 })();
 ```
 
-The corresponding result will then be similar to
+결과는 아래와 같습니다.
 
 ```
 $ node index.js
@@ -199,17 +199,17 @@ $ node index.js
 ]
 ```
 
-For each pair, the following information will be returned:
+각 페어에 대해 아래와 같은 정보가 반환됩니다.
 
-- `pair`: The base/quote symbol pair string
+- `pair`: base/quote 심볼 페어 문자열입니다.
 
-- `rate`: The resulting rate of the given pair
+- `rate`: 주어진 페어의 가격입니다.
 
-- `updated`: The timestamp at which the base and quote symbols was last updated on BandChain. For `USD`, this will be the current timestamp
+- `updated`: 밴드체인에서 base 및 quote 심볼이 마지막으로 업데이트된 타임스탬프이며, `USD`의 경우 현재 타임스탬프입니다.
 
-- `rawRate`: This object consists of two parts.
-	- `value` is the `BigInt` value of the actual rate, multiplied by `10^decimals`
-	- `decimals` is then the exponent by which `rate` was multiplied by to get `rawRate`
+- `rawRate`: 이 객체는 두 개로 구성됩니다.
+	- `value`가 현재 가격의 `BigInt` 값으로, `10^decimals`로 곱해져 있습니다.
+	- `decimals`은 `rawRate` 반환을 위해 `rate`가 곱해진 지수입니다.
 
 
 

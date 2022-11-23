@@ -3,38 +3,38 @@ sidebar_label: BNB Smart Chain Verify Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
-# How to Run A Verify Node on BNB Smart Chain
+# BNB 스마트 체인에서 검증 노드 운영하기
 
-## Verify Node Functions
+## 검증 노드 기능
 
-* Stores the full blockchain history on disk and can answer the data request from the network.
-* Receives and validates the new blocks and transactions.
-* Verifies the states of every accounts.
-* Verifies the stated of Fast Node.
+* 전체 블록체인 기록을 디스크에 저장하고 네트워크의 데이터 요청에 응답할 수 있습니다.
+* 새 블록 및 트랜잭션을 수신하고 유효성을 검사합니다.
+* 모든 계정의 상태를 확인합니다.
+* 고속 노드의 상태를 확인합니다.
 
-## Suggested Requirements for Verify Node
+## 검증 노드의 권장 요구 사항
 
-- VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
-- 16 cores of CPU and 64 gigabytes of memory (RAM)
-- Suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 10 megabyte per second
+- 최신 버전의 Mac OS X 또는 Linux를 실행하는 VPS
+- **중요** 2TB의 사용 가능한 디스크 공간, SSD(solid-state drive), gp3, 8k IOPS, 처리량 250MB/S, 읽기 지연 시간 1ms 미만
+- 16개의 CPU 코어와 64기가바이트 메모리(RAM)를 지원
+- AWS의 경우 m5zn.3xlarge 인스턴스 타입, Google 클라우드의 경우 c2-standard-16이 권장
+- 초당 10mb 업로드/다운로드 속도를 제공하는 브로드밴드 인터넷 연결
 
-## Settings
+## 설정
 
-## Chaindata Snapshot
+## 체인 데이터 스냅샷
 
-Please download the chain data [snapshot](https://github.com/bnb-chain/bsc-snapshots) and extract to your home folder to speed up
+체인 데이터 [스냅샷](https://github.com/bnb-chain/bsc-snapshots)을 다운받고 홈 폴더에 추출하여 속도를 높입니다
 
 ```
 ## Extract the data
 unzip geth.zip -d /NAME_OF_YOUR_HOME/node &
 ```
-## Steps to Run a Verify Node
+## 검증 노드 운영 단계
 
-### Sync From Snapshot (Recommended)
+### 스냅샷 동기화 (권장)
 
-1. Download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below:
+1. [릴리즈 페이지](https://github.com/bnb-chain/bsc/releases/latest)에서 이미 빌드된 바이너리를 다운받거나 아래의 지시를 따릅니다.
 
 ```bash
 # Linux
@@ -43,30 +43,29 @@ wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |gre
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
 ```
 
-2. Download the config files
+2. config 파일을 다운받습니다.
 
-Download `genesis.json` and `config.toml` by:
+`genesis.json`과 `config.toml`를 아래와 같이 다운받습니다
 
 ```bash
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
 ```
 
-3. Download snapshot
+3. 스냅샷을 다운받습니다.
 
-Download latest snapshot from [Download site](https://github.com/bnb-chain/bsc-snapshots)
-Follow the guide to structure the files.
+[다운로드 사이트](https://github.com/bnb-chain/bsc-snapshots)에서 최신 스냅샷을 다운받습니다. 가이드를 따라 파일의 구조를 설정합니다.
 
-4. Start a full node
+4. 풀노드를 시작합니다.
 ```
 geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
-### Sync From Genesis Block (Not Recommended)
+### 제네시스 블록에서 동기화 (권장되지 않음)
 
-1.Build from source code
+1. 소스 코드에서 빌드합니다.
 
-Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
+[Go 1.13+](https://golang.org/doc/install)가 설치되어 있고 `GOPATH`가 `PATH` 환경 변수에 추가되어 있는 것을 확인해주세요.
 
 ```bash
 git clone https://github.com/bnb-chain/bsc
@@ -76,7 +75,7 @@ cd bsc
 make geth
 ```
 
-or you can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below:
+아니면 [릴리즈 페이지](https://github.com/bnb-chain/bsc/releases/latest)에서 이미 빌드된 바이너리를 다운받거나 아래의 지시를 따릅니다.
 
 ```bash
 # Linux
@@ -85,9 +84,9 @@ wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |gre
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
 ```
 
-2.Download the config files
+2. config 파일을 다운받습니다.
 
-Download `genesis.json` and `config.toml` by:
+`genesis.json`과 `config.toml`를 아래와 같이 다운받습니다.
 
 ```bash
 ## mainet
@@ -99,13 +98,13 @@ wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |gre
 unzip testnet.zip
 ```
 
-3.Write genesis state locally
+3. 로컬 환경에 제네시스 상태를 기록합니다.
 
 ```bash
 geth --datadir node init genesis.json
 ```
 
-You could see the following output:
+다음과 같은 결과를 확인할 수 있습니다.
 
 ```
 INFO [05-19|14:53:17.468] Allocated cache and file handles         database=/Users/huangsuyu/Downloads/bsc/node/geth/chaindata cache=16.00MiB handles=16
@@ -118,44 +117,44 @@ INFO [05-19|14:53:17.525] Persisted trie from memory database      nodes=21 size
 INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=lightchaindata hash=7d79cc…fb0d1e
 ```
 
-4.Start your verify node
+4. 검증 노드를 시작하세요.
 
 
-!!! Note
-    BREAKING CHANGE: Non-EIP155 transactions (i.e. transactions which are not replay-protected) are now rejected by the RPC API. You can disable this restriction using the --rpc.allow-unprotected-txs command-line flag.
+!!! 주의
+    긴급 변경: EIP155가 아닌 트랜잭션(즉, 재생 방지되지 않은 트랜잭션)은 이제 RPC API에 의해 거부됩니다. --rpc.allow-unprotected-txs 명령어 플래그를 사용하여 이 제한을 해제할 수 있습니다.
 
 ```bash
 ## start a verify node
 geth --enabletrustprotocol --persistdiff --diffblock 1000000000 --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
-## Node Maintainence
+## 노드 관리
 
-### Peer Discovery
-The bootstrap nodes will be enhanced in the short future. So far, a discovery http service will provide some stable public p2p peers for syncing. Please visit https://api.binance.org/v1/discovery/peers to get dynamic peer info. You can append the peer info to the `StaticNodes` in the config.toml to enhance the networking of the full nodes. To avoid crowded networking, the discovery service will change the peer info from time to time, try fetch new ones if the connected peers of full node are too few.
+### 피어 탐색
+부트스트랩 노드는 빠른 시일 내에 개선될 것입니다. 지금까지 탐색 http 서비스는 동기화를 위해 일부 안정적인 퍼블릭 p2p 피어를 제공해왔습니다. https://api.binance.org/v1/discovery/peers를 방문하여 피어 정보를 확인하세요. 풀노드의 네트워킹 개선을 위해 config.toml의 `StaticNodes`에 피어 정보를 추가할 수 있습니다. 번잡한 네트워킹을 방지하기 위해, 탐색 서비스가 피어 정보를 종종 변경할 것입니다. 연결된 풀노드 피어 수가 너무 적을 경우 새로 가져오기를 시도해보세요.
 
-### Binary
-All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
+### 바이너리
+모든 클라이언트들은 가장 최신 버전으로 업그레이드 하는 것이 권장됩니다. [최신 버전](https://github.com/bnb-chain/bsc/releases/latest)은 더 안정적이고 성능이 더 높습니다.
 
-### Storage
-According to the test, the performance of a verifynode will degrade when the storage size exceeds 1.5T. We suggest the verifynode always keep light storage by pruning the storage. 
+### 스토리지
+테스트에 따르면 스토리지 크기가 1.5T를 초과하면 전체 노드의 성능이 저하됩니다. 전체 노드는 스토리지를 프루닝하여 항상 가벼운 스토리지를 유지하는 것이 좋습니다.
 
-How to prune:
+프루닝하는 법:
 
-1. Stop the BSC node.
-2. Run `nohup geth snapshot prune-state --datadir {the data dir of your bsc node} &`. It will take 3-5 hours to finish.
-3. Start the node once it is done.
+1. BSC 노드를 중단합니다.
+2. `nohup geth snapshot prune-state --datadir {the data dir of your bsc node} &`를 실행합니다. 완료되기까지 약 3-5 시간이 걸립니다.
+3. 끝나면 노드를 중단합니다.
 
-The maintainers should always have a few backup nodes.
+관리자는 항상 몇 개의 백업 노드가 있어야 합니다.
 
-The hardware is also important, **make sure the SSD meets: 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms**.
+하드웨어도 중요합니다. **SSD가 2TB의 여유 디스크 공간, SSD(Solid-State Drive), gp3, 8k IOPS, 처리량 250MB/S, 읽기 지연 시간 <1ms를 충족하는지 확인하십시오**.
 
 ### Diff Sync
-The diffsync protocol rolled out as a stable feature in release v1.1.5. Diff sync improves the syncing speed by 60%～70% approximately according to the test. All full nodes are suggested to enable it by adding `--diffsync` in the starting command.  
+diffsync 프로토콜은 릴리스 v1.1.5에서 안정적인 기능으로 출시되었습니다. Diff sync는 테스트 결과 동기 속도가 약 60~70% 향상되었습니다. 모든 전체 노드는 시작 명령에 '--diffsync'를 추가하여 활성화할 것을 권장합니다.  
 
-### Light Storage
-When the node crashes or been force killed, the node will sync from a block that was a few minutes or a few hours ago. This is because the state in memory is not persisted into the database in real time, and the node needs to replay blocks from the last checkpoint once it start. The replaying time dependents on the configuration `TrieTimeout` in the config.toml.  We suggest you raise it if you can tolerate with long replaying time, so the node can keep light storage.
+### 가벼운 스토리지
+노드가 충돌하거나 강제로 중지되면 노드는 몇 분 또는 몇 시간 전의 블록에서 동기화됩니다. 이는 메모리의 상태가 데이터베이스에 실시간으로 유지되지 않고 노드가 시작되면 마지막 체크포인트에서 블록을 재생해야 하기 때문입니다. 재생 시간은 config.toml의 'TrieTimeout' 구성에 따라 달라집니다. 노드가 가벼운 스토리지를 유지할 수 있도록 긴 재생 시간을 허용할 수 있다면 올리는 것이 좋습니다.
 
-## Upgrade Geth
+## Geth 업그레이드하기
 
-Please read [this guide](./validator/upgrade-fullnode.md)
+[이 지침](upgrade-fullnode.md)을 참고해주세요.

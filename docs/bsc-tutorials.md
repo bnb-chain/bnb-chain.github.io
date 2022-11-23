@@ -23,7 +23,7 @@ In this section, we have provided tutorials on usage of different components of 
 * Tutorial on [How to Write BEP20 (Proxy) Contacts](proxy.md)
 * Tutorial on [How to Verify BEP20 (Proxy) Contacts](verify-proxy.md)
 * Tutorial on How to Deploy and Test Smart Contracts on BSC
-  * [Using Remix](remix-new.md)
+  * [Using Remix](remix.md)
   * [Using Truffle](truffle-new.md)
   * [Using HardHat](hardhat-new.md)
 * Tutorial on [How to Verify Deployed Smart Contract on bscScan](verify.md)

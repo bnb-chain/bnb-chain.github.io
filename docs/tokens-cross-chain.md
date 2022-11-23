@@ -3,34 +3,34 @@ sidebar_label: Cross-chain Token Management
 sidebar_position: 2
 ---
 
-# Cross-chain Token Management
+# 크로스체인 토큰 관리
 
-The dual-chain architecture of Beacon Chain & BNB Smart Chain empowers you to build your own decentralized apps. The native cross-chain communication mechanism allows tokens to be transferred between BC and BSC easily.
+비컨 체인과 BNB 스마트 체인의 이중체인 구조는 바이낸스 DEX에서의 빠른 거래 성능을 이용하는 동시에 탈중앙화 앱을 개발할 수 있도록 도와줍니다. 네이티브 크로스체인 커뮤니케이션 메커니즘은 토큰들이 BC와 BSC 사이에서 쉽게 이동할 수 있도록 도와줍니다.
 
-BNB Smart Chain and Beacon Chain work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases.
-
-
-## BEP2/BEP8 Token Owner
-
-If you are BEP2/BEP9 token owner, please follow this [guideline](./bind-tokens.md) to complete `Bind` process when you wish to migrate to BSC.
-
-You can also use this [tool](https://github.com/bnb-chain/token-bind-tool).
+BNB 스마트 체인과 비컨 체인은 한 토큰이 확인된 총 거래량으로 두 포맷으로 유통되고 다양하게 활용될 수 있도록 함께 동작합니다.
 
 
+## BEP2/BEP8 토큰 소유자
 
-## BEP20 Token Owner
+여러분이 BEP2/BEP9 토큰 소유자인 경우, BSC로 이동하고자 한다면 [가이드라인](./bind-tokens.md)을 따라 `Bind` 프로세스를 진행해주세요.
+
+다음의 [도구](https://github.com/bnb-chain/token-bind-tool)를 사용해도 됩니다.
 
 
-If you are BEP20 token owner or anybody else, please follow this [guideline](./mirror.md) to complete `Mirror` process when you wish to migrate to BC.
+
+## BEP20 소유자
 
 
-## Comparison Between Bind and Mirror
+여러분이 BEP20 토큰 소유자나 둘 다 해당하지 않는 경우, BC로 이동하거나 바이낸스 DEX에 리스팅하고자 한다면 이[가이드라인](./mirror.md)을 따라 `Mirror` 프로세스를 진행해주세요.
+
+
+## Bind와 Mirror 비교
 
 |                   | Bind          | Mirror                    |
 | ----------------- | ------------- | -------------------------------------- |
-| Initiator         | BEP2/BEP8 Token Owner  | Anyone, including BEP20 Token Owner and others    |
-| Fee               | less than 1BNB         | 10 BNB, `mirrorFee` is a governable parameter |
-| How long will it take    | several minutes       | ~30s                                    |
-| Supply Distribution   | Customized between BC & BSC | All supplies are on BSC|
+| 주도자         | BEP2/BEP8 토큰 소유자 | BEP20 토큰 소유자를 포함한 모든 사람   |
+| 수수료               | 1BNB 이하       | 약 100 BNB, `mirrorFee` 는 조정 가능한 파라미터 |
+| 소요 시간    | 몇 분    | ~30s                                    |
+| 유통량 분배   | BC & BSC 사이에서 커스터마이징 | 모든 유통량이 BSC|
 
 

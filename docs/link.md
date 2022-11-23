@@ -84,9 +84,9 @@ print(latestData)
 ```
 
 
-## Get Historical Price Data
+## 과거 가격 데이터 불러오기
 
-The most common use case for Price Feeds is to get the latest price. However, <a href="https://github.com/smartcontractkit/chainlink/blob/master/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol" target="_blank" rel="noreferrer, noopener">`AggregatorV3Interface`</a> also exposes functions which can be used to retrieve price data of a previous round ID.
+가격 피드의 가장 대표적인 용례는 최신 가격을 가져오는 것입니다. 하지만 <a href="https://github.com/smartcontractkit/chainlink/blob/master/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol" target="_blank" rel="noreferrer, noopener">`AggregatorV3Interface`</a>는 이전 라운드 ID의 가격 데이터를 반환하는 함수들 또한 노출하고 있습니다.
 
 **Solidity Contract**
 
@@ -168,43 +168,43 @@ print(historicalData)
 
 ## API Reference
 
-API reference for <a href="https://github.com/smartcontractkit/chainlink/blob/develop/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol" target="_blank">`AggregatorV3Interface`</a>.
+<a href="https://github.com/smartcontractkit/chainlink/blob/develop/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol" target="_blank">`AggregatorV3Interface`</a>를 위한 API 참고 문서입니다.
 
-### Functions
+### 함수
 
-|Name|Description|
+|이름|설명|
 |---|---|
-|[decimals](#decimals)|The number of decimals in the response.|
-|[description](#description)|The description of the aggregator that the proxy points to.|
-|[getRoundData](#getrounddata)|Get data from a specific round.|
-|[latestRoundData](#latestrounddata)|Get data from the latest round.|
-|[version](#version)|The version representing the type of aggregator the proxy points to.|
+|[decimals](#decimals)| 응답에서 decimal 갯수|
+|[description](#description)| 프록시가 가리키는 애그리게이터에 대한 설명|
+|[getRoundData](#getrounddata)| 특정 라운드에서 데이터 불러오기|
+|[latestRoundData](#latestrounddata)| 최신 라운드 데이터 불러오기|
+|[version](#version)|프록시가 가리키는 애그리게이터 타입의 버전|
 
 ___
 
 #### decimals
 
-Get the number of decimals present in the response value.
+응답값에 있는 decimal 수를 불러옵니다.
 
 ```javascript Solidity
 function decimals() external view returns (uint8)
 ```
 
-* `RETURN`: The number of decimals.
+* `RETURN`: decimal 수
 
 #### description
 
-Get the description of the underlying aggregator that the proxy points to.
+프록시가 가리키는 애그리게이터에 대한 설명을 불러옵니다.
 
 ```javascript Solidity
 function description() external view returns (string memory)
 ```
 
-* `RETURN`: The description of the underlying aggregator.
+* `RETURN`: 프록시가 가리키는 애그리게이터에 대한 설명
 
 #### getRoundData
 
-Get data about a specific round, using the `roundId`.
+`roundId`를 사용하여 특정 라운드 데이터를 불러옵니다.
 
 ```javascript Solidity
 function getRoundData(uint80 _roundId) external view
@@ -217,22 +217,21 @@ function getRoundData(uint80 _roundId) external view
     )
 ```
 
-**Parameters**
+**파라미터**
 
-* `roundId`: The round ID
+* `roundId`: 라운드 ID
 
-**Return Values**
+**반환값**
 
-* `roundId`: The round ID.
-* `answer`: The price.
-* `startedAt`: Timestamp of when the round started.
-* `updatedAt`: Timestamp of when the round was updated.
-* `answeredInRound`: The round ID of the round in which the answer
-   * was computed.
+* `roundId`: 라운드 ID.
+* `answer`: 가격.
+* `startedAt`: 라운드가 시작한 타임스탬프.
+* `updatedAt`: 라운드가 업데이트된 타임스탬프.
+* `answeredInRound`: 답이 연산된 라운드의 라운드 ID.
 
 #### latestRoundData
 
-Get the price from the latest round.
+최신 라운드의 가격을 불러옵니다.
 
 ```javascript Solidity
 function latestRoundData() external view
@@ -245,39 +244,38 @@ function latestRoundData() external view
     )
 ```
 
-**Return Values**
+**반환값**
 
-* `roundId`: The round ID.
-* `answer`: The price.
-* `startedAt`: Timestamp of when the round started.
-* `updatedAt`: Timestamp of when the round was updated.
-* `answeredInRound`: The round ID of the round in which the answer
-   * was computed.
+* `roundId`: 라운드 ID.
+* `answer`: 가격.
+* `startedAt`: 라운드가 시작한 타임스탬프.
+* `updatedAt`: 라운드가 업데이트된 타임스탬프.
+* `answeredInRound`: 답이 연산된 라운드의 라운드 ID.
 
 #### version
 
-The version representing the type of aggregator the proxy points to.
+프록시가 가리키는 애그리게이터 타입의 버전을 불러옵니다.
 
 ```javascript Solidity
 function version() external view returns (uint256)
 ```
 
-* `RETURN`: The version number.
+* `RETURN`: 버전 번호
 
 ___
 
 
 
-## Contract Addresses
+## 컨트랙트 주소
 
-Chainlink price feed contracts are updated on a regular basis by multiple Chainlink nodes. This section lists the contract addresses for Price Feeds on the BNB Smart Chain.
+체인링크 가격 피드 컨트랙트는 다수의 체인링크 노드에 의해 주기적으로 업데이트됩니다. 아래에는 BNB 스마트 체인에서의 가격 피드를 위한 컨트랙트 주소 목록을 제공합니다.
 
-### Mainnet
+### 메인넷
 
-| Pair      | Proxy                                                        |
+| 페어      | 프록시                                                        |
 | :-------- | :----------------------------------------------------------- |
 | BNB / USD | [`0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE`](https://bscscan.com/address/0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE) |
 | BTC / USD | [`0x264990fbd0A4796A3E3d8E37C4d5F87a3aCa5Ebf`](https://bscscan.com/address/0x264990fbd0A4796A3E3d8E37C4d5F87a3aCa5Ebf) |
 | ETH / USD | [`0x9ef1B8c0E4F7dc8bF5719Ea496883DC6401d5b2e`](https://bscscan.com/address/0x9ef1B8c0E4F7dc8bF5719Ea496883DC6401d5b2e) |
 
-Original source is from [Chainlink website](https://docs.chain.link/docs/binance-smart-chain-addresses)
+원문 [체인링크 웹사이트](https://docs.chain.link/docs/binance-smart-chain-addresses)에서 참고하였습니다.

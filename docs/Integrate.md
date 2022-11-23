@@ -4,34 +4,34 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-## Public Services
-There are public nodes running by BNB Chain community which will allow you to interact with the blockchain.
+## 퍼블릭 서비스
+BNB 체인 커뮤니티에서 운영하는 퍼블릭 노드를 통해 블록체인과 상호 작용할 수 있습니다.
 
 ### REST API
-[Accelerated nodes](https://docs.bnbchain.org/docs/beaconchain/faq/faq#what-is-the-accelerated-node) provide advanced API services for the public.<br/>
-The list of all the Rest API information available on accelerated node can be found: [here](api-reference/dex-api/paths.md)
+[Accelerated nodes](https://docs.bnbchain.org/docs/beaconchain/faq/faq#what-is-the-accelerated-node)는 일반인을 위한 고급 API 서비스를 제공합니다.<br/>
+가속 노드에서 사용할 수 있는 모든 Rest API 정보 목록을 찾을 수 있습니다: [여기](api-reference/dex-api/paths.md)
 
-### Node RPC
-There are multiple data seed nodes in the network which allow users to  perform low-level operations like executing ABCI queries, broadcasting a transaction or viewing network/consensus state.<br/>
-If you run a full node by yourself, you can also use those RPC functions.<br/>
-List of all endpoints Node RPC service provides can be found: [here](api-reference/node-rpc.md)
+### 노드 RPC
+네트워크에는 사용자가 ABCI 쿼리 실행, 트랜잭션 전파 또는 네트워크/합의 상태 보기와 같은 하위 레벨의 작업을 수행할 수 있는 여러 데이터 시드 노드가 있습니다.<br/>
+혼자서 풀노드를 운영하는 경우, 그 RPC 함수들도 사용할 수 있습니다.<br/>
+노드 RPC 서비스가 제공하는 모든 엔드포인트 목록을 찾을 수 있습니다: [여기](api-reference/node-rpc.md)
 
-## Running a Full Node
-Running a full node requires considerable computational/bandwidth resources.<br/>
-Please refer to this guide about [how to run your own node](validator/fullnode.md).
+## 풀노드 운영하기
+풀노드를 실행하려면 상당한 연산/대역폭 리소스가 필요합니다.<br/>
+[자체 노드 운영하기](validator/fullnode.md)를 참고해주세요.
 
-## Access via Node Command Line Interface (CLI)
-Command Line Interface is currently available for Linux, Mac and Windows.<br/>
-Please refer to the [CLI Reference](api-reference/cli.md).
+## 노드 CLI를 통한 액세스
+CLI는 현재 Linux, Mac 및 Windows에서 사용할 수 있습니다.<br/>
+[CLI Reference](api-reference/cli.md)를 참고해주세요.
 
-## SDKs
-There are multiple advanced SDK solutions available for BNB Chain. The majority of SDKs provide simplified functions to:
+## SDK
+BNB 체인에 사용할 수 있는 여러 고급 SDK 솔루션이 있습니다. 대부분의 SDK는 다음과 같은 단순화된 기능을 제공합니다.
 
-- Create wallets and manage keys
-- Encode/sign transactions and submit to Beacon Chain/DEX, including Transfer, New Order, Cancel Order, etc.
-- Communicate with Beacon Chain/DEX via Node RPC calls through public node RPC services or your own private full nodes
+- 지갑 생성 및 키 관리
+- 전송, 새 주문, 주문 취소 등 트랜잭션 인코딩/서명하고 Beacon Chain/DEX에 전송
+- 퍼블릭 노드 RPC 서비스 또는 개인 풀노드를 통한 노드 RPC 호출을 통해 비콘 체인/DEX와 통신
 
-List of currently available SDKs and their respective documentations:
+현재 사용 가능한 SDK 및 해당 문서의 목록입니다.
 
 - [Go](https://github.com/bnb-chain/go-sdk) - [Documentation](https://github.com/bnb-chain/go-sdk/wiki)
 - [Java](https://github.com/bnb-chain/java-sdk) - [Documentation](https://github.com/bnb-chain/java-sdk/wiki)
@@ -41,15 +41,15 @@ List of currently available SDKs and their respective documentations:
 - [Python](https://github.com/bnb-chain/python-sdk) - [Documentation](https://python-bnb-chain.readthedocs.io/en/latest/bnb-chain.html#module-binance_chain)
 - [Swift](https://github.com/bnb-chain/swift-sdk) - [Documentation](https://github.com/bnb-chain/swift-sdk/blob/master/README.md)
 
-## Important: Ensuring Transaction Finality
+## 중요: 트랜잭션의 최종성 보장
 
-If you intend to add "deposit" and "withdrawal" functionalities to your implementation, it is important that you ensure that transactions are final before the backend system credits or deducts funds from a user account.
+"deposit(입금)" 및 "withdrawal(인출)" 기능을 구현에 추가하려면 백엔드 시스템이 사용자 계정에서 자금을 공제하거나 입금하기 전에 트랜잭션이 최종적인지 확인하는 것이 중요합니다.
 
-In brief, transactions pass through several [phases](https://tendermint.com/docs/spec/abci/abci.html#overview) before they are finalised and included in a block.
+간단히 말해서, 트랜잭션은 여러 [단계](https://tendermint.com/docs/spec/abci/abci.html#overview)를 거쳐서 블록에 포함됩니다.
 
-The status "code" recorded for each of these phases can differ, so be sure to check that it is `0` (meaning success) for each of them. A non-zero "code" indicates that there was a problem with the transaction during processing.
+각 단계에 대해 기록된 상태 "code"는 다를 수 있으므로 각 단계에 대해  `0`(성공을 의미)인지 확인하십시오. 0이 아닌 "code"는 처리 중 트랜잭션에 문제가 있었음을 나타냅니다.
 
-For example, [this transaction](https://explorer.binance.org/tx/F296E84917A92FC4876AFE77DE662CC9417F9D6F2EB8ED1AD723A5433EBB8362) was invalid because the order was already canceled. You can query that the code for this transaction is `405`.
+예를 들어 [이 트랜잭션](https://explorer.binance.org/tx/F296E84917A92FC4876AFE77DE662CC9417F9D6F2EB8ED1AD723A5433EBB8362)은 주문이 이미 취소되었기 때문에 무효입니다. 이 트랜잭션의 코드가 `405`인지 쿼리할 수 있습니다.
 ```json
 {
 code: 393621,
@@ -89,25 +89,25 @@ source: "889"
 }
 ```
 
-The two phases we should be concerned about are `CheckTx` and `DeliverTx`.
+우리가 관심을 가질 두 단계는 `CheckTx`와 `DeliverTx`입니다.
 
-We recommend that you broadcast your transactions via [REST API](#rest-api) or, if you wish to run a [Full Node](#full-node), [Node RPC](#node-rpc) via the `BroadcastTxSync` command.
+[REST API](#rest-api)를 통해 트랜잭션을 전파하거나,  명령어 `BroadcastTxSync`를 통해 [풀노드](#full-node), [노드 RPC](#node-rpc)를 실행하는 것을 권장합니다.
 
-While there is an RPC command called `BroadcastTxCommit` which will wait for both `CheckTx` and `DeliverTx` and return with codes for both and a block height, it is unfortunately [not recommended for use in production](https://github.com/tendermint/tendermint/blob/e3a97b09814bf9289e8c10420af38ce369160752/rpc/core/mempool.go#L154).
+`BroadcastTxCommit`라는 RPC 명령이 있습니다.'CheckTx'와 'Deliver'를 모두 대기하는 TxCommit입니다.Tx'와 블록 높이에 대한 코드와 함께 반환되는 것은 아쉽게도 [실제 운영에서 사용하는 것은 권장되지 않습니다](https://github.com/tendermint/tendermint/blob/e3a97b09814bf9289e8c10420af38ce369160752/rpc/core/mempool.go#L154).
 
-Instead, there are two ways that you can go about checking the status of your transaction after you have broadcasted it.
+대신, 브로드캐스트한 후에 트랜잭션 상태를 확인하는 두 가지 방법이 있습니다.
 
-If you haven't received anything after a couple of blocks, resend the transaction. If the same happens again, send it to some other node. This is safe to do so long as you are broadcasting the *same* transaction. Transactions are unique in the blockchain and you cannot spend the coins twice by retrying the send of the same data.
+몇 블록이 지나도 아무것도 받지 못한 경우 트랜잭션을 다시 보내세요. 같은 일이 다시 발생하면 다른 노드로 보내세요. *동일* 트랜잭션을 전파하는 동안에는 이 작업을 수행하는 것이 안전합니다. 트랜잭션은 블록체인에서 고유하며 동일한 데이터의 전송을 재시도하면서 코인을 두 번 사용할 수 없습니다.
 
-### The Recommended Way (via WebSocket)
+### 권장 방법(WebSocket)
 
-If you want to be sure that the transaction is included in a block, you can subscribe for the result using JSONRPC via a websocket. See [Subscribing to Events via WebSocket](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/node-rpc#631-subscribe).
+트랜잭션이 블록에 포함되도록 하려면 웹 소켓을 통해 JSONRPC를 사용하여 결과에 구독할 수 있습니다. [WebSocket을 통한 이벤트 구독](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/node-rpc#631-subscribe)을 참조하십시오.
 
-### The Alternative Way (via RPC Polling)
+### 대안적 방법(RPC 폴링)
 
-Some of the SDKs do not yet support WebSocket subscriptions for RPC queries, so this may be the preferable option in some use cases.
+아직 RPC 쿼리에 대한 WebSocket 구독을 지원하지 않는 SDK도 있으므로 일부 사용 사례에서는 이 옵션을 사용하는 것이 좋습니다.
 
-You can use the `Tx` RPC method to query for the transaction and get its block height. Here is an example using the JavaScript SDK:
+`Tx` RPC 메서드를 사용하여 트랜잭션을 쿼리하고 블록 높이를 가져올 수 있습니다. 다음은 JavaScript SDK를 사용한 예입니다.
 
 ```js
 > rpc.tx({
@@ -123,6 +123,6 @@ You can use the `Tx` RPC method to query for the transaction and get its block h
 }
 ```
 
-If the Transaction does not yet exist in the blockchain, this attempt will return with an error.
+트랜잭션이 아직 블록체인에 없으면 이 시도가 오류와 함께 반환됩니다.
 
-You should check for an absent "code" field in the `tx_result`: this indicates a code of `0`. You could also perform further checks on the `log` to make sure that it matches the expected value.
+`tx_result`에서 빈 "code" 필드를 확인해야 합니다. 이는 `0` 코드를 나타냅니다. 또한 `log`에 대한 추가 검사를 수행하여 예상값과 일치하는지 확인할 수 있습니다.

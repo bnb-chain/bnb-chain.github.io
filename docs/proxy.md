@@ -3,36 +3,36 @@ sidebar_label: Upgradable BEP20 Contracts on BSC
 hide_table_of_contents: false
 sidebar_position: 2
 ---
- # Upgradeable BEP20 Contracts on BSC
+# BSC에서 업그레이드 가능한 BEP20 컨트랙트
 
-## What are Upgradeable Contracts?
-Smart contracts in EVM are designed to be immutable. Once you create them there is no way to modify them, effectively acting as an unbreakable contract among participants. What do I do if I want to expand the functionality of my contracts? What if there is a bug in the contract that leads to a loss of funds? What if a vulnerability in the Solidity compiler is discovered?
-Here’s what you’d need to do to fix a bug in a contract you cannot upgrade:
+## 업그레이드 가능한 컨트랙트란?
+EVM의 스마트 컨트랙트는 불변하도록 설계되었습니다. 일단 생성하면 수정할 수 있는 방법이 없으므로, 참가자들 사이에서 깨지지 않는 계약으로 효과적으로 작용합니다. 계약의 기능을 확장하려면 어떻게 해야 합니까? 계약서에 자금 손실로 이어지는 버그가 있으면 어떻게 합니까? 솔리디티 컴파일러에서 취약성이 발견되면 어떻게 합니까?
+업그레이드할 수 없는 컨트랙트에서 버그를 수정하려면 다음과 같이 해야 합니다.
 
-- Deploy a new version of the contract
-- Manually migrate all the states from the old one contract to the new one (which can be very expensive in terms of gas fees!)
-- Update all contracts that interacted with the old contract to use the address of the new one
-- Reach out to all your users and convince them to start using the new deployment (and handle both contracts being used simultaneously, as users are slow to migrate)
+- 컨트랙트 새 버전을 배포합니다.
+- 이전 컨트랙트에서 새 컨트랙트로 모든 상태를 수동으로 마이그레이션합니다(가스 요금이 매우 비쌀 수 있습니다!).
+- 이전 컨트랙트와 상호 작용한 모든 컨트랙트를 새 컨트랙트 주소를 사용하도록 업데이트합니다.
+- 모든 사용자에게 연락하여 새로운 배포를 사용하도록 설득합니다(사용자의 마이그레이션 속도가 느리므로 두 컨트랙트를 동시에 사용).
 
-There are several approaches that allow us to make some changes to smart contracts.
+스마트 컨트랙트를 일부 변경할 수 있는 몇 가지 접근 방식이 있습니다.
 
-**Separate logic and data**
+**로직과 데이터를 구분**
 
-By using this approach, data will be read from a designated data contract directly. This is a relatively common approach that is also used outside of Solidity. One of the main disadvantages of this approach is that you cannot change the interface of contracts external to the entire system, and you cannot add or remove functions.
+이 접근 방식을 사용하면 지정된 데이터 컨트랙트에서 직접 데이터를 읽을 수 있습니다. 이는 솔리디티 외부에서 사용되는 비교적 일반적인 접근 방식입니다. 이 접근 방식의 주요 단점 중 하나는 전체 시스템 외부의 계약 인터페이스를 변경할 수 없고 기능을 추가하거나 제거할 수 없다는 것입니다.
 
-**Delegatecall Proxy**
+**Delegatecall 프록시**
 
-`delegatecall` opcode was implemented in [EIP-7](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-7.md). It is possible to delegate execution to other contract, but execution context stays the same. As with delegatecall, the msg.sender will remain that of the caller of the proxy contract. One of the main disadvantages of this approach is that contract code of the proxy will not reflect the state that it stores.
+`delegatecall` opcode는 [EIP-7](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-7.md)에서 구현되었습니다. 실행을 다른 컨트랙트에 위임할 수 있지만 실행 컨텍스트는 동일합니다. delegatecall와 마찬가지로, msg.sender는 프록시 컨트랙트 호출자의 것으로 유지됩니다. 이 접근 방식의 주요 단점 중 하나는 프록시의 컨트랙트 코드가 저장되는 상태를 반영하지 않는다는 것입니다.
 
-## Writing Upgradeable BEP20 Contracts
+## 업그레이드 가능한 BEP20 컨트랙트 작성하기
 
-It’s worth mentioning that these restrictions have their roots in how the Ethereum VM works, and apply to all projects that work with upgradeable contracts, not just OpenZeppelin Upgrades.
+이러한 제한은 이더리움 VM의 작동 방식에 뿌리를 두고 있으며, OpenZeppelin Upgrades뿐만 아니라 업그레이드 가능한 컨트랙트로 작동하는 모든 프로젝트에 적용됩니다.
 
-### Initializers
+### 이니셜라이저
 
-You can use your Solidity contracts in the OpenZeppelin Upgrades without any modifications, except for their constructors. Due to a requirement of the proxy-based upgradeability system, no constructors can be used in upgradeable contracts. To learn about the reasons behind this restriction, head to [Proxies](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies#the-constructor-caveat).
+OpenZeppelin Upgrade에서는 생성자를 제외하고 Solidity 계약을 수정하지 않고 사용할 수 있습니다. 프록시 기반 업그레이드 가능성 시스템의 요구 사항으로 인해 업그레이드 가능한 계약에 생성자를 사용할 수 없습니다. 이러한 제한의 이유에 대해 알아보려면 [Proxies](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies#the-constructor-caveat)를 방문하십시오.
 
-This means that, when using a contract with the OpenZeppelin Upgrades, you need to change its constructor into a regular function, typically named initialize, where you run all the setup logic:
+즉, OpenZeppelin Upgrade 컨트랙트를 사용할 경우 생성자를 모든 설정 로직을 실행하는 일반 함수(일반적으로 initialize)로 변경해야 합니다.
 
 ```javascript
 pragma solidity ^0.6.0;
@@ -42,7 +42,7 @@ pragma solidity ^0.6.0;
     }}
 
 ```
-OpenZeppelin Upgrades provides an Initializable base contract that has an initializer modifier to prevent a contract from being *initialized* multiple times:
+OpenZeppelin Upgrades는 컨트랙트가 여러 번 *초기화*되지 않도록 하는 초기화 수식자(modifier)가 있는 초기화 가능한 기본 컨트랙트를 제공합니다.
 https://github.com/bnb-chain/canonical-upgradeable-bep20/blob/47ed7a710e6e86bdc85f2118bf63fc892e3b7716/contracts/BEP20TokenImplementation.sol#L37
 
 ```javascript
@@ -59,7 +59,7 @@ function initialize(string memory name, string memory symbol, uint8 decimals, ui
     }
 
 ```
-BEP20 contract initializes the token’s name, symbol, and decimals in its constructor. You should not use these contracts in your BEP20 Upgrades contract. , make sure to use the `upgradableBEP20implementation` that has been modified to use initializers instead of constructors.
+BEP20 컨트랙트는 생성자에서 토큰 이름, 기호 및 소수점을 초기화합니다. BEP20 업그레이드 가능 컨트랙트에서 이러한 컨트랙트를 사용하면 안 됩니다. 생성자 대신 이니셜라이저를 사용하도록 수정된 `upgradableBEP20implementation`을 사용해야 합니다.
 https://github.com/bnb-chain/bsc-genesis-contract/blob/42922472b43397fbca9d0c84c7f72fbfaf39efc3/contracts/bep20_template/BEP20Token.template#L351
 
 ```javascript
@@ -74,20 +74,20 @@ constructor() public {
 
 ```
 
-## Using  Truffle
-### Setting up the Environment
+## Truffle 사용하기
+### 환경 설정하기
 
-We will begin by creating a new npm project:
+새로운 npm 프로젝트를 생성하겠습니다.
 ```
 mkdir mycontract && cd mycontract
 ```
-Then,
+그리고,
 ```
 npm init -y
 ```
-### Installation
+### 설치
 
-We will install Truffle.
+Truffle을 설치하겠습니다.
 
 ```
 npm install --save-dev truffle
@@ -95,12 +95,12 @@ npm install --save-dev @openzeppelin/contracts
 npm install --save-dev zeppelin-solidity
 ```
 
-When running Truffle select the option to “Create a truffle-config.js”
+Truffle 실행 “Create a truffle-config.js” 옵션을 선택하세요.
 ```
 npx truffle init
 ```
-### Create upgradeable contract
-This example token has a fixed supply that is minted to the deployer of the contract.
+### 업그레이드 가능 컨트랙트 생성하기
+이 예시 토큰은 고정 공급량으로, 컨트랙트 배포자에게 발행됩니다.
 
 https://github.com/bnb-chain/canonical-upgradeable-bep20/blob/master/contracts/BEP20TokenImplementation.sol
 
@@ -111,43 +111,43 @@ const fs = require('fs');
 module.exports = function(deployer, network, accounts) { deployer.then(async () => {  await deployer.deploy(BEP20TokenImplementation);  await deployer.deploy(BEP20TokenFactory, BEP20TokenImplementation.address); });};
 ```
 
-### Test the contract locally
-To test upgradeable contracts we should create unit tests for the implementation contract, along with creating higher level tests for testing interaction via the proxy.
+### 로컬에서 컨트랙트 테스트해보기
+업그레이드 가능한 컨트랙트를 테스트하려면 구현 컨트랙트에 대한 unit 테스트를 생성하고, 프록시를 통한 상호 작용을 테스트하기 위한 더 높은 수준의 테스트를 생성해야 합니다.
 ```javascript
 contract('Upgradeable BEP20 token', (accounts) => {  it('Create Token', async () => {    const BEP20TokenFactoryInstance = await BEP20TokenFactory.deployed();    bep20FactoryOwner = accounts[0];    bep20Owner = accounts[1];    proxyAdmin = accounts[0];
     const tx = await BEP20TokenFactoryInstance.createBEP20Token("ABC Token", "ABC", 18, web3.utils.toBN(1e18), true, bep20Owner, proxyAdmin, {from: bep20FactoryOwner});    truffleAssert.eventEmitted(tx, "TokenCreated",(ev) => {      bep20TokenAddress = ev.token;      return true;    });
   });
 ```
-### Transfer Control
-You can change the proxy owner to another address.
+### 통제 이전
+프록시 소유자를 다른 주소로 이전할 수 있습니다.
 ```js
 let event = await bep20proxy.methods.changeAdmin(newAdmin).send({from: proxyAdmin});
 bep20proxy.getPastEvents("AdminChanged", {fromBlock: 0, toBlock: "latest"}).then(console.log)
 
 ```
-### Transfer Owner
-You can change the BEP20 token owner to another address.
+### 소유자 이전
+BEP20 토큰 소유자를 다른 주소로 변경할 수 있습니다.
 ```js
     await bep20.methods.transferOwnership(accounts[5]).send({from: accounts[1]});
     const owner = await bep20.methods.getOwner().call({from: accounts[5]});
 ```
-### Deploy on Testnet
+### 테스트넷에 배포하기
 
-Create the following `2_bep20.js` script in the migrations directory.
+`2_bep20.js` 스크립트를 마이그레이션 디렉토리에 생성합니다.
 ```js
 module.exports = function(deployer, network, accounts) { deployer.then(async () => {  await deployer.deploy(BEP20TokenImplementation);  await deployer.deploy(BEP20TokenFactory, BEP20TokenImplementation.address); });};
 ```
-You can first deploy our contract to a local test (such as ganache-cli) and manually interact with it, then deploy your contract to a public test network.
+우선 로컬 테스트(ganache-cli 등)에 컨트랙트를 배포하여 수동으로 상호작용할 수 있습니다. 그리고 컨트랙트를 퍼블릭 테스트 네트워크에 배포합니다.
 ```shell
 $ npx truffle console --network ganache
 ```
-We can interact with our contract using the Truffle console.
+Truffle 콘솔을 사용하여 컨트랙트와 상호작용할 수 있습니다.
 ```shell
 truffle(ganache)> BEP20TokenFactoryInstance = await BEP20TokenFactory.deployed();undefinedtruffle(ganache)> await BEP20TokenFactoryInstance.createBEP20Token("ABC Token", "ABC", 18, web3.utils.toBN(1e18), true, {address1}, {address2});
 ```
-> Note: any secrets such as mnemonics or bscscan keys should not be committed to version control.
+> 참고: 니모닉이나 bscscan 키 등의 기밀사항은 버전 관리에 커밋 되어선 안 됩니다.
 
-Run `truffle migrate` with the BSC testnet to deploy.  We can see our implementation contract 'BEP20TokenImplementation' and the 'BEP20TokenFactory' being deployed.
+BSC 테스트넷에 배포를 위해 `truffle migrate`를 실행합니다. 구현 컨트랙트 'BEP20TokenImplementation'과 'BEP20TokenFactory'가 배포되는 것을 볼 수 있습니다.
 ```
 Deploying 'BEP20TokenImplementation'
    ------------------------------------
@@ -186,10 +186,10 @@ Deploying 'BEP20TokenImplementation'
 
 ```
 
-### Create a new version of our implementation
-After a period of time, we decide that we want to add functionality to our contract. In this guide we will add an `whitelist` function.
+### 구현 새 버전 만들기
+일정 기간이 지나면 컨트랙트에 기능을 추가하기로 결정합니다. 이 가이드에서는 `whitelist` 함수를 추가하겠습니다.
 
-Create the new implementation, `BEP2_V2.sol` in your contracts directory with the following Solidity code.
+다음 솔리디티 코드를 사용하여 컨트랙트 디렉토리에 새 구현인 `BEP2_V2.sol`을 만듭니다.
 ```js
 /**   * @dev sets multiple whitelist address   */
 function multiWhitelistAdd(address[] memory addresses) external onlyOwner {
@@ -213,10 +213,10 @@ function multiWhitelistAdd(address[] memory addresses) external onlyOwner {
     }
 ```
 
-### Test the upgrade locally
-To test our upgrade we should create unit tests for the new implementation contract, along with creating higher level tests for testing interaction via the proxy, checking that state is maintained across upgrades.
+### 로컬에서 업그레이드 테스트하기
+업그레이드를 테스트하려면 새 구현 컨트랙트에 대한 unit 테스트를 생성하고, 프록시를 통해 상호 작용을 테스트하기 위한 더 높은 수준의 테스트를 생성하여 업그레이드 후에도 상태가 유지되는지 확인해야 합니다.
 
-We will create unit tests for the new implementation contract. We can add to the unit tests we already created to ensure high coverage.
+새로운 구현 컨트랙트에 대한 unit 테스트를 만들 것입니다. 이미 만든 테스트에 추가하여 높은 적용 범위를 보장할 수 있습니다.
 
 Create uograde.test.js in your test directory with the following JavaScript.
 ```js
