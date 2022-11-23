@@ -3,11 +3,11 @@ sidebar_label: Hardware Requirements
 hide_table_of_contents: false
 sidebar_position: 2
 ---
-# Validator Hardware Requirements 
+# 검증인 하드웨어 요구사항
 
-- VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms (if start with snap/fast sync, it will need NVMe SSD)
-- 16 cores of CPU and 64 gigabytes of memory (RAM)
-- Suggest m5zn.3xlarge instance type on AWS, or c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 10 megabyte per second
+- 최신 버전의 Mac OS X 또는 Linux를 지원하는 VPS.
+- **중요** 2T GB의 빈 디스크 공간, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S 처리량, 읽기 지연시간(read latency) <1ms (snap/fast sync로 시작할 경우 NVMe SSD 필요)
+- 16 코어 CPU와 메모리 64 GB (RAM)
+- AWS m5zn.3xlarge 인스턴스 타입 또는 구글 클라우드 c2-standard-16 권장.
+- 10 MB/s 업로드/다운로드 속도의 브로드밴드 인터넷
   

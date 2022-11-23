@@ -4,36 +4,36 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Slashing Fee and Evidence Validation
+# 슬래싱 수수료 및 증거 검증
 
-## Double Sign
+## 이중 서명
 
-Anyone can submit a slash request on BC with the evidence of Double Sign of BSC
+BSC의 이중 서명의 증거와 함께 누구나 BC에 슬래싱 요청을 제출할 수 있습니다.
 
-### Evidence Validation
-* Two block headers have the same height and the same parent block hash
-* Two block headers are sealed by the same validator
-* Two signatures of these two blocks must not be the same
-* The time of these two blocks must be within the validity of the evidence, which is 24 hours
+### 증거 검증
+* 두 블록 헤더의 높이가 같고 상위 블록 해시가 같습니다.
+* 두 블록 헤더가 동일한 검증자에 의해 씰링됩니다.
+* 이 두 블록의 두 서명은 동일하지 않아야 합니다.
+* 이 두 블록의 시간은 증거 유효 기간 내에 있어야 합니다. 즉, 24시간입니다.
 
-If the evidence is valid:
+증거가 유효할 경우:
 
-1. **10,000BNB** would be slashed from the **self-delegated** BNB of the validator
-2. If the self-delegator’s stake amount on the validator is less than 10,000BNB, then the unbonding delegation balance would be slashed if it exists until totally 10,000BNB slashed from self-delegator of the validator. However, if all the slashed BNB is less than 10,000, all the remaining stake of the self-delegator will be slashed
-3. **1000** of slashed BNB would allocate to the submitter as a reward
-4. The rest of slashed BNB will allocate to the custody addresses of which validators would take part in the next distribution. If no matched validators found, then the rest of slashed BNB will allocate to validators on BC as block fee
-5. Set the validator ‘jailed’ with a duration of 292 years, and remove it from validator set by an instance BSC validator set update Cross-Chain update
+1. **10,000BNB**가 검증자의 **자체 위임** BNB에서 삭감됩니다.
+2. 검증자에 대한 자체 위임자의 지분 금액이 10,000 BNB 미만일 경우, unbonding 위임 잔액이 존재할 경우 검증자의 자체 위임자로부터 총 10,000 BNB가 삭감될 때까지 슬래싱됩니다. 그러나 삭감된 모든 BNB가 10,000 미만일 경우, 자체 위임자의 나머지 지분은 모두 삭감됩니다.
+3. 삭감된 BNB의 **1000**는 보상으로 제출자에게 할당될 것입니다.
+4. 삭감된 나머지 BNB는 검증자가 다음 배포에 참여할 수탁 주소에 할당할 것입니다. 일치하는 검증자를 찾을 수 없는 경우, 삭감된 나머지 BNB는 BC의 검증자에게 블록 수수료로 할당합니다.
+5. ‘jailed’ 검증자의 유효 기간을 292년으로 설정하고, 인스턴스 BSC 검증자 집단 업데이트 크로스체인 업데이트에 의해 설정된 검증자 집단에서 제거합니다.
 
 
-## Unavailability
+## 부재
 
-There can be an internal smart contract responsible for recording the missed blocking metrics of each validator.
+각 검증자의 누락된 블로킹 메트릭을 기록하는 내부 스마트 컨트랙트가 있을 수 있습니다.
 
-If a validator missed more than 50 blocks in 24h, the blocking reward for the validator will not be relayed to BC for distribution but shared with other better validators. If it missed more than 150 blocks in 24h, then this will be propagated back to BC where another Slashing will happen:
+검증자가 24시간 동안 50개 이상의 블록을 놓친 경우, 검증자에 대한 블록 보상은 배분을 위해 BC로 전달되지 않고 다른 더 나은 검증자와 공유됩니다. 24시간 동안 150개 이상의 블록을 놓치면 BC로 다시 전파되어 또 다른 슬래싱이 발생합니다.
 
-1. **50BNB** would be slashed from the  **self-delegated** BNB of the validator
-2. If the self-delegator’s stake amount on the validator is less than 50BNB, then the unbonding delegation balance would be slashed if it exists until totally **50BNB** slashed from self-delegator of the validator. However, if all the slashed BNB is less than 50, all the remaining stake of the self-delegator will be slashed
-3. **10** of slashed BNB would allocate to the validators on BC as block fee
-4. The rest of slashed BNB will allocate to the custody addresses of which validators would take part in the next distribution. If no matched validators found, then the rest of slashed BNB will allocate to validators on BC as block fee
-5. Set the validator ‘jailed’ with a duration of 2 days, and remove it from validator set by an instance BSC validator set update Cross-Chain update
+1. **50BNB**는 검증자의 ***자체 위임**BNB에서 삭감될 것입니다.
+2. 검증자에 대한 자체 위임자의 지분 금액이 50BNB 미만일 경우, 검증자의 자체 위임자로부터 완전히 **500BNB**가 삭감될 때까지 unbonding 위임 잔액이 슬래싱됩니다. 그러나 삭감된 모든 BNB가 50 미만일 경우, 자체 위임자의 나머지 지분은 모두 삭감됩니다.
+3. 삭감된 BNB의 **10**는 BC의 검증자에게 블록 수수료로 할당될 것입니다.
+4. 삭감된 나머지 BNB는 검증자가 다음 배분에 참여할 수탁 주소에 할당할 것입니다. 일치하는 검증자를 찾을 수 없는 경우, 삭감된 나머지 BNB는 BC의 검증자에게 블록 수수료로 할당합니다.
+5. ‘jailed’ 검증자의 유효기간은 이틀로 설정하고, 인스턴스 BSC 검증자 집단 업데이트 크로스 체인 업데이트에 의해 설정된 검증자 집단에서 제거합니다.
 

@@ -4,21 +4,21 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Common Problems With Connectivity
+# 연결성 문제
 
-Sometimes you just can’t get synced. The most common reasons are as follows:
+동기화가 안 되는 때가 있습니다. 대표적인 이유는 다음과 같습니다:
 
-* You have started `geth` without the discovery protocol, you can set the `--nodiscover` parameter to `False`. You only want this if you are running full node with fixed nodes.
+* Discovery 프로토콜 없이 `geth`를 시작하였습니다. `--nodiscover` 파라미터를 `거짓`으로 설정할 수 있습니다. 고정 노드와 함께 풀노드를 운영하는 경우에만 사용하는 것이 좋습니다.
 
-* Update `BootstrapNodes`
+* `BootstrapNodes` 업데이트
 
 ```
 BootstrapNodes = ["enode://1cc4534b14cfe351ab740a1418ab944a234ca2f702915eadb7e558a02010cb7c5a8c295a3b56bcefa7701c07752acd5539cb13df2aab8ae2d98934d712611443@52.71.43.172:30311","enode://28b1d16562dac280dacaaf45d54516b85bc6c994252a9825c5cc4e080d3e53446d05f63ba495ea7d44d6c316b54cd92b245c5c328c37da24605c4a93a0d099c4@34.246.65.14:30311","enode://5a7b996048d1b0a07683a949662c87c09b55247ce774aeee10bb886892e586e3c604564393292e38ef43c023ee9981e1f8b335766ec4f0f256e57f8640b079d5@35.73.137.11:30311"]
 ```
 
-* Add `Static nodes`
+* `Static nodes` 추가
 
-Geth also supports a feature called static nodes if you have certain peers you always want to connect to. Static nodes are re-connected on disconnects. You can configure permanent static nodes by putting something like the following into `<datadir>/geth/static-nodes.json`:
+항상 연결하고 싶은 피어가 있는 경우 Geth는 정적(static) 노드라는 기능 또한 지원합니다. 정적 노드는 연결이 끊겼을 때 재연결됩니다. 아래의 내용을 `<datadir>/geth/static-nodes.json`에 입력함으로써 영구적인 정적 노드를 설정할 수 있습니다.
 
 ```
 [
@@ -34,12 +34,12 @@ Geth also supports a feature called static nodes if you have certain peers you a
 ]
 ```
 
-You can also add static nodes at runtime via the js console using admin.addPeer():
+admin.addPeer()를 사용하여 js 콘솔을 통해 런타임에 정적 노드를 추가할 수 있습니다:
 ```
 admin.addPeer( "enode://8fb5dd1259e0672efb8c141434bf0c24c73b338f7c2da15efc2def7403b952d453814230eeb97f555aaed46ee0b0b6e2a8568b518f88bd328729031746114dd2@3.0.236.154:30311"
 )
 ```
 
-* Add `Trusted nodes`
+* `Trusted nodes` 추가하기
 
-Geth supports trusted nodes that are always allowed to reconnect, even if the peer limit is reached. They can be added permanently via a config file < datadir >/geth/trusted-nodes.json or temporary via RPC call.
+Geth는 피어 제한에 도달하더라도 항상 재연결하도록 허용된 신뢰 노드를 지원합니다. config 파일 < datadir >/geth/trusted-nodes.json을 통해서, 또는 RPC call을 통해서 일시적으로 연결될 수 있습니다.

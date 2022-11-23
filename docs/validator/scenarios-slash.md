@@ -4,17 +4,17 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Scenarios for Slashing and Jail
+# 슬래싱과 투옥(Jail) 시나리오
 
-### Double Signing
+### 이중서명
 
-Double signing refers to an event when the validator node proposes two different blocks at the same block height. The validator will be removed from the validator set, if they try signing two different blocks and broadcasting them. For BSC slash request on double signing, the supporting evidence should indicate two block headers having the same block height and the same parent block hash sealed by the same validator. The time of these two blocks must be within the validity of the evidence, which is 24 hours. Rewards for successful submission of double-sign evidence is 100 BNB. In the event evidence and slash request is valid, the validators will face a slashing of **_10,000 BNB_** from their self-delegated BNB and will be 'jailed' for a time period of 292 years.
+이중서명이란 검증인 노드가 같은 높이에서 두 개의 다른 블록을 제안한 사건을 뜻합니다. 두 개의 블록에 서명을 하고 전파하려는 검증인은 검증인 집단으로부터 제거됩니다. 이중서명에 대한 BSC 슬래싱 요청에는 같은 높이의 두 블록헤더와 동일한 검증인에 의해 확정된 부모 블록 해쉬가 포함되어야 합니다. 이 두 블록의 시간은 증거 유효기간, 즉 24시간 내여야 합니다. 성공적인 이중서명 증거 제출의 보상은 100 BNB입니다. 증거와 슬래싱 요청이 유효한 경우, 검증인들은 자기위임 BNB에서 **_10,000 BNB_**가 소멸되며 292년 동안 '투옥'됩니다.
 
-### Unavailability/Downtime
+### 부재/다운타임
 
-The slash fee for a validator being offline is self-delegated **_50 BNB_** along with jail time of 2 days. If a validator missed 150 blocks (157.5 minutes of downtime) within 24 hours. In this case, the validator will lose its reward and be kicked out of the validator set immediately.
+오프라인인 검증인에 대한 슬래싱 처벌은 자기위임 **_50 BNB_** 소멸 및 이틀 간의 투옥입니다. 24시간 내 검증인이 150개의 블록을 놓친 경우(157.5 분의 다운타임), 해당 검증인은 보상을 상실하며 즉시 검증인 집단에서 퇴장 당할 것입니다.
 
-### Self‐bond Below Minimum
+### 자기위임 기준 미달
 
-Validators will be jailed for 1 day if their self‐bond falls below **_10,000 BNB_**.
+검증인의 자기위임 액수가 **_10,000 BNB_** 미만일 경우 하루 동안 투옥됩니다.
 
