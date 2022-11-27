@@ -4,9 +4,16 @@ sidebar_position: 2
 ---
 
 # Storage Layout
+In this document, we discuss the storage layout for ZkBNB, both in a Database as well as in the form of Tree structure. 
+
+## RDB Layout
+The storage layout of the data in a RDB is illustrated in the following figure.
 
 ![Layout](./storage_layout.png)
-## Table
+
+### Database Table Layout
+In the database, the following tables will be responsible for storing different information.
+
  - `Account`: record account related information
  - `Account History`: record the historical change information of the account
  - `Asset`: record Asset related information
