@@ -120,7 +120,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Oracles',
-                        items: ['band',  'link']
+                        items: ['bs-oracle', 'band',  'link']
                       },
                       {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain App Support'},
             ]},  
