@@ -1,43 +1,27 @@
 ---
 sidebar_label: Getting Started
 ---
-
 # Getting Started
-The purpose of this tutorial is to give a general overview of BNB Chain and to serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain).
+The purpose of this tutorial is to give a general overview of BNB Chain and to serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain). 
 
 We recommend reading this document entirely before using BNB Chain so that you can avoid common pitfalls and problems that new users run into. There are many multiple components of the BNB Chain, so it's best to get a full picture of things before diving in to save yourself confusion. 
 
-You can find a general overview of BNB Chain [here](bnbIntro). It will be useful in understanding similarities and differences between BNB Chain and other platforms.
+## BNB Chain: An Ecosystem of Blockchains
+Build N Build Chain aka BNB Chain, one of the most popular blockchains in the world, dedicates to delivering its core infrastructure necessary for future public adoption, and always remains as a community-first and open-source ecosystem built on a permissionless and decentralized environment.
 
-## BNB Chain: Beacon Chain and BNB Smart Chain
-BNB Chain is composed of two blockchains - Beacon Chain (BC) and BNB Smart Chain (BSC). The [Beacon Chain](learn/beaconIntro.md) is the blockchain component that is responsible for the governance of the BNB Chain and manages staking and voting on the BNB Chain. Whereas, the [BNB Smart Chain](learn/intro.md) is the blokchain component that is EVM compatible, consensus layers, and with hubs to multi-chains.
+BNB Chain is composed of two blockchains - BNB Beacon Chain (BC) and BNB Smart Chain (BSC). The [BNB Beacon Chain](learn/beaconIntro.md) is the blockchain component that is responsible for the governance of the BNB Chain and manages staking and voting on the BNB Chain. Whereas, the [BNB Smart Chain](learn/intro.md) is the blokchain component that is EVM compatible, consensus layers, and with hubs to multi-chains.
 
-### What can you do with Beacon Chain(BC)?
-The purpose of the Beacon Chain is to provide an efficient blockchain ecosystem that works along a DEX to provide an alternative marketplace for issuing and exchanging digital assets in a decentralized manner.
+## What are the Major Components of BNB Chain?
+BNB Chain is comprised of:
+1. **[BNB Beacon Chain](learn/beaconIntro.md) _(previously Binance Chain)_** - BNB Chain Governance (Staking, Voting)
+2. **[BNB Smart Chain (BSC)](learn/intro.md) (_previously Binance Smart Chain)_** - EVM compatible, consensus layers, and with hubs to multi-chains
+3. **[BNB Sidechain](BNBSidechain/overview/bs-overview.md)** - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
+4. **ZkBNB _(Coming soon)_** - ZkRollup solution to scale BSC as an super high performance blockchains. 
 
-You can:
-
-- [Send and receive BNB](beaconchain/wallet/../transfer.md#web-wallet)
-- [Issue new tokens to digitalize assets](https://community.binance.org/topic/2487), and use Beacon Chain as underlying exchange/transfer network for the assets
-- Send, receive, [burn](beaconchain/tokens.md#burn)/[mint](beaconchain/tokens.md#mint) and [freeze/unfreeze](beaconchain/tokens.md#freeze-unfreeze) tokens
-- [Sumbit an on-chain governance proposal for BNB Smart Chain](learn/bsc-gov.md)
+![BSC 2022](../static/img/assets/BNBChain2022.png)
 
 
-**For traders**, you can:
-
-- [Propose to create trading pairs](beaconchain/list_instruction.md) between two different tokens
-- [Send orders](beaconchain/learn/trading-interface.md) to buy or sell assets through trading pairs created on the chain with [SDK](beaconchain/exchange-integration.md#sdks)
-- [Watch the DEX market](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets) to confirm price and market activity of certain assets
-
-**For developers**, you can also:
-
-- Explore the transaction history and blocks on the chain, via [BNB Chain Explorer](https://explorer.bnbchain.org/), [API](beaconchain/develop/api-reference/dex-api/paths.md)
-and [node RPC](beaconchain/develop/api-reference/node-rpc.md) interfaces.
-- Run a [full node](beaconchain/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-- Extract other data of Binance Chain via full node or [APIs](beaconchain/develop/api-reference/dex-api/paths.md#apiv1markets)
-- [Develop tools](Integrate.md#sdks) and applications to help users use Binance Chain and Binance DEX
-
-### What can you do with BNB Smart Chain (BSC)?
+## What can you do with BNB Smart Chain (BSC)?
 
 BNB Smart Chain (BSC) is best described as a blockchain that runs in parallel to the Beacon Chain. Unlike Beacon Chain, BSC boasts smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM). The design goal here was to leave the high throughput of Beacon Chain intact while introducing smart contracts into its ecosystem.
 
@@ -57,6 +41,7 @@ and node RPC interfaces.
 - Run a [full node](validator/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
 - Become a validator of BSC - [testnet](validator/guideline-testnet.md) and [mainnet](validator/guideline-mainnet.md)
 - [Develop wallets](wallet/wallet_api.md) and tools to help users use Dapps
+  
 
 ## Wallet
 The easiest way to use BNB Beacon and BNB Smart Chain is through a wallet with support for accounts and transfers on these chains.
@@ -132,3 +117,11 @@ Please refer to specific SDK documentation for more information:
 
 ## Blockchain Details
 Please check the [technical details](learn/beaconIntro.md#technology-details) for more technical information.
+
+## Future Goal 
+Innovation never sleeps, and it’s clear that the future of BNB Chain goes into a world of over 1 billion users. BNB Chain’s mission is to build the infrastructure that powers the world’s parallel virtual ecosystem, and BNB Chain’s commitment to the community is that it will be: 
+- Open
+- Multi-chain
+- For creators and inventors
+- Permissionless
+- Forever decentralized
