@@ -21,7 +21,7 @@ const sidebars = {
      // collapsible: true,
       collapsed: true,
       items: [
-         'getting-started', 
+         'bnbIntro', 'getting-started', 
           
           {
             type: 'category',
@@ -176,6 +176,14 @@ const sidebars = {
                   label: 'Solana',
                   items:['migration/non-evm-chains/solana/architecture-comparison', 
                          'migration/non-evm-chains/solana/token-migration']
+                 },
+                 {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Polygon',
+                  items:['migration/evm-chains/chain-comparison', 
+                         'migration/evm-chains/token-comparison',
+                         'migration/evm-chains/token-migration']
                  }
                 ]
             },
