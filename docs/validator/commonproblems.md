@@ -8,7 +8,7 @@ sidebar_position: 2
 
 동기화가 안 되는 때가 있습니다. 대표적인 이유는 다음과 같습니다:
 
-* Discovery 프로토콜 없이 `geth`를 시작하였습니다. `--nodiscover` 파라미터를 `거짓`으로 설정할 수 있습니다. 고정 노드와 함께 풀노드를 운영하는 경우에만 사용하는 것이 좋습니다.
+* Discovery 프로토콜 없이 `geth`를 시작하였습니다. `--nodiscover` 파라미터를 `False`로 설정할 수 있습니다. 고정 노드와 함께 풀노드를 운영하는 경우에만 사용하는 것이 좋습니다.
 
 * `BootstrapNodes` 업데이트
 
@@ -42,4 +42,4 @@ admin.addPeer( "enode://8fb5dd1259e0672efb8c141434bf0c24c73b338f7c2da15efc2def74
 
 * `Trusted nodes` 추가하기
 
-Geth는 피어 제한에 도달하더라도 항상 재연결하도록 허용된 신뢰 노드를 지원합니다. config 파일 < datadir >/geth/trusted-nodes.json을 통해서, 또는 RPC call을 통해서 일시적으로 연결될 수 있습니다.
+Geth는 피어 제한에 도달하더라도 항상 재연결하도록 허용된 신뢰 노드를 지원합니다. config 파일 `<datadir>/geth/trusted-nodes.json`으로 영구적으로 추가하거나, RPC call을 통해서 일시적으로 연결할 수 있습니다.

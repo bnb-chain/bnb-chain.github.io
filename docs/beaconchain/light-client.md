@@ -1,44 +1,40 @@
-# Run a Light Client to Join Beacon Chain 
+# 라이트 클라이언트 실행하여 비컨 체인 참여하기
 
-Light client is a program that connects to a full node to help users access and interact with Beacon Chain 
-in a secure and decentralized manner without having to sync the full blockchain.
+라이트 클라이언트는 풀 노드에 연결되어 사용자들이 블록체인 전체를 동기화 할 필요 없이 안전하고 분산화 된 방식으로 비컨 체인에 접속하거나 상호작용하는 것을 돕는 프로그램입니다.
 
-## Light Client Versus Full Node
+## 라이트 클라이언트 대 풀 노드
 
-- Light client does not store blocks or states,this way it needs less disk space (50 megabytes will be enough).
-- Light client does not join p2p network and it does not produce any network cost when it is idle. The network
-overhead depends on how many requests the light client handles concurrently.
-- Light client does not replay state of the chain so that there is not CPU cost when idle. The CPU cost also
-depends on how many requests the light client handles concurrently.
-- Light client is faster than a full node even if it lagged behind the core network for a few months. It only needs a few seconds
-to catch up with core network.
+- 라이트 클라이언트는 블록이나 상태를 저장하지 않아서, 저장 공간이 적게 필요합니다 (50MB면 충분합니다).
+- 라이트 클라이언트는 p2p 네트워크에 접속하지 않아 통신하지 않을 때는 네트워크 비용이 발생하지 않습니다. 네트워크 처리 시간은 라이트 클라이언트가 동시에 처리하는 요청 수에 따라 달라집니다.
+- 라이트 클라이언트는 체인의 상태를 재생하지 않아서 통신하지 않을 때는 CPU 비용이 들지 않습니다. CPU 비용은 동시에 처리하는 요청 수에 따라 달라집니다.
+- 라이트 클라이언트는 몇 달 간 코어 네트워크와 접속을 안했어도 풀 노드보다 빠릅니다. 코어 네트워크를 따라잡으려면 몇 초만 기다리면 됩니다.
 
-## Platforms and System Requirement
+## 플랫폼과 시스템 요구 사항
 
-### Platforms
+### 플랫폼
 
 We support running light client node on `Mac OS X`, `Windows` and `Linux`.<br/>
-The light client will soon be open sourced, afterwards you can cross compile light client binary and run it on other platforms.
+라이트 클라이언트는 곧 오픈 소스가 될 것이며, 이후 라이트 클라이언트 바이너리를 크로스 컴파일하여 다른 플랫폼에서 실행할 수 있을 것입니다.
 
-### Requirements
-- 50 megabytes of free disk space.
-- 2 CPU cores, 50 megabytes of memory (RAM).
+### 요구 사항
+- 50 MB 빈 디스크 공간
+- 2 CPU 코어 및 50 MB 메모리 (RAM).
 
-## Run a light client node
+## 라이트 클라이언트 노드 실행하기
 
-Download:
+다운로드:
 ```bash
 git clone https://github.com/bnb-chain/node-binary.git
 ```
 
-Go to directory according to the network you want to join in.<br/>
-Replace the `network` variable with `testnet` or `prod` in the following command:
+접속하고 싶은 네트워크에 맞게 디렉토리에 접속하세요<br/>
+다음 명령어에서 `network` 변수를 `testnet`이나 `prod`로 교체하세요:
 
 ```bash
 cd node-binary/lightd/{network}/{version}
 ```
 
-Help info:
+Help 정보:
 
 ```
 ./lightd --help
@@ -62,23 +58,23 @@ Flags:
       --node string                Connect to a binance node at this address (default "tcp://localhost:27147")
 ```
 
-You can specify all the parameters above.
+--help를 통해 모든 매개 변수들을 특정할 수 있습니다.
 
-Start the light client node according to the Platform. Replace the `platform` variable with `mac`, `windows` or `linux` in the following command:
+플랫폼에 따라 라이트 클라이언트를 시작하세요. 다음 명령어에서 `platform` 변수를 `mac`, `windows`나 `linux`로 교체하세요:
 
 ```bash
 ./{{platform}}/lightd --chain-id "{chain-id}" --node tcp://{full node addr}:80 > node.log  &
 ```
 
-There are two required parameters to start a light client node: `chain id` and `full node addr`.<br/>
-The `chain id` of the network that you want join in.<br/>
-You can find chain id at [genesis file in test network](https://https://github.com/bnb-chain/node-binary/blob/master/fullnode/testnet/0.5.8/config/genesis.json)
-or [genesis file in prod network](https://github.com/bnb-chain/node-binary/blob/master/fullnode/prod/0.5.8/config/genesis.json).<br/>
-The `full node addr` field can be an address of any full node that you have deployed.<br/>
-You can refer to [Run a Beacon Chain  full node](fullnode.md) to get more details.<br/>
+라이트 클라이언트를 시작하기 위해서는 필수 매개 변수가 두 가지 존재합니다: `chain id`와 `full node addr`입니다.<br/>
+`chain id`는 접속하고 싶은 네트워크를 나타냅니다.<br/>
+체인 id에 관해서는 [테스트넷의 제네시스 파일](https://https://github.com/bnb-chain/node-binary/blob/master/fullnode/testnet/0.5.8/config/genesis.json)
+이나 [prod넷의 제네시스 파일](https://github.com/bnb-chain/node-binary/blob/master/fullnode/prod/0.5.8/config/genesis.json)를 참고해 주세요.<br/>
+`full node addr`는 배포된 모든 풀 노드의 주소가 들어갈 수 있습니다<br/>
+[비컨 체인 풀 노드 실행하기](fullnode.md)를 참고해 주세요.<br/>
 
-We supply a bunch of full nodes that you can connect to for both mainnet and testnet.<br/>
-You cat get full nodes info through a simple python script(notice to replace domain according to different network):<br/>
+메인넷과 테스트넷 두 네트워크 모두 연결 가능한 풀 노드가 여러 개 제공됩니다.<br/>
+간단한 파이썬 코드를 통해 풀 노드에 관한 정보를 얻을 수 있습니다(네트워크에 따라 도메인을 바꿔주세요):<br/>
 
 ```python
 import requests, json
@@ -88,18 +84,18 @@ seeds = ",".join([ (seed["id"]+"@"+seed["original_listen_addr"]) for seed in l i
 print (seeds)
 ```
 
-### Example for Mainnet:
+### Mainnet 예시:
 ```bash
 ./lightd --chain-id "Binance-Chain-Tigris" --node tcp://dataseed1.binance.org:80 > node.log  &
 ```
 
-### Example for Testnet:
+### Testnet 예시:
 ```bash
 ./lightd --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
 ```
 
 
-## Working with the light client
+## 라이트 클라이언트로 작업하기
 
-Light client has the same RPC interface as [rpc-api](api-reference/node-rpc.md).<br/>
-The default port of light client is `27147`.
+라이트 클라이언트는 [rpc-api](api-reference/node-rpc.md)와 같은 RPC 인터페이스를 보유하고 있습니다.<br/>
+라이트 클라이언트의 기본 포트는 `27147` 입니다.

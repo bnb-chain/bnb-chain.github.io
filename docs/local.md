@@ -19,7 +19,7 @@ sidebar_position: 2
 #### /projects Symbolic 링크를 생성하세요
 
 `/projects` symbolic 링크를 생성하세요
-*(참고:  이 단계는 "/projects" 가 다른 모든 명령어에서 사용될 수 있도록 하기 위함입니다. 대신 완전한 경로를 사용하거나 env var를 설정할 수도 있습니다)*
+*(참고: 이 단계는 "/projects" 가 다른 모든 명령어에서 사용될 수 있도록 하기 위함입니다. 대신 완전한 경로를 사용하거나 환경 변수를 설정할 수도 있습니다)*
 
 ```
 $ mkdir <my projects folder>
@@ -107,13 +107,13 @@ $ geth --datadir /projects/local_ethereum_blockchain/node-2 --port 30304 --nodis
 
 ### 피어
 
-Show peers
+피어 표시하기
 
 ```
 > admin.peers
 ```
 
-How many peers ?
+피어 개수
 
 ```
 > admin.peers.length
@@ -121,17 +121,17 @@ How many peers ?
 
 ### 계정 생성
 
-You need an account to do be able to do things like mining
+채굴 등을 수행하기 위한 계정 생성
 
 ```
 > personal.newAccount()
 ```
 
-*And make sure you remember/save the password!*
+*꼭 패스워드를 기억하거나 기록하세요!*
 
 ### 계정 잠금
 
-Neccessary before some actions
+특정 명령을 수행하기 전에 요구됩니다.
 
 ```
 > personal.unlockAccount( eth.accounts[0] )
@@ -143,7 +143,7 @@ Neccessary before some actions
 > miner.start(1)
 ```
 
-The first block may take a while to mine, allow a few minutes
+첫 블록을 채굴할 때까지 몇 분 걸릴 수 있습니다
 
 ### 마이닝 중단
 

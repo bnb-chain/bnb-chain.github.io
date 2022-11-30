@@ -30,7 +30,7 @@ EVM의 스마트 컨트랙트는 불변하도록 설계되었습니다. 일단 �
 
 ### 이니셜라이저
 
-OpenZeppelin Upgrade에서는 생성자를 제외하고 Solidity 계약을 수정하지 않고 사용할 수 있습니다. 프록시 기반 업그레이드 가능성 시스템의 요구 사항으로 인해 업그레이드 가능한 계약에 생성자를 사용할 수 없습니다. 이러한 제한의 이유에 대해 알아보려면 [Proxies](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies#the-constructor-caveat)를 방문하십시오.
+OpenZeppelin Upgrade에서는 생성자를 제외하고 Solidity 계약을 수정하지 않고 사용할 수 있습니다. 다만 프록시 기반의 업그레이드 시스템에서, 업그레이드가 가능하게 설계된 계약은 시스템 요건에 의해 생성자를 사용할 수 없습니다. 이러한 제한의 이유에 대해 알아보려면 [Proxies](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies#the-constructor-caveat)를 방문하십시오.
 
 즉, OpenZeppelin Upgrade 컨트랙트를 사용할 경우 생성자를 모든 설정 로직을 실행하는 일반 함수(일반적으로 initialize)로 변경해야 합니다.
 
@@ -95,7 +95,7 @@ npm install --save-dev @openzeppelin/contracts
 npm install --save-dev zeppelin-solidity
 ```
 
-Truffle 실행 “Create a truffle-config.js” 옵션을 선택하세요.
+Truffle 실행 시 “Create a truffle-config.js”를 만들기 위해 아뢔와 같이 입력해 주세요.
 ```
 npx truffle init
 ```
@@ -218,7 +218,7 @@ function multiWhitelistAdd(address[] memory addresses) external onlyOwner {
 
 새로운 구현 컨트랙트에 대한 unit 테스트를 만들 것입니다. 이미 만든 테스트에 추가하여 높은 적용 범위를 보장할 수 있습니다.
 
-Create uograde.test.js in your test directory with the following JavaScript.
+테스트 디렉토리에 upgrade.test.js를 생성 후 다음과 같이 작성하면 됩니다.
 ```js
 let tx = await bep20proxy.methods.upgradeTo(newInstance.address).send({from: proxyAdmin});
  bep20proxy.getPastEvents("Upgraded", {fromBlock: 0, toBlock: "latest"}).then(console.log)

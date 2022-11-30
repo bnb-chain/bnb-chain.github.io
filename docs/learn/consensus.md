@@ -58,9 +58,11 @@ BSC의 시스템 보상 구조는 유연하게 변동할 수 있습니다. 거�
 - **handleSynPackage(uint8, bytes calldata msgBytes)**
 
 **Conditions**:
+
         1. 메시지 Sender는 CrossChainContract를 사용합니다.
 
 **Action**:
+
         1. msgBytes의 첫 번째 바이트가 0x00이면 
         `Actions validators update`
 
@@ -68,6 +70,7 @@ BSC의 시스템 보상 구조는 유연하게 변동할 수 있습니다. 거�
         `Actions jail`
 
 **Actions jail**:
+
         1. 검증인을 jailed로 표시.
 
 **Actions validators update**:
@@ -100,7 +103,7 @@ BSC의 시스템 보상 구조는 유연하게 변동할 수 있습니다. 거�
     **Conditions**:
 
         1. 메시지 발신자는 퍼미션 목록에 있어야 합니다.
-        2. 금액은 1 BNB 이상이어선 안됩 니다.
+        2. 금액은 1 BNB 이상이어선 안됩니다.
 
     **Actions**:
 

@@ -16,7 +16,7 @@ BC 및 BSC는 BNB 및 BEP8/BEP2/BEP20 토큰에 대해 동일한 토큰 유니�
 두 체인 모두에서 토큰의 총 유통량을 확보하기 위해 토큰을 체인에 고정하는 `Peg Account`를 도입합니다.
 `Peg Account`는 순수 코드로 제어되는 계정으로서 누구도 해당 계정에 접근할 수 있는 권한이 없습니다.
  
-- BC의 경우 'Peg 계정'은 `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`. (테스트넷은 `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`)
+- BC의 경우 `Peg 계정`은 `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`. (테스트넷은 `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`)
 - BSC의 경우 `Peg Account`은 [TokenHub](https://bscscan.com/address/0x0000000000000000000000000000000000001004) 컨트랙트입니다.
 
 ## 바인딩

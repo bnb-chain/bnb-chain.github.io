@@ -12,7 +12,7 @@ sidebar_position: 2
 이 튜토리얼은 다음 학습 요점에 대한 지식을 얻는 데 도움이 됩니다.
 - 스마트 컨트랙트 개발을 위한 Black IDE
 - 키쌍을 관리하고 Black IDE의 계정에 BNB 토큰을 전송하기
-- BSC 테스트넷에 메타마스크 연결입니다.
+- BSC 테스트넷에 메타마스크 지갑 연결
 - 스마트 컨트랙트 개발
 - NFT를 발행, 민팅 및 양도
 
@@ -23,7 +23,7 @@ sidebar_position: 2
 -	Docker v20.10.14
 
 ## 간단한 기술 스택 소개
-1. **솔리디티:** 가장 인기 있는 객체 지향 고급 스마트 계약 프로그래밍 언어 중 하나입니다. 솔리디티에 대한 자세한 내용은 여기를 참조하십시오.
+1. **솔리디티:** 가장 인기 있는 객체 지향 고급 스마트 계약 프로그래밍 언어 중 하나입니다. 솔리디티에 대한 자세한 내용은 [여기](https://solidity-kr.readthedocs.io)를 참조하십시오.
 2. **메타마스크 지갑 브라우저 익스텐션:** 메타마스크 크롬 확장을 사용하는 것이 좋습니다. 이것은 크롬 브라우저를 유효한 블록체인 네트워크에 연결할 수 있는 웹 지갑입니다.
 3. **Black IDE:** Black IDE는 통합 개발 환경(IDE)으로, EVM 호환 스마트 계약을 더 빠르고 쉽게 개발할 수 있습니다. Black IDE는 데스크톱 및 웹(Black IDE Web) 응용 프로그램을 모두 제공합니다.
 
@@ -31,41 +31,41 @@ sidebar_position: 2
 이 튜토리얼은 가능한 한 단순하게 유지하는 것이 목표이므로 리소스를 최대한 적게 사용합니다. 다음과 같은 도구를 사용했습니다.
 * 메타마스크 지갑
 * 브라우저에서 메타마스크 지갑 익스텐션이 설치되어 실행 중인지 확인하십시오.
-* BSC 테스트넷과 함께 사용할 수 있도록 메타마스크 지갑을 구성합니다. 다음 세부 정보를 사용하여 BSC 테스트넷을 추가합니다. 자세한 내용은 여기를 참조하십시오.
-* 네트워크 이름: BSC 테스트넷입니다.
+* BSC 테스트넷과 함께 사용할 수 있도록 메타마스크 지갑을 구성합니다. 다음 세부 정보를 사용하여 BSC 테스트넷을 추가합니다. 자세한 내용은 [여기](https://academy.binance.com/ko/articles/connecting-metamask-to-binance-smart-chain)를 참조하십시오.
+* 네트워크 이름: BSC Testnet
 * RPC URL: https://data-seed-prebsc-1-s1.binance.org:8545/
 * 체인 ID: 97
 * 통화 기호: BNB
 * 블록 탐색기 URL: https://testnet.bscscan.com 
 * Black IDE: 데스크톱 앱과 웹 앱을 모두 사용할 수 있으며 사용자의 편의에 따라 선택할 수 있습니다. 웹 앱은 OpenZeppelin 컨트랙트를 가져오기를 지원하지 않기 때문에 이 튜토리얼에서는 데스크톱 앱을 사용했습니다. 
-* BlackIDE에 필요한 디펜던시를 다운로드/설치합니다.
+* BlackIDE에 필요한 디펜던시(dependency)를 다운로드/설치합니다.
 
 ![image](https://user-images.githubusercontent.com/93580180/177942609-e2c942a6-342c-46cd-b794-92fc8e72bdc0.png)
 
 ## Black IDE에 로그인하기
 1. Black IDE 데스크톱 애플리케이션을 엽니다. BSC 테스트넷에서 NFT에 대한 스마트 컨트랙트를 컴파일하고 배포하는 데 사용할 것입니다.
 2. 로그인 버튼을 클릭하고 GitHub 계정을 사용하여 인증합니다.
-
+![image](https://user-images.githubusercontent.com/93580180/177942736-d3d79717-8952-4fc7-b7c2-b28dc978f277.png)
 
 ## 새 프로젝트 생성하기
 3. 프로젝트 옆에 있는 New 버튼을 클릭하여 새 프로젝트를 만듭니다. 
-
+![image](https://user-images.githubusercontent.com/93580180/177942931-510837df-ed97-4a8e-a4df-cc4aeca24294.png)
 4. 장치에서 프로젝트를 저장할 위치(예: "BSC-NFT")를 지정하고 드롭다운 목록에서 프로젝트 유형을 "Basics - ERC20, ERC721, & ERC1155(v31+)"로 선택합니다. 그런 다음 Create 버튼을 클릭하여 프로젝트를 생성합니다.
-
+![image](https://user-images.githubusercontent.com/93580180/177942969-a1e8170f-e806-44d5-9e9f-99e5cc2914f8.png)
 
 5. 이 튜토리얼의 스마트 컨트랙트는 샘플일 뿐이며 언제든지 수정하고 개선할 수 있습니다.
 
 ## 스마트 컨트랙트 생성하기
 6. 컨트랙트 메뉴를 확장하고 기본 파일을 삭제합니다. 
-
+![image](https://user-images.githubusercontent.com/93580180/177948005-436776e5-07b4-4109-8b19-897925e623e4.png)
 
 7. 컨트랙트 메뉴를 마우스 오른쪽 버튼으로 클릭하고 새 파일을 선택합니다. 파일 이름(예: BSC-NFT.sol)을 지정한 다음 만들기 단추를 클릭합니다.
-
+![image](https://user-images.githubusercontent.com/93580180/177943065-cc591abd-d856-4c9c-bbef-94b2e826af7f.png)
 
 ## 스마트 컨트랙트 코드 작성
 8. 다음 코드를 스마트 컨트랙트 파일에 복사합니다. 우리는 이[repo](https://github.com/RumeelHussainbnb/ERC721_NFT/blob/main/BSC-NFT.sol)의 계약 코드를 사용했습니다.
-9. 필요에 따라 토큰의 ```MINT_PRICE```, ```MAX_SUPPLY```, ```name```, ```symbol```을 변경하세요. 또한 토큰에 따라 ```_baseURI``를 변경해야 합니다.
-10.	
+9. 필요에 따라 토큰의 ```MINT_PRICE```, ```MAX_SUPPLY```, ```name```, ```symbol```을 변경하세요. 또한 토큰에 따라 ```_baseURI```를 변경해야 합니다.
+
 ![image](https://user-images.githubusercontent.com/93580180/177949895-a095fdb5-f770-4530-84f6-8854a0d7a5eb.png)
 
 ## 기본 프로젝트 설정 편집
@@ -97,12 +97,17 @@ sidebar_position: 2
 ![image](https://user-images.githubusercontent.com/93580180/177944333-ca8aefed-fec2-4271-aa3e-d2ccc301eb6c.png)
  
 *  키 쌍 관리자를 닫았다가 다시 열어 잔액이 업데이트되었는지 확인합니다. 잔액이 업데이트될 때까지 1~2분 정도 기다리세요.
+![image](https://user-images.githubusercontent.com/93580180/177944370-3aa70613-be45-4558-8c83-aca1a00557c3.png)
 
 ## BSC 테스트넷에 스마트 컨트랙트 배포하기
 1. IDE의 오른쪽 하단 모서리에 있는 Solc (0.8.4) 에서 적절한 솔리디티 컴파일러 버전을 선택합니다. 이 경우 ![image](https://user-images.githubusercontent.com/93580180/177944415-e733562a-54ad-4ed8-85a5-f17c79edfeac.png)입니다. 
 2. 빌드 아이콘![image](https://user-images.githubusercontent.com/93580180/177944483-ff523eed-017d-4265-b722-78ded06fe826.png)을 클릭하여 스마트 컨트랙트를 구축합니다. 빌드에 성공하면 프로젝트 탐색 창에 빌드라는 새 폴더가 반영됩니다. 이 폴더에는 컨트랙트의 json 파일이 빌드된 컨트랙트 폴더가 포함되어 있습니다. 우리의 BSCNFT 컨트랙트에서 가져온 모든 컨트랙트도 json 파일로 옵니다.
+![image](https://user-images.githubusercontent.com/93580180/177948331-ece850ae-01fd-479b-b25f-d1f28c3400f6.png)
 
 3. 컨트랙트를 성공적으로 구축했으니 이제 배포할 수 있습니다. 스마트 컨트랙트를 배포하려면 배포 아이콘![image](https://user-images.githubusercontent.com/93580180/177944540-10d86198-03f2-40d8-8ac0-c013483c6458.png)을 클릭하십시오. 아래 그림과 같이 컨트랙트에 대한 세부 정보를 지정한 다음 Estimate & Deploy 버튼을 클릭합니다. 마법사가 자동으로 견적을 내고 컨트랙트에 대한 가스 한도를 채웁니다. 그런 다음 Deploy 버튼을 클릭합니다. 
+
+![image](https://user-images.githubusercontent.com/93580180/177944618-47b0fb1d-0ce3-4512-9b29-66f7a3416325.png)
+![image](https://user-images.githubusercontent.com/93580180/177944632-839f7ac5-c9d5-4d80-b6fe-0b6be2e6c3fb.png)
 
 4. 아래 그림과 같이 배포 세부 정보가 팝업됩니다.
 
@@ -160,5 +165,5 @@ sidebar_position: 2
 ![image](https://user-images.githubusercontent.com/93580180/177949365-52efd22c-25ac-4eac-b47e-82349d6b0a5c.png)
 
 ## 결론
-이 튜토리얼에서는 Obsidian Labs의 Black IDE를 사용하여 BSC 테스트넷에서 NFT를 발행 및 전송하는 방법에 대한 단계별 가이드를 제공했습니다. 이 튜토리얼에 사용되는 기술 스택에는 솔리디티, 트러플, 메타마스크 및 Black IDE가 포함됩니다. BSC에서 개발하는 방법에 대한 자세한 튜토리얼은 [GitHub](https://github.com/bnb-chain/bnb-chain-tutorial)을 참고하세요. 질문이 있거나 막히는 부분이 생기면 [Discord Channel](https://discord.com/channels/789402563035660308/912296662834241597)로 문의하세요.
+이 튜토리얼에서는 Obsidian Labs의 Black IDE를 사용하여 BSC 테스트넷에서 NFT를 발행 및 전송하는 방법에 대한 단계별 가이드를 제공했습니다. 이 튜토리얼에 사용되는 기술 스택에는 솔리디티, 트러플, 메타마스크 및 Black IDE가 포함됩니다. BSC에서 개발하는 방법에 대한 자세한 튜토리얼은 [GitHub](https://github.com/bnb-chain/bnb-chain-tutorial)를 참고하세요. 질문이 있거나 막히는 부분이 생기면 [Discord Channel](https://discord.com/channels/789402563035660308/912296662834241597)로 문의하세요.
 

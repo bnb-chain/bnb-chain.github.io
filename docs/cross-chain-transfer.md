@@ -36,7 +36,7 @@ tbnbcli token info --symbol BNB --trust-node --node http://data-seed-pre-0-s3.bi
 }
 ```
 
-BNB는 두 체인 모두의 네이티브 토큰이기 때문에 컨트랙트주소로 `0x0000000000000000000000000000000000000000`을 사용합니다.떠한 BSC에서는 네이티브 토큰 소수점이 18인 반면 BC에서는 소수점이 8입니다. 따라서 BNB를 BSC로 1e8 만큼 전송하면 수신자의 잔액은 1e18 만큼 증가합니다.
+BNB는 두 체인 모두의 네이티브 토큰이기 때문에 컨트랙트주소로 `0x0000000000000000000000000000000000000000`을 사용합니다. 또한 BSC에서는 네이티브 토큰 소수점이 18인 반면 BC에서는 소수점이 8입니다. 따라서 BNB를 BSC로 1e8 만큼 전송하면 수신자의 잔액은 1e18 만큼 증가합니다.
 
 
 ## BC에서 BSC로 BNB 보내기
@@ -70,7 +70,7 @@ Committed at block 465899 (tx hash: 68FFF82197E27A3EC14AFF8C99A035FA9CA7120312AA
 | 파라미터 이름 | 타입    | 설명                                                  |
 | -------------- | ------- | ------------------------------------------------------------ |
 | contractAddr   | address | BNB에서는 0x0000000000000000000000000000000000000000 |
-| recipient      | address | bech32 주소를 디코딩함. hex 문자열로 전송하기 위해 `0x`로 시작함. bech32를 디코딩할 수 있는 온라인 툴: https://slowli.github.io/bech32-buffer/ |
+| recipient      | address | bech32 주소를 디코딩합니다. hex 문자열로 전송하기 위해 `0x`로 시작합니다. bech32를 디코딩할 수 있는 온라인 툴: https://slowli.github.io/bech32-buffer/ |
 | amount         | uint256 | BSC에서 BNB 소수점은 18. 1 BNB를 전송하고 싶은 경우, 값은 1e18임. 그 외의 경우 N * 1e10 |
 | expireTime     | uint256 | 초 단위 타임 스탬프                             |
 
@@ -93,7 +93,7 @@ MyEtherWallet의 TokenHub 컨트랙트에서 **batchTransferOutBNB**를 호출�
 
 | 파라미터 이름  | 타입      | 설명                                                  |
 | -------------- | --------- | ------------------------------------------------------------ |
-| recipientAddrs | address[] | bech32 주소를 디코딩함. hex 문자열로 전송하기 위해 `0x`로 시작함. bech32를 디코딩할 수 있는 온라인 툴: https://slowli.github.io/bech32-buffer/0 |
+| recipientAddrs | address[] | bech32 주소를 디코딩합니다. hex 문자열로 전송하기 위해 `0x`로 시작합니다. bech32를 디코딩할 수 있는 온라인 툴: https://slowli.github.io/bech32-buffer/0 |
 | amounts        | uint256[] | 각 수신인을 위한 값, N * 1e10여야 함              |
 | refundAddrs    | address[] | 전송인은 크로스 체인 전송 실패 경우를 위해 일부 주소를 반환 주소로 설정 가능 |
 | expireTime     | uint256   | 초 단위 타임 스탬프                               |
@@ -115,7 +115,7 @@ bnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --exp
 tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Ganges --from owner --amount 10000000000:ABC-A64 --node http://data-seed-pre-0-s3.binance.org:80
 ```
 ## BC로 BEP20 전송하기
-**transferOut**나 **batchTransferOut**를 호출하기 전, 사용자들은 **approve** 메서드를 호출하여 TokenHub 컨트랙트에 충분한 허용액을 부여해야 합니다. **transferOut** 메서드의 경우 허용은 전송 금액과 같아야 합니다. **batchTransferOut**의 경우 허용은 금액 배열의 합입니다.
+**transferOut**나 **batchTransferOut**를 호출하기 전, 사용자들은 **approve** 메서드를 호출하여 TokenHub 컨트랙트에 충분한 금액을 부여해야 합니다. **transferOut** 메서드의 경우 허용은 전송 금액과 같아야 합니다. **batchTransferOut**의 경우 허용은 금액 배열의 합입니다.
 
 ### transferOut
 
@@ -162,4 +162,4 @@ bnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-i
 ## testnet
 tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Ganges --node http://data-seed-pre-0-s3.binance.org:80
 ```
-* 다음 순수 코드 제어 주소로 모든 ABC-A64 토큰을 전송하세요: `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`(mainnet address: `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`)
+* 다음 순수 코드 제어 주소로 모든 ABC-A64 토큰을 전송하세요: `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`(메인넷 주소: `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`)

@@ -55,7 +55,7 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 
 ### 3. 합의 키 생성하기
 
-검증인의 합의키, 즉 계정을 생성해야 합니다. 아래의 명령어를 통해 새로운 계정을 만들고 비밀번호를 설정할 수 있습니다.
+검증인의 합의 키, 즉 계정을 생성해야 합니다. 아래의 명령어를 통해 새로운 계정을 만들고 비밀번호를 설정할 수 있습니다.
 
 
 !!! 경고
@@ -77,7 +77,7 @@ geth account import --datadir ./node
 ### 4. 검증인 노드 시작하기
 
 !!! 경고
-	퍼블릭 네트워크의 여러분의 RPC 엔드포인트를 노출하지 마세요.
+	퍼블릭 네트워크에 여러분의 RPC 엔드포인트를 노출하지 마세요.
 
 ```bash
 ## generate the consensus key and input the password

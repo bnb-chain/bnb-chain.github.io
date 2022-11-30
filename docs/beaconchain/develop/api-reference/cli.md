@@ -1,143 +1,141 @@
-# Command Line Interface (CLI)
+# 명령 줄 인터페이스 (CLI - Command Line Interface)
 
-Beacon Chain CLI is one of several ways to interact with Beacon Chain.
+비컨 체인 CLI는 비컨 체인과 상호 작용하기 위한 방법 중 하나입니다.
 
-Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
-key or restore your key from mnemonic words. And you can list your keys and show specified key info.
+비컨 체인 CLI는 로컬 지갑으로 사용될 수 있으며, 바이낸스 CLI를 통해 키를 관리할 수 있습니다. 또한 새로운 키를 생성하거나
+미모닉 단어를 통해 키를 복원할 수도 있습니다. CLI를 통해 보관된 키의 리스트나 특정 키의 정보를 조회할 수도 있습니다.
 
-With Beacon Chain CLI, you can send transactions to Beacon Chain, like placing an order, transferring tokens,
-issuing tokens and so on. Actually you can do almost everything you can do with Beacon Chain web wallet. What is
-more, you can propose to list trading pairs and join chain governance.
+비컨 체인 CLI를 통해 비컨 체인에 트랜잭션을 전송하거나, 주문을 넣거나, 토큰을 이전하거나 발행할 수 있습니다.
+사실 비컨 체인 웹 지갑으로 어떤 것이든 할 수 있습니다. 상장 거래 쌍을 제안하거나 체인 거버넌스에 참여하는 것도 가능합니다.
 
-In addition, you can do some simple queries through CLI. For example, you can query your account's
-balance, transaction detail by transaction hash and etc.
+CLI를 통해 간단한 쿼리도 가능합니다. 예시로 자기 계정의 잔고나 트랜잭션 해시에 나타난 정보 등도 요청할 수 있습니다.
 
-## Where can I download the Beacon Chain CLI?
+## 비컨 체인 CLI를 다운로드하기
 
-You can download Beacon Chain CLI releases here: [https://github.com/bnb-chain/node-binary](https://github.com/bnb-chain/node-binary/tree/master/cli)
+비컨 체인 CLI 릴리스는 여기에서 다운로드 할 수 있습니다: [https://github.com/bnb-chain/node-binary](https://github.com/bnb-chain/node-binary/tree/master/cli)
 ```
 git clone https://github.com/bnb-chain/node-binary.git
 ```
-You can choose to download the version for testnet or mainnet. Replace the network var with `testnet` or` prod` in the following command:
+다운로드 시 테스트넷 버전과 메인넷 버전을 선택할 수 있습니다. 다음 명령어에서 네트워크 변수를 `testnet`이나 ` prod`로 교체하세요:
 ```
 cd node-binary/cli/{network}/{version}
 ```
-### CLI installation
+### CLI 설치
 
-Once you have downloaded the binary for your platform, you may drop it into any folder you like. Open a terminal window or `cmd.exe` in that folder, and then follow the examples on the documentation site.
+플랫폼을 위한 바이너리를 다운 받은 후, 원하는 폴더에다 배치하세요. 해당 폴더에서 터미널이나 `cmd.exe`을 실행하고 문서에 있는 예시를 따라 원하는 기능을 실행하세요.
 
-For mainnet:
+메인넷:
 
 ```bash
 $  ./bnbcli
 ```
 
-On Windows you would most likely use this instead:
+Windows 운영체제에서는 다음과 같이 실행하세요:
 
 ```bash
 C:\> bnbcli.exe
 ```
 
-For testnet:
+테스트넷:
 ```bash
 $  ./tbnbcli
 ```
 
-On Windows you would most likely use this instead:
+Windows 운영체제에서는 다음과 같이 실행하세요:
 
 ```bash
 C:\> tbnbcli.exe
 ```
 
 
-## Where to connect
+## 연결하기
 
-You can manage your keys locally without connecting to any node. But if you want to interact with Beacon Chain, you need to connect to one of Beacon Chain full nodes.
+키는 노드와 연결하지 않고 로컬에서 관리할 수 있습니다. 다만 비컨 체인과 상호작용하려면 비컨 체인 풀 노드 중 하나에 연결해야합니다.
 
-You can run your own full node, which may automatically connect to Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
+풀 노드를 직접 운영할 수도 있는데, 이 경우는 자동으로 비컨 체인에 연결되고 CLI를 실행할 수 있습니다. 운영하지 않는 경우, 다른 사람들이 제공하는 풀 노드에 연결하면 됩니다.
 
-You could query this API for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
+다음 API 에 요청해서 메인넷 상의 풀 노드의 리스틀르 불러오세요: <https://dex.binance.org/api/v1/peers>.
 
-For testnet, visit  <https://testnet-dex.binance.org/api/v1/peers>.
+테스트넷은, 다음 링크를 참고해 주세요:  <https://testnet-dex.binance.org/api/v1/peers>.
 
-Full nodes will be denoted as the format of `ip:port`, you could use `access_addr` as your peer to get connected, such as `https://dataseed4.defibit.io:443`
+풀 노드는 `ip:port` 형식으로 나타내며, `access_addr` 를 피어로 사용하여 접속할 수 있습니다. (예시: `https://dataseed4.defibit.io:443`)
 
-Please note that there are two types of nodes that offer RPC services. Some support TLS and others don't.
+참고로 2가지 유형의 노드가 RPC 서비스를 제공합니다. 일부는 TLS를 지원하지만 나머지는 TLS를 지원하지 않습니다.
 
-## Which Chain-ID to use
+## Chain-ID 사용하기
 
-`chain-id` is an important field to fill for every transaction sent from `bnbcli`. The` chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Ganges` for testnet. Please choose the correct one in your case.
-## Which Private Key To Use
+`chain-id`는 `bnbcli`에서 전송된 모든 트랜잭션에 대해 채워야 하는 중요한 필드입니다. 메인넷의 `chain-id`는 `Binance-Chain-Tigris`이며, 테스트넷의 체인 아이디는 `Binance-Chain-Ganges` 입니다. 해당하는 네트워크에 맞게 작성해 주세요.
+## 개인 키 사용
 
-There are two ways for you to sign transaction：
+트랜잭션을 서명하는 방법은 두 가지 입니다：
 
-* Use Local Keystore File
+* 로컬 키스토어(keystore) 파일 사용하기
 
-This is the default way to sign transactions with `bnbcli`. It will use the encrypted  keystore files saved at bnbcli home. You need to specify which key to decrypt with `--from`.
+이 방식은 `bnbcli`를 통해 서명하는 기본적인 방식입니다. bnbcli 홈 저장된 암호화된 키스토어 파일을 사용합니다. `--from`을 통해 복호화하는 키를 특정해야 합니다.
 
-* Use Private Key in Hardware Wallet
+* 하드웨어 지갑의 개인키를 사용하기
 
-First, you must add `--ledger` when creating a new address. For example,
+우선 새 주소를 생성할 때 `--ledger`를 추가해야 합니다. 예를 들면:
 ```
 bnbcli keys add test --ledger --index 0 --account 0
 ```
-Then,  the private key file in ledger will be used to generate a new address.
+그 후 렛저에 존재하는 개인 키는 새로운 주소를 생성할 때 사용될 것입니다.
 
-You could also specify `--account` and `--index` to generate more addresses. After the generation, you could use Ledger for signing.
+`--account`와 `--index` 인덱스를 특정하여 더 많은 주소를 생성할 수 있습니다. 생성 후, 렛저를 통해 서명할 수 있습니다.
 
-When you use the address to sign transactions, `bnbcli` will send transactions to Ledger and get signatures. Then `bnbcli` build the signed transactions and boardcast them to full nodes.
+서명 트랜잭션에서 주소를 이용할 때, `bnbcli`는 렛저에 트랜잭션을 전송하고 서명을 받습니다. 이후 `bnbcli`가 서명된 트랜잭션을 풀 노드에 전파합니다.
 
-## Key manager
+## 키 관리자
 
-Here we support two types of key: local key and leder key
+두 가지 종류의 키를 지원합니다: 로컬 키(local key)와 렛저 키(ledger key)
 
-### Local key
-* Create a local key
+### 로컬 키
+* 로컬 키 생성하기
 ```
 bnbcli keys add test_key
 ```
-The newly created local key will be encrypted and saved to the local keystore.
-* Sign transaction with a local key
+새롭게 생성된 로컬키는 암호화되어 로컬 키스토어(keystore)에 저장됩니다.
+* 로컬 키로 트랜잭션 서명하기
 ```
 bnbcli send --chain-id=<chain-id> --from=test_key --amount=100:BNB --to=<address>
 ```
-For instance, if you want to send a token transfer transaction, you can use the above command. The flag `--from` is used to specify which key should be used to sign the transaction.
+예를 들어 토큰 전송 트랜잭션을 보내고 싶을 때 위와 같은 명령어를 작성하면 됩니다. `--from` 플래그는 트랜잭션을 서명할 키를 지정하는 데 사용됩니다.
 
-###  Ledger key
-* Create a local key
+###  렛저 키
+* 렛저 키 생성하기
 
-Before creating a new ledger key, make sure you have performed these steps:
-1. Ledger device is installed binance ledger app and the version should be later or equal to **v1.1.3**.
-2. Connect your ledger device to your machine and input pin code to unlock it.
-3. Open the binance ledger app on your ledger device.
+렛저 키를 생성하기 전에 다음과 같은 절차를 수행했는지 확인하세요:
+1. 렛저 기기에 바이낸스 렛저 앱이 설치 되어 있으며 버전이 **v1.1.3** 이상입니다.
+2. 렛저 기기가 연결되어 있으며 코드를 입력해 잠금 해제했습니다.
+3. 렛저 기기에서 바이낸스 렛저 앱을 열었습니다.
 ```
 bnbcli keys add test_ledger_key --ledger
 ```
-Execute the above command to create a ledger key. The private key is only stored in your ledger device. And your local key store will save the corresponding publick key and address.
+다음과 같은 명령어를 실행하여 렛저 키를 생성하세요. 개인키는 렛저 기기에만 저장됩니다. 로컬 키 저장소에는 대응되는 공개키와 주소만 저장됩니다.
 ```
 bnbcli keys add test_ledger_key_new --ledger --index 0 --account 0
 ```
-You can also specify --account and --index to generate more keys.
+--account와 --index를 특정하여 더 많은 키를 생성할 수 있습니다.
 
-* Sign transaction with a ledger key
+* 렛저 키로 트랜잭션 서명하기
 
-Taking transfer transaction for example, please follow these steps:
-1. Execute command in your console:
+전송 트랜잭션을 다음과 같이 실행하세요: 
+1. 콘솔에서 명령어를 실행합니다:
 ```
 bnbcli send --chain-id=<chain-id> --from=test_ledger_key --amount=100:BNB --to=<address>
 ```
-2. Your console will print some message like this:
+2. 콘솔이 다음과 같은 메세지를 반환할 것입니다:
 ```
 Please confirm if address displayed on ledger is identical to bnb15339dcwlq5nza4atfmqxfx6mhamywz35evruva (yes/no)?
 ```
-3. User can click confirm button on ledger device and input yes to continue following steps.
-4. Then user can preview the transaction data on ledger screen.
-5. After going through all transaction data, user can select `sign transaction` or` reject`.
-6. After user selects `sign transaction`, `bnbcli` will get the signature and broadcast the signed transaction to blockchain nodes.
+3. 사용자는 렛저 기기에서 confirm 버튼을 클릭하고 yes를 입력하여 다음 단계를 진행할 수 있습니다.
+4. 사용자는 렛저 스크린에서 트랜잭션 데이터를 미리 조회할 수 있습니다.
+5. 모든 트랜잭션 데이터를 확인한 후, 사용자는 `트랜잭션 서명`이나 `거절`을 선택할 수 있습니다.
+6. `트랜잭션 서명`을 선택한 후, `bnbcli`는 서명된 트랜잭션을 블록체인 노드에게 전파합니다.
 
-## How to use
+## 사용 방법
 
-When you have downloaded Beacon Chain CLI, you can use `help` subcommand to see all the available commands:
+비컨 체인 CLI를 다운 받았으면, `help` 하위 명령어를 통해 가능한 모든 명령어를 조회할 수 있습니다:
 
 ```bash
 $  ./bnbcli help
@@ -176,39 +174,37 @@ Flags:
 Use "bnbcli [command] --help" for more information about a command.
 ```
 
-**Note**:there is one special flag `--trust-node` of most subcommands, if not enabled which is by default the CLI
-will take an extra 2-4 seconds to verify blockchain proof at current height. You can enable that flag if the peer is trustful so that most commands will accomplish in 500 milliseconds. If your node cannot prove the transaction, there will be the following notice:
+**참고**:대부분 하위 명령에는 `--trust-node`라는 특수 플래그가 존재하는데, 기본적으로 CLI에서 비활성화 되어 있습니다. 비활성화 된 경우는 같은 높이의 블록체인을 검증할 때 2-4초가 추가로 소요됩니다.피어를 신뢰할 수 있고 대부분 명령어를 0.5초 내로 처리할 수 있으면 플래그를 활성화해도 됩니다. 만일 노드가 트랜잭션을 증명할 수 없으면, 다음과 같은 메세지가 발생합니다:
 ```
 Create verifier failed: Commit: Response error: RPC error -32603 - Internal error: runtime error: invalid memory address or nil pointer dereference
 Please check network connection and verify the address of the node to connect to
 ```
-To solve this issue, you need to set `--trust-node` to `true`
+이 문제를 해결하려면, `--trust-node`를 `true`로 설정해야 합니다.
 
 
 
-## CLI Reference
+## CLI 레퍼런스
 
-For detailed usage, you can refer to:
+자세한 사용법은 아래 문서를 참고하세요:
 
-- [transfer](../../transfer.md)
-- [trade](../../trade.md)
-- [issue](../../tokens.md)
-- [governance](../../governance.md)
-- [list](../../list.md)
-- [keys](../../keys.md)
-- [offline](../../offline.md)
-- [timelock](../../timelock.md)
-- [memo validation](../../memo-validation.md)
-- [staking](../../learn/bc-staking.md)
-- [slashing](../../learn/bc-slashing.md)
-- [bridge](../../learn/bc-bridge.md)
-- [Binance Smart Chain Governance](../../learn/bsc-gov.md)
+- [전송](../../transfer.md)
+- [교환](../../trade.md)
+- [발행](../../tokens.md)
+- [거버넌스](../../governance.md)
+- [상장](../../list.md)
+- [키](../../keys.md)
+- [오프라인](../../offline.md)
+- [타임 락](../../timelock.md)
+- [메모 검증](../../memo-validation.md)
+- [스테이킹](../../learn/bc-staking.md)
+- [슬래싱](../../learn/bc-slashing.md)
+- [브릿지](../../learn/bc-bridge.md)
+- [바이낸스 스마트 체인 거버넌스](../../learn/bsc-gov.md)
 
 
 
-## Use CLI for Different Blockchains
+## 다른 블록체인의 CLI를 사용하기
 
-`bnbcli` will save data about validatorset changes at home of `bnbcli`. If you want to use `bnbcli` for different blockchains, for example, you want to change from testnet to mainnet, the data will be stale. In order to switch between blockchains, you need clean the data folder with `rm -rf ~/.bnbcli/.bnblite/`  or create a new home folder for bnbcli with `--home` flag.
-If you forget to specify a different home folder path, then you will not be able to make queries with `bnbcli`.
+`bnbcli`는 검증인집합(validatorset) 변화를 `bnbcli` 홈에 저장합니다. `bnbcli`를 테스트넷에서 메인넷 같이 다른 블록체인에 사용하고 싶으면 호환되지 않는 데이터를 처리해야 합니다. 블록체인을 변경하려면, 데이터 폴더를 `rm -rf ~/.bnbcli/.bnblite/`로 정리하거나  `--home` 플래그를 통해 새로운 홈 폴더를 생성하면 됩니다. 홈 폴더 경로를 특정하지 않을 경우 `bnbcli`를 통해 쿼리를 생성할 수 없을 것입니다.
 
-The same logic applies to `tbnbcli`.
+`tbnbcli`에서 변경 하는 것도 같은 방식으로 처리할 수 있습니다.

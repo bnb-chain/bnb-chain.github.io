@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## 아카이브 노드란?
 
-단순히 이야기하자면, 아카이브 노드는 추가적인 특수 옵션 "--gcmode archive"을 가지고 운영되는 풀노드입니다. 제네시스 블록에서부터 블록체인 전체의 데이터를 저장하고 있습니다. 일부 최신 블록에 모든 상태 변화를 담고 있는 일반적인 풀노드에 비해, 아카이브 노드는 모든 블록에 이를 저장합니다.
+아카이브 노드는 추가적인 특수 옵션 "--gcmode archive"을 가지고 운영되는 풀노드입니다. 제네시스 블록에서부터 블록체인 전체의 데이터를 저장하고 있습니다. 일부 최신 블록에 모든 상태 변화를 담고 있는 일반적인 풀노드에 비해, 아카이브 노드는 모든 블록에 이를 저장합니다.
 
 ## 아카이브 노드가 중요한 이유
 
@@ -41,13 +41,13 @@ BNB 체인 공식 문서에서 스냅샷을 받을 수 있습니다:
 
 #### 1.2 세그먼트 아카이브 노드를 사용하여 하나의 풀 아카이브 노드를 만들기
 
-전체 아카이브 데이터를 단일 Geth 인스턴스에 두는 대신, 각각이 체인의 일부를 담당하는 다수의 세그먼트 인스턴스를 생성하는 것이 권장됩니다. 더 높은 성능을 위해서 각 세그먼트의 크기가 4TB 이하로 유지되는 것이 권장됩니다. 전체(2022년 6월까지) 약 35TB 정도의 데이터가 있을 것으로 예상됩니다. 모든 BSC 스냅샷은 [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot)에서 확인하세요. 소유자가 S3에 모든 BSC 아카이브 스냅샷을 옮겨 두었습니다. 설명한 바 있듯, 이 경로는 공개적이지만 requester-pays로 설정되어 있습니다. 이는 즉, 다운로드를 위해 AWS 계정이 필요하다는 말입니다. 모든 세그먼드를 가졌다면, 요청들을 올바른 세그먼트로 파견하기 위한 한 개의 프록시가 필요합니다. 소유자가 감사하게도 프록시 또한 구현했습니다. 빌드를 위해 소유자의 지침을 따르세요.
+전체 아카이브 데이터를 단일 Geth 인스턴스에 두는 대신, 각각이 체인의 일부를 담당하는 다수의 세그먼트 인스턴스를 생성하는 것이 권장됩니다. 더 높은 성능을 위해서 각 세그먼트의 크기가 4TB 이하로 유지되는 것이 권장됩니다. 전체(2022년 6월까지) 약 35TB 정도의 데이터가 있을 것으로 예상됩니다. 모든 BSC 스냅샷은 [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot)에서 확인하세요. 소유자가 S3에 모든 BSC 아카이브 스냅샷을 옮겨 두었습니다. 설명한 바 있듯, 이 경로는 공개적이지만 requester-pays로 설정되어 있습니다. 이는 즉, 다운로드를 위해 AWS 계정이 필요하다는 것을 뜻합니다. 모든 세그먼드를 가졌다면, 요청들을 올바른 세그먼트로 파견하기 위한 한 개의 프록시가 필요합니다. 소유자가 감사하게도 프록시 또한 구현했습니다. 빌드를 위해 소유자의 지침을 따르세요.
 
 ### 2. Erigon 클라이언트로 실행하기
 
 [Erigon](https://github.com/ledgerwatch/erigon)은 BSC 메인넷을 지원했습니다. Erigon 클라이언트를 사용하여 BSC 아카이브 노드를 실행하는 법은 [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot)에서도 참고할 수 있습니다. 소유자가 최근 BSC 아카이브 노드 사용을 위해 Erigon 클라이언트로 변경했습니다. aws s3의 타르볼인 아카이브 스냅샷을 다운받을 수 있습니다. s3 경로는 "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd"입니다. 이 경로는 공개되어 있지만 requester-pays입니다. 그렇기 때문에 다운 받기 위해서는 AWS 계정이 필요합니다.
 
-* local dir에 다운받기 위한 명령어:
+* 로컬 디랙토리에 다운로드하기 위한 명령어:
 
 ```
 aws s3 cp --request-payer=requester  "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd"   local_data_dir

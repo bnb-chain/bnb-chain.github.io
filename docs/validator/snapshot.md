@@ -27,9 +27,9 @@ checksum: 39e311c37a9844b4dd7fb218553cc99f
 * [2021-04-17  스냅샷](https://binance-smart-chain-snapshot.s3.amazonaws.com/snap.tar.gz ) (260 GB, md5sum dd68c7fddaba42997eda013535a572cb)
 
 
-March 스냅샷:  [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata_202103.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1641450253&Signature=hOC8I8HSpCOytlYMVQwKRc5oUaI%3D) (146 GB, md5sum 74ada3bcd6a9d0f101501919f6cc8a534e9d796e)
+3월 스냅샷:  [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata_202103.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1641450253&Signature=hOC8I8HSpCOytlYMVQwKRc5oUaI%3D) (146 GB, md5sum 74ada3bcd6a9d0f101501919f6cc8a534e9d796e)
 
-February 스냅샷: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata_202102.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1640142393&Signature=aIiUN%2BJLmFKXkAAc%2BE6xHCW3b14%3D) (87.4 GB, md5sum 6611dedde095ba9b72b50ebf6c35a8d7)
+2월 스냅샷: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/chaindata_202102.zip?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1640142393&Signature=aIiUN%2BJLmFKXkAAc%2BE6xHCW3b14%3D) (87.4 GB, md5sum 6611dedde095ba9b72b50ebf6c35a8d7)
 
 
 아래 명령어들은 크게 두 가지 상황에서 사용될 수 있는 BSC 노드 운영자들을 위한 단계별 지침입니다:

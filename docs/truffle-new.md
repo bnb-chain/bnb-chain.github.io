@@ -26,7 +26,7 @@ Windows에서 Truffle을 사용하는 경우 네이밍 충돌 등에 의해 제�
 ```
 npm install -g truffle
 ```
-Truffle이 제대로 설치되었는지 확인하려면 터미널에 **`truffle version`**을 입력합니다. 오류가 표시되면 npm 모듈이 경로에 추가되었는지 확인하십시오.
+Truffle이 제대로 설치되었는지 확인하려면 터미널에 `**truffle version**`을 입력합니다. 오류가 표시되면 npm 모듈이 경로에 추가되었는지 확인하십시오.
 
 Truffle을 처음 접하시는 분은 [Getting Starting](https://www.trufflesuite.com/docs/truffle/quickstart)을 참고하여 Truffle 환경을 설정하세요.
 
@@ -36,12 +36,12 @@ Truffle을 처음 접하시는 분은 [Getting Starting](https://www.trufflesuit
 
 ## 생성 
 
-시작 프로젝트를 만들려면 [Truffle 박스](https://trufflesuite.com/boxes)와 BSC 스타터 박스를 샘플 템플릿으로 사용하여 BNB 스마트 체인에서 개발을 시작할 수 있습니다. 
+기본 프로젝트를 만들려면 [Truffle 박스](https://trufflesuite.com/boxes)와 BSC 스타터 박스를 샘플 템플릿으로 사용하여 BNB 스마트 체인에서 개발을 시작할 수 있습니다. 
 
 본 튜토리얼에서는 계정 간 이동이 가능한 토큰을 생성하는 [MetaCoin box](https://trufflesuite.com/boxes/metacoin)를 예로 들었습니다. ```truffle unbox metacoin```을 사용하여 메타코인 박스를 언박싱합니다.
 
 
-> **참고:_**  ```truffle unbox <box-name>```을 사용하여 다른 [Truffle 박스](https://trufflesuite.com/boxes)를 다운로드할 수 있습니다. 또 다른 대안은 ```truffle init``` 명령어를 사용하여 스마트 컨트랙트가 포함되지 않은 빈 Truffle 프로젝트를 만드는 것입니다.
+> **참고: **  ```truffle unbox <box-name>```을 사용하여 다른 [Truffle 박스](https://trufflesuite.com/boxes)를 다운로드할 수 있습니다. 또 다른 대안은 ```truffle init``` 명령어를 사용하여 스마트 컨트랙트가 포함되지 않은 빈 Truffle 프로젝트를 만드는 것입니다.
 
 
 이 작업이 완료되면 다음 항목이 포함된 프로젝트 구조를 가지게 됩니다.
@@ -110,7 +110,7 @@ module.exports = {
 }
 ```
 
-> **참고토:_** Provider에 니모닉을 전달해야 합니다. 이것은 배포할 계정의 시드 구문입니다. 루트 디렉토리에 새 .secret 파일을 만들고 12단어 니모닉 시드 구문을 입력하세요. 메타마스크 지갑에서 시드 단어를 가져오려면 메타마스크 설정으로 이동한 다음 메뉴에서 Security and Privacy로 이동하여 reveal seed words라는 버튼을 클릭합니다.  자세한 내용은 [여기](https://metamask.zendesk.com/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase)를 참고하세요.
+> **참고: ** Provider에 니모닉을 전달해야 합니다. 이것은 배포할 계정의 시드 구문입니다. 루트 디렉토리에 새 .secret 파일을 만들고 12단어 니모닉 시드 구문을 입력하세요. 메타마스크 지갑에서 시드 단어를 가져오려면 메타마스크 설정으로 이동한 다음 메뉴에서 Security and Privacy로 이동하여 reveal seed words라는 버튼을 클릭합니다.  자세한 내용은 [여기](https://metamask.zendesk.com/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase)를 참고하세요.
 
 ## BSC 네트워크에 배포하기
 

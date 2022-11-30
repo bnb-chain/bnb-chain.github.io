@@ -54,7 +54,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 * 비밀번호를 선택하세요.
 
-**주의: it has to be a strong password**
+**주의: 강력한 암호여야 합니다**
 
 ![img](https://lh4.googleusercontent.com/sYV31JuMNYBK1OoqNwaxp3wRovbeLfkFtRle0_cfBeJMb1vyL3wKRKnp8420PZZKS0PLQrs89w6RJtUYCa3z1UAzZDSvf1FQT5bTOJaFowuYOHCuCNauQ41v8yk9dKlsuwkOssed)
 
@@ -71,7 +71,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 * 이전 단계를 따라 BNB 체인 익스텐션을 설치합니다.
 * “I own a wallet”을 클릭합니다.
-![img](https://lh5.googleusercontent.com/WvqszPDj6yhnt4KhB9VNHQrpR3C4lcIvOnBvZE4BslWsl0fmFbjM0f8dcK1sBFPI8OSt-8RGbk7X7pEdbci7P4RCl0rOoN4_5ce-qbfXj0BnGjSj160oDZ4ObvhljeTn8c4hZmnm>
+![img](https://lh5.googleusercontent.com/WvqszPDj6yhnt4KhB9VNHQrpR3C4lcIvOnBvZE4BslWsl0fmFbjM0f8dcK1sBFPI8OSt-8RGbk7X7pEdbci7P4RCl0rOoN4_5ce-qbfXj0BnGjSj160oDZ4ObvhljeTn8c4hZmnm)
 
 * 복구 구문을 입력하고 강력한 암호를 선택하세요.
 
@@ -126,7 +126,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 ## BC에서 BSC로 테스트넷 BNB 전송하기
 
-* Switch to BNB Smart Chain  testnet after unlock your extension wallet and copy your address, start with `0x`
+* 익스텐션 월렛을 잠금 해제한 뒤 `0x`로 시작하는 주소를 복사합니다. 그 다음 BNB 스마트 체인 테스트넷으로 변경합니다.
 
 ![img](https://lh3.googleusercontent.com/kidAixmzNbNt_ujj0BQqZdZ4ZBXdEkxJLSVIOsWnWxZGOeXUJBjhxYsLlxH6VSQWxNX-dzqBFhqXSW3zmshkL99QYcVxIFGxw6tF7xF9ffXZPMPKnXlt0sWCKvPV6RMJWHSx1H0O)
 
@@ -199,4 +199,4 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 ![img](https://lh6.googleusercontent.com/m-lXjzWHuiVteM0n0ukSmMCxHm7XSQtO8wJ0LMXMUYL6spDObSmgbN7zoBVuc0hrhBL2mQ1C3GhBvzHpnHYoP_mbOcKSYtZZojQ46R5-2QA_ULXMPlmHyqXcg1Ht_M8Ix0xdUxJb)
 
 
-* 트랜잭션을 확인하고 바이낸스 변경을 확인하세요.
+* 트랜잭션을 확인하고 잔고가 변경되는 것을 확인하세요.

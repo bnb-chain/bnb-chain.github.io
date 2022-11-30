@@ -4,40 +4,40 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Staking
+# 스테이킹
 
-[BNB Smart Chain](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [Beacon Chain](https://www.binance.org). BNB Smart Chain relies on a system of 21 validators with Proof of [Staked Authority (PoSA) consensus](./learn/consensus.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+[BNB 스마트 체인](https://community.binance.org/topic/2686)은 비콘 체인(Beacon Chain)에 프로그램성과 상호운용성을 도입하기 위한 혁신적인 솔루션입니다. BNB 스마트 체인은 21명의 검증인과 [Staked Authority (PoSA) 합의](./learn/consensus.md) 시스템을 기반으로 하고 있어 짧은 블록타임과 낮은 수수료를 구현할 수 있습니다. 가장 많이 스테이킹한 검증인 후보들이 검증인이 되어 블록을 생성합니다. 이중서명 식별과 슬래싱 로직으로 보안, 안전성, 체인 완결성이 보장됩니다.
 
-Ideally, BNB Smart Chain should build such staking and reward logic into the blockchain, and automatically distribute rewards as the blocking happens. [Cosmos Hub](https://hub.cosmos.network/), who also build on top of Tendermint consensus like Beacon Chain, works in this way.
+이상적으로는 BNB 스마트 체인이 블록체인에 스테이킹 및 보상 로직을 포함시키고 블록 생성 시 자동으로 보상을 배분해야 할 것입니다. 비콘 체인과 같은 텐더민트 컨센서스에 개발하는 [Cosmos Hub](https://hub.cosmos.network/) 또한 이런 방식으로 동작합니다.
 
-However, as BSC wants to remain compatible with Ethereum as much as possible. On the other side, Beacon Chain already has a staking module and could be extended to support both BC and BSC. In this way, all the staking related operations are recorded in BC. Once there are any changes about BSC's validator set or voting power, the new message will be transferred to BSC through cross-chain communication.
+하지만 BSC는 최대한 이더리움과의 호환성을 유지시키고자 합니다. 다른 한편으로 비콘 체인은 이미 스테이킹 모델을 갖추고 있으며, BC와 BSC 모두를 지지하도록 연장될 수 있습니다. 이러한 방식으로 모든 스테이킹 관련 작업들은 BC에 기록됩니다. BSC의 검증인 집단이나 투표 권한에 대한 변경 사항이 있는 경우, 크로스 체인 커뮤니케이션을 통해 새로운 메시지가 BSC로 전송됩니다.
 
-## Staking Economics
+## 스테이킹 경제학
 
-1. The staking token is **[BNB](https://www.binance.com/cn/trade/BNB_USDT)**, as it is a native token on both blockchains anyway
-2. The staking, i.e. token bond and delegation actions and records for BSC, happens on BC.
-3. The BSC validator set is determined by its staking and delegation logic, via a staking module built on BC for BSC, and propagated every day UTC 00:00 from BC to BSC via Cross-Chain communication.
-4. The reward distribution happens on BC around every day UTC 00:00 after.
+1. 스테이킹 토큰은 양 블록체인의 네이티브 토큰인 **[BNB](https://www.binance.com/cn/trade/BNB_USDT)** 입니다.
+2. 스테이킹, 예를 들면 BSC를 위핸 토큰 본드와 위임 행위들은 BC 상에서 발생합니다.
+3. BSC 검증인 집단은 BC 상에 개발된 BSC를 위한 스테이킹 모듈 스테이킹과 위임 로직에 의해 결정되며, 매일 UTC 00:00시 BC에서 BSC로 크로스체인 커뮤니케이션을 통해 전파됩니다.
+4. 보상 배분은 매일 BC 상에서 UTC 00:00 이후 이루어집니다.
 
-## Ranking Algorithm
+## 랭킹 알고리즘
 
-Validators are ranked by their power and operator address. The more its delegation tokens, the higher ranking is. If two validators get the same amount of delegated tokens, validator with smaller address bytes has higher ranking.
+검증인들은 파워와 운영 주소를 기반으로 순위가 매겨집니다. 위임 토큰이 많을 수록 순위도 높습니다. 두 검증인들이 동일한 양의 위임 토큰을 획득한다면, 더 작은 주소 바이트를 지닌 검증인이 순위가 더 높습니다.
 
-## Reward Distrubution
+## 보상 배분
 
-Since BSC uses PoSA as its consensus engine, all the delegators of validators can receive some share of the validators’ reward. However, the rewards(fees) are collected on BSC while the staking info is stored on BC. So, the main idea is we transfer all the rewards from BSC to BC once every day and execute the distribution on BC.
+BSC는 합의 엔진으로 PoSA를 사용하기 때문에 검증인들의 모든 위임인들은 자신의 검증인의 보상을 일부 취할 수 있습니다. 하지만 스테이킹 정보는 BC에 기록될 때, 보상(수수료)은 BSC에서 징수됩니다. 따라서 핵심은 모든 보상을 매일 BSC에서 BC로 전송하고 BC에서의 배분을 실행하는 것입니다.
 
-### Main Workflow:
-1. ValidatorSet is updated in BreatheBlock, the frequency is once a day. let’s assume it happens on day N.
-2. The info of validator set changes of day N would be transmitted to BSCthrough interchain communication.
-3. The validator set contract on BSC would receive and update the new validatorset. After that, it would trigger several interchain transfer to transfer the fees that every **previous validators** collected in this period to their addresses on BC. we can see that fees belongs to the validators of day N-1.
-4. To make some room for the error handling, we distribute the fees of day N-1 in the next breathe block (day N+1).
+### 주요 워크 플로우
+1. ValidatorSet은 하루에 한 번 BreatheBlock에 업데이트됩니다. 그것이 N일에 발생한다고 해봅시다.
+2. N일에 변경되는 검증인 집단의 정보는 체인간 커뮤니케이션으로 BSC에 전달됩니다.
+3. BSC 상 검증인 집단 컨트랙트는 새로운 검증인 집단을 수신하고 업데이트합니다. 그 이후, 모든 **이전의 검증인**이 이 기간 징수한 수수료를 BC의 주소로 전송하기 위해 몇 건의 인터체인 전송을 일으킵니다. 수수료들은 N-1일의 검증인들의 것임을 볼 수 있습니다.
+4. 에러 핸들링을 감안하여 우리는 N-1일의 수수료를 다음 breathe block(N+1일)에 분배합니다.
 
-### Details
+### 세부사항
 
-1. even if validator set or any their voting powers are not changed on that day, we still transmit the validator set info to BSC.
-2. the validator set contract maintains the history of the fees that every validators collected after the previous period(We define the **period** as the time between two contract calls of validator set changes). The actual fees are collected on the contract address.
-3. the interchain transfer to send fees from the contract address to each validator’s distribution address on BC. Note the distribution address is **auto generated** on BC when handling the create-validator tx, so no private key is corresponded to that address and no one except the distribution module can move the tokens on that address. This address is displayed as **Distribution Addr** in validator info.
+1. 검증인 집단이나 이들의 표결권한이 당일 변경되지 않더라도 검증인 정보를 BSC로 전송합니다.
+2. 검증인 집단 컨트랙트는 이전 기간(**기간**은 검증인 집합이 변경되는 두 컨트랙트 호출 사이의 시간으로 정의합니다) 이후 모든 검증인들이 징수한 수수료의 내역을 담고 있습니다. 실제 수수료들은 컨트랙트 주소에 징수됩니다.
+3. 컨트랙트 주소에서 BC 상 각 검증인의 배분 주소로 수수료를 보내기 위한 인터체인 전송이 이뤄집니다. 배분 주소는 BC에서 create-validator 트랜잭션을 처리할 때 **자동 생성**되기 때문에 이 주소에는 아무런 개인키도 대응하지 않으며, 배분 모듈을 제외한 그 누구도 해당 주소의 토큰을 이동시킬 수 없음에 주의해주세요. 이 주소는 검증인 정보에 **Distribution Addr**로 표시됩니다.
 ```bash
 Validator
 Fee Address: tbnb15mgzha93ny878kuvjl0pnqmjygwccdadpw5dxf
@@ -58,20 +58,19 @@ Consensus Addr on Side Chain: 0xF474Cf03ccEfF28aBc65C9cbaE594F725c80e12d
 Fee Addr on Side Chain: 0xe61a183325A18a173319dD8E19c8d069459E2175
 ```
 
-4. we have a lower limit of the value of interchain transfer, at least the value can cover the transfer fee. Also, interchain transfer will only allow max 8 decimals for the amount. The tiny left part would be kept in the contract or put into the system reward pool.
-5. the reward: (totalfees \* (1-commissionRate)) would be distributed in proportion to the delegations, the left part would be sent to the validator fee address.
+4. 인터체인 전송값에는 적어도 전송비는 커버할 수 있는 최저선이 있습니다. 인터체인 전송은 최대 8 decimal까지만 허용합니다. 나머지 액수는 컨트랙트에 보관되거나 시스템 보상 풀에 포함됩니다.
+5. 보상: (totalfees \* (1-commissionRate))가 위임액에 따라 분배되고, 잔여분은 검증인 수수료 주소로 전송됩니다.
 
-### Error handling:
+### 에러 핸들링:
 
-1. if the cross-chain transfer failed, the tokens would be sent back to a specified address(i.e. the  `SideFeeAddr` in the store section, validators can change this address via the EditValidator tx). After that, validators can manually deposit the tokens to its own `DistributionAddr` on BC via Transfer tx. We do not force the validator to do so, but it’s an indicator that can help delegators choose validators.
+1. 크로스체인 전송 실패 시, 토큰들은 지정된 주소로 반환됩니다(store 섹션의  `SideFeeAddr`에서 검증인들은 EditValidator 트랜잭션을 통해 이 주소를 바꿀 수 있습니다). 그 다음, 검증인들은 수동으로 토큰을 Transfer 트랜잭션을 통해 BC 상 자신의 `DistributionAddr`에 토큰을 예치할 수 있습니다. 검증인들에게 이를 강요하지는 않지만, 이는 위임인들이 검증인을 선택하는 데 지표가 될 수 있습니다.
 
-## Fee Table
+## 수수료 테이블
 
-Transaction Type  | Pay in BNB |
+트랜잭션 타입  | BNB |
 -- | -- |
-Create A New Smart Chain Validator | 10 |
-Edit Smart Chain Validator Information| 1 |
-Delegate Smart Chain Validator | 0.001 |
-Redelegate Smart Chain Validator | 0.003 |
-Undelegate Smart Chain Validator | 0.002 |
-
+새로운 스마트 체인 검증인 생성 | 10 |
+스마트 체인 검증인 정보 수정 | 1 |
+스마트 체인 검증인 위임 | 0.001 |
+스마트 체인 검증인 재위임 | 0.003 |
+스마트 체인 검증인 위임 취소 | 0.002 |

@@ -15,7 +15,7 @@ provider 객체 `window.BinanceChain`가 존재한다는 것은 비콘 체인/BN
 이 익스텐션 월렛이 제공하는 API는 [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193)와 [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html)에서 규정하는 API 및 레거시에 크게 의존하는 것들입니다.
 
 ## 개발 경과
-현재 (버전 1.112.8) 바이낸스 익스텐션 월렛은 자체적으로 비콘 체인을 지원하고 있으며, dApp 개발자들이 비콘 체인과 상호작용할 수 있도록 일련의 API들을 공개할 계획입니다. 결과적으로 [APIs available in Beacon Chain javascript sdk](https://github.com/bnb-chain/javascript-sdk/tree/master/docs) 대부분이 사용 가능해질 것입니다.
+현재 (버전 1.112.8) 바이낸스 익스텐션 월렛은 자체적으로 비콘 체인을 지원하고 있으며, dApp 개발자들이 비콘 체인과 상호작용할 수 있도록 일련의 API들을 공개할 계획입니다. 결과적으로 [비컨 체인 자바스크립트 sdk에서 사용가능한 API](https://github.com/bnb-chain/javascript-sdk/tree/master/docs) 대부분이 사용 가능해질 것입니다.
 
 현재 지원되는 것은 다음과 같습니다.
 * [`transfer`](https://github.com/bnb-chain/javascript-sdk/tree/master/docs#transfer-tokens) 
@@ -33,11 +33,11 @@ provider 객체 `window.BinanceChain`가 존재한다는 것은 비콘 체인/BN
 
 우리는 표준 [`eth_sign`](https://eth.wiki/json-rpc/API#eth_sign) JSON-RPC 호출만 제공하는 반면, 메타마스크가 제공하는 완전한 복합 [signing data](https://docs.metamask.io/guide/signing-data.html#signing-data-with-metamask) API는 지원하지 않습니다.
 
-메타마스크에서 이 요청에 대한 params의 `message` 항목은 16진수 keccak256 해시여야 합니다(아니면 API가 조용히 실패합니다 https://www.reddit.com/r/Metamask/comments/9wp7kj/eth_sign_not_working/). 대조적으로, web3 개발자들은 어떤 메시지도 일반 텍스트로 이 메서드에 전달할 수 있으며, 우리의 UI는 지갑 사용자에게 그대로 렌더링합니다.
+메타마스크에서 이 요청에 대한 params의 `message` 항목은 16진수 keccak256 해시여야 합니다(아니면 API가 조용히 실패합니다 https://www.reddit.com/r/Metamask/comments/9wp7kj/eth_sign_not_working/). 반면 BNB 월렛에서는 web3 개발자들은 어떤 메시지도 일반 텍스트로 이 메서드에 전달할 수 있으며, 우리의 UI는 지갑 사용자에게 그대로 렌더링합니다.
 
 ### BinanceChain.request({method: "eth_accounts"})
 
-이 API가 사용자의 승인 없이 호출되면 메타마스크는 빈 배열을 반환합니다. 반면에 사용자에게 지갑의 잠금을 해제하고 사용자가 연결된 주소를 반환하도록 요청합니다.
+이 API가 사용자의 승인 없이 호출되면 메타마스크는 빈 배열을 반환합니다. 반면 BNB 월렛에서는 지갑의 잠금을 해제하고 사용자가 연결된 주소를 반환하도록 요청합니다.
 
 ## 곧 다가올 변화
 
@@ -59,13 +59,13 @@ provider 객체 `window.BinanceChain`가 존재한다는 것은 비콘 체인/BN
 2. 사용자가 연결되어 있는 BNB 스마트 체인 네트워크를 감지합니다.
 3. 사용자의 BNB 스마트 체인 계정을 가져옵니다.
 
-위의 목록에서 `2`와 `3`을 수행하는 방법은 [Using the Provider section](#using-the-provider)의 예시를 참고할 수 있습니다.
+위의 목록에서 `2`와 `3`을 수행하는 방법은 [Provider 부분 사용하기](#using-the-provider)의 예시를 참고할 수 있습니다.
 
 제공자 API만 있으면 모든 기능을 갖춘 web3 애플리케이션을 만들 수 있습니다.
 
 즉, 많은 개발자는 공급자를 직접 사용하는 대신 ethers나 web3.js와 같은 convenience 라이브러리를 사용합니다. 이 API에서 제공하는 것보다 더 높은 수준의 추상화가 필요한 경우 편의 라이브러리를 사용하는 것이 좋습니다.
 
-오늘날 많은 dApp은 [web3-react (https://github.com/NoahZinsmeister/web3-react) 또는 [use-wallet](https://github.com/aragon/use-wallet)(web3-react 위에 구축됨)에서 제공하는 더 높은 레벨의 API를 기반으로 구축됩니다.
+오늘날 많은 dApp은 [web3-react](https://github.com/NoahZinsmeister/web3-react) 또는 [use-wallet](https://github.com/aragon/use-wallet)(web3-react 위에 구축됨)에서 제공하는 더 높은 레벨의 API를 기반으로 구축됩니다.
 
  * web3-react
 
@@ -145,7 +145,7 @@ render(
 | 0x38 | 56      | BNB Smart Chain Main Network (bsc-mainnet) |
 | 0x61 | 97      | BNB Smart Chain Test Network (bsc-testnet) |
 
-This API can also return chain ids of Beacon Chains if users switch to them. The possible return value would be:
+이 API는 유저가 비컨 체인으로 전환하면 체인지 ID를 바환할 수 있다 가능성은 반값은:
 
 | 체인 Id             | 네트워크                                  |
 | -------------------- | ---------------------------------------- |
@@ -494,21 +494,21 @@ function connect() {
 
 ## 레거시 속성
 
-### BinanceChain.networkVersion (DEPRECATED)
+### BinanceChain.networkVersion (향후 미지원)
 
 [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#legacy-properties)를 참고하세요. 유일한 차이점은 다른 객체를 주입했다는 것입니다.
 
-### BinanceChain.selectedAddress (DEPRECATED)
+### BinanceChain.selectedAddress (향후 미지원)
 
 [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-selectedaddress-deprecated)를 참고하세요. 유일한 차이점은 다른 객체를 주입했다는 것입니다.
 
 ## 레거시 메서드
 
-### BinanceChain.enable() (DEPRECATED)
+### BinanceChain.enable() (향후 미지원)
 
 [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-enable-deprecated)를 참고하세요. 유일한 차이점은 다른 객체를 주입했다는 것입니다.
 
-### BinanceChain.sendAsync() (DEPRECATED)
+### BinanceChain.sendAsync() (향후 미지원)
 
 [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-sendasync-deprecated)를 참고하세요. 유일한 차이점은 다른 객체를 주입했다는 것입니다.
 
@@ -533,7 +533,7 @@ type JsonRpcCallback = (error: Error, response: JsonRpcResponse) => unknown;
 BinanceChain.sendAsync(payload: JsonRpcRequest, callback: JsonRpcCallback): void;
 ```
 
-### BinanceChain.send() (DEPRECATED)
+### BinanceChain.send() (향후 미지원)
 
 [MetaMask Doc](https://docs.metamask.io/guide/ethereum-provider.html#ethereum-send-deprecated)를 참고하세요. 유일한 차이점은 다른 객체를 주입했다는 것입니다.
 

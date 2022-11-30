@@ -62,7 +62,7 @@ Give Hardhat a star on Github if you're enjoying it!
      https://github.com/NomicFoundation/hardhat
 ```
 
-Hardhat을 실행하면 현재 작업 디렉토리에서 가장 가까운 ```hardhat.config.js`` 파일을 검색합니다. 이 파일은 일반적으로 프로젝트의 루트에 저장되며 빈 ```hardhat.config.js``는 hardhat이 작동하기에 충분합니다. 전체 설정이 이 파일에 포함되어 있습니다.
+Hardhat을 실행하면 현재 작업 디렉토리에서 가장 가까운 ```hardhat.config.js``` 파일을 검색합니다. 이 파일은 일반적으로 프로젝트의 루트에 저장되며 빈 ```hardhat.config.js```는 hardhat이 작동하기에 충분합니다. 전체 설정이 이 파일에 포함되어 있습니다.
 
 
 ## 스마트 컨트랙트 생성하기
@@ -138,7 +138,7 @@ module.exports = {
 ```
 
 :::참고
-		프로바이더에 전달할 니모닉, 즉 여러분이 사용하여 배포를 진행할 계정의 시드 프레이즈를 필요로 합니다. 루트 디렉토리에 새로운 `secrets.json` 파일을 만들고 12 단어 시드 프레이즈를 입력하세요. 메타마스크 지갑에서 12 단어를 받으려면 메타마스크 설정으로 가서, Security and Privacy를 선택하면 reveal seed words라는 버튼이 보입니다.
+		Provider에 전달할 니모닉, 즉 여러분이 사용하여 배포를 진행할 계정의 시드 구문이 필요로 합니다. 루트 디렉토리에 새로운 `secrets.json` 파일을 만들고 12 단어 시드 프레이즈를 입력하세요. 메타마스크 지갑에서 12 단어를 받으려면 메타마스크 설정으로 가서, Security and Privacy를 선택하면 reveal seed words라는 버튼이 보입니다.
 ```
 Sample secrets.json
 
@@ -219,6 +219,7 @@ npm install --save-dev @nomiclabs/hardhat-etherscan
 - 단계 1: ```require("@nomiclabs/hardhat-etherscan");```를 추가합니다
 - 단계 2: Bscscan API 키를 추가하세요. <https://bscscan.com/myapikey>에서 API 키를 등록하고 획득하세요.
 - 단계 3: 솔리디티 컴파일러 버전을 스마트 컨트랙트를 배포할 때 사용했던 것과 동일하게 유지하세요.
+
 !!! 경고
     API 키는 비밀로 유지하고 버전 관리에 커밋하지 마세요.
 

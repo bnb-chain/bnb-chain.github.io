@@ -3,103 +3,104 @@ sidebar_label: Coin98 Wallet
 hide_table_of_contents: false
 ---
 
-# How to create BNB Smart Chain Wallet on Coin98 Wallet
-Users are able to store, send & receive BNB, the native token of BNB Smart Chain and BEP20 tokens on Coin98 Wallet
+# 코인98 지갑에서 BNB 스마트 체인 월렛을 만들기
+사용자는 BNB 스마트 체인의 네이티브 토큰인 BNB와 BEP20 토큰을 Coin98 월렛에 저장, 전송 및 수신할 수 있습니다.
 
-## Coin98 Mobile Wallet
-**Step 1:** Open Coin98 Mobile Wallet & click **Manage** on the home screen.
+## 코인98 모바일 지갑
+**1단계:** 코인98 모바일 월렛을 열고 홈화면에서 **Manage**를 클릭하세요.
 
-**Step 2:** Click **Add Wallet**, choose **BNB Smart Chain (BNB BEP20)** icon, and click **Create**.
+**2단계:** **Add Wallet**를 클릭하고 **BNB Smart Chain (BNB BEP20)** 아이콘을 선택한 다음 **Create**을 클릭합니다.
 ![img](../assets/picture1.png)
 
-**Step 3**: Name the wallet. Click **Next**
+**3단계**: 지갑의 이름을 지정합니다. **Next**를 클릭합니다.
 
-- Paste the provided Passphrase/ Private Key into the confirmation box.
+- 제공된 암호/개인 키를 확인 상자에 붙여넣습니다.
 
-- After copying & saving your Passphrase, tick the **“Backup your recovery key”** box to confirm & back up the provided Passphrase & Private Key. Please note that this information is crucial to keeping your assets safe. 
+- 암호를 복사하고 저장한 후 **“Backup your recovery key”** 상자에 체크 표시를 하여 제공된 암호와 개인 키를 확인하고 백업합니다. 이 정보는 자산을 안전하게 유지하는 데 매우 중요합니다. 
 
-- Tick the remaining boxes to confirm you’re aware of the risks.
+- 나머지 상자에 체크 표시를 하여 위험을 알고 있는지 확인합니다.
 
-- Click **Create Wallet**.
+- **Create Wallet**를 클릭합니다.
+
 ![img](../assets/picture2.png)
 
-Your BNB Wallet will instantly be displayed on the home screen. You can also click **Manage** to check your wallets.
+홈 화면에 BNB 지갑이 즉시 표시됩니다. **Manage**를 클릭하여 지갑을 확인할 수도 있습니다.
 
-## How to receive BNB and BEP20 tokens to Coin98 Mobile Wallet
-**Step 1:** Select your BNB (BEP20) wallet on the home screen.
+## 코인98 모바일 지갑에서 BNB 및 BEP20 토큰을 받는 방법
+**1단계:** 홈 화면에서 BNB(BEP20) 지갑을 선택합니다.
 
-**Step 2:** Click **Receive**.
+**2단계:** **Receive**을 클릭합니다.
 
-**Step 3:** Click the copy icon to copy the wallet address.
+**3단계:** 복사 아이콘을 클릭하여 지갑 주소를 복사합니다.
 
-**Step 4:** Send BNB tokens to this address.
+**4단계:** 이 주소로 BNB 토큰을 보냅니다.
 
 ![img](../assets/picture3.png)
 
 
-## How to send BNB and BEP20 tokens from Coin98 Mobile Wallet
-**Step 1:** Select your BNB (BEP20) wallet on the home screen.
+## 코인98 모바일 지갑에서 BNB 및 BEP20 토큰을 보내기
+**1단계:** 홈 화면에서 BNB(BEP20) 지갑을 선택합니다.
 
-**Step 2:** Click **Send**.
+**2단계:** **Send**를 클릭합니다.
 
-**Step 3:** Fill in the amount of tokens, the receiver’s wallet address, messages (if necessary) and  adjust the gas fee to your needs.
+**3단계:** 토큰 금액, 수신자의 지갑 주소, 메시지(필요한 경우)를 기입하고 가스 요금을 필요에 따라 조정합니다.
 
-**Step 4:** Slide **Send** to complete.
+**4단계:** 슬라이드 **Send**을 완료하십시오.
 
 ![img](../assets/picture4.png)
 
 
-**Note:**
+**참고:**
 
-- The default gas fee on Coin98 Wallet has been set at the standard rate that offers the most optimized speed at a reasonable cost.
+- 코인98 월렛의 기본 가스 요금은 합리적인 비용으로 가장 최적화된 속도를 제공하는 표준 요금으로 설정되었습니다.
 
-- The gas fee is approximately 0.000105 BNB for each transaction on BNB Smart Chain.
+- 가스 요금은 BNB 스마트 체인의 각 트랜잭션당 약 0.000105 BNB입니다.
 ---
-### Coin98 Extension Wallet
-Users are also able to store, send & receive BNB and BEP20 tokens directly on Coin98 Extension Wallet.
+### 코인98 익스텐션 월렛
+사용자는 또한 코인98 익스텐션 월렛에서 BNB 및 BEP20 토큰을 직접 저장, 전송 및 수신할 수 있습니다.
 
-**Step 1:** Open Coin98 Extension Wallet, enter your password, and click **Manage** on the home screen → Click **Add Wallet.**
+**1단계:** 코인98 익스텐션 월렛을 열고 비밀번호를 입력한 후 홈화면에서 **Manage**를 클릭 → **Add Wallet.** 클릭하면 됩니다.
 
-**Step 2:** Choose **BNB Smart Chain (BNB BEP20)** wallet icon, then click **Create Wallet**.
+**2단계:** **BNB Smart Chain (BNB BEP20)** 지갑 아이콘을 선택한 다음 **Create Wallet**를 클릭합니다.
 
 ![img](../assets/Picture168.png)
 
-**Step 3:** Name the wallet & back up the provided Passphrase & Private Key. Please note that this information is crucial for keeping your assets safe.
+**3단계:** 지갑의 이름을 지정하고 제공된 암호 및 개인 키를 백업합니다. 이 정보는 자산을 안전하게 보관하는 데 매우 중요합니다.
 
-- After copying & saving your Passphrase, tick the **“Backup your recovery key”** box to confirm.
+- 암호를 복사하고 저장한 후 **“Backup your recovery key”** 상자를 선택하여 확인합니다.
 
-- Tick the remaining boxes to confirm you’re aware of the risks.
+- 나머지 상자에 체크 표시를 하여 위험을 인지했음을 확인합니다.
 
-- Click **Create Wallet.**
+- **Create Wallet.** 클릭합니다.
 
-**Step 4:** Paste the provided Passphrase into the confirmation box, then click **Create.**
+**4단계:** 제공된 암호를 확인 상자에 붙여넣은 다음 **Create**를 클릭합니다.
 
 ![img](../assets/picture5.png)
 
-Your BNB Wallet will instantly be displayed on the home screen. You can also click **Manage** to check your wallets.
+홈 화면에 BNB 월렛이 즉시 표시됩니다. **Manage**를 클릭하여 지갑을 확인할 수도 있습니다.
 
-### How to receive BNB and BEP20 tokens
-**Step 1:** Click on your **BNB** wallet on the home screen.
+### BNB와 BEP20 토큰을 받는 방법
+**1단계:** 홈 화면에서 **BNB** 지갑을 클릭하세요.
 
-**Step 2:** Choose **Receive.**
+**2단계:** **Receive**를 선택합니다.
 
-**Step 3:** Copy the wallet address by clicking the Copy icon or screenshot the QR code.
+**3단계:** 복사 아이콘을 클릭하거나 QR코드를 스크린샷하여 지갑주소를 복사합니다.
 
-Transfer BEP20 tokens to the address copied on step 3.
+3단계에서 복사한 주소로 BEP20 토큰을 전송합니다.
 
 ![img](../assets/picture6.png)
 
-### How to send BNB and BEP20 tokens
-**Step 1:** Click on your **BNB** wallet on the home screen.
+### BNB와 BEP20 토큰을 보내는 방법
+**1단계:** 홈 화면에서 **BNB** 월렛을 클릭하십시오.
 
-**Step 2:** Choose **Send.**
+**2단계:** **Send**를 선택합니다.
 
-**Step 3:** Enter the amount and the recipient's wallet address, adjust the gas setting, then click **Send** to complete the transaction.
+**3단계:** 금액과 수취인의 지갑주소를 입력하고 가스 설정을 조정한 후 **Send**를 클릭하여 트랜잭션을 완료합니다.
 
 ![img](../assets/picture7.png)
 
-**Note:**
+**참고:**
 
-- The default gas fee on Coin98 Wallet has been set at the standard rate that offers the most optimized speed with a reasonable cost.
+- 코인98 월렛의 기본 가스 요금은 합리적인 비용으로 가장 최적화된 속도를 제공하는 표준 요금으로 설정되었습니다.
 
-- The gas fee is approximately 0.000105 BNB for each transaction on BNB Smart Chain.
+- 가스 요금은 BNB 스마트 체인의 각 트랜잭션당 약 0.000105 BNB입니다.

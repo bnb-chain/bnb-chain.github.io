@@ -44,7 +44,7 @@ ABC-A64 토큰의 전체 발행량은 1억입니다. 위의 바인드 전송은 
 ### 바인드 요청 승인
 1. 금액 부여:
 
-    In [myetherwallet](wallet/myetherwallet.md), call the **approve** of the BEP20 to grant a 40 million allowance to TokenManager contract. The spender value should be `0x0000000000000000000000000000000000001008`, and the amount value should be 4e25. The transaction sender should be the BEP20 owner. [myetherwallet](myetherwallet.md/myetherwallet)에서 BEP20의 **approve**를 호출하여 TokenManager 컨트랙트에 4,000만 달러 수당을 부여합니다. 지출자 값은 `0x0000000000000000000000000000000000001008`이어야 하며 금액 값은 4e25여야 합니다. 트랜잭션 전송자는 BEP20 소유자여야 합니다.
+    [myetherwallet](myetherwallet.md/myetherwallet)에서 BEP20의 **approve**를 호출하여 TokenManager 컨트랙트에 4,000만 달러 수당을 부여합니다. 지출자 값은 `0x0000000000000000000000000000000000001008`이어야 하며 금액 값은 4e25여야 합니다. 트랜잭션 전송자는 BEP20 소유자여야 합니다.
 
     ![img](https://lh6.googleusercontent.com/p-HctNRPwXg0VD1yfE3j4OJ3BrMHPZpiGGCtp7XUJX34z_LT53nvZqgTzY58Ab1EsybJipwjsnwL2uJ-CPH8gntDpcw7LW7aFPK1_KRxxnNq-xErwGpaPTlg5UbfKoVNjd4YT0xU)
 
@@ -54,11 +54,11 @@ ABC-A64 토큰의 전체 발행량은 1억입니다. 위의 바인드 전송은 
 
     ![img](https://lh6.googleusercontent.com/nFIbDxpA8bTVYH0Rt4UD-SYYz62TmYKjOsgK1CXxFRHHJlz6gOyXnq5p3GesM_zrQES4ixmojvN_Srk4CIf1MPxBXbia-K2DNiL23Hao1HiUgdNe4S2BmPe6yn5XJz7ajlwVVCti)
 
-    여기서 값은 최소 `miniRelayFee/1e18`여야 합니다. 최초 `miniRelayFee`는 1e16. 따라서 `miniRelayFee/1e18`는 `0.01`과 동일합니다. 또한 `miniRelayFee`는 온체인 거버넌스로 변경 가능합니다.
+    여기서 값은 최소 `miniRelayFee/1e18`여야 합니다. 최초 `miniRelayFee`는 1e16 이므로 `miniRelayFee/1e18`은 `0.01`과 동일합니다. 또한 `miniRelayFee`는 온체인 거버넌스로 변경 가능합니다.
 
 3. BC에서 바인드 결과를 확인합니다
 
-    20 정도 후 아래 명령어를 실행하세요:
+    20초 정도 후 아래 명령어를 실행하세요:
     ```bash
     ## mainnet
     bnbcli token info --symbol ABC-A64 --trust-node --node http://dataseed4.binance.org:80
@@ -96,9 +96,9 @@ ABC-A64 토큰의 전체 발행량은 1억입니다. 위의 바인드 전송은 
 3. `approveBind`이 성공적으로 실행되면 바인딩이 완료됩니다. 2천만이 BSC의 소유자 주소에 있게 되며, 이것은 당신의 **선택**입니다.
 4. 바인딩 후, 당신이 원하는 대로 2천만 달러를 쓸 수 있습니다(BC로의 이전 포함). BC에 있는 당신의 토큰의 다른 소유자들의 경우, 그들은 당신의 도움이나 허락 없이 토큰을 BSC로 자유롭게 옮길 수 있습니다.
 
-### 사례 2: 2: 바인딩 트랜잭션에서 0 예치
+### 사례 2: 바인딩 트랜잭션에서 0 예치
 
-만약 당신의 금고에 2천만 보물을 전혀 건드리지 않기로 선택했다고 가정해 보세요.
-1. 금고 2,000만개가 있을 때, 바인드 tx를 실행할 때 0을 예치할 수 있습니다.
+당신의 금고에 2천만 개 토큰을 전혀 건드리지 않기로 선택했다고 가정해 보세요.
+1. 금고에 2,000만 개가 있을 때, 바인드 tx를 실행할 때 0을 예치할 수 있습니다.
 2. 당신의 BEP20이 1억개의 물량을 보유하고 있다고 가정하면, tokenHub 컨트랙트에 1억개를 주기 위해 `approve`을 실행한 다음, `approveBind`를 실행합니다.
 3. `approveBind`가 성공적으로 실행되면 바인딩이 완료됩니다. 당신의 2천만 개는 BC의 당신의 금고 주소에 남이 있고 아무 일도 일어나지 않으며, 이것은 당신의 선택입니다. 반면 BSC에서는 tokenHub 외에는 아무도 BEP20 토큰을 가지고 있지 않습니다. 하지만 바인드가 완료되었기 때문에 간단한 크로스 체인 전송으로 자신을 포함한 모든 사람이 원할 때 BEP20을 받을 수 있습니다.

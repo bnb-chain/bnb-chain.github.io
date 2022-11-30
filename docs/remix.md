@@ -30,7 +30,7 @@ BSC에 솔리디티 스마트 컨트랙트를 배포하려면 다음 모든 요�
 
 ## 스마트 컨트랙트 작성하기
 
-- 새 파일을 생성하고 ```BEP20Token.sol``` 라고 파일명을 설정합니다. [BEP20 token template](BEP20Token.template)에서 컨트랙트 코드를 복사합니다.
+- 새 파일을 생성하고 ```BEP20Token.sol``` 라고 파일명을 설정합니다. [BEP20 토큰 형식](BEP20Token.template)에서 컨트랙트 코드를 복사합니다.
 
 - 적절하게 “name”, “symbol”, “decimals”, “totalSupply” 값을 입력합니다.
 

@@ -38,7 +38,7 @@ const web3 = new Web3('https://data-seed-prebsc-1-s1.binance.org:8545');
 web3.eth.accounts.create([entropy]);
 
 ```
-Output:
+결과:
 ```bash
 web3.eth.accounts.create();
 {
@@ -75,14 +75,14 @@ web3.eth.getBalance(holder).then(console.log);
 6249621999900000000
 ```
 
-### Create Transaction
+### 트랜잭션 생성
 
-**Parameters**
+**파라미터**
 
 * Object - 전송할 트랜잭션 객체
 * from - String|Number: 전송 계정의 주소. 명시되지 않을 시 web3.eth.defaultAccount 프로퍼티 사용. 또는 web3.eth.accounts.wallet의 로컬 월렛의 주소 또는 인덱스.
 * to - String: (선택 사항) 메시지의 도착 주소. 컨트랙트 생성의 경우 정의되지 않음.
-* value - Number|String|BN|BigNumber: (선택 사항) wei로 표시된 트랜잭션 전송 액수. 컨트랙트 생성 트랜잭션의 경우 endowment.
+* value - Number|String|BN|BigNumber: (선택 사항) wei로 표시된 트랜잭션 전송 액수. 컨트랙트 생성 트랜잭션에서는 초기 자금.
 * gas - Number: (optional, default: To-Be-Determined) 트랜잭션에 사용될 가스양(미사용분은 환불).
 * gasPrice - Number|String|BN|BigNumber: (선택 사항) wei로 표시된 트랜잭션의 가스비. 기본값은 web3.eth.gasPrice.
 * data - String: (선택 사항) 컨트랙트의 함수 호출 데이터 포함 ABI 바이트 문자열. 컨트랙트 생성 트랜잭션의 경우 초기화 코드.

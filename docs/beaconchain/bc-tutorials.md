@@ -17,7 +17,7 @@ hide_table_of_contents: false
 - [비컨 체인에서 라이트 클라이언트 실행하는 법](light-client.md)
 ### 월렛
 - [지원하는 월렛 목록](wallets)
-- Tutorial on [비컨 체인에서 트러스트 월렛 사용하는 법](wallet/tutorial/how-to-create-a-wallet-on-trustwallet)
-- Tutorial on [비컨 체인에서 렛저 나노 S 하드워에 지갑 사용하는 법](wallet/tutorial/ledger-nano-s-usage-guide)
-- Tutorial on [비컨 체인에서 트레저 하드웨어 지갑 사용하는 법](wallet/tutorial/trezor-model-t-user-guide)
-- Tutorial on [BNB 체인 테스트넷 웹 지갑에서 BEP8 토큰 관리하는 법](wallet/tutorial/bep8)
+-  [비컨 체인에서 트러스트 월렛 사용하는 법](wallet/tutorial/how-to-create-a-wallet-on-trustwallet)
+-  [비컨 체인에서 렛저 나노 S 하드워에 지갑 사용하는 법](wallet/tutorial/ledger-nano-s-usage-guide)
+-  [비컨 체인에서 트레저 하드웨어 지갑 사용하는 법](wallet/tutorial/trezor-model-t-user-guide)
+-  [BNB 체인 테스트넷 웹 지갑에서 BEP8 토큰 관리하는 법](wallet/tutorial/bep8)

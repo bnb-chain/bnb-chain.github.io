@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB 스마트 체인에서 별개 노드 운영하기
+# BNB 스마트 체인에서 별개 노드(separate node) 운영하기
 
 ## 개요
 
@@ -20,7 +20,7 @@ sidebar_position: 2
 
 - **고속 노드**: 스냅샷만 사용하여 전체 동기화를 수행하고 difflayer를 생성합니다. 블록을 고정하기 전에 검증 노드에서 확인 메시지가 필요하며, 새 블록을 추가하기 전에 조상 블록에 대한 확인 노드에서 확인 메시지를 받을 때까지 기다려야 합니다.
 
-- **검증 노드**: 스냅샷 및 MPT를 사용하여 전체 동기화를 수행하고 difflayer를 생성하는 일반 BSC 전체 노드입니다. 고속 노드로부터 diffash를 수신하고 diffash가 일치하는 해당 difflayer를 찾은 다음 고속 노드에 MPT 루트 메시지를 응답합니다.
+- **검증 노드**: 스냅샷 및 MPT를 사용하여 전체 동기화를 수행하고 difflayer를 생성하는 일반 BSC 풀 노드입니다. 고속 노드로부터 diffash를 수신하고 diffash가 일치하는 해당 difflayer를 찾은 다음 고속 노드에 MPT 루트 메시지를 응답합니다.
 
 
 ## 연관 명령어
@@ -41,8 +41,8 @@ sidebar_position: 2
 
 ` ./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --persistdiff --enabletrustprotocol --disablesnapprotocol --disablediffprotocol`
 
-#### 프룬 트라이 노드
-프룬 트라이 노드:  `./geth snapshot insecure-prune-all --datadir ./node  ./genesis.json`
+#### tries 노드 자르기
+tries 노드 자르기:  `./geth snapshot insecure-prune-all --datadir ./node  ./genesis.json`
 
 ## 검증노드 실행
 [이 가이드](./BSC-verify-node.md)를 참고하세요.

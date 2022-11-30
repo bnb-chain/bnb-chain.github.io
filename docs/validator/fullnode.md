@@ -48,7 +48,7 @@ BootstrapNodes = ["enode://1cc4534b14cfe351ab740a1418ab944a234ca2f702915eadb7e55
 
 - `Static nodes` 추가하기
 
-연결하고 싶은 특정 피어가 있는 경우 Geth는 정적 노드라는 기능 또한 지원합니다. 정적 노드들은 연결 해제되었을 때 다시 연결됩니다. 다음의 내용을 `<datadir>/geth/static-nodes.json`에 추가함으로써 영구적 정적 노드를 설정할 수 있습니다.
+항상 연결하고 싶은 특정 피어가 있는 경우 Geth는 정적 노드라는 기능 또한 지원합니다. 정적 노드들은 연결 해제되었을 때 다시 연결됩니다. 다음의 내용을 `<datadir>/geth/static-nodes.json`에 추가함으로써 영구적 정적 노드를 설정할 수 있습니다.
 
 ```
 [
@@ -73,26 +73,26 @@ admin.addPeer( "enode://8fb5dd1259e0672efb8c141434bf0c24c73b338f7c2da15efc2def74
 
 - `Trusted nodes` 추가하기
 
-Geth supports trusted nodes that are always allowed to reconnect, even if the peer limit is reached. They can be added permanently via a config file `<datadir>/geth/trusted-nodes.json` or temporary via RPC call.
+Geth는 피어 제한에 도달하더라도 항상 재연결하도록 허용한 신뢰 노드를 지원합니다. config 파일 `<datadir>/geth/trusted-nodes.json`으로 영구적으로 추가하거나, RPC 호출을 통해 일시적으로 연결할 수 있습니다.
 
-## Chaindata Snapshot
+## 체인데이터 스냅샷
 
-Please download the chain data [snapshot](./snapshot) and extract to your home folder to speed up
+체인데이터 [스냅샷](./snapshot)을 다운로드하고 홈 폴더에서 압축을 풀어 속도를 높여주세요
 
 ```
 ## Extract the data
 unzip geth.zip -d /NAME_OF_YOUR_HOME/node &
 ```
 
-### Sync Mode
+### 동기화 모드
 
-* Fast Sync
+* 빠른 동기화 (Fast Sync)
 
-The **default** sync mode. Synchronizes a full node doing a fast synchronization by downloading the entire state database, requesting the headers first, and filling in block bodies and receipts afterward. Once the fast sync reaches the best block of the BNB Smart Chain network, it switches to full sync mode.
+**기본** 동기화 모드입니다. 빠른 동기화를 수행하여 전체 노드를 동기화 합니다. 이는 상태 데이터베이스 전체를 다운로드하고, 헤더를 우선적으로 요청하여 블록 내용과 결과를 나중에 불러오는 것을 통해 구현합니다. 빠른 동기화가 BNB 스마트 체인 네트워크의 최상의 블록에 도달하면, 전체 동기화 모드로 변경됩니다.
 
-* Full Sync
+* 전체 동기화 (Full Sync)
 
-Synchronizes a full node starting at genesis, verifying all blocks and executing all transactions. This mode is a bit slower than the fast sync mode but comes with increased security.
+제네시스 블록부터 모든 블록과 트랜잭션을 검증하여 전체 노드를 동기화합니다. 이 모드는 빠른 동기화보단 느리지만 보안이 강화됩니다.
 
 
 ## 풀노드 운영하는 방법
@@ -211,11 +211,11 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 ```
 
 !!! 주의
-	config.toml 내 `TrieTimeout`의 기본값이 크기 때문에, `geth`는 이 시간 임계치에 도달할 때까지 상태를 데이터베이스에 유지하지 않을 것입니다. 노드가 강제로 셧다운되면 최신 상태부터 동기화를 시작할 것인데, 이는 오랜 시간이 걸립니다. 검증인들을 위한 권장 설정은 `TrieTimeout = 100000000000`입ㄴ디ㅏ.
+	config.toml 내 `TrieTimeout`의 기본값이 크기 때문에, `geth`는 이 시간 임계치에 도달할 때까지 상태를 데이터베이스에 유지하지 않을 것입니다. 노드가 강제로 셧다운되면 최신 상태부터 동기화를 시작할 것인데, 이는 오랜 시간이 걸립니다. 검증인들을 위한 권장 설정은 `TrieTimeout = 100000000000`입니다.
 
 5. 노드 상태 관찰하기
 
-기본적으로 `/node/bsc.log`에서 노드 로그를 관챃할 수 있습니다.
+기본적으로 `/node/bsc.log`에서 노드 로그를 관찰할 수 있습니다.
 
 ## 노드 관리
 
@@ -226,7 +226,7 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 모든 클라이언트들은 가장 최신 버전으로 업그레이드 하는 것이 권장됩니다. [최신 버전](https://github.com/bnb-chain/bsc/releases/latest)은 더 안정적이고 성능이 더 높습니다.
 
 ### 스토리지
-테스트에 따르면 스토리지 크기가 1.5T를 초과하면 전체 노드의 성능이 저하됩니다. 전체 노드는 스토리지를 프루닝하여 항상 가벼운 스토리지를 유지하는 것이 좋습니다.
+테스트에 따르면 스토리지 크기가 1.5T를 초과하면 전체 노드의 성능이 저하됩니다. 전체 노드는 스토리지를 프루닝(pruning)하여 항상 가벼운 스토리지를 유지하는 것이 좋습니다.
 
 프루닝하는 법:
 
@@ -238,8 +238,8 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 
 하드웨어도 중요합니다. **SSD가 2TB의 여유 디스크 공간, SSD(Solid-State Drive), gp3, 8k IOPS, 처리량 250MB/S, 읽기 지연 시간 <1ms를 충족하는지 확인하십시오**.
 
-### Diff Sync
-diffsync 프로토콜은 릴리스 v1.1.5에서 안정적인 기능으로 출시되었습니다. Diff sync는 테스트 결과 동기 속도가 약 60~70% 향상되었습니다. 모든 전체 노드는 시작 명령에 '--diffsync'를 추가하여 활성화할 것을 권장합니다.  
+### Diff 동기화
+diffsync 프로토콜은 릴리스 v1.1.5에서 안정적인 기능으로 출시되었습니다. Diff 동기화는 테스트 결과 동기 속도가 약 60~70% 향상되었습니다. 모든 전체 노드는 시작 명령에 `--diffsync`를 추가하여 활성화할 것을 권장합니다.  
 
 ### 가벼운 스토리지
 노드가 충돌하거나 강제로 중지되면 노드는 몇 분 또는 몇 시간 전의 블록에서 동기화됩니다. 이는 메모리의 상태가 데이터베이스에 실시간으로 유지되지 않고 노드가 시작되면 마지막 체크포인트에서 블록을 재생해야 하기 때문입니다. 재생 시간은 config.toml의 'TrieTimeout' 구성에 따라 달라집니다. 노드가 가벼운 스토리지를 유지할 수 있도록 긴 재생 시간을 허용할 수 있다면 올리는 것이 좋습니다.

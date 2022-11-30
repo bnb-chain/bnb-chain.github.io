@@ -1,129 +1,93 @@
-# BSC Relayer
-Relayers are responsible for submitting Cross-Chain Communication Packages between the two blockchains. Due to the heterogeneous parallel chain structure, two different types of Relayers are created.
+# BSC 릴레이어 가이드
 
-Relayers for BC-to-BSC communication referred to as **BSC Relayers** are a standalone process that can be run by anyone, and anywhere, except that Relayers must register themselves onto BSC and deposit a certain amount of BNB. Only relaying requests from the registered Relayers will be accepted by BSC.
+## 자금 준비하기
 
-GitHub Implementation link: <https://github.com/bnb-chain/bsc-relayer>
+1. 계정에 충분한 BNB가 있는지 확인합니다. [포셋](https://testnet.binance.org/faucet-smart)에서 구할 수 있습니다.
 
-Config Files: <https://github.com/bnb-chain/bsc-relayer-config>
+계정을 아직 만들지 않은 경우 [가이드](wallet/metamask.md)를 따라 먼저 계정을 만드세요.
 
-## Monitor and Parse Cross Chain Event
-As a BSC relayer, it must have proper configurations on the following three items:
+* 릴레이어 등록 **100BNB**
+* 트랜잭션 수수료로 **500BNB** 이상
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-|srcCrossChainID | uint16 | CrossChainID of BC, the value is 1 for testnet |
-|destCrossChainID| uint16 | CrossChainID of BSC, the value is 96 for testnet |
+!!! 팁
+		현재 BSC 릴레이어 코드가 완전히 준비되지 않았습니다. `db persistence`, `alert`, `prometheus monitor` 등 일부 기능은 아직 개발 중입니다. 따라서 db_config, alert_config, instrumentation_config, admin_config에 대한 설정을 수정하지 마십시오.
 
-A BSC relayer is required to parse all block results and pick out all events with event type “IBCPackage” from endBlock event table. This is an cross chain package event example:
+## BSC 릴레이어 설치 방법
 
-```json
-{
-  "type": "IBCPackage",
-  "attributes":
-  [
-    {
-      "key": "IBCPackageInfo",
-      "value": "96::8::19"
-    }
-  ]
-}
+1. 소스 코드에서 빌드하기
+
+[Go 1.13+](https://golang.org/doc/install)가 설치되어 있고, `PATH` 환경 변수에 `GOPATH`를 다운 받았음을 확인하세요.
+
+```bash
+git clone https://github.com/bnb-chain/bsc-relayer
+# Enter the folder bsc was cloned into
+cd bsc-relayer
+# Comile and install bsc
+make build
 ```
 
-BSC relayer should iterate all the attributes and parse the attribute value:
+[릴리즈 페이지](https://github.com/bnb-chain/bsc-relayer/releases/tag/v1.1.0)에서 이미 빌드된 바이너리를 다운받을 수 있습니다.
 
-1. Split the value with “::” and get a 4-length string array
-2. Follow the following table to parse the 4 elements:
+## 예시 config file 받기
 
-| Index | Description                       | Type    | Example Value |
-| ------| --------------------------------- | ------- | ------------- |
-| 0     | CrossChainID of destination chain | int16   | 96   |
-| 1     | channel id                        | int8    | 8   |
-| 2     | sequence                          | int64   | 19  |
+이 url 에서 예시 config file을 다운 받습니다: <https://github.com/bnb-chain/bsc-relayer/blob/master/config/config.json>
 
-3. Filter out attributes with mismatched destination chain CrossChainID.
+`config.json`을 수정하고 bsc_config.private_key에 BSC 개인키를 입력합니다. 개인키의 예시는 다음과 같습니다: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
-## Build Tendermint Header and Query Cross Chain Package
+* 비컨 체인 구성:
+	* `mnemonic`: 복구 프레이즈를 여기에 붙여넣기 하세요. bsc-relayer가 자동적으로 `double-sign` 증거를 제출할 것이기 때문에, 커밋된 후 보상이 이 주소로 보내질 것입니다
+* BNB 스마트 체인 구성:
 
-### Build Tendermint Header
-```golang
-import tmtypes "github.com/tendermint/tendermint/types"
-type Header struct {
-  tmtypes.SignedHeader
-  ValidatorSet     *tmtypes.ValidatorSet `json:"validator_set"`
-  NextValidatorSet *tmtypes.ValidatorSet `json:"next_validator_set"`
-}
+## 릴레이어 시작하기
+
+로컬 환경에서 시작할 수 있습니다.
+
+```shell
+./bsc-relayer --config-type local --config-path config.json
 ```
 
-If a cross chain package event is found at height **H**, wait for block **H+1** and call the following rpc methods to build the above **Header** object:
-
-| Name               | Method  |
-| ------------------ | ------- |
-|tmtypes.SignedHeader|{rpcEndpoint}/commit?height=**H+1**|
-|ValidatorSet        |{rpcEndpoint}/validators?height=**H+1**|
-|NextValidatorSet    |{rpcEndpoint}/validators?height=**H+2**|
-
-Header Encoding in golang:
-
-1. Add dependency on [go-amino v0.14.1](https://github.com/tendermint/go-amino/tree/v0.14.1)
-2. Add dependency on [tendermint v0.32.3](https://github.com/tendermint/tendermint/tree/v0.32.3):
-3. Example golang code to encode **Header**:
-```golang
-
-import (
-  amino "github.com/tendermint/go-amino"
-  tmtypes "github.com/tendermint/tendermint/types"
-)
-
-var cdc = amino.NewCodec()
-
-func init() {
-  tmtypes.RegisterBlockAmino(cdc)
-}
-
-func EncodeHeader(h *Header) ([]byte, error) {
-  bz, err := cdc.MarshalBinaryLengthPrefixed(h)
-  if err != nil {
-     return nil, err
-  }
-  return bz, nil
-}
+결과:
 
 ```
-
-### Query Cross Chain Package With Merkle Proof
-1. Query height: **H**
-2. Query path: **/store/ibc/key**
-3. Follow the table to build a 14-length byte array as query key:
-
-| Name | Length | Value  |
-| ---- | ------ | ------ |
-|prefix|1 bytes|0x00|
-|source chain CrossChainID|2 bytes|srcCrossChainID in bsc relayer configuration|
-|destination chain CrossChainID|2 bytes|destCrossChainID in bsc relayer configuration|
-|channelID|1 bytes|channelID from event attribute |
-|sequence|8 bytes|sequence from event attribute |
-
-4. Assemble the above parameters to the following rpc call.
-```
-{rpcEndpoint}/abci_query?path={queryPath}&data={queryKey}&height={queryHeight}&prove=true
+(base) huangsuyudeMacBook-Pro:mac huangsuyu$ bsc-relayer --config-type local --config-path config.json
+2020-05-27 17:01:16 INFO main Start relayer
+2020-05-27 17:01:16 INFO SyncProtocol Sync cross chain protocol from https://github.com/bnb-chain/bsc-relayer-config.git
+2020-05-27 17:01:18 INFO RegisterRelayerHub This relayer has already been registered
+2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 1, next deliver sequence 55 on BSC, next sequence 55 on BC
+2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 2, next deliver sequence 1273 on BSC, next sequence 1273 on BC
+2020-05-27 17:01:18 INFO CleanPreviousPackages channelID: 3, next deliver sequence 6 on BSC, next sequence 6 on BC
+2020-05-27 17:01:19 INFO CleanPreviousPackages channelID: 8, next deliver sequence 5 on BSC, next sequence 5 on BC
+2020-05-27 17:01:19 INFO RelayerDaemon Start relayer daemon
+2020-05-27 17:01:19 INFO Serve start admin server at 0.0.0.0:8080
 ```
 
-## Call Build-In System Contract
+또는 <https://github.com/bnb-chain/bsc-relayer-config>의 동적인 크로스 체인 프로토콜 구성 동기화
 
-### Sync BC Header
-* function **syncTendermintHeader**(bytes calldata header, uint64 height)
+* config.json을 수정하고 "cross_chain_config.protocol_config_type"를 "remote"로 변경합니다. 릴레이어는 동적으로 이 레포지토리 <https://github.com/bnb-chain/bsc-relayer-config>에서 크로스 체인 프로토콜 구성을 동기화하 것입니다.
+* 릴레이어 서비스 시작
 
-    Call **syncTendermintHeader** of TendermintLightClient contract to sync BC header. The contract address is 0x0000000000000000000000000000000000001003. The “header” is the encoding result of **Header** and the height should be **H+1**
+```shell
+./bsc-relayer --config-type local --config-path config.json
+```
 
-### Deliver Cross Chain Package
+### 상태 확인
 
-Call **handlePackage** of crosschain contract(0x0000000000000000000000000000000000002000) to deliver the cross chain packages:
+[RelayerHub 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001006)를 호출하여 릴레이어가 등록된 것을 확인할 수 있습니다. [컨트랙트 읽기](https://bscscan.com/address/0x0000000000000000000000000000000000001006#readContract)로 가서 **isRelayer** 함수를 호출합니다. **true**를 반환하면 릴레이어는 제대로 작동하는 것입니다.
 
-|Parameter Name|Type|Value|
-| ---- | ---- | ----------- |
-|msgBytes|[]byte|package bytes|
-|proof|[]byte|merkle proof bytes|
-|height|uint64|**H+1**|
-|packageSequence|uint64|sequence from attribution value|
-|channelId|uint64|channle id|
+## 릴레이어 보상
+
+1. 시스템 컨트랙트 로그에서 릴레이어 보상 분배를 확인할 수 있습니다: <https://bscscan.com/address/0x0000000000000000000000000000000000001005#events>. [릴레이어 인센티브](learn/incentives.md)에 따르면, 보상은 매 1000 개의 데이터 패키지 마다 분배됩니다. 총 축적된 보상은 [컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001005#readContract)의 `_collectedRewardForHeaderRelayer`와 `_collectedRewardForTransferRelayer` 값에서 읽을 수 있습니다.
+
+2. 릴레이어 상태 쿼리하기
+
+총 축적된 릴레이 횟수는 [컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001005#readContract)의 `_transferRelayersSubmitCount`에서 읽을 수 있습니다.
+
+
+## 릴레이어 중단
+
+예치된 **100BNB**를 돌려 받기 위해서는 [RelayerHub 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001006)를 호출하여 릴레이어 등록을 취소해야 합니다. 수수료는 **0.1BNB**입니다.
+
+* 마이이더월렛으로 가서 [컨트랙트 사용하기](https://www.myetherwallet.com/interface/interact-with-contract)로 갑니다.
+* 컨트랙트 주소 **0x0000000000000000000000000000000000001006**를 [abi](relayerhub.abi) 인터페이스로 채워 넣습니다.
+* **unregister** 함수를 호출하고 ETH 값을 0로 둡니다.
+* **메타마스크**에서 트랜잭션에 서명합니다.

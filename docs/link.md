@@ -4,21 +4,21 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB Smart Chain Price Feeds from Chainlink
+# 체인링크의 BNB 스마트 체인 가격 피드
 
-## Introduction to Price Feeds
+## 가격 피드 소개
 
-Chainlink Price Feeds are the quickest way to connect your smart contracts to the real-world market prices of assets. They enable smart contracts to retrieve the latest price of an asset in a single call.
+체인링크 가격 피드는 스마트 계약과 실제 세계의 자산 가격을 가장 빠르게 연결하는 방법입니다. 이를 통해 스마트 계약은 하나의 호출로 자산의 최신 가격을 불러올 수 있습니다.
 
-Often, smart contracts need to act upon prices of assets in real-time. This is especially true in [DeFi](https://defi.chain.link/). For example, [Synthetix](https://www.synthetix.io/) use Price Feeds to determine prices on their derivatives platform. Lending and Borrowing platforms like [AAVE](https://aave.com/) use Price Feeds to ensure the total value of the collateral.
+종종 스마트 계약들은 실시간 자산 가격에 따라 작동하는 경우가 있는데, 특히 [DeFi](https://defi.chain.link/) 같은 경우가 이에 해당합니다. 예를 들어 [신세틱스](https://www.synthetix.io/)는 파생상품 플랫폼에서 가격을 결정하기 위해 가격 피드를 사용합니다. [에이브](https://aave.com/)같은 대여/대출 플랫폼도 총 담보 가치를 보장하기 위해 가격 피드를 사용합니다.
 
-## Get the Latest Price
+## 최신 가격 가져오기
 
-This section explains how to get the latest price of BNB inside smart contracts using Chainlink Price Feeds, on the BNB Smart Chain.
+이 부분은 BNB 스마트 체인에서 체인링크 가격 피드를 통해 BNB의 최신 가격을 불러오는 방법에 대해 다룰 것입니다.
 
-**Solidity Contract**
+**솔리디티 컨트랙트**
 
-To consume price data, your smart contract should reference <a href="https://github.com/smartcontractkit/chainlink/blob/master/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol" target="_blank">`AggregatorV3Interface`</a>, which defines the external functions implemented by Price Feeds.
+스마트 컨트랙트가 가격 데이터를 사용하려면 가격 피드의 외부 함수를 정의하고 있는 [AggregatorV3Interface](https://github.com/smartcontractkit/chainlink/blob/master/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol)를 참고하면 됩니다.
 
 ```
 pragma solidity ^0.6.7;

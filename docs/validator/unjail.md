@@ -1,6 +1,6 @@
 # 석방(Unjail)
 
-악성 행위로 `Jailed`된 검증자 노드들은 초기 검증을 거쳤다는 전제 하에 `side-unjail transactions`을 보내 석방을 요청할 수 있습니다. 석방 후에 검증자 집단에 다시 참여하기 위해서는 다음 번 `UTC 0:00`을 기다려야 한다. 스마트 컨트랙트 검증자의 `fees to unjail`은 **_1 BNB_**이다. 반면에 검증자의 비잔틴 행위 증거를 제출하는 비용은 **_10 BNB_**이다.
+악성 행위로 `Jailed`된 검증자 노드들은 초기 검증을 거쳤다는 전제 하에 `side-unjail transactions`을 보내 석방을 요청할 수 있습니다. 석방 후에 검증자 집단에 다시 참여하기 위해서는 다음 번 `UTC 0:00`을 기다려야 합니다. 스마트 컨트랙트 검증자의 `fees to unjail`은 **_1 BNB_**입니다. 반면에 검증자의 비잔틴 행위 증거를 제출하는 비용은 **_10 BNB_**입니다.
 
 ## 트랜잭션 검증
 *  검증자 주소란은 비어서는 안 됩니다.
@@ -14,8 +14,8 @@
 
 트랜잭션 타입  | BNB 요금 |
 -- | -- |
-Unjail A Smart Chain Validator | 1 |
-Submit Byzaitine Behavior Evidence of A Smart Chain Validator | 10 |
+스마트 체인 검증자 석방 | 1 |
+스마트 체인 검증자의 비잔틴 동작 증거 제출 | 10 |
 
 ## 석방을 위한 명령어
 

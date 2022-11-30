@@ -8,18 +8,18 @@ hide_table_of_contents: false
 
 ## 풀노드 설치
 
-Please follow this [guide](fullnode.md) to install bsc fullnode locally.
+로컬에 BSC 풀 노드를 설치하려면 다음 [가이드](fullnode.md)를 참고하세요.
 
 ## 계정 생성
 
-You need to create an account that represents a key pair first. Use the following command to create a new account and set a password for that account:
+우선 한 쌍의 키를 갖는 계정을 생성해야 합니다. 다믕과 같이 명령어를 입력하여 새로운 계정과 비밀번호를 설정하세요:
 ```bash
 geth account new --datadir ./node
 ```
 
-This command will return the public address and the path to your private key. BACKUP of keyfile is necessory!
+이 명령어는 공개 주소와 개인 키를 지닌 주소를 반환할 것입니다. 키 파일은 **백업**이 필수입니다!
 
-If you already have an account, use the seed phrase to recover it:
+이미 계정이 있으면, 시드 구문을 이용하여 복구해주세요:
 
 ```bash
 geth account import --datadir ./node

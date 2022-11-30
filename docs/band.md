@@ -213,4 +213,4 @@ $ node index.js
 
 
 
-Originally published [here](https://hackmd.io/@tansawit/bsc-developer-docs-standard-dataset#)
+[원문](https://hackmd.io/@tansawit/bsc-developer-docs-standard-dataset#)

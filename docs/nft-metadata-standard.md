@@ -26,7 +26,7 @@ function tokenURI(uint256 _tokenId) public view returns (string) {
 
 ## 메타 데이터 구조
 
-BSC의 마켓플레이스는 [the official ERC721 metadata standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)에 따른 메타데이터를 지원합니다. 추가적으로 아이템들의 다양한 속성도 지원하기 때문에 BSC 마켓플레이스에서 분류 및 필터링도 가능해집니다.
+BSC의 마켓플레이스는 [공식 ERC721 메타데이터 표준](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)에 따른 메타데이터를 지원합니다. 추가적으로 아이템들의 다양한 속성도 지원하기 때문에 BSC 마켓플레이스에서 분류 및 필터링도 가능해집니다.
 BSC 마켓플레이스는 아래의 메타데이터 구조를 통해 여러분의 NFT가 나타내는 자산의 세부사항을 조회하고 공개할 수 있습니다.
 
 ```

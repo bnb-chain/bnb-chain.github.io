@@ -12,7 +12,7 @@ BNB 스마트 체인과 비컨 체인은 한 토큰이 확인된 총 거래량�
 
 ## BEP2/BEP8 토큰 소유자
 
-여러분이 BEP2/BEP9 토큰 소유자인 경우, BSC로 이동하고자 한다면 [가이드라인](./bind-tokens.md)을 따라 `Bind` 프로세스를 진행해주세요.
+여러분이 BEP2/BEP8 토큰 소유자인 경우, BSC로 이동하고자 한다면 [가이드라인](./bind-tokens.md)을 따라 `Bind` 프로세스를 진행해주세요.
 
 다음의 [도구](https://github.com/bnb-chain/token-bind-tool)를 사용해도 됩니다.
 

@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 2017 초 배포된 노시스 멀티시그 월렛은 이더리움에서 자금을 보관하는 근본적인 인프라가 되었습니다. 노시스 세이프는 크립토 자금을 관리하는 가장 안전한 방법입니다.
 
-오늘 BNB 스마트 체인에서 노시스 세이프 멀티시그를 셋업하는 데에는 60초도 걸리지 않습ㄴ디ㅏ. 레저, 트레조, 월렛 커넥트, 토루스 그리고 메타마스크와 같은 브라우저 지갑을 서명키로 사용하여 암호화폐를 집단적으로, 상호운용 가능하게 관리할 수 있습니다.
+오늘 BNB 스마트 체인에서 노시스 세이프 멀티시그를 셋업하는 데에는 60초도 걸리지 않습니다. 레저, 트레조, 월렛 커넥트, 토루스 그리고 메타마스크와 같은 브라우저 지갑을 서명키로 사용하여 암호화폐를 집단적으로, 상호운용 가능하게 관리할 수 있습니다.
 
 ## 노시스 세이프 컨트랙트 이점
 
@@ -63,7 +63,7 @@ hide_table_of_contents: false
 
 - 세이프 설정 검토하기
 
-![img](https://lh5.googleusercontent.com/Y6iP6Nbw4toivC483_OnL9Jkz0b8IOOcUNnfgU_RTY7VAdYSk5uM-nDQQGxpw1bcDfZ6kIV8XDTXw7rff9tILf8QPGcrfeFE0KfzUBidFcUb6db4tbbeH_sXdYTITri7I3Y83nCb" alt="img" style="zoom: 50%;" />
+![img](<https://lh5.googleusercontent.com/Y6iP6Nbw4toivC483_OnL9Jkz0b8IOOcUNnfgU_RTY7VAdYSk5uM-nDQQGxpw1bcDfZ6kIV8XDTXw7rff9tILf8QPGcrfeFE0KfzUBidFcUb6db4tbbeH_sXdYTITri7I3Y83nCb" alt="img" style="zoom: 50%;" />)
 
 
 - 세이프 생성을 위해 트랜잭션에 서명하기
@@ -109,7 +109,7 @@ hide_table_of_contents: false
 
 
 
-- 트랜잭션 확인을 위해 또 다른 키 소유자가 노시스에 연결해야함
+- 트랜잭션 확인을 위해 또 다른 키 소유자가 노시스에 연결해야합니다
 
 
 

@@ -8,7 +8,7 @@ hide_table_of_contents: false
 BNB 체인 커뮤니티에서 운영하는 퍼블릭 노드를 통해 블록체인과 상호 작용할 수 있습니다.
 
 ### REST API
-[Accelerated nodes](https://docs.bnbchain.org/docs/beaconchain/faq/faq#what-is-the-accelerated-node)는 일반인을 위한 고급 API 서비스를 제공합니다.<br/>
+[가속 노드](https://docs.bnbchain.org/docs/beaconchain/faq/faq#what-is-the-accelerated-node)는 일반인을 위한 고급 API 서비스를 제공합니다.<br/>
 가속 노드에서 사용할 수 있는 모든 Rest API 정보 목록을 찾을 수 있습니다: [여기](api-reference/dex-api/paths.md)
 
 ### 노드 RPC
@@ -93,7 +93,7 @@ source: "889"
 
 [REST API](#rest-api)를 통해 트랜잭션을 전파하거나,  명령어 `BroadcastTxSync`를 통해 [풀노드](#full-node), [노드 RPC](#node-rpc)를 실행하는 것을 권장합니다.
 
-`BroadcastTxCommit`라는 RPC 명령이 있습니다.'CheckTx'와 'Deliver'를 모두 대기하는 TxCommit입니다.Tx'와 블록 높이에 대한 코드와 함께 반환되는 것은 아쉽게도 [실제 운영에서 사용하는 것은 권장되지 않습니다](https://github.com/tendermint/tendermint/blob/e3a97b09814bf9289e8c10420af38ce369160752/rpc/core/mempool.go#L154).
+RPC 명령 중에 `BroadcastTxCommit` 이란 명령이 `CheckTx`와 `DeliverTx`를 모두 대기 한 후 코드와 블록 높이를 반환하지만, 아쉽게도 이 기능은 [실제 운영에서 사용하는 것은 권장하지 않습니다](https://github.com/tendermint/tendermint/blob/e3a97b09814bf9289e8c10420af38ce369160752/rpc/core/mempool.go#L154).
 
 대신, 브로드캐스트한 후에 트랜잭션 상태를 확인하는 두 가지 방법이 있습니다.
 

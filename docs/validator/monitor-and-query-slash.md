@@ -52,7 +52,7 @@ bnbcli slashing side-slash-history 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --
 bnbcli slashing side-slash-histories 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --infraction-type DoubleSign --side-chain-id=bsc --chain-id=test-chain-8d7sJz --home ~/home_cli
 ```
 
-## Query All Side Chain Slash Histories(for internal)
+## 사이드 체인 슬래싱 내역 조회 (내부용)
 
 ### 슬래싱 `side-all-slash-histories` 파라미터
 

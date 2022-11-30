@@ -4,7 +4,7 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Staking with Binance Extension Wallet
+# 바이낸스 익스텐션 월렛으로 스테이킹하기
 
 ## 바이낸스 익스텐션 월렛으로 BNB 위임하기
 

@@ -39,7 +39,7 @@ unzip testnet.zip
 
 ### 합의 키 생성하기
 
-검증인의 합의키, 즉 계정을 생성해야 합니다. 아래의 명령어를 통해 새로운 계정을 만들고 비밀번호를 설정할 수 있습니다.
+검증인의 합의 키, 즉 계정을 생성해야 합니다. 아래의 명령어를 통해 새로운 계정을 만들고 비밀번호를 설정할 수 있습니다.
 
 ```bash
 geth account new --datadir ./node
@@ -63,11 +63,11 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 
 이 [가이드](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc)를 따라 BNB를 BSC 테스트넷에서 BC 테스트넷으로 전송할 수 있습니다.
 
-### Declare Your Candidacy
+### 후보 선언하기
 
 `bnbcli`를 사용하여 계정을 생성 또는 복구할 수 있습니다. 메인넷의 경우 잔고가 10000 BNB, 테스트넷은 100 BNB 이상임을 확인하세요.
 
- `create-validator` 트랜잭션을 생성하기 전에 여러분의 BSC 검증인이 이미 다 따라 동기화를 했는지 확인하세요.
+ `create-validator` 트랜잭션을 생성하기 전에 여러분의 BSC 검증인이 완전히 동기화 되었는지 확인하세요.
 
 테스트넷 예제
 

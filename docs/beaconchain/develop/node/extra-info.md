@@ -1,49 +1,49 @@
-# Get Extra Data From Your Full Node
+# 풀 노드에서 추가 데이터 얻기
 
 
-This document is intended for developers who are interested in transactions, order books, account changes, fee charges in every block and would like to build their own downstream services of the full node.<br/>
-Please refer to [Running Full Node](join-mainnet.md), if you still haven't deployed a full node.
+다음 문서는 트랜잭션, 오더 북, 계정 변경, 수수료 지불 기능에 관심이 있고 풀 노드를 이용하여 자체적인 서비스를 제작하고자 하는 개발자를 대상으로 합니다.<br/>
+아지 풀 노드를 배포하지 않았다면 다음 [문서](join-mainnet.md)를 참고해 주세요.
 
-## Publish Different Messages to Local Files
+## 로컬 파일에 다른 메세지 게시
 
-You can set the `publishLocal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-The full node will append the messages each block published to `{fullnode home}/marketdata/marketdata.json` (each line is a json object for a topic and height), and you can consume them in your own apps. The messages types are explained below.
+`nodebinary/fullnode/{network}/node/app.toml`에 `publishLocal`을 `true`로 설정할 수 있습니다. <br/>
+풀 노드는 `{fullnode home}/marketdata/marketdata.json`에 퍼블리시 된 각 블록에 메세지를 추가하며, (각 줄은 주제 및 높이에 대한 json 객체입니다), 이 메세지는 자신의 앱에서 사용할 수 있습니다. 메세지 유형은 아래에 설명되어 있습니다.
 
-Note: only block messages after this option get turned on can be saved. This function won't make up messages for already saved blocks.
+참고: 해당 옵션을 킨 후의 블록 메세지만 저장됩니다. 이미 저장된 블록에 대해서는 메세지를 작성할 수 없습니다.
 
-## Set Kafka Broker Version
+## Kafka Broker 버전 설정
 
-Since the release of bnbchaind `v0.6.3`, you can customize the version of `kafka broker` in `app.toml`. The default value is `v2.1.0`:
+bnbchaind `v0.6.3` 이 출시 된 후, `app.toml`에서 `kafka broker`버전을 설정할 수 있습니다. 기본 값은 `v2.1.0`입니다:
 
-> The recommended version 2.1.0 and the minimal version is 0.8.2.0
+> 권장 버전은 2.1.0 이고 최소 버전은 0.8.2.0
 
 ```
 kafkaVersion = "2.1.0"
 ```
-If you are using another version of Kafka, please test the compatibility first.
+만일 다른 버전의 Kafka를 사용하고 있으면, 우선 호환성을 테스트하세요.
 
-### 1. OrderUpdates
-You can set  the `publishOrderUpdates` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-Then, the full node will save all the trades that have been filled, orders that changed and proposals that been submitted.
+### 1. 주문 업데이트
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishOrderUpdates`를 `true`로 설정하면<br/>
+풀 노드는는 모든 채결된 거래와 변경된 주문 및 신청된 제안을 저장합니다.
 
-* Example:
+* 예시:
 
-All those [extra info](../../get-extra-data-from-fullnode.md#publish-different-messages-to-local-files) can also be found in exported data from your fullnode.
+다음과 같은 [추가 정보](../../get-extra-data-from-fullnode.md#publish-different-messages-to-local-files)들은 풀 노드로에서 내보낸 데이터에서도 찾아볼 수 있습니다.
 
-### Changes
-In `trade` data structure, there are five new fields: `SSrc`,`BSrc`,`SSingleFee`, `BSingleFee` and `TickerType`.
+### 변경
+`trade` 데이터 구조에는 새로운 5개의 필드가 존재합니다: `SSrc`,`BSrc`,`SSingleFee`, `BSingleFee`, `TickerType`
 
-* `SSrc`: Source code of Sell order transaction
-* `BSrc`: Source code of Buy order transaction
-* `SSingleFee`: fee of matched sell order
-* `BSingleFee`: fee of matched buy order
-* `TickerType`: ticker type
+* `SSrc`: 매매 주문 트랜잭션 소스 코드
+* `BSrc`: 매수 주문 트랜잭션 소스 코드
+* `SSingleFee`: 성사된 매매 주문 수수료
+* `BSingleFee`: 성사된 구매 주문 수수료
+* `TickerType`: 티커 유형
 
-In `Order` data structure, there is a new field: `singlefee`. This is used to show the fee of this order.
+`Order` 데이터의 구조에는 `singlefee`라는 새로운 필드가 존재합니다. 이는 현재 주문의 수수료를 나타냅니다.
 
-`Status` is used to indicate the current status of this order. Namely there are 9 status:  0 for Acknowledge; 1 for Canceled ; 2 for Expired , 3 for IocNoFill, 4 for IocExpire, 5 for PartialFill, 6 for FullyFill, 7 for FailedBlocking, 8 for FailedMatching.
+`Status`는 주문의 현재 상태를 나타냅니다. 9가지 상태로 표현되는데:  0은 인지; 1은 취소; 2는 만료, 3은 즉시구매 체결 실패, 4는 즉시구매 만료, 5는 일부 체결, 6은 전체 체결, 7는 블로킹 실패, 8은 매칭 실패 입니다.
 
-For example:
+예시:
 
 
 ```json
@@ -275,12 +275,12 @@ For example:
 ```
 
 
-### 2. AccountBalance
+### 2. 계정 잔고
 
-You can set the `publishAccountBalance` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-Then, the full node will save all the changed accounts.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishAccountBalance`를 `true`로 설정하면<br/>
+풀 노드는 변경된 계정을 전부 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -296,12 +296,12 @@ Then, the full node will save all the changed accounts.
 }
 ```
 
-### 3. OrderBook
+### 3. 오더 북
 
-You can set the `publishOrderBook` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-Then, the full node will save all order book changes.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishOrderBook`을 `true`로 설정하면<br/>
+풀 노드는 오더 북의 변화를 전부 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -322,12 +322,12 @@ Then, the full node will save all order book changes.
 }
 ```
 
-### 4. BlockFee
+### 4. 블록 수수료
 
-You can set the `publishBlockFee` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-Then, the full node will save all the block fee charged.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishBlockFee`을 `true`로 설정하면<br/>
+풀 노드는 부과된 블록 수수료를 전부 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -338,11 +338,11 @@ Then, the full node will save all the block fee charged.
 ```
 
 
-### 5. Transfers
-You can set the `publishTransfer` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-Then, the full node will save all the transfer transactions.
+### 5. 전송
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishTransfer`를 `true`로 설정하면<br/>
+풀 노드는 모든 전송 트랜잭션을 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -363,12 +363,12 @@ Then, the full node will save all the transfer transactions.
     }
 }
 ```
-### 6. Staking Record
+### 6. 스테이킹 기록
 
-You can set the `publishStaking` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
-Then, the full node will save all the messages about staking.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishStaking`을 `true`로 설정하면<br/>
+풀 노드는 스테이킹과 관련된 모든 메세지를 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -511,7 +511,7 @@ Then, the full node will save all the messages about staking.
 
 ```
 
-* Schema
+* 스키마
 
 ```json
 {
@@ -735,12 +735,12 @@ Then, the full node will save all the messages about staking.
 ```
 
 
-### 7. Reward Distribution
+### 7. 보상 분배
 
-You can set the `publishDistributeReward` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
-Then, the full node will save all the messages about reward distribution.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishDistributeReward`를 `true`로 설정하면<br/>
+풀 노드는 보상 분배와 관련된 모든 메세지를 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -763,7 +763,7 @@ Then, the full node will save all the messages about reward distribution.
 }
 ```
 
-* Schema
+* 스키마
 
 ```
 {
@@ -811,12 +811,12 @@ Then, the full node will save all the messages about reward distribution.
 }
 ```
 
-### 8. Slashing
+### 8. 슬래싱
 
-You can set the `publishSlashing` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
-Then, the full node will save all the messages about slashing.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishSlashing`을 `true`로 설정하면<br/>
+풀 노드는 슬래싱에 관련된 모든 메세지를 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -840,7 +840,7 @@ Then, the full node will save all the messages about slashing.
 }
 ```
 
-* Schema
+* 스키마
 
 ```json
 {
@@ -888,12 +888,12 @@ Then, the full node will save all the messages about slashing.
 }
 ```
 
-### 9. CrossTransfer
+### 9. 크로스 전송
 
-You can set the `publishCrossTransfer` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
-Then, the full node will save all the messages about cross transfer.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishCrossTransfer`를 `true`로 설정하면<br/>
+풀 노드는 크로스 전송에 관한 모든 메세지를 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -917,7 +917,7 @@ Then, the full node will save all the messages about cross transfer.
 }
 ```
 
-* Schema
+* 스키마
 
 ```json
 {
@@ -966,12 +966,12 @@ Then, the full node will save all the messages about cross transfer.
 }
 ```
 
-### 10. SideProposal
+### 10. 사이드 제안
 
-You can set the `publishSideProposal` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.
-Then, the full node will save all the messages about side proposals.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishSideProposal`을 `true`로 설정하면<br/>
+풀 노드는 사이드 제안에 관한 모든 메세지를 저장합니다.
 
-* Example
+* 예시
 
 ```
 {
@@ -986,7 +986,7 @@ Then, the full node will save all the messages about side proposals.
 }
 ```
 
-* Schema
+* 스키마
 
 ```json
 {
@@ -1018,9 +1018,11 @@ Then, the full node will save all the messages about side proposals.
 
 ### 11. BreatheBlock
 
-You can set the `publichBreatheBlock` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`. Then, the full node will save all the messages about side proposals.
+`nodebinary/fullnode/{network}/node/app.toml`의 `publichBreatheBlock`를 `true`로 설정하면<br/>
+풀 노드는 BreatheBlock에 관한 모든 메세지를 저장합니다. 
+(Breathe Block은 제안 통과 후 비컨 체인의 스테이킹/슬래싱/오라클 모듈의 매개 변수들의 변경이 이뤄지는 블록입니다)
 
-* Example
+* 예시
 
 ```
 {
@@ -1029,7 +1031,7 @@ You can set the `publichBreatheBlock` option to `true` in `nodebinary/fullnode/{
 }
 ```
 
-* Schema
+* 스키마
 
 ```json
 {
@@ -1043,13 +1045,13 @@ You can set the `publichBreatheBlock` option to `true` in `nodebinary/fullnode/{
 }
 ```
 
-## Publish Different Messages to Kafka
-You can set the `publishKafka` option to `true` in `nodebinary/fullnode/{network}/node/app.toml`.<br/>
-Then, the full node will save messages that you are interested into Kafka, and you can consume them in your own apps.<br/>
-The message is encoded based on `Avro` serialization system.<br/>
-Their schemas are shown below:<br/>
+## Kafka에 다른 메세지 작성
+`nodebinary/fullnode/{network}/node/app.toml`의 `publishKafka`를 `true` 로 설정하면<br/>
+풀 노드는 Kafka에 관심 있다는 메세지를 저장하며, 이를 자체 앱에서 사용할 수 있습니다.<br/>
+메세지는 `Avro`직렬화 시스템에 기반하여 인코딩됩니다.<br/>
+스키마는 다음과 같습니다:<br/>
 
-- **OrderUpdates**:
+- **주문 업데이트(OrderUpdates)**:
 ```
 {
     "type": "record",
@@ -1185,7 +1187,7 @@ Their schemas are shown below:<br/>
 }
 ```
 
-- **OrderBooksSchema**:
+- **오더북 스키마(OrderBooksSchema)**:
 ```
 {
     "type": "record",
@@ -1228,7 +1230,7 @@ Their schemas are shown below:<br/>
 }
 ```
 
-- **AccountBalanceSchema**:
+- **계정 잔고 스키마(AccountBalanceSchema)**:
 ```
 {
             "type": "record",
@@ -1272,7 +1274,7 @@ Their schemas are shown below:<br/>
 ```
 
 
-- **BlockFeeSchema**:
+- **블록 수수료 스키마(BlockFeeSchema)**:
 ```
 {
     "type": "record",
@@ -1286,7 +1288,7 @@ Their schemas are shown below:<br/>
 }
 ```
 
-- **TransfersSchema**:
+- **전송 스키마(TransfersSchema)**:
 ```
 {
     "type": "record",

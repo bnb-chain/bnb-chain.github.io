@@ -36,7 +36,7 @@ BitQuery [차트](https://explorer.bitquery.io/bsc/miners) 또는 [BscScan](http
 
 ## 검증인이 부담하는 리스크
 
-시스템에 대한 부정행위, 규칙에 반한 행동을 범할 시 **[slashing](bc-slashing.md)**이라고 알려진 페널티가 부과될 수 있습니다.
+시스템에 대한 부정행위, 규칙에 반한 행동을 범할 시 **[슬래싱](bc-slashing.md)** 이라고 알려진 페널티가 부과될 수 있습니다.
 
 
 ### 잠재적 손실

@@ -16,7 +16,7 @@ bnbcli slashing bsc-submit-evidence
  \--evidence-file={File of evidence details} 
  \--chain-id={the chain id of binance chain}
 ```
-#### 슬래싱 bsc-submit-evidence를 위한 증거
+#### 슬래싱 bsc-submit-evidence를 위한 파라미터
 
 | **파라미터 이름** | **예시**                                                  | **설명**                                                 | **필수 여부** |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |

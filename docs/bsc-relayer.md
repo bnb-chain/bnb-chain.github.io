@@ -16,7 +16,7 @@ sidebar_position: 2
 * 트랜잭션 수수료로 **500BNB** 이상
 
 !!! 팁
-		현재 BSC 릴레이어 코드가 완전히 준비되지 않았습니다. `db persistence`, `alert`, `prometheus monitor 등 일부 기능은 아직 개발 중입니다. 따라서 db_config, alert_config, instrumentation_config, admin_config에 대한 설정을 수정하지 마십시오.
+		현재 BSC 릴레이어 코드가 완전히 준비되지 않았습니다. `db persistence`, `alert`, `prometheus monitor` 등 일부 기능은 아직 개발 중입니다. 따라서 db_config, alert_config, instrumentation_config, admin_config에 대한 설정을 수정하지 마십시오.
 
 ## BSC 릴레이어 설치 방법
 
@@ -40,7 +40,7 @@ make build
 
 `config.json`을 수정하고 bsc_config.private_key에 BSC 개인키를 입력합니다. 개인키의 예시는 다음과 같습니다: `AFD8C5D83F148065176268A9D1EE375A10CEE1E74D15985D4CC63E467EC34DA5`
 
-* 비콘 체인 구성:
+* 비컨 체인 구성:
 	* `mnemonic`: 복구 프레이즈를 여기에 붙여넣기 하세요. bsc-relayer가 자동적으로 `double-sign` 증거를 제출할 것이기 때문에, 커밋된 후 보상이 이 주소로 보내질 것입니다
 * BNB 스마트 체인 구성:
 

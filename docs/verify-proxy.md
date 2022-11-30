@@ -40,7 +40,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 
 > 참고: `Owner`는 이전에 배포 트랜잭션을 보낸 주소여야 합니다.
 
-- “Copy”를 클릭하여 다음과 같이 초기화 데이터를 저장합니다: ```
+- “Copy”를 클릭하여 다음과 같이 초기화 데이터를 저장합니다:
 
 
 ```
@@ -70,11 +70,13 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 <img src="https://lh3.googleusercontent.com/bdTP2V-Fco3HogiRVO-2FTlGwzXGsgiOa2VcCUdkr1LCD2kuRbHbz0u7eM7xmLhYiJAToG9IKL-R3heI2i_TPf2dQoFE215s9w-b8D6PLjYPAktKoLRRDozV8aOpQvfYGJgEYtJM" alt="img" style={{zoom:"50%"}}/>
 
 **Logic**: `BEP20Implementation` 컨트랙트의 주소
+
 **Admin**: 관리자는 BEP20 토큰 소유자가 될 수 없습니다
+
 **Data**: 이전에 저장한 초기화 데이터를 사용하세요
 
 - “Deploy” 버튼을 클릭하면 메타마스크 창이 나타납니다.
-- “Confirm” 버튼을 클릭하여 트랜잭션에 서명하고 BSC에 전파합니다.ㄴ
+- “Confirm” 버튼을 클릭하여 트랜잭션에 서명하고 BSC에 전파합니다.
 
 ## BscScan에서 프록시 컨트랙트 확인하기
 주의: BEP20TokenImplementation 컨트랙트를 검증하는 방법은 이전과 같습니다.
