@@ -1,5 +1,5 @@
 ---
-sidebar_label: How to Use
+sidebar_label: 사용 방법
 sidebar_position: 2
 hide_table_of_contents: false
 ---

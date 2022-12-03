@@ -130,14 +130,14 @@ SetURI 트랜잭션은 `TokenURI`의 값을 바꾸기 위해 설계되었습니�
 
 ### 바이낸스 DEX에 BEP8 토큰 상장
 
-BEP2 토큰 상장과 다른 과정을 거칩니다. BEP8 토큰 발행자는 Mini-BEP2 토큰을 비컨 체인 검증인 동의 없이 상장할 수 있습니다. BEP8 토큰은 BNB나 BUSD쌍으로만 상장될 수 있으며 BEP8 토큰을 인용 부호(quote symbol)로 상장할 수 없습니다.
+BEP2 토큰 상장과 다른 과정을 거칩니다. BEP8 토큰 발행자는 Mini-BEP2 토큰을 비컨 체인 검증인 동의 없이 상장할 수 있습니다. BEP8 토큰은 BNB나 BUSD쌍으로만 상장될 수 있으며 BEP8 토큰을 견적 부호(quote symbol)로 상장할 수 없습니다.
 
 **다음은 트랜잭션에 필요한 매개 변수입니다:**
 
 | **Field**    | **타입** | **설명**                                              |
 | :------------ | :-------- | :------------------------------------------------------------ |
 | base-asset-symbol | string | 상장할 Mini BEP2 토큰 |
-|quote-asset-symbol| string|BNB와 BUSD만 인용 자산(quote asset)으로 지원합니다|
+|quote-asset-symbol| string|BNB와 BUSD만 견적 자산(quote asset)으로 지원합니다|
 |init-price|int64|자산의 초기값, 1e8 곱해져서 표시|
 |from|Bech32_address|기초 자산의 발행 주소|
 

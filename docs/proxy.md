@@ -1,5 +1,5 @@
 ---
-sidebar_label: Upgradable BEP20 Contracts on BSC
+sidebar_label: BSC 상 업그레이드 가능한 BEP20 계약
 hide_table_of_contents: false
 sidebar_position: 2
 ---

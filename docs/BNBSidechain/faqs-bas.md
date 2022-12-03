@@ -1,74 +1,75 @@
 ---
-sidebar_label: BNB Sidechain FAQs
+sidebar_label: BNB 사이드 체인 FAQs
 sidebar_position: 2
 hide_table_of_contents: false
 ---
-# BNB Sidechain FAQs
+# BNB 사이드 체인 FAQs
 
-### What is BNB Sidechain? 
-The BNB Sidechain is an infrastructure introduced to help developers and node operators build and run their own blockchain as their internal value system for a massive number of users while still maintaining a close connection with the BNB Chain. Any project developer will be able to deploy their own BNB Sidechain with its unique specifications and validator set. This validator set can run with fewer validators than BNB Chain, depending on the BNB Sidechain deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BNB Sidechain. The typical usage of BNB Sidechain is like the Ronin chain for the Axie Infinity.
+### BNB 사이드 체인이란? 
+BNB 사이드 체인은 개발자와 노드 운영자가 대규모 사용자를 위한 자체적인 내부 시스템을 운영하면서 BNB 체인과 연결이 가능하도록 만든 인프라입니다. 프로젝트 개발자라면 누구나 고유 사양과 검증인 설정을 통해 자체 BNB 사이드 체인을 구축할 수 있습니다. 검증인 집단은 제작자에 따라 다르지만, BNB 체인보다 적은 검증인으로도 운영이 가능합니다. 검증인들은 어플리케이션 소유자나 커뮤니티 예치인 누구나 참여 가능하여 BNB 체인에 유연성과 분산성을 제공합니다.  BNB 사이드 체인의 대표적인 사용법은 엑시 인피니티의 로닌 체인 같이 활용할 수 있습니다.
 
-### Do projects need permissions to set up BNB Sidechain? 
-No, BNB Sidechain is permissionless. We have 3–4 games in the test pilot stage right now. Nodereal and Ankr will help them build on BNB Sidechain.
+### BNB 사이드 체인을 구축하기 위해 허가가 필요하나요? 
+별도의 허가가 필요하지 않습니다. 현재 테스트 단계에서 3–4개의 게임을 테스트하고 있습니다. Nodereal과 Ankr가 BNB 사이드 체인에서 게임들을 적용하는 것을 돕고 있습니다.
 
-### What is the consensus mechanism for BNB Sidechain? 
-TL;DR: Think of it as a "mini BSC".
+### BNB 사이드 체인의 합의 매커니즘은 어떻게 구성되었나요? 
+쉽게 말해 BSC 축소판이라고 생각하면 쉽습니다.
 
-BNB Sidechain uses BSC's Parlia consensus. Parlia is a Proof-of-Staked Authority (PoSA) consensus algorithm for BSC. It incorporates elements from both Proof-of-Stake and Proof-of-Authority. It is a BFT-like consensus where only one validator produces a block and to be sure of the correctness of this operation we must wait for the confirmation time, usually its 2/3*N+1, where N is active validators (15 blocks for the current configuration).
+BNB 사이드 체인은 BSC의 Parlia 합의를 사용합니다. Parlia는 BSC를 위한 권한 지분 증명(PoSA, Proof-of-Staked Authority) 합의 알고지금입니다. 다음 합의 체계는 지분 증명(PoS)과 권한 증명(PoA)의 요소들을 통합하여 구성되었습니다. BFT 같은 합의체계이며 하나의 검증인이 블록을 생성하고 확실히 검증하기 위해 검증 시간인 2/3 * N+1 만큼 기다려야 합니다. N은 활성화된 검증인의 숫자이며, 현재 설정에서는 블록이 15개 생성되는 시간 동안 기다립니다.
 
-For more detail, read about Parlia on [BNB Chain docs](https://docs.bnbchain.org/docs/learn/consensus#consensus-protocol).
+더 자세한 사항은 [BNB 체인 문서](https://docs.bnbchain.org/docs/learn/consensus#consensus-protocol)에서 Parlia에 관해 읽어보세요.
 
-### I've heard about the hack on Ronin. How does BNB Sidechain protect me from something like this?
-The recent exploit discovered on Ronin illustrates the importance of having a diverse and decentralized group of validators and node operators serving the chain. Ankr will use its own token to help incentivize other node providers to support decentralization on BNB Sidechain.
+### Ronin 네트워크 에서 해킹이 발생했는데 BNB 체인은 다음과 같은 위험에서 어떻게 사용자들을 보호할 수 있나요?
+최근 로닌에서 발견된 악용 사례는 체인이 다양하고 분산된 검증인과 노드 운영자들이 필요하다는 것을 보여줍니다. 앵커(Ankr)는 자체 토큰을 통해 노드 제공자에게 인센티브를 제공하고 BNB 사이드체인의 탈중앙화를 돕습니다.
 
-### What is the cost for projects to adopt BNB Sidechain? 
-Depends on whether the project wants to own its own BNB Sidechain, or wants it as a PaaS service. 
+### 프로젝트에 BNB 사이드체인을 적용할 때 비용이 얼마나 되나요? 
+프로젝트가 자체 BNB 사이드 체인을 구축하고 싶은지, 서비스형 플랫폼(PaaS) 서비스 인지에 따라 나뉩니다.
 
-NodeReal or Ankr will provide it as PaaS, which includes validators, networks, tools, RPC service, and explorer. All that will be provided as a package, and there will be a quotation for this service.
+NodeReal이나 Ankr는 서비스형 플랫폼을 제공하며, 검증인, 네트워크, 도구, RPC 서비스와 탐색기를 포함합니다. 이 모든 것이 패키지로 제동되며, 견적을 받아 보실 수 있습니다.
 
-### Will BNB Sidechain transactions and DAOs be counted towards BNB Chain? Should we account for these sidechain metrics and how?
-They will not be counted. In the future, BSC should focus mainly on non-game metrics and liquidity, while games will be on BNB Sidechain.
+### BNB 사이드 체인 트랜잭션과 DAO는 BNB 체인에 반영이 될 예정입가요? 사이드 체인 지표는 어떤 기준을 잡고 측정하게 되나요?
+반영되지 않을 예정입니다. 향후 BSC는 게임이 아닌 지표들과 유동성에 집중하는 반면, 사이드체인에서 게임 분야를 담당하게 될 예정입니다.
 
-### When can projects start deploying on BNB Sidechain? 
-BNB Sidechain Testnet will be out at the end of March 2022.
+### 프로젝트들이 BNB 사이드 체인에 언제부터 배포할 수 있을까요?
+BNB 사이드 체인 테스트넷은 2022년 3월 말까지 출시될 예정입니다.
 
-BNB Sidechain Mainnet will be ready at least 2 months after that.
+BNB 사이드 체인 메인넷은 테스트넷 이후 최소 2개월 뒤에 준비됩니다.
 
-### Where can we find more docs for BNB Sidechain for our developers to read through? 
-Refer to [BNB Sidechain Architecture](architecture/bs-arch.md). 
+### 개발자들이 읽을만한 BNB 사이드체인의 더 많은 문서를 어디서 찾을 수 있나요?
 
-Also, read [BNB Chain 2022: Build N’ Build](https://www.bnbchain.org/en/blog/bsc-2022-build-and-build/) and [BEP100 proposal for BNB Sidechain](https://github.com/bnb-chain/BEPs/pull/132). 
+[BNB 사이드 체인 구조](architecture/bs-arch.md)를 참고하세요. 
 
-### If developers have questions about BNB Sidechain deployment, where can they ask them?
-We will soon set up a Discord channel for questions and organize a Twitter space to share more details. 
-For now, they can read [How to Launch a BNB Sidechain](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/launch-bas).
+[BNB Chain 2022: Build N’ Build](https://www.bnbchain.org/en/blog/bsc-2022-build-and-build/)와 [BNB 사이드 체인을 위한 BEP100 제안](https://github.com/bnb-chain/BEPs/pull/132)도 읽어보세요. 
 
-### I have read the proposal and want to take the next step toward deployment. Whom can I talk to? 
-For now, read [How to Launch a BNB Sidechain](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/launch-bas/). For other business and technical details, wait till the Discord channel for BNB Sidechain is set up. You'll be able to ask your questions there.
+### 개발자가 BNB 사이드 체인 구축에 관한 질문이 있을 때, 누구에게 문의할 수 있나요?
+조만간 질문할 수 있는 디스코드 채널이 생성될 예정이며, 트위터에서 자세한 사항을 공지할 것입니다.
+지금으로선 [BNB 사이드체인 시작하기](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/launch-bas/)를 읽는 것이 가장 좋습니다.
 
-### If a project already has its own private chain, what’s the process to integrate it as a BNB Sidechain? And what does “integrate” mean? 
-Such a project will have to implement BNB Sidechain modules following our standards to align with our BNB Sidechain framework. "Integrate" means to become a BNB Sidechain-compatible blockchain that can use all the specter of BNB Sidechain products.
+### 저는 제안서를 읽었고 배치를 위해 다음 단계를 진행하고 싶습니다. 누구와 얘기할 수 있나요?
+지금으로선 [BNB 사이드체인 시작하기](https://www.ankr.com/docs/build-blockchain/bas/how-to-launch/launch-bas/)를 읽는 것이 가장 좋습니다. 그 외 비즈니스나 기술적인 세부 사항에 관한 질문은 BNB 사이드 체인을 위한 디스코드 체널이 만들어 지면 문의가 가능할 것입니다.
 
-### What’s the process to set up a BNB Sidechain? How long does it take?
-On average, it takes several hours to set up a BNB Sidechain.
+### 프로젝트가 이미 자체 체인을 보유하고 있다면, BNB 사이드 체인과 어떻게 "통합"할 수 있나요? 
+will have to implement 해당 프로젝트 같은 경우 BNB 사이드 체인 모듈 following our standards to align with our BNB Sidechain framework. "통합"은 BNB 사이드 체인이 호환 블록체인이 되는 것이며 모든 BNB 사이드 체인 제품을 사용할 수 있게 되는 것을 뜻합니다. 
 
-### How is the validator set and rules decided? Can the application decide on all the validators? 
-We propose a very flexible configuration, BNB Sidechained on the project parameters. The minimum is 3 validators.
+### BNB 사이드 체인을 구축하기 위해서는 시간이 얼마나 소요되나요?
+평균적으로 BNB 사이드 체인을 구축하려면 몇 시간 정도 걸립니다.
 
-### Are there prerequisites for a token to be used as a BNB Sidechain sidechain token? 
-There are no prerequisites. You can just issue a new token.
+### 검증인 집단과 규칙은 어떻게 결정되나요? 어플리케이션이 모든 검증인을 결정할 수 있나요? 
+BNB체인은 프로젝트 매개 변수를 매우 유연하게 설정할 수 있습니다. 검증인은 3명 이상 설정되어야 합니다.
 
-For example, Ankr will have its own BNB Sidechain and use its own token. 
+### BNB 사이드 체인에서 자체 토큰을 사용하기 위한 전제 조건이 있나요? 
+별도의 전제 조건 없이 새로운 토큰을 발행할 수 있습니다.
 
-### What are the main differences, advantages, and disadvantages when we compare BNB Sidechain with Avalanche Subnets? 
-They are very similar. Where they differ is the consensus rules. 
+앵커(Ankr) 같은 경우 자체 BNB 사이드 체인이 존재하며 자체 토큰을 사용하고 있습니다.
 
-### What maintenance is required for BNB Sidechain operations? Do we maintain it or BNB Chain does it? 
-If you build your own BNB Sidechain, the maintenance is fully on you.
+### BNB 사이드 체인과 아발란체 서브넷의 주요 차이점이 무엇인가요? 
+이 둘은 매우 유사하지만, 합의 규칙에서 차이가 발생합니다.
 
-If you use it as a PaaS at Nodereal or Ankr, they will do the maintenance. They will also do all future upgrades, 24x7 SLA support, and so on.
+### BNB 사이드 체인 운영을 위해 필요한 유지 보수는 무엇인가요? 저희가 담당인가요 아니면 BNB 체인에서 담당하나요? 
+직접 BNB 사이드 체인을 구축한 경우, 모든 유지보수는 여러분들이 담당해야 합니다.
 
-### What's the expected technological advancement here? In other words, what's the positive-sum net value for users and developers?
-With BNB Sidechain, developers are able to set up and run a scalable blockchain solution, with smart contracts capability, in a very short time. They can also modify and upgrade their BNB Sidechain using different modules or writing their own modules. Effectively, it means faster and simpler monetization and easier user attraction.
+Nodereal이나 Ankr에서 서비스형 플랫폼(PaaS)를 운영하면 이들이 유지보수를 담당합니다. 또한 향후 업그레이드와 24x7 SLA 지원 등을 제공합니다.
 
-With BNB Sidechain, users can gain access to new projects faster and use new exciting opportunities.
+### BNB 체인을 통해 사용자들과 개발자들이 앞으로 어떠한 기술적 발전과 가치의 증대를 기대할 수 있나요?
+BNB 사이드 체인을 통해 개발자들은 매우 짧은 시간 안에 스마트 계약 기능을 갖춘 확장 가능한 블록체인 솔루션을 구축하고 운영할 수 있습니다. 모듈을 직접 만들거나 만들어진 모듈을 사용해서 BNB 사이드 체인을 수정하고 업그레이드 할 수 있습니다. 이는 더 빠른 수익화와 사용자 유치가 가능하다는 것을 의미합니다.
+
+BNB 사이드 체인을 통해 사용자들은 새 프로젝트를 더 빠르게 접하고 새로운 기회를 마주할 수 있습니다.

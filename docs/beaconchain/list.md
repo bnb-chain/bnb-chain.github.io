@@ -8,7 +8,7 @@
 ## 트랜잭션 상장
 
 ### 제안 매개 변수
-* `quote-asset-symbol`: 현재는, BNB 만 인용 자산(quote asset)으로 지원합니다.
+* `quote-asset-symbol`: 현재는, BNB 만 견적 자산(quote asset)으로 지원합니다.
 * `init-price`: 자산의 초기 값으로, 소수점 값에 **1e8**이 곱해져 표현됩니다.
 * `proposal-id`: 통과된 상장 제안의 고유 id값 입니다.
 * `from`: 기초 자산의 발행인의 주소와 같아야 합니다

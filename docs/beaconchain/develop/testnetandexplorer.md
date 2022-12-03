@@ -1,44 +1,44 @@
 
-# Beacon Chain Testnet
+# 비컨 체인 테스트넷
 
-### What is a Testnet?
+### 테스트넷이란?
 
-The testnet is a test environment for BNB Chain network, run by the BNB Chain development community, which is open to developers.
+테스트넷은 BNB 체인 개발 커뮤니티에서 운영하는 BNB 체인 네트워크의 테스트 환경이며, 개발자들에게 개방되어 있습니다.
 
-The validators on the testnet are from development team.
+테스트넷의 검증인들은 개발팀에 존재합니다.
 
-You can connect a node to the testnet by downloading the [node binary](https://github.com/bnb-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix) to use this [configuration](https://github.com/bnb-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix/config).
+[노드 바이너리](https://github.com/bnb-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix)를 다운로드하고 다음 [설정](https://github.com/bnb-chain/node-binary/tree/master/fullnode/testnet/0.6.3-hotfix/config)을 통해 테스트넷 노드와 연결할 수 있습니다.
 
-There is also a [web wallet](https://testnet.binance.org/en/) that can directly interact with the DEX. testnet.
+[웹 지갑](https://testnet.binance.org/en/)을 통해 DEX 테스트넷과 직접 상호작용 할 수 있습니다.
 
-### What is the Testnet good for?
+### 테스트넷의 장점은 무엇인가요?
 
-- Create your test address and get your testnet funds.
-- Develop applications and try tutorials on Binance Chain without the potential to lose your own assets.
-- Test your applications against new versions of Binance Chain.
-- Analyze blockchain data on a smaller, non-trivial data set compared to the public network.
+- 테스트 주소를 생성하고 테스트넷 자금을 얻을 수 있습니다.
+- 어플리케이션을 개발하고 자신의 자산을 잃을 위험 없이 BNB 체인에서 테스트 할 수 있습니다.
+- BNB 체인의 새로운 버전에 대해 어플리케이션이 정상적으로 작동하는지 테스트 할 수 있습니다.
+- 퍼블릭 네트워크보다 작고 중요하지 않은 데이터셋으로 블록체인 데이터를 분석해 봅니다.
 
-### How to get Testnet Fund?
+### 테스트넷 자금 받는 법
 
-> Note: The previous Binance Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: https://testnet.binance.org/faucet-smart
+> 참고: 이전 바이낸스 체인 테스트넷 자금 제공처 [Faucet](https://www.binance.com/en/dex/testnet/address)은 2020/08/11 1:00 PM (UTC)에 종료되었습니다. 테스트넷 faucet은 다음 페이지로 이전되었습니다: https://testnet.binance.org/faucet-smart
 
-**Steps to claim testnet BNB:**
+**테스트넷 BNB 수령하는 방법:**
 
-1. Create a new Wallet of Binance Smart Chain testnet with [MetaMask or MathWallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
-2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
+1. 바이낸스 스마트 체인 테스트넷이 작동되는 [MetaMask나 MathWallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets) 지갑을 생성합니다.
+2. 테스트넷 자금 받기: https://testnet.binance.org/faucet-smart
 
-To request funds, please make a tweet with your Binance Smart Chain address pasted into the contents. Then, copy-paste the tweets URL!
-**BNB** will be sent to your BSC wallet right away.
+자금을 요청하려면, 내용에 바이낸스 스마트 체인 주소를 적고 트윗을 생성하세요. 이후, 트윗의 URL을 복사 및 붙어넣기 하세요!
+BSC지갑에 **BNB**가 바로 전송될 것입니다.
 
-3. Transfer From BNB Smart Chain to Beacon Chain
+3. BNB 스마트 체인에서 비컨 체인으로 전송하기
 
-You can use [Binance Extension Wallet](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
+크로스 체인 전송을 위해서는 [바이낸스 확장 지갑](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc)를 사용하면 됩니다.
 
-If you wish to test Beacon Chain features, you could transfer BNB cross-chain with MathWallet dApp:
+비컨 체인 기능을 테스트 하고자 한다면, MathWallet 디앱으로 BNB 크로스체인 전송을 할 수 있습니다:
 https://docs.bnbchain.org/docs/wallet/math#transfer-bnb-from-bsc-to-bc-in-testnet
 
 
-### Explorers for Testnet
+### 테스트넷 탐색기
 * BscSCAN - https://testnet.binance.org/en/
 * Bitquery - https://testnet-explorer.binance.org/
 

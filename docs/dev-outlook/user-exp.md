@@ -1,15 +1,15 @@
 ---
-sidebar_label: User Experience
+sidebar_label: 사용자 경험
 sidebar_position: 2
 ---
-# Imporvements for better User Experience
+# 사용자 경험 개선
 
-## User Experience
-Besides the limitation of the block gas limit cap, the other major factor that can impact BSC capacity is the rate of fork. Fork and re-organization of the blockchain can be very costly for both validators and fullnode.
+## 사용자 경험
+블록 가스 제한 캡의 한계를 제외하고, BSC 용량에 가장 큰 영향을 미치는 컷은 포크 속도입니다. 블록체인에서 포크 및 재조직은 검증인과 풀 노드 모두에게 많은 비용이 소모됩니다. 
 
-## Fast Finality
-Although BSC is designed to produce blocks every 3 seconds, it is recommended to wait until more than half of the validator set has produced new blocks on the block before the block can be confirmed in a probabilistic manner. This will cost at least 3x11 = 33 seconds after the block is visible on the network.
+## 빠른 완결성
+BSC가 3초마다 블록을 생성하게 설계되었어도, 블록들이 확률론적인 방법으로 승인될 수 있기 전에 검증인 집단의 절반 이상이 새 블록을 생성하도록 기다리는 것을 권장합니다. 이는 블록이 네트워크에서 조회 가능할 때까지 최소 3x11 = 33초의 시간이 소요된다는 것을 뜻합니다.
 
-As the validator set is well known every 24 hours, BSC can get a faster consensus on the longest chain based on the “attestation” from more than a certain percentage of the validator set considering it is the longest chain.
+검증인 집합은 24시간마다 업데이트되므로 BSC는 일정 비율 이상의 검증인 집합이 가장 긴 체인이라 생각하는 것을 "증명(attenstation)"하는 것을 기반으로 더 빠른 합의에 도달할 수 있습니다.
 
-This essentially requires altering the “Parlia” consensus mechanism of BSC. A BEP candidate has been proposed by the community at [[WIP] BEP-97: Introduce Fast Finality Mechanism by KeefeL · Pull Request #126 · binance-chain/BEPs · GitHub](https://github.com/binance-chain/BEPs/pull/126) 
+이는 "Parlia" 합의 매커니즘을 변경해야 된다는 것을 의미합니다. BEP 후보는 다음 문서에서 커뮤니티에 의해 제안되었습니다. [[WIP] BEP-97: 빠른 완결성 매커니즘 소개 by KeefeL · Pull Request #126 · binance-chain/BEPs · GitHub](https://github.com/binance-chain/BEPs/pull/126)

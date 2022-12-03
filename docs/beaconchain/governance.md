@@ -38,7 +38,7 @@ DepositedCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainDe
 + `--expire-time`: 만료 기한은 제안이 통과된 후 상장 트랜잭션을 보내야 하는 마감 기한입니다. 기한이 만료될 시 통과된 제안이어도 토큰을 상장할 수 없습니다.
 + `--voting-period`: 검증인이 투표할 수 있는 기간입니다. 초 단위로 구성되며 기본 투표 기간은 1주일입니다. 최대 설정 가능한 기한은 2주입니다. 투표 기한이 끝난 후 검증인의 투표가 집계될 것입니다.
 + `--title`: 제안의 제목
-+ `--quote-asset-symbol`: 자산 인용 부호. BEP2 토큰을 바이낸스 DEX에 상장할 때, 우선 BNB 마켓에 배치해야합니다.따라서 첫 제안에서 `quote-asset-symbol` 을 **BNB** 로 설정해야 하며, 이후 BEP2 자산을 [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1)나 다른 스테이블 코인과 거래쌍으로 상장할 수 있습니다.
++ `--quote-asset-symbol`: 견적 자산 부호. BEP2 토큰을 바이낸스 DEX에 상장할 때, 우선 BNB 마켓에 배치해야합니다.따라서 첫 제안에서 `quote-asset-symbol` 을 **BNB** 로 설정해야 하며, 이후 BEP2 자산을 [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1)나 다른 스테이블 코인과 거래쌍으로 상장할 수 있습니다.
 + `--base-asset-symbol`: 상장하고자 하는 자산 기호
 
 참고로 예치금(deposit과) 초기값(init-price)은 **1e8** 이 곱해져 있습니다. (기본값은 소수점 8자리입니다)
@@ -66,7 +66,7 @@ DepositedCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainDe
 
 참고로:
 
-+ `--quote-asset-symbol`: 자산 인용 부호
++ `--quote-asset-symbol`: 견적 자산 부호
 + `--base-asset-symbol`: 상장 폐지하는 자산의 부호
 + `--from`: 주소 키에 키 이름을 입력하세요. 토큰의 소유자 주소만 신청이 가능합니다.
 + `--voting-period`: 검증인이 투표할 수 있는 기간입니다. 초 단위로 구성되며 기본 투표 기간은 1주일입니다. 최대 설정 가능한 기한은 2주입니다. 투표 기한이 끝난 후 검증인의 투표가 집계될 것입니다.

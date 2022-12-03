@@ -1,66 +1,66 @@
 ---
-sidebar_label: BSC Staking Parameters FAQs
+sidebar_label: BSC 스테이킹 매개 변수 FAQs
 hide_table_of_contents: true
 sidebar_position: 2
 ---
 
-# BNB Smart Chain Staking Parameters
+# BNB 스마트 체인 스테이킹 매개 변수
 
-### Staking Token
+### 스테이킹 토큰
 
 - **BNB**
 
-### Max Validator Count
+### 최대 검증인 계수
 
-- **11** validators on Testnet
-- **21** validators on Mainnet
+- 테스트넷 검증인 : **11**
+- 메인넷 검증인 : **21**
 
-### Validator Candidate
+### 검증인 후보
 
-#### Mainnet
+#### 메인넷
 
-* **Minimiun Self-delegate Amount**: 10000BNB on Mainnet .
-* **Claim reward frequency**: everyday at 0:00 UTC
-* **Unbonding Period**: 7 days
+* **최소 자체 위임 규모 (Self-delegate Amount)**: 메인넷에서 10000BNB.
+* **보상 수령 주기 (Claim reward frequency)**: 매일 0:00 UTC
+* **본딩 해제 기간 (Unbonding Period)**: 7일
 
-#### Testnet
+#### 테스트넷
 
-* **Minimiun Self-delegate Amount**: 100BNB on testnet.
-* **Claim reward frequency**: every 2 hours
-* **Unbonding Period**: 4 hours
+* **최소 자체 위임 규모 (Self-delegate Amount)**: 테스트넷에서 100BNB.
+* **보상 수령 주기 (Claim reward frequency)**: 2시간 마다
+* **본딩 해제 기간 (Unbonding Period)**: 4시간
 
-### Delegator
+### 위임인 (Delegator)
 
-#### Mainnet
+#### 메인넷
 
-* **Redelegate frequency**: 7 days
+* **재위임 주기 (Redelegate frequency)**: 7 days
 
-#### Testnet
+#### 테스트넷
 
-* **Redelegate frequency**: 4 hours
+* **재위임 주기 (Redelegate frequency)**: 4 hours
 
-### Slashing
+### 슬래싱
 
-#### Mainnet
+#### 메인넷
 
-* **Double-Sign Slash**: 10000BNB
-    * **_Details_**: Anyone can submit a slashing request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator.
-* **Offline Slash**: 50BNB
-    * **_Details_**: If a validator missed more than 50 blocks every 24h, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. If it missed more than 150 blocks every 24h, then this will be propagated back to BC where another Slashing will happen
-* **Rewards for submitting double-sign evidence**: 1000BNB
-* **Double-Sign Jail time**: 2^63-1 seconds
-* **Downtime Jail time**: 2 days
-* **Too Low self-delegation Jail time**: 1 day
+* **이중 서명 슬래싱 (Double-Sign Slash)**: 10000BNB
+    * **_세부 내용_**: 누구나 BSC에서 발생한 이중 서명의 증거를 BC에 제출할 수 있습니다. 이중 서명은 같은 부모 블록과 같은 높이의 2개의 블록 헤더를 갖는데, 이를 악용하는 검증인이 블록으로 생성했을 때 발생합니다.
+* **오프라인 슬래싱 (Offline Slash)**: 50BNB
+    * **_세부 내용_**: 검증인이 24시간 사이 50 블록 이상을 놓쳤다면, BC에서 블록 보상을 해당 검증인에게 전달되지 않고 더 나은 검증인들에게 전달합니다. 만일 24시간 내 150블록 이상을 놓쳤다면, BC에 해당 사실이 전달되어 또 다른 슬래싱이 발생합니다.
+* **이중 서명 증거 제출 보상 (Rewards for submitting double-sign evidence)**: 1000BNB
+* **이중 서명 투옥 기간 (Double-Sign Jail time)**: 2^63-1초
+* **오프라인 투옥 기간 (Downtime Jail time)**: 2일
+* **자체 위임 부족 투옥 기간 (Too Low self-delegation Jail time)**: 1일
 
-#### Testnet
+#### 테스트넷
 
-* **Double-Sign Slash**: 10000BNB
-    * **_Details_**: Anyone can submit a slashing request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator.
-* **Offline Slash**: 30BNB
-    * **_Details_**: If a validator missed more than 50 blocks every 24h, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. If it missed more than 150 blocks every 24h, then this will be propagated back to BC where another Slashing will happen
-* **Rewards for submitting double-sign evidence**: 1000BNB
-* **Double-Sign Jail time**: 2^63-1 seconds
-* **Downtime Jail time**: 4h
-* **Too Low self-delegation Jail time**: 4h
+* **이중 서명 슬래싱 (Double-Sign Slash)**: 10000BNB
+    * **_세부 내용_**: 누구나 BSC에서 발생한 이중 서명의 증거를 BC에 제출할 수 있습니다. 이중 서명은 같은 부모 블록과 같은 높이의 2개의 블록 헤더를 갖는데, 이를 악용하는 검증인이 블록으로 생성했을 때 발생합니다.
+* **오프라인 슬래싱 (Offline Slash)**: 30BNB
+    * **_세부 내용_**: 검증인이 24시간 사이 50 블록 이상을 놓쳤다면, BC에서 블록 보상을 해당 검증인에게 전달되지 않고 더 나은 검증인들에게 전달합니다. 만일 24시간 내 150블록 이상을 놓쳤다면, BC에 해당 사실이 전달되어 또 다른 슬래싱이 발생합니다.
+* **이중 서명 증거 제출 보상 (Rewards for submitting double-sign evidence)**: 1000BNB
+* **이중 서명 투옥 기간 (Double-Sign Jail time)**: 2^63-1초
+* **오프라인 투옥 기간 (Downtime Jail time)**: 4시간
+* **자체 위임 부족 투옥 기간 (Too Low self-delegation Jail time)**: 4시간
 
 

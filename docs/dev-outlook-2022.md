@@ -1,19 +1,19 @@
 ---
-sidebar_label: Overview
+sidebar_label: 개요
 sidebar_position: 2
 ---
-# Overview
-In 2017, Binance and BNB were born. Three years later, Binance Smart Chain (BSC) was introduced to the world.  As Binance grew bigger and stronger, so did Binance Smart Chain.  BSC was born in time for the DeFi revolution, as the public showed increased interest in alternative financial solutions and use cases powered by blockchain. Today, both Binance and BSC remain connected by BNB.
+# 개요
+2017년에 바이낸스와 BNB가 탄생하였습니다. 3년 뒤, 바이낸스 스마트 체인이 (BSC) 세계에 소개되었습니다. 바이낸스가 성장해 가면서, 바이낸스 스마트 체인도 함께 성장하였습니다. BSC는 대중들이 대체 금융 솔루션과 블록체인 사용 사례에 관심을 갖는 디파이 혁명기에 맞춰 탄생하였습니다. 오늘 날에도 바이낸스와 BSC는 BNB와 연결되어 있습니다. 
 
 ![beyond-binance](https://public.bnbstatic.com/image/cms/blog/20220215/dde5a744-2e11-4a58-bf71-34a29786d777.jpg)
 
-## Beyond Binance
-BNB is more than just Binance. BNB has its own living, breathing ecosystem, together with BSC. The vision is that one day everyone will own BNB, and that’s why it’s necessary to set it free. For BNB to reach its true potential, Binance and BSC must set sail on different courses. From today, Binance Chain and Binance Smart Chain (BSC) become BNB Chain.
+## 바이낸스를 넘어서
+BNB는 바이낸스 그 이상의 가치가 존재합니다. BNB는 BSC와 함께 살아 숨쉬는 상태계를 지니고 있습니다. 우리의 비전은 모두가 BNB를 소유하는 것이고, 그렇기에 생태계를 자유롭게 하는 것이 중요한 것입니다. BNB의 진정한 잠재력을 발휘하기 위해서는 바이낸스와 BSC가 서로 다른 길을 걸어야합니다. 오늘부터 바이낸스 체인과 바이낸스 스마트 체인(BSC)은 BNB 체인이 됩니다.
 
-BSC development teams and community pioneers would like to share the outlook for the future development direction of the BNB blockchain ecosystem and to demonstrate the resilience and persistence of the BNB spirit: for the builders and users and target to onboard 1B users.
+BSC 개발 팀과 커뮤니티 개척자들은 BNB 블록체인 생태계의 발전 방향에 대한 전망을 공유하고, BNB 정신의 복원력과 지속성을 보여주고자 합니다. 저희는 개발자들과 사용자들을 BNB 생태계에 합류시켜 10억명의 사용자들이 참여하는 목표로 하고 있습니다.
 
-With this name change also comes more advancements to benefit users, projects and developers connected to the BNB Chain community. BNB Chain will embrace large-scale applications, including GameFi, SocialFi and the Metaverse. In particular:
-- Scaling from one chain to multi-chain
-- Boosting the throughput of BSC
-- Introducing on-chain governance mechanisms
-- Improving scaling solutions and an expansion of the validator set of BSC from 21 to 41 (with 20 validators functioning as candidate block producers)
+이름이 변경됨과 동시에 BNB 체인도 발전하여 커뮤니티와 연결된 사용자, 프로젝트 및 개발자들을 위한 혜택이 제공됩니다.BNB 체인은 GameFi, SocialFi나 메타버스 같은 대규모 어플리케이션을 수용할 예정입니다. BNB 체인은 다음과 같이 발전하였습니다:
+- 단일 체인에서 다중 체인으로 확장
+- BSC 처리량 향상
+- 온체인 거버넌스 매커니즘 도입
+- 확장 솔루션의 개선 및 검증인 집단 21명에서 41명으로 증가 (20개의 검증인은 후보 블록 생성자로 작동합니다)

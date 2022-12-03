@@ -1,5 +1,5 @@
 ---
-sidebar_label: Add Account
+sidebar_label: 계정 추가
 hide_table_of_contents: false
 sidebar_position: 2
 ---

@@ -17,7 +17,7 @@
 | ---------------------------- | ------------------------------------ | ------------------------------------------------------------ | ------------ |
 | --chain-id                    | Binance-Chain-XXX                    | 바이낸스 체인의 체인 ID                             | 예          |
 | --from                       | bnb1xxx/tbnb1xxx                     | 해당 트랜잭션을 서명하고 검증인 운영 주소로 사용될 개인키 주소  | 예          |
-| --address-delegator          | bnb1xxx/tbnb1xxx                     | (선택사항) 자기위임자의 bech32 주소. 제공되지 않을 경우 --from 주소가 자기위임자로서 사용됨. | 아니요           |
+| --address-delegator          | bnb1xxx/tbnb1xxx                     | (선택사항) 자기위임인의 bech32 주소. 제공되지 않을 경우 --from 주소가 자기위임인으로서 사용됨. | 아니요           |
 | --amount                     | 2000000000000:BNB  (means 20000 BNB) | 자기위임 액수, 8자리            | 예          |
 | --moniker                    | myval1                               | 검증인 이름                                             | 예          |
 | --identity                   | xxx                                  | (선택사항) identity 서명 (ex. UPort or Keybase)          | 아니요           |
@@ -64,7 +64,7 @@ bnbcli staking bsc-create-validator --chain-id Binance-Chain-Tigris --from {vali
 tbnbcli staking bsc-create-validator --chain-id Binance-Chain-Ganges --from {validator-operator-address}  --address-delegator {delegator-address} --amount 5000000000000:BNB --moniker bsc_v1 --identity "xxx" --website "www.example.com" --details "bsc validator node 1" --commission-rate 80000000 --commission-max-rate 95000000 --commission-max-change-rate 3000000 --side-chain-id chapel --side-cons-addr 0x9B24Ee0BfBf708b541fB65b6087D6e991a0D11A8 --side-fee-addr 0x5885d2A27Bd4c6D111B83Bc3fC359eD951E8E6F8 --home ~/home_cli --generate-only > unsigned.json
 ```
 
-b. 검증 운영자(--from)와 자기위임자(--address-delegator) 모두 ``**bnbcli sign**`` 명령어를 사용하여 a.에서의 파일에 서명합니다.
+b. 검증 운영자(--from)와 자기위임인(--address-delegator) 모두 ``**bnbcli sign**`` 명령어를 사용하여 a.에서의 파일에 서명합니다.
 
 **Delegator** 주소가 `unsigned.json`을 먼저 서명해야 합니다.
 
@@ -150,7 +150,7 @@ bash tbnbcli staking bsc-edit-validator --chain-id Binance-Chain-Ganges --side-c
 | **파라미터 이름**| **예시**             | **설명**                                                 | **필수 여부** |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------------ |
 | --chan-id          | Binance-Chain-XXX        | 바이낸스 체인의 체인 ID                              | 필수          |
-| --from             | bnb1xxx/tbnb1xxx         | 해당 트랜잭션을 서명할 개인키 주소이자 위임자의 주소 | 필수          |
+| --from             | bnb1xxx/tbnb1xxx         | 해당 트랜잭션을 서명할 개인키 주소이자 위임인의 주소 | 필수          |
 | --side-chain-id    | chapel                   | 해당 트랜잭션을 서명하고 검증인 운영 주소로 사용될 개인키 주소       | 필수          |
 | --validator        | bva1xxx                  | bva로 시작하는 검증인의 bech32 주소        | 필수          |
 | --amount           | 1000000000:BNB  (10 BNB) | 위임 액수, 8자리               | 필수          |
@@ -173,7 +173,7 @@ tbnbcli staking bsc-delegate --chain-id Binance-Chain-Ganges --side-chain-id cha
 | **파라미터 이름**     | **예시**             | **설명**                                                 | **필수 여부** |
 | ----------------------- | ------------------------ | ------------------------------------------------------------ | ------------ |
 | --chan-id               | Binance-Chain-XXX        | 바이낸스 체인의 체인 ID                              | 필수          |
-| --from                  | bnb1xxx/tbnb1xxx         | 해당 트랜잭션을 서명할 개인키 주소이자 위임자의 주소 | 필수          |
+| --from                  | bnb1xxx/tbnb1xxx         | 해당 트랜잭션을 서명할 개인키 주소이자 위임인의 주소 | 필수          |
 | --side-chain-id         | chapel                   | 해당 트랜잭션을 서명하고 검증인 운영 주소로 사용될 개인키 주소       | 필수          |
 | --addr-validator-source | bva1xxx                  | bva로 시작하는 최초 검증인의 bech32 주소   | 필수          |
 | --addr-validator-dest   | bva1yyy                  | bva로 시작하는 최종 검증인의 bech32 주소  | 필수          |
@@ -196,7 +196,7 @@ tbnbcli staking bsc-redelegate --chain-id Binance-Chain-Ganges --side-chain-id c
 | **파라미터 이름**| **예시**             | **설명**                                                 | **필수 여부** |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------------ |
 | --chan-id          | Binance-Chain-XXX        | 바이낸스 체인의 체인 ID                              | 필수          |
-| --from             | bnb1xxx/tbnb1xxx         | 해당 트랜잭션을 서명할 개인키 주소이자 위임자의 주소 | 필수          |
+| --from             | bnb1xxx/tbnb1xxx         | 해당 트랜잭션을 서명할 개인키 주소이자 위임인의 주소 | 필수          |
 | --side-chain-id    | chapel                   | 해당 트랜잭션을 서명하고 검증인 운영 주소로 사용될 개인키 주소       | 필수          |
 | --validator        | bva1xxx                  | bva로 시작하는 검증인의 bech32 주소       | 필수          |
 | --amount           | 1000000000:BNB  (10 BNB) | 위임 액수, 8자리                  | 필수          |
@@ -245,7 +245,7 @@ bnbcli staking side-delegation bnb1hz5sg3u0v4gq2veyw5355z7qx6y7uuqhcqre0d bva1hz
 ```
 
 
-## 위임자 별로 사이드 체인 위임 쿼리하기
+## 위임인 별로 사이드 체인 위임 쿼리하기
 
 ### 사이드 위임 스테이킹 파라미터
 
@@ -282,7 +282,7 @@ bnbcli staking  side-unbonding-delegation bnb1rtzy6szuyzcj4amfn6uarvne8a5epxrdkl
 ```
 
 
-### 위임자 별 사이드 체인의 언본딩 위임 쿼리히기
+### 위임인 별 사이드 체인의 언본딩 위임 쿼리히기
 
 #### `staking side-unbonding-delegations` 파라미터
 
@@ -344,7 +344,7 @@ bnbcli staking side-redelegation [delegator-addr] [src-operator-addr] [dst-opera
 bnbcli staking  side-redelegation bnb1rtzy6szuyzcj4amfn6uarvne8a5epxrdklwhhj bva12hlquylu78cjylk5zshxpdj6hf3t0tahqmr98n  bva1hz5sg3u0v4gq2veyw5355z7qx6y7uuqhcuzf3f --side-chain-id=bsc --chain-id=Binance-Chain-Tigris --home ~/home_cli
 ```
 
-### 위임인별 사이드 체인 재위임 쿼리하기
+### 위임인 별 사이드 체인 재위임 쿼리하기
 
 #### `staking side-redelegations` 파라미터
 
