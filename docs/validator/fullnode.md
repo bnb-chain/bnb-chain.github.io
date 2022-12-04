@@ -41,7 +41,7 @@ The `snap` sync mode is used for initial sync, which will download the latest st
 
 The `full` sync mode can also be used to do initial sync, which will apply all the blocks since genesis.
 
-Since the amount of historical data is too large, the initial sync is not recommended for running a full node. Instead, you can download a snapshot from the official repo and start from the snapshot. Default value is `full` when you start geth with an existing data folder so no need there is no need to explicitly add it when syncing from snapshot.
+Since the amount of historical data is too large, the initial sync is not recommended for running a full node. Instead, you can download a snapshot from the official repo and start from the snapshot. Default value is `full` when you start geth with an existing data folder so there is no need to explicitly add it when syncing from snapshot.
 
 ## Steps to Run a Fullnode
 
