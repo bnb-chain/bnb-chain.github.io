@@ -115,13 +115,8 @@ const sidebars = {
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       
-                      'bsc-relayer', 
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'Oracles',
-                        items: ['bs-oracle', 'band',  'link']
-                      },
+                      'bsc-relayer',
+                      'oracles', 
                       {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain App Support'},
             ]},  
             
