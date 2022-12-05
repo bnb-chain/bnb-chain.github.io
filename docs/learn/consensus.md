@@ -22,7 +22,7 @@ We target to design the consensus engine of BSC(BNB Smart Chain) to achieve the 
 * ValidatorSet change, double sign slash of BSC is updated through interchain communication.
 * Consensus engine of BSC keeps as simple as clique.
 
-We investigated some popular implementations of PoA consensus and found out that [Bor](https://blog.polygon.technology/heimdall-and-bor/) follows a similar design as above. We will borrow a few parts from Bor and propose a new consensus engine to achieve all these goals.
+We investigated some popular implementations of PoA consensus and found out that [Bor](https://polygon.technology/blog/heimdall-and-bor) follows a similar design as above. We will borrow a few parts from Bor and propose a new consensus engine to achieve all these goals.
 
 ## Infrastructure Components
 
@@ -69,14 +69,14 @@ It is a watcher of validators change of BSC on Beacon Chain. It implement the fo
 
 **Actions validators update**:
 
-        1. Do distribue the revenue of validators:
-        if the revenue is large than 0.1 BNB, will do cross chain transfer to its account on BC, otherwise will transfer to its address on BSC.
+        1. Do distribute the revenue of validators:
+        if the revenue is larger than 0.1 BNB, will do cross chain transfer to its account on BC, otherwise will transfer to its address on BSC.
         2. Update the latest validatorSet.
         3. Clean the metrics record on slash contract.
 
 **CurrentValidator() returns ([]address)**
 
-    returns the the consensus address of not jailed validators.
+    returns the consensus address of not jailed validators.
 
 **deposit(address valAddr) external**
 

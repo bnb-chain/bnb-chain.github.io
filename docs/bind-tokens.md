@@ -11,34 +11,45 @@ You can use this [tool](https://github.com/bnb-chain/token-bind-tool).
 
 ## Issue BEP2 or BEP8 Token
 
-Please refer to this [doc](tokens.md) to issue BEP2
+Please refer to this [doc](beaconchain/tokens.md) to issue BEP2
 
-Please refer to this [doc](beaconchain/learn/BEP8.md) to issue BEP8
+Please refer to this [doc](beaconchain/wallet/tutorial/bep8.md) to issue BEP8
 
 
 **Example**
 Let's issue a new BEP2 token `ABC`
 ```bash
 ## mainnet
-bnbcli token issue --symbol ABC --token-name "ABC token" --mintable --total-supply 10000000000000000 --from owner --chain-id Binance-Chain-Tigris --node http://dataseed4.org:80
+bnbcli token issue --symbol ABC --token-name "ABC token" --mintable --total-supply 10000000000000000 --from owner --chain-id Binance-Chain-Tigris --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli token issue --symbol ABC --token-name "ABC token" --mintable --total-supply 10000000000000000 --from owner --chain-id Binance-Chain-Ganges --node http://data-seed-pre-0-s3.binance.org:80
+tbnbcli token issue --symbol ABC --token-name "ABC token" --mintable --total-supply 10000000000000000 --from owner --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.binance.org:443
 ```
 
 ## Deploy BEP20 Token
 Please refer to this [doc](issue-BEP20.md)
 
+:::caution
+
 The symbol of the BEP20 token must be exactly identical to the prefix of the bep2 token(case sensitive).
+
+:::
 
 ## Token Binding
 ### Send Bind Transaction
+
+:::note
+
+expire-time need to be 600 seconds after now
+
+:::
+
 ```bash
 ## mainnet
-bnbcli bridge bind --symbol ABC-A64 --amount 6000000000000000 --expire-time 1597545851 --contract-decimals 18 --from owner --chain-id Binance-Chain-Tigris --contract-address 0xee3de9d0640ab4342bf83fe2897201543924a324 --node http://dataseed4.binance.org:80
+bnbcli bridge bind --symbol ABC-A64 --amount 6000000000000000 --expire-time 1597545851 --contract-decimals 18 --from owner --chain-id Binance-Chain-Tigris --contract-address 0xee3de9d0640ab4342bf83fe2897201543924a324 --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli bridge bind --symbol ABC-A64 --amount 6000000000000000 --expire-time 1597545851 --contract-decimals 18 --from owner --chain-id Binance-Chain-Ganges --contract-address 0xee3de9d0640ab4342bf83fe2897201543924a324 --node http://data-seed-pre-0-s3.binance.org:80
+tbnbcli bridge bind --symbol ABC-A64 --amount 6000000000000000 --expire-time 1597545851 --contract-decimals 18 --from owner --chain-id Binance-Chain-Ganges --contract-address 0xee3de9d0640ab4342bf83fe2897201543924a324 --node https://data-seed-pre-0-s1.binance.org:443
 ```
 The total supply of the ABC-A64 token is 100 million. The above bind transfer will transfer 60 million to a pure-code-controlled address. And then there are 40 million flowable tokens in BC. According to our bind mechanism, we have to lock 40 million token to **TokenManager** contract and leave 60 million flowable token on BSC. Thus the sum of flowable tokens on both chains is 100 million. Please remember that the amounts I mentioned above don’t include decimals.
 ### Approve Bind Request
@@ -50,7 +61,7 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
 
 2. Approve Bind
 
-    In [myetherwallet](wallet/myetherwallet.md), call **approveBind** in **TokenManager** contract to approve the bind request from the BEP20 owner address.
+    In [myetherwallet](wallet/myetherwallet.md), call **approveBind** in **TokenManager** contract with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi) to approve the bind request from the BEP20 owner address.
 
     ![img](https://lh6.googleusercontent.com/nFIbDxpA8bTVYH0Rt4UD-SYYz62TmYKjOsgK1CXxFRHHJlz6gOyXnq5p3GesM_zrQES4ixmojvN_Srk4CIf1MPxBXbia-K2DNiL23Hao1HiUgdNe4S2BmPe6yn5XJz7ajlwVVCti)
 
@@ -61,9 +72,9 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
     Wait for about 20 seconds and execute this command:
     ```bash
     ## mainnet
-    bnbcli token info --symbol ABC-A64 --trust-node --node http://dataseed4.binance.org:80
+    bnbcli token info --symbol ABC-A64 --trust-node --node https://dataseed1.binance.org:443
     ## testnet
-    tbnbcli token info --symbol ABC-A64 --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+    tbnbcli token info --symbol ABC-A64 --trust-node --node https://data-seed-pre-0-s1.binance.org:443
     ```
 
     ```json
@@ -81,9 +92,7 @@ The total supply of the ABC-A64 token is 100 million. The above bind transfer wi
       }
     }
     ```
-    If the bind was successful, then in the above response, "contract_address" and "contract_decimals" should not be empty.
-
-
+    If the bind was successful, then in the above response, **"contract_address" and "contract_decimals" should not be empty**.
 
 
 ## Use Cases
@@ -101,4 +110,4 @@ Suppose you have 20 million on your treasure, you decide to lock some tokens via
 Suppose you choose not to touch your 20 million in treasure at all:
 1. When you have 20 million on your treasure, you can choose to lock ZERO when you run the bind tx.
 2. Suppose Your BEP20 has 100 million supplies, you need to run the `approve` to grant 100 million allowance to the tokenHub contract, then you run `approveBind`.
-3. If your approveBind runs successfully, the bind is done. Your 20 million treasures stay at BC in your treasure address, nothing happens to it, and this is your CHOICE. Meanwhile, on BSC, no one has any BEP20 tokens, except the tokenHub. However, because the bind is done, ANYONE, including yourself, can get BEP20 whenever they want by a simple cross-chain transfer.
+3. If your approveBind runs successfully, the bind is done. Your 20 million treasures stay at BC in your treasure address, nothing happens to it, and this is your **CHOICE**. Meanwhile, on BSC, no one has any BEP20 tokens, except the tokenHub. However, because the bind is done, ANYONE, including yourself, can get BEP20 whenever they want by a simple cross-chain transfer.

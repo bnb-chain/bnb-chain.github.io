@@ -101,7 +101,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ### Global Parameters
 
-* `min-deposit`: The threshold for submitting a proposal on mainnet is **1000BNB**, and the threshold for submitting a proposal on testnet is **2000BNB**
+* `min-deposit`: The threshold for submitting a proposal is **2000BNB**.
 
 
 ## Commands

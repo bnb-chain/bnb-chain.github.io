@@ -1,10 +1,10 @@
 ---
-sidebar_label: Cross Chain Transfer
+sidebar_label: Cross-Chain Token Transfer
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Cross-Chain Transfer
+# Cross-Chain Token Transfer
 
 Cross-chain transfers only support bound BEP2 or BEP8 tokens on BC and BEP20 tokens on BSC.
 
@@ -14,10 +14,10 @@ First, you should make sure that it's already bound. For example, you could see 
 
 ```shell
 ## mainnet
-bnbcli token info --symbol BNB --trust-node --node http://dataseed4.binance.org:80
+bnbcli token info --symbol BNB --trust-node --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli token info --symbol BNB --trust-node --node http://data-seed-pre-0-s3.binance.org:80 
+tbnbcli token info --symbol BNB --trust-node --node https://data-seed-pre-0-s1.binance.org:443 
 ```
 
 ```json
@@ -45,10 +45,10 @@ As BNB is the native token on both chains, so we use `0x000000000000000000000000
 
 ```shell
 ## mainnet
-bnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Tigris --from owner --amount 100000000:BNB --node http://dataseed4.binance.org:80
+bnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Tigris --from owner --amount 100000000:BNB --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Ganges --from owner --amount 100000000:BNB --node http://data-seed-pre-0-s3.binance.org:80
+tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Ganges --from owner --amount 100000000:BNB --node https://data-seed-pre-0-s1.binance.org:443
 ```
 
 Result:
@@ -61,7 +61,7 @@ Committed at block 465899 (tx hash: 68FFF82197E27A3EC14AFF8C99A035FA9CA7120312AA
 
 ### transferOut
 
-Call **transferOut** of [TokenHub contract](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi) in [MyEtherWallet](https://www.myetherwallet.com/):
+Call **transferOut** of `TokenHub` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001004#writeContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi) in [MyEtherWallet](https://www.myetherwallet.com/):
 
 ![img](https://lh3.googleusercontent.com/q8-nnt12h8gvYyMe6iwLalwzY-1jHfQ11BsSyIz3qkQPCjp_-D-dIzPxZ-HuMJngCxTs7pt65-zSUIYImpsoO8bJ_QC_pyfPMu_2O7Lh65uDvVXrkhKqOakI070vKuEK3UNnlk8m)
 
@@ -87,7 +87,7 @@ After all the above parameters have been set to proper values, users can click t
 
 ### batchTransferOutBNB
 
-Call **batchTransferOutBNB** of TokenHub contract in MyEtherWallet:
+Call **batchTransferOutBNB** of `TokenHub` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001004#writeContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi) in [MyEtherWallet](https://www.myetherwallet.com/):
 
 ![img](https://github.com/bnb-chain/docs-site/raw/master/docs/assets/batchTransferOutBNB.png)
 
@@ -105,17 +105,21 @@ The value here should follow this equation:
 txValue = (sumOfAmounts + RelayFee * batchSize)/1e18
 ```
 
-## Transfer BEP2 to BSC
+## Transfer BEP2 from BC to BSC
 Execute the following command to transfer ABC-A64 token to BSC:
 ```bash
 ## mainnet
-bnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Tigris --from owner --amount 10000000000:ABC-A64 --node http://dataseed4.binance.org:80
+bnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Tigris --from owner --amount 10000000000:ABC-A64 --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Ganges --from owner --amount 10000000000:ABC-A64 --node http://data-seed-pre-0-s3.binance.org:80
+tbnbcli bridge transfer-out --to 0xEe9546E92e6876EdF6a234eFFbD72d75360d91f0 --expire-time 1597543193 --chain-id Binance-Chain-Ganges --from owner --amount 10000000000:ABC-A64 --node https://data-seed-pre-0-s1.binance.org:443 
 ```
-## Transfer BEP20 to BC
-Before calling **transferOut** or **batchTransferOut**, users need to call **approve** method to grant enough allowance to TokenHub contract. For **transferOut** method, the allowance should equal the transfer amount. For **batchTransferOut**, the allowance should be the sum of the amount array.
+## Transfer BEP20 from BSC to BC
+Before calling **transferOut** or **batchTransferOut**, users need to call **approve** method to grant enough allowance to TokenHub contract:
+
+In [myetherwallet](wallet/myetherwallet.md), call the **approve** of the BEP20 to grant desired allowance to TokenHub contract. The spender value should be `0x0000000000000000000000000000000000001004`, and the amount value should be boosted by 1e10 (token decimals on BC is 10). 
+
+For **transferOut** method, the allowance should equal the transfer amount. For **batchTransferOut**, the allowance should be the sum of the amount array.
 
 ### transferOut
 
@@ -139,10 +143,10 @@ If both the BEP20 token and BEP2 token are mintable, then token owners can still
 1. Execute the following command to mint 10000 ABC-A64:
 ```bash
 ## mainnet
-bnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Tigris --node http://dataseed4.binance.org:80
+bnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Tigris --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Ganges --node http://data-seed-pre-0-s3.binance.org:80
+tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.binance.org:443 
 ```
 
 2. Mint token on BSC and lock the new minted token:
@@ -157,9 +161,13 @@ tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-
 * Execute the following command to mint 10000 ABC-A64:
 ```bash
 ## mainnet
-bnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Tigris --node http://dataseed4.binance.org:80
+bnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Tigris --node https://dataseed1.binance.org:443
 
 ## testnet
-tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Ganges --node http://data-seed-pre-0-s3.binance.org:80
+tbnbcli token mint --symbol ABC-A64 --amount 1000000000000 --from owner --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.binance.org:443 
 ```
-* Transfer all minted ABC-A64 token to the pure-code-controlled address: `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`(mainnet address: `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`)
+* Transfer all minted ABC-A64 token to the pure-code-controlled address:
+
+Mainnet address: `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`
+
+Testnet address: `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`
