@@ -115,8 +115,8 @@ const sidebars = {
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       
-                      'bsc-relayer',
-                      'oracles', 
+                      'bsc-relayer', 
+                      'oracles',
                       {type: 'doc', id: 'learn/cross-chain-bridges', label: 'Cross-Chain Bridges'},
             ]},  
             
