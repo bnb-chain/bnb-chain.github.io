@@ -117,7 +117,7 @@ const sidebars = {
                       
                       'bsc-relayer',
                       'oracles', 
-                      {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain App Support'},
+                      {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain Bridges'},
             ]},  
             
             {
