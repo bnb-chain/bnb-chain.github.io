@@ -55,6 +55,8 @@ BSC RPC Endpoints:
   
 * BlockVision: <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
 
+* NOWNodes: <https://bit.ly/nownodes-bnb>
+
 ### Start HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
