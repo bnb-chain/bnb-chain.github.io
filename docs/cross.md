@@ -40,4 +40,4 @@ BSC 릴레이어(relayer)는 비컨 체인의 크로스체인 패키지를 검�
 
 ### 크로스 체인 전송을 어떻게 하나요?
 
-[바이낸스 익스텐션 월렛](wallet/binance.md)이나 [트러스트 월렛](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)에서 사용할 수 있습니다.
+[바이낸스 익스텐션 지갑](wallet/binance.md)이나 [트러스트 월렛](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)에서 사용할 수 있습니다.

@@ -16,7 +16,7 @@ sidebar_position: 2
 
 다음을 통해 위임 가능합니다:
 
-* [바이낸스 익스텐션 월렛](binance.md)
+* [바이낸스 익스텐션 지갑](binance.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 * [트러스트 월렛](https://community.trustwallet.com/t/bnb-staking-with-trust-wallet/113243)
 * [커멘트 라인 도구](https://github.com/bnb-chain/node/releases/tag/v0.8.1)

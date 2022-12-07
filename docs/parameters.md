@@ -19,13 +19,13 @@ sidebar_position: 2
 
 #### 메인넷
 
-* **최소 자체 위임 규모 (Self-delegate Amount)**: 메인넷에서 10000BNB.
+* **최소 자기 위임 규모 (Self-delegate Amount)**: 메인넷에서 10000BNB.
 * **보상 수령 주기 (Claim reward frequency)**: 매일 0:00 UTC
 * **본딩 해제 기간 (Unbonding Period)**: 7일
 
 #### 테스트넷
 
-* **최소 자체 위임 규모 (Self-delegate Amount)**: 테스트넷에서 100BNB.
+* **최소 자기 위임 규모 (Self-delegate Amount)**: 테스트넷에서 100BNB.
 * **보상 수령 주기 (Claim reward frequency)**: 2시간 마다
 * **본딩 해제 기간 (Unbonding Period)**: 4시간
 
@@ -50,7 +50,7 @@ sidebar_position: 2
 * **이중 서명 증거 제출 보상 (Rewards for submitting double-sign evidence)**: 1000BNB
 * **이중 서명 투옥 기간 (Double-Sign Jail time)**: 2^63-1초
 * **오프라인 투옥 기간 (Downtime Jail time)**: 2일
-* **자체 위임 부족 투옥 기간 (Too Low self-delegation Jail time)**: 1일
+* **자기 위임 부족 투옥 기간 (Too Low self-delegation Jail time)**: 1일
 
 #### 테스트넷
 
@@ -61,6 +61,6 @@ sidebar_position: 2
 * **이중 서명 증거 제출 보상 (Rewards for submitting double-sign evidence)**: 1000BNB
 * **이중 서명 투옥 기간 (Double-Sign Jail time)**: 2^63-1초
 * **오프라인 투옥 기간 (Downtime Jail time)**: 4시간
-* **자체 위임 부족 투옥 기간 (Too Low self-delegation Jail time)**: 4시간
+* **자기 위임 부족 투옥 기간 (Too Low self-delegation Jail time)**: 4시간
 
 

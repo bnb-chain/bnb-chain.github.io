@@ -1,31 +1,31 @@
 CHANGELOG
 ========
 
-## Upcoming Changes in Beacon Chain  Mainnet API - 2021-06-04
+## 비컨 체인 메인넷 API 변경 예정 - 2021-06-04
 
 ### HTTP API
 
 #### /api/v1/transactions
 
-***Changes***
+***변경***
 
-The following changes will take effect.
-
-
-* `address` related `Mutli Send Transfer` transaction history will also be included;
-* If this address is the receiver of any `HTL_TRANSFER` , the related transactions history will also be included
-* `asset` parameter can be used to search for `quote asset` of NEW_ORDER, CANCEL_ORDER,MINI_TOKEN_LIST,LISTING transactions
-* `asset` parameter can be used to search for `quote asset` or `base asset` of dex listing SUBMIT_PROPOSAL transactions
-* DEPOSIT_HTL HTL_TRANSFER, SIDE_DEPOSIT, TIME_LOCK, TIME_RELOCK, TRANSFER can relate to multiple assets, you can search by any of them.
+다음과 같은 변화가 이뤄집니다.
 
 
-## Upcoming Changes in Beacon Chain  Mainnet API v0.7.2
+* `address`관련 `Mutli Send Transfer` 트랜잭션 내역이 추가됩니다;
+* 만일 주소가 어떤 `HTL_TRANSFER`를 받을 때, 관련된 트랜잭션 내역이 포함됩니다
+* `asset`(자산) 매개변수는 NEW_ORDER, CANCEL_ORDER,MINI_TOKEN_LIST,LISTING 트랜잭션의 `quote asset`(견적 자산)을 찾는데 사용될 수 있습니다.
+* `asset`(자산) 매개변수는 dex에 상장하는 SUBMIT_PROPOSAL 트랜잭션 `quote asset`(견적 자산)이나 `base asset`(기초 자산)을 찾는데 사용될 수 있습니다.
+* DEPOSIT_HTL HTL_TRANSFER, SIDE_DEPOSIT, TIME_LOCK, TIME_RELOCK, TRANSFER 는 여러 자산에 사용될 수 있습니다.
 
-### Node RPC
 
-Extra paths are available for querying information about `BEP8` tokens and trading pairs.
+## 비컨 체인 메인넷 API v0.7.2 업데이트 내역
 
-**New Query Path**
+### 노드 RPC
+
+`BEP8` 토큰과 거래 쌍에 대한 정보를 쿼리하기 위한 경로를 사용할 수 있습니다.
+
+**새 쿼리 경로**
 
 *  `/mini-tokens/info`
 *  `/mini-tokens/list`
@@ -36,184 +36,174 @@ Extra paths are available for querying information about `BEP8` tokens and tradi
 
 #### /api/v1/depth
 
-***Changes***
+***변경***
 
-Add pending_match flag in response to indicate that current block has not run matching process for the new orders incoming in this block.
-In detail, if there are new orders created in current block, but the matching process has not run for the block, then pending_math=true. As a result, there could be orders with cross prices - price of ask is lower than price of bid. Client can ignore the response with pending_match=true and query the depth API until pending_match=false.
+pending_match 플래그를 더해 현재 블록이 새롭게 들어오는 주문에 대해 매칭 과정을 진행하지 않았다는 것을 표현합니다. 구체적으론, 만일 새롭게 생성된 주문이 현재 블록에 들어왔지만 매칭 과정이 블록에서 실행되지 않았다면 `pending_math=true`로 표현합니다. 결과적으로 가격이 엇갈릴 수 있는데, 매도가가 매수 희망가보다 낮을 수 있습니다. 클라이언트는 pending_match=true로 응답을 무시하고 깊이 API를 통해 pending_match=false가 될 때까지 요청하면 됩니다.
 
 ---
 ***GET***
-**Summary:** Get the order book.
+**요약:** 오더 북을 가져옵니다.
 
-**Description:** Gets the order book depth data for a given pair symbol.
+**설명:**  주어진 심볼 쌍에 대한 오더 북 깊이 데이터를 가져옵니다.
 
-The given _limit_ must be one of the allowed limits below.
+_한계_는 아래 혀용된 한계 중 하나여야 합니다.
 
-**Destination:** Validator node.
+**도착 지점**  검증인 노드.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
-**URL for testnet:** [https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+**테스트넷 URL:** [https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
-| limit | query | The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000] | No | integer |
+| symbol | query | 마켓 쌍 심볼, 예. NNB-0AD_BNB | 예 | string |
+| limit | query | 결과의 한계. 허용된 한계: [5, 10, 20, 50, 100, 500, 1000] | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-#### MarketDepth
+#### 마켓 깊이
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
-
-#### MarketDepth
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
+| asks | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| pending_match | boolean | 새 주문이 현재 블록에 들어오고 매칭 과정이 사작되지 않았을 시, 참(true)을 반환 |  |
 
 #### /api/v1/mini/tokens
 
-***Changes***
+***변경***
 
-Gets a list of available mini tokens.
+미니 토큰 리스트를 가져옵니다.
 
-#### MiniTokens
+#### 미니토큰
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | name | string |  | Beacon Chain  Mini Token |
 | symbol | string |  | BTC-000 |
 | original_symbol | string |  | BTC |
-| total_supply | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| token_type | integer | Type of the mini token |  |
-| owner | string (address) | Address |  |
-| mintable | boolean | mintable |  |
-| token_uri | string | URI for token description |  |
+| total_supply | string (fixed8) | 소수점 형태로, 예. 1.00000000 | 0.00000000 |
+| token_type | integer | 미니 토큰 유형 |  |
+| owner | string (address) | 주소 |  |
+| mintable | boolean | 민팅가능여부 |  |
+| token_uri | string | 토큰 설명 URI |  |
 
 #### /api/v1/mini/markets:
 
-***Changes***
+***변경***
 
-Gets a list of available mini tokens trading pairs.
+가능한 미니 토큰 쌍의 리스트를 불러옵니다.
 
 #### Market
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| base_asset_symbol | string (currency) | symbol of base asset | BNB |
-| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| list_price | string (fixed8) | In decimal form | 1.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
+| base_asset_symbol | string (currency) | 기초 자산 심볼 | BNB |
+| quote_asset_symbol | string (currency) | 견적 자산 심볼 | ABC-5CA |
+| list_price | string (fixed8) | 소수점 형태 | 1.00000000 |
+| tick_size | string (fixed8) | 소수점 형태의 최소 가격 변화| 0.00000001 |
+| lot_size | string (fixed8) | 소수점 형태의 최소 거래량 변화 | 1.00000000 |
 
 #### /api/v1/mini/kline
 
-***Changes***
+***변경***
 
-Get mini-token candlestick bars. Interval allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]
+미니 토큰 캔들스틱 막대를 가져옵니다. Interval allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]
 
-#### Candlestick
+#### 캔들스틱
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| close | number | closing price |  |
-| closeTime | long | time of closing trade |  |
-| high | number | the highest price |  |
-| low | number | the lowest price |  |
-| numberOfTrades | integer | total trades |  |
-| open | number | open price |  |
-| openTime | long | time of open trade |  |
-| quoteAssetVolume | number | the total trading volume in quote asset |  |
-| volume | number | the total trading volume |  |
+| close | number | 종가 |  |
+| closeTime | long | 거래 종료 시각 |  |
+| high | number | 최고가 |  |
+| low | number | 최저가 |  |
+| numberOfTrades | integer | 총 거래량 |  |
+| open | number | 열린 가격 |  |
+| openTime | long | 거래 시작 시간 |  |
+| quoteAssetVolume | number | 총 견적 자산 거래량 |  |
+| volume | number | 총 거래 규모 |  |
 
 #### /api/v1/mini/orders/closed
 
-***Changes***
+***변경***
 
-Get closed orders of mini-token pairs.
+미니 토큰 쌍에 대한 닫힌 주문을 가져옵니다.
 
-#### OrderList
+#### 주문리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| order | [ Order ] | list of orders |  |
+| order | [ Order ] | 주문 리스트 |  |
 | total | long |  |  |
 
 #### /api/v1/mini/orders/open
 
-***Changes***
+***변경***
 
-Get open orders of mini-token pairs.
+미니 토큰 쌍에 대한 열린 주문을 가져옵니다.
 
-#### OrderList
+#### 주문리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| order | [ Order] ] | list of orders |  |
+| order | [ Order] ] | 주문 리스트 |  |
 | total | long |  |  |
 
 #### /api/v1/mini/ticker/24hr
 
-***Changes***
+***변경***
 
-Get a market ticker of mini-token pairs.
+미니 토큰 쌍에 대한 마켓 티커를 가져옵니다. 
 
-#### TickerStatistics
+#### 티커 통계
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| askPrice | string | sell price |  |
-| askQuantity | string | sell quantity |  |
-| bidPrice | string | buy price |  |
-| bidQuantity | string | buy quantity |  |
-| closeTime | long | time of closing |  |
-| count | long | total trade count |  |
-| firstId | string | ID of first trade |  |
-| highPrice | string | highest price |  |
-| lastId | string | ID of last trade |  |
-| lastPrice | string | last price |  |
-| lastQuantity | string | last quantity |  |
-| lowPrice | string | lowest price |  |
-| openPrice | string | open price |  |
-| openTime | long | open time |  |
-| prevClosePrice | string | last close price |  |
-| priceChange | string | change of price |  |
-| priceChangePercent | string | change of price in percentage |  |
-| quoteVolume | string | trading volume in quote asset |  |
-| symbol | string | trading symbol |  |
-| volume | string | trading volume |  |
-| weightedAvgPrice | string | weighted average price |  |
+| askPrice | string | 판매 가격 |  |
+| askQuantity | string | 판매 수량 |  |
+| bidPrice | string | 구매 가격 |  |
+| bidQuantity | string | 구매 수량 |  |
+| closeTime | long | 종료 시각 |  |
+| count | long | 총 거래  카운트 |  |
+| firstId | string | 첫 거래 ID |  |
+| highPrice | string | 최고가 |  |
+| lastId | string | 마지막 거래 ID |  |
+| lastPrice | string | 마지막 가격 |  |
+| lastQuantity | string | 마지막 수량 |  |
+| lowPrice | string | 최저가 |  |
+| openPrice | string | 열린 가격 |  |
+| openTime | long | 열린 시간 |  |
+| prevClosePrice | string | 마지막 종가 |  |
+| priceChange | string | 가격 변화 |  |
+| priceChangePercent | string | 가격 변화율 |  |
+| quoteVolume | string | 견적 자산으로 거래 규모 |  |
+| symbol | string | 거래 심볼 |  |
+| volume | string | 거래 규모 |  |
+| weightedAvgPrice | string | 가중된 평균 가격 |  |
 
 
 #### /api/v1/mini/trades
 
-***Changes***
+***변경***
 
-Get market trades of mini-token pairs.
+미니 토큰 쌍에 대한 마켓 거래를 가져옵니다.
 
-#### TradePage
-
-| Name | Type | Description | Example |
+#### 거래 페이지
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| total | long | total number of trades |  |
+| total | long | 총 거래 횟수 |  |
 | trade | [ [Trade] ] |  |  |
 
-## Upcoming Changes in Beacon Chain  Testnet API v0.7.0
+## 비컨 체인 테스트넷 API v0.7.0 업데이트 내역
 
 ### Node RPC
 
-Extra paths are available for querying information about `BEP8` tokens and trading pairs.
+`BEP8` 토큰과 거래 쌍에 대한 정보를 쿼리하기 위한 경로를 사용할 수 있습니다.
 
-**New Query Path**
+**새 쿼리 경로**
 
 *  `/mini-tokens/info`
 *  `/mini-tokens/list`
@@ -224,186 +214,185 @@ Extra paths are available for querying information about `BEP8` tokens and tradi
 
 #### /api/v1/depth
 
-***Changes***
+***변경***
 
-Add pending_match flag in response to indicate that current block has not run matching process for the new orders incoming in this block.
-In detail, if there are new orders created in current block, but the matching process has not run for the block, then pending_math=true. As a result, there could be orders with cross prices - price of ask is lower than price of bid. Client can ignore the response with pending_match=true and query the depth API until pending_match=false.
+pending_match 플래그를 더해 현재 블록이 새롭게 들어오는 주문에 대해 매칭 과정을 진행하지 않았다는 것을 표현합니다. 구체적으론, 만일 새롭게 생성된 주문이 현재 블록에 들어왔지만 매칭 과정이 블록에서 실행되지 않았다면 `pending_math=true`로 표현합니다. 결과적으로 가격이 엇갈릴 수 있는데, 매도가가 매수 희망가보다 낮을 수 있습니다. 클라이언트는 pending_match=true로 응답을 무시하고 깊이 API를 통해 pending_match=false가 될 때까지 요청하면 됩니다.
 
 ---
 ***GET***
-**Summary:** Get the order book.
+**요약:** 오더 북을 가져옵니다.
 
-**Description:** Gets the order book depth data for a given pair symbol.
+**설명:**  주어진 심볼 쌍에 대한 오더 북 깊이 데이터를 가져옵니다.
 
-The given _limit_ must be one of the allowed limits below.
+_한계_는 아래 혀용된 한계 중 하나여야 합니다.
 
-**Destination:** Validator node.
+**도착 지점**  검증인 노드.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
-| limit | query | The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000] | No | integer |
+| symbol | query | 마켓 쌍 심볼, 예. NNB-0AD_BNB | 예 | string |
+| limit | query | 결과의 한계. 허용된 한계: [5, 10, 20, 50, 100, 500, 1000] | 아니오 | integer |
 
-**Responses**
-
-#### MarketDepth
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
+**응답** 
 
 #### MarketDepth
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
+| asks | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| pending_match | boolean | 새 주문이 현재 블록에 들어오고 매칭 과정이 사작되지 않았을 시, 참(true)을 반환 |  |
+
+#### MarketDepth
+
+| 이름 |유형 | 설명 | 예시 |
+| ---- | ---- | ----------- | ------- |
+| asks | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| pending_match | boolean | 새 주문이 현재 블록에 들어오고 매칭 과정이 사작되지 않았을 시, 참(true)을 반환 |  |
 
 #### /api/v1/mini/tokens
 
-***Changes***
+***변경***
 
-Gets a list of available mini tokens.
+미니 토큰 리스트를 가져옵니다.
 
-#### MiniTokens
+#### 미니토큰
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | name | string |  | Beacon Chain  Mini Token |
 | symbol | string |  | BTC-000 |
 | original_symbol | string |  | BTC |
-| total_supply | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| token_type | integer | Type of the mini token |  |
-| owner | string (address) | Address |  |
-| mintable | boolean | mintable |  |
-| token_uri | string | URI for token description |  |
+| total_supply | string (fixed8) | 소수점 형태로, 예. 1.00000000 | 0.00000000 |
+| token_type | integer | 미니 토큰 유형 |  |
+| owner | string (address) | 주소 |  |
+| mintable | boolean | 민팅가능여부 |  |
+| token_uri | string | 토큰 설명 URI |  |
 
 #### /api/v1/mini/markets:
 
-***Changes***
+***변경***
 
-Gets a list of available mini tokens trading pairs.
+거래 가능한 미니 토큰 쌍의 리스트를 가져옵니다.
 
-#### Market
+#### 마켓
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| base_asset_symbol | string (currency) | symbol of base asset | BNB |
-| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| list_price | string (fixed8) | In decimal form | 1.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
+| base_asset_symbol | string (currency) | 기초 자산 심볼 | BNB |
+| quote_asset_symbol | string (currency) | 견적 자산 심볼 | ABC-5CA |
+| list_price | string (fixed8) | 소수점 형태 | 1.00000000 |
+| tick_size | string (fixed8) | 소수점 형태의 최소 가격 변화| 0.00000001 |
+| lot_size | string (fixed8) | 소수점 형태의 최소 거래량 변화 | 1.00000000 |
 
 #### /api/v1/mini/kline
 
-***Changes***
+***변경***
 
-Get mini-token candlestick bars. Interval allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]
+미니 토큰 캔들스틱 막대를 가져옵니다. Interval allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]
 
-#### Candlestick
+#### 캔들스틱
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| close | number | closing price |  |
-| closeTime | long | time of closing trade |  |
-| high | number | the highest price |  |
-| low | number | the lowest price |  |
-| numberOfTrades | integer | total trades |  |
-| open | number | open price |  |
-| openTime | long | time of open trade |  |
-| quoteAssetVolume | number | the total trading volume in quote asset |  |
-| volume | number | the total trading volume |  |
+| close | number | 종가 |  |
+| closeTime | long | 거래 종료 시각 |  |
+| high | number | 최고가 |  |
+| low | number | 최저가 |  |
+| numberOfTrades | integer | 총 거래량 |  |
+| open | number | 열린 가격 |  |
+| openTime | long | 거래 시작 시간 |  |
+| quoteAssetVolume | number | 총 견적 자산 거래량 |  |
+| volume | number | 총 거래 규모 |  |
 
 #### /api/v1/mini/orders/closed
 
-***Changes***
+***변경***
 
-Get closed orders of mini-token pairs.
+미니 토큰 쌍에 대한 닫힌 주문을 가져옵니다.
 
-#### OrderList
+#### 주문리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| order | [ [Order] ] | list of orders |  |
+| order | [ [Order] ] | 주문 리스트 |  |
 | total | long |  |  |
 
 #### /api/v1/mini/orders/open
 
-***Changes***
+***변경***
 
-Get open orders of mini-token pairs.
+미니 토큰 쌍에 대한 열린 주문을 가져옵니다.
 
-#### OrderList
+#### 주문리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| order | [Order ] | list of orders |  |
+| order | [Order ] | 주문 리스트 |  |
 | total | long |  |  |
 
 #### /api/v1/mini/ticker/24hr
 
-***Changes***
+***변경***
 
-Get a market ticker of mini-token pairs.
+미니 토큰 쌍에 대한 마켓 티커를 가져옵니다. 
 
 #### TickerStatistics
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| askPrice | string | sell price |  |
-| askQuantity | string | sell quantity |  |
-| bidPrice | string | buy price |  |
-| bidQuantity | string | buy quantity |  |
-| closeTime | long | time of closing |  |
-| count | long | total trade count |  |
-| firstId | string | ID of first trade |  |
-| highPrice | string | highest price |  |
-| lastId | string | ID of last trade |  |
-| lastPrice | string | last price |  |
-| lastQuantity | string | last quantity |  |
-| lowPrice | string | lowest price |  |
-| openPrice | string | open price |  |
-| openTime | long | open time |  |
-| prevClosePrice | string | last close price |  |
-| priceChange | string | change of price |  |
-| priceChangePercent | string | change of price in percentage |  |
-| quoteVolume | string | trading volume in quote asset |  |
-| symbol | string | trading symbol |  |
-| volume | string | trading volume |  |
-| weightedAvgPrice | string | weighted average price |  |
+| askPrice | string | 판매 가격 |  |
+| askQuantity | string | 판매 수량 |  |
+| bidPrice | string | 구매 가격 |  |
+| bidQuantity | string | 구매 수량 |  |
+| closeTime | long | 종료 시각 |  |
+| count | long | 총 거래  카운트 |  |
+| firstId | string | 첫 거래 ID |  |
+| highPrice | string | 최고가 |  |
+| lastId | string | 마지막 거래 ID |  |
+| lastPrice | string | 마지막 가격 |  |
+| lastQuantity | string | 마지막 수량 |  |
+| lowPrice | string | 최저가 |  |
+| openPrice | string | 열린 가격 |  |
+| openTime | long | 열린 시간 |  |
+| prevClosePrice | string | 마지막 종가 |  |
+| priceChange | string | 가격 변화 |  |
+| priceChangePercent | string | 가격 변화율 |  |
+| quoteVolume | string | 견적 자산으로 거래 규모 |  |
+| symbol | string | 거래 심볼 |  |
+| volume | string | 거래 규모 |  |
+| weightedAvgPrice | string | 가중된 평균 가격 |  |
 
 
 #### /api/v1/mini/trades
 
-***Changes***
+***변경***
 
-Get market trades of mini-token pairs.
+미니 토큰 쌍에 대한 마켓 거래를 가져옵니다.
 
 #### TradePage
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| total | long | total number of trades |  |
+| total | long | 총 거래 횟수 |  |
 | trade | [ [Trade] ] |  |  |
 
-## Upcoming Changes in Beacon Chain  API v0.6.4
+## 비컨 체인 메인넷 API v0.6.4 업데이트 내역
 
 ### HTTP API
 
-#### Add Error Message for Newly Created Address
+#### 새로 생된된 주소에 에러 메세지 추가
 
-You will get `{"code":404,"message":"account not found"}` for newly created account:
+새로운 계정에 대해 다음과 같은 메세지를 얻습니다`{"code":404,"message":"account not found"}`:
 
-**Example**
+**예시**
 ```
 https://testnet-dex-asiapacific.binance.org/api/v1/account/tbnb10qpmrlsr4mq65xwgjd39xypkkpw3wm9c5e58xm
 ```
@@ -416,55 +405,55 @@ message: "account not found"
 ```
 #### /api/v1/trades
 
-***Changes***
+***변경***
 
-Add `buyerSource` and `sellerSource` in the response Trade data structure. The Source Id reference can be found in https://github.com/binance-chain/BEPs/blob/master/BEP10.md.
+거래 데이터 구조 응답에 `buyerSource`(구매처) 와 `sellerSource`(판매처)를 더합니다. 출처 ID는 다음 링크에서 찾을 수 있습니다 https://github.com/binance-chain/BEPs/blob/master/BEP10.md.
 
-#### Trade
+#### 거래
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| baseAsset | string | base asset symbol |  |
-| blockHeight | long | block height |  |
-| buyFee | string | trading fee for the buyer address on the block of this trade |  |
-| buyerId | string | id of buyer |  |
-| buyerOrderId | string | order id for buyer |  |
-| buySingleFee | string | trading fee for the buyer address on this single trade | BNB:0.00000172; |
-| buyerSource | long | tx source of buy order | 1 |
-| price | string | trade price |  |
-| quantity | string | trade quantity |  |
-| quoteAsset | string | quote asset symbol |  |
-| sellFee | string | trading fee for the seller address on the block of this trade |  |
-| sellerId | string | seller ID |  |
-| sellerOrderId | string | seller order ID |  |
-| sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
-| sellerSource | long | tx source of sell order | 1 |
-| symbol | string | asset symbol |  |
+| baseAsset | string | 기초 자산 심볼 |  |
+| blockHeight | long | 블록 높이 |  |
+| buyFee | string | 구매자 주소의 블록 거래 수수료 |  |
+| buyerId | string | 구매자 ID |  |
+| buyerOrderId | string | 구매자 주문 id |  |
+| buySingleFee | string | 구매자 주소의 단일 거래에 대한 수수료 | BNB:0.00000172; |
+| buyerSource | long | 구매 주문의 tx 출처 | 1 |
+| price | string | 거래 가격 |  |
+| quantity | string | 거래 수량 |  |
+| quoteAsset | string | 견적 자산 심볼 |  |
+| sellFee | string | 판매자 주소의 블록 거래 수수료 |  |
+| sellerId | string | 판매자 ID |  |
+| sellerOrderId | string | 판매자 주문 id |  |
+| sellSingleFee | string | 판매자 주소의 단일 거래에 대한 수수료 | BNB:0.00000216; |
+| sellerSource | long | 판매 주문 tx 출처 | 1 |
+| symbol | string | 자산 심볼 |  |
 | tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
-| time | long | trade time |  |
-| tradeId | string | trade ID |  |
+| time | long  | 거래 시간 |  |
+| tradeId | string | 거래 ID |  |
 
-## Upcoming Changes in Beacon Chain  API v0.6.3
+## 비컨 체인 API v0.6.3 업데이트 내역
 
 ### HTTP API
 
 #### /api/v1/atomic-swaps
 #### /api/v1/atomic-swaps/{id}
 
-***Changes***
+***변경***
 
-The API is used to query atomic-swaps by id or by address.
-In the `AtomicSwap` data structure:
-* A new field `blockTimestamp` is added to indicate the block time in millisecond
-* The original `timestamp` is changed to indicate the timestamp for randomNumberHash calculation. Its unit is second.
-* `createTime` and `updateTime` are removed from `AtomicSwap`.
+API는 아토믹 스왑 ID나 주소를 요청합니다.
+`AtomicSwap` 데이터 구조에서는:
+* 블록 시간을 밀리초 단위로 측정하기 위해 `blockTimestamp` 변수가 추가되었습니다.
+* 원래 `timestamp` 는 randomNumberHash 계산을 위한 타임 스탬프로 변경되었습니다. 단위는 초입니다.
+* `createTime`과 `updateTime`은 `AtomicSwap`에서 제거되었습니다.
 
 
-#### AtomicSwap
+#### 아토믹 스왑
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| blockTimestamp | long | Timestamp of block in which the swap is initiated. The unit is millisecond. |  |
+| blockTimestamp | long | 스왑이 시작되는 블록의 타임 스탬프 단위는 밀리초 입니다. |  |
 | closedTime | long |  |  |
 | crossChain | integer |  |  |
 | expectedIncome | string |  |  |
@@ -477,45 +466,35 @@ In the `AtomicSwap` data structure:
 | recipientOtherChain | string |  |  |
 | status | integer |  |  |
 | swapId | string |  |  |
-| timestamp | long | The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second. |  |
+| timestamp | long | randomNumberHash 계산을 위한 타임 스탬프, randomNumberHash=sha256(randomNumber, timestamp). 단위는 초 입니다. |  |
 | toAddr | string |  |  |
 
-### WebSocket
+### 웹 소켓
 
-As described in https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/ws-streams#6-book-depth-streams, you can now customize the returned level from orderbook. The default level is 20 and you can extend the level to 100, 500, or 1000 with compression enabled.
+https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/ws-streams#6-book-depth-streams에서 설명된 대로, 이제 오토북에 반환되는 레벨을 사용자가 정의할 수 있습니다. The default level is 20 and you can extend the level to 100, 500, or 1000 with compression enabled. 기본 레벨을 20이면 압축을 키면 100, 500, 1000까지 늘릴 수 있습니다.
 
-* Example on mainnet:
+* 메인넷 예시:
 ```
 var  marketDepth = new WebSocket("wss://dex-atlantic.binance.org/api/ws/NEXO-A84_BNB@marketDepth100");
 ```
-* Example on testnet:
+* 테스트넷 예시:
 ```
 var  marketDepth = new WebSocket("wss://testnet-de.binance.org/api/ws/ALT-3B6_BNB@marketDepth100");
 ```
 
-### Node RPC
+### RPC 노드
 
-Due to changes of underling Tendermint library, `ResponseCheckTx`, `ResponseDeliverTx`, `ResponseBeginBlock`, and `ResponseEndBlock` now include `Events` instead of `Tags`. Each `Event` contains a type and a list of attributes (list of key-value pairs) allowing for inclusion of multiple distinct events in each response.
+텐더민트 라이브러리의 변화로, `ResponseCheckTx`, `ResponseDeliverTx`, `ResponseBeginBlock`, `ResponseEndBlock`는 `Tags`(태그)대신 `Events`를 갖습니다. 각 `이벤트`는 각 응답에 다양한 다른 이벤트를 포함하는 속성 key-value 리스트를 갖고 있습니다.
 
-#### Events
+#### 이벤트
 
-Some methods (`CheckTx, BeginBlock, DeliverTx, EndBlock`)
-include an `Events` field in their `Response*`. Each event contains a type and a
-list of attributes, which are key-value pairs denoting something about what happened
-during the method's execution.
+일부 메서드(`CheckTx, BeginBlock, DeliverTx, EndBlock`)는 `Response*` 부분에서 `Events`를 포함합니다. 각 이벤트에는 메소드 실행 중에 발생한 내용을 나타내는 키-값 쌍인 속성 유형과 유형이 포함됩니다.
 
-Events can be used to index transactions and blocks according to what happened
-during their execution. Note that the set of events returned for a block from
-`BeginBlock` and `EndBlock` are merged. In case both methods return the same
-tag, only the value defined in `EndBlock` is used.
+이벤트는 트랜잭션에과 블록에 실행 시 어떤 상황이 발생 했는 지를 알립니다. `시작`블록과 `끝`블록에서 반환된 이벤트들을 합쳐집니다. 두 메서드가 같은 태그를 가지고 있는 것을 대비하여, `끝 블록`에서 정의된 값만 사용합니다.
 
-Each event has a `type` which is meant to categorize the event for a particular
-`Response*` or tx. A `Response*` or tx may contain multiple events with duplicate
-`type` values, where each distinct entry is meant to categorize attributes for a
-particular event. Every key and value in an event's attributes must be UTF-8
-encoded strings along with the event type itself.
+각 이벤트는 특정 Response* 나 tx를 유형으로 분류하는 `type`이 존재합니다. 응답* 또는 tx에는 중복된 유형 값을 가진 여러 이벤트가 포함될 수 있으며, 각 항목은 특정 이벤트에 대한 속성을 분류합니다. 이벤트 속성에 있는 모든 키와 값은 UTF-8 인코딩된 문자열과 이벤트 유형을 포함해야 합니다.
 
-Example:
+예시:
 
 ```go
  abci.ResponseDeliverTx{
@@ -609,31 +588,31 @@ type ResponseEndBlock struct {
 }
 ```
 
-## Upcoming Changes in Beacon Chain  API v0.6.2
+## 비컨 체인 API v0.6.2 업데이트 내역
 
 ### HTTP API
 
 #### /api/v2/transactions-in-block/{blockHeight}
 
-***Changes***
+***변경***
 
-This endpoint is used for getting all transactions in the block. Multi-send and multi-coin transactions are flattened as sub-transactions.
+다음 엔트포인트는 모든 트랜잭션을 받기 위해 사용됩니다.다중 전송 및 다중 코인 거래는 하위 거래로 평탄화된다.
 
 #### TxV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | blockHeight | long |  |  |
 | code | integer |  | 0 |
 | data | string |  |  |
 | fromAddr | string |  |  |
 | memo | string |  |  |
-| orderId | string | Optional. Available when the transaction type is NEW_ORDER |  |
-| proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
+| orderId | string | 선택사항. 트랜잭션 유형이 NEW_ORDER일 때 가능 |  |
+| proposalId | string | 선택사항. 트랜잭션 유형이 PROPOSAL일 때 가능 |  |
 | sequence | long |  |  |
 | source | long |  |  |
-| subTransactions | [ [SubTx](#subtx) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
-| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| subTransactions | [ [SubTx](#subtx) ] | 선택사항. 트랜잭션이 multi-send 같은 하위 트랜잭션을 갖거나 트랜잭션에 여러 자산이 있을 경우 가능 |  |
+| swapId | string | 선택사항. 트랜잭션 유형이 HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL 중 하나일 때 가능 |  |
 | timeStamp | dateTime |  |  |
 | toAddr | string |  |  |
 | txAsset | string |  |  |
@@ -644,155 +623,155 @@ This endpoint is used for getting all transactions in the block. Multi-send and 
 
 #### /api/v1/timelocks/{account_addr}
 
-***Changes***
+***변경***
 
-This new function is for getting the whole timelock history of an address.
+다음 함수는 타임볽 기록 전체를 가져오기 위해 제작되었습니다.
 
-#### TimeLocks
+#### 타임록
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| id | long | The record id of the timelock transaction |  |
-| description | string | The description of the timelock transaction |  |
+| id | long | 타임록 트랜잭션의 기록 id |  |
+| description | string | 타임록 트랜잭션 설명 |  |
 | amount | [  ] |  |  |
-| locktime | string | The available unlock time |  |
+| locktime | string | 가능한 잠금 해제 시간 |  |
 
 ####/api/v1/timelock/{account_addr}?(id={recordid})
 
-***Changes***
+***변경***
 
-This new function is for getting the timelock history of an address by id.
+다음 함수는 새 id로 접끕한 주소의 타임록 기록을 조회하기 위해 제작되었습니다.
 
-#### TimeLocks
+#### 타임록
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| id | long | The record id of the timelock transaction |  |
-| description | string | The description of the timelock transaction |  |
+| id | long | 타임록 트랜잭션의 기록 id |  |
+| description | string | 타임록 트랜잭션 설명 |  |
 | amount | [  ] |  |  |
-| locktime | string | The available unlock time |  |
+| locktime | string | 가능한 잠금 해제 시간 |  |
 
-## Upcoming Changes in Beacon Chain  API v0.6.1
+## 비컨 체인 API v0.6.1 업데이트 내역
 
 ### HTTP API
 
-As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths
+아시다시피, 대중을 위한 고급 API 서비스를 제공하는 가속 노드가 있습니다. 다음은 메인넷에 모든 HTTP API 정보의 리스트입니다: https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths
 
-In the latest update of HTTP API for testnet, there are the following changes:
+HTTP API 테스넷의 최신 업데이트에서 변경된 점입니다:
 
 #### /api/v1/account/{address}
 
-***Changes***
-In the `Account` data structure, a new field `flags` is added to indicate the constrains for this address.
+***변경***
+`Account` 데이터 구조에서 새로운 필드인 `flags`가 추가되어 다음 주소에 관한 제약이 나타납니다.
 
-* `flags` is used to indicate which script needs to be executed.
+* 어떤 스트립트가 실행될 지 표시하기 위해 `flags`가 사용됩ㄴ디ㅏ. 
 
 #### Account
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | account_number | integer |  |  |
 | address | string (address) |  |  |
-| balances | [ [Balance](#balance) ] |  |  |
+| balances | [ [잔고](#잔고) ] |  |  |
 | public_key | [ integer ] | Public key bytes |  |
-| flags | integer | indicate additional check for this account|  |
-| sequence | long | sequence is for preventing replay attack |  |
+| flags | integer | 계정에 대한 추가 확인을 나타냅니다|  |
+| sequence | long | 시퀸스는 재생 공격을 방지합니다 |  |
 
-## Upcoming Changes in Beacon Chain  API v0.6.0
+## 비컨 체인 API v0.6.0 업데이트 내역
 
 ### HTTP API
 
-As you know, There are some accelerate nodes which provides some advanced API services for the public. Here is a list of all the HTTP API information it provides on mainnet: https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths 
+아시다시피, 대중을 위한 고급 API 서비스를 제공하는 가속 노드가 있습니다. 다음은 메인넷에 모든 HTTP API 정보의 리스트입니다: https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths
 
-In the latest update of HTTP API for testnet, there are the following changes:
+HTTP API 테스넷의 최신 업데이트에서 변경된 점입니다:
 
 
 #### /api/v1/trades
 ---
 
-***Changes***
+***변경***
 
 In the `Trade` data structure, a new field `Ticker Type` is added. The enumerate values are: "Unknown", "SellTaker","BuyTaker","BuySurplus","SellSurplus","Neutral". When there is a maker and taker, `SellTaker` and  `BuyTaker` are used to indicate the side. When both sides are taker,  `BuySurplus`, `SellSurplus` and `Neutral` are used to indicate market pressure.`Unknown` mean the type is not possible to define.
 
-* `buySingleFee` is used to show trading fee for the buyer address on this single trade.
-* `sellSingleFee`is used to show  trading fee for the seller address on this single trade.
+* `buySingleFee`는 구매자 계정의 개별 거래에 대한 수수료를 나타냅니다.
+* `sellSingleFee`는 구매자 계정의 개별 거래에 대한 수수료를 나타냅니다.
 
 ***GET***
 
-**Summary:** Get market trades.
+**요약:** 마켓 거래를 가져옵니다.
 
-**Description:** Gets a list of historical trades.
+**설명:**  거래 내역 리스트를 가져옵니다.
 
-**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+**쿼리 창:**  기본 쿼리 창은 최근 7일입니다. 쿼리 창의 최대 시작-종료 기간은 3개월입니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the buyer/seller address | No | string |
-| buyerOrderId | query | buyer order id | No | string |
-| end | query | end time in Milliseconds | No | long |
-| height | query | block height | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| quoteAsset | query | quote asset | No | string |
-| sellerOrderId | query | seller order id | No | string |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 구매자/판매자 주소 | 아니오 | string |
+| buyerOrderId | query | 구매자 주문 id | 아니오 | string |
+| end | query | 종료 시간 (밀리초) | 아니오 | long |
+| height | query | 블록 높이 | 아니오 | long |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| quoteAsset | query | 견적 자산 | 아니오 | string |
+| sellerOrderId | query | 판매자 주문 id | 아니오 | string |
+| side | query | 주문 측. 1 - 구매  2 - sell. | 아니오 | integer |
+| start | query | 시작 시간 (밀리초) | 아니오 | long |
+| symbol | query | symbol | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TradePage](#tradepage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
-#### TradePage
+#### 거래 페이지
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | total | long |  |  |
-| trade | [ [Trade](#trade) ] |  |  |
+| trade | [ [거래](#거래) ] |  |  |
 
-#### Trade
+#### 거래
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | baseAsset | string | base asset |  |
-| blockHeight | long | block height |  |
-| buyFee | string | trading fee for the buyer address on the block of this trade |  |
-| buyerId | string | id of buyer |  |
-| buyerOrderId | string | order id for buyer |  |
-| **buySingleFee** | string | trading fee for the buyer address on this single trade |  |
-| price | string | trade price |  |
-| quantity | string | trade quantity |  |
-| quoteAsset | string | quote asset |  |
-| sellFee | string | trading fee for the seller address on the block of this trade |  |
-| sellerId | string | seller ID |  |
-| sellerOrderId | string | seller order ID |  |
-| **sellSingleFee** | string | trading fee for the seller address on this single trade |  |
-| symbol | string | asset symbol |  |
+| blockHeight | long | 블록 높이 |  |
+| buyFee | string | 구매자 주소의 블록 거래 수수료 |  |
+| buyerId | string | 구매자 ID |  |
+| buyerOrderId | string | 구매자 주문 id |  |
+| **buySingleFee** | string | 구매자 주소의 단일 거래에 대한 수수료 |  |
+| price | string | 거래 가격 |  |
+| quantity | string | 거래 수량 |  |
+| quoteAsset | string | 견적 자산 |  |
+| sellFee | string | 판매자 주소의 블록 거래 수수료 |  |
+| sellerId | string | 판매자 ID |  |
+| sellerOrderId | string | 판매자 주문 id |  |
+| **sellSingleFee** | string | 판매자 주소의 단일 거래에 대한 수수료 |  |
+| symbol | string | 자산 심볼 |  |
 | **tickType** | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
-| time | long | trade time |  |
-| tradeId | string | trade ID |  |
+| time | long  | 거래 시간 |  |
+| tradeId | string | 거래 ID |  |
 
 
 
-### Websocket
+### 웹 소켓
 
-#### Trades
+#### 거래
 
-***Changes***
+***변경***
 
-In received Payload of `trades`, a new filed `tt` is added. Its enumerate values are:
+수신된 페이로드 `trades`에 `tt` 값이 추가되었습니다. 다음을 표현하는데 사용됩니다:
 * 0: Unknown
 * 1: SellTaker
 * 2: BuyTaker
@@ -800,61 +779,61 @@ In received Payload of `trades`, a new filed `tt` is added. Its enumerate values
 * 4: SellSurplus
 * 5: Neutral
 
-  **Received Payload:**
+  **수신된 페이로드:**
 
 ```javascript
 {
     "stream": "trades",
     "data": [{
-        "e": "trade",       // Event type
-        "E": 123456789,     // Event height
-        "s": "BNB_BTC",     // Symbol
-        "t": "12345",       // Trade ID
-        "p": "0.001",       // Price
-        "q": "100",         // Quantity
-        "b": "88",          // Buyer order ID
-        "a": "50",          // Seller order ID
-        "T": 123456785,     // Trade time
-        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress
-        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress
-        "tt": 1   //tiekertype
+        "e": "trade",       // 이벤트 유형
+        "E": 123456789,     // 이벤트 높이
+        "s": "BNB_BTC",     // 심볼
+        "t": "12345",       // 거래 ID
+        "p": "0.001",       // 가격
+        "q": "100",         // 수량
+        "b": "88",          // 구매자 주문 ID
+        "a": "50",          // 판매자 주문 ID
+        "T": 123456785,     // 거래 시간
+        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress (판매자 주소)
+        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress (구매자 주소)
+        "tt": 1   // 티커 타입
     },
     {
-        "e": "trade",       // Event type
-        "E": 123456795,     // Event time
-        "s": "BNB_BTC",     // Symbol
-        "t": "12348",       // Trade ID
-        "p": "0.001",       // Price
-        "q": "100",         // Quantity
-        "b": "88",          // Buyer order ID
-        "a": "52",          // Seller order ID
-        "T": 123456795,     // Trade time
-        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress
-        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress
-        "tt": 0    //tiekertype
+        "e": "trade",       // 이벤트 유형
+        "E": 123456795,     // 이벤트 시간
+        "s": "BNB_BTC",     // 심볼
+        "t": "12348",       // 거래 ID
+        "p": "0.001",       // 가격
+        "q": "100",         // 수량
+        "b": "88",          // 구매자 주문 ID
+        "a": "52",          // 판매자 주문 ID
+        "T": 123456795,     // 거래 시간
+        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress (판매자 주소)
+        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress (구매자 주소)
+        "tt": 0    // 티커 타입
     }]
 }
 ```
 
-### Extra data from your fullnode
+### 풀 노드에세 추가 데이터 가져오기
 
-All those [extra info](get-extra-data-from-fullnode.md#publish-different-messages-to-local-files ) can also be found in exported data from your fullnode.
+[추가 정보](get-extra-data-from-fullnode.md#publish-different-messages-to-local-files )는 풀 노드에서 추출된 데이터에서도 볼 수 있습니다.
 
-***Changes***
+***변경***
 
-In `trade` data structure, there are five new fields: `SSrc`,`BSrc`,`SSingleFee`, `BSingleFee` and `TickerType`.
+`trade` 데이터 구조에 5가지 새로운 값이 추가되었습니다: `SSrc`,`BSrc`,`SSingleFee`, `BSingleFee`, `TickerType`.
 
-* `SSrc`: Source code of Sell order transaction
-* `BSrc`: Source code of Buy order transaction
-* `SSingleFee`: fee of matched sell order
-* `BSingleFee`: fee of matched buy order
-* `TickerType`: ticker type
+* `SSrc`: 판매 주문 트랜잭션 소스 코드
+* `BSrc`: 구매 주문 트랜잭션 소스 코드
+* `SSingleFee`: 성사된 판매 주문 수수료
+* `BSingleFee`: 성사된 구매 주문 수수료
+* `TickerType`: 티커 유형
 
-In `Order` data structure, there is a new field: `singlefee`. This is used to show the fee of this order.
+`Order` 데이터 구조에 `singlefee`라는 새로운 값이 존재합니다. 이는 해당 거래의 수수료를 나타냅니다.
 
 
 
-For example:
+예를 들어:
 
 
 ```json
@@ -959,13 +938,13 @@ For example:
 }
 ```
 
-## Upcoming Changes in v0.6.2
+## v0.6.2 업데이트 내역
 
-### Tendermint Changes
+### 텐더민트 변경
 
-#### 1. Better Handle Index database
+#### 1. 더 나은 인덱스 데이터베이스 처리
 
-Now Tendermint will recover index data from restart or crash. You can see the latest indexed height from status:
+텐더민트가 재시작이나 크래시로부터 인덱스 데이터를 복구합니다. 상태에서 최신 인텍싱된 높이를 조회할 수 있습니다:
 ```
 {
 "jsonrpc": "2.0",
@@ -983,23 +962,23 @@ Now Tendermint will recover index data from restart or crash. You can see the la
 ...
 }
 ```
-#### 2. More configuration in config file
+#### 2. 속성 파일에 추가 설정
 
-A new field is added: ` skip_tx_from_persistent` under mempool part. If you set this to be True, your node will not broadcast transactions to its persistent peers.
+맴풀(mempool) 부분에 ` skip_tx_from_persistent`가 추가되었습니다. 참으로 설정하면, 영구 피어에게 트랜잭션을 전파하지 않습니다.
 
-#### 3. Change of Monitoring Metrics
+#### 3. 모니터링 메트릭 변화
 
-* Add the following metrics:
-   * IndexHegiht：This metric will show the latest indexed height.
-   * Height: This metric will show the latest  height of the blockchain
-   * BlockIntervalSeconds: This metric will show the Time between this and the last block
-   * NumTxs: This metric will show the total  number of transactions in the current block
-   * BlockSizeBytes: This metric will show the size of the block
-   * TotalTxs: This metric will show the total  number of transactions in history
-   * CommittedHeight: This metric will show the latest block height
-   * PermanentPeerSetSize: This metric will show the number of peers considered as good
-   * PermanentPeers: This metric will show the details of peers considered as good
-   * DecayPeerSetSize:  This metric will show the number of peers considered as bad
-* Remove metrics of ReceivedTx, PeerSendBytesTotal, PeerReceiveBytesTotal
+* 메트릭은 다음과 같습니다:
+   * IndexHegiht：최신 인덱스 높이를 나타냅니다
+   * Height: 블록체인의 최신 =높이를 나타냅니다
+   * BlockIntervalSeconds: 현재와 이전 블록 사이 시간을 나타냅니다
+   * NumTxs: 현재 블록에 총 트랜잭션 수를 나타냅니다
+   * BlockSizeBytes: 블록 사이즈를 나타냅니다
+   * TotalTxs: 내역에서 총 트랜잭션 수를 나타냅니다
+   * CommittedHeight: 최신 블록 높이를 나타냅니다
+   * PermanentPeerSetSize: 안정적으로 분류된 피어의 개수를 나타냅니다
+   * PermanentPeers: 안정적으로 분류된 피어의 세부 정보를 나타냅니다
+   * DecayPeerSetSize: 불안정한 분류된 피어의 개수를 나타냅니다
+* ReceivedTx, PeerSendBytesTotal, PeerReceiveBytesTotal이 제거되었습니다.
 
 

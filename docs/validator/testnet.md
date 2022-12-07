@@ -31,7 +31,7 @@ geth account import --datadir ./node
 
 ### BSC에서 BC로 BNB 이동하기
 
-바이낸스 익스텐션 월렛을 이용하여 BNB를 전송하려면 이 [가이드](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc)를 참고해주세요.
+바이낸스 익스텐션 지갑을 이용하여 BNB를 전송하려면 이 [가이드](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc)를 참고해주세요.
 
 
 ### 검증자 후보되기

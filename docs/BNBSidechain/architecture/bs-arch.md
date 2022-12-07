@@ -1,16 +1,17 @@
 ---
-sidebar_label: Architecture
+sidebar_label: 구조
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# BNB 사이드체인 구성
+# BNB 사이드체인 구조
 
-BNB 사이드체인은 BSC-호환 사이드체인을 만드는 모듈식 프레임워크입니다. BSC 생태계와 통합하기 위한 요구사항을 정의하고 스테이킹이나 RPC-API, 스마트 컨트랙트 같이 개발된 EVM-호환 기능들을 제공합니다. BSC는 BNB 사이드체인 보안 모델에 의존하지 않으므로, BSC와 BNB 사이드체인 네트워크 간의 표준 브릿지 솔루션이 없습니다. 대신 BNB 사이드체인은 Multichain이나 Celer Network cBridge같은 서드 파티 브릿지와 통합하기 위한 프로토콜과 표준을 제공할 수 있습니다.
+BNB 사이드체인은 BSC-호환 사이드체인을 만드는 모듈식 프레임워크입니다. BSC 생태계와 통합하기 위한 요구사항을 정의하고 스테이킹이나 RPC-API, 스마트 컨트랙트 같이 개발된 EVM-호환 기능들을 제공합니다. BSC는 BNB 사이드체인 보안 모델에 의존하지 않으므로, BSC와 BNB 사이드체인 네트워크 간의 표준 브릿지 솔루션이 없습니다. 대신 BNB 사이드체인은 Multichain이나 Celer 네트워크의 cBridge같은 서드 파티 브릿지와 통합하기 위한 프로토콜과 표준을 제공할 수 있습니다.
 
 ## BNB 사이드체인 구조와 통합
 
-BNB Sidechain specifies the primary structure and configuration of the blockchain, using special templates. A **template** is a ready-made blockchain solution that is **already integrated into the BSC infrastructure**. With this integration, developers automatically get access to products like a ready-made staking system, block explorer, API gateways, interfaces for governance, etc. 
+BNB 사이드 체인은 특수 템플릿을 통해 기초 구조와 블록체인 설정을 지정합니다. **템플릿**은 *이미 BSC 인프라에 통합된** 블록체인 솔루션을 뜻합니다. 이를 통해 개발자들은 스테이킹 시스템, 블록 탐색기, API 게이트웨이, 거버넌스 인터페이스와 같이 BSC에 이미 개발되어 있는 제품들을 사용할 수 있습니다. 
+
 
 템플릿을 적용한 후, BNB 사이트체인은 프로그램 가능 및 설정 가능한 **모듈**을 통해 쉽게 커스터마이징이 가능하다,
 
@@ -20,27 +21,27 @@ BNB Sidechain specifies the primary structure and configuration of the blockchai
 
 BNB 사이드체인의 주요 목표는 다중 모듈식 블록체인 구조를 구현하고, 누구나 사용이 편리하고 유연하게 만드는 것입니다.
 
-As the current implementation of BNB Sidechain is built on BSC, all existing modules are built into the system smart contracts and into the EVM machine. In the future, a system of modules will be created to allow you to develop a universal smart contract and a bus for interacting between modules and other parts. This all will make it possible to use such modules in any blockchain solution.
+현재 BNB 사이드 체인은 BSC 상에서 구현되었는데, 모든 모듈들은 시스템 스마트 계약과 EVM에 내장되어 있습니다. 앞으로는 범용 스마트 컨트랙트 모듈과 다른 모듈 및 부분들과 상호작용할 수 있는 버스를 개발할 수 있는 모듈 시스템이 만들어질 것입니다. 이는 어떤 블록체인 솔루션에서도 사용이 가능해질 것입니다.
 
-BNB Sidechain brings with it programmable and configurable modules that can be used or modified by developers to reach their business goals, for example:
+BNB 사이드 체인은 비즈니스 목표에 도달하기 위해 개발자가 프로그래밍과 설정을 통해 수정 및 사용 가능한 모듈을 제공합니다. 예를 들자면:
 
-- Cross Chain — BNB Sidechain is designed to provide cross chain functionality for the native assets. Since native assets are fully managed by BAS developers they can compromise token supply or mint/burn tokens.
+- 크로스 체인 — BNB 사이드 체인은 생태계 자체 자산에 크로스 체인 기능을 제공하도록 설계되었습니다. 생태계 자체 자산은 BAS 개발자에 의해 관리되기 때문에 토큰 공급량을 타협하거나 토큰을 발행/소각할 수 있습니다.
 
-- Staking & Staking Pool— BNB Sidechain supports on-chain staking system and uses the PoSA (proof-of-stake-of-authority) staking model. It allows users to delegate their tokens to the specific validator and share validator's rewards based on the total staked amount.
+- 스테이킹 및 스테이킹 풀 — BNB 사이트 체인은 권한지분증명(POSA) 스테이킹 모델을 사용한 온체인 스테이킹 시스템을 지원합니다. 사용자들을 지정된 검증인에게 토큰을 위임할 수 있으며 위임한 규모에 따라 검증인의 보상을 분배 받을 수 있습니다.
 
-- Runtime Upgrade — Runtime upgrade system smart contract allows to modify the existing byte code for the system smart contracts. However, it doesn't allow to modify user's smart contracts. To apply any modification to the sources, the user must create a proposal, and changes can only be applied once a quorum is reached on the governance. This scheme is much simpler compared to hard forks, as it doesn't require all validators to upgrade their nodes.
+- 런타임 업그레이드 — 런타임 업그레이드를 통해 시스템 스마트 계약은 현재 존재하는 스마트 계약의 기존 바이트 코드를 수정할 수 있습니다. 다만, 사용자의 스마트 계약을 수정할 수는 없습니다. 수정을 적용하려면, 제안서를 작성해야하며 거버넌스에서 정족수를 채워 통과해야 합니다. 해당 과정은 모든 검증인들이 노드를 업그레이드 할 필요가 없기 때문에 하드 포크보다는 간단합니다. 
 
-- Blockchain & EVM — for block producing and EVM transaction execution, of course, each BNB Sidechain can define their own runtime execution environment based, for example, on WebAssembly in future.
+- 블록체인 및 EVM — 블록 생성 및 EVM 트랜잭션 실행. 향후 웹어셈블리(WebAssembly)처럼 자체 런타임 실행 환경을 정의할 수 있게 됩니다.
 
-- Web3 API — for BNB Sidechain compatibility with Web3 ecosystem including MetaMask and other applications.
+- Web3 API — 메타마스크 같은 Web3 생태계 어플리케이션과 BNB 사이드 체인 호환을 위한 기능.
 
-- Transaction Pool — for managing internal BNB Sidechain policies for transaction filtering and for charging fees for the system operational.
+- 트랜잭션 풀(Pool) — 트랜잭션 필터링을 위한 내부 BNB 사이드 체인 정책을 관리하고 시스템 운영을 위해 수수료 징수.
 
-- PoSA Consensus & Staking — for users to be able to stake to the authorized validators in the BNB Sidechain network and guarantee the safeness of actions applied on the chain.
+- PoSA 합의 및 스테이킹 — BNB 사이드 체인에서 사용자들이 인증된 검증인에게 스테이킹하고 체인에 적용되는 작업의 안정성을 보장.
 
-- 거버넌스 — A decentralized voting system for managing and implementing changes to cryptocurrency blockchains.
+- 거버넌스 — 암호화폐와 블록체인 변경을 관리하기 위한 탈중앙화 튜표 시스템.
 
-- 저장 및 상태 — 로컬 데이터를 유지하기 위해.
+- 저장 및 상태 — 로컬 데이터를 관리하기
 
 내부적으로 BNB 사이드체인은 다음과 같은 모듈을 구현하고 있습니다: Parlia 합의 엔진, 스테이킹 풀, 거버넌스, 동적 런타임 업그레이드, 보상 관리, 관리 가능한 블록체인 변수와 EVM 후크.
 

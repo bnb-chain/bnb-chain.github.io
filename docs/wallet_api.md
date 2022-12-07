@@ -6,16 +6,16 @@ sidebar_position: 2
 
 # BNB 월렛 API
 
-바이낸스 익스텐션 월렛은 웹사이트 방문자들에게 `window.BinanceChain`을 통해 글로벌 API를 주입합니다.
+바이낸스 익스텐션 지갑은 웹사이트 방문자들에게 `window.BinanceChain`을 통해 글로벌 API를 주입합니다.
 
-이 API 명세는 널리 도입된 API 메타마스크를 많이 참고하였습니다. Web3 개발자들은 쉽게 dApp을 바이낸스 익스텐션 월렛에 연결시킬 수 있습니다. 이 API들을 통해 웹사이트들은 사용자의 BNB 스마트 체인 주소를 요청하고, 사용자가 연결된 블록체인으로부터 데이터를 읽어오고, 사용자들이 메시지와 트랜잭션에 서명하도록 요청할 수 있습니다.
+이 API 명세는 널리 도입된 API 메타마스크를 많이 참고하였습니다. Web3 개발자들은 쉽게 dApp을 바이낸스 익스텐션 지갑에 연결시킬 수 있습니다. 이 API들을 통해 웹사이트들은 사용자의 BNB 스마트 체인 주소를 요청하고, 사용자가 연결된 블록체인으로부터 데이터를 읽어오고, 사용자들이 메시지와 트랜잭션에 서명하도록 요청할 수 있습니다.
 
 provider 객체 `window.BinanceChain`가 존재한다는 것은 비콘 체인/BNB 스마트 체인 사용자임을 나타냅니다.
 
-이 익스텐션 월렛이 제공하는 API는 [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193)와 [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html)에서 규정하는 API 및 레거시에 크게 의존하는 것들입니다.
+이 익스텐션 지갑이 제공하는 API는 [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193)와 [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html)에서 규정하는 API 및 레거시에 크게 의존하는 것들입니다.
 
 ## 개발 경과
-현재 (버전 1.112.8) 바이낸스 익스텐션 월렛은 자체적으로 비콘 체인을 지원하고 있으며, dApp 개발자들이 비콘 체인과 상호작용할 수 있도록 일련의 API들을 공개할 계획입니다. 결과적으로 [비컨 체인 자바스크립트 sdk에서 사용가능한 API](https://github.com/bnb-chain/javascript-sdk/tree/master/docs) 대부분이 사용 가능해질 것입니다.
+현재 (버전 1.112.8) 바이낸스 익스텐션 지갑은 자체적으로 비콘 체인을 지원하고 있으며, dApp 개발자들이 비콘 체인과 상호작용할 수 있도록 일련의 API들을 공개할 계획입니다. 결과적으로 [비컨 체인 자바스크립트 sdk에서 사용가능한 API](https://github.com/bnb-chain/javascript-sdk/tree/master/docs) 대부분이 사용 가능해질 것입니다.
 
 현재 지원되는 것은 다음과 같습니다.
 * [`transfer`](https://github.com/bnb-chain/javascript-sdk/tree/master/docs#transfer-tokens) 
@@ -23,11 +23,11 @@ provider 객체 `window.BinanceChain`가 존재한다는 것은 비콘 체인/BN
 ## 메타마스크와의 차이점
 !!! 경고
 
-    메타마스크와 연동된 Web3 개발자로, 바이낸스 익스텐션 월렛과의 연동에 관심이 있는 경우 이 섹션을 읽어주세요.
+    메타마스크와 연동된 Web3 개발자로, 바이낸스 익스텐션 지갑과의 연동에 관심이 있는 경우 이 섹션을 읽어주세요.
 
 ### 페이지 내 주입된 객체
 
-바이낸스 익스텐션 월렛과 메타마스크의 가장 큰 차이점은 웹 페이지에 `ethereum`(또는 `web3`)이 아닌 `BinanceChain`을 주입한다는 것입니다. 따라서 사용자는 두 개의 확장자를 동시에 유지할 수 있습니다.
+바이낸스 익스텐션 지갑과 메타마스크의 가장 큰 차이점은 웹 페이지에 `ethereum`(또는 `web3`)이 아닌 `BinanceChain`을 주입한다는 것입니다. 따라서 사용자는 두 개의 확장자를 동시에 유지할 수 있습니다.
 
 ### BinanceChain.request({method: "eth_sign", params: ["address", "message"])
 
@@ -138,7 +138,7 @@ render(
 
     커스텀 RPC 엔드포인트는 영향을 받지 않으며, 사용자가 지정한 체인 ID를 항상 반환합니다.
 
-바이낸스 익스텐션 월렛이 기본적으로 지원하는 BNB 스마트 체인의 ID입니다.
+바이낸스 익스텐션 지갑이 기본적으로 지원하는 BNB 스마트 체인의 ID입니다.
 
 | Hex  | Decimal | 네트워크                                        |
 | ---- | ------- | ---------------------------------------------- |
@@ -160,7 +160,7 @@ render(
 
     이 자산의 가치는 언제든지 변경될 수 있으며 전적으로 의존해서는 안 됩니다. 자세한 내용은 [`chainChanged`](#chainchanged) 이벤트를 참고하세요.
 
-**참고:** 바이낸스 익스텐션 월렛 제공자의 체인 ID에 대한 중요한 정보는 [체인 ID 섹션](#chain-ids)을 참고하세요.
+**참고:** 바이낸스 익스텐션 지갑 제공자의 체인 ID에 대한 중요한 정보는 [체인 ID 섹션](#chain-ids)을 참고하세요.
 
 
 현재 체인 ID를 나타내는 16진수 문자열입니다.
@@ -258,11 +258,11 @@ BinanceChain
 
 !!! 경고
 
-    모든 플러그인은 바이낸스 익스텐션 월렛과 동일한 객체 `BinanceChain`을 주입할 수 있기 때문에 dApp 개발자는 반환된 공개 키가 ECDSA 서명 확인 외에 사용자가 주장하는 주소로 변환될 수 있는지 확인해야 합니다.
+    모든 플러그인은 바이낸스 익스텐션 지갑과 동일한 객체 `BinanceChain`을 주입할 수 있기 때문에 dApp 개발자는 반환된 공개 키가 ECDSA 서명 확인 외에 사용자가 주장하는 주소로 변환될 수 있는지 확인해야 합니다.
 
 ### BinanceChain.switchNetwork(networkId: string): Promise<{networkId: string}>
 
-바이낸스 익스텐션 월렛은 병렬로 실행되는 이종 블록체인인 비콘 체인과 BNB 스마트 체인을 기본적으로 지원합니다. API는 어떤 상황에서도 다를 수 있습니다. (우리는 곧 비콘 체인 용 API를 열 것입니다.)
+바이낸스 익스텐션 지갑은 병렬로 실행되는 이종 블록체인인 비콘 체인과 BNB 스마트 체인을 기본적으로 지원합니다. API는 어떤 상황에서도 다를 수 있습니다. (우리는 곧 비콘 체인 용 API를 열 것입니다.)
 
 개발자는 현재 `BinanceChain.chainId` 또는 `BinanceChain.on('chainChanged', callback)`을 통해 `chainChanged` 이벤트를 듣고 있는 사용자가 선택한 네트워크를 판단할 수 있습니다.
 
@@ -490,7 +490,7 @@ function connect() {
 
 이 섹션은 메타마스크의 레거시 provider API를 기록합니다.
 
-메타마스크를 지원하는 기존의 dApp들과의 호환성을 위해 바이낸스 익스텐션 월렛 또한 이를 구현하지만, 절대 의존하지 마세요. 근시일 내 종료할 수 있습니다.
+메타마스크를 지원하는 기존의 dApp들과의 호환성을 위해 바이낸스 익스텐션 지갑 또한 이를 구현하지만, 절대 의존하지 마세요. 근시일 내 종료할 수 있습니다.
 
 ## 레거시 속성
 

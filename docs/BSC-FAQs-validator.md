@@ -1,177 +1,182 @@
 ---
-sidebar_label: BSC Validator FAQs
+sidebar_label: BSC 검증인 FAQs
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB Smart Chain Validator FAQs
+# BNB 스마트 체인 검증인 FAQs
 
-### What is the role of BNB Smart Chain Validators?
-It powers the blockchain network by processing transactions and signing blocks.
+### BNB 스마트 체인 검증인의 역할은 무엇인가요?
+트랜잭션을 처리하고 블록을 서명하여 블록체인 네트워크를 운영합니다.
 
-### What are the incentives to run a validator node?
+### 검증인 노드를 운영해서 얻는 인센티브가 무엇인가요?
 
-Validators and delegators will earn rewards from transaction fees: dApp usages.
+검증인과 위임인은 트랜잭션 수수료로부터 보상을 얻습니다: dApp 사용 등.
 
-### What's on-chain governance proposal?
+### 온체인 거버넌스 제안은 무엇인가요?
 
-The proposal will decide: slash amount, cross-chain transfer fees.
+제안은 다음을 결정합니다: 슬래싱 규모, 크로스 체인 전송 수수료.
 
-### How to join testnet as a validator?
+### 테스트넷에서 어떻게 검증인이 될 수 있나요?
 
-  1. Choose your own server/PC.
-  2. Install software.
-  3. Create a wallet and get some BNB.
-  4. Run your fullnode and keep it synced.
-  5. Stake your BNB on BC, the top 21 most staked nodes to be the validator set.
+  1. 검증인이 될 서버/PC를 선택하세요
+  2. 소프트웨어를 설치하세요
+  3. 지갑을 생성하고 BNB를 입금하세요
+  4. 풀 노드를 실행하고 동기화하세요
+  5. 바이낸스 체인에서 BNB를 스테이킹하세요: 스테이킹된 노드 중 상위 21 개가 검증인 집합이 됩니다.
 
-### How to join mainnet as a validator? 
+### 메인넷에서 어떻게 검증인이 될 수 있나요?
 
-  1.  Choose your own server/PC
-  2. Install software
-  3. Create a wallet and get some BNB
-  4. Run your fullnode and keep it synced
-  5. Stake your BNB on BC, the top 21 most staked nodes to be the validator set"
+  1. 검증인이 될 서버/PC를 선택하세요
+  2. 소프트웨어를 설치하세요
+  3. 지갑을 생성하고 BNB를 입금하세요
+  4. 풀 노드를 실행하고 동기화하세요
+  5. 바이낸스 체인에서 BNB를 스테이킹하세요: 스테이킹된 노드 중 상위 21 개가 검증인 집합이 됩니다.
 
-### What are hardware requirements of running a validator node?
+### What are hardware requirements of running a validator node? 
 
-Processing transactions is mostly CPU bound. Therefore we recommend running CPU optimized servers.
+트랜잭션 처리는 대부분 CPU에서 발생하므로, CPU 최적화된 서버를 운영하는 것을 권장합니다.
 
- * Directly facing internet (public IP, no NAT)
+ * 직접 연결된 인터넷 (NAT이 아닌 공개 IP)
  
- * 8 cores CPU
+ * 8 코어 CPU
  
- * 16GB of RAM
+ * 16GB RAM
  
- * 500 SSD storage"
+ * 500 SSD 저장공간
 
-### How many BNB are required to create a validator?
+### 검증인을 생성하기 위해 BNB가 얼마나 필요하나요?
 
-Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders. These bonded BNB acts as collateral and cause each delegate, including validators, to have “skin in the game” so to speak. If any equivocation or byzantine behavior by a validator were to be committed, the validator and its delegates would be slashed a predefined amount of bonded stake. The minimum self-delegated amount is 10000BNB.
+검증인은 자기 본딩, 즉 BNB를 자신한테 위임할 수 있습니다. 또한 다른 BNB 소유자에게서 위임 받을 수도 있습니다. 이렇게 바인딩된 BNB는 담보 역할을 하며 검증인을 포함한 각 위임인들이 책임을 지게 합니다. 검증인의 부정행위나 비잔틴 행동이 발생할 경우, 검증인과 그 위임인들의 바인딩된 지분이 슬래싱됩니다. 최소 자기 위임양은 10000BNB입니다.
 
-### When are rewards paid out?
+### 보상은 언제 지급되나요?
 
-The rewards will not be sent to validator right away, instead, they will be distributed and accumulated on a contract. The reward distribution happens on BC around every day UTC 00:00.
+보상은 검증인에게 바로 지급되지 않고, 계약에 누적되고 분배됩니다. 바이낸스 체인에서 보상 분배는 매일 UTC 00:00에 이뤄집니다.
 
-### What's the potential loss for validators?
+### 검증인이 부담하는 잠재적인 위험은 무엇인가요?
 
-Validators can suffer from “Slashing”, a punishment for their bad behaviors, such as double sign and/or instability. Such loss will not be shared by their delegators.
-Slashing is a punitive function that is triggered by a validator ’s bad actions. Getting slashed is losing self delegation of a validator. Validators will be slashed for the actions below:
+검증인은 “슬래싱”을 당할 수 있는데, 이는 이중 서명이나 불안정성에 대한 처벌로 발생합니다. 이로 인한 손실은 위임인들과 공유되진 않습니다.
+슬래싱은 검증인의 잘못된 행동으로 발생하는 징벌적 기능입니다. 슬래싱되는 것은 검증인으로서 자기 위임 지분을 읽는 것을 뜻합니다. 검증인은 다음 활동을 하면 슬래싱이 이뤄집니다:
 
-  * Going offline or unable to communicate with the network.
+  * 오프라인이 되어 네트워크와 통신할 수 없는 경우
   
-  * Double signing: If a validator node tries to split the network by signing two different blocks and broadcasting them, it will be removed from validator set definitely.
+  * 이중 서명: 검증인 노드가 2개의 다른 블록을 서명해서 배포해서 네트워크를 분리하려고 하면 검증인 집합에서 완전히 박탈됩니다
 
-### What is the process of getting selected as a validator node on BSC?
+### 어떻게 BSC에서 검증인으로 선정되나요?
 
-On BNB Smart Chain  (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 21 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 21 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.bnbchain.org/docs/validator/overview.html).
+BNB 스마트 체인(BSC) 네트워크에서, 검증인은 트랜잭션을 처리하고 블록을 서명하여 네트워크를 유지하는 역할을 맡고 있습니다. 검증인 노드는 이런 좋은 행동에 대해 트랜잭션 수수료로 보상을 받습니다. 현재는 테스트넷에 11게의 검증인이 있고 메인넷에 21개의 검증인이 존재합니다. 검증인은 24시간마다 선정됩니다. 누구나 검증인 후보자가 될 수 있습니다. 검증인 선정 과정에 참여하기 위해서는 노드들은 BNB를 스테이킹 해야 합니다. 검증인은 BNB를 자기 위임(자기 바인딩) 할 수 있으며 다른 BNB 소유자들로부터 위임받을 수 있습니다. 최소 자기 위임 금액은 **10000BNB**입니다. 상위 21개 최고 위임 노드들만이 검증인 집합에 선정됩니다. 자세한 사항은 [여기](https://docs.bnbchain.org/docs/validator/overview.html)를 확인하세요.
 
-### How is the bad or malicious behavior of the validator nodes controlled in the BSC?
+### 어떻게 BSC에서 검증인 노드의 불량하거나 악의적인 행동을 제어하나요?
 
-One of the important on-chain governance implementations is the technique of “slashing” along with jailing. When jailed validator cannot participate in the consensus mechanism or earn rewards for set period of time. Slashing ensures that validators who act maliciously or show bad behavior are punished. Furthermore, it is designed to expose any attacker and make execution of their attempts extremely expensive. Anyone can submit BSC slash request. Even though BSC slash request requires slash evidence and transaction cost fees, huge reward is given in case the request is successful. To ensure that the delegators are not punished for the validator’s bad behavior, only the self-bonded BNB of the validator are slashed. Currently, slashing is applied on any node that processes an invalid transaction, performs double-signing or is unavailable for a defined period of time.
+"슬래싱"은 투옥과 함께 구현된 중요한 온체인 거버넌스 기술 중 하나입니다. 수감된 검증인은 합의 매커니즘에 참여하지 못하고 해당 기간 동안 보상을 받지 못합니다. 슬래싱은 불량하거나 악의적인 행위를 하는 검증인들을 처벌하는 역할을 합니다. 또한, 슬래싱은 공격자를 노출시키고 공격을 실행하는데 엄청난 비용이 들도록 설계되었습니다. 누구나 BSC 슬래싱 요청을 제출할 수 있습니다. BSC 슬래싱 요청은 슬래싱 증거와 트랜잭션 수수료가 필요하지만, 요청이 성공할 시 큰 보상이 주어집니다. 위임인들이 검증인의 불량한 행동에 의해 처벌 받지 않기 위해, 자기 본딩된 BNB가 삭감됩니다. 현재 슬래싱은 부적합한 트랜잭션을 제출하거나, 이중 서명을 하거나, 일정 시간 동안 부재중인 모든 노드에게 적용됩니다.
 
-### What are the two slashable cases?
+### 슬래싱 가능한 두 가지 경우가 무엇인가요?
 
-The validators are slashed in cases of self-bound less than the required minimum, double singing, and unavailability. 
+검증인은 자기 위임 금액이 부족하거나, 이중 서명하거나, 사용 불가능할 시 슬래싱 됩니다.
 
-*_Double Signing:_* refers to an event when a validator node proposes two different blocks at the same block height. A validator will be removed from the validator set definitely, if they try signing two different blocks and broadcasting them. For a BSC slash request for double signing the supporting evidence should indicate two block headers having same block height and same parent block hash sealed by the same validator. Two signatures of these two blocks must not be the same. The time of these two blocks must be within the validity of the evidence, which is 24 hours. Rewards for submitting double-sign evidence is **1000BNB**. In case the provided evidence are valid, the validators face a slashing of **10000BNB** from their self-delegated BNB and will be ‘jailed’ for a time period of 7 days.
+*_이중 서명:_* 은 검증인 노드가 두 개의 다른 블록을 갇은 높이로 제출할 때 발생합니다. 검증인이 두 개의 다른 블록을 서명하고 전파를 시도할 때 검증인 집합에서 확정적으로 제거됩니다. 이중서명에 대한 BSC 슬래싱 요청은 두개의 블록 해더가 같은 블록 크기를 갇고 부모 블록 해시를 갖으며, 같은 검증인에게 서명되었다는 증거를 보여줘야 합니다. 같은 검증인이 서명했어도 이 두 블록에 대한 서명은 달라야 합니다. 두 블록은 증거 유효 기간인 24시간 내에 발행되었어야 합니다. 이중 서명 증거를 제출한 것에 대한 보상은 **1000BNB**입니다. 제공된 정보가 유효하다면, 검증인은 자기 위임된 **10000BNB**가 슬래싱(삭감)되며 7일 간 ‘투옥’됩니다.
 
-*_Unavailability/ Downtime in a 24 hour period:_* the slash fee for a validator being offline is self-delegated **50BNB** accompanied with a jail time of 2 days. If a validator misses at least 50 blocks (~52 minutes of downtime) during 24 hours, they will not be able to receive any rewards during that period of time.
-Instead their reward will be distributed amongst other better performing validators of the set. Another case of unavailability is when a validator misses over 150 blocks (~157.5 minutes of downtime) during 24 hours. In this case, the validator will not receive reward instead it will be propagated back to BC. 
+*_사용 불가능/24시간 내 다운타임 발생:_* 오프라인에 대한 슬래싱 비용은 자기 위임된 **50BNB**이며 2일 동안 투옥됩니다. 검증인이 24시간 동안 50블록 이상을 놓치면 (다운타임으론 ~52분) , 해당 기간 동안 발생된 보상을 받을 수 없습니다.
+이 보상은 더 우수한 검증인들에게 분배됩니다. 다른 사용 불가능한 사례는 검증인이 24시간 동안 150블록 이상을 놓치는 (다운타임으론 ~157.5분 정도)경우입니다. 해당 경우에는 검증인이 보상을 받지 않고 바이낸스 체인으로 전파됩니다. 
 
-*_Self‐bond below minimum:_* Validators are jailed for 1 day if their self‐bond falls below **10000BNB**.
+*_자기 본딩 최소금액 부족:_* 검증인의 자기 본딩된 금액이 **10000BNB** 아래로 떨어질 때 하루 수감됩니다.
 
-### What is the minimum amount for self-delegation to avoid being jailed?
+### 수감을 피하기 위한 최소 자기 위임 금액은 얼마인가요?
 
-The [minimum self-delegated amount](parameters.md) is **10000BNB**.
+[최소 자기 위임 금액](parameters.md)은 **10000BNB**입니다.
 
-### What is the unbounding time period?
+### 본딩 해제 기간이 얼마나 되나요?
 
-Unbonding time: 7 days
+본딩 해제 기간: 7 일
 
-### What is the unjail fees for a validator jailed for being offline? What is the offline jail time period? 
+### 오프라인으로 투옥된 검증인의 석방 비용은 얼마인가요? 오프라인 투옥 기간은 얼마인가요? 
 
-offline Unjail fee: 1BNB 
+오프라인 석방 비용: 1BNB 
 
-offline Jailed time: 2 days. A validator can only unjail 2 days later after it has been jailed
+오프라인 투옥 기간: 2일. 검증인은 투옥 후 2일이 지나야만 석방을 요청할 수 있습니다
 
-### What is the slashing amount charged to the validators for being offline and double signing?
+### 검증인이 오프라인이거나 이중서명 할 시 부과되는 슬래싱 금액은 얼마인가요?
 
-offline slashing amount: 50BNB 
+오프라인 슬래싱 금액: 50BNB 
 
-Double-sign slashing amount: 10000BNB
+이중서명 슬래싱 금액: 10000BNB
 
-### Where can you monitor the slash contract?
+### 슬래싱 계약을 어떻게 모니터링 할 수 있나요?
 
-The slash contract can be monitored on the BSC scanner on the following link
+해당 링크의 BSC 스캐너에서 슬래싱 계약을 확인할 수 있습니다.
 
 https://bscscan.com/address/0x0000000000000000000000000000000000001001#events
 
-### Does an inactive validator receive any rewards?
+### 비활성화된 검증인도 보상을 받나요?
 
-No, they will not.
+아니오, 받지 않습니다.
 
-### Can I receive my staking rewards if my chosen validator is inactive?
+### 제가 스테이킹한 검증인이 비활성화 되어 있으면 보상을 받을 수 있나요?
 
-No, you cannot.
+아니오, 받을 수 없습니다.
 
-### When can I receive my unstaked BNB?
+### 스테이킹 해제한 BNB는 언제 받을 수 있나요?
 
-After you sent `undelegate` transaction, you have to wait 7 days. This period starts at UTC 00:00 next day.
+`undelegate`(위임 해제) 트랜잭션을 보낸 후 7 일을 기다려야 합니다. 시간은 다음 날 UTC 00:00 부터 계산됩니다.
 
-### How to get un-jailed?
-Validator nodes that have been jailed due to their malicious or bad behavior can be set to ‘unjailed’ by sending a side-unjail transaction if the validation passed. Furthermore, when unjailed, to join the validator set again, the validator must wait for the next UTC 0:00. The fees to un-jail a smart contract validator is **1BNB**. Whereas, the fee for submitting a byzantine behavior evidence of a validator is **10BNB**.
+### 어떻게 석방될 수 있나요?
+불량하거나 악의적인 동작에 의해 투옥된 검증인은 검증이 통과될 시 side-unjail 트랜잭션을 보내어 석방될 수 있습니다. 석방이 되었을 시 다시 검증인 집합이 참가하려면 다음 UTC 00:00까지 기다려야 합니다. 검증인 석방을 위한 스마트 계약 수수료는 **1BNB**입니다. 반면, 검증인의 비잔틴 행동 증거를 제출하는 수수료는 **10BNB**입니다.
 
-_Example:_
+_예시:_
 
 ~~~~
 bnbcli slashing side-unjail --side-chain-id=bsc –node http://dataseed4.binance.org:80 --chain-id=Binance-Chain-Tigris --trust-node --output=json  --from {the address of the validaator operator}
 ~~~~
 
-### What is 'self-delegation'? How can I increase my 'self-delegation'?
+### '자기 위임'은 무엇이며 어떻게 늘릴 수 있나요?
 
-Self-delegation is delegation from a validator to themselves. This amount can be increases by sending a delegate transaction from your validator's operator address.
+자기 위임은 검증인이 BNB를 자신에게 위임하는 것을 뜻합니다. 검증인 작업 주소를 통해 위임 트랜잭션을 보내서 금액을 늘릴 수 있습니다.
 
-### What is the command to prune?
+### 프루닝(prune) 하는 명령어는 무엇인가요?
 
-  * Stop the node gracefully
+  * 노드를 멈추세요
   
-  * Run `nohup geth snapshot prune-state --datadir {the data dir of your bsc node} &`
+  * `nohup geth snapshot prune-state --datadir {the data dir of your bsc node} &` 를 실행하세요
   
-  * Wait for 5-6 hours to finish, it depends on the size of current storage
+  * 끝날 때까지 5-6 까지 기다리세요. 저장 용량에 따라 대기 시간이 달라질 수 있습니다.
 
-### What to do if one can’t run prune-state command In the event when running the geth snapshot `prune-state --datadir /chaindata` on geth 1.1.5 return the following error
+### 상태 명령어를 실행하지 못할 때 어떻게 해야 하나요?
+
+ geth 1.1.5에서 geth 스냅 샷을 실행할 때 `prune-state --datadir /chaindata` 다음과 같은 에러가 발생할 수 있습니다.
 
 ~~~~
 ERROR[11-02|06:02:55.001] Failed to open snapshot tree err="head doesn't
 match snapshot: have 0x5c17a8fc0164dabedd446e954b64e8a54fc7c8b4fee1bbd707c3cc3ed1e45fff, want 0x431565cee8b7f3d7bbdde1265304fa4574dc3531e511e9ffe43ae79d28e431d6" head doesn't match snapshot: have 0x5c17a8fc0164dabedd446e954b64e8a54fc7c8b4fee1bbd707c3cc3ed1e45fff, want 0x431565cee8b7f3
 ~~~~
 
-This error occurs due to data corruption. You can run geth snapshot verify-state to double confirm whether the data is correct. You can download the latest snapshot from https://github.com/bnb-chain/bsc-snapshots. By doing that, you don't have to prune-state in the future, save precious disk IO, it will help you keep up with syncing.
+이는 데이터 손상으로 인해 발생합니다. geth 스냇샷 검증 상태(verify-state)에서 데이터가 정확한지 다시 확인할 수 있습니다. 최신 스냅샷은 https://github.com/bnb-chain/bsc-snapshots 에서 확인할 수 있습니다. 이를 통해 나중에 프루닝 상태를 실행하지 않아도 되고, 소중한 디스크 IO를 아끼며, 동기화 상태를 유지할 수 있습니다.
 
-### What to do if Sync is slow on running the following command 
+### 동기화기가 느릴 경우
+
+다음 명령어를 실행하면 됩니다.
 
 ~~~~
 *_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap –diffsync --txlookuplimit 0_*
 ~~~~
 
-Try pruning the state -- stop geth, then run geth --datadir=node - prune-state. Assuming that datadir is node, change that if it's elsewhere then restart after it's done. Follow https://github.com/bnb-chain/bsc/issues/502 to get more tips about how to maintain a synced node.
+상태를 프루닝 하고 --stop geth로 멈춘 후, 그리고 geth를 다시 실행합니다 --datadir=node - prune-state. datadir이 노드라고 할 때, 다른 곳에 있으면 변경하고 작업이 끝난 후 재시작합니다.https://github.com/bnb-chain/bsc/issues/502 에서 동기화된 노드를 유지하는 방법에 대해 알아보세요.
 
-### How to start the geth node through snapshot to get node synced?
+### 스냅샷을 통해 geth 노드를 시작하고 동기화하는 법
 
-The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows: 
+동기화 시 가장 큰 병목 현상은 CPU와 IOPS에서 발생합니다. 방법은 다음과 같습니다: 
 
-  * Download the latest version of geth from the [official site](https://github.com/bnb-chain/bsc-snapshots) and make it executable, optionally move it `/usr/local/bin/geth`
+  * [공식 사이트](https://github.com/bnb-chain/bsc-snapshots)에서 최신 geth 버전을 다운로드 받고 실행 파일로 만듭니다. `/usr/local/bin/geth` 로 옮기는 것을 추천합니다.
   
-  * Download mainnet.zip and unzip
+  * mainnet.zip를 다운 받고 압축을 해제합니다
   
-  * Generate genesis using command below, will also create a mainnet folder for blockchain data ./geth_linux --datadir mainnet init genesis.json
+  * 아래 명령어를 통해 제네시스를 생성하면, 블록체인 데이터를 위한 메인넷 폴더도 생성됩니다
+    ./geth_linux --datadir mainnet init genesis.json
   
-  * Download the latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots)
+  * [여기](https://github.com/bnb-chain/bsc-snapshots)서 최신 스냅샷을 다운로드 받으세요
    
-  * Extract the snapshot
+  * 스냅샷을 추출하세요
  
-  * Move the snapshot data to mainnet folder
+  * 스냅샷 데이터를 메인넷 폴더로 옮기세요
 
       `rm -rf mainnet/geth/chaindata`  
 
@@ -184,38 +189,38 @@ The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows:
       
       `mv server/data-seed/geth/triecache mainnet/geth/triecache`  
 
-[Optional] Open config.toml and delete the Node Log section, just useful for getting logs straight on the terminal or just use tail to look at the logs
+[선택사항] config.toml 을 열고 Node Log 부분을 삭제하세요. 터미널에 직접 로그를 받거나 tail로 로그를 조회할 때 유용합니다.
 
-[Optional] Create a service or use screen to run the command below, so it doesn't stop if you are using SSH.
-Run screen then press enter, anytime you lose connection via ssh, run screen -r to get back the "screen/terminal" where geth was running Geth Command 
+[선택사항] SSH 사용 시 멈추지 않도록 서비스를 생성하거나 스크린에서 명령어를 실행합니다.
+스크린을 실행하고 엔터를 눌러서, ssh로 인해 접속이 끊겼을 시,  `screen -r`을 실행하여 geth가 명령어를 돌리면 "screen/terminal"로 복귀합니다. 
 
 `geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false –diffsync`
 
-### What are the few adjustments that can help resolve sync issues?
+### 동기화 문제를 해결하기 위해서는 어떻게 해야 하나요?
 
-  * Keep maxpeers at around 30. Either Too large or too less is not suggested
+  * 최대 피어를 약 30으로 유지하세요. 너무 많거나 너무 적은 것은 추천하지 않습니다.
   
-  * Enable snapshot, snapshot is another format of state world, it is designed to improve the performance. You can always set it to true.
+  * 스냅샷을 활성화합니다, 스냅샷은 상태 세계에 또 다른 형식으로 성능을 개선하기 위해 설계되었습니다. 항상 참(true)으로 설정할 수 있습니다.
   
-  * Upgrade to 1.1.5 and diffsync is enabled
+  * 1.1.5로 업그레이드하여 diffsync를 활성화합니다.
   
-  * Try to reduce amount of peers to 30-50 (more peers need more resources) and make sure you're connected to enough peers with net.peerCount
+  * 30-50으로 피어 수를 줄여보세요 (리소스 많을 시 피어 더 필요). net.peerCount를 통해 피어가 충분히 연결되어 있는지 확인하세요.
   
-  * Upgrade your hardware, especially Disk and CPU resources.
+  * 하드웨어를 업그레이드 하세요 (특히 디스크와 CPU 리소스)
 
-### Why is the tx from my dapp not visible on the bscscan even though its hash is generated?
-Due to network congestion, it is possible for the tx to appear after a delay. Another possibility is that the number of pending txs have exceeded the size of the limited tx pool of the network and hence the txs have been dropped.
+### 제 dapp에서 트랜잭션의 해시가 생성되었는되도 왜 bscscan에서 조회가 불가능한가요?
+네트워크 혼잡으로 트랜잭션이 지연된 후 나타날 수 있습니다. 아니면 대기 중인 트랜잭션들이 제한된 트랜잭션 풀의 용량을 초과하여 트랜잭션이 삭제된 경우입니다.
 
-### What is the best course of actions to make sure the slash indicator for a validator contract doesn’t exceed beyond 150 and getting jailed?
-  * Pruning  is the top choice.
+### 검증인 계약의 슬래싱 계측기가 150을 넘지 않고 수감되지 않도록 할 수 있는 조치는 무엇인가요?
+  * 프루닝 하는 것이 최선입니다.
   
-  * Use better CPU, currently we suggest m5zn.3xlarge, it is 3.2G Hz frequency.
+  * 더 좋은 CPU를 사용하세요. 현재는 m5zn.3xlarge를 추천합니다. 클럭 속도가 3.2GHz 입니다.
   
-  * IOPS above 10000 is good enough.
+  * 10000을 넘는 IOPS면 충분합니다.
   
-  * Running 2-3 backup nodes please.
+  * 2-3개의 백업 노드를 운영하세요.
   
-  * NVMe disk is better than SSD
+  * NVMe 디스크가 SSD보다 좋습니다
 
-### Can the location of the validator nodes be considered as playing factor in performance? Is there any way to get the enode or ips of the validator nodes?
-The validators are usually running in a private network making it hard to connect or trace their location. Furthermore, it is suggested by community developers that EU is considered a better location in terms of performance.
+### 검증인 노드의 위치가 성능에 영향을 줄 수 있나요? 검증인 노드의 enode나 ips를 가져올 방법이 있나요?
+검증인 노드는 대부분 개인 네트워크에서 운영되어 연결하거나 장소를 추적하는 것이 어렵습니다. 게다가, 커뮤니티 개발자들은 EU에서 운영하는 것이 성능 상으로는 더 뛰어나다고 제안하고 있습니다.

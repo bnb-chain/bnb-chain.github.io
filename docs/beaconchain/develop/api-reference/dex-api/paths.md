@@ -1,8 +1,8 @@
 HTTP API
 ========
-Within the ecosystem of Binance Chain, there are several accelerated nodes which provides more secure and faster lines to access Binance Chain and DEX data service including HTTP API.
+바이낸스 생태계 안에는 바이낸스 체인과 HTTP API 같은 DEX 데이터 서비스에 더 안전하고 빠른 회선을 제공하는 몇 개의 가속 노드들이 존재합니다.
 
-For mainnet, there are more accelerated nodes.
+메인넷에는 더 많은 가속 노드들이 존재합니다.
 
   * dex-atlantic.binance.org
 
@@ -11,183 +11,183 @@ For mainnet, there are more accelerated nodes.
   * dex-european.binance.org
 
 
-**Version:** 1.0.0
+**버전:** 1.0.0
 
-**License:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+**라이센스:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### /api/v1/time
 ---
 ##### ***GET***
-**Summary:** Get the block time.
+**요약:** 블록 생성 시간을 가져옵니다.
 
-**Description:** Gets the latest block time and the current time according to the HTTP service.
+**설명:**  HTTP 서비스 현재 시간의 최신 블록 생성 시간을 가져옵니다.
 
-**Destination:** Validator node.
+**도착 지점** 검증인 노드.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:** IP 하나 당 초당 1개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/time](https://dex.binance.org/api/v1/time)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [Times](#times) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [Times](#times) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/node-info
 ---
 ##### ***GET***
-**Summary:** Get node information.
+**요약:** 노드 정보를 가져옵니다.
 
-**Description:** Gets runtime information about the node.
+**설명:**  노드에 관한 런타임 정보를 가져옵니다.
 
-**Destination:** Validator node.
+**도착 지점**  검증인 노드.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/node-info](https://dex.binance.org/api/v1/node-info)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ResultStatus](#resultstatus) |
+| 200 | Success(성공) | [ResultStatus](#resultstatus) |
 
 ### /api/v1/validators
 ---
 ##### ***GET***
-**Summary:** Get validators.
+**요약:** 검증인을 가져옵니다.
 
-**Description:** Gets the list of validators used in consensus.
+**설명:**  합의에 참여하는 검증인의 리스트를 가져옵니다.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/validators](https://dex.binance.org/api/v1/validators)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Validators](#validators) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [검증인들](#검증인들) ] |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/peers
 ---
 ##### ***GET***
-**Summary:** Get network peers.
+**요약:** 네트워크 피어를 가져옵니다.
 
-**Description:** Gets the list of network peers.
+**설명:**  네트워크 피어 리스트를 가져옵니다.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/peers](https://dex.binance.org/api/v1/peers)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Peer](#peer) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [피어](#피어) ] |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/account/{address}
 ---
 ##### ***GET***
-**Summary:** Get an account.
+**요약:** 계정을 가져옵니다.
 
-**Description:** Gets account metadata for an address.
+**설명:**  주소에 대한 계정 메타데이터를 가져옵니다.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
+| address | path | 쿼리할 계정 주소 | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [Account](#account) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found | [Error](#error) |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [계정](#계정) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) | [에러](#에러). |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/account/{address}/sequence
 ---
 ##### ***GET***
-**Summary:** Get an account sequence.
+**요약:** 계정 시퀸스를 가져옵니다.
 
-**Description:** Gets an account sequence for an address.
+**설명:**  주소에 대한 계정 시퀸스를 가져옵니다.
 
-**Destination:** Validator node.
+**도착 지점**  검증인 노드.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
+| address | path | 쿼리할 계정 주소 | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [AccountSequence](#accountsequence) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [AccountSequence](#accountsequence) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/tx/{hash}
 ---
 ##### ***GET***
-**Summary:** Get a transaction.
+**요약:** 트랜잭션을 가져옵니다.
 
-**Description:** Gets transaction metadata by transaction ID. By default, transactions are returned in a raw format. You may add `?format=json` to the end of the path to obtain a more readable response.
+**설명:**  트랜잭션 ID로 트랜잭션 메타데이터를 가져옵니다.기본적으로 트랜잭션은 원시 형식으로 반환됩니다. 더 읽기 쉬운 응답을 위해 경로 뒤에 `?format=json`를 추가해도 됩니다.
 
-**Destination:** Seed node.
+**도착 지점**  시드 노드.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
-**Example:**
+**예시:**
 
-Below is an example response of a send transaction when `?format=json` is used.
+아래는 `?format=json`가 사용되었을 때 발송 트랜잭션의 응답 예시입니다.
 ```
     {
      code:0,
@@ -258,884 +258,881 @@ Below is an example response of a send transaction when `?format=json` is used.
 ```
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| hash | path | The transaction hash to query | Yes | string |
-| format | query | Response format (`json` or amino) | No | string |
+| hash | path | 쿼리할 트랜잭션 해시 | 예 | string |
+| format | query | 응답 형식 (`json` 이나 amino) | 아니오 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 0 | Success | [Transaction](#transaction) |
-| 404 | Not Found |  |
-| 500 | Bad Request | [Error](#error) |
-| default | Generic error response | [Error](#error) |
+| 0 | Success(성공) | [Transaction](#transaction) |
+| 404 | Not Found(칮을 수 없음) |  |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/tokens
 ---
 ##### ***GET***
-**Summary:** Get tokens list.
+**요약:** Get tokens list.
 
-**Description:** Gets a list of tokens that have been issued.
+**설명:**  발행된 토큰 리스트 가져오기.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/tokens](https://dex.binance.org/api/v1/tokens)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 100. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
+| limit | query | 기본 100. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Token](#token) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Token](#token) ] |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/markets
 ---
 ##### ***GET***
-**Summary:** Get market pairs.
+**요약:** 마켓 쌍 가져오기.
 
-**Description:** Gets the list of market pairs that have been listed.
+**설명:**  상장된 마켓 쌍 리스트 가져오기.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/markets](https://dex.binance.org/api/v1/markets)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Market](#market) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Market](#market) ] |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/fees
 ---
 ##### ***GET***
-**Summary:** Obtain trading fees information.
+**요약:** 거래 수수료 정보 가져오기.
 
-**Description:** Gets the current trading fees settings.
+**설명:**  현재 거래 수수료 정보 설정 가져오기.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/fees](https://dex.binance.org/api/v1/fees)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Fee](#fee) ] |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Fee](#fee) ] |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/depth
 ---
 ##### ***GET***
-**Summary:** Get the order book.
+**요약:** 오더 북을 가져옵니다.
 
-**Description:** Gets the order book depth data for a given pair symbol.
+**설명:**  주어진 심볼 쌍에 대한 오더 북 깊이 데이터를 가져옵니다.
 
-The given _limit_ must be one of the allowed limits below.
+_한계_는 아래 혀용된 한계 중 하나여야 합니다.
 
-**Destination:** Validator node.
+**도착 지점**  검증인 노드.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
-| limit | query | The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000] | No | integer |
+| symbol | query | 마켓 쌍 심볼, 예. NNB-0AD_BNB | 예 | string |
+| limit | query | 결과의 한계. 허용된 한계: [5, 10, 20, 50, 100, 500, 1000] | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [MarketDepth](#marketdepth) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [MarketDepth](#marketdepth) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/broadcast
 ---
 ##### ***POST***
-**Summary:** Broadcast a transaction.
+**요약:** 트랜잭션 전파.
 
-**Description:** Broadcasts a signed transaction. A single transaction must be sent hex-encoded with a `content-type` of `text/plain`.
+**설명:**  서명된 트랜잭션 전파. 단일 트랜잭션은 `text/plain`의  `content-type`으로 hex 인코딩 되어 전송되야 합니다.
 
-**Destination:** Witness node.
+**도착 지점**  증인 노드.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/broadcast](https://dex.binance.org/api/v1/broadcast)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| sync | query | Synchronous broadcast (wait for [DeliverTx](https://github.com/tendermint/tendermint/wiki/Application-Developers#delivertx))?  | No | boolean |
-| body | body |  | Yes | binary |
+| sync | query | 동기적 전파([DeliverTx](https://github.com/tendermint/tendermint/wiki/Application-Developers#delivertx) 대기)?  | 아니오 | boolean |
+| body | body |  | 예 | binary |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Transaction](#transaction) ] |
-| 400 | Bad Request | [Error](#error) |
-| 401 | Bad Signature | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Transaction](#transaction) ] |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 401 | Bad Signature | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/klines
 ---
 ##### ***GET***
-**Summary:** Get candlestick bars.
+**요약:** 캔들스틱 막대 가져오기.
 
-**Description:** Gets candlestick/kline bars for a symbol. Bars are uniquely identified by their open time.
+**설명:**  심볼에 대한 캔들스틱/클라인 막대 가져오기. 막대는 각 막대의 시작 시간을 통해 구분 됩니다.
 
-If the time window is larger than limits, only the first n klines will return. In this case, please either shrink the window or increase the limit to get proper amount of klines.
+시간 창이 한계보다 크다면, 첫 번째 n개의 클라인만 반환됩니다. 이 경우, 창을 줄이거나 한계를 늘려 적당한 양의 클라인을 가져오세요.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
 
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
+**테스트넷 URL:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
 
-**Example**
+**예시**
 
 ```
 [
-  1499040000000,      // Open time
+  1499040000000,      // Open time (시작 시간)
   "0.01634790",       // Open
-  "0.80000000",       // High
-  "0.01575800",       // Low
+  "0.80000000",       // High (고점)
+  "0.01575800",       // Low (저점)
   "0.01577100",       // Close
   "148976.11427815",  // Volume
-  1499644799999,      // Close time
-  "2434.19055334",    // Quote asset volume
-  308                // Number of trades
+  1499644799999,      // Close time (종료 시간)
+  "2434.19055334",    // Quote asset volume (견적 자산 규모)
+  308                // Number of trades (거래 횟수)
 ]
 ```
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | Yes | string |
-| interval | query | interval. Allowed value: [1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | Yes | enum string |
-| limit | query | default 300; max 1000. | No | integer |
-| startTime | query | start time in Milliseconds | No | long |
-| endTime | query | end time in Milliseconds | No | long |
+| symbol | query | symbol | 예 | string |
+| interval | query | 간격. 허용된 값: [1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | 예 | enum string |
+| limit | query | 기본 300; 최대 1000. | 아니오 | integer |
+| startTime | query | 시작 시간 (밀리초) | 아니오 | long |
+| endTime | query | 종료 시간 (밀리초) | 아니오 | long |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ [Candlestick](#candlestick) ] |
 
 ### /api/v1/orders/closed
 ---
 ##### ***GET***
-**Summary:** Get closed orders.
+**요약:** 닫힌 주문을 가져옵니다.
 
-**Description:** Gets closed (filled and cancelled) orders for a given address.
+**설명:**  주어진 주소에 대한 닫힌(체결 혹은 취소) 주소를 가져옵니다.
 
-**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+**쿼리 창:**  기본 쿼리 창은 최근 7일입니다. 쿼리 창의 최대 시작-종료 기간은 3개월입니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| end | query | end time in Milliseconds | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| status | query | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No | enum string |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 소유자 주소 | 예 | string |
+| end | query | 종료 시간 (밀리초) | 아니오 | long |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| side | query | 주문 측. 1 - 구매  2 - sell. | 아니오 | integer |
+| start | query | 시작 시간 (밀리초) | 아니오 | long |
+| status | query | 주문 상태 리스트. 허용된 값: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | 아니오 | enum string |
+| symbol | query | symbol | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OrderList](#orderlist) |
 
 ### /api/v1/orders/open
 ---
 ##### ***GET***
-**Summary:** Get open orders.
+**요약:** 열린 주문을 가져옵니다.
 
-**Description:** Gets open orders for a given address.
+**설명:**  주어진 주소에 대한 열린 주문을 가져옵니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 소유자 주소 | 예 | string |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| symbol | query | symbol | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OrderList](#orderlist) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/orders/{id}
 ---
 ##### ***GET***
-**Summary:** Get an order.
+**요약:** 주문을 가져옵니다.
 
-**Description:** Gets metadata for an individual order by its ID.
+**설명:**  ID로 개별 주문에 대한 메타 데이터를 가져옵니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| id | path | order id | Yes | string |
+| id | path | 주문 ID | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | OK | [Order](#order) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | OK | [주문](#주문) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/ticker/24hr
 ---
 ##### ***GET***
-**Summary:** Get a market ticker.
+**요약:** 마켓 티커 가져오기.
 
-**Description:** Gets 24 hour price change statistics for a market pair symbol. Updated every second.
+**설명:**  마켓 거래 쌍에 대한 24시간 가격 변동 통계를 가져옵니다.  매초 업데이트됩니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | No | string |
+| symbol | query | symbol | 아니오 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ [TickerStatistics](#tickerstatistics) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/trades
 ---
 ##### ***GET***
-**Summary:** Get market trades.
+**요약:** 마켓 거래를 가져옵니다.
 
-**Description:** Gets a list of historical trades.
+**설명:**  거래 내역 리스트를 가져옵니다.
 
-**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+**쿼리 창:**  기본 쿼리 창은 최근 7일입니다. 쿼리 창의 최대 시작-종료 기간은 3개월입니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the buyer/seller address | No | string |
-| buyerOrderId | query | buyer order id | No | string |
-| end | query | end time in Milliseconds | No | long |
-| height | query | block height | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| quoteAsset | query | quote asset | No | string |
-| sellerOrderId | query | seller order id | No | string |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 구매자/판매자 주소 | 아니오 | string |
+| buyerOrderId | query | 구매자 주문 id | 아니오 | string |
+| end | query | 종료 시간 (밀리초) | 아니오 | long |
+| height | query | 블록 높이 | 아니오 | long |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| quoteAsset | query | 견적 자산 | 아니오 | string |
+| sellerOrderId | query | 판매자 주문 id | 아니오 | string |
+| side | query | 주문 측. 1 - 구매  2 - sell. | 아니오 | integer |
+| start | query | 시작 시간 (밀리초) | 아니오 | long |
+| symbol | query | symbol | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TradePage](#tradepage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/block-exchange-fee
 ---
 ##### ***GET***
-**Summary:** Trading fee of the address grouped by block
+**요약:** 블록에 묶인 주소들의 거래 수수료
 
-**Description:** Get historical trading fees of the address, including fees of trade/canceled order/expired order. Transfer and other transaction fees are not included. Order by block height DESC.
-**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
-**Rate Limit:** 5 requests per IP per second.
+**설명:**  주소의 거래/거래 취소/만료된 주문을 포함한 거래 수수료를 가져옵니다. 전송 및 다른 트랜잭션 수수료는 포함되지 않습니다.블록 높이 DESC로 정렬됩니다.
+**쿼리 창:**  기본 쿼리 창은 최근 7일입니다. 쿼리 창의 최대 시작-종료 기간은 3개월입니다.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the seller/buyer address | No | string |
-| end | query | end time | No | long |
-| limit | query | default 50; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 판매자/구매자 주소 | 아니오 | string |
+| end | query | 종료 시간 | 아니오 | long |
+| limit | query | default 50; max 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| start | query | 시작 시간 (밀리초) | 아니오 | long |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [BlockExchangeFeePage](#blockexchangefeepage) |
 
 ### /api/v1/transactions
 ---
 
-**Note:** This endpoint will be retired soon, use [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1txs) instead (please read the migration guide).
+**참고:** 해당 엔드포인트는 곧 제거될 예정이며 [다음 api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1txs)를 대신 사용하세요 (이전 방법에 관해 읽어주세요).
 
 ##### ***GET***
-**Summary:** Get transactions.
+**요약:** 트랜잭션을 가져옵니다.
 
-**Description:** Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
+**설명:**  트랜잭션 리스트를 가져옵니다. 이 API에서는 다중 전송 트랜잭션을 사용할 수 없습니다. 현재 'confirmBlocks'과 'txAge' 는 지원되지 않습니다.**쿼리 창:**  Default query window is latest 24 hours;쿼리 창의 최대 시작-종료 기간은 3개월입니다.
 
-**Query Window:** Default query window is latest 24 hours;The maximum start - end query window is 3 months.
-
-**Rate Limit:** 15 requests per IP per minute.
+**Rate 제한:**  IP 하나 당 분당 15개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | address | Yes | string |
-| blockHeight | query | blockHeight | No | long |
-| endTime | query | endTime in Milliseconds | No | long |
-| limit | query | limit | No | integer |
-| offset | query | offset | No | integer |
-| side | query | transaction side. Allowed value: [ RECEIVE, SEND] | No | enum string |
-| startTime | query | start time in Milliseconds | No | long |
-| txAsset | query | txAsset | No | string |
-| txType | query | transaction type. Allowed value: [ TRANSFER,NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL] | No | enum string |
+| address | query | 주소 | 예 | string |
+| blockHeight | query | blockHeight | 아니오 | long |
+| endTime | query | 종료 시간 (밀리초) | 아니오 | long |
+| limit | query | limit | 아니오 | integer |
+| offset | query | offset | 아니오 | integer |
+| side | query | 트랜잭션 측. 허용된 값: [ RECEIVE, SEND] | 아니오 | enum string |
+| startTime | query | 시작 시간 (밀리초) | 아니오 | long |
+| txAsset | query | txAsset | 아니오 | string |
+| txType | query | 트랜잭션 유형. 허용된 값: [ TRANSFER,NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL] | 아니오 | enum string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TxPage](#txpage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| 403 | Tx is not within 24h query window|  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| 403 | Tx 이 24시간 쿼리 창에 있지 않습니다 |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/transactions-in-block/{blockHeight}
 ---
-**Note:** This endpoint will be retired soon, use [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1blocksblockheighttxs) instead (please read the migration guide).
+**Note:**해당 엔드포인트가 곧 제거되며 [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1blocksblockheighttxs) 를 대신 사용하세요 (이전 방법은 가이드를 읽어주세요)..
 
 ##### ***GET***
-**Summary:** Get transactions in the specific block.
+**요약:** 특정 블록의 트랜잭션을 가져옵니다.
 
-**Description:** Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
+**설명:**  블록 내 트랜잭션을 가져옵니다. Multi-send and multi-coin transactions are flattened as transactions. 이 API는 누락되었습니다.
 
-**Rate Limit:** 1 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
-**Rate Limit:** 15 requests per IP per minute.
+**Rate 제한:**  IP 하나 당 분당 15개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | block height | Yes | string |
+| blockHeight | path | 블록 높이 | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [BlockTx](#blocktx) |
-| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request. 쿼리하는 블록이 현재 블록 높이보다 높습니다. | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v2/transactions-in-block/{blockHeight}
 
-**Note:** This endpoint will be retired soon, use [this api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1blocksblockheighttxs) instead (please read the migration guide).
+**참고:**해당 엔드포인트가 곧 제거되며 [다음 api](https://github.com/bnb-chain/bnb-chain.github.io/blob/master/docs/beaconchain/develop/api-reference/dex-api/block-service.md#apiv1blocksblockheighttxs) 를 대신 사용하세요 (이전 방법은 가이드를 읽어주세요)..
 
 ---
 ##### ***GET***
-**Summary:** transactions in Block
+**요약:** 블록 내 트랜잭션
 
-**Description:** Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+**설명:**  블록 내 트랜잭션을 가져옵니다. Multi-send와 multi-coin 트랜잭션이 하위 트랜잭션으로 포함됩니다.
 
-**Rate Limit:** 1 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 1개 요청.
 
-**Rate Limit:** 15 requests per IP per minute.
+**Rate 제한:**  IP 하나 당 분당 15개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | blockHeight | Yes | long |
+| blockHeight | path | blockHeight | 예 | long |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [BlockTxV2](#blocktxv2) |
-| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
+| 400 | Bad Request. 쿼리하는 블록이 현재 블록 높이보다 높습니다. | [에러](#에러). |
 
 ### /api/v1/atomic-swaps
 ---
 ##### ***GET***
-**Summary:** AtomicSwap
+**요약:** AtomicSwap
 
-**Description:** Get atomic swaps by address.
+**설명:**  주소로 아토믹 스왑을 가져옵니다.
 
-**Rate Limit:** 5 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
-**Rate Limit:** 60 requests per IP per minute.
+**Rate 제한:**  IP 하나 당 분당 60개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| endTime | query | end time of blockTimestamp | No | long |
-| fromAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
-| limit | query | default 25; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| startTime | query | start time of blockTimestamp in Milliseconds; The maximum start - end query window is 3 months; Default query window is the latest 30 days. | No | long |
-| toAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
+| endTime | query | blockTimestamp 종료 시간 | 아니오 | long |
+| fromAddress | query | toAddress와 fromAddress 중 하나가 매개변수로 주어집니다 | 아니오 | string |
+| limit | query | 기본 25; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| startTime | query | blockTimestamp 시작 시간 (밀리초); 최대 시작 - 종료 쿼리 창은 3개월; 기본 쿼리 창은 최근 30 일. | 아니오 | long |
+| toAddress | query | toAddress와 fromAddress 중 하나가 매개변수로 주어집니다 | 아니오 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [AtomicSwapPage](#atomicswappage) |
 
 ### /api/v1/atomic-swaps/{id}
 ---
 ##### ***GET***
-**Summary:** AtomicSwap
+**요약:** AtomicSwap
 
-**Description:** Get an AtomicSwap by swap id
+**설명:**  스왑 id로 아토믹스왑을 가져옵니다
 
-**Rate Limit:** 5 request per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
-**Rate Limit:** 60 request per IP per minute.
+**Rate 제한:**  IP 하나 당 분당 60개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| id | path | swap id | Yes | string |
+| id | path | swap id | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [AtomicSwap](#atomicswap) |
 
 ### /api/v1/timelocks/{address}
 ---
 ##### ***GET***
-**Summary:** Gets time lock records given an address
+**요약:** 해당 주소의 타임록 기록을 가져옵니다
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
-| id | query | the record id of timelock to query | No | long |
+| address | path | 쿼리할 계정 주소 | 예 | string |
+| id | query | 쿼리할 기록 id의 타임록 | 아니오 | long |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [TimeLocks](#timelocks) |
-| 400 | Bad Request | [Error](#error) |
-| 500 | internal server error | [Error](#error) |
+| 200 | Success(성공) | [타임록](#타임록) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 500 | internal server error | [에러](#에러). |
 
 ### /api/v1/timelock/{account_addr}?(id={recordid})
 ---
 ##### ***GET***
-**Summary:** Get timelock records of an address.
+**요약:** 주소의 타임록 기록을 가져옵니다.
 
-**Description:** Get the timelock history of an address.
-**Rate Limit:** 60 requests per IP per minute.
+**설명:**  주소의 타임록 기록을 가져옵니다.
+**Rate 제한:**  IP 하나 당 분당 60개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
-| id | query | the record id of timelock to query | No | long |
+| address | path | 쿼리할 계정 주소 | 예 | string |
+| id | query | 쿼리할 기록 id의 타임록 | 아니오 | long |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [TimeLocks](#timelocks) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| 500 | internal server error | [Error](#error) |
+| 200 | Success(성공) | [타임록](#타임록) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| 500 | internal server error | [에러](#에러). |
 
 ### /api/v1/mini/tokens
 ---
 ##### ***GET***
-**Summary:** Gets a list of available mini tokens.
+**요약:** 미니 토큰 리스트를 가져옵니다.
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| offset | query | offset | No | integer |
-| limit | query | limit | No | integer |
+| offset | query | offset | 아니오 | integer |
+| limit | query | limit | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [MiniTokens](#minitokens) |
-| 400 | Bad Request | [Error](#error) |
-| 500 | internal server error | [Error](#error) |
+| 200 | Success(성공) | [MiniTokens](#minitokens) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 500 | internal server error | [에러](#에러). |
 
 ### /api/v1/mini/markets
 ---
 ##### ***GET***
-**Summary:** Gets a list of mini market pairs.
+**요약:** 미니 마켓 쌍에 대한 리스트를 가져옵니다.
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| offset | query | offset | No | integer |
-| limit | query | limit | No | integer |
+| offset | query | offset | 아니오 | integer |
+| limit | query | limit | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [Markets](#markets) |
-| 400 | Bad Request | [Error](#error) |
+| 200 | Success(성공) | [마캣](#마켓) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
 
 ### /api/v1/mini/klines
 ---
 ##### ***GET***
-**Summary:** Get mini-token candlestick bars.
+**요약:** 미니 토큰 캔들스틱 막대를 가져옵니다.
 
-**Description:** Gets candlestick/kline bars for a mini-token symbol pair. Bars are uniquely identified by their open time.
+**설명:**  미니 토큰 심볼 쌍을 위한 캔들스틱/클라인 막대를 가져옵니다. 막대는 각 막대의 시작 시간을 통해 구분 됩니다.
 
-If the time window is larger than limits, only the first n klines will return. In this case, please either shrink the window or increase the limit to get proper amount of klines.
+시간 창이 한계보다 크다면, 첫 번째 n개의 클라인만 반환됩니다. 이 경우, 창을 줄이거나 한계를 늘려 적당한 양의 클라인을 가져오세요.
 
-**Rate Limit:** 10 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 10개 요청.
 
-**Example**
+**예시**
 
 ```
 [
-  1499040000000,      // Open time
+  1499040000000,      // Open time (시작 시간)
   "0.01634790",       // Open
-  "0.80000000",       // High
-  "0.01575800",       // Low
+  "0.80000000",       // High (고점)
+  "0.01575800",       // Low (저점)
   "0.01577100",       // Close
   "148976.11427815",  // Volume
-  1499644799999,      // Close time
-  "2434.19055334",    // Quote asset volume
-  308                // Number of trades
+  1499644799999,      // Close time (종료 시간)
+  "2434.19055334",    // Quote asset volume (견적 자산 규모)
+  308                // Number of trades (거래 횟수)
 ]
 ```
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | Yes | string |
-| interval | query | interval. Allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | Yes | enum string |
-| limit | query | default 300; max 1000. | No | integer |
-| startTime | query | start time in Milliseconds | No | long |
-| endTime | query | end time in Milliseconds | No | long |
+| symbol | query | symbol | 예 | string |
+| interval | query | 간격. 허용된 값: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | 예 | enum string |
+| limit | query | 기본 300; 최대 1000. | 아니오 | integer |
+| startTime | query | 시작 시간 (밀리초) | 아니오 | long |
+| endTime | query | 종료 시간 (밀리초) | 아니오 | long |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ [Candlestick](#candlestick) ] |
 
 ### /api/v1/mini/orders/closed
 ---
 ##### ***GET***
-**Summary:** Get closed orders of mini-token pairs.
+**요약:** 미니 토큰 쌍에 대한 닫힌 주문을 가져옵니다.
 
-**Description:** Gets closed (filled and cancelled) orders for a given address.
+**설명:**  주어진 주소에 대한 닫힌(체결 혹은 취소) 주소를 가져옵니다.
 
-**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+**쿼리 창:**  기본 쿼리 창은 최근 7일입니다. 쿼리 창의 최대 시작-종료 기간은 3개월입니다.
 
-**Rate Limit:** 5 requests per IP per second.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| end | query | end time in Milliseconds | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| status | query | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No | enum string |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 소유자 주소 | 예 | string |
+| end | query | 종료 시간 (밀리초) | 아니오 | long |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| side | query | 주문 측. 1 - 구매  2 - sell. | 아니오 | integer |
+| start | query | 시작 시간 (밀리초) | 아니오 | long |
+| status | query | 주문 상태 리스트. 허용된 값: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | 아니오 | enum string |
+| symbol | query | 심볼 | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OrderList](#orderlist) |
 
 ### /api/v1/mini/orders/open
 ---
 ##### ***GET***
-**Summary:** Get open orders of mini-token pairs.
+**요약:** 미니 토큰 쌍에 대한 열린 주문을 가져옵니다.
 
-**Description:** Gets open orders for a given address.
-**Rate Limit:** 5 requests per IP per second.
+**설명:**  주어진 주소에 대한 열린 주문을 가져옵니다.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 소유자 주소 | 예 | string |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| symbol | query | symbol | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OrderList](#orderlist) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/mini/orders/{id}
 ---
 ##### ***GET***
-**Summary:** Get an order of mini-token pairs.
+**요약:** 미니 토큰 쌍의 주문을 가져옵니다.
 
-**Description:** Gets metadata for an individual order by its ID.
-**Rate Limit:** 5 requests per IP per second.
+**설명:**  ID로 개별 주문에 대한 메타 데이터를 가져옵니다.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| id | path | order id | Yes | string |
+| id | path | 주문 ID | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | OK | [Order](#order) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | OK | [주문](#주문) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/mini/ticker/24hr
 ---
 ##### ***GET***
-**Summary:** Get a market ticker of mini-token pairs.
+**요약:** 미니 토큰 쌍에 대한 마켓 티커를 가져옵니다. 
 
-**Description:** Gets 24 hour price change statistics for a market pair symbol. Updated every second.
-**Rate Limit:** 5 requests per IP per second.
+**설명:**  마켓 거래 쌍에 대한 24시간 가격 변동 통계를 가져옵니다.  매초 업데이트됩니다.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | No | string |
+| symbol | query | 심볼 | 아니오 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ [TickerStatistics](#tickerstatistics) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/mini/trades
 ---
 ##### ***GET***
-**Summary:** Get market trades of mini-token pairs.
+**요약:** 미니 토큰 쌍에 대한 마켓 거래를 가져옵니다.
 
-**Description:** Gets a list of historical trades.
-**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
-**Rate Limit:** 5 requests per IP per second.
+**설명:**  거래 내역 리스트를 가져옵니다.
+**쿼리 창:**  기본 쿼리 창은 최근 7일입니다. 쿼리 창의 최대 시작-종료 기간은 3개월입니다.
+**Rate 제한:**  IP 하나 당 초당 5개 요청.
 
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the buyer/seller address | No | string |
-| buyerOrderId | query | buyer order id | No | string |
-| end | query | end time in Milliseconds | No | long |
-| height | query | block height | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| quoteAsset | query | quote asset | No | string |
-| sellerOrderId | query | seller order id | No | string |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| address | query | 구매자/판매자 주소 | 아니오 | string |
+| buyerOrderId | query | 구매자 주문 id | 아니오 | string |
+| end | query | 종료 시간 (밀리초) | 아니오 | long |
+| height | query | 블록 높이 | 아니오 | long |
+| limit | query | 기본 500; 최대 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| quoteAsset | query | 견적 자산 | 아니오 | string |
+| sellerOrderId | query | 판매자 주문 id | 아니오 | string |
+| side | query | 주문 측. 1 - 구매  2 - sell. | 아니오 | integer |
+| start | query | 시작 시간 (밀리초) | 아니오 | long |
+| symbol | query | symbol | 아니오 | string |
+| total | query | 필요 총 개수, 0 - 불필요 1 - 필요; 기본 - 불필요, 응답으로 total=-1 반환 | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TradePage](#tradepage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### Models
 ---
 
-### Error
+### 에러
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| code | long | error code | 400 |
-| message | string | error message |  |
+| code | long | 에러 코드 | 400 |
+| message | string | 에러 메세지 |  |
 
-### Times
+### 시간
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| ap_time | string | event time | e.g. 2019-01-21T10:30:00Z |
-| block_time | string | the time of latest block | e.g. 2019-01-21T10:30:00Z |
+| ap_time | string | 이벤트 시간 | 예. 2019-01-21T10:30:00Z |
+| block_time | string | 최신 블록 시간 | 예. 2019-01-21T10:30:00Z |
 
-### Validators
+### 검증인들
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| block_height | long | Current block height | 12345 |
-| validators | [ [Validator](#validator) ] |  |  |
+| block_height | long | 현재 블록 높이 | 12345 |
+| validators | [ [검증인](#검증인) ] |  |  |
 
-### Validator
+### 검증인
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| address | string (hex address) | Address |  |
-| pub_key | [ integer ] | Public key bytes |  |
-| voting_power | integer | validator's voting power |  |
-| accum | integer | validator's accumulated voting power |  |
+| address | string (hex 주소) | 주소 |  |
+| pub_key | [ integer ] | 공개 키 바이트 수 |  |
+| voting_power | integer | 검증인의 투표권 |  |
+| accum | integer | 검증인의 누적 투표권 |  |
 
-### Peer
+### 피어
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| id | string | Authenticated identifier | 8c379d4d3b9995c712665dc9a9414dbde5b30483 |
-| original_listen_addr | string (RemoteAddr) | Original listen address before PeersService changed it |  |
-| listen_addr | string (RemoteAddr) | Listen address |  |
-| access_addr | string (RemoteAddr) | Access address (HTTP) |  |
-| stream_addr | string (RemoteAddr) | Stream address (WS) |  |
-| network | string | Chain ID | Binance-Chain-Ganges |
-| version | string | Version | 0.30.1 |
-| moniker | string | Moniker (Name) | data-seed-1 |
-| capabilities | [ string ] | Array of capability tags: node, qs, ap, ws | node,ap |
-| accelerated | boolean | Is an accelerated path to a validator node |  |
+| id | string | 인증된 식별자 | 8c379d4d3b9995c712665dc9a9414dbde5b30483 |
+| original_listen_addr | string (RemoteAddr) | PeersService가 바꾸기 전 listen 주소  |  |
+| listen_addr | string (RemoteAddr) | Listen 주소 |  |
+| access_addr | string (RemoteAddr) | 접근 주소 (HTTP) |  |
+| stream_addr | string (RemoteAddr) | 스트림 주소 (WS) |  |
+| network | string | 체인 ID | Binance-Chain-Ganges |
+| version | string | 버전 | 0.30.1 |
+| moniker | string | 이름 | data-seed-1 |
+| capabilities | [ string ] | 가능한 태그의 배열: node, qs, ap, ws | node,ap |
+| accelerated | boolean | 검증인 노드의 가속된 경로 |  |
 
-### Transaction
+### 트랜잭션
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| hash | string (hex) | Hash of transaction, it returned as bytes before, and now it returns as hex string |  |
-| log | string | Log of transaction |  |
-| data | string | Data of transaction |  |
-| height | string | Height of transaction |  |
-| code | integer | Result code of transaction |  |
+| hash | string (hex) | 트랜잭션 해시; 이전에는 바이트로 왔지만 현재는 hex string 형태로 반환됩니다 |  |
+| log | string | 트랜잭션 로그 |  |
+| data | string | 트랜잭션 데이터 |  |
+| height | string | 트랜잭션 높이 |  |
+| code | integer | 트랜잭션 결과 코드 |  |
 | ok | boolean |  |  |
 | tx | object | Detail of transaction, like transaction type, messages and signature
 
-For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
-varies with msg type, if you query with --format=json.
+아래는 트랜잭션 세부 사항에 대한 예시입니다. 대부분은 고정되어 있지만 --format=json로 쿼리하면 msg는 유형에 따라 나뉩니다.
 
 ```
 {
@@ -1189,134 +1186,134 @@ varies with msg type, if you query with --format=json.
 ```
  |  |
 
-### Account
+### 계정
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | account_number | integer |  |  |
 | address | string (address) |  |  |
-| balances | [ [Balance](#balance) ] |  |  |
-| public_key | [ integer ] | Public key bytes |  |
-| sequence | long | sequence is for preventing replay attack |  |
+| balances | [ [잔고](#잔고) ] |  |  |
+| public_key | [ integer ] | 공개 키 바이트 수 |  |
+| sequence | long | 시퀸스는 재생 공격을 방지합니다 |  |
 
 ### AccountSequence
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| sequence | long | number used for preventing replay attack | 1 |
+| sequence | long | 숫자는 재생 공격을 방지하는데 사용됩니다 | 1 |
 
-### Balance
+### 잔고
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| symbol | string (currency) | asset symbol | BNB |
-| free | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
-| locked | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
-| frozen | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
+| symbol | string (currency) | 자산 심볼 | BNB |
+| free | string (fixed8) | 소수점 형태로, 예. 0.00000000 | 0.00000000 |
+| locked | string (fixed8) | 소수점 형태로, 예. 0.00000000 | 0.00000000 |
+| frozen | string (fixed8) | 소수점 형태로, 예. 0.00000000 | 0.00000000 |
 
-### Token
+### 토큰
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| name | string | token name | Binance Chain Native Token |
-| symbol | string | unique token trade symbol | BTC-000 |
-| original_symbol | string | token symbol | BTC |
-| total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
-| owner | string (address) | Address which issue the token |  |
-| contract_address | string | smart contract address for this token |  |
-| contract_decimals | int | the token decimals |  |
+| name | string | 토큰 이름 | Binance Chain Native Token |
+| symbol | string | 고유한 토큰 거래 심볼 | BTC-000 |
+| original_symbol | string | 토큰 심볼 | BTC |
+| total_supply | string (fixed8) | 총 토큰 공급량 소수점 형태로, 예. 1.00000000 | 0.00000000 |
+| owner | string (address) | 토큰을 발행한 주소 |  |
+| contract_address | string | 이 토큰의 스마트 계약 주소 |  |
+| contract_decimals | int | 토큰 소수점 |  |
 
-### Market
+### 마켓
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| base_asset_symbol | string (currency) | symbol of base asset | BNB |
-| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| list_price | string (fixed8) | In decimal form | 1.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
+| base_asset_symbol | string (currency) | 기초 자산 심볼 | BNB |
+| quote_asset_symbol | string (currency) | 견적 자산 심볼 | ABC-5CA |
+| list_price | string (fixed8) | 소수점 형태 | 1.00000000 |
+| tick_size | string (fixed8) | 소수점 형태의 최소 가격 변화| 0.00000001 |
+| lot_size | string (fixed8) | 소수점 형태의 최소 거래량 변화 | 1.00000000 |
 
-### Fee
+### 수수료
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
-| fee | number | The fee amount | 1000000000 |
+| msg_type | string | 수수료가 해당하는 트랜잭션 메세지 유형  | submit_proposal |
+| fee | number | 수수료 금액 | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
-| multi_transfer_fee | string | Fee for multi-transfer | 200000 |
-| lower_limit_as_multi | string | e.g. 2 | 2 |
-| fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
-| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
+| multi_transfer_fee | string | 다중 전송 비용 | 200000 |
+| lower_limit_as_multi | string | 예. 2 | 2 |
+| fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | 고정 수수료일 시 설정 |  |
+| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex 수수료 |  |
 
 ### FixedFeeParams
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
-| fee | number | The fixed fee amount | 1000000000 |
+| msg_type | string | 수수료가 해당하는 트랜잭션 메세지 유형  | submit_proposal |
+| fee | number | 고정된 수수료 금액 | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
 
 ### DexFeeFieldParams
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| fee_name | string | fee name |  |
-| fee_value | integer | fee value |  |
+| fee_name | string | 수수료 이름 |  |
+| fee_value | integer | 수수료 값 |  |
 
 ### MarketDepth
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
+| asks | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| pending_match | boolean | 새 주문이 현재 블록에 들어오고 매칭 과정이 사작되지 않았을 시, 참(true)을 반환 |  |
 
-### Candlestick
+### 캔들스틱
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| close | number | closing price |  |
-| closeTime | long | time of closing trade |  |
-| high | number | the highest price |  |
-| low | number | the lowest price |  |
-| numberOfTrades | integer | total trades |  |
-| open | number | open price |  |
-| openTime | long | time of open trade |  |
-| quoteAssetVolume | number | the total trading volume in quote asset |  |
-| volume | number | the total trading volume |  |
+| close | number | 종가 |  |
+| closeTime | long | 거래 종료 시각 |  |
+| high | number | 최고가 |  |
+| low | number | 최저가 |  |
+| numberOfTrades | integer | 총 거래량 |  |
+| open | number | 열린 가격 |  |
+| openTime | long | 거래 시작 시간 |  |
+| quoteAssetVolume | number | 총 견적 자산 거래량 |  |
+| volume | number | 총 거래 규모 |  |
 
-### OrderList
+### 주문리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| order | [ [Order](#order) ] | list of orders |  |
+| order | [ [주문](#주문) ] | 주문 리스트 |  |
 | total | long |  |  |
 
-### Order
+### 주문
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| cumulateQuantity | string | total amount of trades that have made |  |
-| fee | string | trading fee on the latest updated block of this order. Multiple assets are split by semicolon. |  |
-| lastExecutedPrice | string | price of last execution |  |
-| lastExecutedQuantity | string | quantity of last execution |  |
-| orderCreateTime | dateTime | time of order creation |  |
-| orderId | string | order ID |  |
-| owner | string | order issuer |  |
-| price | string | order price |  |
-| quantity | string | order quantity |  |
-| side | integer | 1 for buy and 2 for sell |  |
+| cumulateQuantity | string | 발생한 총 거래량 |  |
+| fee | string | 해당 주문의 최신 업데이트 블록에 대한 거래 수수료. 여러 자산은 세미콜론으로 나눠서 표현합니다. |  |
+| lastExecutedPrice | string | 마지막 실행 가격 |  |
+| lastExecutedQuantity | string | 마지막 실행 수량 |  |
+| orderCreateTime | dateTime | 주문 생성 시각 |  |
+| orderId | string | 주문 ID |  |
+| owner | string | 주문 생성자 |  |
+| price | string | 주문 가격 |  |
+| quantity | string | 주문 수량 |  |
+| side | integer | 1 - 구매  2 - 판매 |  |
 | status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
-| symbol | string | trading pair symbol |  |
-| timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
-| tradeId | string | trade ID |  |
-| transactionHash | string | hash of transaction |  |
-| transactionTime | dateTime | time of latest order update, for example, cancel, expire |  |
-| type | integer | only 2 is available for now, meaning limit order |  |
+| symbol | string | 거래 쌍 심볼 |  |
+| timeInForce | integer | 1 - GTE 주문  3 - IOC 주문 |  |
+| tradeId | string | 거래 ID |  |
+| transactionHash | string | 트랜잭션의 해시 |  |
+| transactionTime | dateTime | 마지막 주문 업데이트 시간 (취소, 만료 등) |  |
+| type | integer | 현재 (2 - 지정가 주문)만 가능 |  |
 
 ### SubTx
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | blockHeight | long |  |  |
 | fromAddr | string |  |  |
@@ -1329,139 +1326,139 @@ varies with msg type, if you query with --format=json.
 
 ### TickerStatistics
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| askPrice | string | sell price |  |
-| askQuantity | string | sell quantity |  |
-| bidPrice | string | buy price |  |
-| bidQuantity | string | buy quantity |  |
-| closeTime | long | time of closing |  |
-| count | long | total trade count |  |
-| firstId | string | ID of first trade |  |
-| highPrice | string | highest price |  |
-| lastId | string | ID of last trade |  |
-| lastPrice | string | last price |  |
-| lastQuantity | string | last quantity |  |
-| lowPrice | string | lowest price |  |
-| openPrice | string | open price |  |
-| openTime | long | open time |  |
-| prevClosePrice | string | last close price |  |
-| priceChange | string | change of price |  |
-| priceChangePercent | string | change of price in percentage |  |
-| quoteVolume | string | trading volume in quote asset |  |
-| symbol | string | trading symbol |  |
-| volume | string | trading volume |  |
-| weightedAvgPrice | string | weighted average price |  |
+| askPrice | string | 판매 가격 |  |
+| askQuantity | string | 판매 수량 |  |
+| bidPrice | string | 구매 가격 |  |
+| bidQuantity | string | 구매 수량 |  |
+| closeTime | long | 종료 시각 |  |
+| count | long | 총 거래  카운트 |  |
+| firstId | string | 첫 거래 ID |  |
+| highPrice | string | 최고가 |  |
+| lastId | string | 마지막 거래 ID |  |
+| lastPrice | string | 마지막 가격 |  |
+| lastQuantity | string | 마지막 수량 |  |
+| lowPrice | string | 최저가 |  |
+| openPrice | string | 열린 가격 |  |
+| openTime | long | 열린 시간 |  |
+| prevClosePrice | string | 마지막 종가 |  |
+| priceChange | string | 가격 변화 |  |
+| priceChangePercent | string | 가격 변화율 |  |
+| quoteVolume | string | 견적 자산으로 거래 규모 |  |
+| symbol | string | 거래 심볼 |  |
+| volume | string | 거래 규모 |  |
+| weightedAvgPrice | string | 가중된 평균 가격 |  |
 
 ### TradePage
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| total | long | total number of trades |  |
-| trade | [ [Trade](#trade) ] |  |  |
+| total | long | 총 거래 횟수 |  |
+| trade | [ [거래](#거래) ] |  |  |
 
-### Trade
+### 거래
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| baseAsset | string | base asset symbol |  |
-| blockHeight | long | block height |  |
-| buyFee | string | trading fee for the buyer address on the block of this trade |  |
-| buyerId | string | id of buyer |  |
-| buyerOrderId | string | order id for buyer |  |
-| buySingleFee | string | trading fee for the buyer address on this single trade | BNB:0.00000172; |
-| buyerSource | long | tx source of buy order | 1 |
-| price | string | trade price |  |
-| quantity | string | trade quantity |  |
-| quoteAsset | string | quote asset symbol |  |
-| sellFee | string | trading fee for the seller address on the block of this trade |  |
-| sellerId | string | seller ID |  |
-| sellerOrderId | string | seller order ID |  |
-| sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
-| sellerSource | long | tx source of sell order | 1 |
-| symbol | string | asset symbol |  |
+| baseAsset | string | 기초 자산 심볼 |  |
+| blockHeight | long | 블록 높이 |  |
+| buyFee | string | 구매자 주소의 블록 거래 수수료 |  |
+| buyerId | string | 구매자 ID |  |
+| buyerOrderId | string | 구매자 주문 id |  |
+| buySingleFee | string | 구매자 주소의 단일 거래에 대한 수수료 | BNB:0.00000172; |
+| buyerSource | long | 구매 주문의 tx 출처 | 1 |
+| price | string | 거래 가격 |  |
+| quantity | string | 거래 수량 |  |
+| quoteAsset | string | 견적 자산 심볼 |  |
+| sellFee | string | 판매자 주소의 블록 거래 수수료 |  |
+| sellerId | string | 판매자 ID |  |
+| sellerOrderId | string | 판매자 주문 id |  |
+| sellSingleFee | string | 판매자 주소의 단일 거래에 대한 수수료 | BNB:0.00000216; |
+| sellerSource | long | 판매 주문 tx 출처 | 1 |
+| symbol | string | 자산 심볼 |  |
 | tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
-| time | long | trade time |  |
-| tradeId | string | trade ID |  |
+| time | long  | 거래 시간 |  |
+| tradeId | string | 거래 ID |  |
 
 ### BlockExchangeFeePage
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | blockExchangeFee | [ [BlockExchangeFee](#blockexchangefee) ] |  |  |
 | total | long |  |  |
 
 ### BlockExchangeFee
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | address | string |  |  |
 | blockHeight | long |  |  |
-| blockTime | long | timestamp of a block |  |
-| fee | string | total fee collected. Multiple assets are split by semicolon. |  |
-| tradeCount | long | trade count of the address on the block |  |
+| blockTime | long | 블록의 타임 스탬프 |  |
+| fee | string | 총 수수료. 여러 자산은 세미콜론으로 구분됩니다. |  |
+| tradeCount | long | 블록에 있는 주소의 거래 건수 |  |
 
 ### TxPage
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| total | long | total sum of transactions |  |
+| total | long | 트랜잭션의 총 계수 |  |
 | tx | [ [Tx](#tx) ] |  |  |
 
 ### BlockTx
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| blockHeight | long | block height |  |
+| blockHeight | long | 블록 높이 |  |
 | tx | [ [Tx](#tx) ] |  |  |
 
 ### BlockTxV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| blockHeight | long | block height |  |
+| blockHeight | long | 블록 높이 |  |
 | tx | [ [TxV2](#txv2) ] |  |  |
 
 ### Tx
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| blockHeight | long | block height |  |
-| code | integer | transaction result code | 0 |
+| blockHeight | long | 블록 높이 |  |
+| code | integer | 트랜잭션 결과 코드 | 0 |
 | confirmBlocks | long |  |  |
 | data | string |  |  |
-| fromAddr | string | from address |  |
-| orderId | string | order ID |  |
-| timeStamp | dateTime | time of transaction |  |
-| toAddr | string | to address |  |
+| fromAddr | string | 보내는 주소 |  |
+| orderId | string | 주문 ID |  |
+| timeStamp | dateTime | 트랜잭션 시간 |  |
+| toAddr | string | 받는 주소 |  |
 | txAge | long |  |  |
 | txAsset | string |  |  |
 | txFee | string |  |  |
-| txHash | string | hash of transaction |  |
-| txType | string | type of transaction |  |
-| value | string | value of transaction |  |
+| txHash | string | 트랜잭션의 해시 |  |
+| txType | string | 트랜잭션의 유형 |  |
+| value | string | 트랜잭션의 값 |  |
 | source | long |  |  |
 | sequence | long |  |  |
-| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| swapId | string | 선택사항. 트랜잭션 유형이 HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL 중 하나일 때 가능 |  |
 | proposalId | string |  |  |
 
 ### ExchangeRate
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | ExchangeRate | object |  |  |
 
 ### ResultStatus
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | validator_info | [ [ValidatorInfo](#validatorinfo) ] |  |  |
-| sync_info | [ [SyncInfo](#syncinfo) ] |  |  |
-| node_info | [ [NodeInfo](#nodeinfo) ] |  |  |
+| sync_info | [ [동기화정보](#동기화정보) ] |  |  |
+| node_info | [ [노드정보](#노드정보) ] |  |  |
 
-### NodeInfo
+### 노드정보
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | Protocol_Version | [ [ProtocolVersion](#protocolversion) ] |  |  |
 | ID | string |  |  |
@@ -1472,9 +1469,9 @@ varies with msg type, if you query with --format=json.
 | moniker | string |  |  |
 | other | object |  |  |
 
-### SyncInfo
+### 동기화정보
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | latest_block_hash | string (hex) |  |  |
 | latest_app_hash | string (hex) |  |  |
@@ -1484,32 +1481,32 @@ varies with msg type, if you query with --format=json.
 
 ### ProtocolVersion
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | P2P | integer (uint64) |  |  |
 | block | integer (uint64) |  |  |
 | app | integer (uint64) |  |  |
 
-### ValidatorInfo
+### 검증인정보
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| address | string | hex address |  |
-| pub_key | string | hex-encoded |  |
+| address | string | hex 주소 |  |
+| pub_key | string | hex 인코딩 |  |
 | voting_power | long |  |  |
 
 ### AtomicSwapPage
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | atomicSwaps | [ [AtomicSwap](#atomicswap) ] |  |  |
 | total | long |  |  |
 
 ### AtomicSwap
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| blockTimestamp | long | Timestamp of block in which the swap is initiated. The unit is millisecond. |  |
+| blockTimestamp | long | 스왑이 시작되는 블록의 타임 스탬프 단위는 밀리초 입니다. |  |
 | closedTime | long |  |  |
 | crossChain | integer |  |  |
 | expectedIncome | string |  |  |
@@ -1522,24 +1519,24 @@ varies with msg type, if you query with --format=json.
 | recipientOtherChain | string |  |  |
 | status | integer |  |  |
 | swapId | string |  |  |
-| timestamp | string (int64) | The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second. |  |
+| timestamp | string (int64) | randomNumberHash 계산을 위한 타임 스탬프, randomNumberHash=sha256(randomNumber, timestamp). 단위는 초 입니다. |  |
 | toAddr | string |  |  |
 
 ### TxV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | blockHeight | long |  |  |
 | code | integer |  | 0 |
 | data | string |  |  |
 | fromAddr | string |  |  |
 | memo | string |  |  |
-| orderId | string | Optional. Available when the transaction type is NEW_ORDER |  |
-| proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
+| orderId | string | 선택사항. 트랜잭션 유형이 NEW_ORDER일 때 가능 |  |
+| proposalId | string | 선택사항. 트랜잭션 유형이 PROPOSAL일 때 가능 |  |
 | sequence | long |  |  |
 | source | long |  |  |
-| subTransactions | [ [SubTx](#subtx) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
-| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
+| subTransactions | [ [SubTx](#subtx) ] | 선택사항. 트랜잭션이 multi-send 같은 하위 트랜잭션을 갖거나 트랜잭션에 여러 자산이 있을 경우 가능 |  |
+| swapId | string | 선택사항. 트랜잭션 유형이 HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL 중 하나일 때 가능 |  |
 | timeStamp | dateTime |  |  |
 | toAddr | string |  |  |
 | txAsset | string |  |  |
@@ -1548,26 +1545,26 @@ varies with msg type, if you query with --format=json.
 | txType | string |  |  |
 | value | string |  |  |
 
-### TimeLocks
+### 타임록
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| id | long | The record id of the timelock transaction |  |
-| description | string | The description of the timelock transaction |  |
+| id | long | 타임록 트랜잭션의 기록 id |  |
+| description | string | 타임록 트랜잭션 설명 |  |
 | amount | [  ] |  |  |
-| locktime | string | The available unlock time |  |
+| locktime | string | 가능한 잠금 해제 시간 |  |
 
-### MiniTokens
+### 미니토큰
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| name | string |  | Binance Chain Mini Token |
+| name | string |  | 바이낸스 체인 미니 토큰 |
 | symbol | string |  | BTC-000 |
 | original_symbol | string |  | BTC |
-| total_supply | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| token_type | integer | Type of the mini token |  |
-| owner | string (address) | Address |  |
-| mintable | boolean | mintable |  |
-| token_uri | string | URI for token description |  |
-| contract_address | string | smart contract address for this token |  |
-| contract_decimals | int | the token decimals |  |
+| total_supply | string (fixed8) | 소수점 형태로, 예. 1.00000000 | 0.00000000 |
+| token_type | integer | 미니 토큰 유형 |  |
+| owner | string (address) | 주소 |  |
+| mintable | boolean | 민팅 가능 |  |
+| token_uri | string | 토큰 설명 URI |  |
+| contract_address | string | 이 토큰의 스마트 계약 주소 |  |
+| contract_decimals | int | 토큰 소수점 |  |

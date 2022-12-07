@@ -229,7 +229,7 @@ NewOrder transaction will create a new order to buy or sell tokens on Binance DE
 message NewOrder {
   0xCE6DC043 // hardcoded, object type prefix in 4 bytes
   bytes sender // order originating address
-  string id // order id, please check the Order ID section below for details.
+  string id // 주문 ID, please check the Order ID section below for details.
   string symbol // symbol for trading pair in full name of the token
   int64 ordertype // only accept 2 for now, meaning limit order
   int64 side // 1 for buy and 2 fory sell
@@ -257,7 +257,7 @@ message CancelOrder {
   0x166E681B // hardcoded, object type prefix in 4 bytes
   bytes sender // order originating address
   string symbol // symbol for trading pair in full name of the token
-  string refid // order id of the order to cancel
+  string refid // 주문 ID of the order to cancel
 }
 ```
 

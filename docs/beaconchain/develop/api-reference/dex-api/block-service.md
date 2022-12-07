@@ -1,205 +1,205 @@
-# API reference for block service
-API description for block and transaction service
+# 블록 서비스의 API 레퍼런스
+블록과 트랜잭션 서비스를 위한 API 설명
 
-## Version: V1.0
-Mainnet base path: <https://api.binance.org/bc/>
+## 버전: V1.0
+메인넷 기초 경로: <https://api.binance.org/bc/>
 
-Testnet base path: <https://testnet-api.binance.org/bc/>
+테스트넷 기초 경로: <https://testnet-api.binance.org/bc/>
 
 ### /api/v1/blocks
 
 #### GET
-##### Summary
+##### 요약
 
-Get a batch of blocks, including fees.
+수수료를 포함한 블록의 집단을 가져옵니다.
 
-Rate Limit: 500 request per IP in 5 minutes.
+Rate 제한: 한 IP당 5분에 500개 응답.
 
-##### Parameters
+##### 매개 변수
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| endHeight | query | end of block height, endHeight-startHeight <= 50 | Yes | long |
-| startHeight | query | start of block height, startHeight should bigger than 0 | Yes | long |
+| endHeight | query | 블록 높이의 끝, 끝 높이-시작 높이 <= 50 | 예 | long |
+| startHeight | query |블록 높이의 시작, 시작 높이가 0보다 커야 합니다 | 예 | long |
 
-##### Responses
+##### 응답
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [BlocksVO](#blocksvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/blocks/{blockHeight}
 
 #### GET
-##### Summary
+##### 요약
 
-Get a block, including fees, for a particular block height.
+특정 블록 높이의 (수수료를 포함한) 블록을 가져옵니다.
 
-Rate Limit: in together with `/api/v1/blocks/{blockHeight}/txs` 1500 request per IP in 5 minutes.
+Rate Limit: 한 IP당 5분에 1500개 응답 (`/api/v1/blocks/{blockHeight}/txs`와 함께).
 
-##### Parameters
+##### 매개 변수
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | height of block | Yes | long |
+| blockHeight | path | 블록의 높이 | 예 | long |
 
-##### Responses
+##### 응답
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [BlockVO](#blockvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/blocks/{blockHeight}/txs
 
 #### GET
-##### Summary
+##### 요약
 
-Get transactions in a particular block height.
+특정 블록 높이의 트랜잭션을 가져옵니다
 
-Rate Limit: in together with `/api/v1/blocks/{blockHeight}` 1500 request per IP in 5 minutes.
+Rate 제한: 한 IP당 5분에 1500개 응답 (`/api/v1/blocks/{blockHeight}`와 함께).
 
-##### Parameters
+##### 매개 변수
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | height of block | Yes | long |
+| blockHeight | path | 블록의 높이 | 예 | long |
 
 ##### Responses
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TxsVO](#txsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/txs
 
 #### GET
-##### Summary
+##### 요약
 
-Search transactions by criteria.
+기준에 맞는 트랜잭션을 탐색합니다.
 
-Rate Limit: 500 request per IP in 5 minutes (please read notes for more detials).
+Rate 제한: 한 IP당 5분에 500개 응답. (자세한 사항은 아래를 참고하세요).
 
-##### Parameters
+##### 매개 변수
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | address | Yes | string |
-| addressType | query | address type: FROM or TO | No | string |
-| asset | query | asset | No | string |
-| endTime | query | end time in in milliseconds, endTime - startTime should be smaller than 7 days | Yes | long |
-| limit | query | default 10, max 50 | No | integer |
-| offset | query | default 0, max 10000 | No | integer |
-| startTime | query | start time in milliseconds | Yes | long |
-| type | query | type | No | string |
+| address | query | address | 예 | string |
+| addressType | query | 주소 타입: FROM이나 TO | 아니오 | string |
+| asset | query | asset | 아니오 | string |
+| endTime | query | 밀리초로 표현되는 종료 시간, endTime - startTime는 7일보다 짧아야합니다 | 예 | long |
+| limit | query | 기본 10, 최대 50 | 아니오 | integer |
+| offset | query | 기본 0, 최대 10000 | 아니오 | integer |
+| startTime | query | 시작 시간 (밀리초) | 예 | long |
+| type | query | type | 아니오 | string |
 
-Notes:
-1. The timeframe between endTime and startTime should be less than 7 days. The shorter timeframe will get faster response, and longer timeframe will trigger more strict rate limiter.
-2. type: NEW_ORDER, ISSUE_TOKEN, BURN_TOKEN, LIST_TOKEN, CANCEL_ORDER, FREEZE_TOKEN, UN_FREEZE_TOKEN, TRANSFER, PROPOSAL, SIDE_PROPOSAL, VOTE, SIDE_VOTE, DEPOSIT, SIDE_DEPOSIT, MINT, CREATE_VALIDATOR, REMOVE_VALIDATOR, TIME_LOCK, TIME_UNLOCK, TIME_RELOCK, SET_ACCOUNT_FLAG, HTL_TRANSFER, DEPOSIT_HTL, CLAIM_HTL, REFUND_HTL, CREATE_SIDECHAIN_VALIDATOR, EDIT_SIDECHAIN_VALIDATOR, SIDECHAIN_DELEGATE, SIDECHAIN_REDELEGATE, SIDECHAIN_UNDELEGATE, ORACLE_CLAIM, CROSS_TRANSFER_OUT, CROSS_BIND, CROSS_UNBIND, BSC_SUBMIT_EVIDENCE, SIDECHAIN_UNJAIL, TRANSFER_TOKEN_OWNERSHIP, TINY_TOKEN_ISSUE, MINI_TOKEN_ISSUE, MINI_TOKEN_LIST, MINI_TOKEN_SET_URI
-3. addressType: FROM or TO
+참고:
+1. endTime과 startTime 사이 시간은 7일보다 작아야 합니다. 시간 간격이 짧을 수록 더 빠른 응답을 받으며, 긴 시간 간격은 더 엄격한 rate 제한이 적용됩니다.
+2. 타입: NEW_ORDER, ISSUE_TOKEN, BURN_TOKEN, LIST_TOKEN, CANCEL_ORDER, FREEZE_TOKEN, UN_FREEZE_TOKEN, TRANSFER, PROPOSAL, SIDE_PROPOSAL, VOTE, SIDE_VOTE, DEPOSIT, SIDE_DEPOSIT, MINT, CREATE_VALIDATOR, REMOVE_VALIDATOR, TIME_LOCK, TIME_UNLOCK, TIME_RELOCK, SET_ACCOUNT_FLAG, HTL_TRANSFER, DEPOSIT_HTL, CLAIM_HTL, REFUND_HTL, CREATE_SIDECHAIN_VALIDATOR, EDIT_SIDECHAIN_VALIDATOR, SIDECHAIN_DELEGATE, SIDECHAIN_REDELEGATE, SIDECHAIN_UNDELEGATE, ORACLE_CLAIM, CROSS_TRANSFER_OUT, CROSS_BIND, CROSS_UNBIND, BSC_SUBMIT_EVIDENCE, SIDECHAIN_UNJAIL, TRANSFER_TOKEN_OWNERSHIP, TINY_TOKEN_ISSUE, MINI_TOKEN_ISSUE, MINI_TOKEN_LIST, MINI_TOKEN_SET_URI
+3. 주소 타입: FROM or TO
 
-##### Responses
+##### 응답
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TxsVO](#txsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/txs/{txHash}
 
 #### GET
-##### Summary
+##### 요약
 
-Get a transaction by a hash.
+해시를 통해 트랜잭션을 가져옵니다.
 
-Rate Limit: 1500 request per IP in 5 minutes.
+Rate 제한: 한 IP당 5분에 1500개 응답.
 
-##### Parameters
+##### 매개 변수
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| txHash | path | hash of tx | Yes | string |
+| txHash | path | tx의 해시 | 예 | string |
 
-##### Responses
+##### 응답
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TxVO](#txvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
-### Models
+### 모델
 
 #### BlockVO
 
-| Name | Type | Description | Required |
+|이름 | 타입 | 설명 | 필수 |
 | ---- | ---- | ----------- | -------- |
-| consumeTime | long | elapsed time from last block   | No |
-| fees | [ [FeeVO](#feevo) ] | fees | No |
-| hash | string | block hash | No |
-| height | long | block height | No |
-| parentHash | string | block's parent hash  | No |
-| proposerAddr | string | proposer's address of the block | No |
-| proposerNode | string | proposer's name | No |
-| size | long | size | No |
-| time | long | block timestamp | No |
-| txCount | integer | the count of tx in the block | No |
+| consumeTime | long | 마지막 블록에서 흐른 시간   | 아니오 |
+| fees | [ [FeeVO](#feevo) ] | fees | 아니오 |
+| hash | string | block hash | 아니오 |
+| height | long | 블록 높이 | 아니오 |
+| parentHash | string | 블록의 부모 해시  | 아니오 |
+| proposerAddr | string | 블록의 제안자 주소 | 아니오 |
+| proposerNode | string | 제안자 이름 | 아니오 |
+| size | long | 사이즈 | 아니오 |
+| time | long | 블록 타임스탬프 | 아니오 |
+| txCount | integer | 블록에 있는 트랜잭션 개수 | 아니오 |
 
 #### BlocksVO
 
-| Name | Type | Description | Required |
+|이름 | 타입 | 설명 | 필수 |
 | ---- | ---- | ----------- | -------- |
-| blocks | [ [BlockVO](#blockvo) ] | blocks | No |
+| blocks | [ [BlockVO](#blockvo) ] | 블록들 | 아니오 |
 
 #### FeeVO
 
-| Name | Type | Description | Required |
+|이름 | 타입 | 설명 | 필수 |
 | ---- | ---- | ----------- | -------- |
-| address | string | address | No |
-| asset | string | fee asset | No |
-| blockHeight | long | height of block | No |
-| quantity | long | quantity of the asset | No |
+| address | string | 주소 | 아니오 |
+| asset | string | 수수료 자산 | 아니오 |
+| blockHeight | long | 블록의 높이 | 아니오 |
+| quantity | long | 자산의 양 | 아니오 |
 
 #### FeesVO
 
-| Name | Type | Description | Required |
+|이름 | 타입 | 설명 | 필수 |
 | ---- | ---- | ----------- | -------- |
-| fees | [ [FeeVO](#feevo) ] | fees | No |
+| fees | [ [FeeVO](#feevo) ] | 수수료 | 아니오 |
 
 #### TxVO
 
-| Name | Type | Description | Required |
+|이름 | 타입 | 설명 | 필수 |
 | ---- | ---- | ----------- | -------- |
-| amount | long | amount of the asset | No |
-| asset | string | asset | No |
-| blockHeight | long | height of the block | No |
-| blockTime | long | timestamp of the block | No |
-| code | integer | code | No |
-| data | string | different schemas for different tx types | No |
-| fee | long | fee | No |
-| fromAddr | string | from address | No |
-| hash | string | hash of the tx | No |
-| log | string | log | No |
-| memo | string | memo | No |
-| sequence | long | sequence | No |
-| source | long | source | No |
-| toAddr | string | to address | No |
-| type | string | tx type | No |
+| amount | long | 자산의 규모 | 아니오 |
+| asset | string | 자산 | 아니오 |
+| blockHeight | long | 블록의 높이 | 아니오 |
+| blockTime | long | 블록의 타임스탬프 | 아니오 |
+| code | integer | 코드 | 아니오 |
+| data | string | 다른 tx 유형에 대한 다른 스키마 | 아니오 |
+| fee | long | fee | 아니오 |
+| fromAddr | string | 보내는 주소 | 아니오 |
+| hash | string | tx의 해시 | 아니오 |
+| log | string | 로그 | 아니오 |
+| memo | string | 메모 | 아니오 |
+| sequence | long | 시퀸스 | 아니오 |
+| source | long | source | 아니오 |
+| toAddr | string | 받는 주소 | 아니오 |
+| type | string | tx 타입 | 아니오 |
 
 #### TxsVO
 
-| Name | Type | Description | Required |
+|이름 | 타입 | 설명 | 필수 |
 | ---- | ---- | ----------- | -------- |
-| total | long | total count of txs | No |
-| txs | [ [TxVO](#txvo) ] | txs | No |
+| total | long | tx 총 개수 | 아니오 |
+| txs | [ [TxVO](#txvo) ] | txs | 아니오 |

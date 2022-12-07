@@ -36,7 +36,7 @@ BNB 체인용 테스트넷 포셋(faucet)은 [여기](https://testnet.binance.or
 
 3. BNB 스마트 체인에서 비콘 체인으로 전환
 
-[바이낸스 익스텐션 월렛](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc)을 통해 크로스 체인 전송이 가능합니다.
+[바이낸스 익스텐션 지갑](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc)을 통해 크로스 체인 전송이 가능합니다.
 
 비콘체인 기능을 테스트하고 싶다면 매스월렛으로 BNB를 크로스 체인 전송할 수 있습니다:
 https://docs.bnbchain.org/docs/wallet/math#transfer-bnb-from-bsc-to-bc-in-testnet

@@ -1,10 +1,10 @@
-# Node RPC
+ㅁ# Node RPC
 
 RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
 
-## 1. Connecting
+## 1. 연결하기
 
-There are two main ways to connect to a node to send RPC commands.
+노드에 연결하고 RPC 명령를 보내는 데는 크게 두 가지 방법이 있습니다.
 
 ### 1.1 Use your own local node
 
@@ -118,7 +118,7 @@ curl 'localhost:27147/broadcast_tx_sync?tx=0xdb01f0625dee0a63ce6dc0430a14813e493
 
 ### 4.2 JSONRPC/HTTP
 
-JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (e.g. <a href="http://localhost:27147/">http://localhost:27147/</a>).
+JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (예. <a href="http://localhost:27147/">http://localhost:27147/</a>).
 
 ```json
 {
@@ -133,7 +133,7 @@ JSONRPC requests can be POST'd to the root RPC endpoint via HTTP (e.g. <a href="
 
 ### 4.3 JSONRPC/websockets
 
-JSONRPC requests can be made via websocket. The websocket endpoint is at `/websocket`, e.g. `localhost:27147/websocket`.  Asynchronous RPC functions like event `subscribe` and `unsubscribe` are only available via websockets.
+JSONRPC requests can be made via websocket. The websocket endpoint is at `/websocket`, 예. `localhost:27147/websocket`.  Asynchronous RPC functions like event `subscribe` and `unsubscribe` are only available via websockets.
 
 ## 5. RPC Endpoint List
 
@@ -191,7 +191,7 @@ curl 'localhost:27147'
 #### 6.1.1 Query ABCIInfo
 
 Get some info about the application.
-**Return Type:**
+**리턴 타입:**
 
 ```
 type ResponseInfo struct {
@@ -203,7 +203,7 @@ type ResponseInfo struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/abci_info'
@@ -219,7 +219,7 @@ defer client.Stop()
 info, err := client.ABCIInfo()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -240,8 +240,8 @@ info, err := client.ABCIInfo()
 ConsensusState returns a concise summary of the consensus state. This is just a snapshot of consensus state, and it will not persist.
 
 
-**Return Parameters**
-return round states
+**반환 매개 변수**
+라운드 상태를 반환합니다
 
 ```
 type ResultConsensusState struct {
@@ -249,7 +249,7 @@ type ResultConsensusState struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/consensus_state'
@@ -268,7 +268,7 @@ defer client.Stop()
 state, err := client.ConsensusState()
 ```
 
-The above command returns JSON structured like this:
+위의 명령어는 다음과 같이 설계된 JSON을 반환합니다:
 
 ```json
 {
@@ -302,8 +302,8 @@ The above command returns JSON structured like this:
 
 DumpConsensusState dumps consensus state. This is just a snapshot of consensus state, and it will not persist.
 
-**Return Parameters**
-return round states
+**반환 매개 변수**
+라운드 상태를 반환합니다
 
 ```
 type ResultConsensusState struct {
@@ -311,7 +311,7 @@ type ResultConsensusState struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/dump_consensus_state'
@@ -330,7 +330,7 @@ defer client.Stop()
 state, err := client.DumpConsensusState()
 ```
 
-The above command returns JSON structured like this:
+위의 명령어는 다음과 같이 설계된 JSON을 반환합니다:
 
 ```json
 {
@@ -454,7 +454,7 @@ The above command returns JSON structured like this:
 
 Get network info.
 
-**Return Parameters**
+**반환 매개 변수**
 
 ```
 // Info about peer connections
@@ -466,7 +466,7 @@ type ResultNetInfo struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/net_info'
@@ -484,7 +484,7 @@ defer client.Stop()
 info, err := client.NetInfo()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -618,9 +618,9 @@ info, err := client.NetInfo()
 
 Get genesis file.
 
-**Return Parameters**
+**반환 매개 변수**
 
-return round states
+라운드 상태를 반환합니다
 
 ```
 // Genesis file
@@ -638,7 +638,7 @@ type GenesisDoc struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/genesis'
@@ -657,7 +657,7 @@ defer client.Stop()
 genesis, err := client.Genesis()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1481,13 +1481,13 @@ genesis, err := client.Genesis()
 Get node health. Returns empty result (200 OK) on success, no response - in
 case of an error.
 
-**Return Parameters**
+**반환 매개 변수**
 
 ```json
 ResultHealth{}
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/health'
@@ -1506,7 +1506,7 @@ defer client.Stop()
 result, err := client.Health()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1521,13 +1521,13 @@ result, err := client.Health()
 
 Get number of unconfirmed transactions.
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type | Default | Required | Description                          |
+| 매개 변수 | 타입 | 기본 | 필수 |  설명                          |
 | --------- | ---- | ------- | -------- | ------------------------------------ |
-| limit     | int  | 30      | false    | Maximum number of entries (max: 100) |
+| limit     | int  | 30      | 거짓      | Maximum number of entries (max: 100) |
 
-**Return Parameters**
+**반환 매개 변수**
 
 ```
 // List of mempool txs
@@ -1537,7 +1537,7 @@ type ResultUnconfirmedTxs struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/num_unconfirmed_txs'
@@ -1555,7 +1555,7 @@ defer client.Stop()
 result, err := client.UnconfirmedTxs()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1574,7 +1574,7 @@ result, err := client.UnconfirmedTxs()
 Get Tendermint status including node info, pubkey, latest block
 hash, app hash, block height and time.
 
-**Return Parameters**
+**반환 매개 변수**
 
 ```
 // Node Status
@@ -1585,7 +1585,7 @@ type ResultStatus struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/status'
@@ -1603,7 +1603,7 @@ defer client.Stop()
 result, err := client.Status()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1651,14 +1651,14 @@ result, err := client.Status()
 #### 6.1.9 ABCIQuery
 Query the application for some information.
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description                                    |
+| 매개 변수 | 타입   | 기본 | 필수 |  설명                                    |
 |-----------|--------|---------|----------|------------------------------------------------|
-| path      | string | false   | false    | Path to the data ("/a/b/c")                    |
-| data      | []byte | false   | true     | Data                                           |
-| height    | int64  | 0       | false    | Height (0 means latest)                        |
-| prove     | bool   | false   | false    | Includes proof if true                         |
+| path      | string | 거짓     | 거짓      | Path to the data ("/a/b/c")                    |
+| data      | []byte | 거짓     | 참     | Data                                           |
+| height    | int64  | 0       | 거짓      | Height (0 means latest)                        |
+| prove     | bool   | 거짓     | 거짓      | Includes proof if true                         |
 
 **Available Query Path**
 
@@ -1676,7 +1676,7 @@ Query the application for some information.
 *  `/mini-tokens/list`
 *  `/dex-mini/pairs`
 
-**Return Type**
+**리턴 타입**
 
 ```
 type ResponseQuery struct {
@@ -1691,7 +1691,7 @@ type ResponseQuery struct {
 	Codespace            string
 }
 ```
-**Example**
+**예시**
 
 In this example, we will explain how to query account info with `abci_query`.
 1. Generate query key
@@ -1715,9 +1715,9 @@ defer client.Stop()
 result, err := client.ABCIQuery("/store/acc/key", "6163636F756E743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886", true)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 >
-> Please note that the response is amino-encoded.
+> 참고로 응답이 아미노 인코딩 되어 있습니다.
 
 ```json
 {
@@ -1755,7 +1755,7 @@ defer client.Stop()
 account, err := client.GetAccount("Your address")
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1772,13 +1772,13 @@ account, err := client.GetAccount("Your address")
 Get block at a given height.
 If no height is provided, it will fetch the latest block.
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description                                    |
+| 매개 변수 | 타입   | 기본 | 필수 |  설명                                    |
 |-----------|--------|---------|----------|------------------------------------------------|
-| height      | int64 | false   | false    | height of blockchain|
+| height      | int64 | 거짓     | 거짓      | 블록체인의 높이 |
 
-**Return Type:**
+**리턴 타입:**
 
 ```
 type ResultBlock struct {
@@ -1800,7 +1800,7 @@ type Block struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/block?height=10'
@@ -1818,7 +1818,7 @@ defer client.Stop()
 info, err := client.Block(10)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1873,13 +1873,13 @@ If no height is provided, it will fetch results for the latest block.
 Results are for the height of the block containing the txs.
 Thus response.results[5] is the results of executing getBlock(h).Txs[5]
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description                                    |
+| 매개 변수 | 타입   | 기본 | 필수 |  설명                                    |
 |-----------|--------|---------|----------|------------------------------------------------|
-| height      | int64 | false   | false    | height of blockchain|
+| height      | int64 | 거짓     | 거짓      | 블록체인의 높이 |
 
-**Return Type:**
+**리턴 타입:**
 
 ```
 type ResultBlockResults struct {
@@ -1888,7 +1888,7 @@ type ResultBlockResults struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/block_results?height=10'
@@ -1906,7 +1906,7 @@ defer client.Stop()
 info, err := client.BlockResults(10)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -1940,14 +1940,14 @@ info, err := client.BlockResults(10)
 Get block headers for minHeight <= height <= maxHeight.
 Block headers are returned in descending order (highest first).
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description                                    |
+| 매개 변수 | 타입   | 기본 | 필수 |  설명                                    |
 |-----------|--------|---------|----------|------------------------------------------------|
-| minHeight      | int64 | false   | true    | height of blockchain|
-| maxHeight      | int64 | false   | true    | height of blockchain|
+| minHeight      | int64 | 거짓     | 참    | 블록체인의 높이 |
+| maxHeight      | int64 | 거짓     | 참    | 블록체인의 높이 |
 
-**Return Type:**
+**리턴 타입:**
 
 List of blocks
 ```
@@ -1956,7 +1956,7 @@ type ResultBlockchainInfo struct {
 	BlockMetas []*types.BlockMeta
 }
 ```
-**Example**
+**예시**
 
 ```shell
 curl 'localhost:27147/blockchain?minHeight=10&maxHeight=10'
@@ -1974,7 +1974,7 @@ defer client.Stop()
 info, err := client.BlockchainInfo(10, 10)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -2027,14 +2027,14 @@ info, err := client.BlockchainInfo(10, 10)
 Get block commit at a given height.
 If no height is provided, it will fetch the commit for the latest block.
 
-**Transaction Parameters**
+**트랜잭션 변수**
 
-| Parameter | Type | Default | Required | Description     |
+| 매개 변수 | 타입 | 기본 | 필수 | 설명     |
 |-----------|------|---------|----------|-----------------|
-| Height      | int64 | false   | true    | height of blockchain|
+| Height      | int64 | 거짓     | 참    | 블록체인의 높이 |
 
 
-**Return Parameters**
+**반환 매개 변수**
 
 ```
 type ResultCommit struct {
@@ -2043,7 +2043,7 @@ type ResultCommit struct {
 }
 ```
 
-**Example**
+**예시**
 ```shell
 curl 'localhost:27147/commit?height=10'
 ```
@@ -2061,7 +2061,7 @@ defer client.Stop()
 info, err := client.Commit(100)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -2249,14 +2249,14 @@ Tx allows you to query the transaction results. `nil` could mean the
 transaction is in the mempool, invalidated, or was not sent in the first
 place.
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description                                               |
+| 매개 변수 | 타입   | 기본 | 필수 |  설명                                               |
 |-----------|--------|---------|----------|-----------------------------------------------------------|
-| hash      | []byte | nil     | true     | The transaction hash                                      |
-| prove     | bool   | false   | false    | Include a proof of the transaction inclusion in the block |
+| hash      | []byte | 없음     | 참     | The transaction hash                                      |
+| prove     | bool   | 거짓     | 거짓      | Include a proof of the transaction inclusion in the block |
 
-**Returns Parameters**
+**매개변수 리턴**
 
 Returns a transaction matching the given transaction hash.
 
@@ -2272,7 +2272,7 @@ type ResultTx struct {
 }
 ```
 
-**Example**
+**예시**
 
 ```shell
 curl "localhost:27147/tx?hash=0xAB1B84C7C0B0B195941DCE9CFE1A54214B72D5DB54AD388D8B146A6B62911E8E"
@@ -2291,7 +2291,7 @@ defer client.Stop()
 tx, err := client.Tx([]byte("AB1B84C7C0B0B195941DCE9CFE1A54214B72D5DB54AD388D8B146A6B62911E8E"), true)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -2345,16 +2345,16 @@ list of transactions (maximum ?per_page entries) and the total count.
 
 You need to enable indexer in `config.tml`. You can modify the `index_tags` to include `tx.height`, which is the only tag we support now. In this way, you can index transactions by height by adding "tx.height" tag here.
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description                                               |
+| 매개 변수 | 타입   | 기본 | 필수 |  설명                                               |
 |-----------|--------|---------|----------|-----------------------------------------------------------|
-| query     | string | ""      | true     | Query                                                     |
-| prove     | bool   | false   | false    | Include proofs of the transactions inclusion in the block |
-| page      | int    | 1       | false    | Page number (1-based)                                     |
-| per_page  | int    | 30      | false    | Number of entries per page (max: 100)                     |
+| query     | string | ""      | 참     | Query                                                     |
+| prove     | bool   | 거짓     | 거짓      | Include proofs of the transactions inclusion in the block |
+| page      | int    | 1       | 거짓      | Page number (1-based)                                     |
+| per_page  | int    | 30      | 거짓      | Number of entries per page (max: 100)                     |
 
-**Returns Parameters**
+**매개변수 리턴**
 
 - `proof`: the `types.TxProof` object
 - `tx`: `[]byte` - the transaction
@@ -2370,7 +2370,7 @@ You need to enable indexer in `config.tml`. You can modify the `index_tags` to i
 
 Right now, you can only query by transaction height: `tx.height`. Please note that on Beacon Chain  testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
 
-**Example**
+**예시**
 
 For example, if you want to search all the transactions that happened on height 10000.
 
@@ -2392,7 +2392,7 @@ q, err := tmquery.New("tx.height=10000")
 tx, err := client.TxSearch(q, true)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -2440,13 +2440,13 @@ tx, err := client.TxSearch(q, true)
 #### 6.2.1 BroadcastTxAsync
 This method just return transaction hash right away and there is no return from CheckTx or DeliverTx.
 
-**Transaction Parameters**
+**트랜잭션 변수**
 
-| Parameter | Type | Default | Required | Description     |
+| 매개 변수 | 타입 | 기본 | 필수 | 설명     |
 |-----------|------|---------|----------|-----------------|
-| tx        | Tx   | nil     | true     | The transaction info|
+| tx        | Tx   | 없음     | 참     | 트랜잭션 정보 |
 
-**Return Parameters**
+**반환 매개 변수**
 
 CheckTx Result
 
@@ -2458,13 +2458,13 @@ type ResultBroadcastTx struct {
 	Hash cmn.HexBytes
 }
 ```
-**Example of Calling REST**
+**REST 호출 예시**
 
-1. Query the account number and sequence of your address
+1. 계정 번호와 당신 주소의 시퀸스를 쿼리합니다.
 ```
 tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
-2. Generate your transaction json and save this output to a json file
+2. 트랜잭션 json을 생성하고 그 결과를 json 파일에 저장합니다.
 ```
 tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
@@ -2472,11 +2472,11 @@ The returned value is the transaction to be sent without signature：
 ```
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"","account_number":" account-number","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
-3. Generate amino-encoded  transaction with `dry-run`
+3. `dry-run`으로 아미노 인코딩된 트랜잭션을 생성합니다
 ```shell
 tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
-This transaction is generatedas as a signed transaction in amino encoding:
+이 트랜잭션은 amino 인코딩에서 서명된 트랜잭션으로 생성됩니다:
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"6qppgKBUp5Fwc77qc1I/U1qX4H4VSBP/fHUWaEPoQDk/visNDIGCts96271+TaflByaRV/toQTulIHOjbT9oJQ==","account_number":" <account-number>","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
@@ -2498,7 +2498,7 @@ defer client.Stop()
 result, err := client.BroadcastTxAsync("db01f0625dee0a63ce6dc0430a14813e4939f1567b219704ffc2ad4df58bde010879122b383133453439333946313536374232313937303446464332414434444635384244453031303837392d34341a0d5a454252412d3136445f424e422002280130c0843d38904e400112700a26eb5ae9872102139bdd95de72c22ac2a2b0f87853b1cca2e8adf9c58a4a689c75d3263013441a124015e99f7a686529c76ccc2d70b404af82ca88dfee27c363439b91ea0280571b2731c03b902193d6a5793baf64b54bcdf3f85e0d7cf657e1a1077f88143a5a65f518d2e518202b")
 ```
 
-The above command returns JSON structured like this:
+위의 명령어는 다음과 같이 설계된 JSON을 반환합니다:
 
 ```json
 {
@@ -2535,13 +2535,13 @@ waiting for tx to commit.
 If CheckTx or DeliverTx fail, no error will be returned, but the returned result
 will contain a non-OK ABCI code.
 
-**Transaction Parameters**
+**트랜잭션 변수**
 
-| Parameter | Type | Default | Required | Description     |
+| 매개 변수 | 타입 | 기본 | 필수 | 설명     |
 |-----------|------|---------|----------|-----------------|
-| tx        | Tx   | nil     | true     | The transaction info|
+| tx        | Tx   | 없음     | 참     | 트랜잭션 정보 |
 
-**Return Parameters**
+**반환 매개 변수**
 
 CheckTx and DeliverTx results
 
@@ -2553,13 +2553,13 @@ type ResultBroadcastTxCommit struct {
 	Height    int64
 }
 ```
-**Example of Calling REST**
+**REST 호출 예시**
 
-1. Query the account number and sequence of your address
+1. 계정 번호와 당신 주소의 시퀸스를 쿼리합니다.
 ```
 tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
-2. Generate your transaction json and save this output to a json file
+2. 트랜잭션 json을 생성하고 그 결과를 json 파일에 저장합니다.
 ```
 tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
@@ -2567,11 +2567,11 @@ The returned value is the transaction to be sent without signature：
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"","account_number":" account-number","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
-3. Generate amino-encoded  transaction with `dry-run`
+3. `dry-run`으로 아미노 인코딩된 트랜잭션을 생성합니다
 ```shell
 tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
-This transaction is generatedas as a signed transaction in amino encoding:
+이 트랜잭션은 amino 인코딩에서 서명된 트랜잭션으로 생성됩니다:
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"6qppgKBUp5Fwc77qc1I/U1qX4H4VSBP/fHUWaEPoQDk/visNDIGCts96271+TaflByaRV/toQTulIHOjbT9oJQ==","account_number":" <account-number>","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
@@ -2631,13 +2631,13 @@ To understand the output data, you could decode these data information of base64
 #### 6.2.3 BroadcastTxSync
 The transaction will be broadcasted and returns with the response from CheckTx.
 
-**Transaction Parameters**
+**트랜잭션 변수**
 
-| Parameter | Type | Default | Required | Description     |
+| 매개 변수 | 타입 | 기본 | 필수 | 설명     |
 |-----------|------|---------|----------|-----------------|
-| tx        | Tx   | nil     | true     | The transaction info|
+| tx        | Tx   | 없음     | 참     | 트랜잭션 정보 |
 
-**Return Parameters**
+**반환 매개 변수**
 
 CheckTx results
 
@@ -2649,12 +2649,12 @@ type ResultBroadcastTx struct {
 	Hash cmn.HexBytes
 }
 ```
-**Example of Calling REST**
-1. Query the account number and sequence of your address
+**REST 호출 예시**
+1. 계정 번호와 당신 주소의 시퀸스를 쿼리합니다.
 ```
 bnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```
-2. Generate your transaction json and save this output to a json file
+2. 트랜잭션 json을 생성하고 그 결과를 json 파일에 저장합니다.
 ```
 bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
 ```
@@ -2662,11 +2662,11 @@ The returned value is the transaction to be sent without signature：
 ```
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"","account_number":" account-number","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
-3. Generate amino-encoded  transaction with `dry-run`
+3. `dry-run`으로 아미노 인코딩된 트랜잭션을 생성합니다
 ```shell
 bnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
 ```
-This transaction is generatedas as a signed transaction in amino encoding:
+이 트랜잭션은 amino 인코딩에서 서명된 트랜잭션으로 생성됩니다:
 ```json
  {"type":"auth/StdTx","value":{"msg":[{"type":"dex/NewOrder","value":{"sender":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","id":"813E4939F1567B219704FFC2AD4DF58BDE010879-53","symbol":"ZEBRA-16D_BNB","ordertype":2,"side":1,"price":"1000000","quantity":"10000","timeinforce":1}}],"signatures":[{"pub_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"signature":"6qppgKBUp5Fwc77qc1I/U1qX4H4VSBP/fHUWaEPoQDk/visNDIGCts96271+TaflByaRV/toQTulIHOjbT9oJQ==","account_number":" <account-number>","sequence":"10"}],"memo":"","source":"0","data":null}}
 ```
@@ -2688,7 +2688,7 @@ defer client.Stop()
 result, err := client.BroadcastTxSync("db01f0625dee0a63ce6dc0430a14813e4939f1567b219704ffc2ad4df58bde010879122b383133453439333946313536374232313937303446464332414434444635384244453031303837392d34381a0d5a454252412d3136445f424e422002280130c0843d38904e400112700a26eb5ae9872102139bdd95de72c22ac2a2b0f87853b1cca2e8adf9c58a4a689c75d3263013441a12406032dd568bac76ef8231fdf928f663ab6893124465528cc8ac5232afdceceea41640227501847c95dc5307f9bbcd01c82b33093c0eb11af8aef9c70eeb554f9318d2e518202f")
 ```
 
-The above command returns JSON structured like this:
+위의 명령어는 다음과 같이 설계된 JSON을 반환합니다:
 
 ```json
 {
@@ -2718,13 +2718,13 @@ moment). condition has a form: "key operation operand". key is a string with
 a restricted set of possible symbols ( \t\n\r\\()"'=>< are not allowed).
 operation can be "=", "<", "<=", ">", ">=", "CONTAINS". operand can be a
 string (escaped with single quotes), number, date or time.
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description |
+| 매개 변수 | 유형   | 기본 | 필수 | 설명 |
 | --------- | ------ | ------- | -------- | ----------- |
-| query     | string | ""      | true     | Query       |
+| query     | string | ""      | 참     | Query       |
 
-**Examples:**
+**예시:**
 
 ```
 	tm.event = 'NewBlock'								# new blocks
@@ -2751,10 +2751,10 @@ DeliverTx response.
 		tm.event = 'Tx' AND account.owner CONTAINS 'Igor'
 ```
 
-See list of all possible events here
+가능한 모든 이벤트를 확인하세요
 <a href="https://godoc.org/github.com/tendermint/tendermint/types#pkg-constants">https://godoc.org/github.com/tendermint/tendermint/types#pkg-constants</a>
 
-For complete query syntax, check out
+전체 쿼리 구문을 여기서 확인하세요
 <a href="https://godoc.org/github.com/tendermint/tendermint/libs/pubsub/query">https://godoc.org/github.com/tendermint/tendermint/libs/pubsub/query</a>.
 
 ```go
@@ -2785,7 +2785,7 @@ go func() {
 }()
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -2799,15 +2799,15 @@ go func() {
 }
 ```
 
-#### 6.3.2 Unsubscribe
+#### 6.3.2 구독 취소
 
-Unsubscribe from events via WebSocket.
+웹 소켓으로 이벤트 구독 취소
 
-**Query Parameters**
+**쿼리 매개 변수**
 
-| Parameter | Type   | Default | Required | Description |
+| 매개 변수 | 유형   | 기본 | 필수 | 설명 |
 | --------- | ------ | ------- | -------- | ----------- |
-| query     | string | ""      | true     | Query       |
+| query     | string | ""      | 참     | Query       |
 
 ```go
 client := client.NewHTTP("tcp://0.0.0.0:27147", "/websocket")
@@ -2819,7 +2819,7 @@ defer client.Stop()
 err = client.Unsubscribe("test-client", query)
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {
@@ -2832,9 +2832,9 @@ err = client.Unsubscribe("test-client", query)
 
 
 
-#### 6.3.3 UnsubscribeAll
+#### 6.3.3 전부 구독 취소
 
-Unsubscribe from all events via WebSocket.
+웹 소켓으로 모든 이벤트 구독 취소
 
 ```go
 client := client.NewHTTP("tcp://0.0.0.0:27147", "/websocket")
@@ -2849,7 +2849,7 @@ defer client.Stop()
 err = client.UnsubscribeAll("test-client")
 ```
 
-> The above command returns JSON structured like this:
+> 위 명령어는 다음과 같은 JSON을 반환합니다:
 
 ```json
 {

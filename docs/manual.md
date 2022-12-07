@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# 바이넌스 익스텐션 월렛을 수동으로 설치하는 법
+# 바이넌스 익스텐션 지갑을 수동으로 설치하는 법
 
 ## zip 파일 다운받기
 

@@ -4,11 +4,11 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# 바이낸스 익스텐션 월렛으로 스테이킹하기
+# 바이낸스 익스텐션 지갑으로 스테이킹하기
 
-## 바이낸스 익스텐션 월렛으로 BNB 위임하기
+## 바이낸스 익스텐션 지갑으로 BNB 위임하기
 
-- [바이낸스 익스텐션 월렛 설치하기](binance.md)
+- [바이낸스 익스텐션 지갑 설치하기](binance.md)
   
 - 스테이킹 페이지로 갑니다:
 
@@ -31,7 +31,7 @@ hide_table_of_contents: false
 
 ![img](https://lh4.googleusercontent.com/-mfR40ZPqZ3yih90oXNee4DULAnbV1l3ZWbkGgqgi07tdXDcCFR_5eA5PY23vW_GqO0sXlkwTr_laljPl11COpX0hB4KBA6_dHgGGUqe8y2YxYNECcKZvc75GdW9WlaFJf4zx776)
 
-- 익스텐션 월렛의 트랜잭션을 확인합니다.
+- 익스텐션 지갑의 트랜잭션을 확인합니다.
 
 ![img](https://lh5.googleusercontent.com/U_ji1L_LgRaxKmRHFvvUwtiOb7SXqTZ6GrMiqvK2gR_aS21bVTqgTHp2aF207pKxfZaYd38QFvRau20n8zbd_MZ1_6ktWEoXYbRrf6vSUdp2W1yWfwqWFqbhjvrbGiX1YRMzJj7b)
 
@@ -47,7 +47,7 @@ hide_table_of_contents: false
 
 ![img](https://lh5.googleusercontent.com/P3TMkfcn75wK5-DUQNcxl9XGRPhSYFZR561Ov6ko3jH_gnTImh561tYk0keFORWCET28LxhnnU2iChX2CzZd1a0R4tH4_GMKziRpsZWRtHhZeFmi5MF-WE9g0XcWkzLHSxwQggVu)
 
-## 바이낸스 익스텐션 월렛으로 BNB 재위임하기
+## 바이낸스 익스텐션 지갑으로 BNB 재위임하기
 
 BNB를 스테이킹함으로써 BNB 스마트 체인 검증인 선별 과정에 참여하며 보상을 얻을 수 있습니다. BNB 스테이킹은 네트워크 안정 유지에 필수적입니다. 검증인들은 자기 위임을 할 수 있고, 다른 BNB 홀더들로부터 위임을 받을 수도 있습니다.
 
@@ -61,7 +61,7 @@ BNB를 스테이킹함으로써 BNB 스마트 체인 검증인 선별 과정에 
 
 ![img](https://lh4.googleusercontent.com/sQ23rDrcUIccCmjwHp0jgHRqgkJwm_nkPH2cvHiL5guqj3Xk-1VfPxbM_Okx_zCrJswFoaWq03fwFh0ATLKvEvVM-OmgVheFCNHbrK9Plw4tmilNO7UFSLYVBUjExSyrskiuNsPs)
 
-- 익스텐션 월렛에서 트랜잭션을 확인하세요.
+- 익스텐션 지갑에서 트랜잭션을 확인하세요.
 
 ![img](https://lh6.googleusercontent.com/fSkKxBxzsGcbnKrflFG-mEysjAVV7a4MqbImMKQgN6jgEbvcOLoMET5nWK7rUEEev-9iNTPeqqQb-Vxgk3wXB9WFkA4OHtIkz9VI5mBPmAXxAiIkTYZgs2bTgib-kmnlWeSK0ZpH)
 
@@ -74,7 +74,7 @@ BNB를 스테이킹함으로써 BNB 스마트 체인 검증인 선별 과정에 
 
 ![img](https://lh6.googleusercontent.com/O1FC9Fas2TSwootvC7HoJKR2O6dOLpxsKtf9px-k7DLlsZHNWuyJ_fQkvWEvtRQQNBxbP5iKN1EHbbj1SD3RQXYeh_vFYzlISAfBkErbvDmTU_hprGw3dTamm9Pmfzr84Kh7A3hm)
 
-## 바이낸스 익스텐션 월렛으로 위임 해제하기
+## 바이낸스 익스텐션 지갑으로 위임 해제하기
 
 - "undelegate"를 클릭하세요.
 
@@ -84,7 +84,7 @@ BNB를 스테이킹함으로써 BNB 스마트 체인 검증인 선별 과정에 
 
 ![img](https://lh3.googleusercontent.com/dMuio1mZQGq4AmKKR-GPLYkBFLl3U2F4G-Ddm8qKKAdD682LjIMI97rCzx-GFd4pxMcsVvCwszUXUbxnO-txr3bmHd3EcqL1Qw-mqMG61S0Tj49VA7toQmyd8rDqPqYo24kK2mow)
 
-- 익스텐션 월렛에서 트랜잭션을 확인하세요.
+- 익스텐션 지갑에서 트랜잭션을 확인하세요.
 
 ![img](https://lh6.googleusercontent.com/2BBgV-Em4WudnNIeYPHGqxNSYKL0W-jW6-MFZ0L4sC7xl7TVSIccV6lslr6uJrnP28W9D7O9Qkr5MUhLp48aew1-tI-pD8gW_1aorPr7BX8l9v75zd9KaXWV1U3bzwjN4yyxAA0o)
 

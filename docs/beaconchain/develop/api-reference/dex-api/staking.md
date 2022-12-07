@@ -32,7 +32,7 @@ sidebar_position: 2
 | 200 | OK | [BalanceVo](#balancevo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/allowed-dst-validators
 ---
@@ -56,7 +56,7 @@ sidebar_position: 2
 | 200 | OK | [AllowedDstValidatorsVO](#alloweddstvalidatorsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/delegations
 ---
@@ -79,7 +79,7 @@ sidebar_position: 2
 | 200 | OK | [DelegationValsVO](#delegationvalsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/operations
 ---
@@ -102,7 +102,7 @@ sidebar_position: 2
 | 200 | OK | [OperationsVO](#operationsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/reds
 ---
@@ -126,7 +126,7 @@ sidebar_position: 2
 | 200 | OK | [RedsVO](#redsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/rewards
 ---
@@ -151,7 +151,7 @@ sidebar_position: 2
 | 200 | OK | [RewardsDetailVO](#rewardsdetailvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/ubds
 ---
@@ -176,7 +176,7 @@ sidebar_position: 2
 | 200 | OK | [UbdsVO](#ubdsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/next-reward-time
 ---
@@ -196,7 +196,7 @@ sidebar_position: 2
 | 200 | OK | 객체 |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/summary
 ---
@@ -216,7 +216,7 @@ sidebar_position: 2
 | 200 | OK | [StakingSumVO](#stakingsumvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators
 ---
@@ -239,7 +239,7 @@ sidebar_position: 2
 | 200 | OK | [ValidatorsVO](#validatorsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}
 ---
@@ -260,7 +260,7 @@ sidebar_position: 2
 | 200 | OK | [ValidatorDetailVO](#validatordetailvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/delegations
 ---
@@ -283,7 +283,7 @@ sidebar_position: 2
 | 200 | OK | [DelegationsVO](#delegationsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/operations
 ---
@@ -306,7 +306,7 @@ sidebar_position: 2
 | 200 | OK | [OperationsVO](#operationsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/powers
 ---
@@ -329,7 +329,7 @@ sidebar_position: 2
 | 200 | OK | [ [VotingPowerVO](#votingpowervo) ] |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/rewards
 ---
@@ -352,7 +352,7 @@ sidebar_position: 2
 | 200 | OK | [ [RewardVO](#rewardvo) ] |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### Models
 ---

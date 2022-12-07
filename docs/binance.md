@@ -4,12 +4,12 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# 바이낸스 익스텐션 월렛 사용하기
+# 바이낸스 익스텐션 지갑 사용하기
 
-## 바이낸스 익스텐션 월렛이란?
-바이낸스 익스텐션 월렛은 비콘 체인, BNB 스마트 체인의 크립토 지갑입니다. 비콘 체인과 BNB 스마트 체인에서 자금을 전송 및 수신할 수 있으며, BNB 체인의 두 블록체인 간 크로스체인 전송도 가능합니다.
+## 바이낸스 익스텐션 지갑이란?
+바이낸스 익스텐션 지갑은 비콘 체인, BNB 스마트 체인의 크립토 지갑입니다. 비콘 체인과 BNB 스마트 체인에서 자금을 전송 및 수신할 수 있으며, BNB 체인의 두 블록체인 간 크로스체인 전송도 가능합니다.
 
-향후 바이낸스 익스텐션 월렛은 이더리움 블록체인을 지원할 것이며, 브라우저에서 "Dapps"을 지원할 것입니다.
+향후 바이낸스 익스텐션 지갑은 이더리움 블록체인을 지원할 것이며, 브라우저에서 "Dapps"을 지원할 것입니다.
 
 Firefox와 Chrome 브라우저에서 지원됩니다.
 
@@ -22,7 +22,7 @@ Chrome 앱스토어 링크: <https://chrome.google.com/webstore/detail/binance-c
 
 Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
-[바이낸스 익스텐션 월렛 수동 설치하기](manual.md)
+[바이낸스 익스텐션 지갑 수동 설치하기](manual.md)
 
 
 ## 설치하기
@@ -46,7 +46,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 
 다른 모든 브라우저에서도 절차는 동일합니다.
-## BNB 스마트 체인을 위한 익스텐션 월렛에서 계정 생성하기
+## BNB 스마트 체인을 위한 익스텐션 지갑에서 계정 생성하기
 
 * “I do not own a wallet”를 클릭하세요.
 
@@ -87,7 +87,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 ![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
 
-* 익스텐션 월렛 잠금 해재 후 BNB 스마트 체인 테스트넷으로 변경합니다.
+* 익스텐션 지갑 잠금 해재 후 BNB 스마트 체인 테스트넷으로 변경합니다.
 
 ![img](https://lh6.googleusercontent.com/RolgUaF7n1Gxh8FV7_oUqJ4Fgx0cjRob9LPn4jMMS9yGrbZ15ssPo1rsrPpavy8VVooM0Rqr3dDh00Om5C3OvMN-D2s4nhBub6dIJBhtuod6ZCQ0j8fWFGZ0WUOQQXBDOScaap98)
 
@@ -105,7 +105,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 ![img](https://lh6.googleusercontent.com/RTAOcHcPxUIthhOLlHHJ1_wrFnvmZvbZ4DJUvpNR453E4mnWWRjHLBEABMTZZdSQGYMktX5eXJPOIt7iEijMsbmMJBEL29RAShDBD8ZRIDiCnXpfwi741DM7-XiDDyJO4uiLHyNL)
 
 ## BSC에서 BC로 테스트넷 BNB 전송하기
-* 비콘 체인 테스트넷으로 변경하여 익스텐션 월렛을 잠금해재 한 뒤 주소를 복사합니다. `tbnb1`로 시작합니다.
+* 비콘 체인 테스트넷으로 변경하여 익스텐션 지갑을 잠금해재 한 뒤 주소를 복사합니다. `tbnb1`로 시작합니다.
 
 ![img](https://lh3.googleusercontent.com/K5w_Mbk4rT9Az6eIY130MHaj_ZCicU4Tp3w93z40dtrGdzwFCMZ5qAfwytI5PY_TdztTPrK5WPAf1uHM5ej-1YdEWu7GtVgghRBub1KSf0e63tgi1L-4MkwPBG3pG0SDYHfMpt_J)
 
@@ -126,7 +126,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 ## BC에서 BSC로 테스트넷 BNB 전송하기
 
-* 익스텐션 월렛을 잠금 해제한 뒤 `0x`로 시작하는 주소를 복사합니다. 그 다음 BNB 스마트 체인 테스트넷으로 변경합니다.
+* 익스텐션 지갑을 잠금 해제한 뒤 `0x`로 시작하는 주소를 복사합니다. 그 다음 BNB 스마트 체인 테스트넷으로 변경합니다.
 
 ![img](https://lh3.googleusercontent.com/kidAixmzNbNt_ujj0BQqZdZ4ZBXdEkxJLSVIOsWnWxZGOeXUJBjhxYsLlxH6VSQWxNX-dzqBFhqXSW3zmshkL99QYcVxIFGxw6tF7xF9ffXZPMPKnXlt0sWCKvPV6RMJWHSx1H0O)
 
@@ -145,7 +145,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 ## 테스트넷 BEP2 토큰을 동등한 BEP20로 스왑하기
 
-* 위의 지침을 따라 바이낸스 익스텐션 월렛을 설치하세요.
+* 위의 지침을 따라 바이낸스 익스텐션 지갑을 설치하세요.
 * 위의 지침을 따라 계정을 생성 또는 복구하세요.
 * BNB 스마트 체인 테스트넷으로 변경하고 필요 시 “+”를 클릭하여 BEP2 토큰을 추가하세요.
 
@@ -175,7 +175,7 @@ Firefox 앱스토어 링크: <https://addons.mozilla.org/en-US/firefox/addon/bin
 
 ## 테스트넷 BEP20 토큰을 동등한 BEP2 토큰으로 전환하기
 
-* 위의 지침을 따라 바이낸스 익스텐션 월렛을 설치하세요.
+* 위의 지침을 따라 바이낸스 익스텐션 지갑을 설치하세요.
 * 위의 지침을 따라 계정을 생성 또는 복구하세요.
 * BNB 스마트 체인 테스트넷으로 변경하고 필요 시 “+”를 클릭하여 BEP20 토큰을 추가하세요.
 
