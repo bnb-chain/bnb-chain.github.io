@@ -1,25 +1,25 @@
 ---
-sidebar_label: Tokenomics
+sidebar_label: 토크노믹스
 sidebar_position: 2
 ---
 
-# Tokenomics
+# 토크노믹스
 
-## Supported Tokens
-ZkBNB can be used to transfer BNB, BEP20 and BEP721 tokens. ZkBNB supports a maximum of 65535 BEP20 tokens and 1099511627775 BEP721 tokens. For BEP20 tokens, each supported token need to be listed on ZkBNB L1 contract first. For BEP721 tokens, there are two sources: one is to deposit BEP721 token from BSC network to ZkBNB, another is to directly mint on ZkBNB.
+## 지원되는 토큰
+ZkBNB에서는 BNB, BEP20와 BEP721 토큰을 전송할 수 있습니다. ZkBNB는 최대 65535개의 BEP20 토큰과 1099511627775개의 BEP721 토큰을 지원합니다. BEP20 토큰들은은 우선 ZkBNB L1 컨트랙트에 상장해야 사용이 가능합니다. BEP721 토큰은 두 가지 방법을 지원하는데: 하나는 BSC에서 ZkBNB로 BEP721 토큰을 전송하는 것이고, 다른 하나는 ZkBNB에서 직접 민팅하는 것입니다.
 
-ZkBNB is not responsible for security of supported token contract. Please use any token on your own risk.
+ZkBNB는 지원되는 토큰 계약의 보안을 책임지지 않습니다. 항상 위험을 인지하고 토큰을 사용해 주세요.
 
-## List Token
-ZkBNB use `AssetGovernance` contract to manage supported tokens. To list token on ZkBNB, call function `addAsset(address _assetAddress)` of AssetGovernance contract.
+## 토큰 상장
+ZkBNB 는`AssetGovernance` 컨트랙트를 통해 지원되는 토큰을 관리합니다. ZkBNB에 토큰을 상장하려면, AssetGovernance 컨트랙트에 있는 `addAsset(address _assetAddress)`함수를 호출합니다.
 
-Notice there is a listing fee for listing token, and fees are denominated using a specific token. The listing fee and fee token can be retrived by calling function `listingFee` and `listingFeeToken`. Make sure the sender that calls `addAsset` has enough fee token balance.
+토큰을 상장할 때 상장 수수료가 있으며, 수수료는 특정 토큰에 대해 가격이 표시 됩니다. 토큰을 나열하는 데에는 목록 수수료가 있으며 수수료는 특정 토큰을 사용하여 정해지는 것에 유의하세요. 상장 수수료와 수수료 토큰은 각각 함수 `listingFee`와 `listingFeeToken`을 불러 회수할 수 있습니다. `addAsset`을 호출하는 발신인이 충분한 수수료 토큰 잔액이 있는지 확인하세요.
 
-## Fee
-In ZkBNB the cost of every transaction comes from two parts:
+## 수수료
+ZkBNB에서 모든 트랜잭션의 가격은 2가지 부분에서 발생합니다:
 
-- **L2 part**: every transaction needs to read or write state storage, and ZkBNB prover needs to generate a SNARK proof for every transaction. This part depends on the use of hardware resources and is therefor invariable;
+- **L2 부분**: 모든 트랜잭션은 상태 저장소을 읽거나 작성해야하며, ZkBNB 증명인은 모든 트랜잭션에 대해 SNARK 증명을 생성해야 합니다. 이 부분은 하드웨어 자원을 사용하는 법에 따라 다르므로 의존하므로 변하지 않습니다.
 
-- **L1 part**: ZkBNB must pay BNB gas to commit, verify and execute L2 blocks by sending corresponding L1 transaction. The L1 fees need to be averaged per L2 transaction which is orders of magnitude cheaper than the cost of normal BNB/BEP20 transfers. In addition, for the special transaction types which need to be executed on contract such as `Withdraw` and `WithdrawNft`, there is extra gas cost to be covered.
+- **L1 부분**: ZkBNB에서 커밋하고, 검증하고 레이어1 대응되는 트랜잭션을 보내 레이어2 블록을 실행하기 위해서는 BNB로 가스를 지불해야 합니다. 레이어1 수수료는 레이어2 트랜잭션당 평균을 내야 일반 BNB/BEP20 이전 비용보다 훨씬 저렴한 합니다. 레이어1 수수료는 레이어2 트랜잭션 당 평균을 내야 하는데, 이는 일반적인 BNB/BEP20 전송 비용보다 훨씬 저렴합니다.추가로, `Withdraw`나 `WithdrawNft`같이 컨트랙트 상에서 실행해야하는 특수한 트랜잭션 유형에서는 추가 가스 부담이 발생할 수 있습니다.
 
-Users can easily get fee cost of every transaction type using rpc method provided by ZkBNB, then pay transaction fees in multi fee tokens supported by ZkBNB. For example, suppose ZkBNB supports BNB/USDT, when users make a transaction, users can use BNB or USDT to pay transaction fees for their own convenience.
+사용자들은 ZkBNB에서 제공하는 rpc 메소드를 통해 모든 트랜잭션 유형에 대한 수수료 값을 쉽게 얻을 수 있고, 트랜잭션 비용을 ZkBNB에 의해 지원되는 여러 토큰들로 지불할 수 있습니다. 예를들어 ZkBNB가 BNB/USDT를 지원할 때, 사용자가 트랜잭션을 보내면 BNB나 USDT로 편리하게 전송 수수료를 지불할 수 있습니다.
