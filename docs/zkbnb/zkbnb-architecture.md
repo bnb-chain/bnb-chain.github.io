@@ -4,17 +4,17 @@ sidebar_position: 2
 ---
 # ZkBNB의 구조적 디테일
 
-Increased throughput and scalability are two of the most desired requirements of any blockchain ecosystem to thrive 경쟁적인 Web3 산업에서 블록체인 생태계가 성공하기 위해서는 처리량과 확장성을 증가하는 것이 . Several solutions have been proposed to achieve this, however, one of the latest and touted solutions is the one based on Zero Knowledge (ZK) Proofs. Joining the bandwagon of providing groundbreaking scalability solutions based on ZK-Proofs is the world's third largest smart contract network, BNB Chain.
+네트워크의 처리량과 확장성을 증가하는 것이 경쟁적인 Web3 산업에서 블록체인 생태계가 활성화되기 위한 필요조건입니다. 이를 달성하기 위해 몇 가지 제안이 나왔지만, 가장 최근에 널리 알려진 방법 중 하나는 ZK(Zero Knowledge)-증명을 기반으로 하는 해결책입니다. 세계 3위의 스마트 컨트랙트 네트워크인 BNB 체인은 ZK증명을 기반으로한 획기적인 확장성 솔루션을 제공하는 대열에 합류하였습니다.
 
-영지식 롤업(ZkRollups)은 Zk 증명(Zk-Proofs) 레이어2(L2) 블록체인 확장 솔루션입니다. blockchain scalability solutions based on ZK-Proofs. ZK-Rollups essentially scales the main blockchain network, i.e., Layer-1(L1), by performing computations, bundling transactions, and moving the transaction data off the main blockchain, making sure in this way that the network on the main chain does not become congested.
+영지식 롤업(ZkRollups)은 Zk-증명(Zk-Proofs)을 기반으로 한 레이어2(L2) 블록체인 확장 솔루션입니다. ZK-롤업은 말 그대로 메인 블록체인 네트워크를 확장하는데 연산 수행, 트랜잭션 번들링, 메인 블록체인에서 트랜잭션 데이터 옮기기 등을 통해 메인 체인이 포화되지 않도록 작동합니다.
 
-Harnessing the power of ZK-Rollups, BNB Chain has introduced ZkBNB which is considered a breakthrough in the scalability solutions for blockchain technologies. ZkBNB는 is an infrastructure designed for developers to build large-scale BSC-based applications with higher throughput and much lower or even zero transaction fees.
+ZK-롤업의 힘을 통해 BNB 체인은 블록체인 기술의 확장성 솔루션인 ZkBNB를 소개합니다. ZkBNB는 개발자들이 BSC 기반 대규모 어플리케이션을 만들도록 설계되어, 높은 처리량과 낮거나 0에 가까운 트랜잭션 수수료를 지원합니다.
 
-이 문세에서는, ZkBNB를 혁신적으로 불리게 하는 we dive deep into the underlying architecture that makes ZkBNB a ground-breaking innovation, covering the underlying ZkRollup architecture, protocol overview, key technologies used, and the tokenomics of the ZkBNB infrastructure.
+이 문세에서는, ZkBNB를 혁신적으로 불리게 하는 아키텍처, 프로토콜 전반, 사용된 핵심 기술 및 ZkBNB 인프라의 토크노믹스에 대해 자세히 살펴볼 예정입니다.
 
 ## ZkBNB - 내제된 Zk 롤업 구조
 
-ZK 롤업 아키텍처 상에서 제작된 ZkBNB는 수백개의 오프체인에서의 트랜잭션을 묶는("롤업")is capable of bundling (or "rolling-up") hundreds of transactions off-chain and then generating cryptographic proof for proving the validity of the transactions, included in each batch. 암호화된 증거는 SNARK(succinct non-interactive argument of knowledge) 형태로 되어 있어, which can prove the validity of every single transaction in the rolled up block. It means, all funds are held on the BSC, while computation and storage are performed on BNB Application Sidechains (BAS), with less cost and fast speed. Furthermore, because of the use of Zk-SNARK proofs, ZkBNB shares the same security as that of BSC.
+ZK 롤업 아키텍처 상에서 제작된 ZkBNB는 수백개의 오프체인에서의 트랜잭션을 묶고(bundling 혹은 "롤업") 각 배치(batch)에 암호학적 증거를 생성하여 트랜잭션의 유효성을 증명합니다. 암호학적 증거는 SNARK(succinct non-interactive argument of knowledge)형태로 되어 있어, 블록에 묶인 모든 트랜잭션에 대한 유효성을 증명할 수 있습니다. 이 뜻은, 모든 자금은 BSC 상에 존재하지만, 연산과 저장 작업은 BNB 어플리케이션 사이드 체인(BAS)에서 더 낮은 가격과 빠른 속도로 수행된다는 것입니다. 또한 Zk-SNARK 증거를 이용하기 때문에, ZkBNB는 BSC와 같은 수준의 보안을 공유합니다.
 
 ## ZkBNB 프레임워크
 
@@ -22,12 +22,12 @@ ZK 롤업 아키텍처 상에서 제작된 ZkBNB는 수백개의 오프체인에
 
 위에는 인프라의 주요 구성요소를 표시하였으며, 아래에는 목록으로 표시하였습니다:
 
--   **Committer:** 커미터(committer)는 트랜잭션을 실행하는 것과 연속적인 블록을 생성해야합니다.
+-   **Committer:** 실행자(committer)는 트랜잭션을 실행하는 것과 연속적인 블록을 생성해야합니다.
 -   **Monitor:** 모니터(Monitor) 컴포넌트는 BSC에서 발생하는 이벤트를 추적하고, ZkBNB에서 트랜잭션으로 번역합니다.
--   **Witness:** 증인(Witness) 컴프넌트는 롤업 블록에 있는 트랜잭션을 재실행하는 것과 증인 responsible for re-executing the transactions within a rollup block and generating witness materials.
--   **Prover:** 증명인(Prover)은 암호학적 증인 material을 통해 증거를 암호학적 증거를 is responsible for generating cryptographic proof based on the witness materials.
--   **Sender:** The Sender rollups the compressed L2 blocks into L1, and submits proof to verify them.
--   **API Server:** The API 서버는 대부분의 유저의 the access endpoint for most users; it provides rich data, including digital assets, blocks, transactions, swap info, and gas fees.
+-   **Witness:** 증인(Witness) 컴프넌트는 롤업 블록에 있는 트랜잭션을 재실행하는 것과 증거들을 생성합니다.
+-   **Prover:** 증명인(Prover)은 증인 증거를 바탕으로 암호학적 증거를 생성하는 것을 담당합니다.
+-   **Sender:** 전송인(Sender) 압축된 L2 블록을 L1으로 롤업하고, 확인하기 위해 증거를 제출합니다.
+-   **API Server:** API 서버는 대부분의 유저의 접근 엔트포인트입니다.디지털 자산, 블록, 트랜잭션, 거래정보, 가스 수수료 등 풍부한 정보를 제공합니다.
 -   **Recovery:** PostgreSQL의 상태 세계를 기반으로한 kv-rock의 Sparse Merkle Tree를 회복하는 툴입니다.
 
 ## ZkBNB 프로토콜 개요
@@ -42,39 +42,38 @@ ZkBNB는 Zk 롤업 프로토콜을 구현한 것이며, 다음과 같은 내장�
 
 ZkBNB에서 기본 롤업 작업 흐름은 다음과 같습니다:
 
--   Users can become owners in the rollup operation by calling registerZNS in L1 to register a short name for L2; 사용자는 L1에서 registerZNS를 호출하여 롤업 작업을 호출하여 소유자가 될 수 있습니다.
+-   사용자들은 레이어2의 심볼을 등록하기 위해 L1의 registerZNS를 호출하여 롤업작업의 소유자가 될 수 있습니다.
 -   소유자들은 서로에게 자산을 전송하고, L2 상에서 NFT를 민팅하고, L2에서 토큰 간 스왑할 수 있습니다;
 -   소유자들은 보유하고 있는 자산을 어떤 L1 주소로든 전송할 수 있습니다.
 
-It is to note here that Rollup operation in the ZkBNB framework requires the assistance of a committer. The committer here is responsible for rolling transactions together. Other than this, a prover is also responsible for computing the zero-knowledge proof of the correct state transition. Additionally, the prover also affects the state transition by interacting with the rollup contract.ZKBNB 프레임워크 상 롤업 기능은 
+참고로 ZKBNB 프레임워크 상 롤업 작업은 실행자(commiter)의 도움이 필요합니다. 실행자는 트랜잭션들을 롤업하는 역할을 담당합니다. 그 외에 증명인(prover)은 옳바른 상태 변환의 영지식 증명을 계산하는 역할을 담당합니다. 또한 증명인은 롤업 컨트랙트와 상호작용하여 상태 전환에 영향을 미칩니다. 
 
 프로토콜 디자인에 관한 자세한 사항은 [여기](https://github.com/bnb-chain/zkbnb/blob/master/docs/protocol.md)를 참고하세요.
 
 ## 최신 기능의 작동 방식
 
-The working of some of the most important features revolving around the issue of throughout, availability, and scalability that are offered seamlessly by ZkBNB is as follows: ZkBNB에서 원활하게 제공하는 중요한 기능에는 처리량, 가용성, 확장성 문제를 해결한 
+ZkBNB가 원활하게 제공하는 처리량, 가용성 및 확장성 문제를 중심으로 하는 가장 중요한 기능의 작동 방식은 다음과 같습니다:
 
-#### **Data Availability** 
 
-오프 체인 상에서 진행된 모든 트랜잭션의 상태 데이터는 ZkBNB에서 BSC로 작성됩니다. 해당 데이터로 인해  it is possible to reproduce the rollup's state for an individual or a business to validate the chain themselves. BSC makes this transaction data available to all of the network's participants in the form of **calldata**.
+#### **데이터 가용성** 
 
-It is to note here that it is not required by ZkBNB to publish extensive transaction data on-chain, i.e., BSC main chain. This is large because the validity proofs generated with each rollup batch already verify the authenticity of state transitions. Nevertheless, it is still important to store transactions on-chain because it allows permissionless, independent verification of the L2 chain's state, allowing anyone to submit batches of transactions. In doing so, malicious committers are prevented from censoring or freezing the L2 chain.
+오프 체인 상에서 진행된 모든 트랜잭션의 상태 데이터는 ZkBNB에서 BSC로 작성됩니다. 이 데이터를 통해 체인을 검증하려는 개인이나 기업들이 롤업 상태를 재현할 수 있습니다. BSC는 **calldata** 형태로 모든 네트워크 참여자들이 해당 트랜잭션 데이터를 사용할 수 있도록 합니다.
+
+여기서 주목할 점은 ZkBNB가 광범위한 거래 데이터를 BSC 메인 체인에 게시할 필요가 없다는 것입니다. 이는 각 롤업 배치에서 생성된 유효성 증명이 이미 상태 전환을 검증했기 때문입니다. 다만 누구나 트랜잭션 배치를 제출할 수 있는 레이어2 체인 상태의 동의없는 독립적인 검증을 허용하기 위해서는 여전히 트랜잭션을 온 체인에 저장하는 것은 중요합니다. 이를 통해 악의적인 실행자가 L2 체인을 검영하거나 동결하는 것을 방지합니다.
 
 ZkBNB는 BSC에서 사용 가능한 **calldata**를 기반으로 레이어 2의 모든 상태를 재생하는 기본 클라이언트를 제공합니다.
 
 #### 트랜잭션 완결성
 
-In the ZkBNB setup, BSC acts as a settlement layer for ZkBNB. This means that all Layer-2 transactions are finalized, only in case the Layer-1 contract accepts the validity proof and executes the transactions. This condition eliminates the risk of malicious operators corrupting the Layer-2 chain (e.g., stealing roll-up funds), since every transaction must also be approved on the Layer-1 (Mainnet). Furthermore, BSC guarantees that user operations cannot be reversed once finalized on Layer-1. To provide an enhanced user experience, ZkBNB provides a relatively fast finality speed of approximately 10 minutes.
+ZkBNB 설정에서, BSC는 ZkBNB의 정착 레이어처럼 활용됩니다. 이는 모든 레이어2 트랜잭션은 레이어1 컨트랙트가 유효성 증명을 허용한 후 트랜잭션을 실행할 때만 완결된다는 것을 뜻합니다. 이 조건은 모든 트랜잭션이 레이어1(메인넷)의 허가를 받아야 하는 것을 의미하기 때문에 레이어2 체인의 (롤업 자금을 훔치는 등)악의적인 연산의 위험을 제거합니다. 또한, BSC는 레이어1에서 완결이 되면 사용자 작업의 비가역성을 보장합니다. 향상된 사용자 경험을 위해, ZkBNB는 약 10분이라는 상대적으로 빠른 완결성을 제공합니다.
 
-However, this does not affect the usability of the network. The state transition is designed to happen immediately once the block has been proposed on the ZkBNB. Furthermore, rollup operations are totally transparent to the users, allowing the users to make further transfers without waiting. 다만 이것이 네트워크의 활용도에 영향을 주진 않습니다. 상태 전환은 블록이 ZkBNB에 제안되면 
+다만 이것이 네트워크의 활용성에 영향을 미치지는 않습니다. 상태 전환은 ZkBNB에 제한된 후 바로 변경되도록 설계되어 있습니다. 또한, 롤업 작업은 사용자들에게 완전히 투명하게 공개가 되어 있어 대기 없이 전송할 수 있습니다.
 
 #### 검열 저항성
 
-In the ZkBNB setup, the committer is responsible for executing transactions and producing rollup batches. While this ensures efficiency, it increases the risk of censorship in the way that a malicious ZK-rollup committer can censor users by refusing to include their transactions in the rollup batches. ZkBNB에서는 트랜잭션을 실행하고 롤업 배치(batch)를 
-ZkBNB 설정에서 반영하는 사람이 트랜잭션을 실행하고 롤업 배치를 생성해야하는 책임이 있습니다. 이것은 효율성을 보장하지만 악의적인 ZK 롤업 커미터가 롤업 배치에 트랜잭션을 포함하는 것을 거부함으로써 사용자를 검열할 수 있는 방식으로 검열의 위험을 증가시킨다.
+ZkBNB 설정에서 실행자(commiter)가 트랜잭션을 실행하고 롤업 배치를 생성해야하는 책임이 있습니다. 이것은 효율성을 보장하지만 악의적인 ZK 롤업 커미터가 롤업 배치에 트랜잭션을 포함하는 것을 거부함으로써 사용자를 검열할 수 있는 방식으로 검열의 위험을 증가시킵니다.
 
-As a counter-security measure to censorship, ZkBNB allows users to submit transactions directly to the rollup contract on the BSC Mainnet if they feel that they are being censored by the ZkBNB operator. This feature allows users to force an exit from the ZkBNB to BSC without having to rely on the committer's permission.
-검열에 대한 보안 대책으로, ZkBNB 사용자는 ZkBNB 운영자에 의해 검열되고 있다고 느낄 경우 BSC 메인넷의 롤업 컨트랙트에 직접 트랜잭션을 제출할 수 있습니다. 이 기능을 통해 사용자는 커미터(commiter)의 허가에 의존하지 않고도 ZkBNB에서 BSC로 강제로 나갈 수 있다.
+검열에 대한 보안 대책으로, ZkBNB 사용자는 ZkBNB 운영자에 의해 검열되고 있다고 느낄 경우 BSC 메인넷의 롤업 컨트랙트에 직접 트랜잭션을 제출할 수 있습니다. 이 기능을 통해 사용자는 실행자(commiter)의 허가에 의존하지 않고도 ZkBNB에서 BSC로 강제로 나갈 수 있습니다.
 
 ## API 참조
 
