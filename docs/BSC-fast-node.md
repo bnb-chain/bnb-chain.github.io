@@ -9,17 +9,15 @@ sidebar_position: 2
 
 * Stores the full blockchain history on disk and can answer the data request from the network.
 * Receives and validates the new blocks and transactions.
-* Verifies the states of every accounts.
+* Verifies the states of every account.
 
 ## Suggested Requirements for Fast Node
 
-- VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 1T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if start with snap/fast sync, it will need NVMe SSD)
-- 16 cores of CPU and 64 gigabytes of memory (RAM).
+- VPS running recent versions of Mac OS X, Linux, or Windows.
+- **IMPORTANT** 1 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (if node is started with snap sync, it will need NVMe SSD)
+- 16 cores of CPU and 64 GB of memory (RAM).
 - Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 5 megabyte per second
-
-## Settings
+- A broadband Internet connection with upload/download speeds of 5 MB/S
 
 ## Steps to Run a Fast Node
 
@@ -30,8 +28,13 @@ sidebar_position: 2
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
 ```
 
 2. Download the config files
@@ -45,9 +48,11 @@ unzip mainnet.zip
 
 3. Download snapshot
 
-  Download latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots).
+Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
 
-  Follow the guide to structure the files.
+:::note
+Your --datadir flag should point to the extracted chaindata folder path
+:::
 
 4. Prune all trie data
 
@@ -60,7 +65,7 @@ Fast node does not need trie data anymore, prune the trie data by the following 
 
 1.Build from source code
 
-Make sure that you have installed [Go 1.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
+Make sure that you have installed [Go 1.17.13+](https://golang.org/doc/install) and have added `GOPATH` to `PATH` environment variable
 
 ```bash
 git clone https://github.com/bnb-chain/bsc
@@ -75,8 +80,13 @@ or you can download the pre-build binaries from [release page](https://github.co
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
 ```
 
 2.Download the config files
@@ -141,14 +151,8 @@ EnableMsgEvents = false
 geth --tries-verify-mode full --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
-## Node Maintainence
-
-### Peer Discovery
-The bootstrap nodes will be enhanced in the short future. So far, a discovery http service will provide some stable public p2p peers for syncing. Please visit https://api.binance.org/v1/discovery/peers to get dynamic peer info. You can append the peer info to the `StaticNodes` in the config.toml to enhance the networking of the full nodes. To avoid crowded networking, the discovery service will change the peer info from time to time, try fetch new ones if the connected peers of full node are too few.
-
-### Binary
-All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and get better performance.
+## Node Maintenance
+Please read [this guide](./validator/node-maintenance.md)
 
 ## Upgrade Geth
-
 Please read [this guide](./validator/upgrade-fullnode.md)
