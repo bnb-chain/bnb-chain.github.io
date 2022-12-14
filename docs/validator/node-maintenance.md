@@ -47,10 +47,6 @@ How to prune:
 
 `block-amount-reserved` is the number of ancient data blocks that you want to keep after pruning. 
 
-
-### Diff Sync
-Diff sync allows a BSC client to simply apply the execution result of a block securely without executing the transactions. Diff sync improves the syncing speed by 60%～70% approximately according to the tests. All full nodes are suggested to enable it by adding `--diffsync` in the starting command. This flag is ignored when used with `--tries-verify-mode none` on Fast nodes.
-
 ### Light Storage
 When the node crashes or been force killed, the node will sync from a block that was a few minutes or a few hours ago. This is because the state in memory is not persisted into the database in real time, and the node needs to replay blocks from the last checkpoint once it start. The replaying time depends on the configuration `TrieTimeout` in the config.toml.  We suggest you raise it if you can tolerate with long replaying time, so the node can keep light storage.
 

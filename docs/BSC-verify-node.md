@@ -57,7 +57,7 @@ Your --datadir flag should point to the extracted chaindata folder path
 
 4. Start a full node
 ```
-geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
 :::note

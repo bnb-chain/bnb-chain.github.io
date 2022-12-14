@@ -80,7 +80,7 @@ Your --datadir flag should point to the extracted chaindata folder path
 
 4. Start a full node
 ```
-./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 :::note
 Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
