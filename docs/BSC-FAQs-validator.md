@@ -152,7 +152,7 @@ This error occurs due to data corruption. You can run geth snapshot verify-state
 ### What to do if Sync is slow on running the following command 
 
 ~~~~
-*_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap –diffsync --txlookuplimit 0_*
+*_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap  --txlookuplimit 0_*
 ~~~~
 
 Try pruning the state -- stop geth, then run geth --datadir=node - prune-state. Assuming that datadir is node, change that if it's elsewhere then restart after it's done. Follow https://github.com/bnb-chain/bsc/issues/502 to get more tips about how to maintain a synced node.
@@ -189,7 +189,7 @@ The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows:
 [Optional] Create a service or use screen to run the command below, so it doesn't stop if you are using SSH.
 Run screen then press enter, anytime you lose connection via ssh, run screen -r to get back the "screen/terminal" where geth was running Geth Command 
 
-`geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false –diffsync`
+`geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false `
 
 ### What are the few adjustments that can help resolve sync issues?
 

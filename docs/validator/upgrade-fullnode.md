@@ -51,5 +51,5 @@ Make sure to use the same start-up command you used before the upgrade. So in th
 
 ```bash
 ##
-./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
