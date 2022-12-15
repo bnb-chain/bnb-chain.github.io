@@ -5,7 +5,7 @@ sidebar_label: Getting Started
 The purpose of this document is to give a general overview of BNB Chain and to serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain). 
 
 ## Architecture 
-BNB Chain is an ecosystem that is comprised of multiple blockchains. Before you start developing dApps on the BNB Chain, it is important to learn about its underlying architecture. Refere [here](./learn/cross-chain.md) to learn in depth. For learning about the uderlying blockhchaind details of BNB Beacon Chain, refer [here](learn/beaconIntro.md#technology-details).
+BNB Chain is an ecosystem that is comprised of multiple blockchains. Before you start developing dApps on the BNB Chain, it is important to learn about its underlying architecture. Refer [here](./learn/cross-chain.md) to learn in depth. For learning about the underlying blockchain details of BNB Beacon Chain, refer [here](learn/beaconIntro.md#technology-details).
 
 ## Consensus Mechanism 
 Consensus protocols play key roles in building trust in the blockchain ecosystem. To learn about the consensus mechanism used in the BNB Chain, refer [here](./learn/consensus.md).
