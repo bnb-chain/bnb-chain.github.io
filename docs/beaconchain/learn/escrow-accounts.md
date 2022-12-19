@@ -30,9 +30,9 @@ DelegationAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainStakeD
 ### Bridge module
 A purely-code-controlled escrow account is created to secure the total circulation of the token on both chains.
 
-Address in mainnet: `bnb1j725qk29cv4kwpers4addy9x93ukhw7czfkjaj`
+Address in mainnet: `bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj`
 
-Address in testnet: `tbnb1j725qk29cv4kwpers4addy9x93ukhw7cvulkar`
+Address in testnet: `tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr`
 ```go
 // bnb prefix address: bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj
 // tbnb prefix address: tbnb1v8vkkymvhe2sf7gd2092ujc6hweta38xnc4wpr
