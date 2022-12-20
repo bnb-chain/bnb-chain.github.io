@@ -1,5 +1,5 @@
 ---
-sidebar_label: Cross Chain Transfer
+sidebar_label: 크로스 체인 전송
 hide_table_of_contents: false
 sidebar_position: 2
 ---

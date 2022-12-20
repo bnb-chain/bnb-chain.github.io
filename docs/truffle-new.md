@@ -1,5 +1,5 @@
 ---
-sidebar_label: Using Truffle
+sidebar_label: Truffle 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---

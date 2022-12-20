@@ -1,5 +1,5 @@
 ---
-sidebar_label: BSC Relayer Guides
+sidebar_label: BSC 릴레이어 가이드
 hide_table_of_contents: false
 sidebar_position: 2
 ---

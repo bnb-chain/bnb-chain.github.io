@@ -1,5 +1,5 @@
 ---
-sidebar_label: Scenarios for Slashing
+sidebar_label: 슬래싱 시나리오
 hide_table_of_contents: false
 sidebar_position: 2
 ---

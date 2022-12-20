@@ -1,5 +1,5 @@
 ---
-sidebar_label: Token Circulation Model
+sidebar_label: 토큰 유통 모델
 hide_table_of_contents: false
 sidebar_position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Slashing and Jail
+sidebar_label: 슬래싱 및 투옥
 hide_table_of_contents: false
 sidebar_position: 2
 ---

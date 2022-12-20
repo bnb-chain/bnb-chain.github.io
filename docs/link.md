@@ -1,5 +1,5 @@
 ---
-sidebar_label: Chainlink Price Feeds for BSC
+sidebar_label: 체인링크 가격 피드
 hide_table_of_contents: false
 sidebar_position: 2
 ---

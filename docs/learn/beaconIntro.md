@@ -1,5 +1,5 @@
 ---
-sidebar_label: Introduction
+sidebar_label: 소개
 sidebar_position: 2
 ---
 # 소개

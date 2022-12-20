@@ -1,5 +1,5 @@
 ---
-sidebar_label: Issue BEP20 Tokens
+sidebar_label: BEP20 토큰 발행하기
 sidebar_position: 2
 ---
 

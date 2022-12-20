@@ -1,5 +1,5 @@
 ---
-sidebar_label: Integration
+sidebar_label: 통합하기
 sidebar_position: 2
 hide_table_of_contents: false
 ---

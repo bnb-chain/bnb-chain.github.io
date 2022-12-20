@@ -1,5 +1,5 @@
 ---
-sidebar_label: Gnosis Safe Multisig
+sidebar_label: 노시스 세이프 멀티시그
 sidebar_position: 2
 hide_table_of_contents: false
 ---

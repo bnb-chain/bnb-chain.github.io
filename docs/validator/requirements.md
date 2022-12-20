@@ -1,5 +1,5 @@
 ---
-sidebar_label: Hardware Requirements 
+sidebar_label: 하드웨어 요구사항 
 hide_table_of_contents: false
 sidebar_position: 2
 ---

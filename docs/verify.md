@@ -1,5 +1,5 @@
 ---
-sidebar_label: Verify Your Contract on BscScan
+sidebar_label: BscScan에서 컨트랙트 확인하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---

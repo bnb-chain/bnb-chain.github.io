@@ -1,5 +1,5 @@
 ---
-sidebar_label: Using Web3.js Library on BNB Smart Chain
+sidebar_label: BNB 스마트 체인에서 Web3.js 라이브러리 사용하기
 sidebar_position: 2
 hide_table_of_contents: false
 ---

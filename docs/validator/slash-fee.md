@@ -1,5 +1,5 @@
 ---
-sidebar_label: Slashing Fee
+sidebar_label: 슬래싱 수수료
 hide_table_of_contents: false
 sidebar_position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Manually Install Binance Extension Wallet
+sidebar_label: 수동으로 바이넌스 익스텐션 지갑 설치하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---

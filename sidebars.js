@@ -17,7 +17,7 @@ const sidebars = {
   bscSideBar: [
     {
       type: 'category',
-      label: 'BNB Chain',
+      label: 'BNB 체인',
      // collapsible: true,
       collapsed: true,
       items: [
@@ -27,7 +27,7 @@ const sidebars = {
             type: 'category',
             collapsible: true,
             collapsed: true,
-            label: 'BNB Smart Chain',
+            label: 'BNB 스마트 체인',
             items: ['learn/intro', 
 
                 {type: 'doc', label: 'Tutorials', id:'bsc-tutorials'},
@@ -35,12 +35,12 @@ const sidebars = {
                 {
                 type: 'category',
                 collapsed: true,
-                label: 'Core Concepts',
+                label: '핵심 개념',
                 items: ['learn/consensus', 
                           {type: 'category',
                           //collapsible: true,
                           collapsed: true,
-                          label: 'BC and BSC Cross-Chain Mechanism',
+                          label: 'BC와 BSC 크로스 체인 구조',
                           items: ['learn/cross-chain', 'learn/system-contract',
                                   'cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
                                   'learn/oracle-module','learn/oracle-relayer']},
@@ -51,50 +51,50 @@ const sidebars = {
               {type: 'category',
               //collapsible: true,
               collapsed: true,
-              label: 'Develop',
+              label: '개발',
               items: [
-                      {type: 'doc', label: 'Development Tools', id:'learn/ecosystem'},
-                      {type:'doc', id:'rpc', label:'RPC Endpoints'},
+                      {type: 'doc', label: '개발 도구', id:'learn/ecosystem'},
+                      {type:'doc', id:'rpc', label:'RPC 엔드포인트'},
                       'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Running Fullnode',
+                        label: '풀 노드 운영하기',
                         items: ['validator/fullnode','validator/snapshot','local', 'validator/upgrade-fullnode']
                       },
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Running Archive Node',
+                        label: '아카이브 노드 운영하기',
                         items: ['archivenode']
                       },
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Separate Node',
+                        label: '개별 노드',
                         items: ['BSC-separate-node','BSC-verify-node', 'BSC-fast-node']
                       },
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Deploy Smart Contract',
+                        label: '스마트 컨트랙트 배포하기',
                         items: ['chainide', 'remix-new', 'truffle-new', 'hardhat-new', 'replit', 'verify']
                       },
                       {
                         type: 'category',
-                        label: 'Deploy NFTs on BSC',
+                        label: 'BSC에서 NFT 배포하기',
                         items:['nft-metadata-standard', 'ERC721', 'nft_blackide']
                       },
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'BEP20 Tokens',
+                        label: 'BEP20 토큰',
                         items: ['BEP20', 'issue-BEP20', 
                                   {
                                     type: 'category',
                                     //collapsible: true,
                                     collapsed: true,
-                                    label: 'Bind Tokens',
+                                    label: '토큰 바인딩',
                                     items: ['tokens-cross-chain', 'bind-tokens', 'mirror', 
                                     'circulation-model', 'sync' ]
                                   },
@@ -103,7 +103,7 @@ const sidebars = {
                                     type: 'category',
                                     //collapsible: true,
                                     collapsed: true,
-                                    label: 'BEP20 Contracts',
+                                    label: 'BEP20 컨트랙트',
                                     items: ['proxy', 'verify-proxy']
                                   },
                               ]
@@ -111,7 +111,7 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Dapp Development',
+                        label: '디앱 개발',
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       
@@ -119,7 +119,7 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Oracles',
+                        label: '오라클',
                         items: ['band',  'link']
                       },
                       {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain App Support'},
@@ -129,17 +129,17 @@ const sidebars = {
               type: 'category',
               //collapsible: true,
               collapsed: true,
-              label: 'Validator',
+              label: '검증인',
               items: ['validator/overview','del-guide', 'validator/requirements', 
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Running as Validator on BSC',
+                        label: 'BSC에서 검증인 운영하기',
                         items:['validator/guideline-mainnet',
                         {
                           type: 'category',
                         collapsed: true,
-                        label: 'Join Testnet',
+                        label: '테스트넷 합류',
                         items:['validator/guideline-testnet', 'validator/testnet']
                         },
                         
@@ -154,12 +154,12 @@ const sidebars = {
               type: 'category',
               //collapsible: true,
               collapsed: true,
-              label: 'Staking',
+              label: '스테이킹',
               items: ['stake/Staking', 'stake/cli-commands', 'wallet/staking',
               {
                 type: 'category',
                 collapsed: true,
-                label: 'Slashing',
+                label: '슬래싱',
                 items:['validator/Penalty-overview',  'validator/send-slash-evidence', 
                       'validator/scenarios-slash', 'validator/slash-fee', 'validator/unjail',
                       'validator/monitor-and-query-slash'
@@ -173,17 +173,17 @@ const sidebars = {
             {
               type: 'category',
               collapsed: true,
-              label: 'Migrating to BNB Chain',
+              label: 'BNB 체인으로 이전하기',
               items: [
               {
                 type: 'category',
                 collapsed: true,
-                label: 'From Non-EVM Chain',
+                label: 'EVM 아닌 체인들',
                 items:[
                  {
                   type: 'category',
                   collapsed: true,
-                  label: 'Solana',
+                  label: '솔라나',
                   items:['migration/non-evm-chains/solana/architecture-comparison']
               },
                 ]
@@ -191,26 +191,26 @@ const sidebars = {
               ]
             },
            
-            {type: 'doc',   id: 'Integrate',   label: 'Integration'},
+            {type: 'doc',   id: 'Integrate',   label: '통합하기'},
       
             {
               type: 'category',
               //collapsible: true,
               collapsed: true,
-              label: 'Wallet',
+              label: '지갑',
               items: ['Wallet', 'create-wallet', 
               {
                 type: 'category',
                 //collapsible: true,
                 collapsed: true,
-                label: 'BNB Chain Extension Wallet',
+                label: 'BNB 체인 익스텐션 지갑',
                 items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
               },
               {type:'doc', id:'wallet/wallet_api', label:'Binance Extension Wallet API'},
               {
                 type: 'category',
                 collapsed: true,
-                label: 'Tutorials on Third Party Wallets',
+                label: '서드 파티 지갑 튜토리얼',
                 items:['wallets/wallet-tutorial-overview','wallet/trustwallet', 'wallet/metamask','wallet/arkane', 'wallet/math', 'wallet/myetherwallet',
                   'wallet/ezdefi', 'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
                   'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken', 'learn/gnosis']
@@ -223,21 +223,21 @@ const sidebars = {
                     
           {
             type: 'category',
-            label: 'Beacon Chain',
+            label: '비컨 체인',
           // collapsible: true,
             collapsed: true,
             items: ['learn/beaconIntro',
                       {type: 'doc', label: 'Tutorials', id:'beaconchain/bc-tutorials'},
                       {
                         type:'category',
-                        label: 'Learn',
+                        label: '배우기',
                         collapsed: true,
                         items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/assets',
                         'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8', 
                         
                         {
                             type: 'category',
-                            label: 'Encoding',
+                            label: '인코딩',
                             collapsed: true,
                             items: [ 'encoding', 'beaconchain/learn/encoding/encoding',
                             'beaconchain/learn/encoding/amino-example']
@@ -246,11 +246,11 @@ const sidebars = {
                       },
                       {
                         type:'category',
-                        label:'Develop',
+                        label:'개발',
                         items: [
                           {
                           type:'category',
-                          label:'Beacon Chain Fullnode',
+                          label:'비컨 체인 풀 노드',
                           items:['beaconchain/develop/node/install', 'beaconchain/develop/node/join-mainnet',
                                   'beaconchain/develop/node/join-testnet', 'beaconchain/develop/node/synctypes',
                                 'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
@@ -259,27 +259,27 @@ const sidebars = {
                             'beaconchain/develop/node/snapshot'
                           ]
                         }, 
-                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'Beacon Chain Client'},
-                        {type:'doc', id: 'beaconchain/light-client', label:'Light Client'},
-                        {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
-                        {type:'doc', id: 'beaconchain/list_instruction', label:'List Instructions'},
-                        {type:'doc', id: 'beaconchain/list', label:'List Transaction'},
-                        {type:'doc', id: 'beaconchain/trading-spec', label:'Trading Specification'},
-                        {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'Simple API Server'},
-                        {type:'doc', id: 'beaconchain/develop/bcsdk', label:'Beacon Chain SDK'},
-                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'Beacon Chain Testnet & SDK'},
+                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'비컨 체인 클라이언트'},
+                        {type:'doc', id: 'beaconchain/light-client', label:'라이트 클라이언트'},
+                        {type:'doc', id: 'beaconchain/tokens', label:'자산 관리'},
+                        {type:'doc', id: 'beaconchain/list_instruction', label:'상장 명령어'},
+                        {type:'doc', id: 'beaconchain/list', label:'상장 트랜잭션'},
+                        {type:'doc', id: 'beaconchain/trading-spec', label:'거래 세부사항'},
+                        {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'간단한 API 서버'},
+                        {type:'doc', id: 'beaconchain/develop/bcsdk', label:'비컨 체인 SDK'},
+                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'비컨 체인 테스트넷 & SDK'},
                         {
                           type: 'category',
-                          label:'Beacon Chain and DEX API Reference',
+                          label:'비컨 체인 및 DEX API 레퍼런스',
                           items:[
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
-                            {type:'link', href:"pathname:///api-swagger/index.html", label: 'Accelerated Node HTTP API Swagger'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: 'Accelerated Node HTTP API Testnet- Paths and Models'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: 'Node RPC - Paths and Models'},
-                            {type:'link', href:"pathname:///rpc-swagger/index.html", label: 'Node RPC Swagger'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: '가속 노드 HTTP API 메인넷 - 경로 및 모델'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: '새 가속 노드 HTTP API 메인넷'},
+                            {type:'link', href:"pathname:///api-swagger/index.html", label: '가속 노드 HTTP API Swagger'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: '가속 노드 HTTP API 테스트넷- 경로 및 모델'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: '웹 소켓 - 연결하기'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: '웹 소켓 - 스트림'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: '노드 RPC - 경로 및 모델'},
+                            {type:'link', href:"pathname:///rpc-swagger/index.html", label: '노드 RPC Swagger'},
                             {type:'doc', id:'beaconchain/changelog', label:'CHANGELOG'}
       
                           ]
@@ -289,16 +289,16 @@ const sidebars = {
                       },
                       {
                         type: 'category',
-                        label:'Wallet',
+                        label:'지갑',
                         items:['beaconchain/wallets',
                           {
                             type: 'category',
-                            label:'Tutorials',
+                            label:'튜토리얼',
                             items:[
-                            {type:'doc', id:'beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet', label:'Trust Wallet Guide'},
-                            {type:'doc', id:'beaconchain/wallet/tutorial/ledger-nano-s-usage-guide', label:'Ledger Wallet Guide'},
-                            {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'Trezor Wallet Guide'},
-                            {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'How to manage BEP8 token with Web Wallet'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet', label:'트러스트 웰렛 가이드'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/ledger-nano-s-usage-guide', label:'렛저 월렛 가이드'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'트레저 월렛 가이드'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'웹 지갑으로 BEP8 토큰 관리하기'},
                           ]
                           }
                         ]
@@ -309,18 +309,18 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'BNB Sidechain', 
+            label: 'BNB 사이드 체인', 
             //link: {type: "doc", id: 'BNBSidechain/overview/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
             items:[
                'BNBSidechain/overview/bs-overview', 'BNBSidechain/overview/whenBNBSidechain',
                {
                   type: 'doc',
-                  label: 'Architecture',
+                  label: '아키텍처',
                   id: 'BNBSidechain/architecture/bs-arch'
                },
               {
                 type: 'doc',
-                label: 'Development Tools',
+                label: '개발 도구',
                 id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
               },
               'BNBSidechain/develop/BNBSidechainTestnet/launch-bs',
@@ -328,11 +328,11 @@ const sidebars = {
                {
                   type: 'category',
                   collapsed: true,
-                  label: 'Security',
+                  label: '보안',
                   items:['BNBSidechain/security/blockchain-and-evm-security', 
                         'BNBSidechain/security/bridge-security']
                },
-              {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bs-pilot-projects'},
+              {type: 'doc', label: 'BNB 사이드 체인 파일럿 프로젝트', id:'BNBSidechain/bs-pilot-projects'},
             
             ]
           },
@@ -343,14 +343,14 @@ const sidebars = {
     {
       type: 'category',
       collapsed: true,
-      label: 'Future Developments',
+      label: '개발 전망',
       items:[
                 {
                   type: 'category',
                   collapsed: true,
-                  label: '2022 Development Outlook',
-                  items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/user-exp',
-                             'dev-outlook/sharding-and-multichain', 'dev-outlook/community'],
+                  label: '2022 개발 전망',
+                  items:['dev-outlook-2022', 'dev-outlook/scaling',
+                              'dev-outlook/community'],
                 }
       ],
     },
@@ -364,25 +364,25 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'BNB Smart Chain FAQs',
+          label: 'BNB 스마트 체인 FAQs',
           items: ['BSC-FAQs-general', 'BSC-FAQs-tokens', 
                   'BSC-FAQs-validator', 'BSC-FAQs-delegator', 
                   'parameters', 'cross',  'faq'],
         },
         {
-          type: 'doc', label: 'Beacon Chain FAQs', id: 'beaconchain/faq/faq',
+          type: 'doc', label: '비컨 체인 FAQs', id: 'beaconchain/faq/faq',
         },
         {
           type: 'doc',
           id: 'BNBSidechain/faqs-bas',
-          label: 'BNB Sidechain FAQs',
+          label: 'BNB 사이드 체인 FAQs',
         },  
      ],
 
     },
     
-    {type: 'doc',   id: 'contribute',   label: 'Contribute to BSC'},
-    {type: 'doc',   id: 'more-help',   label: 'More Help'},
+    {type: 'doc',   id: 'contribute',   label: 'BSC에 기여하기'},
+    {type: 'doc',   id: 'more-help',   label: '도움'},
   ],
    
 };

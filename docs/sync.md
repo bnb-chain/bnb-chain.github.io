@@ -1,10 +1,10 @@
 ---
-sidebar_label: Sync Token Supply
+sidebar_label: 토큰 총공급량 동기화
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BEP2과 BEP20 토큰 총공급량 싱크 맞추기
+# BEP2과 BEP20 토큰 총공급량 동기화
 
 ## 요구사항
 

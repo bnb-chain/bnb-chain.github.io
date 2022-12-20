@@ -1,5 +1,5 @@
 ---
-sidebar_label: Mirror BEP2 and BEP20 Token
+sidebar_label: BEP2와 BEP20 토큰 미러링하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---

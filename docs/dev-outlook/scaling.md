@@ -1,5 +1,5 @@
 ---
-sidebar_label: 확장 확장 및 사용자 경험 개선
+sidebar_label: 확장 및 사용자 경험 개선
 sidebar_position: 2
 ---
 

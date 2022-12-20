@@ -1,5 +1,5 @@
 ---
-sidebar_label: Join Mainnet
+sidebar_label: 메인넷 합류하기
 sidebar_position: 2
 hide_table_of_contents: false
 ---

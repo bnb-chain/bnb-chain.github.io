@@ -1,5 +1,5 @@
 ---
-sidebar_label: Using HardHat
+sidebar_label: HardHat 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---

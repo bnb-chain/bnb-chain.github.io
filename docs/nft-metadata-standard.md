@@ -1,5 +1,5 @@
 ---
-sidebar_label: NFT Metadata Standard
+sidebar_label: NFT 메타데이터 표준
 sidebar_position: 1
 ---
 # NFT 메타데이터 표준

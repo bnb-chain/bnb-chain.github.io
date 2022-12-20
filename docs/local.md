@@ -1,5 +1,5 @@
 ---
-sidebar_label: Local BNB Smart Chain Network
+sidebar_label: 로컬 BNB 스마트 체인 네트워크
 hide_table_of_contents: false
 sidebar_position: 2
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Overview
+sidebar_label: 개요
 hide_table_of_contents: false
 ---
 

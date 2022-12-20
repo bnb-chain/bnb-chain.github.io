@@ -1,5 +1,5 @@
 ---
-sidebar_label: BSC Testnet
+sidebar_label: BSC 테스트넷
 ---
 
 # BSC 테스트넷

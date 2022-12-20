@@ -1,5 +1,5 @@
 ---
-sidebar_label: Common Problems With Connectivity
+sidebar_label: 연결성 문제
 hide_table_of_contents: false
 sidebar_position: 2
 ---

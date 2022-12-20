@@ -1,5 +1,5 @@
 ---
-sidebar_label: Staking
+sidebar_label: 스테이킹
 sidebar_position: 2
 hide_table_of_contents: false
 ---

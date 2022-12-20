@@ -1,10 +1,10 @@
 ---
-sidebar_label: Create a Validator on Testnet
+sidebar_label: 테스트넷에서 검증인 생성하기
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# 검증자 후보되기
+# 검증인 후보되기
 
 ## 풀노드 설치
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Governance of BSC
+sidebar_label: BSC의 거버넌스
 sidebar_position: 2
 hide_table_of_contents: false
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_label: BNB Chain Platform Overview
+sidebar_label: BNB 체인 플랫폼 개요
 ---
 
 # 소개 

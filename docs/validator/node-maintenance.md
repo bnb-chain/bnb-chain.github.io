@@ -1,5 +1,5 @@
 ---
-sidebar_label: Node Maintenance
+sidebar_label: 노드 관리
 hide_table_of_contents: false
 sidebar_position: 2
 ---

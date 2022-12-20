@@ -1,5 +1,5 @@
 ---
-sidebar_label: 구조
+sidebar_label: 아키텍처
 sidebar_position: 2
 hide_table_of_contents: false
 ---

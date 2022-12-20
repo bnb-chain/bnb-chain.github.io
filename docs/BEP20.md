@@ -1,9 +1,9 @@
 ---
-sidebar_label: Introduction
+sidebar_label: 소개
 sidebar_position: 2
 ---
 
-# BEP20 토큰 개요
+# BEP20 토큰 소개
 BEP20 토큰은 [IBEP20.sol](IBEP20.sol)에서 `IBEP20` 인터페이스를 구현해야 합니다. 이 것은 템플릿 컨트랙트 [BEP20Token.template](BEP20Token.template)입니다. `_name`, `_symbol`, `_decimals`, `_totalSupply` 만 채워넣으면 됩니다:
 ```
   constructor() public {

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Using Black IDE
+sidebar_label: Black IDE 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---

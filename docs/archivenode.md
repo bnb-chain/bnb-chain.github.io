@@ -1,5 +1,5 @@
 ---
-sidebar_label: BNB Smart Chain Archive Node
+sidebar_label: BNB 스마트 체인 아카이브 노드
 hide_table_of_contents: false
 sidebar_position: 2
 ---

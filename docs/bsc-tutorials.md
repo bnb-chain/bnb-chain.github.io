@@ -1,5 +1,5 @@
 ---
-sidebar_label: Tutorials
+sidebar_label: 튜토리얼
 hide_table_of_contents: false
 ---
 

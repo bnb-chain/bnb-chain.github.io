@@ -1,5 +1,5 @@
 ---
-sidebar_label: Upgrading Geth
+sidebar_label: Geth 업그레이드
 hide_table_of_contents: false
 sidebar_position: 2
 ---

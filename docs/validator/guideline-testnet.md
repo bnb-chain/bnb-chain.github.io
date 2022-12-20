@@ -1,5 +1,5 @@
 ---
-sidebar_label: Run Validator on Testnet
+sidebar_label: 테스트넷에서 검증인 운영하기
 sidebar_position: 2
 hide_table_of_contents: false
 ---

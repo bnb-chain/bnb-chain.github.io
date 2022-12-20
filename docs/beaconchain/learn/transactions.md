@@ -1,5 +1,5 @@
 ---
-sidebar_label: Transactions
+sidebar_label: 트랜잭션
 hide_table_of_contents: false
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Wallet Guide
+sidebar_label: 지갑 가이드
 sidebar_position: 2
 hide_table_of_contents: false
 ---

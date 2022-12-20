@@ -1,5 +1,5 @@
 ---
-sidebar_label: Full Stack Hello World dApp
+sidebar_label: 풀 스택 Hello World 디앱
 sidebar_position: 2
 hide_table_of_contents: false
 ---

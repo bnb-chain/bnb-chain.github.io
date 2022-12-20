@@ -1,5 +1,5 @@
 ---
-sidebar_label: Staking with Binance Extension Wallet
+sidebar_label: Binance Extension Wallet으로 스테이킹하기
 hide_table_of_contents: false
 ---
 

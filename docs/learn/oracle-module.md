@@ -1,5 +1,5 @@
 ---
-sidebar_label: Oracle Module
+sidebar_label: 오라클 모듈
 sidebar_position: 2
 hide_table_of_contents: false
 ---

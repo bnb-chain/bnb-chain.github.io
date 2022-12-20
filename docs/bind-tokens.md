@@ -1,5 +1,5 @@
 ---
-sidebar_label: Bind BEP2 and BEP20 Tokens
+sidebar_label: BEP2와 BEP20 토큰 바인딩하기
 sidebar_position: 2
 ---
 
@@ -44,7 +44,7 @@ ABC-A64 토큰의 전체 발행량은 1억입니다. 위의 바인드 전송은 
 ### 바인드 요청 승인
 1. 금액 부여:
 
-    [myetherwallet](myetherwallet.md/myetherwallet)에서 BEP20의 **approve**를 호출하여 TokenManager 컨트랙트에 4,000만 달러 수당을 부여합니다. 지출자 값은 `0x0000000000000000000000000000000000001008`이어야 하며 금액 값은 4e25여야 합니다. 트랜잭션 전송자는 BEP20 소유자여야 합니다.
+    [myetherwallet](wallet/myetherwallet.md)에서 BEP20의 **approve**를 호출하여 TokenManager 컨트랙트에 4,000만 달러 수당을 부여합니다. 지출자 값은 `0x0000000000000000000000000000000000001008`이어야 하며 금액 값은 4e25여야 합니다. 트랜잭션 전송자는 BEP20 소유자여야 합니다.
 
     ![img](https://lh6.googleusercontent.com/p-HctNRPwXg0VD1yfE3j4OJ3BrMHPZpiGGCtp7XUJX34z_LT53nvZqgTzY58Ab1EsybJipwjsnwL2uJ-CPH8gntDpcw7LW7aFPK1_KRxxnNq-xErwGpaPTlg5UbfKoVNjd4YT0xU)
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Download Blockchain Snapshot
+sidebar_label: 블록체인 스냅샷 다운로드
 sidebar_position: 2
 hide_table_of_contents: false
 ---

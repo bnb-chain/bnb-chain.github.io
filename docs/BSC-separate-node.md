@@ -1,10 +1,10 @@
 ---
-sidebar_label: BNB Smart Chain Separate Node
+sidebar_label: BNB 스마트 체인 개별 노드
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB 스마트 체인에서 별개 노드(separate node) 운영하기
+# BNB 스마트 체인에서 개별 노드(separate node) 운영하기
 
 ## 개요
 

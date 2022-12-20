@@ -1,5 +1,5 @@
 ---
-sidebar_label: BSC Slash Evidence
+sidebar_label: BSC 슬래싱 증거
 hide_table_of_contents: false
 sidebar_position: 2
 ---

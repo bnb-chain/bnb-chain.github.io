@@ -1,5 +1,5 @@
 ---
-sidebar_label: Build-in System Contracts
+sidebar_label: 빌트인 시스템 컨트랙트
 sidebar_position: 2
 hide_table_of_contents: false
 ---

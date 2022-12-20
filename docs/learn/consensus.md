@@ -1,5 +1,5 @@
 ---
-sidebar_label: Consensus Engine
+sidebar_label: 합의 엔진
 sidebar_position: 2
 hide_table_of_contents: false
 ---

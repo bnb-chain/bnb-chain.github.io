@@ -1,5 +1,5 @@
 ---
-sidebar_label: Wallet Key Management
+sidebar_label: 키 관리
 hide_table_of_contents: false
 sidebar_position: 2
 ---

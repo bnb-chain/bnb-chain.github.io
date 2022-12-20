@@ -1,5 +1,5 @@
 ---
-sidebar_label: Cross-chain Token Management
+sidebar_label: 크로스체인 토큰 관리
 sidebar_position: 2
 ---
 

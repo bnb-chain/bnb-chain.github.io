@@ -1,5 +1,5 @@
 ---
-sidebar_label: Using ChainIDE
+sidebar_label: ChainIDE 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---
@@ -39,7 +39,7 @@ sidebar_position: 2
 ### 바이낸스에서 BNB 스마트 체인 테스트 네트워크 활성화하기
 바이낸스 월렛을 계속 사용하고 싶다면 바이낸스 월렛을 설치하고 바이낸스 월렛을 설치한 후 "Show Test Networks"를 활성화하고 'BNB 스마트 체인 테스트 네트워크'로 전환해야 합니다. 
 
-<img src=" https://chainide-doc.s3.amazonaws.com/Using+Chain입니다.IDE+BNB+스마트+체인/16.png" alt="img" style=style:"50%"}/>
+<img src=" https://chainide-doc.s3.amazonaws.com/Using+Chain입니다.IDE+BNB+스마트+체인/16.png" alt="img" style="50%" />
 
 ### 테스트 BNB 토큰 받기
 

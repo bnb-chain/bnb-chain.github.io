@@ -1,5 +1,5 @@
 ---
-sidebar_label: Oracle Relayer
+sidebar_label: 오라클 릴레이어
 sidebar_position: 2
 hide_table_of_contents: false
 ---

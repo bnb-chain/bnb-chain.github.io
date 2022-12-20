@@ -1,5 +1,5 @@
 ---
-sidebar_label: Using Replit
+sidebar_label: Replit 사용하기
 hide_table_of_content: false
 sidebar_position: 2
 ---

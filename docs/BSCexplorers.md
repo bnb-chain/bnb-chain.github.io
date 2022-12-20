@@ -1,5 +1,5 @@
 ---
-sidebar_label: BSC Explorers
+sidebar_label: BSC 탐색기
 sidebar_position: 2
 hide_table_of_contents: false
 ---

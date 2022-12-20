@@ -1,4 +1,4 @@
-# 명령 줄 인터페이스 (CLI - Command Line Interface)
+# 커멘드 라인 인터페이스 (CLI)
 
 비컨 체인 CLI는 비컨 체인과 상호 작용하기 위한 방법 중 하나입니다.
 

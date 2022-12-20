@@ -1,5 +1,5 @@
 ---
-sidebar_label: Verify Proxy Contracts
+sidebar_label: 프록시 컨트랙트 검증하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---
