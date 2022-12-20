@@ -5,9 +5,9 @@ sidebar_position: 2
 ---
 # How to Run a Archive Node on BNB Smart Chain
 
-## What is archive node?
+## What is an archive node?
 
-Simply speaking, an archive node is a full node running with an additional special option, "--gcmode archive". It stores all the historical data of the blockchain starting from the genesis block. As compared to a typical full node that just holds all the state change data for some latest blocks, an archive node always stores them for each block.
+Simply speaking, an archive node is a full node running with an additional special option, `--gcmode archive`. It stores all the historical data of the blockchain starting from the genesis block. As compared to a typical full node that just holds all the state change data for some latest blocks, an archive node always stores them for each block.
 
 ## Why is an archive node important?
 

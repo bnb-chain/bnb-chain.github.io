@@ -1,11 +1,13 @@
 ---
-sidebar_label: Scaling
+sidebar_label: Scaling & Better User Experience
 sidebar_position: 2
 ---
 
-# Scaling 
+# Scaling and Imporvements for Better User Experience
 
-## BSC Throughput Boost
+## Scaling 
+
+### BSC Throughput Boost
 
 Though many have challenged that BSC chose to scale up the capacity by shorter block time and larger block gas limit. There is strong faith that there is still room to improve the capacity of the current PoSA based BSC.
 
@@ -13,7 +15,7 @@ Based on the past research and investigation, storage has been commonly consider
 
 ![storage-stats](https://global.discourse-cdn.com/standard11/uploads/binancesmartchain1/original/1X/d177780f6baa8cfe6c6b5761b08b980d51cabcee.jpeg)
 
-## Erigon Based BSC Client or Another Storage Model
+### Erigon Based BSC Client or Another Storage Model
 [Erigon](https://github.com/ledgerwatch/erigon), a.k.a the previous “turbo-geth”, has been striving hard to improve the storage system of Ethereum/Geth in the past 3 years and now blossomed into beta status. Its new storage model with the new database, MPT generation methodology and staged sync has been proven to run much more efficiently than Geth for the large storage. Creating a BSC client based on Erigon will certainly improve the efficiency of the BSC archive node by reducing the storage size and improving the sync time.
 
 [Ankr is already contributing to the task](https://github.com/bnb-chain/bsc-erigon). The full node binary is ready to run while the validator mode is being worked on.
@@ -22,7 +24,7 @@ Besides the instant benefits, the new storage model of Erigon may also set a bet
 
 One shortcoming of Erigon is that it doesn’t support Snapshot Sync yet, which is a must for BSC node runners. The BSC community will work with Erigon to overcome this in 2022.
 
-## Distributed Node
+### Distributed Node
 For high performance computing, it is almost impossible to only rely on one node nowadays. The principle of BSC is to allow the node runners to use multiple servers with common hardware specs to support the network, instead of one “bare-metal” super machine.
 
 Running different functions of a blockchain client on different processes or machines are not new. Erigon proposes to run the RPC function in a standalone process on the same or different machine. The Merge of ETH 2.0 will also decompose the consensus and execution layers onto different client softwares.
@@ -31,7 +33,7 @@ A typical blockchain client comprises many functionalities, P2P networking, cons
 
 A straightforward approach may be to arrange the tasks in a “synchronized, distributed, assembly line” (SDAL), due to the sequential characteristics of the blockchain. Some change may be required on the consensus logic to make this type optimization easier. This is also discussed in other blockchains that break sequencing, execution and storage (settlement) into different components.
 
-## Ephemeral Client and Hot/Cold Data Segregation
+### Ephemeral Client and Hot/Cold Data Segregation
 One foreseeable problem of the current public blockchain is that it stores ALL the data FOREVER. It is very likely that only 20% of the state in the EVM blockchain is still useful, while 80% may not be used much anymore. BSC has more than 121 million unique addresses in Dec. 2021, while daily active addresses are only over 2 million. Many data were created on the blockchain for just one time use and the creators do not bother with calling the SELF DESTRUCT instruction. But the data will be there forever, and accumulated only to break the bones of the archive node.
 
 Ideally there should be an “Ephemeral Client”, which is a mode between a “full node” and a “light client”:
@@ -53,7 +55,7 @@ One potential solution may be:
     4. The transaction senders will pay extra gas to run any transaction that requires swapping in the data.
 A new data layer may emerge due to the requirement to store the cold data.
 
-## EVM Parallelization
+### EVM Parallelization
 Running transactions in parallel for Ethereum has been studied for several years. Solana goes with a native design to enable this as much as possible so that it can take advantage of the powerful GPU.
 
 Based on the analytics of BSC data, the CPU has not been the No.1 bottleneck but the storage is. Even though the EVM parallelization will take better usage of multiple cores of the modern CPUs, the primary goal is to increase the parallelism of storage operation to maximize the SSD usage (even the SATA ones).
@@ -64,7 +66,18 @@ Besides the parallelization within one block, BSC inherits one limit from Ethere
 
 How to run transactions in parallel even among different blocks will be very rewarding here, but it will be very difficult as well.
 
-## EVM JIT Compilation
+### EVM JIT Compilation
 Using JIT compilation in EVM was [proposed](https://github.com/ethereum/evmjit) and [discussed](https://ethresear.ch/t/evm-performance/2791) in the early days of Ethereum. When popular dApps dominate the network, such as OpenSea and Uniswap on Ethereum, and PancakeSwap on BSC, and one GameFi dApp had a few million transactions per day, the idea is fascinating that these applications can be compiled into native instructions and able to run faster. This benefits even the compilation is not done “just-in-time” but offline.
 
 However, this is a very challenging feature because it touches the very low level of EVM and can be quite prone to error and security issues. Here is just a placeholder for the talented developers to conquer in the later stage.
+
+
+## User Experience
+Besides the limitation of the block gas limit cap, the other major factor that can impact BSC capacity is the rate of fork. Fork and re-organization of the blockchain can be very costly for both validators and fullnode.
+
+## Fast Finality
+Although BSC is designed to produce blocks every 3 seconds, it is recommended to wait until more than half of the validator set has produced new blocks on the block before the block can be confirmed in a probabilistic manner. This will cost at least 3x11 = 33 seconds after the block is visible on the network.
+
+As the validator set is well known every 24 hours, BSC can get a faster consensus on the longest chain based on the “attestation” from more than a certain percentage of the validator set considering it is the longest chain.
+
+This essentially requires altering the “Parlia” consensus mechanism of BSC. A BEP candidate has been proposed by the community at [[WIP] BEP-97: Introduce Fast Finality Mechanism by KeefeL · Pull Request #126 · binance-chain/BEPs · GitHub](https://github.com/binance-chain/BEPs/pull/126) 

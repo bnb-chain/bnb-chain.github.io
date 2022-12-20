@@ -14,7 +14,7 @@ The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
 
 :::note
 
-You can make `eth_getLogs` requests with up to a 5K block range.
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
 If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
 
 :::

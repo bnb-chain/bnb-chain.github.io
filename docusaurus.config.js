@@ -113,8 +113,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Introduction',
-                to: '/docs/bnbIntro',
+                label: 'Getting Started',
+                to: '/docs/getting-started',
               },
             ],
           },

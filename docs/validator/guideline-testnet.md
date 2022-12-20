@@ -12,10 +12,10 @@ Before you start, make sure you meet the hardware requirements for the validator
 #### Choose Your Validator hardware
 
 - VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
-- 16 cores of CPU and 48 gigabytes of memory (RAM)
+- **IMPORTANT** 2 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
+- 16 cores of CPU and 48 GB of memory (RAM)
 - Suggest m5zn.3xlarge instance type on AWS, or c2-standard-8 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 10 megabyte per second
+- A broadband Internet connection with upload/download speeds of 10 MB/S
 
 ### Setup a Validator Node at Testnet
 

@@ -21,7 +21,7 @@ const sidebars = {
      // collapsible: true,
       collapsed: true,
       items: [
-        'bnbIntro', 'getting-started', 
+         'bnbIntro', 'getting-started', 
           
           {
             type: 'category',
@@ -111,18 +111,13 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Dapp Development',
+                        label: 'Dapp Tutorials',
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       
                       'bsc-relayer', 
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'Oracles',
-                        items: ['band',  'link']
-                      },
-                      {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain App Support'},
+                      'oracles',
+                      {type: 'doc', id: 'learn/cross-chain-bridges', label: 'Cross-Chain Bridges'},
             ]},  
             
             {
@@ -175,20 +170,22 @@ const sidebars = {
               collapsed: true,
               label: 'Migrating to BNB Chain',
               items: [
-              {
-                type: 'category',
-                collapsed: true,
-                label: 'From Non-EVM Chain',
-                items:[
                  {
                   type: 'category',
                   collapsed: true,
                   label: 'Solana',
-                  items:['migration/non-evm-chains/solana/architecture-comparison']
-              },
+                  items:['migration/non-evm-chains/solana/architecture-comparison', 
+                         'migration/non-evm-chains/solana/token-migration']
+                 },
+                 {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Polygon',
+                  items:['migration/evm-chains/chain-comparison', 
+                         'migration/evm-chains/token-comparison',
+                         'migration/evm-chains/token-migration']
+                 }
                 ]
-              },
-              ]
             },
            
             {type: 'doc',   id: 'Integrate',   label: 'Integration'},
@@ -223,7 +220,7 @@ const sidebars = {
                     
           {
             type: 'category',
-            label: 'Beacon Chain',
+            label: 'BNB Beacon Chain',
           // collapsible: true,
             collapsed: true,
             items: ['learn/beaconIntro',
@@ -232,7 +229,7 @@ const sidebars = {
                         type:'category',
                         label: 'Learn',
                         collapsed: true,
-                        items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/assets',
+                        items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/escrow-accounts', 'beaconchain/learn/assets',
                         'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8', 
                         
                         {
@@ -250,7 +247,7 @@ const sidebars = {
                         items: [
                           {
                           type:'category',
-                          label:'Beacon Chain Fullnode',
+                          label:'BNB Beacon Chain Fullnode',
                           items:['beaconchain/develop/node/install', 'beaconchain/develop/node/join-mainnet',
                                   'beaconchain/develop/node/join-testnet', 'beaconchain/develop/node/synctypes',
                                 'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
@@ -259,18 +256,18 @@ const sidebars = {
                             'beaconchain/develop/node/snapshot'
                           ]
                         }, 
-                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'Beacon Chain Client'},
+                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'BNB Beacon Chain Client'},
                         {type:'doc', id: 'beaconchain/light-client', label:'Light Client'},
                         {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
                         {type:'doc', id: 'beaconchain/list_instruction', label:'List Instructions'},
                         {type:'doc', id: 'beaconchain/list', label:'List Transaction'},
                         {type:'doc', id: 'beaconchain/trading-spec', label:'Trading Specification'},
                         {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'Simple API Server'},
-                        {type:'doc', id: 'beaconchain/develop/bcsdk', label:'Beacon Chain SDK'},
-                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'Beacon Chain Testnet & SDK'},
+                        {type:'doc', id: 'beaconchain/develop/bcsdk', label:'BNB Beacon Chain SDK'},
+                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'BNB Beacon Chain Testnet & SDK'},
                         {
                           type: 'category',
-                          label:'Beacon Chain and DEX API Reference',
+                          label:'BNB Beacon Chain and DEX API Reference',
                           items:[
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
@@ -336,23 +333,26 @@ const sidebars = {
             
             ]
           },
+
+
+          {
+            type: 'category',
+            collapsed: true,
+            label: 'ZkBNB', 
+            items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture','zkbnb/zkbnb-storageLayout',
+                   'zkbnb/zkbnb-tokenomics','zkbnb/zkbnb-wallets'],
+          },
+          
     ],
     },
+
 
 
     {
       type: 'category',
       collapsed: true,
       label: 'Future Developments',
-      items:[
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: '2022 Development Outlook',
-                  items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/user-exp',
-                             'dev-outlook/sharding-and-multichain', 'dev-outlook/community'],
-                }
-      ],
+      items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/community'],
     },
 
     {
@@ -370,7 +370,7 @@ const sidebars = {
                   'parameters', 'cross',  'faq'],
         },
         {
-          type: 'doc', label: 'Beacon Chain FAQs', id: 'beaconchain/faq/faq',
+          type: 'doc', label: 'BNB Beacon Chain FAQs', id: 'beaconchain/faq/faq',
         },
         {
           type: 'doc',
