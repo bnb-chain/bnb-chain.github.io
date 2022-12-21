@@ -1,6 +1,8 @@
 ---
 sidebar_label: BNB 체인 플랫폼 개요
 ---
+# BNB Chain: An Ecosystem of Blockchains
+Build N Build Chain aka BNB Chain, one of the most popular blockchains in the world, dedicates to delivering its core infrastructure necessary for future public adoption, and always remains as a community-first and open-source ecosystem built on a permissionless and decentralized environment.
 
 # 소개 
 세계에서 가장 인기 있는 블록체인 중 하나인 BNB 체인은 향후 대중화에 필요한 핵심 인프라를 제공하기 위해 노력하고 있으며, 항상 무신뢰, 탈중앙 환경을 기반으로 구축된 커뮤니티 우선의 오픈 소스 생태계로 유지될 것입니다.
@@ -39,3 +41,8 @@ BSC 2021(현재 버전)은 **_100m 가스 상한선__**의 상당한 블록사�
 - 창작자와 발명가 중시
 - 무신뢰
 - 영원히 탈중앙
+
+## Resources 
+- [Whitepaper](https://github.com/bnb-chain/whitepaper)
+- [Official GitHub](https://github.com/bnb-chain)
+- [Official Blog](https://www.bnbchain.org/en/blog/)

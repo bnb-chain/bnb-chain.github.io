@@ -30,8 +30,13 @@ sidebar_position: 2
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
 ```
 
 2. config 파일을 다운받습니다.
@@ -75,8 +80,13 @@ make geth
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
 ```
 
 2. config 파일을 다운받습니다.

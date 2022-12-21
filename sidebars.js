@@ -21,7 +21,7 @@ const sidebars = {
      // collapsible: true,
       collapsed: true,
       items: [
-        'bnbIntro', 'getting-started', 
+         'bnbIntro', 'getting-started', 
           
           {
             type: 'category',
@@ -116,13 +116,8 @@ const sidebars = {
                       },
                       
                       'bsc-relayer', 
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: '오라클',
-                        items: ['band',  'link']
-                      },
-                      {type: 'doc', id: 'learn/cross-chain-app-list', label: 'Cross-Chain App Support'},
+                      'oracles',
+                      {type: 'doc', id: 'learn/cross-chain-bridges', label: 'Cross-Chain Bridges'},
             ]},  
             
             {
@@ -175,20 +170,22 @@ const sidebars = {
               collapsed: true,
               label: 'BNB 체인으로 이전하기',
               items: [
-              {
-                type: 'category',
-                collapsed: true,
-                label: 'EVM 아닌 체인들',
-                items:[
                  {
                   type: 'category',
                   collapsed: true,
                   label: '솔라나',
-                  items:['migration/non-evm-chains/solana/architecture-comparison']
-              },
+                  items:['migration/non-evm-chains/solana/architecture-comparison', 
+                         'migration/non-evm-chains/solana/token-migration']
+                 },
+                 {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Polygon',
+                  items:['migration/evm-chains/chain-comparison', 
+                         'migration/evm-chains/token-comparison',
+                         'migration/evm-chains/token-migration']
+                 }
                 ]
-              },
-              ]
             },
            
             {type: 'doc',   id: 'Integrate',   label: '통합하기'},
@@ -232,7 +229,7 @@ const sidebars = {
                         type:'category',
                         label: '배우기',
                         collapsed: true,
-                        items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/assets',
+                        items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/escrow-accounts', 'beaconchain/learn/assets',
                         'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8', 
                         
                         {
@@ -336,23 +333,26 @@ const sidebars = {
             
             ]
           },
+
+
+          {
+            type: 'category',
+            collapsed: true,
+            label: 'ZkBNB', 
+            items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture','zkbnb/zkbnb-storageLayout',
+                   'zkbnb/zkbnb-tokenomics','zkbnb/zkbnb-wallets'],
+          },
+          
     ],
     },
+
 
 
     {
       type: 'category',
       collapsed: true,
-      label: '개발 전망',
-      items:[
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: '2022 개발 전망',
-                  items:['dev-outlook-2022', 'dev-outlook/scaling',
-                              'dev-outlook/community'],
-                }
-      ],
+      label: '향후 개발',
+      items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/community'],
     },
 
     {
@@ -370,7 +370,7 @@ const sidebars = {
                   'parameters', 'cross',  'faq'],
         },
         {
-          type: 'doc', label: '비컨 체인 FAQs', id: 'beaconchain/faq/faq',
+          type: 'doc', label: 'BNB 비컨 체인 FAQs', id: 'beaconchain/faq/faq',
         },
         {
           type: 'doc',

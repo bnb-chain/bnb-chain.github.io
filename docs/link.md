@@ -166,7 +166,7 @@ print(historicalData)
 ```
 
 
-## API Reference
+## API 레퍼런스
 
 <a href="https://github.com/smartcontractkit/chainlink/blob/develop/evm-contracts/src/v0.6/interfaces/AggregatorV3Interface.sol" target="_blank">`AggregatorV3Interface`</a>를 위한 API 참고 문서입니다.
 

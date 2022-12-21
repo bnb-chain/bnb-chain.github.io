@@ -16,9 +16,16 @@ BSC RPC 엔드포인트:
 
 권장
 
-* https://bsc-dataseed.binance.org/
-* https://bsc-dataseed1.defibit.io/
-* https://bsc-dataseed1.ninicoin.io/
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+:::
+
+### Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.binance.org
+* https://bsc-dataseed1.defibit.io
+* https://bsc-dataseed1.ninicoin.io
 * https://bsc.nodereal.io
 
 

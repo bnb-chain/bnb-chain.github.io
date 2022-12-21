@@ -39,8 +39,13 @@ unzip geth.zip -d /NAME_OF_YOUR_HOME/node &
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
 ```
 
 2. config 파일을 다운받습니다.
@@ -58,8 +63,12 @@ unzip mainnet.zip
 
 4. 풀노드를 시작합니다.
 ```
-geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
+
+:::참고
+geth 버정 중 wget과 같이 다울로드 한 것만 사용하세요.
+:::
 
 ### 제네시스 블록에서 동기화 (권장되지 않음)
 
@@ -80,8 +89,13 @@ make geth
 ```bash
 # Linux
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
 # MacOS
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
 ```
 
 2. config 파일을 다운받습니다.

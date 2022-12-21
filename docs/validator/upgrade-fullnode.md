@@ -35,6 +35,6 @@ $ kill  $pid
 
 
 ```bash
-## start a full node
-geth --config ./config.toml --datadir ./node --syncmode snap
+##
+./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```

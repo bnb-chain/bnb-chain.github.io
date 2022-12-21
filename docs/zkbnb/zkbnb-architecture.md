@@ -78,3 +78,5 @@ ZkBNB 설정에서 실행자(commiter)가 트랜잭션을 실행하고 롤업 �
 ## API 참조
 
 API 참조에 관한 제사한 사항은 [여기](https://github.com/bnb-chain/zkbnb/blob/master/docs/api_reference.md)를 참고하세요.
+
+API 참조에 관한 제사한 사항은 [여기](https://github.com/bnb-chain/zkbnb/blob/master/docs/api_reference.md)를 참고하세요.

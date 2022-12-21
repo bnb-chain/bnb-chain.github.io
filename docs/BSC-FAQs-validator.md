@@ -156,7 +156,7 @@ match snapshot: have 0x5c17a8fc0164dabedd446e954b64e8a54fc7c8b4fee1bbd707c3cc3ed
 다음 명령어를 실행하면 됩니다.
 
 ~~~~
-*_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap –diffsync --txlookuplimit 0_*
+*_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap  --txlookuplimit 0_*
 ~~~~
 
 상태를 프루닝 하고 --stop geth로 멈춘 후, 그리고 geth를 다시 실행합니다 --datadir=node - prune-state. datadir이 노드라고 할 때, 다른 곳에 있으면 변경하고 작업이 끝난 후 재시작합니다.https://github.com/bnb-chain/bsc/issues/502 에서 동기화된 노드를 유지하는 방법에 대해 알아보세요.
@@ -194,7 +194,7 @@ match snapshot: have 0x5c17a8fc0164dabedd446e954b64e8a54fc7c8b4fee1bbd707c3cc3ed
 [선택사항] SSH 사용 시 멈추지 않도록 서비스를 생성하거나 스크린에서 명령어를 실행합니다.
 스크린을 실행하고 엔터를 눌러서, ssh로 인해 접속이 끊겼을 시,  `screen -r`을 실행하여 geth가 명령어를 돌리면 "screen/terminal"로 복귀합니다. 
 
-`geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false –diffsync`
+`geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false `
 
 ### 동기화 문제를 해결하기 위해서는 어떻게 해야 하나요?
 

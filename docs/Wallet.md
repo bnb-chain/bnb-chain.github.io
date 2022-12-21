@@ -24,20 +24,21 @@ hide_table_of_contents: false
 
 | 번호 | 월렛 이름            | 웹사이트 | 스테이킹 지원 여부|
 |------ | ------------------- | ------------------------------ |-----|
-|1      | Binance Extension Wallet | <https://binance-wallet.gitbook.io/binance-chain-wallet/> | 지원  |
-|2      | Trust Wallet |<https://trustwallet.com/> | 지원   |
-|3      | Math Wallet  |<https://mathwallet.org/en-us/>| 지원  |
-|4      | SafePal      |<https://safepal.io/> | 미지원  |
-|5      | TokenPocket  |<https://www.tokenpocket.pro/> |  미지원  |
-|6      | Arkane       |<https://arkane.network/>|미지원|
-|7      | MetaMask     |<https://metamask.zendesk.com/hc/en-us>|미지원|
-|8      | Ledger       |<https://www.ledger.com/>|지원|
-|9      | Trezor       |<https://wallet.trezor.io>|미지원|
-|10     | MEW          |<https://www.myetherwallet.com/>|미지원|
-|11     | ezDeFi       |<http://ezdefi.com>|미지원|
-|12     | 1inch wallet |<https://1inch.io/wallet/>|미지원|
-|13     | Infinity wallet (Desktop)| <https://infinitywallet.io/download/> |미지원|
-|14     | BitKeep (App&Chrome)|<https://bitkeep.com>|미지원|
-|15     | Coin98 Wallet (App Web Extension)|<https://coin98.com/wallet>|미지원|
-|16     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|미지원|
-|17     | Rabby Wallet |<https://rabby.io/>|미지원|
+|1      | Binance Extension Wallet | <https://binance-wallet.gitbook.io/binance-chain-wallet/> | Yes  |
+|2      | BNB Chain List | <https://www.bnbchainlist.org/> | No |
+|3      | Trust Wallet |<https://trustwallet.com/> | Yes   |
+|4      | Math Wallet  |<https://mathwallet.org/en-us/>| Yes  |
+|5      | SafePal      |<https://safepal.io/> | No  |
+|6      | TokenPocket  |<https://www.tokenpocket.pro/> |  No  |
+|7      | Arkane       |<https://arkane.network/>|No|
+|8      | MetaMask     |<https://metamask.zendesk.com/hc/en-us>|No|
+|9      | Ledger       |<https://www.ledger.com/>|Yes|
+|10      | Trezor       |<https://wallet.trezor.io>|No|
+|11     | MEW          |<https://www.myetherwallet.com/>|No|
+|12     | ezDeFi       |<http://ezdefi.com>|No|
+|13     | 1inch wallet |<https://1inch.io/wallet/>|No|
+|14     | Infinity wallet (Desktop)| <https://infinitywallet.io/download/> |No|
+|15     | BitKeep (App&Chrome)|<https://bitkeep.com>|No|
+|16     | Coin98 Wallet (App Web Extension)|<https://coin98.com/wallet>|No|
+|17     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|No|
+|18     | Rabby Wallet |<https://rabby.io/>|No|

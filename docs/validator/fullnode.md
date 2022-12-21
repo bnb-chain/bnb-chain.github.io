@@ -122,13 +122,16 @@ unzip mainnet.zip
 
 3. 스냅샷을 다운받습니다.
 
- [여기](https://github.com/bnb-chain/bsc-snapshots)에서 최신 스냅샷을 다운받습니다.
+ [여기](https://github.com/bnb-chain/bsc-snapshots)에서 최신 스냅샷을 다운받습니다. 지침을 따라 파일 구조를 설정합니다.
 
-  지침을 따라 파일 구조를 설정합니다.
+:::참고
+`--datadir` 플래그가 추출된 체인 데이터 폴더 경로를 가리켜야 합니다.flag should point to the extracted chaindata folder path
+:::
+
 
 4. 풀노드를 시작합니다.
 ```
-./geth --config ./config.toml --datadir ./node --diffsync --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
 주의: 로컬에서 설치한 geth가 아닌 위에서 wget로 다운받은 geth 버전을 사용하세요. 로컬의 버전은 틀릴 수 있습니다.

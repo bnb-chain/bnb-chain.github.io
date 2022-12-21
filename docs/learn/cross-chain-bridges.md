@@ -3,13 +3,18 @@
 크로스체인, 즉 체인 간 토큰 전송은 필수적인 요구사항이 되었습니다. 이는 한 블록체인에서 다른 블록체인으로 자금을 전송하게 해주는 기능입니다. 이러한 크로스체인 지원의 중요성을 의식하면서 다양한 네트워크들은 자체 "브릿지"를 통해 자금 전송을 편리하게 만들었습니다. 아래는 BSC와 다른 토큰들의 크로스체인 전송을 지원하는 브릿지들의 목록입니다.
 
 * [Poly.network](https://medium.com/poly-network/poly-network-now-supports-cross-chain-transfer-of-eth-neo-heco-assets-to-bsc-fed6880d5681)
-* [multichain.xyz](https://multichain.xyz/)
+* [Multichain](https://multichain.org/)
 * [pNetwork](https://www.binance.org/en/blog/pnetworks-ethereum-bsc-bridge-now-live-on-the-binance-smart-chain/)
 * [curvegrid](https://www.curvegrid.com/)
 * [Anyswap](https://anyswap.exchange/)
-* [renbridge](https://bridge.renproject.io/welcome)
+* [Ren Project](https://bridge.renproject.io/welcome)
 * [allbridge](https://app.allbridge.io/bridge/)
-* [cBridge](https://cbridge.celer.network/)
+* [Celer cBridge](https://cbridge.celer.network/)
+* [LayerZero](https://layerzero.network/)
+* [ChainHop](https://chainhop.exchange/)
+* [HashFlow](https://www.hashflow.com/)
+* [Wormhole Portal Bridge](https://www.portalbridge.com/)
+* [Axelar](https://docs.axelar.dev/)
 
 BNB 스마트 체인을 지원하는 크로스체인 앱 목록
 
@@ -21,6 +26,8 @@ BNB 스마트 체인을 지원하는 크로스체인 앱 목록
 |Fungible Token| Poly.network	| https://bridge.poly.network/ | [Link](https://medium.com/poly-network/poly-network-now-supports-cross-chain-transfer-of-eth-neo-heco-assets-to-bsc-fed6880d5681) |
 |Fungible Token| allbridge	| https://allbridge.io/	| [link](https://docs.allbridge.io/) |
 |Fungible Token| renbridge	| https://bridge.renproject.io/ | [Link](https://docs.renproject.io/developers/) |
-|Fungible Token| cBridge	| https://cbridge.celer.network/	| [Link](https://cbridge-docs.celer.network/) |
+|Fungible Token| Celer cBridge	| https://cbridge.celer.network/	| [Link](https://cbridge-docs.celer.network/) |
 |NFT |	pNetwork |	https://dapp.ptokens.io/	| [Link](https://www.binance.org/en/blog/pnetworks-ethereum-bsc-bridge-now-live-on-the-binance-smart-chain/) |
 |NFT |	curvegrid |	https://www.curvegrid.com/	| [Link](https://www.curvegrid.com/docss) |
+|NFTs from Solana | Portal Bridge | https://www.portalbridge.com/#/nft | [Link](https://docs.wormhole.com/wormhole/tutorial-nft-bridge) |
+|Fungible Tokens from Solana | Portal Bridge | https://www.portalbridge.com/ | [Link](https://docs.wormhole.com/wormhole/video-tutorial-how-to-use-portal) |
