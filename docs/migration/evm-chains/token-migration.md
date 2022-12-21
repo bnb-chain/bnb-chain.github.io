@@ -1,5 +1,5 @@
 ---
-sidebar_label: Token Migration
+sidebar_label: 토큰 이전
 ---
 # Migrate Tokens From Polygon to BSC
 In this article, we'll discuss how to migrate deployed tokens from Polygon to BSC and also the migration of vested tokens.

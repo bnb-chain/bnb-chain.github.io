@@ -1,8 +1,8 @@
 ---
-sidebar_label: Token Migration
+sidebar_label: 토큰 이전
 ---
 
-# Token Migration from Solana to BNB Smart Chain
+# 솔라나에서 BNB 스마트 체인으로 토큰 이전
 
 Blockchain technology has gained superlative popularity over time, proving that it is here to stay. This popularity has resulted in a multitude of blockchain platforms that offer unique features for dapp development. As every blockchain platform has its pros and cons and differs from each other in terms of the underlying architecture, working mechanisms, etc., it is possible for blockchain-based projects and crypto tokens to migrate from one blockchain platform to another. For instance, from Solana to BNB Smart Chain (BSC), for better user experience by leveraging the innovative features of BSC.
 

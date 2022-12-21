@@ -117,7 +117,7 @@ const sidebars = {
                       
                       'bsc-relayer', 
                       'oracles',
-                      {type: 'doc', id: 'learn/cross-chain-bridges', label: 'Cross-Chain Bridges'},
+                      {type: 'doc', id: 'learn/cross-chain-bridges', label: '크로스 체인 브릿지'},
             ]},  
             
             {
@@ -180,7 +180,7 @@ const sidebars = {
                  {
                   type: 'category',
                   collapsed: true,
-                  label: 'Polygon',
+                  label: '폴리곤',
                   items:['migration/evm-chains/chain-comparison', 
                          'migration/evm-chains/token-comparison',
                          'migration/evm-chains/token-migration']

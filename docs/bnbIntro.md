@@ -1,11 +1,8 @@
 ---
 sidebar_label: BNB 체인 플랫폼 개요
 ---
-# BNB Chain: An Ecosystem of Blockchains
-Build N Build Chain aka BNB Chain, one of the most popular blockchains in the world, dedicates to delivering its core infrastructure necessary for future public adoption, and always remains as a community-first and open-source ecosystem built on a permissionless and decentralized environment.
-
-# 소개 
-세계에서 가장 인기 있는 블록체인 중 하나인 BNB 체인은 향후 대중화에 필요한 핵심 인프라를 제공하기 위해 노력하고 있으며, 항상 무신뢰, 탈중앙 환경을 기반으로 구축된 커뮤니티 우선의 오픈 소스 생태계로 유지될 것입니다.
+# BNB 체인: 블록체인의 생태계
+Build N Build 체인, 줄여서 BNB Chain은 세계에서 가장 인기 있는 블록체인 중 하나로, 향후 대중화에 필요한 핵심 인프라를 제공하기 위해 노력하고 있으며, 항상 무신뢰, 탈중앙 환경을 기반으로 구축된 커뮤니티 우선의 오픈 소스 생태계로 유지될 것입니다.
 
 바이낸스 체인과 바이낸스 스마트 체인은 2022년 2월 15일부터 BNB 체인을 함께 구성했습니다. BNB 체인은 BNB 비콘 체인(이전 바이낸스 체인)과 BNB 스마트 체인(이전 바이낸스 스마트 체인)으로 구성됩니다. BNB(이전의 "바이낸스 코인")도 "Build and Build"로 이름이 변경되었습니다. 이름 변경은 사용자가 10억 명이 넘는 암호화 세계를 환영하 위한 것 뿐 아니라 향후 대중 채택에 필요한 핵심 인프라의 제공을 강화하고, 가장 중요한 것은 대규모 웹3 애플리케이션을 수용하기 위한 더 나은 생태계를 구축하기 위한 것입니다.
 

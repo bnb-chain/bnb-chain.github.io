@@ -1,5 +1,5 @@
 ---
-sidebar_label: Token Standard Comparison
+sidebar_label: 토큰 표준 비교
 ---
 # Token Standard Comparison 
 
