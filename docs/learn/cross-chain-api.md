@@ -1,3 +1,8 @@
+---
+sidebar_label: Cross-Chain API
+sidebar_position: 2
+hide_table_of_contents: false
+---
 # Cross-Chain API
 
 To facilitate querying cross chain transactions between BNB Beacon Chain and BNB Smart Chain, following apis are provided.

@@ -187,9 +187,7 @@ const sidebars = {
                  }
                 ]
             },
-           
-            {type: 'doc',   id: 'Integrate',   label: 'Integration'},
-      
+
             {
               type: 'category',
               //collapsible: true,
@@ -273,7 +271,6 @@ const sidebars = {
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
                             {type:'link', href:"pathname:///api-swagger/index.html", label: 'Accelerated Node HTTP API Swagger'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: 'Accelerated Node HTTP API Testnet- Paths and Models'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/cross-chain', label: 'Cross Chain API'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},
                             {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: 'Node RPC - Paths and Models'},
