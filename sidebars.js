@@ -43,7 +43,7 @@ const sidebars = {
                           label: 'BC와 BSC 크로스 체인 구조',
                           items: ['learn/cross-chain', 'learn/system-contract',
                                   'cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
-                                  'learn/oracle-module','learn/oracle-relayer']},
+                                  'learn/oracle-module','learn/oracle-relayer','learn/cross-chain-api']},
                                   'learn/bsc-gov']
                 },
 
@@ -187,9 +187,7 @@ const sidebars = {
                  }
                 ]
             },
-           
-            {type: 'doc',   id: 'Integrate',   label: '통합하기'},
-      
+
             {
               type: 'category',
               //collapsible: true,
