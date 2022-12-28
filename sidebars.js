@@ -43,7 +43,7 @@ const sidebars = {
                           label: 'BC and BSC Cross-Chain Mechanism',
                           items: ['learn/cross-chain', 'learn/system-contract',
                                   'cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
-                                  'learn/oracle-module','learn/oracle-relayer']},
+                                  'learn/oracle-module','learn/oracle-relayer', 'learn/cross-chain-api']},
                                   'learn/bsc-gov']
                 },
 
@@ -187,9 +187,7 @@ const sidebars = {
                  }
                 ]
             },
-           
-            {type: 'doc',   id: 'Integrate',   label: 'Integration'},
-      
+
             {
               type: 'category',
               //collapsible: true,
