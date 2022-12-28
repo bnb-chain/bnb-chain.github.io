@@ -1,365 +1,365 @@
 ---
-sidebar_label: Staking
+sidebar_label: 스테이킹
 hide_table_of_contents: true
 sidebar_position: 2
 ---
-# Staking API
+# 스테이킹 API
 
-**Version:** 1.0
+**버전:** 1.0
 
-**Terms of service:**
+**이용 약관:**
 
 * Base URL: api.binance.org/
 
 
-**License:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+**라이센스:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 ### /v1/staking/accounts/{address}/balance
 ---
 ##### ***GET***
-**Summary:** getBalance
+**요약:** getBalance
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소| 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | path | address | Yes | string |
+| 주소 | 경로 | 주소 | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [BalanceVo](#balancevo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/allowed-dst-validators
 ---
 ##### ***GET***
-**Summary:** getAllowedDstValidators
+**요약:** getAllowedDstValidators
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| delegator | path | delegator | Yes | string |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
-| src-validator | query | src-validator | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| delegator | 경로 | delegator | 예 | 문자열 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
+| src-validator | 쿼리 | src-validator | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [AllowedDstValidatorsVO](#alloweddstvalidatorsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/delegations
 ---
 ##### ***GET***
-**Summary:** getDelegationsValByDelegator
+**요약:** getDelegationsValByDelegator
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| delegator | path | delegator | Yes | string |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
+| chain-id | 경로 | chain-id | 예| 문자열 |
+| delegator | 경로 | delegator | 예 | 문자열 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [DelegationValsVO](#delegationvalsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/operations
 ---
 ##### ***GET***
-**Summary:** getOperationsByDelegator
+**요약:** getOperationsByDelegator
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| delegator | path | delegator | Yes | string |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| delegator | 경로 | delegator | 예 | 문자열 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OperationsVO](#operationsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/reds
 ---
 ##### ***GET***
-**Summary:** getDelREDs
+**요약:** getDelREDs
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| delegator | path | delegator | Yes | string |
-| isCompleted | query | isCompleted | No | integer |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| delegator | 경로 | delegator | 예 | 문자열 |
+| isCompleted | 쿼리 | isCompleted | 아니오 | 정수형 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [RedsVO](#redsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/rewards
 ---
 ##### ***GET***
-**Summary:** getDelRewards
+**요약:** getDelRewards
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| delegator | path | delegator | Yes | string |
-| endTime | query | endTime | No | long |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
-| startTime | query | startTime | No | long |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| delegator | 경로 | delegator | 예 | 문자열 |
+| endTime | 쿼리 | endTime | 아니오 | long |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
+| startTime | 쿼리 | startTime | 아니오 | long |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [RewardsDetailVO](#rewardsdetailvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/delegators/{delegator}/ubds
 ---
 ##### ***GET***
-**Summary:** getDelUBDs
+**요약:** getDelUBDs
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| delegator | path | delegator | Yes | string |
-| isCompleted | query | isCompleted | No | integer |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
-| validator | query | validator | No | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| delegator | 경로 | delegator | 예 | 문자열 |
+| isCompleted | 쿼리 | isCompleted | 아니오 | 정수형 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
+| validator | 쿼리 | validator | 아니오 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [UbdsVO](#ubdsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/next-reward-time
 ---
 ##### ***GET***
-**Summary:** getNextRewardTime
+**요약:** getNextRewardTime
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | OK | object |
+| 200 | OK | 객체 |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/summary
 ---
 ##### ***GET***
-**Summary:** getSum
+**요약:** getSum
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [StakingSumVO](#stakingsumvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators
 ---
 ##### ***GET***
-**Summary:** getValidators
+**요약:** getValidators
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| consensus-address | query | consensus-address | No | string |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| consensus-address | 쿼리 | consensus-address | 아니오 | 문자열 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ValidatorsVO](#validatorsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}
 ---
 ##### ***GET***
-**Summary:** getValidator
+**요약:** getValidator
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| validator | path | validator | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| validator | 경로 | validator | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ValidatorDetailVO](#validatordetailvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/delegations
 ---
 ##### ***GET***
-**Summary:** getDelegationsByValidator
+**요약:** getDelegationsByValidator
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
-| validator | path | validator | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
+| validator | 경로 | validator | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [DelegationsVO](#delegationsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/operations
 ---
 ##### ***GET***
-**Summary:** getOperationsByValidator
+**요약:** getOperationsByValidator
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| limit | query | limit | Yes | integer |
-| offset | query | offset | Yes | integer |
-| validator | path | validator | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| limit | 쿼리 | limit | 예 | 정수형 |
+| offset | 쿼리 | offset | 예 | 정수형 |
+| validator | 경로 | validator | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OperationsVO](#operationsvo) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/powers
 ---
 ##### ***GET***
-**Summary:** getVotingPower
+**요약:** getVotingPower
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| endTime | query | endTime | Yes | long |
-| startTime | query | startTime | Yes | long |
-| validator | path | validator | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| endTime | 쿼리 | endTime | 예 | long |
+| startTime | 쿼리 | startTime | 예 | long |
+| validator | 경로 | validator | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ [VotingPowerVO](#votingpowervo) ] |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /v1/staking/chains/{chain-id}/validators/{validator}/rewards
 ---
 ##### ***GET***
-**Summary:** getValRewards
+**요약:** getValRewards
 
-**Parameters**
+**파라미터**
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 장소 | 내용 | 필수 | 스키마(Schema) |
 | ---- | ---------- | ----------- | -------- | ---- |
-| chain-id | path | chain-id | Yes | string |
-| endTime | query | endTime | Yes | long |
-| startTime | query | startTime | Yes | long |
-| validator | path | validator | Yes | string |
+| chain-id | 경로 | chain-id | 예 | 문자열 |
+| endTime | 쿼리 | endTime | 예 | long |
+| startTime | 쿼리 | startTime | 예 | long |
+| validator | 경로 | validator | 예 | 문자열 |
 
-**Responses**
+**응답**
 
-| Code | Description | Schema |
+| 코드 | 내용 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ [RewardVO](#rewardvo) ] |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### Models
 ---
 
 ### AllowedDstValidatorsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | earliestCompleteTime | dateTime |  |  |
 | total | long |  |  |
@@ -367,244 +367,244 @@ sidebar_position: 2
 
 ### BalanceVo
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| asset | string |  |  |
-| delegated | number |  |  |
-| unbonding | number |  |  |
+| asset | 문자열 |  |  |
+| delegated | 숫자 |  |  |
+| unbonding | 숫자 |  |  |
 
 ### DelegationVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| amount | number |  |  |
-| delegator | string |  |  |
+| amount | 숫자 |  |  |
+| delegator | 문자열 |  |  |
 | initialTime | dateTime |  |  |
-| validator | string |  |  |
+| validator | 문자열 |  |  |
 
 ### DelegationValVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| amount | number |  |  |
-| delegator | string |  |  |
+| amount | 숫자 |  |  |
+| delegator | 문자열 |  |  |
 | initialTime | dateTime |  |  |
-| validator | string |  |  |
-| validatorName | string |  |  |
-| validatorStatus | integer | 0: active 1: inactive 2: inJail |  |
+| validator | 문자열 |  |  |
+| validatorName | 문자열 |  |  |
+| validatorStatus | 정수형 | 0: active 1: inactive 2: inJail |  |
 
 ### DelegationValsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | delegations | [ [DelegationValVO](#delegationvalvo) ] |  |  |
 | total | long |  |  |
 
 ### DelegationsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | delegations | [ [DelegationVO](#delegationvo) ] |  |  |
 | total | long |  |  |
 
 ### Link
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| href | string |  |  |
+| href | 문자열 |  |  |
 | templated | boolean |  |  |
 
 ### Map«string,Link»
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| Map«string,Link» | object |  |  |
+| Map«string,Link» | 객체 |  |  |
 
 ### ModelAndView
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | empty | boolean |  |  |
-| model | object |  |  |
-| modelMap | object |  |  |
+| model | 객체 |  |  |
+| modelMap | 객체 |  |  |
 | reference | boolean |  |  |
-| status | string |  |  |
+| status | 문자열 |  |  |
 | view | [View](#view) |  |  |
-| viewName | string |  |  |
+| viewName | 문자열 |  |  |
 
 ### OperationVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| amount | number |  |  |
-| delegator | string |  |  |
-| operationType | integer | 0: delegate; 1: undelegate; 2: redelegate |  |
-| srcValidator | string |  |  |
+| amount | 숫자 |  |  |
+| delegator | 문자열 |  |  |
+| operationType | 정수형 | 0: delegate; 1: undelegate; 2: redelegate |  |
+| srcValidator | 문자열 |  |  |
 | time | dateTime |  |  |
-| txHash | string |  |  |
-| valName | string |  |  |
-| validator | string |  |  |
+| txHash | 문자열 |  |  |
+| valName | 문자열 |  |  |
+| validator | 문자열 |  |  |
 
 ### OperationsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | operations | [ [OperationVO](#operationvo) ] |  |  |
 | total | long |  |  |
 
 ### RedVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| balance | number |  |  |
+| balance | 숫자 |  |  |
 | completeHeight | long |  |  |
 | completeTime | dateTime |  |  |
 | creationHeight | long |  |  |
-| delegator | string |  |  |
-| denom | string |  |  |
+| delegator | 문자열 |  |  |
+| denom | 문자열 |  |  |
 | dstShares | long |  |  |
-| dstValidator | string |  |  |
-| initialBalance | number |  |  |
+| dstValidator | 문자열 |  |  |
+| initialBalance | 숫자 |  |  |
 | srcShares | long |  |  |
-| srcValidator | string |  |  |
+| srcValidator | 문자열 |  |  |
 
 ### RedsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | redelegations | [ [RedVO](#redvo) ] |  |  |
 | total | long |  |  |
 
 ### RewardDetailVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| chainId | string |  |  |
-| delegator | string |  |  |
+| chainId | 문자열 |  |  |
+| delegator | 문자열 |  |  |
 | height | long |  |  |
-| reward | number |  |  |
+| reward | 숫자 |  |  |
 | rewardTime | dateTime |  |  |
-| valName | string |  |  |
-| validator | string |  |  |
+| valName | 문자열 |  |  |
+| validator | 문자열 |  |  |
 
 ### RewardVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| chainId | string |  |  |
-| commission | number |  |  |
+| chainId | 문자열 |  |  |
+| commission | 숫자 |  |  |
 | height | long |  |  |
 | rewardTime | dateTime |  |  |
-| selfDelegator | string |  |  |
-| totalReward | number |  |  |
-| valTokens | number |  |  |
-| validator | string |  |  |
+| selfDelegator | 문자열 |  |  |
+| totalReward | 숫자 |  |  |
+| valTokens | 숫자 |  |  |
+| validator | 문자열 |  |  |
 
 ### RewardWithDistributionAddrVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| chainId | string |  |  |
-| commission | number |  |  |
-| distributionAddr | string |  |  |
+| chainId | 문자열 |  |  |
+| commission | 숫자 |  |  |
+| distributionAddr | 문자열 |  |  |
 | height | long |  |  |
 | rewardTime | dateTime |  |  |
-| selfDelegator | string |  |  |
-| totalReward | number |  |  |
-| valTokens | number |  |  |
-| validator | string |  |  |
+| selfDelegator | 문자열 |  |  |
+| totalReward | 숫자 |  |  |
+| valTokens | 숫자 |  |  |
+| validator | 문자열 |  |  |
 
 ### RewardsDetailVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | rewardDetails | [ [RewardDetailVO](#rewarddetailvo) ] |  |  |
 | total | long |  |  |
 
 ### RewardsWithDistributionAddrVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | rewards | [ [RewardWithDistributionAddrVO](#rewardwithdistributionaddrvo) ] |  |  |
 | total | long |  |  |
 
 ### StakingSumVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| reward | number |  |  |
-| votingPower | number |  |  |
+| reward | 숫자 |  |  |
+| votingPower | 숫자 |  |  |
 
 ### UbdVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| balance | number |  |  |
+| balance | 숫자 |  |  |
 | completeHeight | long |  |  |
 | completeTime | dateTime |  |  |
 | creationHeight | long |  |  |
-| delegator | string |  |  |
-| denom | string |  |  |
-| initialBalance | number |  |  |
-| validator | string |  |  |
+| delegator | 문자열 |  |  |
+| denom | 문자열 |  |  |
+| initialBalance | 숫자 |  |  |
+| validator | 문자열 |  |  |
 
 ### UbdsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | total | long |  |  |
 | unbondingDelegations | [ [UbdVO](#ubdvo) ] |  |  |
 
 ### ValidatorDetailVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| apr | number |  |  |
-| commissionMaxChangeRate | number |  |  |
-| commissionMaxRate | number |  |  |
-| commissionRate | number |  |  |
-| detail | string |  |  |
-| distributionAddr | string |  |  |
-| identity | string |  |  |
-| selfDelegator | string |  |  |
-| selfStake | number |  |  |
-| sideConsAddr | string |  |  |
-| sideFeeAddr | string |  |  |
-| status | integer |  |  |
-| valName | string |  |  |
-| validator | string |  |  |
-| votingPower | number |  |  |
-| votingPowerProportion | number |  |  |
-| website | string |  |  |
+| apr | 숫자 |  |  |
+| commissionMaxChangeRate | 숫자 |  |  |
+| commissionMaxRate | 숫자 |  |  |
+| commissionRate | 숫자 |  |  |
+| detail | 문자열 |  |  |
+| distributionAddr | 문자열 |  |  |
+| identity | 문자열 |  |  |
+| selfDelegator | 문자열 |  |  |
+| selfStake | 숫자 |  |  |
+| sideConsAddr | 문자열 |  |  |
+| sideFeeAddr | 문자열 |  |  |
+| status | 정수형 |  |  |
+| valName | 문자열 |  |  |
+| validator | 문자열 |  |  |
+| votingPower | 숫자 |  |  |
+| votingPowerProportion | 숫자 |  |  |
+| website | 문자열 |  |  |
 
 ### ValidatorVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| apr | number |  |  |
-| commissionRate | number |  |  |
-| status | integer |  |  |
-| valName | string |  |  |
-| validator | string |  |  |
-| votingPower | number |  |  |
-| votingPowerProportion | number |  |  |
+| apr | 숫자 |  |  |
+| commissionRate | 숫자 |  |  |
+| status | 정수형 |  |  |
+| valName | 문자열 |  |  |
+| validator | 문자열 |  |  |
+| votingPower | 숫자 |  |  |
+| votingPowerProportion | 숫자 |  |  |
 
 ### ValidatorsVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | total | long |  |  |
 | validators | [ [ValidatorVO](#validatorvo) ] |  |  |
 
 ### View
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| contentType | string |  |  |
+| contentType | 문자열 |  |  |
 
 ### VotingPowerVO
 
-| Name | Type | Description | Example |
+| 이름 | 타입 | 내용 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | snapshotTime | dateTime |  |  |
-| votingPower | number |  |  |
+| votingPower | 숫자 |  |  |

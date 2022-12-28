@@ -1,45 +1,43 @@
 ---
-sidebar_label: BSC Cross-chain Communication FAQs
+sidebar_label: BSC 크로스 체인 통신 FAQs
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Cross-chain Communication
+# 크로스 체인 통신
 
-### How much is cross-chain transfer fee?
+### 크로스 체인 전송 수수료가 얼마인가요?
 
-The total cost of transfer from BC to BSC is composed of 2 parts:
+BC에서 BSC로 보내는 과정은 두 개의 부분으로 구성되어 있습니다:
 
-* Fee for executing `bridge transfer-out` transaction is 0.004BNB, pay validators on Beacon Chain
+* `bridge transfer-out` 트랜잭션을 실행하는데 0.004BNB가 들고, 이 수수료는 비컨 체인 검증인에게 지불됩니다
 
-* Fee for BSC-relayers 0.004BNB. it will cover the fees of calling TokenHub Contract on BSC.
+* BSC 릴레이어에게 0.004BNB를 지불합니다. 이는 BSC 상의 `TokenHub` 계약을 호출하는 비용입니다.
 
-The total cost of transfer from BSC to BC is composed of 2 parts:
+BSC에서 BC로 보내는 과정은 두 개의 부분으로 구성되어 있습니다:
 
-* Fee for Oracle-relayers 0.004BNB, pay for BSC relayers
+* 오라클 릴레이어 수수료 0.004BNB를 BSC 릴레이어에게 지불합니다.
 
-* Call TokenHub Contract: You need to pay BNB for calling smart-contract on BSC, this transaction is metered by gas, which is a global parameter. At the moment, you need to pay about 0.0005BNB ~ 0.0015BNB.
+* TokenHub 계약 호출하기: BSC 상의 스마트 계약을 호출하려면 BNB를 지불해야 하는데, 트랜잭션은 전역 매개 변수인 gas에 의해 값이 측정됩니다. 현재 기준으로는 0.0005BNB ~ 0.0015BNB 정도를 지불해야 합니다.
 
-### What's is a BSC relayer?
+### BSC 릴레이어는 무엇인가요?
 
-BSC relayer monitors cross chain packages on Beacon Chain, builds and broadcasts transactions to BSC to deliver these packages, which is the key of cross chain communication from Beacon Chain to BSC.
+BSC 릴레이어(relayer)는 비컨 체인의 크로스체인 패키지를 검사하고, BSC에 다음 패키지를 트랜잭션으로 만들고 전파하여 비컨 체인에서 BSC로 크로스 체인 통신을 구현합니다.
 
-### What's is an Oracle relayer?
+### 오라클 릴레이어는 무엇인가요?
 
-Oracle Relayer watches the state change of Binance Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of Beacon Chain are eligible to run Oracle relayers.
+오라클 릴레이어는 바이낸스 스마트 체인의 상태 변화를 조회합니다. 크로스 체인 이벤트를 감지하면, 해당 요청에 관한 투표를 제출합니다. 오라클 릴레이어의 ⅔ 이상의 투표권을 가진 BC 검증인들이 변경을 허용할 때, 크로스 체인 변화가 이뤄집니다. 비컨 체인의 검증인만이 오라클 릴레이러를 실행할 수 있습니다.
 
-### What's an oracle?
+### 오라클이 무엇인가요?
 
-In blockchain network, an oracle refers to the element that connects smart contracts with data from the outside world. In the network of Binance Smart Chain, the execution of the transanction wil emit Events, and such events can be packaged and relayed onto BC. In this way, BC will get updates about changes of BSC.
+블록체인 네트워크 상에는 오라클은 외부 세계 데이터와 스마트 계약을 연결하는 요소를 뜻합니다. 바이낸스 스마트 체인 네트워크에서는, 트랜잭션의 실행은 이벤트를 발생시키고 비컨 체인 상에 패키지화 되어 전파될 수 있습니다. 이를 통해 BC은 BSC의 변화한 값에 대해 알 수 있습니다.
 
-### Which wallet support cross-chain transfer?
+### 크로스 체인 전송을 지원하는 지갑이 있나요?
 
-You need to use [MyEtherWallet](wallet/myetherwallet.md)to call contracts and use Beacon Chain commandline client: `bnbcli`/ `tbnbcli` for complementary commands
+[MyEtherWallet](wallet/myetherwallet.md)을 사용하여 컨트랜트를 호출하고 비컨 체인 명령어 클라이언트를 사용할 수 있습니다 (보완 명령을 위해 `bnbcli`/ `tbnbcli` 사용 가능)
 
-Please refer to this [guide](cross-chain-transfer.md) for details
+자세한 내용은 다음 [가이드](cross-chain-transfer.md)를 참고하세요
 
-### How to send cross-chain transfer?
+### 크로스 체인 전송을 어떻게 하나요?
 
-You can use [BInance Extension Wallet](wallet/binance.md) or
-
-use [Trust wallet](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)
+[바이낸스 익스텐션 지갑](wallet/binance.md)이나 [트러스트 월렛](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)에서 사용할 수 있습니다.

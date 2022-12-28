@@ -1,22 +1,22 @@
 ---
-sidebar_label: Transaction Encoding Specification
+sidebar_label: 트랜잭션 인코딩 사양
 hide_table_of_contents: false
 ---
 
-# BNB Beacon Chain Transaction Encoding Specification
+# BNB 비컨 체인 트랜잭션 인코딩 사양
 
-BNB Beacon Chain transactions are protocol-based data types and can only be submitted in a compatible encoded frame.
+BNB 비컨 체인 트랜잭션은 프로토콜 가반 데이터 구조로 호환되는 인코딩 프레임을 통해서만 제출 가능합니다.
 
-The fundamental encoding logic is from [Tendermint Amino](https://github.com/tendermint/go-amino), which derives from and is "largely compatible with" Google protocol-buffer's Proto3.
+기본적인 인코딩 원리는 [텐더민트 Amino](https://github.com/tendermint/go-amino)를 따르며, 이는 호환성이 뛰어난 구글 프로토콜 버퍼 "Proto3"에서 파생되었습니다.
 
-However, the client sides only needs to stick to the specifications outlined below for the most frequently used transactions.
+사용하는 클라이언트 측에서는 아래 예시에 설명된 가장 빈번하게 사용되는 트랜잭션 사양만 준수하면 됩니다.
 
-## Encoding Output
+## 인코딩 출력
 
-BNB Beacon Chain (Amino) encoding logic may encode a data structure into two output formats: Binary and JSON.
+BNB 비컨 체인 Amino 인코딩 로직은 자료 구조를 두 개의 형식으로 반환할 수 있습니다: 바이너리와 JSON.
 
-### JSON Marshal
-Amino supports JSON encoding natively, which is the same as other usual json marshalers. Except that it can add one more `type` info for registered type, as shown below.
+### JSON 마샬
+Amino는 다른 JSON 마샬(marshal)처럼 자체적으로 JSON 변환(인코딩)을 지원합니다. 다만 아래와 같이 등록된 타입에 하나의 `타입` 정보를 더 추가할 수 있습니다.
 
 ```json
 {
@@ -24,37 +24,37 @@ Amino supports JSON encoding natively, which is the same as other usual json mar
   "value": <JSON>
 }
 ```
-### Binary Marshal
+### 바이너리 마샬
 
-**[Please note the below binary encoding logic is subjected to future changes. Please watch out for the community news](more-help.md).**
+**[아래 바이너리 인코딩 원리는 변경될 예정입니다. 커뮤니티 뉴스를 확인하세요.](more-help.md).**
 
-Binary encoding is a variant of Google's protobuf. The bytes are laid out in the below sequence:
+바이너리 인코딩은 구글의 protobuf의 변형을 통해 이뤄졌습니다. 바이트 단위는 다음과 같이 나열됩니다:
 
-1. a [varint](https://developers.google.com/protocol-buffers/docs/encoding#varints) encoded integer - it contains the length of the encoded bytes for the object, which is displayed as `SIZE-OF-ENCODED` in the below structs. Please note that it contains the length of encoded bytes and also the type prefix (below), but not itself, e.g. if the encoded msg is 20 bytes, then the length would be 20 + 4 = 24, while 4 is used for the type prefix bytes.
-2. an object type prefix of 4-8 bytes - For different type of objects, there will be different type prefixes, and they are displayed as in the specific objects below (data structures).
-3. a binary encoded object - the encoding is mostly the same as protocol buffer encoding mechanism, except the embedded fields of complex type:
-    - to encode data field of some specific types, an object type prefix for the field will be added ahead of the real encoding.
-4. repeated (array) Encoding - it is the same as google protocol buffer, while encoding of the object/struct may contain the type prefix as shown below.
+1. [varint](https://developers.google.com/protocol-buffers/docs/encoding#varints) 인코딩된 정수 - 인코딩된 바이트가 오브젝트에 포함되며, `SIZE-OF-ENCODED`로 아래 예시에서 볼 수 있습니다. 참고로 길이에는 인코딩된 바이트 뿐만 아니라 타입 접두사(type prefix)도 포함합니다. (예시: 만일 인코딩된 메세지(msg)가 20바이트면, 길이는 20 + 4 = 24로 4는 타입 접두사 바이트로 사용됩니다)
+2. 4-8 바이트의 오브젝트 타입 접두사 - 다른 유형의 오브젝트들은 다른 형태의 접두사를 지니며, 이는 특정한 오브젝트(자료구조)에 나타납니다.
+3. 바이너리 인코딩된 오브젝트 - 인코딩은 프로토콜 버퍼 인코딩 방법과 거의 같지만, complex 유형이 포함된 필드가 존재합니다:
+    - 특정 타입으로 데이터 필드를 변환하려면, 오브젝트 타입 접미사가 실제 인코딩 전에 더해져야 합니다.
+4. 반복되는 (배열) 인코딩 - 구글 프로토콜 버퍼와 같지만, 오브젝트 및 구조체가 아래에서 나타나는 접두사를 포함할 수 있습니다.
 
-## BNB Beacon Chain Transaction Encoding
+## BNB 비컨 체인 트랜잭션 인코딩
 
-Below are the data types that can be sent to BNB Beacon Chain as requests, and their encoding layout. To simplify the presentation, we will use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, other fields will use the default `proto3` encoding logic.
+ 아래 문서에서는 BNB 비컨 체인에 요청이나 인코딩 레이아웃에 보내질 수 있는 데이터 타입을 나타냅니다. 간단하게 표현하기 위해 [구글 프로토콜 버퍼 proto3](https://developers.google.com/protocol-buffers/docs/proto3) 언어의 변형을 사용하여 데이터 필드의 구조를 표현할 것입니다. 전부 대문자로 표현된 곳을 제외하면, 다른 부분들은 기본 `proto3` 인코딩 로직을 사용하여 처리됩니다.
 
 
-### Standard Transaction
+### 표준 트랜잭션
 
-Transactions are each wrapped in the below "Standard Transaction": structure:
+트랜잭션들은 보통 아래 "표준 트랜잭션" 구조에 묶여 있으며, 다음과 같이 나타냅니다:
 
 ```go
-// please note the field name is the JSON name.
+// 필드 이름은 JSON의 이름입니다.
 message StdTx {
-  uint64 SIZE-OF-ENCODED // varint encoded length of the structure after encoding, please note this includes both the below type prefix (4 bytes) and the all encoding bytes
-  0xF0625DEE // hardcoded, object type prefix in 4 bytes
-  repeated Msg msgs // array of size 1, containing the transaction message, which are one of the transaction types below. please check the above "Array Encoding"
-  repeated StdSignature signatures // array of size 1, containing the standard signature structure of the transaction sender
-  string memo // a short sentence of remark for the transaction. Please only `Transfer` transaction allows 'memo' input, and other transactions with non-empty `Memo` will be rejected.
-  int64 source // an identifier for tools triggerring this transaction, set to zero if unwilling to disclose.
-  bytes data // byte array, reserved for future use
+  uint64 SIZE-OF-ENCODED // 인코딩 후 인코딩된 구조의 길이를 표현하는 varint로, 이는 타입 접미사(4 바이트)와 모든 인코딩 바이트를 포함합니다
+  0xF0625DEE // 하트 코딩된 4바이트 타입 접두사
+  repeated Msg msgs // 사이즈 1인 배열로 트랜잭션 메세지를 포함하며, 트랜잭션 타입 중의 하나입니다. 위에 "배열 인코딩"을 참고하세요
+  repeated StdSignature signatures // 사이즈 1인 배열로 트랜잭션 발신자의 표준 서명 구조를 포함합니다.
+  string memo // 트랜잭션에 관한 간단한 문장 메모. 트랜잭션 전송 시 'memo' 입력을 허용하는 곳에만 보내야 하며, 허용하지 않을 경우  비우지 않은 `Memo`가 보내질 시 트랜잭션이 거절됩니다.
+  int64 source // 트랜잭션을 발생한 도구의 식별자로, 공개하지 않는 경우 0으로 설정합니다.
+  bytes data // 향후 사용될 바이트 배열
 }
 ```
 
@@ -72,13 +72,15 @@ type StdSignDoc struct {
 
 ```
 
-### Canonical Bytes for Signing
+### 서명을 위한 표준 바이트
 
-A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical representation of the transaction is generated in JSON format for signing.
+트랜잭션 서명은 Amino 인코딩된 바이트 자체에서 생성되지 **않습니다**. 오히려 서명을 위한 트랜잭션의 표준 표현은 JSON 형식으로 생성됩니다.
 
-This would allow for clients to sign a transaction off-chain, for example, with a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. An external system will not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
+이를 통해 클라이언트들은 체인에 접속하지 않아도 서명이 가능합니다. 예시로, 하드웨어 보안 모듈 기기인 Ledger나 알고리즘 트레이딩 시스템에서도 블록체인에 접속하지 않아도 서명이 가능합니다. 외부 시스템은 Amino 인코딩을 이해하지 않아도 트랜잭션을 이해하고 서명된 JSON 문자열을 생성할 수 있게 됩니다.
 
-The canonical bytes for signing are generated from the StdSignBytes method. It produces a JSON string similar to the format below (formatted for clarity):
+서명을 위한 표준 바이트는 StdSignBytes 메서드를 통해 생성됩니다. 아래와 같은 형식의 JSON 문자열이 생성됩니다:
+
+(이해를 위해 줄을 변경했습니다. **공백을 제거하고 키들을 알파벳 순서로 정렬하면** 기존 JSON 문자열 형태로 표현됩니다.)
 
 ```json
 {
@@ -118,15 +120,15 @@ The canonical bytes for signing are generated from the StdSignBytes method. It p
 ```
 
 
-This JSON string, **with all whitespace removed and keys sorted in alphabetical order**, is signed with the private key of the sender. This signature is then attached to the `StdTx` structure described in the above section. Please note that the transaction broadcasted to the blockchain is not JSON - the JSON is merely used as a canonical representation to generate the signature.
+다음 JSON 문자열은 발신자의 개인키로 서명되었습니다. 이 서명은 위에서 설명한 `StdTx` 구조에 첨부됩니다. 참고로 블록체인 상 전파되는 트랜잭션은 JSON 형태가 아닙니다. JSON은 표준 표현으로 서명을 생성할 때만 사용됩니다.
 
-The next section describes how the generated signature is attached to a transaction.
+다음은 생성된 서명이 트랜잭션에 첨부되는 과정에 대해 설명합니다.
 
-### Standard Signature
+### 표준 서명
 
-The sender's signature is stored in the `Standard Transaction` data via a `Standard Signature`, as shown below. This structure is included in the `StdTx` (see above).
+발신자의 서명은 아래와 같이 `표준 서명`을 통해 `표준 트랜잭션`에 저장됩니다. 표준 서명 구조는 `StdTx`에 속해 있습니다 (위를 확인하세요).
 
-Please note that `StdSignature` itself doesn't have type prefix, while the `PubKey` does.
+참고로 `StdSignature`는 타입 접두사(type prefix)가 없지만, `PubKey`는 타입 접두사가 있습니다.
 
 ```go
 message StdSignature {
@@ -144,11 +146,11 @@ message StdSignature {
 }
 ```
 
-### Message Types
-Messages represent the individual operations possible on BNB Beacon Chain, and these can be inserted into the `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangebly in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
+### 메세지 유형
+메세지는 BNB 비컨 체인에서 가능한 개별 작업들을 나타내며, `StdTx.msgs` 필드에 포함할 수 있습니다. 메세지 유형 혹은 "트랜잭션 유형"은 상호 교환적인 의미로 이 문서 및 앞으로의 기술 문서에서 번갈아 가며 사용될 것입니다. 지금까지 모든 `StdTx` 트랜잭션 "컨테이너"는 하나의 "메세지"만 담을 수 있습니다.
 
-#### Transfer
-Transfer is the transaction used for transferring funds to different addresses.
+#### 전송
+전송은 자금을 다른 주소로 보낼 때 사용하는 트랜잭션입니다.
 
 ```go
 // please note the field name is the JSON name.
@@ -171,15 +173,15 @@ message Send {
 }
 ```
 
-#### NewOrder
-NewOrder transaction will create a new order to buy or sell tokens on Binance DEX.
+#### 새 주문
+NewOrder 트랜잭션은 바이낸스 DEX에서 토큰 매수/매도 주문을 생성합니다.
 
 ```go
 // please note the field name is the JSON name.
 message NewOrder {
   0xCE6DC043 // hardcoded, object type prefix in 4 bytes
   bytes sender // order originating address
-  string id // order id, please check the Order ID section below for details.
+  string id // 주문 ID, please check the Order ID section below for details.
   string symbol // symbol for trading pair in full name of the token
   int64 ordertype // only accept 2 for now, meaning limit order
   int64 side // 1 for buy and 2 fory sell
@@ -189,17 +191,17 @@ message NewOrder {
 }
 ```
 
-##### Order ID
-Order ID is unique across the world. It is generated by sender and acknowledged by Binance DEX. The current implementation is composed from 3 parts:
+##### 주문 ID
+주문 ID는 고유하며, 송신자에 의해 생성되며 바이낸스 DEX에서 인식합니다. 현재는 세 부분으로 구성되어 있습니다:
 
-1. Sender address in HEX format, without human-readable prefix
-2. A dash sign: `-`
-3. Sequence number
+1. 사람이 읽을 수 없는 접미사 형식을 가진 HEX 형식의 발신자 주소
+2. 대시 기호: `-`
+3. 시퀸스 넘버
 
-E.g. `40C2979694BBC961023D1D27BE6FC4D21A9FEBE6-5`
+예시. `40C2979694BBC961023D1D27BE6FC4D21A9FEBE6-5`
 
-#### Cancel
-Cancel transactions (cancel the outstanding/unfilled) orders from the Binance DEX. After cancel success, the locked quantity on the orders will return back to the originating address balance and become free to use, i.e. transfer or send new orders.
+#### 취소
+바이낸스 DEX에서 취소 트랜잭션을 통해 미결 및 미지불된 주문을 취소합니다. 취소가 성공한 후, 주문을 위해 잠긴 금액은 원래 주소에 반환되어 다시 사용할 수 있게 됩니다(i.e. 전송하거나 새로운 주문 생성).
 
 ```go
 // please note the field name is the JSON name.
@@ -207,12 +209,12 @@ message CancelOrder {
   0x166E681B // hardcoded, object type prefix in 4 bytes
   bytes sender // order originating address
   string symbol // symbol for trading pair in full name of the token
-  string refid // order id of the order to cancel
+  string refid // 주문 ID of the order to cancel
 }
 ```
 
-#### Freeze
-Freeze transaction will move the amount of the tokens into a `frozen` state, in which they cannot be used for transfers or sending new orders.
+#### 동결
+동결 트랜잭션은 토큰을 `동결` 상태로 변환합니다. 동결 상태에서는 전송과 주문에 사용할 수 없습니다.
 
 ```go
 // please note the field name is the JSON name.
@@ -224,8 +226,8 @@ message TokenFreeze {
 }
 ```
 
-#### Unfreeze
-Unfreeze will reversely turn the amount of `frozen` tokens back to free state.
+#### 동결 해제
+`동결` 상태의 토큰을 동결 해제 하여 자유롭게 사용할 수 있는 상태로 변환합니다.
 
 ```go
 // please note the field name is the JSON name.
@@ -237,8 +239,8 @@ message TokenUnfreeze {
 }
 ```
 
-#### Vote
-Vote transactions for proposals.
+#### 투표
+제안을 위한 투표 트랜잭션
 
 ```go
 // please note the field name is the JSON name.
@@ -250,16 +252,16 @@ message Vote {
 }
 ```
 
-Below are options for `option`:
+다음은 `option`의 표현입니다:
 ```go
-OptionYes           = 0x01  // yes
-OptionAbstain       = 0x02  // abstain
-OptionNo            = 0x03  // no
-OptionNoWithVeto    = 0x04  // no with veto
+OptionYes           = 0x01  // 찬성
+OptionAbstain       = 0x02  // 유보
+OptionNo            = 0x03  // 반대
+OptionNoWithVeto    = 0x04  // 강하게 반대
 ```
 
-#### Issue
-Issue (create) new asset on BNB Beacon Chain.
+#### 발행
+발행(생성)은 새로운 자산은 BNB 비컨 체인에 추가합니다.
 ```go
 message IssueTokenValue  {
   0x17EFAB80 // hardcoded, object type prefix in 4 bytes
@@ -271,8 +273,8 @@ message IssueTokenValue  {
 }
 ```
 
-#### Mint
-Mint is used to increase the total supply of a token.
+#### 민팅
+민팅은 토큰 총 공급량을 늘릴 때 사용됩니다.
 ```go
 message Mint {
   0x467E0829 // hardcoded, object type prefix in 4 bytes
@@ -282,8 +284,8 @@ message Mint {
 }
 ```
 
-#### Burn
-Burn is used to decrease the total supply of a token.
+#### 소각
+소각은 토큰 총 공급량을 줄일 때 사용됩니다.
 ```go
 message TokenBurn {
   0x7ED2D2A0 // hardcoded, object type prefix in 4 bytes
@@ -293,8 +295,8 @@ message TokenBurn {
 }
 ```
 
-#### List
-List is used to add a new trading pair.
+#### 상장
+상장은 새로운 거래 쌍을 더할 때 사용됩니다.
 ```go
 message DexList{
   0xB41DE13F // hardcoded, object type prefix in 4 bytes
@@ -306,8 +308,8 @@ message DexList{
 }
 ```
 
-#### Submit Proposal
-Submit proposal is used to create a proposal for validators about adding trading pairs
+#### 제안 제출
+제안 제출은 검증인에게 거래 쌍을 더할 것을 제안하는데 사용됩니다.
 ```go
 message Submit{
   0xB42D614E // hardcoded, object type prefix in 4 bytes
@@ -323,8 +325,8 @@ message Submit{
 }
 ```
 
-#### Deposit
-Deposit is used to increase the total deposit of a proposal.
+#### 예치
+Deposit은 제안의 총 예치금을 늘리기 위해 사용됩니다.
 ```go
 message Deposit{
   0xA18A56E5 // hardcoded, object type prefix in 4 bytes
@@ -336,8 +338,8 @@ message Deposit{
   }
 }
 ```
-#### Set Account Flags
-You can set the flag value of your account.
+#### 어카운트 플래그 설정
+어카운트 플래그 값을 설정할 수 있습니다.
 ```go
 message SetAccountFlags{
   0xBEA6E301 // hardcoded, object type prefix in 4 bytes
@@ -346,8 +348,8 @@ message SetAccountFlags{
 }
 ```
 
-#### Time-lock
-You can only lock tokens on your own account for a certain period of time.
+#### 타임 락
+자신 어카운트의 토큰은 일정 시간 동안만 잠글 수 있습니다.
 ```go
 message Timerelock{
   0x07921531 // hardcoded, object type prefix in 4 bytes
@@ -363,8 +365,8 @@ message Timerelock{
 ```
 
 
-#### Time-unlock
-You can  unlock tokens on your own account after a certain period of time.
+#### 타임 언락
+일정 시간이 지난 후 자신의 계정에 있는 토큰을 직접 잠금 해제할 수 있습니다.
 ```go
 message Timeunlock{
   0xC4050C6C   // hardcoded, object type prefix in 4 bytes
@@ -373,8 +375,8 @@ message Timeunlock{
 }
 ```
 
-#### Time-relock
-You can  relock tokens on your own account after a certain period of time.
+#### 타임 다시 잠금(relock)
+일정 시간이 지난 후 자신의 계정에 있는 토큰을 다시 잠글 수 있습니다.
 ```go
 message Timerelock{
   0x504711DA // hardcoded, object type prefix in 4 bytes
@@ -392,7 +394,7 @@ message Timerelock{
 
 #### HTLT
 
-Hash Timer Locked Transfer (HTLT) is a new transaction type on BNB Beacon Chain, to serve as HTLC in the first step of Atomic Swap
+해시 타이머 잠금 전송(HTLT - Hash Timer Locked Transfer)는 BNB 비컨 체인에 존재하는 새로운 트랜잭션으로, 아토믹 스왑의 첫 단계의 HTLC 역할을 합니다.
 
 ```go
 message HTLT{
@@ -414,8 +416,8 @@ message HTLT{
 }
 ```
 
-#### Deposit HTLT
-Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT which is for single chain atomic swap.
+#### 예치 HTLT
+예치 해시 타이머 잠금 전송(Deposit Hash Timer Locked Transfer)는 새 BEP2 자산을 싱글 체인 아토믹 스왑을 위해 이미 존재하는 HTLT에 잠급니다.
 
 ```go
 message DepositHTLT{
@@ -429,8 +431,8 @@ message DepositHTLT{
   bytes swap_id
 }
 ```
-#### Claim HTLT
-Claim Hash Timer Locked Transfer is to claim the locked asset by showing the random number value that matches the hash. Each HTLT locked asset is guaranteed to be release once.
+#### 수령 HTLT
+수령 해시 타이머 잠금 전송(Claim Hash Timer Locked Transfer)는 해시와 일치하는 난수 값을 보여주면 잠긴 자산을 수령할 수 있습니다. 각 HTLT 잠금 자산은 한 번 해제됩니다.
 
 ```go
 message ClaimHTLTMsg{
@@ -440,9 +442,9 @@ message ClaimHTLTMsg{
   bytes random_number
 }
 ```
-#### Refund HTLT
+#### 환불 HTLT
 
-Refund Hash Timer Locked Transfer is to refund the locked asset after timelock is expired.
+환불 해시 타이머 잠금 전송(Refund Hash Timer Locked Transfer)는 잠금 시간이 만료된 후 환불하기 위해 만들어졌습니다.
 ```go
 message RefundHTLTMsg{
   0x3454A27C // hardcoded, object type prefix in 4 bytes

@@ -1,12 +1,12 @@
 ---
-sidebar_label: Community
+sidebar_label: 커뮤니티
 sidebar_position: 2
 ---
 
-## Buidling For the Community, With the Community, and By the Community
+# 커뮤니티를 위해, 커뮤티티에 의한, 커뮤니티와 함께 만들어갑니다
 
-BNB has been on a journey. BSC is not the end, but another start. BSC is a testimony on how a great ecosystem can be co-built by the community. The same as other blockchain projects, the secret sauce of the success always includes the attitude to be more open, inclusive, collaborative, persistent and down-to-earth.
+BNB는 여정을 해 왔는데, 끝나는 것이 아니라 새로운 시작을 앞두고 있습니다. BSC는 커뮤니티와 함께 구축한 생태계가 얼마나 대단한지 보여주는 사례입니다. 다른 블록체인과 마찬가지로, 개방적이고, 포용하고, 협력하고, 지속가능하면서도 현실적인 태도가 BNB 체인의 성공 비결입니다. 
 
-The research and development of the BNB ecosystem, with BSC as the first major inception point, will go further down the road to embrace the community, open source, and collective intelligence, which are essentially the good part of decentralization.
+BSC를 첫 주요 시작점으로 한 BNB 생태계의 연구 및 개발은 본질적으로 탈중앙화의 장점인 커뮤니티, 오픈 소스 및 집단지성을 포괄하며 나아 갈 것입니다.
 
-That is why we put this as a topic to push hard on persistently, for now and for the future.
+그렇기 때문에 우리는 현재와 미래를 위해 이 주제를 끈질지게 밀고 나가고자 합니다. 

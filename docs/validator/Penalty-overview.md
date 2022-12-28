@@ -1,14 +1,14 @@
 ---
-sidebar_label: Slashing and Jail
+sidebar_label: 슬래싱 및 투옥
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Penalty for Bad Behaviour by Validators
+# 검증인의 악성 행위 처벌
 
-On the BNB Smart Chain (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 8 validators on the testnest and 21 active and 20 candidate validators on the mainnet. Validators are selected every 24 hours making the network highly decentralized. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is 10,000 BNB. Only the top 21 highest-staked nodes are chosen to be part of the validator set. To make sure that validators do not abuse the power entrusted to them, BSC has on-chain slashing mechanism to monitor their behavior. 
+BNB 스마트 체인 (BSC) 네트워크에서 검증인들은 트랜잭션을 처리하고 블록에 서명을 함으로써 네트워크를 보장하는 역할을 맡습니다. 검증인 노드들은 선한 행위에 대해 트랜잭션 수수료의 형태로 보상을 받습니다. 현재 테스트넷에는 8명의 검증인, 메인넷에는 21명의 활동 중인 검증인과 20명의 후보자 검증인이 있습니다. 네트워크는 상당히 탈중앙화되어 있으며, 검증인들은 24시간 마다 선정됩니다. 누구든지 검증인 후보자가 될 수 있습니다. 검증인 선정 과정에 참여하기 위해서 노드들은 BNB를 예치해야합니다. 검증인들은 BNB를 자기위임하거나 다른 홀더들의 BNB를 위임할 수도 있습니다. 자기 위임 최소 금액은 10,000 BNB입니다. 오직 상위 21 예치 노드만이 검증인 집단에 포함되도록 선정됩니다. 검증인들이 권한을 남용하지 않도록 BSC는 온체인 슬래싱 메커니즘을 사용해여 이들의 행위를 감시합니다.
 
-## Slashing and Jail
+## 슬래싱과 투옥(Jail)
 
-BSC introduces Slashing logic to penalize Byzantine validators for double signing or inavailability. The slashed validator will eventually be jailed. Validators who are in jail status cannot participate in the consensus mechanism or earn rewards during that period of time. Slashing ensures that validators who act maliciously or show bad behavior are not rewarded. Furthermore, it is designed to expose attackers and make execution attempts extremely expensive. BSC slash requests can be submitted by any public users. All BSC slash requests require slash evidence and transaction cost fees, and rewards will be given to successful slash requests. To ensure that the delegators are not punished for the validator's bad behavior, only self-bonded BNB of the validator are slashed. Currently, slashing is applied on any node that processes any invalid transaction, double-signing or unavailable for a defined period of time. The consensus mechanism will automatically accuse the offline validator within its block by generating a slash transaction, the other fullnode will verify the correctness of the slash transaction to avoid abusing.
+BSC는 비잔틴 검증인들의 이중서명이나 부재를 슬래싱 로직을 이용하여 처벌합니다. 슬래싱된 검증인은 투옥됩니다. 투옥 상태의 검증인들은 합의 과정에 참여할 수도, 해당 기간 동안 보상을 얻을 수도 없습니다. 슬래싱은 악의적으로 행동하거나 악성 행위를 보이는 검증인들이 보상을 받지 않도록 보장해줍니다. 아울러 공격자들을 노출시키고, 이러한 행위를 실행하는 비용을 매우 높게 만듭니다. BSC 슬래싱 요청은 어느 유저에 의해서든 제출될 수 있습니다. 모든 BSC 슬래싱 요청은 증거, 트랜잭션 비용을 필요로 하며, 보상은 성공적인 슬래싱 요청에 주어집니다. 위임인들이 검증인의 악성 행위로 인해 처벌받지 않도록, 오직 검증자의 자기위임 BNB만 슬래싱됩니다. 현재 슬래싱은 무효한 트랜잭션을 처리하는 노드, 이중서명, 일정 기간 부재에 대해 적용됩니다. 합의 모델이 블록 내의 부재중인 검증인을 슬래싱 트랜잭션 생성을 통해 자동적으로 처벌할 것입니다. 남용 방지를 위해 다른 풀노드는 슬래싱 트랜잭션을 검증할 것입니다.
 

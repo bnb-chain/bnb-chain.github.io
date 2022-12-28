@@ -1,69 +1,61 @@
-#  Types of Nodes
+#  노드의 종류
 
 
-## Full Node Node Roles
+## 풀 노드 역할
 
-There are two types of Full Nodes in Beacon Chain  network: validator nodes and witness nodes.
+풀 노드에는 검증인 노드와 증인 두 종류의 노드가 있습니다.
 
-### What is a Validator Node?
+### 검증인 노드란?
 
-Validators are a group/IT infrastructure that take the responsibility to maintain the Binance
-Chain/DEX data and validate all the transactions. They join the consensus procedure and
-vote to produce blocks. The fees are collected and distributed among all validators.
-You can consider Validator as "miner" in Bitcoin and Ethereum and similar concepts exist in dPoS
-blockchain as EOS or dBFT in NEO. The initial validators are selected from trusted members of the
-Binance community, and will eventually expand to more members as the Binance blockchain and
-ecosystem matures, this responsibility will be distributed. The decentralized governance procedure
-will be introduced and executed. More qualified organization/individual can become Validators.
+검증인은 바이낸스 체인/DEX를 유지하고 트랜잭션을 검증하는 책임을 지닌 그룹/IT 인프라입니다. 이들은 합의 과정에 참여하고 투표하여 블록을 생성합니다.
+해당 과정의 보상으로 네트워크 상의 수수료를 모은 후 검증인에게 배분됩니다. 검증인은 비트코인과 이더리움에서의 "채굴자"이며, EOS나 NEO의 dBFT 같은 위임지분증명(dPoS) 블록체인에 비슷한 개념이 존재합니다. 최초 검증인은 바이낸스 커뮤니티의 신뢰할 수 있는 멤버들에 의해 선정되었으며, 바이낸스 블록체인과 생태계가 성장해 갈수록 책임이 분산될 것입니다. 탈중앙화된 거버넌스 절차가 도입되고 집행될 것이며, 자격을 갖춘 더 많은 개인 및 기관들이 검증인으로 합류할 수 있을 것입니다.
 
 
-### What is a Witness Node?
+### 증인 노드란?
 
-Witness nodes represent the majority of nodes in a Beacon Chain  deployment. Although they do not join the consensus process
-and produce blocks, they take care of:
+증인 노드는 비컨 체인 배포 과정에서 대부분의 노드를 담당합니다.
+합의 절차에 참여하거나 블록을 생성하진 않지만, 다음과 같은 역할을 맡습니다:
 
-- The witness consensus process.
-- They serve as data replicas and help to propagate the chain state around the network.
-- They receive transactions and broadcast them to all other nodes including Validator nodes.
+- 증인 합의 절차
+- 데이터 복사본으로 작용하며 네트워크에 체인 상태 전파를 돕습니다
+- 트랜잭션을 받은 후 검증인 노드를 포함한 다른 노드에 전파합니다
 
-You can see the witness node information from this endpoint: https://dex.binance.org/api/v1/peers
+증인 노드에 관한 정보는 다음 엔드포인트에서 확인할 수 있습니다: https://dex.binance.org/api/v1/peers
 
-For mainnet, there are some witness nodes.
+메인넷의 증인 노드입니다.
 
 - `http://dataseed1.binance.org/`
 - `http://dataseed2.binance.org/`
 - `http://dataseed3.binance.org/`
 - `https://dataseed4.binance.org/`
 
-For testnet, there are some witness nodes.
+테스트넷의 증인 노드입니다.
 
 - `https://data-seed-pre-0-s3.binance.org/`
 - `https://data-seed-pre-1-s3.binance.org/`
 - `https://data-seed-pre-2-s3.binance.org/`
 
-To see the existing RPC endpoints provided by witness node, check the list  [here](../api-reference/node-rpc.md)!
+증인 노드에 의해 제공되는 엔드포인트를 확인하려면, [리스트](../api-reference/node-rpc.md)를 체크하세요!
 
-### What is an Accelerated Node?
+### 가속 노드란?
 
-While users can submit transactions and most of the queries via normal, self-run full nodes.<br/>
-Accelerated Node provides more secure and faster lines to access Beacon Chain .
+사용자는 보통 풀 노드를 통해 트랜잭션 및 대부분의 쿼리를 제출할 수 있지만<br/>
+가속 노드는 비컨 체인에 접근할 수 있는 더 안전하고 빠른 회선을 제공합니다.
 
-Accelerated Node is a special infrastructure built around Validator to facilitate accelerated transaction
-routing and provide richer, faster user interfaces. There are always several Accelerated Nodes running
-at the same time around the world (owned by different organizations) and you are encouraged to choose
-one of them to use, or allow your Wallet choose one randomly.<br/>
-For rapid API access, you'd better stay with one Accelerated Node to get better performance.
+가속 노드는 검증인 중심으로 구축된 특수 인프라로 빠른 트랜잭션 라우팅과 풍부한 사용자 인터페이스를 제공합니다.
+가속 노드는 다양한 기관들이 실시간으로 운영하고 있으며, 그 중 하나를 결정하거나 지갑이 임의로 결정하여 사용할 수 있습니다.<br/>
+빠른 API 접근을 위해서는 하나의 가속 노드만 사용하는 것을 권장합니다.
 
-For mainnet, there are more accelerated nodes.
+메인넷에는 많은 가속 노드들이 존재합니다.
 
 - `dex-atlantic.binance.org`
 - `dex-asiapacific.binance.org`
 - `dex-european.binance.org`
 
-For testnet, there are 2 accelerated nodes setup as below. API users should try to use them directly.
+테스트넷은 2개의 가속 노드가 존재합니다. API 사용자는 노드에 직접 접근하여 사용하는 것이 좋습니다.
 
 - `testnet-dex-atlantic.binance.org`
 - `testnet-dex-asiapacific.binance.org`
 
-To see the existing endpoints provided by Accelerated node, check the list [here](../api-reference/dex-api/paths.md)!
+가속 노드에 의해 제공되는 엔드포인트를 확인하려면, [리스트](../api-reference/dex-api/paths.md)를 체크하세요!
 

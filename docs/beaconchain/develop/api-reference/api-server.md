@@ -1,9 +1,9 @@
 API Server
 ========
 
-API server daemon
+API 서버 데몬
 
-> Before starting `api-server`, please make sure that you have created an address locally. Otherwise, your will see the following error:
+> `api-server`를 시작하기 전에 로컬에서 주소를 생생했는지 확인하세요. 생성하지 않았을 경우 다음과 같은 오류가 발생합니다:
 
 ```
 panic: stat /Users/user/.bnbcli/keys/keys.db: no such file or directory
@@ -20,21 +20,21 @@ github.com/binance-chain/node/vendor/github.com/spf13/cobra.(*Command).ExecuteC(
 github.com/binance-chain/node/vendor/github.com/spf13/cobra.(*Command).Execute(...)
 ```
 
-Start the API server according to the Platform.
+플랫폼에 맞춰 API 서버를 시작해주세요
 
-Replace the `platform` variable with `mac`, `windows` or `linux` in the following command:
+Replace the `platform` 변수를 variable with `mac`, `windows` or `linux` in the following command:
 
 ```bash
 ./{{platform}}/bnbcli api-server --chain-id "{chain-id}" --node tcp://{full node addr}:80 --laddr localhost:8080
 ```
 
-### Example for Mainnet:
+#### 메인넷 예시:
 
 ```bash
 ./bnbcli api-server --chain-id "Binance-Chain-Tigris" --node tcp://dataseed1.binance.org:80 --laddr tcp://127.0.0.1:8080 --trust-node
 ```
 
-### Example for Testnet:
+### 테스트넷 예시:
 
 ```bash
 ./tbnbcli api-server --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.binance.org:80 --laddr tcp://127.0.0.1:8080 --trust-node
@@ -43,11 +43,11 @@ Replace the `platform` variable with `mac`, `windows` or `linux` in the followin
 ### /version
 ---
 ##### ***GET***
-**Summary:** Get the blockchain version.
+**요약:** 블록체인 버전을 가져옵니다.
 
-**Description:** Get the blockchain version of the fullnode you connect with.
+**설명:**  연결되어 있는 풀 노드의 블록체인 버전을 가져옵니다.
 
-**Example**
+**예시**
 
 ```
 http://localhost:8080/version
@@ -58,34 +58,34 @@ http://localhost:8080/version
 ### /api/v1/account/{address}
 ---
 ##### ***GET***
-**Summary:** Get an account.
+**요약:** 계정을 가져옵니다.
 
-**Description:** Gets account metadata for an address.
+**설명:**  주소에 대한 계정 메타데이터를 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/account/bnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtwqmzfj
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 ```
 http://localhost:8080/api/v1/account/tbnb1ke87gxdtsk32kuaqxj6skhhmn79ma89cx2ep4g
 ```
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
+| address | path | 쿼리할 계정 주소 | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [Account](#account) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [계정](#계정) |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
 
@@ -93,470 +93,470 @@ http://localhost:8080/api/v1/account/tbnb1ke87gxdtsk32kuaqxj6skhhmn79ma89cx2ep4g
 ### /api/v1/markets
 ---
 ##### ***GET***
-**Summary:** Get market pairs.
+**요약:** 마켓 쌍을 가져옵니다.
 
-**Description:** Gets the list of market pairs that have been listed.
+**설명:**  상장된 마켓 쌍 리스트 가져오기.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/markets
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/markets
 ```
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 100; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
+| limit | query | default 100; max 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Market](#market) ] |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Market](#market) ] |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
 ### /api/v1/depth
 ---
 ##### ***GET***
-**Summary:** Get the order book.
+**요약:** 오더 북을 가져옵니다.
 
-**Description:** Gets the order book depth data for a given pair symbol.
+**설명:**  주어진 심볼 쌍에 대한 오더 북 깊이 데이터를 가져옵니다.
 
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/depth?symbol=SPNDB-916_BNB
 ```
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/depth?symbol=GEOP-152_BNB
 ```
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
-| limit | query | The limit of results. Default: 100 Allowed limits: [5, 10, 20, 50, 100] | No | integer |
+| symbol | query | 마켓 쌍 심볼, 예. NNB-0AD_BNB | 예 | string |
+| limit | query | The limit of results. Default: 100 Allowed limits: [5, 10, 20, 50, 100] | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [MarketDepth](#marketdepth) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [MarketDepth](#marketdepth) |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
 ### /api/v1/orders/open
 ---
 ##### ***GET***
-**Summary:** Get open orders.
+**요약:** 열린 주문을 가져옵니다.
 
-**Description:** Gets open orders for a given address.
+**설명:**  주어진 주소에 대한 열린 주문을 가져옵니다.
 
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/orders/open?address=bnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtwqmzfj&symbol=SPNDB-916_BNB
 
 ```
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/orders/open?address=tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr&symbol=TEST-599_BNB
 ```
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| limit | query | default 100; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total =-1 in response | No | integer |
+| address | query | 소유자 주소 | 예 | string |
+| limit | query | default 100; max 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
+| symbol | query | symbol | 아니오 | string |
+| total | query | total number required, 0 for not required and 1 for required; default not required, return total =-1 in response | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [OrderList](#orderlist) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/tokens
 ---
 ##### ***GET***
-**Summary:** Get tokens list.
+**요약:** 토큰 리스트 가져오기.
 
-**Description:** Gets a list of tokens that have been issued.
+**설명:**  발행된 토큰 리스트 가져오기.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/tokens
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/tokens
 ```
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 100; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
+| limit | query | default 100; max 1000. | 아니오 | integer |
+| offset | query | 0으로 시작; 기본 0. | 아니오 | integer |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Token](#token) ] |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Token](#token) ] |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/tokens/{symbol}
 ---
 ##### ***GET***
-**Summary:** Get information for a token.
+**요약:** 토큰 정보를 가져옵니다.
 
-**Description:** Get information for a token.
+**설명:**  토큰 정보를 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/tokens/SPNDB-916
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/tokens/TEST-599
 ```
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Token](#token) ] |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Token](#token) ] |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/balance/{address}
 ---
 ##### ***GET***
-**Summary:** Get account balance for an address.
+**요약:** 주소의 계정 잔고를 가져옵니다.
 
-**Description:** Get account balance for an address.
+**설명:**  주소의 계정 잔고를 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/balances/bnb1qwugqccfrefqyg9kgm0st8szjf8mmgkmvyt76lv9
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/balances/tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr
 ```
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success |  [Balance](#balances) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) |  [Balance](#balances) |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/balance/{address}/{symbol}
 ---
 ##### ***GET***
-**Summary:** Get balance for one token from an address.
+**요약:** 주소에 있는 특정 토큰에 대한 잔고를 가져옵니다.
 
-**Description:** Get balance for one token from an address.
+**설명:**  주소에 있는 특정 토큰에 대한 잔고를 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/balances/bnb1qwugqccfrefqyg9kgm0st8szjf8mmgkmvyt76lv9/BNB
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/balances/tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr/BNB
 ```
 
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success |  [Balance](#balances) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) |  [Balance](#balances) |
+| 500 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
 ### /api/v1/fees
 ---
 ##### ***GET***
-**Summary:** Obtain trading fees information.
+**요약:** 거래 수수료 정보 가져옵니다.,
 
-**Description:** Gets the current trading fees settings.
+**설명:**  현재 거래 수수료 정보 설정 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/fees
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/fees
 ```
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Fee](#fee) ] |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [Fee](#fee) ] |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
 ### /api/v1/validators
 ---
 ##### ***GET***
-**Summary:** Get validators.
+**요약:** 검증인을 가져옵니다.
 
-**Description:** Gets the list of validators used in consensus.
+**설명:**  합의에 참여하는 검증인의 리스트를 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/stake/validators
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/stake/validators
 ```
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [Validators](#validators) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [ [검증인들](#검증인들) ] |
+| 400 | Bad Request(잘못된 요청) | [에러](#에러). |
+| 404 | Not Found(칮을 수 없음) |  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
 ### /api/v1/timelock/timelocks/{address}
 ---
 ##### ***GET***
-**Summary:** Get all the timelock records of an address.
+**요약:**주소의 모든 타임록 기록을 가져옵니다.
 
-**Description:** Gets the list of the timelock records of an address.
+**설명:**  주소의 모든 타임록 기록 리스트를 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/timelock/timelocks/bnb1ycuzfx8cxpqmleu7z64uys9wx5ntcujre2knpc
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/timelock/timelocks/tbnb1g9rzc0e2jf8ef3qp9ax7h0pmpmvjzwmtq4jxfr
 ```
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [TimelockList](#TimelockList)  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [TimelockList](#TimelockList)  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 ### /api/v1/timelock/timelock/{address}/{id}
 ---
 ##### ***GET***
-**Summary:** Get a timelock record of an address.
+**요약:** 주소의 타임록 기록을 가져옵니다.
 
-**Description:** Gets a timelock record of an address.
+**설명:**  주소의 \타임록 기록을 가져옵니다.
 
-**Example for mainnet**
+**메인넷 예시**
 ```
 http://localhost:8080/api/v1/timelock/timelock/bnb1ycuzfx8cxpqmleu7z54uys9wx5ntcujre2knpc/1
 ```
 
-**Example for testnet:**
+**테스트넷 예시**
 
 ```
 http://localhost:8080/api/v1/timelock/timelock/tbnb1g9rzc0e2jf7ef3qp9ax8h0pmpmvjzwmtq4jxfr/1
 ```
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
-| 200 | Success | [Timelock](#Timelock)  |
-| default | Generic error response | [Error](#error) |
+| 200 | Success(성공) | [Timelock](#Timelock)  |
+| default | Generic error response(일반 오류 응답) | [에러](#에러). |
 
 
-### Account
+### 계정
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | account_number | integer |  |  |
 | address | string (address) |  |  |
-| balances | [ [Balance](#balance) ] |  |  |
-| public_key | [ integer ] | Public key bytes |  |
-| sequence | long | sequence is for preventing replay attack |  |
+| balances | [ [잔고](#잔고) ] |  |  |
+| public_key | [ integer ] | 공개 키 바이트 수 |  |
+| sequence | long | 시퀸스는 재생 공격을 방지합니다 |  |
 
 
-### Balances
+### 잔고들
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | address | string (address) |  |  |
-| balances | [ [Balance](#balance) ] |  |  |
+| balances | [ [잔고](#잔고) ] |  |  |
 
 
-### Balance
+### 잔고
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| symbol | string (currency) | asset symbol | BNB |
-| free | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
-| locked | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
-| frozen | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
+| symbol | string (currency) | 자산 심볼 | BNB |
+| free | string (fixed8) | 소수점 형태로, 예. 0.00000000 | 0.00000000 |
+| locked | string (fixed8) | 소수점 형태로, 예. 0.00000000 | 0.00000000 |
+| frozen | string (fixed8) | 소수점 형태로, 예. 0.00000000 | 0.00000000 |
 
 
-### Token
+### 토큰
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| name | string | token name | Binance Chain Native Token |
-| symbol | string | unique token trade symbol | BTC-000 |
-| original_symbol | string | token symbol | BTC |
-| total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
-| owner | string (address) | Address which issue the token |  |
+| name | string | 토큰 이름 | Binance Chain Native Token |
+| symbol | string | 고유한 토큰 거래 심볼 | BTC-000 |
+| original_symbol | string | 토큰 심볼 | BTC |
+| total_supply | string (fixed8) | 총 토큰 공급량 소수점 형태로, 예. 1.00000000 | 0.00000000 |
+| owner | string (address) | 토큰을 발행한 주소 |  |
 
-### Market
+### 마켓
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| base_asset_symbol | string (currency) | symbol of base asset | BNB |
-| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| price | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| tick_size | string (fixed8) | Minimum price change in decimal form, e.g. 1.00000000 | 0.00000001 |
-| lot_size | string (fixed8) | Minimum trading quantity in decimal form, e.g. 1.00000000 | 0.000001 |
+| base_asset_symbol | string (currency) | 기초 자산 심볼 | BNB |
+| quote_asset_symbol | string (currency) | 견적 자산 심볼 | ABC-5CA |
+| price | string (fixed8) | 소수점 형태로, 예. 1.00000000 | 0.00000000 |
+| tick_size | string (fixed8) | Minimum price change 소수점 형태로, 예. 1.00000000 | 0.00000001 |
+| lot_size | string (fixed8) | Minimum trading quantity 소수점 형태로, 예. 1.00000000 | 0.000001 |
 
-### Fee
+### 수수료
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
-| fee | number | The fee amount | 1000000000 |
+| msg_type | string | 수수료가 해당하는 트랜잭션 메세지 유형  | submit_proposal |
+| fee | number | 수수료 금액 | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
-| multi_transfer_fee | string | Fee for multi-transfer | 200000 |
-| lower_limit_as_multi | string | e.g. 2 | 2 |
-| fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
-| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
+| multi_transfer_fee | string | 다중 전송 비용 | 200000 |
+| lower_limit_as_multi | string | 예. 2 | 2 |
+| fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | 고정 수수료일 시 설정 |  |
+| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex 수수료 |  |
 
 ### FixedFeeParams
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
-| fee | number | The fixed fee amount | 1000000000 |
+| msg_type | string | 수수료가 해당하는 트랜잭션 메세지 유형  | submit_proposal |
+| fee | number | 고정된 수수료 금액 | 1000000000 |
 | fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
 
 ### DexFeeFieldParams
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| fee_name | string | fee name |  |
-| fee_value | integer | fee value |  |
+| fee_name | string | 수수료 이름 |  |
+| fee_value | integer | 수수료 값 |  |
 
 
-### Error
+### 에러
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| code | long | error code | 400 |
-| message | string | error message |  |
+| code | long | 에러 코드 | 400 |
+| message | string | 에러 메세지 |  |
 
 ### MarketDepth
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
+| asks | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
+| bids | [ string (fixed8) ] | 가격 및 수량 소수점 형태로, 예. 1.00000000 | ["1.00000000","800.00000000"] |
 
-### OrderList
+### 주문리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| order | [ [Order](#order) ] | list of orders |  |
+| order | [ [주문](#주문) ] | 주문 리스트 |  |
 | total | long |  |  |
 
-### Order
+### 주문
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | cumulateQuantity | string |  |  |
-| fee | string | trading fee on the block of this order |  |
-| lastExecutedPrice | string | price of last execution |  |
-| lastExecutedQuantity | string | quantity of last execution |  |
-| orderCreateTime | dateTime | time of order creation |  |
-| orderId | string | order ID |  |
-| owner | string | order issuer |  |
-| price | string | order price |  |
-| quantity | string | order quantity |  |
-| side | integer | 1 for buy and 2 for sell |  |
+| fee | string | 이 주문이 포함된 블록의 거래수수료 |  |
+| lastExecutedPrice | string | 마지막 실행 가격 |  |
+| lastExecutedQuantity | string | 마지막 실행 수량 |  |
+| orderCreateTime | dateTime | 주문 생성 시각 |  |
+| orderId | string | 주문 ID |  |
+| owner | string | 주문 생성자 |  |
+| price | string | 주문 가격 |  |
+| quantity | string | 주문 수량 |  |
+| side | integer | 1 - 구매  2 - 판매 |  |
 | status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
 | symbol | string |  |  |
-| timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
-| tradeId | string | trade ID |  |
+| timeInForce | integer | 1 - GTE 주문  3 - IOC 주문 |  |
+| tradeId | string | 거래 ID |  |
 | transactionHash | string |  |  |
-| transactionTime | dateTime | time of transaction |  |
-| type | integer | only 2 is available for now, meaning limit order |  |
+| transactionTime | dateTime | 트랜잭션 시간 |  |
+| type | integer | 현재 (2 - 지정가 주문)만 가능 |  |
 
-### TimelockList
+### 타임록리스트
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
-| Timelocks | [ [Timelock](#timelock) ] | list of timelock records |  |
+| Timelocks | [ [타임록](#타임록) ] | list of timelock records |  |
 
-#### Timelock
-| Name | Type | Description | Example |
+#### 타임록
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | ID | integer |  |  |
 | description | string |  |  |
-| amount | [Coin](#coin) |  |  |
+| amount | [코인](#코인) |  |  |
 | locktime | timestamp |  |  |
 
 
-#### Coin
-| Name | Type | Description | Example |
+#### 코인
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | denom | string |  |  |
 | amount | int |  |  |

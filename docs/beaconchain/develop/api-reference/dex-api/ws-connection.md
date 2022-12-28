@@ -1,27 +1,27 @@
-# WebSocket Connections
+# 웹 소켓 연결
 
-The DEX exposes several data streams over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
+DEX는 표준 웹 소켓 연결을 통해 여러 데이터 스트림을 제공하며, 현대 웹 브라우저 및 서버 측 웹 소켓 라이브러리에서 사용할 수 있습니다.
 
-- The base endpoint for mainnet is: **wss://dex.binance.org/api/**.
-- The base endpoint for testnet is: **wss://testnet-dex.binance.org/api/**.
-- Each connection can consume a single stream or multiple streams may be multiplexed through one connection for more complex apps.
-- All symbols in stream names are lowercase.
+- 메인넷의 기본 엔트포인트는: **wss://dex.binance.org/api/**.
+- 테스트넷의 기본 엔트포인트는: **wss://testnet-dex.binance.org/api/**.
+- 각 연결은 하나의 스트림을 소비하거나 더 복잡한 앱을 위해 하나의 연결이 다중화 될 수 있습니다.
+- 스트림 이름의 모든 기호는 소문자입니다.
 
-Stream names may be provided in the URL **or** there is a mechanism to `subscribe` to consume streams on demand through one connection.
+스트림 이름은 URL에 제공되거나 **아니면** 스트림을 언제든지 소비하기 위해 하나의 연결로 `구독`할 수 있는 매커니즘이 있습니다.
 
-Note: Once the connection is established, the websocket server will send ping frame to the client every 30 seconds. The client should reply with pong frame in time (this has already been implemented by most modern browsers, but programmatical users need to be aware of whether your websocket library supports this), otherwise, the connection might be closed.
+참고: 연결된 후, 웹 소켓 서버는 30초마다 클라이언트에게 핑 프레임을 전송합니다. 클라이언트는 제 시간 안에 퐁 프레임으로 응답해야 합니다(대부분 현대 브라우저에 도입 되었지만, 프로그램 사용자들은 웹 소켓이 다음 기능을 지원하는지 알고 있어야 합니다). 답장하지 못 한다면, 연결이 끊기게 됩니다.
 
-Examples of each of these methods are provided below in JavaScript:
+각 방법에 대한 예시는 JavaScript로 제공됩니다:
 
-### Method 1: Connect with stream names in the URL
+### 방법 1: URL에서 스트림 이름으로 연결하기
 
-Using this method, stream names are specified in the URLs used to connect to the data streams:
+이 방법을 통해 데이터 스트림에 연결되는 스트림 이름이 URL에 명시됩니다:
 
-- Single streams `/ws/<streamName>`
-- Combined streams `/stream?streams=<streamName1>/<streamName2>/<streamName3>` (etc.)
+- 단일 스트림 `/ws/<streamName>`
+- 결합 스트림 `/stream?streams=<streamName1>/<streamName2>/<streamName3>` (등.)
 
 
-**Mainnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
+**메인넷 예시:** 스트림 이름이 URL에 제공 될 시 스트림에 연결하는 다양한 방법:
 
 ```javascript
   // for personal streams, ex: Account & Orders & Transfers
@@ -42,7 +42,7 @@ Using this method, stream names are specified in the URLs used to connect to the
   const combinedFeeds = new WebSocket("wss://dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
-**Testnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
+**테스트넷 예시:** 스트림 이름이 URL에 제공 될 시 스트림에 연결하는 다양한 방법:
 
 ```javascript
   // for personal streams, ex: Account & Orders & Transfers
@@ -63,11 +63,11 @@ Using this method, stream names are specified in the URLs used to connect to the
   const combinedFeeds = new WebSocket("wss://testnet-dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
-### Method 2: Subscribe to streams on demand
+### 방법 2: 스트림 온디맨드(On-Demand) 구독하기
 
-Using this method, streams are be consumed via subscribe and unsubscribe commands, sent through a single WebSocket connection.
+해당 메서드로, 스트림은 구독 및 구독 취소 명령어를 통해 소비됩니다. 하나의 웹 소켓 연결을 통해 보내집니다.
 
-**Note: one connection is only allowed to subscribe to one address.**
+**Note: 하나의 연결은 한 주소의 구독만 허용됩니다.**
 
 ```javascript
     const conn = new WebSocket("wss://dex.binance.org/api/ws");
@@ -82,9 +82,9 @@ Using this method, streams are be consumed via subscribe and unsubscribe command
     };
 ```
 
-After connecting successfully you can subscribe/unsubscribe to different topics.
+연결에 성공하면 다양한 주제에 대해 구독/해제가 가능합니다.
 
-**Example:** To subscribe to orders events and market depth updates, you should send a socket message with the `subscribe` payload as below:
+**예시:** 주문 이벤트와 시장 깊이 업데이트를 구독하려면, 다음과 같은 `subscribe` 페이로드를 가진 메세지를 전송합니다:
 
 ```javascript
     const conn = new WebSocket("wss://dex.binance.org/api/ws/bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x");
@@ -100,7 +100,7 @@ After connecting successfully you can subscribe/unsubscribe to different topics.
     }
 ```
 
-**Example:** To unsubscribe from orders events, you should send a socket message with payloads as below:
+**예시:** 주문 이벤트 구독을 해제하려면, 페이로드와 다음과 같은 소켓 메세지를 전송하세요:
 
 ```javascript
     // unsubscribe from topic
@@ -110,7 +110,7 @@ After connecting successfully you can subscribe/unsubscribe to different topics.
     conn.send(JSON.stringify({ method: "unsubscribe", topic: "marketDepth", symbols: ["BNB_BTC"] }));
 ```
 
-**Example:** To extend connection life, you should send a a message with a payload using the `keepAlive` method:
+**예시:** 연결 기간을 늘리려면, `keepAlive` 메서드를 사용하며 페이로드와 다음과 같은 메세지를 전송하세요:
 
 ```javascript
     // This will extend the connection time to another 30 minutes
@@ -118,7 +118,7 @@ After connecting successfully you can subscribe/unsubscribe to different topics.
     conn.send(JSON.stringify({ method: "keepAlive" }));
 ```
 
-**Example:** To close a connection, you should send a socket message with a payload as below:
+**예시:** 연결을 종료하려면, 페이로드와 다음과 같은 소켓 메세지를 전송하세요:
 
 ```javascript
     // Connections will auto close after 30 - 60 minutes if no "keepAlive" messages received

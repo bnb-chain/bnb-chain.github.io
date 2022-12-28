@@ -1,14 +1,14 @@
-# WebSocket Streams
+# 웹 소켓 스트림
 
-### 1. Orders
+### 1. 주문
 
-Returns individual order updates.
+개인 주문 업데이트를 반환합니다.
 
-Examples are written in JavaScript.
+예시는 JavaScript로 작성되었습니다.
 
-**Topic Name:** orders | Stream: /ws/address
+**주제 이름:** orders | 스트림: /ws/address
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -21,7 +21,7 @@ Examples are written in JavaScript.
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -34,65 +34,65 @@ Examples are written in JavaScript.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
   {
     "stream": "orders",
     "data": [{
-        "e": "executionReport",        // Event type
-        "E": 1499405658658,            // Event height
-        "s": "ETH_BTC",                // Symbol
-        "S": 1,                        // Side, 1 for Buy; 2 for Sell
-        "o": 2,                        // Order type, 2 for LIMIT (only)
-        "f": 1,                        // Time in force,  1 for Good Till Expire (GTE); 3 for Immediate Or Cancel (IOC)
-        "q": "1.00000000",             // Order quantity
-        "p": "0.10264410",             // Order price
-        "x": "NEW",                    // Current execution type
-        "X": "Ack",                    // Current order status, possible values Ack, Canceled, Expired, IocNoFill, PartialFill, FullyFill, FailedBlocking, FailedMatching, Unknown
-        "i": "91D9...7E18-2317",       // Order ID
-        "l": "0.00000000",             // Last executed quantity
-        "z": "0.00000000",             // Cumulative filled quantity
-        "L": "0.00000000",             // Last executed price
-        "n": "10000BNB",               // Commission amount for all user trades within a given block. Fees will be displayed with each order but will be charged once.
-                                       // Fee can be composed of a single symbol, ex: "10000BNB"
-                                       // or multiple symbols if the available "BNB" balance is not enough to cover the whole fees, ex: "1.00000000BNB;0.00001000BTC;0.00050000ETH"
-        "T": 1499405658657,            // Transaction time
-        "t": "TRD1",                   // Trade ID
-        "O": 1499405658657,            // Order creation time
+        "e": "executionReport",        // 이벤트 유형
+        "E": 1499405658658,            // 이벤트 높이
+        "s": "ETH_BTC",                // 심볼
+        "S": 1,                        // 사이드, 1은 구매; 2는 판매
+        "o": 2,                        // 주문 유형, 2 제한 주문 (현재는 2만 가능)
+        "f": 1,                        // 시간 제한,  1 for Good Till Expire (GTE); 3 for Immediate Or Cancel (IOC)
+        "q": "1.00000000",             // 주문 수량
+        "p": "0.10264410",             // 주문 가격
+        "x": "NEW",                    // 현재 실행 유형
+        "X": "Ack",                    // 현재 주문 상태: Ack, Canceled, Expired, IocNoFill, PartialFill, FullyFill, FailedBlocking, FailedMatching, Unknown
+        "i": "91D9...7E18-2317",       // 주문 ID
+        "l": "0.00000000",             // 최종 실행된 수량
+        "z": "0.00000000",             // 누적충전수량
+        "L": "0.00000000",             // 최종 실행 가격
+        "n": "10000BNB",               // 주어진 블록에서 모든 사용자 거래 커미션 비. 각 주문에 대해 표시되지만 한 번에 청구됩니다.
+                                       //수수료는 하나의 심볼로 이뤄질 수 있습니다, 예: "10000BNB"
+                                       // "BNB"로 모든 수수료를 못 낼 경우 다양한 심볼을 사용할 수 있습니다, 예: "1.00000000BNB;0.00001000BTC;0.00050000ETH"
+        "T": 1499405658657,            // 트랜잭션 시간
+        "t": "TRD1",                   // 거래 ID
+        "O": 1499405658657,            // 주문 생성 시간
     },
     {
-        "e": "executionReport",        // Event type
-        "E": 1499405658658,            // Event height
-        "s": "ETH_BNB",                // Symbol
-        "S": "BUY",                    // Side
-        "o": "LIMIT",                  // Order type
-        "f": "GTE",                    // Time in force
-        "q": "1.00000000",             // Order quantity
-        "p": "0.10264410",             // Order price
-        "x": "NEW",                    // Current execution type
-        "X": "Ack",                    // Current order status
-        "i": 4293154,                  // Order ID
-        "l": "0.00000000",             // Last executed quantity
-        "z": "0.00000000",             // Cumulative filled quantity
-        "L": "0.00000000",             // Last executed price
-        "n": "10000BNB",               // Commission amount for all user trades within a given block. Fees will be displayed with each order but will be charged once.
-                                        // Fee can be composed of a single symbol, ex: "10000BNB"
-                                        // or multiple symbols if the available "BNB" balance is not enough to cover the whole fees, ex: "1.00000000BNB;0.00001000BTC;0.00050000ETH"
-        "T": 1499405658657,            // Transaction time
-        "t": "TRD2",                   // Trade ID
-        "O": 1499405658657,            // Order creation time
+        "e": "executionReport",        // 이벤트 유형
+        "E": 1499405658658,            // 이벤트 높이
+        "s": "ETH_BNB",                // 심볼
+        "S": "BUY",                    // 사이드
+        "o": "LIMIT",                  // 주문 유형
+        "f": "GTE",                    // 시간 제한
+        "q": "1.00000000",             // 주문 수량
+        "p": "0.10264410",             // 주문 가격
+        "x": "NEW",                    // 현재 실행 유형
+        "X": "Ack",                    // 현재 주문 상태
+        "i": 4293154,                  // 주문 ID
+        "l": "0.00000000",             // 최종 실행된 수량
+        "z": "0.00000000",             // 누적충전수량
+        "L": "0.00000000",             // 최종 실행 가격
+        "n": "10000BNB",               // 주어진 블록에서 모든 사용자 거래 커미션 비. 각 주문에 대해 표시되지만 한 번에 청구됩니다.
+                                        //수수료는 하나의 심볼로 이뤄질 수 있습니다, 예: "10000BNB"
+                                        // "BNB"로 모든 수수료를 못 낼 경우 다양한 심볼을 사용할 수 있습니다, 예: "1.00000000BNB;0.00001000BTC;0.00050000ETH"
+        "T": 1499405658657,            // 트랜잭션 시간
+        "t": "TRD2",                   // 거래 ID
+        "O": 1499405658657,            // 주문 생성 시간
       }]
   }
 ```
 
-### 2. Account
+### 2. 계정
 
-Return account updates.
+어카운트 업데이트를 반환합니다.
 
-**Topic Name:** accounts | Stream: /ws/address
+**주제 이름:** accounts | 스트림: /ws/address
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -106,7 +106,7 @@ Return account updates.
 ```
 
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -119,20 +119,20 @@ Return account updates.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
     "stream": "accounts",
     "data": [{
-      "e": "outboundAccountInfo",   // Event type
-      "E": 1499405658849,           // Event height
-      "B": [                        // Balances array
+      "e": "outboundAccountInfo",   // 이벤트 유형
+      "E": 1499405658849,           // 이벤트 높이
+      "B": [                        // 잔고 배열
         {
-          "a": "LTC",               // Asset
-          "f": "17366.18538083",    // Free amount
-          "l": "0.00000000",        // Locked amount
-          "r": "0.00000000"         // Frozen amount
+          "a": "LTC",               // 자산
+          "f": "17366.18538083",    // 자유 금액
+          "l": "0.00000000",        // 잠긴 금액
+          "r": "0.00000000"         // 동결 금액
         },
         {
           "a": "BTC",
@@ -151,13 +151,13 @@ Return account updates.
 }
 ```
 
-### 3. Transfer
+### 3. 전송
 
-Return transfer updates if address is involved (as sender or receiver) in a transfer. Multisend is also covered
+주소가 전송에 참여했을 시(송신 및 수신) 전송 업데이트를 반환합니다. 다중 전송(Multisend)도 다룹니다.
 
-**Topic Name:** transfers | Stream: /ws/address
+**주제 이름:** transfers | 스트림: /ws/address
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -170,7 +170,7 @@ Return transfer updates if address is involved (as sender or receiver) in a tran
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -183,23 +183,23 @@ Return transfer updates if address is involved (as sender or receiver) in a tran
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
   "stream": "transfers",
   "data": {
-    "e":"outboundTransferInfo",                                                // Event type
-    "E":12893,                                                                 // Event height
-    "H":"0434786487A1F4AE35D49FAE3C6F012A2AAF8DD59EC860DC7E77123B761DD91B",    // Transaction hash
-    "M":"123456789",                                                           // Transaction memo, added for BEP39
-    "f":"bnb1z220ps26qlwfgz5dew9hdxe8m5malre3qy6zr9",                          // From addr
+    "e":"outboundTransferInfo",                                                // 이벤트 유형
+    "E":12893,                                                                 // 이벤트 높이
+    "H":"0434786487A1F4AE35D49FAE3C6F012A2AAF8DD59EC860DC7E77123B761DD91B",    // 트랜잭션 해시
+    "M":"123456789",                                                           // 트랜잭션 메모 (BEP39 위해 추가)
+    "f":"bnb1z220ps26qlwfgz5dew9hdxe8m5malre3qy6zr9",                          // 발신 주소
     "t":
       [{
-        "o":"bnb1xngdalruw8g23eqvpx9klmtttwvnlk2x4lfccu",                      // To addr
-        "c":[{                                                                 // Coins
-          "a":"BNB",                                                           // Asset
-          "A":"100.00000000"                                                   // Amount
+        "o":"bnb1xngdalruw8g23eqvpx9klmtttwvnlk2x4lfccu",                      // 수신 주소
+        "c":[{                                                                 // 코인들
+          "a":"BNB",                                                           // 자산
+          "A":"100.00000000"                                                   // 규모
           }]
       }]
   }
@@ -207,13 +207,13 @@ Return transfer updates if address is involved (as sender or receiver) in a tran
 
 ```
 
-### 4. Trades
+### 4. 거래
 
-Returns individual trade updates.
+개인 거래 업데이트를 반환합니다Returns individual trade updates.
 
-**Topic Name:** trades | Stream: \<symbol\>@trades
+**주제 이름:** trades | 스트림: \<symbol\>@trades
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -226,7 +226,7 @@ Returns individual trade updates.
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -239,49 +239,49 @@ Returns individual trade updates.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
     "stream": "trades",
     "data": [{
-        "e": "trade",       // Event type
-        "E": 123456789,     // Event height
-        "s": "BNB_BTC",     // Symbol
-        "t": "12345",       // Trade ID
-        "p": "0.001",       // Price
-        "q": "100",         // Quantity
-        "b": "88",          // Buyer order ID
-        "a": "50",          // Seller order ID
-        "T": 123456785,     // Trade time
-        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress
-        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress
-        "tt": 1             //tiekertype 0: Unknown 1: SellTaker 2: BuyTaker 3: BuySurplus 4: SellSurplus 5: Neutral
+        "e": "trade",       // 이벤트 유형
+        "E": 123456789,     // 이벤트 높이
+        "s": "BNB_BTC",     // 심볼
+        "t": "12345",       // 거래 ID
+        "p": "0.001",       // 가격
+        "q": "100",         // 수량
+        "b": "88",          // 구매자 주문 ID
+        "a": "50",          // 판매자 주문 ID
+        "T": 123456785,     // 거래 시간
+        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress (판매자 주소)
+        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress (구매자 주소)
+        "tt": 1             // 티커 타입 0: Unknown 1: SellTaker 2: BuyTaker 3: BuySurplus 4: SellSurplus 5: Neutral
     },
     {
-        "e": "trade",       // Event type
-        "E": 123456795,     // Event time
-        "s": "BNB_BTC",     // Symbol
-        "t": "12348",       // Trade ID
-        "p": "0.001",       // Price
-        "q": "100",         // Quantity
-        "b": "88",          // Buyer order ID
-        "a": "52",          // Seller order ID
-        "T": 123456795,     // Trade time
-        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress
-        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress
-        "tt": 1             //tiekertype 0: Unknown 1: SellTaker 2: BuyTaker 3: BuySurplus 4: SellSurplus 5: Neutral
+        "e": "trade",       // 이벤트 유형
+        "E": 123456795,     // 이벤트 시간
+        "s": "BNB_BTC",     // 심볼
+        "t": "12348",       // 거래 ID
+        "p": "0.001",       // 가격
+        "q": "100",         // 수량
+        "b": "88",          // 구매자 주문 ID
+        "a": "52",          // 판매자 주문 ID
+        "T": 123456795,     // 거래 시간
+        "sa": "bnb1me5u083m2spzt8pw8vunprnctc8syy64hegrcp", // SellerAddress (판매자 주소)
+        "ba": "bnb1kdr00ydr8xj3ydcd3a8ej2xxn8lkuja7mdunr5" // BuyerAddress (구매자 주소)
+        "tt": 1             // 티커 타입 0: Unknown 1: SellTaker 2: BuyTaker 3: BuySurplus 4: SellSurplus 5: Neutral
     }]
 }
 ```
 
-### 5. Diff. Depth Stream
+### 5. Diff. 규모 스트림
 
-Order book price and quantity depth updates used to locally keep an order book.
+오더 북 가격과 수량 규모 업데이트는 로컬에서 오더 북을 유지하기 위해 사용합니다.
 
-**Topic Name:** marketDiff | Stream: \<symbol\>@marketDiff
+**주제 이름:** marketDiff | 스트림: \<symbol\>@marketDiff
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -294,7 +294,7 @@ Order book price and quantity depth updates used to locally keep an order book.
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -307,42 +307,42 @@ Order book price and quantity depth updates used to locally keep an order book.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
     "stream": "marketDiff",
     "data": {
-        "e": "depthUpdate",   // Event type
-        "E": 123456789,       // Event time
-        "s": "BNB_BTC",       // Symbol
-        "b": [                // Bids to be updated
+        "e": "depthUpdate",   // 이벤트 유형
+        "E": 123456789,       // 이벤트 시간
+        "s": "BNB_BTC",       // 심볼
+        "b": [                // 업데이트 될 매수
             [
-            "0.0024",         // Price level to be updated
-            "10"              // Quantity
+            "0.0024",         // 업데이트 될 가격 레벨
+            "10"              // 수량
             ]
         ],
-        "a": [                // Asks to be updated
+        "a": [                // 업데이트 될 매도
             [
-            "0.0026",         // Price level to be updated
-            "100"             // Quantity
+            "0.0026",         // 업데이트 될 가격 레벨
+            "100"             // 수량
             ]
         ]
     }
 }
 ```
 
-### 6. Book Depth Streams
+### 6. 오더북 규모 스트림
 
-Top 20 (could extend to 100, 500, 1000) levels of bids and asks.
+상위 20(100, 500, 1000으로 확장 가능합니다)레벨의 구매와 판매 주문입니다.
 
-If you want subscribe topic marketDepth1000,your client must enable [compression](https://tools.ietf.org/html/rfc7692).
+marketDepth1000 주제를 구독하고 싶으면, 클라이언트가 [압축(compression)](https://tools.ietf.org/html/rfc7692)을 활성화 해야 합니다.
 
-**Topic Name:** marketDepth | Stream: \<symbol\>@marketDepth
+**주제 이름:** marketDepth | 스트림: \<symbol\>@marketDepth
 
-**Extension:** marketDepth100, marketDepth500, marketDepth1000 | Stream: \<symbol\>@marketDepth100, \<symbol\>@marketDepth500, \<symbol\>@marketDepth1000
+**확장:** marketDepth100, marketDepth500, marketDepth1000 | 스트림: \<symbol\>@marketDepth100, \<symbol\>@marketDepth500, \<symbol\>@marketDepth1000
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -354,7 +354,7 @@ If you want subscribe topic marketDepth1000,your client must enable [compression
         conn.send(JSON.stringify({ method: "subscribe", topic: "marketDepth", symbols: ["BNB_BTCB-1DE"] }));
     }
 ```
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -367,37 +367,37 @@ If you want subscribe topic marketDepth1000,your client must enable [compression
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
     "stream": "marketDepth",
     "data": {
-        "lastUpdateId": 160,    // Last update ID
-        "symbol": "BNB_BTC",    // symbol
-        "bids": [               // Bids to be updated
+        "lastUpdateId": 160,    // 최근 업데이트 ID
+        "symbol": "BNB_BTC",    // 심볼
+        "bids": [               // 업데이트 될 매수
             [
-            "0.0024",           // Price level to be updated
-            "10"                // Quantity
+            "0.0024",           // 업데이트 될 가격 레벨
+            "10"                // 수량
             ]
         ],
-        "asks": [               // Asks to be updated
+        "asks": [               // 업데이트 될 매도
             [
-            "0.0026",           // Price level to be updated
-            "100"               // Quantity
+            "0.0026",           // 업데이트 될 가격 레벨
+            "100"               // 수량
             ]
         ]
     }
 }
 ```
 
-### 7. Kline/Candlestick Streams
+### 7. 클리인/캔들스틱 스트림
 
-The kline/candlestick stream pushes updates to the current klines/candlestick every second.
+클라인/캔들스틱(Kline/Candlestick) 스트림은 매 초마다 현재 클라인/캔들스틱을 업데이트합니다.
 
-**Kline/Candlestick chart intervals:**
+**Kline/Candlestick 차트 주기:**
 
-m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
+m -> 분; h -> 시간; d -> 일; w -> 주; M -> 월
 
 * 1m
 * 3m
@@ -415,9 +415,9 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 * 1w
 * 1M
 
-**Topic Name:** kline_\<interval\> | Stream: \<symbol\>@kline_\<interval\>
+**주제 이름:** kline_\<interval\> | 스트림: \<symbol\>@kline_\<interval\>
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -430,7 +430,7 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -443,42 +443,42 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
   "stream": "kline_1m",
   "data": {
-    "e": "kline",         // Event type
-    "E": 123456789,       // Event time
-    "s": "BNBBTC",        // Symbol
+    "e": "kline",         // 이벤트 유형
+    "E": 123456789,       // 이벤트 시간
+    "s": "BNBBTC",        // 심볼
     "k": {
-      "t": 123400000,     // Kline start time
-      "T": 123460000,     // Kline close time
-      "s": "ABC_0DX-BNB",      // Symbol
-      "i": "1m",          // Interval
-      "f": "100",         // First trade ID
-      "L": "200",         // Last trade ID
-      "o": "0.0010",      // Open price
-      "c": "0.0020",      // Close price
-      "h": "0.0025",      // High price
-      "l": "0.0015",      // Low price
-      "v": "1000",        // Base asset volume
-      "n": 100,           // Number of trades
-      "x": false,         // Is this kline closed?
-      "q": "1.0000",      // Quote asset volume
+      "t": 123400000,     // 클라인 시작 시간
+      "T": 123460000,     // 클라인 종료 시간
+      "s": "ABC_0DX-BNB",      // 심볼
+      "i": "1m",          // 주기
+      "f": "100",         // 첫 거래 ID
+      "L": "200",         // 최종 거래 ID
+      "o": "0.0010",      // 희망 가격
+      "c": "0.0020",      // 종가
+      "h": "0.0025",      // 최고 가격
+      "l": "0.0015",      // 최저 가격
+      "v": "1000",        // 기초 자산 규모
+      "n": 100,           // 거래 개수
+      "x": false,         // 클라인 종료 여부
+      "q": "1.0000",      // 견적 자산 규모
     }
   }
 }
 ```
 
-### 8. Individual Symbol Ticker Streams
+### 8. 개별 심볼 티커 스트림
 
-24hr Ticker statistics for a single symbol are pushed every second.
+개별 심볼의 24시간 통계가 매 초마다 푸시됩니다.
 
-**Topic Name:** ticker | Stream: \<symbol\>@ticker
+**주제 이름:** ticker | 스트림: \<symbol\>@ticker
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -491,7 +491,7 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -504,48 +504,48 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
-"stream" and "data" wrapper object is ignored here
+"stream"과 "data" wrapper 객체는 무시됩니다
 
 ```javascript
 {
   "stream": "ticker",
   "data": {
-    "e": "24hrTicker",  // Event type
-    "E": 123456789,     // Event time
-    "s": "ABC_0DX-BNB",      // Symbol
-    "p": "0.0015",      // Price change
-    "P": "250.00",      // Price change percent
-    "w": "0.0018",      // Weighted average price
-    "x": "0.0009",      // Previous day's close price
-    "c": "0.0025",      // Current day's close price
-    "Q": "10",          // Close trade's quantity
-    "b": "0.0024",      // Best bid price
-    "B": "10",          // Best bid quantity
-    "a": "0.0026",      // Best ask price
-    "A": "100",         // Best ask quantity
-    "o": "0.0010",      // Open price
-    "h": "0.0025",      // High price
-    "l": "0.0010",      // Low price
-    "v": "10000",       // Total traded base asset volume
-    "q": "18",          // Total traded quote asset volume
-    "O": 0,             // Statistics open time
-    "C": 86400000,      // Statistics close time
-    "F": "0",           // First trade ID
-    "L": "18150",       // Last trade Id
-    "n": 18151          // Total number of trades
+    "e": "24hrTicker",  // 이벤트 유형
+    "E": 123456789,     // 이벤트 시간
+    "s": "ABC_0DX-BNB",      // 심볼
+    "p": "0.0015",      // 가격 변화
+    "P": "250.00",      // 가격 변화율
+    "w": "0.0018",      // 가중 평균 가격
+    "x": "0.0009",      // 전일 종가
+    "c": "0.0025",      // 오늘 종가
+    "Q": "10",          // 마감 거래 수량
+    "b": "0.0024",      // 최고 매수 가격
+    "B": "10",          // 최고 매수 수량
+    "a": "0.0026",      // 최고 매도 가격
+    "A": "100",         // 최고 매도 수량
+    "o": "0.0010",      // 희망 가격
+    "h": "0.0025",      // 최고 가격
+    "l": "0.0010",      // 최저 가격
+    "v": "10000",       // 총거래기준자산량
+    "q": "18",          // 총거래견젹자산량
+    "O": 0,             // 통계 시작 시간
+    "C": 86400000,      // 통계 종료 시간
+    "F": "0",           // 첫 거래 ID
+    "L": "18150",       // 최종 거래 ID
+    "n": 18151          // 총 거래량
   }
 }
 ```
 
-### 9. All Symbols Ticker Streams
+### 9. 모든 심볼 티커 스트림
 
-24hr Ticker statistics for a all symbols are pushed every second.
+모든 심볼의 24시간 통계가 매 초마다 푸시됩니다.
 
-**Topic Name:** allTickers | Stream: $all@allTickers
+**주제 이름:** allTickers | 스트림: $all@allTickers
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -572,36 +572,36 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
   "stream": "allTickers",
   "data": [
     {
-      "e": "24hrTicker",  // Event type
-      "E": 123456789,     // Event time
-      "s": "ABC_0DX-BNB",      // Symbol
-      "p": "0.0015",      // Price change
-      "P": "250.00",      // Price change percent
-      "w": "0.0018",      // Weighted average price
-      "x": "0.0009",      // Previous day's close price
-      "c": "0.0025",      // Current day's close price
-      "Q": "10",          // Close trade's quantity
-      "b": "0.0024",      // Best bid price
-      "B": "10",          // Best bid quantity
-      "a": "0.0026",      // Best ask price
-      "A": "100",         // Best ask quantity
-      "o": "0.0010",      // Open price
-      "h": "0.0025",      // High price
-      "l": "0.0010",      // Low price
-      "v": "10000",       // Total traded base asset volume
-      "q": "18",          // Total traded quote asset volume
-      "O": 0,             // Statistics open time
-      "C": 86400000,      // Statistics close time
-      "F": "0",           // First trade ID
-      "L": "18150",       // Last trade Id
-      "n": 18151          // Total number of trades
+      "e": "24hrTicker",  // 이벤트 유형
+      "E": 123456789,     // 이벤트 시간
+      "s": "ABC_0DX-BNB",      // 심볼
+      "p": "0.0015",      // 가격 변화
+      "P": "250.00",      // 가격 변화율
+      "w": "0.0018",      // 가중 평균 가격
+      "x": "0.0009",      // 전일 종가
+      "c": "0.0025",      // 오늘 종가
+      "Q": "10",          // 마감 거래 수량
+      "b": "0.0024",      // 최고 매수 가격
+      "B": "10",          // 최고 매수 수량
+      "a": "0.0026",      // 최고 매도 가격
+      "A": "100",         // 최고 매도 수량
+      "o": "0.0010",      // 희망 가격
+      "h": "0.0025",      // 최고 가격
+      "l": "0.0010",      // 최저 가격
+      "v": "10000",       // 총거래기준자산량
+      "q": "18",          // 총거래견젹자산량
+      "O": 0,             // 통계 시작 시간
+      "C": 86400000,      // 통계 종료 시간
+      "F": "0",           // 첫 거래 ID
+      "L": "18150",       // 최종 거래 ID
+      "n": 18151          // 총 거래량
     },
     {
       ...
@@ -609,14 +609,14 @@ m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
 }
 ```
 
-### 10. Individual Symbol Mini Ticker Streams
+### 10. 개별 심볼 미니 티커 스트림
 
-A ticker for a single symbol is pushed every second.
+개별 심볼의 티커가 매 초마다 푸시됩니다.
 
-**Topic Name:** miniTicker | Stream: \<symbol\>@miniTicker
+**주제 이름:** miniTicker | 스트림: \<symbol\>@miniTicker
 
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -629,7 +629,7 @@ A ticker for a single symbol is pushed every second.
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -642,32 +642,32 @@ A ticker for a single symbol is pushed every second.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
   "stream": "miniTicker",
   "data": {
-    "e": "24hrMiniTicker",    // Event type
-    "E": 123456789,           // Event time
-    "s": "ABC_0DX-BNB",            // Symbol
-    "c": "0.0025",            // Current day's close price
-    "o": "0.0010",            // Open price
-    "h": "0.0025",            // High price
-    "l": "0.0010",            // Low price
-    "v": "10000",             // Total traded base asset volume
-    "q": "18",                // Total traded quote asset volume
+    "e": "24hrMiniTicker",    // 이벤트 유형
+    "E": 123456789,           // 이벤트 시간
+    "s": "ABC_0DX-BNB",            // 심볼
+    "c": "0.0025",            // 오늘 종가
+    "o": "0.0010",            // 희망 가격
+    "h": "0.0025",            // 최고 가격
+    "l": "0.0010",            // 최저 가격
+    "v": "10000",             // 총거래기준자산량
+    "q": "18",                // 총거래견젹자산량
   }
 }
 ```
 
-### 11. All Symbols Mini Ticker Streams
+### 11. 모든 심볼 미니 티커 스트림
 
-Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
+모든 심볼에 대한 24시간 미니 티커 배열이 매 초마다 푸시됩니다.
 
-**Topic Name:** allMiniTickers | Stream: $all@allMiniTickers
+**주제 이름:** allMiniTickers | 스트림: $all@allMiniTickers
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -680,7 +680,7 @@ Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -693,22 +693,22 @@ Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
   "stream": "allMiniTickers",
   "data": [
     {
-      "e": "24hrMiniTicker",      // Event type
-      "E": 123456789,             // Event time
-      "s": "ABC_0DX-BNB",              // Symbol
-      "c": "0.0025",              // Current day's close price
-      "o": "0.0010",              // Open price
-      "h": "0.0025",              // High price
-      "l": "0.0010",              // Low price
-      "v": "10000",               // Total traded base asset volume
-      "q": "18",                  // Total traded quote asset volume
+      "e": "24hrMiniTicker",      // 이벤트 유형
+      "E": 123456789,             // 이벤트 시간
+      "s": "ABC_0DX-BNB",              // 심볼
+      "c": "0.0025",              // 오늘 종가
+      "o": "0.0010",              // 희망 가격
+      "h": "0.0025",              // 최고 가격
+      "l": "0.0010",              // 최저 가격
+      "v": "10000",               // 총거래기준자산량
+      "q": "18",                  // 총거래견젹자산량
     },
     {
       ...
@@ -716,13 +716,13 @@ Array of 24hr Mini Ticker statistics for a all symbols pushed every second.
 }
 ```
 
-### 12. Blockheight
+### 12. 블록 높이
 
-Streams the latest block height.
+최신 블록 높이를 스트림합니다.
 
-**Topic Name:** blockheight | Stream: $all@blockheight
+**주제 이름:** blockheight | 스트림: $all@blockheight
 
-**Mainnet Connection Example:**
+**메인넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -735,7 +735,7 @@ Streams the latest block height.
     }
 ```
 
-**Testnet Connection Example:**
+**테스트넷 연결 예시:**
 
 ```javascript
     // URL connection
@@ -748,13 +748,13 @@ Streams the latest block height.
     }
 ```
 
-**Received Payload:**
+**수신된 페이로드:**
 
 ```javascript
 {
   "stream": "blockheight",
   "data": {
-    "h": 123456789,     // Block height
+    "h": 123456789,     // 블록 높이
   }
 }
 ```

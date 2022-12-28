@@ -1,369 +1,327 @@
-# Beacon Chain FAQ
+# 비컨 체인 FAQ
 
-## What is Beacon Chain, or Binance DEX?
+## 비컨체인은 무엇이며, 바이낸스 DEX는 무엇인가요?
 
-Beacon Chain is the blockchain initially developed by Binance and community. Binance DEX is the
-decentralized exchange module developed on top of the Beacon Chain blockchain.
+비컨 체인은 바이낸스 및 커뮤니티에서 개발한 블록체인입니다. 바이낸스 DEX는 비컨 체인 위에 개발된 탈중앙화 거래소 모듈입니다.
 
-## What is the design principle of Beacon Chain?
 
-The main focuses for the design of Beacon Chain are:
+## 비컨 체인의 설계 원리는 무엇인가요?
 
-- No custody of funds: traders maintain control of their private keys and funds.
-- High performance: low latency, high throughput for a large user base, and high liquidity trading.
-We target to achieve 1 second block times, with 1 confirmation finality.
-- Low cost: in both fees and liquidity cost.
-- Easy user experience: as friendly as Binance.com.
-- Fair trading: minimize front-running, to the extent possible.
-- Evolvable: able to develop with forever-improving technology stack, architecture, and ideas.
+비컨 체인 설계 시 주요 초점은 다음과 같습니다:
 
-## What can you do on Beacon Chain?
+- 자금을 커스티디에 보관하지 않습니다: 거래인들이 자신의 개인키를 통해 자금을 자체적으로 관리합니다.
+- 높은 성능: 많은 사용자들과 유동성 거래를 위한 적은 지연 시간과 높은 처리량을 지원합니다. 블록 생성 시간과 최종 처리 시간 각각 1초를 달성하는 것을 목표로 합니다.
+- 낮은 비용: 수수료와 유동성 모두 낮은 비용으로 처리 가능합니다.
+- 쉬운 사용법: Binance.com처럼 사용하기 편하게 설계하였습니다.
+- 공정 거래: 전면적인 운영을 최소화합니다.
+- 진화 가능: 계속 발전되는 기술 스택, 아키텍쳐, 아이디어를 통해 지속적인 개발이 가능합니다.
 
-You can:
+## 비컨 체인에서 무엇을 할 수 있나요?
 
-- Send and receive BNB
-- Issue new tokens
-- Send, receive, burn/mint and freeze/unfreeze tokens
-- Propose to create trading pairs between two different tokens
-- Send orders to buy or sell assets through trading pairs created on the chain
+다음을 할 수 있습니다:
 
-## Will Beacon Chain introduce more features and transaction types in the future?
+- BNB 송신 및 수신
+- 새로운 토큰 발행
+- 토큰 송신, 수신, 소각/발행 및 동결/동결 해제
+- 서로 다른 토큰에 대한 거래 쌍 생성 제안
+- 주문으로 체인에서 생성된 거래 쌍을 통한 자산 매매
 
-Yes, Beacon Chain team and community would cherish the technology advancements and recommended trends and strive to make circulation of assets and value easier and easier.
+## 향후 비컨 체인에서 더 많은 기능과 전송 유형을 지원 가능한가요?
 
-## What is the native coin on Beacon Chain?
+네, 비컨 체인 팀과 커뮤니티는 기술 발전 및 트렌드를 중요시하며 자산과 가치가 더 유통되기 쉽게 만들기 위해 노력할 것입니다.
 
-The Binance Coin, BNB, is the native asset on Beacon Chain. There are 200MM BNB coins in total.
-There will be no mining. The existing coin burns and freezes will still be in effect on the new
-Beacon Chain blockchain.
+## 비컨 체인의 네이티브 토큰은 무엇인가요?
 
-The exact number of BNB coins will be destroyed based on the same number of BNB ERC20 tokens
-that have already been destroyed.
+BNB(Build N Build)토큰이 비컨 체인의 자체 통화입니다. 총 발행량은 2억개이며, 채굴이 존재하지 않습니다.
+지금까지 소각과 동결은 비컨 체인 위에서도 유효합니다.
 
-Since Beacon Chain is live, all BNB ERC20 tokens will be swapped for Beacon Chain coins. All
-users who hold BNB ERC20 tokens can deposit them to Binance.com, and upon withdrawal, the new
-Beacon Chain native coins will be sent to their new wallets.
 
-## How can I register on Beacon Chain/DEX and start trading?
+BNB ERC20 토큰에서 소각된 만큼의 BNB 코인들도 완전히 같은 수가 제거되었습니다.
 
-There is no need to register. All you need is a Beacon Chain address, which can be generated with
-any [wallet](../wallets.md) that supports Beacon Chain. Then you can trade BNB or other assets stored on that address.
+비컨 체인이 시작되면서 모든 BNB ERC 토큰은 비컨 체인 코인으로 교환되었습니다. BNB ERC20 토큰을 보유한 모든 사용자는 binance.com에 예치한 후 출금 시, 새로운 비컨 체인 네이티브 토콘이 지갑에 전송됩니다.
 
-## How can I send orders on Binance DEX?
-### Order
+## 비컨 체인/DEX에 가입하는 방법이 무엇인가요?
 
-On Binance DEX, you can send "new order" messages to buy or sell certain assets. You can also
-send "cancel" messages to cancel existing open orders.
+비컨 체인과 DEX는 가입이 필요 없습니다. 비컨 체인을 지원하는 모든 [지갑](../wallets.md)에서 생성 가능한 비컨 체인 주소만 있으면 사용 가능합니다. 
+다음 주소에 저장된 BNB 및 다른 자산들을 통해 거래가 가능합니다.
 
-You can use a wallet to send new orders and cancels. Binance DEX also provides API for automated trading.
+## 바이낸스 DEX에 주문을 어떻게 전송하나요?
+### 주문
 
-In Binance DEX v1.0, the order message contains:
+바이낸스 DEX에서 "새 주문" 메세지를 전송하여 특정 자산을 구매 혹은 판매할 수 있습니다. "취소" 메세지를 보내 열린 주문들을 취소하는 것도 가능합니다.
 
-- Symbol: trading pair on the chain
-- Side: buy or sell
-- Price: only limit price orders are supported in Beacon Chain v1.0
-- Amount
-- Time In Force: Binance DEX supports `Immediate Or Cancel` (IOC) and `Good Till Expiry` (GTE)
-orders. GTE orders can quote on the exchange until they are filled by the opposite orders satisfying
-the limit price, or canceled by client themselves, or expire after 72 hours after 00:00 (UTC).
-Check the "What is `Order Expire`" section of the FAQ for more information.
+지갑을 통해 새 주문을 보내거나 취소하는 것도 가능합니다. 바이낸스 DEX는 자동화 거래를 위한 API도 지원합니다.
 
-Network nodes examine orders to ensure they are valid. Once the orders are accepted, they are
-booked on the next block, and get matched accordingly.
+바이낸스 DEX v1.0에서는, 주문 메세지에 포함된 것이:
 
-### What is `Immediate Or Cancel order`?
+- Symbol(기호): 체인 상 거래 쌍 표시
+- Side(편): 판매 혹은 구매
+- Price(가격): 비컨 체인 v1.0 에서는 지정 가격(limit price) 주문만 지원합니다
+- Amount(수량)
+- Time In Force(시간 제한): 바이낸스 DEX `즉시 거래 성립 혹은 취소` (IOC)와 `만료까지 유효` (GTE)한 주문을 지원합니다.
+GTE 주문은 지정가를 만족하는 반대 주문이 채워질 때까지 거래가 진행되며, 주문자가 취소하거나, 72시간이 지나 00:00(UTC)에 만료됩니다.
+더 자세한 사항은 "`주문 만료`가 무엇인가요" 부분을 참고해 주세요.
 
-Immediate Or Cancel is a special order type. Once the order is accepted into a block, Immediate Or
-Cancel orders only exist in this block round. The order may get filled to zero, or partially or fully
-filled by other orders, and then will become expired and removed from the order book right away.
-As a result, it will not be tradable in the next round of matching. A small fee will be charged
-for the network usage, if there is no fill at all for the order (deemed as no intention to trade).
+네트워크 노드들은 주문이 유효한지 검사합니다. 주문이 정상적으로 접수된 후, 다음 블록을 통해 예약되며 매칭 과정을 거칩니다.
 
-### Match
+### `즉시 거래 성립 혹은 취소`(IOC) 가 무엇인가요?
 
-Binance DEX does all of its matching on the blockchain, i.e. all nodes perform the matches and
-expect the same result. This is to ensure the maximum transparency and to mitigate the chance
-for front-running, even from the block producers. The matching infrastructure is expected to
-evolve and grow in capacity as time progresses.
+즉시 거래 성립 혹은 취소(IOC, Immediate Or Cancel)는 특수 주문 유형입니다. 주문이 허용되어 블록에 들어갈 때, IOC 주문은 현재 블록에서만 존재합니다.
+주문이 하나도 안 채워질 수 있는데, 이 경우 주문이 만료되며 바로 오더 북에서 제거됩니다. 그 결과 다음 라운드의 매칭이 진행될 때 교환이 불가능합니다. 만일 하나도 체워지지 않는다면, 교환 의사가 없는 것으로 간주되어 네트워크 사용으로 인한 약간의 수수료가 부과됩니다.
 
-Binance DEX doesn't do continuous matching as most centralized exchanges do. Instead, it matches
-using periodic auction matching for all the existing open orders received in the past and the
-latest blocks. The match logic is explained in more detail later.
+### 매칭
 
-### Trade
+바이낸스 DEX는 모든 매칭을 블록체인 상에서 진행합니다. 따라서 매칭을 진행한 모든 노드들은 같은 결과가 나와야 합니다.
+이는 블록 생성자를 포함해 선행 매매를 방지하고 최대한의 투명성을 보장하기 위해 설계된 시스템입니다. 매칭 인프라는 시간이 지날수록 진화하고 용량 면에서 증가할 예정입니다.
 
-Once the orders are filled, the corresponding assets will be automatically moved into buyers'
-addresses. The confirmation is instant and no need to wait for further blocks (i.e. T+0 block).
-Buyers can use the bought asset right away, either send it to another address or trade it again.
+바이낸스 DEX는 대부분의 중앙화 거래소와 다르게 지속적인 매칭이 이루지지 않습니다. 대신, 주기적인 경매 매칭을 통해 과거부터 최신까지 접수된 모든 열린 주문들을 처리합니다.
+매칭 방식은 이후 더 자세히 설명할 예정입니다.
 
-### What is `Order Expire`?
+### 거래
 
-Orders accepted by Binance DEX will either get filled with other orders or remain in the order book,
-but they will not stay on the order book forever. These orders will expire and be removed from the
-order book after the 1st midnight (UTC) after 72 hours once the order gets accepted. A small fee
-will be charged for the network usage, if there is no fill at all for the order (deemed as no intention to trade).
+주문이 채워진 후, 대응되는 자산이 자동적으로 구매자의 주소로 옮겨집니다. 이 과정은 바로 이뤄지며 블록이 처리되길 기다리지 않아도 괜찮습니다(T+0 시점에 바로 처리).
+구매자는 구매한 자산을 바로 사용할 수 있으며, 다시 거래하거나 다른 주소로 전송할 수 있습니다.
 
-### Where can I see my assets and trades?
+###  `주문 만료`가 무엇인가요?
 
-You can always use wallets that support Beacon Chain to check your asset balances, open orders,
-and (optionally) order/trade history. Beacon Chain Explorer is another tool to check balances
-and transactions.
+바이낸스 DEX에 의해 허용된 주문들은 다른 주문에 의해 채워지거나 오더 북에 남아 있게 됩니다.
+다만 계속 오더 북에 남지는 않고, 주문이 블록으로 접수 된 후 72시간 지난 후 UTC 기준 첫 자정에 만료되고 삭제됩니다.
+만일 하나도 체워지지 않는다면, 교환 의사가 없는 것으로 간주되어 네트워크 사용으로 인한 약간의 수수료가 부과됩니다.
 
-### When can I see my order on the blockchain after I send it?
+### 제 자산이나 거래를 어떻게 조회하나요?
 
-It depends. Normally, if you connect to one of the Accelerated Nodes, your orders should get
-accepted and booked into a block in 1-3 seconds. If the order price is marketable, the order
-will be filled and trades will come back in about similar time. If you send the order from far-way
-(self-setup full node), or there is heavy network traffic, the order may take longer to reach
-a Validator (block producer).
+비컨 체인을 지원하는 지갑을 통해 자산 잔고, 열린 주문이나 (선택 사항)주문/거래 내역을 조회할 수 있습니다.
+비컨 체인 탐색기를 통해서도 잔고와 트랜잭션을 확인할 수 있습니다.
 
-### What is the Fee Structure?
+### 주문을 전송한 후 언제 블록체인 상에서 조회가 가능한가요?
 
-Fees are charged and shared among the block producers (i.e. Validators) to run the network,
-in order to pay for the network usage and prevent abuse and attack. Since all user transactions,
-include transfer, new order, cancel etc, they are all recorded in blocks and chain state, the fee will be
-shared among different transactions. New orders are exempt from fees to encourage usage and larger
-trades will be charged more for their benefits from the liquidity provided in the network.
-Order Expire and Cancel are also charged with a fee if they fail to provide any liquidity. The current fee table is [here](../trading-spec.md)
+It depends. 보통 가속 노드 중 하나에 연결하면 승인되고 블록에 접수까지 1-3초 내에 처리됩니다. 주문가가 시장에서 거래가 가능하다면, 바로 성사되어 처리될 때까지 비슷한 시간이 걸립니다.주문을 원격에서 보내거나(자체 설정 풀 노드) 네트워크가 포화 상태면 주문이 검증인(블록 생성자)에 도달하기 까지 더 오래 걸릴 수 있습니다.
 
-Besides the fees, **no other gas will be charged.**
+### 수수료 구조가 어떻게 이루어지나요?
 
-Fees can be paid in any asset, but the network will charge BNB first and apply a discount if the
-address has BNB balance.
+수수료는 네트워크 악용 및 공격을 방지하고 운영 비용 지불을 위해 부과되며, 블록 생성자(검증인)에게 배분됩니다. 모든 유저들이 전송, 주문 생성, 취소 같은 트랜잭션들을 사용하기 때문에 이들은 전부 블록과 체인 상태에 기록되고, 신규 주문을 장려하기 위해 수수료가 면제되며 더 큰 규모의 거래는 네트워크에 제공되는 유동성의 혜택을 받을 수 있어 더 많은 양의 수수료가 청구됩니다. 주문 만료 및 취소 시에도 유동성 공급에 실패한다면 수수료가 부과됩니다. 현재 수수료 표는 [여기](../trading-spec.md)서 확인 가능합니다.
 
-The fee is subject to periodical review and adjustment, after agreement from validators, via a
-proposal-vote procedure. See a fee-change proposal [here](https://explorer.binance.org/tx/B1E78D8275598CB0538C716997EEDD2F1198B82F4D73959C5BF69CBAF4281240)
+수수료를 제외한 **가스비는 들지 않습니다**
 
-- Trade fee is calculated based on trade notional value, while fees for other transactions are fixed.
-- It is free to send a new GET order, cancel a partially filled order, or expire a partially filled order.
-- Non-Trade related transactions will be charged with a fee when the transactions happen, and can
-only be paid in BNB. The transaction will be rejected if the address does not have enough BNB.
-- Trade-related transactions will be charged with a fee when an order is filled, or
-canceled/expired/IOC-expired with no fills. If there is enough BNB to pay, BNB fee structure will
-be used, otherwise, non-BNB fee structure will be used instead.
-- If the whole order value and free balance for the receiving asset are not enough to pay the fee,
-all the receiving asset and its residual balance will be charged.
+어떤 자산으로도 수수료 결제가 가능하지만, 네트워크에서 BNB를 우선적으로 받고 BNB로 수수료를 지불할 시 할인을 해 줍니다.
 
-## What is the current Fee Table on Beacon Chain Mainnet?
+수수료는 정기적인 검토와 조정을 통해 변경되어야 합니다. 해당 안건은 제안 투표 과정을 거치며, 조정은 검증인들 간 합의가 완료 되었을 때 반영됩니다.
+[여기](https://explorer.binance.org/tx/B1E78D8275598CB0538C716997EEDD2F1198B82F4D73959C5BF69CBAF4281240)에서 수수료 변경 제안을 확인하세요.
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2021-03-21** is as follows:
+- 다른 트랜잭션의 금액은 고정인 경우가 많은 방면, 수수료 금액은 거래 금액에 비례하여 계산됩니다.
+- 새로운 GET 주문을 보내거나, 일부 채결된 주문이 취소되거나 만료되면 무효입니다.
+- 거래 관련된 트랜잭션이 아닐 경우 수수료가 부과되며, BNB로만 납부 가능합니다. 주소에 충분한 BNB가 존재하지 않는다면 트랜잭션이 거절될 것입니다.
+- 거래 관련 트랜잭션은 주문이 채워지거나, 취소/만료/IOC 만료가 하나도 채결되지 않았을 시 수수료가 발생합니다.만일 지불할 BNB가 잔고에 존재한다면, BNB 수수료 구조를 통해 우선적으로 걷어가고, 없는 경우 BNB가 아닌 수수료 구조가 지불하는데 사용됩니다.
+- 만일 자산을 교환할 시 총 주문 금액과 자유 잔고에 수수료를 납부할 돈이 부족할 때, 모든 수령 자산과 잔여 금액에서 수수료가 청구됩니다.
 
-Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
+
+### 메인넷의 현재 수수료는 얼마나 드나요?
+
+수수료는 변수이며 거버넌스 제안 및 투표에 의해 변경될 수 있습니다. 해당 수수료 표는 **2021-03-21** 메인넷 기준입니다:
+
+트랜잭션 유형 | BNB 아닌 자산으로 결제 | BNB로 결제 | Exchange (DEX) 관련
 -- | -- | -- | --
-New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-Order Expire (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-IOC (No Fill) | Equivalent 0.00025 BNB | 0.000005 BNB | Y
-Transfer | N/A | 0.000075 BNB | N
-crossTransferOut| N/A | 0.000075 BNB | N
-Multi-send | N/A | 0.00006 BNB | N
-Issue Asset | N/A | 10 BNB |
-Mint Asset | N/A | 0.002 BNB | N
-Transfer ownership| N/A | 0.002 BNB | N
-Burn Asset | N/A | 0.002 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.001 BNB | N
-Lock/unlock/relock Asset | N/A | 0.002 BNB | N
-List Asset | N/A | 200 BNB | N
-Submit Proposal | N/A | 1 BNB | N
-Deposit | N/A | 0.000125 BNB | N
-Enable Memo Check | N/A | 0.2 BNB | N
-Disable Memo Check | N/A | 0.2 BNB | N
-HTLT | N/A | 0.000075 BNB | N
-depositHTLT | N/A |  0.000075 BNB | N
-claimHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-TinyIssueFee | N/A | 0.4 BNB | N
-MiniIssueFee | N/A | 0.6 BNB | N
-SetTokenUri | N/A| 0.000075 BNB | N
-List BEP8 Token| N/A| 1 BNB | N
-Create A New Smart Chain Validator | N/A |2 BNB |N
-Edit Smart Chain Validator Information|N/A| 0.2 BNB |N
-Delegate Smart Chain Validator |N/A| 0.0002 BNB |N
-Redelegate Smart Chain Validator | N/A|0.0006 BNB |N
-Undelegate Smart Chain Validator | N/A|0.0004 BNB |N
-Unjail A Smart Chain Validator | N/A| 0.5 BNB | N
-Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 0.5 BNB| N
-Submit Smart Chain Proposal | N/A| 1 BNB    | N
-Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
-Smart Chain Proposal Vote   | N/A| 0 BNB   | N
-Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
+새 주문 | 0 | 0 | 예
+취소 (미채결) | Equivalent 0.00005 BNB | 0.00001 BNB | 예
+Order Expire (미채결) | Equivalent 0.00005 BNB | 0.00001 BNB | 예
+IOC (미채결) | Equivalent 0.00025 BNB | 0.000005 BNB | 예
+전송 | 불가 | 0.000075 BNB | 아니오
+crossTransferOut(크로스 전송)| 불가 | 0.000075 BNB | 아니오
+Multi-send(다중 전송) | 불가 | 0.00006 BNB | 아니오
+자산 발행 | 불가 | 10 BNB | 아니오
+자산 민팅 | 불가 | 0.002 BNB | 아니오
+소유권 이전 | 불가 | 0.002 BNB | 아니오
+자산 소각 | 불가 | 0.002 BNB | 아니오
+자산 동결/해제 | 불가 | 0.001 BNB | 아니오
+자산 잠금/해제/다시 잠금 | 불가 | 0.002 BNB | 아니오
+자산 상장 | 불가 | 200 BNB | 아니오
+Submit Proposal | 불가 | 1 BNB | 아니오
+예치 | 불가 | 0.000125 BNB | 아니오
+메모 체크 활성화 | 불가 | 0.2 BNB | 아니오
+메모 체크 비활성화 | 불가 | 0.2 BNB | 아니오
+HTLT | 불가 | 0.000075 BNB | 아니오
+depositHTLT | 불가 |  0.000075 BNB | 아니오
+claimHTLT | 불가 |  0.000075 BNB | 아니오
+refundHTLT | 불가 |  0.000075 BNB | 아니오
+refundHTLT | 불가 |  0.000075 BNB | 아니오
+TinyIssueFee | 불가 | 0.4 BNB | 아니오
+MiniIssueFee | 불가 | 0.6 BNB | 아니오
+SetTokenUri | 불가| 0.000075 BNB | 아니오
+BEP8 토큰 상장 | 불가| 1 BNB | 아니오
+새로운 스마트 체인 검증인 생성 | 불가 |2 BNB | 아니오
+스마트 체인 검증인 정보 수정 |불가| 0.2 BNB | 아니오
+스마트 체인 검증인 위임 |불가| 0.0002 BNB | 아니오
+스마트 체인 검증인 재위임 | 불가|0.0006 BNB | 아니오
+스마트 체인 검증인 위임 해제 | 불가|0.0004 BNB | 아니오
+스마트 체인 검증인 탈옥 | 불가| 0.5 BNB | 아니오
+스마트 체인 검증인 비잔틴 행동 증거 제출 | 불가| 0.5 BNB| 아니오
+스마트 체인 제안 제출 | 불가 | 1 BNB    | 아니오
+스마트 체인 제안 예치 | 불가 |0.00025 BNB | 아니오
+스마트 체인 제안 투표  | 불가 | 0 BNB   | 아니오
+크로스 외부 전송 릴레이어 보상 | 불가 | 0.0004 BNB    | 아니오
 
 
-## What is the current Fee Table on Beacon Chain Testnet?
+### 테스트넷의 현재 수수는 얼마나 드나요?
 
-Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2021-03-17** is as follows:
+수수료는 변수이며 거버넌스 제안 및 투표에 의해 변경될 수 있습니다. 해당 수수료 표는 **2021-03-17** 테스트넷 기준입니다:
 
 
-Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
+트랜잭션 유형 | BNB 아닌 자산으로 결제 | BNB로 결제 | Exchange (DEX) 관련
 -- | -- | -- | --
-New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-Order Expire (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-IOC (No Fill) | Equivalent 0.00025 BNB | 0.000005 BNB | Y
-Transfer | N/A | 0.000075 BNB | N
-crossTransferOut| N/A | 0.000075 BNB | N
-Multi-send | N/A | 0.00006 BNB | N
-Issue Asset | N/A | 10 BNB |
-Mint Asset | N/A | 0.002 BNB | N
-Transfer ownership| N/A | 0.002 BNB | N
-Burn Asset | N/A | 0.002 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.001 BNB | N
-Lock/unlock/relock Asset | N/A | 0.002 BNB | N
-List Asset | N/A | 200 BNB | N
-Submit Proposal | N/A | 1 BNB | N
-Deposit | N/A | 0.000125 BNB | N
-Enable Memo Check | N/A | 0.2 BNB | N
-Disable Memo Check | N/A | 0.2 BNB | N
-HTLT | N/A | 0.000075 BNB | N
-depositHTLT | N/A |  0.000075 BNB | N
-claimHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-TinyIssueFee | N/A | 0.4 BNB | N
-MiniIssueFee | N/A | 0.6 BNB | N
-SetTokenUri | N/A| 0.000075 BNB | N
-List BEP8 Token| N/A| 1 BNB | N
-Create A New Smart Chain Validator | N/A |2 BNB |N
-Edit Smart Chain Validator Information|N/A| 0.2 BNB |N
-Delegate Smart Chain Validator |N/A| 0.0002 BNB |N
-Redelegate Smart Chain Validator | N/A|0.0006 BNB |N
-Undelegate Smart Chain Validator | N/A|0.0004 BNB |N
-Unjail A Smart Chain Validator | N/A| 0.5 BNB | N
-Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 0.5 BNB| N
-Submit Smart Chain Proposal | N/A| 1 BNB    | N
-Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
-Smart Chain Proposal Vote   | N/A| 0 BNB   | N
-Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
+새 주문 | 0 | 0 | 예
+취소 (미채결) | 0.00005 BNB 환산 | 0.00001 BNB | 예
+주문 만료 (미채결) | 0.00005 BNB 환산 | 0.00001 BNB | 예
+IOC (미채결) | 0.00025 BNB 환산 | 0.000005 BNB | 예
+전송 | 불가 | 0.000075 BNB | 아니오
+crossTransferOut(크로스 전송) | 불가 | 0.000075 BNB | 아니오
+Multi-send(다중 전송) | 불가 | 0.00006 BNB | 아니오
+자산 발행 | 불가 | 10 BNB | 아니오
+자산 민팅 | 불가 | 0.002 BNB | 아니오
+소유권 이전 | 불가 | 0.002 BNB | 아니오
+자산 소간 | 불가 | 0.002 BNB | 아니오
+자산 동결/해제 | 불가 | 0.001 BNB | 아니오
+자산 잠금/해제/다시 잠금 | 불가 | 0.002 BNB | 아니오
+자산 상장 | 불가 | 200 BNB | 아니오
+제안 제출 | 불가 | 1 BNB | 아니오
+예치 | 불가 | 0.000125 BNB | 아니오
+메모 체크 활성화 | 불가 | 0.2 BNB | 아니오
+메모 체크 비활성화 | 불가 | 0.2 BNB | 아니오
+HTLT | 불가 | 0.000075 BNB | 아니오
+depositHTLT | 불가 |  0.000075 BNB | 아니오
+claimHTLT | 불가 |  0.000075 BNB | 아니오
+refundHTLT | 불가 |  0.000075 BNB | 아니오
+refundHTLT | 불가 |  0.000075 BNB | N
+TinyIssueFee | 불가 | 0.4 BNB | 아니오
+MiniIssueFee | 불가 | 0.6 BNB | 아니오
+SetTokenUri | 불가| 0.000075 BNB | 아니오
+BEP8 토큰 상장 | 불가| 1 BNB | 아니오
+새로운 스마트 체인 검증인 생성 | 불가 |2 BNB | 아니오
+스마트 체인 검증인 정보 수정 | 불가 | 0.2 BNB |아니오
+스마트 체인 검증인 위임 | 불가 | 0.0002 BNB | 아니오
+스마트 체인 검증인 재위임 | 불가 |0.0006 BNB | 아니오
+스마트 체인 검증인 위임 해제 | 불가|0.0004 BNB | 아니오
+스마트 체인 검증인 탈옥 | 불가| 0.5 BNB | 아니오
+스마트 체인 검증인 비잔틴 행동 증거 제출 | 불가 | 0.5 BNB| 아니오
+스마트 체인 제안 제출 | 불가 | 1 BNB    | 아니오
+스마트 체인 제안 예치 | 불가 |0.00025 BNB | 아니오
+스마트 체인 제안 투표   | 불가 | 0 BNB   | 아니오
+크로스 외부 전송 릴레이어 보상  | 불가 | 0.0004 BNB    | 아니오
 
-## Can I see orders/balances of others or can other people see my orders/balances?
+## 제 잔고나 주문을 다른 사람이 확인 가능한가요? 제가 다른 사람의 잔고나 주문을 확인할 수 있나요?
 
-Yes, anyone can see anyone's orders and balances if they know the corresponding addresses.
-Beacon Chain is 100% transparent for transactions and balances.
+네, 누구나 해당 주소에 대한 주문이나 잔고를 조회할 수 있습니다.
+비컨 체인은 트랜잭션과 잔고에 대해 완전히 투명합니다.
 
-## Information provided through API and their usage
+## API를 통해 제공되는 정보와 사용법
 
-### Is there any limit to using the API to send orders or check market data?
+### API를 사용하여 주문을 전송하거나 시장 데이터를 확인할 때 제한이 존재하나요?
 
-Yes, there are rate limits to ensure there is no waste or abuse of the network infrastructure.<br/>
-Please check the API documentation.
 
-### What does Wallet and API cost to use?
+네, 네트워크 인프라 낭비 및 남용을 방지하기 위해 요청 한도(Rate Limit)가 정해져 있습니다.<br/>
+자세한 사항은 API 문서를 확인해 주세요. 
 
-No fee or commission at all (free to use).
+### 지갑과 API를 사용하는데 들어가는 비용이 얼마입니까?
 
-### What Market Data can I get?
+수수료가 전혀 없습니다 (무료입니다).
 
-The market data provided via Wallet and API are similar to Binance.com, including ticker data, order book,
-trade and Kline. They can be seen in the Wallet and read from REST or WebSocket API.<br/>
-Please check the API documentation for details.
+### 어떤 시장 데이터를 얻을 수 있나요?
 
-### What are the tick size and lot size? Are they fixed?
+지갑이나 API를 통해 제공되는 시장 데이터 는 Binance.com과 비슷한데, 티커(ticker) 데이터, 오더 북, 거래 및 클라인(Kline) 등의 제공됩니다. 이런 데이터는 지갑에서 조회하거나 REST 또는 WebSocket API를 통해 읽을 수 있습니다. <br/>
+자세한 사항은 API 문서를 확인해 주세요. 
 
-Tick size is the minimum unit to increase or decrease for the price (in quote asset) of an order,
-while lot size is the minimum unit to increase or decrease for the quantity (in base asset) of an order.<br/>
-They are not the same as on Binance.com. They can be queried from API or checked from Wallet UI.
+### 틱 사이즈와 로트 사이즈는 무엇인가요? 이 값들은 고정인가요?
 
-Tick Size and lot size are not fixed. Beacon Chain will automatically/periodically review the values to make
-sure proper order size and notional is applied.
+틱 사이즈는 주문에서 견적 자산(quote asset)에 대한 가격의 증감을 표현하는 최소 단위를 의미합니다.
+반면 로트 사이즈는 주문에서 기초 자산(base asset)에 대한 수량의 증감을 표현하는 최소 단위를 의미합니다.<br/>
+Binance.com에서 사용하는 크기와 다릅니다. 틱과 로트 사이즈는 API에서 요청하거나 지갑 UI를 통해 확인할 수 있습니다.
 
-### Are there limits on notional value of an order?
+틱 사이즈와 로트 사이즈는 고정되지 않습니다. 비컨 체인은 주기적으로 자동으로 값과 크기를 점검하여 적절한 가격 단위와 주문 크기를 적용합니다.
 
-The smallest order you can send for a trading pair is 1 lot size quantity at 1 tick size price. No other limits.
+### 주문에 값의 제한이 있나요?
 
-### What is the decimal precision for prices and quantities on Beacon Chain/DEX?
+거래를 할 수 있는 최소 단위는 가격으로는 1틱(tick) 사이즈고, 수량으로는 1로트(lot) 사이즈 입니다. 이외에 제한은 없습니다.
 
-Amounts are represented as integers, and all coins have a fixed scale of 8.<br/>
-This means that if a balance of 100000000 were to be exposed to a wallet integrator, this will represent a balance of 1 coin.
+### 비컨 체인 및 DEX의 소수점 정밀도가 얼마입니까?
 
-## I forgot the private key for my address, how can I get it back?
+수량은 양의 정수로 표시되며, 모든 코인은 8의 척도로 표시됩니다.<br/>
+이 뜻은 지갑 통합기에 의해 잔고에 100000000 이란 숫자가 나오면, 실제 코인 잔액은 1을 뜻합니다.
 
-Sorry, you cannot. Owner of the address takes full responsibility for the private key protection.
-Beacon Chain and official wallets do not have your private key.
+## 제 개인 키를 잊었는데, 어떻게 복구할 수 있나요?
 
-## My private key got stolen by hackers, how can I recover my assets?
+죄송하지만 복구가 불가능합니다. 개인 키의 소유 및 보호는 완전히 사용자가 관리해야 합니다.
+비컨 체인과 공식 지갑에선 당신의 개인 키를 보유하고 있지 않습니다.
 
-Sorry, you take full responsibility of your private key ownership and protection. Beacon Chain
-and official wallets will not record, or transfer out your private key.
+## 제 개인 키가 해커에 의해 도난 당했습니다? 제 자산을 복구할 수 있나요?
 
-## What is the Accelerated Node?
+죄송합니다, 개인 키의 소유 및 보호는 완전히 사용자가 관리해야 합니다.
+비컨 체인과 공식 지갑에선 당신의 개인 키를 기록하거나 전송하지 않기 때문에 복구가 불가능합니다.
 
-While users can submit transactions and most of the queries via normal, self-run full nodes.<br/>
-Accelerated Node provides more secure and faster lines to access Beacon Chain.
+## 가속 노드가 무엇인가요?
 
-Accelerated Node is special infrastructure built around Validator to facilitate accelerated transaction
-routing and provide richer, faster user interfaces. There are always several Accelerated Nodes running
-at the same time around the world (owned by different organizations) and you are encouraged to choose
-one of them to use, or allow your Wallet choose one randomly.<br/>
-For rapid API access, you'd better stay with one Accelerated Node to get better performance.
+사용자는 보통 풀 노드를 통해 트랜잭션 및 대부분의 쿼리를 제출할 수 있지만<br/>
+가속 노드는 비컨 체인에 접근할 수 있는 더 안전하고 빠른 회선을 제공합니다.
 
-## How can I issue an asset?
+가속 노드는 검증인 중심으로 구축된 특수 인프라로 빠른 트랜잭션 라우팅과 풍부한 사용자 인터페이스를 제공합니다.
+가속 노드는 다양한 기관들이 실시간으로 운영하고 있으며, 그 중 하나를 결정하거나 지갑이 임의로 결정하여 사용할 수 있습니다.<br/>
+빠른 API 접근을 위해서는 하나의 가속 노드만 사용하는 것을 권장합니다.
 
-Anyone can pay a fee and issue an asset as Token on Beacon Chain, as long as they provide
-proper information for the fields below, and then execute the command through the command line or http interfaces.
+## 토큰을 어떻게 발행하나요?
 
-- Name: a description string of less than 21 characters
-- Symbol: an identifier string less than 9 characters, which must be composed of [0-9A-Z]
-- Total Supply: a positive number less than or equal to 90 billions
-- Mint-able: whether the token can increase Total Supply in later time or not
+ 명령어나 http 인터페이스를 통해 아래 필드에 적절한 정보를 기제하면 누구나 비컨 체인 상에서 수수료를 내고 토큰을 발행할 수 있습니다.
 
-## What is the consensus algorithm used on Beacon Chain?
+- Name(이름): 21자 미만의 이름을 표기하는 문자열
+- Symbol(심볼): [0-9A-Z]만 사용하여 나타낸 9자 미만의 식별자 문자열 
+- Total Supply(총 공급량): 900억 이하의 양수
+- Mint-able(민팅 가능 여부): 토큰이 발행 이후 총 공급량을 늘릴 수 있는 지에 관한 여부
 
-Beacon Chain uses BFT and PoS (upcoming) based consensus mechanism to produce blocks among
-a series of qualified Validators. This is similar to the architectures of several existing
-popular blockchain platforms such as EOS and NEO.
-The process for setting up validators among different entities on Beacon Chain is currently being defined. More details will be shared at a later date.
+## 비컨 체인에서 사용되는 합의 알고리즘은 무엇입니까?
 
-## Can I run a full node for Beacon Chain?
+비컨 체인은 BFT와 POS(예정) 기반 합의 매커니즘을 통해 자격을 갖춘 검증인들에 의해 블록이 생성됩니다. 이는 EOS나 NEO같은 블록체인 플랫폼에서 사용하는 구조와 비슷합니다. 
+현재는 비컨 체인의 다양한 주체들을 검증인으로 만드는 것을 논의 중입니다. 자세한 내용은 추후 공지될 예정입니다.
 
-Yes, you can. A full node contains all the information and application logic for Beacon Chain.
-It can receive and broadcast blocks and transactions with other full nodes and even validators.
-The only exception is it will not participate in the consensus if the full node is not a Validator.
+## 비컨 체인으로 풀 노드를 실행할 수 있나요?
 
-## Does Beacon Chain support Smart Contracts?
+네, 가능합니다. 풀 노드는 비컨 체인의 모든 정보와 어플리케이션 로직이 포함되어 있습니다.
 
-No. This was an intentional design decision to improve the performance of the system and eliminate
-having to support unnecessary features.
+이들은 다른 플 노드들이나 검증자들에게 블록이나 트랜잭션을 받거나 전파합니다.  
+예외적으로 풀 노드가 검증인이 아닌 경우는 합의에 참여하지 않습니다.
 
-If you have certain must-have feature-s, it might be added as a native implementation instead of using smart contract.<br/>
-Feel free to talk to Binance community.
+## 비컨 체인이 스마트 계약을 지원하나요?
 
-## How can I transfer tokens, such as Bitcoin, from other block chains onto Beacon Chain?
+스마트 계약은 지원하지 않습니다. 성능을 높이기 위해 불필요한 기능들을 의도적으로 제거하여 설계하였습니다.  
 
-Right now, there are 2 ways to transfer tokens cross-chain:
+만일 꼭 필요한 긴으이 존재한다면, 스마트 계약 대산 자체 설계로 도입될 수 있습니다.<br/>
+이는 바이낸스 커뮤니티에서 논의할 수 있습니다.
 
-1. via interoperability among different chains. After the latest “Archimedes” upgrade, [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md) was introduced and it defines native transactions to support [Hash Timelock Contract (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) on Beacon Chain and it also to defines the infrastructure standard and procedure to use HTLC for inter-chain [atomic swap](https://www.binance.vision/blockchain/atomic-swaps-explained) to easily swap tokens on different chains. Beacon Chain development community has finished implementing its solution for BEP3 with BEP2 and ERC20 tokens and decided to open-source all of the key components, including：
-*  [smart-contract solution](https://github.com/binance-chain/bep3-smartcontracts) that supports Atomic Peg Swap (APS) for Ethereum. Please note that this solution is already audited by 3rd party.
-* [deputy process](https://github.com/binance-chain/bep3-deputy) written in GoLang that handles swap activities
+## 비트코인 같은 다른 블록 체인의 토큰들을 비컨 체인으로 옮길 수 있나요?
 
-Any developer is welcome to test the solutions in testnet and then use them in mainnet.
+현재는 2가지 방법으로 체인 간 전송을 할 수 있습니다:
 
-2. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on Beacon Chain (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
+1. 다른 체인 간의 상호 운용성을 통해서 전송 가능합니다. 최신 “아르키메데스(Archimedes)” 업그레이드로 [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md)을 통해 자체 트랜잭션이 비컨 체인 상에서 [해시 타이머 잠금 전송 (HTLC)](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts)을 지원하게 되었습니다. 또한 인프라 표준을 정의하고 HTLC를 사용하는 과정을 도입하여 [아토믹 스왑](https://www.binance.vision/blockchain/atomic-swaps-explained)에서 다른 체인 간 거래를 용이하게 만들었습니다. 비컨 체인 개발 커뮤니티는 BEP3, BEP2 및 ERC20 간 토큰 전송 솔루션의 개발 및 적용이 완료되어 다음을 포함한 모든 중요 요소들을 오픈 소스화 하기로 결정하였습니다：
+*  [스마트 계약 솔루션](https://github.com/binance-chain/bep3-smartcontracts)은 이더리움의 아토믹 패그 스왑(APS)를 지원합니다. 다음 솔루션은 이미 서드 파티에 의해 감사되고 있습니다.
+*  Go로 작성된[Deputy 프로세스](https://github.com/binance-chain/bep3-deputy)로 스왑 활동을 제어할 수 있습니다.
 
-Atomic swap and this centralized approach are not exclusive to other decentralized approaches, which can also be implemented in parallel. There are many cross-chain solutions being developed and we are very interested in them.
+개발자라면 누구나 테스트넷에서 솔루션을 테스트한 후 메인넷에서 사용할 수 있습니다.
 
-Please do __NOT__ try to transfer anything on existing network to Beacon Chain testnet, you may experience loss by doing so, because testnet doesn't run with real coins.
+2. Binance.com 통해서 가능합니다. 가장 큰 암호화폐 거래소인 [바이낸스](https://wwww.binance.com)는 비컨 체인 상에서 암호화폐와 패깅된 토큰들을 발행 했습니다(BEP2 토큰 형식): [BEP2 비트코인](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 비트코인캐시](https://explorer.binance.org/asset/BCH-1FD),[BEP2 리플](https://explorer.binance.org/asset/XRP-BF2), [BEP2 라이트코인](https://explorer.binance.org/asset/LTC-F07). 패깅 토큰인 [BEP2 비트코인](https://explorer.binance.org/asset/BTCB-1DE)은 [준비금](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb)에 100% 보관되어 있습니다. 준비금의 주소는 누구나 감사를 진행할 수 있습니다. 다음 [블로그](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) 를 통해 준비금이 저장된 주소에 대해 알아보세요. 사용자들은 입/출금을 통해 네이티브 비트코인과 BEP2 비트코인을 자유롭게 전환할 수 있습니다. 이를 통해 거래인들에게 더 높은 수준의 편의성을 제공합니다. 곧 파트너 지갑에서 더 많은 스왑 채널들이 제공될 것입니다.
 
-## How is a trading pair created on Binance DEX?
+아토믹 스왑과 다음과 같이 중앙화된 접근은 탈중앙화된 방법과 배타적이지 않으며, 양립할 수 있습니다. 여러 크로스 체인 솔루션들이 개발되고 있으며 우리도 매우 관심 있게 보고 있습니다.
 
-The design philosophy of Binance DEX adheres to the idea that the most efficient and low cost way to perform trading and
-price-discovery is still to use single order book. This single order book is managed and replicated across all
-full nodes with the same, deterministic matching logic.
+다만 기존 네트워크에서 비컨 체인 테스트넷으로 어떤 자산이든 전송하면 __안 됩니다__. 테스트넷은 실제 자산으로 운영되지 않기 때문에, 전송 시 코인을 잃을 수 있습니다.
 
-Simply allowing trading between two assets seems easy enough, however it is expensive for not only the network
-but also its users in long term (and liquidity costs can be much larger). In order to efficiently use the
-network, Beacon Chain only list assets against BNB and other widely accepted market quote assets.
+## 바이낸스 DEX에서 거래 쌍은 어떻게 생성되나요?
 
-After an asset is issued, which costs a small fee,
-anyone can "propose" to all validators to list it against particular quote assets.
-Validators then vote to accept the proposal.
-A deposit is taken to prevent network abuse.
-Once the proposal is accepted, the owner of the base asset can list the trading pair.
+바이낸스 DEX의 디자인 철학은 거래와 가격 발견시 가장 효율적이고 비용이 덜 드는 방법이 하나의 오더 북을 통해 관리한다는 아이디어를 따릅니다. 이는 하나의 오더 북이 동일하고 결정론적인 일치 로직을 통해 풀 노드들 간에 복제하고 관리하게 합니다.
 
-For more information about this process please check the [listing guide](../list.md).
+두 자산 간의 거래를 허용하는 것은 쉬워 보이지만, 네트워크와 장기적으로 사용자들에게 비용이 많이 듭니다(유동성 비용이 매우 커집니다). 네트워크를 효율적으로 사용하려면, 비컨 체인은 자산 쌍을 BNB와 자주 사용되는 견적 자산(quote asset)과의 거래 쌍만 상장을 허용합니다.
 
-## How would a third-party integrate with Beacon Chain and Binance DEX?
+자산이 발행된 후, 누구나 약간의 수수료를 내서 검증인에게 특정 견적 자산(quote asset)과 거래 쌍을 이뤄 상장할 것을 제안할 수 있습니다.
+검증인들은 제안을 수락할 지 투표하고, 네트워크 남용을 방지하기 위해 예치금을 받습니다.
+제안이 수락된 후, 기초 자산의 소유자는 거래 쌍을 상장할 수 있습니다.
 
-A wallet provider may choose to only support the feature set of Beacon Chain, which would just
-cover wallets, addresses, balances and transfers.<br/>
-To improve their implementation further, they could choose to integrate Binance DEX which would add trading (order placement and cancellation), historical order and trade views, charts, etc.
+다음 과정에 대한 더 자세한 정보는 [상장 가이드](../list.md) 문서를 참고해 주세요.
+
+## 서드 파티가 비컨 체인과 바이낸스 DEX와 어떻게 통합이 가능할까요?
+
+서드 파티인 지갑 공급자는 지갑, 주소, 잔고, 전송 같은 비컨 체인 상의 기능들만 지원할 수 있습니다.<br/>
+기능을 더 개선하기 위해 바이낸스 DEX 기능과 통합하여 거래(주문 접수 및 취소), 거래 내역, 거래 페이지 및 차트 등의 기능을 지원할 수 있습니다.

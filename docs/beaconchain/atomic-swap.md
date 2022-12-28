@@ -17,14 +17,14 @@ Hash Timer Locked Transfer (HTLT) is a new transaction type on Beacon Chain, to 
 #### Parameters
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| From | Address | Sender address, where the asset is from | No |
-| recipient-addr | Address | Receiver address, where the asset is to, if the proper condition meets. | No |
-| recipient-other-chain | bytes | a byte array, maximum 32 bytes, in any proper encoding. leave it empty for single chain swap | Yes |
-| sender-other-chain | bytes | a byte array, maximum 32 bytes, in any proper encoding. leave it empty for single chain swap | Yes |
+| From | Address | Sender address, where the asset is from | 아니오 |
+| recipient-addr | Address | Receiver address, where the asset is to, if the proper condition meets. | 아니오 |
+| recipient-other-chain | bytes | a byte array, maximum 32 bytes, in any proper encoding. leave it empty for single chain swap | 예 |
+| sender-other-chain | bytes | a byte array, maximum 32 bytes, in any proper encoding. leave it empty for single chain swap | 예 |
 | RandomNumberHash | 32 bytes | hash of a random number and timestamp, based on SHA256. If left out, a random value will be generated | True |
-| Timestamp | int64 | Supposed to be the time of sending transaction, counted by second. It should be identical to the one in swap contract. If left out, current timestamp will be used. | No |
-| OutAmount | Coins | similar to the Coins in the original Transfer defined in BEP2, assets to swap out | No |
-| ExpectedIncome | string | Expected income from swap counter party, example: "100:BNB" or "100:BNB,10000:BTCB-1DE" The amount needs to be bumped by e^8 | No |
+| Timestamp | int64 | Supposed to be the time of sending transaction, counted by second. It should be identical to the one in swap contract. If left out, current timestamp will be used. | 아니오 |
+| OutAmount | Coins | similar to the Coins in the original Transfer defined in BEP2, assets to swap out | 아니오 |
+| ExpectedIncome | string | Expected income from swap counter party, example: "100:BNB" or "100:BNB,10000:BTCB-1DE" The amount needs to be bumped by e^8 | 아니오 |
 | HeightSpan | int64   | number of blocks to wait before the asset may be returned to From if not claimed via Random. The number must be larger than or equal to 360 (>2 minutes), and smaller than 518400 (< 48 hours) | No  |
 | CrossChain | bool   | Specify if the HTLT is for cross chain atomic swap | True, the default value is False |
 
@@ -162,9 +162,9 @@ Deposit Hash Timer Locked Transfer is to lock new BEP2 asset to an existed HTLT 
 
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| From | Address | Sender address, where the assets are from | No |
-| SwapID | 32 bytes | ID of previously created swap, hex encoding | No |
-| Amount | Coins | The swapped out amount BEP2 tokens, example: "100:BNB" or "100:BNB,10000:BTCB-1DE" | No |
+| From | Address | Sender address, where the assets are from | 아니오 |
+| SwapID | 32 bytes | ID of previously created swap, hex encoding | 아니오 |
+| Amount | Coins | The swapped out amount BEP2 tokens, example: "100:BNB" or "100:BNB,10000:BTCB-1DE" | 아니오 |
 
 #### Examples
 
@@ -205,9 +205,9 @@ Claim Hash Timer Locked Transfer is to claim the locked asset by showing the ran
 
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| From | Address | Sender address | No |
-| SwapID | 32 bytes |  ID of previously created swap, hex encoding | No |
-| RandomNumber | 32 bytes | The random number to unlock the locked hash, 32 bytes, hex encoding | No |
+| From | Address | Sender address | 아니오 |
+| SwapID | 32 bytes |  ID of previously created swap, hex encoding | 아니오 |
+| RandomNumber | 32 bytes | The random number to unlock the locked hash, 32 bytes, hex encoding | 아니오 |
 
 #### Examples
 
@@ -242,8 +242,8 @@ Refund Hash Timer Locked Transfer is to refund the locked asset after timelock i
 
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| From | Address | Sender address | No |
-| SwapID | 32 bytes | ID of previously created swap, hex encoding | No |
+| From | Address | Sender address | 아니오 |
+| SwapID | 32 bytes | ID of previously created swap, hex encoding | 아니오 |
 
 #### Examples
 
@@ -282,7 +282,7 @@ Query atomic swap allows you to search swap information by `swapID`
 
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| SwapID | 32 bytes | ID of previously created swap, hex encoding | No |
+| SwapID | 32 bytes | ID of previously created swap, hex encoding | 아니오 |
 
 #### Examples
 
@@ -327,7 +327,7 @@ Query atomic swap ID allows you to search swap history of an recipient. As this 
 
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| recipient-addr | Address | Swap recipient address | No |
+| recipient-addr | Address | Swap recipient address | 아니오 |
 
 #### Examples
 
@@ -352,7 +352,7 @@ Query atomic swap ID allows you to search swap history of an initiator. As this 
 
 | Name | Type | Description | Optional |
 | -----| ---- | ----------- | -------- |
-| creator-addr | Address | Swap creator address | No |
+| creator-addr | Address | Swap creator address | 아니오 |
 
 #### Examples
 
@@ -447,7 +447,7 @@ Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.binanc
 
 You can also get swapID by [calculateSwapID in javascript-sdk](https://github.com/bnb-chain/javascript-sdk/blob/91b4d39e96e6433c16a3a1288931f84923075543/src/utils/index.js#L266). It requires three parameters:
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 |-- | -- | -- | -- |
 |randomNumberHash | string  | randomNumberHash in client HTLT transaction on Ethereum | 5a3728a8f4ecb8b4cb0b983a9441b7d69f95229c4aa531e6e3827d7c19beac82 |
 |sender | string  | deputy bep2 address | tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr |

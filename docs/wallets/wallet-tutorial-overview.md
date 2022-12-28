@@ -1,19 +1,17 @@
 ---
-sidebar_label: Overview
+sidebar_label: 개요
 hide_table_of_contents: false
 ---
 
-# Tutorials on Using Third-Party Wallets on BNB Smart Chain
-BNB Smart Chain offers extensive support of third-party wallets that can be used for sending/receiving/buying/exchanging/staking BNB Tokens. Below we provide a list of the most popular wallets.
+# BNB 스마트 체인에서 외부 월렛 사용하는 법
+BNB 스마트 체인은 BNB토큰을 전송/수신/구매/거래/스테이킹할 수 있는 다양한 월렛을 지원합니다. 아래에 자주 사용되는 월렛의 목록이 있습니다.
 
-[BNBChain List](https://www.bnbchainlist.org/) is a list of BSC-related networks, including BNB Smart Chain (BSC) and its Application Sidechains (BAS). Users can use the information to connect their wallets and Web3 middleware providers to the appropriate Chain ID and Network ID to connect to the correct chain.
-
-| Wallet | Tutorial Link |
+| 월렛 | 튜토리얼 링크 |
 |--------------|---------------|
 | Binance Extension Wallet| [How to use Binance Extension Wallet with BNB Smart Chain](../binance.md) |
-| Staking with Binance Extension Wallet | [How to Stake BNB Tokens using Binance Extension Wallet](../wallet/staking.md) |  
-| Trust Wallet | [How to use Trust Wallet with BNB Smart Chain](../wallet/trustwallet.md) |
+| Staking with Binance Extension Wallet | [How to Stake BNB Tokens using Binance Extension Wallet](../wallet/staking.md)    
 | Metamask| [How to use Metamask with BNB Smart Chain](../wallet/metamask.md)|
+| Trust Wallet | [How to use Trust Wallet with BNB Smart Chain](../wallet/trustwallet.md) |
 | Alpha Wallet | [How to use Alpha Wallet with BNB Smart Chain](../wallet/AlphaWallet.md) |
 | Arkane Wallet | [How to use Arkane Wallet with BNB Smart Chain](../wallet/arkane.md) |
 | Coin98 Wallet | [How to use Coin98 Wallet with BNB Smart Chain](../wallet/coin98wallet.md) |
@@ -25,5 +23,3 @@ BNB Smart Chain offers extensive support of third-party wallets that can be used
 | Trezor Wallet | [How to use Metamask with BNB Smart Chain](../wallet/trezor.md) |
 | imtoken | [How to use imToken with BNB Smart Chain](tutorial/BSCimToken.md) |
 
-
- 

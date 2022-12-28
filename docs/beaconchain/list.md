@@ -1,20 +1,20 @@
-# List Transaction
+# 상장 트랜잭션
 
-Only [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) tokens issued on Beacon Chain  can be listed. Learn how to issue BEP2 tokens [here](tokens.md). If a token's listing proposal has been passed by valdiators, then a `list` transaction must be sent before `expire-time`.
+비컨 체인 상에서 [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) 토큰으로 발행된 자산만이 상장될 수 있습니다. BEP2 토큰을 발행하는 방법은 [여기](tokens.md)에 있습니다. 만일 토큰의 상장 제인이 검증인들에 의해 통과되면, `list` 트랜잭션을 `expire-time`전에 전송해야 합니다.
 
-## List Fee
-Fees will be charge when issuing a token, creating a proposal, depositing and listing. You can refer to [fee table in trading spec](trading-spec.md).
+## 상장 수수료
+수수료는 토큰을 발행할 때, 제안을 생성할 때, 예치할 때와 상장할 때 청구됩니다. 금액은 [거래 세부 수수료 테이블](trading-spec.md)을 참고하면 됩니다.
 
-## List Transaction
+## 트랜잭션 상장
 
-### Proposal Parameters
-* `quote-asset-symbol`: For now, only support BNB as quote asset.
-* `init-price`: the initial price for your asset, it is boosted by **1e8**
-* `proposal-id`: this corresponds to the listing proposal that is passed
-* `from`: this address should be the issuer of base asset
+### 제안 매개 변수
+* `quote-asset-symbol`: 현재는, BNB 만 견적 자산(quote asset)으로 지원합니다.
+* `init-price`: 자산의 초기 값으로, 소수점 값에 **1e8**이 곱해져 표현됩니다.
+* `proposal-id`: 통과된 상장 제안의 고유 id값 입니다.
+* `from`: 기초 자산의 발행인의 주소와 같아야 합니다
 
 
-Example on **mainnet**:
+**mainnet** 예시:
 ```bash
 
 $  ./bnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
@@ -34,7 +34,7 @@ $  ./bnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
 }
 ```
 
-Example on **testnet**:
+**testnet** 예시:
 
 ```bash
 $  ./tbnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
@@ -54,6 +54,6 @@ $  ./tbnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
 }
 ```
 
-After the transaction is executed, you could see the newly added trading pair from Explorer and maket API.
+트랜잭션이 실행된 후, 새롭게 추가된 거래 쌍을 탐색기나 마켓 API에서 조회할 수 있습니다.
 
 

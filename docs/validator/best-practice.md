@@ -1,5 +1,5 @@
-# Best Practice
-## Keep Track of Syncing Speed
+# 모범 사례
+## 동기화 속도 확인하기
 
 ```
 t=2021-05-13T17:17:17+0800 lvl=info msg="Imported new chain segment"             blocks=11  txs=3701  mgas=482.461  elapsed=8.075s    mgasps=59.744  number=7,355,800 hash=0x84e085b1cd5b1ad4f9a954e2f660704c8375a80f04326395536eedf83363942f age=12h38m32s dirty="583.73 MiB"
@@ -9,111 +9,110 @@ t=2021-05-13T17:17:33+0800 lvl=info msg="Imported new chain segment"            
 t=2021-05-13T17:17:42+0800 lvl=info msg="Imported new chain segment"             blocks=18  txs=5612  mgas=799.778  elapsed=8.260s    mgasps=96.815  number=7,355,853 hash=0x73e87742ef4405ffefec987fc4b8b19e69c54b8f914c27ea69a502fae4d735e0 age=12h36m18s dirty="613.03 MiB"
 ```
 
-Your syncing speed is `mgasps`. The value should be around 100.
-If you are syncing slowly, please check the speed of your disk.
+동기화 속도는 `mgasps`입니다. 값은 100 근처입니다.
+만약 느리게 동기화가 되고 있다면, 여러분 디스크의 속도를 확인하세요.
 
-## Use Chaindata Snapshot
+## 체인데이터 스냅샷
 
-Please download the chain data [snapshot](https://github.com/bnb-chain/bsc-snapshots) and extract to your home folder to speed up
+체인데이터 [스냅샷](https://github.com/bnb-chain/bsc-snapshots)을 다운받고, 홈 폴더에 추출하여 속도를 높입니다.
 
-## Store Your BNB with a Hardware Wallet
+## 하드웨어 월렛으로 BNB 저장하기
 
-The most valuable assets of a validator are two keys: one for signing transactions and another for signing blocks
-
-
-## Securing Your Full Node RPC from Hackers
-
-Please do not expose your RPC endpoints to public network.
+검증인의 가장 가치있는 자산은 두 키입니다: 트랜잭션 서명, 블록 서명을 위한 것입니다.
 
 
-## Account Private keys
+## 해커로부터 풀노드 RPC 안전하게 유지하기
 
-To protect your BNB, do not share your 24 words with anyone. The only person who should ever need to know them is you. In short, HSMs are affordable, performant and portable pieces of hardware that help to securely generate, store and manage your private keys. Malware attacks and remote extraction of private keys are much more difficult when an HSM is configured properly.
-
-## Software Vulnerabilities
-
-To protect your BNB, you should only download software directly from official sources, and make sure that you're always using the latest, most secure version
+공개 네트워크에 RPC 엔드포인트를 노출하지 마세요.
 
 
-## Running Server as a Daemon
-It is important to keep `geth` running at all times. There are several ways to achieve this, and the simplest solution we recommend is to register `geth`  as a systemd service so that it will automatically get started upon system reboots and other events.
+## 계정 개인키
+
+BNB를 보호하기 위해, 24개 단어들을 누구와도 공유하지 마세요. 이를 알아야 될 유일한 사람은 당신 자신입니다. HSM은 저렴하고 고성능인 휴대용 하드웨어로서 개인키를 안전하게 생성, 저장, 관리할 수 있게 해줍니다. 말웨어 공격이나 원격 개인기 추출은 HSM가 올바르게 설정된 경우 매우 어렵습니다.
+
+## 소프트웨어 취약성
+
+BNB을 안전하게 보호하기 위해 공식 소스에서 소프트웨어를 직접 다운로드 받고 최신 버전을 사용하세요.
 
 
-## Set up a Backup Node
-* Run validator node in archive mode
-* Shut down nodes gracefully
-* Active monitoring with tools
-
-## Steps to Run a Backup Node
-1. Install the latest version of geth
-2. Sync to the latest height using fast sync mode. You can either download the latest snapshot or start fast sync
-once your node is fully synced
-3. Shut down your node gracefully kill -HUP $(pgrep geth)
-4. Restart your node with `--gcmode archive `
-
-### Why Node will be Offline for a While After Restart? or What will Happen If the Client is Force Killed?
-
-After running (synchronized) for a long period of time and being abruptly terminated, only archived nodes are expected to quickly re-synchronize upon restart.
-
-Steps to reproduce:
-
-* Run the node synchronized for a period of time.
-* Abruptly kill the node (kill -9 or system crash).
-* Restart the node, observe where it resynchronizes from block height 1 hour ago.
+## Daemon으로 서버 돌리기
+항상 `geth`가 돌아가고 있도록 하는 것이 중요합니다. 이것을 할 수 있는 방법이 몇 가지 있는데, 가장 단순한 방법은 `geth`를 시스템 서비스로 등록하는 것입니다. 시스템 재부팅이나 다른 이벤트 발생 시 자동으로 시작하게 됩니다.
 
 
-**Reasons**
+## 백업 노드 설정하기
+* 아카이브 모드에서 검증자 노드 실행하기
+* 노드 정상적으로 셧다운하기
+* 툴을 이용한 적극적 모니터링
 
-If Geth crashes (or is not shut down gracefully), the recent state held in memory is lost and needs to be regenerated. It takes Geth a long time to restore the states.
+## 백업 노드 실행하는 법
+1. geth 최신 버전을 설치합니다.
+2. 고속 싱크 모드를 사용하여 최신 높이에 동기화하세요. 노드가 완전히 동기화 되었을 때 최신 스냅샷을 다운받거나 고속 싱크를 시작할 수 있습니다.
+3. 노드를 정상적으로 셧다운하고 -HUP $(pgrep geth)를 종료합니다.
+4. `--gcmode archive` 를 사용하여 노드를 재시작합니다.
 
-The root reason is that `geth` does flush the state trie periodically. The period is defined as `trieTimeout` in `config.toml`.
+### 왜 재시작 후 노드가 한동안 오프라인인가요? 클라이언트가 강제 종료되면 어떻게 되나요?
+
+동기화된 채로 오랫동안 실행되다가 갑자기 종료될 경우, 재시작 후 아카이빙된 노드만 빠르게 재동기화됩니다.
+
+재현 과정:
+
+* 일정 시간 동기화된 채로 노드를 실행합니다.
+* 갑작스럽게 노드를 종료합니다(kill -9 또는 시스템 고장).
+* 노드를 재시작하고, 1시간 전 블록 높이가 재동기화되는 지점을 관찰합니다.
 
 
-## How to Upgrade a Backup Node to Become a Validator Node?
+**이유**
 
-You can stop mining new blocks by sending commands in `geth console`
+만약 Geth가 고장이 나면 (또는 정상적으로 종료되지 않았다면), 메모리에 들어있던 최신 상태는 상실되고 재생성되어야 합니다. Geth는 상태를 복구하기 위해 오랜 시간이 걸립니다.
 
-Connect to your validator node with `geth attach ipc:path/to/geth.ipc`
+근본 이유는 `geth`가 상태 트라이를 주기적으로 청소하지 않기 때문입니다. 이 기간은 `config.toml`에서 `trieTimeout`으로 정의됩니다.
+
+
+## 백업 노드를 검증인 노드로 업그레이드하는 법
+
+`geth console`에 명령어를 보냄으로써 새 블록 채굴을 중단할 수 있습니다.
+
+`geth attach ipc:path/to/geth.ipc`를 사용해 검증인 노드에 연결할 수 있습니다.
 
 ```bash
 miner.stop()
 ```
 
-Then, let backup node resume validating ,
+그리고, 백업 노드가 검증하게 합니다.
 ```bash
 miner.start()
 ```
-## Securing the Validators
+## 검증인 안전하게 유지하기
 
-Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them againt different DoS and DDoS attacks. In this section, we disscuss the security mechanism adopted by BSC for its validators.
+다양한 설정이 네트워크의 복원력을 증가시키므로 각 검증자 후보는 독립적으로 작업을 실행하도록 권장됩니다. 검증자가 투자한 액수가 많기 때문에 다양한 DoS 및 DDoS 공격으로부터 그들을 보호하는 것이 매우 중요합니다. 이 섹션에서는 BSC가 검증자를 위해 채택한 보안 메커니즘에 대해 논의합니다.
 
-### Sentry Nodes (DDOS Protection)
+### 센트리 노드 (DDOS 보호)
 
-Validators are responsible for ensuring that the network can sustain denial of service attacks. One recommended way to mitigate these risks is for validators to carefully structure their network topology in a so-called sentry node architecture.
-Sentry nodes can be quickly spun up or change their IP addresses. Because the links to the sentry nodes are in private IP space, an internet based attacked cannot disturb them directly. This will ensure validator block proposals and votes always make it to the rest of the network.
+검증자는 네트워크가 서비스 거부 공격을 지속할 수 있는지 확인할 책임이 있습니다. 이러한 위험을 완화하기 위해 권장되는 한 가지 방법은 검증자가 소위 센트리 노드 아키텍처에서 네트워크 토폴로지를 신중하게 구성하는 것입니다.
+센트리 노드는 빠르게 띄울 수 있고, IP 주소를 변경할 수 있습니다. 센트리 노드에 대한 링크가 개인 IP 공간에 있기 때문에, 인터넷 기반 공격으로는 직접 방해할 수 없습니다. 이렇게 하면 검증자 차단 제안 및 투표가 항상 네트워크의 나머지 부분에 도달하도록 보장할 수 있습니다.
 
-To setup your sentry node architecture you can follow the instructions below:
+센트리 노드 아키텍처를 설정하려면 아래 지침을 따르세요.
 
-1. Build a private network and setup trusted private connections between the validator node and its sentry
+1. 개인 네트워크를 구축하고 검증자 노드와 해당 센트리 사이에 신뢰할 수 있는 개인 연결을 설정합니다.
 
-Please do not expose your validator fullnode RPC endpoints to the public network.
+검증자 전체 노드 RPC 엔드포인트들을 공용 네트워크에 노출하지 마십시오.
 
-Install your [fullnode](fullnode.md)
+[풀노드](fullnode.md)를 설치합니다.
 
-2. Set sentry as peers for the validator node
+2. 센트리를 검증자 노드의 피어로 설정합니다.
 
-In the console of the sentry node, run `admin.nodeInfo.enode` You should get something similar to this.
+센트리 노드의 콘솔에서 `admin.nodeInfo.enode`를 실행합니다. 이와 유사한 메시지가 나타납니다.
 
 ```
 enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[::]:30306?discport=0
 ```
 
-!!! Note:
-	[::] will be parsed as localhost (127.0.0.1). If your nodes are on a local network check each individual host machine and find your IP with ifconfig
-	If your peers are not on the local network, you need to know your external IP address (use a service) to construct the enode URL.
-	Copy this value and in the console of the first node run,
+!!! 주의:
+	[::]는 로컬호스트(127.0.0.1)로 파싱됩니다. 노드가 로컬 네트워크에 있는 경우 각 개별 호스트 시스템을 확인하고 ifconfig를 사용하여 IP를 찾습니다.
+	피어가 로컬 네트워크에 없는 경우 외부 IP 주소(서비스 사용)를 알고 있어야 노드 URL을 구성할 수 있습니다.
+	이 값을 복사하고, 첫 번째 노드 실행의 콘솔에서
 
-Update `config.toml` file of validator node
+검증자 노드의 `config.toml` 파일을 업데이트합니다.
 
 ```
 # make node invisible
@@ -121,27 +120,27 @@ NoDiscovery = true
 # connect only to sentry
 StaticNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[10.1.1.1]:30306"]
 ```
-This will return true if successful, but that doesn’t mean the node was added successfully.
+성공하면 true가 반환되지만 노드가 성공적으로 추가된 것은 아닙니다.
 
 
-To confirm run `admin.peers` and you should see the details of the node you just added.
+확인을 위해 `admin.peers`를 실행합니다.방금 추가한 노드의 세부 정보를 볼 수 있습니다.
 
 
-That way your validator node will try to peer with your provided sentry nodes only.
+이렇게 하면 검증자 노드가 제공된 센트리 노드에만 피어링하려고 시도합니다.
 
 
-3. Confirm the connection
+3. 연결을 확인합니다.
 
-To confirm run `admin.peers` and you should see the details of the node you just added.
+확인을 위해 `admin.peers`를 실행합니다. 방금 추가한 노드의 세부 정보를 볼 수 있습니다.
 
 
 ![img](https://lh3.googleusercontent.com/w6notWcdyEXayM592WuI5xcpysFqgkwwBSX3sBZFIc34SHrKewZYlNMBMyGBPs375ez78i4gZmbnMyMn3Ry5s6Z6qTejatPYdDXL67moRhGmAQsjNNVF0CRZz10yznx13U34fKSc)
 
-### Firewall Configuration
+### 방화벽 설정
 
-`geth` uses several TCP ports for different purposes.
+`geth`는 여러 TCP 포트를 서로 다른 용도로 사용합니다.
 
-`geth` use a listener (TCP) port and a discovery (UDP) port, both on 30303 by default.
+`geth`는 기본적으로 30303에 있는 수신기(TCP) 포트와 검색(UDP) 포트를 사용합니다.
 
-If you need to run JSON-RPC, you'll also need TCP port 8545. Note that JSON-RPC port should not be opened to the outside world, because from there you can do admin operations.
+JSON-RPC를 실행해야 하는 경우 TCP 포트 8545도 필요합니다. JSON-RPC 포트는 관리 작업을 수행할 수 있으므로 외부에 개방해서는 안 됩니다.
 

@@ -1,66 +1,60 @@
 ---
-sidebar_label: Types
+sidebar_label: 타입
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Encoding
+# 인코딩
 
-The Cosmos SDK utilizes two binary wire encoding protocols, [Beacon Chain  Amino](https://github.com/bnb-chain/bnc-go-amino)
-and [Protocol Buffers](https://developers.google.com/protocol-buffers), where Amino is an object encoding specification. It is a subset of Proto3 with an extension for interface support. See the [Proto3 spec](https://developers.google.com/protocol-buffers/docs/proto3)
-for more information on Proto3, which Amino is largely compatible with (but not with Proto2).
+코스모스 SDK 두 개의 바이너리 와이어 인코딩을 지원하는데, [비컨 체인 Amino](https://github.com/bnb-chain/bnc-go-amino)와
+[Protocol Buffers](https://developers.google.com/protocol-buffers)입니다. 여기서 Amino는 객체 인코딩 규격이며 Proto3에 인터페이스 지원을 확장한 형태로 만들어 졌습니다.
+Amino가 대부분 호환되는 Proto3에 관한 더 자세한 정보를 위해서는 다음 [문서](https://developers.google.com/protocol-buffers/docs/proto3)를 확인하세요. (참고로 proto2와는 호환되지 않습니다)
 
-Due to Amino having significant performance drawbacks, being reflection-based, and not having any meaningful cross-language/client support, Protocol Buffers, specifically [gogoprotobuf](https://github.com/gogo/protobuf/), is being used in place of Amino. Note, this process of using Protocol Buffers over Amino is still an ongoing process.
+Amino의 상당한 성능 저하, 반영 기반(reflection-based) 구조, 의미있는 언어간/클라이언트 지원의 부족으로 Protocal Buffers, 특히 [gogoprotobuf](https://github.com/gogo/protobuf/)를 Amino 대신 사용하고 있는 추세입니다. Protocol Buffers를 Amino 대신 사용하는 것은 아직 진행되고 있는 과정입니다.
+코스모스 SDK 상 타입의 바이너리 와이어 인코딩은 클라이언트(client) 인코딩과 저장소(store) 인코딩 두 가지로 분류할 수 있습니다. 클라이언트 인코딩은 트랜잭션 처리와 서명에 중점을 두는 반면 저장소 인코딩은 상태 머신 전환과 궁극적으로 머클 트리에 저장되는 과정에 중점을 둡니다.
 
-Binary wire encoding of types in the Cosmos SDK can be broken down into two main categories, client encoding and store encoding. Client encoding mainly revolves around transaction processing and signing, whereas store encoding revolves around types used in state-machine transitions and what is ultimately stored in the Merkle tree.
+저장소 인코딩은 protobuf 정의는 어떤 타입으로든 존재할 수 있고 보통 Amino 기반 "중간자" 유형으로 존재합니다. 구체적으로, protobuf 기반 타입 정의는 직렬화와 지속성에 사용되는 반면, Amino 기반 타입은 지속적으로 전환되는 상태 기계의 비즈니스 로직에 사용됩니다. 참고로 Amino 기반 타입은 미래에 폐지될 수 있으므로 개발자들은 가능하면 protobuf 메세지 정의를 사용하는 것을 권장합니다.
 
-For store encoding, protobuf definitions can exist for any type and will typically have an Amino-based "intermediary" type. Specifically, the protobuf-based type definition is used for serialization and persistence, whereas the Amino-based type is used for business logic in the state-machine where they may converted back-n-forth. Note, the Amino-based types may slowly be phased-out in the future so developers should take note to use the protobuf message definitions where possible.
+`codec` 페키지에는 `Marshaler`(마샬러)와 `ProtoMarshaler`(프로토마샬러)라는 두 개의 핵심 인터페이스가 존재합니다. 마샬러는 일반 `interface{}`타입을 사용하는 대신 프로토마샬러를 구현하는 타입에서 작동한다는 점을 제외하고는 현재 Amino 인터페이스를 캡슐화하여 구현되어 있습니다.
 
-In the `codec` package, there exists two core interfaces, `Marshaler` and `ProtoMarshaler`, where the former encapsulates the current Amino interface except it operates on types implementing the latter instead of generic `interface{}` types.
+추가로 `Marshaler`를 구현하는 방법은 3가지가 존재합니다. 첫 번째는 `AminoCodec`으로 바이너리와 JSON 직렬화가 둘 다 Amino에서 다뤄집니다. 두 번째 방법은 `ProtoCodec`를 사용하며 바이너리와 JSON 직렬화가 Protobuf에 의해 다뤄집니다. 마지막으로 `HybridCodec`은 바이너리 직렬화는 Protobuf를 사용하고 JSON 직렬화는 Amino를 사용합니다. 대부분의 경우 클라이언트 사용과 상태 직렬화에 쉬운 `HybridCodec`이 많이 사용됩니다.
 
-In addition, there exists three implementations of `Marshaler`. The first being `AminoCodec`, where both binary and JSON serialization is handled via Amino. The second being `ProtoCodec`, where both binary and JSON serialization is handled via Protobuf. Finally, `HybridCodec`, a codec that utilizes Protobuf for binary serialization and Amino for JSON serialization. The `HybridCodec` is typically the codec that used in majority in situations as it's easier to use for client and state serialization.
-
-This means that modules may use Amino or Protobuf encoding but the types must implement `ProtoMarshaler`. If modules wish to avoid implementing this interface for their types, they may use an Amino codec directly.
+모듈에서는 Amino나 Protobuf 인코딩을 사용할 수 있지만 타입들은 `ProtoMarshaler`를 도입해야 합니다. 만일 모듈의 타입에서 해당 인터페이스를 사용하는 것을 원하지 않을 경우에는 직접 Amino 코덱을 사용하면 됩니다.
 
 ## Amino
 
-Every module uses an Amino codec to serialize types and interfaces. This codec typically
-has types and interfaces registered in that module's domain only (e.g. messages),
-but there are exceptions like `x/gov`. Each module exposes a `RegisterCodec` function
-that allows a user to provide a codec and have all the types registered. An application
-will call this method for each necessary module.
+모든 모듈은 타입과 인터페이스를 직렬화하기 위해 Amino 코덱을 사용합니다. 이 코덱은 일반적으로
+메세지 같은 해당 모듈의 도메인에만 타입과 인터페이스를 등록하지만, `x\gov` 같은 예외도 존재합니다.
+각 모듈은 사용자가 코덱을 제공하고 모든 타입을 등록할 수 있는 `RegisterCodec` 함수를 사용할 수 있습니다.
+어플리케이션에서는 각 메서드에 대해 이 모듈을 호출할 것입니다.
 
-Where there is no protobuf-based type definition for a module (see below), Amino
-is used to encode and decode raw wire bytes to the concrete type or interface:
+아래와 같이 모듈에 protobuf 기반의 타입 정의가 존재하지 않는 경우,
+Amino를 통해 처리되지 않은 와이어 바이트를 구체적인 타입이나 인터페이스로 인코딩 및 디코딩을 진행할 수 있습니다:
 
 ```go
 bz := keeper.cdc.MustMarshalBinaryBare(typeOrInterface)
 keeper.cdc.MustUnmarshalBinaryBare(bz, &typeOrInterface)
 ```
 
-Note, there are length-prefixed variants of the above functionality and this is
-typically used for when the data needs to be streamed or grouped together
-(e.g. `ResponseDeliverTx.Data`)
-
-Another important use of the Amino is the encoding and decoding of
-[transactions](../transaction.md). Transactions are defined by the application or
-the SDK, but passed to the underlying consensus engine in order to be relayed to
-other peers. Since the underlying consensus engine is agnostic to the application,
-it only accepts transactions in the form of raw bytes. The encoding is done by an
-object called `TxEncoder` and the decoding by an object called `TxDecoder`.
+참고로 위의 기능에 대한 길이 접두사 변형(length-prefixed variants)이 존재하며, 
+이는 보통 데이터가 스트리밍이나 그룹화 되는 경우 사용됩니다. (예시. `ResponseDeliverTx.Data`)
 
 
-A standard implementation of both these objects can be found in the [`auth` module](https://github.com/cosmos/cosmos-sdk/blob/master/x/auth):
+Amino의 또 다른 중요한 기능은 [트랜잭션](../transaction.md)의 인코딩 및 디코딩입니다.
+트랜잭션은 어플리케이션이나 SDK에 의해 정의되지만, 다른 피어들로 전파될려면 기본 합의 엔진을 거쳐야합니다.
+기본 합의 엔진은 응용 프로그램의 영향을 받지 않으므로, 가공되지 않은 바이트 형태로만 트랜잭션을 받습니다.
+따라서 `TxEncoder`라는 객체에서 인코딩이 진행되며 `TxDecoder`에서 디코딩이 진행됩니다.
+
+
+두 객체에 대한 표준 구현은 [`auth` 모듈](https://github.com/cosmos/cosmos-sdk/blob/master/x/auth)에서 볼 수 있습니다:
 
 
 ## Gogoproto
 
-Modules are encouraged to utilize Protobuf encoding for their respective types.
-If modules do not contain any interfaces (e.g. `Account` or `Content`), then they
-may simply accept a `Marshaler` as the codec which is implemented via the `HybridCodec`
-without any further customization.
+모듈은 자신의 타입에 해당하는 Protobuf 인코딩을 사용하는 것이 권장됩니다. 
+만일 모듈이 `Account`나 `Content`같은 인터페이스를 포함하지 않는다면, 추가적인
+세부 조정 없이 `HybridCoded`을 통해 구현된 `Marshaler`(마샬러)코덱을 사용하면 됩니다.
 
-However, if modules are to handle type interfaces, they should seek to extend the
-`Marshaler` interface contract for these types (e.g. `MarshalAccount`). Note, they
-should still use a `HybridCodec` internally. These extended contracts will typically
-use concrete types with unique `oneof` messages.
+그러나 만일 모듈이 타입 인터페이스를 다룬다면, 해당 타입을 다루기 위해 확장된 `Marshaler` 인터페이스 계약을 사용해야 합니다. (예시. `MarshalAccount`).
+참고로 내부적으로는 `HybridCodec`을 사용해야 합니다. 이런 확장된 계약은 고유의 `oneof` 메세지를 갖는 구체적인 타입을 사용할 것입니다.
+

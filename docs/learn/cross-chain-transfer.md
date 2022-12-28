@@ -1,9 +1,3 @@
----
-sidebar_label: 크로스 체인 전송
-hide_table_of_contents: false
-sidebar_position: 2
----
-
 # 크로스 체인 전송
 
 크로스 체인 전송은 BC의 바인딩된 BEP2 또는 BEP8 토큰과 BSC의 BEP20 토큰만 지원합니다.

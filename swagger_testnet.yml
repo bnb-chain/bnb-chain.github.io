@@ -1487,7 +1487,7 @@ paths:
     get:
       tags:
         - mini
-      summary: Gets a list of available mini tokens.
+      summary: 미니 토큰 리스트를 가져옵니다.
       operationId: getMiniTokens
       parameters:
         - in: query

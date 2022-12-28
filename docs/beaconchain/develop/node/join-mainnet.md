@@ -1,85 +1,87 @@
-# Join Mainnet
+# 메인넷 합류
 
-!!! Tip
-    See the [node-binary repo](https://github.com/bnb-chain/node-binary/blob/master/README.md) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
+!!! 팁
+    [노드 바이너리 repo](https://github.com/bnb-chain/node-binary/blob/master/README.md) 를 통해 메인넷에 관한 정보와 호환되는 바이너리 버전 및 제네시스 파일 세부 사항을 확인하세요.
 
-!!! warning
-    You need to install [bnbchaind](install.md) before you go further
+!!! 경고
+    다음 과정을 진행하려면 [bnbchaind](install.md)를 설치해야 합니다.
 
-## Minimum System Requirements
-The hardware must meet certain requirements to run a Full Node.
+## 최소 시스템 사양
+풀 노드를 실행하기 위해 하드웨어 최소 사양을 만족해야 합니다.
 
-* Desktop or laptop hardware running recent versions of Mac OS X, Windows, or Linux.
-* 500 GB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
-* 4 cores of CPU and 8 gigabytes of memory (RAM).
-* A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
-* Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain  More hours will be better, run your node continuously for best results.
+*  최신 맥 OS X, 윈도우, 리눅스 버전이 설치된 데스크탑이나 노트북.
+*  최소 읽기/쓰기 속도가 100 MB/s이며, 500GB의 빈 디스크 공간.
+* 4 코어 CPU 및 8GB 메모리(RAM).
+* 최소 1MB/s 속도를 지닌 광대역 인터넷 접속
+* 풀 노드는 24시간 중 최소 4시간 이상 운영해야 비컨 체인 갱신 속도를 따라갈 수 있습니다. 더 운영할 수록 좋으며, 연속적으로 노드를 운영하는 것이 가장 좋습니다.
 
-## Setting Up a New Node
-> You can skip this part if you have executed the install script.
+## 새 노드 설정
+> 설치 스크립트를 실행했다면 이 부분은 넘어가셔도 됩니다.
 
-First you need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain .
-You can setup this by:
+우선 비컨 체인의 홈 폴더를 설정합니다 `$BNCHOME` (i.e. ~/.bnbchaind).
+다음을 통해 설정할 수 있습니다:
 
 ```
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-Then, download `app.toml` and `config.toml` from `node-binary/fullnode/{network}/{version}/config/` into `$BNCHOME/config`
+그리고 `node-binary/fullnode/{network}/{version}/config/`에서 `$BNCHOME/config`로 `app.toml`와 `config.toml`를 다운로드 합니다. 
 
-You can edit this moniker later, in the ~/.gaiad/config/config.toml file:
+~/.gaiad/config/config.toml 파일에서 노드 이름을 변경할 수 있습니다:
 ```toml
-# A custom human readable name for this node
+# 사람이 읽을 수 있도록 노드 이름 설정
 moniker = "<your_custom_moniker>"
 ```
 
-> Note Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable. :::
+> 노드 이름은 ASCII 문자만 사용할 수 있습니다. 유니코드 문자를 사용하면 노드에 연결할 수 없게 됩니다. :::
 
 
-Now your Full Node has been initialized!
+이제 풀 노드가 초기화되었습니다!
 
-## Genesis & Seeds
+## 제네시스 및 시드
 
-### Download the Genesis File
+### 제네시스 파일 다운로드
 
-Fetch the mainnet's genesis.json file into node-binary's config directory.
+메인넷의 genesis.json 파일을 가져와 노드 바이너리의 config 디랙토리에 저장합니다.
 ```
 cd -p $HOME/.bnbchaind/config
 wget https://raw.githubusercontent.com/bnb-chain/node-binary/master/fullnode/prod/0.6.3-hotfix/config/genesis.json
 ```
-Note we use the latest directory in the node-binary repo which contains details for the mainnet like the latest version and the genesis file.
 
-::: tip If you want to understand genesis file, click [here](../../learn/genesis.md) :::
+참고로 다운로드 시 최신 버전의 메인넷 및 제네시스 파일 정보를 지닌 가장 최신 노드 바이너리 repo를 사용합니다.
 
-To verify the correctness of the configuration run:
+::: 팁: 제네시스 파일에 대해 이해하고 싶으면, [다음](../../learn/genesis.md)을 클릭하세요. :::
+
+설정이 제대로 작동하는지 확인하려면 다음과 같이 실행하면 됩니다:
+
 ```shell
 bnbchaind start &
 ```
 
-If you encounter any issue when running a Full Node, you can read the FAQ list [here](fullnodeissue.md).
+만일 풀 노드를 운영할 때 문제가 발생하면, [FAQ 리스트](fullnodeissue.md)를 참고해 주세요.
 
 
-### Add Seed Nodes
-Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $HOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
+### 시드 노드 추가
+풀 노드는 블록체인 네트워크의 피어를 찾는 방법을 알아야 합니다. 이를 위해 $HOME/.bnbchain/config/config.toml에 활성화된 시드 노드를 추가해야합니다. 추천된 `config.toml`에는 이미 일부 시드에 대한 링크를 포함하고 있습니다.
 
-If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://dex.binance.org/api/v1/peers
+만일 시드가 작동하지 않는다면, HTTP API 엔드포인트에서 더 많은 시드나 영구 피어들을 찾을 수 있습니다: https://dex.binance.org/api/v1/peers
 
-#### Additional Configuration
-- Sync type: by default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](./synctypes.md)
-- Log: The log file is under `home`- the directory specified when starting `bnbchaind`.
-  The latest log file is `bnc.log`. The process will create a new log file every one hour.
-  To make sure you have sufficient disk space to keep the log files, we strongly recommend you to change the log location by changing `logFileRoot` option in `$BNCHOME/config/app.toml`.
-- Service Port: RPC service listens on port `27147` and P2P service listens on port `27146` by default.
-  Make sure these two ports are open before starting a full node, unless the full node has to listen on other ports.
-- Store: All the state and block data will store under `$BNCHOME/data`, do not delete or edit any of these files.
+#### 추가 구성
+- 동기화 유형: 기본적으로 새 노드는 `state-sync` 모드로 동기화 됩니다. 동기화 모드를 변경하려면, [다음](./synctypes.md) 문서를 참고하세요.
+-로그: 로그 파일은 `bnbchaind` 생성 시 구체화 한 `home`아래 있습니다.
+  가장 최신 로그 파일은 `bnc.log`이며 새로운 로그 파일은 1시간마다 생성됩니다.
+  로그 파일을 저장하기 위한 충분한 디스크 공간을 확보하기 위해서는 로그 저장소를 `$BNCHOME/config/app.toml`의 `logFileRoot` 옵션에서 로그 위치를 변경하는 것이 좋습니다.
+- 서비스 포트: 기본적으로 RPC 서비스는 `27147` 포트를 수신하며 P2P 서비스는 `27146`포트를 수신합니다.
+  풀 노드를 실행하기 전에 두 포트가 열려 있는지 확인해야 합니다. 그렇지 않을 경우 풀 노드는 다른 포트를 통해 데이터를 수신해야 합니다.
+- 저장: 모든 상태와 블록 데이터는 `$BNCHOME/data`에 저장됩니다. 다음 파일들을 삭제하거나 편집하지 마세요.
 
-## Get Extra Information From Your Fullnode
+## 풀 노드에 관한 추가 정보
 
-If you have a Full Node running, then you can publish extra messages to local files.
+풀 노드를 실행하고 있으면, 로컬 파일에 추가 메세지를 작성할 수 있습니다.
 
-##### Monitor Syncing Process
+##### 동기화 과정 조회
 
-You can verify if state sync is done by `curl localhost:27147/status` several times and see whether `latest_block_height` is increasing in response.
+상태 동기화 진행 여부는 `curl localhost:27147/status`가 여러 번 진행될 때 `latest_block_height` 값이 함께 증가하는지 확인하면 됩니다.
 
 ```
 "sync_info": {
@@ -90,10 +92,10 @@ You can verify if state sync is done by `curl localhost:27147/status` several ti
 }
 ```
 
-## Prometheus Metrics
+## 프로메테우스 메트릭
 
-Prometheus is enabled on port `28660` by default, and the endpoint is `/metrics`.
+프로메테우스(Prometheus)는 기본적으로 포트 `28660`에 활성화 되어 있으며, 엔드포인트는 `/metrics`입니다.
 
-## Mainnet Tools
+## 메인넷 도구
 
-* [Explorer](https://explorer.binance.org/)
+* [탐색기](https://explorer.binance.org/)

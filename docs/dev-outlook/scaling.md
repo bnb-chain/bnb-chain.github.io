@@ -1,83 +1,80 @@
 ---
-sidebar_label: Scaling & Better User Experience
+sidebar_label: 확장 및 사용자 경험 개선
 sidebar_position: 2
 ---
 
-# Scaling and Imporvements for Better User Experience
+# 확장 및 사용자 경험 개선
 
-## Scaling 
+## BSC 처리량 증가
 
-### BSC Throughput Boost
+많은 사람들이 어려울 것이라고 예상했지만, BSC는 용량을 확장하여 짧은 블록 생성 시간과 블록 가스 제한을 늘렸습니다. 우리는는 현재 PoSA 기반 BSC의 용량을 개선할 여지가 있다는 강한 믿음을 갖고 있습니다.
 
-Though many have challenged that BSC chose to scale up the capacity by shorter block time and larger block gas limit. There is strong faith that there is still room to improve the capacity of the current PoSA based BSC.
-
-Based on the past research and investigation, storage has been commonly considered as the major bottleneck. The 17TB data of a BSC archive node / 2TB for a full node on one machine is not sustainable. As a result, storage optimization is the main focus as well.
+과거 연구와 조사에 따르면, 스토리지는 병목 현상의 주요 원인으로 지목되어 왔습니다. 17TB인 BSC 아카이브 노드와 풀 노드 당 2TB를 사용하는 것은 결국 지속되기 어렵습니다. 따라서, 스토리지 최적화도 개선하는 것도 저희의 주요 목표입니다.
 
 ![storage-stats](https://global.discourse-cdn.com/standard11/uploads/binancesmartchain1/original/1X/d177780f6baa8cfe6c6b5761b08b980d51cabcee.jpeg)
 
-### Erigon Based BSC Client or Another Storage Model
-[Erigon](https://github.com/ledgerwatch/erigon), a.k.a the previous “turbo-geth”, has been striving hard to improve the storage system of Ethereum/Geth in the past 3 years and now blossomed into beta status. Its new storage model with the new database, MPT generation methodology and staged sync has been proven to run much more efficiently than Geth for the large storage. Creating a BSC client based on Erigon will certainly improve the efficiency of the BSC archive node by reducing the storage size and improving the sync time.
+## 에리곤 기반 BSC 클라이언트 및 또 다른 스토리지 모듈
+이전에 "turbo-geth"라고 불린 [에리곤(Erigon)](https://github.com/ledgerwatch/erigon)은 지난 3년간 이더리움/geth의 스토리지 시스템을 개선하기 위해 연구해 왔으며 이제 베타 상태로 노력의 결실을 맺었습니다. 에리곤은 새로운 데이터베이스를 갖는 스토리지 모델을 통해 MPT 생성 기법과 단계적 동기화를 통해 대용량 환경에서 Geth보다 더 효율적으로 작동하는 시스템의 존재를 증명했습니다. 에리곤 기반의 BSC 클라이언트가 개발되면 저장된 용량은 줄고 동기화 속도가 증가하여 BSC의 아카이브 노드의 효율성이 개선될 것입니다.
 
-[Ankr is already contributing to the task](https://github.com/bnb-chain/bsc-erigon). The full node binary is ready to run while the validator mode is being worked on.
+[Ankr(앵커)는 이미 개선 과정에 기어하고 있습니다](https://github.com/bnb-chain/bsc-erigon). 풀 노드 바이너리는 실행할 준비가 되었으며 검증인 모드는 개발되고 있습니다.
 
-Besides the instant benefits, the new storage model of Erigon may also set a better cornerstone for the other storage related optimizations.
+당장의 혜택 외에도, 에리곤의 새로운 저장소 모델은 다른 스토리지 관련 최적화를 위한 더 나은 초석을 마련하였습니다.
 
-One shortcoming of Erigon is that it doesn’t support Snapshot Sync yet, which is a must for BSC node runners. The BSC community will work with Erigon to overcome this in 2022.
+에리곤의 한 가지 단점은 노드 운영자에게 꼭 필요한 스냅샷 동기화를 지원하지 않는다는 것입니다. BSC 커뮤니티는 2022년에 해당 문제를 해결하고자 합니다.
 
-### Distributed Node
-For high performance computing, it is almost impossible to only rely on one node nowadays. The principle of BSC is to allow the node runners to use multiple servers with common hardware specs to support the network, instead of one “bare-metal” super machine.
+## 분산된 노드
+고성능 연산을 위해 하나의 노드에 의존하는 것은 불가능합니다. BSC도 하나의 특수 고성능 기기가 노드를 운영하기 보다 여러 서버에서 일반적인 하드웨어 성능을 가진 여러개의 노드들이 네트워크를 운영하고 있습니다.
 
-Running different functions of a blockchain client on different processes or machines are not new. Erigon proposes to run the RPC function in a standalone process on the same or different machine. The Merge of ETH 2.0 will also decompose the consensus and execution layers onto different client softwares.
+다른 프로세스나 기계에서 블록체인 클라이언트의 다른 함수를 실행하는 것은 새로운 시도가 아닙니다. 에리곤은 RPC 함수를 동일하거나 다른 기계에서 독립적인 프로세스로 실행할 것을 제안합니다. 이더리움 2.0 머지는 합의 및 살행 계층을 서로 다른 클라이언트 소프트웨어에서 처리하도록 분해합니다. 
 
-A typical blockchain client comprises many functionalities, P2P networking, consensus, RPC service, execution layer etc. Even zooming in these parts, e.g. the execution layer, is composed of many steps, such as the computing of transactions, the state persistence and the generation of different MPT(Merkle Patricia Trie) roots. Decoupling the functions onto different processes and machines can take advantage of the better computing and storage capacity. Some community members have started [some trials](https://github.com/binance-chain/bsc/pull/640). However, distributing the node also poses great challenges, especially on synchronization between the distributed sub-nodes without losing the blockchain network security, i.e. the full node operators can easily run the suite of processes to keep the network running with the same level of security but much more capacity.
+보통 블록체인 클라이언트는 여러 기능들, P2P 네트워크, 합의, RPC 서비스, 실행 계층 등으로 구성되어 있습니다. 실행 계층을 예로 들어 더 자세히 들여다 보면, 트랜잭션 계산, 상태 유지 및 MPT(Merkle Patricia Trie) 루트 생성 등 여러 과정으로 이루어져 있습니다. 함수들을 서로 다른 프로세스나 기기들로 나누는 것은 계산 과정이나 용량 면에서 유리할 수 있습니다. 커뮤니티에서 해당 작업을 [시도](https://github.com/binance-chain/bsc/pull/640)하는 구성원도 존재합니다. 다만 노드를 분산하는 것은 다른 문제를 야기하는데, 특히 분산된 서브 노드들 간 네트워크 보안을 유지하면서 동기화 하는 것이 어려워집니다. 즉, 풀 노드 운영자는 쉽게 해당 프로세스를 기존 보안 수준을 유지하면서 실행이 가능하지만, 훨씬 더 많은 용량이 필요합니다.
 
-A straightforward approach may be to arrange the tasks in a “synchronized, distributed, assembly line” (SDAL), due to the sequential characteristics of the blockchain. Some change may be required on the consensus logic to make this type optimization easier. This is also discussed in other blockchains that break sequencing, execution and storage (settlement) into different components.
+가장 간단한 접근은 순차적으로 진행되는 블록체인 특성에 따라 "동기화되고, 분배된 어셈블리 라인(synchronized, distributed, assembly line -SDAL)" 형태로 작업을 정렬하는 것입니다. 다음과 같은 유형의 최적화를 위해서는 합의 로직을 약간 변경해야 합니다. 이 문제는 시퀸싱, 실행과 저장을 서로 다른 요소로 나누는 다른 블록체인에서도 논의되고 있습니다.
 
-### Ephemeral Client and Hot/Cold Data Segregation
-One foreseeable problem of the current public blockchain is that it stores ALL the data FOREVER. It is very likely that only 20% of the state in the EVM blockchain is still useful, while 80% may not be used much anymore. BSC has more than 121 million unique addresses in Dec. 2021, while daily active addresses are only over 2 million. Many data were created on the blockchain for just one time use and the creators do not bother with calling the SELF DESTRUCT instruction. But the data will be there forever, and accumulated only to break the bones of the archive node.
+## 단기 클라이언트 및 핫/콜드 데이터 분리
+현재 퍼블릭 블록체인에서 예측 가능한 문제는 모든 데이터를 영원히 보관한다는 것입니다. EVM 블록체인에서 20%의 상태만 활용될 가능성이 높고, 나머지 80%는 더 이상 사용되지 않을 가능성이 높습니다. BSC는 2021년 12월 기준 약 1.21억개의 고유 주소가 존재하지만, 일일 활성 주소는 200만개 밖에 되지 않습니다. 블록체인 상 생성된 수 많은 데이터는 일회성으로 사용된 경우가 많으며 해당 작업의 생성자들도 해당 데이터를 제거해도 크게 신경쓰지 않습니다. 하지만 데이터는 평생 존재하고 축적되며, 아카이브 노드의 부담만 가중되고 있습니다.
 
-Ideally there should be an “Ephemeral Client”, which is a mode between a “full node” and a “light client”:
+이상적으로는 "풀 노드"와 "라이트 클라이언트" 사이에 있는 “단기 클라이언트”가 존재하는 것이 좋습니다:
 
-Ephemeral Client starts with a much smaller snapshot of the blockchain, which only contains state of the accounts and contracts that are active in the past 2 weeks or 1 months, with only recent block bodies, headers and receipts, with all other data excluded;
-The excluded accounts and contracts will only be presented as intermediate node of MPT, so that they can still be used to calculate the new MPT;
-Ephemeral Client can work in a similar way as a full node, in the sense that it will execute all the transactions and verify all the data. It should load the excluded data during the execution from another full node or the Portal Network, or even pre-load the excluded data based on the transactions in the mempool.
-Apparently sometimes the ephemeral clients may run slower than a full node, but it is a trade-off to make it much easier to run, and run faster.
+단기 클라이언트(Ephemeral Client)는 2주 혹 1달의 계정 및 계약 상태를 보관하고 최신 블록 바디(block body), 헤더, 내역만 갖고 있는 비교적 작은 블록체인의 스냅샷을 지니게 됩니다. 제외된 계정과 계약들은 MPT의 중간 노드에 의해서만 나타날 것이며, 여전히 새로운 MPT를 계산하기 위해 사용될 수 있습니다. 단기 클라이언트는 모든 트랜잭션을 실행하여 데이터를 검증한다는 측면에서는 풀 노드와 비슷한 방식으로 작동합니다. 제외된 데이터는 다른 풀 노드나 포탈 네트워크에서 실행할 때 불러오거나, 맴풀(mempool)에 있는 트랜잭션을 기반으로 제외된 데이터를 미리 불러올 수도 있습니다. 단기 클라이언트가 풀 노드보다 느릴 경우도 있는데, 이는 더 쉽고 빠르게 실행할 수 있도록 만들어진 것에 대한 트레이드오프(trade-off)입니다.
 
-Deriving from this concept, it is natural to consider separating the hot data from the cold data, which has been a classic technique used in the computing industry. If the EVM blockchain is considered as a “world computer”, the memory of the node should be the registers, while the storage can be the RAM (yes, with MPT used in a similar way as ECC in RAM). RAM has never been big enough, so that the data has to be swapped out onto local or/and remote disks. The EVM blockchain needs such “local or/and remote disks” too.
+위 개념에서 파생되어, 컴퓨터 업계에서 사용되어 온 핫 데이터와 콜드 데이터를 분리하는 것을 고려할 수 있습니다. EVM 블록체인이 "월드 컴퓨터"이면, 노드의 메모리가 레지스터 역할을 하며, 저장소를 RAM으로 생각할 수 있습니다(MPT가 RAM에서 ECC와 비슷한 역할을 한다고 가정할 수 있습니다). RAM은 충분히 크지 않아서, 데이터가 로컬 혹은 원격 디스크에 옮겨져야 합니다. EVM 블록체인에도 “로컬 혹은 원격 디스크” 역할이 필요합니다.
 
-This is not an easy problem to solve:
-    1. Data location is not part of the consensus. It may be easy to mark the data as “swap-out” or “offline” and reach the consensus, but the more important issue is to reach the implicit consensus that “my proposed block has some transactions that swap in data from the offline mode”. The short blocking time may not be enough from other validators to respond.
-    2. Some contracts may have a very big storage, which is a great help to swap it out, but very challenging to swap it in as a whole back to “online”.
-One potential solution may be:
-    1. Swap the data out by the unit of account and contract when they have not been changed for a long time, and put this as an transaction to get consensus;
-    2. Swap in data by a deterministic set size, which may not be as large as the whole contract data.
-    3. The swapped-in data can be passed in as extra calldata on the block, and the other validators can execute the transactions and verify the data as a “stateless client” if they cannot load the data in time.
-    4. The transaction senders will pay extra gas to run any transaction that requires swapping in the data.
-A new data layer may emerge due to the requirement to store the cold data.
+다만 다음 문제는 해결하기 쉽지 않습니다:
+    1. 데이터 위치는 합의 과정에 포함되지 않습니다. 데이터를 "swap-out"(교체)혹은 "offline"(오프라인) 으로 표기 후 합의에 도달하는 것은 쉬울 수 있지만, 더 중요한 문제는 "제가 제안된 블록에 오프라인 모드에서 데이터를 불러오는 트랜잭션이 존재합니다" 같은 상태에 대한 내부 합의가 이뤄져야 한다는 것입니다. 해당 문제는 짧은 블록 생성 시간으로 인해 다른 검증인들이 답변을 주기 어려울 수 있습니다.
+    2. 어떤 컨트랙트는 매우 큰 저장 공간을 갖아서 데이터를 옮기는게 효과적일 수 있지만, 다시 온라인 상태로 불러오는 것이 문제가 될 수 있습니다.
+잠재적인 해결책은 다음과 같습니다:
+    1. 계정과 컨트랙트 단위로 변경 내역이 오랬동안 없을 시 데이터를 외부로 내보내고, 이 과정을 합의를 위한 트랜잭션에 넣습니다.
+    2. 데이터를 불러올 때 컨트랙트 데이터 전체만큼 크지 않으므로, 결정론적인 사이즈를 설정해서 들어옵니다.
+    3. 들여온 데이터가 블록의 추가 호출 데이터로 전달되고, 다른 검증인들이 실행할 때 데이터를 제 시간 안에 불러오지 못할 시 "상태없는 클라이언트"로 정의합니다.
+    4. 트랜잭션 생성자들이 데이터 교체가 있는 트랜잭션에 대한 추가적인 가스를 지불합니다.
+콜드 데이터를 보관하기 위해서 새로운 데이터 계층이 탄생할 수도 있습니다.
 
-### EVM Parallelization
-Running transactions in parallel for Ethereum has been studied for several years. Solana goes with a native design to enable this as much as possible so that it can take advantage of the powerful GPU.
+## EVM 병렬화
+이더리움에 병렬로 운영하는 연구는 것은 몇 년간 이뤄져 왔습니다. 솔라나는 강력한 GPU를 활용하여 최대한 이런 설계를 가능하게 하는 자체 디자인을 채택하고 있습니다.
 
-Based on the analytics of BSC data, the CPU has not been the No.1 bottleneck but the storage is. Even though the EVM parallelization will take better usage of multiple cores of the modern CPUs, the primary goal is to increase the parallelism of storage operation to maximize the SSD usage (even the SATA ones).
+BSC의 데이터 분석을 통해, 병목의 원인은 CPU가 아닌 스토리지라는 것이 밝혀졌습니다. EVM의 병렬화가 다중 코어인 현대 CPU 잘 활용할 수 있어도, 가장 중요한 목표는 스토리지 운영의 병렬화를 구현하여 SSD 사용을 최대화하는 것입니다(SATA도 포함합니다).
 
-In order to maintain backwards compatibility and not change the account structures as Solana does, the most straightforward method is heuristic based, i.e. try-and-rerun-the-failed. The full nodes can do some preprocessing to categorize the transactions in the blocks and mempool into different concurrent workers before actually running them. A lower level instrument monitor will be planted at the storage level, if the race condition is detected, and relevant transactions will be put back into the main worker to rerun in order to generate the correct state. Block producers may even place some hints for others to run the blocks in the most efficient way via the P2P network, though the hint itself is not part of the block.
+솔라나처럼 계정 구조를 바꾸지 않고 이전 버전 호환을 유지하기 위해서, 가장 간단한 것은 직접 시도하면서 개선하는 것입니다. 풀 노드는 실제 실행하기 전에 블록 내부나 맴풀(mempool)에 있는 트랜잭션 동시에 작업하는 노드에게 분류하는 전처리 작업을 수행할 수 있습니다. 로우 레벨 작업 모니터가 스토리지 단계에 설치되며, 실행 조건이 감지될 때 관련 트랜잭션이 주요 작업자에게 전달되어 옳바른 상태를 생성하기 위해 다시 실행됩니다. 
+블록 생성자는 블록에는 해당하진 않지만, 다른 작업자들이 가장 효율적인 방식으로 블록을 실행할 수 있도록 P2P 네트워크를 통해 힌트를 제공할 수도 있습니다.
 
-Besides the parallelization within one block, BSC inherits one limit from Ethereum that the block proposer has to wait until it applies all the previous blocks before it can execute any transactions in its block to propose at its turn. If the previous block proposers send the block late, or the blocks are delayed due to slow network etc, the proposer may not have enough time to execute enough transactions into their blocks and have to propose an empty block or even miss its turn. Tendermint is a good example that solves the above issue. The block proposer on Tendermint network only needs to assemble the block without executing them. How to control the gas used within one block without executing transactions is a difficult topic on the EVM network.
+하나의 블록에서 병렬화 하는 경우 외에도, BSC는 블록 제안자가 만든 현재 블록 안의 트랜잭션을 실행하기 위해 이전의 모든 블록이 적용되는 것을 기다린 후에 블록을 제안할 수 있다는 이더리움의 제약을 상속합니다. 만일 이전 블록 제안자가 블록을 늦게 전송하거나 네트워크 병목 현상으로 인해 느려지면, 제안자가 충분한 트랜잭션들을 실행할 수 있는 시간이 부족하여 빈 블록을 제안하거나 차례를 놓칠 수 있습니다. 텐더민트는 다음 문제를 해결할 수 있는 좋은 예시입니다. 텐트민트 네트워크의 블록 제안자는 실행하지 않고 블록을 생성할 수 있습니다. 다만 트랜잭션을 실행하지 않고 한 블록 안의 가스를 제어하는 것은 EVM 네트워크에서는 어려운 문제입니다.
 
-How to run transactions in parallel even among different blocks will be very rewarding here, but it will be very difficult as well.
+다른 블록에 대해서도 트랜잭션을 병렬로 운영할 수 있으면 혜택이 많지만, 동시에 구현하기 어려운 과제일 것입니다.
 
-### EVM JIT Compilation
-Using JIT compilation in EVM was [proposed](https://github.com/ethereum/evmjit) and [discussed](https://ethresear.ch/t/evm-performance/2791) in the early days of Ethereum. When popular dApps dominate the network, such as OpenSea and Uniswap on Ethereum, and PancakeSwap on BSC, and one GameFi dApp had a few million transactions per day, the idea is fascinating that these applications can be compiled into native instructions and able to run faster. This benefits even the compilation is not done “just-in-time” but offline.
+## EVM JIT 컴파일
+EVM 상에서 JIT 컴파일은 이더리움 초기 [제안](https://github.com/ethereum/evmjit)되었고 [논의](https://ethresear.ch/t/evm-performance/2791)되어 왔습니다. 네트워크를 지배하다 싶이 하는 인기 디앱들이 해당 솔루션을 도입할 때; 예를 들어 이더리움의 오픈씨나 유니스왑, BS의 팬케이크 스왑, 또는 매일 몇 백만개의 트랜잭션이 발생하는 GameFi 디앱들이 자체 명령어로 컴파일할 수 있으면 속도를 획기적으로 개선될 것입니다. 이 는 컴파일이 "제 시간에" 이루어지지 않고 오프라인 상에서 미리 이뤄지는 혜택도 제공합니다.
 
-However, this is a very challenging feature because it touches the very low level of EVM and can be quite prone to error and security issues. Here is just a placeholder for the talented developers to conquer in the later stage.
+다만 이 기능은 EVM의 로우 레벨을 다루고 있고 에러 및 보안 문제가 쉽게 발생할 수 있어서 해결하기 매우 어려운 문제입니다. 이 부분은 향후 재능 있는 개발자들이 도전해야 할 단계로 표시하고 있습니다.
 
+# 사용자 경험 개선
 
-## User Experience
-Besides the limitation of the block gas limit cap, the other major factor that can impact BSC capacity is the rate of fork. Fork and re-organization of the blockchain can be very costly for both validators and fullnode.
+## 사용자 경험
+블록 가스 제한 캡의 한계를 제외하고, BSC 용량에 가장 큰 영향을 미치는 컷은 포크 속도입니다. 블록체인에서 포크 및 재조직은 검증인과 풀 노드 모두에게 많은 비용이 소모됩니다. 
 
-## Fast Finality
-Although BSC is designed to produce blocks every 3 seconds, it is recommended to wait until more than half of the validator set has produced new blocks on the block before the block can be confirmed in a probabilistic manner. This will cost at least 3x11 = 33 seconds after the block is visible on the network.
+## 빠른 완결성
+BSC가 3초마다 블록을 생성하게 설계되었어도, 블록들이 확률론적인 방법으로 승인될 수 있기 전에 검증인 집단의 절반 이상이 새 블록을 생성하도록 기다리는 것을 권장합니다. 이는 블록이 네트워크에서 조회 가능할 때까지 최소 3x11 = 33초의 시간이 소요된다는 것을 뜻합니다.
 
-As the validator set is well known every 24 hours, BSC can get a faster consensus on the longest chain based on the “attestation” from more than a certain percentage of the validator set considering it is the longest chain.
+검증인 집합은 24시간마다 업데이트되므로 BSC는 일정 비율 이상의 검증인 집합이 가장 긴 체인이라 생각하는 것을 "증명(attenstation)"하는 것을 기반으로 더 빠른 합의에 도달할 수 있습니다.
 
-This essentially requires altering the “Parlia” consensus mechanism of BSC. A BEP candidate has been proposed by the community at [[WIP] BEP-97: Introduce Fast Finality Mechanism by KeefeL · Pull Request #126 · binance-chain/BEPs · GitHub](https://github.com/binance-chain/BEPs/pull/126) 
+이는 "Parlia" 합의 매커니즘을 변경해야 된다는 것을 의미합니다. BEP 후보는 다음 문서에서 커뮤니티에 의해 제안되었습니다. [[WIP] BEP-97: 빠른 완결성 매커니즘 소개 by KeefeL · Pull Request #126 · binance-chain/BEPs · GitHub](https://github.com/binance-chain/BEPs/pull/126)

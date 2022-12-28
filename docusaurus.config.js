@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'BNB Chain Documentation',
+  title: 'BNB 체인 공식 Docs',
   url: 'https://bnb-chain.github.io/',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
@@ -98,7 +98,7 @@ const config = {
         theme: 'default',
       },
       navbar: {
-        title: 'BNB Chain Documentation',
+        title: 'BNB 체인 공식 Docs',
         style: 'primary',
         logo: {
           alt: 'BNB',
@@ -113,36 +113,36 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Getting Started',
-                to: '/docs/getting-started',
+                label: '소개',
+                to: '/docs/bnbIntro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: '커뮤니티',
             items: [
               {
-                label:'BuildnBuild Forum',
+                label:'BuildnBuild 포럼',
                 href: 'https://www.buildnbuild.dev/',
               },
               {
-                label: 'Blog',
+                label: '블로그',
                 href: 'https://www.bnbchain.org/en/blog/',
               },
               {
-                label: 'GitHub',
+                label: '깃허브',
                 href: 'https://github.com/bnb-chain',
               },
               {
-                label: 'Discord',
+                label: '디스코드',
                 href: 'https://discord.com/invite/bnbchain',
               },
               {
-                label: 'Twitter',
+                label: '트위터',
                 href: 'https://twitter.com/BNBCHAIN',
               },
               {
-                label: 'Telegram',
+                label: '텔레그램',
                 href: 'http://t.me/BinanceDEXchange',              
               }
             ],

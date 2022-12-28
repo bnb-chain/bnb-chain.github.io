@@ -1,42 +1,42 @@
 ---
-sidebar_label: Local BNB Smart Chain Network
+sidebar_label: 로컬 BNB 스마트 체인 네트워크
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Local BNB Smart Chain Network
+# 로컬 BNB 스마트 체인 네트워크
 
-See also : [https://github.com/ethereum/go-ethereum/wiki/Private-network](https://github.com/ethereum/go-ethereum/wiki/Private-network)
+[https://github.com/ethereum/go-ethereum/wiki/Private-network](https://github.com/ethereum/go-ethereum/wiki/Private-network) 또한 참고하세요.
 
 
-## Setting Up Your BSC Node(s)
+## BSC 노드 셋업하기
 
-### Pre-Requisites
-#### Install Geth
+### 요구사항
+#### Geth 설치하기
 
-Review the guide [here](validator/fullnode.md)
+[여기](validator/fullnode.md)에서 가이드를 확인하세요.
 
-#### Create /projects Symbolic Link 
+#### /projects Symbolic 링크를 생성하세요
 
-Create a `/projects` symbolic link
-*(Note:  This step is simply so "/projects" can be used in all other commands, instead you could use full paths, or set an env var)*
+`/projects` symbolic 링크를 생성하세요
+*(참고: 이 단계는 "/projects" 가 다른 모든 명령어에서 사용될 수 있도록 하기 위함입니다. 대신 완전한 경로를 사용하거나 환경 변수를 설정할 수도 있습니다)*
 
 ```
 $ mkdir <my projects folder>
 $ sudo ln -s <my projects folder> /projects
 ```
 
-### Create local\_ethereum\_blockchain folder
+### local\_ethereum\_blockchain 폴더 생성하기
 
 ```
 $ mkdir /projects/local_ethereum_blockchain
 ```
 
-### Create the Genesis Block Config
+### Genesis Block Config 생성하기
 
-Create this file :  `/projects/local_ethereum_blockchain/genesis.json`
+이 파일을 생성하세요:  `/projects/local_ethereum_blockchain/genesis.json`
 
-With the following contents :
+내용에는 다음을 입력하세요:
 
 ```
 {
@@ -56,133 +56,133 @@ With the following contents :
      "alloc": {}
 }
 ```
-([info about the genesis file](https://ethereum.stackexchange.com/a/2377/2040))
+([제네시스 파일 정보](https://ethereum.stackexchange.com/a/2377/2040))
 
-### Initialize an Ethereum Node
+### 이더리움 노드 초기화하기
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node1 init /projects/local_ethereum_blockchain/genesis.json
 ```
 
-### Start the Ethereum Node
+### 이더리움 노드 시작하기
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node1 --networkid 1000 console
 ```
 
-### Initialize Another Ethereum Node
+### 또 다른 이더리움 노드 초기화하기
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node-2 init /projects/local_ethereum_blockchain/genesis.json
 ```
 
-### Start the 2nd Ethereum Node
+### 두 번째 이더리움 노드 시작하기
 
 ```
 $ geth --datadir /projects/local_ethereum_blockchain/node-2 --port 30304 --nodiscover --networkid 1000 console
 ```
 
-### Connect One Node to the Other
+### 한 노드를 다른 노드에 연결하기
 
-In one geth console :
+한 geth 콘솔:
 
 ```
 > admin.nodeInfo.enode
 ```
 
-In the other console :
+다른 geth 콘솔:
 
 ```
 > admin.addPeer( <the enode value from the first console> )
 ```
 
 
-## Useful geth Commands
+## 유용한 geth 명령어
 
-### Node info
+### 노드 정보
 
 ```
 > admin.nodeInfo
 ```
 
-### Peers
+### 피어
 
-Show peers
+피어 표시하기
 
 ```
 > admin.peers
 ```
 
-How many peers ?
+피어 개수
 
 ```
 > admin.peers.length
 ```
 
-### Create an Account
+### 계정 생성
 
-You need an account to do be able to do things like mining
+채굴 등을 수행하기 위한 계정 생성
 
 ```
 > personal.newAccount()
 ```
 
-*And make sure you remember/save the password!*
+*꼭 패스워드를 기억하거나 기록하세요!*
 
-### Unlock Account
+### 계정 잠금
 
-Neccessary before some actions
+특정 명령을 수행하기 전에 요구됩니다.
 
 ```
 > personal.unlockAccount( eth.accounts[0] )
 ```
 
-### Start Mining
+### 마이닝 시작
 
 ```
 > miner.start(1)
 ```
 
-The first block may take a while to mine, allow a few minutes
+첫 블록을 채굴할 때까지 몇 분 걸릴 수 있습니다
 
-### Stop Mining
+### 마이닝 중단
 
 ```
 > miner.stop()
 ```
 
-### Current Block Number
+### 현재 블록넘버
 
 ```
 > eth.blockNumber
 ```
 
-### Details of Current Block
+### 현재 블록 정보
 
 ```
 > eth.getBlock( eth.blockNumber )
 ```
 
 
-### Which Node had Mined the Last Block
+### 마지막 블록을 채굴한 노드
 
 ```
 > eth.getBlock(eth.blockNumber).miner
 ```
 
-### Account Balance in Ether
+### Ether 계정 잔액
 
 ```
 > web3.fromWei(eth.getBalance(eth.accounts[0]))
 ```
 
-### Transfer Ether Between Accounts
+### 계정 간 Ether 전송
 
-First get the account numbers by doing
+다음과 같이 계정을 알아냅니다.
 
 `> eth.accounts`
 
-Then unlock the account you are sending from
+보내는 계정을 언락합니다.
 
 `> personal.unlockAccount( <from account> )`
 
@@ -190,31 +190,31 @@ eg.
 
 `> personal.unlockAccount(eth.accounts[0])`
 
-Finally transfer 1 ether
+1 ether를 보냅니다.
 
 ```
 > eth.sendTransaction({from: "<from account>", to: "<to account>", value: web3.toWei(1, "ether")})
 ```
 
 
-### Exit
+### 엑시트
 
 ```
 > exit
 ```
 
-(This will also stop the node from running if it was started using `$ geth console` (as opposed to `$ geth attach`))
+(`$ geth attach`가 아닌) `$ geth console`를 통해 노드를 시작한 경우 노드를 중단합니다.)
 
 
 
-## Connect to Other Nodes on Your Network
+## 네트워크의 다른 노드와 연결하기
 
-1. Get the IP of the node : `$ ifconfig|grep netmask|awk '{print $2}'`
+1. 노드의 IP 가져오기: `$ ifconfig|grep netmask|awk '{print $2}'`
 
-2. Get the enode of the node : `> admin.nodeInfo.enode`
+2. 노드의 enode 가져오기: `> admin.nodeInfo.enode`
 
-3. REPLACE `[::]` in the enode string with the `[<ip address>]`
+3. enode 문자열에서 REPLACE `[::]`를 `[<ip address>]`로 변경합니다.
 
-4. On your console `> admin.addPeer(< the enode string with the ip address in it>)`
+4. 콘솔에서 `> admin.addPeer(<ip 주소가 있는 enode 문자열>)`
 
 

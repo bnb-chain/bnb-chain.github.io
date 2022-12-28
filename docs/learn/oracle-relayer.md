@@ -1,19 +1,19 @@
 ---
-sidebar_label: Oracle Relayer
+sidebar_label: 오라클 릴레이어
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Oracle Relayer
+# 오라클 릴레이어
 
-The relayer is a service which monitors events on BSC, builds and broadcasts transactions to BC. Each validator operator should maintain its own relayer service. The relayer service requires to have access to the validator operator private key. All relayer service independently witness the peggy contract events, then build transactions to claim events to BC oracle module.
+릴레이어는 BSC에서 이벤트를 모니터링하여 BC로 트랜잭션을 생성하고 전파하는 서비스입니다. 각 검증자 운영자는 자체 릴레이어 서비스를 유지해야 합니다. 릴레이어 서비스는 검증자 운영자 개인키에 대한 액세스 권한을 요구합니다. 모든 릴레이어 서비스는 개별적으로 페기 컨트랙트(peggy contract) 이벤트를 확인한 다음 트랜잭션을 생성하여 BC 오라클 모듈에 이벤트를 전달합니다.
 
-The relay process:
+릴레이 프로세스는 다음과 같습니다.
 
-* Continually listen for cross chain event
-* Parse the cross-chain transfer parameters from event data
-* Use this information to build an unsigned BC oracle transaction
-* Sign and broadcast transaction.
+* 크로스 체인 이벤트를 지속적으로 조회합니다.
+* 이벤트 데이터에서 크로스 체인 전송 파라미터를 파싱합니다.
+* 이 정보를 사용하여 서명되지 않은 BC 오라클 트랜잭션을 생성합니다.
+* 트랜잭션에 서명하고 전파합니다.
 
 
-GitHub Implementation link: <https://github.com/bnb-chain/oracle-relayer>
+GitHub 구현 링크: <https://github.com/bnb-chain/oracle-relayer>

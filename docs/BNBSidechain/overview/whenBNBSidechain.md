@@ -1,23 +1,23 @@
 ---
-sidebar_label: When to Choose BNB Sidechain
+sidebar_label: 언제 BNB 사이드 체인을 사용하나요
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# When to Choose BNB Sidechain
+# 언제 BNB 사이드 체인을 사용하나요
 
-BNB Sidechain is recommended for large decentralized applications with more than 100k Daily Active Users (DAUs). It is designed to be the go-to choice for any application that wants to build its own chain with high speed, ultra-low gas fee, and its own gas token.
+BNB 사이드 체인은 10만명 이상의 일일 활성 사용자(DAU)를 지닌 대형 탈중앙화 어플리케이션에 사용하는 것을 추천합니다. 사이드 체인은 높은 스피드, 매우 낮은 가스비와 자체 가스 토큰을 지닌 자체 체인을 도입하려는 어플리케이션에 적합하도록 설계되었습니다.
 
-## Benefits of Choosing BNB Sidechain
+## BNB 사이드 체인의 장점
 
-* ### **Own Your Own Blockchain and Gas Token**
-Introduce more utilities through Gas tokens. Have flexibility in designing your own validator set and tools.
+* ### **자체 블록체인과 가스 토큰을 운영하세요**
+가스 토큰을 통해 더 많은 기능을 구현하세요. 자체 검증인 집합과 도구를 통해 더 유연하게 설계할 수 있습니다.
 
-* ### **High TPS, Ultra Low Gas Fees, and Full EVM Compatibility**
-Sustainable growth. Great user experience. Assurance of consistent performance on the network.
+* ### **높은 TPS, 매우 낮은 가스비, 그리고 EVM 완전 호환**
+지속 가능한 성장이 가능하고, 뛰어난 사용자 경험을 제공하며, 네트워크의 안정적인 성능을 보장합니다.
 
-* ### **Backed by the Largest Ecosystems by BSC and BNB Sidechain**
-BSC and BNB Sidechain are seamlessly integrated and BSC DeFi/NFT liquidity and user base (>2M DAU ATH).
+* ### **BSC 및 BNB 사이드 체인이란 최대 규모의 생태계로부터 지원**
+BSC와 BNB 사이드 체인과 완벽하게 통합되고 BSC DeFi/NFT 유동성과 사용자들이 따라옵니다 (최대 200만명 DAU).
 
-* ### **Free of Programming Languages Constraints or API Standards**
-BNB Sidechain is a set of smart contracts written in any possible programming language. The contract executor itself can be anyone and work in any way; BNB Sidechain does not require the use of any specific set of programming languages or API standards.
+* ### **프로그래밍 언어 제약 및 API 표준으로부터 자유로움**
+BNB 사이드 체인은 어떤 프로그래밍 언어로도 작성 가능한 스마트 계약의 집합입니다. BNB 사이드 체인은 특정 프로그래밍 언어나 API 표준을 요구하지 않기 때문에 어떤 환경에서든 실행할 수 있고 어떤 방향으로든 작동시킬 수 있습니다.

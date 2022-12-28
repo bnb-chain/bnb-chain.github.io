@@ -1,140 +1,140 @@
 ---
-sidebar_label: Cross-Chain API
+sidebar_label: 크로스 체인 API
 sidebar_position: 2
 hide_table_of_contents: false
 ---
-# Cross-Chain API
+# 크로스 체인 API
 
-To facilitate querying cross chain transactions between BNB Beacon Chain and BNB Smart Chain, following apis are provided.
+BNB 비컨 체인과 BNB 스마트 체인 간 크로스 체인 트랜잭션 쿼리를 돕기 위해 다음과 같은 API가 제공됩니다.
 
-Mainnet base path: <https://api.bnbchain.org>
+메인넷 base 경로: <https://api.bnbchain.org>
 
-**Version:** 1.0.0
+**버전:** 1.0.0
 
 
 ## /cross_chain/v1/transfer_in_txs?address={address}
-### Method
+### 메서드
 GET
 
-### Summary
-Query transfer in cross chain transactions.
+### 요약
+크로스 체인 트랜잭션에서 전송을 쿼리합니다.
 
-### Parameters
+### 매개변수
 
-| Name      | Located in | Description                                         | Required | Schema |
-|-----------|------------|-----------------------------------------------------|----------|--------|
-| address   | query      | BNB Beacon Chain address or BNB Smart Chain address | Yes      | string |
-| page      | query      | page number                                         | No       | int    |
-| page_size | query      | page size                                           | No       | int    |
+| 이름      | 위치        | 설명                                      | 필수     | 스키마  |
+|-----------|------------|-------------------------------------------|----------|--------|
+| address   | query      | BNB 비컨 체인 주소 혹은 BNB 스마트 체인 주소 | 네       | string |
+| page      | query      | 페이지 넘버                                | 아니오    | int    |
+| page_size | query      | 페이지 사이즈                              | 아니오    | int    |
 
-### Responses
+### 응답
 
-| Code | Description  | Schema                      |
+| 코드 | 설명         | 스키마                      |
 |------|--------------|-----------------------------|
 | 200  | OK           | [TransferIns](#TransferIns) |
-| 401  | Unauthorized |                             |
-| 403  | Forbidden    |                             |
+| 401  | 승인되지 않음 |                             |
+| 403  | 금지됨       |                             |
 
 
 ## /cross_chain/v1/transfer_out_txs?address={address}
-### Method
+### 메서드
 GET
 
-### Summary
-Query transfer-out cross chain transactions.
+### 요약
+전송되어 나가는 크로스 체인 트랜잭션 쿼리
 
-### Parameters
+### 매개변수
 
-| Name      | Located in | Description                                         | Required | Schema |
-|-----------|------------|-----------------------------------------------------|----------|--------|
-| address   | query      | BNB Beacon Chain address or BNB Smart Chain address | Yes      | string |
-| page      | query      | page number                                         | No       | int    |
-| page_size | query      | page size                                           | No       | int    |
+| 이름      | 위치        | 설명                                      | 필수     | 스키마  |
+|-----------|------------|-------------------------------------------|----------|--------|
+| address   | query      | BNB 비컨 체인 주소 혹은 BNB 스마트 체인 주소 | 네       | string |
+| page      | query      | 페이지 넘버                                | 아니오    | int    |
+| page_size | query      | 페이지 사이즈                              | 아니오    | int    |
 
-### Responses
+### 응답
 
-| Code | Description  | Schema                        |
+| 코드 | 설명         | 스키마                         |
 |------|--------------|-------------------------------|
 | 200  | OK           | [TransferOuts](#TransferOuts) |
-| 401  | Unauthorized |                               |
-| 403  | Forbidden    |                               |
+| 401  | 승인되지 않음 |                               |
+| 403  | 금지된       |                               |
 
 
 ## /cross_chain/v1/tx/{tx_hash}
-### Method
+### 메서드
 GET
 
-### Summary
+### 요약
 Query cross chain transaction on target chain by transaction hash.
 
-### Parameters
+### 매개변수
 
-| Name    | Located in | Description                      | Required | Schema |
-|---------|------------|----------------------------------|----------|--------|
-| tx_hash | query      | BNB Smart Chain transaction hash | Yes      | string |
+| 이름    | 위치   | 설명                        | 필수 | 스키마 |
+|---------|-------|-----------------------------|-----|--------|
+| tx_hash | query | BNB 스마트 체인 트랜잭션 해시 | 예  | string |
 
-### Responses
+### 응답
 
-| Code | Description  | Schema    |
+| 코드 | 설명          | 스키마    |
 |------|--------------|-----------|
 | 200  | OK           | [Tx](#Tx) |
-| 401  | Unauthorized |           |
-| 403  | Forbidden    |           |
+| 401  | 승인되지 않음 |           |
+| 403  | 금지된        |           |
 
 
 ## /cross_chain/v1/reverse_tx/{tx_hash}
-### Method
+### 메서드
 GET
 
-### Summary
-Query source transaction (the transaction on the other chain) by the transaction hash on target chain.
+### 요약
+목표(target) 체인의 트랜잭션 해시에서 source 트랜잭션 (다른 체인의 트랜잭션) 쿼리
 
-### Parameters
+### 매개변수
 
-| Name    | Located in | Description                       | Required | Schema |
-|---------|------------|-----------------------------------|----------|--------|
-| tx_hash | query      | BNB Beacon Chain transaction hash | Yes      | string |
+| 이름    | 위치   | 설명                       | 필수 | 스키마 |
+|---------|-------|----------------------------|------|--------|
+| tx_hash | 쿼리   | BNB 비컨 체인 트랜잭션 해시 | 예   | string |
 
-### Responses
+### 응답
 
-| Code | Description  | Schema                  |
+| 코드 | 설명          | 스키마                  |
 |------|--------------|-------------------------|
 | 200  | OK           | [ReverseTx](#ReverseTx) |
-| 401  | Unauthorized |                         |
-| 403  | Forbidden    |                         |
+| 401  | 승인되지 않음 |                         |
+| 403  | 금지된        |                         |
 
-## Models
+## 모델
 
 ### Tx
 
-| Name                | Type    | Description                               | Required |
-|---------------------|---------|-------------------------------------------|----------|
-| has_refund          | boolean | whether the transaction has been refunded | Yes      |
-| cross_chain_tx_hash | string  | transaction hash on the other chain       | Yes      |
-| refund_tx_hash      | string  | refund transaction hash if exists         | No       |
+| 이름                | 타입     |  설명                         | 필수    |
+|---------------------|---------|-------------------------------|--------|
+| has_refund          | boolean | 트랜잭션이 환불되었는지 여부    | 예      |
+| cross_chain_tx_hash | string  | 다른 체인에서의 트랜잭션 해시   | 예      |
+| refund_tx_hash      | string  | 존재 시 환불 트랜잭션 해시      | 아니오  |
 
 ### ReverseTx
 
-| Name                   | Type   | Description                                | Required |
-|------------------------|--------|--------------------------------------------|----------|
-| original_chain_tx_hash | string | source transaction hash on the other chain | Yes      |
+| 이름                   | 타입    |  설명                             | 필수 |
+|------------------------|--------|-----------------------------------|------|
+| original_chain_tx_hash | string | 다른 체인에서 source 트랜잭션 해시  | 예   |
 
 ### TransferIns
 
-| Name            | Type  | Description                                 | Required |
-|-----------------|-------|---------------------------------------------|----------|
-| page            | int   | page number                                 | Yes      |
-| page_size       | int   | page size                                   | Yes      |
-| total_count     | int   | total transactions                          | Yes      |
-| transfer_in_txs | array | transfer-in transaction hashes              | Yes      |
-| original_txs    | array | the corresponding source transaction hashes | Yes      |
+| 이름            | 타입   |  설명                               | 필수 |
+|-----------------|-------|-------------------------------------|------|
+| page            | int   | 페이지 넘버                          | 예   |
+| page_size       | int   | 페이지 사이즈                        | 예   |
+| total_count     | int   | 총 트랜잭션                          | 예   |
+| transfer_in_txs | array | 들어오는(transfer-in) 트랜잭션 해시   | 예   |
+| original_txs    | array | 대응되는 source 트랜잭션 해시         | 예   |
 
 ### TransferOuts
 
-| Name             | Type  | Description                                 | Required |
-|------------------|-------|---------------------------------------------|----------|
-| page             | int   | page number                                 | Yes      |
-| page_size        | int   | page size                                   | Yes      |
-| total_count      | int   | total transactions                          | Yes      |
-| transfer_out_txs | array | transfer-out transaction hashes             | Yes      |
-| original_txs     | array | the corresponding source transaction hashes | Yes      |
+| 이름             | 타입   |  설명                               | 필수 |
+|------------------|-------|-------------------------------------|------|
+| page             | int   | 페이지 넘버                          | 예   |
+| page_size        | int   | 페이지 사이즈                        | 예   |
+| total_count      | int   | 총 트랜잭션                          | 예   |
+| transfer_out_txs | array | 나가는(transfer-out) 트랜잭션 해시    | 예   |
+| original_txs     | array | 대응되는 source 트랜잭션 해시         | 예   |

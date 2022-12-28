@@ -1,112 +1,108 @@
 ---
-sidebar_label: Wallets
+sidebar_label: 지갑
 sidebar_position: 2
 ---
 
-# ZkBNB Wallets
+# ZkBNB 지갑
 
-## L1 Wallet Support Introduction
+## L1 지갑 지원 소개
 
-ZkBNB is built on ZK Rollup architecture.
-ZkBNB bundle (or “roll-up”) hundreds of transactions off-chain and generates cryptographic proof.
+ZkBNB는 ZK 롤업 아키텍처 상에서 만들어졌습니다.
+ZkBNB는 오프체인 상의 수백 개 트랜잭션을 번들 단위로 묶고 암호학적 증거를 생성합니다.
 
-For convenience of user, ZkBNB implemented new version supporting L1 wallets by taking advantages of
-EIP-712 standard signature which is able to sign any structured message and supported well by the mainstream wallets. (f.g. metamask, trust wallet, etc.)
+사용자의 편의를 위해 ZkBNB는 EIP-712 표준 서명을 통해 구조화된 메세지든 서명할 수 있으며 주요 레이어1 지갑(메타마스크, 트러스트 월렛 등)을 지원하는 새로운 버전을 구현하였습니다.
 
-Any user can be accessible to ZkBNB only if the user gets wallet apps which support the EIP-712 signing scheme, and any user can easily manage their L2 assets(NFT, Tokens, etc.)
-by importing the ecdsa(secp256k1) private key to their wallets mentioned above.
+사용자는 EIP 서명 표준을 지원하는 지갑을 사용하면 누구나 ZkBNB에 접근할 수 있으며, 위에서 설명한 지갑에서 ecdsa(secp256k1) 개인 키를 기를 가져와서 간단하게 L2 자산 (NFT, 토큰 등)을 관리할 수 있습니다.
 
-**NOTE: this feature is still on development**
+**참고: 현재 이 기능은 개발 중에 있습니다**
 
-![L1_USAGE](./l1_wallet_eip712_usage.png)
+![L1_사용처](./l1_wallet_eip712_usage.png)
 
-## EIP-712 Standard Adaptation
+## EIP-712 표준 적용
 
-[EIP-712](https://eips.ethereum.org/EIPS/eip-712) is a standard for hashing and signing of typed structured data as opposed to just bytestrings. It includes a
+[EIP-712](https://eips.ethereum.org/EIPS/eip-712)은 해싱(hashing)과 타입 구조화된(typed structured) 데이터를 서명하는 표준입니다 (bytestrings를 사용하는 것과 반대).
+이는 다음을 포함합니다.
 
-* theoretical framework for correctness of encoding functions,
-* specification of structured data similar to and compatible with Solidity structs,
-* safe hashing algorithm for instances of those structures,
-* safe inclusion of those instances in the set of signable messages,
-* an extensible mechanism for domain separation,
-* new RPC call eth_signTypedData, and
-* an optimized implementation of the hashing algorithm in EVM.
+* 인코딩 함수의 정확성을 위한 이론적 프레임워크
+* 솔리디티 structs와 호환되는 구조체 데이터 세부사항 정의
+* 구조체의 인스턴스를 위한 안전한 해싱 알고리즘
+* 서명 가능한 메세지 집합에 해당 인스턴스 안전하게 포함
+* 도메인 분리를 위한 확장 메커니즘
+* 새로운 RPC가 호출하는 eth_signTypedData,
+* EVM의 적용된 해시 알고리즘의 최적화
 
-### Brief View of EIP-712 Implementation
+### EIP-712의 구현 개요
 
-EIP-712 standard is implemented as below
+EIP-712 표준은 아래와 같이 적용되었습니다.
 
-![EIP_BRIEF_VIEW](./eip_brief_view.svg)
+![EIP_개요](./eip_brief_view.svg)
 
-Below is the encode and sign flow from bottom to top.
+아래는 암호화와 서명 구조를 아래서부터 위로 다룹니다.
 
-1. hash of message type, we call it **hash(type)**
-2. rawEncode of hash(type) and message entity properties, we call it **rawEncode result**. rawEncode result is rawEncode(hash(type), properties...)
-3. hash of rawEncode result, we call it **hashStruct(message)**
-4. same structure as hashStruct(message) for the EIP712Domain hashStruct, we call it **hashStruct(EIP712Domain)**
-5. concat bytes of prefix, hashStruct(EIP712Domain), hashStruct(message), we call them **bytesConcat**.
-6. hash of bytesConcat, we call it **hash(bytesConcat)**
-7. sign the hash(bytesConcat) using the privateKey, and generate final ecdsa signature based on curve secp256k1.
+1. **hash(type)** 라 부르는 메세지 타입의 해시
+2. hash(type)의 rawEncode와 메세지 엔티티(entity) 속성을 **rawEncode result**라고 합니다. rawEncode result는 rawEncode(hash(type), properties...)와 같이 표현할 수 있습니다.
+3. rawEncode 결과의 해시를 **hashStruct(message)**
+4. ashStruct(message)와 같은 구조를 갖는 EIP712Domain의 hashStruct를 **hashStruct(EIP712Domain)**이라고 합니다.
+5. prefixd 및 hashStruct(EIP712Domain)와 hashStruct(message)를 합치면 **bytesConcat**가 나옵니다.
+6. bytesConcat의 해시를 **hash(bytesConcat)** 라고 표현합니다.
+7. 개인키를 이용해 해시(bytesConcat)를 서명하고, secp256k1을 기반으로 최종 ecdsa 서명을 생성합니다.
 
-### Elliptic Curve Adaptation
+### 타원 곡선 적용
 
-For an adaptation of EIP-712 standard signing scheme, ZkBNB switch ecc signature algorithm's elliptic curve from original eddsa to ecdsa, precisely secp256k1 which
-is used across EVM-based blockchain. 
+EIP-712 표준 서명 체계를 적용하기 위해, ZkBNB는 ecc 서명 알고리즘 타원 곡선을 기존 eddsa에서 ecdsa로 전환합니다. 정확하게는 EVM 기반 블록체인에서 사용되는 secp256k1를 사용합니다. 
 
-Moreover, in order to support ecdsa change ZkBNB switch the zksnarks proving system from groth16 to plonk, so the contract verifier switch from groth16 verifier contract to plonk verifier contract.
+또한, ecdsa으로 전환을 지원하기 위해 ZkBNB에서는 zksnarks 증명 시스템도 groth16 검증 컨트랙트를 쓰는 groth16에서 plonk 검증 컨트랙트를 사용하는 plonk로 전환합니다.
 
-*This feature is still on develop phase, and will support soon.*
+*현재 이 기능을 개발 단계이며, 곧 지원될 예정입니다.*
 
-### Hash Function Adaptation
+### 해시 함수 적용
 
-For an adaptation of EIP-712 standard signing scheme, ZkBNB switch hash algorithm from originally MIMC to Keccak256(SHA-3).
+EIP-712 표준 서명 체계를 적용하기 위해, ZkBNB는 기존 해시 알고리즘인 MIMC에서 Keccak256(SHA-3)으로 전환합니다.
 
-The keccak256 in Circuit is still in hint scope for the complexity of keccak functions, which pure implementation by circuit will add constraints more than **200K**.
+회로 상 keccak256은 여전히 keccak 함수의 복잡성에 따른 힌트 범위에 있으며, 회로에 순수 구현하는 것은 **20만**개 이상의 제약 조건이 추가됩니다.
 
-*Trick here: as we can see from [Brief View of EIP-712 Implementation](#brief-view-of-eip-712-implementation), the hash results of hashStruct(eip712domain) and hash(type) will be skipped in circuit by using a constant value, which can significantly reduce keccaks times*
+*팁: [EIP-712 구현 개요](#EIP-712의_구현_개요)에서 볼 수 있듯이, hashStruct(eip712domain)와  hash(type) 의 해시 결과는 회로에서 상수를 통해 건너 뛸 것이며, keccaks 시간을 상당히 줄일 수 있습니다*
 
-*f.g. we define prefix + hashStruct(EIP712Domain) in code as below:*
+*f.g. prefix + hashStruct(EIP712Domain)를 아래 코드와 같이 적용합니다:*
 ```golang=
 var HexPrefixAndEip712DomainKeccakHash = "1901b4c86e5ff1abb2a7aae82a5ced0f0733dfd26fbef5c4713bfbf42d46a73e21c4"
 ```
-*f.g. we definae hash(type) for transfer as below*
+*f.g. 전송을 위한 해시(타입)를 아래와 같이 적용합니다*
 ```golang=
 HexEIP712MessageTypeHash[Transfer] = "96695797a85b65c62a1eb8e28852fc7d5a34b668e127752d9a132d6d5e2d3717"
 ```
 
-### Encodes Adaptation
+### 인코드 적용
 
-For an adaptation of EIP-712 standard signing scheme, ZkBNB switch encodes of transaction from originally joining all bytes to
-EIP-712 signed typed message encoding, as described at [Brief View of EIP-712 Implementation](#brief-view-of-eip-712-implementation).
+EIP-712 표준 서명 체계를 적용하기 위해, ZkBNB는 트랜잭션의 인코딩 방식을 [EIP-712 구현 개요](#EIP-712의_구현_개요)에 설명처럼 원래 모든 바이트를 ERC-721로 합치는 방법에서 서명된 타입메세지로(typed message)로 인코딩합니다.
 
-Basically the encode switched to a
-non-standard abi.encode function, while use the type hash as the fist input and properties of transactions as others, and called as a constructor abi.encode for each transaction.
-See more about abi.encode [here](https://docs.soliditylang.org/en/v0.8.15/abi-spec.html).
+다시말해 encode는 표준이 아닌 abi.encode 함수로 변경되었으며, 타입 해시를 첫 입력값으로 하고 나머지에 특성을 입력하는 생성자 abi.encode를 각 트랜잭션에 사용합니다.
+abi.encode에 대해서는 [여기](https://docs.soliditylang.org/en/v0.8.15/abi-spec.html)를 참고하세요.
 
-And the message of every transaction is described in [Transactions Type Definition](#typed-message-definition-of-all-transactions).
-The abi.encode in Circuit is still in hint scope.
+모든 트랜잭션의 메세지는 [트랜잭션 유형 정의](#typed-message-definition-of-all-transactions)에 소개되어 있습니다.
+Circuit의 abi.encode는 여전히 힌트 범위에 있습니다.
 
-## Typed Message Signature
+## 타입메세지 서명
 
-Below is the typescript definition of TypedMessage. The TypedMessage use types as types definition, and primaryType as the selected encode types, and message as the values to be signed, the domain here is EIP712Domain.
+아래는 타입메세지(TypedMessage)의 타입스크립트 정의입니다. 타입메세지는 타입 정의를 위해 types를 사용하며, primaryType을 정해진 인코딩 유형으로 설정하며, message를 서명해야 하는 값으로, 도메인을 EIP712Domain으로 설정합니다.
 
 ```typescript=
 /**
-* This is the message format used for `signTypeData`, for all versions
-* except `V1`.
+* `signTypeData`에 사용된 메세지 형식이며,
+* `V1`을 제외한 모든 버전에서 사용됩니다.
 *
-* @template T - The custom types used by this message.
-* @property types - The custom types used by this message.
-* @property primaryType - The type of the message.
-* @property domain - Signing domain metadata. The signing domain is the intended context for the
-* signature (e.g. the dapp, protocol, etc. that it's intended for). This data is used to
-* construct the domain seperator of the message.
-* @property domain.name - The name of the signing domain.
-* @property domain.version - The current major version of the signing domain.
-* @property domain.chainId - The chain ID of the signing domain.
-* @property domain.verifyingContract - The address of the contract that can verify the signature.
+* @template T - 메세지에서 사용한 커스텀 유형.
+* @property types - 메세지에서 사용한 커스텀 유형.
+* @property primaryType - 메세지 유형.
+* @property domain - 도메인 메타데이터 서명. 서명 도메인 서명에 대한 컨텍스트(context)입니다 
+* (예시. dapp, 프로토콜 등 의도된 맥락에 사용).
+* 데이터는 메세지의 분리기를 만들기 위해 사용됩니다.
+* @property domain.name - 서명하는 도메인의 이름.
+* @property domain.version - 서명하는 도메인의 버전.
+* @property domain.chainId - 서명하는 도메인의 체인 ID.
+* @property domain.verifyingContract - 서명 검증할 수 있는 컨트랙트의 주소.
 * @property domain.salt - A disambiguating salt for the protocol.
-* @property message - The message to be signed.
+* @property message -서명받을 주소. The message to be signed.
 */
 export interface TypedMessage<T extends MessageTypes> {
    types: T;
@@ -122,11 +118,11 @@ export interface TypedMessage<T extends MessageTypes> {
 }
 ```
 
-### Typed Message Definition of All Transactions
+### 모든 트랙잭션에 대한 메세지 유형 정의
 
-Below is the typescript definition of transaction and EIP712Domain. These typed message can be used in all wallets that support EIP-712 sign scheme and thus generate the signature ready for L2 verification and execution, finally rollup proof generation.
+아래는 트랜잭션과 EIP721 도메인에 대한 타입스크립트 정의입니다. 이러한 유형으로 분류된 메세지는 EIP-721 서명 체계를 지원하는 모든 지갑에서 사용할 수 있으며 L2 검증, 실행 준비 및 롤업 증거 생성을 위한 서명으로 사용할 수 있습니다.
 
-#### EIP712Domain
+#### EIP712 도메인
 ```typescript=
     const types = {
         EIP712Domain: [
@@ -138,7 +134,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
         ],
 ```        
 
-#### EIP712Domain Static Value
+#### EIP712 도메인 정적 값
 ```typescript=
     const salt = Buffer.from(
         '0xf2d857f4a3edcb9b78b4d503bfe733db1e3f6cdc2b7971ee739626c97e86a558',
@@ -153,8 +149,8 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
     };    
 ```        
 
-#### Message
-##### Transfer
+#### 메세지
+##### 전송
 ```typescript=
         Transfer: [
             { name: 'FromAccountIndex', type: 'uint256' },
@@ -171,7 +167,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```
-##### Withdraw
+##### 출금
 ```typescript=
         Withdraw: [
             { name: 'FromAccountIndex', type: 'uint256' },
@@ -186,7 +182,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```        
-##### CreateCollection
+##### 컬렉션 생성
 ```typescript=
         CreateCollection: [
             { name: 'AccountIndex', type: 'uint256' },
@@ -198,7 +194,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```        
-##### MintNft
+##### NFT 민팅
 ```typescript=
         MintNft: [
             { name: 'CreatorAccountIndex', type: 'uint256' },
@@ -215,7 +211,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```        
-##### TransferNft
+##### NFT 전송
 ```typescript=
         TransferNft: [
             { name: 'FromAccountIndex', type: 'uint256' },
@@ -231,7 +227,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```        
-##### WithdrawNft
+##### NFT 출금
 ```typescript=
         WithdrawNft: [
             { name: 'AccountIndex', type: 'uint256' },
@@ -245,7 +241,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```        
-##### CancelOffer
+##### 오퍼 취소
 ```typescript=
         CancelOffer: [
             { name: 'AccountIndex', type: 'uint256' },
@@ -258,7 +254,7 @@ Below is the typescript definition of transaction and EIP712Domain. These typed 
             { name: 'ChainId', type: 'uint256' },
         ],
 ```     
-##### AtomicMatch
+##### 아토믹 매칭
 ```typescript=
         AtomicMatch: [
             { name: 'sellerAccountIndex', type: 'uint256' },

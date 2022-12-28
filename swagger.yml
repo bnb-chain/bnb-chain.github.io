@@ -156,7 +156,7 @@ paths:
             $ref: "#/definitions/Error"
   /api/v1/peers:
     get:
-      summary: Get network peers.
+      summary: 네트워크 피어를 가져옵니다.
       description: |
         Gets the list of network peers.
 
@@ -277,7 +277,7 @@ paths:
         type: string
   /api/v1/tx/{hash}:
     get:
-      summary: Get a transaction.
+      summary: 트랜잭션을 가져옵니다.
       description: |
         Gets transaction metadata by transaction ID. By default, transactions are returned in a raw format. You may add `?format=json` to the end of the path to obtain a more readable response.
 
@@ -1285,7 +1285,7 @@ paths:
       description: |
         Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
 
-        **Rate Limit:** 5 requests per IP per second.
+        **Rate Limit:** IP 하나 당 초당 5개 요청.
 
         **Rate Limit:** 60 requests per IP per minute.
       operationId: getTransactionsInBlock
@@ -1516,7 +1516,7 @@ paths:
     get:
       tags:
         - mini
-      summary: Gets a list of available mini tokens.
+      summary: 미니 토큰 리스트를 가져옵니다.
       operationId: getMiniTokens
       parameters:
         - in: query

@@ -1,83 +1,83 @@
-# Incentive Mechanism for BSC Relayer 
+# BSC 릴레이어를 위한 인센티브 메커니즘
 
-The BSC relayers play an important role in relaying interchain packages from BC to BSC.
-All BSC relayers build their stable infrastructure, watch any event happened on the Beacon Chain, and act timely to get paid accordingly. The following discussion is about how to distribute the rewards to let the relayers are willing to make a long-term contribution.
+BSC 릴레이어는 BC에서 BSC로 체인 간 패키지를 중계하는 데 중요한 역할을 합니다.
+모든 BSC 릴레이어는 안정적인 인프라를 구축하고, 비콘 체인에서 발생한 모든 이벤트를 관찰하며, 적시에 조치를 취해 그에 따른 비용을 지불합니다. 이하 내용은 중계자들이 기꺼이 장기적인 기여를 할 수 있도록 보상을 분배하는 방법에 관한 것입니다.
 
-## Principle
-Considering the following points:
+## 원칙
+다음 사항을 고려하십시오.
 
-1. Fairness, competitiveness, and redundancy: Everyone has a chance to run a relayer even on cheap hardware. It should be hard for someone to get all the rewards.
-2. Simplicity.
-3. Robustness: The relayer may have a strategy to make its largest profit accordingly, under any condition, the interchain communication should not be blocked.
-4. Low Risk: The relayer should take a little risk to play in this game. For the top N relayers, they should gain enough rewards to cover the cost.
+1. 공정성, 경쟁력 및 중복성. 누구나 저렴한 하드웨어에서도 릴레이어를 실행할 수 있는 기회가 있습니다. 누군가가 보상을 독차지하는 것은 어려울 것입니다.
+2. 단순성.
+3. 견고성. 릴레이어는 어떠한 조건에서도 체인 간 통신이 차단되어서는 안 되며, 그에 따라 최대의 이익을 얻기 위한 전략을 가질 수 있습니다.
+4. 낮은 리스크. 릴레이어는 이 게임에서 뛰기 위해 약간의 위험을 감수해야 합니다. 상위 N 릴레이어의 경우 비용을 감당할 수 있는 충분한 보상을 받아야 합니다.
 
-It is tough hard to achieve all these goals; we make some trade-off on robustness and low risk in the following design.
+이러한 모든 목표를 달성하는 것은 어렵습니다. 우리는 다음 설계에서 견고성과 낮은 위험성에 대해 약간의 절충을 합니다.
 
-## Rewards Source and Allocation
+## 보상 출처와 할당
 
-We have three reward sources:
+다음과 같은 세 가지 보상 소스가 있습니다.
 
-1. Users paid rewards: Users who send `bind` or `cross chain transfer` transactions need to pay extra fee as BSC relayer rewards.
-2. System rewards: Rewards comes from `SystemReward` contract.
+1. 사용자 지불 보상. `bind` 또는 `cross chain transfer` 트랜잭션을 보내는 사용자는 BSC 릴레이어 보상으로 추가 수수료를 지불해야 합니다.
+2. 시스템 보상. `SystemReward` 컨트랙트에서 보상을 받습니다.
 
-The role of relayers and their rewards comes from:
+릴레이어의 역할과 보상 출처는 다음과 같습니다.
 
-| Relayer Behavior | Rewards come from |
+| 릴레이어 행동 | 보상 출처 |
 | --------------------------------------------------- | ------------- |
-|User packages(bind, unbind, transfer) from BC to BSC | Users pay for the reward |
-|System packages(staking, slash, governance) from BC to BSC | System reward |
-|Relayer for sync tendermint header to light client contract  |System reward|
+| BC에서 BSC로 사용자 패키지(바인드, 언바인드, 전송) | 사용자가 보상에 대해 지불합니다 |
+| BC에서 BSC로의 시스템 패키지(스테이킹, 슬래시, 거버넌스) | 시스템 보상 |
+|텐더민트 헤더를 라이트 클라이언트 계약으로 동기화하기 위한 릴레이어 |시스템 보상|
 
-## Rewards Distribution Formula
+## 보상 분배 공식
 
-To prevent the relayer who has the best network always winning the game, we gather the reward into two reward pools (header relayer reward pool and package relayer reward pool) and reallocate to the relayers to achieve redundancy:
+최고의 네트워크를 가진 릴레이어가 항상 게임에서 승리하는 것을 방지하기 위해, 우리는 보상을 두 개의 보상 풀(헤더 릴레이어 보상 풀과 패키지 릴레이어 보상 풀)로 모으고 릴레이어로 재할당하여 중복성을 달성합니다.
 
-1. *S* is a constant number of transactions that in around. Each round, there are *S* transactions, and the last transaction of the round will trigger reward distribution.
-2. *N* is the maximum weight that a relayer can gain in a round. *R* is the total reward in this round. *Ki* is the number of successful transactions from Relayer i. *Wi* is the reward weight of Relayer i. *Ri* is the rewards of Relayer i.
-3. *R* is the total reward in this round.
-4. *Ki* is the number of successful transactions from Relayer i.
-5. *Wi* is the reward weight of Relayer i.
-6. *Ri* is the rewards of Relayer i.
+1. *S*는 약 2천 개에 달하는 한 라운드의 트랜잭션 수입니다. 매 라운드마다 *S* 트랜잭션이 있으며, 마지막 라운드의 트랜잭션이 보상 분배를 촉발합니다.
+2. *N*은 릴레이어가 한 라운드에서 얻을 수 있는 최대 가중치입니다. *R*은 이 라운드에서의 총 보상입니다. *Ki*는 릴레이어 i의 성공적인 거래 트랜잭션입니다. *Wi*는 릴레이어 i의 보상 가중치이며 *Ri*는 릴레이어 i의 보상입니다.
+3. *R*은 이 라운드의 총 보상입니다.
+4. *Ki*는 릴레이어 i의 성공한 트랜잭션 수입니다.
+5. *Wi*는 릴레이어 i의 보상 가중치입니다.
+6. *Ri*는 릴레이어 i의 보상입니다.
 
-### Weight formula for package relayers:
+### 패키지 릴레이어의 가중치 공식
 
 ![formula](../../static/img/packageRelayerRewardformula.png)
 
-`Rp` represents the total balance of package reward pool.
+`Rp`는 패키지 보상 풀의 총 잔액을 나타냅니다.
 
-### Weight formula for header relayers:
+### 헤더 릴레이어의 가중치 공식
 
-![formula](../../static/img/headerRelayerRewardFormula.png)
+![formula](../../static/img/headerRelayerRewardFormula.png)입니다.
 
-`Rh` represents the total balance of header reward pool.
+`Rp`는 헤더 보상 풀의 총 잔액을 나타냅니다.
 
-### We consider setting these parameters a reasonable value:
+### 이러한 파라미터를 합리적인 값으로 설정하는 것을 고려합니다.
 
-1. S to be 100. Some rewards come from gas fee, we can not guarantee enough rewards during a small round, a large round may dismiss deviation and let relayer give up relaying when it has made its max profit.
-2. N to be 40. We think the redundancy of relayer around 3-5 is best. If N is too large, the redundancy will decrease. If N is too small, then there will not be enough relayers. Set N as 40 may be a reasonable value, at least 3 relayers can compete.
-3. The relayFee of a single package and the ratio of reward for header relayer can be modified by governance on Beacon Chain.
+1. S는 100입니다. 일부 보상은 가스 요금에서 비롯되며, 소규모 라운드에서 충분한 보상은 보장할 수 없습니다. 대규모 라운드는 편차를 무시하고 최대 이익을 얻었을 때 릴레이어가 릴레이를 포기하도록 할 수 있습니다.
+2. N은 40이 됩니다. 우리는 릴레이어 중복성(redundancy)이 3-5 정도 되는 것이 최선이라고 생각합니다. N이 너무 크면 중복성이 감소합니다. N이 너무 작으면 릴레이어가 충분하지 않습니다. N을 40으로 설정하면 적절한 값이 될 수 있으며, 최소 3개의 릴레이어가 경쟁할 수 있습니다.
+3. 단일 패키지의 릴레이 수수료와 헤더 릴레이어에 대한 보상 비율은 비콘 체인의 거버넌스에 의해 수정될 수 있습니다.
 
-### Distribution And Claim Reward
+### 분배 및 보상 지급
 
-In each round, the last package delivery transaction will trigger the reward distribution. Both the header reward pool and package reward pool will be distributed. However, the reward won't be paid directly to relayer accounts. The distribution algorithm just calculates rewards for all relayers and writes down the amounts. Relayers are required to actively send transactions to claim their own accumulated rewards.
+각 라운드에서 마지막 패키지 전달 트랜잭션이 보상 분배를 진행합니다. 헤더 리워드 풀과 패키지 리워드 풀이 모두 배포됩니다. 하지만 보상금은 릴레이어 계정으로 직접 지급되지 않습니다. 분배 알고리즘은 모든 릴레이어에 대한 보상을 계산하고 금액을 적습니다. 릴레이어는 스스로 축적된 보상을 지급받기 위해 적극적으로 트랜잭션을 보내야 합니다.
 
-## Other Consideration
+## 기타 고려 사항
 
-### System Reward Pool
+### 시스템 보상 풀
 
-The system reward pool can hold at most 100BNB for example, to prevent the pool get unnecessary income.
+예를 들어 시스템 보상 풀은 풀에서 불필요한 수입을 얻지 못하도록 최대 100BNB를 가지고 있을 수 있습니다.
 
-The client needs to query the balance of the contract to decide whether to distribute 1/16 of the transaction fee to the contract or not. It seems not that fair that some validators pay more to the reward pool than others, but this is random and will eventually become fair in the long run.
+클라이언트는 거래 수수료의 16분의 1을 계약에 분배할지 여부를 결정하기 위해 계약 잔액을 조회해야 합니다. 일부 검증자가 다른 검증자보다 보상 풀에 더 많은 비용을 지불하는 것은 공정하지 않아 보이지만, 이는 무작위적이며 장기적으로는 결국 공정하게 될 것입니다.
 
-If there are not enough rewards in the pool, all the tokens in the pool will be distributed.
+풀에 충분한 보상이 없으면 풀에 있는 모든 토큰이 배분됩니다.
 
-Block header sync transaction with `validatorSet` change will claim reward to relayers from system reward pool directly.
+`validatorSet` 변경 사항이 있는 블록 헤더 동기화 트랜잭션은 시스템 보상 풀에서 직접 릴레이어에게 보상을 청구합니다.
 
-### Foul Play
+### 부정 행위
 
-For example, a relayer may deliver packages using a different address in round robin, we can’t recognize this. We try to introduce registration and BNB deposit for relayer to raise the cost of cheat.  How it works:
+예를 들어 릴레이어가 다른 주소를 사용하여 중복으로 패키지를 전달할 수 있지만, 우리는 이것을 인식할 수 없습니다. 우리는 부정 행위의 비용을 높이기 위해 릴레이어 등록과 BNB 예금을 도입하려고 합니다. 작동 방식은 다음과 같습니다:
 
-* A BSC account needs to call the `register` of [RelayerHub](https://bscscan.com/address/0x0000000000000000000000000000000000001006) contract to deposit 100BNB(more or less than 100 BNB will be rejected) to become a BSC relayer.
-* Only a valid relayer can sync Beacon Chain Headers and deliver cross-chain packages.
-* Relayer can withdraw its deposit, but we will charge 0.1 BNB as the transaction fee so that it will receive 99.9 BNB back.
-* The charged fee will directly go to the system reward pool.
+* BSC 계정은 BSC 릴레이어가 되기 위해 [RelayerHub](https://bscscan.com/address/0x0000000000000000000000000000000000001006) 컨트랙트의 `register`를 호출하여 100BNB(100BNB보다 부족하거나 초과되면 거부됩니다)를 예치해야 합니다.
+* 유효한 릴레이어만 비콘 체인 헤더를 동기화하고 크로스 체인 패키지를 전달할 수 있습니다.
+* 릴레이어는 보증금을 인출할 수 있지만, 트랜잭션 수수료로 0.1 BNB를 청구하여 99.9 BNB를 돌려받도록 할 것입니다.
+* 청구된 요금은 시스템 보상 풀로 직접 이동됩니다.

@@ -3,91 +3,91 @@ sidebar_label: imToken
 hide_table_of_contents: false
 ---
 
-# How to use BNB Smart Chain (BSC) on imToken? 
-An introduction on how to start with using BSC on the imToken wallet
+# 아임토큰(imToken)에서 BNB 스마트 체인(BSC)을 사용하는 방법
+아임토큰 지갑에서 BSC를 사용하는 방법을 소개합니다.
 
-## How to Download the imToken Wallet?
-1. To get started, download imToken wallet via our official website [token.im](https://token.im/), the Apple App Store or Google Play.
+## 아임토큰 지갑을 다운로드하는 방법
+1. 시작하려면 공식 웹 사이트 [token.im](https://token.im/), 애플 앱스토어 또는 구글 플레이를 통해 아임토큰 지갑을 다운로드하세요.
 
-2. Android phone users best download via Google Play or the official website.
+2. 안드로이드 사용자는 구글 플레이 또는 공식 웹 사이트를 통해 다운로드하는 것이 가장 좋습니다.
 
-3. Make sure to download the official, genuine App, since there are scammers out there providing fake apps.
+3. 가짜 앱을 제공하는 사기꾼들이 있기 때문에 공식 정품 앱을 반드시 다운로드하십시오.
 
-4. Apple users can use the App Store. Here as well, please double check the app developer being IMTOKEN PTE.LTD. Be aware of scam apps.
+4. 애플 사용자는 앱 스토어를 사용할 수 있습니다. 앱 개발자가 IMTOKEN PTE.LTD.인지 확인을 해주세요. 스캠에 유의하시기 바랍니다.
 ![img](assets/10.png)
 
-## How to Create an imToken Identity Wallet?
-1. Open imToken, click "Create Identity" and click to agree to the terms of service.
+## 아임토큰 아이덴티티 월럿 생성 방법
+1. 아임토큰을 열고 "Create Identity"를 클릭한 다음 서비스 약관에 동의하세요.
 
-2. Fill in your identity name and wallet password. Next, click "Create", copy the backup mnemonic phrase with pen and paper and keep it in a safe place. Confirm the mnemonic words in order again and click "Next" to successfully create a wallet.
+2. Identity 이름과 지갑 비밀번호를 입력하세요. 그런 다음 "만들기"를 클릭하고 백업 니모닉 문구를 펜과 종이로 받아 적어 안전한 장소에 보관합니다. 니모닉 단어를 순서대로 다시 확인하고 "다음"을 클릭하면 지갑이 성공적으로 생성됩니다.
 
-## What is BSC?
-BSC is the abbreviation of BNB Smart Chain. The chain adopts PoSA (Proof of Staked Authority), which means holders of BNB (BSC's native token) vote to select 21 validators that are responsible for on-chain transaction verification and block production.
+## BSC란?
+BSC는 BNB 스마트 체인의 약자입니다. BNB(BSC의 네이티브 토큰) 투표 보유자가 온체인 거래 검증과 블록 생산을 담당하는 21명의 검증자를 선정하는 것을 의미하는 PoSA(Proof of Staked Authority)를 채택하고 있습니다.
  
-Since BSC is EMV-compatible, developers can easily deploy smart contracts and build DApps on the chain. Compared with Ethereum, BSC has lower gas fees and faster transaction settlement with lower security guarantees.
+BSC는 EMV와 호환되므로 개발자는 스마트 컨트랙트를 쉽게 배포하고 체인에 DApp을 구축할 수 있습니다. BSC는 이더리움에 비해 가스요금이 저렴하고 보안 보증이 낮아 트랜잭션 확정이 빠릅니다.
  
-With imToken wallet, we do not only support BSC DApps and watching token balances but also the DeFi Portfolio feature, providing a holistic BSC experience.
+imToken wallet을 사용하면 BSC DApp 및 토큰 잔액 감시뿐만 아니라 DeFi 포트폴리오 기능도 지원하여 전체적인 BSC 경험을 제공합니다.
 
 
-## How to start using BSC in imToken?
-### Switch to BSC
-Open imToken's ETH wallet and click "Ethereum Mainnet" under "Wallet" to enter the network switching page, and select "BNB Smart Chain".
+## 아임토큰에서 BSC를 사용하는 방법
+### BSC로 전환
+아임토큰의 ETH 지갑을 열고 "Wallet" 아래에 있는 "Ethereum Mainnet"을 클릭하여 네트워크 전환 페이지로 들어가 "BNB Smart Chain"을 선택합니다.
 
-After the switch is successful, you can transfer and collect funds on the BSC chain in imToken, and experience its ecosystem DApps.
+전환에 성공하면 아임토큰에서 BSC 체인을 통해 자금을 송금 및 회수할 수 있으며, BSC 체인의 에코시스템 DApp을 경험할 수 있습니다.
 
 ![img](assets/1.png)
  
-### Receiving a Payment via BSC on imToken
-Click "Receipt", copy the address or payment code and send it to the other party.
+### 아임토큰에서 BSC를 통해 송금 받기
+"Receipt"를 클릭하여 주소 또는 결제 코드를 복사하여 상대방에게 발송합니다.
 
 ![img](assets/2.png)
 
 
-### Transferring via BSC on imToken
-Click "Transfer", enter the payment address and amount, and then click "Next" to make the payment.
+### 아임토큰에서 BSC를 통해 전송하기
+"이체"를 클릭하고 결제 주소와 금액을 입력한 후 "다음"을 클릭하여 결제를 진행합니다.
 
 ![img](assets/3.png)
 
-### Ecosystem Applications
-Click on "Ecosystem Applications" on the asset homepage to view and experience recent popular DApps on the BSC chain.
+### 생태계 애플리케이션
+BSC 체인에서 최근 인기 있는 DApp을 보고 체험하려면 asset 홈페이지의 "Ecosystem Applications"를 클릭하세요.
 
 ![img](assets/4.png)
 
 
-### How to Send Funds from Binance to your imToken Wallet
+### 바이낸스에서 아임토큰 지갑으로 자금을 보내는 방법
 
-To withdraw BSC assets from Binance to imToken, you can follow the steps below. We use the BNB token as an example.
+BSC 자산을 바이낸스에서 아임토큰으로 인출하려면 아래 단계를 따릅니다. BNB 토큰을 예로 사용합니다.
 
-Click on the wallet address, enter the payment page, and click "Copy".
+지갑 주소를 클릭하고 결제 페이지를 입력한 후 "Copy"를 클릭합니다.
 
 ![img](assets/5.png)
 
-Open Binance, click "Funds"-"Withdraw", select "BNB" or other BSC-supported assets.
+바이낸스를 열고 "Funds"-"Withdraw"을 클릭한 다음 "BNB" 또는 기타 BSC 지원 자산을 선택합니다.
 
 ![img](assets/6.png)
 
-Select "BEP20 (BSC)" in "Network", paste the copied address, and enter the withdrawal password to proceed with withdrawal. Make sure it’s the correct address.
+"Network"에서 "BEP20 (BSC)"를 선택하고 복사한 주소를 붙여넣은 후 인출비밀번호를 입력하여 인출을 진행합니다. 주소가 정확한지 확인하십시오.
 
 ![img](assets/8.png)
 
 
-### Withdraw coins from imToken wallet to Binance Exchange
-If you want to recharge assets on BSC from imToken to Binance Exchange, you can follow the steps below, here is BNB as an example.
+### 아임토큰 지갑에서 바이낸스 거래소로 코인 인출하기
+BSC의 자산을 아임토큰에서 바이낸스 거래소로 재충전하려면 아래 단계를 따릅니다. 예를 들어 BNB가 있습니다.
 
-Enter Binance Exchange, click "Assets"-"Recharge", select "BNB" or other BSC-supported assets.
+바이낸스 거래소에 들어가서 "Assets"-"Recharge"을 클릭하고 "BNB" 또는 기타 BSC 지원 자산을 선택합니다.
 
 ![img](assets/6.png)
 
-Select "BEP20 (BSC)" in "Network" and click to copy the BNB recharge address.
+"Network"에서 "BEP20(BSC)"를 선택하고 클릭하여 BNB 충전 주소를 복사합니다.
 
 ![img](assets/9.png)
 
-On the asset page, click BNB to enter the transfer page, click "Transfer", paste Binance's recharge address, enter the withdrawal amount, and click "Next" to complete the transfer after paying the miner's fee.
+asset 페이지에서 BNB를 클릭하여 이체 페이지로 들어가고, "Transfer"를 클릭하고, 바이낸스의 충전 주소를 붙여넣습니다. 인출 금액을 입력한 후, "다음"을 클릭하여 전송 수수료를 지불한 후 이체를 완료하십시오.
 
 ![img](assets/2.png)
 
 
-Learn more: https://token.im
+자세한 내용: https://token.im
 
-Risk Warning: The content of this article does not constitute any form of investment advice or recommendation. imToken does not make any guarantees and promises for the third-party services and products mentioned in this article, nor assume any responsibility. Digital asset investment has risks. You should carefully evaluate these investment risks and consult with relevant professionals to make your own decisions.
+경고: 본 아티클의 내용은 어떠한 형태의 투자 조언이나 권고가 아닙니다. 아임토큰은 본 기사에 언급된 제3자 서비스 및 제품에 대해 어떠한 보증 및 약속도 하지 않으며, 어떠한 책임도 지지 않습니다. 디지털 자산 투자에는 위험이 있습니다. 이러한 투자 위험을 신중하게 평가하고 관련 전문가와 상의하여 스스로 결정해야 합니다.
 

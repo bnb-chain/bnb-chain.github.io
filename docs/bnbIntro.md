@@ -1,43 +1,43 @@
 ---
-sidebar_label: BNB Chain Overview
+sidebar_label: BNB 체인 플랫폼 개요
 ---
-# BNB Chain: An Ecosystem of Blockchains
-Build N Build Chain aka BNB Chain, one of the most popular blockchains in the world, dedicates to delivering its core infrastructure necessary for future public adoption, and always remains as a community-first and open-source ecosystem built on a permissionless and decentralized environment.
+# BNB 체인: 블록체인의 생태계
+Build N Build 체인, 줄여서 BNB Chain은 세계에서 가장 인기 있는 블록체인 중 하나로, 향후 대중화에 필요한 핵심 인프라를 제공하기 위해 노력하고 있으며, 항상 무신뢰, 탈중앙 환경을 기반으로 구축된 커뮤니티 우선의 오픈 소스 생태계로 유지될 것입니다.
 
-BNB Chain is composed of two blockchains - BNB Beacon Chain (BC) and BNB Smart Chain (BSC). The [BNB Beacon Chain](./learn/beaconIntro.md) is the blockchain component that is responsible for the governance of the BNB Chain and manages staking and voting on the BNB Chain. Whereas, the [BNB Smart Chain](./learn/intro.md) is the blokchain component that is EVM compatible, consensus layers, and with hubs to multi-chains. 
-BNB Chain, one of the most popular blockchains in the world, dedicates to delivering its core infrastructure necessary for future public adoption, and always remains as a community-first and open-source ecosystem built on a permissionless and decentralized environment.
+바이낸스 체인과 바이낸스 스마트 체인은 2022년 2월 15일부터 BNB 체인을 함께 구성했습니다. BNB 체인은 BNB 비콘 체인(이전 바이낸스 체인)과 BNB 스마트 체인(이전 바이낸스 스마트 체인)으로 구성됩니다. BNB(이전의 "바이낸스 코인")도 "Build and Build"로 이름이 변경되었습니다. 이름 변경은 사용자가 10억 명이 넘는 암호화 세계를 환영하 위한 것 뿐 아니라 향후 대중 채택에 필요한 핵심 인프라의 제공을 강화하고, 가장 중요한 것은 대규모 웹3 애플리케이션을 수용하기 위한 더 나은 생태계를 구축하기 위한 것입니다.
 
-## What is Build N Build (BNB) Chain?
-BNB Chain is comprised of:
-1. **[BNB Beacon Chain](learn/beaconIntro.md)** - BNB Chain Governance (Staking, Voting)
-2. **[BNB Smart Chain (BSC)](learn/intro.md)** - EVM compatible, consensus layers, and with hubs to multi-chains
-3. **[BNB Sidechain](BNBSidechain/overview/bs-overview.md)** - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
-4. **[ZkBNB](zkbnb/zkbnb-overview.md)** - ZkRollup solution to scale BSC as an super high performance blockchains. 
+## Build N Build (BNB) 체인이란?
+BNB 체인의 구성 요소는 다음과 같습니다:
+1. **[BNB 비콘 체인](learn/beaconIntro.md) _(previously Binance Chain)_** - BNB 체인 거버넌스 (스테이킹, 투표)
+2. **[BNB 스마트 체인 (BSC)](learn/intro.md) (_previously Binance Smart Chain)_** - EVM 호환, 합의 계층 그리고 멀티체인 허브
+3. **[BNB Sidechain](BNBSidechain/overview/bs-overview.md)** - 기존 BSC 기능을 사용하여 사용자 지정 블록체인 및 dApp 개발에 즉시 사용할 수 있는 PoS 솔루션
+4. **BNB ZkRolllup _(Coming soon)_** -  BSC를 초고성능 블록체인으로 확장하는 ZkRollup 솔루션
 
 ![BSC 2022](../static/img/assets/BNBChain2022.png)
 
-## BNB Token
-BNB stands for “**Build and Build**”. Along with _fueling_ transactions on BNB Chain (similar to gas on Ethereum), BNB also acts as a governance token. Holding BNB gives you the right to make your voice heard and is necessary for participation in BNB Chain’s decentralized on-chain governance. With this name change also comes more advancements to benefit users, projects and developers connected to the BNB Chain community.
+## BNB 토큰
 
-## Key Features
-Currently, BSC offers a considerable block size of **__140M gas ceiling__**. We plan to introduce a more advanced logic for blockchain storage and BSC client to cover it and allow further expansion.  Currently, to fully sync the BSC blockchain, validators need extensive storage and time. Scaling down the validator and node operator requirements is necessary to enable a seamless BSC experience.
+BNB는 "**Build and Build**"를 의미합니다. BNB 체인의 트랜잭션(이더리움의 가스와 유사)의 연료 역할을 해주는 것 외에 BNB는 거버넌스 토큰 역할도 합니다. BNB를 보유하면 자신의 목소리를 낼 수 있는 권리가 부여되며 BNB 체인의 탈중앙 온체인 거버넌스에 참여하기 위해 필요합니다. 이러한 이름 변경으로 BNB 체인 커뮤니티에 연결된 사용자, 프로젝트 및 개발자에게 더 많은 혜택이 제공됩니다.
 
-- New technologies, like Erigon, are being verified to decrease both time and storage demands for validators nodes while performing full sync. 
-- Working with validators and infrastructure providers to deploy new solutions to address this issue, such as  
-  - Parallel EVM
-  - Better block process pipeline
-  - Improved state caching
-  - Fast sync mode
-  - Distributed nodes 
-  - Introduce more validators to join the block production of BSC
+## 주요 기능
+BSC 2021(현재 버전)은 **_100m 가스 상한선__**의 상당한 블록사이즈를 도입하였습니다. 이를 커버하고 추가 확장이 가능하도록 블록체인 스토리지와 BSC 클라이언트를 위한 더욱 발전된 로직을 도입할 계획입니다.  현재, BSC 블록체인을 완전히 동기화하기 위해서는 검증자가 광범위한 스토리지와 시간이 필요합니다. 원활한 BSC 환경을 구현하려면 검증자 및 노드 운영자 요구사항을 축소해야 합니다.
 
-## Future Goal 
-Innovation never sleeps, and it's clear that the future of BNB Chain goes into a world of over 1 billion users. BNB Chain's mission is to build the infrastructure that powers the world's parallel virtual ecosystem, and BNB Chain's commitment to the community is that it will be: 
-- Open
-- Multi-chain
-- For creators and inventors
-- Permissionless
-- Forever decentralized
+- 에리곤(Erigon)과 같은 신기술은 전체 동기화를 수행하는 동안 검증자 노드의 시간과 스토리지 요구를 모두 줄여주는 것으로 검증되고 있습니다. 
+- 검증자 및 인프라 공급자와 협력하여 다음과 같은 문제를 해결하기 위한 새로운 솔루션을 구축하고 있습니다.
+  - 평행 EVM
+  - 개선된 블록 프로세스 파이프라인
+  - 상태 캐싱이 개선
+  - 빠른 동기화 모드
+  - 분산 노드입
+  - BSC 2022의 블록 생산에 참여할 20명의 검증자가 추가
+
+## 미래 목표
+혁신은 결코 잠을 자지 않습니다. BNB 체인의 미래는 10억 명 이상의 사용자가 있는 세계로 진입할 것이란 사실은 분명합니다. BNB 체인의 임무는 세계의 병렬 가상 생태계를 강화하는 인프라를 구축하는 것이며, 커뮤니티에 대한 BNB 체인의 약속은 다음과 같습니다. 
+- 공개
+- 다중 체인
+- 창작자와 발명가 중시
+- 무신뢰
+- 영원히 탈중앙
 
 ## Resources 
 - [Whitepaper](https://github.com/bnb-chain/whitepaper)

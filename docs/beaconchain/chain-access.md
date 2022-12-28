@@ -31,7 +31,7 @@ The transaction message and related information will be packed into `payload`, w
 
 The transaction body, memo, signature, etc. all fill in the `Standard Transaction`, encode and then broadcast out together onto Beacon Chain .
 
-### Transaction Encoding
+###트랜잭션 Encoding
 Encoding defines the way how transactions are serialized and transferred between clients and nodes,
 and different nodes themselves. [here](encoding.md) is a detailed specification on the transaction
 types and encoding logic.

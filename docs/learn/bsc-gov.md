@@ -1,55 +1,55 @@
 ---
-sidebar_label: Governance of BSC
+sidebar_label: BSC의 거버넌스
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Governance of BSC
+# BSC 거버넌스
 
-## Motivation
+## 동기
 
-There are many system parameters to control the behavior of the BSC:
+BSC의 동작을 제어하는 많은 시스템 파라미터가 있습니다.
 
-- All these parameters of BSC system contracts should be flexible: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.
+- BSC 시스템 컨트랙트의 모든 파라미터는 유연해야 합니다. 즉, 슬래싱 임계값, 체인 간 전송 수수료, 릴레이어 보상 금액 등입니다.
 
-- params of Staking/Slash/Oracle modules on BC
+- BC에서 스테이킹/슬래시/오라클 모듈의 파라미터 등이 있습니다.
 
-All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such the process will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication if needed.
+이 모든 파라미터들은 BSC 검증인 집단에 의해 스테이킹 기반 제안-투표 프로세스를 통해 결정됩니다. 이러한 프로세스는 BC에서 수행될 것이며, 필요한 경우 크로스 체인 통신을 통해 해당 시스템 컨트랙트에 의해 새로운 파라미터 값이 선택됩니다.
 
-## Design Principles
+## 디자인 원칙
 
-**For BC:**
+**BC**
 
-- Codebase reuse: Reuse most of the structure of proposal and vote, and the logic about propose and vote.
+- 코드베이스 재사용: 제안과 투표의 구조와 로직의 대부분을 재사용합니다.
 
-- Cross chain package Available at once: The cross-chain package should be available once the proposal passed.
+- 크로스 체인 패키지를 한 번에 사용 가능: 크로스 체인 패키지는 제안이 통과되면 사용 가능합니다.
 
-- Native params change take place at breath block: The param change of Staking/Slash/Oracle modules on BC take place at breath block after the proposal passed.
+- 네이티브 파라미터 변경은 breath 블록에서 이루어집니다. BC에서 스테이킹/슬래싱/오라클 모듈의 파라미터 변경은 제안이 통과된 후 breath 블록에서 발생합니다.
 
-**For BSC:**
+**BSC**
 
-- Uniform interface. The contracts who are interested in these parameters only need to implement the same interface.
+- 균일한 인터페이스: 이러한 파라미터에 관심이 있는 컨트랙트들은 동일한 인터페이스만 구현하면 됩니다.
 
-- Extensible. When adding a new system contract, there is no need to modify any other contracts.
+- 확장 가능: 새 시스템 컨트랙트를 추가할 때 다른 컨트랙트를 수정할 필요가 없습니다.
 
-- Failure toleration. Validators could vote to skip false proposals and go on.
+- 실패 허용: 검증자는 잘못된 제안을 건너뛰기 위해 투표할 수 있습니다.
 
-- Multiplexing. Now we have only parameters gov, but in the future, there will be more governance functions.
+- 멀티플렉싱: 지금은 파라미터 거버넌스만 있지만, 미래에는 더 많은 거버넌스 기능이 있을 것입니다.
 
-## Workflow
+## 워크플로우
 
 ![img](../../static/img/gov-workflow.png)
 
-## Contract Interface
+## 컨트랙트 인터페이스
 
-Every contract that wants to subscribe param change event, should implement the following interface: **function updateParam(string key, bytes calldata value) external**
+파라미터 변경 이벤트를 실행하려는 모든 컨트랙트에서 다음 인터페이스를 구현해야 합니다. **function updateParam(string key, bytes calldata value) external**
 
-Some following check must be done inside the interface:
+인터페이스 내부에서 다음과 같은 검사를 수행해야 합니다.
 
-- The msg sender must be the gov contract.
-- Basic check of value. (length, value range)
+- 메시지 보낸 사람은 거버넌스 컨트랙트여야 합니다.
+- 값의 기본 검사 (길이, 값 범위)
 
-An example implementation:
+구현 예시:
 
 ```
 modifier onlyGov() {
@@ -70,50 +70,51 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 }
 ```
 
-## Gov Contract
-Implement the cross chain contract interface: **handlePackage(bytes calldata msgBytes, bytes calldata proof, uint64 height, uint64 packageSequence)**
+## 거버넌스 컨트랙트
+크로스 체인 컨트랙트 인터페이스를 구현합니다: **handlePackage(bytes calldata msgBytes, bytes calldata proof, uint64 height, uint64 packageSequence)**
 
-And do the following steps:
-- Basic check. Sequence check, Relayer sender check, block header sync check, merkel proof check.
-- Check the msg type according to the first byte of msgBytes, only param change msg type is supported for now. Check and parse the msg bytes.
-- Use a fixed gas to invoke the  updateParam interface of target contract. Catch any exception and emit fail event if necessary, but let the process go on.
-- Claim reward for the relayer and increase sequence.
+다음 단계를 수행하십시오.
+- 기본 검사. 시퀀스 검사, 릴레이어 송신인 검사, 블록 헤더 동기화 검사, 머클 증명 검사.
+- msgBytes의 첫 번째 바이트에 따라 msg type을 확인합니다. 현재로서는 param change msg type만 지원됩니다. msg 바이트를 확인하고 파싱합니다.
+- 고정 가스를 사용하여 대상 컨트랙트의 updateParam 인터페이스를 호출합니다. 모든 예외를 포착하고 필요한 경우 실패 이벤트를 발생시키지만, 프로세스는 계속 진행되도록 합니다.
+- 릴레이어에 대한 보상을 받고 시퀀스를 늘립니다.
 
 
-##  Parameters that control the behavior of BSC
+##  BSC의 동작을 제어하는 파라미터
 
- There are many system parameters to control the behavior of the BSC:
+ BSC의 동작을 제어하는 많은 시스템 파라미터가 있습니다.
 
-- All these parameters of BSC system contracts should be flexible: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.
+- BSC 시스템 컨트랙트의 모든 파라미터는 유연해야 합니다. 즉, 슬래싱 임계값, 체인 간 전송 수수료, 릴레이어 보상 금액 등이 있습니다.
 
-- params of Staking/Slash/Oracle/IBC modules on BC
+- BC에서 스테이킹/슬래시/오라클/IBC 모듈의 파라미터 등도 있습니다.
 
-All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such processes will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.
+이 모든 매개 변수는 BSC 검증인 집단에 의해 스테이킹 기반 제안-투표 프로세스를 통해 결정됩니다. 이러한 프로세스는 BC에서 수행되며, 새로운 파라미터 값은 필요할 시 크로스 체인 통신을 통해 해당 시스템 컨트랙트에 의해 의해 선택될 것입니다.
 
-## Fee Table
 
-| Transaction Type                   | Fee         | Fee For                      |
+## 트랜잭션 수수료
+
+| 트랜잭션 타입                   | 수수료         | 수수료 대상                    |
 | -------------------------- | ----------- | ---------------------------- |
-| Submit Smart Chain Proposal | 10 BNBs     | Proposer                     |
-| Smart Chain Proposal Deposit        | 0.00125 BNB | Proposer                     |
-| Smart Chain Proposal Vote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.001 BNB    | system reward pool |
+| 스마트 체인 제안 제출(Submit Smart Chain Proposal) | 10 BNBs     | 제안자                     |
+| 스마트 체인 제안 예치(Smart Chain Proposal Deposit)        | 0.00125 BNB | 제안자                     |
+| 스마트 체인 제안 투표(Smart Chain Proposal Vote)           | 1 BNB       | 제안자                     |
+| 릴레이어 보상(Relayer reward)           | 0.001 BNB    | 시스템 보상 풀 |
 
-### Global Parameters
+### 글로벌 파라미터
 
-* `min-deposit`: The threshold for submitting a proposal is **2000BNB**.
+* `min-deposit`: 메인넷에서 제안을 제출을 위한 최소값은 **1000BNB**이며, 테스트넷에서는 **2000BNB**입니다.
 
 
-## Commands
+## 명령어
 
-### Query side chain proposals
+### 사이드 체인 제안 쿼리
 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id     | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --status            | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No          |
-| --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                | No           |
+| --chan-id           | Binance-Chain-XXX                          | 바이낸스 체인의 체인 ID                       | Yes          |
+| --side-chain-id     | chapel                                     | 사이드 체인의 ID, 기본값은 네이티브 체인        | Yes          |
+| --status            | passed                                     | 제안 상태에 따라 제안 필터링: deposit_period/voting_period/passed/rejected | No          |
+| --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | 투표자에 따라 제안 필터링              | No           |
 
 
 ```bash
@@ -124,13 +125,13 @@ All these parameters will be determined by BSC Validator Set together through a 
 ./tbnbcli gov  query-proposals --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
 ```
 
-### Query side chain proposal
+### 사이드 체인 제안 쿼리
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
+| **파라미터 이름** | **예시**                                | **설명**                                         | **필수 여부** |         
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | 바이낸스 체인의 체인 ID                       | Yes          |
+| --side-chain-id    | chapel                                     | 사이드 체인의 ID, 기본값은 네이티브 체인        | Yes          |
+| --proposal-id      | 1                                          | 쿼리되고 있는 제안의 ID                 | Yes          |
 
 ```bash
 ## mainnet
@@ -140,11 +141,11 @@ All these parameters will be determined by BSC Validator Set together through a 
 ./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
 ```
 
-### Query side chain parameters
+### 사이드 체인 파라미터 쿼리
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
+| **파라미터 이름** | **예시**                                | **설명**                                         | **필수 여부** |         
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
+| --side-chain-id    | chapel                                     | 사이드 체인의 ID, 기본값은 네이티브 체인        | Yes          |
 
 ```bash
 ## mainnet
@@ -154,19 +155,19 @@ All these parameters will be determined by BSC Validator Set together through a 
  ./tbnbcli params side-params --side-chain-id chapel  --trust-node
 ```
 
-### Submit cross chain param change proposal.
+### 크로스 체인 파라미터 변경 제안 제출
 
-| **parameter name** | **example**                                                        | **comments**                                                              | **required** |
+| **파라미터 이름** | **예시**                                                        | **설명**                                                              | **필수 여부** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
-| --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
-| --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
-| --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
-| --key              | felonyThreshold                                                    | the parameter name on the side chain                                      | Yes          |
-| --target           | 0x0000000000000000000000000000000000001001                         | the address of the contract on side chain                                 | Yes          |
-| --title            | "test csc change"                                                  | title of proposal                                                         | Yes          |
-| --value            | 0x000000000000000000000000000000000000000000000000000000000000001b | the specified value of the parameter on side chain, should encoded in hex | Yes          |
-| --voting-period    | 604800                                                             | voting period in seconds (default 604800)                                 | No           |
+| --chan-id          | Binance-Chain-XXX                                                  | 바이낸스 체인의 체인 ID                                            | Yes          |
+| --side-chain-id    | chapel                                                             | 사이드 체인의 ID, 기본값은 네이티브 체인                             | Yes          |
+| --deposit          | 200000000000:BNB                                                   | 제안의 예치금                                                       | Yes          |
+| --from             | alice                                                              | 서명할 개인키 이름 또는 주소                         | Yes          |
+| --key              | felonyThreshold                                                    | 사이드 체인에서 파라미터 이름                                      | Yes          |
+| --target           | 0x0000000000000000000000000000000000001001                         | 사이드 체인에서 컨트랙트 주소                                 | Yes          |
+| --title            | "test csc change"                                                  | 제안의 제목                                                         | Yes          |
+| --value            | 0x000000000000000000000000000000000000000000000000000000000000001b | 사이드 체인에서 파라미터의 구체적인 값, hex로 인코딩되어야 함 | Yes          |
+| --voting-period    | 604800                                                             | 초 단위 투표 기간 (기본값: 604800)                                 | No           |
 
 ```bash
 ## mainet
@@ -176,18 +177,18 @@ All these parameters will be determined by BSC Validator Set together through a 
 ./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
 ```
 
-### Submit cross chain channel management proposal.
+### 크로스 체인 채널 관리 제안 제출
 
-| **parameter name** | **example**                                                        | **comments**                                                              | **required** |
+| **파라미터 이름** | **예시**                                                        | **설명**                                                              | **필수 여부** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
-| --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
-| --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
-| --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
-| --channel-id       | 1                                                                  | the the channel id that want to manage                                    | Yes          |
-| --enable           | true                                                               | enable the channel or not (default true)                                  | Yes          |
-| --title            | "test csc change"                                                  | title of proposal                                                         | Yes          |
-| --voting-period    | 604800                                                             | voting period in seconds (default 604800)                                 | No           |
+| --chan-id          | Binance-Chain-XXX                                                  | 바이낸스 체인의 체인 ID                                            | Yes          |
+| --side-chain-id    | chapel                                                             | 사이드 체인의 ID, 기본값은 네이티브 체인                             | Yes          |
+| --deposit          | 200000000000:BNB                                                   | 제안의 예치금                                                       | Yes          |
+| --from             | alice                                                              | 서명할 개인키 이름 또는 주소                         | Yes          |
+| --channel-id       | 1                                                                  | 관리하고 싶은 채널 ID                                    | Yes          |
+| --enable           | true                                                               | 채널 활성화 여부 (기본값은 참)                                  | Yes          |
+| --title            | "test csc change"                                                  | 제안의 제목                                                         | Yes          |
+| --voting-period    | 604800                                                             | 초 단위 투표 기간 (기본값: 604800)                                 | No           |
 
 ```bash
 ## mainnet
@@ -197,17 +198,17 @@ All these parameters will be determined by BSC Validator Set together through a 
 ./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
 ```
 
-### Submit side chain module param change proposal.
+### 사이드 체인 모듈 파라미터 변경 제안 제출
 
-| **parameter name** | **example**                                                        | **comments**                                                              | **required** |
+| **파라미터 이름** | **예시**                                                        | **설명**                                                              | **필수 여부** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
-| --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
-| --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
-| --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
-| --title            | "test csc change"                                                  | title of proposal                                                         | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | 바이낸스 체인의 체인 ID
+| --side-chain-id    | chapel                                                             | 사이드 체인의 ID, 기본값은 네이티브 체인                             | Yes          |
+| --deposit          | 200000000000:BNB                                                   | 제안의 예치금                                                       | Yes          |
+| --from             | alice                                                              | 서명할 개인키 이름 또는 주소                         | Yes          |
+| --title            | "test csc change"                                                  | 제안의 제목                                                         | Yes          |
 | --sc-param-file    | param.json                                                         | the file of Side Chain params (json format)                               | Yes          |
-| --voting-period    | 604800                                                             | voting period in seconds (default 604800)                                 | No           |
+| --voting-period    | 604800                                                             | 초 단위 투표 기간 (기본값: 604800)                                 | No           |
 
 ```bash
 ## mainnet
@@ -217,14 +218,14 @@ All these parameters will be determined by BSC Validator Set together through a 
 ./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges
 ```
 
-### Vote for side chain proposal
+### 사이드 체인 제안 투표
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
+| **파라미터 이름** | **예시**                                | **설명**                                         | **필수 여부** |         
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
-| --option           | Yes                                        | vote option {yes, no, no_with_veto, abstain}         | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | 바이낸스 체인의 체인 ID                       | Yes          |
+| --side-chain-id    | chapel                                     | 사이드 체인의 ID, 기본값은 네이티브 체인        | Yes          |
+| --proposal-id      | 1                                          | 쿼리되고 있는 제안의 ID                 | Yes          |
+| --option           | Yes                                        | 투표 옵션 {yes, no, no_with_veto, abstain}         | Yes          |
 
 ```bash
 ## mainnet
@@ -234,15 +235,15 @@ All these parameters will be determined by BSC Validator Set together through a 
  ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges
 ```
 
-### Deposit for side chain proposal
+### 사이드 체인 제안의 예치금
 
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
+| **파라미터 이름** | **예시**                                | **설명**                                         | **필수 여부** |         
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
-| --deposit          | Yes                                        | amount of deposit                                    | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | 바이낸스 체인의 체인 ID                       | Yes          |
+| --side-chain-id    | chapel                                     | 사이드 체인의 ID, 기본값은 네이티브 체인        | Yes          |
+| --proposal-id      | 1                                          | 쿼리되고 있는 제안의 ID                 | Yes          |
+| --deposit          | Yes                                        | 예치된 금액                                    | Yes          |
 
 ```bash
 ## mainnet
