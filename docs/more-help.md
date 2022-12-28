@@ -10,7 +10,7 @@
 
 - 네트워크 탐색기 - [BSCScan 익스플로러](https://bscscan.com/)
 
-- 테스트넥 메트릭 대시보드 - [테스트넷 BscScan 탐색기](https://testnet.bscscan.com/) 
+- 테스트넷 메트릭 대시보드 - [테스트넷 BscScan 탐색기](https://testnet.bscscan.com/) 
 
 - 바이낸스 Dex 지원: <https://www.bnbchain.org/en>에 접속한 후 ``help`` 버튼을 누르고 ``contact us``를 누릅니다. 이를 통해 고객 서비스팀에게 문의할 수 있습니다.
 

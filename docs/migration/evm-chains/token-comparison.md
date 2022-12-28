@@ -1,55 +1,56 @@
 ---
 sidebar_label: 토큰 표준 비교
 ---
-# Token Standard Comparison 
+# 토큰 표준 비교
 
-Over the few years, blockchain technology has evolved with respect to several different features like design, infrastructure, working mechanism, etc. However, with new platforms offering much more attractive features, it is common for blockchain-based projects, aka decentralized applications (dApps) and crypto tokens, to migrate from one blockchain to another. 
-Launched in 2020, BNB Chain quickly gained a lot of popularity due to its distinguishing features of low cost and faster transaction rate. Several projects based on other blockchain platforms are already migrating to the BNB Chain platform. 
-In this article, we provide an overview of what tokens are and supported tokens by BSC
+근 몇 년간, 블록체인 기술은 구조, 인프라, 작동 매커니즘 등의 특징들과 함께 진화했습니다. 다만 더욱 매력적인 기능을 지원하는 플랫폼들이 탄생하면서, 디앱으로 불리는 탈중앙화 어플리케이션과 크립토 토큰들이 다른 블록체인으로 이전하는 것도 흔히 볼 수 있게 되었습니다.
+BNB 체인은 2020년에 출범하여 적은 수수료와 빠른 전송률을 토대로 많은 인기를 얻었습니다. 다른 블록체인 플랫폼에 있는 몇몇 프로젝트들은 BNB 체인 플랫폼으로 이전하고 있습니다.
+이 문서에서는 토큰에 대한 정보와 BSC에서 지원하는 토큰에 대해 다룹니다.
 
-## Overview of Tokens
-Technically speaking, “token” is just another term used for referencing cryptocurrencies or crypto-assets. Nevertheless, with the evolution in the standards for crypto tokens, tokens can be described in the context of their use. One description of tokens is that of cryptocurrencies, where tokens are used in the form of digital money and are native to a particular blockchain. In another way, tokens can also be described as digital assets running on top of other cryptocurrencies’ blockchain, e.g., most of the decentralized finance (DeFi) tokens. There is a wide spectrum of use cases where tokens can be functional.  e.g., decentralized exchanges, tradable assets, digitization of assets, etc. Generally, all tokens can be traded or held like any other cryptocurrency.
+## 토큰 개요
 
-## Importance of Tokens
-Tokens hold a very important role in the blockchain-based decentralized ecosystem and can be used for various purposes within a dapp’s universe. Other than fungible tokens, which are a representation of interchangeable assets on a blockchain and are usually used as cryptocurrencies, some of the most important categories based on usage are as follows:
-* **DeFi Tokens:** DeFi protocols and dApps are aimed at reproducing traditional financial system functions (lending, borrowing, saving, insurance, trading, etc.). DeFi tokens represent a diverse set of cryptocurrencies native to automated, decentralized DeFi platforms run through [smart contracts](https://www.coindesk.com/markets/2016/06/04/making-sense-of-blockchain-smart-contracts/). These tokens perform a wide range of functions within the DeFi platform and are also tradable or can be held like any other cryptocurrency.
-* **Utility Tokens:** These types of tokens are designed to serve particular purposes within a specific application/protocol's ecosystem and allow users to be part of the decision-making on a specific network. Furthermore, utility tokens are unique to their ecosystem and are non-mineable cryptocurrencies. They are usually pre-mined, being created all at once, and distributed in a manner chosen by the team behind the project.
-* **Governance Tokens:** These specialized tokens give holders the right to vote on issues that govern the development and operations of a blockchain project. It’s a method for projects to distribute decision-making power to their communities. This decentralized governance model helps align the interests of the token holders with that of the project.
-* **Non-Fungible Tokens (NFTs):** NFTs are used to represent ownership rights to a unique digital or real-world asset. These allow the tokenization of real-world things like art, collectibles, real estate, etc. Ownership of an asset is secured by the blockchain network, as no one can modify the record of ownership or copy/paste a new NFT into existence.
-* **Security Tokens:** are a new class of assets that aim to be the crypto equivalent of traditional securities like stocks and bonds. Their main use case is to sell shares in a company (very much like the shares or fractional shares sold via conventional markets) or other enterprises (for instance, real estate) without the need for a broker. Major companies and startups have been reported to be investigating security tokens as a potential alternative to other methods of fundraising.
+"토큰"은 암호화폐나 암호화 자산을 나타내는 용어로 이해할 수 있습니다. 다만 암호화폐 및 자산 표준들이 다양한 방식으로 사용할 수 있도록 발전하면서 토큰이란 용어는 다양한 상황에서 사용할 수 있게 되었습니다. 토큰은 암호화폐 형태를 띌 수 있습니다. 아니면 대부분의 디파이 토큰들처럼 다른 암호화폐 블록체인에서 운영되는 디지털 자산 형태가 될 수도 있습니다. 토큰은 다양한 분야에서 사용 가능한데, 탈중앙화 거래소, 거래 가능한 자산, 자산의 디지털화 등에 이용딜 수 있습니다. 토큰은 다른 암호화폐처럼 보유하거나 거래할 수 있습니다. 
 
-## Token Standards
-Ethereum is the pioneer of blockchain platforms to provide smart contract functionalities and standards for developing crypto tokens. However, with time, several blockchain platforms have emerged, some being EVM-compatible and others non-EVM. With a multitude of blockchain projects issuing their own tokens on different blockchains, it is important to make sure that these tokens are compatible with the underlying blockchains and adhere to the platform’s token standards.
-To ensure compatibility, interoperability, and security, token standards are issued. These are a set of rules for the issuance and implementation of new tokens. The most commonly included requirements in these token standards are the token’s total supply limit, minting,  burning, and the process for performing transactions using the token.
-Furthermore, token standards are designed to help avoid fraud, technical incompatibilities between tokens, and issuance of tokens not aligned with the blockchain’s principles. For example, the rules for total supply and new token minting help contain potential token value depreciation.
+## 토큰의 중요성
 
-### ERC Token Standard 
-One of the most popular token standards is the ERC standard. ERC (Ethereum Request for Comments) is a set of rules defining the issuance and implementation of tokens on the Ethereum Blockchain. ERC20 is a technical standard that describes a common set of rules that should be followed for a token to function properly within the Ethereum ecosystem. It is one of the most commonly used standards and is usually used for fungible tokens in the form of cryptocurrencies. Other popular ERC standards are ERC-721 (NFTs) and ERC-1155 Multi-Token Standard.
+블록체인 기반 탈중앙화 생태계에서 토큰은 디앱 내에서 다양한 목적을 달성하기 위해 중요한 역할을 합니다. 토큰은 크게 대체 가능 및 대체 불가능한 토큰으로 나눌 수 있습니다. 대체 가능한 토큰은 상호 교환이 가능한 자산으로 주로 암호화폐로 사용됩니다. 다른 목적으로 사용되는 토큰은 주로 다음과 같습니다:
 
-### BEP Token Standard
-Similar to ERC, BNB Chain defines its own set of standards for token issuance, management, and implementation known as BEP (BNB Evolution Proposals). BEPs are token management rules and pre-defined criteria for launching on-chain assets on BNB Chain. The most popular BEP standards are BEP2 and BEP20. BEP2 is the native coin of the Beacon Chain. Whereas BEP20 is popular for use on BSC. It is to note here that BEP20 is very similar to ERC20 and extends its functionality. Note that BNB, which is the native token of the BNB Chain ecosystem, is a BEP2 token.
+- **DeFi 토큰:** 디파이(DeFi) 프로토콜 및 디앱들은 전통적인 금융 시스템 기능(예치, 대출, 적금, 보험, 거래 등)을 재현합니다. 디파이 토큰들은 디파이 앱들과 프로토콜을 작동시키며 기불 및 트랜잭션 흐름을 제어하도록 프로그래밍할 수 있습니다. 이 토큰들은 거래가 가능하며 다른 암호화폐처럼 보유할 수 있습니다.
+- **유틸리티 토큰:** 은 소속된 어플리케이션 및 프로토콜 생태계에서 특정 목적을 달성하기 위해 설계되었습니다. 이를 통해 사용자들이 특정 네트워크에서 의사 결정 과정에 참여할 수 있습니다. 또한 유틸리티 토큰은 생태계에 고유하게 존재하며 채굴할 수 없습니다. 이들은 이미 채굴된 행태로 한꺼번에 만들어 졌으며, 프로젝트를 제작한 팀에 의해 비율이 결정되어 배분되었습니다.
+- **거버넌스 토큰:** 블록체인 프로젝트의 개발 및 운영의 거버넌스와 관련된 사항에 대한 투표권을 보유자에게 부여하는데 특화된 토큰입니다. 이를 통해 프로젝트는 커뮤니티에 의사결정권을 분배할 수 있습니다. 이러한 분산형 거버넌스 모델은 토큰 보유자의 이익을 프로젝트의 이익과 일치시키는 데 도움이 됩니다.
+- **대체 불가능한 토큰 (NFT):** NFT는 실제 혹은 디지털 세상에서 소유권을 나타냅니다. 이를 통해 실제 세계의 미술, 수집품, 부동산 등을 토큰화 할 수 있습니다. NFT를 통해 자산의 소유자는 블록체인 네트워크에 인해 다른 사람들이 소유권을 조작하거나 복제할 수 없도록 만듭니다.
+- **증권형 토큰:** 새로운 형태의 자산으로 전통 증권의 주식이나 채권을 블록체인 상에서 구현한 것입니다. 주요 사용처는 중계자 없이 회사의 지분을 판매(기존 주식 시장에서 파는 것처럼)하거나 다른 자산(예를 들어 부동산)을 쪼개서 판매할 수 있습니다. 현재 많은 주요 기업들 및 스타트업에서는 증권형 토큰을 자금 조달의 잠재적인 대안으로 생각하며 검토하고 있습니다. 
 
-### Difference between ERC and BEP tokens
-Both ERC20 and BEP20 standards are very similar in mechanism. However, ERC-20 is dedicated to Ethereum, whereas BEP-20 is dedicated to BNB Smart Chain. In simpler terms, each of these is a token standard that belongs to a different blockchain.
+## 토큰 표준
+블록체인 기술이 전례 없는 인기를 얻으면서 다양한 프로젝트가 여러 블록체인 플랫폼에서 자체 토큰을 발행하였습니다. 이 토큰들은 제작된 블록체인 상에서 호환이 되고 토큰 표준을 따르는 것이 중요합니다. 호환성, 상호운용성, 보안성을 보장하기 위해 토큰 표준이 나왔습니다. 토큰 표준은 사기, 토큰 간의 기술적 비호환성 및 블록체인 정의에 맞지 않는 발행을 방지하기 위해 설계되었습니다. 이는 사실상 새로운 토큰을 발행 및 구현할 때 필요한 규칙들을 정의한 것입니다. 토큰 표준에 주로 들어가는 규칙은 토큰의 총 공급량, 민팅 과정, 소각 과정 및 토큰을 활용한 트랜잭션 과정 등을 정의합니다.
+
+### ERC 토큰 표준
+가장 널리 사용되는 토큰 표준은 ERC 표준입니다. Ethereum Request for Comments(ERC)는 이더리움 토큰 발행 및 구현 시 따라야하는 규칙이 정의되어 있습니다. ERC20은 기술적 표준으로 토큰이 이더리움 생태계 내에서 문제 없이 작동하기 위해 필요한 규칙들을 포함하고 있습니다. 가장 널리 쓰이는 표준 중에서 하나이며 주로 암호화폐로 사용하는 대체 가능한 토큰에서 사용합니다. 인기가 많은 다른 ERC 표준에는 ERC-721(NFT)이나 ERC-1155(멀티 토큰 표준)가 있습니다.
+
+#### BEP 토큰 표준
+ERC와 유사하게 BNB 체인은 토큰 발행, 관리, 구현을 위해 BEP(Binance Evolution Proposals)라는 자체 토큰 표준을 만들었습니다. BEP는 토큰 관리 규칙이며 BNB 체인에서 온체인 자산을 발행하기 전 따라야하는 기준이 정의되어 있습니다. 가장 많이 사용되는 BEP 표준은 BEP2과 BEP20입니다. BEP2는 비컨 체인의 네이티브 코인인 반면, BEP20는 BSC에서 자주 사용됩니다. 참고로 BEP20는 ERC20과 매우 유사하며 기능을 확장한 형태입니다. BNB 체인 생태계의 자체 토큰인 BNB도 BEP20 토큰입니다.
+
+### ERC와 BEP 토큰의 차이
+ERC20나 BEP20 표준은 매커니즘 상 유사합니다. 다만 ERC-20은 이더리움 전용인 반면 BEP-20은 BNB 스마트 체인에서만 사용할 수 있습니다. 다시 말해 다음 토큰 표준들은 서로 다른 볼록체인에 속합니다.
 
 #### ERC20 vs BEP20
-In this section, we provide a brief difference between the ERC20 and BEP20 tokens.
+아래는 ERC20과 BEP20 토큰의 차이에 대해 다루었습니다.
 
 | ERC20                                                                                                                                    | BEP20                                                                                                                                |
 |------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| Gas fees are paid for performing any transaction on the Ethereum blockchain. Ethereum has higher gas costs as compared to the BNB Chain. | Gas fees collected to create BEP20 tokens are   comparatively lower than ERC20 tokens.                                               |
-| ERC20 transactions are slower, as up to 15 seconds are required for them to take place.                                                  | Transaction speed is 5 times faster as BEP20 transactions   take up to 3 seconds to take place.                                      |
-| Proof-of-Stake (PoS) algorithm is used for the verification and validation of ERC20 transactions, ensuring higher security.              | BEP20 token also offers high security and uses   Proof-of-Staked-Authority (PoSA) for verification and validation of   transactions. |
-| ERC20 tokens are mostly used for crypto crowdfunding, trading, staking, etc.                                                             | BEP20 tokens are mostly used for crypto crowdfunding,   trading, staking, etc.                                                       |
+| 이더리움 블록체인 상에서 어느 트랜잭션을 실행하기 위해서는 가스비를 지불해야 합니다. 이더리움 가스 수수료는 BNB 체인에 비해 비쌉니다. | BEP20 토큰 생성을 위한가스 수수료가 ERC20에 비해 저렴합니다.                                               |
+| ERC20 트랜잭션이 더 느리며 처리를 위해 약 15초가 필요합니다.                                                  | 트랜잭션 속도가 약 5배 빠르므로 BEP20 트랜잭션에서는 3초만에 처리가 가능하빈다.                                      |
+| 지분증명(PoS) 알고리즘을 통해 안전하게 확인 및 검증합니다.              | BEP20 토큰도 권한지분증명을(PoSA) 통해 트랜잭션의 확인 및 검증을 안전하게 진행합니다. |
+| ERC20 토큰은 암호화폐 자금조달, 거래, 스테이킹 등에 사용합니다.                                                             | BEP20 토큰도 암호화폐 자금조달, 거래, 스테이킹 등에 사용됩니다.                                                       |
 
 
-## Token Standards Supported by BSC
-BNB Chain is an ecosystem that runs on two blockchain giants, namely, Beacon Chain (BC) and BNB Smart Chain (BSC). The native token standard for Beacon Chain is BEP2, while the native token standard for BNB Smart Chain is BEP20. BNB ecosystem’s native currency, BNB, initially launched as an ERC20 token, is in fact a BEP2 token.
+## BSC 호환 토큰 표준
+BNB 체인은 비컨 체인(BC)와 BNB 스마트 체인(BSC) 이라는 두 거대한 블록체인에 의해 운영되는 생태계입니다. BNB 생태계의 자체 화폐인 BNB는 처음에 ERC20에서 배포되었지만 현재 BEP2 토큰입니다.
 
-### BEP2 Tokens
-Beacon Chain is essentially a digital asset creation and exchange platform. Beacon chain is responsible for the governance of the BNB Chain ecosystem, which includes staking and voting. BEP2 is the token standard for BNB Chain’s native currency, BNB, on Binance’s crypto exchanges. It is a unique token standard. BEP2 is not compatible with blockchains other than BNB Chain. Additionally, BNB in the BEP2 format can only be used as a transaction fee on both Binance cryptocurrency exchanges. One limitation of BEP2 is its lack of support for smart contract development. For more information, you can read the full BEP2 proposal [here](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md).
+### BEP2 토큰
+비컨 체인은 스테이킹 및 투표를 통해 BNB 체인 생태계의 거버넌스를 담당합니다. BEP2는 BNB 체인의 자체 화폐인 BNB의 토큰 표준입니다. 자체 토큰 표준으로 BEP2는 BNB 체인 외의 다른 블록체인들과 호환되지 않습니다. 또한 BEP2 형식의 BNB는 바이낸스 암호화폐 거래소에서 트랜잭션 수수료로만 사용될 수 있습니다. BEP2의 한계는 스마트 컨트랙트 개발 지원이 부족하다는 것입니다. 자세한 사항은 [BEP2 제안서](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md)를 참고하세요.
 
-### BEP20 Tokens
-BSC is the blockchain component of the BNB Chain that provides its users with a smart contract facility and is a platform for dApp development. BEP20 is a token interface standard for creating token contracts on BSC. The BEP20 tokens are designed to be compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 for compatibility with EVM chain and Ethereum smart contracts. Other than the ERC20 functionalities, the BEP20 standard contains additional interfaces, such as getOwner and decimals. For more information on BEP20, read the full proposal [here](https://github.com/binance-chain/BEPs/blob/master/BEP20.md). 
+### BEP20 토큰
+BSC는 BNB 체인의 블록체인 컴포넌트로 사용자들에게 스마트 컨트랙트 기능 및 디앱 개발 플랫폼을 제공합니다. BEP20는 BSC에서 토큰 컨트랙트를 생성하기 위한 토큰 인터페이스 표준입니다. BEP20 토큰은 BEP2와 [ERC20](https://eips.ethereum.org/EIPS/eip-20)과 호환되도록 설계되었습니다. BEP20은 EVM 체인 및 이더리움 스마트 컨트랙트와 호환되도록 ERC20을 연장하였습니다. ERC20 기능 외에도 BEP20 표준에는 getOwner와 소수점 같은 추가적인 요소들이 존재합니다. BEP20에 관한 더 자세한 상황은 [여기](https://github.com/binance-chain/BEPs/blob/master/BEP20.md) 제안서를 참고하세요.
 
 
