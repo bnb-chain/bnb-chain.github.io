@@ -30,9 +30,7 @@ NodeReal or Ankr will provide it as PaaS, which includes validators, networks, t
 They will not be counted. In the future, BSC should focus mainly on non-game metrics and liquidity, while games will be on BNB Sidechain.
 
 ### When can projects start deploying on BNB Sidechain? 
-BNB Sidechain Testnet will be out at the end of March 2022.
-
-BNB Sidechain Mainnet will be ready at least 2 months after that.
+You can jump start developing projects on BNB Sidechain rightway, refer to [BNBChainList](https://www.bnbchainlist.org/) for connecting to different BNB Sidechain mainnets available.
 
 ### Where can we find more docs for BNB Sidechain for our developers to read through? 
 Refer to [BNB Sidechain Architecture](architecture/bs-arch.md). 
