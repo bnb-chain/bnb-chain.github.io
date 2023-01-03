@@ -35,7 +35,7 @@ BNB and coins on BNB Smart Chain are supported by the Ledger Nano S hardware wal
 ## Enabling contract data for BEP20 
 
 !!! Tip
-		 Please ensure your enabled contract data before transfering BEP20 tokens 
+		 Please ensure your enabled contract data before transferring BEP20 tokens 
 If you want to send BEP-20 tokens, you need to activate contract data on your device. Otherwise, invalid status `6a80` is returned.
 
 Steps: 

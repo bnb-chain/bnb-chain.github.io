@@ -1,5 +1,5 @@
 ---
-sidebar_label: Comprison with BSC
+sidebar_label: Comparison with BSC
 ---
 # BNB Smart Chain vs Polygon - Comparing the Differences
 

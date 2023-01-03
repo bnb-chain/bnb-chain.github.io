@@ -6,7 +6,7 @@ A wallet provider is a service that allows DApps to provide wallets to their end
 
 Arkane will help you interact with the BNB Smart Chain, create blockchain wallets, create different asset types such as fungible (BEP20, ERC20), and non-fungible tokens - NFTs - (ERC721, and ERC1155) and interact with smart contracts. Next to a superior developer experience, you can give your users a user-friendly interface.
 
-Each application is unique and has different needs, therefore they provide different ways of interacting with Arkane. Applications that have support for Web3 are recommendated to integrate the [Arkane Web3 provider](https://docs.arkane.network/widget/web3-provider/getting-started), others are suggested to use the [Arkane Widget](https://docs.arkane.network/widget/widget/introduction).
+Each application is unique and has different needs, therefore they provide different ways of interacting with Arkane. Applications that have support for Web3 are recommended to integrate the [Arkane Web3 provider](https://docs.arkane.network/widget/web3-provider/getting-started), others are suggested to use the [Arkane Widget](https://docs.arkane.network/widget/widget/introduction).
 
 
 ## Key features

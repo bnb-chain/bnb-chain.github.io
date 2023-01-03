@@ -5,7 +5,7 @@ sidebar_label: Getting Started
 This document serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain). 
 
 ## What can users do with BNB Smart Chain (BSC)?
-BNB Smart Chain (BSC) is the blockchain compoment of the BNB Chain ecosytem that is equipped with the smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM) and is used for developing various kinds of decentralized applications. The design goal of BSC was to leave the high throughput of Beacon Chain intact while introducing smart contracts into the BNB Chain ecosystem. Being EVM-compatible, other than easy portability, BSC enjoys support of the rich universe of [Ethereum](https://academy.binance.com/en/articles/what-is-ethereum) tools and dApps
+BNB Smart Chain (BSC) is the blockchain component of the BNB Chain ecosystem that is equipped with the smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM) and is used for developing various kinds of decentralized applications. The design goal of BSC was to leave the high throughput of Beacon Chain intact while introducing smart contracts into the BNB Chain ecosystem. Being EVM-compatible, other than easy portability, BSC enjoys support of the rich universe of [Ethereum](https://academy.binance.com/en/articles/what-is-ethereum) tools and dApps
 
 ### Tokenization
 On the BNB Smart Chain, users can: 
