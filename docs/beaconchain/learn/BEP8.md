@@ -129,44 +129,23 @@ Example on **mainnet**:
 ./bnbcli token set-uri-mini --symbol $mini-token-symbol --token-uri http://www.efg.com --from alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
 ```
 
-### List BEP8 Tokens on Binance DEX
+## Fee Table
 
-The listing process is different from BEP2 token list. BEP8 token issuer can list the Mini-BEP2 token without the agreement of Beacon Chain  validators. The BEP8 token can only be listed against BNB or BUSD and they cannot be listed as a quote symbol.
+### Mainnet
+API URL: <https://dex.binance.org/api/v1/fees?format=amino>
 
-**The following parameters are required for the transaction:**
+Transaction Type  | Pay in BNB |
+-- | -- |
+TinyIssueFee | 4 |
+MiniIssueFee | 6 |
+SetUri| 0.00075 |
 
-| **Field**    | **Type** | **Description**                                              |
-| :------------ | :-------- | :------------------------------------------------------------ |
-| base-asset-symbol | string | the Mini BEP2 token to list|
-|quote-asset-symbol| string|only support BNB and BUSD as quote asset|
-|init-price|int64|the initial price for your asset, it is boosted by 1e8|
-|from|Bech32_address|this address should be the issuer of base asset|
-
-#### Commands
-
-```bash
-./bnbcli dex list-mini -s=$mini-token-symbol --quote-asset-symbol=BNB --init-price=1000000000 --from=alice --chain-id Binance-Chain-Tigris   --node  https://dataseed5.defibit.io:443  --trust-node
-```
-
-## BEP8 Token Trading Pair Matching
-
-The number of BEP8 trading pairs could be much bigger than BEP2 pairs due to the cheap issue/listing fee. As they are designed to use limited network resource, Binance DEX match engine will only allocate a fixed resource on matching the BEP8 pairs. Unlike BEP2 token, BEP8 trading pairs are not matched every block, but they are guaranteed to be matched at least once in every 16 blocks.
-
-### Place Order
-
-The minimum amount of the Mini-BEP2 token should be larger than or equal to **1**, which is presented as 1e8 with the 8 digit decimal rule internally. The only exceptional case is that the user sells the total amount of the free BEP8 token in his account
-
-### Delist
-Delist a trading pair of Mini-BEP2 token is the same as BEP2 delist. It needs the agreement of Beacon Chain  validators.
-
-## Fee Table for Testnet
-
+### Testnet
 API URL: <https://testnet-dex.binance.org/api/v1/fees?format=amino>
 
 Transaction Type  | Pay in BNB |
 -- | -- |
-TinyIssueFee | 2 |
-MiniIssueFee | 3 |
-SetUri| 0.000375 |
-List BEP8| 8 |
+TinyIssueFee | 4 |
+MiniIssueFee | 6 |
+SetUri| 0.00075 |
 
