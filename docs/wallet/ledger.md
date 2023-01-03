@@ -111,7 +111,7 @@ With Ledger, you need to approve your transaction in your device.
 
 ## FAQ
 
-1. Fail to tranfer BEP20 tokens
+1. Fail to transfer BEP20 tokens
 
 Error message:
 

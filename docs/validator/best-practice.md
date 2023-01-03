@@ -85,7 +85,7 @@ miner.start()
 ```
 ## Securing the Validators
 
-Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them againt different DoS and DDoS attacks. In this section, we disscuss the security mechanism adopted by BSC for its validators.
+Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them against different DoS and DDoS attacks. In this section, we disscuss the security mechanism adopted by BSC for its validators.
 
 ### Sentry Nodes (DDOS Protection)
 

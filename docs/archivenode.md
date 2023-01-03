@@ -45,7 +45,7 @@ Instead of putting all archive data on a single Geth instance, it is suggested t
 
 ### 2. Run with an Erigon client
 
-[Erigon](https://github.com/ledgerwatch/erigon) has supported BSC mainnet. You can also refer to [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot) for the guide to run a BSC archive node with an Erigon client. The owner has switched to using an Erigon client for a BSC archive node recently. You can dowload the archive snapshot which is a tarball from aws s3. The s3 path is "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd". This path is public, but is configured as requester-pays. Also this means you'll need an AWS account in order to download it.
+[Erigon](https://github.com/ledgerwatch/erigon) has supported BSC mainnet. You can also refer to [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot) for the guide to run a BSC archive node with an Erigon client. The owner has switched to using an Erigon client for a BSC archive node recently. You can download the archive snapshot which is a tarball from aws s3. The s3 path is "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd". This path is public, but is configured as requester-pays. Also this means you'll need an AWS account in order to download it.
 
 * Command to download to local dir:
 

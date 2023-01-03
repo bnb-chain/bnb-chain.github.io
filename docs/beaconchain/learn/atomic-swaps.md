@@ -422,7 +422,7 @@ refundHTLT | N/A |  0.000375 BNB | Y
 Go to [this page](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract) and approve some amount of tokens.
 
  * Function: *Approve*
- * Prameters:
+ * Parameters:
      * _spender: address of smartcontract, which is `0x12DCBf79BE178479870A473A99d91f535ed960AD`
      * _value: approved amount, should be bumped by e^10
 
@@ -434,7 +434,7 @@ Example of approve 100 PPC on [ropsten testnet](https://ropsten.etherscan.io/tx/
 Go to [smartcontract](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098#writeContract) and call `HTLT` function
 
  * Function: *htlt*
- * Prameters:
+ * Parameters:
       * _randomNumberHash: SHA256(randomNumber||timestamp), randomNumber is 32-length random byte array
       * _timestamp: it should be about 10 mins span around current timestamp
       * _heightSpan: it's a customized filed for deputy operator. it should be more than 200 for this deputy.

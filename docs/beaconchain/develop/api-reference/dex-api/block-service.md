@@ -86,7 +86,7 @@ Rate Limit: in together with `/api/v1/blocks/{blockHeight}` 1500 request per IP 
 
 Search transactions by criteria.
 
-Rate Limit: 500 request per IP in 5 minutes (please read notes for more detials).
+Rate Limit: 500 request per IP in 5 minutes (please read notes for more details).
 
 ##### Parameters
 
