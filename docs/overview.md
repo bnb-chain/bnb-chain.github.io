@@ -9,7 +9,7 @@ BNB Chain, one of the most popular blockchains in the world, dedicates to delive
 
 ## What is Build N Build (BNB) Chain?
 BNB Chain is comprised of:
-1. **[BNB Beacon Chain](learn/beaconIntro.md)** - BNB Beacon Chain(BC) implements a vision of a decentralized exchange (DEX) for digital assets. During the evolution of the dual chain structure, BC plays more like a Beacon Chain that helps to enhance the security of BSC as a staking and governance layer.
+1. **[BNB Beacon Chain](learn/beaconIntro.md)** - BNB Beacon Chain is the staking and governance layer of BNB ecosystem.
 2. **[BNB Smart Chain (BSC)](learn/intro.md)** - An EVM compatible blockchain that bring programmability and interoperability to BNB ecosystem.
 3. **[ZkBNB](zkbnb/zkbnb-overview.md)** - ZkBNB is an infrastructure that built on ZK Rollup architecture for developers that helps them to build large scale BSC-based apps with higher throughput and much lower or even zero transaction fees.
 
