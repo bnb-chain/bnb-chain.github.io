@@ -21,7 +21,7 @@ const sidebars = {
      // collapsible: true,
       collapsed: true,
       items: [
-         'bnbIntro', 'getting-started', 
+         'overview', 'getting-started',
           
           {
             type: 'category',
