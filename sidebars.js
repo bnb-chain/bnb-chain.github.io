@@ -302,16 +302,12 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'ZkBNB', 
-            items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture','zkbnb/zkbnb-storageLayout',
-                   'zkbnb/zkbnb-tokenomics','zkbnb/zkbnb-wallets'],
+            label: 'ZkBNB',
+              items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
           },
           
     ],
     },
-
-
-
     {
       type: 'category',
       collapsed: true,
