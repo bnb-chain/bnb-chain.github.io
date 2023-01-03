@@ -1,14 +1,26 @@
 ---
-sidebar_label: Slashing and Jail
+sidebar_label: Overview
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Penalty for Bad Behaviour by Validators
+# Overview
+Slashing is part of the on-chain governance, to ensure the malicious or negative behaviors are punished. BSC slash can be submitted by anyone. The transaction submission requires slash evidence and costs fees but also brings a larger reward when it is successful.
 
-On the BNB Smart Chain (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 8 validators on the testnest and 21 active and 20 candidate validators on the mainnet. Validators are selected every 24 hours making the network highly decentralized. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is 10,000 BNB. Only the top 21 highest-staked nodes are chosen to be part of the validator set. To make sure that validators do not abuse the power entrusted to them, BSC has on-chain slashing mechanism to monitor their behavior. 
+So far there are two slashable cases.
 
-## Slashing and Jail
+## Double Sign
+It is quite a serious error and very likely deliberate offense when a validator signs more than one block with the same height and parent block. The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. When Double Sign happens, the validator should be removed from the Validator Set right away.
 
-BSC introduces Slashing logic to penalize Byzantine validators for double signing or inavailability. The slashed validator will eventually be jailed. Validators who are in jail status cannot participate in the consensus mechanism or earn rewards during that period of time. Slashing ensures that validators who act maliciously or show bad behavior are not rewarded. Furthermore, it is designed to expose attackers and make execution attempts extremely expensive. BSC slash requests can be submitted by any public users. All BSC slash requests require slash evidence and transaction cost fees, and rewards will be given to successful slash requests. To ensure that the delegators are not punished for the validator's bad behavior, only self-bonded BNB of the validator are slashed. Currently, slashing is applied on any node that processes any invalid transaction, double-signing or unavailable for a defined period of time. The consensus mechanism will automatically accuse the offline validator within its block by generating a slash transaction, the other fullnode will verify the correctness of the slash transaction to avoid abusing.
+Anyone can submit a slash request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator. Upon receiving the evidence, if the BC verifies it to be valid:
+
+The validator will be removed from validator set by an instance BSC validator set update Cross-Chain update;
+A predefined amount of BNB would be slashed from the self-delegated BNB of the validator; Both validator and its delegators will not receive the staking rewards.
+Part of the slashed BNB will be allocated to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction
+The rest of the slashed BNB will be allocated to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
+
+## Inavailability
+The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn. Validators can miss their turn due to any reason, especially problems in their hardware, software, configuration or network. This instability of the operation will hurt the performance and introduce more indeterministic into the system.
+
+There can be an internal smart contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. In such a way, the poorly-operating validator should be gradually voted out of the validator set as their delegators will receive less or none reward. If the metrics remain above another higher level of threshold, the validator will be dropped from the rotation, and this will be propagated back to BC, then a predefined amount of BNB would be slashed from the self-delegated BNB of the validator. Both validators and delegators will not receive their staking rewards.
 

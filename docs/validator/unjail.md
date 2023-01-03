@@ -38,5 +38,5 @@ bnbcli slashing side-unjail
 ### Example
 
 ```
-bnbcli slashing side-unjail \--from bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd \--side-chain-id=bsc \--chain-id=Binance-Chain-Tigris \--home \~/home\_cli
+bnbcli slashing side-unjail --from bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd --side-chain-id=bsc --chain-id=Binance-Chain-Tigris --home ~/home\_cli
 ```
