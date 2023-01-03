@@ -263,9 +263,7 @@ const sidebars = {
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},
                             {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: 'Node RPC - Paths and Models'},
-                            {type:'link', href:"pathname:///rpc-swagger/index.html", label: 'Node RPC Swagger'},
-                            {type:'doc', id:'beaconchain/changelog', label:'CHANGELOG'}
-      
+                            {type:'link', href:"pathname:///rpc-swagger/index.html", label: 'Node RPC Swagger'}
                           ]
                         },
                         
