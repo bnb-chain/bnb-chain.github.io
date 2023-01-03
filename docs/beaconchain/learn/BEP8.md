@@ -8,7 +8,7 @@ sidebar_position: 2
 
 As explained in [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md),the idea of BEP8 Tokens is raised to accommodate the small or micro projects, intellectual properties, and other small token economies to build a more comprehensive venue for token trading.
 
-Based on the limitation usage of the network, the cost of issuing and listing of such BEP8 tokens are minimized to a different magnitude. 
+Based on the limitation usage of the network, the cost of issuing of such BEP8 tokens are minimized to a different magnitude. 
 
 Similar to SME board in the traditional stock markets, BEP8 tokens markets will increase the liquidity of utility tokens of startups or Intellectual Property (IP) tokens by removing the capital requirements for listing. One good example is the open-source license model. A software developer can issue a BEP8 token and link his work to it. This token will be used to cover licensing fees for his work in the future.
 
