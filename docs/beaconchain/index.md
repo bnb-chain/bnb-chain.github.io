@@ -9,8 +9,8 @@ Have fun trading and see you on chain!
 
 ## What are Beacon Chain and Binance DEX?
 
-[Beacon Chain](https://www.binance.org) is a blockchain software system developed by Binance and its community.
-Binance DEX refers to the decentralized exchange features developed on top of Beacon Chain .
+[Beacon Chain](https://www.bnbchain.org) is a blockchain software system developed by its community.
+Binance DEX refers to the decentralized exchange features developed on top of Beacon Chain.
 
 Please read the [FAQ](faq/faq.md) to get started.
 

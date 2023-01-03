@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 # Introduction
 
-[Beacon Chain](https://www.bnbchain.org) is a blockchain developed by [Binance](https://www.binance.com) and its community that implements the staking and governance layer of BNB ecosystem.
+[Beacon Chain](https://www.bnbchain.org) is a blockchain developed its community that implements the staking and governance layer of BNB ecosystem.
 
 Beacon Chain transactions burns BNB (the native token of the Binance ecosystem), according to a fee schedule.
 
