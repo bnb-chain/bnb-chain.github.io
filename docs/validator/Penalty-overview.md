@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 
 # Overview
-Slashing is part of the on-chain governance, to ensure the malicious or negative behaviors are punished. BSC slash can be submitted by anyone. The transaction submission requires slash evidence and cost fees but also brings a larger reward when it is successful.
+Slashing is part of the on-chain governance, to ensure the malicious or negative behaviors are punished. BSC slash can be submitted by anyone. The transaction submission requires slash evidence and costs fees but also brings a larger reward when it is successful.
 
 So far there are two slashable cases.
 
@@ -16,8 +16,8 @@ Anyone can submit a slash request on BC with the evidence of Double Sign of BSC,
 
 The validator will be removed from validator set by an instance BSC validator set update Cross-Chain update;
 A predefined amount of BNB would be slashed from the self-delegated BNB of the validator; Both validator and its delegators will not receive the staking rewards.
-Part of the slashed BNB will allocate to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction
-The rest of the slashed BNB will allocate to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
+Part of the slashed BNB will be allocated to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction
+The rest of the slashed BNB will be allocated to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
 
 ## Inavailability
 The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn. Validators can miss their turn due to any reason, especially problems in their hardware, software, configuration or network. This instability of the operation will hurt the performance and introduce more indeterministic into the system.
