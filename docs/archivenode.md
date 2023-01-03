@@ -3,7 +3,7 @@ sidebar_label: BNB Smart Chain Archive Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
-# How to Run a Archive Node on BNB Smart Chain
+# How to Run an Archive Node on BNB Smart Chain
 
 ## What is an archive node?
 

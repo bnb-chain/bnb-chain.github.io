@@ -99,7 +99,7 @@ Congratulations! You've now successfully joined a network as a [full node](fulln
 
 ### 6. Setup a data backup (recommended for the mainnet)
 
-If you are connecting to an existing network for which you have a data backup (from a provider you trust), you can optionally load the backup into your node storage rather than syncing from scratch. Learn more [here](snapshot.md)
+If you are connecting to an existing network for which you have a data backup (from a provider you trust), you can optionally load the backup into your node storage rather than syncing from scratch.
 
 ### 7. Declare Candidacy
 

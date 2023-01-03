@@ -10,8 +10,6 @@ The testnet is a test environment for BNB Smart Chain network, run by the BNB Ch
 
 The validators on the testnet are mainly from the development team.
 
-You can connect a node to the testnet by downloading the node binary and testnet configuration from [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases).
-
 ## What is the Testnet good for?
 
 - Create your test address and get your testnet funds.
@@ -28,3 +26,13 @@ The testnet faucet for BNB Chain can be accessed [here](https://testnet.binance.
 * BscScan - https://testnet.bscscan.com/
  
 * Bitquery - https://explorer.bitquery.io/bsc_testnet
+
+## RPC Endpoints
+BSC RPC Endpoints(ChainID 0x61):
+
+- https://data-seed-prebsc-1-s1.binance.org:8545
+- https://data-seed-prebsc-2-s1.binance.org:8545
+- https://data-seed-prebsc-1-s2.binance.org:8545
+- https://data-seed-prebsc-2-s2.binance.org:8545
+- https://data-seed-prebsc-1-s3.binance.org:8545
+- https://data-seed-prebsc-2-s3.binance.org:8545
