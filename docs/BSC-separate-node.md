@@ -1,10 +1,10 @@
 ---
-sidebar_label: BNB Smart Chain Separate Node
+sidebar_label: Separate Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# How to Run Separate Node on BNB Smart Chain
+# Separate Node on BNB Smart Chain
 
 ## Introduction
 
@@ -34,15 +34,22 @@ Introduce a new **tries-verify-mode** setting, there are four modes:
 
 If the fast node runs in not local mode, the node will disable diff protocol by default, If the fast node runs in full or light mode, the node will enable trust protocol by default.
 
-` ./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --tries-verify-mode none`
+```
+./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --tries-verify-mode none
+```
 
 #### Verify node
 When a full node has enabled the trust protocol, it can serve as a verify node, at the same time, we will recommend you to enable persist diff, disable snap protocol and diff protocol when running a verify node.
 
-` ./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --persistdiff --enabletrustprotocol --disablesnapprotocol --disablediffprotocol`
+```
+./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --persistdiff --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
+```
 
 #### Prune tries node
-Prune the tires node:  `./geth snapshot insecure-prune-all --datadir ./node  ./genesis.json`
+Prune the tires node:  
+```
+./geth snapshot insecure-prune-all --datadir ./node  ./genesis.json
+```
 
 ## Run Verify Node
 Please read [this guide](./BSC-verify-node.md)

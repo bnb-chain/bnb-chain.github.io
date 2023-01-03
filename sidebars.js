@@ -60,13 +60,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Running Fullnode',
-                        items: ['validator/fullnode','validator/snapshot','local', 'validator/upgrade-fullnode']
-                      },
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'Running Archive Node',
-                        items: ['archivenode']
+                        items: ['validator/fullnode', 'archivenode', 'validator/upgrade-fullnode']
                       },
                       {
                         type: 'category',
@@ -136,9 +130,7 @@ const sidebars = {
                         collapsed: true,
                         label: 'Join Testnet',
                         items:['validator/guideline-testnet', 'validator/testnet']
-                        },
-                        
-                        'validator/snapshot', ]
+                        }]
                       },
                       //'validator/security', 
                       'validator/best-practice','validator/node-maintenance',
