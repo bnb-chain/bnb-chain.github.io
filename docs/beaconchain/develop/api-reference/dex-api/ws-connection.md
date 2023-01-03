@@ -1,6 +1,6 @@
 # WebSocket Connections
 
-The DEX exposes several data streams over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
+Several data streams are exposed over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
 
 - The base endpoint for mainnet is: **wss://dex.binance.org/api/**.
 - The base endpoint for testnet is: **wss://testnet-dex.binance.org/api/**.
@@ -18,49 +18,25 @@ Examples of each of these methods are provided below in JavaScript:
 Using this method, stream names are specified in the URLs used to connect to the data streams:
 
 - Single streams `/ws/<streamName>`
-- Combined streams `/stream?streams=<streamName1>/<streamName2>/<streamName3>` (etc.)
-
 
 **Mainnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
 
 ```javascript
-  // for personal streams, ex: Account & Orders & Transfers
+  // for personal streams, ex: Account & Transfers
   const accountAndOrdersFeeds = new WebSocket("wss://dex.binance.org/api/ws/<USER_ADDRESS>");
 
-  // for single streams
-  const tradesFeeds = new WebSocket("wss://dex.binance.org/api/ws/<symbol>@trades");
-  const marketFeeds = new WebSocket("wss://dex.binance.org/api/ws/<symbol>@marketDiff");
-  const deltaFeeds = new WebSocket("wss://dex.binance.org/api/ws/<symbol>@marketDepth");
-  ... etc
-
   // for all symbols
-  const allTickers = new WebSocket("wss://dex.binance.org/api/ws/$all@allTickers");
-  const allMiniTickers = new WebSocket("wss://dex.binance.org/api/ws/$all@allMiniTickers");
   const blockHeight = new WebSocket("wss://dex.binance.org/api/ws/$all@blockheight");
-
-  // for combined streams, can combined a mixed symbols and streams
-  const combinedFeeds = new WebSocket("wss://dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
 **Testnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
 
 ```javascript
-  // for personal streams, ex: Account & Orders & Transfers
+  // for personal streams, ex: Account & Transfers
   const accountAndOrdersFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<USER_ADDRESS>");
 
-  // for single streams
-  const tradesFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<symbol>@trades");
-  const marketFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<symbol>@marketDiff");
-  const deltaFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<symbol>@marketDepth");
-  ... etc
-
   // for all symbols
-  const allTickers = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@allTickers");
-  const allMiniTickers = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@allMiniTickers");
   const blockHeight = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@blockheight");
-
-  // for combined streams, can combined a mixed symbols and streams
-  const combinedFeeds = new WebSocket("wss://testnet-dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
 ### Method 2: Subscribe to streams on demand
@@ -84,19 +60,15 @@ Using this method, streams are be consumed via subscribe and unsubscribe command
 
 After connecting successfully you can subscribe/unsubscribe to different topics.
 
-**Example:** To subscribe to orders events and market depth updates, you should send a socket message with the `subscribe` payload as below:
+**Example:** To subscribe to transfer events, you should send a socket message with the `subscribe` payload as below:
 
 ```javascript
     const conn = new WebSocket("wss://dex.binance.org/api/ws/bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x");
     conn.onopen = function(evt) {
-        // for personal topics such as accounts & orders & transfers, an `address` is required
+        // for personal topics such as accounts & transfers, an `address` is required
         // Note: one connection is only allowed to subscribe to one address.
         // If you subscribe to a new address, regardless of whether the topic is new, the subscriptions for the previous addresses will be removed.
-        conn.send(JSON.stringify({ method: "subscribe", topic: "orders", address: "bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x" }));
-
-        // for data topics such as marketDepth, marketDelta, trades and ticker;
-        // a list of symbols is required. Same message can be used to append new topic and/or symbols
-        conn.send(JSON.stringify({ method: "subscribe", topic: "marketDepth", symbols: ["BNB_BTC","BNB_ETH"] }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", address: "bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x" }));
     }
 ```
 
@@ -104,13 +76,10 @@ After connecting successfully you can subscribe/unsubscribe to different topics.
 
 ```javascript
     // unsubscribe from topic
-    conn.send(JSON.stringify({ method: "unsubscribe", topic: "orders" }));
-
-    // unsubscribe from individual symbols
-    conn.send(JSON.stringify({ method: "unsubscribe", topic: "marketDepth", symbols: ["BNB_BTC"] }));
+    conn.send(JSON.stringify({ method: "unsubscribe", topic: "transfers" }));
 ```
 
-**Example:** To extend connection life, you should send a a message with a payload using the `keepAlive` method:
+**Example:** To extend connection life, you should send a message with a payload using the `keepAlive` method:
 
 ```javascript
     // This will extend the connection time to another 30 minutes
