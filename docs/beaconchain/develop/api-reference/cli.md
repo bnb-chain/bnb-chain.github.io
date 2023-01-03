@@ -14,14 +14,10 @@ balance, transaction detail by transaction hash and etc.
 
 ## Where can I download the Beacon Chain CLI?
 
-You can download Beacon Chain CLI releases here: [https://github.com/bnb-chain/node-binary](https://github.com/bnb-chain/node-binary/tree/master/cli)
-```
-git clone https://github.com/bnb-chain/node-binary.git
-```
-You can choose to download the version for testnet or mainnet. Replace the network var with `testnet` or` prod` in the following command:
-```
-cd node-binary/cli/{network}/{version}
-```
+You can download Beacon Chain CLI releases here: [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases)
+
+You can choose to download the version for testnet (`tbnbcli`) or mainnet (`bnblci`).
+
 ### CLI installation
 
 Once you have downloaded the binary for your platform, you may drop it into any folder you like. Open a terminal window or `cmd.exe` in that folder, and then follow the examples on the documentation site.

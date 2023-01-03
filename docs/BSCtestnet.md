@@ -10,6 +10,8 @@ The testnet is a test environment for BNB Smart Chain network, run by the BNB Ch
 
 The validators on the testnet are mainly from the development team.
 
+You can connect a node to the testnet by downloading the node binary and testnet configuration from [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases).
+
 ## What is the Testnet good for?
 
 - Create your test address and get your testnet funds.

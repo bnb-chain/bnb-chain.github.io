@@ -106,7 +106,7 @@ If you are connecting to an existing network for which you have a data backup (f
 You can use `bnbcli` binary to sen `create-validator` transaction, thus you can declare your candidacy.
 
 
-* Download `bnbcli` from [GitHub](https://github.com/bnb-chain/node-binary/tree/master/cli/prod/0.8.2)
+* Download `bnbcli` from [GitHub](https://github.com/bnb-chain/node/releases)
 
 Use `bnbcli` to create an account or recover an account, make sure the account get more than 10000 BNB.
 

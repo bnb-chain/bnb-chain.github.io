@@ -59,7 +59,7 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {your-valid
 
 You can get testnet BNB from <https://testnet.binance.org/faucet-smart>, but the BNB is on BNB Smart Chain.
 
-Download `tbnbcli `from [GitHub](https://github.com/bnb-chain/node-binary/tree/master/cli/testnet/0.8.1). Use `tbnbcli` to create an account or recover an account.
+Download `tbnbcli `from [GitHub](https://github.com/bnb-chain/node/releases). Use `tbnbcli` to create an account or recover an account.
 
 You can follow the [guide](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) to transfer BNB from BSC testnet to BC testnet.
 
