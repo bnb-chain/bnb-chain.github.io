@@ -187,10 +187,8 @@ To solve this issue, you need to set `--trust-node` to `true`
 For detailed usage, you can refer to:
 
 - [transfer](../beaconchain/transfer.md)
-- [trade](../beaconchain/trade.md)
 - [issue](../beaconchain/tokens.md)
 - [governance](../beaconchain/governance.md)
-- [list](../beaconchain/list.md)
 - [keys](../beaconchain/keys.md)
 - [offline](../beaconchain/offline.md)
 - [timelock](../beaconchain/timelock.md)

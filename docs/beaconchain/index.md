@@ -93,7 +93,6 @@ Want to develop on **BNB Smart Chain **? First, read through the [FAQ](../BSC-FA
 Beacon Chain  is essentially a digital asset creation and exchange platform.<br/>
 The features listed below are currently supported on Beacon Chain :
 
-- [The Listing and Delisting of Tokens](list.md)
 - [The Issuance, Burning, Minting and Freezing of Tokens](tokens.md)
 - [Transfer of Tokens](transfer.md)
 
