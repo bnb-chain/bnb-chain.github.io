@@ -3,7 +3,7 @@ sidebar_label: Scaling & Better User Experience
 sidebar_position: 2
 ---
 
-# Scaling and Imporvements for Better User Experience
+# Scaling and Improvements for Better User Experience
 
 ## Scaling 
 

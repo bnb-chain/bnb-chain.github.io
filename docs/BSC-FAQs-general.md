@@ -250,7 +250,7 @@ https://forms.coinholmes.com
 
 Coinholmes.com is supported by the Peckshield team (A professional security company)
 
-## How to reset Binance Extention Wallet?
+## How to reset Binance Extension Wallet?
 If the user has a seed phrase then the user can refer to [here](wallet/extension/reset.md) to reset the wallet.
 
 ## How to apply for Pioneer Burn Refunding?

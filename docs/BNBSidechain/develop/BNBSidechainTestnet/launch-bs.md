@@ -21,7 +21,7 @@ The config file structure is as such:
 * `systemTreasury` — address of system treasury that accumulates 1/16 of rewards (might be governance).
    * `consensusParams` — parameters for the consensus and staking.
    * `activeValidatorsLength` — suggested values are (3k+1, where k is honest validators, even better): 7, 13, 19, 25, 31...
-   * `epochBlockInterval` — length of an epoch, specified in blocks; recommmended length is 1 day (86400/3=28800, where 3s is block time).
+   * `epochBlockInterval` — length of an epoch, specified in blocks; recommended length is 1 day (86400/3=28800, where 3s is block time).
    * `misdemeanorThreshold` — after missing this amount of blocks per day validator losses all daily rewards (penalty).
    * `felonyThreshold` — after missing this amount of blocks per day validator goes in jail for N epochs.
    * `validatorJailEpochLength` — how many epochs validator should stay in jail (7 epochs = ~7 days).
