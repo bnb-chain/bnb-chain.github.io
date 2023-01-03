@@ -108,7 +108,7 @@ $ cp ./docs/jsdoc.md ../docs-site/docs/api-reference/js-sdk/jsdoc.md
 #### Generate swagger doc
 
 ```bash
-$  swagger-codegen generate -i ./rpc-openapi.json  -l  html2   -o ./site/rpc-swagger
-$  swagger-codegen generate -i ./swagger.json  -l  html2   -o ./site/api-swagger
+$  swagger-codegen generate -i ./rpc-openapi.json  -l  html2   -o ./static/rpc-swagger
+$  swagger-codegen generate -i ./swagger.json  -l  html2   -o ./static/api-swagger
 ```
 

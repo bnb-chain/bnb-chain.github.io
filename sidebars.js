@@ -250,7 +250,7 @@ const sidebars = {
                                   'beaconchain/develop/node/join-testnet', 'beaconchain/develop/node/synctypes',
                                 'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
                               'beaconchain/develop/node/upgrade', 'beaconchain/develop/node/localnetwork',
-                            'beaconchain/develop/node/fullnodeissue', 'beaconchain/develop/api-reference/dex-api/staking',
+                            'beaconchain/develop/node/fullnodeissue',
                             'beaconchain/develop/node/snapshot'
                           ]
                         }, 
@@ -259,15 +259,16 @@ const sidebars = {
                         {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
                         {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'Simple API Server'},
                         {type:'doc', id: 'beaconchain/develop/bcsdk', label:'BNB Beacon Chain SDK'},
-                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'BNB Beacon Chain Testnet & SDK'},
+                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'BNB Beacon Chain Testnet'},
                         {
                           type: 'category',
-                          label:'BNB Beacon Chain and DEX API Reference',
+                          label:'BNB Beacon Chain API Reference',
                           items:[
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
-                            {type:'link', href:"pathname:///api-swagger/index.html", label: 'Accelerated Node HTTP API Swagger'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: 'Accelerated Node HTTP API Testnet- Paths and Models'},
+                            {type:'link', href:"pathname:///api-swagger/index.html", label: 'Accelerated Node HTTP API Swagger'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/staking', label: 'Staking API'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},
                             {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: 'Node RPC - Paths and Models'},
