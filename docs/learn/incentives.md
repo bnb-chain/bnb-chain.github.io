@@ -1,4 +1,4 @@
-# Incentive Mechanism for BSC Relayer 
+# Incentive Mechanism 
 
 The BSC relayers play an important role in relaying interchain packages from BC to BSC.
 All BSC relayers build their stable infrastructure, watch any event happened on the Beacon Chain, and act timely to get paid accordingly. The following discussion is about how to distribute the rewards to let the relayers are willing to make a long-term contribution.
@@ -17,8 +17,8 @@ It is tough hard to achieve all these goals; we make some trade-off on robustnes
 
 We have three reward sources:
 
-1. Users paid rewards: Users who send `bind` or `cross chain transfer` transactions need to pay extra fee as BSC relayer rewards.
-2. System rewards: Rewards comes from `SystemReward` contract.
+1. Users paid rewards: Users who send **bind** or **cross chain transfer** transactions need to pay extra fee as BSC relayer rewards.
+2. System rewards: Rewards comes from **SystemReward** contract.
 
 The role of relayers and their rewards comes from:
 
@@ -43,13 +43,13 @@ To prevent the relayer who has the best network always winning the game, we gath
 
 ![formula](../../static/img/packageRelayerRewardformula.png)
 
-`Rp` represents the total balance of package reward pool.
+**Rp** represents the total balance of package reward pool.
 
 ### Weight formula for header relayers:
 
 ![formula](../../static/img/headerRelayerRewardFormula.png)
 
-`Rh` represents the total balance of header reward pool.
+**Rh** represents the total balance of header reward pool.
 
 ### We consider setting these parameters a reasonable value:
 

@@ -33,7 +33,6 @@ In this section, we have provided tutorials on usage of different components of 
 * Tutorial on [How to Bind BEP2 and BEP20 Tokens](bind-tokens.md)
 * Tutorial on [How to Mirror BEP2 and BEP20 Tokens](mirror.md)
 * Tutorial on [How to Sync BEP2 and BEP20 Supply](sync.md)
-* Tutorial on [How to Perform Cross-Chain Transfer of BEP2 and BEP20 Tokens Between BC and BSC](cross-chain-transfer.md)
 #### NFT
 * Tutorial on [How to Implement Token URI](develop/../nft-metadata-standard.md)
 * Tutorial on [How to Deploy NFTs on BSC](ERC721.md)
