@@ -7,7 +7,7 @@ sidebar_position: 2
 # How does Add Account Work
 
 ## BIP39
-[Bitcoin Improvement Proposal (BIP) 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) defines a formula for the generation of a mnemonic sentence (also referred to as mnemonic words, seed phrase, recovery phrase, etc.) the generation of a seed from that mnemonic sentence. The seed pharse is used to produce your private and public keys.
+[Bitcoin Improvement Proposal (BIP) 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) defines a formula for the generation of a mnemonic sentence (also referred to as mnemonic words, seed phrase, recovery phrase, etc.) the generation of a seed from that mnemonic sentence. The seed phrase is used to produce your private and public keys.
 
 ## BIP32
 [BIP 32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) is a specification for creating [Hierarchical Deterministic wallets](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki). They are wallets that from a root can generate multiple "child" private keys in a deterministic way. You only need to remember the "path" of the child key.For example hardware wallets use them from a single root you can generate separate keys for Bitcoin (with path m/44'/0'/0'/0) and Ethereum (path m/44'/60'/0'/0).

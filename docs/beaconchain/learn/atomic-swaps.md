@@ -6,7 +6,7 @@ The problem of an atomic swap is one where (at least) two parties, Alice and Bob
 
 A non-atomic trivial solution would have Alice send her coins to Bob, and then have Bob send other coins to Alice - but Bob has the option of going back on his end of the bargain and simply not following through with the protocol, ending up with both sets of coins.
 
-Atomic swaps can be used for trading between BEP2 tokens, or for trading crosss different blockchains.
+Atomic swaps can be used for trading between BEP2 tokens, or for trading across different blockchains.
 
 ## Hash Timer Locked Contract
 
@@ -21,7 +21,7 @@ A purely-code-controlled escrow account is a kind of account which is derived fr
 ```
 AtomicSwapCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainAtomicSwapCoins")))
 ```
-The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and the account for testnet is: **tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d**. Once the swap is claimed or refunded, the fund will be transfered from the purely-code-controlled escrow account to client accounts.
+The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and the account for testnet is: **tbnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4ffasp3d**. Once the swap is claimed or refunded, the fund will be transferred from the purely-code-controlled escrow account to client accounts.
 
 
 ### Hash Timer Locked Transfer
@@ -684,7 +684,7 @@ In its [event log](https://ropsten.etherscan.io/tx/0x142fb8db7eb66feb241ca710a02
 Then, you can call the `claim` function:
 
  * Function: *claim*
- * Prameters:
+ * Parameters:
     * _swapID: this is get from event, you can also calculate it from `calSwapID` function in the contract. calSwapID(randomNumberHash, {deputy ethereum address}, {hex encoding client binance address})
     * _randomNumber: reveal your randomNumber
 

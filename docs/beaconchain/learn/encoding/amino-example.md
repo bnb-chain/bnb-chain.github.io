@@ -123,7 +123,7 @@ type StdSignDoc struct {
 
 ### Canonical Bytes for Signing
 
-A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical represenation of the transaction is generated in JSON format for signing.
+A transaction signature is **not** formed from the Amino-encoded transaction bytes themselves. Rather, a canonical representation of the transaction is generated in JSON format for signing.
 
 This would allow for clients to sign a transaction off-chain, for example, a hardware HSM device like a Ledger, or within a micro-service in an algorithmic trading system. For example an external system will not have to understand Amino encoding to be able to approve of the transaction's content and produce the signed JSON string.
 
@@ -194,10 +194,10 @@ message StdSignature {
 ```
 
 ### Message Types
-Messages represent the individual operations possible on Beacon Chain , and these can be inserted into `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangably in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
+Messages represent the individual operations possible on Beacon Chain , and these can be inserted into `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangeably in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
 
 #### Transfer
-Transfer is the transaction for transfering funds to different addresses.
+Transfer is the transaction for transferring funds to different addresses.
 
 ```go
 // please note the field name is the JSON name.
