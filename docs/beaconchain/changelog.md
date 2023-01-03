@@ -1,6 +1,10 @@
 CHANGELOG
 ========
 
+##  Latest Changes
+
+This page is deprecated. Please follow [BNB Chain Blog](https://www.bnbchain.org/en/blog/tag/announcement/) to get the latest updates.
+
 ## Upcoming Changes in Beacon Chain  Mainnet API - 2021-06-04
 
 ### HTTP API
