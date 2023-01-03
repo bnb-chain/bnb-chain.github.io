@@ -1,4 +1,4 @@
-# Monitoring and Querying Slashing Events
+# Monitoring
 
 ## Monitoring Slash Contract
 

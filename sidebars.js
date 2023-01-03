@@ -144,9 +144,9 @@ const sidebars = {
                 type: 'category',
                 collapsed: true,
                 label: 'Slashing',
-                items:['validator/Penalty-overview',  'validator/send-slash-evidence', 
-                      'validator/scenarios-slash', 'validator/slash-fee', 'validator/unjail',
-                      'validator/monitor-and-query-slash'
+                items:['validator/Penalty-overview', 'validator/unjail',
+                       'validator/slash-fee', 'validator/send-slash-evidence',
+                    'validator/monitor-and-query-slash'
                 ]
               },
               ]
