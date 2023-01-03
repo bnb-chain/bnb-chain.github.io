@@ -26,17 +26,15 @@ Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](wallet
 ```js
 const Web3 = require('web3');
 // mainnet
-const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
-
+const web3 = new Web3('https://bsc-dataseed.binance.org');
 // testnet
 const web3 = new Web3('https://data-seed-prebsc-1-s1.binance.org:8545');
 ```
 
-### Create a wallet
+### Create a Wallet
 
 ```javascript
 web3.eth.accounts.create([entropy]);
-
 ```
 Output:
 ```bash
@@ -48,34 +46,28 @@ web3.eth.accounts.create();
   sign: [Function: sign],
   encrypt: [Function: encrypt]
 }
-
 ```
 
-### Recover a wallet
+### Recover a Wallet
 
 ```javascript
-
 const account = web3.eth.accounts.privateKeyToAccount("0xe500f5754d761d74c3eb6c2566f4c568b81379bf5ce9c1ecd475d40efe23c577")
-
 ```
 
 
-### Check balance
+### Check Balance
 
 ```javascript
 web3.eth.getBalance(holder).then(console.log);
-
 ```
 
-Output:
-
-The balance will be bumped by e18 for BNB.
+Output (The balance will be bumped by e18 for BNB):
 
 ```
 6249621999900000000
 ```
 
-### Create transaction
+### Create Transaction
 
 **Parameters**
 
@@ -89,21 +81,20 @@ The balance will be bumped by e18 for BNB.
 * nonce - Number: (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
 
 ```Javascript
-
-	// // Make a transaction using the promise
-	web3.eth.sendTransaction({
-	    from: holder,
-	    to: '0x0B75fbeB0BC7CC0e9F9880f78a245046eCBDBB0D',
-	    value: '1000000000000000000',
-	    gas: 5000000,
-        gasPrice: 18e9,
-	}, function(err, transactionHash) {
-      if (err) {
-        console.log(err);
-        } else {
-        console.log(transactionHash);
-       }
-    });
+// Make a transaction using the promise
+web3.eth.sendTransaction({
+	  from: holder,
+	  to: '0x0B75fbeB0BC7CC0e9F9880f78a245046eCBDBB0D',
+	  value: '1000000000000000000',
+	  gas: 5000000,
+    gasPrice: 18e9,
+}, function(err, transactionHash) {
+  if (err) {
+      console.log(err);
+      } else {
+      console.log(transactionHash);
+      }
+});
 ```
 
 

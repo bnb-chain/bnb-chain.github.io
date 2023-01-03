@@ -6,15 +6,15 @@ sidebar_position: 2
 
 # Mirror BEP2 and BEP20 Token
 
-## Prerequisite
+## Pre-requisites
 
-This BEP20 token is not bonded to any BEP2 token
+This BEP20 token is not bound to any BEP2 token
 
 ## Motivation
 
-Anyone can call the `mirror` [method](https://github.com/binance-chain/bsc-genesis-contract/blob/af4f3993303213052222f55c721e661862d19638/contracts/TokenManager.sol#L331) to issue a BEP2 token automatically and bind them.
+Anyone can call the `mirror` [method](https://github.com/bnb-chain/bsc-genesis-contract/blob/af4f3993303213052222f55c721e661862d19638/contracts/TokenManager.sol#L331) to issue a BEP2 token automatically and bind them.
 
-## What happens under the hood
+## What Happens Under the Hood
 
 - Verify there is no pending mirror request
 - Check the total supply and token symbol is valid
@@ -34,7 +34,7 @@ Both `mirrorFee` and `relayFee` can be changed by on-chain governance
 
 To query `mirrorFee` from system contract;
 
-- Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+- Call `Tokenmanager` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001008#readContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi)
 
 - Query `mirrorFee` function
 
@@ -42,7 +42,7 @@ Fee= result/1e18
 
 To query `relayFee` from system contract;
 
-- Call `TokenHub` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi )
+- Call `TokenHub` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001004#readContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
 
 - Query `getMiniRelayFee` function
 
@@ -50,9 +50,7 @@ Fee= result/1e18
 
 ## Mirror With MyEtherWallet
 
-- Call `Tokenmanager` Contract
-
-Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+- Call `Tokenmanager` Contract with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi)
 
 ![img](https://lh5.googleusercontent.com/SYyvWVcLHELSE72JSXqBwMJB6Y50jMz5HgH6irmCbyxGwr-W_Hz-vbm4IqWXAqE2hvCAXaqNKfs28ZhGFtMrMrDgWvDfEkHPunnSuxSKPpLBtuxmiX-b5yRjfczENJxKDrqSAYWy)
 
@@ -70,12 +68,8 @@ All set!
 
 ## Query BEP2 Token Symbol
 
-You can query BEP2 Token symbol from `tokenhub` contract.
+You can query BEP2 Token symbol from `tokenhub` contract with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
 
-Use the latest [ABI](https://raw.githubusercontent.com/binance-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
-
-Select `getBoundBep2Symbol` function
-
-Then, you can see the token symbol in the result.
+Select `getBoundBep2Symbol` function input BEP20 token contract address, then you can see the token symbol in the result.
 
 ![img](https://lh6.googleusercontent.com/i1NSu3t9lWEo5lRmsNw7moE_okqZe7VOto1vjGl3MXhQIoNJUJ0wMEwx-68LYRfMKbTs8TfCXzPGWJ7Oj9nSdtF3vo4wVnb_QFCeeC6RQk6kweQOe61_isnt8BOQs7mGmPpz7PKP)

@@ -1,4 +1,4 @@
-# Run a light client to join Beacon Chain 
+# Run a Light Client to Join Beacon Chain 
 
 Light client is a program that connects to a full node to help users access and interact with Beacon Chain 
 in a secure and decentralized manner without having to sync the full blockchain.

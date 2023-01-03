@@ -1,5 +1,5 @@
 ## Introduction
-As explained in [BEP3](https://github.com/binance-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on Beacon Chain and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
+As explained in [BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on Beacon Chain and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
 During the swap process, the related fund will be locked to a purely-code-controlled escrow account.
 A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in Beacon chain protocol. This kind of account doesn't have its own private key and it's only controlled by code of the protocol. The code for calculating escrow account is the same that is used in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
 ```
@@ -389,8 +389,8 @@ refundHTLT | N/A |  0.000375 BNB | Y
 
 ### Preparations
 
-1. Deploy smart-contract which supports Atomic Peg Swap (APS), there is  already [one example](https://github.com/binance-chain/bep3-smartcontracts) for Ethereum
-2. Deploy `deputy` process for handling swap activities by token owners, there is an existing open-source solution here: <https://github.com/binance-chain/bep3-deputy>
+1. Deploy smart-contract which supports Atomic Peg Swap (APS), there is  already [one example](https://github.com/bnb-chain/bep3-smartcontracts) for Ethereum
+2. Deploy `deputy` process for handling swap activities by token owners, there is an existing open-source solution here: <https://github.com/bnb-chain/bep3-deputy>
 3. Issue and transfer enough tokens
 
 ### Testnet Deployment
@@ -445,7 +445,7 @@ Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.binanc
 ]
 ```
 
-You can also get swapID by [calculateSwapID in javascript-sdk](https://github.com/binance-chain/javascript-sdk/blob/91b4d39e96e6433c16a3a1288931f84923075543/src/utils/index.js#L266). It requires three parameters:
+You can also get swapID by [calculateSwapID in javascript-sdk](https://github.com/bnb-chain/javascript-sdk/blob/91b4d39e96e6433c16a3a1288931f84923075543/src/utils/index.js#L266). It requires three parameters:
 
 | Name | Type | Description | Example |
 |-- | -- | -- | -- |

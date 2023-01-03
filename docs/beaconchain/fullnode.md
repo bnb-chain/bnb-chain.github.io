@@ -115,7 +115,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 
 ##### State Sync
 
-As explained in [BEP18](https://github.com/binance-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
+As explained in [BEP18](https://github.com/bnb-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.<br/>
 Now you do not need to allocate more memories to your full node for this feature to work.
 
 Configuration is located in `$BNCHOME/config/config.toml`:

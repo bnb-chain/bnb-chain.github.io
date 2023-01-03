@@ -14,6 +14,16 @@
   src: url('../../static/IBM Plex Sans Font/IBM-Plex-Mono/IBMPlexMono-Regular.otf') format('otf');
 }
 
+img{
+  /*max-width: 80%;
+  max-height: auto;*/
+  justify-content: center;
+}
+
+img[BNB]{
+  max-height: 100%;
+  max-width: 100%
+}
 
 :root {
   --ifm-color-primary: #f0b90b;
@@ -96,5 +106,3 @@ html[data-theme='light'] .navbar dropdown {
     var(--ifm-color-emphasis-100) 100%
   );
 }
-
-

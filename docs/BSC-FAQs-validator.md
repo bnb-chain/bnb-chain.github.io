@@ -1,13 +1,12 @@
 ---
 sidebar_label: BSC Validator FAQs
-hide_table_of_contents: true
+hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB Smart Chain  Validator FAQs
+# BNB Smart Chain Validator FAQs
 
-### How does a validator node work?
-
+### What is the role of BNB Smart Chain Validators?
 It powers the blockchain network by processing transactions and signing blocks.
 
 ### What are the incentives to run a validator node?
@@ -65,7 +64,7 @@ Slashing is a punitive function that is triggered by a validator ’s bad action
 
 ### What is the process of getting selected as a validator node on BSC?
 
-On BNB Smart Chain  (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 21 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 21 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.binance.org/smart-chain/validator/overview.html).
+On BNB Smart Chain  (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 21 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 21 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.bnbchain.org/docs/validator/overview.html).
 
 ### How is the bad or malicious behavior of the validator nodes controlled in the BSC?
 
@@ -84,7 +83,7 @@ Instead their reward will be distributed amongst other better performing validat
 
 ### What is the minimum amount for self-delegation to avoid being jailed?
 
-The [minimum self-delegated amount](validator/Parameters.md) is **10000BNB**.
+The [minimum self-delegated amount](parameters.md) is **10000BNB**.
 
 ### What is the unbounding time period?
 
@@ -148,29 +147,31 @@ ERROR[11-02|06:02:55.001] Failed to open snapshot tree err="head doesn't
 match snapshot: have 0x5c17a8fc0164dabedd446e954b64e8a54fc7c8b4fee1bbd707c3cc3ed1e45fff, want 0x431565cee8b7f3d7bbdde1265304fa4574dc3531e511e9ffe43ae79d28e431d6" head doesn't match snapshot: have 0x5c17a8fc0164dabedd446e954b64e8a54fc7c8b4fee1bbd707c3cc3ed1e45fff, want 0x431565cee8b7f3
 ~~~~
 
-This error occurs due to data corruption. You can run geth snapshot verify-state to double confirm whether the data is correct. You can download the latest snapshot from https://github.com/binance-chain/bsc-snapshots. By doing that, you don't have to prune-state in the future, save precious disk IO, it will help you keep up with syncing.
+This error occurs due to data corruption. You can run geth snapshot verify-state to double confirm whether the data is correct. You can download the latest snapshot from https://github.com/bnb-chain/bsc-snapshots. By doing that, you don't have to prune-state in the future, save precious disk IO, it will help you keep up with syncing.
 
 ### What to do if Sync is slow on running the following command 
 
 ~~~~
-*_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap –diffsync --txlookuplimit 0_*
+*_start order: geth --config ./config.toml --datadir /data/server/data-seed/ --cache 20000 --rpc.allow-unprotected-txs --syncmode snap  --txlookuplimit 0_*
 ~~~~
 
-Try pruning the state -- stop geth, then run geth --datadir=node snapshot prune-state. Assuming that datadir is node, change that if it's elsewhere then restart after it's done. Follow https://github.com/binance-chain/bsc/issues/502 to get more tips about how to maintain a synced node.
+Try pruning the state -- stop geth, then run geth --datadir=node - prune-state. Assuming that datadir is node, change that if it's elsewhere then restart after it's done. Follow https://github.com/bnb-chain/bsc/issues/502 to get more tips about how to maintain a synced node.
 
 ### How to start the geth node through snapshot to get node synced?
 
-The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows: download geth 1.1.5 and make it executable, optionally move it `/usr/local/bin/geth`
+The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows: 
+
+  * Download the latest version of geth from the [official site](https://github.com/bnb-chain/bsc-snapshots) and make it executable, optionally move it `/usr/local/bin/geth`
   
-  * download mainnet.zip and unzip
+  * Download mainnet.zip and unzip
   
-  * generate genesis using command below, will also create a mainnet folder for blockchain data ./geth_linux --datadir mainnet init genesis.json
+  * Generate genesis using command below, will also create a mainnet folder for blockchain data ./geth_linux --datadir mainnet init genesis.json
   
-  * download the 14 nov 2021 snapshot
+  * Download the latest snapshot from [here](https://github.com/bnb-chain/bsc-snapshots)
    
-  * extract snapshot
+  * Extract the snapshot
  
-  * move snapshot data to mainnet folder
+  * Move the snapshot data to mainnet folder
 
       `rm -rf mainnet/geth/chaindata`  
 
@@ -188,7 +189,7 @@ The two biggest bottlenecks are CPU and IOPS when syncing. Steps are as follows:
 [Optional] Create a service or use screen to run the command below, so it doesn't stop if you are using SSH.
 Run screen then press enter, anytime you lose connection via ssh, run screen -r to get back the "screen/terminal" where geth was running Geth Command 
 
-`geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false –diffsync`
+`geth --config ./config.toml –datadir ./mainnet --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 –ws --syncmode=full --snapshot=false `
 
 ### What are the few adjustments that can help resolve sync issues?
 

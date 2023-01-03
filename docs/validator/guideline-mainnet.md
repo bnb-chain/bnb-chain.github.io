@@ -12,17 +12,17 @@ Before you start, make sure you meet the hardware requirements for the validator
 #### Choose Your Validator hardware
 
 - VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 2T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
-- 16 cores of CPU and 48 gigabytes of memory (RAM)
+- **IMPORTANT** 2 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms
+- 16 cores of CPU and 48 GB of memory (RAM)
 - Suggest m5zn.3xlarge instance type on AWS, or c2-standard-8 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 10 megabyte per second
+- A broadband Internet connection with upload/download speeds of 10 MB/S
 
 
 ## Setting up Validator Node on Mainnet
 
 ### 1. Install BSC Fullnode
 
-You can download the pre-build binaries from [release page](https://github.com/binance-chain/bsc/releases/latest) or follow the instructions [here to set up a full node](fullnode.md).
+You can download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions [here to set up a full node](fullnode.md).
 
 **Download the config files**
 
@@ -30,7 +30,7 @@ Download `genesis.json` and `config.toml` by:
 
 ```bash
 ## mainet
-wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+wget --no-check-certificate  $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
 ```
 
@@ -137,7 +137,7 @@ Make sure that the `side-cons-addr` is the address you unlock when start the val
 
 Read the detailed manual [here](../stake/Staking.md) to understand other parameters.
 
-Go to [explorer](https://explorer.binance.org/) to verify your transactions.
+Go to [explorer](https://explorer.bnbchain.org/) to verify your transactions.
 
 ## After Declaring Your Candidacy
 
@@ -155,13 +155,13 @@ docker run -it -d -p 9090:9090 \
 
 ### 2. Update validator profile
 
-You can submit a PullRequest to this repository to update your information: <https://github.com/binance-chain/validator-directory>
+You can submit a PullRequest to this repository to update your information: <https://github.com/bnb-chain/validator-directory>
 Reference: <https://grafana.com/grafana/dashboards/6976>
 
 
 ### 3. Publish Validator Information
 
-Please submit a Pull Request to this repo <https://github.com/binance-chain/validator-directory>
+Please submit a Pull Request to this repo <https://github.com/bnb-chain/validator-directory>
 
 This repository is a place for validator candidates to give potential delegators a brief introduction about your team and infrastructure, and present your ecosystem contributions.
 

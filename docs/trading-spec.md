@@ -5,16 +5,16 @@
 Orders are the requests for client to buy or sell tokens into other tokens on Binance DEX.
 It is a standard type of Beacon Chain transaction. Orders are composed of the below parameters.
 
-0. Symbol Pairs: the list pair the order wants to trade.
-1. Order Type: Binance DEX only accept LIMIT orders, which is adhering to SEC definitions of LIMIT orders
-2. Price: price users would like to pay for the specified token quantity, presented as a float
+1. Symbol Pairs: the list pair the order wants to trade.
+2. Order Type: Binance DEX only accept LIMIT orders, which is adhering to SEC definitions of LIMIT orders
+3. Price: price users would like to pay for the specified token quantity, presented as a float
 number of quote currency. This must be rounded by tick size. Internally it can be multiplied by 1e8(10^8) in order to store as an integer
 in the range of int64.
-3. Quantity: number of tokens users want to buy or sell. That must be rounded by lot size. Internally it can be multiplied by
+4. Quantity: number of tokens users want to buy or sell. That must be rounded by lot size. Internally it can be multiplied by
 1e8(10^8) in order to store as an integer in the range of int64.
-4. Side: buy or sell
-5. Time: entry time of the order, which is the block number(height) the order gets booked in.
-6. TimeInForce:
+5. Side: buy or sell
+6. Time: entry time of the order, which is the block number(height) the order gets booked in.
+7. TimeInForce:
 
     * GTE: Good Till Expire. Order would stay effective until expire time. Order may expire in the UTC midnight after more than 259, 200 blocks, which is 72 hours in term of blocking time.
     * IOC: Immediate or Cancel. Orders would be executed as much as it can in the booking block
@@ -59,7 +59,7 @@ For GTE order, if a GTE order can execute against another order as a whole, the 
 Order would expire after 72 hours once it is booked on a block. A whole order book scan would happen every UTC mid-night to filter out all the expired orders. After the scan, all the expired orders would be removed from the order book, the locked quantity in the account would be unlocked. Before this action all the existing orders in the order book is subject to matching.
 
 !!! Tip
-        As discussed in [BEP-67](https://github.com/binance-chain/BEPs/blob/master/BEP67.md), those orders in the best 500 price levels on both ask and bid side will be expired after **30 days** instead of 72 hours. Meanwhile, the expiration fee is unchanged. BEP67 is already implemented and has been activated after Testnet Nightingale Upgrade. Beacon Chain Mainnet will be upgraded to support BEP-67 soon.
+        As discussed in [BEP-67](https://https://github.com/bnb-chain/BEPs/blob/master/BEP67.md), those orders in the best 500 price levels on both ask and bid side will be expired after **30 days** instead of 72 hours. Meanwhile, the expiration fee is unchanged. BEP67 is already implemented and has been activated after Testnet Nightingale Upgrade. Beacon Chain Mainnet will be upgraded to support BEP-67 soon.
 
 ## Precision
 

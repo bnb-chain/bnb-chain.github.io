@@ -4,18 +4,18 @@ hide_table_of_contents: true
 sidebar_position: 2
 ---
 
-# BNB Wallet API
+# Binance Extension Wallet API
 
-BNB Chain Wallet injects a global API into websites visited by its users at `window.BinanceChain`.
+Binance Extension Wallet injects a global API into websites visited by its users at `window.BinanceChain`.
 
-This API specification borrows heavily from API MetaMask provided, considering the massive adoption. So Web3 site developers can easily connect their dApps with the BNB Chain Wallet. The APIs allow websites to request users' BNB Smart Chain addresses, read data from the blockchain the user is connected to, and prompt the users to sign messages and transactions.
+This API specification borrows heavily from API MetaMask provided, considering the massive adoption. So Web3 site developers can easily connect their dApps with the Binance Extension Wallet. The APIs allow websites to request users' BNB Smart Chain addresses, read data from the blockchain the user is connected to, and prompt the users to sign messages and transactions.
 
 The presence of the provider object `window.BinanceChain` indicates a Beacon Chain/BNB Smart Chain user.
 
 The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied on legacy ones).
 
 ## Development Progress
-Currently (version 1.112.8) as BNB Chain Wallet natively supports Beacon Chain, we are planning to open a series of APIs for dApp developers to interact with Beacon Chain. At the end of the day, most [APIs available in Beacon Chain javascript sdk](https://github.com/binance-chain/javascript-sdk/tree/master/docs) would be available.
+Currently (version 1.112.8) as Binance Extension Wallet natively supports Beacon Chain, we are planning to open a series of APIs for dApp developers to interact with Beacon Chain. At the end of the day, most [APIs available in Beacon Chain javascript sdk](https://github.com/binance-chain/javascript-sdk/tree/master/docs) would be available.
 
 Currently, only the following is supported:
 * [`transfer`](https://github.com/binance-chain/javascript-sdk/tree/master/docs#transfer-tokens) 
@@ -24,11 +24,11 @@ Currently, only the following is supported:
 
 !!! warning
 
-    Please read through this section if you are a Web3 developer who has integrated with MetaMask and are interested in integrating with BNB Chain Wallet.
+    Please read through this section if you are a Web3 developer who has integrated with MetaMask and are interested in integrating with Binance Extension Wallet.
 
 ### Inpage injected object
 
-The biggest difference between BNB Chain Wallet and MetaMask is we inject `BinanceChain` rather than `ethereum` (or `web3`) to the web page. So, users could keep two extensions at the same time.
+The biggest difference between Binance Extension Wallet and MetaMask is we inject `BinanceChain` rather than `ethereum` (or `web3`) to the web page. So, users could keep two extensions at the same time.
 
 ### BinanceChain.request({method: "eth_sign", params: ["address", "message"])
 
@@ -137,7 +137,7 @@ render(
 
     Custom RPC endpoints are not affected; they always return the chain ID specified by the user.
 
-These are the IDs of the BNB Smart Chains that BNB Chain Wallet supports by default.
+These are the IDs of the BNB Smart Chains that Binance Extension Wallet supports by default.
 
 | Hex  | Decimal | Network                                        |
 | ---- | ------- | ---------------------------------------------- |
@@ -159,7 +159,7 @@ This API can also return chain ids of Beacon Chains if users switch to them. The
 
     The value of this property can change at any time, and should not be exclusively relied upon. See the [`chainChanged`](#chainchanged) event for details.
 
-**NOTE:** See the [Chain IDs section](#chain-ids) for important information about the BNB Chain Wallet provider's chain IDs.
+**NOTE:** See the [Chain IDs section](#chain-ids) for important information about the Binance Extension Wallet provider's chain IDs.
 
 
 A hexadecimal string representing the current chain ID.
@@ -257,11 +257,11 @@ The returned `signature` would be bytes encoded in hex string starting with `0x`
 
 !!! warning
 
-    dApp developers should verify whether the returned public key can be converted into the address user claimed in addition to an ECDSA signature verification because any plugin can inject the same object `BinanceChain` as BNB Chain Wallet.
+    dApp developers should verify whether the returned public key can be converted into the address user claimed in addition to an ECDSA signature verification because any plugin can inject the same object `BinanceChain` as Binance Extension Wallet.
 
 ### BinanceChain.switchNetwork(networkId: string): Promise<{networkId: string}>
 
-As BNB Chain Wallet natively supports Beacon Chain and BNB Smart Chain which are heterogeneous blockchains run in parallel. APIs would be different in any situation. (We would open APIs for Beacon Chain very soon).
+As Binance Extension Wallet natively supports Beacon Chain and BNB Smart Chain which are heterogeneous blockchains run in parallel. APIs would be different in any situation. (We would open APIs for Beacon Chain very soon).
 
 Developers could judge which network is selected by user currently via `BinanceChain.chainId` or listening to the `chainChanged` event via `BinanceChain.on('chainChanged', callback)`.
 
@@ -447,8 +447,8 @@ BinanceChain.on('accountsChanged', handleAccountsChanged);
 // For now, 'eth_accounts' will continue to always return an array
 function handleAccountsChanged(accounts) {
   if (accounts.length === 0) {
-    // BNB Chain Wallet is locked or the user has not connected any accounts
-    console.log('Please connect to BNB Chain Wallet.');
+    // Binance Extension Wallet is locked or the user has not connected any accounts
+    console.log('Please connect to Binance Extension Wallet.');
   } else if (accounts[0] !== currentAccount) {
     currentAccount = accounts[0];
     // Do any other work!
@@ -489,7 +489,7 @@ function connect() {
 
 This section documents MetaMask's legacy provider API.
 
-To be compatible with existing dApps that support MetaMask, BNB Chain Wallet implements them as well, but please don't rely on them. We may deprecate them soon in the future.
+To be compatible with existing dApps that support MetaMask, Binance Extension Wallet implements them as well, but please don't rely on them. We may deprecate them soon in the future.
 
 ## Legacy Properties
 

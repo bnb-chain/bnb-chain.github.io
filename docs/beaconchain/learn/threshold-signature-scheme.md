@@ -15,14 +15,14 @@ Combining TSS feature  with Beacon Chain  client will help users manage their fu
 
 ## Implementation
 
-Many development resources have been poured into implementing TSS, a cryptographic protocol for distributed key generation and signing. TSS is now compatible and reusable for ECDSA-based blockchains, including Beacon Chain , Bitcoin, and Ethereum networks. We expect that members of the Binance ecosystem and partner community can integrate this TSS library with their applications, such as wallets and custodians, and further develop this exciting new technology.
+Many development resources have been poured into implementing TSS, a cryptographic protocol for distributed key generation and signing. TSS is now compatible and reusable for ECDSA-based blockchains, including Beacon Chain , Bitcoin, and Ethereum networks. We expect that members of the BNB Chain ecosystem and partner community can integrate this TSS library with their applications, such as wallets and custodians, and further develop this exciting new technology.
 
-With the support of the Beacon Chain  community, we are happy to share the open-source code at https://github.com/binance-chain/tss-lib.
+With the support of the Beacon Chain  community, we are happy to share the open-source code at https://github.com/bnb-chain/tss-lib.
 
 ## Security Audit
 
 
-The implementation of a multi-party threshold ECDSA [library](https://github.com/binance-chain/tss-lib) is open source so it can be publicly audited by anyone. An independent third party auditors from [Kudelski Security](https://www.kudelskisecurity.com/)  are hired to validate the security of the cryptography in TSS solution. The latest report in October by can be found [here](../../assets/audit-binance-tss-lib-final.pdf).
+The implementation of a multi-party threshold ECDSA [library](https://github.com/bnb-chain/tss-lib) is open source so it can be publicly audited by anyone. An independent third party auditors from [Kudelski Security](https://www.kudelskisecurity.com/)  are hired to validate the security of the cryptography in TSS solution. The latest report in October by can be found [here](../../assets/audit-binance-tss-lib-final.pdf).
 
 Security checks are routinely and continuously planed for all parts of TSS lib implmentations and future audits  will be reported to Beacon Chain  community.
 

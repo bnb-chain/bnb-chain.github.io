@@ -14,30 +14,32 @@ The execution of a Smart Contract may slow down the exchange function and add no
 
 ## Where will the published whitepaper be found?
 
-<https://binance.org/whitepaper.pdf> and also <https://github.com/binance-chain/whitepaper>, where feedback is more than welcome.
+<https://binance.org/whitepaper.pdf> and also <https://github.com/bnb-chain/whitepaper>, where feedback is more than welcome.
 
 ## Where can I take a look at BNB Smart Chain  code? Is there a GitHub repository?
 
 The codebase of BSC is open-sourced here:
 
-* <https://github.com/binance-chain/bsc>
-* <https://github.com/binance-chain/bsc-relayer>
-* <https://github.com/binance-chain/bsc-relayer-config>
-* <https://github.com/binance-chain/bsc-genesis-contract>
-* <https://github.com/binance-chain/bsc-double-sign-sdk>
-* <https://github.com/binance-chain/oracle-relayer>
+* <https://github.com/bnb-chain/bsc>
+* <https://github.com/bnb-chain/bsc-relayer>
+* <https://github.com/bnb-chain/bsc-relayer-config>
+* <https://github.com/bnb-chain/bsc-genesis-contract>
+* <https://github.com/bnb-chain/bsc-double-sign-sdk>
+* <https://github.com/bnb-chain/oracle-relayer>
 
 ## Where can I find some support?
 
-* Technical talk and support running our software: Telegram <https://t.me/joinchat/IuVfSlYWC5seijz6a0Bjww>
-* Bugs or technical contributions: GitHub
+* Technical talk and support running our software: 
+  * Telegram <https://t.me/joinchat/IuVfSlYWC5seijz6a0Bjww>
+  * Discord <https://discord.com/channels/789402563035660308/912296662834241597>
+* Bugs or technical contributions: GitHub <https://github.com/bnb-chain>
 * General discussion regarding our blockchain: Telegram <https://t.me/BinanceDEXchange>
 
-## Which are BNB Smart Chain 's official channels for communication and information?
+## Which are BNB Smart Chain's official channels for communication and information?
 
 * Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
-* Twitter: <https://twitter.com/binancechain>
-* BNB Chain  Forum: <https://community.binance.org>
+* Twitter: <https://twitter.com/bnbchain>
+* BNB Chain Forum: <https://buildnbuild.dev/>
 
 ## Wallet support for BNB Smart Chain 
 
@@ -47,6 +49,11 @@ The codebase of BSC is open-sourced here:
   - [Arkane](wallet/arkane.md)
   - [Ledger](wallet/ledger.md)
   - [MEW](wallet/myetherwallet.md)
+  - [Trust Wallet](wallet/trustwallet.md)
+  - [ezDeFi](wallet/ezdefi.md)
+  - [SafePal](https://blog.safepal.io/pre-announcement-trade-on-dex-with-safepal/)
+  - [TokenPocket](https://tokenpocket-gm.medium.com/defi-with-tokenpocket-how-to-use-binance-smart-chain-swap-with-tokenpocket-e76d6cd7986)
+
 
 ##  How to recover if you choose the wrong network type?
 
@@ -78,7 +85,7 @@ BNB Chain opens the gate for users to take advantage of the fast transferring an
 
 There are already [140 assets](https://explorer.binance.org/assets/bep2) on BNB Chain 
 
-The introduction of [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
+The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties
 
 ## What make BNB Smart Chain  different?
 
@@ -120,4 +127,6 @@ bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binan
 
 * Cross-chain relay fee: 0.004 BNB
 
+## Which dApps are deployed on BSC?
+Refer to [here](https://bnbproject.org/) to learn about the different projects deployed on BSC.
 

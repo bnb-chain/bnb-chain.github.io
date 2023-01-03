@@ -40,6 +40,6 @@ Please refer to this [guide](cross-chain-transfer.md) for details
 
 ### How to send cross-chain transfer?
 
-You can use [BNB Chain extension wallet](wallet/binance.md) or
+You can use [BInance Extension Wallet](wallet/binance.md) or
 
 use [Trust wallet](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)

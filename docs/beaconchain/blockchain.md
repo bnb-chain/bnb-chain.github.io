@@ -1,6 +1,6 @@
-# The Beacon Chain  Blockchain
+# The Beacon Chain Blockchain
 
-The purpose of the new blockchain and DEX is to create an alternative marketplace for issuing and exchanging digital assets in a decentralized manner.
+The purpose of the Beacon Chain blockchain and DEX is to create an alternative marketplace for issuing and exchanging digital assets in a decentralized manner.
 
 ## Consensus Details
 

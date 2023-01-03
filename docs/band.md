@@ -1,5 +1,5 @@
 ---
-sidebar_label: Band Protocol Price Feed on BNB Smart Chain s
+sidebar_label: Band Protocol Price Feed on BNB Smart Chain
 hide_table_of_contents: false
 sidebar_position: 2
 ---

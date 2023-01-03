@@ -1,17 +1,17 @@
 # Wallets with WalletConnect Support
 
-* List of Wallets Supporting WalletConnect on Beacon Chain 
+* List of Wallets Supporting WalletConnect on BNB Chain
 
 
-| Number | Wallet Name                                            | Network                          |
-| ------ | ------------------------------------------------------ | -------------------------------- |
-| 1      | [Trust Wallet](wallets/trust-wallet.md)                | Mainnet                          |
-| 2      | [Math Wallet](wallets/math-wallet.md)                  | Mainnet                          |
-| 3      | [Meet.One Wallet](wallets/meet.md)                     | Mainnet                          |
-| 4      | [Equal Wallet](wallets/equal.md)                       | Mainnet&Testnet                  |
-| 5      | [SafePal Wallet](wallets/safepal.md)                   | Mainnet                          |
-| 6      | [CoolWallet](wallets/cool-wallet.md)                   | Mainnet                          |
-| 7      | [XWallet](wallets/xwallet.md)                          | Mainnet                          |
-| 8      | [Atomic Wallet](wallets/atomic-wallet.md)              | Mainnet                          |
-| 9      | [Cosmostation Wallet](wallets/cosmostation.md)         | Mainnet&Testnet                  |
-| 10     | [Infinity Wallet](wallets/infinitywallet.md)           | Mainnet&Testnet                  |
+| Number | Wallet Name                                    | Network                          |
+| ------ | -----------------------------------------------| -------------------------------- |
+| 1      | [Trust Wallet](https://trustwallet.com/)       | Mainnet                          |
+| 2      | [Math Wallet](https://mathwallet.org/en-us/)   | Mainnet                          |
+| 3      | [Meet.One Wallet](https://github.com/meet-one) | Mainnet                          |
+| 4      | [Equal Wallet](https://equal.tech/)            | Mainnet & Testnet                |
+| 5      | [SafePal Wallet](https://safepal.io/)          | Mainnet                          |
+| 6      | [CoolWallet](https://www.coolwallet.io/)       | Mainnet                          |
+| 7      | [XWallet](https://support.pundix.com/hc/en-us/categories/360001370531-XWallet-FAQ)    | Mainnet     |
+| 8      | [Atomic Wallet](https://atomicwallet.io/)      | Mainnet                          |
+| 9      | [Infinity Wallet](https://infinitywallet.io/)  | Mainnet                          |
+| 10     | [imToken](https://token.im/)                   | Mainnet                          |

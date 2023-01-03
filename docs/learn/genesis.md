@@ -15,8 +15,8 @@ A genesis file is a JSON file which defines the initial state of your blockchain
 
 The state defined in the genesis file contains all the necessary information, like initial token allocation, genesis time, default parameters, and more. Let us break down these information.
 
-Genesis Link for Mainnet:  <https://github.com/binance-chain/bsc/releases/download/v1.0.2/mainnet.zip>
-Genesis Link for Chapel Testnet: <https://github.com/binance-chain/bsc/releases/download/v1.0.2/testnet.zip>
+Genesis Link for Mainnet:  <https://github.com/bnb-chain/bsc/releases/download/v1.0.2/mainnet.zip>
+Genesis Link for Chapel Testnet: <https://github.com/bnb-chain/bsc/releases/download/v1.0.2/testnet.zip>
 
 ## Explaination
 

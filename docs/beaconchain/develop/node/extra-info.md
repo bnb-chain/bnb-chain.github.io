@@ -28,7 +28,7 @@ Then, the full node will save all the trades that have been filled, orders that 
 
 * Example:
 
-All those [extra info](https://docs.binance.org/get-extra-data-from-fullnode.html#publish-different-messages-to-local-files ) can also be found in exported data from your fullnode.
+All those [extra info](../../get-extra-data-from-fullnode.md#publish-different-messages-to-local-files) can also be found in exported data from your fullnode.
 
 ### Changes
 In `trade` data structure, there are five new fields: `SSrc`,`BSrc`,`SSingleFee`, `BSingleFee` and `TickerType`.

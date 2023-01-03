@@ -1,8 +1,5 @@
 # How to Reveal Your Seed Phrase
-
-
 When dealing with cryptocurrencies or crypto assets like BNB or BUSD, it is important to always be aware of and have your private keys, seed phrases and passwords backed up in case the unexpected occurs.
-
 
 ## Backing Up When Installing
 When you create a new Binance Extension Wallet account, you are given your 12 word seed phrase is the most important bit of information for you to record and keep safe when managing your extension account.

@@ -1,0 +1,3067 @@
+swagger: '2.0'
+info:
+  title: 'HTTP API'
+  version: 1.0.0
+  description: |
+    Within the ecosystem of Binance Chain, there are several accelerated nodes which provides more secure and faster lines to access Binance Chain and DEX data service including HTTP API.
+
+
+    For testnet, there are 2 accelerated nodes setup as below. API users should try to use them directly.
+
+    * testnet-dex-atlantic.binance.org
+
+    * testnet-dex-asiapacific.binance.org
+
+  license:
+    name: 'Apache 2.0'
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+basePath: /
+schemes:
+- https
+# - wss
+produces:
+- application/json
+tags:
+-
+  name: info
+  description: 'Access to runtime metadata'
+-
+  name: account
+  description: 'Access to an individual user''s trading activity'
+-
+  name: tx
+  description: 'Access to transactions metadata'
+-
+  name: tokens
+  description: 'Access to tokens metadata'
+-
+  name: market
+  description: 'Access to DEX market data'
+-
+  name: order
+  description: 'Access to historical orders'
+-
+  name: trade
+  description: 'Access to historical trading activity'
+-
+  name: userdata
+  description: 'Access to an individual user''s trading activity'
+-
+  name: node
+  description: 'Access to the node RPC functions'
+-
+  name: frontier
+  description: 'Access to the frontier services'
+-
+  name: misc
+  description: Others
+paths:
+  /api/v1/time:
+    get:
+      tags:
+      - misc
+      summary: Get the block time.
+      description: |
+        Gets the latest block time and the current time according to the HTTP service.
+
+        **Destination:** Validator node.
+
+        **Rate Limit:** 1 request per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
+      operationId: getTime
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/definitions/Times"
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/node-info:
+    get:
+      summary: Get node information.
+      description: |
+        Gets runtime information about the node.
+
+        **Destination:** Validator node.
+
+        **Rate Limit:** 1 request per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
+
+      operationId: getNodeInfo
+      produces:
+      - application/json
+      tags:
+      - info
+      - node
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/definitions/ResultStatus"
+            title: 'Node info'
+            description: 'Represents block height, current timestamp and the number of connected peers.'
+  /api/v1/validators:
+    get:
+      summary: Get validators.
+      description: |
+        Gets the list of validators used in consensus.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 10 requests per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
+
+      operationId: getValidators
+      produces:
+      - application/json
+      tags:
+      - info
+      - node
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Validators'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/peers:
+    get:
+      summary: Get network peers.
+      description: |
+        Gets the list of network peers.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 1 request per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
+
+      operationId: getPeers
+      produces:
+      - application/json
+      tags:
+      - info
+      - node
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Peer'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/account/{address}:
+    get:
+      summary: Get an account.
+      description: |
+        Gets account metadata for an address.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 5 requests per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
+      operationId: getAccount
+      produces:
+      - application/json
+      tags:
+      - node
+      - account
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Account'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      parameters:
+      -
+        name: address
+        in: path
+        description: 'The account address to query'
+        required: true
+        type: string
+  /api/v1/account/{address}/sequence:
+    get:
+      summary: Get an account sequence.
+      description: |
+        Gets an account sequence for an address.
+
+        **Destination:** Validator node.
+
+        **Rate Limit:** 5 requests per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
+      operationId: getAccountSequence
+      produces:
+      - application/json
+      tags:
+      - node
+      - account
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/AccountSequence'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      parameters:
+      -
+        name: address
+        in: path
+        description: 'The account address to query'
+        required: true
+        type: string
+  /api/v1/tx/{hash}:
+    get:
+      summary: Get a transaction.
+      description: |
+        Gets transaction metadata by transaction ID. By default, transactions are returned in a raw format. You may add `?format=json` to the end of the path to obtain a more readable response.
+
+        **Destination:** Seed node.
+
+        **Rate Limit:** 10 requests per IP per second.
+
+        **Example:**
+
+        Below is an example response of a send transaction when `?format=json` is used.
+        ```
+            {
+             code:0,
+             hash:"433806D6A4AB6359CB56EC55BA99896DFAB2AF11326B74881A2ABA7049C492D3",
+             height:"7850389",
+             log:"Msg 0: ",
+             ok:true,
+             tx:{
+                type:"auth/StdTx",
+                value:{
+                   data:null,
+                   memo:"101192150",
+                   msg:[
+                      {
+                         type:"cosmos-sdk/Send",
+                         value:{
+                            inputs:[
+                               {
+                                  address:"bnb1jafs33u9u6f7w7wzfmm4rr9rzy2cgqzp78kwaw",
+                                  coins:[
+                                     {
+                                        amount:"496429373",
+                                        denom:"BNB",
+
+                                     }
+                                  ],
+
+                               }
+                            ],
+                            outputs:[
+                               {
+                                  address:"bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23",
+                                  coins:[
+                                     {
+                                        amount:"496429373",
+                                        denom:"BNB",
+
+                                     }
+                                  ],
+
+                               }
+                            ],
+
+                         },
+
+                      }
+                   ],
+                   signatures:[
+                      {
+                         account_number:"438",
+                         pub_key:{
+                            type:"tendermint/PubKeySecp256k1",
+                            value:"A3mfgg/i12XNyy9esqCjI7yrkrOs9dngP7c9cDUEJly5",
+
+                         },
+                         sequence:"0",
+                         signature:"VvvGz3qbyirJ7vv01Df8tuAd7K4I+HK+yEBfep+qwtMKuHWQQH3XtMB9Pqtc2jlia0AtDe+BUEMtIyh3/N66IQ==",
+
+                      }
+                   ],
+                   source:"1",
+
+                },
+
+             },
+
+          }
+        ```
+      operationId: getTransaction
+      produces:
+      - application/json
+      tags:
+      - node
+      - tx
+      parameters:
+      -
+        name: hash
+        in: path
+        description: 'The transaction hash to query'
+        required: true
+        type: string
+      -
+        name: format
+        in: query
+        description: 'Response format (`json` or amino)'
+        required: false
+        type: string
+      responses:
+        '0':
+          description: Success
+          schema:
+            $ref: '#/definitions/Transaction'
+        '500':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/tokens:
+    get:
+      tags:
+      - tokens
+      summary: Get tokens list.
+      description: |
+        Gets a list of tokens that have been issued.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 1 request per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
+      operationId: getTokens
+      produces:
+      - application/json
+      parameters:
+      - name: limit
+        in: query
+        description: default 100.
+        required: false
+        type: integer
+        default: 100
+        format: int32
+        allowEmptyValue: false
+      - name: offset
+        in: query
+        description: start with 0; default 0.
+        required: false
+        type: integer
+        default: 0
+        format: int32
+        allowEmptyValue: false
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Token'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/markets:
+    get:
+      tags:
+      - market
+      summary: Get market pairs.
+      description: |
+        Gets the list of market pairs that have been listed.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 1 request per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)
+      operationId: getPairs
+      produces:
+      - application/json
+      parameters:
+      - name: limit
+        in: query
+        description: default 500; max 1000.
+        required: false
+        type: integer
+        default: 500
+        format: int32
+        allowEmptyValue: false
+      - name: offset
+        in: query
+        description: start with 0; default 0.
+        required: false
+        type: integer
+        default: 0
+        format: int32
+        allowEmptyValue: false
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Market'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/fees:
+    get:
+      summary: Obtain trading fees information.
+      description: |
+        Gets the current trading fees settings.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 1 request per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
+
+      operationId: getFees
+      produces:
+        - application/json
+      tags:
+        - info
+        - market
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Fee'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/depth:
+    get:
+      tags:
+      - market
+      summary: Get the order book.
+      description: |
+        Gets the order book depth data for a given pair symbol.
+
+        The given _limit_ must be one of the allowed limits below.
+
+        **Destination:** Validator node.
+
+        **Rate Limit:** 10 requests per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+      operationId: getDepth
+      produces:
+      - application/json
+      parameters:
+      -
+        in: query
+        name: symbol
+        description: Market pair symbol, e.g. NNB-0AD_BNB
+        required: true
+        type: string
+      -
+        in: query
+        name: limit
+        description: "The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000]"
+        required: false
+        type: integer
+        format: int32
+        enum:
+          - 5
+          - 10
+          - 20
+          - 50
+          - 100
+          - 500
+          - 1000
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/definitions/MarketDepth"
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/broadcast:
+    post:
+      tags:
+      - node
+      operationId: broadcastTx
+      summary: Broadcast a transaction.
+      description: |
+        Broadcasts a signed transaction. A single transaction must be sent hex-encoded with a `content-type` of `text/plain`.
+
+        **Destination:** Witness node.
+
+        **Rate Limit:** 5 requests per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
+      consumes:
+      - text/plain
+      produces:
+      - application/json
+      schemes:
+      - https
+      parameters:
+      - in: query
+        name: sync
+        description: |
+          Synchronous broadcast (wait for [DeliverTx](https://github.com/tendermint/tendermint/wiki/Application-Developers#delivertx))?
+        required: false
+        type: boolean
+        default: false
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: string
+          format: binary
+          minLength: 1
+          maxLength: 100000
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Transaction'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '401':
+          description: 'Bad Signature'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/klines:
+    get:
+      tags:
+      - market
+      summary: Get candlestick bars.
+      description: |
+        Gets candlestick/kline bars for a symbol. Bars are uniquely identified by their open time.
+
+        If the time window is larger than limits, only the first n klines will return. In this case, please either shrink the window or increase the limit to get proper amount of klines.
+
+        **Rate Limit:** 10 requests per IP per second.
+
+        **URL for testnet:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
+
+        **Example**
+
+        ```
+        [
+          1499040000000,      // Open time
+          "0.01634790",       // Open
+          "0.80000000",       // High
+          "0.01575800",       // Low
+          "0.01577100",       // Close
+          "148976.11427815",  // Volume
+          1499644799999,      // Close time
+          "2434.19055334",    // Quote asset volume
+          308                // Number of trades
+        ]
+        ```
+      operationId: getCandlestickBars
+      produces:
+      - application/json
+      parameters:
+      - name: symbol
+        in: query
+        description: symbol
+        required: true
+        type: string
+      - name: interval
+        in: query
+        description: "interval. Allowed value: [1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]"
+        required: true
+        type: enum string
+        allowEmptyValue: false
+        enum:
+        - 1m
+        - 3m
+        - 5m
+        - 15m
+        - 30m
+        - 1h
+        - 2h
+        - 4h
+        - 6h
+        - 8h
+        - 12h
+        - 1d
+        - 3d
+        - 1w
+        - 1M
+      - name: limit
+        in: query
+        description: default 300; max 1000.
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+      - name: startTime
+        in: query
+        description: start time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: endTime
+        in: query
+        description: end time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Candlestick'
+            example: ' [[
+
+                              1499040000000,      // Open time
+
+                              "0.01634790",       // Open
+
+                              "0.80000000",       // High
+
+                              "0.01575800",       // Low
+
+                              "0.01577100",       // Close
+
+                              "148976.11427815",  // Volume
+
+                              1499644799999,      // Close time
+
+                              "2434.19055334",    // Quote asset volume
+
+                              308                // Number of trades
+
+                      ]] '
+      deprecated: false
+  /api/v1/orders/closed:
+    get:
+      tags:
+      - order
+      summary: Get closed orders.
+      description: |
+        Gets closed (filled and cancelled) orders for a given address.
+
+        **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+
+        **Rate Limit:** 5 requests per IP per second.
+
+      operationId: getClosedOrders
+      produces:
+      - application/json
+      parameters:
+      - name: address
+        in: query
+        description: the owner address
+        required: true
+        type: string
+        allowEmptyValue: false
+      - name: end
+        in: query
+        description: end time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: limit
+        in: query
+        description: default 500; max 1000.
+        required: false
+        type: integer
+        default: 500
+        format: int32
+        allowEmptyValue: false
+      - name: offset
+        in: query
+        description: start with 0; default 0.
+        required: false
+        type: integer
+        default: 0
+        format: int32
+        allowEmptyValue: false
+      - name: side
+        in: query
+        description: order side. 1 for buy and 2 for sell.
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+        enum:
+        - BUY
+        - SELL
+      - name: start
+        in: query
+        description: start time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: status
+        in: query
+        description: "order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]"
+        required: false
+        type: enum string
+        items:
+          type: string
+        collectionFormat: multi
+        allowEmptyValue: false
+      - name: symbol
+        in: query
+        description: symbol
+        required: false
+        type: string
+      - name: total
+        in: query
+        description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+        enum:
+        - 0
+        - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/OrderList'
+      deprecated: false
+  /api/v1/orders/open:
+    get:
+      tags:
+      - order
+      summary: Get open orders.
+      description: |
+        Gets open orders for a given address.
+
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getOpenOrders
+      produces:
+      - application/json
+      parameters:
+      - name: address
+        in: query
+        description: the owner address
+        required: true
+        type: string
+        allowEmptyValue: false
+      - name: limit
+        in: query
+        description: default 500; max 1000.
+        required: false
+        type: integer
+        default: 500
+        format: int32
+        allowEmptyValue: false
+      - name: offset
+        in: query
+        description: start with 0; default 0.
+        required: false
+        type: integer
+        default: 0
+        format: int32
+        allowEmptyValue: false
+      - name: symbol
+        in: query
+        description: symbol
+        required: false
+        type: string
+      - name: total
+        in: query
+        description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+        enum:
+        - 0
+        - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/OrderList'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/orders/{id}:
+    get:
+      tags:
+      - order
+      summary: Get an order.
+      description: |
+        Gets metadata for an individual order by its ID.
+
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getOrder
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: order id
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Order'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/ticker/24hr:
+    get:
+      tags:
+      - market
+      summary: Get a market ticker.
+      description: |
+        Gets 24 hour price change statistics for a market pair symbol. Updated every second.
+
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: get24HrPriceStatistics
+      produces:
+      - application/json
+      parameters:
+      - name: symbol
+        in: query
+        description: symbol
+        required: false
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TickerStatistics'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/trades:
+    get:
+      tags:
+      - trade
+      summary: Get market trades.
+      description: |
+        Gets a list of historical trades.
+
+        **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getTrades
+      produces:
+      - application/json
+      parameters:
+      - name: address
+        in: query
+        description: the buyer/seller address
+        required: false
+        type: string
+        allowEmptyValue: false
+      - name: buyerOrderId
+        in: query
+        description: buyer order id
+        required: false
+        type: string
+        allowEmptyValue: false
+      - name: end
+        in: query
+        description: end time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: height
+        in: query
+        description: block height
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: limit
+        in: query
+        description: default 500; max 1000.
+        required: false
+        type: integer
+        default: 500
+        format: int32
+        allowEmptyValue: false
+      - name: offset
+        in: query
+        description: start with 0; default 0.
+        required: false
+        type: integer
+        default: 0
+        format: int32
+        allowEmptyValue: false
+      - name: quoteAsset
+        in: query
+        description: quote asset
+        required: false
+        type: string
+        allowEmptyValue: false
+      - name: sellerOrderId
+        in: query
+        description: seller order id
+        required: false
+        type: string
+        allowEmptyValue: false
+      - name: side
+        in: query
+        description: order side. 1 for buy and 2 for sell.
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+        enum:
+        - BUY
+        - SELL
+      - name: start
+        in: query
+        description: start time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: symbol
+        in: query
+        description: symbol
+        required: false
+        type: string
+      - name: total
+        in: query
+        description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+        enum:
+        - 0
+        - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TradePage'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/block-exchange-fee:
+    get:
+      tags:
+      - trading fee
+      summary: Trading fee of the address grouped by block
+      description: |
+        Get historical trading fees of the address, including fees of trade/canceled order/expired order. Transfer and other transaction fees are not included. Order by block height DESC.
+        **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getBlockExchangeFee
+      produces:
+      - application/json
+      parameters:
+      - name: address
+        in: query
+        description: the seller/buyer address
+        required: false
+        type: string
+        allowEmptyValue: false
+      - name: end
+        in: query
+        description: end time
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: limit
+        in: query
+        description: default 50; max 1000.
+        required: false
+        type: integer
+        default: 50
+        format: int32
+        allowEmptyValue: false
+      - name: offset
+        in: query
+        description: start with 0; default 0.
+        required: false
+        type: integer
+        default: 0
+        format: int32
+        allowEmptyValue: false
+      - name: start
+        in: query
+        description: start time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+        allowEmptyValue: false
+      - name: total
+        in: query
+        description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+        required: false
+        type: integer
+        format: int32
+        allowEmptyValue: false
+        enum:
+        - 0
+        - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BlockExchangeFeePage'
+      deprecated: false
+  /api/v1/transactions:
+    get:
+      tags:
+      - transaction
+      summary: Get transactions.
+      description: |
+        Gets a list of transactions. Multisend transaction is not available in this API. Currently 'confirmBlocks' and 'txAge' are not supported.
+
+        **Query Window:** Default query window is latest 24 hours; The maximum start - end query window is 3 months.
+
+        **Rate Limit:** 60 requests per IP per minute.
+      operationId: txns
+      produces:
+      - application/json
+      parameters:
+      - name: address
+        in: query
+        description: address
+        required: true
+        type: string
+      - name: blockHeight
+        in: query
+        description: blockHeight
+        required: false
+        type: integer
+        format: int64
+      - name: endTime
+        in: query
+        description: endTime in Milliseconds
+        required: false
+        type: integer
+        format: int64
+      - name: limit
+        in: query
+        description: limit
+        required: false
+        type: integer
+        default: 500
+        format: int32
+      - name: offset
+        in: query
+        description: offset
+        required: false
+        type: integer
+        default: 0
+        format: int32
+      - name: side
+        in: query
+        description: "transaction side. Allowed value: [ RECEIVE, SEND]"
+        required: false
+        type: enum string
+        allowEmptyValue: false
+        enum:
+        - RECEIVE
+        - SEND
+      - name: startTime
+        in: query
+        description: start time in Milliseconds
+        required: false
+        type: integer
+        format: int64
+      - name: txAsset
+        in: query
+        description: txAsset
+        required: false
+        type: string
+      - name: txType
+        in: query
+        description: "transaction type. Allowed value: [ NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL]"
+        required: false
+        type: enum string
+        allowEmptyValue: false
+        enum:
+        - NEW_ORDER
+        - ISSUE_TOKEN
+        - BURN_TOKEN
+        - LIST_TOKEN
+        - CANCEL_ORDER
+        - FREEZE_TOKEN
+        - UN_FREEZE_TOKEN
+        - TRANSFER
+        - PROPOSAL
+        - VOTE
+        - MINT
+        - DEPOSIT
+        - CREATE_VALIDATOR
+        - REMOVE_VALIDATOR
+        - TIME_LOCK
+        - TIME_UNLOCK
+        - TIME_RELOCK
+        - SET_ACCOUNT_FLAG
+        - HTL_TRANSFER
+        - CLAIM_HTL
+        - DEPOSIT_HTL
+        - REFUND_HTL
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TxPage'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/transactions-in-block/{blockHeight}:
+    get:
+      tags:
+        - transaction in block
+      summary: Get transactions in the specific block.
+      description: |
+        Get transactions in the block. Multi-send and multi-coin transactions are flattened as transactions. This API is deprecated.
+
+        **Rate Limit:** 5 requests per IP per second.
+
+        **Rate Limit:** 60 requests per IP per minute.
+      operationId: getTransactionsInBlock
+      produces:
+        - application/json
+      parameters:
+        - name: blockHeight
+          in: path
+          description: block height
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BlockTx'
+        '400':
+          description: 'Bad Request. The block to query is higher than current highest block.'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: true
+  '/api/v2/transactions-in-block/{blockHeight}':
+    get:
+      tags:
+        - transaction
+      summary: transactions in Block
+      description: |
+         Get transactions in the block. Multi-send and multi-coin transactions are included as sub-transactions.
+
+         **Rate Limit:** 5 request per IP per second.
+
+         **Rate Limit:** 60 requests per IP per minute.
+
+      operationId: getTransactionsInBlockV2
+      produces:
+        - application/json
+      parameters:
+        - name: blockHeight
+          in: path
+          description: blockHeight
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BlockTxV2'
+        '400':
+          description: 'Bad Request. The block to query is higher than current highest block.'
+          schema:
+            $ref: "#/definitions/Error"
+          '404':
+            description: 'Not Found'
+          default:
+            description: Generic error response
+            schema:
+              $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/atomic-swaps:
+    get:
+      tags:
+        - atomicSwap
+      summary: AtomicSwap
+      description: |
+         Get atomic swaps by address.
+
+         **Rate Limit:** 5 request per IP per second.
+
+         **Rate Limit:** 60 requests per IP per minute.
+
+      operationId: getAtomicSwapsByAddrUsingGET
+      produces:
+        - '*/*'
+        - application/json
+      parameters:
+        - name: endTime
+          in: query
+          description: end time of blockTimestamp
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: fromAddress
+          in: query
+          description: At least one of toAddress and fromAddress should be provided as parameter
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: limit
+          in: query
+          description: default 25; max 1000.
+          required: false
+          type: integer
+          default: 25
+          format: int32
+        - name: offset
+          in: query
+          description: start with 0; default 0.
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: startTime
+          in: query
+          description: start time of blockTimestamp in Milliseconds; The maximum start - end query window is 3 months; Default query window is the latest 30 days.
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: toAddress
+          in: query
+          description: At least one of toAddress and fromAddress should be provided as parameter
+          required: false
+          type: string
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AtomicSwapPage'
+  /api/v1/atomic-swaps/{id}:
+    get:
+      tags:
+        - atomicSwap
+      summary: AtomicSwap
+      description: |
+       Get an AtomicSwap by swap id
+
+       **Rate Limit:** 5 request per IP per second.
+
+       **Rate Limit:** 60 request per IP per minute.
+      operationId: getAtomicSwapUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: swap id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AtomicSwap'
+  /api/v1/timelocks/{address}:
+    get:
+      summary: 'Gets time lock records given an address'
+      operationId: getTimeLocks
+      produces:
+        - application/json
+      tags:
+        - node
+        - account
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/TimeLocks'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '500':
+          description: 'internal server error'
+          schema:
+            $ref: "#/definitions/Error"
+      parameters:
+        -
+          name: address
+          in: path
+          type: string
+          description: 'The account address to query'
+          required: true
+        -
+          in: query
+          name: id
+          description: "the record id of timelock to query"
+          required: false
+          type: integer
+          format: int64
+  /api/v1/timelock/{account_addr}?(id={recordid}):
+    get:
+      tags:
+        - timelock records
+      summary: Get timelock records of an address.
+      description: |
+          Get the timelock history of an address.
+          **Rate Limit:** 60 requests per IP per minute.
+      operationId: getTimeLocks
+      produces:
+          - application/json
+      parameters:
+          - name: address
+            in: path
+            type: string
+            description: 'The account address to query'
+            required: true
+          - in: query
+            name: id
+            description: "the record id of timelock to query"
+            required: false
+            type: integer
+            format: int64
+      responses:
+          '200':
+            description: Success
+            schema:
+              $ref: '#/definitions/TimeLocks'
+          '400':
+            description: 'Bad Request'
+            schema:
+              $ref: "#/definitions/Error"
+          '404':
+            description: 'Not Found'
+          '500':
+            description: 'internal server error'
+            schema:
+              $ref: "#/definitions/Error"
+  /api/v1/mini/tokens:
+    get:
+      tags:
+        - mini
+      summary: Gets a list of available mini tokens.
+      operationId: getMiniTokens
+      parameters:
+        - in: query
+          name: offset
+          description: offset
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - in: query
+          name: limit
+          description: limit
+          required: false
+          type: integer
+          default: 100
+          format: int32
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/MiniTokens'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '500':
+          description: 'internal server error'
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/mini/markets:
+    get:
+      tags:
+        - mini
+      summary: Gets a list of mini market pairs.
+      parameters:
+        - in: query
+          name: offset
+          description: offset
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - in: query
+          name: limit
+          description: limit
+          required: false
+          type: integer
+          default: 100
+          format: int32
+      operationId: getMiniPairs
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Markets'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+  /api/v1/mini/klines:
+    get:
+      tags:
+        - market
+      summary: Get mini-token candlestick bars.
+      description: |
+        Gets candlestick/kline bars for a mini-token symbol pair. Bars are uniquely identified by their open time.
+
+        If the time window is larger than limits, only the first n klines will return. In this case, please either shrink the window or increase the limit to get proper amount of klines.
+
+        **Rate Limit:** 10 requests per IP per second.
+
+        **Example**
+
+        ```
+        [
+          1499040000000,      // Open time
+          "0.01634790",       // Open
+          "0.80000000",       // High
+          "0.01575800",       // Low
+          "0.01577100",       // Close
+          "148976.11427815",  // Volume
+          1499644799999,      // Close time
+          "2434.19055334",    // Quote asset volume
+          308                // Number of trades
+        ]
+        ```
+      operationId: getCandlestickBars
+      produces:
+        - application/json
+      parameters:
+        - name: symbol
+          in: query
+          description: symbol
+          required: true
+          type: string
+        - name: interval
+          in: query
+          description: "interval. Allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M]"
+          required: true
+          type: enum string
+          allowEmptyValue: false
+          enum:
+            - 1h
+            - 2h
+            - 4h
+            - 6h
+            - 8h
+            - 12h
+            - 1d
+            - 3d
+            - 1w
+            - 1M
+        - name: limit
+          in: query
+          description: default 300; max 1000.
+          required: false
+          type: integer
+          format: int32
+          allowEmptyValue: false
+        - name: startTime
+          in: query
+          description: start time in Milliseconds
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: endTime
+          in: query
+          description: end time in Milliseconds
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Candlestick'
+            example: ' [[
+
+                                1499040000000,      // Open time
+
+                                "0.01634790",       // Open
+
+                                "0.80000000",       // High
+
+                                "0.01575800",       // Low
+
+                                "0.01577100",       // Close
+
+                                "148976.11427815",  // Volume
+
+                                1499644799999,      // Close time
+
+                                "2434.19055334",    // Quote asset volume
+
+                                308                // Number of trades
+
+                        ]] '
+      deprecated: false
+  /api/v1/mini/orders/closed:
+    get:
+      tags:
+        - order
+      summary: Get closed orders of mini-token pairs.
+      description: |
+        Gets closed (filled and cancelled) orders for a given address.
+
+        **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+
+        **Rate Limit:** 5 requests per IP per second.
+
+      operationId: getClosedOrders
+      produces:
+        - application/json
+      parameters:
+        - name: address
+          in: query
+          description: the owner address
+          required: true
+          type: string
+          allowEmptyValue: false
+        - name: end
+          in: query
+          description: end time in Milliseconds
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: limit
+          in: query
+          description: default 500; max 1000.
+          required: false
+          type: integer
+          default: 500
+          format: int32
+          allowEmptyValue: false
+        - name: offset
+          in: query
+          description: start with 0; default 0.
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: side
+          in: query
+          description: order side. 1 for buy and 2 for sell.
+          required: false
+          type: integer
+          format: int32
+          allowEmptyValue: false
+          enum:
+            - BUY
+            - SELL
+        - name: start
+          in: query
+          description: start time in Milliseconds
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: status
+          in: query
+          description: "order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]"
+          required: false
+          type: enum string
+          items:
+            type: string
+          collectionFormat: multi
+          allowEmptyValue: false
+        - name: symbol
+          in: query
+          description: symbol
+          required: false
+          type: string
+        - name: total
+          in: query
+          description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+          required: false
+          type: integer
+          format: int32
+          allowEmptyValue: false
+          enum:
+            - 0
+            - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/OrderList'
+      deprecated: false
+  /api/v1/mini/orders/open:
+    get:
+      tags:
+        - order
+      summary: Get open orders of mini-token pairs.
+      description: |
+        Gets open orders for a given address.
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getOpenOrders
+      produces:
+        - application/json
+      parameters:
+        - name: address
+          in: query
+          description: the owner address
+          required: true
+          type: string
+          allowEmptyValue: false
+        - name: limit
+          in: query
+          description: default 500; max 1000.
+          required: false
+          type: integer
+          default: 500
+          format: int32
+          allowEmptyValue: false
+        - name: offset
+          in: query
+          description: start with 0; default 0.
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: symbol
+          in: query
+          description: symbol
+          required: false
+          type: string
+        - name: total
+          in: query
+          description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+          required: false
+          type: integer
+          format: int32
+          allowEmptyValue: false
+          enum:
+            - 0
+            - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/OrderList'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/mini/orders/{id}:
+    get:
+      tags:
+        - order
+      summary: Get an order of mini-token pairs.
+      description: |
+        Gets metadata for an individual order by its ID.
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getOrder
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: order id
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Order'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/mini/ticker/24hr:
+    get:
+      tags:
+        - market
+      summary: Get a market ticker of mini-token pairs.
+      description: |
+        Gets 24 hour price change statistics for a market pair symbol. Updated every second.
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: get24HrPriceStatistics
+      produces:
+        - application/json
+      parameters:
+        - name: symbol
+          in: query
+          description: symbol
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TickerStatistics'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+  /api/v1/mini/trades:
+    get:
+      tags:
+        - trade
+      summary: Get market trades of mini-token pairs.
+      description: |
+        Gets a list of historical trades.
+        **Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+        **Rate Limit:** 5 requests per IP per second.
+      operationId: getTrades
+      produces:
+        - application/json
+      parameters:
+        - name: address
+          in: query
+          description: the buyer/seller address
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: buyerOrderId
+          in: query
+          description: buyer order id
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: end
+          in: query
+          description: end time in Milliseconds
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: height
+          in: query
+          description: block height
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: limit
+          in: query
+          description: default 500; max 1000.
+          required: false
+          type: integer
+          default: 500
+          format: int32
+          allowEmptyValue: false
+        - name: offset
+          in: query
+          description: start with 0; default 0.
+          required: false
+          type: integer
+          default: 0
+          format: int32
+          allowEmptyValue: false
+        - name: quoteAsset
+          in: query
+          description: quote asset
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: sellerOrderId
+          in: query
+          description: seller order id
+          required: false
+          type: string
+          allowEmptyValue: false
+        - name: side
+          in: query
+          description: order side. 1 for buy and 2 for sell.
+          required: false
+          type: integer
+          format: int32
+          allowEmptyValue: false
+          enum:
+            - BUY
+            - SELL
+        - name: start
+          in: query
+          description: start time in Milliseconds
+          required: false
+          type: integer
+          format: int64
+          allowEmptyValue: false
+        - name: symbol
+          in: query
+          description: symbol
+          required: false
+          type: string
+        - name: total
+          in: query
+          description: 'total number required, 0 for not required and 1 for required; default not required, return total=-1 in response'
+          required: false
+          type: integer
+          format: int32
+          allowEmptyValue: false
+          enum:
+            - 0
+            - 1
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/TradePage'
+        '400':
+          description: 'Bad Request'
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: 'Not Found'
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+      deprecated: false
+definitions:
+  Error:
+    type: object
+    required:
+    - message
+    properties:
+      code:
+        type: integer
+        format: int64
+        required: true
+        description: error code
+        example: 400
+      message:
+        type: string
+        required: true
+        description: error message
+  Times:
+    type: object
+    title: Times
+    properties:
+      ap_time: {type: string, description: event time , example: e.g. 2019-01-21T10:30:00Z}
+      block_time: {type: string, description: the time of latest block, example: e.g. 2019-01-21T10:30:00Z}
+  Validators:
+    type: object
+    properties:
+      block_height:
+        type: integer
+        description: 'Current block height'
+        format: int64
+        required: true
+        example: 12345
+      validators:
+        type: array
+        required: true
+        title: Validators
+        items:
+          $ref: '#/definitions/Validator'
+  Validator:
+        type: object
+        properties:
+            address:
+              type: string
+              description: Address
+              format: hex address
+              required: true
+            pub_key:
+              type: array
+              title: 'Public key'
+              description: Public key bytes
+              required: true
+              items:
+                type: integer
+                format: int32
+            voting_power:
+              type: integer
+              required: true
+              description: validator's voting power
+            accum:
+              type: integer
+              required: true
+              description: validator's accumulated voting power
+
+
+
+  Peer:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 'Authenticated identifier'
+        required: true
+        example: 8c379d4d3b9995c712665dc9a9414dbde5b30483
+      original_listen_addr:
+        type: string
+        description: 'Original listen address before PeersService changed it'
+        format: RemoteAddr
+        required: true
+      listen_addr:
+        type: string
+        description: 'Listen address'
+        format: RemoteAddr
+        required: true
+      access_addr:
+        type: string
+        description: 'Access address (HTTP)'
+        format: RemoteAddr
+        required: true
+      stream_addr:
+        type: string
+        description: 'Stream address (WS)'
+        format: RemoteAddr
+        required: true
+      network:
+        type: string
+        description: 'Chain ID'
+        required: true
+        example: Binance-Chain-Ganges
+      version:
+        type: string
+        description: 'Version'
+        required: true
+        example: 0.30.1
+      moniker:
+        type: string
+        description: 'Moniker (Name)'
+        required: true
+        example: data-seed-1
+      capabilities:
+        type: array
+        description: "Array of capability tags: node, qs, ap, ws"
+        example: ["node", "ap"]
+        items:
+          type: string
+          enum: ['node', 'qs', 'ap', 'ws']
+        required: true
+      accelerated:
+        type: boolean
+        description: 'Is an accelerated path to a validator node'
+  Transaction:
+    type: object
+    properties:
+      hash:
+        type: string
+        format: hex
+        title: Hash
+        description: 'Hash of transaction, it returned as bytes before, and now it returns as hex string'
+      log:
+        title: Log
+        type: string
+        description: 'Log of transaction'
+      data:
+        title: Data
+        type: string
+        description: 'Data of transaction'
+
+      height:
+        title: Height
+        type: string
+        description: 'Height of transaction'
+      code:
+        title: Code
+        type: integer
+        format: int32
+        default: 0
+        description: 'Result code of transaction'
+      ok:
+        type: boolean
+      tx:
+        title: Tx
+        type: object
+        description: |
+          Detail of transaction, like transaction type, messages and signature
+
+          For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
+          varies with msg type, if you query with --format=json.
+
+          ```
+          {
+              "type": "auth/StdTx", // fixed, type of transaction
+              "value": {            // fixed, detail of the transaction
+                  "data": null,     // fixed, data of the transaction
+                  "memo": "",       // fixed, memo
+                  "msg": [          // fixed, msgs of the transaction
+                      {
+                          "type": "cosmos-sdk/Send",  // vary with msg type
+                          "value": {                  // value content vary with mst type
+                              "inputs": [
+                                  {
+                                      "address": "bnb1vt4zwu5hy7tyryktud6mpcu8h2ehh6xw66gzwp",
+                                      "coins": [
+                                          {
+                                              "amount": "100000000000000",
+                                              "denom": "BNB"
+                                          }
+                                      ]
+                                  }
+                              ],
+                              "outputs": [
+                                  {
+                                      "address": "bnb1kg8mh20tndur9d9rry4wjunhpfzcud30qzf0qv",
+                                      "coins": [
+                                          {
+                                              "amount": "100000000000000",
+                                              "denom": "BNB"
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      }
+                  ],
+                  "signatures": [ // fixed, signatures of the transaction
+                      {
+                          "account_number": "0",
+                          "pub_key": {
+                              "type": "tendermint/PubKeySecp256k1",
+                              "value": "AoWY3eWBOnnvLPTz4RsUlX1pWCkLLPewu1vAAoTEzxzR"
+                          },
+                          "sequence": "1",
+                          "signature": "6O2TQAgleFNPw4zIWBLaNvOf5dR7DHNSr2DwAPeFK6lokRqZd2KR2BD+WlmaWj4LdLo5N+utN1JtY41E91N0uw=="
+                      }
+                  ],
+                  "source": "0"  // fixed, source of the transaction
+              }
+          }
+          ```
+  Account:
+    type: object
+    properties:
+      account_number:
+        type: integer
+        title: 'Account number'
+        format: int32
+        required: true
+      address:
+        type: string
+        title: Address
+        format: address
+        required: true
+      balances:
+        type: array
+        title: Balances
+        items:
+          $ref: '#/definitions/Balance'
+        required: true
+      public_key:
+        type: array
+        title: 'Public key'
+        description: 'Public key bytes'
+        items:
+          type: integer
+        required: true
+      sequence:
+        type: integer
+        title: Sequence
+        format: int64
+        required: true
+        description: 'sequence is for preventing replay attack'
+  AccountSequence:
+    type: object
+    properties:
+      sequence:
+        type: integer
+        title: Sequence
+        format: int64
+        required: true
+        description: number used for preventing replay attack
+        example: 1
+  Balance:
+    type: object
+    properties:
+      symbol: {type: string,description: asset symbol, example: BNB, format: currency}
+      free: {type: string, title: Free, description: "In decimal form, e.g. 0.00000000", example: "0.00000000", format: fixed8}
+      locked: {type: string, title: Locked, description: "In decimal form, e.g. 0.00000000", example: "0.00000000", format: fixed8}
+      frozen: {type: string, title: Frozen, description: "In decimal form, e.g. 0.00000000", example: "0.00000000", format: fixed8}
+  Token:
+    type: object
+    properties:
+      name:
+        type: string
+        description: token name
+        example: Binance Chain Native Token
+        required: true
+      symbol:
+        type: string
+        description: unique token trade symbol
+        example: BTC-000
+        required: true
+      original_symbol:
+        type: string
+        description: token symbol
+        example: BTC
+        required: true
+      total_supply:
+        type: string
+        description: "total token supply in decimal form, e.g. 1.00000000"
+        example: "0.00000000"
+        format: fixed8
+        required: true
+      owner:
+        type: string
+        description: Address which issue the token
+        format: address
+        required: true
+      contract_address:
+        type: string
+        description: "smart contract address for this token"
+        x-omitempty: true
+      contract_decimals:
+        type: int
+        description: "the token decimals"
+        x-omitempty: true
+  Market:
+    type: object
+    properties:
+      base_asset_symbol:
+        type: string
+        description: symbol of base asset
+        example: BNB
+        format: currency
+        required: true
+      quote_asset_symbol:
+        type: string
+        description: symbol of quote asset
+        example: ABC-5CA
+        format: currency
+        required: true
+      list_price:
+        type: string
+        description: "In decimal form"
+        example: "1.00000000"
+        format: fixed8
+        required: true
+      tick_size:
+        type: string
+        description: "Minimium price change in decimal form"
+        example: "0.00000001"
+        format: fixed8
+        required: true
+      lot_size:
+        type: string
+        description: "Minimium trading quantity in decimal form"
+        example: "1.00000000"
+        format: fixed8
+        required: true
+  Fee:
+    type: object
+    properties:
+      msg_type:
+        type: string
+        description: Transaction msg type that this fee applies to
+        example: submit_proposal
+      fee:
+        type: number
+        description: The fee amount
+        example: 1000000000
+      fee_for:
+        type: integer
+        description: 1 = proposer, 2 = all, 3 = free
+        example: 1
+      multi_transfer_fee:
+        type: string
+        description: Fee for multi-transfer
+        example: "200000"
+      lower_limit_as_multi:
+        type: string
+        description: e.g. 2
+        example: "2"
+      fixed_fee_params:
+        description: Set if the fee is fixed
+        $ref: '#/definitions/FixedFeeParams'
+      dex_fee_fields:
+        description: dex fee
+        $ref: '#/definitions/DexFeeFieldParams'
+  FixedFeeParams:
+    type: object
+    properties:
+      msg_type:
+        type: string
+        description: Transaction msg type that this fee applies to
+        example: submit_proposal
+      fee:
+        type: number
+        description: The fixed fee amount
+        example: 1000000000
+      fee_for:
+        type: integer
+        description: 1 = proposer, 2 = all, 3 = free
+        example: 1
+  DexFeeFieldParams:
+     type: object
+     properties:
+       fee_name:
+         type: string
+         description: fee name
+       fee_value:
+        type: integer
+        description: fee value
+  MarketDepth:
+    type: object
+    properties:
+      asks:
+        type: array
+        description: "Price and qty in decimal form, e.g. 1.00000000"
+        example: "[\"1.00000000\",\"800.00000000\"]"
+        items:
+          type: string
+          format: fixed8
+        minItems: 2
+        maxItems: 2
+        required: true
+      bids:
+        type: array
+        description: "Price and qty in decimal form, e.g. 1.00000000"
+        example: "[\"1.00000000\",\"800.00000000\"]"
+        items:
+          type: string
+          format: fixed8
+        minItems: 2
+        maxItems: 2
+        required: true
+      pending_match:
+        type: boolean
+        description: "If new orders inserted in current block and the matching process has not started in the block, return true."
+  Candlestick:
+    type: object
+    properties:
+      close:
+        type: number
+        description: closing price
+      closeTime:
+        type: integer
+        format: int64
+        description: time of closing trade
+      high:
+        type: number
+        description: the highest price
+      low:
+        type: number
+        description: the lowest price
+      numberOfTrades:
+        type: integer
+        format: int32
+        description: total trades
+      open:
+        type: number
+        description: open price
+      openTime:
+        type: integer
+        format: int64
+        description: time of open trade
+      quoteAssetVolume:
+        type: number
+        description: the total trading volume in quote asset
+      volume:
+        type: number
+        description: the total trading volume
+
+  OrderList:
+    type: object
+    properties:
+      order:
+        type: array
+        description: list of orders
+        items:
+          $ref: '#/definitions/Order'
+      total:
+        type: integer
+        format: int64
+  Order:
+    type: object
+    properties:
+      cumulateQuantity:
+        type: string
+        description: total amount of trades that have made
+      fee:
+        type: string
+        description: trading fee on the latest updated block of this order. Multiple assets are split by semicolon.
+      lastExecutedPrice:
+        type: string
+        description: price of last execution
+      lastExecutedQuantity:
+        type: string
+        description: quantity of last execution
+      orderCreateTime:
+        type: string
+        description: time of order creation
+        format: date-time
+      orderId:
+        type: string
+        description: order ID
+      owner:
+        type: string
+        description: order issuer
+      price:
+        type: string
+        description: order price
+      quantity:
+        type: string
+        description: order quantity
+      side:
+        type: integer
+        format: int32
+        description: "1 for buy and 2 for sell"
+        enum:
+        - BUY
+        - SELL
+      status:
+        type: string
+        description: "enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire]"
+      symbol:
+        type: string
+        description: trading pair symbol
+      timeInForce:
+        type: integer
+        format: int32
+        description: "1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)"
+        enum:
+        - GTE
+        - IOC
+        - UNKNOWN
+      tradeId:
+        type: string
+        description: trade ID
+      transactionHash:
+        type: string
+        description: hash of transaction
+      transactionTime:
+        type: string
+        description: time of latest order update, for example, cancel, expire
+        format: date-time
+      type:
+        type: integer
+        format: int32
+        description: "only 2 is available for now, meaning limit order"
+        enum:
+        - LIMIT
+    title: Order
+  SubTx:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        format: int64
+      fromAddr:
+        type: string
+      toAddr:
+        type: string
+      txAsset:
+        type: string
+      txFee:
+        type: string
+      txHash:
+        type: string
+      txType:
+        type: string
+      value:
+        type: string
+    title: SubTx
+  TickerStatistics:
+    type: object
+    properties:
+      askPrice:
+        type: string
+        description: sell price
+      askQuantity:
+        type: string
+        description: sell quantity
+      bidPrice:
+        type: string
+        description: buy price
+      bidQuantity:
+        type: string
+        description: buy quantity
+      closeTime:
+        type: integer
+        description: time of closing
+        format: int64
+      count:
+        type: integer
+        description: total trade count
+        format: int64
+      firstId:
+        type: string
+        description: ID of first trade
+      highPrice:
+        type: string
+        description: highest price
+      lastId:
+        type: string
+        description: ID of last trade
+      lastPrice:
+        type: string
+        description: last price
+      lastQuantity:
+        type: string
+        description: last quantity
+      lowPrice:
+        type: string
+        description: lowest price
+      openPrice:
+        type: string
+        description: open price
+      openTime:
+        type: integer
+        format: int64
+        description: open time
+      prevClosePrice:
+        type: string
+        description: last close price
+      priceChange:
+        type: string
+        description: change of price
+      priceChangePercent:
+        type: string
+        description: change of price in percentage
+      quoteVolume:
+        type: string
+        description: trading volume in quote asset
+      symbol:
+        type: string
+        description: trading symbol
+      volume:
+        type: string
+        description: trading volume
+      weightedAvgPrice:
+        type: string
+        description: weighted average price
+    title: TickerStatistics
+  TradePage:
+    type: object
+    properties:
+      total:
+        type: integer
+        format: int64
+        description: total number of trades
+      trade:
+        type: array
+        items:
+          $ref: '#/definitions/Trade'
+  Trade:
+    type: object
+    properties:
+      baseAsset:
+        type: string
+        description: base asset symbol
+      blockHeight:
+        type: integer
+        description: block height
+        format: int64
+      buyFee:
+        type: string
+        description: trading fee for the buyer address on the block of this trade
+      buyerId:
+        type: string
+        description: id of buyer
+      buyerOrderId:
+        type: string
+        description: order id for buyer
+      buySingleFee:
+        type: string
+        description: trading fee for the buyer address on this single trade
+        example: "BNB:0.00000172;"
+      buyerSource:
+        type: long
+        description: tx source of buy order
+        example: 1
+      price:
+        type: string
+        description: trade price
+      quantity:
+        type: string
+        description: trade quantity
+      quoteAsset:
+        type: string
+        description: quote asset symbol
+      sellFee:
+        type: string
+        description: trading fee for the seller address on the block of this trade
+      sellerId:
+        type: string
+        description: seller ID
+      sellerOrderId:
+        type: string
+        description: seller order ID
+      sellSingleFee:
+        type: string
+        description: trading fee for the seller address on this single trade
+        example: "BNB:0.00000216;"
+      sellerSource:
+        type: long
+        description: tx source of sell order
+        example: 1
+      symbol:
+        type: string
+        description: asset symbol
+      tickType:
+        type: string
+        description: "enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral]"
+      time:
+        type: integer
+        description: trade time
+        format: int64
+      tradeId:
+        type: string
+        description: trade ID
+  BlockExchangeFeePage:
+    type: object
+    properties:
+      blockExchangeFee:
+        type: array
+        items:
+          $ref: '#/definitions/BlockExchangeFee'
+      total:
+        type: integer
+        format: int64
+    title: BlockExchangeFeePage
+  BlockExchangeFee:
+    type: object
+    properties:
+      address:
+        type: string
+      blockHeight:
+        type: integer
+        format: int64
+      blockTime:
+        type: integer
+        description: timestamp of a block
+        format: int64
+      fee:
+        type: string
+        description: total fee collected. Multiple assets are split by semicolon.
+      tradeCount:
+        type: integer
+        description: trade count of the address on the block
+        format: int64
+    title: BlockExchangeFee
+  TxPage:
+    type: object
+    properties:
+      total:
+        type: integer
+        description: total sum of transactions
+        format: int64
+      tx:
+        type: array
+        items:
+          $ref: '#/definitions/Tx'
+  BlockTx:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        description: block height
+        format: int64
+      tx:
+        type: array
+        items:
+          $ref: '#/definitions/Tx'
+  BlockTxV2:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        description: block height
+        format: int64
+      tx:
+        type: array
+        items:
+          $ref: '#/definitions/TxV2'
+  Tx:
+    type: object
+    properties:
+      blockHeight:
+        type: integer
+        description: block height
+        format: int64
+      code:
+        type: integer
+        description: transaction result code
+        format: int32
+        example: 0
+      confirmBlocks:
+        type: integer
+        format: int64
+      data:
+        type: string
+      fromAddr:
+        type: string
+        description: from address
+      orderId:
+        type: string
+        description: order ID
+      timeStamp:
+        type: string
+        description: time of transaction
+        format: date-time
+      toAddr:
+        type: string
+        description: to address
+      txAge:
+        type: integer
+        format: int64
+      txAsset:
+        type: string
+      txFee:
+        type: string
+      txHash:
+        type: string
+        description: hash of transaction
+      txType:
+        type: string
+        description: type of transaction
+      value:
+        type: string
+        description: value of transaction
+      source:
+        type: integer
+        format: int64
+      sequence:
+        type: integer
+        format: int64
+      swapId:
+        type: string
+        description: Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL
+      proposalId:
+        type: string
+    title: Tx
+  ExchangeRate:
+    type: object
+    additionalProperties:
+      type: number
+      format: double
+  ResultStatus:
+    type: object
+    properties:
+      validator_info:
+        type: array
+        items:
+          $ref: '#/definitions/ValidatorInfo'
+      sync_info:
+        type: array
+        items:
+          $ref: '#/definitions/SyncInfo'
+      node_info:
+        type: array
+        items:
+          $ref: '#/definitions/NodeInfo'
+  NodeInfo:
+    type: object
+    properties:
+      Protocol_Version:
+        type: array
+        items:
+          $ref: '#/definitions/ProtocolVersion'
+      ID :
+        type: string
+      listen_addr:
+        type: string
+      network:
+        type: string
+      version:
+        type: string
+      channels:
+        type: string
+      moniker:
+        type: string
+      other:
+        type: object
+  SyncInfo:
+        type: object
+        properties:
+          latest_block_hash:
+            type: string
+            format: hex
+          latest_app_hash:
+            type: string
+            format: hex
+          latest_block_height:
+            type: integer
+            format: int64
+          latest_block_time:
+            type: time
+          catching_up:
+            type: boolean
+  ProtocolVersion:
+    type: object
+    properties:
+      P2P:
+        type: integer
+        format: uint64
+      block:
+        type: integer
+        format: uint64
+      app:
+        type: integer
+        format: uint64
+
+  ValidatorInfo:
+        type: object
+        properties:
+          address:
+            type: string
+            description: hex address
+          pub_key:
+            type: string
+            description: hex-encoded
+          voting_power:
+            type: integer
+            format: int64
+
+  AtomicSwapPage:
+        type: object
+        properties:
+          atomicSwaps:
+            type: array
+            items:
+              $ref: '#/definitions/AtomicSwap'
+          total:
+            type: integer
+            format: int64
+        title: AtomicSwapPage
+  AtomicSwap:
+        type: object
+        properties:
+          blockTimestamp:
+            type: integer
+            format: int64
+            description: Timestamp of block in which the swap is initiated. The unit is millisecond.
+          closedTime:
+            type: integer
+            format: int64
+          crossChain:
+            type: integer
+            format: int32
+          expectedIncome:
+            type: string
+          expireHeight:
+            type: integer
+            format: int64
+          fromAddr:
+            type: string
+          inAmount:
+            type: string
+          outAmount:
+            type: string
+          randomNumber:
+            type: string
+          randomNumberHash:
+            type: string
+          recipientOtherChain:
+            type: string
+          status:
+            type: integer
+            format: int32
+          swapId:
+            type: string
+          timestamp:
+            type: string
+            format: int64
+            description: The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second.
+          toAddr:
+            type: string
+        title: AtomicSwap
+  TxV2:
+    type: object
+    required: [blockHeight,code,data,fromAddr,memo,sequence,source,timeStamp,toAddr,txAsset,txFee, txHash,txType,value]
+    properties:
+      blockHeight:
+        type: integer
+        format: int64
+      code:
+        type: integer
+        format: int32
+        example: 0
+      data:
+        type: string
+      fromAddr:
+        type: string
+      memo:
+        type: string
+      orderId:
+        type: string
+        description: Optional. Available when the transaction type is NEW_ORDER
+      proposalId:
+        type: string
+        description: Optional. Available when the transaction type is PROPOSAL
+      sequence:
+        type: integer
+        format: int64
+      source:
+        type: integer
+        format: int64
+      subTransactions:
+        type: array
+        items:
+          $ref: '#/definitions/SubTx'
+        description: Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets
+      swapId:
+        type: string
+        description: Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL
+      timeStamp:
+        type: string
+        format: date-time
+      toAddr:
+        type: string
+      txAsset:
+        type: string
+      txFee:
+        type: string
+      txHash:
+        type: string
+      txType:
+        type: string
+      value:
+        type: string
+    title: TxV2
+  TimeLocks:
+      type: array
+      properties:
+        id:
+          type: integer
+          title: ID
+          description: "The record id of the timelock transaction"
+          format: int64
+          x-omitempty: false
+        description:
+          type: string
+          description: "The description of the timelock transaction"
+          title: Description
+          x-omitempty: false
+        amount:
+          type: array
+          title: "Locked coins"
+          x-omitempty: false
+          items:
+            properties:
+              symbol: {type: string, example: BNB, format: currency}
+              amount: {type: string, title: Amount, description: "In decimal form, e.g. 0.00000000", example: "0.00000000", format: fixed8, x-omitempty: false}
+        locktime:
+          type: string
+          description: "The available unlock time"
+          title: LockTime
+          x-omitempty: false
+  MiniTokens:
+    type: array
+    properties:
+        name:
+          type: string
+          example: Binance Chain Mini Token
+          x-omitempty: false
+        symbol:
+          type: string
+          example: BTC-000
+          x-omitempty: false
+        original_symbol:
+          type: string
+          example: BTC
+          x-omitempty: false
+        total_supply:
+          type: string
+          description: "In decimal form, e.g. 1.00000000"
+          example: "0.00000000"
+          format: fixed8
+          x-omitempty: false
+        token_type:
+          type: integer
+          description: "Type of the mini token"
+          format: int32
+          x-omitempty: false
+        owner:
+          type: string
+          description: Address
+          format: address
+          x-omitempty: false
+        mintable:
+          type: boolean
+          description: mintable
+          x-omitempty: false
+        token_uri:
+          type: string
+          description: "URI for token description"
+          x-omitempty: false
+        contract_address:
+          type: string
+          description: "smart contract address for this token"
+          x-omitempty: true
+        contract_decimals:
+          type: int
+          description: "the token decimals"
+          x-omitempty: true

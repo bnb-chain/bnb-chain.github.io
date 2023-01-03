@@ -2,8 +2,9 @@
 sidebar_label: NFT Metadata Standard
 sidebar_position: 1
 ---
+# NFT Metadata Standard
 
-# Implementing token URI
+## Implementing Token URI
 
 To facilitate a marketplace on BSC to pull in off-chain metadata for BEP721 assets, the NFT contract will need to return a URI where the metadata can be found. To find this URI, the tokenURI method in ERC721 and the uri method in ERC1155 are used to track your NFT. You should implement the function in the Contract:
 
@@ -23,7 +24,7 @@ function tokenURI(uint256 _tokenId) public view returns (string) {
 
 The tokenURI function in your Contract should return an HTTP or IPFS URL. When queried, this URL should in turn return a JSON blob of data with the metadata for your token.
 
-# Metadata structure
+## Metadata Structure
 
 Marketplaces on BSC support metadata that is structured according to [the official ERC721 metadata standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md). Additionally, several properties for your items are supported, giving you all the sorting and filtering capabilities on BSC Marketplaces.
 The below metadata structure, allows the BSC Marketplace to read and display the details about the assets which your NFTs represent.
@@ -52,7 +53,7 @@ Here's how each of these properties work:
 | external_url     | This is the URL that will appear below the asset's image on the marketplace and will allow users to leave the marketplace and view the item on your site.                                    |
 | attributes       | These are the attributes for the item to describe the detail of the NFT. (see array below)                                                                                                   |
 
-## Attributes
+### Attributes
 To present NFT traits, include the following array in the metadata: 
 
 ```
@@ -99,10 +100,10 @@ Here `trait_type` is the name of the trait, `value` is the value of the trait, a
 All traits included in the attributes will be displayed in `Attribute`.
 If you don't want to have a `trait_type` for a particular trait, you can include just a value in the trait and it will be set as a generic attribute.
 
-### Numeric Traits
+#### Numeric Traits
 There are 3 supported options for `display_type`: `number` will show the value in pure number, `boost_number` allows you to show the number with Plus or Minus symbol, and `boost_percentage` is similar to boost_number but will show a percent sign behind the number.
 
-### Date
+#### Date
 Marketplace also supports date traits in `date` `display_type`. Pass in a unix timestamp as the value.
 
 ```

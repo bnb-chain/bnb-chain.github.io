@@ -11,15 +11,23 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon/favicon.ico',
   organizationName: 'bnb-chain', 
   projectName: 'bnb-chain.github.io', 
   deploymentBranch: 'gh-pages',
-    
-  /*i18n: {
-      defaultLocale: 'en',
-      locales: ['en', 'fr', 'zh'],
-    },*/
+ 
+  
+  plugins: [
+             require.resolve("docusaurus-plugin-image-zoom"),
+              
+              [require.resolve('docusaurus-gtm-plugin'),
+              {
+                  id: 'GTM-W9BVQXM', // GTM Container ID
+                  preview: 'live',
+              }],
+              
+            ],
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -33,7 +41,7 @@ const config = {
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://www.bnbchain.world/en/blog/',
+            'https://www.bnbchain.org/en/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -46,14 +54,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     
     ({
-      /*announcementBar: {
-        id: 'support_us',
-        content:
-          'Binance Chain and Binance Smart Chain are entering a new development era with a new brand. The documentations and the web pages are under reconstruction.',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: false,
-      },*/
+      
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          }
+        }
+      },
       
       algolia: {
         // The application ID provided by Algolia
@@ -78,6 +89,7 @@ const config = {
   
         //... other Algolia params
       },
+
       colorMode: {
         defaultMode: 'light',
       },
@@ -101,8 +113,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Introduction',
-                to: '/docs/bnbIntro',
+                label: 'Getting Started',
+                to: '/docs/getting-started',
               },
             ],
           },
@@ -115,7 +127,7 @@ const config = {
               },
               {
                 label: 'Blog',
-                href: 'https://www.bnbchain.world/en/blog/',
+                href: 'https://www.bnbchain.org/en/blog/',
               },
               {
                 label: 'GitHub',
@@ -127,7 +139,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/binance',
+                href: 'https://twitter.com/BNBCHAIN',
               },
               {
                 label: 'Telegram',

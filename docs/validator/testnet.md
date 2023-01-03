@@ -25,24 +25,24 @@ If you already have an account, use the seed phrase to recover it:
 geth account import --datadir ./node
 ```
 
-### Get some testnet funds from faucet
+### Get Testnet Funds from Faucet
 
 Go to this faucet page: <https://testnet.binance.org/faucet-smart>
 
 ### Transfer BNB from BSC to BC
 
-Please refer to this [guide](https://binance-wallet.gitbook.io/binance-chain-extension-wallet/best-practice/transfer-testnet-bnb-from-bsc-to-bc) to transfer BNB with Binance Chain extension wallet.
+Please refer to this [guide](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) to transfer BNB with Binance Chain extension wallet.
 
 
-### Become a validator candidate
+### Become a Validator Candidate
 
 You can use `tbnbcli` to [declare your candidacy](../stake/cli-commands.md) some of BNB to a validator
 
 Go to [testnet explorer](https://testnet-explorer.binance.org/) to verify your transactions.
 
-### Get Genesis file and Config file
+### Get Genesis File and Config file
 ```bash
-wget --no-check-certificate  $(curl -s https://api.github.com/repos/binance-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+wget --no-check-certificate  $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
 unzip testnet.zip
 ```
 
@@ -55,7 +55,7 @@ geth --datadir node init genesis.json
 geth --config ./config.toml --datadir ./node --syncmode snap -unlock {validator-address} --mine --allow-insecure-unlock 
 ```
 
-### Become a validator candidate of testnet
+### Become a Validator Candidate of Testnet
 
 You can use `tbnbcli` to [declare your candidacy](../stake/cli-commands.md) some of BNB to a validator
 

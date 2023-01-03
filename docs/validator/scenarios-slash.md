@@ -12,7 +12,7 @@ Double signing refers to an event when the validator node proposes two different
 
 ### Unavailability/Downtime
 
-The slash fee for a validator being offline is self-delegated **_50 BNB_** along with jail time of 2 days. If a validator missed 50 blocks (\~52 minutes of downtime) within 24 hours, their collected reward will be re-distributed among other better performing validators of the set. Another case of unavailability is when a validator misses over 150 blocks (\~157.5 minutes of downtime) within 24 hours. In this case, the validator will lose its reward and be kicked out of the validator set immediately.
+The slash fee for a validator being offline is self-delegated **_50 BNB_** along with jail time of 2 days. If a validator missed 150 blocks (157.5 minutes of downtime) within 24 hours. In this case, the validator will lose its reward and be kicked out of the validator set immediately.
 
 ### Self‐bond Below Minimum
 

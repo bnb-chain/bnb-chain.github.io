@@ -11,21 +11,21 @@ hide_table_of_contents: false
 **The software and related documentation are under active development, all subject to potential future change without notification and not ready for production use. The code and security audit have not been fully completed and are not ready for any bug bounty. We advise you to be careful and experiment on the network at your own risk. Stay safe out there.**
 
 
-GitHub Implementation link: <https://github.com/binance-chain/bsc-genesis-contract>
+GitHub Implementation link: <https://github.com/bnb-chain/bsc-genesis-contract>
 
 
 | Contract Name         | Contract Address  | ABI file |
 | --------------------- | ----------------- | ------------- |
-| BSCValidatorSet Contract | 0x0000000000000000000000000000000000001000 | [bscvalidatorset](system-smart-contract/bscvalidatorset.abi)|
-| Liveness Slash Contract | 0x0000000000000000000000000000000000001001 | [slashindicator](system-smart-contract/slashindicator.abi)|
-| SystemReward Contract | 0x0000000000000000000000000000000000001002 | [systemreward](system-smart-contract/systemreward.abi)|
-| TendermintLightClient Contract | 0x0000000000000000000000000000000000001003 | [tendermintlightclient](system-smart-contract/tendermintlightclient.abi) |
-| TokenHub Contract | 0x0000000000000000000000000000000000001004 | [tokenhub](system-smart-contract/tokenhub.abi)|
-| RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](system-smart-contract/relayerincentivize.abi)|
-| RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](system-smart-contract/relayerhub.abi) |
-| GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](system-smart-contract/govhub.abi)                               |
-| TokenManager Contract |0x0000000000000000000000000000000000001008 |[tokenmanager](system-smart-contract/tokenmanager.abi) |
-| CrossChain Contract |0x0000000000000000000000000000000000002000 |[crosschain](system-smart-contract/crosschain.abi) |
+| BSCValidatorSet Contract | 0x0000000000000000000000000000000000001000 | [bscvalidatorset](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/bscvalidatorset.abi)|
+| Liveness Slash Contract | 0x0000000000000000000000000000000000001001 | [slashindicator](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/slashindicator.abi)|
+| SystemReward Contract | 0x0000000000000000000000000000000000001002 | [systemreward](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/systemreward.abi)|
+| TendermintLightClient Contract | 0x0000000000000000000000000000000000001003 | [tendermintlightclient](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tendermintlightclient.abi) |
+| TokenHub Contract | 0x0000000000000000000000000000000000001004 | [tokenhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)|
+| RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/relayerincentivize.abi)|
+| RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/relayerhub.abi) |
+| GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/govhub.abi)                               |
+| TokenManager Contract |0x0000000000000000000000000000000000001008 |[tokenmanager](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi) |
+| CrossChain Contract |0x0000000000000000000000000000000000002000 |[crosschain](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/crosschain.abi) |
 
 ## On-Chain Light Client
 

@@ -1,19 +1,19 @@
 ---
 sidebar_label: Staking
 sidebar_position: 2
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
-# Staking with extension wallet
+# Staking with Binance Extension Wallet
 
-## How to delegate your BNB with extension wallet
+## How to Delegate Your BNB with Binance Extension Wallet
 
-- [Install BNB Chain extension wallet](binance.md)
+- [Install Binance Extension Wallet](binance.md)
   
 - Go to the staking page:
 
     - Mainnet: <https://www.binance.org/en/staking>
-    - Testnet: <https://testnet-staking.binance.org/en/staking >
+    - Testnet: <https://testnet-staking.binance.org/en/staking>
 
 **Testnet example**
 
@@ -35,19 +35,19 @@ hide_table_of_contents: true
 
 ![img](https://lh5.googleusercontent.com/U_ji1L_LgRaxKmRHFvvUwtiOb7SXqTZ6GrMiqvK2gR_aS21bVTqgTHp2aF207pKxfZaYd38QFvRau20n8zbd_MZ1_6ktWEoXYbRrf6vSUdp2W1yWfwqWFqbhjvrbGiX1YRMzJj7b)
 
-**Success**
+- Upon **Success** you will see a similar output
 
 ![img](https://lh5.googleusercontent.com/avie7-_5sa8jnI8XdFa1EytOMB9pZVULKQntno3hk3w3MuWJtwE9WNYayKTA0W7mymtJLG5mKZFk42TvUyGa_qSAi5rIH88LL2riKln35loCEHl3ntaqZEspWwUMbOgPdZbhOSp6)
 
--  your delegation overview
+-  Your delegation overview
 
 ![img](https://lh4.googleusercontent.com/m8hyetwRYQS-HLcubdSkuhjAAFDyWQptswGJKUWaAwcK-m1yVblM-5pXL599ogLJ1DjkKUo75WOzt6JUDxrnUNwNANDa1ZpuyHxlDxRg7enDF8jkhF70SkWeAPq6hAARAcphlaKw)
 
-You can see the staking history here
+- You can also see the staking history
 
 ![img](https://lh5.googleusercontent.com/P3TMkfcn75wK5-DUQNcxl9XGRPhSYFZR561Ov6ko3jH_gnTImh561tYk0keFORWCET28LxhnnU2iChX2CzZd1a0R4tH4_GMKziRpsZWRtHhZeFmi5MF-WE9g0XcWkzLHSxwQggVu)
 
-## How to redelegate your BNB with extension wallet
+## How to Redelegate Your BNB With Binance Extension Wallet
 
 By staking you BNB, you participate in the selection process of BNB Smart Chain validators and earn rewards. Staking BNB is critical for securing the network. Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders.
 
@@ -65,7 +65,7 @@ Redelegations between a unique delegator, source validator, and destination vali
 
 ![img](https://lh6.googleusercontent.com/fSkKxBxzsGcbnKrflFG-mEysjAVV7a4MqbImMKQgN6jgEbvcOLoMET5nWK7rUEEev-9iNTPeqqQb-Vxgk3wXB9WFkA4OHtIkz9VI5mBPmAXxAiIkTYZgs2bTgib-kmnlWeSK0ZpH)
 
-**Success**
+- Upon **Success** you will see a similar output
 
 ![img](https://lh5.googleusercontent.com/SyWHb2uqlxzZcwCLULNTuSAunBTIYrbidK_JEu7xSwmAIFViv8rScXp6ogoJKWPmduqKcOuM_ypt1RPtzgG0L9fIqoEHvtREuVSrYNTRTHuJmIWoz_qJU9O4HppOZ3DmxkRG6gqr)
 
@@ -74,7 +74,7 @@ Redelegations between a unique delegator, source validator, and destination vali
 
 ![img](https://lh6.googleusercontent.com/O1FC9Fas2TSwootvC7HoJKR2O6dOLpxsKtf9px-k7DLlsZHNWuyJ_fQkvWEvtRQQNBxbP5iKN1EHbbj1SD3RQXYeh_vFYzlISAfBkErbvDmTU_hprGw3dTamm9Pmfzr84Kh7A3hm)
 
-## How to undelegate your BNB with extension wallet
+## How to Undelegate Your BNB with Binance Extension Wallet
 
 - Click on undelegate
 
@@ -89,7 +89,7 @@ Redelegations between a unique delegator, source validator, and destination vali
 ![img](https://lh6.googleusercontent.com/2BBgV-Em4WudnNIeYPHGqxNSYKL0W-jW6-MFZ0L4sC7xl7TVSIccV6lslr6uJrnP28W9D7O9Qkr5MUhLp48aew1-tI-pD8gW_1aorPr7BX8l9v75zd9KaXWV1U3bzwjN4yyxAA0o)
 
 
-**Success**
+- Upon **Success** you will see a similar output
 
 ![img](https://lh3.googleusercontent.com/KneZHA6Hkm1SudGWIR-7Vl8F5N2tlj7QTQ5-f-Twyn79RgsoFPhBBIkwrVl5OLOYbbRSYXQ4gguJUqlczSiW7qGarqN-Kag6NyC7eD3P8-2QCOX6f0YGDJrWQnDRDOw0ElkCkAgM)
 

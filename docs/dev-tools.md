@@ -1,4 +1,4 @@
-# Development Tools used on BSC
+# Development Tools on BSC
 
 # Smart Contracts
 

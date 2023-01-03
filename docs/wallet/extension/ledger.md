@@ -1,4 +1,5 @@
 # How to use Ledger with Binance Extension Wallet
+
 Binance Extension Wallet v1.121.1 is released and verified on **Firefox and Chrome** with Ledger Nano S
 
 ## **Connect to Ledger Nano S Hardware Wallet**
@@ -14,7 +15,7 @@ Next:
 1. Your first step is to plug your[ Ledger](https://shop.ledger.com/pages/back-to-school?r=da6d9b98e517) into your computer. Ensure it powers on and then input the pin you chose when setting up your ledger.
 2. Select and open the Ethereum Application. If you haven't installed Ethereum Application, please read this[ guide](https://docs.binance.org/smart-chain/wallet/ledger.html#app-installation-instructions)
 3. Enabling contract data for BEP20. The first item in the settings menu is “Contract Data”. Push down both buttons to select it. Once you have set your ledger up like this the first time, you won’t have to do it again each time you want to use it with Binance Extension wallet.
-4. Open Binance Chain Extension Wallet and select "Binance Smart Chain" network
+4. Open BNB Chain Extension Wallet and select "Binance Smart Chain" network
 5. Choose "Hardware Wallet" in Settings. Then, click on "Connect"
 
 <img src="https://lh3.googleusercontent.com/cl6u_s0KmvaoDLGOgGRAOZAdRWBVEqwVVBqJyuKWfj5qe6mFoaOkJj0RBUr3lGCfyTbl-LGMtSsGGZeDmXZEZriKzhmJeTgAIxMVXDV-9eL8LdMEZoElvDJxBkRv_eCQXFK2U0g_" />
@@ -30,7 +31,7 @@ Next:
 <img src="https://lh6.googleusercontent.com/AVcK7gB6q8NC68wme8jJokOxtc5RuZVVm7nhp_Om6255reIrR51OvKm559n6-xZ-Bg6vUhlZHhySjdovhwVwx8ZS0LpJWXwbIIQYWvUKdddEFntQbJNK0qHRUGM13fUrDoAdGiTY" alt="img" style={{zoom:"50%"}} />
 
 !!! Warning
-       Please note you cannot use Ledger account for Binance Chain network. 
+       Please note you cannot use Ledger account for BNB Chain network. 
 
 **You are connected!**
 

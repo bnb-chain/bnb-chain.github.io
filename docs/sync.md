@@ -33,7 +33,7 @@ Both `syncFee` and `relayFee` can be changed by on-chain governance
 
 To query `syncFee` from system contract;
 
-- Call `Tokenmanager` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+- Call `Tokenmanager` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001008#readContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi)
 
 - Query `syncFee` function
 
@@ -41,7 +41,7 @@ Fee= result/1e18
 
 To query `relayFee` from system contract;
 
-- Call `TokenHub` [Contract](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) with the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi )
+- Call `TokenHub` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001004#readContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
 
 - Query `getMiniRelayFee` function
 
@@ -51,7 +51,7 @@ Fee= result/1e18
 
 - Call `Tokenmanager` Contract
 
-Use the latest [ABI](https://github.com/binance-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+Use the latest [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
 
 ![img](https://lh5.googleusercontent.com/SYyvWVcLHELSE72JSXqBwMJB6Y50jMz5HgH6irmCbyxGwr-W_Hz-vbm4IqWXAqE2hvCAXaqNKfs28ZhGFtMrMrDgWvDfEkHPunnSuxSKPpLBtuxmiX-b5yRjfczENJxKDrqSAYWy)
 

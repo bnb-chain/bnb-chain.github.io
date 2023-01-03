@@ -13,7 +13,7 @@ The account for mainnet is: **bnb1vu5max8wqn997ayhrrys0drpll2rlz4dh39s3h** and t
 ![workflow](../assets/workflow.jpg)
 
 ### Global Parameters
-* `min-deposit`: The threshold for submitting a proposal on mainnet is **1000BNB**, and the threshold for submitting a proposal on testnet is **2000BNB**
+* `min-deposit`: The threshold for submitting a proposal is **2000BNB**.
 * `deposit_period`: This is a global parameter and the value for mainnet is two days and testnet is two week. It means the time to deposit enough BNB tokens is two days in mainnet and two weeks in testnet.
 * `fee`: Checkout the fee of governance-related transactions [here](trading-spec.md)
 
@@ -25,7 +25,7 @@ The account for mainnet is: **bnb1vu5max8wqn997ayhrrys0drpll2rlz4dh39s3h** and t
 ### Participate in Governance
 #### Tools
 
-Please use this [tool](<https://github.com/binance-chain/node-binary/tree/master/tools>) for generating
+Please use this [tool](<https://github.com/bnb-chain/node-binary/tree/master/tools>) for generating
 
 You can also use [Web Wallet](https://community.binance.org/topic/2487/how-to-manage-your-bep2-token-on-binance-chain-in-web-wallet) for token management operations.
 
@@ -59,7 +59,7 @@ Example on **testnet**:
 --description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
 ```
 !!! Tip
-        As discussed in [BEP-70](https://github.com/binance-chain/BEPs/blob/master/BEP70.md), BUSD is one of the most influential stable coins worldwide and the most dominant stable coin on Beacon Chain . BEP2 token issuers can list their assets against [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1) without the requirement of creating BNB pair first. Listing and trading BUSD pairs on Beacon Chain  will facilitate token owners and exchange traders, making the markets more liquid and healthier.  BEP70 is already implemented and has been activated after Testnet Nightingale Upgrade. Beacon Chain  Mainnet will be upgraded to support BEP-70 soon.
+        As discussed in [BEP-70](https://github.com/bnb-chain/BEPs/blob/master/BEP70.md), BUSD is one of the most influential stable coins worldwide and the most dominant stable coin on Beacon Chain . BEP2 token issuers can list their assets against [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1) without the requirement of creating BNB pair first. Listing and trading BUSD pairs on Beacon Chain  will facilitate token owners and exchange traders, making the markets more liquid and healthier.  BEP70 is already implemented and has been activated after Testnet Nightingale Upgrade. Beacon Chain  Mainnet will be upgraded to support BEP-70 soon.
 
 #### Submit a Delist Proposal
 In testnet, only validators can make a delist proposal. To add a new delist pairs, a validator can run the following command:<br/>

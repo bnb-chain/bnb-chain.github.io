@@ -92,7 +92,7 @@ There is an example on how this prefix is used in JavaScript [here](https://gith
 
 More documentation is available [here](../../learn/encoding/encoding.md)
 
-Binance Chain JavaScript SDK Amino API [example](https://github.com/binance-chain/javascript-sdk/wiki/API-Examples#amino-js-amino)
+Binance Chain JavaScript SDK Amino API [example](https://github.com/bnb-chain/javascript-sdk/wiki/API-Examples#amino-js-amino)
 
 
 | Type | Name | Prefix | Length | Notes |

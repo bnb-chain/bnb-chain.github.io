@@ -18,15 +18,14 @@ WalletConnect is a simple infrastructure that can be setup by any developer. Usi
 
 | Number | Wallet Name                                            | Network                          |
 | ------ | ------------------------------------------------------ | -------------------------------- |
-| 1      | [Trust Wallet](../../wallets/trust-wallet.md)                | Mainnet                          |
-| 2      | [Math Wallet](../../wallets/math-wallet.md)                  | Mainnet                          |
-| 3      | [Meet.One Wallet](../../wallets/meet.md)              | Mainnet                          |
-| 4      | [Equal Wallet](../../wallets/equal.md)                       | Mainnet&Testnet                  |
-| 5      | [SafePal Wallet](../../wallets/safepal.md)                   | Mainnet                          |
-| 6      | [CoolWallet](../../wallets/cool-wallet.md)                   | Mainnet                          |
-| 7      | [XWallet](../../wallets/xwallet.md)                          | Mainnet                          |
-| 8      | [Atomic Wallet](../../wallets/atomic-wallet.md)              | Mainnet                          |
-
+| 1      | [Trust Wallet](https://trustwallet.com/)       | Mainnet                          |
+| 2      | [Math Wallet](https://mathwallet.org/en-us/)   | Mainnet                          |
+| 3      | [Meet.One Wallet](https://github.com/meet-one) | Mainnet                          |
+| 4      | [Equal Wallet](https://equal.tech/)            | Mainnet & Testnet                |
+| 5      | [SafePal Wallet](https://safepal.io/)          | Mainnet                          |
+| 6      | [CoolWallet](https://www.coolwallet.io/)       | Mainnet                          |
+| 7      | [XWallet](https://support.pundix.com/hc/en-us/categories/360001370531-XWallet-FAQ)| Mainnet     |
+| 8      | [Atomic Wallet](https://atomicwallet.io/)      | Mainnet                          |
 
 ## Get Started
 

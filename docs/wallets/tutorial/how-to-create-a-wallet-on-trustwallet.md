@@ -1,4 +1,4 @@
-# How to create your wallet with Trust Wallet
+# How to Create Your Wallet with Trust Wallet
 
 **Step 1.** To get the latest Trust Wallet App you should follow one of the download links on our website [trustwallet.com](https://trustwallet.com/).
 

@@ -16,4 +16,4 @@ The relay process:
 * Sign and broadcast transaction.
 
 
-GitHub Implementation link: <https://github.com/binance-chain/oracle-relayer>
+GitHub Implementation link: <https://github.com/bnb-chain/oracle-relayer>

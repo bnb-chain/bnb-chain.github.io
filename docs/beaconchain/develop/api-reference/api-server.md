@@ -4,6 +4,7 @@ API Server
 API server daemon
 
 > Before starting `api-server`, please make sure that you have created an address locally. Otherwise, your will see the following error:
+
 ```
 panic: stat /Users/user/.bnbcli/keys/keys.db: no such file or directory
 
@@ -19,8 +20,10 @@ github.com/binance-chain/node/vendor/github.com/spf13/cobra.(*Command).ExecuteC(
 github.com/binance-chain/node/vendor/github.com/spf13/cobra.(*Command).Execute(...)
 ```
 
-Start the API server according to the Platform.<br/>
+Start the API server according to the Platform.
+
 Replace the `platform` variable with `mac`, `windows` or `linux` in the following command:
+
 ```bash
 ./{{platform}}/bnbcli api-server --chain-id "{chain-id}" --node tcp://{full node addr}:80 --laddr localhost:8080
 ```

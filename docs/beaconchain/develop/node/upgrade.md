@@ -13,7 +13,7 @@ Many of Beacon Chain  upgrades are hardfork ones. If so, you have to finish the 
 bnbchaind start --home <home-path>
 ```
 
-## Forget to Upgrade
+## Forgot to Upgrade
 
 The Beacon Chain  has a hardfork upgrade and if you failed to upgrade your fullnode to the latest version, `bnbchaind` process will stop and even if you restart with the latest version, the following error will appear:
 ```
@@ -28,7 +28,7 @@ To recover from the `state` conflict error, you need to:
 
 * Backup your home directory,  (default is ~/.bnbchaind)
 
-* Download the tool: [state-recover](https://github.com/binance-chain/node-binary/tree/master/tools/recover)
+* Download the tool: [state-recover](https://github.com/bnb-chain/node-binary/tree/master/tools/recover)
 
 * Get the height of upgrade, this height will be announced in the upgrade announcement on the forum.  For example, if it's announced as 5000 in the forum and run the following command will make your full node recover to the last block before the upgrade, and that is 4999 :
 ```

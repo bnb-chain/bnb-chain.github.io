@@ -20,7 +20,7 @@ Please refer to this [governance doc](governance.md) to learn about how to creat
 
 *Community Thread Proposal (Recommended)*
 
-It is recommended that Token Issuers first create a thread under the “Token Issuance & Listings” category in the Beacon Chain  Community Forum (https://community.binance.org/). The whole guideline is [here](https://community.binance.org/topic/18/guidelines-on-how-to-list-your-token-on-binance-dex)
+It is recommended that Token Issuers first create a thread under the “Token Issuance & Listings” category in the Beacon Chain Community Forum (https://community.binance.org/). The whole guideline is [here](https://community.binance.org/topic/18/guidelines-on-how-to-list-your-token-on-binance-dex)
 
 ## 3. Send List Transaction
 
