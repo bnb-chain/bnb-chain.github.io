@@ -25,7 +25,7 @@ The account for mainnet is: **bnb1vu5max8wqn997ayhrrys0drpll2rlz4dh39s3h** and t
 ### Participate in Governance
 #### Tools
 
-Please use this [tool](<https://github.com/bnb-chain/node-binary/tree/master/tools>) for generating
+Please use this [tool](<https://github.com/bnb-chain/node-binary/tree/master/tools>), as an example, for generating proposals.
 
 You can also use [Web Wallet](https://community.binance.org/topic/2487/how-to-manage-your-bep2-token-on-binance-chain-in-web-wallet) for token management operations.
 

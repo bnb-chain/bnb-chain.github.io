@@ -28,7 +28,7 @@ To recover from the `state` conflict error, you need to:
 
 * Backup your home directory,  (default is ~/.bnbchaind)
 
-* Download the tool: [state-recover](https://github.com/bnb-chain/node-binary/tree/master/tools/recover)
+* Download the tool: [state-recover](https://github.com/bnb-chain/node/releases)
 
 * Get the height of upgrade, this height will be announced in the upgrade announcement on the forum.  For example, if it's announced as 5000 in the forum and run the following command will make your full node recover to the last block before the upgrade, and that is 4999 :
 ```
