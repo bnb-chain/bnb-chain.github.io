@@ -13,7 +13,7 @@ BNB Smart Chain's mainnet can be used for deploying actual dApps on the BSC bloc
 There are multiple ways to purchase BNB Tokens for use on the mainnet. Other than the official [Binance Extension Wallet](binance.md), BNB Smart Chain supports several popular wallets like [TrustWallet](wallet/trustwallet.md) and [MetaMask](wallet/metamask.md), to learn more about the supported wallets refer [here](Wallet.md). For a list of tutorials on how to use different supported wallets with BNB Smart Chain, refer [here](wallets/wallet-tutorial-overview). 
 
 ## How to Access BSC
-There are multiple ways to access the BSC mainnet. One possible method is to join the mainnet as a [full node](validator/guideline-mainnet.md). You can also use the RPC endpoints specified [here](rpc.md) to connect to the mainnet. RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction. RPC endpoints are also used with web wallets like [MetaMask](wallet/metamask.md) to connect to the BSC mainnet.
+There are multiple ways to access the BSC mainnet. One possible method is to join the mainnet as a [full node](validator/fullnode.md). You can also use the RPC endpoints specified [here](rpc.md) to connect to the mainnet. RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction. RPC endpoints are also used with web wallets like [MetaMask](wallet/metamask.md) to connect to the BSC mainnet.
 
 ## Explorers for Mainnet
 

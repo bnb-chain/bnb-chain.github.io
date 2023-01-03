@@ -60,7 +60,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Running Fullnode',
-                        items: ['validator/fullnode', 'archivenode', 'validator/upgrade-fullnode']
+                        items: ['validator/fullnode', 'archivenode', 'validator/best-practice', 'validator/node-maintenance', 'validator/upgrade-fullnode']
                       },
                       {
                         type: 'category',
@@ -116,23 +116,7 @@ const sidebars = {
               //collapsible: true,
               collapsed: true,
               label: 'Validator',
-              items: ['validator/overview','del-guide', 'validator/requirements', 
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'Running as Validator on BSC',
-                        items:['validator/guideline-mainnet',
-                        {
-                          type: 'category',
-                        collapsed: true,
-                        label: 'Join Testnet',
-                        items:['validator/guideline-testnet', 'validator/testnet']
-                        }]
-                      },
-                      //'validator/security', 
-                      'validator/best-practice','validator/node-maintenance',
-                      'validator/commonproblems', //'validator/troubleshoot'
-                    ], 
+              items: ['validator/overview', 'validator/create-val', 'validator/run-val'],
             },
             {
               type: 'category',
@@ -151,9 +135,6 @@ const sidebars = {
               },
               ]
             },
-            /*{type:'doc', id:'Staking', label:'Staking on BSC'},*/
-            //{type: 'doc',   id: 'del-guide',   label: 'Delegator Guide'},
-                    
             {
               type: 'category',
               collapsed: true,

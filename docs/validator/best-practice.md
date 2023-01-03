@@ -9,7 +9,7 @@ t=2021-05-13T17:17:33+0800 lvl=info msg="Imported new chain segment"            
 t=2021-05-13T17:17:42+0800 lvl=info msg="Imported new chain segment"             blocks=18  txs=5612  mgas=799.778  elapsed=8.260s    mgasps=96.815  number=7,355,853 hash=0x73e87742ef4405ffefec987fc4b8b19e69c54b8f914c27ea69a502fae4d735e0 age=12h36m18s dirty="613.03 MiB"
 ```
 
-Your syncing speed is `mgasps`. The value should be around 100.
+Your syncing speed is **mgasps**. The value should be around 100.
 If you are syncing slowly, please check the speed of your disk.
 
 ## Use Chaindata Snapshot
@@ -36,7 +36,7 @@ To protect your BNB, you should only download software directly from official so
 
 
 ## Running Server as a Daemon
-It is important to keep `geth` running at all times. There are several ways to achieve this, and the simplest solution we recommend is to register `geth`  as a systemd service so that it will automatically get started upon system reboots and other events.
+It is important to keep **geth** running at all times. There are several ways to achieve this, and the simplest solution we recommend is to register **geth**  as a systemd service so that it will automatically get started upon system reboots and other events.
 
 
 ## Set up a Backup Node
@@ -49,7 +49,7 @@ It is important to keep `geth` running at all times. There are several ways to a
 2. Sync to the latest height using fast sync mode. You can either download the latest snapshot or start fast sync
 once your node is fully synced
 3. Shut down your node gracefully kill -HUP $(pgrep geth)
-4. Restart your node with `--gcmode archive `
+4. Restart your node.
 
 ### Why Node will be Offline for a While After Restart? or What will Happen If the Client is Force Killed?
 
@@ -66,14 +66,14 @@ Steps to reproduce:
 
 If Geth crashes (or is not shut down gracefully), the recent state held in memory is lost and needs to be regenerated. It takes Geth a long time to restore the states.
 
-The root reason is that `geth` does flush the state trie periodically. The period is defined as `trieTimeout` in `config.toml`.
+The root reason is that **geth** does flush the state trie periodically. The period is defined as **trieTimeout** in **config.toml**.
 
 
 ## How to Upgrade a Backup Node to Become a Validator Node?
 
-You can stop mining new blocks by sending commands in `geth console`
+You can stop mining new blocks by sending commands in **geth console**
 
-Connect to your validator node with `geth attach ipc:path/to/geth.ipc`
+Connect to your validator node with **geth attach ipc:path/to/geth.ipc**
 
 ```bash
 miner.stop()
@@ -102,7 +102,7 @@ Install your [fullnode](fullnode.md)
 
 2. Set sentry as peers for the validator node
 
-In the console of the sentry node, run `admin.nodeInfo.enode` You should get something similar to this.
+In the console of the sentry node, run **admin.nodeInfo.enode** You should get something similar to this.
 
 ```
 enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[::]:30306?discport=0
@@ -113,7 +113,7 @@ enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03
 	If your peers are not on the local network, you need to know your external IP address (use a service) to construct the enode URL.
 	Copy this value and in the console of the first node run,
 
-Update `config.toml` file of validator node
+Update **config.toml** file of validator node
 
 ```
 # make node invisible
@@ -124,7 +124,7 @@ StaticNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631b
 This will return true if successful, but that doesn’t mean the node was added successfully.
 
 
-To confirm run `admin.peers` and you should see the details of the node you just added.
+To confirm run **admin.peers** and you should see the details of the node you just added.
 
 
 That way your validator node will try to peer with your provided sentry nodes only.
@@ -132,16 +132,16 @@ That way your validator node will try to peer with your provided sentry nodes on
 
 3. Confirm the connection
 
-To confirm run `admin.peers` and you should see the details of the node you just added.
+To confirm run **admin.peers** and you should see the details of the node you just added.
 
 
 ![img](https://lh3.googleusercontent.com/w6notWcdyEXayM592WuI5xcpysFqgkwwBSX3sBZFIc34SHrKewZYlNMBMyGBPs375ez78i4gZmbnMyMn3Ry5s6Z6qTejatPYdDXL67moRhGmAQsjNNVF0CRZz10yznx13U34fKSc)
 
 ### Firewall Configuration
 
-`geth` uses several TCP ports for different purposes.
+**geth** uses several TCP ports for different purposes.
 
-`geth` use a listener (TCP) port and a discovery (UDP) port, both on 30303 by default.
+**geth** use a listener (TCP) port and a discovery (UDP) port, both on 30303 by default.
 
 If you need to run JSON-RPC, you'll also need TCP port 8545. Note that JSON-RPC port should not be opened to the outside world, because from there you can do admin operations.
 

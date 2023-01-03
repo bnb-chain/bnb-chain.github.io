@@ -66,7 +66,6 @@ and node RPC interfaces.
 - [Issue](../issue-BEP20.md) new tokens to digitalize assets
 - [Migrate](https://github.com/binance-chain/bsc-develop-ecosystem) existing DApps
 - Run a [full node](fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-- Become a validator of BSC, on [mainnet](../validator/guideline-mainnet.md) and [testnet](../validator/guideline-testnet.md)
 - [Develop wallets](../wallet/wallet_api.md) and tools to help users use Dapps
 
 ## Comparision Between BC and BSC

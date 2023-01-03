@@ -118,9 +118,6 @@ Since the amount of historical data is too large, the initial sync is **not reco
 ## Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/bsc-deploy) to setup a local private network.
 
-## Common Problems With Connectivity
-Please read [this guide](./validator/commonproblems.md)
-
 ## Node Maintenance
 Please read [this guide](./validator/node-maintenance.md)
 

@@ -12,7 +12,7 @@ A delegator can delegate its BNB to a chosen validator to participate the consen
 
 ### How to delegate my BNB?
 
-Please read the guide [here](del-guide.md)
+Please read the guide [here](staking-with-ext-wallet.md)
 
 You can use:
 

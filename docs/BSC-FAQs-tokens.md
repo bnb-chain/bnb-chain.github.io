@@ -46,7 +46,7 @@ Please follow the guide [here](issue-BEP20.md)
 
 ## How can I stake my BNB?
 
-Please follow the guide [here](del-guide.md)
+Please follow the guide [here](staking-with-ext-wallet.md)
 
 ## How many tokens are required to stake BNB?
 

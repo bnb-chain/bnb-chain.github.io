@@ -7,18 +7,15 @@ hide_table_of_contents: false
 In this section, we have provided tutorials on usage of different components of BNB Smart Chain.
 
 ### Validator
-* Tutorial on [How to Join BNB Smart Chain Mainnet as Validator](validator/guideline-mainnet.md)
-* Tutorial on [How to Join BNB Smart Chain Testnet as Validator](validator/guideline-testnet.md)
-* Tutorial on [How to Create a Validator on BNB Smart Chain Testnet](validator/testnet.md)
+* Tutorial on [How to Join BNB Smart Chain as Validator](validator/run-val.md)
+* Tutorial on [How to Create a Validator on BNB Smart Chain](validator/create-val.md)
 ### Full Node
 * Tutorial on [How to Run a Full Node on BNB Smart Chain](validator/fullnode.md)
-* Tutorial on [How to Run a Local BNB Smart Chain Network](local.md)
 * Tutorial on [How to Upgrade Geth (Full Node) on BNB Smart Chain](validator/upgrade-fullnode.md)
 ### Archive Node
 * Tutorial on [How to Run an Archive Node on BNB Smart Chain](archivenode.md)
 ### Staking and Delegation
 * Tutorial on [How to Stake BNB Tokens on BSC](staking-with-ext-wallet.md)
-* Tutorial on [How to Delegate BNB Tokens on BSC](del-guide.md)
 ### Smart Contracts
 * Tutorial on [How to Write BEP20 (Proxy) Contacts](proxy.md)
 * Tutorial on [How to Verify BEP20 (Proxy) Contacts](verify-proxy.md)
