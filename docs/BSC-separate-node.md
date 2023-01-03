@@ -38,6 +38,8 @@ If the fast node runs in not local mode, the node will disable diff protocol by 
 ./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --tries-verify-mode none
 ```
 
+***Note: fast node can never revert to full node.**
+
 #### Verify node
 When a full node has enabled the trust protocol, it can serve as a verify node, at the same time, we will recommend you to enable persist diff, disable snap protocol and diff protocol when running a verify node.
 

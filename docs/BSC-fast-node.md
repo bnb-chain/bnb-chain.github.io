@@ -5,6 +5,11 @@ sidebar_position: 2
 ---
 # Fast Node on BNB Smart Chain
 
+## Note
+**Fast Node does not generate Trie Data when syncing.  
+Once the Fast Node is running, there is no way to switch back to Full Node.  
+Need to re-download snapshot data to restore it to Full Node.**
+
 ## Fast Node Functions
 
 * Stores the full blockchain history on disk and can answer the data request from the network.
