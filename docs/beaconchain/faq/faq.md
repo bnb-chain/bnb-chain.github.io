@@ -134,6 +134,11 @@ Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
 Smart Chain Proposal Vote   | N/A| 0 BNB   | N
 Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 
+## Can I see balances of others or can other people see my balances?
+
+Yes, anyone can see anyone's balances if they know the corresponding addresses.
+Beacon Chain is 100% transparent for transactions and balances.
+
 ## Information provided through API and their usage
 
 ### Is there any limit to using the API to send orders or check market data?
