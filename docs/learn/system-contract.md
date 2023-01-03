@@ -6,26 +6,22 @@ hide_table_of_contents: false
 
 # Build-in System Contract
 
-### Disclaimer
-
-**The software and related documentation are under active development, all subject to potential future change without notification and not ready for production use. The code and security audit have not been fully completed and are not ready for any bug bounty. We advise you to be careful and experiment on the network at your own risk. Stay safe out there.**
-
-
 GitHub Implementation link: <https://github.com/bnb-chain/bsc-genesis-contract>
 
 
-| Contract Name         | Contract Address  | ABI file |
-| --------------------- | ----------------- | ------------- |
-| BSCValidatorSet Contract | 0x0000000000000000000000000000000000001000 | [bscvalidatorset](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/bscvalidatorset.abi)|
-| Liveness Slash Contract | 0x0000000000000000000000000000000000001001 | [slashindicator](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/slashindicator.abi)|
-| SystemReward Contract | 0x0000000000000000000000000000000000001002 | [systemreward](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/systemreward.abi)|
+| Contract Name                  | Contract Address                           | ABI file                                                                                                                       |
+|--------------------------------|--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| BSCValidatorSet Contract       | 0x0000000000000000000000000000000000001000 | [bscvalidatorset](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/bscvalidatorset.abi)             |
+| Liveness Slash Contract        | 0x0000000000000000000000000000000000001001 | [slashindicator](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/slashindicator.abi)               |
+| SystemReward Contract          | 0x0000000000000000000000000000000000001002 | [systemreward](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/systemreward.abi)                   |
 | TendermintLightClient Contract | 0x0000000000000000000000000000000000001003 | [tendermintlightclient](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tendermintlightclient.abi) |
-| TokenHub Contract | 0x0000000000000000000000000000000000001004 | [tokenhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)|
-| RelayerIncentivize Contract | 0x0000000000000000000000000000000000001005 | [relayerincentivize](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/relayerincentivize.abi)|
-| RelayerHub Contract | 0x0000000000000000000000000000000000001006 | [relayerhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/relayerhub.abi) |
-| GovHub Contract |0x0000000000000000000000000000000000001007 | [govhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/govhub.abi)                               |
-| TokenManager Contract |0x0000000000000000000000000000000000001008 |[tokenmanager](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi) |
-| CrossChain Contract |0x0000000000000000000000000000000000002000 |[crosschain](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/crosschain.abi) |
+| TokenHub Contract              | 0x0000000000000000000000000000000000001004 | [tokenhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)                           |
+| RelayerIncentivize Contract    | 0x0000000000000000000000000000000000001005 | [relayerincentivize](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/relayerincentivize.abi)       |
+| RelayerHub Contract            | 0x0000000000000000000000000000000000001006 | [relayerhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/relayerhub.abi)                       |
+| GovHub Contract                | 0x0000000000000000000000000000000000001007 | [govhub](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/govhub.abi)                               |
+| TokenManager Contract          | 0x0000000000000000000000000000000000001008 | [tokenmanager](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi)                   |
+| CrossChain Contract            | 0x0000000000000000000000000000000000002000 | [crosschain](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/crosschain.abi)                       |
+| Native Staking Contract        | 0x0000000000000000000000000000000000002001 | [staking](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/staking.abi)                                       |
 
 ## On-Chain Light Client
 
@@ -49,54 +45,10 @@ This contract implements tendermint header verification algorithm. The input par
 
 This contract implements a [Tendermint merkle proof verification algorithm](https://github.com/tendermint/tendermint/blob/master/docs/architecture/adr-026-general-merkle-proof.md).
 
-### Solidity Contract
+### Build-in System Contract
+* **Merkle Proof Verification Library**
 
-#### Tendermint Light Client Contract
-
-1. ConsensusState: The first consensus state will be written in the constructor. Once a new tendermint header is verified, a new consensus state will be created.
-    ```golang
-    type ConsensusState struct {
-      chainID              string
-      height               int64
-      appHash              []byte
-      curValidatorSetHash  []byte
-      nextValidatorSet     *tmtypes.ValidatorSet
-    }
-    ```
-2. Tendermint Header: A relayer who want to sync new tendermint headers need to query BC to build this object. Then encode it to byte array and call syncTendermintHeader.
-    ```golang
-    type Header struct {
-        Header blockHeader
-        Validator[] CurValidatorSet
-        Validator[] NextValidatorSet
-    }
-    ```
-This contract implements the following four methods:
-
-1. function **syncTendermintHeader**(byte[] header, uint64 height)
-
-    **syncTendermintHeader** gets nearest consensus state by height and call validateTendermintHeader in precompiled contract to verify the tendermint header. If the success, a new consensus state will be saved.
-
-2. function **getAppHash**(uint64 height) returns(bytes32)
-
-    **getAppHash** provides a method to get the verified appHash at the specified height. Besides, If the header of the specified height have not be verified, then zero value will be returned.
-
-3. function **isHeaderSynced**(uint64 height) returns (bool)
-
-    **isHeaderSynced** provides a lower cost method to judge if the specified height has been synced.
-
-4. function **getSubmitter**(uint64 height) returns (address)
-
-    **getSubmitter** provides a method to get the submitter address of the specified header.
-
-#### Merkle Proof Verification Library
-This library provides an util to verify merkle proof from BC. Contracts which need to verify Merkle proof just need to import this library.
-
-function **verifyMerkleProof**(int64 height, byte[] key, byte[] value, byte[] proof) bool
-
-**verifyMerkleProof** reassembles user parameters and calls the above precompiled contract to validate the proof.
-
-## Other Build-in System Contract
+    This library provides an util to verify merkle proof from BC. Contracts which need to verify Merkle proof just need to import this library.
 
 * **TokenHub Contract**
 

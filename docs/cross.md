@@ -32,12 +32,6 @@ Oracle Relayer watches the state change of Binance Smart Chain. Once it catches 
 
 In blockchain network, an oracle refers to the element that connects smart contracts with data from the outside world. In the network of Binance Smart Chain, the execution of the transanction wil emit Events, and such events can be packaged and relayed onto BC. In this way, BC will get updates about changes of BSC.
 
-### Which wallet support cross-chain transfer?
-
-You need to use [MyEtherWallet](wallet/myetherwallet.md)to call contracts and use Beacon Chain commandline client: `bnbcli`/ `tbnbcli` for complementary commands
-
-Please refer to this [guide](cross-chain-transfer.md) for details
-
 ### How to send cross-chain transfer?
 
 You can use [BInance Extension Wallet](wallet/binance.md) or

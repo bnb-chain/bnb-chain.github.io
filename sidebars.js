@@ -42,7 +42,7 @@ const sidebars = {
                           collapsed: true,
                           label: 'BC and BSC Cross-Chain Mechanism',
                           items: ['learn/cross-chain', 'learn/system-contract',
-                                  'cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
+                                   'learn/bsc-relayer', 'learn/incentives',
                                   'learn/oracle-module','learn/oracle-relayer', 'learn/cross-chain-api']},
                                   'learn/bsc-gov']
                 },
@@ -98,7 +98,6 @@ const sidebars = {
                                     items: ['tokens-cross-chain', 'bind-tokens', 'mirror', 
                                     'circulation-model', 'sync' ]
                                   },
-                                  'cross-chain-transfer',
                                   {
                                     type: 'category',
                                     //collapsible: true,
