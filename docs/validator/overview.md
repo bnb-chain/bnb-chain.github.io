@@ -30,7 +30,7 @@ Validator gets: 100\*20% + Commission = 36 BNB
 All delegators get: 100\*80% - Commission = 64 BNB
 ```
 
-If validators double sign, are frequently offline, their staked BNB ( not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
+If validators double sign, or frequently offline, their staked BNB (not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
 
 You can learn to see the revenue history from BitQuery's [chart](https://explorer.bitquery.io/bsc/miners) or a table of [BscScan](https://bscscan.com/validatorset)
 
