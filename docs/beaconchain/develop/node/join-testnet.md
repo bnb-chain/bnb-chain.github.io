@@ -1,7 +1,7 @@
 # Join Testnet
 
 !!! Tip
-    See the [node repo](https://github.com/binance-chain/node) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
+    See the [node repo](https://github.com/bnb-chain/node) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
 
 !!! warning
     You need to install [bnbchaind](install.md) before you go further
@@ -10,7 +10,7 @@
 The hardware must meet certain requirements to run a Full Node.
 
 * Desktop or laptop hardware running recent versions of Mac OS X, Windows, or Linux.
-* 500 GB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
+* 1 TB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
 * 4 cores of CPU and 8 gigabytes of memory (RAM).
 * A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
 * Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain  More hours will be better, run your node continuously for best results.
