@@ -53,8 +53,6 @@ Replace the `platform` variable with `mac`, `windows` or `linux` in the followin
 http://localhost:8080/version
 ```
 
-
-
 ### /api/v1/account/{address}
 ---
 ##### ***GET***
@@ -87,114 +85,6 @@ http://localhost:8080/api/v1/account/tbnb1ke87gxdtsk32kuaqxj6skhhmn79ma89cx2ep4g
 | 404 | Not Found |  |
 | default | Generic error response | [Error](#error) |
 
-
-
-
-### /api/v1/markets
----
-##### ***GET***
-**Summary:** Get market pairs.
-
-**Description:** Gets the list of market pairs that have been listed.
-
-**Example for mainnet**
-```
-http://localhost:8080/api/v1/markets
-```
-
-**Example for testnet:**
-
-```
-http://localhost:8080/api/v1/markets
-```
-
-**Parameters**
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 100; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-
-**Responses**
-
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Market](#market) ] |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
-
-
-### /api/v1/depth
----
-##### ***GET***
-**Summary:** Get the order book.
-
-**Description:** Gets the order book depth data for a given pair symbol.
-
-
-**Example for mainnet**
-```
-http://localhost:8080/api/v1/depth?symbol=SPNDB-916_BNB
-```
-**Example for testnet:**
-
-```
-http://localhost:8080/api/v1/depth?symbol=GEOP-152_BNB
-```
-**Parameters**
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
-| limit | query | The limit of results. Default: 100 Allowed limits: [5, 10, 20, 50, 100] | No | integer |
-
-**Responses**
-
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [MarketDepth](#marketdepth) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
-
-
-### /api/v1/orders/open
----
-##### ***GET***
-**Summary:** Get open orders.
-
-**Description:** Gets open orders for a given address.
-
-
-**Example for mainnet**
-```
-http://localhost:8080/api/v1/orders/open?address=bnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtwqmzfj&symbol=SPNDB-916_BNB
-
-```
-**Example for testnet:**
-
-```
-http://localhost:8080/api/v1/orders/open?address=tbnb1g9rzc0e2jf8ef3qp9ax8h0pmpmvjzwmtq4jxfr&symbol=TEST-599_BNB
-```
-**Parameters**
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| limit | query | default 100; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total =-1 in response | No | integer |
-
-**Responses**
-
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [OrderList](#orderlist) |
-| 500 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
 
 ### /api/v1/tokens
 ---
@@ -459,16 +349,6 @@ http://localhost:8080/api/v1/timelock/timelock/tbnb1g9rzc0e2jf7ef3qp9ax8h0pmpmvj
 | total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
 | owner | string (address) | Address which issue the token |  |
 
-### Market
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| base_asset_symbol | string (currency) | symbol of base asset | BNB |
-| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| price | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| tick_size | string (fixed8) | Minimum price change in decimal form, e.g. 1.00000000 | 0.00000001 |
-| lot_size | string (fixed8) | Minimum trading quantity in decimal form, e.g. 1.00000000 | 0.000001 |
-
 ### Fee
 
 | Name | Type | Description | Example |
@@ -503,42 +383,6 @@ http://localhost:8080/api/v1/timelock/timelock/tbnb1g9rzc0e2jf7ef3qp9ax8h0pmpmvj
 | ---- | ---- | ----------- | ------- |
 | code | long | error code | 400 |
 | message | string | error message |  |
-
-### MarketDepth
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-
-### OrderList
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| order | [ [Order](#order) ] | list of orders |  |
-| total | long |  |  |
-
-### Order
-
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| cumulateQuantity | string |  |  |
-| fee | string | trading fee on the block of this order |  |
-| lastExecutedPrice | string | price of last execution |  |
-| lastExecutedQuantity | string | quantity of last execution |  |
-| orderCreateTime | dateTime | time of order creation |  |
-| orderId | string | order ID |  |
-| owner | string | order issuer |  |
-| price | string | order price |  |
-| quantity | string | order quantity |  |
-| side | integer | 1 for buy and 2 for sell |  |
-| status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
-| symbol | string |  |  |
-| timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
-| tradeId | string | trade ID |  |
-| transactionHash | string |  |  |
-| transactionTime | dateTime | time of transaction |  |
-| type | integer | only 2 is available for now, meaning limit order |  |
 
 ### TimelockList
 
