@@ -6,39 +6,39 @@ hide_table_of_contents: false
 
 # Governance of BSC
 
-## Motivation
+## Introduction
 
-There are many system parameters to control the behavior of the BSC:
+The BSC network is not only a Proof of Staked Authority blockchain network but also one that utilizes on-chain governance. Ideally, such governance logic should be built into the blockchain and automatically executed as the blocking happens. Cosmos Hub, which shares the same Tendermint consensus and libraries with BNB Beacon Chain, works in this way.
+The BNB Beacon Chain has been preparing to enable governance logic since the design days. In order to keep the compatibility and reuse the good foundation of BC, the governance logic of BSC is implemented on BC.
 
-- All these parameters of BSC system contracts should be flexible: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.
+What kind of changes are made via on-chain governance with BSC? Right now, there are many system parameters to control the behavior of the BSC, e.g. slash amount, cross-chain transfer fees. All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such process will be carried on BC, and the new parameter values will be picked up by either the management module on BC or corresponding system contracts via a cross-chain communication. The proposals can be classified into two groups: 1. Param Change Proposal if the parameter takes effect on the Beacon Chain; 2. Cross Param Change Proposal if the parameter takes effect on the BNB Smart Chain.
 
-- params of Staking/Slash/Oracle modules on BC
-
-All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such the process will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication if needed.
-
-## Design Principles
-
-**For BC:**
-
-- Codebase reuse: Reuse most of the structure of proposal and vote, and the logic about propose and vote.
-
-- Cross chain package Available at once: The cross-chain package should be available once the proposal passed.
-
-- Native params change take place at breath block: The param change of Staking/Slash/Oracle modules on BC take place at breath block after the proposal passed.
-
-**For BSC:**
-
-- Uniform interface. The contracts who are interested in these parameters only need to implement the same interface.
-
-- Extensible. When adding a new system contract, there is no need to modify any other contracts.
-
-- Failure toleration. Validators could vote to skip false proposals and go on.
-
-- Multiplexing. Now we have only parameters gov, but in the future, there will be more governance functions.
+To understand process-wise how BSC governance works, it’s best to think of these network upgrades in the following stages which are enforced on the protocol level.
 
 ## Workflow
+### Deposit Stage
+Anyone can submit a proposal on the BNB Beacon Chain for others to view. The only cost associated with submitting a proposal is the transaction fee as little as 1 BNB. 
+However, over the course of the voting period, a proposal must have at least 2000 BNB deposited to it in order for it to proceed to a vote. 
+This period lasts at most 2 weeks, but if the minimum amount of 2000 BNB is reached sooner the proposal will pass to voting immediately. 
+Currently, there is no penalty for delegators and validators who do not participate in governance, though there is a risk to individuals who deposit BNB to a proposal if the proposal does not pass the voting stage, 
+in such case the deposited BNB will be distributed to the validator set.
 
-![img](../../static/img/gov-workflow.png)
+### Voting Stage
+The next stage in the governance process is the voting stage which lasts a customized period. Rather than depositing BNB, 
+validator operators in this governance stage are actually voting Yes, No, or Abstain. 
+If a proposal reaches quorum or the minimum threshold defined by the protocol it will pass to the next stage for tallying.
+
+### Tallying & Execution Stage
+After voting stage, the following condition will be taken into consideration to determine if it passes or not:
+
+- Quorum: more than 50% of the total staked tokens at the end of the voting period need to have voted
+- Threshold: More than 50% or a majority of the tokens that participated in the vote, excluding "Abstain" votes must have voted "Yes"
+- Veto: Less than 33.4% of the tokens that participated in the vote, not counting "Abstain" votes, have vetoed the decision "No (With Veto)".
+
+If any of these conditions are not met, the deposit associated with the denied proposal will not be refunded. These funds will be sent to the validator set.
+
+Once a parameter change is voted on and passes all conditions, the upgrade will take effect automatically in the whole network. And this is how you would have seen the BSC evolve to the current version today!
+
 
 ## Contract Interface
 
@@ -70,39 +70,25 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 }
 ```
 
-## Gov Contract
-Implement the cross chain contract interface: **handlePackage(bytes calldata msgBytes, bytes calldata proof, uint64 height, uint64 packageSequence)**
-
-And do the following steps:
-- Basic check. Sequence check, Relayer sender check, block header sync check, merkel proof check.
-- Check the msg type according to the first byte of msgBytes, only param change msg type is supported for now. Check and parse the msg bytes.
-- Use a fixed gas to invoke the  updateParam interface of target contract. Catch any exception and emit fail event if necessary, but let the process go on.
-- Claim reward for the relayer and increase sequence.
-
 
 ##  Parameters that control the behavior of BSC
 
  There are many system parameters to control the behavior of the BSC:
 
-- All these parameters of BSC system contracts should be flexible: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.
+- All these parameters of BSC system contracts is governable: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.
 
 - params of Staking/Slash/Oracle/IBC modules on BC
 
-All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such processes will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.
+All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. 
+Such processes will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.
 
 ## Fee Table
 
-| Transaction Type                   | Fee         | Fee For                      |
-| -------------------------- | ----------- | ---------------------------- |
-| Submit Smart Chain Proposal | 10 BNBs     | Proposer                     |
-| Smart Chain Proposal Deposit        | 0.00125 BNB | Proposer                     |
-| Smart Chain Proposal Vote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.001 BNB    | system reward pool |
-
-### Global Parameters
-
-* `min-deposit`: The threshold for submitting a proposal is **2000BNB**.
-
+| Transaction Type                   | Fee         | 
+| -------------------------- |-------------|
+| Submit Smart Chain Proposal | 1 BNBs      |
+| Smart Chain Proposal Deposit        | 0.00025 BNB |
+| Smart Chain Proposal Vote           | 0 BNB       |
 
 ## Commands
 
@@ -118,10 +104,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
-./bnbcli gov  query-proposals --side-chain-id  bsc --trust-node --chain-id Binance-Chain-Tigris
+./bnbcli gov  query-proposals --side-chain-id  bsc  --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov  query-proposals --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
+./tbnbcli gov  query-proposals --side-chain-id  chapel --node http://data-seed-pre-1-s1.binance.org:80 --trust-node --chain-id Binance-Chain-Ganges
 ```
 
 ### Query side chain proposal
@@ -134,10 +120,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
-./bnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  bsc --trust-node --chain-id Binance-Chain-Tigris
+./bnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  bsc --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
+./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --node http://data-seed-pre-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges
 ```
 
 ### Query side chain parameters
@@ -148,10 +134,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
- ./bnbcli params side-params --side-chain-id bsc  --trust-node
+ ./bnbcli params side-params --side-chain-id bsc  --trust-node --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli params side-params --side-chain-id chapel  --trust-node
+ ./tbnbcli params side-params --side-chain-id chapel  --trust-node --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### Submit cross chain param change proposal.
@@ -170,10 +156,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainet
-./bnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
+./bnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
+./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### Submit cross chain channel management proposal.
@@ -191,10 +177,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
-./bnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
+./bnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
+./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### Submit side chain module param change proposal.
@@ -211,10 +197,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
-./bnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  bsc  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris
+./bnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  bsc  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges
+./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### Vote for side chain proposal
@@ -228,10 +214,10 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
- ./bnbcli gov vote --from alice   --side-chain-id  bsc    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris
+ ./bnbcli gov vote --from alice   --side-chain-id  bsc    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges
+ ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### Deposit for side chain proposal
@@ -246,8 +232,8 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ```bash
 ## mainnet
- ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris
+ ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.binance.org:80
 
 ## testnet
- ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges
+ ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
