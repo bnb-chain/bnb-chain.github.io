@@ -5,7 +5,7 @@ Beacon Chain CLI is one of several ways to interact with Beacon Chain.
 Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
 key or restore your key from mnemonic words. And you can list your keys and show specified key info.
 
-With Beacon Chain CLI, you can send transactions to Beacon Chain, like placing an order, transferring tokens,
+With Beacon Chain CLI, you can send transactions to Beacon Chain, like transferring tokens,
 issuing tokens and so on. Actually you can do almost everything you can do with Beacon Chain web wallet. What is
 more, you can propose to list trading pairs and join chain governance.
 
@@ -187,10 +187,8 @@ To solve this issue, you need to set `--trust-node` to `true`
 For detailed usage, you can refer to:
 
 - [transfer](../../transfer.md)
-- [trade](../../trade.md)
 - [issue](../../tokens.md)
 - [governance](../../governance.md)
-- [list](../../list.md)
 - [keys](../../keys.md)
 - [offline](../../offline.md)
 - [timelock](../../timelock.md)
