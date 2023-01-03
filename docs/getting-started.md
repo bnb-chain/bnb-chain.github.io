@@ -2,20 +2,7 @@
 sidebar_label: Getting Started
 ---
 # Getting Started
-The purpose of this document is to give a general overview of BNB Chain and to serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain). 
-
-## Architecture 
-BNB Chain is an ecosystem that is comprised of multiple blockchains. Before you start developing dApps on the BNB Chain, it is important to learn about its underlying architecture. Refere [here](./learn/cross-chain.md) to learn in depth. For learning about the uderlying blockhchaind details of BNB Beacon Chain, refer [here](learn/beaconIntro.md#technology-details).
-
-## Consensus Mechanism 
-Consensus protocols play key roles in building trust in the blockchain ecosystem. To learn about the consensus mechanism used in the BNB Chain, refer [here](./learn/consensus.md).
-
-## Running Full Nodes 
-Run a [full node](./validator/fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-
-## Join as a Validator 
-- On the [Testnet](./validator/guideline-testnet.md). 
-- On the [Mainnet](./validator/guideline-mainnet.md).
+This document serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain). 
 
 ## What can users do with BNB Smart Chain (BSC)?
 BNB Smart Chain (BSC) is the blockchain compoment of the BNB Chain ecosytem that is equipped with the smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM) and is used for developing various kinds of decentralized applications. The design goal of BSC was to leave the high throughput of Beacon Chain intact while introducing smart contracts into the BNB Chain ecosystem. Being EVM-compatible, other than easy portability, BSC enjoys support of the rich universe of [Ethereum](https://academy.binance.com/en/articles/what-is-ethereum) tools and dApps
@@ -66,32 +53,6 @@ BSC empowers developers to build dApps of different kinds. Below is a list of tu
   - From [Solana](./migration/non-evm-chains/solana/architecture-comparison.md).
   - From [Polygon](./migration/evm-chains/chain-comparison.md)
 
-### REST API
-- [Accelerated Nodes](beaconchain/develop/node/nodetypes.md) provide advanced API services for the public.
-- For a list of all the Rest API information Accelerated Node provides, refer [here](beaconchain/develop/api-reference/dex-api/paths). 
-
 ### Node RPC
 There are data seed nodes in the network which allow users to perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
 If you run a full node by yourself, you can also use RPC functions. For a list of all the Node RPC services for Beacon Chain refer [here](beaconchain/develop/api-reference/node-rpc.md) and for BNB Smart Chain refer [here](rpc.md).
-
-### SDKs
-
-SDKs are also provided as a starting point for your apps.
-
-There are two advanced SDK solutions for Beacon chain: [Java](https://github.com/bnb-chain/java-sdk) and [Golang](https://github.com/bnb-chain/go-sdk).
-
-Both solutions provide functions for:
-
-* Create wallets and manage keys
-* Encode/sign transactions and submit to Binance Chain/DEX, including Transfer, New Order, Cancel Order, etc.
-* Communicate with Binance Chain/DEX Node RPC calls through public node RPC services or your own private full nodes
-
-Please refer to specific SDK documentation for more information:
-
-- [Go SDK](https://github.com/bnb-chain/go-sdk). Refer to ([Documentation](https://github.com/bnb-chain/go-sdk/wiki))
-- [Java SDK](https://github.com/bnb-chain/java-sdk). Refer to ([Documentation](https://github.com/bnb-chain/java-sdk/wiki))
-- [Javascript SDK](https://github.com/bnb-chain/javascript-sdk). Refer to ([Documentation](https://github.com/bnb-chain/javascript-sdk/wiki))
-- [C++ SDK](https://github.com/bnb-chain/cplusplus-sdk). Refer to ([Documentation](https://github.com/bnb-chain/cplusplus-sdk/wiki))
-- [C# SDK](https://github.com/bnb-chain/csharp-sdk). Refer to ([Documentation](https://github.com/bnb-chain/csharp-sdk))
-- [Python SDK](https://github.com/bnb-chain/python-sdk).  Refer to ([Documentation](https://github.com/bnb-chain/python-sdk))
-- [Swift SDK](https://github.com/bnb-chain/swift-sdk).  Refer to ([Documentation](https://github.com/bnb-chain/swift-sdk/blob/master/README.md))
