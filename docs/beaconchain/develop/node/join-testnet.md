@@ -108,3 +108,7 @@ You can verify if state sync is done by `curl localhost:27147/status` several ti
 ## Prometheus Metrics
 
 Prometheus is enabled on port `28660` by default, and the endpoint is `/metrics`.
+
+## Testnet Tools
+
+* [Explorer](https://testnet-explorer.binance.org/)
