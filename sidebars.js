@@ -213,31 +213,30 @@ const sidebars = {
                         type:'category',
                         label:'Develop',
                         items: [
-                          {
+                        {type:'doc', id: 'beaconchain/develop/rpc', label:'RPC'},
+                        {
                           type:'category',
                           label:'BNB Beacon Chain Fullnode',
-                          items:['beaconchain/develop/node/install', 'beaconchain/develop/node/join-mainnet',
+                              items: ['beaconchain/develop/node/install', 'beaconchain/develop/node/join-mainnet',
                                   'beaconchain/develop/node/join-testnet', 'beaconchain/develop/node/synctypes',
-                                'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
-                              'beaconchain/develop/node/upgrade', 'beaconchain/develop/node/localnetwork',
-                            'beaconchain/develop/node/fullnodeissue',
-                            'beaconchain/develop/node/snapshot'
-                          ]
-                        }, 
-                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'BNB Beacon Chain Client'},
-                        {type:'doc', id: 'beaconchain/light-client', label:'Light Client'},
-                        {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
-                        {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'Simple API Server'},
+                                  'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
+                                  'beaconchain/develop/node/upgrade', 'beaconchain/develop/node/localnetwork',
+                                  'beaconchain/develop/node/fullnodeissue'
+                              ]
+                        },
+                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'BNB Beacon Chain CLI'},
                         {type:'doc', id: 'beaconchain/develop/bcsdk', label:'BNB Beacon Chain SDK'},
                         {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'BNB Beacon Chain Testnet'},
+                        {type:'doc', id: 'beaconchain/light-client', label:'Light Client'},
+                        {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
                         {
                           type: 'category',
                           label:'BNB Beacon Chain API Reference',
                           items:[
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: 'Accelerated Node HTTP API Testnet- Paths and Models'},
                             {type:'link', href:"pathname:///api-swagger/index.html", label: 'Accelerated Node HTTP API Swagger'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/staking', label: 'Staking API'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
                             {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},

@@ -1,5 +1,5 @@
 ---
-sidebar_label: BEP8 Token Protocol
+sidebar_label: BEP8 Tokens
 hide_table_of_contents: false
 sidebar_position: 2
 ---
