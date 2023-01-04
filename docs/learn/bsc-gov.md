@@ -96,7 +96,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chan-id           | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
 | --side-chain-id     | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --status            | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No          |
 | --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                | No           |
@@ -114,7 +114,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 
@@ -140,11 +140,11 @@ Such processes will be carried on BC, and the new parameter values will be picke
  ./tbnbcli params side-params --side-chain-id chapel  --trust-node --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
-### Submit cross chain param change proposal.
+### Submit cross chain param change proposal
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of beacon chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -156,17 +156,17 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 ```bash
 ## mainet
-./bnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
+./bnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
-### Submit cross chain channel management proposal.
+### Submit cross chain channel management proposal
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of beacon chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -183,11 +183,11 @@ Such processes will be carried on BC, and the new parameter values will be picke
 ./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
-### Submit side chain module param change proposal.
+### Submit side chain module param change proposal
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of beacon chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -207,7 +207,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --option           | Yes                                        | vote option {yes, no, no_with_veto, abstain}         | Yes          |
@@ -225,7 +225,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --deposit          | Yes                                        | amount of deposit                                    | Yes          |
