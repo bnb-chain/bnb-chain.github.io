@@ -1,10 +1,13 @@
 # Join Mainnet
 
-!!! Tip
-    See the [node repo](https://github.com/bnb-chain/node) for information on the mainnet, including the correct version of the binaries to use and details about the genesis file.
+:::tip
+See the [node repo](https://github.com/bnb-chain/node) for information on the mainnet, 
+including the correct version of the binaries to use and details about the genesis file
+:::
 
-!!! warning
-    You need to install [bnbchaind](install.md) before you go further
+:::note
+You need to install [bnbchaind](install.md) before you go further
+:::
 
 ## Minimum System Requirements
 The hardware must meet certain requirements to run a Full Node.
@@ -16,53 +19,61 @@ The hardware must meet certain requirements to run a Full Node.
 * Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain  More hours will be better, run your node continuously for best results.
 
 ## Setting Up a New Node
-> You can skip this part if you have executed the install script.
 
-First you need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain .
-You can setup this by:
+1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
 
 ```
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-Then, download `app.toml` and `config.toml` from mainnet_config.zip/testnet_config.zip into `$BNCHOME/config`
+2. Download `app.toml`,  `config.toml` and `genesis.json` from `https://github.com/bnb-chain/node/releases` and copy them into `$BNCHOME/config`
 
-You can edit this moniker later, in the ~/.gaiad/config/config.toml file:
+```
+wget   $(curl -s https://api.github.com/repos/bnb-chain/node/releases/latest |grep browser_ |grep mainnet_config |cut -d\" -f4)
+unzip mainnet_config.zip
+```
+
+You can edit this moniker later, in the ~/.bnbchaind/config/config.toml file:
 ```toml
 # A custom human readable name for this node
 moniker = "<your_custom_moniker>"
 ```
 
-> Note Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable. :::
+:::note
+Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable. 
+:::
 
-
-Now your Full Node has been initialized!
+Now your Full Node has been initialized.
 
 ## Genesis & Seeds
 
-### Download the Genesis File
+3. The `genesis.json` file will be downloaded along with the other config files in step #2.
 
-Fetch the mainnet's genesis.json file into node-binary's config directory.
-```
-cd -p $HOME/.bnbchaind/config
-wget https://github.com/bnb-chain/node/releases/download/v0.9.1/mainnet_config.zip
-unzip mainnet_config.zip
-cp mainnet_config/genesis.json .
-```
-Note the releases of node repo contain details of the latest version and the genesis file.
+:::tip 
+If you want to understand genesis file, click [here](../../learn/genesis.md)
+:::
 
-::: tip If you want to understand genesis file, click [here](../../learn/genesis.md) :::
+4. Start your Full Node.
 
-To verify the correctness of the configuration run:
 ```shell
 bnbchaind start &
 ```
+
+:::note
+Alternatively, if you choose a different $BNCHOME location and you are not using the suggested default `~/.bnbchaind`, you may start the full node by using below script, where $BNCHOME is your selected directory. 
+
+Example: If you set `/usr/local/beacon-chain` as your home directory. Run the Full Node with:
+
+```shell
+bnbchaind start --home /usr/local/beacon-chain &
+```
+:::
 
 If you encounter any issue when running a Full Node, you can read the FAQ list [here](fullnodeissue.md).
 
 
 ### Add Seed Nodes
-Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $HOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
+Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
 
 If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://dex.binance.org/api/v1/peers
 
