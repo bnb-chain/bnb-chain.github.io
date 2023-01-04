@@ -108,6 +108,7 @@ const sidebars = {
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       'oracles',
+                      {type: 'doc', id: 'dstorages', label: 'dStorages'},
                       {type: 'doc', id: 'learn/cross-chain-bridges', label: 'Cross-Chain Bridges'},
             ]},  
             
