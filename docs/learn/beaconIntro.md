@@ -16,7 +16,6 @@ Beacon Chain implement following features now:
 - Goverenance for beacon chain and side chains
 - Staking of side chains
 - Cross chain transfers and communications
-- Smart contract sidechain (in-progress)
 
 Beacon Chain also includes efforts to implement [listing assets from other chains](../beaconchain/atomic-swap.md), and cryptographic primitives such as [threshold signatures](../beaconchain/learn/threshold-signature-scheme.md).
 
