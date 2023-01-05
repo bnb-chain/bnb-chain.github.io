@@ -6,7 +6,7 @@ Smart contracts development with BSC enables you to build your smart contracts f
 
 Smart contracts are programming logic that are executed automatically on when a certain condition(s) are met. In BSC, smart contracts can be written in Solidity programming language.
 
-Please refer to the [official documenatation of Solidity](https://solidity.readthedocs.io/en/v0.7.1/) for any queries.
+Please refer to the [official documentation of Solidity](https://solidity.readthedocs.io/en/v0.7.1/) for any queries.
 
 # IDE and Libraries
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: BSC 슬래싱 증거
+sidebar_label: BSC 슬래싱 증거 제출
 hide_table_of_contents: false
 sidebar_position: 2
 ---
@@ -31,7 +31,7 @@ bnbcli slashing bsc-submit-evidence
 #### 예시
 
 ```
-bnbcli slashing bsc-submit-evidence \--from= bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd \--chain-id=Binance-Chain-Tigris\--home \~/home\_cli\
+bnbcli slashing bsc-submit-evidence --from= bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd --chain-id=Binance-Chain-Tigris --home  ~/home_cli
 ```
 
 #### 예시

@@ -24,43 +24,21 @@ DEX는 표준 웹 소켓 연결을 통해 여러 데이터 스트림을 제공�
 **메인넷 예시:** 스트림 이름이 URL에 제공 될 시 스트림에 연결하는 다양한 방법:
 
 ```javascript
-  // for personal streams, ex: Account & Orders & Transfers
+  // for personal streams, ex: Account & Transfers
   const accountAndOrdersFeeds = new WebSocket("wss://dex.binance.org/api/ws/<USER_ADDRESS>");
 
-  // for single streams
-  const tradesFeeds = new WebSocket("wss://dex.binance.org/api/ws/<symbol>@trades");
-  const marketFeeds = new WebSocket("wss://dex.binance.org/api/ws/<symbol>@marketDiff");
-  const deltaFeeds = new WebSocket("wss://dex.binance.org/api/ws/<symbol>@marketDepth");
-  ... etc
-
   // for all symbols
-  const allTickers = new WebSocket("wss://dex.binance.org/api/ws/$all@allTickers");
-  const allMiniTickers = new WebSocket("wss://dex.binance.org/api/ws/$all@allMiniTickers");
   const blockHeight = new WebSocket("wss://dex.binance.org/api/ws/$all@blockheight");
-
-  // for combined streams, can combined a mixed symbols and streams
-  const combinedFeeds = new WebSocket("wss://dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
 **테스트넷 예시:** 스트림 이름이 URL에 제공 될 시 스트림에 연결하는 다양한 방법:
 
 ```javascript
-  // for personal streams, ex: Account & Orders & Transfers
+  // for personal streams, ex: Account & Transfers
   const accountAndOrdersFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<USER_ADDRESS>");
 
-  // for single streams
-  const tradesFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<symbol>@trades");
-  const marketFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<symbol>@marketDiff");
-  const deltaFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<symbol>@marketDepth");
-  ... etc
-
   // for all symbols
-  const allTickers = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@allTickers");
-  const allMiniTickers = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@allMiniTickers");
   const blockHeight = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@blockheight");
-
-  // for combined streams, can combined a mixed symbols and streams
-  const combinedFeeds = new WebSocket("wss://testnet-dex.binance.org/api/stream?streams=<symbol>@trades/<symbol>@marketDepth/<symbol>@marketDiff");
 ```
 
 ### 방법 2: 스트림 온디맨드(On-Demand) 구독하기
@@ -89,14 +67,10 @@ DEX는 표준 웹 소켓 연결을 통해 여러 데이터 스트림을 제공�
 ```javascript
     const conn = new WebSocket("wss://dex.binance.org/api/ws/bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x");
     conn.onopen = function(evt) {
-        // for personal topics such as accounts & orders & transfers, an `address` is required
+        // for personal topics such as accounts & transfers, an `address` is required
         // Note: one connection is only allowed to subscribe to one address.
         // If you subscribe to a new address, regardless of whether the topic is new, the subscriptions for the previous addresses will be removed.
-        conn.send(JSON.stringify({ method: "subscribe", topic: "orders", address: "bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x" }));
-
-        // for data topics such as marketDepth, marketDelta, trades and ticker;
-        // a list of symbols is required. Same message can be used to append new topic and/or symbols
-        conn.send(JSON.stringify({ method: "subscribe", topic: "marketDepth", symbols: ["BNB_BTC","BNB_ETH"] }));
+        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", address: "bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x" }));
     }
 ```
 
@@ -104,10 +78,7 @@ DEX는 표준 웹 소켓 연결을 통해 여러 데이터 스트림을 제공�
 
 ```javascript
     // unsubscribe from topic
-    conn.send(JSON.stringify({ method: "unsubscribe", topic: "orders" }));
-
-    // unsubscribe from individual symbols
-    conn.send(JSON.stringify({ method: "unsubscribe", topic: "marketDepth", symbols: ["BNB_BTC"] }));
+    conn.send(JSON.stringify({ method: "unsubscribe", topic: "transfers" }));
 ```
 
 **예시:** 연결 기간을 늘리려면, `keepAlive` 메서드를 사용하며 페이로드와 다음과 같은 메세지를 전송하세요:

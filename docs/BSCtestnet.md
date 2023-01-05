@@ -41,7 +41,16 @@ BNB 체인용 테스트넷 포셋(faucet)은 [여기](https://testnet.binance.or
 비콘체인 기능을 테스트하고 싶다면 매스월렛으로 BNB를 크로스 체인 전송할 수 있습니다:
 https://docs.bnbchain.org/docs/wallet/math#transfer-bnb-from-bsc-to-bc-in-testnet
 
+* BscScan - https://testnet.bscscan.com/
+ 
+* Bitquery - https://explorer.bitquery.io/bsc_testnet
 
-### Testnet 탐색기
-    * BscSCAN - https://testnet.bscscan.com/
-    * Bitquery - https://explorer.bitquery.io/bsc_testnet
+## RPC 엔드포인트
+BSC RPC 엔드포인트(ChainID 0x61):
+
+- https://data-seed-prebsc-1-s1.binance.org:8545
+- https://data-seed-prebsc-2-s1.binance.org:8545
+- https://data-seed-prebsc-1-s2.binance.org:8545
+- https://data-seed-prebsc-2-s2.binance.org:8545
+- https://data-seed-prebsc-1-s3.binance.org:8545
+- https://data-seed-prebsc-2-s3.binance.org:8545

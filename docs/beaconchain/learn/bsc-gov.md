@@ -87,7 +87,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 | --voting-period    | 604800                                                             | voting period in seconds (default 604800)                                 | No           |
 
 ```bash
-## mainet
+## mainnet
 ./bnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
 
 ## testnet

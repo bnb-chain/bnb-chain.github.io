@@ -9,8 +9,8 @@ Have fun trading and see you on chain!
 
 ## What are Beacon Chain and Binance DEX?
 
-[Beacon Chain](https://www.binance.org) is a blockchain software system developed by Binance and its community.
-Binance DEX refers to the decentralized exchange features developed on top of Beacon Chain .
+[Beacon Chain](https://www.bnbchain.org) is a blockchain software system developed by its community.
+Binance DEX refers to the decentralized exchange features developed on top of Beacon Chain.
 
 Please read the [FAQ](faq/faq.md) to get started.
 
@@ -66,7 +66,6 @@ and node RPC interfaces.
 - [Issue](../issue-BEP20.md) new tokens to digitalize assets
 - [Migrate](https://github.com/binance-chain/bsc-develop-ecosystem) existing DApps
 - Run a [full node](fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
-- Become a validator of BSC, on [mainnet](../validator/guideline-mainnet.md) and [testnet](../validator/guideline-testnet.md)
 - [Develop wallets](../wallet/wallet_api.md) and tools to help users use Dapps
 
 ## Comparision Between BC and BSC
@@ -93,7 +92,6 @@ Want to develop on **BNB Smart Chain **? First, read through the [FAQ](../BSC-FA
 Beacon Chain  is essentially a digital asset creation and exchange platform.<br/>
 The features listed below are currently supported on Beacon Chain :
 
-- [The Listing and Delisting of Tokens](list.md)
 - [The Issuance, Burning, Minting and Freezing of Tokens](tokens.md)
 - [Transfer of Tokens](transfer.md)
 

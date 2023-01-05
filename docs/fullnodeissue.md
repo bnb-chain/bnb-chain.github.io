@@ -127,7 +127,7 @@ To recover from the `state` conflict error, you need to:
 
 * Backup your home directory,  (default is ~/.bnbchaind)
 
-* Download the tool: [state-recover](https://github.com/bnb-chain/node-binary/tree/master/tools/recover)
+* Download the tool: [state-recover](https://github.com/bnb-chain/node/releases)
 
 * Get the height of upgrade, this height will be announced in the upgrade announcement on the forum.  For example, if it's announced as 5000 in the forum and run the following command will make your full node recover to the last block before the upgrade, and that is 4999 :
 ```
@@ -161,7 +161,7 @@ If you do not download the binaries completely, you will see the following messa
 ./bnbchaind: line 1: version: command not found ./bnbchaind: line 2: oid: command not found /Library/Developer/CommandLineTools/usr/bin/size: 45160816 No such file or directory
 ```
 
-Since all the binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please use this [script](https://github.com/bnb-chain/node-binary/blob/master/install.sh) to download the binaries or use `git lfs clone`.
+Since all the binaries are stored in `git lfs`, you will see this error is the binary is not complete. Please download the latest binaries from [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases).
 
 #### Cannot Query a Specific Block
 

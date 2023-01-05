@@ -1,5 +1,5 @@
 ---
-sidebar_label: 스테이킹
+sidebar_label: 스테이킹 API
 hide_table_of_contents: true
 sidebar_position: 2
 ---

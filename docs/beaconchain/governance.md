@@ -46,10 +46,10 @@ DepositedCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainDe
 **mainnet** 예시:
 
 ```shell
+## mainnet
 ./bnbcli gov submit-list-proposal --from test --deposit 100000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
 --description "list AAA-254/BNB" --expire-time 1570665600 --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --voting-period 604800 --json
-```
 
 **testnet** 예시:
 
@@ -94,8 +94,8 @@ tbnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200
 **mainnet** 예시:
 
 ```shell
-bnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BNB --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
-```
+# mainnet
+./bnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --trust-node
 
 **testnet** 예시:
 
@@ -108,9 +108,9 @@ tbnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BN
 
 **mainnet** 예시:
 
-```shell
-./bnbcli gov query-proposal --proposal-id <proposal-ID> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
-```
+```bash
+## mainnet
+./bnbcli params  submit-fee-change-proposal --fee-param-file param.json --deposit 200000000000:BNB  --voting-period 100 --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 **testnet** 예시:
 
@@ -152,15 +152,12 @@ tbnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BN
 
 **mainnet** 예시:
 
-```shell
-./bnbcli gov query-votes --proposal-id 272 --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
+## testnet
+ ./tbnbcli gov vote --from alice --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 **testnet** 예시:
 
-```shell
-./tbnbcli gov query-votes --proposal-id 272 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
-```
 
 결과 예시:
 ```json
@@ -259,33 +256,11 @@ tbnbcli gov deposit --from name --proposal-id <proposl-ID> --deposit <amount>:BN
 `bnbcli`를 통해 제안 정보를 요청할 수 있습니다.
 
 ```bash
-$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Ganges --node=tcp://data-seed-pre-1-s3.binance.org:80 --proposal-id 370
-{
-  "type": "gov/TextProposal",
-  "value": {
-    "proposal_id": "370",
-    "title": "list JCC-CB1/BNB",
-    "description": "{\"base_asset_symbol\":\"JCC-CB1\",\"quote_asset_symbol\":\"BNB\",\"init_price\":100000000,\"description\":\"list JCC-CB1/BNB\",\"expire_time\":\"2019-04-24T14:46:35+08:00\"}",
-    "proposal_type": "ListTradingPair",
-    "voting_period": "604800000000000",
-    "proposal_status": "Passed",
-    "tally_result": {
-      "yes": "1100000000000",
-      "abstain": "0",
-      "no": "0",
-      "no_with_veto": "0",
-      "total": "1100000000000"
-    },
-    "submit_time": "2019-04-10T06:49:11.568747217Z",
-    "total_deposit": [
-      {
-        "denom": "BNB",
-        "amount": "200000000000"
-      }
-    ],
-    "voting_start_time": "2019-04-10T06:52:00.064744275Z"
-  }
-}
+## mainnet
+ ./bnbcli gov deposit --from alice --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.binance.org:80
+
+## testnet
+ ./tbnbcli gov deposit --from alice --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 `tally result`와 `proposal_status`를 받을 수 있습니다.<br/>
@@ -305,11 +280,9 @@ $ ./bnbcli gov query-proposal --chain-id Binance-Chain-Ganges --node=tcp://data-
 **참고:** 투표 기한을 거치지 않은 제안을 요청하면 `error`가 반환됩니다.
 
 ```bash
-$ ./bnbcli gov query-proposal --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --proposal-id 25
-{
-  "codespace": 5,
-  "code": 1,
-  "abci_code": 327681,
-  "message": "Unknown proposal with id 25"
-}
+## mainnet
+ ./bnbcli gov query-votes --proposal-id 1 --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
+
+## testnet
+ ./tbnbcli gov query-votes --proposal-id 1 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
 ```

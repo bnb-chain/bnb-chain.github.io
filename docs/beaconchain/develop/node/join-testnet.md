@@ -100,3 +100,7 @@ bnbchaind start &
 
 * [탐색기](https://explorer.binance.org/)
 
+
+## 테스트넷 도구
+
+* [탐색기](https://testnet-explorer.binance.org/)

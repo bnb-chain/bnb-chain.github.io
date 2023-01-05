@@ -1,5 +1,5 @@
 ---
-sidebar_label: BNB 스마트 체인 검증 노드
+sidebar_label: 검증 노드
 hide_table_of_contents: false
 sidebar_position: 2
 ---
@@ -63,7 +63,7 @@ unzip mainnet.zip
 
 4. 풀노드를 시작합니다.
 ```
-geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
 ```
 
 :::참고

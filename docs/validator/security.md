@@ -5,7 +5,7 @@ hide_table_of_contents: true
 ---
 # Securing the Validators
 
-Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them againt different DoS and DDoS attacks. In this section, we disscuss the security mechanism adopted by BSC for its validators.
+Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them against different DoS and DDoS attacks. In this section, we discuss the security mechanism adopted by BSC for its validators.
 
 ## Sentry Nodes (DDOS Protection)
 
@@ -41,7 +41,7 @@ NoDiscovery = true
 # connect only to sentry
 StaticNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[10.1.1.1]:30306"]
 ```
-This will return true if successful, but that doesn’t mean the node was added successfully.
+This will return true if successful, but that doesn't mean the node was added successfully.
 
 
 To confirm run `admin.peers` and you should see the details of the node you just added.
