@@ -19,7 +19,7 @@ You can also run a [full node](fullnode.md) by yourself, so that you will have a
 to send RPC requests and read Chain information off.
 
 ## Command Line Interface
-Essentially command line interfaces are just tools that wrap the incoming command line arguments and call RPCs. Please check the [Command Line Referenace](api-reference/cli.md).
+Essentially command line interfaces are just tools that wrap the incoming command line arguments and call RPCs. Please check the [Command Line Reference](api-reference/cli.md).
 
 
 ## Write APIs

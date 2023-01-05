@@ -21,7 +21,7 @@ const sidebars = {
      // collapsible: true,
       collapsed: true,
       items: [
-         'bnbIntro', 'getting-started', 
+         'overview', 'getting-started',
           
           {
             type: 'category',
@@ -42,8 +42,8 @@ const sidebars = {
                           collapsed: true,
                           label: 'BC와 BSC 크로스 체인 구조',
                           items: ['learn/cross-chain', 'learn/system-contract',
-                                  'cross-chain-transfer','learn/bsc-relayer', 'learn/incentives',
-                                  'learn/oracle-module','learn/oracle-relayer','learn/cross-chain-api']},
+                                   'learn/bsc-relayer', 'learn/incentives',
+                                  'learn/oracle-module','learn/oracle-relayer', 'learn/cross-chain-api']},
                                   'learn/bsc-gov']
                 },
 
@@ -60,13 +60,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: '풀 노드 운영하기',
-                        items: ['validator/fullnode','validator/snapshot','local', 'validator/upgrade-fullnode']
-                      },
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: '아카이브 노드 운영하기',
-                        items: ['archivenode']
+                        items: ['validator/fullnode', 'archivenode', 'validator/best-practice', 'validator/node-maintenance', 'validator/upgrade-fullnode']
                       },
                       {
                         type: 'category',
@@ -98,7 +92,6 @@ const sidebars = {
                                     items: ['tokens-cross-chain', 'bind-tokens', 'mirror', 
                                     'circulation-model', 'sync' ]
                                   },
-                                  'cross-chain-transfer',
                                   {
                                     type: 'category',
                                     //collapsible: true,
@@ -114,8 +107,6 @@ const sidebars = {
                         label: '디앱 개발',
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
-                      
-                      'bsc-relayer', 
                       'oracles',
                       {type: 'doc', id: 'learn/cross-chain-bridges', label: '크로스 체인 브릿지'},
             ]},  
@@ -125,25 +116,7 @@ const sidebars = {
               //collapsible: true,
               collapsed: true,
               label: '검증인',
-              items: ['validator/overview','del-guide', 'validator/requirements', 
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'BSC에서 검증인 운영하기',
-                        items:['validator/guideline-mainnet',
-                        {
-                          type: 'category',
-                        collapsed: true,
-                        label: '테스트넷 합류',
-                        items:['validator/guideline-testnet', 'validator/testnet']
-                        },
-                        
-                        'validator/snapshot', ]
-                      },
-                      //'validator/security', 
-                      'validator/best-practice','validator/node-maintenance',
-                      'validator/commonproblems', //'validator/troubleshoot'
-                    ], 
+              items: ['validator/overview', 'validator/create-val', 'validator/run-val'],
             },
             {
               type: 'category',
@@ -155,16 +128,13 @@ const sidebars = {
                 type: 'category',
                 collapsed: true,
                 label: '슬래싱',
-                items:['validator/Penalty-overview',  'validator/send-slash-evidence', 
-                      'validator/scenarios-slash', 'validator/slash-fee', 'validator/unjail',
-                      'validator/monitor-and-query-slash'
+                items:['validator/Penalty-overview', 'validator/unjail',
+                       'validator/slash-fee', 'validator/send-slash-evidence',
+                    'validator/monitor-and-query-slash'
                 ]
               },
               ]
             },
-            /*{type:'doc', id:'Staking', label:'Staking on BSC'},*/
-            //{type: 'doc',   id: 'del-guide',   label: 'Delegator Guide'},
-                    
             {
               type: 'category',
               collapsed: true,
@@ -243,40 +213,35 @@ const sidebars = {
                         type:'category',
                         label:'개발',
                         items: [
-                          {
+                        {type:'doc', id: 'beaconchain/develop/rpc', label:'RPC'},
+                        {
                           type:'category',
-                          label:'비컨 체인 풀 노드',
-                          items:['beaconchain/develop/node/install', 'beaconchain/develop/node/join-mainnet',
+                          label:'BNB 비컨 체인 풀 노드',
+                              items: ['beaconchain/develop/node/install', 'beaconchain/develop/node/join-mainnet',
                                   'beaconchain/develop/node/join-testnet', 'beaconchain/develop/node/synctypes',
-                                'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
-                              'beaconchain/develop/node/upgrade', 'beaconchain/develop/node/localnetwork',
-                            'beaconchain/develop/node/fullnodeissue', 'beaconchain/develop/api-reference/dex-api/staking',
-                            'beaconchain/develop/node/snapshot'
-                          ]
-                        }, 
-                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'비컨 체인 클라이언트'},
-                        {type:'doc', id: 'beaconchain/light-client', label:'라이트 클라이언트'},
-                        {type:'doc', id: 'beaconchain/tokens', label:'자산 관리'},
-                        {type:'doc', id: 'beaconchain/list_instruction', label:'상장 명령어'},
-                        {type:'doc', id: 'beaconchain/list', label:'상장 트랜잭션'},
-                        {type:'doc', id: 'beaconchain/trading-spec', label:'거래 세부사항'},
-                        {type:'doc', id: 'beaconchain/develop/api-reference/api-server', label:'간단한 API 서버'},
-                        {type:'doc', id: 'beaconchain/develop/bcsdk', label:'비컨 체인 SDK'},
-                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'비컨 체인 테스트넷 & SDK'},
+                                  'beaconchain/develop/node/extra-info', 'beaconchain/develop/node/nodetypes',
+                                  'beaconchain/develop/node/upgrade', 'beaconchain/develop/node/localnetwork',
+                                  'beaconchain/develop/node/fullnodeissue'
+                              ]
+                        },
+                        {type:'doc', id: 'beaconchain/develop/api-reference/cli', label:'BNB Beacon Chain CLI'},
+                        {type:'doc', id: 'beaconchain/develop/bcsdk', label:'BNB Beacon Chain SDK'},
+                        {type:'doc', id: 'beaconchain/develop/testnetandexplorer', label:'BNB Beacon Chain Testnet'},
+                        {type:'doc', id: 'beaconchain/light-client', label:'Light Client'},
+                        {type:'doc', id: 'beaconchain/tokens', label:'Asset Management'},
                         {
                           type: 'category',
-                          label:'비컨 체인 및 DEX API 레퍼런스',
+                          label:'BNB 비컨 체인 API 참고',
                           items:[
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: '가속 노드 HTTP API 메인넷 - 경로 및 모델'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: '새 가속 노드 HTTP API 메인넷'},
-                            {type:'link', href:"pathname:///api-swagger/index.html", label: '가속 노드 HTTP API Swagger'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: '가속 노드 HTTP API 테스트넷- 경로 및 모델'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: '웹 소켓 - 연결하기'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: '웹 소켓 - 스트림'},
-                            {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: '노드 RPC - 경로 및 모델'},
-                            {type:'link', href:"pathname:///rpc-swagger/index.html", label: '노드 RPC Swagger'},
-                            {type:'doc', id:'beaconchain/changelog', label:'CHANGELOG'}
-      
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/block-service', label: 'New Accelerated Node HTTP API Mainnet'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths', label: 'Accelerated Node HTTP API Mainnet - Paths and Models'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/paths-testnet', label: 'Accelerated Node HTTP API Testnet- Paths and Models'},
+                            {type:'link', href:"pathname:///api-swagger/index.html", label: 'Accelerated Node HTTP API Swagger'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/staking', label: 'Staking API'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-connection', label: 'WebSockets - Connecting'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/dex-api/ws-streams', label: 'WebSockets - Streams'},
+                            {type:'doc', id:'beaconchain/develop/api-reference/node-rpc', label: 'Node RPC - Paths and Models'},
+                            {type:'link', href:"pathname:///rpc-swagger/index.html", label: 'Node RPC Swagger'}
                           ]
                         },
                         
@@ -336,16 +301,12 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'ZkBNB', 
-            items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture','zkbnb/zkbnb-storageLayout',
-                   'zkbnb/zkbnb-tokenomics','zkbnb/zkbnb-wallets'],
+            label: 'ZkBNB',
+              items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
           },
           
     ],
     },
-
-
-
     {
       type: 'category',
       collapsed: true,

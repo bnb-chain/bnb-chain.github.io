@@ -113,7 +113,7 @@ bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binan
 
 * minimum self-delegated amount: **10000BNB**
 
-* minimium delegate amount: **1BNB**
+* minimum delegate amount: **1BNB**
 
 * Unbonding time: 7 days
 

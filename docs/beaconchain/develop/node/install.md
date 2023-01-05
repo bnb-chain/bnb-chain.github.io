@@ -12,6 +12,9 @@ BNB 커뮤니티에서 관리하는 체인 디렉토리 설정이 가능한 설�
 - `~/.bnbchaind`에 홈 폴더 존재
 - 클라이언트 실행 파일(`lightd`, `bnbchaind` 등)이 `/usr/local/bin`에 저장
 
+# Windows
+wget   $(curl -s https://api.github.com/repos/bnb-chain/node/releases/latest |grep browser_ |grep windows_binary |cut -d\" -f4)
+unzip windows_binary.zip
 ```
 # 한 줄 설치
 sh <(wget -qO- https://raw.githubusercontent.com/bnb-chain/node-binary/master/install.sh)
@@ -34,7 +37,13 @@ https://git-lfs.github.com/ 에 들어가서 `git lfs`를 설치하세요.
 2. Git LFS로 바이너리 다운로드:
 
 ```
-git lfs clone https://github.com/bnb-chain/node-binary.git
+Then you will get binaries in ./build/ folder.
+
+2. Copy the executables (i.e.bnbchaind or bnbcli) to /usr/local/bin
+3. Verify that everything is OK:
+```shell
+$ bnbchaind version
+$ bnbcli version
 ```
 
 [changelog](https://github.com/bnb-chain/node-binary/blob/master/fullnode/Changelog.md)에 가서 최신 풀 노드 버전을 확인하세요.

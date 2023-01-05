@@ -1,4 +1,4 @@
-# 라이트 클라이언트 실행하여 비컨 체인 참여하기
+# 라이트 클라이언트
 
 라이트 클라이언트는 풀 노드에 연결되어 사용자들이 블록체인 전체를 동기화 할 필요 없이 안전하고 분산화 된 방식으로 비컨 체인에 접속하거나 상호작용하는 것을 돕는 프로그램입니다.
 
@@ -23,16 +23,9 @@ We support running light client node on `Mac OS X`, `Windows` and `Linux`.<br/>
 ## 라이트 클라이언트 노드 실행하기
 
 다운로드:
-```bash
-git clone https://github.com/bnb-chain/node-binary.git
-```
+[노드 repo](https://github.com/bnb-chain/node/releases)
 
-접속하고 싶은 네트워크에 맞게 디렉토리에 접속하세요<br/>
-다음 명령어에서 `network` 변수를 `testnet`이나 `prod`로 교체하세요:
-
-```bash
-cd node-binary/lightd/{network}/{version}
-```
+합류하고 싶은 네트워크에 맞게 설정 파일을 다운로드 하세요. (mainnet_config.zip/testnet_config.zip).
 
 Help 정보:
 
