@@ -41,6 +41,7 @@ BEP20 제안서는 여기를 확인해 주세요: <https://github.com/bnb-chain/
 * [커맨드라인 명령어](beaconchain/learn/BEP8.md)
 
 ## 어똏게 BEP2 토큰을 발행하나요?
+[다음](staking-with-ext-wallet.md) 가이드를 참고하세요.
 
 [다음](https://community.binance.org/topic/2487/) 가이드를 참고해 주세요
 

@@ -1,9 +1,12 @@
 ---
-sidebar_label: BNB 스마트 체인 고속 노드
+sidebar_label:  고속 노드
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 # BNB 스마트 체인에서 고속 노드 운영하기
+**고속 노드는 동기화 시 Trie 데이터를 생성하지 않습니다.
+고속 노드가 작동 시, 풀 노드로 전환할 수 있는 방법이 없습니다.
+풀 노드로 복구하기 위해서는 스냅샷을 재다운로드 해야 합니다.**
 
 ## 패스트 노드의 기능
 

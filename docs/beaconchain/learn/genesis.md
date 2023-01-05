@@ -1,6 +1,8 @@
 ---
 id: genesis
 title: 제네시스 파일
+hide_table_of_contents: false
+sidebar_position: 2
 ---
 
 이 문서에서는 비컨 체인 메인넷의 제네시스 파일이 어떻게 구성되는지 설명합니다. 또한 테스트넷에서 제네시스 파일을 생성하는 법도 설명합니다.
@@ -46,20 +48,20 @@ The state defined in the genesis file contains all the necessary information, li
   - `pub_key_types`: 현재는 `ed25519`만 허용됩니다.
 
 ```json
-consensus_params: {
-	block_size: {
-		max_bytes: "1048576",
-		max_gas: "-1"
-		},
-	evidence: {
-		max_age: "100000"
-	},
-	validator: {
-		pub_key_types: [
-			"ed25519"
-			]
-		}
-},
+"consensus_params": {
+    "block_size": {
+        "max_bytes": "1048576",
+        "max_gas": "-1"
+    },
+    "evidence": {
+      "max_age": "100000"
+    },
+    "validator": {
+        "pub_key_types": [
+          "ed25519"
+        ]
+    }
+}
 ```
 
 ## 어플리케이션 상태
@@ -75,15 +77,16 @@ consensus_params: {
 ```json
 [
   {
-  name: "Aconcagua",
-  address: "bnb1y888axmhzz6yjj464syfy68mkhzy9phlv8fzac",
-  consensus_addr: ""
+    "name": "Aconcagua",
+    "address": "bnb1y888axmhzz6yjj464syfy68mkhzy9phlv8fzac",
+    "consensus_addr": ""
   },
   {
-  name: "Aconcagua",
-  address: "bnb1kdx4xkktr35j2mpxncvtsshswj5gq577me7lx4",
-  consensus_addr: "A71E5CD078B8C5C7B1AF88BCE84DD70B0557D93E"
-  },
+    "name": "Aconcagua",
+    "address": "bnb1kdx4xkktr35j2mpxncvtsshswj5gq577me7lx4",
+    "consensus_addr": "A71E5CD078B8C5C7B1AF88BCE84DD70B0557D93E"
+  }
+]
 ```
 
 리스트를 확인해 보면:
@@ -136,7 +139,10 @@ bonds: null
 
 - `bonds`:마지막으로 확인된 위임 리스트입니다. 이전 상태를 가져와서 생성한 제네시스가 아니면 보통 `null`입니다.
 
+#### Governance
 
+The `gov` module handles all governance-related transactions. The initial state of the `gov` section looks like the
+following:
 
 
 ### 거버넌스
@@ -155,12 +161,12 @@ gov: {
       ],
     max_deposit_period: "172800000000000"
     },
-  tally_params: {
-  quorum: "50000000",
-  threshold: "50000000",
-  veto: "33400000"
-  }
-},
+    "tally_params": {
+        "quorum": "50000000",
+        "threshold": "50000000",
+        "veto": "33400000"
+    }
+}
 ```
 
 매개 변수는 다음과 같습니다:

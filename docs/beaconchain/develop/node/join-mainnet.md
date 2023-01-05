@@ -58,6 +58,16 @@ wget https://raw.githubusercontent.com/bnb-chain/node-binary/master/fullnode/pro
 bnbchaind start &
 ```
 
+:::참고
+대안으로 $BNCHOME 장소를 고르고 기본 `~/.bnbchaind`아닌 다른 곳에 저장한다면, $BNCHOME가 홈인 아래 스크립트와 같이 풀 노드를 시작할 수 있습니다.
+
+예시: `/usr/local/beacon-chain`를 홈 디랙토리로 정하면. 다음과 같이 풀 노드를 운영합니다:
+
+```shell
+bnbchaind start --home /usr/local/beacon-chain &
+```
+:::
+
 만일 풀 노드를 운영할 때 문제가 발생하면, [FAQ 리스트](fullnodeissue.md)를 참고해 주세요.
 
 

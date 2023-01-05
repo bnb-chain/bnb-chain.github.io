@@ -1,10 +1,10 @@
 ---
-sidebar_label: BNB 스마트 체인 개별 노드
+sidebar_label: 개별 노드
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# BNB 스마트 체인에서 개별 노드(separate node) 운영하기
+# BNB 스마트 체인 개별 노드(separate node)
 
 ## 개요
 
@@ -34,12 +34,18 @@ sidebar_position: 2
 
 고속 노드가 로컬 모드가 아닌 상태에서 실행되는 경우 노드는 기본적으로 diff 프로토콜을 사용하지 않도록 설정합니다. 고속 노드가 전체 또는 라이트 모드로 실행되는 경우 노드는 기본적으로 신뢰 프로토콜을 사용하도록 설정합니다.
 
-` ./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --tries-verify-mode none`
+```
+./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --tries-verify-mode none
+```
+
+***Note: fast node can never revert to full node.**
 
 #### 검증 노드
 풀노드가 신뢰 프로토콜을 활성화했을 때 검증 노드로서 기능할 수 있습니다. 또한 검증 노드 실행 시 persist diff를 활성화하고 snap protocol와 diff protocol를 비활성화하는 것을 권장합니다.
 
-` ./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --persistdiff --enabletrustprotocol --disablesnapprotocol --disablediffprotocol`
+```
+./geth --config ./config.toml --datadir ./node --syncmode full --cache 5000 --persistdiff --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
+```
 
 #### tries 노드 자르기
 tries 노드 자르기:  `./geth snapshot insecure-prune-all --datadir ./node  ./genesis.json`

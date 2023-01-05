@@ -9,6 +9,7 @@ sidebar_position: 2
 ## BIP39
 [Bitcoin Improvement Proposal (BIP) 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)는 니모닉 문장(니모닉 단어, 시드 프레이즈, 복구 프레이즈 등으로도 불립니다) 생성 및 해당 문장에서 시드를 생성하기 위한 공식을 정의합니다. 시드 프레이즈는 개인 및 퍼블릭 키를 생성하는 데 사용됩니다.
 
+
 ## BIP32
 [BIP 32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)는 [계층적 결정 지갑](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)를 생성하기 위한 명세입니다. 이 지갑들은 루트에서부터 다수의 "자식" 개인키를 결정론적으로 생성할 수 있습니다. 오직 자식 키의의 "경로(path)"만 기억하고 있으면 됩니다. 예를 들어 하드웨어 월렛들은 하나의 루트를 이용하여 비트코인(path m/44'/0'/0'/0)과 이더리움(path m/44'/60'/0'/0)을 위한 개별 키를 생성할 수 있습니다.
 

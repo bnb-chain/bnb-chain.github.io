@@ -12,7 +12,7 @@ sidebar_position: 2
 
 ### 어떻게 BNB를 위임하나요?
 
-해당 [가이드](del-guide.md)를 읽어주세요.
+해당 [가이드](staking-with-ext-wallet.md)를 읽어주세요.
 
 다음을 통해 위임 가능합니다:
 

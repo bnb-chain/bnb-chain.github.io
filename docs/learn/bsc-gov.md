@@ -38,7 +38,6 @@ BSC의 동작을 제어하는 많은 시스템 파라미터가 있습니다.
 
 ## 워크플로우
 
-![img](../../static/img/gov-workflow.png)
 
 ## 컨트랙트 인터페이스
 
@@ -119,10 +118,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
-./bnbcli gov  query-proposals --side-chain-id  bsc --trust-node --chain-id Binance-Chain-Tigris
+./bnbcli gov  query-proposals --side-chain-id  bsc  --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov  query-proposals --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
+./tbnbcli gov  query-proposals --side-chain-id  chapel --node http://data-seed-pre-1-s1.binance.org:80 --trust-node --chain-id Binance-Chain-Ganges
 ```
 
 ### 사이드 체인 제안 쿼리
@@ -135,10 +134,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
-./bnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  bsc --trust-node --chain-id Binance-Chain-Tigris
+./bnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  bsc --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
+./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --node http://data-seed-pre-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges
 ```
 
 ### 사이드 체인 파라미터 쿼리
@@ -149,10 +148,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
- ./bnbcli params side-params --side-chain-id bsc  --trust-node
+ ./bnbcli params side-params --side-chain-id bsc  --trust-node --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli params side-params --side-chain-id chapel  --trust-node
+ ./tbnbcli params side-params --side-chain-id chapel  --trust-node --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### 크로스 체인 파라미터 변경 제안 제출
@@ -171,10 +170,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainet
-./bnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
+./bnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
+./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### 크로스 체인 채널 관리 제안 제출
@@ -192,10 +191,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
-./bnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
+./bnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
+./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### 사이드 체인 모듈 파라미터 변경 제안 제출
@@ -212,10 +211,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
-./bnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  bsc  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris
+./bnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  bsc  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges
+./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### 사이드 체인 제안 투표
@@ -229,10 +228,10 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
- ./bnbcli gov vote --from alice   --side-chain-id  bsc    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris
+ ./bnbcli gov vote --from alice   --side-chain-id  bsc    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges
+ ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```
 
 ### 사이드 체인 제안의 예치금
@@ -247,8 +246,8 @@ function updateParam(string key, bytes calldata value) external onlyGov{
 
 ```bash
 ## mainnet
- ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris
+ ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.binance.org:80
 
 ## testnet
- ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges
+ ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
 ```

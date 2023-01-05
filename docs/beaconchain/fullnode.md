@@ -19,44 +19,22 @@ More hours will be better, run your node continuously for best results.
 
 ## Steps to Run a Full Node
 
-### Option One: Installation Script
+1. Download Binary
 
-We have a community-maintained installer script (`install.sh`) that takes care of chain directory setup. This uses the following defaults:
-
-* Home folder in `~/.bnbchaind`
-* Client executables stored in `/usr/local/bin` (i.e. `light` or `bnbchaind`)
-
-```shell
-# One-line install
-sh <(wget -qO- https://raw.githubusercontent.com/binance-chain/node-binary/master/install.sh)
+Open the following page and download the binaries for your platform, as well as configuration files for mainnet or testnet .
+```bash
+https://github.com/bnb-chain/node/releases
 ```
 
-### Option Two: Manual Installation
+Please go to [changelog](https://github.com/bnb-chain/node/releases) to get the information about the latest release of full node version.
 
-We currently use this repo to store historical versions of the compiled `node-binaries`.
-
-1. Install Git LFS
-
-Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
-
-Please go to <https://git-lfs.github.com/> and install `git lfs`.
-
-2. Download Binary with Git LFS:
+Download the configuration files according to the network you want to join in (mainnet_config.zip/testnet_config.zip).
 
 ```bash
-git lfs clone https://github.com/bnb-chain/node-binary.git
+upzip linux_binary.zip
 ```
 
-Please go to [changelog](https://github.com/bnb-chain/node-binary/blob/master/fullnode/Changelog.md) to get the information about the latest release of full node version.
-
-Go to directory according to the network you want to join in.<br/>
-Replace the `network` variable with `testnet` or `prod` in the following command:
-
-```bash
-cd node-binary/fullnode/{network}/{version}
-```
-
-1. Copy the executables (i.e.`bnbchaind` or `bnbcli`) to `/usr/local/bin`
+2. Copy the executables (i.e.`bnbchaind` or `bnbcli`) to `/usr/local/bin`
 
 ### Initialize Home Folder
 
@@ -70,13 +48,13 @@ mkdir ~/.bnbchaind/config
 
 ### Setup Configuration
 
-Put `app.toml`, `config.toml` and `genesis.json` from `node-binary/fullnode/{network}/{version}/config/` into `$BNCHOME/config`
+Put `app.toml`, `config.toml` and `genesis.json` from mainnet_config.zip/testnet_config.zip into `$BNCHOME/config`
 
 ### Add Seed Nodes
 
 For a full node to function, it must connect to one or more known nodes to join Beacon Chain .<br/>
 There are several famous `seed nodes` that offer known node addresses in the network to newly joined full nodes.<br/>
-They are already in `node-binary/fullnode/{network}/{version}/config/config.toml` file.
+They are already in `config.toml` file, which sits in mainnet_config.zip/testnet_config.zip.
 
 You cat also get seeds info through a simple python script (replace domain name depending on which network you are using):
 
