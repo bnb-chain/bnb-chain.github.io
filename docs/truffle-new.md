@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 
 # Using Truffle for Deploying Smart Contracts on BSC 
-In this tutorial, you will learn to create, compile nad deploy smart contract on the BNB Smart Chain network using the Truffle IDE. 
+In this tutorial, you will learn to create, compile and deploy smart contract on the BNB Smart Chain network using the Truffle IDE. 
 
 ## Setting up the development environment
 
@@ -36,7 +36,7 @@ To use most Truffle commands, you need to run them against an existing Truffle p
 
 ## Creation 
 
-For creating a scaffold project for getting started, you can use the [Truffle Boxes](https://trufflesuite.com/boxes), BSC Starter Box for an eample template to start devloping on BNB Smart Chain. 
+For creating a scaffold project for getting started, you can use the [Truffle Boxes](https://trufflesuite.com/boxes), BSC Starter Box which is a boilerplate to jump start development on the BNB Smart Chain. 
 
 For this tutorial, we have used the [MetaCoin box](https://trufflesuite.com/boxes/metacoin) as an example, which creates a token that can be transferred between accounts. Use the command ```truffle unbox metacoin``` to unbox the metacoin box.
 
