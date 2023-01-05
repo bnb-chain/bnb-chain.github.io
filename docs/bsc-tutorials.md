@@ -6,19 +6,13 @@ hide_table_of_contents: false
 # 튜토리얼
 다음은 BNB 스마트 체인의 구성 요소에 사용 방법에 관한 문서들입니다.
 
-### 검증인
-* [BNB 스마트 체인 메인넷에서 검증인이 되는 법](validator/guideline-mainnet.md)
-* [BNB 스마트 체인 테스트넷에서 검증인이 되는 법](validator/guideline-testnet.md)
-* [BNB 스마트 체인에서 검증인 후보 되는 법](validator/testnet.md)
 ### 풀 노드
 * [BNB 스마트 체인에서 풀노드 생성하기](validator/fullnode.md)
-* [로컬 BNB 스마트 체인 네트워크 생성하기](local.md)
 * [BNB 스마트 체인에서 Geth(풀 노드) 업그레이드 하기](validator/upgrade-fullnode.md)
 ### 아카이브 노드
 * [BNB 스마트 체인에서 아카이브 노드 운영하기](archivenode.md)
 ### 스테이킹 및 위임
 * [BSC에서 BNB 토큰 스테이킹 하기](staking-with-ext-wallet.md)
-* [BSC에서 BNB 토큰 위임 하기](del-guide.md)
 ### 스마트 컨트랙트
 * [BEP20(프록시) 컨트랙트 작성하기](proxy.md)
 * [BEP20(프록시) 컨트랙트 확인하기](verify-proxy.md)
@@ -33,7 +27,6 @@ hide_table_of_contents: false
 * [BEP2와 BEP20 토큰 바인딩하기](bind-tokens.md)
 * [BEP2와 BEP20 토큰 미러링하기](mirror.md)
 * [BEP2와 BEP20 토큰 총공급량 싱크 맞추기](sync.md)
-* [BC와 BSC 간 BEP2/BEP20 토큰 크로스 체인 전송하기](cross-chain-transfer.md)
 #### NFT
 * [토큰 URI 적용하기](develop/../nft-metadata-standard.md)
 * [BSC에서 NFT 배포하기](ERC721.md)
