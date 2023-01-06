@@ -15,8 +15,6 @@ BSC(BNB 스마트 체인)의 합의 엔진은 다음의 목표를 위해 구상�
 4. 이더리움 정도의 호환성.
 5. 코스모스만큼 강력한 스테이킹과 거버넌스.
 
-Meanwhile, the PoA protocol is most criticized for being not as decentralized as PoW, as the validators, i.e. the nodes that take turns to produce blocks, have all the authorities and are prone to corruption and security attacks. Other blockchains, such as EOS and Lisk both, introduce different types of [Delegated Proof of Stake (DPoS)](https://en.bitcoinwiki.org/wiki/DPoS) to allow the token holders to vote and elect the validator set. It increases the decentralization and favors community governance.
-
 [Geth](https://github.com/ethereum/go-ethereum/wiki/geth)는 두 종류의 합의 엔진을 구현하고 있습니다: ethash(PoW 기반) 그리고 [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)(PoA 기반)입니다. BSC는 PoW를 포기했기 때문에 Ethash는 적절한 선택지가 아닙니다. Clique는 블로킹 타임이 더 짧고, 51% 어택에 취약하지 않은 동시에 기존 이더리움 클라이언트 호환성을 유지하기 위해 코어 데이터 구조에 최소한의 변화만을 주었습니다. PoA의 단점은 중앙화, 유의미한 스테이킹의 부재 그리고 온체인 거버넌스 능력의 부족입니다. 반면에 비컨 체인은 스테이킹 및 거버넌스 메커니즘을 보유하고 있는 코스모스 위에 만들어졌습니다. 따라서 다음과 같은 합의 엔진을 제안하려 합니다:
 
 * 비컨 체인이 BSC 대신 스테이킹과 거버넌스를 담당합니다.
