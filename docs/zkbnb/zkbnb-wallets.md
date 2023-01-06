@@ -3,17 +3,17 @@ sidebar_label: Wallets
 sidebar_position: 2
 ---
 
-# ZkBNB Wallets
+# zkBNB Wallets
 
 ## L1 Wallet Support Introduction
 
-ZkBNB is built on ZK Rollup architecture.
-ZkBNB bundle (or “roll-up”) hundreds of transactions off-chain and generates cryptographic proof.
+zkBNB is built on ZK Rollup architecture.
+zkBNB bundle (or “roll-up”) hundreds of transactions off-chain and generates cryptographic proof.
 
-For convenience of user, ZkBNB implemented new version supporting L1 wallets by taking advantages of
+For convenience of user, zkBNB implemented new version supporting L1 wallets by taking advantages of
 EIP-712 standard signature which is able to sign any structured message and supported well by the mainstream wallets. (f.g. metamask, trust wallet, etc.)
 
-Any user can be accessible to ZkBNB only if the user gets wallet apps which support the EIP-712 signing scheme, and any user can easily manage their L2 assets(NFT, Tokens, etc.)
+Any user can be accessible to zkBNB only if the user gets wallet apps which support the EIP-712 signing scheme, and any user can easily manage their L2 assets(NFT, Tokens, etc.)
 by importing the ecdsa(secp256k1) private key to their wallets mentioned above.
 
 **NOTE: this feature is still on development**
@@ -50,16 +50,16 @@ Below is the encode and sign flow from bottom to top.
 
 ### Elliptic Curve Adaptation
 
-For an adaptation of EIP-712 standard signing scheme, ZkBNB switch ecc signature algorithm's elliptic curve from original eddsa to ecdsa, precisely secp256k1 which
+For an adaptation of EIP-712 standard signing scheme, zkBNB switch ecc signature algorithm's elliptic curve from original eddsa to ecdsa, precisely secp256k1 which
 is used across EVM-based blockchain. 
 
-Moreover, in order to support ecdsa change ZkBNB switch the zksnarks proving system from groth16 to plonk, so the contract verifier switch from groth16 verifier contract to plonk verifier contract.
+Moreover, in order to support ecdsa change zkBNB switch the zksnarks proving system from groth16 to plonk, so the contract verifier switch from groth16 verifier contract to plonk verifier contract.
 
 *This feature is still on develop phase, and will support soon.*
 
 ### Hash Function Adaptation
 
-For an adaptation of EIP-712 standard signing scheme, ZkBNB switch hash algorithm from originally MIMC to Keccak256(SHA-3).
+For an adaptation of EIP-712 standard signing scheme, zkBNB switch hash algorithm from originally MIMC to Keccak256(SHA-3).
 
 The keccak256 in Circuit is still in hint scope for the complexity of keccak functions, which pure implementation by circuit will add constraints more than **200K**.
 
@@ -76,7 +76,7 @@ HexEIP712MessageTypeHash[Transfer] = "96695797a85b65c62a1eb8e28852fc7d5a34b668e1
 
 ### Encodes Adaptation
 
-For an adaptation of EIP-712 standard signing scheme, ZkBNB switch encodes of transaction from originally joining all bytes to
+For an adaptation of EIP-712 standard signing scheme, zkBNB switch encodes of transaction from originally joining all bytes to
 EIP-712 signed typed message encoding, as described at [Brief View of EIP-712 Implementation](#brief-view-of-eip-712-implementation).
 
 Basically the encode switched to a
