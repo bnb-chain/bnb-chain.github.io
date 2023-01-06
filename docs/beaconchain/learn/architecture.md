@@ -1,12 +1,15 @@
 # Architecture
 
-## Consensus Details
-
-Beacon Chain  is a peer-to-peer distributed system, connecting together multiple clients that reach consensus on their views of the "state of the world". Beacon Chain  uses [Tendermint](https://github.com/tendermint/tendermint) BFT consensus and has a dedicated `application layer` that runs upon it. A simplified overview of the application's architecture might look something like this:
+BNB Beacon Chain is a multi-modular blockchain with excellent native support for account management, asset management, cross chain, goverenance and so on.
+It is esay to extend to support different initiatives of BNB ecosystem.
+Beacon Chain uses [Tendermint](https://github.com/tendermint/tendermint) BFT consensus, and a dedicated application layer, which is built with Cosmos SDK, runs upon it. 
+A simplified overview of the application's architecture might look something like this:
 
 ```
-+------------+-----------+
-| RPC API    | Web API   |
++------------+---------------------+
+| RPC API        | Web API         |
++------------------------+---------+
+| Staking | Salshing | Cross Chain |
 +------------------------+---------+
 | Asset Management | Match Engine  |
 +----------------------------------+
@@ -23,63 +26,26 @@ Beacon Chain  is a peer-to-peer distributed system, connecting together multiple
 
 ```
 
-For more information, please have a look at the [Tendermint spec](https://github.com/tendermint/tendermint/blob/master/docs/spec/consensus/consensus.md).
+For more information about Tendermint, please have a look at the [Tendermint Core](https://tendermint.com/core/).
+For more information about Cosmos SDK, please have a look at the [Cosmos Intro](https://v1.cosmos.network/intro).
 
-## Block Size
+## Modules
 
-Beacon Chain  uses a similar block structure as Tendermint proposes, with a size limit of 1 megabyte.
+BNB Beacon Chain implements a multi-modular blockchain architecture which is easy to extend and use, and also provides the basic functionalities for side chains and other chains to build upon it.
+Here are the main moudles:
 
-It is expected a block will be produced on a-few-of-seconds level among validators, and can include
-from 0 up to several thousands of transactions.
+- Asset - A fruitful set of features are implemented for asset management, for example, users can issue, mint/burn, freeze/unfreeze, lock/unlock BEP2 and BEP8 tokens.
 
-## Blockchain State
+- Governance - Beacon Chain supports on-chain governance of beacon chain and side chains. Holders of the native token (i.e., BNB) can submit proposals and vote on proposals to apply different kinds of changes on chains.
 
-Blockchain state stores the below information:
+- Staking - With this moudle, BNB holders can become validators and can delegate tokens to validators, ultimately determining the effective validator sets for beacon chain and side chains (e.g., BSC).
 
-- account and balances
-- fees
-- token information
-- trading pairs
-- tick size and lot size
-- governance information
+- Distribution - Beacon Chain will actively distribute rewards between validators and delegators, for both Beacon Chain itself and its side chains.
 
-please note the transactions are not stored as chain state, because they are stored in blocks, while
-trades are not stored as state either, because they can be reproduced via balances and transactions.
+- Cross Chain - Beacon Chain supports the cross chain transfers of native tokens. Cross chain communication is also built in, to support different kinds of usage scenarios.
 
-## Cryptographic Design
+- Slashing - Slashing module will disincentivize any bad actor by penalizing them. 
 
-### Account and Address
+- Params - A globally available parameter store is provided by Beacon Chain. These parameters affects the excution of Beacon Chain itself and its side chains, and can be changed by goverenance.
 
-For normal users, all the keys and addresses can be generated via Binance [Web Wallet](https://www.binance.org/en/create).
-
-This default wallet would use a similar way to generate keys as Bitcoin, i.e. use 256 bits entropy to generate a 24-word mnemonic based on [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), and then use the mnemonic and an empty passphrase to generate a seed; finally use the seed to generate a master key, and derive the private key using BIP32/BIP44 with HD prefix as `"44'/714'/"`, which is reserved at [SLIP 44](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
-
-_714 comes from Binance's birthday, July 14th. :)_
-
-#### Keys
-
-Beacon Chain  uses the same elliptic curve cryptography as the current [Bitcoin implementation](https://github.com/btcsuite/btcd/tree/master/btcec), i.e. `secp256k1`. Its private key is 32 bytes while public key is 33 bytes.
-
-#### Address
-
-Addresses on Beacon Chain  are 20 bytes and may be expressed as:
-
-```
-Address = RIPEMD160(SHA256(compressed public key))
-```
-
-Typically, an address is encoded in the [bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) format which includes a checksum and human-readable prefix (HRP). However, it doesn't use the `SegWit` address format (because we do not have `SegWit` function anyway, so no `witness program version` etc.).
-
-A Beacon Chain  address is therefore more similar to a [Bitcoin Cash address](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md), which does not include a SegWit program script.
-
-Address format pseudo-code:
-
-```
-Address_Bech32 = HRP + '1' + bech32.encode(convert8BitsTo5Bits(RIPEMD160(SHA256(compressed public key))))
-```
-
-For Beacon Chain  address, the prefix is `bnb` for production network, and `tbnb` for testnet.
-
-#### Signature
-
-Beacon Chain  uses an ECDSA signature on curve secp256k1 against a `SHA256` hash of the byte array of a JSON-encoded canonical representation of the transaction. For more information, please see [this page](encoding/encoding.md#canonical-bytes-for-signing).
+- APIs - RPC, HTTP, and Websocket APIs are provided for interacting with blockchains and the related services. Developers can use these APIs to build their Web3 applications, wallets, data services and so on.
