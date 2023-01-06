@@ -77,7 +77,7 @@ const sidebars = {
                       {
                         type: 'category',
                         label: 'Deploy NFTs on BSC',
-                        items:['nft-metadata-standard', 'ERC721', 'nft_blackide']
+                        items:['nft-metadata-standard', 'ERC721', 'nft_blackide', 'nft-storage']
                       },
                       {
                         type: 'category',
