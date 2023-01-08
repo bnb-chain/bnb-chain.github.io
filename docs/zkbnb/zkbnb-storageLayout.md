@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 # Storage Layout
-In this document, we discuss the storage layout for zkBNB, both in a Database as well as in the form of Tree structure. 
+In this document, we discuss the storage layout for ZkBNB, both in a Database as well as in the form of Tree structure. 
 
 ## RDB Layout
 The storage layout of the data in a RDB is illustrated in the following figure.
@@ -51,6 +51,6 @@ The `CreatorAccountIndex`, `OwnerAccountIndex`, `NftContentHash`, `NftL1Address`
 Used to record and save nft status under each block height.
 
 ## Physical Storage
-The Tree in `zkBNB` uses the Sparse Merkle Tree (SMT) structure. In order to optimize the storage space as much as possible, we have implemented a SMT library, compressing the four-layer tree structure into one layer, reducing the depth of the tree and achieving a higher level. storage space usage.
+The Tree in `ZkBNB` uses the Sparse Merkle Tree (SMT) structure. In order to optimize the storage space as much as possible, we have implemented a SMT library, compressing the four-layer tree structure into one layer, reducing the depth of the tree and achieving a higher level. storage space usage.
 
-Find More: <https://github.com/bnb-chain/zkBNB-smt/blob/master/docs/design.md>
+Find More: <https://github.com/bnb-chain/zkbnb-smt/blob/master/docs/design.md>
