@@ -301,7 +301,7 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'ZkBNB',
+            label: 'zkBNB',
               items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
           },
           
