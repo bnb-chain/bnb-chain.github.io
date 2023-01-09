@@ -18,7 +18,7 @@ Built on ZK Rollup architecture, zkBNB is capable of bundling (or "rolling-up") 
 
 ## zkBNB Framework
 
-![](./zkBNB-framework.png)
+![](./zkbnb-framework.png)
 
 The different key components of the zkBNB infrastructure, as illustrated in the figure above, are listed below:
 
