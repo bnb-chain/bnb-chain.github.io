@@ -6,7 +6,7 @@ hide_table_of_contents: false
 
 # Staking
 
-[BNB Smart Chain](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [Beacon Chain](https://www.binance.org). BNB Smart Chain relies on a system of 29 validators with Proof of [Staked Authority (PoSA) consensus](./learn/consensus.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+[BNB Smart Chain](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [Beacon Chain](https://www.binance.org). BNB Smart Chain relies on a system of 50 validators with Proof of [Staked Authority (PoSA) consensus](./learn/consensus.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
 Ideally, BNB Smart Chain should build such staking and reward logic into the blockchain, and automatically distribute rewards as the blocking happens. [Cosmos Hub](https://hub.cosmos.network/), who also build on top of Tendermint consensus like Beacon Chain, works in this way.
 
