@@ -23,7 +23,7 @@ The proposal will decide: slash amount, cross-chain transfer fees.
   2. Install software.
   3. Create a wallet and get some BNB.
   4. Run your fullnode and keep it synced.
-  5. Stake your BNB on BC, the top 21 most staked nodes to be the validator set.
+  5. Stake your BNB on BC, the top 29 most staked nodes to be the validator set.
 
 ### How to join mainnet as a validator? 
 
@@ -31,7 +31,7 @@ The proposal will decide: slash amount, cross-chain transfer fees.
   2. Install software
   3. Create a wallet and get some BNB
   4. Run your fullnode and keep it synced
-  5. Stake your BNB on BC, the top 21 most staked nodes to be the validator set"
+  5. Stake your BNB on BC, the top 29 most staked nodes to be the validator set"
 
 ### What are hardware requirements of running a validator node?
 
@@ -64,7 +64,7 @@ Slashing is a punitive function that is triggered by a validator ’s bad action
 
 ### What is the process of getting selected as a validator node on BSC?
 
-On BNB Smart Chain  (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 21 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 21 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.bnbchain.org/docs/validator/overview.html).
+On BNB Smart Chain  (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 29 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 29 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.bnbchain.org/docs/validator/overview.html).
 
 ### How is the bad or malicious behavior of the validator nodes controlled in the BSC?
 

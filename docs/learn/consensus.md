@@ -26,7 +26,7 @@ The consensus protocol of BSC fulfills the following goals:
 5. It allows modern proof-of-stake blockchain network governance.
 
 ## Validator Quorum
-In the genesis stage, a few trusted nodes will run as the initial Validator Set. After the blocking starts, anyone can compete to join as candidates to elect as a validator. The staking status decides the top 21 most staked nodes to be the next validator set, and such an election will repeat every 24 hours.
+In the genesis stage, a few trusted nodes will run as the initial Validator Set. After the blocking starts, anyone can compete to join as candidates to elect as a validator. The staking status decides the top 29 most staked nodes to be the next validator set, and such an election will repeat every 24 hours.
 
 BNB is the token used to stake for BSC.
 
@@ -56,4 +56,4 @@ If the transaction that updates the validator is sent to the BSC right on the ep
 
 ## Security and Finality
 Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the [Clone Attack](https://arxiv.org/pdf/1902.10244.pdf). To secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.
-With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+With 29 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
