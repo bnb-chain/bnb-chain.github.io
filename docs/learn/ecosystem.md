@@ -71,22 +71,22 @@ In the below sections you can find a list of different layers of the BSC Stack.
 Goto [BSC Developer Ecosystem](https://github.com/bnb-chain/bsc-ecosystem/blob/master/BSC_Develop_Ecosystem.md) to navigate the full list.
 
 ### Dapps infra
-| Components | Existing projects | Potentially interesting projects
-|-|-|-
-| Data Analytics & Visualization| [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/), [Nakji](https://nakji.network/), [Dune](http://dune.com/), [YeildWatch](https://www.yieldwatch.net/), [DeBank](http://debank.com/), [Bloxy](http://bloxy.info/), [Footprint Analytics](https://www.footprint.network/about), [Web3Go](https://web3go.xyz/)
-| NFT Marketplaces | [Rareboard](http://rareboard.com/), [Venly](https://www.venly.io/), [NFTrade](https://nftrade.com/), [Element](https://www.element.market/bsc)
-| Oracle | [Binance Oracle](https://oracle.binance.com/), [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Pyth](https://pyth.network/)
-| Archive Data |[InfStones](https://infstones.com/)
-| File Storage, Cloud | [IPFS](https://ipfs.io/), [Arweave](https://www.arweave.org/), [pinata.cloud](https://www.pinata.cloud/)
+| Components | Existing projects | Potentially interesting projects|
+|-|-|-|
+| Data Analytics & Visualization| [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/), [Nakji](https://nakji.network/), [Dune](http://dune.com/), [YeildWatch](https://www.yieldwatch.net/), [DeBank](http://debank.com/), [Bloxy](http://bloxy.info/), [Footprint Analytics](https://www.footprint.network/about), [Web3Go](https://web3go.xyz/)||
+| NFT Marketplaces | [Rareboard](http://rareboard.com/), [Venly](https://www.venly.io/), [NFTrade](https://nftrade.com/), [Element](https://www.element.market/bsc)||
+| Oracle | [Binance Oracle](https://oracle.binance.com/), [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Pyth](https://pyth.network/)||
+| Archive Data |[InfStones](https://infstones.com/)||
+| Decentralized Storage | [IPFS](https://ipfs.io/), [Filecoin](https://filecoin.io/build/), [Arweave](https://www.arweave.org/), [pinata.cloud](https://www.pinata.cloud/) ||
 | Cross Chain Bridges | [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/),[PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/), [Multichain](https://multichain.xyz/), [Celer cbridge](https://cbridge.celer.network/), [ChainHop] (https://chainhop.exchange/), [LayerZero](https://layerzero.network/), [HashFlow](https://www.hashflow.com/) , [Axelar](https://axelar.network/)| Decentralized, trustless, Open Access|
-| Automation | [Gelato](https://www.gelato.network/)
-| Browsers | [Brave](https://brave.com/), [Opera](https://www.opera.com/)
-| Identity/DID/Credentials | [Ontology](https://ont.io/), [Galaxy](https://galaxy.eco/), [Space ID](https://space.id/), [CyberConnect](https://cyberconnect.me/)
-| Easy Wallet Onboarding	| [Web3auth](https://web3auth.io/), [Venly](https://www.venly.io/), [Sequence](https://sequence.xyz/)
-| Social Networking | [Prometeus](https://prometeus.io/), [CyberConnect](https://cyberconnect.me/)
-| Gasless Solutions | [Biconomy](http://biconomy.io/)
-| Governance/DAO | [Tally](https://www.tally.xyz/), [Collab.Land](https://collab.land/), [Coinshift](https://coinshift.xyz/), [Snapshot](https://snapshot.org/#/), [HQ.xyz](https://www.hq.xyz/)
-| Gaming Related Infrastructure | [Carv (Gaming Credential)](https://carv.io/), [Community Gaming (Tournament)](https://www.communitygaming.io/), [GameSpace](https://game.space/)
-| Security Audit |	[Certik](https://www.certik.com/), [PeckShield](https://peckshield.com/), [SlowMist](https://www.slowmist.com/), [Staging Labs](https://www.staginglabs.io/), [Go+ / Plus](https://gopluslabs.io/), [Verichains](https://audit.verichains.io/), [HashDit](https://www.hashdit.io/), [Halborn](https://halborn.com/), [Trail of Bits](https://www.trailofbits.com/), [Consensys Diligence](https://consensys.net/diligence/), [Zokyo](https://www.zokyo.io/)
-| Payment | [SWFT](https://www.swft.pro/zh-pc/#/home), [MultiSender](https://multisender.app/) | [Celer Network](https://www.celer.network/), [Connext](https://connext.network/)
-| Payment Gateway | [Binance Connect](https://www.binancecnt.com/en), [Okse](https://okse.io/), [Kado](https://www.kado.money/), [SuperFluid](https://www.superfluid.finance/home), [Pip](https://www.getpip.com/), [Bifinity](https://bifinity.com), [MoonPay](https://www.moonpay.com/), [Transak](https://transak.com/)
+| Automation | [Gelato](https://www.gelato.network/)||
+| Browsers | [Brave](https://brave.com/), [Opera](https://www.opera.com/)||
+| Identity/DID/Credentials | [Ontology](https://ont.io/), [Galaxy](https://galaxy.eco/), [Space ID](https://space.id/), [CyberConnect](https://cyberconnect.me/)||
+| Easy Wallet Onboarding	| [Web3auth](https://web3auth.io/), [Venly](https://www.venly.io/), [Sequence](https://sequence.xyz/)||
+| Social Networking | [Prometeus](https://prometeus.io/), [CyberConnect](https://cyberconnect.me/)||
+| Gasless Solutions | [Biconomy](http://biconomy.io/)||
+| Governance/DAO | [Tally](https://www.tally.xyz/), [Collab.Land](https://collab.land/), [Coinshift](https://coinshift.xyz/), [Snapshot](https://snapshot.org/#/), [HQ.xyz](https://www.hq.xyz/)||
+| Gaming Related Infrastructure | [Carv (Gaming Credential)](https://carv.io/), [Community Gaming (Tournament)](https://www.communitygaming.io/), [GameSpace](https://game.space/)||
+| Security Audit |	[Certik](https://www.certik.com/), [PeckShield](https://peckshield.com/), [SlowMist](https://www.slowmist.com/), [Staging Labs](https://www.staginglabs.io/), [Go+ / Plus](https://gopluslabs.io/), [Verichains](https://audit.verichains.io/), [HashDit](https://www.hashdit.io/), [Halborn](https://halborn.com/), [Trail of Bits](https://www.trailofbits.com/), [Consensys Diligence](https://consensys.net/diligence/), [Zokyo](https://www.zokyo.io/)||
+| Payment | [SWFT](https://www.swft.pro/zh-pc/#/home), [MultiSender](https://multisender.app/) | [Celer Network](https://www.celer.network/), [Connext](https://connext.network/)|
+| Payment Gateway | [Binance Connect](https://www.binancecnt.com/en), [Okse](https://okse.io/), [Kado](https://www.kado.money/), [SuperFluid](https://www.superfluid.finance/home), [Pip](https://www.getpip.com/), [Bifinity](https://bifinity.com), [MoonPay](https://www.moonpay.com/), [Transak](https://transak.com/)||
