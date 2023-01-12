@@ -15,10 +15,11 @@ The hardware must meet certain requirements to run a Full Node.
 * Desktop or laptop hardware running recent versions of Mac OS X, Windows, or Linux.
 * 2 TB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
 * 4 cores of CPU and 8 gigabytes of memory (RAM).
-* A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
-* Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain  More hours will be better, run your node continuously for best results.
+* A broadband Internet connection with upload/download speeds of at least 1 megabyte per second.
 
 ## Setting Up a New Node
+
+### Sync From Snapshot (Recommended)
 
 1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
 
@@ -26,7 +27,7 @@ The hardware must meet certain requirements to run a Full Node.
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-2. Download `app.toml`,  `config.toml` and `genesis.json` from `https://github.com/bnb-chain/node/releases` and copy them into `$BNCHOME/config`
+2. Download `app.toml`, `config.toml` and `genesis.json` from `https://github.com/bnb-chain/node/releases` and copy them into `$BNCHOME/config`
 
 ```
 wget   $(curl -s https://api.github.com/repos/bnb-chain/node/releases/latest |grep browser_ |grep mainnet_config |cut -d\" -f4)
@@ -45,7 +46,6 @@ Monikers can contain only ASCII characters. Using Unicode characters will render
 
 Now your Full Node has been initialized.
 
-## Genesis & Seeds
 
 3. The `genesis.json` file will be downloaded along with the other config files in step #2.
 
@@ -53,7 +53,16 @@ Now your Full Node has been initialized.
 If you want to understand genesis file, click [here](../../learn/genesis.md)
 :::
 
-4. Start your Full Node.
+4. Download snapshot
+
+Download latest data snapshot from [here](https://github.com/bnb-chain/bc-snapshots). 
+Follow the guide to structure your files, i.e., 
+```shell
+cp <uncompressed snapshot data> $BNCHOME/data
+```
+
+
+5. Start your Full Node.
 
 ```shell
 bnbchaind start &
@@ -71,14 +80,34 @@ bnbchaind start --home /usr/local/beacon-chain &
 
 If you encounter any issue when running a Full Node, you can read the FAQ list [here](fullnodeissue.md).
 
+### Sync From Genesis Block (Not Recommended)
+1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
 
-### Add Seed Nodes
-Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
+```
+mkdir ~/.bnbchaind
+mkdir ~/.bnbchaind/config
+```
+2. Download `app.toml`, `config.toml` and `genesis.json` from `https://github.com/bnb-chain/node/releases` and copy them into `$BNCHOME/config`
 
-If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://dex.binance.org/api/v1/peers
+```
+wget   $(curl -s https://api.github.com/repos/bnb-chain/node/releases/latest |grep browser_ |grep mainnet_config |cut -d\" -f4)
+unzip mainnet_config.zip
+```
 
-#### Additional Configuration
-- Sync type: by default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](./synctypes.md)
+
+3. The `genesis.json` file will be downloaded along with the other config files in step #2.
+
+
+4. Start your Full Node.
+
+```shell
+bnbchaind start &
+```
+
+### Additional Configuration
+- Seed nodes: Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
+  If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://dex.binance.org/api/v1/peers
+- Sync type: By default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](./synctypes.md)
 - Log: The log file is under `home`- the directory specified when starting `bnbchaind`.
   The latest log file is `bnc.log`. The process will create a new log file every one hour.
   To make sure you have sufficient disk space to keep the log files, we strongly recommend you to change the log location by changing `logFileRoot` option in `$BNCHOME/config/app.toml`.
