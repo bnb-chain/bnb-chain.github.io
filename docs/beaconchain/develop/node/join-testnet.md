@@ -15,8 +15,7 @@ The hardware must meet certain requirements to run a Full Node.
 * Desktop or laptop hardware running recent versions of Mac OS X, Windows, or Linux.
 * 1 TB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
 * 4 cores of CPU and 8 gigabytes of memory (RAM).
-* A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
-* Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain  More hours will be better, run your node continuously for best results.
+* A broadband Internet connection with upload/download speeds of at least 1 megabyte per second.
 
 ## Setting Up a New Node
 
@@ -46,8 +45,6 @@ Monikers can contain only ASCII characters. Using Unicode characters will render
 
 Now your Full Node has been initialized.
 
-## Genesis & Seeds
-
 3. The `genesis.json` file will be downloaded along with the other config files in step #2.
 
 :::tip 
@@ -74,13 +71,10 @@ bnbchaind start --home /usr/local/beaconchain-testnet &
 If you encounter any issue when running a Full Node, you should read the FAQ provided here.
 
 
-### Add Seed Nodes
-Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
-
+### Additional Configuration
+- Seed node: Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
 If those seeds aren't working, you can find more seeds and persistent peers in the HTTP API endpoints: https://testnet-dex.binance.org/api/v1/peers
-
-#### Additional Configuration
-- Sync type: by default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](synctypes.md)
+- Sync type: By default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](synctypes.md)
 - Log: The log file is under `home`- the directory specified when starting `bnbchaind`.
   The latest log file is `bnc.log`. The process will create a new log file every one hour.
   To make sure you have sufficient disk space to keep the log files, we strongly recommend you to change the log location by changing `logFileRoot` option in `$BNCHOME/config/app.toml`.
