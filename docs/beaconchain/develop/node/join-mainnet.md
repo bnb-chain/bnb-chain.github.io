@@ -11,21 +11,22 @@
 
 *  최신 맥 OS X, 윈도우, 리눅스 버전이 설치된 데스크탑이나 노트북.
 *  최소 읽기/쓰기 속도가 100 MB/s이며, 500GB의 빈 디스크 공간.
-* 4 코어 CPU 및 8GB 메모리(RAM).
-* 최소 1MB/s 속도를 지닌 광대역 인터넷 접속
-* 풀 노드는 24시간 중 최소 4시간 이상 운영해야 비컨 체인 갱신 속도를 따라갈 수 있습니다. 더 운영할 수록 좋으며, 연속적으로 노드를 운영하는 것이 가장 좋습니다.
+*  4 코어 CPU 및 8GB 메모리(RAM).
+*  최소 1MB/s 속도를 지닌 광대역 인터넷 접속
 
 ## 새 노드 설정
 > 설치 스크립트를 실행했다면 이 부분은 넘어가셔도 됩니다.
 
-우선 비컨 체인의 홈 폴더를 설정합니다 `$BNCHOME` (i.e. ~/.bnbchaind).
+### 스냅샷으로 동기화 (추천)
+
+1. 비컨 체인의 홈 폴더를 설정합니다 `$BNCHOME` (i.e. ~/.bnbchaind).
 다음을 통해 설정할 수 있습니다:
 
 ```
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-그리고 `node-binary/fullnode/{network}/{version}/config/`에서 `$BNCHOME/config`로 `app.toml`와 `config.toml`를 다운로드 합니다. 
+2. `https://github.com/bnb-chain/node/releases`에서 `app.toml`, `config.toml` 와 `genesis.json` 를 다운로드하고 `$BNCHOME/config`에 복사합니다.
 
 ~/.gaiad/config/config.toml 파일에서 노드 이름을 변경할 수 있습니다:
 ```toml
@@ -42,7 +43,8 @@ moniker = "<your_custom_moniker>"
 
 ### 제네시스 파일 다운로드
 
-메인넷의 genesis.json 파일을 가져와 노드 바이너리의 config 디랙토리에 저장합니다.
+3. 메인넷의 `genesis.json` 파일을 가져와 노드 바이너리의 config 디랙토리에 저장합니다.
+
 ```
 cd -p $HOME/.bnbchaind/config
 wget https://raw.githubusercontent.com/bnb-chain/node-binary/master/fullnode/prod/0.6.3-hotfix/config/genesis.json
@@ -52,7 +54,15 @@ wget https://raw.githubusercontent.com/bnb-chain/node-binary/master/fullnode/pro
 
 ::: 팁: 제네시스 파일에 대해 이해하고 싶으면, [다음](../../learn/genesis.md)을 클릭하세요. :::
 
-설정이 제대로 작동하는지 확인하려면 다음과 같이 실행하면 됩니다:
+4. 스냅샷 다운로드
+
+[여기](https://github.com/bnb-chain/bc-snapshots)에서 최신 스냅샷을 다운로드합니다. 
+파일을 구성하기 위해 가이드를 따라주세요, i.e., 
+```shell
+cp <uncompressed snapshot data> $BNCHOME/data
+```
+
+5. 풀 노드를 시작합니다.
 
 ```shell
 bnbchaind start &

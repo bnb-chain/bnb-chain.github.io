@@ -72,7 +72,7 @@ BNB 스마트 체인은 이더리움 EVM과 100% 호환 가능한 블록체인�
 |-|-|-
 | 데이터 분석 및 시각화| [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/)
 | 오라클 | [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Pyth](https://pyth.network/)
-| 아카이브 데이터 |[InfStones](https://infstones.com/)
+| 아카이브 데이터 |[InfStones](https://infstones.com/), , [Filecoin](https://filecoin.io/build/), [Arweave](https://www.arweave.org/), [pinata.cloud](https://www.pinata.cloud/)
 | 파일 스토리지, 클라우드 | [IPFS](https://ipfs.io/) 
 | 크로스체인 브릿지| [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/),[PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/), [Multichain](https://multichain.xyz/), [Celer cbridge](https://cbridge.celer.network/), [ChainHop] (https://chainhop.exchange/)| Decentralized, trustless, Open Access|
 | 자동화 | [Gelato](https://www.gelato.network/)

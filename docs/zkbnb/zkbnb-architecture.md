@@ -18,7 +18,7 @@ ZK 롤업 아키텍처 상에서 제작된 ZkBNB는 수백개의 오프체인에
 
 ## ZkBNB 프레임워크
 
-![](./zkBNB-framework.png)
+![](./zkbnb-framework.png)
 
 위에는 인프라의 주요 구성요소를 표시하였으며, 아래에는 목록으로 표시하였습니다:
 
