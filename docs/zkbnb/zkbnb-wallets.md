@@ -3,7 +3,7 @@ sidebar_label: 지갑
 sidebar_position: 2
 ---
 
-# ZkBNB 지갑
+# zkBNB 지갑
 
 ## L1 지갑 지원 소개
 

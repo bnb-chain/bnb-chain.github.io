@@ -336,6 +336,11 @@ const sidebars = {
           id: 'BNBSidechain/faqs-bas',
           label: 'BNB 사이드 체인 FAQs',
         },  
+        {
+          type: 'doc',
+          id: 'zkbnb/zkbnb-faqs',
+          label: 'zkBNB FAQs',
+        },  
      ],
 
     },

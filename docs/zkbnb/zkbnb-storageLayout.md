@@ -52,6 +52,6 @@ RDB 안의 저장소 레이아웃은 다음과 같은 형태로 나타납니다.
 각 블록 높이에 NFT 상태를 기록하고 저장하는데 사용합니다.
 
 ## 물리적 저장소
-`ZkBNB`에서 트리 구조는 희박한 머클 트리(Sparse Merkle Tree, SMT) 구조를 갖습니다. 저장 공간을 최대한 최적화하기 위해서 SMT 라이브러리를 도입하였고, 4개 층의 트리 구조를 하나의 레이어로 압축하여 트리의 깊이를 줄이고 더 높은 수준을 달성합니다l. 저장 시 물리적 저장 공간을 사용합니다.
+`zkBNB`에서 트리 구조는 희박한 머클 트리(Sparse Merkle Tree, SMT) 구조를 갖습니다. 저장 공간을 최대한 최적화하기 위해서 SMT 라이브러리를 도입하였고, 4개 층의 트리 구조를 하나의 레이어로 압축하여 트리의 깊이를 줄이고 더 높은 수준을 달성합니다l. 저장 시 물리적 저장 공간을 사용합니다.
 
-더 자세한 사항은 여기를 참고하세요: <https://github.com/bnb-chain/zkbnb-smt/blob/master/docs/design.md>
+더 자세한 사항은 여기를 참고하세요: <https://github.com/bnb-chain/zkBNB-smt/blob/master/docs/design.md>
