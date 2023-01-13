@@ -9,40 +9,35 @@
 ## 최소 시스템 사양
 풀 노드를 실행하기 위해 하드웨어 최소 사양을 만족해야 합니다.
 
-*  최신 맥 OS X, 윈도우, 리눅스 버전이 설치된 데스크탑이나 노트북.
-*  최소 읽기/쓰기 속도가 100 MB/s이며, 500GB의 빈 디스크 공간.
+* 최신 맥 OS X, 윈도우, 리눅스 버전이 설치된 데스크탑이나 노트북.
+* 최소 읽기/쓰기 속도가 100 MB/s이며, 500GB의 빈 디스크 공간.
 * 4 코어 CPU 및 8GB 메모리(RAM).
 * 최소 1MB/s 속도를 지닌 광대역 인터넷 접속
-* 풀 노드는 24시간 중 최소 4시간 이상 운영해야 비컨 체인 갱신 속도를 따라갈 수 있습니다. 더 운영할 수록 좋으며, 연속적으로 노드를 운영하는 것이 가장 좋습니다.
 
 ## 새 노드 설정
 > 설치 스크립트를 실행했다면 이 부분은 넘어가셔도 됩니다.
 
-우선 비컨 체인의 홈 폴더를 설정합니다 `$BNCHOME` (i.e. ~/.bnbchaind).
-다음을 통해 설정할 수 있습니다:
+1. 비컨 체인의 홈 폴더를  `$BNCHOME`로 설정합니다(i.e. ~/.bnbchaind). 다음을 통해 설정할 수 있습니다:
 
 ```
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-그리고 `node-binary/fullnode/{network}/{version}/config/`에서 `$BNCHOME/config`로 `app.toml`와 `config.toml`를 다운로드 합니다. 
+2. `node-binary/fullnode/{network}/{version}/config/`에서 `$BNCHOME/config`로 `app.toml`와 `config.toml`를 다운로드 합니다. 
 
-~/.gaiad/config/config.toml 파일에서 노드 이름을 변경할 수 있습니다:
+나중에 ~/.gaiad/config/config.toml 파일에서 moniker 이름을 변경할 수 있습니다:
 ```toml
 # 사람이 읽을 수 있도록 노드 이름 설정
 moniker = "<your_custom_moniker>"
 ```
 
-> 노드 이름은 ASCII 문자만 사용할 수 있습니다. 유니코드 문자를 사용하면 노드에 연결할 수 없게 됩니다. :::
-
+::: 참고
+moniker 이름은 ASCII 문자만 사용할 수 있습니다. 유니코드 문자를 사용하면 노드에 연결할 수 없게 됩니다.
+:::
 
 이제 풀 노드가 초기화되었습니다!
 
-## 제네시스 및 시드
-
-### 제네시스 파일 다운로드
-
-테스트넷의 genesis.json 파일을 가져와 노드 바이너리의 config 디랙토리에 저장합니다.
+3. 테스트넷의 genesis.json 파일을 가져와 노드 바이너리의 config 디랙토리에 저장합니다.
 
 ```
 cd -p $HOME/.bnbchaind/config

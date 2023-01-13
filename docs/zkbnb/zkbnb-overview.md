@@ -2,7 +2,7 @@
 sidebar_label: 개요
 sidebar_position: 2
 ---
-# ZkBNB - BNB 체인의 혁신적인 확장
+# ZkBNB - BNB 체인의 혁신적인 확장성 솔루션
 
 이 문서에서는 구체적인 구성, 저장소 구조, 토크노믹스에 대해 설명하기 전에 큰 흐름과 관련된 기능들을 살펴봅니다.
 
@@ -12,23 +12,23 @@ sidebar_position: 2
 
 몇 몇 솔루션들은 특정 어플리케이션 범위에 적용되는 솔루션(예시. 체널)이고, 나머지는 범용 솔루션(예시. 사이드체인)으로 간주됩니다. 하지만 여전히 모든 블록체인에서 작동하는 "범용 솔루션"이 부족합니다. 이는 블록체인 관련 확장성 문제를 해결하는 궁극의 레이어2 솔루션인 영지식 롤업(ZK roullup)이 소개되면서 해결할 수 있게 되었습니다.
 
-이 글을 쓰는 시점에서, BSC 상 총 일일 활성화 주소(Daily Active Address, DAA)는 약 [815,620](https://ycharts.com/indicators/sources/bscscan)이며, 일일 트랜잭션의 총 개수는 [358만](https://ycharts.com/indicators/reports/binance_smart_chain_statistics)정도입니다. 그렇게 멀지 않은 과거인 2021년 7월 29일에 BSC 네트워크의 총 활용률은 [최고점인 90%](https://bscscan.com/chart/networkutilization)를 달성하여, 코어 개발 팀이 이 문제를 극복하기 위해 확장성 솔루션을 고안하게 되었습니다. BNB 스마트 체인은 블록체인 기술의 확장성 문제를 zk롤업을 통해 획기적으로 발전시킨 ZkBNB를 선보였습니다.
+이 글을 쓰는 시점에서, BSC 상 총 일일 활성화 주소(Daily Active Address, DAA)는 약 [815,620](https://ycharts.com/indicators/sources/bscscan)이며, 일일 트랜잭션의 총 개수는 약 [357.2만](https://ycharts.com/indicators/reports/binance_smart_chain_statistics)정도입니다. 그렇게 멀지 않은 과거인 2021년 7월 29일에 BSC 네트워크의 총 활용률은 [최고점인 90%](https://bscscan.com/chart/networkutilization)를 달성하여, 코어 개발 팀이 이 문제를 극복하기 위해 확장성 솔루션을 고안하게 되었습니다. BNB 스마트 체인은 블록체인 기술의 확장성 문제를 zk롤업을 통해 획기적으로 발전시킨 ZkBNB를 선보였습니다.
 
 ## ZkBNB란?
 
-ZkBNB는 ZK(Zero Knowledge) 롤업 구조를 기반으로 만들어졌습니다. ZK 롤업은 모든 계산과 상태 변화가 체인 밖에서, 즉 사이드 체인에서 이뤄지는 레이어2 솔루션입니다. 이 구조에서는 변경의 유효성을 입증하기 위해 몇 가지 암호화 증명과 함께 변경 사항 요약이 메인넷에 게시됩니다.
+zkBNB는 ZK(Zero Knowledge) 롤업 구조를 기반으로 만들어졌습니다. ZK 롤업은 모든 계산과 상태 변화가 체인 밖에서, 즉 사이드 체인에서 이뤄지는 레이어2 솔루션입니다. 이 구조에서는 변경의 유효성을 입증하기 위해 몇 가지 암호화 증명과 함께 변경 사항 요약이 메인넷에 게시됩니다.
 
-zk 롤업과 마찬가지로 ZkBNB에서는 오프체인 상에서 수백개의 트랜잭션을 하나의 배치(Rollup Block)로 묶고(혹은 "롤업") 암호학적 증거를 생성합니다. 이 증거들은 [SNARKs (succinct non-interactive argument of knowledge)](https://cointelegraph.com/explained/zk-starks-vs-zk-snarks-explained)형태로 나오는데, SNARK는 롤업 블록 내부의 모든 단일 트랜잭션에 대해 유효성을 증명할 수 있습니다. 또한 모든 자금은 BSC 상에 존재하는 것을 확인하며, 계산과 저장은 [BNB 사이드 체인](https://docs.bnbchain.org/docs/BNBSidechain/overview/bs-overview)보다 더 적은 비용과 빠른 속도로 수행할 수 있음을 보여줍니다. 또한 zk-SNARK 증거를 사용하는 덕분에 ZkBNB는 BNB 스마트 체인과 동일한 보안을 공유할 수 있습니다.
+zk 롤업과 마찬가지로 zkBNB에서는 오프체인 상에서 수백개의 트랜잭션을 하나의 배치(Rollup Block)로 묶고(혹은 "롤업") 암호학적 증거를 생성합니다. 이 증거들은 [SNARKs (succinct non-interactive argument of knowledge)](https://cointelegraph.com/explained/zk-starks-vs-zk-snarks-explained)형태로 나오는데, SNARK는 롤업 블록 내부의 모든 단일 트랜잭션에 대해 유효성을 증명할 수 있습니다. 또한 모든 자금은 BSC 상에 존재하는 것을 확인하며, 계산과 저장은 [BNB 사이드 체인](https://docs.bnbchain.org/docs/BNBSidechain/overview/bs-overview)보다 더 적은 비용과 빠른 속도로 수행할 수 있음을 보여줍니다. 또한 zk-SNARK 증거를 사용하는 덕분에 zkBNB는 BNB 스마트 체인과 동일한 보안을 공유할 수 있습니다.
 
-## 왜 ZkBNB를 사용하나요?
+## 왜 zkBNB를 사용하나요?
 
 BSC의 확장성 문제를 해결하기 위해, BSC 호환 사이드 체인을 만드는 모듈러 프레임워크 기준인 BEP100이 제안되었습니다. 사이드 체인은 메인 블록체인(BSC)와 독립적으로 작동하는 블록체인이지만, 양방향 브릿지를 통해 BSC 메인넷과 연결되어 있습니다. BEP100은 이런 사이드체인들이 자체 릴레이어 허브를 통해 BSC와 연결되는 방식을 제안하는데, 이는 전반적인 네트워크 성능이 개선되고 더 높은 처리량 및 더 낮은 가스비를 지원합니다. 또한 자체 릴레이어 허브의 보안은 사이드 체인에 의해 보장됩니다. 그럼에도 불구하고, 브리지에 대한 공격은 2022년에 도난당한 전체 자금의 69%를 차지할 정도로 해커들의 최우선 목표로 고려되고 있습니다. 이로인해 네트워크 확장성 문제를 해결할뿐만 아니라 BSC와 BSC 호환 사이드 체인 간의 통신을 안전하게 지원하는 솔루션이 필요하게 되었습니다. 따라서 [영지식 롤업](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)구조 기반으로 만든 zkBNB를 개발하게 되었습니다.
 
-## ZkBNB는 어떤 기능이 있나요?
+## zkBNB는 어떤 기능이 있나요?
 
-현재 ZkBNB는 다음과 같은 기능을 구현하고 있습니다:
+현재 zkBNB는 다음과 같은 기능을 구현하고 있습니다:
 
--   **L1과 같은 수준의 보안:** ZkBNB는 BSC와 같은 보안 수준을 자랑합니다. zkSNARK 증명을 사용하여, 암호학적으로 보안이 보장됩니다. 사용자들은 서드 파티를 믿지 않고 롤업 블록을 모니터링하여 사기를 방지할 수 있습니다.
+-   **L1 수준의 보안:** ZkBNB는 BSC와 같은 보안 수준을 자랑합니다. zkSNARK 증명을 사용하여, 암호학적으로 보안이 보장됩니다. 사용자들은 서드 파티를 믿지 않고 롤업 블록을 모니터링하여 사기를 방지할 수 있습니다.
 -   **원할한 L1-L2 통신**: BNB와 BSC나 ZkBNB 상에서 생성된 BEP20/BEP721/BEP1155 토큰들을 BSC와 ZkBNB 사이 매끄럽게 이동할 수 있습니다.
 -   **내장된 즉석 AMM (Automated Market Maker) 스왑:** ZkBNB는 내장된 유동성 풀을 통해 허가 과정 없이 자동으로 디지털 자산을 거래할 수 있습니다.
 -   **내장된 NFT 마켓:** 개발자들은 ZkBNB에 내장된 기능으로 디지털 수집품이나 NFT(non-fungible tokens)마켓을 바로 구축할 수 있습니다.
@@ -36,7 +36,7 @@ BSC의 확장성 문제를 해결하기 위해, BSC 호환 사이드 체인을 �
 -  **가스 토큰:** **ZkBNB 상 가스 토큰은 BEP20나 BNB가 될 수 있으며, 수수료가 1/10까지 감소합니다**
 -   **BSC상 "Full exit":** 만일 사용자가 트랜잭션이 ZkBNB에서 검열당하는 것처럼 느껴지면 언제든지 "full exit" 작업을 요청해 출금할 수 있습니다. 이는 사용자가 자금을 언제든지 출금할 수 있다는 것을 뜻합니다.
 
-## 누가 ZkBNB로 혜택을 받나요?
+## 누가 zkBNB로 혜택을 받나요?
 
 BNB 스마트 체인에서 가장 중요한 것을 사용자 경험을 개선하는 것입니다. 이것이 ZkBNB가 사람들이 많이 사용하는 블록체인 기반 게임과 소셜 미디어를 고려하여 만들어진 이유입니다. 
 

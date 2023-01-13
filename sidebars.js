@@ -77,7 +77,7 @@ const sidebars = {
                       {
                         type: 'category',
                         label: 'BSC에서 NFT 배포하기',
-                        items:['nft-metadata-standard', 'ERC721', 'nft_blackide']
+                        items:['nft-metadata-standard', 'ERC721', 'nft_blackide', 'nft-storage']
                       },
                       {
                         type: 'category',
@@ -108,7 +108,8 @@ const sidebars = {
                         items: ['dapp-dev/Hello-World', 'dapp-dev/web3js-tutorial']
                       },
                       'oracles',
-                      {type: 'doc', id: 'learn/cross-chain-bridges', label: '크로스 체인 브릿지'},
+                      {type: 'doc', id: 'dstorages', label: 'd스토리지'},
+                      {type: 'doc', id: 'learn/cross-chain-bridges', label: '크로스체인 브릿지'},
             ]},  
             
             {
@@ -198,7 +199,7 @@ const sidebars = {
                         label: '배우기',
                         collapsed: true,
                         items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/escrow-accounts', 'beaconchain/learn/assets',
-                        'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8', 
+                            'beaconchain/learn/breathe-block', 'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8',
                         
                         {
                             type: 'category',
@@ -301,7 +302,7 @@ const sidebars = {
           {
             type: 'category',
             collapsed: true,
-            label: 'ZkBNB',
+            label: 'zkBNB',
               items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
           },
           
@@ -334,7 +335,12 @@ const sidebars = {
         {
           type: 'doc',
           id: 'BNBSidechain/faqs-bas',
-          label: 'BNB 사이드 체인 FAQs',
+          label: 'BNB 사이드체인 FAQs',
+        },
+        {
+          type: 'doc',
+          id: 'zkbnb/zkbnb-faqs',
+          label: 'zkBNB FAQs',
         },  
      ],
 
