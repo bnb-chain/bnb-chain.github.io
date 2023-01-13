@@ -1,14 +1,14 @@
 ---
-sidebar_label: Transactions
+sidebar_label: 트랜잭션
 hide_table_of_contents: false
 ---
 
-# Beacon Chain Transaction Basics
+# 비컨 체인 트랜잭션 기초
 
-A blockchain is a globally shared, transactional database. This means that everyone can read entries in the database just by participating in the network. If you want to change something in the database, you have to create a so-called transaction which has to be accepted by all others. The word transaction implies that the change you want to make (assume you want to change two values at the same time) is either not done at all or completely applied. Furthermore, while your transaction is being applied to the database, no other transaction can alter it.
+블록 체인은 전 세계적으로 공유되는 트랜잭션 데이터베이스입니다. 이는 네트워크에 참여만 하는 것으로 누구나 데이터베이스의 항목들을 읽을 수 있다는 것을 뜻합니다. 만일 데이터베이스의 요소를 변경하고 싶으면, 트랜잭션이라 불리는 것을 생성하고 모든 사용자들이 이에 동의해야합니다. 트랜잭션이란 단어는 변경하고자 하는 것(한 번에 두 값을 변경한다고 가정)이 모두 완료가 되지 않았거나 전부 적용 되었다는 뜻을 내포합니다. 추가로, 제출한 트랜잭션이 데이터베이스에 적용되는 동안에는 다른 트랜잭션이 현재 트랜잭션을 변경할 수 없습니다.
 
-As an example, imagine a table that lists the balances of all accounts in an electronic currency. If a transfer from one account to another is requested, the transactional nature of the database ensures that if the amount is subtracted from one account, it is always added to the other account. If due to whatever reason, adding the amount to the target account is not possible, the source account is also not modified.
+모든 계정의 전자 화폐에 대한 잔고를 포함하는 표가 있다고 가정합니다. 만일 하나의 계정에서 다른 계정으로 전송이 요청 되었을 때, 트랜잭션 특성에 따라 하나의 계정에서 차감된 것은 항상 다른 계정에 추가되도록 만듭니다. 만일 어떤 이유로 인해 받는 계정에 금액을 추가할 수 없을 경우 소스(source) 계정도 수정하지 않습니다.  
 
-Furthermore, a transaction is always cryptographically signed by the sender (creator). This makes it straightforward to guard access to specific modifications of the database. In the example of the electronic currency, a simple check ensures that only the person holding the keys to the account can transfer money from it.
+또한 트랜잭션은 항상 보낸 사람(작성자)에 의해 항상 암호화된 서명을 받습니다. 이는 데이터베이스의 특정 수정 사항에 대한 접근을 보호하기 쉽게 만듭니다. 전자 화폐 같은 경우, 간단한 확인을 통해 키를 보유하고 있는 계정만이 그 돈을 송금할 수 있도록 보장합니다. 
 
 

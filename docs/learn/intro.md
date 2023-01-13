@@ -1,75 +1,62 @@
 ---
-sidebar_label: Introduction 
+sidebar_label: 소개 
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Introduction
+# 소개
 
-BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 21 active validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality. 
-Other than the 21 active validators, BSC will introduce more validators, e.g. another 20 inactive validators, into the validator set as backups, which will be called "Candidates".
+BNB 스마트 체인은 비컨 체인(Beacon Chain)에 프로그램성과 상호운용성을 도입하기 위한 혁신적인 솔루션입니다. BNB 스마트 체인은 21명의 검증인과 Proof of Staked Authority (PosA)로 구성된 시스템을 기반으로 하고 있어 짧은 블록타임과 낮은 수수료를 구현할 수 있습니다. 가장 많이 스테이킹한 검증인 후보들이 검증인이 되어 블록을 생성합니다. 이중서명 식별과 슬래싱 로직으로 보안, 안전성, 체인 완결성이 보장됩니다.
 
-Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 21 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
+BSC는 21명의 검증인을 더 늘려갈 것입니다. 예컨대 "후보"라고 칭해지는 20명의 비활성 검증인을 예비 인력에 포함시킬 것입니다.
 
-In an extreme case, if a majority of the active 21 validators get attacked and offline, Candidate Validators can report to Beacon Chain about the stale blocking, resume it and eventually propose a re-election of the active validator set.
+후보들은 BSC 메인넷에서 블록을 생성하고 가스비를 받지만, 이는 21명의 선출된 공식 검증인 보다는 낮은 확률로 이루어집니다. 부재중인 후보들은 적은 수이긴 하지만 슬래싱됩니다. 후보 검증인들이 BSC의 품질과 안정성을 유지할 수 있기 위해서는 어느 정도의 의지가 필요합니다.
 
-The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. Cross-chain transfer and other communication are possible due to native support of interoperability. The BNB Smart Chain will be:
+극단적인 경우 21명의 활동 검증인의 과반수가 공격을 받아 접속이 끊길 경우 후보 검증인들이 비컨 체인에 이 스테일 블록킹에 대해 보고하고, 재개한 뒤 활동 검증인 집단을 재선출하자는 제안을 올릴 수 있습니다.
 
-* **A self-sovereign blockchain**: Provides security and safety with elected [validators](consensus.md).
-* **EVM-compatible**: Supports all the existing Ethereum tooling along with faster finality and cheaper transaction fees.
-* **Interoperable**: Comes with efficient native dual chain communication; Optimized for scaling high-performance dApps that require a fast and smooth user experience.
-* **Distributed with on-chain governance**: Proof of Staked Authority (PoSA) brings in decentralization and community participants. As the native token, BNB will serve as both the gas of smart contract execution and tokens for staking.
+BNB 스마트 체인은 또한 EVM 호환이 되는 스마트 컨트랙트와 프로토콜을 지원합니다. 체인 간 전송과 커뮤니케이션이 가능한 것은 네이티브 상호호환성 지원하기 때문입니다. 바이낸스 DEX는 양 체인 모두에서의 자산 교환을 위한 유동적 공간입니다. 이 이중체인 구조는 한 측에서의 빠른 트레이딩, 다른 쪽에서의 탈중앙화 앱 개발을 하고자 하는 사용자들에게 이상적입니다. 바이낸스 스마트 체인의 특성은 다음과 같습니다:
 
-## Proof of Staked Authority
-Although Proof-of-Work (PoW) has been recognized as a practical mechanism to implement a decentralized network, it is not friendly to the environment and also requires a large size of participants to maintain the security.
+* **자기주권적 블록체인**: 선출된 [검증인](consensus.md)들을 통해 보안과 안전을 제공합니다.
+* **EVM 호환**: 기존의 모든 이더리움 툴을 지원하면서 더 빠른 확정성과 낮은 거래 수수료를 제공합니다.
+* **상호호환**: 효율적인 네이티브 이중 체인 커뮤니케이션이 포함됩니다. 빠르고 매끄러운 사용자 경험을 요구하는 고성능 dApp을 확장하는 데 최적화되어 있습니다.
+* **온체인 거버넌스를 포함한 탈중앙성**: Proof of Staked Authority (PoSA)는 탈중앙성과 커뮤니티 참여를 가능하게 해줍니다. 네이티브 토큰으로서 BNB는 스마트 컨트랙트 실행을 위한 가스 및 스테이킹 토큰으로서 기능할 것입니다.
 
-Ethereum and some other blockchain networks, such as [MATIC Bor](https://github.com/maticnetwork/bor), [TOMOChain](https://tomochain.com/), [GoChain](https://gochain.io/), [xDAI](https://xdai.io/), do use [Proof-of-Authority(PoA)](https://en.wikipedia.org/wiki/Proof_of_authority) or its variants in different scenarios, including both testnet and mainnet. PoA provides some defense to 51% attack, with improved efficiency and tolerance to certain levels of Byzantine players (malicious or hacked). It serves as an easy choice to pick as the fundamentals.
+<!--## 비컨체인과 BNB 스마트 체인 비교
 
-Meanwhile, the PoA protocol is most criticized for being not as decentralized as PoW, as the validators, i.e. the nodes that take turns to produce blocks, have all the authorities and are prone to corruption and security attacks. Other blockchains, such as EOS and Lisk both, introduce different types of [Delegated Proof of Stake (DPoS)](https://en.bitcoinwiki.org/wiki/DPoS) to allow the token holders to vote and elect the validator set. It increases the decentralization and favors community governance.
+|                   | 비컨 체인 | BNB 스마트 체인                    |
+| ----------------- | ------------- | -------------------------------------- |
+| Consensus         | DPoS          | PoSA                                   |
+| No. of Validators | 11            | up to 41 (20 candidate block producers)|
+| Mean Block Time   | <1s           | ~5s                                    |
+| Programmability   | BEPs          | Support EVM-compatible smart contracts |
+| Cross Chain       |[BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md) introduces *Hash Timer Locked Contract functions* and further [mechanism](https://community.binance.org/topic/1892) to handle inter-blockchain tokens peg.    | BSC comes with efficient [native dual chain communication](cross-chain.md); Optimized for scaling high-performance dApps that require fast and smooth user experience.                    |
+-->
+## 크로스체인과 멀티체인의 생태계
+2021년에 BSC가 얻은 큰 교훈은 "하나의 체인"으로 모든 것을 처리할 수 없다는 것입니다. 피크 타임에서 BSC는 200만명 이상의 일일 활성 사용자(DAU)를 기록했고, 단일 GameFi 분야가 100만명까지 가기도 했습니다. 이것은 네트워크 자체와 그것을 지원하는 RPC/API 노드 등 인프라에 막대한 도전을 제기했습니다. 거대한 사용자 기반을 지닌 dApp의 경우 멀티체인과 크로스체인이 해결방안이 되어야 합니다.
 
-BSC here proposes to combine DPoS and PoA for consensus, so that:
+BSC 코어 팀은 탈중앙화된 연산력과 스토리지에 대한 계속되는 수요 증가를 충족시킬 수 있는 파티션체인과 멀티체인의 미래를 강력히 믿습니다. 이는 ETH2.0, 폴카닷의 멀티체인 전략, 코스모스, 아발란체 등 업계의 다른 블록체인들과도 일관적입니다.
 
-1. Blocks are produced by a limited set of validators
-2. Validators take turns to produce blocks in a PoA manner, similar to [Ethereum's Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
-3. Validator set are elected in and out based on a staking based governance
+크로스샤드와 크로스체인/멀티체인의 상호호환성이 2022년의 핵심 주제가 될 것입니다. BSC 검증인 및 개발자 커뮤니티는 탈중앙화된 블록체인 미래의 갈림길에서 기능하고자 하는 BSC의 비전을 충족시키기 위해 노력하고 있습니다. 특히 BNB 사이드체인과 BSC 파티션 체인 (BPC) 인프라 레이어를 통해 BSC의 신기술을 구현함으로써 이를 달성하고자 합니다.
 
-The consensus protocol of BSC fulfills the following goals:
+![BSC 2022](/img/assets/BNBChain2022.png)
 
-1. Short Blocking time, 3 seconds on mainnet.
-2. It requires limited time to confirm the finality of transactions, around 45s for mainnet.
-3. There is no inflation of native token: BNB, the block reward is collected from transaction fees, and it will be paid in BNB.
-4. It is 100% compatible with Ethereum system .
-5. It allows modern proof-of-stake blockchain network governance.
+### BNB 사이드체인
+BNB 사이드체인은 개발자들과 노드 운영자들이 BSC와의 밀접한 연관을 유지하면서 대량의 유저들을 위한 내부 밸류 시스템으로서의 자체 블록체인을 구축할 수 있도록 도입된 인프라입니다. 어떤 프로젝트 개발자든지 고유한 스펙과 검증인 집단을 가진 자체 BNB 사이드체인을 배포할 수 있습니다. 이 검증인 집단는 BNB 사이드체인 배포자에 따라 BSC 보다 적은 수의 검증인를 가지고 동작할 수 있습니다. 이 검증인들은 앱의 주인이나 커뮤니티 이해관계자에 의해 동작될 수 있으며, 이를 통해 BNB 사이드체인의 유연성과 탈중앙성이 보장됩니다. BNB 사이드체인의 전형적인 사용 사례는 액시 인피니티(Axie Infinity)의 로닌 체인과 같습니다. 하지만 사이드체인의 잠재적 리스크를 최소화하기 위해서는 BNB 사이드체인과 BSC 간의 매끄러운 유동성을 보장하기 위한 (빌트인(Built-in) 애셋 타입과 크로스체인을 포함한) 새로운 프로토콜이 도입되어야 할 것입니다.
 
-## Security and Finality
-Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the [Clone Attack](https://arxiv.org/pdf/1902.10244.pdf). To secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.
-With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+### BNB ZkRollup - 무신뢰 확장 솔루션
+   
+BNB ZkRollup은 BNB 스마트 체인을 위한 무신뢰 확장 솔루션입니다. BNB ZkRollup은 ZK 롤업 아키텍처 위에 구축되어 있습니다. BNB ZkRollup은 체인 밖에서 수백 개의 트랜잭션을 묶어서(“롤업”) 암호화 증명을 생성해냅니다. 이러한 증명들은 롤업 블록의 모든 트랜잭션의 유효성을 증명할 수 있는 SNARK (succinct non-interactive argument of knowledge) 형태로 있기도 합니다. 이는 즉 연산과 스토리지가 더 저렴한 비용과 빠른 속도로 BNB 사이드체인에서 실행되는 동시에 모든 자금들이 BSC에 보관된다는 것을 뜻합니다.
 
-## Reward
-All the BSC validators in the current validator set will be rewarded with transaction fees in BNB. As BNB is not an inflationary token, there will be no mining rewards as what Bitcoin and Ethereum network generate, and the gas fee is the major reward for validators. As BNB is also utility tokens with other use cases, delegators and validators will still enjoy other benefits of holding BNB.
+BNB ZkRollup이 달성하는 목표는 다음과 같습니다:
 
-The reward for validators is the fees collected from transactions in each block. Validators can decide how much to give back to the delegators who stake their BNB to them, in order to attract more staking. Every validator will take turns to produce the blocks in the same probability (if they stick to 100% liveness), thus, in the long run, all the stable validators may get a similar size of the reward. Meanwhile, the stakes on each validator may be different, so this brings a counter-intuitive situation that more users trust and delegate to one validator, they potentially get less reward. So rational delegators will tend to delegate to the one with fewer stakes as long as the validator is still trustful (insecure validator may bring slashable risk). In the end, the stakes on all the validators will have less variation. This will actually prevent the stake concentration and "winner wins forever" problem seen on some other networks.
+* 탈중앙화나 보안을 희생하지 않을 것
+* BNB ZkRollup은 BSC와 동일안 보안을 가질 것. zkSNARK 증명 덕분에 암호학적으로 보안이 보장됨. 사용자들은 사기를 방지하기 위해 제3자를 신뢰할 필요도, Rollup블록을 계속해서 감시할 필요도 없음.
+* 빠른 트랜잭션, 더 빠른 완결성, 더 낮은 가스비.
+* BSC나 BNB ZkRollup에서 만들어진 BNB 및 BEP20/BEP721/BEP115는 BSC와 ZkRollup 사이에서 자유롭게 이동 가능.
+* BNB ZkRollup의 가스 토큰은 BEP20 또는 BNB 둘 다 가능. 
+* 사용자들은 BSC로부터 “full exit” 가능. 자신의 트랜잭션들이 BNB ZkRollup에 의해 검열되고 있다고 느낄 경우 자금 철회 동작을 요청할 수 있음.
+* 빌트인 실시간 AMM 스왑.
+* 빌트인 NFT 마켓플레이스.
 
-## Token Economy
-BC and BSC share the same token universe for BNB and BEP2 tokens. This defines:
-
-1. The same token can circulate on both networks, and flow between them bi-directionally via a cross-chain communication mechanism.
-2. The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the token’s total effective supply on both BSC and BC.
-3. The tokens can be initially created on BSC in a similar format as ERC20 token standard, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
-
-## Cross-Chain Transfer and Communication
-Cross-chain communication is the key foundation to allow the community to take advantage of the dual chain structure:
-
-1. users are free to create any tokenization, financial products, and digital assets on BSC or BC as they wish
-2. the items on BSC can be manually and programmingly traded and circulated in a stable, high throughput, lighting fast and friendly environment of BC
-3. users can operate these in one UI and tooling ecosystem.
-
-## Staking and Governance
-Proof of Staked Authority brings in decentralization and community involvement. Its core logic can be summarized as the below. You may see similar ideas from other networks, especially Cosmos and EOS.
-
-1. Token holders, including the validators, can put their tokens "bonded" into the stake. Token holders can delegate their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to re-delegate their tokens1.
-2. All validator candidates will be ranked by the number of bonded tokens on them, and the top ones will become the real validators.
-3. Validators can share (part of) their blocking reward with their delegators.
-4. Validators can suffer from "Slashing", a punishment for their bad behaviors, such as double sign and/or instability.
-5. There is an "unbonding period" for validators and delegators so that the system makes sure the tokens remain bonded when bad behaviors are caught, the responsible will get slashed during this period.
-
+## 참고자료
+[백서](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md)

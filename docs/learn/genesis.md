@@ -1,5 +1,5 @@
 ---
-sidebar_label: Genesis File 
+sidebar_label: 제네시스 파일
 sidebar_position: 2
 hide_table_of_contents: false
 ---

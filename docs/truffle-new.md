@@ -1,72 +1,72 @@
 ---
-sidebar_label: Using Truffle
+sidebar_label: Truffle 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Using Truffle for Deploying Smart Contracts on BSC 
-In this tutorial, you will learn to create, compile and deploy smart contract on the BNB Smart Chain network using the Truffle IDE. 
+# Truffle을 사용하여 BSC에서 스마트 컨트랙트 배포하기 
+이 튜토리얼에서는 Truffle IDE를 사용하여 BNB 스마트 체인 네트워크에 스마트 컨트랙트를 생성, 컴파일, 배포하는 법을 안내하겠습니다. 
 
-## Setting up the development environment
+## 개발 환경 설정하기
 
-### Requirements
-There are a few technical requirements before we start. Please install the following:
+### 요구사항
+시작에 앞서 필요한 기술적 요구사항들이 있습니다. 아래의 항목들을 설치해주세요.
 
-- Windows, Linux or Mac OS X
+- Windows, Linux 또는 Mac OS X
 - [Node.js v8.9.4 LTS or later](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 
-**Recommendations for Windows**
-If you're running Truffle on Windows, you may encounter some naming conflicts that could prevent Truffle from executing properly. Please refer to the [official Truffle Documentation](https://trufflesuite.com/docs/truffle/reference/configuration/#resolving-naming-conflicts-on-windows) to find solutions for resolving naming conflicts.
+**Windows를 위한 권장 사항**
+Windows에서 Truffle을 사용하는 경우 네이밍 충돌 등에 의해 제대로 동작하지 않을 수 있습니다. [공식 Truffle 문서](https://trufflesuite.com/docs/truffle/reference/configuration/#resolving-naming-conflicts-on-windows)를 참고하여 네이밍 충돌에 대한 해결책을 찾아주세요.
 
-### Installing Truffle
+### Truffle 설치하기
 
-Once the above mentioned softwares are installed, we only need one command to install Truffle:
+위에서 언급한 소프트웨어가 설치되고 나면, Truffle을 설치하기 위해 하나의 명령어만 있으면 됩니다:
 
 ```
 npm install -g truffle
 ```
-To verify that Truffle is installed properly, type **`truffle version`** on a terminal. If you see an error, make sure that your npm modules are added to your path.
+Truffle이 제대로 설치되었는지 확인하려면 터미널에 `**truffle version**`을 입력합니다. 오류가 표시되면 npm 모듈이 경로에 추가되었는지 확인하십시오.
 
-If you're new to Truffle then please follow the [Getting Started](https://www.trufflesuite.com/docs/truffle/quickstart) by truffle, To setup the truffle environment.
+Truffle을 처음 접하시는 분은 [Getting Starting](https://www.trufflesuite.com/docs/truffle/quickstart)을 참고하여 Truffle 환경을 설정하세요.
 
-## Project Creation, Compilation, and Configuration
+## 프로젝트 생성, 컴파일 및 구성
 
-To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a Truffle project.
+대부분의 Truffle 명령어를 사용하려면 기존 Truffle 프로젝트에 대해 실행해야 합니다. 그래서 첫 번째 단계는 Truffle 프로젝트를 만드는 것입니다.
 
-## Creation 
+## 생성 
 
-For creating a scaffold project for getting started, you can use the [Truffle Boxes](https://trufflesuite.com/boxes), BSC Starter Box which is a boilerplate to jump start development on the BNB Smart Chain. 
+기본 프로젝트를 만들려면 [Truffle 박스](https://trufflesuite.com/boxes)와 BSC 스타터 박스를 샘플 템플릿으로 사용하여 BNB 스마트 체인에서 개발을 시작할 수 있습니다. 
 
-For this tutorial, we have used the [MetaCoin box](https://trufflesuite.com/boxes/metacoin) as an example, which creates a token that can be transferred between accounts. Use the command ```truffle unbox metacoin``` to unbox the metacoin box.
-
-
-> **_NOTE:_**  You can use the ```truffle unbox <box-name>``` command to download any of the other [Truffle Boxes](https://trufflesuite.com/boxes). Another alternative is to create a bare Truffle project with no smart contracts included using the ```truffle init``` command.
+본 튜토리얼에서는 계정 간 이동이 가능한 토큰을 생성하는 [MetaCoin box](https://trufflesuite.com/boxes/metacoin)를 예로 들었습니다. ```truffle unbox metacoin```을 사용하여 메타코인 박스를 언박싱합니다.
 
 
-Once this operation is completed, you'll now have a project structure with the following items:
+> **참고: **  ```truffle unbox <box-name>```을 사용하여 다른 [Truffle 박스](https://trufflesuite.com/boxes)를 다운로드할 수 있습니다. 또 다른 대안은 ```truffle init``` 명령어를 사용하여 스마트 컨트랙트가 포함되지 않은 빈 Truffle 프로젝트를 만드는 것입니다.
 
-* contracts/: Directory for Solidity contracts
-* migrations/: Directory for scriptable deployment files
-* test/: Directory for test files for testing your application and contracts
-* truffle-config.js: Truffle configuration file
 
-### Create Contract
+이 작업이 완료되면 다음 항목이 포함된 프로젝트 구조를 가지게 됩니다.
 
-You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template) and place it in the ``contracts`` directory.
+* contracts/: 솔리디티 컨트랙트 디렉토리
+* migrations/: 스크립팅 가능한 배포 파일의 디렉토리
+* test/: 애플리케이션 및 컨트랙트를 테스트하기 위한 테스트 파일 디렉토리
+* truffle-config.js: Truffle 구성 파일
+
+### 컨트랙트 생성
+
+직접 스마트 컨트랙트를 작성하거나 [BEP20 토큰 스마트 컨트랙트 템플릿](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template)을 다운로드하여 ``contracts`` 디렉토리로 이동시키면 됩니다.
 
 ### Compile Contract
 
-To compile a Truffle project, change to the root of the directory where the project is located and then type the following into a terminal:
+Truffle 프로젝트를 컴파일하려면 프로젝트가 있는 디렉터리의 루트로 변경한 후 터미널에 다음을 입력하십시오.
 
 ```
 truffle compile
 ```
 
-### Configuring Truffle for BSC
+### BSC용 Truffle 구성
 
-- Go to truffle-config.js
-- Update the truffle-config with bsc-network-crendentials.
+- truffle-config.js로 이동합니다.
+- bsc-network-crendentials로 truffle-config를 업데이트합니다.
 
 ```js
 const HDWalletProvider = require('@truffle/hdwallet-provider');
@@ -110,16 +110,16 @@ module.exports = {
 }
 ```
 
-> **_NOTE:_** Notice, it requires mnemonic to be passed in for Provider, this is the seed phrase for the account you'd like to deploy from. Create a new .secret file in root directory and enter your 12 word mnemonic seed phrase to get started. To get the seedwords from metamask wallet you can go to Metamask Settings, then from the menu choose Security and Privacy where you will see a button that says reveal seed words, refer [here](https://metamask.zendesk.com/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase) for more details.
+> **참고: ** Provider에 니모닉을 전달해야 합니다. 이것은 배포할 계정의 시드 구문입니다. 루트 디렉토리에 새 .secret 파일을 만들고 12단어 니모닉 시드 구문을 입력하세요. 메타마스크 지갑에서 시드 단어를 가져오려면 메타마스크 설정으로 이동한 다음 메뉴에서 Security and Privacy로 이동하여 reveal seed words라는 버튼을 클릭합니다.  자세한 내용은 [여기](https://metamask.zendesk.com/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase)를 참고하세요.
 
-## Deploying on BSC Network
+## BSC 네트워크에 배포하기
 
-Run this command in root of the project directory:
+프로젝트 디렉토리 루트에서 다음 명령어를 실행하세요:
 ```js
 $ truffle migrate --network testnet
 ```
 
-Contract will be deployed on Binance Chain Chapel Testnet, it look like this:
+바이낸스 체인 채플 테스트넷에 컨트랙트가 다음과 같이 배포됩니다.
 
 ```js
 1_initial_migration.js
@@ -158,40 +158,40 @@ Summary
 > Final cost:          0.00383886 ETH
 ```
 
-> **_Note_** Remember your address, transaction_hash and other details provided would differ, Above is just to provide an idea of structure.
+> **참고** 주소, transaction_hash 및 제공된 기타 세부 정보는 다를 수 있다는 것을 기억해주세요. 위는 구조에 대한 이해를 위해 예시를 제공한 것입니다.
 
-🎉 **Congratulations!** You have successfully deployed BEP20 Smart Contract. Now you can interact with the Smart Contract.
+🎉 **축하합니다!** BEP20 스마트 컨트랙트를 성공적으로 배포했습니다. 이제 스마트 컨트랙트를 사용할 수 있습니다.
 
-You can check the deployment status here: <https://bscscan.com/> or <https://testnet.bscscan.com/>
+배포 상태는 여기에서 확인하세요: <https://bscscan.com/> 또는 <https://testnet.bscscan.com/>
 
 
-# Verify Your Contract on BscScan
+# BscScan에서 컨트랙트 확인하기
 
-The recommended way to verify a smart contract is using the plugin. It is easier to read and imports and licenses are maintained.
+스마트 컨트랙트를 확인하기 위해 권장되는 방법은 플러그인을 사용하는 것입니다. 읽는 것이 쉬우며, 임포트 및 라이선스가 유지됩니다.
 
-**Verified using Truffle**
+**Truffle로 확인**
 
-Example: <https://testnet.bscscan.com/token/0x68D2E27940CA48109Fa3DaD0D2C8B27E64a0c6cf>
+예시: <https://testnet.bscscan.com/token/0x68D2E27940CA48109Fa3DaD0D2C8B27E64a0c6cf>
 
 GitHub Project: <https://github.com/huangsuyu/verify-example>
 
-## BscScan plugin for Truffle
+## Truffle을 위한 BscScan 플러그인
 
-Truffle has a BscScan plugin: [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify)
+Truffle은 BscScan 플러그인을 가지고 있습니다: [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify)
 
-You need to deploy with Truffle to verify with the Truffle verify plugin.
+Truffle verify 플러그인을 사용하기 위해서는 Truffle로 배포를 해야 합니다.
 
-Get API key: https://bscscan.com/myapikey
+API 키 받기: https://bscscan.com/myapikey
 
-### Install the plugin
+### 플러그인 설치
 
 ```bash
 npm install -D truffle-plugin-verify
 ```
 
-### Configure the plugin 
+### 플러그인 설정
 
-Configure the plugin in `truffle-config.js` using the following command
+`truffle-config.js`에서 다음 명령어를 이용해 플러그인을 설정합니다.
 
 ```js
 const HDWalletProvider = require("@truffle/hdwallet-provider");
@@ -242,12 +242,12 @@ module.exports = {
 
 ```
 
-### Verification Command
+### 확인 명령어
 
 ```
 truffle run verify BEP20Token@{contract-address} --network testnet
 ```
-You should see the following output:
+다음과 같은 결과값을 볼 수 있습니다:
 
 ```
 Verifying BEP20Token@0x68D2E27940CA48109Fa3DaD0D2C8B27E64a0c6cf

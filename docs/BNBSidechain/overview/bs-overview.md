@@ -1,41 +1,38 @@
 ---
-sidebar_label: Getting Started
+sidebar_label: 시작하기
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Getting Started with BNB Sidechain
+# BNB 사이드 체인 시작하기
 
-## Why is BNB Sidechain introduced?
-To overcome network scalability problems of BSC in 2021, the BSC community has proposed the use of BNB Sidechain in their [Outlook 2022](https://www.bnbchain.world/en/blog/bsc-2022-build-and-build/) paper. These sidechains can be designed for much higher throughput and lower (even zero) gas fees. We want to define a protocol for consensus management and messaging between BNB Sidechain and BSC so that it is easier for developers to use a ready-made solution and it is easier for BSC to integrate with them. Briefly speaking, the typical usage of BNB Sidechain is like that of the Ronin chain for the Axie Infinity on Ethereum. However, unlike Ronin, BNB Sidechain is designed with better architecture and security in mind. The idea of BNB Sidechain is to allow you to expand and reuse existing modules, and by using the architecture on smart contracts, painlessly modify existing contracts. 
+## 왜 BNB 사이드 체인이 소개되었나요?
+2021년 BSC의 네트워크 확장성 문제를 해결하기 위해 BSC 커뮤니티에서 BNB 사이드 체인을 활용한다는 [2022 예상](https://www.bnbchain.world/en/blog/bsc-2022-build-and-build/)에서 발표하였습니다. 다음 사이드체인은 높은 처리량과 적은 가스비(어떨 땐 0)로 사용할 수 있도록 설계되었습니다. BNB 사이드 체인은 합의 관리와 BSC와 BNB 사이드 체인 간 메시징을 지원하여 개발자가 준비된 솔루션을 활용하고 BSC와 더 쉽게 통합할 수 있는 프로토콜을 만들었습니다. BNB 사이드 체인의 대표적인 사용법은 엑시 인피니티의 로닌 체인 같이 활용할 수 있습니다. 다만 BNB 사이드 체인은 로닌보다 더 나은 구조 및 보안성을 갖고 설계되었습니다. The idea of BNB 사이드 체인은 현존하는 모듈을 확장 및 재사용 할 수 있으며, 스마트 컨트랙트의 구조를 활용하여 현존하는 컨트랙트를 쉽게 개선할 수 있습니다. 
 
-## What is BNB Sidechain?
-BNB Sidechain is a framework for creating sidechains in the BSC (BNB Smart Chain) ecosystem. It is an infrastructure to help developers and node operators build and run their custom blockchains as their internal value system and for a massive number of users while still maintaining a close connection with the BSC. 
-The main task of BNB Sidechain is to facilitate any project developer to be able to deploy their blockchains with their unique specifications and validator set but still be connected to the BSC infrastructure. The validator set can run with fewer validators than BNB Chain, depending on the BNB Sidechain deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BNB Sidechain.
-We can rightfully claim that BNB Sidechain is a lightweight framework on which one can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality of the BNB Chain (BSC). 
+## BNB 사이드 체인은 무엇인가요?
+BNB 사이드 체인은 BSC(BNB Smart Chain) 생태계에서 사이드 체인을 만드는 프레임워크입니다. 해당 인프라를 통해 개발자 및 노드 운영자는 BSC와 연결되면서도 많은 사용자들을 수용할 수 있는 자체 블록체인을 제작하고 운영할 수 있습니다. BNB 사이드 체인의 주요 과제는 프로젝트 개발자들이 자체 세부 사항과 검증인 집단을 갖도록 도우면서 여전히 BSC 인프라와 연결되도록 하는 것입니다. 
+검증인 집단은 사이드 체인 개발자의 판단 하에 BNB 체인보다 적은 검증인을 통해 운영될 수 있습니다.검증인은 어플리케이션 사용자나 커뮤니티 이해 관계자를 통해 운영될 수 있어서 BNB 사이드 체인의 유연화와 분산화를 돕습니다. BNB 사이드 체인 개발자가 간단하면서 잘 작동하는 블록체인을 만들 수 있는 가벼운 프레임워크라고 볼 수 있습니다. 개발자와 팀은 자신들의 비즈니스 규칙과 경제를 반영한 블록체인을 간단하게 만들 수 있습니다. 특히, 이미 BNB 체인(BSC)에 있던 기능을 확장해서 사용할 수 있습니다. 
 
-## Architecture
-BNB Sidechain is a modular framework for creating BSC-compatible sidechains. 
-It defines requirements for integration with the BSC ecosystem and brings development-ready EVM-compatible features like staking, RPC-API, and smart contracts. Since BSC doesn’t rely on the BNB Sidechain security model, there is no default embedded production-ready bridge solution between the BSC and BNB Sidechain networks. Instead, BNB Sidechain can provide protocols and standards for integrating third-party bridges like Celer Network’s cBridge or Multichain.
+## 구조
+BNB 사이드 체인은 BSC 호환 사이드 체인을 만드는 모듈러 프레임워크입니다. BSC 생태계와 통합을 위한 요구 사항을 정의하고 EVM 호환되는 개발 준비된 스테이킹, RPC-API, 스마트 기능 계약 등이 준비됩니다. BSC는 BNB 사이드 체인 보안 모델에 의존하지 않으므로, BSC와 BNB 사이드 체인 네트워크 간 내장된 기본 브릿지 솔루션은 없습니다.대신 BNB 사이드 체인은 Celer 네트워크의 cBridge나 Multichain 같은 서드 파티 브릿지와 통합할 수 있는 프로토콜 및 기준을 제공합니다.
 
-Technically, BNB Sidechain is a set of smart contracts that can be written in any compatible programming language. The contract executor itself can be anyone and work in any way; BNB Sidechain does not require the use of any specific set of programming languages or API standards. 
-In essence, BNB Sidechain defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BSC infrastructure. With this integration, developers automatically get access to useful products as a ready-made solution such as staking system, block explorer, RPC gateways, interfaces for governance, cross-chain bridges, etc. 
-The current implementation of BNB Sidechain is based on a modified version of BSC, but this is not the rule, BNB Sidechain can technically run on top of any blockchain. In the future, the list of templates will be extended. 
+엄밀히 말하자면, BNB 사이드 체인은 호환되는 모든 언어로 작성할 수 있는 스마트 컨트랙트에 집합입니다. 컨트랙트 실행자는 누구나 될 수 있고 어떤 방식으로든 작동시킬 수 있습니다; BNB 사이드 체인은 특정 프로그래밍 언어나 API 표준을 사용할 필요가 없습니다. BNB 사이드 체인은 특수 형식을 통해 기초 구조와 블록체인 설정을 정의합니다. 형식은 이미 BSC 인프라에서 제작되고 통합된 블록체인 솔루션을 사용합니다. 해당 통합을 통해 개발자들은 자동으로 스테이킹 시스템, 블록 탐색기, RPC 게이트웨이, 인터페이스, 거버넌스, 크로스 체인 브릿지 등의 이미 제작된 유용한 솔류션들을 활용할 수 있습니다. 현재 BNB 사이드 체인 구현은 BSC의 개선한 버전으로 구현되었는데, 이는 확정된 개발 방향이 아닙니다. BNB 사이드 체인은 어떤 블록체인 상에서도 작동할 수 있으며, 향후 형식이 더 추가될 것입니다.
 
-## Launch a BNB Sidechain
-If you want to set up your own testnet, follow the steps defined [here](https://www.ankr.com/docs/build-blockchain/bas/overview). Celer has also provided a testnet BNB Sidechain [bridge](https://test-bas-bridge.celer.network/#/transfer) for use with BNB Sidechain.
 
-If you want to leverage third party services, you can reach [NodeReal Support](https://nodereal.io/semita) or [Ankr](https://docs.ankr.com/blockchain-apis/getting-support) to get professional support there. 
+## BNB 사이드 체인 출시하기
+자체 테스트넷을 구축하고 싶으면 다음 [가이드](https://www.ankr.com/docs/build-blockchain/bas/overview)를 참고하세요. Celer는 테스트넷 BNB 사이드 체인 [브릿지](https://test-bas-bridge.celer.network/#/transfer)를 제공합니다.
 
-### Testnets
-There are two testnets where you can try BNB Sidechain. It already contains pre-deployed API gateways, block explorer, UI for the staking, and a faucet.
+서드 파티 서비스를 활용하는 경우, [NodeReal 지원](https://nodereal.io/semita)이나 [Ankr(앵커)](https://docs.ankr.com/blockchain-apis/getting-support)를 통해 전문가 지원을 받아보세요. 
 
-* Ankr BNB Sidechain Testnet: [Ankr documentation](https://docs.ankr.com/bnb-application-sidechain/demo).
+### 테스트넷
+BNB 사이드 체인을 사용할 수 있는 두 개의 테스트넷이 존재합니다. 테스트넷에는 It already contains pre-deployed API 게이트웨이, 블록 탐색기, 스테이킹 UI, 토큰 공급 faucet이 이미 구현되어 있습니다.
 
-* NodeReal Aries Testnet: 
-  * NodeReal Testnet blog: <https://blog.nodereal.io/en/build-your-gamefi-on-bas-aries-testnet/>
-  * Documentation: <https://docs.nodereal.io/nodereal/bas/build-on-bas>.
+* Ankr(앵커) BNB 사이드 체인 테스트넷: [Ankr 문서](https://docs.ankr.com/bnb-application-sidechain/demo).
+
+* NodeReal Aries 테스트넷: 
+  * 노드리얼 테스트넷 블로그: <https://blog.nodereal.io/en/build-your-gamefi-on-bas-aries-testnet/>
+  * 문서: <https://docs.nodereal.io/nodereal/bas/build-on-bas>.
 
 ## FAQ
-For more questions, refer to the [FAQs](../faqs-bas.md) section.
+추가 문의 사항은 [FAQ](../faqs-bas.md)를 참고하세요.
 

@@ -1,34 +1,34 @@
 ---
-sidebar_label: Using Remix IDE
+sidebar_label: Remix IDE 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Using Remix IDE for Deploying Smart Contracts on BSC
+# BSC에서 스마트 컨트랙트 배포를 위해 Remix IDE를 사용하기
 
-In this tutorial, we provide guidelines on how to create, compile, and deploy a simple Hello World smart contract on BSC using the [Remix IDE](https://remix.ethereum.org/).
+이 튜토리얼에서는 [Remix IDE](https://remix.ethereum.org/)를 사용하여 BSC에서 간단한 Hello World 스마트 컨트랙트를 작성, 컴파일 및 배포하는 방법에 대한 가이드를 제공합니다.
 
-### Pre-requisites
-There is no need for any local environment settings for deploying solidity smart contracts on BSC using the Remix IDE.
+### 요구사항
+Remix IDE를 사용하여 BSC에 솔리디티 스마트 컨트랙트를 배포하는 데에는 로컬 환경 설정이 필요하지 않습니다.
  
-All you require is a browser-based Web3 wallet (e.g. MetaMask) to interact with the BSC Testnet and deployed contracts. If you are already using MetaMask, it is recommended to create a new account for testing with Replit. You can do this from the account menu, which appears when you click on the account avatar in the top right corner of MetaMask interface.
+BSC 테스트넷 및 배포된 컨트랙트와 상호 작용하는 브라우저 기반 웹3 지갑(예: 메타마스크)만 있으면 됩니다. 이미 메타마스크를 사용하는 경우 Replit을 사용하여 테스트할 새 계정을 만드는 것이 좋습니다. 메타마스크 인터페이스의 우측 상단 모서리에 있는 계정 아바타를 클릭하면 나타나는 계정 메뉴에서 이 작업을 수행할 수 있습니다.
  
-You must set up all of the following Pre-requisites to be able to deploy your solidity smart contract on BSC:
+BSC에 솔리디티 스마트 컨트랙트를 배포하려면 다음 모든 요구 사항이 필요합니다.
 
-* [Download Metamask wallet](https://metamask.io/)
-* [Configure BNB Smart Chain Testnet on Metamask](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
-* [Get BNB testnet tokens](https://testnet.binance.org/faucet-smart)
+* [메타마스크 지갑 다운로드](https://metamask.io/)
+* [메타마스크에서 BNB 스마트 체인 테스트넷 구성](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
+* [BNB 테스트넷 토큰 받기](https://testnet.binance.org/faucet-smart)
  
-### Setting Up Remix IDE
+### 리믹스 IDE 설정하기
 
-- Remix is an online IDE to develop smart contracts.
-- You need to choose Solidity Compiler, Choose the appropriate compiler version. We used 0.8.15 for this tutorial.
+- Remix는 스마트 컨트랙트를 개발하기 위한 온라인 IDE입니다.
+- Solidity 컴파일러를 선택하고, 적절한 컴파일러 버전을 선택해야 합니다. 이 튜토리얼은 0.8.15를 사용했습니다.
 
 <img src="https://user-images.githubusercontent.com/93580180/182832884-f3554c38-84aa-46f0-85e6-32b54e24eba6.png"/>
 
-## Writing the Smart Contract
+## 스마트 컨트랙트 작성하기
 
-- Create a new file, name it ```HelloWorld.sol```, and copy the contract code given below
+- 새 파일을 생성하고 ```HelloWorld.sol```라고 파일명을 설정합니다. 아래의 컨트랙트 코드를 복사합니다.
 
 ```
 // SPDX-License-Identifier: MIT
@@ -40,101 +40,101 @@ contract HelloWorld {
 }
 ```
 
-The first line, `pragma solidity ^0.8.15` specifies that the source code is for a Solidity version greater than 0.8.15. [Pragmas](https://solidity.readthedocs.io/en/latest/layout-of-source-files.html#pragma) are common instructions for compilers about how to treat the source code (e.g., pragma once).
+첫 번째 줄의 `pragma solidity ^0.8.15`는 소스코드가 솔리디티 버전 0.8.15 이상을 위한 것임을 나타냅니다. [Pragmas](https://solidity.readthedocs.io/en/latest/layout-of-source-files.html#pragma)는 소스모드를 어떻게 처리해야 하는지에 대한 일반적 지침들입니다 (e.g., pragma once).
 
-A contract in the sense of Solidity is a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain. Learn more about the [constructor](https://solidity.readthedocs.io/en/latest/contracts.html#constructor) and  [memory](https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#storage-memory-and-the-stack) in the docs.
+솔리디티에서 컨트랙트는 이더리움 블록체인의 특정 주소에 존재하는 코드(함수들)와 데이터(상태)의 집합입니다. [constructor](https://solidity.readthedocs.io/en/latest/contracts.html#constructor)와 [memory](https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#storage-memory-and-the-stack)에 대한 자세한 내용은 각 문서를 참고하세요.
 
-## Compile Smart Contract
+## 스마트 컨트랙트 컴파일하기
 
-- Step1: Click button to switch to compile page.
+- 1단계: 버튼을 클릭하여 컴파일 페이지로 전환합니다.
 
-- Step2: Select the appropriate compiler version, 0.8.15 in our case.
+- 2단계: 적절한 컴파일러 버전을 선택합니다(여기에서는 0.8.15입니다).
 
-- Step3: Enable "Auto compile" and "Optimization" from Advanced Configurations,
+- 3단계: Advanced Configurations에서 "Auto compile" 및 "Optimization"를 활성화합니다.
 
-- Step4: Select "HelloWorld" from the contract drop-down menu.
+- 4단계: 컨트랙트 드롭다운 메뉴에서 "HelloWorld"를 선택합니다.
 
-- Step5: Click "ABI" to copy the contract ABI and save it.
+- 5단계: "ABI"를 클릭하여 컨트랙트 ABI를 복사하고 저장합니다.
 
 <img src="https://user-images.githubusercontent.com/93580180/182833004-bd530c91-adb4-4b8c-a87b-70139ef75e35.png" alt="img" style={{zoom:"80%"}}/>
 
-## Configure MetaMask and Fund Your Account
+## 메타마스크 설정하고 계정 충전하기
 
-Now, We have to deploy our smart contract on BNB Smart Chain Network. For that, we have to connect to Web3 world, this can be done by many services like MetaMask, Brave, Portis etc. We will be using MetaMask. Please follow this [tutorial to setup a Metamask Account](wallet/metamask.md) for configuring the MetaMask wallet to use with BSC.
+이제 BNB 스마트 체인 네트워크에 스마트 컨트랙트를 배포해야 합니다. 이를 위해 Web3 세계에 연결해야 합니다. 이것은 메타마스크, 브레이브, 포티스 등과 같은 서비스를 통해 가능합니다. 여기서는 메타마스크를 사용할 예정입니다. BSC에서 사용할 메타마스크 지갑을 구성하려면 [메타마스크 계정 설정 튜토리얼](wallet/metamask.md)을 따르십시오.
 
 
-- Open Metamask and select Custom RPC from the networks dropdown
+- 메타마스크를 열고 네트워크 드롭다운에서 Custom RPC를 선택합니다.
 
-- Go to setting page
+- 설정 페이지로 이동합니다.
 
 <img src="https://lh5.googleusercontent.com/NqWPIv1MrMJ-W2wDKjxtdxcdFhDwiqhsZ6G6MY6FQnhxPTCCPfPHBJ59vBl1ddxpbfV11ufETWAolV1s9YjCYHPeJCKW1S-sr8gfjcFt3swXM-p3IgafNBqPZ86DvThK-I9gKbrw" alt="img" style={{zoom:"80%"}}/>
 
-- Add a new network
+- 새로운 네트워크를 추가합니다.
 
 <img src="https://lh6.googleusercontent.com/jrq511YshO6rPPx4i-ePRy2gs-66b465c_JFXEW8Cm5CSNTM7CXgCPuFmIh_Im3JlEhxpAqEDDjmUqfskq2m5rG-FKhwZ4_jIenOTdAVs_rMMTjTvZlM6iOpQeivrz_V1liSvuB5" alt="img" style={{zoom:"30%"}}/>
 
-* Testnet
+* 테스트넷
     * [RPC URLs](./rpc.md)
     * ChainID: 97
     * Symbol: BNB
     * Block Explorer: https://testnet.bscscan.com
 
-* Mainnet
+* 메인넷
     * [RPC URLs](./rpc.md)
     * ChainID: 56
     * Symbol: BNB
     * Block Explorer: https://bscscan.com
 
-- Go ahead and click save
-- Copy your address from Metamask
+- Save를 클릭하여 저장합니다.
+- 메타마스크에서 주소를 복사합니다.
 
-- Head over to [Faucet](https://testnet.binance.org/faucet-smart) and request test BNB
+- [포셋](https://testnet.binance.org/faucet-smart)에서 테스트 BNB를 받습니다.
 
-## Deploy Smart Contract 
+## 스마트 컨트랙트 배포하기
 
-Follow the following steps to deploy the HelloWorld smart contract on the BNB Smart Chain Testnet. 
+다음 단계에 따라 BNB 스마트 체인 테스트넷에 HelloWorld 스마트 컨트랙트를 배포할 수 있습니다.
 
 <img src="https://user-images.githubusercontent.com/93580180/182833072-ca9cbd50-253e-400b-84c5-720e0ee6bb32.png" alt="img" style={{zoom:"80%"}}/>
 
-- Step1: Navigate to the Deployment Page.
-- Step2: Select Injected Provider in the Environment dropdown
-- Step3: Confirm the Connection Request on the MetaMask notification.
+- 1단계: 배포 페이지로 이동합니다.
+- 2단계: 환경 드롭다운에서 Injected Provider를 선택합니다.
+- 3단계: 메타마스크 알림에서 Connection Request를 확인합니다.
 
 <img src="https://user-images.githubusercontent.com/93580180/182833162-4aff06eb-9d20-41c0-a5b6-df996db41a1c.png" alt="img" style={{zoom:"80%"}}/>
 
-- Step4: Once Metamask is connected to Remix, click on the "Deploy" button which would generate another metamask popup that requires transaction confirmation.
+- 4단계: 메타마스크가 Remix에 연결되면 "Deploy" 버튼을 클릭합니다. 트랜잭션 확인을 요구하는 메타마스크 팝업이 생성됩니다.
 
 <img src="https://user-images.githubusercontent.com/93580180/182833376-8497b8c8-1edf-4f9f-a586-acfbe20ab696.png" alt="img" style={{zoom:"80%"}}/>
 
-**Congratulations!** You have successfully deployed a simple Smart Contract on the BSC Testnet. Now you can interact with the Smart Contract. Check the deployment status here: <https://testnet.bscscan.com/>
+**축하합니다!** BSC 테스트넷에 간단한 스마트 컨트랙트를 배포했습니다. 이제 스마트 컨트랙트를 사용할 수 있습니다. 배포 상태는 여기에서 확인하세요. < https://testnet.bscscan.com/>
 
-# Flatten and Verify the deployed contract on BscScan
+# BscScan에서 배포된 컨트랙트를 flatten하고 확인합니다.
 
-The first and foremost step is to flatten the solidity contract into a single file to be able to get it verified on [BscScan](https://testnet.bscscan.com/).
+가장 중요한 첫 번째 단계는 [BscScan](https://testnet.bscscan.com/)에서 확인할 수 있도록 솔리디티 컨트랙트를 단일 파일로 flatten하는 것입니다.
 
-### Flatten the Smart Contract Code
+### 스마트 컨트랙트 코드 flatten하기
 
-* Install [Truffle Flattener](https://github.com/nomiclabs/truffle-flattener) by running the command ```npm install truffle-flattener```
-* Flatten the contract by running the command in the ```npx truffle-flattener HelloWorld.sol > FlatHelloWorld.sol``` contracts directory
-* Clean up the licensing information.
-    * The flattened contract will have the same licensing note imported from each of the files. 
-    * Multiple licensing notes in one file break the BscScan verification, so you have to leave one licensing note for the entirety of the flattened contract. 
-    * The easiest way to clean up is to search for the SPDX mentions in the file and remove all of them except for the very first one.
+* ```npm install truffle-flattener``` 명령을 실행하여 [Truffle Flattener](https://github.com/nomiclabs/truffle-flattener)를 설치합니다.
+* ```npx truffle-flattener HelloWorld.sol > FlatHelloWorld.sol``` contracts 디렉토리에서 명령을 실행하여 컨트랙트를 flatten합니다.
+* 라이센스 정보를 정리합니다.
+    * flattened 계약에는 각 파일에서 가져온 동일한 라이센스 노트가 포함됩니다. 
+    * 한 파일에 여러 개의 라이센스 노트가 있으면 BscScan 검증이 중단되므로 전체 flattened 컨트랙트 대해 하나의 라이센스 노트를 남겨야 합니다. 
+    * 정리하는 가장 쉬운 방법은 파일에서 SPDX 언급을 검색하고 첫 번째 언급을 제외한 모든 언급을 제거하는 것입니다.
 
-### Using Flattened Code to Verify 
-At this point, you have your flattened and cleaned-up contract ready for the BscScan verification.
-* Go to [BscScan Testnet](https://testnet.bscscan.com/).
-* Find your deployed contract by searching it using its address.
-* On the main page of BscScan, on the header click **Misc > Verify Contract.**
-* In Compiler Type, select **Solidity (Single file)**.
-* In Compiler Version, select **v0.8.15**. This is the version this tutorial used to compile the contract.
-* In Open Source License Type, select **MIT License (MIT)**.
-* Click **Continue**.
-* Keep the **Optimization** option set to **No** as Remix does not use optimization by default.
-* Paste the entirety of your flattened .sol contract in the **Enter the Solidity Contract Code below** field.
-* Click **Verify and Publish**.
-* BscScan will take a few seconds to compile your contract, verify, and publish it.
+### Flattened 코드를 사용하여 확인하기
+이제 flattened되고 정리된 컨트랙트가 준비되어 BscScan 확인이 가능합니다.
+* [BscScan Testnet](https://testnet.bscscan.com/)으로 이동합니다.
+* 주소를 사용하여 배포된 컨트랙트를 검색하여 찾습니다.
+* BscScan의 메인 페이지 헤더에서 **Misc > Verify Contract**을 클릭합니다.
+* 컴파일러 타입에서 **Solidity** **(Single file)**를 선택합니다.
+* 컴파일러 버전에서 **v0.8.15**를 선택합니다. 이 튜토리얼에서 컴파일하는 데 사용한 버전입니다.
+* 오픈 소스 라이센스 유형에서 **MIT License** **(MIT)**를 선택합니다.
+* **Continue**를 클릭합니다.
+* Remix에서는 기본적으로 최적화를 사용하지 않으므로 **Optimization** 옵션을 **No**로 설정합니다.
+* Flattened .sol 컨트랙트 전체를 **Enter the Solidity Contract Code below** 필드에 붙여넣습니다.
+* **확인 및 게시**를 클릭합니다.
+* BscScan에서 컨트랙트를 컴파일, 확인, 게시하는 데 몇 초가 걸립니다.
 
 
-## Conclusion
-This tutorial guided you through the basics of creating and deploying a simple smart contract using the Remix IDE and MetaMask Web Wallet. It also provides step-by-step guide on how to verify and publish your deployed smart contract. This tutorial uses testnet, however, the exact same instructions and sequence will work on the mainnet as well.
+## 결론
+이 튜토리얼은 Remix IDE 및 메타마스크 웹 월렛을 사용하여 간단한 스마트 컨트랙트를 만들고 배포하는 기본 사항을 안내했습니다. 또한 배포된 스마트 컨트랙트를 확인하고 게시하는 방법에 대한 단계별 가이드도 제공하였습니다. 이 튜토리얼은 테스트넷을 사용하지만, 메인넷에서도 동일한 명령어와 순서가 작동합니다.

@@ -1,127 +1,107 @@
-# Join Mainnet
+# 메인넷 합류
 
-:::tip
-See the [node repo](https://github.com/bnb-chain/node) for information on the mainnet, 
-including the correct version of the binaries to use and details about the genesis file
-:::
+!!! 팁
+    [노드 바이너리 repo](https://github.com/bnb-chain/node-binary/blob/master/README.md) 를 통해 메인넷에 관한 정보와 호환되는 바이너리 버전 및 제네시스 파일 세부 사항을 확인하세요.
 
-:::note
-You need to install [bnbchaind](install.md) before you go further
-:::
+!!! 경고
+    다음 과정을 진행하려면 [bnbchaind](install.md)를 설치해야 합니다.
 
-## Minimum System Requirements
-The hardware must meet certain requirements to run a Full Node.
+## 최소 시스템 사양
+풀 노드를 실행하기 위해 하드웨어 최소 사양을 만족해야 합니다.
 
-* Desktop or laptop hardware running recent versions of Mac OS X, Windows, or Linux.
-* 2 TB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
-* 4 cores of CPU and 8 gigabytes of memory (RAM).
-* A broadband Internet connection with upload/download speeds of at least 1 megabyte per second.
+*  최신 맥 OS X, 윈도우, 리눅스 버전이 설치된 데스크탑이나 노트북.
+*  최소 읽기/쓰기 속도가 100 MB/s이며, 500GB의 빈 디스크 공간.
+*  4 코어 CPU 및 8GB 메모리(RAM).
+*  최소 1MB/s 속도를 지닌 광대역 인터넷 접속
 
-## Setting Up a New Node
+## 새 노드 설정
+> 설치 스크립트를 실행했다면 이 부분은 넘어가셔도 됩니다.
 
-### Sync From Snapshot (Recommended)
+### 스냅샷으로 동기화 (추천)
 
-1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
+1. 비컨 체인의 홈 폴더를 설정합니다 `$BNCHOME` (i.e. ~/.bnbchaind).
+다음을 통해 설정할 수 있습니다:
 
 ```
 mkdir ~/.bnbchaind
 mkdir ~/.bnbchaind/config
 ```
-2. Download `app.toml`, `config.toml` and `genesis.json` from `https://github.com/bnb-chain/node/releases` and copy them into `$BNCHOME/config`
+2. `https://github.com/bnb-chain/node/releases`에서 `app.toml`, `config.toml` 와 `genesis.json` 를 다운로드하고 `$BNCHOME/config`에 복사합니다.
 
-```
-wget   $(curl -s https://api.github.com/repos/bnb-chain/node/releases/latest |grep browser_ |grep mainnet_config |cut -d\" -f4)
-unzip mainnet_config.zip
-```
-
-You can edit this moniker later, in the ~/.bnbchaind/config/config.toml file:
+~/.gaiad/config/config.toml 파일에서 노드 이름을 변경할 수 있습니다:
 ```toml
-# A custom human readable name for this node
+# 사람이 읽을 수 있도록 노드 이름 설정
 moniker = "<your_custom_moniker>"
 ```
 
-:::note
-Monikers can contain only ASCII characters. Using Unicode characters will render your node unreachable. 
-:::
-
-Now your Full Node has been initialized.
+> 노드 이름은 ASCII 문자만 사용할 수 있습니다. 유니코드 문자를 사용하면 노드에 연결할 수 없게 됩니다. :::
 
 
-3. The `genesis.json` file will be downloaded along with the other config files in step #2.
+이제 풀 노드가 초기화되었습니다!
 
-:::tip 
-If you want to understand genesis file, click [here](../../learn/genesis.md)
-:::
+## 제네시스 및 시드
 
-4. Download snapshot
+### 제네시스 파일 다운로드
 
-Download latest data snapshot from [here](https://github.com/bnb-chain/bc-snapshots). 
-Follow the guide to structure your files, i.e., 
+3. 메인넷의 `genesis.json` 파일을 가져와 노드 바이너리의 config 디랙토리에 저장합니다.
+
+```
+cd -p $HOME/.bnbchaind/config
+wget https://raw.githubusercontent.com/bnb-chain/node-binary/master/fullnode/prod/0.6.3-hotfix/config/genesis.json
+```
+
+참고로 다운로드 시 최신 버전의 메인넷 및 제네시스 파일 정보를 지닌 가장 최신 노드 바이너리 repo를 사용합니다.
+
+::: 팁: 제네시스 파일에 대해 이해하고 싶으면, [다음](../../learn/genesis.md)을 클릭하세요. :::
+
+4. 스냅샷 다운로드
+
+[여기](https://github.com/bnb-chain/bc-snapshots)에서 최신 스냅샷을 다운로드합니다. 
+파일을 구성하기 위해 가이드를 따라주세요, i.e., 
 ```shell
 cp <uncompressed snapshot data> $BNCHOME/data
 ```
 
-
-5. Start your Full Node.
+5. 풀 노드를 시작합니다.
 
 ```shell
 bnbchaind start &
 ```
 
-:::note
-Alternatively, if you choose a different $BNCHOME location and you are not using the suggested default `~/.bnbchaind`, you may start the full node by using below script, where $BNCHOME is your selected directory. 
+:::참고
+대안으로 $BNCHOME 장소를 고르고 기본 `~/.bnbchaind`아닌 다른 곳에 저장한다면, $BNCHOME가 홈인 아래 스크립트와 같이 풀 노드를 시작할 수 있습니다.
 
-Example: If you set `/usr/local/beacon-chain` as your home directory. Run the Full Node with:
+예시: `/usr/local/beacon-chain`를 홈 디랙토리로 정하면. 다음과 같이 풀 노드를 운영합니다:
 
 ```shell
 bnbchaind start --home /usr/local/beacon-chain &
 ```
 :::
 
-If you encounter any issue when running a Full Node, you can read the FAQ list [here](fullnodeissue.md).
-
-### Sync From Genesis Block (Not Recommended)
-1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
-
-```
-mkdir ~/.bnbchaind
-mkdir ~/.bnbchaind/config
-```
-2. Download `app.toml`, `config.toml` and `genesis.json` from `https://github.com/bnb-chain/node/releases` and copy them into `$BNCHOME/config`
-
-```
-wget   $(curl -s https://api.github.com/repos/bnb-chain/node/releases/latest |grep browser_ |grep mainnet_config |cut -d\" -f4)
-unzip mainnet_config.zip
-```
+만일 풀 노드를 운영할 때 문제가 발생하면, [FAQ 리스트](fullnodeissue.md)를 참고해 주세요.
 
 
-3. The `genesis.json` file will be downloaded along with the other config files in step #2.
+### 시드 노드 추가
+풀 노드는 블록체인 네트워크의 피어를 찾는 방법을 알아야 합니다. 이를 위해 $HOME/.bnbchain/config/config.toml에 활성화된 시드 노드를 추가해야합니다. 추천된 `config.toml`에는 이미 일부 시드에 대한 링크를 포함하고 있습니다.
 
+만일 시드가 작동하지 않는다면, HTTP API 엔드포인트에서 더 많은 시드나 영구 피어들을 찾을 수 있습니다: https://dex.binance.org/api/v1/peers
 
-4. Start your Full Node.
+#### 추가 구성
+- 동기화 유형: 기본적으로 새 노드는 `state-sync` 모드로 동기화 됩니다. 동기화 모드를 변경하려면, [다음](./synctypes.md) 문서를 참고하세요.
+-로그: 로그 파일은 `bnbchaind` 생성 시 구체화 한 `home`아래 있습니다.
+  가장 최신 로그 파일은 `bnc.log`이며 새로운 로그 파일은 1시간마다 생성됩니다.
+  로그 파일을 저장하기 위한 충분한 디스크 공간을 확보하기 위해서는 로그 저장소를 `$BNCHOME/config/app.toml`의 `logFileRoot` 옵션에서 로그 위치를 변경하는 것이 좋습니다.
+- 서비스 포트: 기본적으로 RPC 서비스는 `27147` 포트를 수신하며 P2P 서비스는 `27146`포트를 수신합니다.
+  풀 노드를 실행하기 전에 두 포트가 열려 있는지 확인해야 합니다. 그렇지 않을 경우 풀 노드는 다른 포트를 통해 데이터를 수신해야 합니다.
+- 저장: 모든 상태와 블록 데이터는 `$BNCHOME/data`에 저장됩니다. 다음 파일들을 삭제하거나 편집하지 마세요.
 
-```shell
-bnbchaind start &
-```
+## 풀 노드에 관한 추가 정보
 
-### Additional Configuration
-- Seed nodes: Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/.bnbchain/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
-  If those seeds aren't working, you can find more seeds and persistent peers in HTTP API endpoints: https://dex.binance.org/api/v1/peers
-- Sync type: By default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](./synctypes.md)
-- Log: The log file is under `home`- the directory specified when starting `bnbchaind`.
-  The latest log file is `bnc.log`. The process will create a new log file every one hour.
-  To make sure you have sufficient disk space to keep the log files, we strongly recommend you to change the log location by changing `logFileRoot` option in `$BNCHOME/config/app.toml`.
-- Service Port: RPC service listens on port `27147` and P2P service listens on port `27146` by default.
-  Make sure these two ports are open before starting a full node, unless the full node has to listen on other ports.
-- Store: All the state and block data will store under `$BNCHOME/data`, do not delete or edit any of these files.
+풀 노드를 실행하고 있으면, 로컬 파일에 추가 메세지를 작성할 수 있습니다.
 
-## Get Extra Information From Your Fullnode
+##### 동기화 과정 조회
 
-If you have a Full Node running, then you can publish extra messages to local files.
-
-##### Monitor Syncing Process
-
-You can verify if state sync is done by `curl localhost:27147/status` several times and see whether `latest_block_height` is increasing in response.
+상태 동기화 진행 여부는 `curl localhost:27147/status`가 여러 번 진행될 때 `latest_block_height` 값이 함께 증가하는지 확인하면 됩니다.
 
 ```
 "sync_info": {
@@ -132,10 +112,10 @@ You can verify if state sync is done by `curl localhost:27147/status` several ti
 }
 ```
 
-## Prometheus Metrics
+## 프로메테우스 메트릭
 
-Prometheus is enabled on port `28660` by default, and the endpoint is `/metrics`.
+프로메테우스(Prometheus)는 기본적으로 포트 `28660`에 활성화 되어 있으며, 엔드포인트는 `/metrics`입니다.
 
-## Mainnet Tools
+## 메인넷 도구
 
-* [Explorer](https://explorer.binance.org/)
+* [탐색기](https://explorer.binance.org/)

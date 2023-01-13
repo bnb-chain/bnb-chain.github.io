@@ -1,26 +1,24 @@
 ---
-sidebar_label: Overview
+sidebar_label: 개요
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Overview
-Slashing is part of the on-chain governance, to ensure the malicious or negative behaviors are punished. BSC slash can be submitted by anyone. The transaction submission requires slash evidence and costs fees but also brings a larger reward when it is successful.
+# 개요
+슬래싱은 온체인 거버넌스의 일부로, 악용 및 해가 되는 행위를 처벌하는 역할을 합니다. BSC 슬래싱은 누구나 제출할 수 있습니다. 트랜잭션 제출은 슬래싱 증거가 필요하고 비용이 들지만 성공 시 더 큰 보상을 제공합니다.
 
-So far there are two slashable cases.
+현재 슬래싱에는 두 가지 경우가 존재합니다.
 
-## Double Sign
-It is quite a serious error and very likely deliberate offense when a validator signs more than one block with the same height and parent block. The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. When Double Sign happens, the validator should be removed from the Validator Set right away.
+## 이중 서명
+검증인이 같은 높이의 부모 블록에서 2개 이상의 블록을 서명하는 것은 상당히 심각한 에러이며 고의일 가능성이 높습니다. 레퍼런스 프로토콜에는 다음과 같은 문제를 방지하기 위한 로직이 존재하며, 악용하는 코드만 이를 발동할 수 있습니다. 이중 서명이 발생할 때, 검증인은 곧바로 제거됩니다.
 
-Anyone can submit a slash request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator. Upon receiving the evidence, if the BC verifies it to be valid:
+누구나 BC에 BSC에서의 이중 서명 증거를 제출하여 슬래시 요청을 할 수 있는데, 같은 높이와 부모 블록을 갖는 2개의 블록 헤더를 포함하고 악용하는 검증인에 의해 블록이 생성되어야 합니다.증거를 받으면 BC는 맞는지 검증합니다:
 
-The validator will be removed from validator set by an instance BSC validator set update Cross-Chain update;
-A predefined amount of BNB would be slashed from the self-delegated BNB of the validator; Both validator and its delegators will not receive the staking rewards.
-Part of the slashed BNB will be allocated to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction
-The rest of the slashed BNB will be allocated to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
+검증인은 BSC 검증인들이 크로스 체인 업데이트 시 검증인 집합에서 제거됩니다;
+미리 정의된 양의 예치된 BNB가 슬래싱됩니다; 검증인 및 위임인들은 스테이킹 보상을 얻을 수 없습니다.
+슬래싱된 BNB의 일부는 증거 제출자 주소로 배정됩니다. 이는 슬래싱 증거 트랜잭션을 제출하는 비용보다 큽니다.
+나머지 슬래싱 된 BNB는 다른 검증인들의 커스터디 주소 및 위임인들에게 블록 생성 리워드처럼 분배됩니다.
 
-## Inavailability
-The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn. Validators can miss their turn due to any reason, especially problems in their hardware, software, configuration or network. This instability of the operation will hurt the performance and introduce more indeterministic into the system.
-
-There can be an internal smart contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. In such a way, the poorly-operating validator should be gradually voted out of the validator set as their delegators will receive less or none reward. If the metrics remain above another higher level of threshold, the validator will be dropped from the rotation, and this will be propagated back to BC, then a predefined amount of BNB would be slashed from the self-delegated BNB of the validator. Both validators and delegators will not receive their staking rewards.
+## 이용 불가
+BSC 네트워크는 그들의 차례일 시 블록을 생성하는 권한지분증명에 참여하는 검증인 집합에 의존합니다. 검증인은 어떤 이유로 인해 해당 과정을 놓칠 수 있는데, 특히 하드웨어/소프트웨어/설정 혹은 네트워크 문제가 발생할 수 있습니다. 작동의 불안정성은 성능을 저하시키며 시스템의 불안정성을 야기할 수 있습니다.
 

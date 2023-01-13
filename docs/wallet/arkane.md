@@ -4,63 +4,61 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# How to create a BSC wallet in Arkane
+# 아케인(Arkane)에서 BSC 월렛 만들기
 
-If you are looking for a user-friendly BNB Smart Chain wallet, consider creating an Arkane wallet. It allows you to enable the recovery mechanism and comes with end-user support via their in-app chat, making sure you are never lost in the wonderful land of cryptocurrency.
+사용자 친화적인 BNB 스마트 체인 월렛을 찾고 있다면 아케인 월렛을 만들어보세요. 여러분들이 멋진 암호화폐의 세계에서 길을 잃지 않도록 복구 메커니즘을 사용할 수 있을 뿐 아니라, 인앱 챗을 통한 고객지원도 함께 제공합니다.
 
-## Key features
-- Cloud wallet, offers support Web and mobile
-- Register via social (Google, Facebook, Twitter)
-- In app crypto purchases
-- Support multiple blockchains
-- Build for a mainstream audience
-- In-app customer support 
+## 핵심 기능
+- 클라우드 월렛, 모바일과 웹 포함
+- 사회관계망을 통한 가입 (구글, 페이스북, 트위터)
+- 인앱 크립토 구매
+- 다양한 블록체인 지원
+- 메인스트림을 위한 설계
+- 인앱 고객지원 
 
-## Step 1. Sign up to Arkane
+## 1 단계: 아케인에 가입하기
 
-- Navigate to [https://arkane.network](https://arkane.network/?utm_source=binance&utm_medium=documentation) and click the 'YOUR WALLET'-button in the top right corner.
+- [https://arkane.network](https://arkane.network/?utm_source=binance&utm_medium=documentation)를 방문하여 우측 상단에 'YOUR WALLET'버튼을 누르세요.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/01.png?raw=true)
 
-- Click 'Create Account' if you are new to Arkane. You can sign up to Arkane with your social credentials or with email and password.
+- 아케인에 처음이라면 'Create Account'을 클릭하세요. 사회관계망 정보나 이메일과 비밀번호를 가지고 아케인에 가입할 수 있습니다.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/02.png?raw=true)
 
-- After signing up with one of your social accounts (fastest) or with your email address and password. You will need to accept the terms and conditions.
+- 사회관계망 계정 중 한 개로 가입(가장 빠른 방법)하거나 이메일과 비밀번호로 가입을 한 뒤, 이용약관에 동의해주세요.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/03.png?raw=true)
 
-- To secure your wallet you need to configure a PIN. You PIN should be between 4 and 6 digits. Your PIN will be used to approve future transactions.
+- 월렛을 안전하게 유지하려면 PIN을 설정해야 합니다. PIN은 4에서 6자리여야 합니다. PIN은 향후 트랜잭션 승인에 사용됩니다.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/04.png?raw=true)
 
-## Step 2. Create your wallet
-- Now that you've configured your PIN, you are ready to create a BNB Smart Chain wallet. Just select BNB Smart Chain from the list.
+## 2 단계: 월렛 생성하기
+- PIN을 설정했다면 BNB 스마트 체인 월렛을 생성할 수 있습니다. 목록에서 BNB 스마트 체인을 선택해주세요.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/05.png?raw=true)
 
-- To create a new wallet press *'Create new wallet'* 
+- 새 월렛을 생성하려면 *'Create new wallet'*을 선택해주세요.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/06.png?raw=true)
 
-- Once you've press the button, Arkane will ask you to confirm using your PIN (the one you configured a few steps before). After that your wallet will be created and you will be taken to your Dashboard.
+- 아케인에서 이전 단계에서 설정한 PIN을 이용해 확인을 요청할 것입니다. 그리고 나면 월렛이 생성되며, 여러분은 대시보드로 이동됩니다.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/07.png?raw=true)
 
-## 🥳 Congratulations! 
+## 🥳 축하합니다! 
 
-- You have now created your BNB Smart Chain wallet to manage your digital assets on the BNB Smart Chain blockchain. 
+- BNB 스마트 체인 블록체인에서 디지털 자산을 관리할 수 있는 BNB 스마트 체인 월렛을 성공적으로 생성했습니다.
 
-## Receive BNB and BEP20 tokens
+## BNB와 BEP20 토큰 수신하기
 
-- Every BSC wallet in Arkane is able to send and receive BNB or BEP20 tokens. They will automatically  appear in your wallet.
+- 아케인의 모든 BSC 월렛은 BNB나 BEP20 토큰을 주고 받을 수 있습니다. 여러분의 월렛에 자동적으로 나타납니다.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/09.png?raw=true)
 
-## Resources:
+## 리소스:
 * [BNB Smart Chain partners with Arkane](https://arkane.network/blog/binance-smart-chain-partners-with-arkane?utm_source=binance&utm_medium=documentation)
 * [Arkane Developer Introduction Video (25min)](https://www.youtube.com/watch?v=F5yFvIKHCPk)
 * [Use Arkane in your DApp](arkane-developer.md)
-
-
 

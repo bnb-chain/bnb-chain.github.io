@@ -1,164 +1,165 @@
 ---
-sidebar_label: Architecture
+sidebar_label: 아키텍처
 sidebar_position: 2
 ---
 
-# BNB Chain and Solana Architecture Differences 
+# BNB 체인과 솔라나 아키텍처 차이점 
 
-This document covers the architectural differences between BNB Chain and Solana blockchain, providing an overview to developers aiming to migrate their projects from Solana to BNB Chain ecosytem.
+이 문서는 BNB 체인과 솔라나 블록체인의 차이점에 대해 다루며, 개발자들에게 솔라나에서 BNB체인 생태계로 프로젝트를 이전하는 방법을 소개합니다.
 
-## Architectural and Technical Comparisons
+## 구조 및 기술 비교
 
-Ethereum is considered the pioneer of blockchain platforms offering developers the option of developing decentralized applications (dApps) through the use of smart contracts. However, with obstacles like high gas cost and scalability issues, several other blockchain platforms offering better features to users have emerged. Amongst the most popular Layer-1 blockchains are BNB Chain and Solana.
+ 이더리움은 개발자들이 스마트 컨트랙트를 통해 디앱(dApp)을 개발할 수 있는 블록체인 플랫폼의 선구자로 여겨졌습니다. 다만 높은 가스비와 확장성 문제로 인해 더 나은 기능을 제공하는 블록체인 플랫폼들이 등장하게 되었습니다. 다음 플랫폼들 중 가장 인기가 많은 레이어1 블록체인은 BNB 체인과 솔라나입니다. 
 
-BNB Chain has since garnered immense popularity and is now the largest smart contract-powered blockchain network as it provides users with speed, security, scalability, and innovative features. BNB Chain comprises two parts, the Beacon Chain (BC) and the BNB Smart Chain (BSC). BSC offers dApp development, is Ethereum Virtual Machine (EVM) compatible and uses the EVM for smart contract execution. This means that all of the tools and infrastructure compatible with the Ethereum network can also be used with the BSC network. Also, porting projects onto BSC from other EVM-based chains is possible.
+BNB 높은 속도, 보안, 확장성 및 혁신적인 기능을 제공하여 엄청난 인기를 얻게 되었으며는 현재 가장 큰 스마트 컨트랙트 기반 블록체인 네트워크 중 하나입니다. BSC는 디앱 개발을 지원하고, 이더리움 가상 머신(EVM)을 호환하며 EVM을 통해 스마트 컨트랙트를 실행합니다. 이는 모든 도구들과 인프라가 이더리움 네트워크와 호환되어 바이낸스 스마트 체인 네트워크에서 사용할 수 있음을 말합니다. 또한 다른 EVM 기반 체인에서 BSC로 프로젝트를 옮기는 것도 가능합니다.
 
-On the other hand, one of the most popular non-EVM-based blockchain networks is the Solana blockchain. By being non-EVM based, this means that Solana has its own set of token standards, dev tools, infrastructure, etc., for dApp development. This also means that the majority of the Ethereum-compliant tools and standards cannot be used on the Solana network. Solana initially gained good traction in the Web3 ecosystem, though it also faced incidents of non-availability, scalability, and security issues, leading some projects to consider other options available in the market such as BNB Chain.
+S반면 비 이더리움 기반 블록체인 네트워크 중 가장 인기가 많은 네트워크는 솔라나입니다. EVM 기반이 아니므로 솔라나는 디앱 개발을 위한 자체 토큰 표준, 개발 툴, 인프라 등이 존재합니다. 그 뜻은 대부분의 이더리움 기반의 도구들과 표준들이 솔라나에서 사용할 수 없다는 것을 뜻합니다. 솔라나는 비가용성, 확장성 및 보안 등의 문제를 겪긴 했지만, 시장에서 BNB체인을 대체할 수 있는 옵션으로 자리잡으며 Web3 생태계에서 상당한 견인력을 지니게 되었습니다. 
 
-In this article, we provide an overview of the architectural differences and other technicalities amongst the two blockchains BNB Chain and Solana. This will help developers understand any adaptations required if they need to migrate a project from Solana to BNB Chain.
+이 문서에서는 BNB 체인과 솔라나 간의 기술적 및 구조적 차이에 관한 소개할 예정입니다. 이를 통해 개발자들은 솔라나에서 BNB 체인으로 이전하기 위해 필요한 요건들을 알 수 있을 것입니다.
 
-## Overview
+## 개요
 
-In this section, we provide an introductory overview of both of the blockchain giants, namely, BNB Chain and Solana.
+이 부분에서는 BNB체인과 솔라나라는 두 거대 블록체인에 관해 간단히 소개할 것입니다. 
 
-### BNB Chain
+### BNB 체인
 
-The BNB Chain ecosystem comprises two blockchain giants, namely, Beacon Chain (BC) and the BNB Smart Chain (BSC). The Beacon Chain is responsible for the Governance of the BNB Chain (Staking, Voting). Whereas, the BNB Smart Chain (BSC) blockchain, founded in 2020, is EVM compatible and contains consensus layers and hubs to multi-chains. The BNB Token is the native cryptocurrency of the ecosystem that is used for both staking purposes as well as for payments of transactions over the network.
+BNB 체인은 두 개의 블록체인 거인인 비컨 체인(BC)과 BNB 스마트 체인으로 구성되어 있습니다. 비컨 체인은 BNB 체인의 거버넌스(스테이킹, 투표)를 담당하고 2020에 만들어진 BNB 체인은 EVM이 호환되고, 합의 레이어가 존재하며 멀티 체인을 지원합니다. BNB 토큰은 스테이킹 및 네트워크 상 트랜잭션 결제에 사용되는 생태계의 자체 암호화폐입니다. 
 
-BSC runs parallel to the Beacon Chain and is the EVM-compatible component of the BNBChain ecosystem, and offers smart contract functionality for creating dApps and other blockchain-based products. BSC gained real popularity in early 2021 because of its lower gas fees and faster finality as compared to Ethereum's high gas fees and scalability problems. BSC uses the Proof-of-Staked-Authority (PoSA) consensus algorithm i.e, it merges delegated Proof-of-Stake with Proof-of-Authority (PoA).
+BSC는 비컨 체인과 병렬적으로 운영되며 BNB 생태계에서 이더리움이 호환되는 컴포넌트입니다. 이를 통해 디앱 및 다른 블록체인 기반 제품들을 생성하기 위한 스마트 컨트랙트 기능을 지원합니다. BSC는 이더리움의 높은 가스비와 확장성 문제를 갖는 것에 비해 낮은 가스비와 빠른 완결성을 통해 2021 전반기에 실질적인 인기를 얻게 되었습니다. BSC는 지분증명(Proof-of-Stake) 및 권한증명(Proof-of-Authority)을 결합한 권한지분증명(PoSA) 합의 알고리즘을 사용합니다.
 
-### Solana
+### 솔라나
 
-Launched in 2017, like BSC, Solana is a Layer-1 blockchain platform with smart contract functionality for programmability purposes. The native cryptocurrency of Solana is SOL which, like BNB in BSC, is used for network validations and payment of fees. As compared to its main competitor, Ethereum, Solana has faster transaction times and lower costs. Solana attains consensus utilizing a Proof-of-Stake (PoS) mechanism, as well as a “Proof-of-History” (PoH) mechanism. Solana states that the merger of PoS and PoH improves scalability without deviating from decentralization and security.
+솔라나는 스마트 컨트랙트 및 프로그래밍 가능한 레이어1 블록체인으로 2017년에 출시되었습니다. BSC에서 BNB역할을 하는 자체 암호화폐인 SOL은 네트워크 검증 및 수수료 결제에 사용됩니다. 주 경쟁자인 이더리움과 달리 솔라나는 빠른 트랜잭션 처리 시간과 낮은 수수료를 지니고 있습니다. 솔라나는 지분 증명(PoS)뿐만 아니라 "역사 증명"(PoH) 메커니즘을 통해 합의를 달성합니다. 솔라나는 PoS와 PoH를 결합하여 탈중앙화와 보안을 훼손하지 않으면서 확장성을 개선하였다고 주장합니다.
 
-## Architecture Overview
+## 아키텍처 개요
 
-In this section, we provide a brief overview of the architecture of both BSC and the Solana blockchain network.
+이 부분에서는 BSC와 솔라나 블록체인의 구조에 관해 다룰 예정입니다.
 
-### BSC Architecture Overview
+### BSC 아키텍처 소개
 
-BNB Chain is an ecosystem comprising two major blockchains that serve different purposes, namely, Beacon Chain (BC) and BNB Smart Chain (BSC). To deal with the increased transactions and DAU, the BNB Chain ecosystem has evolved to add more scaling solutions and now comprises the following components with different responsibilities and purposes.
+BNB 체인은 비컨 체인(BC)과 BNB 스마트 체인(BSC)라는 서로 다른 목적을 가진 두 가지의 블록체인으로 구성된 생태계입니다. 증가한 일일활성사용자(DAU)와 트랜잭션을 처리하기 위해, BNB 체인 생태계는 스케일링 솔루션을 추가할 수 있도록 진화하였고 다음과 같은 다양한 목적을 지닌 컴포논트를 갖게 되었습니다.
 
-- [**BNB Beacon Chain**](https://docs.bnbchain.org/docs/learn/beaconIntro) - BNB Chain Governance (Staking, Voting)
-- [**BNB Smart Chain (BSC)**](https://docs.bnbchain.org/docs/learn/intro) - EVM compatible, consensus layers, and with hubs to multi-chains
-- [**BNB Sidechain**](https://docs.bnbchain.org/docs/BNBSidechain/overview/bs-overview) - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
-- **BNB ZkRolllup**- ZkRollup solution to scale BSC as a super high-performance blockchain.
+- [**BNB 비컨 체인**](https://docs.bnbchain.org/docs/learn/beaconIntro) - BNB 체인 거버넌스 (스테이킹, 투표)
+- [**BNB 스마트 체인 (BSC)**](https://docs.bnbchain.org/docs/learn/intro) - EVM 호환, 합의 레이어, 멀티 체인 허브
+- [**BNB 사이드 체인**](https://docs.bnbchain.org/docs/BNBSidechain/overview/bs-overview) -현존하는 BSC 기능을 사용 가능한 자체 블록체인 및 디앱을 개발 할 수 있는 PoS 솔루션
+- **BNB Zk롤업**- BSC를 스케일링 및 고성능 블록체인으로 만드는 Zk롤업 솔루션
 
 ![image](https://user-images.githubusercontent.com/93580180/201682988-ca74e288-bf3b-4b31-ab2b-5e748342ef4b.png)
 
-#### Design principles of BSC
+#### BSC 디자인 정의
 
-- **Standalone Blockchain**: even though BSC runs in parallel to the Beacon chain, technically, it is a standalone blockchain. Most of the fundamental technical and business functions of BSC are self-contained, and it can run well even if the BC is stopped.
-- **Ethereum Compatibility**: To take advantage of the relatively mature applications and community of Ethereum, BSC chooses to be compatible with the existing Ethereum mainnet. This means most of the Ethereum-based **dApps**, ecosystem components, and toolings work with BSC and require zero or minimum changes. Furthermore, BSC nodes require similar (or a bit higher) hardware specifications and skills to run and operate.
-- **Staking Involved Consensus and Governance**: Staking-based consensus is more environmentally friendly and leaves more flexible options for community governance. Expectedly, this consensus enables better network performance over[ proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) blockchain systems, i.e., faster blocking time and higher transaction capacity.
-- **Native Cross-Chain Communication**: both BC and BSC are implemented with native support for cross-chain communication among the two blockchains. The communication protocol is designed to be bi-directional, decentralized, and trustless. It concentrates on moving digital assets between BC and BSC, i.e.,[ BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) tokens, and eventually, any other BEP tokens introduced later.
+- **독립형 블록체인**: BSC가 비컨 체인과 함께 작동하긴 하지만 엄밀히 말하자면 독립형 블록체인입니다. -BSC의 가장 중요한 기술적 비즈니스적인 기능들은 내제화 되어 있어, 비컨 체인이 멈추더라도 정상적으로 작동합니다.
+- **이더리움 호환성**: 상대적으로 성숙한 어플리케이션들이나 커뮤니티를 가진 이더리움의 장점을 활용하기 위해, BSC는 현존하는 이더리움 메인넷과 호환할 수 있도록 설계하였습니다. 이는 대부분의 이더리움 기반 **디앱**들과, 생태계 컴포넌트, 도구등을 조금 혹은 아예 변경하지 않아도 사용할 수 있다는 것을 뜻합니다. 또한, BSC 노드들은 이더리움 노드들을 작동할 때 필요한 하드웨어 스펙 및 지식을 가지고 있으면 노드를 운영할 수 있습니다.
+- **스테이킹 관여된 합의 및 거버넌스**: 스테이킹 기반 합의는 환경 친화적이며 더욱 유연한 커뮤니티 거버넌스를 가능하게 합니다. 다음 합의 체계는 [작업 증명](https://en.wikipedia.org/wiki/Proof_of_work) 블록체인 시스템 보다 더 빠른 블록 시간과 트랜잭션 수용량을 통해 더 나은 네트워크 성능을 지원합니다.
+- **자체 크로스 체인 통신**: both BC와 BSC는 두 블록체인 간 자체 크로스 체인 통신을 지원합니다. 통신 프로토콜은 양방향이며, 탈중앙화 되었으며, 신뢰 없이 작동하도록 설계되었습니다. 이 기능은 BC와 BSC 간[BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md)나 향후에 지원할 다른 BEP 토큰 같은 디지털 자산을 옮기는데 집중하였습니다.
 
 ![image](https://user-images.githubusercontent.com/93580180/201683059-ef7983fa-6828-4c66-a87c-bf62ba4456b9.png)
 
-### Solana Architecture Overview
+### 솔라나 아키텍처 소개
 
 ![image](https://user-images.githubusercontent.com/93580180/201683132-8302d96b-57be-4722-ac81-90c655b125fd.png)
 
 [Image Source](https://www.immunebytes.com/blog/solanas-architecture-the-top-8-innovations-that-make-it-unique/)
 
-In order to create a decentralized and permissionless network, the Solana ecosystem comprises 8 key technologies:
+탈중앙화되고 권한 없는 네트워크를 만들기 위해 솔라나는 8가지 주요 기술로 이루어져 있습니다:
 
-- [**Proof of History (POH)**](https://medium.com/solana-labs/proof-of-history-a-clock-for-blockchain-cf47a61a9274?source=post_page---------------------------) — a clock before consensus;
-- [**Tower BFT**](https://medium.com/solana-labs/tower-bft-solanas-high-performance-implementation-of-pbft-464725911e79?source=post_page---------------------------) — a PoH-optimized version of PBFT;
-- [**Turbine**](https://medium.com/solana-labs/turbine-solanas-block-propagation-protocol-solves-the-scalability-trilemma-2ddba46a51db?source=post_page---------------------------) — a block propagation protocol;
-- [**Gulf Stream**](https://medium.com/solana-labs/gulf-stream-solanas-mempool-less-transaction-forwarding-protocol-d342e72186ad?source=post_page---------------------------) — Mempool-less transaction forwarding protocol;
-- [**Sealevel**](https://medium.com/solana-labs/sealevel-parallel-processing-thousands-of-smart-contracts-d814b378192) — Parallel smart contracts run-time;
-- **Pipelining** — a Transaction Processing Unit for validation optimization
-- [**Cloudbreak**](https://medium.com/solana-labs/cloudbreak-solanas-horizontally-scaled-state-architecture-9a86679dcbb1?source=post_page---------------------------) — Horizontally-Scaled Accounts Database; and
-- [**Archivers**](https://medium.com/solana-labs/announcing-the-solar-bridge-c90718a49fa2) — Distributed ledger storage
+- [**Proof of History (POH)**](https://medium.com/solana-labs/proof-of-history-a-clock-for-blockchain-cf47a61a9274?source=post_page---------------------------) — 합의 전 시계;
+- [**Tower BFT**](https://medium.com/solana-labs/tower-bft-solanas-high-performance-implementation-of-pbft-464725911e79?source=post_page---------------------------) — PoH-최적화된 PBFT;
+- [**Turbine**](https://medium.com/solana-labs/turbine-solanas-block-propagation-protocol-solves-the-scalability-trilemma-2ddba46a51db?source=post_page---------------------------) — 블록 전파 프로토콜;
+- [**Gulf Stream**](https://medium.com/solana-labs/gulf-stream-solanas-mempool-less-transaction-forwarding-protocol-d342e72186ad?source=post_page---------------------------) — Mempool 없는 트랜잭션 포워딩 프로토콜;
+- [**Sealevel**](https://medium.com/solana-labs/sealevel-parallel-processing-thousands-of-smart-contracts-d814b378192) — 평행 스마트 컨트랙트 런타임;
+- **Pipelining** — 최적화를 위한 트랜잭션 처리 유닛
+- [**Cloudbreak**](https://medium.com/solana-labs/cloudbreak-solanas-horizontally-scaled-state-architecture-9a86679dcbb1?source=post_page---------------------------) — 수평적으로 스케일된 계정 데이터베이스; 
+- [**Archivers**](https://medium.com/solana-labs/announcing-the-solar-bridge-c90718a49fa2) — 분산된 렛저 저장소
 
-## Architectural Differences
+## 구조적 차이점
 
-In this section, we discuss and compare the differences in the architecture and underlying working mechanisms of both BSC and the Solana network.
+이 부분에서는 BSC와 솔라나 네트워크의 구조와 작동 매커니즘에 대해 다룰 예정입니다.
 
-- **Relation to Ethereum:** Both BSC and Solana are Layer-1 standalone blockchains and do not rely on or have any dependency on the Ethereum blockchain network.
-- **EVM Compatibility:** BSC is designed to be completely EVM-compatible. Support for the EVM allows interoperability and portability between BSC and other EVM-compatible blockchains. Whereas, Solana is non-EVM compatible and is built on a tech stack that the team built from scratch, resulting in interoperability and portability issues.
-- **Consensus Algorithm:** In terms of consensus algorithms, both BSC and Solana rely on PoS merged with other energy-efficient mechanisms. Both of the consensus mechanisms employed by either of the blockchains are to overcome Ethereum’s high gas fees and slower transactions.
+- **이더리움과 연관성:** BSC와 솔라나 모두 레이어1 독립적 블록체인으로 이더리움 네트워크에 의존하진 않습니다.
+- **EVM 호환성:** BSC는 완진히 EVM에 호환되도록 설계되었으며, 이를 통해 BSC와 다른 EVM 호환 블록체인들 간의 상호 운용 및 이식이 가능합니다. 반면 솔라나는 EVM 호환 블록체인이 아니며 팀에서 자체적으로 설계하여 EVM 관련 체인들과 호환이나 이식이 어렵습니다.
+- **합의 알고리즘:** BSC와 솔라나의 합의 알고리즘은 다른 에너지 효율을 올려주는 매커니즘과 결합한 지분 증명 방식을 사용합니다. 이를 통해 이더리움의 높은 가스비와 느린 트랜잭션을 극복했습니다. 
 
-  - **BSC:** the BSC network uses a merger of delegated PoS and Proof-of-Authority (PoA) termed the Proof-of-Staked-Authority (PoSA). Utilizing the PoSA consensus mechanism, BSC was initially launched with 21 validators. However, now BSC supports 26 active validators, with plans to increase it to 41 in the near future. The top validator candidates with the most bonded stakes are chosen to be part of the subset of active validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+  - **BSC:** BSC 네트워크는 위임된 PoS와 권한 증명(PoA)을 합쳐서 권한지분증명(PoSA) 구조를 지닙니다. 권한지분증명을 사용한 BSC는 처음에 21개의 검증인 두고 출범하였습니다. 현재 BSC는 26개의 활성화된 검증인을 두고 있으며, 근시일 내 41개로 늘릴 계획입니다. 스테이킹 된 토큰이 가장 많은 상위 검증인 후보는 활성화된 검증인의 하위 집합의 일부로 선정되어 블록을 생성합니다. 그 외 이중 서명 감지 및 다른 슬래싱 방식을 통해 보안, 안정성, 및 체인 완결성을 보장합니다. 
 
-  - **Solana:** uses a combination of Proof-of-Stake (PoS) and Proof-of-History (PoH). Solana's PoS-based consensus mechanism termed Tower BFT leverages the network's PoH mechanism as a clock before consensus to reduce communication overhead and latency. PoH is a method of incorporating time itself into the blockchain.
-  Every time a validator votes on a particular fork, voting is restricted to a fixed period of hashes known as the “slot”. Currently, one slot aims to have a duration of approximately 400 milliseconds (ms), i.e., 0.4 seconds. In reality, the block size varies between 800ms up to 2 seconds. During the block creation time, the network has a potential rollback point, but every subsequent vote doubles the amount of time that the network would have to stall before it can unroll that vote. In short, secondary votes make it much harder to undo the transactions executed in a particular slot. Therefore, a block with several votes has a greater chance of remaining a part of the chain permanently.
-  As new blocks are added to the ledger, old blocks are increasingly likely to be confirmed because the number of slots old votes are committed to doubles every slot. Tower BTF offers finality once two-thirds of network validators have voted on some order of events. Once transactions are finalized, they can't be rolled back.
+  - **솔라나:** 
+   지분 증명(PoS)와 역사 증명(PoH)을 결합한 구조를 지닙니다. 솔라나에서 PoS 기반 합의 매커니즘인 타워 BFT는 합의 전에 PoH 매커니즘을 시계로 사용하여 통신 오버헤드 및 대기 시간을 줄입니다. 검증인이 특정 포크에서 투표할 때마다 "슬롯"이라는 정해진 기간에 해시 동안으로만 투표가 제한됩니다. 현재, 하나의 슬롯은 약 400ms(0.4초) 정도입니다. 현실에서 블록 사이즈는 800ms부터 2초까지 다양하게 나타납니다. 블록 생성 시간 동안, 네트워크는 잠재적인 롤백 포인트를 가지지만, 모든 후속 투표는 네트워크가 해당 투표를 롤백하기 전에 정지해야 하는 시간을 두 배로 늘립니다. 다시 말해, 2차 투표는 특정 슬롯에서 실행된 트랜잭션을 취소하기 어렵도록 만듭니다. 따라서 여러 투표가 있는 블록들은 체인 패널티로 남게 될 확률이 높습니다. 블록이 렛저에 더해질 때마다, 이전 블록들은 이전 투표들의 슬롯들이 모든 슬롯 당 2배씩 증가하기 때문에 검증될 확률이 높아집니다. 타워 BTF는 2/3 이상의 네트워크 검증자가 이벤트 순서에 따라 투표하면 완결성을 제공합니다. 트랜잭션이 완료된 후에는 되돌릴 수 없습니다.
 
-- **Validators:**
-  Using the PoSA algorithm, BSC supports a set of up to 41 active validators today (. The top validator candidates with the most bonded stakes are chosen to be part of the subset of active validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+- **검증인:**
+   PoSA 알고리즘을 사용하여, BSC는 41 활성화 노드들에 대한 검증인 집합을 제공합니다. 본딩된 스테이킹이 가장 많이 된 상위 검증인 후보는 활성화 노드의 하위 집합으로 선정되어 블록을 생성합니다. 이중 서명 감지 및 다른 슬래싱 알고리즘은 보안, 안정성 및 체인 완결성을 보장합니다.
 
-  The Solana mainnet operates in a delegated-Proof-of-Stake (dPoS) fashion. SOL holders can participate in the block production process and earn rewards by either becoming a validator through staking SOLs or by delegating their tokens. Any individual can become a validator on the network and contribute to the overall security of the protocol. There is no minimum staking requirement, although the leader selection process (which validator gets to propose the next block) is stake-weighted.
+  솔라나 메인넷은 위임 지분 증명(dPos)  형태로 작동합니다. 솔라나 보유자들은 블록 생성 과정에 참여하고 SOL을 스태이킹하거나 위임하여 검증 과정에 참여할 수 있습니다. 어느 개인도 네트워크 상의 검증인이 되고 전반적인 프로토콜의 보안에 기여할 수 있습니다. 최소 스테이킹 개수는 정해져 있지 않지만, 리더를 결정하는 과정(다음 블록을 발행할 예정을 결정)은 스테이킹 개수 기반으로 진행합니다.
 
-- **Scalability and Block Time:** BSC offers several different features, such as BNB Sidechains, ZkRolls, etc., to overcome any scalability issues commonly faced by blockchain networks. The average block time of BSC is approximately 3 seconds even during periods with the highest congestion. Solana, on the other hand, offers an average block time of 0.610 seconds and allows 700 transactions per second. Nevertheless, this block time has faced consistency issues, and you are likely to face several slower block times. Notably, Solana has suffered several outages this year.
+- **확장성 및 블록 시간:** BSC는 많은 블록체인들이 겪는 다양한 문제를 해결하기 위해 BNB 사이드 체인이나 Zk롤업 등을 지원합니다. BSC의 일반적인 블록 타입은 아무리 네트워크가 포화되도 3초입니다. 반면 솔라나는 평균적으로 블록 처리를 0.6초에 진행하며, 1초당 700 트랜젝션을 제공합니다. 그럼에도 해당 블록 시간은 일관성 문제를 겪어왔으며 더 느린 처리 속도를 겪을 확률이 높습니다. 주목할 만한 것은 올해 솔라나는 몇 번의 네트워크 중단 문제를 겪었습니다.
 
-- **Transaction Speed and Fees:** Theoretically, Solana claims to have the power of processing over 60,000 TPS without relying on scaling solutions. However, this figure is hugely inflated when compared to other blockchains’ TPS figures. Solana’s TPS is measured by Block Explorers can be misleading — it counts internal consensus messages as transactions, which no other blockchain does. Roughly[ 80% of Solana’s throughput](https://dune.xyz/queries/396417/756581) is consensus messages.
+- **트랜잭션 속도 및 수수료:** 이론적으로 솔라나는 스케일링 솔루션 없이 60,000TPS를 처리할 수 있다고 주장합니다. 하지만 다른 블록체인 TPS에 비해 크게 부풀려졌습니다. 솔라나의 TPS는 블록 탐색기로 측정되는데, 다른 블록체인들과 달리 내부 합의 메세지도 트랜잭션으로 처리하기 때문에 오해할 수 있습니다. 대략 솔라나에서 처리되는 80%의 트랜잭션을 합의 메세지입니다.
 
-- **User Activity:** based on user activity, BSC is the largest network with an all-time high daily active users (DAU) of 2.2M on Dec 2021. At the time of writing, the current value of DAU of BNB Smart Chain is 1.2M with daily network usage of approximately 13% with an average of TPS and more than 3.6B transactions, along with a [TVL of 6.14B](https://defillama.com/chain/BSC). On the other hand, there is no way officially stated the DAU number for Solana. However, you can get an estimated value from [Dune Dashboard](https://dune.com/danning.sui/Solana-User-Base), at the time of writing, Solana has approximately 124K DAU with a[ 1,784 TPS](https://explorer.solana.com/) and [TVL of 584M](https://defillama.com/chain/Solana), making TVL 10 times lower than on BSC Remember that Solana counts its vote transactions for calculating TPS value. As per The Block, the 7-day average for non-vote transactions on Solana is 24.8M, which as compared to BSC is far less.
+- **사용자 활동:** BSC는 2021년 12월에 최대 220만명의 일일 활성 사용자를 달성한 가장 큰 블록체인 네트워크입니다. 이 글을 작성하는 기간에 BNB 스마트 체인의 일일 활성 사용자(DAU) 수는 120만명으로 일반 TPS 속도일 시 일일 평균 약 13%의 네트워크 사용량을 기록했으며 36억개의 트랜잭션이 전송되었고, [TVL이 61.4억 달러](https://defillama.com/chain/BSC)를 기록하였습니다. 반면 솔라나에서는 공식적으로 발표한 DAU가 존재하지 않습니다. 다만 [Dune 대시보드](https://dune.com/danning.sui/Solana-User-Base)를 통해 추정하면, 이 글을 작성 당시에 솔라는 12만 4천명의 DAU가 존재하고 [1,784 TPS](https://explorer.solana.com/) 및 [TVL은 5.84억 달러](https://defillama.com/chain/Solana)를 기록해 BSC의 1/10 정도의 크기를 보여주게 되었습니다. 참고로 솔라나는 투표 트랜잭션도 TPS를 계산하기 위해 사용됩니다. 솔라나에서 각 블록마다 7일 평균 투표가 아닌 트랜잭션의 경우에는 2480만개로 BSC에 비해 매우 적습니다.
   
-- **Reliability:** Throughout this year, Solana displayed several reliability issues and outages. The network has suffered up to 10 partial or complete outages in 2022 and some slow block times. Whereas, BSC, on the other hand, it has never faced slow block times due to uncontrolled outages. BSC has rolled out several breakthrough features to further strengthen its scalability and reliability.
+- **신뢰성:** 이번 한 해 동안, 솔라는 신뢰성 문제를 겪었습니다. 2022년에 네트워크는 10번의 일부 혹은 완전 정지되었고 블록 시간이 느려진 경우도 있었습니다. 반면 BSC는 제어할 수 없는 네트워크 정지로 인해 블록 시간이 느려진 적이 없습니다. BSC는 확장성과 신뢰성을 높이기 위한 솔루션들을 출시해 왔습니다.
 
-### Architectural differences that affect programmability
+### 프로그래밍에 영향을 미치는 구조적인 차이점
 
-Other than the underlying working mechanism like consensus and security, architectural differences affect the way dApps are programmed on either of the blockchain networks.
+합의 체계나 보안 같이 시스템 내부에서 작동하는 매커니즘 외에도, 구조적인 차이점으로 인해 두 블록체인 간 디앱을 프로그래밍하는 방법이 달라집니다. 
 
-In this section, we highlight some of these major differences that a web3 developer should be aware of when programming dApps on either of the blockchain networks.
+이 부분에서는 web3 개발자가 디앱을 프로그래밍할 때 인지해야 하는 차이점에 대해 소개할 예정입니다.
 
-  1. **Gas vs Rent:**
-    On EVM-based blockchains, one of the major resources of concern is the Gas fees paid for transactions over the network. Gas is referred to as the cost required for performing a transaction on the network. As BSC is EVM-based, it follows the Gas system for payment of transactions and rewards to the validators. The exact price of the gas is determined by supply, demand, and network capacity at the time of the transaction. The gas fee is calculated using Gas Limit \* Gas Price per Unit. As of writing, BSC has an average gas limit of [~119M](https://bscscan.com/chart/gaslimit), an average gas price of [6.9870Gwei](https://bscscan.com/chart/gasprice), and an average daily gas used of [4331M](https://bscscan.com/chart/gasused).
+  1. **가스(Gas) vs 렌드(Rent):**
+    EVM 기반 블록체인의 가장 큰 걱정 중 하나는 트랜잭션을 지불하는 가스비에 관한 것입니다. 가스는 네트워크 상에서 트랜잭션을 처리하기 위한 비용으로 주로 불립니다. BSC는 EVM 기반이므로 트랜잭션 결제 및 검증인에게 보상 지급하는 과정은 가스 시스템을 따릅니다. 정호가한 가스비는 수요, 공급 및 트랜잭션 당시 네트워크 용량에 의해 결정됩니다. 가스비는 ( 가스 제한 \* 유닛 당 가스 가격)라는 식에 의해 계산됩니다. 작성하는 현재 시점에서 BSC의 평균 가스 제한은 [~1.2억](https://bscscan.com/chart/gaslimit) 정도이며, 평균적인 가스 가격은 [6.9870Gwei](https://bscscan.com/chart/gasprice)이며 평균 일일 가스 사용량은 약 [43.31억](https://bscscan.com/chart/gasused)입니다.
     <br/>
-    On the other hand, Solana does not have a Gas system, rather it follows a rent model. Every account includes metadata that specifies the runtime access permissions of the data. It also includes metadata regarding the lifetime of the data held in the account. Lifetime is expressed by a number of fractional native tokens called lamports. Accounts are held in validator memory and pay "rent" to stay there. Each validator periodically scans all accounts and collects the rent. Any account whose balance drops to zero lamports or required rent amount gets removed from the network in a process known as Garbage Collection. One important aspect to remember is that rent is different from transaction fees. Rent is paid (or held in an Account) to keep data stored on the Solana blockchain. Whereas transaction fees are paid to process instructions on the network.
+    반면 솔라나는 가스 시스템 대신 렌트 모델을 채택했습니다. 모든 계정은 데이터의 런타입 접근 권한을 정의하는 메타데이터를 포함합니다. 거기에 계정의 보유한 데이터의 수명에 관한 메타데이터도 존재합니다. 수명은 소수점 단위의 네이티브 토큰인 램포트(lamports)에 의해 표현됩니다. 계정들은 검증인 메모리에 저장되고 계속 존재하기 위해 "렌트"를 지불합니다. 각 검증인은 주기적으로 모든 계정을 확인하며 랜트를 걷습니다. 랜트를 지불하기에 램포트 잔고가 부족하거나 0이 되면 가비지 컬랙션(Garbage Collection) 과정에 의해 제거됩니다. 한 가지 기억해야 할 점은 랜트는 트랜잭션 수수료와 다르다는 것입니다. 랜트는 솔라나 블록체인 상에 데이터를 저장하기 위해 지불(혹은 보유)됩니다. 반면 트랜잭션은 명령어를 실행하기 위해 지불합니다.
     <br/>
-    To prevent abuse of computational resources, each transaction on the Solana network is allocated a computing budget. The budget specifies the maximum number of computing units that a transaction can consume. Compute unit can be defined as the smallest unit of measure for the consumption of computational resources of the blockchain. The costs associated with different types of operations a transaction may perform and the operational bounds the transaction must adhere to are all specified by the compute budget. This budget is capped and leads to several issues for programmers who wish to develop more extensive features on the Solana network.
+     컴퓨터 자원 남용를 방지하기 위해, 솔라나 블록체인 상 각 트랜잭션에 컴퓨팅 예산이 배정됩니다. 예산은 트랜잭션이 소모할 수 있는 최대 계산 유닛을 정의합니다. 컴퓨팅 유닛은 블록체인의 컴퓨팅 리소스를 사용하는 최소 단위를 나타냅니다. 트랜잭션이 수행할 수 있는 다양한 유형의 작업과 트랜잭션이 준수해야 하는 운영 한계와 관련된 비용은 모두 컴퓨팅 예산에 의해 지정됩니다.해당 예산은 상한이 정해져 있어 솔라나에서 더 광범위한 기능을 개발하고 싶은 프로그래머들에게 문제가 됩니다.
 
-  2. **Storage**
+  2. **스토리지**
   
-     a. **Accounts**
-      EVM-based blockchains have two types of accounts - Externally Owned Accounts (EOA) and Contract Accounts. EOAs can store asset balances and are capable of sending and receiving transactions. Contract accounts form the basis for on-chain smart contracts. Along with storing the EVM code, every contract account also has an associated storage map that is used for reading and writing arbitrary data. The EVM provides instructions for each contract to read and write to its own storage, but it is impossible to read from other contracts’ storage.
+     a. **계정**
+      EVM 기반 블록체인에는 두 가지 종류의 계정이 있습니다 - 외부 보유 계정(EOA)와 컨트랙트 계정입니다. EOA는 잔고를 지니며 트랜잭션을 주고 받을 수 있습니다. 컨트랙트 계정은 온체인 스마트 컨트랙트의 기초를 형성합니다. EVM 코드를 저장할 뿐만 아니라 모든 컨트랙트 계정은 연관된 스토리지 맵을 통해 멀리 떨어진 데이트를 읽고 쓸 수 있게됩니다. EVM은 각 컨트랙트가 자신의 저장소에 읽고 쓸 수 있는 명령어를 제공하지만, 다른 컨트랜트 저장소의 내용은 읽을 수 없습니다.
 
-      Solana’s Sealevel (runtime component for smart-contract) also has two types of accounts: executable and non-executable accounts. Unlike the EVM, both of these accounts have the capability of storing data. Executable accounts are immutable in Sealevel and can either store their own executable byte code or a proxy address of an account that stores mutable executable byte code. Due to the immutable nature of the executable accounts, non-executable accounts are used for storing their application state.
+      Solana의 시베렐(Sealevel)에는 (스마트 컨트랙트의 런타임 컴포넌트) 실행 가능 및 실행 불가능 두 가지 종류의 계정이 존재합니다. EVM과 달리 두 계정 모두 데이터를 저장할 수 있습니다. 실행 가능한 계정은 시레벨에서 변경 불가능하며 자체 실행 가능한 바이트 코드나 변경 가능한 바이트 코드를 저장하는 프록시 계정을 저장합니다. 실행 가능한 계정의 불변성으로 인해, 실행 불가능한 계정들은 어플리케이션 상태를 저장하기 위해 사용됩니다. 
 
-      In the EVM, contracts can only read and write their own storage. On the other hand, in Sealevel, any account’s data can be read or written to by a contract. However, the runtime enforces that only an account’s “owner” is allowed to modify it. Changes by any other programs will be reverted and cause the transaction to fail.
+      EVM에서 컨트랙트는 자신의 저장소만 읽고 쓸 수 있습니다. 반면, 시레벨에서는(Sealevel) 컨트랙트에 의해 어떤 계정의 데이터이든 읽고 쓸 수 있습니다. 반면, 런타임은 계정의 소유자만이 이를 변형할 수 있도록 합니다. 다른 프로그램에 인한 변경된 내용은 되돌려지고 트랜잭션이 실패합니다.
 
-     b. **Contract Storage**
+     b. **컨트랙트 스토리지**
 
-      On the BSC blockchain, EVM is responsible for the execution of smart contracts. The contract state or memory is stored at the contract address. This storage resembles the array data structure of infinite length located at the contract’s address. The storage mechanism ensures no conflicts in storage locations and follows a set of rules. Using these rules, we can decode the state of any contract.
+      BSC 블록체인에서 EVM은 스마트 컨트랙트 실행을 담당합니다. 컨트랙트 상태나 메모리는 컨트랙트 주소에 저장됩니다. 이 컨트랙트 주소에 있는 저장소는 무한한 길이를 가진 배열과 유사합니다. 저장 매커니즘은 저장소 위치간 충돌이 없도록 하며 정해진 규칙에 의해 작동합니다. 해당 규칙을 통해 어떤 컨트랙트든 디코딩할 수 있습니다.
 
-      As compared to BSC, data storage and management are much more complex on Solana. There are different account categories used for data storage on Solana:
+       BSC와 비교해서 솔라나는 데이터 저장 및 관리가 더 복잡합니다. 솔라나에서는 데이터를 저장하기 위한 여러 유형의 계정이 존재합니다:
 
-      - **Program Accounts:** are accounts that store executable code, the equivalent to BSC’s smart contracts.
-      - **Storage Accounts:** are used for storing the data connected to programs (smart contracts).
-      - **Token Accounts:** are used for keeping track of an account balance of tokens and allow for transferring or receiving tokens between accounts.
+      - **프로그램 계정:** BSC의 스마트 컨트랙트처럼 실행 가능한 코드를 저장하는 계정입니다.
+      - **스토리지 계정:** 프로그램(스마트 컨트랙트)에 연결된 데이터를 저장합니다.
+      - **토큰 계정:** 어카운트 토큰 잔고를 모니터링하고 어카운트 간에 토큰을 전송할 수 있습니다.
 
-      In the Solana blockchain, smart contracts are referred to as programs. Unlike BSC, there is a separation between the program and the data/state of the program. Both are assigned separate accounts but are connected. In BSC, a smart contract and its data are both located in one location on the blockchain. If you were to make a program that counted the number of token transfers that a program made, you would need to create the program to make the transfers as well as another account to store the count of transfers.
+      솔라나 블록체인에서 스마트 컨트랙트는 프로그램과 같습니다. BSC와 달리 프로그램과 데이터/상태는 분리되어 있습니다. 이들은 개별 계정에 할당되지만 연결되어 있습니다. BSC에서는 스마트 컨트랙트와 데이터가 같은 곳에 위치하고 있습니다. 솔라나에서 프로그램이 토큰을 전송한 횟수를 측정하는 프로그램을 만든다면, 전송을 하는 프로그램과 전송한 횟수를 저장하는 계정을 각각 만들어야 합니다.
 
       ![image](https://user-images.githubusercontent.com/93580180/201683595-dc786a17-eebc-4d51-a51e-74988e2d0c91.png)
       
       [Image Source](https://solanacookbook.com/assets/account_example.5b70d95a.jpeg)
 
-  3. **EVM Contracts vs Solana PDA**
-     On BSC, smart contracts are EVM compatible. On EVM, smart contracts are stored on the contract accounts. A contract account is controlled by code executed by the EVM. Contract accounts have associated code and data storage, controlled by the code itself. The controlling behavior is defined in the smart contract stored in them. Creating a contract account has a cost due to network storage. A contract account can only send transactions in response to receiving a transaction. Transactions from an external account (user account) to a contract account can trigger code, which can execute many different actions.
+  3. **EVM 컨트랙트 vs 솔라나 PDA**
+     BSC에서 스마트 컨트랙트는 EVM이 호환됩니다. EVM에서는 스마트 컨트랙트는 컨트랙트 계정에 저장됩니다. 컨트랙트 계정은 EVM에서 실행되는 코드에 의해 제어됩니다. 컨트랙트 계정은 자체적으로 제어하는 관련 코드와 데이터 저장소가 존재합니다. 제어하는 방법은 저장된 스마트 컨트랙트에 의해서 결정됩니다. 컨트랙트 계정을 만드는 것은 네트워크의 저장 공간을 사용하는 것이기 때문에 비용이 발생합니다. 컨트랙트 계정은 트랜잭션을 받을 시 트랜잭션으로만 응답할 수 있습니다. 외부 계정(사용자 계정)에서 컨트랙트 계정으로의 트랜잭션은 코드를 실행하게 하여, 다양한 동작을 실행합니다.
      
-     On the Solana blockchain, Program Derived Accounts (PDA) are referred to as the account whose owner is a program and are designed to be controlled by a specific program. With PDAs, programs can programmatically sign for certain addresses without needing a private key. These serve as the foundation for Cross-Program Invocation through which Solana-based apps are composable with one another.
+      솔라나 블록체인에서는 프로그램이 계정을 소유하며 특정 프로그램에 의해 제어되는 프로그램 파생 계정(PDA)이 존재합니다. PDA를 통해 프로그램은 개인키 없이 특정 주소에 대해 프로그래밍 방식으로 서명할 수 있습니다. 이는 솔라나 기반 앱들이 서로 호환되며 크로스 프로그램 호출을 할 수 있는 기반이 됩니다.
 
-  4. **Smart Contract Life cycle**
-      On an EVM-based blockchain, like BSC, there are four phases involved in the life cycle of smart contracts.
+  4. **스마트 컨트랙트 생명 주기**
+      BSC같은 EVM 기반 블록체인에서는, 스마트 컨트랙트는 4단계에 주기를 거치게 됩니다.
 
-      - Creation of the smart contract
-      - Freezing of the smart contract
-      - Execution of the smart contract
-      - Finalization of the smart contract
+      - 스마트 컨트랙트 생성
+      - 스마트 컨트랙트 동결
+      - 스마트 컨트랙트 실행
+      - 스마트 컨트랙트 확정
 
-      On BSC, Smart contracts are usually written in a high-level language, like Solidity. However, in order to run, they are compiled to the low-level bytecode compatible to run on the EVM. Once compiled, the bytecode is deployed on the BSC platform using a special contract creation transaction. Each contract is identified by a BSC contract address, which is derived from the contract creation transaction as a function of the originating account and nonce. The address of a contract can be used in a transaction as the recipient, sending funds to the contract, or calling one of the contract’s functions.
+      BSC에서 스마트 컨트랙트는 주로 솔리디티 같은 하이 레벨 언어를 통해 작성됩니다. 다만 EVM에서 실행하기 위해서는 로우 레벨 바이트코드롤 컴파일되어야 합니다. 컴파일 된 후, 바이트 코드는 특수 컨트랙트 생성 트랜잭션을 통해 BSC 플랫폼에 배포됩니다. 각 컨트랙트는 컨트랙트 생성 트랜잭션을 생성한 어카운트와 논스값에 의한 BSC 컨트랙트 주소에 의해 구분됩니다. 각 컨트랙트는 BSC 컨트랙트 주소로 식별되는데, 이는 컨트랙트 생성 트랜잭션에서 원래 어카운트와 논스값의 함수로부터 파생되었습니다.
 
-      In the case of Solana, on-chain programs are compiled via the [LLVM compiler infrastructure](https://llvm.org/) to an [Executable and Linkable Format (ELF) ](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)containing a variation of the [Berkeley Packet Filter (BPF)](https://en.wikipedia.org/wiki/Berkeley_Packet_Filter) bytecode. Because Solana uses the LLVM compiler infrastructure, a program may be written in any programming language that can target the LLVM's BPF backend. Solana currently supports writing programs in Rust and C/C++. BPF provides an efficient [instruction set](https://github.com/iovisor/bpf-docs/blob/master/eBPF.md) that can be executed in an interpreted virtual machine or as efficient just-in-time compiled native instructions.
+      컨트랙트의 주소는 수신자로 사용되거나, 컨트랙트로 자금을 전송하거나, 컨트랙트의 함수를 호출할 때 사용될 수 있습니다.
 
-  5. **Interaction with Smart contracts**
+      솔라나의 경우, 온체인 프로그램은 [LLVM 컴파일러 인프라](https://llvm.org/) 에서 [Berkeley Packet Filter (BPF)](https://en.wikipedia.org/wiki/Berkeley_Packet_Filter) 바이트코드의 변형한 [Executable and Linkable Format (ELF)](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)를 통해 컴파일됩니다. 솔라나는 LLVM 컴파일러 인프라를 지원하기 때문에, LLVM BPF 백엔드를 지원하는 언어를 통해 프로그래밍 할 수 있습니다. 현재 솔라나는 Rust와 C/C++를 지원합니다. BPF는 해석된 가상 머신이나 효과적인 자체적으로 컴파일된 [네이티브 명령어 집합](https://github.com/iovisor/bpf-docs/blob/master/eBPF.md)으로 실행될 수 있는 효율적인 명령어 집합을 제공합니다.
 
-      a. **Solana execution model vs EVM model:** EVM follows a stack-based model for the execution of transactions and smart contracts. On the other hand, Solana offers a parallel execution model. Its Sealevel runtime is a concurrent transaction processor. Transactions specify their data dependencies upfront and dynamic memory allocation is explicit. By separating program code from the state it operates on, the runtime is able to perform concurrent access. Transactions accessing only read-only accounts are executed in parallel whereas transactions accessing writable accounts are serialized. The runtime interacts with the program through an entry point with a well-defined interface. The data stored in an account is an opaque type, an array of bytes. The program has full control over its contents.
+  5. **스마트 컨트랙트와 상호작용**
 
-## Conclusion
+      a. **솔라나 실행 모델 vs EVM 모델:** EVM은 트랜잭션 및 스마트 컨트랙트를 실행할 때 스택 기반 모델을 사용합니다. 반면, 솔라나는 병렬적인 실행 모델을 제공합니다. 솔라나의 시레벨(Sealevel) 런타임은 동시에 트랜잭션을 처리하는 프로세서입니다. 트랜잭션은 데이터 의존도를 미리 지정하고 명시적으로 동적 메모리를 할당합니다. 프로그램 코드와 작동하는 상태를 분리함에 따라 동시에 런타임을 처리할 수 있습니다. 읽기 전용 계정에만 접근하는 트랜잭션은 병렬로 실행되는 반면 쓰기 가능한 계정에 접근하는 트랜잭션은 직렬화됩니다. 런타임은 명확히 정의된 인터페이스의 엔트리 포인트를 통해 프로그램과 상호작용합니다. 계정에 저장된 데이터는 바이트 배열이라는 불투명한(opaque) 타입입니다. 계정에 저장되는 데이터는 프로그램은 컨텐츠에 대한 모든 권한을 갖고 있습니다.
 
-With a multitude of blockchain platforms available for development in the Web3 domain, BNB Chain has emerged amongst the top ranks. BNB Chain offers developers speed, security, efficiency, and low cost with ensured scalability. In this article, we have provided a detailed comparison of the architecture of the BNB Smart Chain and the Solana network. This article is aimed at giving readers understand the differences in the underlying architecture.
+## 결론
+
+Web3 분야에서 개발이 가능한 여러 블록체인 플랫폼이 나왔지만, BNB 체인은 그 중에서 최상위권 체인으로 도약하였습니다. BNB체인은 속도, 보안, 효율성, 낮은 비용과 확장성을 개발자들에게 제공합니다. 해당 문서에서는 BNB 스마트 체인과 솔라나 네트워크에 관한 차이점을 자세하게 다뤘습니다. 이 문서는 통해 독자들이 두 체인 간의 기본 구조의 차이점을 이해시키는 것을 목표로 합니다. 
 

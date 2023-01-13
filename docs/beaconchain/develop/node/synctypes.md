@@ -1,62 +1,62 @@
-#  Different Sync Types
+#  다양한 동기화 유형
 
-There are three ways for you to get synced with other peers in blockchain network and these methods can be used together.
+블록체인 네트워크에서 다른 피어와 동기화하기 위해 3가지 방법이 있으며, 함께 사용될 수 있습니다.
 
-- Fast Sync
-- State Sync
-- Hot Sync
+- 빠른 동기화
+- 상태 동기화
+- 핫 동기화
 
-## Fast Sync
+## 빠른 동기화 (Fast Sync)
 
-In fast sync, you need to download all the blocks from your peers and execute all the transactions in every block. The sync speed is about 20 blocks/sec, which is slower than state sync.
+빠른 동기화에서는 피어로부터 모든 블록을 다운로드 받은 후 모든 트랜잭션을 실행합니다. 동기화 속도는 약 1초에 20블럭이 처리되며, 상태 동기화보다 약간 느립니다. 
 
-Configuration is located in `$BNCHOME/config/config.toml`:
+설정(configuration)은 `$BNCHOME/config/config.toml`에 있습니다:
 
-- `fast_sync` Must be set to `true`
-- `state_sync_reactor` Can be set to `false` or `true`
-- `state_sync` Can be set to `false` or `true`
+- `fast_sync`는 `true`로 설정해야 합니다
+- `state_sync_reactor` 는 `true`나 `false`로 설정될 수 있습니다
+- `state_sync` 는 `true`나 `false`로 설정될 수 있습니다
 
-## State Sync
+## 상태 동기화 (State Sync)
 
-The default way to get newly joined Full Node syncing with other Full Node is `state sync`. Once your Full Node is synced to a snapshot, it will switch to `fast-sync` mode to catch up with its peers.
+`상태 동기화`는 새로운 풀 노드가 다른 풀 노드와 동기화하기 위한 기본적인 방법입니다. 풀 노드가 스냅샷에 동기화 된 후에는 `빠른 동기화` 모드로 변경되어 피어들을 따라잡습니다. 
 
-State sync can help fullnode in same status with other peers within short time (according to our test, a one month ~800M DB snapshot in Beacon Chain  testnet can be synced in around 45 minutes). As explained in [BEP18](https://github.com/bnb-chain/BEPs/blob/master/BEP18.md), State sync will get the application state of your full node to be up to date without downloading all of the blocks.The sync speed is faster than fast sync.
-Now you do not need to allocate more memories to your full node for this feature to work.
+상태 동기화를 통해 풀노드는 짧은 시간 안에 다른 피어들과 같은 상태로 동기화 할 수 있습니다. 테스트 결과 1달 동안 생성된 비컨 체인 테스트넷의 8억개의 DB 스냅샷은 45분 만에 동기화 될 수 있습니다. [BEP18](https://github.com/bnb-chain/BEPs/blob/master/BEP18.md)에 설명된 것처럼, 상태 동기화는 모든 블록을 다운로드 하지 않고 풀 노드의 어플리케이션 상태를 가져와서 최신 상태를 유지합니다. 동기화 속도는 빠른 동기화보다 속도가 빠릅니다.
+이제 이 기능이 작동하기 위해 풀 노드에 더 많은 메모리를 할당할 필요가 없어집니다.
 
-Configuration is located in `$BNCHOME/config/config.toml`:
+설정(configuration)은 `$BNCHOME/config/config.toml`에 있습니다:
 
-- `state_sync_reactor` Must be set to `true`
-- `recv_rate` Must set to `102428800`
-- `ping_interval` Recommendation is set to `10m30s`
-- `pong_timeout` Recommendation is set to `450s`
-- `state_sync_height` Recommendation is set to `0`, so it allows to state sync from the peers's latest height.
+- `state_sync_reactor`는 `true`로 설정해야 합니다
+- `recv_rate`는 `102428800`으로 설정해야 합니다
+- `ping_interval`는 `10m30s`로 설정하는 것을 권장합니다
+- `pong_timeout`는 `450s`로 설정하는 것을 권장합니다
+- `state_sync_height`는 상태 동기화가 피어의 최신 높이와 동기화 되기 위해 `0`으로 설정하는 것을 권장합니다.
 
-State sync can help you receive latest blocks/transactions and query latest status of orderbook, account balances etc.. But state sync **DOES NOT** download historical blocks before `state sync` height, if you start your node with state sync and it synced at height 10000, then your local database would only have blocks after height 10000.
+상태 동기화는 최신 블록 및 트랜잭션을 받거나 오더북이나 계좌 최신 상태를 조회하는 것 같은 활동에 도움이 됩니다. 다만 상태 동기화는 `상태 동기화` 높이 이전 블록들은 다운로드 하지 **않습니다**. 따라서 노드를 시작할 때 상태 동기화를 높이 10000에 동기화 하였다면, 로컬 데이터베이스에는 10000이후의 블록만 저장됩니다.
 
-### Switch From Fast Sync to State Sync
+### 빠른 동기화에서 상태 동기화로 변경
 
-If full node has already started, suggested way is to delete the (after backup) `$BNCHOME/data` directory and `$BNCHOME/config/priv_validator_key.json` before enabling state sync.
+만일 풀 노드를 이미 시작했다면, 상태 동기화를 활성화하기 전에 백업 후 `$BNCHOME/data` 디렉토리와 `$BNCHOME/config/priv_validator_key.json`를 삭제하는 것을 권장합니다.
 
-If you turn on the `state_sync_reactor`, the snapshots of heights will be saved at `$HOME/data/snapshot/` automatically. To save disk space, you can delete the directory or turn off the `state_sync_reactor`.
+만일 `state_sync_reactor`를 활성화하면 높이의 스냅샷은 자동으로 `$HOME/data/snapshot/`에 저장될 것입니다. 디스크 공간을 절약하려면, 디렉토리를 삭제 후 `state_sync_reactor`를 비활성화하면 됩니다.
 
-### Recover From State Sync Failure
+### 상태 동기화 실패 복구
 
-If state sync did not succeed, please repeat deletion of `$BNCHOME/data` directory and `$BNCHOME/config/priv_validator_key.json` before starting full node next time in case of data inconsistency.
+상태 동기화가 실패하면, 풀 노드를 시작하기 전에 다시 `$BNCHOME/data` 디렉토리와 `$BNCHOME/config/priv_validator_key.json`파일을 삭제하여 데이터 불일치를 방지합니다.
 
-### Skip Blocks in State Sync
+### 상태 동기화에서 블록 건너 뛰기
 
-Once state sync succeeded, later full node restart would not state sync anymore (in case the local blocks are not continuous).
-But if you do want state sync again (don't care that there are missing blocks between last stop and latest state sync snapshot) and you want to keep already synced blocks, you can just delete `$BNCHOME/data/STATESYNC.LOCK`.
+상태 동기화 성공하면, 로컬 블록이 연속적이지 않을 시 이후에 풀 노드가 재시작 시 상태 동기화 상태를 하지 않습니다. 만일 이미 동기화된 블록을 유지하면서 상태 동기화를 다시 하고 싶으면(최신 상태 스냅샷과 멈춘 상태 사이에 건너 뛴 블록이 있는 것이 상관 없을 때), 단순히 `$BNCHOME/data/STATESYNC.LOCK`를 삭제하면 됩니다.
 
-For example, you start your full node at Jan 1st with state sync at height 10000 and after a while you shut it down at height 22000 on Feb 10th. Now its Mar 1st, latest sync-able block height is 50000, you don't care blocks between 22000 and 50000, you can delete `$BNCHOME/data/STATESYNC.LOCK` before start your node. Then the full node would continue state sync from height 50000.
+예를 들어, 1월 1일 풀 노드에서 상태 동기화를 시작하여 높이 10000에 도달했고, 2월 10일날 높이 22000에 노드 운영을 중지했습니다. 3월 1일에 동기화 가능한 최신 블록 높이가 50000일 때, 22000과 50000사이 블록에 대해 신경쓰지 않는다면 노드를 다시 시작하기 전에 `$BNCHOME/data/STATESYNC.LOCK`파일을 삭제하면 됩니다. 그러면 노드는 높이 50000부터 동기화를 시작합니다.
 
-Turning off `state_sync_reactor` and `state_sync` can save your memory after you successfully state synced.
+`state_sync_reactor`와 `state_sync`를 끄는 것은 상태 동기화를 마친 후 메모리를 절약하는데 도움이 됩니다.
 
-## Hot Sync
+## 핫 동기화 (Hot Sync)
 
-In Beacon Chain  network, almost every fullnode operator will first enable `state-sync` to get synced with peers. After downloading all the state machine changes, the fullnode will go back to `fast-sync` mode and eventually in `consensus` mode. In fast-sync mode, the fullnode will have high delay because it needs to be aware of peers’ heights. It downloads all the blocks in parallel and verifying their commits. On the other hand, when a fullnode is under `consensus` state, it will consume a lot of bandwidth and CPU resources because it receives a lot of redundant messages for consensus engine and writes more WAL. To increase the efficiency for fullnodes, the `hot-sync` protocol is introduced. A fullnode under `hot-sync` protocol will pull the blocks from its peers and it will subscribe these blocks in advance. It will skip the message for prevotes and only subscribe to maj23 precommit and block proposal messages. At the same time, it will put its peers in different buckets and subscribe to peers in active buckets. `Hot-Sync` can help fullnodes gossip blocks in low latency, while cost less network, memory, cpu and disk resources than Tendermint consensus protocol. Even cheap hardware can easily run a fullnode, and a fullnode can connect with more peers than before by saving network and CPU resources.
+비컨 체인 네트워크에서는, 거의 모든 풀노드 연산자는 `상태 동기화`를 활성화하여 피어들과 동기화 할 것입니다. 모든 상태 머신 변화를 다운로드 한 후, 풀 노드는 `빠른 동기화` 모드로 변경되며 궁극적으로 `합의` 모드에 도달합니다. 빠른 동기화 모드에서는 풀 노드가 피어의 높이를 인식해야 하므로 상당한 지연이 발생합니다. 모든 블록을 병렬적으로 다운로드 후 변경 사항을 확인하기 때문입니다. 반면 풀 노드가 `합의` 상태이면, 컨센서스 엔진에 대한 많은 중복 메시지를 수신하고 더 많은 WAL을 적기 때문에 많은 대역폭과 CPU 리소스를 소비할 것입니다.
+풀 노드의 효율을 높이기 위해서, `핫 싱크` 프로토콜이 등장하였습니다. `핫 싱크` 프로토콜을 사용하는 풀 노드는 피어로부터 블록을 미리 가져와서 구독합니다. 구독 시 사전 투표 메세지는 건너 뛰고 maj23 사전 커밋과 블록 제인 메세지만 불러옵니다. 동시에 피어들을 다른 버킷 분류하고 활성화된 버킷의 피어들을 구독합니다. `핫 싱크`를 통해 풀 노드는 텐더민트 합의 프로토콜보다 더 지연 시간이 짧으면서 네트워크, 메모리, CPU 및 디스크 리소스 비용을 보다 덜 들이는 방법으로 블록을 주고 받을 수 있습니다. 따라서 값이 싼 하드웨어도 풀 노드를 운영할 수 있으며, 네트워크 및 CPU 리소스 비용을 절약하면서 더 많은 피어들과 연결할 수 있게 됩니다.
 
-The state transition of a hot sync reactor can be of three part:
+핫 싱크 리액터에 상태 전환은 3가지로 구분됩니다:
 
 ```
                               Hot --> Consensus
@@ -66,13 +66,13 @@ The state transition of a hot sync reactor can be of three part:
                                 Mute
 ```
 
-1. `Mute`: will only answer subscribe requests from others, will not sync from others or from consensus reactor. The Hot Sync reactor stays in `Mute` when it is fast syncing.
-2. `Hot`: handle subscribe requests from other peers as a publisher, also subscribe block messages from other peers as a subscriber. A non-validators will stay in `Hot` when the peer have catch up after fast syncing.
-3. `Consensus`: handle subscribes requests from other peers as a publisher, but get block/commit message from consensus reactor. A sentry node should stay in `Consensus`. Or a non-validator should switch from `Hot` to `Consensus` when it become a validator.
+1. `음소거(Mute)`: 받은 구독 요청에 대한 응답만 하고, 노드 자신은 다른 피어나 합의 리액터로에 동기화 하지 않습니다. 핫 싱크 리액터는 빠른 동기화 중일 때 `Mute` 상태입니다.
+2. `핫(Hot)`: 퍼블리셔(publisher)로서 다른 피어에게 받은 구독 요청을 처리하는 동시에 구독자(subscriber)로서 다른 피어에게서 블록 메세지를 구독합니다. 검증인이 아닌 경우에는 피어가 빠른 동기화로 따라 잡은 후에는 검증인이 아닌 경우 `Hot` 상태로 유지됩니다.
+3. `합의(Consensus)`: 다른 피어의 구독 요청을 퍼블리셔로서 제어하지만, 블록/커밋 메세지는 합의 리액터에서 가져옵니다. 풀 노드는 `Consensus` 상태로 유지되어야 합니다. 또한 `Hot` 상태의 검증인이 아닌 노드가 검증인이 되었을 시 `Consensus`로 전환되어야 합니다.
 
-Configuration is located in `$BNCHOME/config/config.toml`:
+설정(configuration)은 `$BNCHOME/config/config.toml`에 있습니다:
 
-- `hot_sync_reactor` Must be set to `true`
-- `hot_sync` Can be set to `false` or `true`
-- `hot_sync_timeout` is the max wait time for subscribe a block. It only takes effect when hot_sync is true
+- `hot_sync_reactor`는 `true`로 설정해야 합니다
+- `hot_sync`는 `true`나 `false`로 설정해야 합니다
+- `hot_sync_timeout`은 블록을 구독하기 위한 최대 대기 시간입니다. `hot_sync`가 `true`일 때만 유효합니다.
 

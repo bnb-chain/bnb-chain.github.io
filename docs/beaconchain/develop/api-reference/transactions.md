@@ -14,7 +14,7 @@ All kinds of transactions have the same type of Fee and Signatures, the differen
 
 Adding new transaction types would not require fork of blockchain, while upgrading transaction would be done via adding new transaction type: e.g. Burn2 vs. Burn.
 
-### Order
+### 주문
 ```go
 type Msg struct {
     From   sdk.Address `json:"from"`

@@ -1,14 +1,14 @@
 ---
-sidebar_label: BNB Sidechain Pilot Projects
+sidebar_label: BNB 사이드 체인 시범 프로젝트
 ---
 
-# BNB Sidechain Pilot Projects
+# BNB 사이드 체인 시범 프로젝트
 
-Following is the list of pilot projects powered by the BNB SideChain.
+다음은 BNB 사이드 체인에서 작동하는 시범 프로젝트입니다.
 
-* **[Cube](https://cube.store/)**: brings entertainment powered by blockchain on the Metaverse. CUBE aims to provide revolutionary entertainment for gamers, game developers, content creators, and content consumers alike, aiming to create a single platform where virtual entertainment translates to true value.
+* **[큐브](https://cube.store/)**: 메타버스에 블록체인 기반의 엔터테이먼트를 가져옵니다. CUBE는 게이머, 게임 개발자, 컨텐츠 개발자, 컨텐츠 소비자들을 위한 혁신적인 엔터테이먼트를 제공하는 것을 목표로 하며, 가상 엔테테이먼트가 실제 가치로 변환될 수 있는 하나의 플랫폼으로 만들려고 합니다.
 
-* **[Project Galaxy](https://galaxy.eco/)**: a collaborative credential infrastructure that empowers brands to build better communities and products in Web3. Project Galaxy aims to empower users to curate and contribute to digital credentials and utilize those credentials through its application modules, credential oracle, and credential API.
+* **[프로젝트 갤럭시](https://galaxy.eco/)**: 더 나은 커뮤니티와 웹3 제품을 만들기 위한 협업 자격 증명 인프라입니다. 프로젝트 갤럭시는 어플리케이션 모듈, 자격 증명 오라클, 자격 증명 API를 통해 사용자들이 디지털 자격 증명에 기여하고 활용하는 것을 목표로 합니다.
 
-* **[Meta Apes](https://metaapesgame.com)**: Meta Apes is a real player-owned Web3 Game. Become part of the strongest Clan, create your own Gang, fight other apes, and be the first monkey to explore the galaxy!
+* **[Meta Apes](https://metaapesgame.com)**: Meta Apes는 사용자가 보유하는 웹3 게임입니다. 최강의 클랜에 합류하고, 여러분만의 그룹(Gang)을 만들고, 다른 원숭이들과 싸워서 우주를 탐험하는 첫번째 원숭이가 되세요!
 

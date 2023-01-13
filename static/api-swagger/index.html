@@ -9072,6 +9072,1508 @@ except ApiException as e:
                       </div>
                       <hr>
                   </section>
+                <section id="api-Order">
+                  <h1>Order</h1>
+                    <div id="api-Order-getClosedOrders">
+                      <article id="api-Order-getClosedOrders-0" data-group="User" data-name="getClosedOrders" data-version="0">
+                        <div class="pull-left">
+                          <h1>getClosedOrders</h1>
+                          <p>Get closed orders.</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Gets closed (filled and cancelled) orders for a given address.
+
+**Query Window:** Default query window is latest 7 days; The maximum start - end query window is 3 months.
+
+**Rate Limit:** 5 requests per IP per second.
+</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/api/v1/orders/closed</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Order-getClosedOrders-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Order-getClosedOrders-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Order-getClosedOrders-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Order-getClosedOrders-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Order-getClosedOrders-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+-H "Accept: application/json"\
+"https://dex.binance.org/api/v1/orders/closed?address=&end=&limit=&offset=&side=&start=&status=&symbol=&total="</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Order-getClosedOrders-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrderApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrderApiExample {
+
+    public static void main(String[] args) {
+        
+        OrderApi apiInstance = new OrderApi();
+        String address = address_example; // String | the owner address
+        Long end = 789; // Long | end time in Milliseconds
+        Integer limit = 56; // Integer | default 500; max 1000.
+        Integer offset = 56; // Integer | start with 0; default 0.
+        Integer side = 56; // Integer | order side. 1 for buy and 2 for sell.
+        Long start = 789; // Long | start time in Milliseconds
+        String status = status_example; // String | order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+
+        String symbol = symbol_example; // String | symbol
+        Integer total = 56; // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+        try {
+            OrderList result = apiInstance.getClosedOrders(address, end, limit, offset, side, start, status, symbol, total);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrderApi#getClosedOrders");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Order-getClosedOrders-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrderApi;
+
+public class OrderApiExample {
+
+    public static void main(String[] args) {
+        OrderApi apiInstance = new OrderApi();
+        String address = address_example; // String | the owner address
+        Long end = 789; // Long | end time in Milliseconds
+        Integer limit = 56; // Integer | default 500; max 1000.
+        Integer offset = 56; // Integer | start with 0; default 0.
+        Integer side = 56; // Integer | order side. 1 for buy and 2 for sell.
+        Long start = 789; // Long | start time in Milliseconds
+        String status = status_example; // String | order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+
+        String symbol = symbol_example; // String | symbol
+        Integer total = 56; // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+        try {
+            OrderList result = apiInstance.getClosedOrders(address, end, limit, offset, side, start, status, symbol, total);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrderApi#getClosedOrders");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Order-getClosedOrders-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Order-getClosedOrders-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *address = address_example; // the owner address
+Long *end = 789; // end time in Milliseconds (optional)
+Integer *limit = 56; // default 500; max 1000. (optional) (default to 500)
+Integer *offset = 56; // start with 0; default 0. (optional) (default to 0)
+Integer *side = 56; // order side. 1 for buy and 2 for sell. (optional)
+Long *start = 789; // start time in Milliseconds (optional)
+String *status = status_example; // order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+ (optional)
+String *symbol = symbol_example; // symbol (optional)
+Integer *total = 56; // total number required, 0 for not required and 1 for required; default not required, return total=-1 in response (optional)
+
+OrderApi *apiInstance = [[OrderApi alloc] init];
+
+// Get closed orders.
+[apiInstance getClosedOrdersWith:address
+    end:end
+    limit:limit
+    offset:offset
+    side:side
+    start:start
+    status:status
+    symbol:symbol
+    total:total
+              completionHandler: ^(OrderList output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getClosedOrders-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var HttpApi = require('http_api');
+
+var api = new HttpApi.OrderApi()
+var address = address_example; // {{String}} the owner address
+var opts = { 
+  'end': 789, // {{Long}} end time in Milliseconds
+  'limit': 56, // {{Integer}} default 500; max 1000.
+  'offset': 56, // {{Integer}} start with 0; default 0.
+  'side': 56, // {{Integer}} order side. 1 for buy and 2 for sell.
+  'start': 789, // {{Long}} start time in Milliseconds
+  'status': status_example, // {{String}} order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+
+  'symbol': symbol_example, // {{String}} symbol
+  'total': 56 // {{Integer}} total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getClosedOrders(address, opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Order-getClosedOrders-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Order-getClosedOrders-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getClosedOrdersExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new OrderApi();
+            var address = address_example;  // String | the owner address
+            var end = 789;  // Long | end time in Milliseconds (optional) 
+            var limit = 56;  // Integer | default 500; max 1000. (optional)  (default to 500)
+            var offset = 56;  // Integer | start with 0; default 0. (optional)  (default to 0)
+            var side = 56;  // Integer | order side. 1 for buy and 2 for sell. (optional) 
+            var start = 789;  // Long | start time in Milliseconds (optional) 
+            var status = status_example;  // String | order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+ (optional) 
+            var symbol = symbol_example;  // String | symbol (optional) 
+            var total = 56;  // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response (optional) 
+
+            try
+            {
+                // Get closed orders.
+                OrderList result = apiInstance.getClosedOrders(address, end, limit, offset, side, start, status, symbol, total);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrderApi.getClosedOrders: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getClosedOrders-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiOrderApi();
+$address = address_example; // String | the owner address
+$end = 789; // Long | end time in Milliseconds
+$limit = 56; // Integer | default 500; max 1000.
+$offset = 56; // Integer | start with 0; default 0.
+$side = 56; // Integer | order side. 1 for buy and 2 for sell.
+$start = 789; // Long | start time in Milliseconds
+$status = status_example; // String | order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+
+$symbol = symbol_example; // String | symbol
+$total = 56; // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+
+try {
+    $result = $api_instance->getClosedOrders($address, $end, $limit, $offset, $side, $start, $status, $symbol, $total);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->getClosedOrders: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getClosedOrders-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrderApi;
+
+my $api_instance = WWW::SwaggerClient::OrderApi->new();
+my $address = address_example; # String | the owner address
+my $end = 789; # Long | end time in Milliseconds
+my $limit = 56; # Integer | default 500; max 1000.
+my $offset = 56; # Integer | start with 0; default 0.
+my $side = 56; # Integer | order side. 1 for buy and 2 for sell.
+my $start = 789; # Long | start time in Milliseconds
+my $status = status_example; # String | order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+
+my $symbol = symbol_example; # String | symbol
+my $total = 56; # Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+
+eval { 
+    my $result = $api_instance->getClosedOrders(address => $address, end => $end, limit => $limit, offset => $offset, side => $side, start => $start, status => $status, symbol => $symbol, total => $total);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling OrderApi->getClosedOrders: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getClosedOrders-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrderApi()
+address = address_example # String | the owner address
+end = 789 # Long | end time in Milliseconds (optional)
+limit = 56 # Integer | default 500; max 1000. (optional) (default to 500)
+offset = 56 # Integer | start with 0; default 0. (optional) (default to 0)
+side = 56 # Integer | order side. 1 for buy and 2 for sell. (optional)
+start = 789 # Long | start time in Milliseconds (optional)
+status = status_example # String | order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+ (optional)
+symbol = symbol_example # String | symbol (optional)
+total = 56 # Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response (optional)
+
+try: 
+    # Get closed orders.
+    api_response = api_instance.get_closed_orders(address, end=end, limit=limit, offset=offset, side=side, start=start, status=status, symbol=symbol, total=total)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrderApi->getClosedOrders: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">address*</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_address">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                                    <div class="inner description">
+                                                        the owner address
+                                                    </div>
+                                            </div>
+                                                <div class="inner required">
+                                                    Required
+                                                </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">end</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_end">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Long
+                                                </span>
+                                                    <span class="format">
+                                                        (int64)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        end time in Milliseconds
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">limit</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_limit">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        default 500; max 1000.
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">offset</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_offset">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        start with 0; default 0.
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">side</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_side">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        order side. 1 for buy and 2 for sell.
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">start</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_start">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Long
+                                                </span>
+                                                    <span class="format">
+                                                        (int64)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        start time in Milliseconds
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">status</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_status">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                                    <div class="inner description">
+                                                        order status list. 
+Allowed value: [Ack, IocExpire, IocNoFill,
+FullyFill, Canceled, Expired, FailedBlocking, FailedMatching]
+
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">symbol</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_symbol">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                                    <div class="inner description">
+                                                        symbol
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">total</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getClosedOrders_total">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        total number required, 0 for not required and 1 for required; default not required, return total&#x3D;-1 in response
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - OK </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getClosedOrders-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getClosedOrders-200-schema">
+                                  <div id='responses-getClosedOrders-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrderList"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getClosedOrders-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getClosedOrders-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getClosedOrders-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Order-getOpenOrders">
+                      <article id="api-Order-getOpenOrders-0" data-group="User" data-name="getOpenOrders" data-version="0">
+                        <div class="pull-left">
+                          <h1>getOpenOrders</h1>
+                          <p>Get open orders.</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Gets open orders for a given address.
+
+**Rate Limit:** 5 requests per IP per second.
+</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/api/v1/orders/open</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Order-getOpenOrders-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Order-getOpenOrders-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Order-getOpenOrders-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Order-getOpenOrders-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Order-getOpenOrders-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+-H "Accept: application/json"\
+"https://dex.binance.org/api/v1/orders/open?address=&limit=&offset=&symbol=&total="</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Order-getOpenOrders-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrderApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrderApiExample {
+
+    public static void main(String[] args) {
+        
+        OrderApi apiInstance = new OrderApi();
+        String address = address_example; // String | the owner address
+        Integer limit = 56; // Integer | default 500; max 1000.
+        Integer offset = 56; // Integer | start with 0; default 0.
+        String symbol = symbol_example; // String | symbol
+        Integer total = 56; // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+        try {
+            OrderList result = apiInstance.getOpenOrders(address, limit, offset, symbol, total);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrderApi#getOpenOrders");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Order-getOpenOrders-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrderApi;
+
+public class OrderApiExample {
+
+    public static void main(String[] args) {
+        OrderApi apiInstance = new OrderApi();
+        String address = address_example; // String | the owner address
+        Integer limit = 56; // Integer | default 500; max 1000.
+        Integer offset = 56; // Integer | start with 0; default 0.
+        String symbol = symbol_example; // String | symbol
+        Integer total = 56; // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+        try {
+            OrderList result = apiInstance.getOpenOrders(address, limit, offset, symbol, total);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrderApi#getOpenOrders");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Order-getOpenOrders-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Order-getOpenOrders-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *address = address_example; // the owner address
+Integer *limit = 56; // default 500; max 1000. (optional) (default to 500)
+Integer *offset = 56; // start with 0; default 0. (optional) (default to 0)
+String *symbol = symbol_example; // symbol (optional)
+Integer *total = 56; // total number required, 0 for not required and 1 for required; default not required, return total=-1 in response (optional)
+
+OrderApi *apiInstance = [[OrderApi alloc] init];
+
+// Get open orders.
+[apiInstance getOpenOrdersWith:address
+    limit:limit
+    offset:offset
+    symbol:symbol
+    total:total
+              completionHandler: ^(OrderList output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOpenOrders-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var HttpApi = require('http_api');
+
+var api = new HttpApi.OrderApi()
+var address = address_example; // {{String}} the owner address
+var opts = { 
+  'limit': 56, // {{Integer}} default 500; max 1000.
+  'offset': 56, // {{Integer}} start with 0; default 0.
+  'symbol': symbol_example, // {{String}} symbol
+  'total': 56 // {{Integer}} total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getOpenOrders(address, opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Order-getOpenOrders-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Order-getOpenOrders-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getOpenOrdersExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new OrderApi();
+            var address = address_example;  // String | the owner address
+            var limit = 56;  // Integer | default 500; max 1000. (optional)  (default to 500)
+            var offset = 56;  // Integer | start with 0; default 0. (optional)  (default to 0)
+            var symbol = symbol_example;  // String | symbol (optional) 
+            var total = 56;  // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response (optional) 
+
+            try
+            {
+                // Get open orders.
+                OrderList result = apiInstance.getOpenOrders(address, limit, offset, symbol, total);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrderApi.getOpenOrders: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOpenOrders-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiOrderApi();
+$address = address_example; // String | the owner address
+$limit = 56; // Integer | default 500; max 1000.
+$offset = 56; // Integer | start with 0; default 0.
+$symbol = symbol_example; // String | symbol
+$total = 56; // Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+
+try {
+    $result = $api_instance->getOpenOrders($address, $limit, $offset, $symbol, $total);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->getOpenOrders: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOpenOrders-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrderApi;
+
+my $api_instance = WWW::SwaggerClient::OrderApi->new();
+my $address = address_example; # String | the owner address
+my $limit = 56; # Integer | default 500; max 1000.
+my $offset = 56; # Integer | start with 0; default 0.
+my $symbol = symbol_example; # String | symbol
+my $total = 56; # Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response
+
+eval { 
+    my $result = $api_instance->getOpenOrders(address => $address, limit => $limit, offset => $offset, symbol => $symbol, total => $total);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling OrderApi->getOpenOrders: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOpenOrders-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrderApi()
+address = address_example # String | the owner address
+limit = 56 # Integer | default 500; max 1000. (optional) (default to 500)
+offset = 56 # Integer | start with 0; default 0. (optional) (default to 0)
+symbol = symbol_example # String | symbol (optional)
+total = 56 # Integer | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response (optional)
+
+try: 
+    # Get open orders.
+    api_response = api_instance.get_open_orders(address, limit=limit, offset=offset, symbol=symbol, total=total)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrderApi->getOpenOrders: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">address*</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getOpenOrders_address">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                                    <div class="inner description">
+                                                        the owner address
+                                                    </div>
+                                            </div>
+                                                <div class="inner required">
+                                                    Required
+                                                </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">limit</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getOpenOrders_limit">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        default 500; max 1000.
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">offset</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getOpenOrders_offset">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        start with 0; default 0.
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">symbol</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getOpenOrders_symbol">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    String
+                                                </span>
+                                
+                                                    <div class="inner description">
+                                                        symbol
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                                <tr><td style="width:150px;">total</td>
+                                <td>
+                                
+                                
+                                    <div id="d2e199_getOpenOrders_total">
+                                        <div class="json-schema-view">
+                                            <div class="primitive">
+                                                <span class="type">
+                                                    Integer
+                                                </span>
+                                                    <span class="format">
+                                                        (int32)
+                                                    </span>
+                                
+                                                    <div class="inner description">
+                                                        total number required, 0 for not required and 1 for required; default not required, return total&#x3D;-1 in response
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - OK </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getOpenOrders-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getOpenOrders-200-schema">
+                                  <div id='responses-getOpenOrders-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OrderList"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getOpenOrders-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getOpenOrders-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getOpenOrders-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - Bad Request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getOpenOrders-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getOpenOrders-400-schema">
+                                  <div id='responses-getOpenOrders-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Bad Request",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Error"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getOpenOrders-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getOpenOrders-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getOpenOrders-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 404 - Not Found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: default - Generic error response </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getOpenOrders-default-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getOpenOrders-default-schema">
+                                  <div id='responses-getOpenOrders-default-schema-default' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Generic error response",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Error"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getOpenOrders-default-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getOpenOrders-default-schema-default');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getOpenOrders-default-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Order-getOrder">
+                      <article id="api-Order-getOrder-0" data-group="User" data-name="getOrder" data-version="0">
+                        <div class="pull-left">
+                          <h1>getOrder</h1>
+                          <p>Get an order.</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Gets metadata for an individual order by its ID.
+
+**Rate Limit:** 5 requests per IP per second.
+</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/api/v1/orders/{id}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Order-getOrder-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Order-getOrder-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Order-getOrder-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Order-getOrder-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Order-getOrder-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Order-getOrder-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Order-getOrder-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Order-getOrder-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Order-getOrder-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Order-getOrder-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Order-getOrder-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Order-getOrder-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+-H "Accept: application/json"\
+"https://dex.binance.org/api/v1/orders/{id}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Order-getOrder-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.OrderApi;
+
+import java.io.File;
+import java.util.*;
+
+public class OrderApiExample {
+
+    public static void main(String[] args) {
+        
+        OrderApi apiInstance = new OrderApi();
+        String id = id_example; // String | order id
+        try {
+            Order result = apiInstance.getOrder(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrderApi#getOrder");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Order-getOrder-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.OrderApi;
+
+public class OrderApiExample {
+
+    public static void main(String[] args) {
+        OrderApi apiInstance = new OrderApi();
+        String id = id_example; // String | order id
+        try {
+            Order result = apiInstance.getOrder(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling OrderApi#getOrder");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Order-getOrder-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Order-getOrder-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *id = id_example; // 주문 ID
+
+OrderApi *apiInstance = [[OrderApi alloc] init];
+
+// Get an order.
+[apiInstance getOrderWith:id
+              completionHandler: ^(Order output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOrder-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var HttpApi = require('http_api');
+
+var api = new HttpApi.OrderApi()
+var id = id_example; // {{String}} order id
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getOrder(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Order-getOrder-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Order-getOrder-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getOrderExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new OrderApi();
+            var id = id_example;  // String | order id
+
+            try
+            {
+                // Get an order.
+                Order result = apiInstance.getOrder(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrderApi.getOrder: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOrder-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiOrderApi();
+$id = id_example; // String | order id
+
+try {
+    $result = $api_instance->getOrder($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->getOrder: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOrder-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::OrderApi;
+
+my $api_instance = WWW::SwaggerClient::OrderApi->new();
+my $id = id_example; # String | order id
+
+eval { 
+    my $result = $api_instance->getOrder(id => $id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling OrderApi->getOrder: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Order-getOrder-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.OrderApi()
+id = id_example # String | order id
+
+try: 
+    # Get an order.
+    api_response = api_instance.get_order(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrderApi->getOrder: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+                                  <td>
+                                  
+                                  
+                                      <div id="d2e199_getOrder_id">
+                                          <div class="json-schema-view">
+                                              <div class="primitive">
+                                                  <span class="type">
+                                                      String
+                                                  </span>
+                                  
+                                                      <div class="inner description">
+                                                          order id
+                                                      </div>
+                                              </div>
+                                                  <div class="inner required">
+                                                      Required
+                                                  </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  </tr>
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - OK </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getOrder-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getOrder-200-schema">
+                                  <div id='responses-getOrder-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "OK",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Order"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getOrder-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getOrder-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getOrder-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - Bad Request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getOrder-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getOrder-400-schema">
+                                  <div id='responses-getOrder-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Bad Request",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Error"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getOrder-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getOrder-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getOrder-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 404 - Not Found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: default - Generic error response </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getOrder-default-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getOrder-default-schema">
+                                  <div id='responses-getOrder-default-schema-default' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Generic error response",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Error"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.content["application/json"].schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.components = {};
+                                          schemaWrapper.components.schemas = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getOrder-default-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getOrder-default-schema-default');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getOrder-default-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                  </section>
                 <section id="api-TimelockRecords">
                   <h1>TimelockRecords</h1>
                     <div id="api-TimelockRecords-getTimeLock">

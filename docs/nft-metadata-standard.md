@@ -1,12 +1,12 @@
 ---
-sidebar_label: NFT Metadata Standard
+sidebar_label: NFT 메타데이터 표준
 sidebar_position: 1
 ---
-# NFT Metadata Standard
+# NFT 메타데이터 표준
 
-## Implementing Token URI
+## 토큰 URI 구현하기
 
-To facilitate a marketplace on BSC to pull in off-chain metadata for BEP721 assets, the NFT contract will need to return a URI where the metadata can be found. To find this URI, the tokenURI method in ERC721 and the uri method in ERC1155 are used to track your NFT. You should implement the function in the Contract:
+BSC에 BEP721 자산을 위한 오프체인 메타데이터를 끌어오기 위한 마켓플레이스를 더 쉽게 사용하도록 하기 위해서는 NFT 컨트랙트가 메타데이터가 저장된 장소의 URI를 반환해야 합니다. 이 URI를 찾기 위해 ERC721의 tokenURI 메서드와 ERC1155의 URI 메서드가 NFT 추적에 사용됩니다. 컨트랙트에 다음과 같은 함수를 구현해야 합니다.
 
 ```
 
@@ -22,12 +22,12 @@ function tokenURI(uint256 _tokenId) public view returns (string) {
 
 ```
 
-The tokenURI function in your Contract should return an HTTP or IPFS URL. When queried, this URL should in turn return a JSON blob of data with the metadata for your token.
+컨트랙트의 tokenURI 함수는 HTTP나 IPFS URL을 반환해야 합니다. 조회 시 이 URL은 해당 토큰의 메타 데이터를 포함한 데이터의 JSON을 반환합니다.
 
-## Metadata Structure
+## 메타 데이터 구조
 
-Marketplaces on BSC support metadata that is structured according to [the official ERC721 metadata standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md). Additionally, several properties for your items are supported, giving you all the sorting and filtering capabilities on BSC Marketplaces.
-The below metadata structure, allows the BSC Marketplace to read and display the details about the assets which your NFTs represent.
+BSC의 마켓플레이스는 [공식 ERC721 메타데이터 표준](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)에 따른 메타데이터를 지원합니다. 추가적으로 아이템들의 다양한 속성도 지원하기 때문에 BSC 마켓플레이스에서 분류 및 필터링도 가능해집니다.
+BSC 마켓플레이스는 아래의 메타데이터 구조를 통해 여러분의 NFT가 나타내는 자산의 세부사항을 조회하고 공개할 수 있습니다.
 
 ```
 
@@ -41,20 +41,20 @@ The below metadata structure, allows the BSC Marketplace to read and display the
 
 ```
 
-Here's how each of these properties work:
+각 프로퍼티 설명은 다음과 같습니다.
 
-| Property         | Description                                                                                                                                                                                  |
+| 프로퍼티         | 설명                                                                                                                                                                                  |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     name         | Name of the item. Max 200 characters.                                                                                                                                                        |
-| description      | A human-readable description of the item. Markdown is supported. Max 500 characters.                                                                                                         |
-| image            | This is the URL to the image of the item. It can be just about any type of image. A 350 x 350 image is recommended.                                                                             |
-| animation_url    | This is the URL to a multi-media attachment for the item. The file extensions GLTF, GLB, WEBM, MP4, M4V, OGV, and OGG are supported, along with the audio-only extensions MP3, WAV, and OGA. |
-| animation_type   | This is the file format of the multi-media attachment provided from animation_url.                                                                                                           |
-| external_url     | This is the URL that will appear below the asset's image on the marketplace and will allow users to leave the marketplace and view the item on your site.                                    |
-| attributes       | These are the attributes for the item to describe the detail of the NFT. (see array below)                                                                                                   |
+|     name         | 아이템 이름. 최대 200 글자.                                                                                                                                                        |
+| description      | 읽을 수 있는 아이템 이름. 마크다운 지원. 최대 500 글자.                                                                                                         |
+| image            | 아이템 이미지의 URL. 모든 타입의 이미지 가능. 350 x 350 이미지 권장.                                                                             |
+| animation_url    | 아이템의 멀티미디어 첨부 URL. 파일 확장자 GLTF, GLB, WEBM, MP4, M4V, OGV, OGG 그리고 음성 확장자 MP3, WAV, OGA가 지원됨. |
+| animation_type   | animation_url에서 제공된 멀티미디어 첨부 파일.                                                   |
+| external_url     | 마켓플레이스에서 자산의 이미지 아래에 나타날 URL로, 사용자들이 마켓플레이스를 빠져나가 여러분의 사이트에서 아이템을 볼 수 있게 해줍니다.                                    |
+| attributes       | NFT 세부사항을 묘사하기 위한 아이템의 특성들. (아래의 배열을 확인해주세요)                                                                                                   |
 
-### Attributes
-To present NFT traits, include the following array in the metadata: 
+### 속성
+NFT 특성 위해 메타데이터의 다음 배열을 추가할 수 있습니다: 
 
 ```
 
@@ -96,15 +96,14 @@ To present NFT traits, include the following array in the metadata:
 
 ```
 
-Here `trait_type` is the name of the trait, `value` is the value of the trait, and `display_type` is a field indicating how you would like a numeric value should be displayed. For string traits, you don't have to worry about `display_type`. 
-All traits included in the attributes will be displayed in `Attribute`.
-If you don't want to have a `trait_type` for a particular trait, you can include just a value in the trait and it will be set as a generic attribute.
+`trait_type`은 특성의 이름이며 `value`는 특성의 값입니다. `display_type`는 숫자값이 어떻게 표시되었으면 좋겠는지를 나타내는 필드입니다. 문자열 특성의 경우 `display_type`은 신경쓰지 않아도 됩니다. 속성에 포함된 모든 특성들은 `Attribute`에 보여집니다.
+어떤 특성에 `trait_type`을 주고 싶지 않은 경우, 해당 특성에 `value` 값을 입력하면 일반적인 특성으로 설정됩니다.
 
-#### Numeric Traits
-There are 3 supported options for `display_type`: `number` will show the value in pure number, `boost_number` allows you to show the number with Plus or Minus symbol, and `boost_percentage` is similar to boost_number but will show a percent sign behind the number.
+#### 숫자 특성
+`display_type`에는 세 가지 타입이 지원됩니다. `number`는 숫자로 값을 나타내며, `boost_number`는 플러스 또는 마이너스 기호가 붙은 숫자를 나타내도록 해줍니다. `boost_percentage`는 `boost_number`과 비슷하지만 숫자 뒤에 퍼센티지 기호를 보여줍니다.
 
-#### Date
-Marketplace also supports date traits in `date` `display_type`. Pass in a unix timestamp as the value.
+#### 날짜
+마켓플레이스는 또한 `date`와 `display_type`를 통해 날짜 특성을 보여줍니다. Unix 타임스탬프를 전달해야 합니다.
 
 ```
 

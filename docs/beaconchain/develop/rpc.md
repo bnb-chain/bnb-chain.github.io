@@ -2,10 +2,10 @@
 sidebar_label: RPC
 ---
 
-# RPC Endpoint
-RPC endpoints may be used to interact with a node directly over HTTP or websockets. Using RPC, you may perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
+# RPC 엔드포인트
+RPC 엔드포인트는 HTTP 혹은 웹 소켓으로 상호작용하는데 사용됩니다. RPC를 통해 ABCI 쿼리, 네트워크/합의 상태 조회 혹은 트랜잭션 전파 등 로우 레벨 작업들을 할 수 있습니다.
 
-## Mainnet
+## 메인넷
 
 * https://dataseed1.binance.org:443
 * https://dataseed2.binance.org:443
@@ -20,7 +20,7 @@ RPC endpoints may be used to interact with a node directly over HTTP or websocke
 * https://dataseed3.ninicoin.io:443
 * https://dataseed4.ninicoin.io:443
 
-## Testnet
+## 테스트넷
 
 *  https://data-seed-pre-0-s1.binance.org:443
 *  https://data-seed-pre-1-s1.binance.org:443

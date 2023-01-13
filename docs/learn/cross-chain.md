@@ -1,8 +1,9 @@
 ---
-sidebar_label: Architecture
+sidebar_label: 아키텍처
 sidebar_position: 2
 hide_table_of_contents: false
 ---
+# 크로스체인 커뮤니케이션
 # Cross-Chain Communication
 
 Cross-chain communication is the key foundation to allow the community to take advantage of the dual chain structure:
@@ -13,13 +14,13 @@ Cross-chain communication is the key foundation to allow the community to take a
 ## Architecture Diagram
 ![img](../../static/img/cross-transfer-architecture.png)
 
-A native cross chain communication protocol is developed between BC (Beacon Chain) and BSC (BNB Smart Chain). It has the following key parts:
+BC(비컨 체인)과 BSC(BNB 스마트 체인) 간 네이티브 크로스체인 커뮤니케이션 프로토콜이 개발되었습니다. 핵심 요소는 다음과 같습니다:
 
 * [Build-in System Contract](system-contract.md)
-* [Oracle on Beacon Chain](oracle-module.md)
-* [BSC Relayer](bsc-relayer.md)
-* [BSC Relayer Incentive Mechanism](incentives.md)
-* [Oracle Relayer](oracle-relayer.md)
+* [비콘 체인 오라클](oracle-module.md)
+* [BSC 릴레이어](bsc-relayer.md)
+* [BSC 릴레이어 인센티브 메커니즘](incentives.md)
+* [오라클 릴레이어](oracle-relayer.md)
 
 ## BC to BSC Architecture
 
@@ -57,7 +58,8 @@ By using the same validator quorum, it saves the light client code on BC and con
 
 ## Timeout and Error Handling
 
-There are scenarios that the cross-chain communication fails. For example, the relayed package cannot be executed on BSC due to some coding bug in the contracts. **Timeout and error handling logics are** used in such scenarios.
+## 아키텍쳐 도식
+아래의 도식은 크로스체인 메커니즘의 아키텍처를 보여줍니다.
 
 For the recognizable user and system errors or any expected exceptions, the two networks should heal themselves. For example, when BC to BSC transfer fails, BSC will issue a failure event and Oracle Relayers will execute a refund on BC; when BSC to BC transfer fails, BC will issue a refund package for Relayer to relay in order to unlock the fund.
 

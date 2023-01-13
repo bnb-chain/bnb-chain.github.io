@@ -1,36 +1,36 @@
 ---
-sidebar_label: Using HardHat
+sidebar_label: HardHat 사용하기
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Using Hardhat for Deploying Smart Contracts on BSC
+# BSC에서 Hardhat을 사용하기 위해 스마트 컨트랙트 배포하기
 
-In this tutorial, we explain step-by-step how to create, compile and deploy a simple smart contract on the BSC Testnet using Hardhat.
+이 튜토리얼에서는 Hardhat을 사용하여 BSC 테스트넷에서 간단한 스마트 컨트랙트를 생성, 컴파일 및 배포하는 방법을 단계별로 설명합니다.
 
-## What is Hardhat
+## Hardhat이란?
 
-Hardhat is a development environment to compile, deploy, test, and debug your smart contract.
+Hardhat은 스마트 컨트랙트를 컴파일, 배포, 테스트 및 디버깅하기 위한 개발 환경입니다.
 
-## Setting up the development environment
+## 개발 환경을 설정
 
-There are a few technical requirements before we start. 
+시작하기 전에 몇 가지 기술적 요구사항이 있습니다. 
 
-### Pre-requisites
+### 요구사항
 
-There are a few technical requirements before we start as listed below:
+시작하기 전에 몇 가지 기술적 요구사항이 있습니다.
 
-- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (comes with Node)
+- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (노드와 함께 제공)
 - [Git](https://git-scm.com/)
-- Create an empty project ```npm init --yes```
-- Once your project is ready, run ```npm install --save-dev hardhat``` to install Hardhat.
-- Install hardhat toolbox ```npm install @nomicfoundation/hardhat-toolbox```
-- To use your local installation of Hardhat, you need to use `npx` to run it (i.e. `npx hardhat`).
+- 새 프로젝트 ```npm init --yes```를 생성합니다.
+- 프로젝트가 준비되면 ```npm install --save-dev hardhat```을 실행하여 Hardhat 설치합니다.
+- Hardhat 툴박스 ```npm install @nomicfoundation/hardhat-toolbox```를 설치합니다.
+- 로컬 설치를 사용하려면 `npx`를 통해 실행해야 합니다. (i.e. `npx hardhat`).
 
-## Create A Project
+## 프로젝트 생성
 
-- To create your Hardhat project run ```npx hardhat``` in your project folder to intialize your project. 
-- Select ```Create an empty hardhat.config.js``` with your keyboard and hit enter.
+- Hardhat 프로젝트를 만들려면 프로젝트 폴더에서 ```npx hardhat```을 실행하여 프로젝트를 초기화하십시오. 
+- 키보드로 ```Create an empty hardhat.config.js```를 선택하고 Enter 키를 누릅니다.
 
 ```
 $ npx hardhat
@@ -62,17 +62,17 @@ Give Hardhat a star on Github if you're enjoying it!
      https://github.com/NomicFoundation/hardhat
 ```
 
-When Hardhat is run, it searches for the closest ```hardhat.config.js``` file starting from the current working directory. This file normally lives in the root of your project and an empty ```hardhat.config.js``` is enough for Hardhat to work. The entirety of your setup is contained in this file.
+Hardhat을 실행하면 현재 작업 디렉토리에서 가장 가까운 ```hardhat.config.js``` 파일을 검색합니다. 이 파일은 일반적으로 프로젝트의 루트에 저장되며 빈 ```hardhat.config.js```는 hardhat이 작동하기에 충분합니다. 전체 설정이 이 파일에 포함되어 있습니다.
 
 
-## Create Smart Contract
+## 스마트 컨트랙트 생성하기
 
-You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template), place it in the ```contracts``` directory of your project and remane it as ```BEP20Token.sol```.
+직접 스마트 컨트랙트를 작성하거나 [BEP20 토큰 스마트 계약 템플릿](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template), 프로젝트의 ```contracts``` 디렉터리에 저장하고 ```BEP20Token.sol```으로 이름을 변경하십시오.
 
-## Configure Hardhat for BSC
+## BSC용 Hardhat 설정하기
 
-- Go to ```hardhat.config.js```
-- Update the  config with bsc-network-crendentials.
+- ```hardhat.config.js```로 이동합니다.
+- bsc-network-credential로 업데이트합니다.
 
 ```js
 require("@nomicfoundation/hardhat-toolbox");
@@ -137,8 +137,8 @@ module.exports = {
 
 ```
 
-:::note
-		It requires mnemonic to be passed in for Provider, this is the seed phrase for the account you'd like to deploy from. Create a new `secrets.json` file in root directory and enter your 12 word mnemonic seed phrase to get started. To get the seedwords from metamask wallet you can go to Metamask Settings, then from the menu choose Security and Privacy where you will see a button that says reveal seed words.
+:::참고
+		Provider에 전달할 니모닉, 즉 여러분이 사용하여 배포를 진행할 계정의 시드 구문이 필요로 합니다. 루트 디렉토리에 새로운 `secrets.json` 파일을 만들고 12 단어 시드 프레이즈를 입력하세요. 메타마스크 지갑에서 12 단어를 받으려면 메타마스크 설정으로 가서, Security and Privacy를 선택하면 reveal seed words라는 버튼이 보입니다.
 ```
 Sample secrets.json
 
@@ -148,17 +148,17 @@ Sample secrets.json
 ```
 :::
 
-## Compile Smart Contract
+## 스마트 컨트랙트 컴파일하기
 
-To compile a Hardhat project, change to the root of the directory where the project is located and then type the following into a terminal:
+Hardhat 프로젝트를 컴파일하기 위해서는 프로젝트가 위치한 디렉토리의 루트를 변경하고, 다음 명령어를 터미널에 입력합니다.
 
 ```
 npx hardhat compile
 ```
 
-## Deploy Smart Contract on BSC Network
+## BSC 네트워크에 스마트 컨트랙트 배포하기
 
-- Copy and paste the following content into the ```scripts/deploy.js``` file.
+- ```scripts/deploy.js``` 파일에 다음 내용을 복사해서 붙여 넣습니다.
 
 ```js
 async function main() {
@@ -183,12 +183,12 @@ main()
 
 ```
 
-- Run this command in root of the project directory:
+- 프로젝트 디렉토리 루트에 다음 명령어를 실행합니다:
 
 ```js
 $  npx hardhat run --network testnet scripts/deploy.js
 ```
-- Sample Output
+- 예시 결과
 
 ```
 $ npx hardhat run --network testnet scripts/deploy.js
@@ -196,32 +196,32 @@ Deploying contracts with the account: 0x27cf2CEAcdedce834f1673005Ed1C60efA63c081
 Account balance: 100721709119999208161
 Token address: 0xbF39886B4F91F5170934191b0d96Dd277147FBB2
 ```
-> Remember your address, transaction_hash and other details provided would differ, Above is just to provide an idea of structure.
+> 여러분의 실제 주소, 트랜잭션 해시 등 정보는 다를 것입니다. 위는 참고를 위한 예시입니다.
 
-**Congratulations!** You have successfully deployed BEP20 Smart Contract. Now you can interact with the Smart Contract.
+**축하합니다!** BEP20 스마트 컨트랙트를 배포했습니다. 이제 스마트 컨트랙트를 사용할 수 있습니다.
 
-You can check the deployment status here: <https://bscscan.com/> or <https://testnet.bscscan.com/>
+배포 상태는 여기에서 확인할 수 있습니다: <https://bscscan.com/> 또는 <https://testnet.bscscan.com/>
 
-## Verify with Hardhat
+## Hardhat으로 확인하기
 
-Hardhat has an Etherscan plugin: [Hardhat Etherscan plugin](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html)
+Hardhat은 Etherscan 플러그인을 가지고 있습니다: [Hardhat Etherscan 플러그인](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html)
 
-> Note: Hardhat was previously Buidler.
+> 참고: Hardhat은 이전에 Buidler였습니다.
 
-### Install the plugin
+### 플러그인 설치하기
 
 ```
 npm install --save-dev @nomiclabs/hardhat-etherscan
 ```
 
-### Configure the EthereScan plugin in hardhat.config.js
+### hardhat.config.js에서 Etherscan 플러그인 설정하기
 
-- Step1: Add ```require("@nomiclabs/hardhat-etherscan");```
-- Step2: Add your Bscscan API key. Register and obtain your API key from <https://bscscan.com/myapikey> .
-- Step3: Always remember to set the solidity compiler version to match what was used for deploying the smart contract.
+- 단계 1: ```require("@nomiclabs/hardhat-etherscan");```를 추가합니다
+- 단계 2: Bscscan API 키를 추가하세요. <https://bscscan.com/myapikey>에서 API 키를 등록하고 획득하세요.
+- 단계 3: 솔리디티 컴파일러 버전을 스마트 컨트랙트를 배포할 때 사용했던 것과 동일하게 유지하세요.
 
-!!! warning
-    Keep your API key as secret and never it commit to version control
+!!! 경고
+    API 키는 비밀로 유지하고 버전 관리에 커밋하지 마세요.
 
 
 ```js
@@ -254,11 +254,11 @@ module.exports = {
   solidity: "0.8.9"
 };
 ```
-### Verify Command
-!!! warning
-    Remove any unnecessary contracts and clear the artifacts otherwise these will also be part of the verified contract.
+### 명령어 확인하기
+!!! 경고
+    불필요한 컨트랙트 및 부분들은 제거하세요. 아니면 확인되는 컨트랙트의 일부로 간주됩니다.
 
-Run the following command:
+다음 명령어를 실행하세요:
 
 ```
 npx buidler verify --network mainnet DEPLOYED_CONTRACT_ADDRESS "Constructor argument 1"
@@ -278,5 +278,5 @@ Successfully verified contract BEP20Token on Etherscan.
 https://testnet.bscscan.com/address/0xbF39886B4F91F5170934191b0d96Dd277147FBB2#code
 ```
 
-## Conclusion
-This tutorial guided you through the basics of creating and deploying a simple smart contract using the Hardhat IDE. It also provides step-by-step guide on how to verify your deployed smart contract. This tutorial uses testnet, however, the exact same instructions and sequence will work on the mainnet as well.
+## 결론
+이 튜토리얼에서는 Hardhat IDE를 사용하여 간단한 스마트 컨트랙트를 만들고 배포하는 기본 사항을 알아봤습니다. 또한 배포된 스마트 컨트랙트를 확인하는 방법에 대한 단계별 가이드도 제공합니다. 이 튜토리얼은 테스트넷을 사용하지만, 메인넷에서도 동일한 명령어와 순서가 작동합니다.

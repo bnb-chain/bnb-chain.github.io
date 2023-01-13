@@ -1,37 +1,37 @@
-# Assets
+# 자산
 
-Assets are stored as `tokens` on Beacon Chain , and the below management actions are available. All the assets are complied with [BEP2 standard](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md). [BEP](https://github.com/bnb-chain/BEPs/blob/master/BEP1.md) stands for BNB Chain Evolution Proposal. Each BEP will be a proposal document providing information to the Beacon Chain /DEX community. The BEP should provide a concise technical specification of the feature or improvement and the rationale behind it. Each BEP proposer is responsible for building consensus within the community and documenting dissenting opinions. Each BEP has a unique index number.
+자산은 비컨 체인에서 `tokens`로 저장되며, 다음과 같이 관리하고 있습니다. 모든 자산은[BEP2 표준](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md)을 준수합니다. [BEP](https://github.com/bnb-chain/BEPs/blob/master/BEP1.md)는 BNB Chain Evolution Proposal(BNB 체인 진화 제안)를 뜻합니다. 각 BEP는 비컨 체인이나 DEX 커뮤니티에 정보를 제공하는 제안서입니다. BEP는 기능이나 개선사항에 대한 명확한 기술 규격과 근거를 제시해야 합니다. 각 BEP를 제안한 사람은 커뮤니티 내의 합의를 이끌어 내는 것을 책임지게 되며, 반대 의견들을 문서화해야 합니다. 각 BEP는 고유한 인덱스를 갖게 됩니다.
 
-## BEP2 Token Properties
+## BEP2 토큰 속성
 
-- Source Address: Source Address is the owner of the issued token.
+- 원시 주소: 원시(source) 주소는 발행된 토큰의 소유주를 뜻합니다.
 
-- Token Name: Token Name represents the long name of the token - e.g. "MyToken".
+- 토큰 이름: 토큰 이름은 토큰 전체 이름을 뜻합니다 - 예시. "MyToken".
 
-- Symbol: Symbol is the identifier of the newly issued token.
+- 심볼: 심볼은 새로 발행된 토큰을 간략하게 표현하는 식별자입니다.
 
-- Total Supply: Total supply will be the total number of issued tokens.
+- 총 공급량: 총 공급량은 발행된 토큰의 총 계수입니다.
 
-- Mintable: Mintable means whether this token can be minted in the future, which would increase the total supply of the token
+- Mintable: 다음 토큰이 미래에 민팅 가능한지 여부를 표기합니다. 가능하면 총 공급량이 증가할 수 있습니다.
 
-### Symbol Convention:
+### 심볼 관례:
 
 [Symbol][b]-[Suffix]
 
-Explanations: Suffix is the first 3 bytes of the issue transaction’s hash, for example: [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1). It helps to remove the constraint of requiring unique token names. If this token pegs to an existing blockchain, there should be an additional suffix of “B”.
+설명: Suffix(접미사)는 발행 트랜잭션 해시의 첫 3바이트이며, 예시로: [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1)를 보면 됩니다. 이는 고유한 토큰 이름을 요구하는 제약을 제거하는데 도움이 됩니다. 만일 토큰이 이미 존재하는 블록체인에 패그(peg)된디면, “B”라는 추가 접미사가 붙습니다.
 
-### Issue Process:
+### 발행 과정:
 
-1. Issuer signed an issue transaction and broadcast it to one of Beacon Chain nodes
-2. This Beacon Chain  node will check this transaction. If there is no error, then this transaction will be broadcasted to other Beacon Chain  nodes
-3. Issue transaction is committed on the blockchain by block proposer
-4. Validators will verify the constraints on total supply and symbol and deduct the fee from issuer’s account
-5. New token’s symbol is generated based on the transaction hash. It is added to the issuer’s address and token info is saved on the Beacon Chain 
+1. 발행인이 발행 트랜젹선을 서명하고 비컨 체인 노드 중 하나에 전파합니다
+2. 받은 비컨 체인 노드가 트랜잭션을 점검합니다. 에러가 없으면 이 트랜잭션이 다른 비컨 체인 노드들로 전파됩니다
+3. 발행 트랜잭션이 블록 제안자에 의해 블록체인 상에 기록됩니다
+4. 검증인은 총 공급량과 심볼의 제약 조건을 검증하고 발행인 계정에서 수수료를 차감합니다
+5. 새로은 토큰 심볼이 트랜잭션 해시 기반으로 생성됩니다. 발행자 주소에 추가되며 토큰 정보는 비컨 체인 상에 저장됩니다.
 
 ## BNB
 
-The Binance Coin, `BNB`, is the native asset on Beacon Chain . There are 200MM BNB coins in total. There will be no mining. The existing coin burns and freezes will still be in effect on the new Beacon Chain  blockchain.
+바이낸스 코인인 `BNB`는 비컨 체인의 자체 토큰입니다. BNB 코인은 200MM개 발행되었고, 채굴은 없을 것입니다. 현존하는 코인의 소각이나 동결은 새 비컨 체인 블록체인 상에서도 유효할 것입니다.
 
-The exact number of BNB coins will be destroyed based on the same number of BNB ERC20 tokens that have already been destroyed.
+BNB ERC20 토큰에서 이미 제거된 것과 같은 수의 BNB 코인이 제거될 것입니다.
 
-Since Beacon Chain  is live, all BNB ERC20 tokens will be swapped for Beacon Chain  coins. All users who hold BNB ERC20 tokens can deposit them to Binance.com, and upon withdrawal, the new Beacon Chain  native coins will be sent to their new wallets.
+비컨 체인이 활성화 됨에 따라, 모든 BNB ERC20 토큰은 비컨 체인 코인으로 교환될 것입니다. BNB ERC20 토큰 소유자들은 binance.com에 예치 후 인출할 시, 자체 토큰이 새 지갑에 인출될 것입니다.

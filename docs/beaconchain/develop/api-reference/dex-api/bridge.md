@@ -9,292 +9,292 @@ Binance Chain
 
 **Base URL:** api.binance.org/bridge
 
-**Rate Limit:** 2000 request per IP per 5 mins.
+**Rate 제한:**  2000 request per IP per 5 mins.
 
 ### /api/v1/tokens
 ---
 ##### ***GET***
-**Summary:** get
+**요약:** get
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| direction | query | In or OUT | No | string |
+| direction | query | In or OUT | 아니오 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TokenList](#tokenlist) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/tokens/{symbol}/networks
 ---
 ##### ***GET***
-**Summary:** get
+**요약:** get
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | path | token symbol | Yes | string |
+| symbol | path | token symbol | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [NetworkList](#networklist) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/swaps
 ---
 ##### ***GET***
-**Summary:** find
+**요약:** find
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| direction | query | direction | No | string |
-| endTime | query | endTime | No | long |
-| limit | query | limit | No | long |
-| offset | query | offset | No | long |
-| startTime | query | startTime | No | long |
-| status | query | status | No | [ string ] |
-| symbol | query | symbol | No | string |
-| walletAddress | query | walletAddress | Yes | string |
+| direction | query | direction | 아니오 | string |
+| endTime | query | endTime | 아니오 | long |
+| limit | query | limit | 아니오 | long |
+| offset | query | offset | 아니오 | long |
+| startTime | query | startTime | 아니오 | long |
+| status | query | status | 아니오 | [ string ] |
+| symbol | query | symbol | 아니오 | string |
+| walletAddress | query | walletAddress | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodySwapList](#responsestatusbodyswaplist) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ##### ***POST***
-**Summary:** create
+**요약:** create
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| payload | body | payload | Yes | [SwapCreationRequest](#swapcreationrequest) |
+| payload | body | payload | 예 | [SwapCreationRequest](#swapcreationrequest) |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodySwapCreation](#responsestatusbodyswapcreation) |
 | 201 | Created |  |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/swaps/{swapId}
 ---
 ##### ***GET***
-**Summary:** get
+**요약:** get
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| swapId | path | swapId | Yes | string |
+| swapId | path | swapId | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodySwapDetail](#responsestatusbodyswapdetail) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/swaps/{swapId}/email
 ---
 ##### ***PUT***
-**Summary:** createEmail
+**요약:** createEmail
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| payload | body | payload | Yes | [EmailUpdateRequest](#emailupdaterequest) |
-| swapId | path | swapId | Yes | string |
+| payload | body | payload | 예 | [EmailUpdateRequest](#emailupdaterequest) |
+| swapId | path | swapId | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatus](#responsestatus) |
 | 201 | Created |  |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/swaps/quota/24hour
 ---
 ##### ***GET***
-**Summary:** getQuota
+**요약:** getQuota
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | Yes | string |
-| walletAddress | query | walletAddress | Yes | string |
+| symbol | query | symbol | 예 | string |
+| walletAddress | query | walletAddress | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodyQuota](#responsestatusbodyquota) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v2/swaps
 ---
 ##### ***GET***
-**Summary:** findV2
+**요약:** findV2
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| endTime | query | endTime | No | long |
-| limit | query | limit | No | long |
-| offset | query | offset | No | long |
-| startTime | query | startTime | No | long |
-| status | query | status | No | string |
-| symbol | query | symbol | No | string |
-| walletAddress | query | walletAddress | Yes | string |
+| endTime | query | endTime | 아니오 | long |
+| limit | query | limit | 아니오 | long |
+| offset | query | offset | 아니오 | long |
+| startTime | query | startTime | 아니오 | long |
+| status | query | status | 아니오 | string |
+| symbol | query | symbol | 아니오 | string |
+| walletAddress | query | walletAddress | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodySwapList](#responsestatusbodyswaplist) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ##### ***POST***
-**Summary:** createV2
+**요약:** createV2
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| payload | body | payload | Yes | [SwapCreationRequestV2](#swapcreationrequestv2) |
+| payload | body | payload | 예 | [SwapCreationRequestV2](#swapcreationrequestv2) |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodySwapCreation](#responsestatusbodyswapcreation) |
 | 201 | Created |  |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v2/tokens
 ---
 ##### ***GET***
-**Summary:** getTokens
+**요약:** getTokens
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [TokenListV2](#tokenlistv2) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v2/tokens/{symbol}/networks
 ---
 ##### ***GET***
-**Summary:** get
+**요약:** get
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| symbol | path | token symbol | Yes | string |
+| symbol | path | token symbol | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [NetworkListV2](#networklistv2) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v1/unknown-deposits
 ---
 ##### ***GET***
-**Summary:** getUnknownDeposits
+**요약:** getUnknownDeposits
 
-**Parameters**
+**매개 변수** 
 
-| Name | Located in | Description | Required | Schema |
+| 이름 | 위치 | 설명 | 필수 | 스키마 |
 | ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | limit | No | long |
-| offset | query | offset | No | long |
-| walletAddress | query | walletAddress | Yes | string |
+| limit | query | limit | 아니오 | long |
+| offset | query | offset | 아니오 | long |
+| walletAddress | query | walletAddress | 예 | string |
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodyDepositList](#responsestatusbodydepositlist) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### /api/v2/swaps/validation/ip
 ---
 ##### ***GET***
-**Summary:** validateIP
+**요약:** validateIP
 
-**Responses**
+**응답** 
 
-| Code | Description | Schema |
+| 코드 | 설명 | 스키마 |
 | ---- | ----------- | ------ |
 | 200 | OK | [ResponseStatusBodyboolean](#responsestatusbodyboolean) |
 | 401 | Unauthorized |  |
 | 403 | Forbidden |  |
-| 404 | Not Found |  |
+| 404 | Not Found(칮을 수 없음) |  |
 
 ### Models
 ---
 
 ### EmailUpdateRequest
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | email | string |  |  |
 | walletAddress | string |  |  |
 
 ### ResponseStatus
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | message | string |  |  |
 
 ### ResponseStatusBodySwapCreation
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | data | [SwapCreation](#swapcreation) |  |  |
@@ -302,7 +302,7 @@ Binance Chain
 
 ### ResponseStatusBodySwapDetail
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | data | [SwapDetail](#swapdetail) |  |  |
@@ -310,7 +310,7 @@ Binance Chain
 
 ### SwapCreation
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
 | createTime | dateTime |  |  |
@@ -333,7 +333,7 @@ Binance Chain
 
 ### SwapCreationRequest
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
 | direction | string |  |  |
@@ -347,7 +347,7 @@ Binance Chain
 
 ### SwapDetail
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | actualFromAmount | number |  |  |
 | actualNetworkFee | number |  |  |
@@ -381,7 +381,7 @@ Binance Chain
 
 ### ResponseStatusBodySwapList
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | data | [SwapList](#swaplist) |  |  |
@@ -389,28 +389,28 @@ Binance Chain
 
 ### SwapList
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | swaps | [ [SwapDetail](#swapdetail) ] |  |  |
 | total | long |  |  |
 
 ### TokenList
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | swaps | [ [TokenDetail](#tokendetail) ] |  |  |
 | total | long |  |  |
 
 ### TokenListV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | swaps | [ [TokenDetailV2](#tokendetailv2) ] |  |  |
 | total | long |  |  |
 
 ### TokenDetail
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | name | string |  |  |
 | symbol | string |  |  |
@@ -425,7 +425,7 @@ Binance Chain
 
 ### TokenDetailV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | name | string |  |  |
 | symbol | string |  |  |
@@ -445,14 +445,14 @@ Binance Chain
 
 ### NetworkList
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | from | [ [NetworkDetail](#networkdetail) ] |  |  |
 | to | [ [NetworkDetail](#networkdetail) ] |  |  |
 
 ### NetworkDetail
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | name | string |  |  |
 | supportLabel | boolean |  |  |
@@ -465,14 +465,14 @@ Binance Chain
 
 ### NetworkListV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | from | [ [NetworkDetailV2](#networkdetailv2) ] |  |  |
 | to | [ [NetworkDetailV2](#networkdetailv2) ] |  |  |
 
 ### NetworkDetailV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | name | string |  |  |
 | symbol | string |  |  |
@@ -491,7 +491,7 @@ Binance Chain
 
 ### ResponseStatusBodyQuota
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | data | [Quota](#quota) |  |  |
@@ -499,7 +499,7 @@ Binance Chain
 
 ### Quota
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | left | number |  |  |
 | total | number |  |  |
@@ -507,7 +507,7 @@ Binance Chain
 
 ### SwapCreationRequestV2
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
 | exchangeGasAmount | number |  | 0.5,1,2 |
@@ -522,7 +522,7 @@ Binance Chain
 
 ### ResponseStatusBodyDepositList
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | data | [DepositList](#depositlist) |  |  |
@@ -530,7 +530,7 @@ Binance Chain
 
 ### Deposit
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | amount | number |  |  |
 | confirmTimes | integer |  |  |
@@ -552,14 +552,14 @@ Binance Chain
 
 ### DepositList
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | deposits | [ [Deposit](#deposit) ] |  |  |
 | total | long |  |  |
 
 ### ResponseStatusBodyboolean
 
-| Name | Type | Description | Example |
+| 이름 |유형 | 설명 | 예시 |
 | ---- | ---- | ----------- | ------- |
 | code | integer |  |  |
 | data | boolean |  |  |

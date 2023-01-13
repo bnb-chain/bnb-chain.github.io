@@ -1,51 +1,83 @@
-# Architecture
+# 시스템 구성
 
-BNB Beacon Chain is a multi-modular blockchain with excellent native support for account management, asset management, cross chain, goverenance and so on.
-It is esay to extend to support different initiatives of BNB ecosystem.
-Beacon Chain uses [Tendermint](https://github.com/tendermint/tendermint) BFT consensus, and a dedicated application layer, which is built with Cosmos SDK, runs upon it. 
-A simplified overview of the application's architecture might look something like this:
+## 합의 상세
+
+비컨 체인은 피어-투-피어 분산 시스템으로, "세계의 상태"에 대해 합의에 도달한 여러 클라이언트들을 연결합니다. 비컨체인은 [텐더민트](https://github.com/tendermint/tendermint) BFT 합의를 사용하며 이 위에서 실행되는 전용 `어플리케이션 계층`을 가지고 있습니다. 어플리케이션의 구성을 간단하게 도식화 하면 다음과 같이 나타낼 수 있습니다:
 
 ```
-+------------+---------------------+
-| RPC API        | Web API         |
++------------+-----------+
+| RPC API    | 웹 API    |
 +------------------------+---------+
-| Staking | Salshing | Cross Chain |
-+------------------------+---------+
-| Asset Management | Match Engine  |
+| 자산 관리        | 매치 엔진      |
 +----------------------------------+
-| Account Management | Governance  |---------> crypto and blockchain governance
+| 계정 관리        | 거버넌스       |---------> 크립토 및 블록체인 거버넌스
 +----------------------------------+
-| State Caching and Persisence     +-+
+| 상태 캐싱 및 지속성               +-+
 +----------------------------------+ |
-| Consensus Protocol               | |
-+----------------------------------+ |-----> revised Tendermint
-| P2P Protocol                     | |
+| 합의 프로토콜                     | |
++----------------------------------+ |-----> 수정된 텐더민트
+| P2P 프로토콜                      | |
 +----------------------------------+ |
-| Networking    |  Database        +-+
+| 네트워킹     |  데이터베이스       +-+
 +----------------------------------+
 
 ```
 
-For more information about Tendermint, please have a look at the [Tendermint Core](https://tendermint.com/core/).
-For more information about Cosmos SDK, please have a look at the [Cosmos Intro](https://v1.cosmos.network/intro).
+더 자세한 정보는 [텐더민트 상세](https://github.com/tendermint/tendermint/blob/master/docs/spec/consensus/consensus.md)를 보시면 됩니다.
 
-## Modules
+## 블록 크기
 
-BNB Beacon Chain implements a multi-modular blockchain architecture which is easy to extend and use, and also provides the basic functionalities for side chains and other chains to build upon it.
-Here are the main moudles:
+비컨 체인은 텐더민트가 제안한 것과 유사한 블록 구조를 사용하며, 크기 제한은 1MB입니다.
 
-- Asset - A fruitful set of features are implemented for asset management, for example, users can issue, mint/burn, freeze/unfreeze, lock/unlock BEP2 and BEP8 tokens.
+블록은 몇 초 단위로 검증자들에 의해 생성될 것으로 기대되며, 한 블록에는 0에서부터 몇 천 개의 트랜잭션들을 담을 수 있습니다.
 
-- Governance - Beacon Chain supports on-chain governance of beacon chain and side chains. Holders of the native token (i.e., BNB) can submit proposals and vote on proposals to apply different kinds of changes on chains.
+## 블록체인 상태
 
-- Staking - With this moudle, BNB holders can become validators and can delegate tokens to validators, ultimately determining the effective validator sets for beacon chain and side chains (e.g., BSC).
+블록체인 상태는 다음과 같은 정보를 저장합니다:
 
-- Distribution - Beacon Chain will actively distribute rewards between validators and delegators, for both Beacon Chain itself and its side chains.
+- 계정과 잔고
+- 수수료
+- 토큰 정보
+- 거래 쌍
+- 틱 크기와 로트 크기
+- 거버넌스 정보
 
-- Cross Chain - Beacon Chain supports the cross chain transfers of native tokens. Cross chain communication is also built in, to support different kinds of usage scenarios.
+트랜잭션은 블록에 저장되기 때문에 체인 상태로 저장되지 않습니다. 거래도 잔액과 트랜잭션을 통해 알 수 있기 때문에 따로 저장하지 않습니다.
 
-- Slashing - Slashing module will disincentivize any bad actor by penalizing them. 
+## 암호화 설계
 
-- Params - A globally available parameter store is provided by Beacon Chain. These parameters affects the excution of Beacon Chain itself and its side chains, and can be changed by goverenance.
+### 계정과 주소
 
-- APIs - RPC, HTTP, and Websocket APIs are provided for interacting with blockchains and the related services. Developers can use these APIs to build their Web3 applications, wallets, data services and so on.
+일반 사용자들은 모든 키와 주소가 바이낸스 [웹 지갑](https://www.binance.org/en/create)에 의해 생성됩니다.
+
+이 지갑은 비트코인과 비슷한 방식으로 키를 생성합니다. 256비트의 엔트로피를 이용하여 [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)기반 24-단어 니모닉을 생성하고, 니모닉과 빈 암호 구문을 통해 시드를 생성합니다. 이 시드를 이용하여 마스터 키를 생성하고, [SLIP 44](https://github.com/satoshilabs/slips/blob/master/slip-0044.md)에 BNB를 가리키는 HD 접두사 `"44'/714'/"`와 BIP32/BIP44 표준을 사용하여 개인키를 도출합니다.
+
+_참고로 714 는 7월 14일 바이낸스 생일에서 유래했습니다. :)_
+
+#### 키(Key)
+
+비컨 체인은 [비트코인 구현](https://github.com/btcsuite/btcd/tree/master/btcec)할 때 사용하는 `secp256k1`같은 타원 곡선 암호화 기법을 사용합니다. 개인키는 32 바이트로 이루어졌고, 공개키는 33바이트입니다.
+
+#### 주소
+
+비컨 체인의 주소들은 20바이트이며 다음과 같이 표현할 수 있습니다:
+
+```
+Address = RIPEMD160(SHA256(압축된 공개 키))
+```
+
+일반적으로 주소는 체크섬(Checksum)과 사람이 읽을 수 있는 접두사(HRP)를 포함한 [bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)형식으로 인코딩됩니다. 단, `SegWit` 주소 형식은 사용하지 않습니다 (어차피 `세그윗` 함수가 없기 때문에 `witness program version` 같은 것은 사용하지 못합니다).
+
+따라서 비컨 체은 주소는 세그윗 프로그램 스크립트가 없는 [비트코인 캐시 주소](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md)와 더 유사합니다.
+
+주소 형식 pseudo-code:
+
+```
+Address_Bech32 = HRP + '1' + bech32.encode(convert8BitsTo5Bits(RIPEMD160(SHA256(압축된 공개키))))
+```
+
+비컨 체인 주소는, 실제 네트워크에서 주소 에 `bnb`를 붙이며, 테스트넷 앞에는 `tbnb`를 붙입니다.
+
+#### 서명
+
+비컨 체인은 바이트 배열의 JSON 인코딩 트랜잭션 표준 표현으로 `SHA256` 해시값을 도출하고, 이 값을 secp256k1 곡선에서 ECDSA 서명하는데 사용합니다. 자세한 정보는 [이 페이지](encoding/encoding.md#canonical-bytes-for-signing)를 참고하세요.

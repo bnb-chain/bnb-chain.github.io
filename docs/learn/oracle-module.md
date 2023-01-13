@@ -1,21 +1,21 @@
 ---
-sidebar_label: Oracle Module
+sidebar_label: 오라클 모듈
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Oracle on Beacon Chain
+# 비콘 체인에서의 오라클
 
-The **oracle** module is a common module like gov which is used to handle prophecy and claim. Prophecy means the validators want to reach a consensus on something, like cross chain transfer. Claim is raised by a validator and the content of claim is the cross chain transfer. When most of the validators (like 70%) claim the same thing on the prophecy, the winning claim will be executed.For oracle module is a common module, other module which depends on oracle module will register claim type and related hooks checking and handling claim. Each claim type has a sequence, oracle module should process prophecy and claim by sequence. When one prophecy is executed successfully, the sequence of the claim type will be increased by one.
+**오라클** 모듈은 예언과 클레임을 처리하는 데 사용되는 gov와 같은 일반적 모듈입니다. 예언은 검증자들이 크로스 체인 전송과 같은 것에 대해 합의에 도달하기를 원한다는 것을 의미합니다. 클레임은 검증자에 의해 제기되며, 클레임의 내용은 크로스 체인 전송입니다. 대부분의 검증자(70% 정도)가 예언에서 동일한 것을 주장(claim)할 때, 승리한 클레임이 실행됩니다. 오라클 모듈이 공통 모듈이기 때문에, 오라클 모듈에 의존하는 다른 모듈이 클레임을 확인 및 처리하며 클레임 타입 및 관련 후크를 등록할 것입니다. 각 클레임 유형에는 시퀀스(sequence)가 있으며, 오라클 모듈은 예측 및 클레임을 시퀀스별로 처리해야 합니다. 하나의 예언이 성공적으로 실행되면 클레임 유형의 시퀀스가 1씩 증가합니다.
 
-## Oracle Process
-1. Oracle module receives a claim message from validator, if the sequence is not current sequence, the claim message will be rejected.
-2. If sequence is valid, the hooks of the claim type will check the claim message, if the claim message is invalid, then return
-3. If the claim message is valid and it’s the first claim, the related prophecy will be created. If claim message is not the first claim, then it will be added to the existed prophecy.
-4. If the power of validators which claim the same content reaches a threshold like 70%, the prophecy will be marked success and the hooks will execute the winning claim and the sequence of claim type will be increased.
-5. If there is no chance that the validators will reach a consensus, the prophecy will be marked failed and the prophecy will be deleted and the validators should start over again.
+## 오라클 프로세스
+1. 오라클 모듈은 검증자로부터 클레임 메시지를 수신합니다. 시퀀스가 현재 시퀀스가 아닌 경우 클레임 메시지가 거부됩니다.
+2. 시퀀스가 유효하면 클레임 타입의 후크가 클레임 메시지를 확인하고, 클레임 메시지가 유효하지 않으면 반환됩니다.
+3. 클레임 메시지가 유효하고 첫 번째 클레임일 경우 관련 예언이 생성됩니다. 클레임 메시지가 첫 번째 클레임이 아닐 경우 기존 예언에 추가됩니다.
+4. 동일한 내용을 주장하는 검증자의 힘이 70%와 같은 임계값에 도달하면 예언이 성공으로 표시되고, 훅이 승리한 클레임을 실행하며 클레임 타입의 시퀀스가 증가합니다.
+5. 검증자가 합의에 도달할 가능성이 없는 경우 예언은 실패한 것으로 표시되며 삭제되고 검증자는 처음부터 다시 시작해야 합니다.
 
-## Bridge Module
-Bridge module will process cross chain transactions. It contains two parts: transactions from BC to BSC and transactions from BSC to BC.
-For transactions from BSC to BC, it will depend on the oracle module. When the validators reach a consensus on a certain claim, the bridge module will process the transaction according to the claim, like transfer from BSC to BC.
-For transactions from BC to BSC, it will process the BC part of the transaction and write the related cross chain package for BSC.
+## 브리지 모듈
+브리지 모듈이 체인 간 트랜잭션을 처리합니다. BC에서 BSC로의 트랜잭션과 BSC에서 BC로의 트랜잭션 두 부분으로 구성됩니다.
+BSC에서 BC로의 트랜잭션의 경우 오라클 모듈에 따라 달라집니다. 검증자가 특정 클레임에 대한 합의에 도달하면 브리지 모듈은 BSC에서 BC로의 전송 등과 같은 클레임에 따라 트랜잭션을 처리합니다.
+BC에서 BSC로의 트랜잭션의 경우, 거래의 BC 부분을 처리하고 BSC를 위한 관련 교차 체인 패키지를 작성합니다.

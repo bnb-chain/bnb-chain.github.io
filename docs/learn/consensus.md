@@ -1,59 +1,208 @@
 ---
-sidebar_label: Consensus Engine
+sidebar_label: 합의 엔진
 sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Consensus Engine
+# 합의 엔진
 
-Although Proof-of-Work (PoW) has been recognized as a practical mechanism to implement a decentralized network, it is not friendly to the environment and also requires a large size of participants to maintain the security.
+## 요약
+BSC(BNB 스마트 체인)의 합의 엔진은 다음의 목표를 위해 구상되었습니다:
 
-Ethereum and some other blockchain networks, such as [MATIC Bor](https://github.com/maticnetwork/bor), [TOMOChain](https://tomochain.com/), [GoChain](https://gochain.io/), [xDAI](https://xdai.io/), do use [Proof-of-Authority(PoA)](https://en.wikipedia.org/wiki/Proof_of_authority) or its variants in different scenarios, including both testnet and mainnet. PoA provides some defense to 51% attack, with improved efficiency and tolerance to certain levels of Byzantine players (malicious or hacked). It serves as an easy choice to pick as the fundamentals.
+1. 몇 개의 블록이 확정될 때까지 대기(이더리움 1.0 보다 적어야 함), 대부분의 경우 포크가 없는 편이 나음.
+2. 이더리움 1.0 대비 블로킹 시간이 짧아야 함(5초 이하).
+3. 인플레이션 없음. 트랜잭션 가스비가 블록 보상.
+4. 이더리움 정도의 호환성.
+5. 코스모스만큼 강력한 스테이킹과 거버넌스.
 
-Meanwhile, the PoA protocol is most criticized for being not as decentralized as PoW, as the validators, i.e. the nodes that take turns to produce blocks, have all the authorities and are prone to corruption and security attacks. Other blockchains, such as EOS and Lisk both, introduce different types of [Delegated Proof of Stake (DPoS)](https://en.bitcoinwiki.org/wiki/DPoS) to allow the token holders to vote and elect the validator set. It increases the decentralization and favors community governance.
+[Geth](https://github.com/ethereum/go-ethereum/wiki/geth)는 두 종류의 합의 엔진을 구현하고 있습니다: ethash(PoW 기반) 그리고 [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)(PoA 기반)입니다. BSC는 PoW를 포기했기 때문에 Ethash는 적절한 선택지가 아닙니다. Clique는 블로킹 타임이 더 짧고, 51% 어택에 취약하지 않은 동시에 기존 이더리움 클라이언트 호환성을 유지하기 위해 코어 데이터 구조에 최소한의 변화만을 주었습니다. PoA의 단점은 중앙화, 유의미한 스테이킹의 부재 그리고 온체인 거버넌스 능력의 부족입니다. 반면에 비컨 체인은 스테이킹 및 거버넌스 메커니즘을 보유하고 있는 코스모스 위에 만들어졌습니다. 따라서 다음과 같은 합의 엔진을 제안하려 합니다:
 
-BSC here proposes to combine DPoS and PoA for consensus, so that:
+* 비컨 체인이 BSC 대신 스테이킹과 거버넌스를 담당합니다.
+* 검증인 집단은 변화하며, BSC의 이중 서명 슬래싱은 체인 간 커뮤니케이션을 통해 업데이트 됩니다.
+* BSC의 합의 엔진은 clique 만큼 단순합니다.
 
-1. Blocks are produced by a limited set of validators
-2. Validators take turns to produce blocks in a PoA manner, similar to [Ethereum's Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
-3. Validator set are elected in and out based on a staking based governance
+대표적인 PoA 합의 몇 가지를 조사해본 결과 [Bor](https://blog.polygon.technology/heimdall-and-bor/)가 위와 흡사하게 설계되었음을 발견했습니다. Bor로부터 몇 부분을 차용하여 위의 모든 목표를 달성할 수 있는 새로운 합의 엔진을 제안할 것입니다.
 
-The consensus protocol of BSC fulfills the following goals:
-1. Short Blocking time, 3 seconds on mainnet.
-2. It requires limited time to confirm the finality of transactions, around 45s for mainnet.
-3. There is no inflation of native token: BNB, the block reward is collected from transaction fees, and it will be paid in BNB.
-4. It is 100% compatible with Ethereum system .
-5. It allows modern proof-of-stake blockchain network governance.
+## 인프라 구성 요소
 
-## Validator Quorum
-In the genesis stage, a few trusted nodes will run as the initial Validator Set. After the blocking starts, anyone can compete to join as candidates to elect as a validator. The staking status decides the top 21 most staked nodes to be the next validator set, and such an election will repeat every 24 hours.
+1. **비컨 체인(Beacon Chain)**. BSC 검증인을 독립된 투표를 통해 스테이킹 기능을 실현합니다. 투표 워크 플로우는 스테이킹 절차에 의해 실행됩니다.
+2. **BSC 검증인**. 검증인들은 트랜잭션을 검증하고 블록을 생성함으로써 네트워크의 안보와 원장의 일관성을 보장합니다. 그 대신 트랜잭션의 가스 소비로부터 보상을 받습니다.
+3. **BSC(또는 시스템 컨트랙트)의 스테이킹 dApp**. BSC에서 스테이킹을 구현하기 위한 제네시스 컨트랙트들이 있습니다. 여섯 가지로 분류가 됩니다:
+    - **Light client 컨트랙트**. 오직 비컨 체인의 합의 알고리즘을 검증하는 컨트랙트에 의해 구현된 분산 합의 프로세스의 watcher입니다.
+    - **Cross Chain 컨트랙트**. 크로스체인 커뮤니케이션 레이어입니다. 크로스체인 패키지의 순서와 머클 증명(merkle proof)를 검증할 것입니다.
+    - **BSCValidatorSet 컨트랙트**. 비컨 체인 상 BSC의 검증인 변경을 감시합니다. BSC의 검증인 집단 변경을 적용할 것입니다. 또한 검증인들을 위한 블록 가스비 보상을 저장하며, validatorSet 변경의 크로스체인 패키지 수신 시 검증인들에게 수익을 배분합니다.
+    - **System Reward 컨트랙트**. 릴레이어들이 시스템 컨트랙트들을 유지할 수 있도록 해주는 인센티브 메커니즘입니다. 시스템 보상 컨트랙트에서 보상을 받을 것입니다.
+    - **Liveness Slash 컨트랙트**. BSC의 liveness는 검증인 세트에 의존하며, 자신의 차례에 적시에 블록을 생성할 수 있습니다. 검증인들은 어떤 이유에서든 자신의 차례를 놓칠 수 있습니다. 작업의 이러한 불안정성은 네트워크의 성능에 악영향을 미치며, 더 비결정론적인 성질을 시스템에 도입합니다. 이 컨트랙트는 각 검증인의 누락된 블록킹 메트릭을 기록하는 역할을 합니다. 메트릭들이 사전에 정의된 임계치 이상이라면, 검증인을 위한 블록 보상은 배분을 위해 BC로 전달되는 대신 더 나은 검증인들과 공유됩니다.
+    - **기타 컨트랙트**.  BSC는 비컨 체인의 강력한 거버넌스를 이용하여 예를 들어 시스템 컨트랙트 파라미터 변경을 제안할 수 있습니다.
 
-BNB is the token used to stake for BSC.
+비컨 체인의 스테이킹과 거버넌스는 합의 보다 상위에 있는 레이어입니다. 릴레이어의 경우 독립적인 프로세스이며, 구현 방법은 아직 미정입니다. 이에 대한 자세한 내용은 이 문서에서는 다루지 않겠습니다.
 
-In order to remain as compatible as Ethereum and upgradeable to future consensus protocols to be developed, BSC chooses to rely on the BC for staking management. There is a dedicated staking module for BSC on BC. It will accept BSC staking from BNB holders and calculate the highest staked node set. Upon every UTC midnight, BC will issue a verifiable **ValidatorSetUpdate** cross-chain message to notify BSC to update its validator set.
+이 문서는 오직 합의 엔진과 더 긴밀하게 연관이 있는 **BSC 검증인**와 **스테이킹 dApps**에만 초점을 맞출 것입니다.
 
-While producing further blocks, the existing BSC validators check whether there is a **ValidatorSetUpdate** message relayed onto BSC periodically. If there is, they will update the validator set after an **epoch period**, i.e. a predefined number of blocking time. For example, if BSC produces a block every 5 seconds, and the epoch period is 240 blocks, then the current validator set will check and update the validator set for the next epoch in 1200 seconds (20 minutes).
+## 시스템 보상 분배
+BSC의 시스템 보상 구조는 유연하게 변동할 수 있습니다. 거버넌스를 통해 파라미터를 조정할 수 있습니다.
 
-## Parlia
+보상들은 트랜잭션 수수료에서 비롯됩니다. 보상은 몇 개의 (조정 가능한) 규칙에 기반하여 분배됩니다:
+1. 블록을 생성하는 검증인들은 가스비의 15/16를 받습니다.
+2. 시스템 보상 컨트랙트는 가스비의 1/16를 받습니다.
 
-The implement of the consensus engine is named as **Parlia** which is similar to [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853). This doc will focus more on the difference and ignore the common details.
+시스템 보상 컨트랙트의 잔고가 100BNB 이상인 경우, BNB를 분배하지 않습니다.
+아래에서는 이 컨트랙트들이 보상을 어떻게 분배하는지 설명하겠습니다.
 
-### Light Client Security
-Validators set changes take place at the (epoch+N/2) blocks. (N is the size of validatorset before epoch block). Considering the security of light client, we delay N/2 block to let validatorSet change take place.
+## BSC의 스테이킹 dApps
 
-Every epoch block, validator will query the validatorset from contract and fill it in the extra_data field of block header. Full node will verify it against the validatorset in contract. A light client will use it as the validatorSet for next epoch blocks, however, it can not verify it against contract, it have to believe the signer of the epoch block. If the signer of the epoch block write a wrong extra_data, the light client may just go to a wrong chain. If we delay N/2 block to let validatorSet change take place, the wrong
-epoch block won’t get another N/2 subsequent blocks that signed by other validators, so that the light client are free of such attack.
+### [BSCValidatorSet 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001000)
+비컨 체인 상에서 BSC의 검증인 변경의 감시자입니다. 아래와 같은 인터페이스를 구현합니다:
 
-### System Transaction
-The consensus engine may invoke system contracts, such transactions are called system transactions. System transactions is signed by the the validator who is producing the block. For the witness node, will generate the system transactions(without signature) according to its intrinsic logic and compare them with the system transactions in the block before applying them.
+- **handleSynPackage(uint8, bytes calldata msgBytes)**
 
-### Enforce Backoff
-In Clique consensus protocol, out-of-turn validators have to wait a randomized amount of time before sealing the block. It is implemented in the client-side node software and works with the assumption that validators would run the canonical version.
-However, given that validators would be economically incentivized to seal blocks as soon as possible, it would be possible that the validators would run a modified version of the node software to ignore such a delay. To prevent validator rushing to seal a block, every out-turn validator will get a specified time slot to seal the block. Any block with a earlier blocking time produced by an out-turn validator will be discarded by other witness node.
+**Conditions**:
 
-### Extending the ruling of the current validator set via temporary censorship
-If the transaction that updates the validator is sent to the BSC right on the epoch period, then it is possible for the in-turn validator to censor the transaction and not change the set of validators for that epoch. While a transaction cannot be forever censored without the help of other n/2 validators, by this it can extend the time of the current validator set and gain some rewards. In general, the probability of this scheme can increase by colluding with other validators. It is relatively benign issue that a block may be approximately 3 secs and one epoch being 200 blocks, i.e. 20 mins so the validators could only be extended for another 10 mins.
+        1. 메시지 Sender는 CrossChainContract를 사용합니다.
 
-## Security and Finality
-Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the [Clone Attack](https://arxiv.org/pdf/1902.10244.pdf). To secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.
-With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+**Action**:
+
+        1. msgBytes의 첫 번째 바이트가 0x00이면 
+        `Actions validators update`
+
+        2. msgBytes의 첫 번째 바이트가 0x01이면 
+        `Actions jail`
+
+**Actions jail**:
+
+        1. 검증인을 jailed로 표시.
+
+**Actions validators update**:
+
+        1. 검증인 수익 분배:
+        수익이 0.1 BNB 이상이면 BC의 계정으로 크로스체인 전송을 함. 그렇지 않은 경우 BSC에서 주소로 전송함.
+        2. 최신 validatorSet 업데이트.
+        3. 슬래시 컨트랙트에서 메트릭 기록 정리.
+
+**CurrentValidator() returns ([]address)**
+
+    투옥 안 된 검증인들의 합의 주소를 반환
+
+**deposit(address valAddr) external**
+
+**Conditions**:
+
+        1. 메시지 발신자가 coinbase여야 합니다.
+        2. 한 블록 당 한 번 호출합니다.
+
+**Actions**:
+
+        1. 검증인의 수익 증가
+
+### [시스템 보상 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001002)
+현재는 **크로스체인 컨트랙트** 만이 시스템 보상 컨트랙트를 호출할 수 있습니다. 다음과 같은 인터페이스를 구현합니다:
+
+- **claimRewards(address payable to, uint256 amount) external**
+
+    **Conditions**:
+
+        1. 메시지 발신자는 퍼미션 목록에 있어야 합니다.
+        2. 금액은 1 BNB 이상이어선 안됩니다.
+
+    **Actions**:
+
+        1. 특정 주소에 BNB를 전송합니다.
+
+### [Liveness Slash 컨트랙트](https://bscscan.com/address/0x0000000000000000000000000000000000001001)
+검증인이 블록 생성에 실패할 경우 기록하고 슬래싱합니다. 다음의 인터페이스를 구현합니다.
+
+- **Slash(validator address) external**
+
+    **Conditions**:
+
+        1. 메시지 발신자가 coinbase에 있어야 합니다.
+        2. 한 블록 당 한 번 호출합니다.
+
+    **Actions**:
+
+        1. 검증인의 놓친 블록 메트릭을 1 증가시킵니다.
+        2. 놓친 블록 메트릭이 50의 배수라면 BSCValidatorSet 컨트랙트의 misdemeanor 함수를 호출하여 misdemeanor 이벤트를 트리거하고, 검증인의 수익을 다른 이들에게 분배합니다.
+        3. 놓친 블록 메트릭이 150의 배수라면,BSCValidatorSet 컨트랙트의 felony 함수를 호출하여 felony 이벤트를 트리거하고, 검증인의 수익을 다른 이들에게 분배할 뿐 아니라 validatorset에서 제거합니다.
+
+
+## 합의 프로토콜
+
+컨센서스 엔진의 구현 이름은 **Parlia**로,  [clique](https://ethereum-magicians.org/t/eip-225-clique-proof-of-authority-consensus-protocol/1853)와 유사합니다. 이 문서는 차이에 더 초점을 맞추고 일반적인 세부 정보는 무시합니다.
+
+소개하기 전에 몇 가지 용어를 명확히 하고자 합니다.
+
+1. 에폭 블록. 컨센서스 엔진이 BSCValidatorSet 컨트랙트의 validatorSet을 주기적으로 업데이트합니다.  현재 주기는 200 블록이고, 높이가 200의 배수이면 에폭 블록이라고 합니다.
+2. 스냅샷.  스냅샷은 블록의 검증자 및 최근 서명자를 저장하는 데 도움이 되는 보조 개체입니다.
+
+
+### 핵심 기능
+
+#### 라이트 클라이언트 보안
+검증자 집합 변경은 (epoch+N/2) 블록에서 수행됩니다. (N은 에폭 블록 앞에 설정된 validatorset 크기입니다.) 라이트 클라이언트의 보안을 고려하여 N/2 블록을 지연하여 validatorSet이 변경되도록 합니다.
+
+에폭 블록마다 검증자는 컨트랙트에서 validatorset을 쿼리하고 블록 헤더의 extra_data 필드에 입력합니다. 풀노드는 컨트랙트에 설정된 검증자에 대해 이 노드를 확인합니다. 라이트 클라이언트는 이를 다음 에폭 블록의 validatorSet으로 사용하지만 컨트랙트에 대해 검증할 수 없으며 에폭 블록의 서명자를 믿어야 합니다. 에폭 블록의 서명자가 잘못된 extra_data를 쓰면 라이트 클라이언트는 잘못된 체인으로 갈 수 있습니다. validatorSet이 변경되도록 N/2 블록을 지연시키면 잘못된 에폭 블록은 다른 검증자가 서명한 다른 N/2 후속 블록을 얻지 않으므로 라이트 클라이언트는 이러한 공격을 받지 않습니다.
+
+#### 시스템 트랜잭션
+합의 엔진은 시스템 컨트랙트를 호출할 수 있으며, 이러한 트랜잭션을 시스템 트랜잭션이라고 합니다. 시스템 트랜잭션은 블록을 생성하는 검증자에 의해 서명됩니다. 감시 노드(witness node)의 경우 에서는 고유한 논리에 따라 시스템 트랜잭션(서명 없음)을 생성하고 이를 적용하기 전에 블록의 시스템 트랜잭션과 비교합니다.
+
+#### 백오프를 적용
+Clique 합의 프로토콜에서는 순서를 놓친 검증자가 블록을 확정하기 전에 무작위 시간을 기다려야 합니다. 이는 클라이언트 측 노드 소프트웨어에서 구현되며 검증자가 표준 버전을 실행한다는 가정 하에 작동합니다.
+그러나, 검증자가 경제적으로 인센티브를 받을 경우 가능한 한 빨리 블록을 봉인할 유인이 된다는 점을 감안할 때, 검증자가 그러한 지연을 무시하기 위해 노드 소프트웨어의 수정된 버전을 실행할 가능성이 있습니다. 검증자가 블록을 급하게 봉인하는 것을 방지하기 위해 모든 순서 놓친 검증자는 지정된 시간 슬롯을 통해 블록을 밀봉합니다. 순서를 놓친 검증자에 의해 생성된 차단 시간이 더 빠른 블록은 다른 감시 노드에 의해 삭제됩니다.
+
+### 새로운 블록을 생성하는 법
+
+#### 1단계: 준비
+검증자 노드가 다음 블록의 블록 헤더를 준비합니다.
+
+* 캐시 또는 데이터베이스에서 스냅샷을 불러옵니다.
+* (height % epoch)==0인 경우, `BSCValidatorSet` [contract](https://bscscan.com/address/0x0000000000000000000000000000000000001000)에서 ValidatorSet를 가져옵니다.
+*  모든 에폭 블록은 라이트 클라이언트의 구현을 용이하게 하기 위해 블록 헤더의 `extraData` 필드에 검증자 세트 메시지를 저장합니다.
+* coinbase는 검증자 주소입니다.
+
+#### 2단계: 확정 및 어셈블
+
+* 순번 검증자가 아닌 경우 liveness 슬래시 컨트랙트를 호출하여 예상 검증자를 슬래시하고 슬래시 트랜잭션을 생성합니다.
+* 블록에 가스 요금이 있는 경우 시스템 보상 컨트랙트에 **1/16**을 배분하고 나머지는 검증자 컨트랙트로 이동합니다.
+
+#### 3단계: 봉인
+검증자가 새 블록을 전파하기 전의 마지막 단계입니다.
+
+* 블록 헤더의 모든 항목에 서명하고 서명을 extraData에 추가합니다.
+* 검증자가 블록에 서명할 차례가 아닌 경우, 정직한 검증자는 임의의 적절한 시간을 기다립니다.
+
+### 블록을 검증/재생하는 법
+
+#### 1단계: 헤더 확인
+새 블록을 수신할 때 블록 헤더를 확인합니다.
+
+* coinbase의 서명이 `blockheader`의 `extraData`에 있는지 확인합니다.
+* `blockHeader`의 블록 시간을 서명자의 예상 블록시간과 비교합니다. `blockHeader` 가 예상보다 작을 시 거부합니다. 이는 이기적인 검증자가 블록 봉인을 서두르는 것을 방지하는 데 도움이 됩니다.
+* coinbase는 서명자여야 하고 난이도는 기대치여야 합니다.
+
+#### 2단계: 확정
+
+* 에폭 블록인 경우 검증자 노드는 BSCValidatorSet에서 validatorSet을 가져와 extra_data와 비교합니다.
+* 블록이 차례로 검증자에 의해 생성되지 않으면 슬래시 컨트랙트를 호출합니다.
+블록에 가스 비가 있는 경우 1/16을 시스템 보상 컨트랙트에 분배하고 나머지는 검증자 컨트랙트에 분배합니다.
+* 합의 엔진에서 생성된 트랜잭션은 블록의 tx와 동일해야 합니다.
+
+### 서명
+coinbase의 서명은 블록헤더의 extraData에 있으며, extraData의 구조는 다음과 같습니다.
+에폭 블록: 
+`32바이트의 extraVanity + N*{20바이트의 검증자 주소} + 65바이트의 서명`
+
+에폭 블록이 없음: 
+`32바이트의 extraVanity + 65바이트의 서명`
+
+서명된 내용은 블록 헤더의 RLP 인코딩의 `Keccak256`입니다.
+
+
+### 보안 및 최종성
+1/2\*N+1개 이상의 검증자가 정직하다고 할 때, PoA 기반 네트워크는 일반적으로 안전하고 적절하게 작동합니다. 그러나 "클론 공격"과 같이 일정 수의 비잔틴 검증자가 여전히 네트워크를 공격할 수 있는 경우도 있습니다. BC 정도의 보안을 유지하기 위해 BSC 사용자는 2/3\*N+1개 이상의 서로 다른 검증자가 밀봉한 블록을 수신할 때까지 기다리는 것을 권장합니다. 이러한 방식으로 BSC는 BC와 유사한 보안 수준에서 신뢰할 수 있으며 1/3\*N 미만의 비잔틴 검증자를 허용할 수 있습니다.
+
+21명의 검증자가 있고 차단 시간이 5초인 경우, 2/3\*N+1개의 다른 검증자 봉인에는 (2/3\*21+1)\*5 = 75초의 시간이 필요합니다. BSC의 중요한 애플리케이션은 상대적으로 안전한 최종 결과를 보장하기 위해 2/3\*N+1을 기다려야 할 수 있습니다. 그러나 그러한 합의 외에도 BSC는 이중 서명 또는 불안정성에 대해 비잔틴 검증자에게 불이익을 주기 위해 슬래싱 로직을 도입합니다. 이러한 슬래싱 로직으로 인해 악의적인 검증자가 매우 짧은 시간에 노출되어 [클론 공격](https://arxiv.org/pdf/1902.10244.pdf)은 실행하기가 매우 어렵거나 매우 비경제적입니다. 이 기능 향상 덕분에 1/2\*N+1 또는 더 적은 수의 블록으로 충분히 대부분의 트랜잭션을 확인할 수 있습니다.
+
+### 잠재적인 문제
+
+#### 임시 검열을 통해 현재 검증자 집합의 결정을 확장
+검증자를 업데이트하는 트랜잭션이 에폭 기간에 BSC 오른쪽으로 전송되는 경우, 순번 검증자가 트랜잭션을 검열하고 해당 에폭에 대한 검증자 집합을 변경하지 않을 수 있습니다. 트랜잭션은 다른 n/2 검증자의 도움 없이는 영원히 검열될 수 없지만, 이를 통해 현재 검증자 세트의 시간을 연장하고 일부 보상을 얻을 수 있습니다. 일반적으로 다른 검증자와 결탁하면 이 계획의 가능성이 증가할 수 있습니다. 비교적 무해한 문제로, 블록이 약 5초, 한 에폭이 240 블록, 즉 20분이 되므로 검증자가 20분 더 지연될 수 있습니다.

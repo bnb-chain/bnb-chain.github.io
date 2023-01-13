@@ -1,66 +1,66 @@
 ---
-sidebar_label: Sync Token Supply
+sidebar_label: 토큰 총공급량 동기화
 hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Sync BEP2 and BEP20 Token Supply
+# BEP2과 BEP20 토큰 총공급량 동기화
 
-## Prerequisite
+## 요구사항
 
-This BEP20 token is [mirrored](mirror.md) to a BEP2 token.
+이 BEP20 토큰은 BEP2 토큰에 [미러](mirror.md)되어 있습니다.
 
-## Motivation
+## 동기
 
-For a BEP20 token which has been mirrored to BC, anyone can call the `sync` method to balance the total supply on BC and BSC. Thus, the total supply among two Blockchains will remain the same.
+BC에 미러된 BEP20 토큰의 경우, 누구든지 `sync` 메서드를 호출하여 BC와 BSC에서의 총공급량의 균형을 맞출 수 있습니다. 따라서, 두 블록체인 간의 총공급량은 동일하게 유지됩니다.
 
-## What happens under the hood
+## 작동 방식
 
-- Verify there is already mirrored
-- Check the total supply and token symbol is valid
-- Send a cross-chain package to modify a BEP2 token total supply on Binance Chain
+- 이미 미러링이 되어 있는지 확인합니다.
+- 총 공급량 및 토큰 심볼이 유효한지 확인합니다.
+- 바이낸스 체인에서 BEP2의 총공급량을 수정하기 위해 크로스 체인 패키지를 보냅니다.
 
-After syncing, the total supply on BC and BSC are the same.
+동기화 후, BC와 BSC의 총공급량은 동일합니다.
 
-## Fee Table
+## 수수료 테이블
 
-| Fee Name    | Pay in BNB |
+| 수수료 이름   | BNB로 지불 |
 | ----------- | ---------------------------- |
-| syncFee     | it's 0.002BNB on mainnet now |
-| relayFee    | it's 0.002BNB on mainnet now |
+| syncFee     | 현재 메인넷에서 0.002BNB |
+| relayFee    | 현재 메인넷에서 0.002BNB |
 
-Both `syncFee` and `relayFee` can be changed by on-chain governance
+`syncFee`와 `relayFee` 둘 다 온체인 거버넌스로 변경될 수 있습니다.
 
-To query `syncFee` from system contract;
+시스템 컨트랙트에서 `syncFee` 쿼리하기;
 
-- Call `Tokenmanager` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001008#readContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenmanager.abi)
+- 최신 [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )를 사용하여 `Tokenmanager` [컨트랙트](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) 호출
 
-- Query `syncFee` function
-
-Fee= result/1e18
-
-To query `relayFee` from system contract;
-
-- Call `TokenHub` [Contract](https://bscscan.com/address/0x0000000000000000000000000000000000001004#readContract) with the latest [ABI](https://raw.githubusercontent.com/bnb-chain/bsc-genesis-contract/master/abi/tokenhub.abi)
-
-- Query `getMiniRelayFee` function
+- `syncFee` 함수 호출
 
 Fee= result/1e18
 
-## Mirror With MyEtherWallet
+시스템 컨트랙트에서 `relayFee` 쿼리하기;
 
-- Call `Tokenmanager` Contract
+- 최신 [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenhub.abi) 사용하여 `TokenHub` [컨트랙트](https://testnet.bscscan.com/address/0x0000000000000000000000000000000000001008#writeContract) 호출
 
-Use the latest [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi )
+- `getMiniRelayFee` 함수 쿼리하기;
+
+Fee= result/1e18
+
+## 마이이더넷월렛과 싱크하기
+
+- `Tokenmanager` 컨트랙트 호출
+
+최신 [ABI](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenmanager.abi) 사용하기
 
 ![img](https://lh5.googleusercontent.com/SYyvWVcLHELSE72JSXqBwMJB6Y50jMz5HgH6irmCbyxGwr-W_Hz-vbm4IqWXAqE2hvCAXaqNKfs28ZhGFtMrMrDgWvDfEkHPunnSuxSKPpLBtuxmiX-b5yRjfczENJxKDrqSAYWy)
 
-- Select `sync` function and fill-in with your BEP20 address
+- `sync` 함수 선택하고 여러분의 BEP20 주소를 기입합니다
 
-The value here should be no less than  `syncFee`+ `relayFee`.
+여기서 최소값은 `syncFee`+ `relayFee`입니다.
 
-Time stamp should be greater than `unix_timestamp(now())`. The difference should be between 120 and 86400. It's recommended to use `unix_timestamp(now())+1000`
+타임스탬프는 `unix_timestamp(now())` 이상이어야 합니다. 격차는 120에서 86400 사이여야 합니다. `unix_timestamp(now())+1000` 사용을 권장합니다.
 
 ![img](https://lh5.googleusercontent.com/EIgRKIBY8unMsuSBa88jY_EXdJeO1WtaXTQLV905AZmPJDsN72chHcPZrDEWOeD8m1a1awEwP43Uh0eFURLXSKQvnfc3J9YzWLYuBvAeVwIwicKfLUZlCkvkR0NdWxkYWAQKa3Ii)
 
-All set!
+다 준비가 되었습니다!

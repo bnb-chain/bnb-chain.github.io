@@ -1,46 +1,45 @@
 ---
-sidebar_label: Token Migration
+sidebar_label: 토큰 이전
 ---
-# Migrate Tokens From Polygon to BSC
-In this article, we'll discuss how to migrate deployed tokens from Polygon to BSC and also the migration of vested tokens.
+# 폴리곤에서 BSC로 토큰 이전하기
+이 문서에서는 폴리곤에 배포되거나 베스팅 된 토큰들을 BSC로 이전하는 방법에 대해 다룹니다.
 
-## Token migration 
-Often, blockchain projects begin as whitepapers, promising innovative technologies to follow in the future. However, there can be multiple twists and turns in the process of transforming from a design paper to a real product. One such can be choosing to move to an entirely different blockchain, than that initially proposed.
-In such scenarios, projects can require a token migration, also known as a token swap. 
+## 토큰 이전
+많은 블록체인 프로젝트들은 백서에서 향후 기술 혁신이 있을 것이라고 서술합니다. 다만 백서에서 실제 제품을 생성할 때 예상치 못한 문제들이나 계획의 변경이 일어납니다. 그 중 하나는 처음에 만들고자 했던 블록체인에서 다른 블록체인에 출시하기로 결정하는 것입니다. 이런 경우 프로젝트들은 토큰 스왑으로 알려진 토큰을 이전해야 하는 경우가 발생합니다. 
 
-Token migration is a process that involves transmitting a token holder's balance on one blockchain to another blockchainLet's discuss how to create an ERC20 token on BSC and how to bridge an ERC20 token from the EVM-based blockchain to BSC - we'll be using Polygon as an example.
+토큰 이전은 토큰 소유자의 잔고를 원래 블록체인에서 다른 블록체인으로 옮기는 것을 뜻합니다. 이 부분에서는 폴리곤을 예시로 ERC20 토큰을 생성하고 이를 브릿지를 통해 같은 EVM 기반인 BSC로 이전하는 것에 대해 다룹니다.
 
-## Creating ERC20 Token on BSC
-Since EVM chains are compatible with ERC20 tokens, in this section, we provide  guidelines on how to develop ERC20 tokens on BSC and how to bridge an ERC20 token from Polygon to BSC. 
-For this tutorial, we will use Truffle Suite to compile and deploy ERC20 token smart contracts onto the BSC network.
+## BSC에서 ERC20 토큰 생성
+EVM 체인은 ERC20 토큰들과 호환되기 때문에 이 부분에서는 BSC 상에서 ERC20을 BSC상에서 개발하고 ERC20 토큰을 사용하는 폴리곤에서 BSC로 브릿지를 연결하는 가이드라인을 제공할 예정입니다.
+이 튜토리얼에서는 Truffle Suite를 통해 ERC20 토큰 스마트 컨트랙트를 BSC에서 컴파일하고 배포할 것입니다.
 
-### Pre-requisites
-There is no need for any local environment settings for deploying Solidity smart contracts on BSC using the Remix IDE.
-All you require is a browser-based Web3 wallet (e.g. MetaMask) to interact with the BSC Testnet and the deployed contracts. If you are already using MetaMask, it is recommended to create a new account for testing with Replit. You can do this from the account menu, which appears when you click on the account avatar in the top right corner of the MetaMask interface.
-You must set up all of the following prerequisites to be able to deploy your Solidity smart contract on BSC:
-* [Download Metamask wallet](https://metamask.io/)
-* [Configure BNB Smart Chain Testnet on Metamask](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
-* [Get BNB Testnet tokens](https://testnet.binance.org/faucet-smart)
+### 필수 조건
+Remix IDE를 사용하여 솔리디티 스마트 컨트랙트를 BSC에서 배포하는 것에 로컬 환경 설정을 할 필요는 없습니다.
+BSC 테스트넷과 배포된 컨트랙트를 사용하기 위해서는 브라우저 기반 Web3 지갑(예. [메타마스크](https://metamask.io/))이 필요합니다. 이미 [메타마스크](https://metamask.io/)를 사용하고 계시면, Remix IDE에서 테스트하기 위해 새 계정을 생성하는 것을 권장합니다. 메타마스크 인터페이스 우측 상단의 계정 아바타를 클릭하면 나오는 계정 메뉴에서 생성할 수 있습니다.
+BSC에서 솔리디티 스마트 컨트랙트를 배포하기 위해서는 다음 요소들을 미리 설정해야 합니다:
+* [메타마스크 지갑 다운로드](https://metamask.io/)
+* [메타마스크에서 BNB 스마트 체인 테스트넷 설정하기](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
+* [BNB 테스트넷 토큰 얻기](https://testnet.binance.org/faucet-smart)
 
-### Setting Up Remix IDE
-* Remix is an online IDE to develop smart contracts.
-* You need to choose Solidity compiler - choose the appropriate compiler version; 0.8.15 was used for this tutorial.
+### Remix IDE 설정하기
+* 리믹스는 스마트 컨트랙트 개발을 위한 온라인 IDE입니다.
+* 솔리디티 컴파일러를 선택하고, 맞는 컴파일러 버전을 선택합니다. 이 튜토리얼에서는 0.8.15을 사용합니다.
 
-### Creating a Workspace in Remix IDE
-* Click on the plus icon to create a new workspace.
+### Remix IDE에서 작업환경 생성하기
+* 플러스 아이콘을 클릭하여 새로운 작업환경을 생성하세요.
   
 ![](token-1.png)
 
-* Choose the OpenZeppelin's ERC20 template; give a meaningful name to your workspace and press ok.
+* 오픈 제플린(OpenZeppelin)의 ERC20 템플릿을 선택하세요. 작업환경에 의미 있는 이름을 부여한 후 ok를 누르세요.
 
 ![](token-2.png)
 
-* Remix will create the smart contract "MyToken.sol" for you as well as will import any dependencies. We can edit this "MyToken.sol" to create our own ERC20 tokens.
+* 리믹스는 "MyToken.sol"이란 스마트 컨트랙트를 생성하고 종속된 라이브러리 및 프로그램 버전을 불러옵니다. "MyToken.sol"을 수정하여 자체 ERC20 토큰을 생성할 수 있습니다.
 
 ![](token-3.png)
  
-### Writing the Smart Contract
-* Open the "MyToken.sol" file and replace the token name and symbol with that of your choice, as shown in the code  below
+### 스마트 컨트랙트 작성하기
+* "MyToken.sol" 파일을 열고 아래 코드와 같이 토큰 이름과 심볼을 원하는대로 변경합니다.
 
 ```
 // SPDX-License-Identifier: MIT
@@ -53,80 +52,80 @@ contract ERC20Example is ERC20 {
 }
 ```
 
-* Rename the MyToken.sol file to the name of your token.
+* MyToken.sol 파일 이름을 토큰 이름으로 변경하세요.
 
 ![](token-4.png)
 
-* Compile the smart contract 
+* 스마트 컨트랙트를 컴파일하세요 
 
 ![](token-5.png)
 
-* Deploy the smart contract. Make sure that your MetaMask wallet is configured for use with the BNB Smart Chain Testnet. 
-  * Select inject provider in the environment variable and make sure you see your connect account address in the Account field. 
-  * Click on the Deploy button to deploy the ERC20 token smart contract.
+* 스마트 컨트랙트를 배포하세요. 메타마스크 지갑이 BNB 스마트 테스트넷을 사용하도록 설정되어 있는지 다시 한 번 확인하세요.
+  * 환경 변수에서 주입 공급자(inject provider)를 선택하고 Account 부분에서 당신의 연결되는 계정 주소를 확인하세요.  
+  * Deploy 버튼을 클릭하여 BEP20 토큰 스마트 컨트랙트를 배포하세요.
 
 ![](token-6.png)
 
-* Confirm the transaction by pressing the confirm button on the metamask notification. 
+* 메타마스크 알림에서 confirm 버튼을 눌러 트랜잭션을 확인합니다.
 
 ![](token-7.png)
 
-* To view your tokens in your metamask wallet, follow [this](https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask) tutorial.
+* 메타마스크 지갑에서 토큰을 조회하려면 [다음](https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-display-tokens-in-MetaMask) 튜토리얼을 참고하세요.
 
 ![](token-8.png)
  
-## Bridging Tokens from Polygon to BSC
-With several different blockchain platforms available for development, of the varied underlying architecture, consensus mechanism, etc., interoperability and cross-communication between these platforms with respect to token and data transfers can be nearly impossible. 
+## 폴리곤에서 BSC로 토큰 브릿지 이용하기
+다양한 구조 및 합의 체계를 가진 블록체인 플랫폼이 개발되면서 토큰이나 데이터의 크로스 체인 통신 및 상호운용이 거의 불가능할 수 있습니다. 
 
-Blockchain bridges are designed to overcome this hindrance of interoperability and provide a secure mechanism for decentralized token transfers. 
-A cross-chain bridge connects independent blockchains and enables the transfer of assets and information between them, allowing users to access other protocols easily. Most commonly, the lock-and-mint model is used by cross-chain bridges for the purpose of moving assets between different chains. An easy description of things work is as follows:
-1.	Alice sends a certain amount of Token A to a specific address on the source chain (say, Polygon) and pays the transaction fee. 
-2.	Alice's Token A is locked up in a smart contract by a trusted validator or held with a trusted custodian. 
-3.	Equal amount of Token B is minted on the destination blockchain (say, BSC). 
-4.	Alice receives Token B in her wallet address and can use it on the new blockchain. 
+블록체인 브릿지는 이러한 상호 운용성의 장애를 극복하고 분산된 토큰 전송을 위한 안전한 메커니즘을 제공하도록 설계되었습니다.
+크로스 체인 브릿지는 개별 블록체인을 연결하고 자산 전송을 가능하게 하여 사용자들이 다른 프로토콜들을 더욱 쉽게 접근할 수 있도록 합니다. 
+크로스 체인 브릿지에서 서로 다른 체인 간 자산을 옮길 때 잠금 및 민팅 모델을 사용합니다. 작동 방식을 쉽게 설명하면 다음과 같습니다:
+1.	엘리스는 일정량의 원래 자산이 존재하는 체인(폴리곤) 주소에서 토큰 A를 트랜잭션 수수료를 지불하고 전송을 시작합니다. 
+2.	엘리스의 토큰 A는 인증된 검증인이나 관리인에 의해 스마트 컨트랙트에 잠깁니다. 
+3.	같은 양의 토큰 B가 도착하는 블록체인(여기선 BSC)에 민팅됩니다. 
+4.	엘리스는 자신의 지갑 주소에 토큰 B를 받고 새로운 블록체인 상에서 사용할 수 있습니다. 
  
 [Image Source](https://blog.makerdao.com/what-are-blockchain-bridges-and-why-are-they-important-for-defi/)
 
-Now, what if Alice needs to move back the Token B onto her source chain and use them as Token A. This is where the burning mechanism comes into play:
-1.	Alice sends leftover Token B to a specific address on the second chain. These tokens are "burned" in the sense that they are irrecoverable. 
-2.	The validator or custodian triggers the release of Alice's Token A on the source chain. Alice then receives the released funds in her original wallet. 
-One thing critical to understand is how cross-chain bridges actually work. Cross-chain bridges work by "wrapping" tokens in a smart contract and issuing native assets you can use on another chain. For example, wrapped Bitcoin (wBTC) is an ERC-20 token that uses Bitcoin (BTC) as a collateral. Users must deposit BTC on the Bitcoin blockchain, before receiving wBTC tokens on the BSC network. 
+만일 엘리스가 토큰 B를 보냈던 체인으로 다시 보내고 토큰 A를 사용해야한다고 가정하면, 다음과 같은 소각 과정이 일어납니다:
+1.	엘리스는 남은 토큰 B를 현재 사용하고 있는 체인의 특정 주소에 전송합니다. 이 토큰들은 "소각"되며 복구할 수 없습니다. 
+2.	보냈던 체인에서 검증인 혹은 관리인이 엘리스의 토큰 A의 잠금을 소각된만큼 해제합니다. 엘리스는 잠금 해제된 자금을 원래 지갑에 받을 수 있습니다. 
+크로스 체인 브릿지의 작동 방식을 이해하는 것은 중요합니다. 크로스 체인 브릿지는 토큰을 스마트 컨트랙트에서 "래핑(Wrapping)"하여 다른 체인에서 사용할 수 있도록 자체 자산을 발행합니다. 예를 들어 래핑된 비트코인(wBTC)는 ERC-20 토큰으로 이더리움 체인 상에서 비트코인처럼 사용됩니다. 사용자들은 이더리움 네트워크에서 wBTC 토큰을 받기 전에 비트코인 블록체인에서 BTC를 이체해야 받을 수 있습니다.
 
-### Celer's cBridge
-In this section of the article, we describe how to use [Celer's cBridge](https://cbridge.celer.network/1/10/DF) for bridging tokens from Polygon to BSC. For custom tokens, you will have to get your token whitelisted by the Celer team. For this tutorial, we will be bridging a more commonly supported USDC token from the Polygon blockchain to BSC using the [Celer cBridge](https://cbridge.celer.network/1/10/DF).
+### Celer의 cBridge
+다음 부분에서는 [Celer의 cBridge](https://cbridge.celer.network/1/10/DF)를 통해 폴리곤에서 BSC로 토큰 브릿지를 사용하는 방법에 관해 설명할 것입니다. 커스터 토큰들은 셀러 공식 팀에서 화이트리스트 인증을 받아야 사용 가능합니다. 이 튜토리얼에서는 USDC 토큰을 폴리곤 [Celer cBridge](https://cbridge.celer.network/1/10/DF)를 통해 폴리곤에서 BSC로 옮길 것입니다.
 
-### Using Celer cBridge to bridge tokens from Polygon to BSC
+### Celer cBridge를 사용하여 폴리곤에서 BSC로 토큰 브릿지 사용하기
 1.	Head over to the official Website of cBridge and connect your wallet. After clicking on the connect wallet button, choose your desired wallet. If metamask is chosen, confirm the connection on the popup notification.
 
 ![](token-10.png)
 
-2.	Select your source and destination chains. To make sure your Metamask wallet is connected to the source chain, approve and switch to the network by confirming the metamask notification. 
-3.	Make sure your source chain is set to Polygon and the destination chain is BSC. Also, confirm that you have selected USDC for transfer. 
+2.	보내는 체인(source chain) 및 받는 체인(destination chain)을 설정합니다. 메타마스크가 보내는 체인과 연결되어 있는 것을 확인하기 위해, 메타마스크 알림에서 네트워크를 변경하고 확인하세요.
+3.	보내는 체인(source chain)이 폴리곤(Polygon)인지 확인하고 받는 체인(destination chain)이 BSC인지 확인하세요. 또한 보내는 토큰이 USDC인지 확인하세요. 
  
 ![](token-11.png)
 
-4.	Adjust the slippage tolerance if required. Your transfer may fail if you choose a very low slippage tolerance.
+4.	필요시 슬리피지 허용을 조정하세요. 슬리피지 허용이 매우 낮을 시 전송이 실패할 수 있습니다.
 
 ![](token-12.png)
 
-5.	Review your transaction details and confirm the transaction.
-6.	Confirm Transfer, then sign the transaction on your wallet.
-7.	Wait for the transaction to confirm and for your funds to arrive on your destination
-8.	In case of transfer failure, due to insufficient liquidity on the destination chain or an unfavorable slippage tolerance, you will receive a popup explaining the reason for the failure. You can cancel the transfer either through the popup, or by clicking Request Refund in the transfer history.
+5.	트랜잭션 세부 사항을 검토하고 트랜잭션을 확인하세요.
+6.	전송을 확정하고 지갑을 통해 트랜잭션을 서명하세요.
+7.	트랜잭션이 확정되고 자금이 도착지에 도착하기까지 기다립니다.
+8.	받는 체인에서 유동성이 부족하거나 맞지 않는 슬리피지 허용으로 인해 트랜잭션이 실패할 경우 팝업을 통해 실패한 이유가 표시됩니다. 팝업이나 전송 기록에서 Request Refund를 눌러서 통해 전송을 취소할 수 있습니다. 
 
-## Migrating Vested Token from Polygon to BSC
-In crypto space, Vesting is known as the process of locking and distributing purchased tokens within a particular timeframe known as the Vesting Period. Vested tokens can be described as a certain amount of tokens that are held aside for a particular time period, usually for the team members, partners, advisors, and others who are contributing to the development of the project. 
-Vested tokens are essentially locked in a smart contract and are released automatically until certain conditions are met. Vesting basically gives the impression that the team is highly interested in the project and aims to continue working on the project development. Additionally, vesting lowers market price manipulations. 
-There are two options available for migrating vested tokens from EMV-based blockchain to BSC.
-* Migrate the vesting contract and move the whole vesting schedule to BSC.
-* Migrate the tokens that are being released as per the schedule
+## 폴리곤에서 BSC로 베스팅된 토큰 이전하기
+크립토 분야에서 _**베스팅**_은 구매한 토큰을 잠그고 _**베스팅 기간**_이라는 특정 기간 사이에 일정량을 배분하는 것을 뜻합니다. 베스팅된 토큰은 팀이나 파트너사, 어드바이저 및 프로젝트에 개발에 기여자들에게 배분되어 일정 기간동안 보유하고 있는 토큰들을 의미합니다.
+베스팅된 토큰은 스마트 컨트랙트에 잠겨 있으며 특정 조건에 도달했을 때 자동으로 해제됩니다. 베스팅은 개발한 팀이 프로젝트에 지속적으로 관심을 갖고 개발하게 되는 동기를 마련합니다. 또한 베스팅을 통해 시장 가격 조작을 억제합니다. 솔라나에서 BSC로 베스팅된 토큰을 이전하는 방법에는 두 가지가 있습니다.
+* 베스팅 컨트랙트와 스케쥴을 폴리곤에서 BSC로 이전합니다.
+* 토큰을 이전하고 스케쥴대로 잠금을 해제합니다.
 
-## Migrating Vesting Contract
-Vesting is essentially a smart contract that has all of the vested tokens locked up which are released over a time period automatically when certain conditions are met. One of the possible ways to migrate vested tokens from BSC is to migrate the vesting contract that is to deploy your vesting smart contract to BSC. 
+## 베스팅 컨트랙트 이전
+베스팅은 스마트 컨트랙트가 모든 베스팅된 토큰을 잠근 후 특정 조건이 성립되면 시간에 맞게 자동으로 락업된 토큰들을 해제합니다. BSC로 베스팅된 토큰을 옮기는 방법 중 하나는 베스팅 컨트랙트를 BSC로 옮기는 것입니다.
 
-### Migrating Vesting Tokens 
-Another method is to ask the holders of vested tokens to exchange the already bought vested tokens with a newly created equivalent token on BSC and continue the release of vested tokens as per schedule. Another way is to take a snapshot of the vested token holders and update their wallets with an equivalent amount of new tokens and continue with the vesting schedule and release of tokens.
+### 베스팅된 토큰 이전 
+토큰을 옮기는 프로젝트 팀들은 보유자들에게 이미 산 베스팅된 토큰을 BSC에서 새롭게 같은 가치를 보유하며 생성된 생성된 토큰으로 일정에 맞춰 교환해준 후 스케쥴대로 잠긴 토큰들을 새로운 토큰으로 푸는 방법을 사용할 수 있습니다. 또 다른 방법은 베스팅된 토큰 보유자들의 스냅샷을 촬영하여 그들의 지갑에 같은 양의 새로운 토큰으로 업데이트 후 베스팅된 토큰을 스케쥴에 맞춰 푸는 방식이 있습니다.
 
-## Conclusion
-With several advantages and an ecosystem that supports web3 development, BNB Chain has gained a lot of attention from developers and blockchain projects. Several blockchain projects are now choosing to migrate their tokens from other EVM chains to BSC. In this article, we provided a brief overview of how to migrate tokens from one EVM to another, in particular from Polygon to BSC.
+## 결론
+여러 장점 및 Web3 개발을 지원하는 생태계를 통해 BNB체인은 개발자 및 블록체인 프로젝트들로부터 주목을 받게 되었습니다. 몇몇 EVM 기반 블록체인 프로젝트들이나 토큰들은 BSC로 이전하고 있습니다. 이 문서에서는 폴리곤에서 BSC로 옮기는 예시를 통해 EVM기반 토큰들을 BSC로 이전하는 방법에 대해 알아보았습니다.
 
