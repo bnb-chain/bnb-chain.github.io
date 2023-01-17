@@ -12,7 +12,7 @@ hide_table_of_contents: false
   
 - Go to the staking page:
 
-    - Mainnet: <https://www.binance.org/en/staking>
+    - Mainnet: <https://www.bnbchain.org/en/staking>
     - Testnet: <https://testnet-staking.binance.org/en/staking>
 
 **Testnet example**
@@ -27,7 +27,7 @@ hide_table_of_contents: false
 
 ![img](https://lh4.googleusercontent.com/rCFd8jPzCspJDYEKO02JvZTVhNPWL1UGZIENnhIJ9_7h-8UXp20PhGxg2xzwNmRKQiFRLnrmMVaTDd1dYAmVk1b2WVG9DBnsuFFYOlpI-xCeZhtObAfgjzVUlmqQ43BWCyPKhwjl)
 
-- Click on “delegate” and input the amount
+- Click on **Delegate** and input the amount
 
 ![img](https://lh4.googleusercontent.com/-mfR40ZPqZ3yih90oXNee4DULAnbV1l3ZWbkGgqgi07tdXDcCFR_5eA5PY23vW_GqO0sXlkwTr_laljPl11COpX0hB4KBA6_dHgGGUqe8y2YxYNECcKZvc75GdW9WlaFJf4zx776)
 
@@ -53,11 +53,11 @@ By staking you BNB, you participate in the selection process of BNB Smart Chain 
 
 Redelegations between a unique delegator, source validator, and destination validator can only happen once every 7 days
 
-- Click on redelegate
+- Click on **Redelegate**
 
 ![img](https://lh3.googleusercontent.com/mgnbGGdmvIfMyj5_cWTwOtaN-8uQn8t7hBaP5cZ297MH6-KE-v_pWRNl-sGjecPRp-K7eoKa4BvEFLYBvOxoPlO9Weq6RDijN2xvGC6-VhS8poycBwkOSOKGjtmw0jj-S1NdWsB-)
 
-- Select a new validator and the redegelation amount
+- Select a new validator and input amount to redelegate
 
 ![img](https://lh4.googleusercontent.com/sQ23rDrcUIccCmjwHp0jgHRqgkJwm_nkPH2cvHiL5guqj3Xk-1VfPxbM_Okx_zCrJswFoaWq03fwFh0ATLKvEvVM-OmgVheFCNHbrK9Plw4tmilNO7UFSLYVBUjExSyrskiuNsPs)
 
@@ -76,11 +76,11 @@ Redelegations between a unique delegator, source validator, and destination vali
 
 ## How to Undelegate Your BNB with Binance Extension Wallet
 
-- Click on undelegate
+- Click on **Undelegate**
 
 ![img](https://lh6.googleusercontent.com/FsvTIitDmIut49wYjPr6-gKRrQSx__IBKE7Ga74Uk1SPdH1WmuPFA50WLdsUmd8B78V9kemXA91F01rocBD53M0whofHnkMVE4bkydOdu8-ooGiNS9UlkN1Dv-KZnbcu_imph6_6)
 
-- input the amount
+- Input the amount
 
 ![img](https://lh3.googleusercontent.com/dMuio1mZQGq4AmKKR-GPLYkBFLl3U2F4G-Ddm8qKKAdD682LjIMI97rCzx-GFd4pxMcsVvCwszUXUbxnO-txr3bmHd3EcqL1Qw-mqMG61S0Tj49VA7toQmyd8rDqPqYo24kK2mow)
 

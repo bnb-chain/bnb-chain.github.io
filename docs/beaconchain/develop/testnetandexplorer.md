@@ -9,8 +9,6 @@ The validators on the testnet are from development team.
 
 You can connect a node to the testnet by downloading the node binary and testnet configuration from [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases).
 
-There is also a [web wallet](https://testnet.binance.org/en/) that can directly interact with the DEX. testnet.
-
 ### What is the Testnet good for?
 
 - Create your test address and get your testnet funds.
@@ -24,22 +22,16 @@ There is also a [web wallet](https://testnet.binance.org/en/) that can directly 
 
 **Steps to claim testnet BNB:**
 
-1. Create a new Wallet of Binance Smart Chain testnet with [MetaMask or MathWallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
-2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
+1. Create a new Wallet of Binance Smart Chain testnet with [Trust Wallet or Binance Extension Wallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
 
-To request funds, please make a tweet with your Binance Smart Chain address pasted into the contents. Then, copy-paste the tweets URL!
-**BNB** will be sent to your BSC wallet right away.
+2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
 
 3. Transfer From BNB Smart Chain to Beacon Chain
 
 You can use [Binance Extension Wallet](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
 
-If you wish to test Beacon Chain features, you could transfer BNB cross-chain with MathWallet dApp:
-https://docs.bnbchain.org/docs/wallet/math#transfer-bnb-from-bsc-to-bc-in-testnet
-
 
 ### Explorers for Testnet
-* BscSCAN - https://testnet.binance.org/en/
-* Bitquery - https://testnet-explorer.binance.org/
-
+* BscScan - https://testnet.bscscan.com/
+* Beacon Chain Explorer - https://testnet-explorer.binance.org/
 
