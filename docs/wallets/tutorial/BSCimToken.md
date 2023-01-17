@@ -22,7 +22,7 @@ An introduction on how to start with using BSC on the imToken wallet
 2. Fill in your identity name and wallet password. Next, click "Create", copy the backup mnemonic phrase with pen and paper and keep it in a safe place. Confirm the mnemonic words in order again and click "Next" to successfully create a wallet.
 
 ## What is BSC?
-BSC is the abbreviation of BNB Smart Chain. The chain adopts PoSA (Proof of Staked Authority), which means holders of BNB (BSC's native token) vote to select 21 validators that are responsible for on-chain transaction verification and block production.
+BSC is the abbreviation of BNB Smart Chain. The chain adopts PoSA (Proof of Staked Authority), which means holders of BNB (BSC's native token) vote to select 50 validators that are responsible for on-chain transaction verification and block production.
  
 Since BSC is EMV-compatible, developers can easily deploy smart contracts and build DApps on the chain. Compared with Ethereum, BSC has lower gas fees and faster transaction settlement with lower security guarantees.
  

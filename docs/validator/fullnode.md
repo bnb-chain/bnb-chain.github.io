@@ -116,7 +116,7 @@ The **full** sync mode can also be used to do initial sync, which will apply all
 Since the amount of historical data is too large, the initial sync is **not recommended** for running a full node. Instead, you can download a snapshot from the official repo and start from the snapshot. Default value is **full** when you start geth with an existing data folder so there is no need to explicitly add it when syncing from snapshot.
 
 ## Local Private Network
-Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/bsc-deploy) to setup a local private network.
+Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
 
 ## Node Maintenance
 Please read [this guide](./validator/node-maintenance.md)

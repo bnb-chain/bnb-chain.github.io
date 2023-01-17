@@ -31,7 +31,7 @@ The codebase of BSC is open-sourced here:
 
 ## What is the consensus model of BSC?
 
-BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
 
 ## Where can I find some support?
 * Technical talk and support running our software: 
@@ -67,7 +67,7 @@ Please read this [guide](./wallet/withdraw-en.md)
 
 ### How does BNB Smart Chain work? What are the architecture and consensus used?
 
-BNB Smart Chain relies on a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.
+BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.
 
 There will be fewer validators on the BNB Smart Chain testnet.
 
