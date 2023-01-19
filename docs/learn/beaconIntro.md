@@ -4,11 +4,11 @@ sidebar_position: 2
 ---
 # Introduction
 
-[Beacon Chain](https://www.bnbchain.org) is a blockchain developed its community that implements the staking and governance layer of BNB ecosystem. 
+[Beacon Chain](https://www.bnbchain.org) is a blockchain developed by its community that implements the staking and governance layer of BNB ecosystem. 
 As a beacon chain, it has a flexible set of native assets and pluggable modules for governance, staking and etc. 
 It uses Tendermint for consensus and app logic is built upon Cosmos SDK. It targets fast block times, a native dApp layer and multi-token support with no smart contract VM.
 
-Beacon Chain implement following features now:
+Beacon Chain implements the following features now:
 
 - Sending and receiving BNB and digital assets
 - Issuing new digital assets (we have a standard called BEP-2 and BEP-8)

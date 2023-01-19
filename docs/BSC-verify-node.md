@@ -47,7 +47,7 @@ Your --datadir flag should point to the extracted chaindata folder path
 
 4. Start verify node
 ```
-geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
+./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
 ```
 
 :::note
