@@ -36,7 +36,7 @@ Currently, there are **11** validators in BNB Beacon Chain mainnet, and more par
 
 BNB is the native token for both BNB Beacon Chain and BNB Smart Chain. On Beacon Chain
 - BNB is used as the token for staking and goverenance
-- transactions fees are paied in BNB
+- transactions fees are paid in BNB
 - transactions burns BNB, according to a fee schedule
 - there is a native support for cross chain transfers of BNB between Beacon Chain and side chains.
 

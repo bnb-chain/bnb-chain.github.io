@@ -1,6 +1,6 @@
 # Upgrade
 
-Please follow [Beacon Chain  Telegram Announcement Channel](https://t.me/Binance_DEX_Announcement) or forum to get the latest news about upcoming upgrades.
+Please follow our official channels to get the latest news about upcoming upgrades.
 
 ## Upgrading Full Node
 
