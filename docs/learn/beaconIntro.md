@@ -4,11 +4,11 @@ sidebar_position: 2
 ---
 # Introduction
 
-[Beacon Chain](https://www.bnbchain.org) is a blockchain developed its community that implements the staking and governance layer of BNB ecosystem. 
+[Beacon Chain](https://www.bnbchain.org) is a blockchain developed by its community that implements the staking and governance layer of BNB ecosystem. 
 As a beacon chain, it has a flexible set of native assets and pluggable modules for governance, staking and etc. 
 It uses Tendermint for consensus and app logic is built upon Cosmos SDK. It targets fast block times, a native dApp layer and multi-token support with no smart contract VM.
 
-Beacon Chain implement following features now:
+Beacon Chain implements the following features now:
 
 - Sending and receiving BNB and digital assets
 - Issuing new digital assets (we have a standard called BEP-2 and BEP-8)
@@ -36,7 +36,7 @@ Currently, there are **11** validators in BNB Beacon Chain mainnet, and more par
 
 BNB is the native token for both BNB Beacon Chain and BNB Smart Chain. On Beacon Chain
 - BNB is used as the token for staking and goverenance
-- transactions fees are paied in BNB
+- transactions fees are paid in BNB
 - transactions burns BNB, according to a fee schedule
 - there is a native support for cross chain transfers of BNB between Beacon Chain and side chains.
 

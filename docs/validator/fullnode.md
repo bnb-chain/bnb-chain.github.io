@@ -60,13 +60,20 @@ Your --datadir flag should point to the extracted chaindata folder path
 4. Start a full node
 ```
 ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
-
-## It is recommand to run fullnode with `--tries-verify-mode none` if you want high performance and care little about state consistency
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
 ```
+
 :::note
 Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
 :::
+
+:::tip
+It is recommended to run fullnode with `--tries-verify-mode none` if you want high performance and care little about state consistency.
+Check [here](./BSC-fast-node.md) for full details on running a fast node.
+```
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
+```
+:::
+
 
 5. Monitor node status
 
@@ -82,7 +89,7 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 1. Write genesis state locally
 
 ```bash
-geth --datadir node init genesis.json
+./geth --datadir node init genesis.json
 ```
 
 You could see the following output:
@@ -102,7 +109,7 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 
 ```bash
 ## start a full node
-geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
 ## Sync Mode
