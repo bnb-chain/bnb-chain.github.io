@@ -108,13 +108,13 @@ Follow the following steps to deploy the HelloWorld smart contract on the BNB Sm
 
 **Congratulations!** You have successfully deployed a simple Smart Contract on the BSC Testnet. Now you can interact with the Smart Contract. Check the deployment status here: <https://testnet.bscscan.com/>
 
-# Flatten and Verify the deployed contract on BscScan
+# Verify the deployed contract on BscScan
 
 The first and foremost step is to flatten the solidity contract into a single file to be able to get it verified on [BscScan](https://testnet.bscscan.com/).
 
 ### Flatten the Smart Contract Code
-
-* Install [Truffle Flattener](https://github.com/nomiclabs/truffle-flattener) by running the command ```npm install truffle-flattener```
+* Copy and Paste your smart contract into a local file on your system named as `HelloWorld.sol`. 
+* Install [Truffle Flattener](https://github.com/nomiclabs/truffle-flattener) by running the command ```npm install truffle-flattener``` on your terminal or command prompt.
 * Flatten the contract by running the command in the ```npx truffle-flattener HelloWorld.sol > FlatHelloWorld.sol``` contracts directory
 * Clean up the licensing information.
     * The flattened contract will have the same licensing note imported from each of the files. 
