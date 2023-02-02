@@ -42,7 +42,16 @@ The Solidity starter repl comes with a friendly web interface, built using the <
 ## Create Smart Contract
 Delete the contents of the contract.sol file and paste the following solidity code into this file.
 
-![image](https://user-images.githubusercontent.com/93580180/189648710-7185193d-b705-4453-99f6-51cfa103499e.png)
+```jsx
+// SPDX-License-Identifier: MIT
+pragma solidity >0.4.0 <= 0.9.0;
+
+contract HelloWorld{
+   function sayHello() public pure returns (string memory) {
+      return "Hello, World!";
+   }
+}
+```
 
 ## Deploy on BSC
  
