@@ -338,6 +338,12 @@ const sidebars = {
           label: 'BNB Sidechain FAQs',
         },
         {
+          type: 'category',
+          collapsed: true,
+          label: 'BNB Greenfield FAQs',
+          items: [ 'greenfield/faqs/validators', 'greenfield/faqs/storage-providers'  ],
+        },
+        {
           type: 'doc',
           id: 'zkbnb/zkbnb-faqs',
           label: 'zkBNB FAQs',
