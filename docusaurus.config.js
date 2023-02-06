@@ -122,8 +122,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label:'BuildnBuild Forum',
-                href: 'https://www.buildnbuild.dev/',
+                label:'BNB Chain Forum',
+                href: 'https://forum.bnbchain.org/',
               },
               {
                 label: 'Blog',
@@ -143,7 +143,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'http://t.me/BinanceDEXchange',              
+                href: 'http://t.me/bnbchain',              
               }
             ],
           },
