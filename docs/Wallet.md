@@ -33,7 +33,7 @@ If you want to be able to receive BNB and other supported tokens on the Binance 
 |7      | Arkane       |<https://arkane.network/>|No|
 |8      | MetaMask     |<https://metamask.zendesk.com/hc/en-us>|No|
 |9      | Ledger       |<https://www.ledger.com/>|Yes|
-|10      | Trezor       |<https://wallet.trezor.io>|No|
+|10     | Trezor       |<https://wallet.trezor.io>|No|
 |11     | MEW          |<https://www.myetherwallet.com/>|No|
 |12     | ezDeFi       |<http://ezdefi.com>|No|
 |13     | 1inch wallet |<https://1inch.io/wallet/>|No|
@@ -42,3 +42,4 @@ If you want to be able to receive BNB and other supported tokens on the Binance 
 |16     | Coin98 Wallet (App Web Extension)|<https://coin98.com/wallet>|No|
 |17     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|No|
 |18     | Rabby Wallet |<https://rabby.io/>|No|
+|19     | Atomic Wallet | <https://atomicwallet.io/> | Yes |
