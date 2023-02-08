@@ -25,7 +25,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 
 | Components | Existing projects | Potentially interesting projects
 |-|-|-
-| Desktop Wallets | [Wise Safe](https://smart-binance.portonvictor.org/) (a port of Gnosis Safe), [TokenPocket](https://www.tokenpocket.pro/en/download/pc), [infinity Wallet](https://infinitywallet.io/download/), []
+| Desktop Wallets | [Wise Safe](https://smart-binance.portonvictor.org/) (a port of Gnosis Safe), [TokenPocket](https://www.tokenpocket.pro/en/download/pc), [infinity Wallet](https://infinitywallet.io/download/)
 | Browser Extensions | [Binance Wallet](https://chrome.google.com/webstore/detail/binance-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp), [MetaMask](https://metamask.io/), [MathWallet](https://mathwallet.xyz/en/), [SafePal](https://www.safepal.io/), [ezDeFi](https://chrome.google.com/webstore/detail/ezdefi/ejeemacpidnaejkhpbmfkadhgjhnolaa?hl=en), [BitKeep](https://bitkeep.com/), [Coin98](https://coin98.com/wallet), [Rabby Wallet](https://rabby.io/), [Onto](https://onto.app/), [Slope](https://slope.finance/)
 | Mobile Wallets|  [MathWallet](https://mathwallet.xyz/en/), [TrustWallet](https://trustwallet.com/), [BitKeep](https://bitkeep.com/), [TokenPocket](https://www.tokenpocket.pro/), [SafePal](https://www.safepal.io/), [ONTO Wallet](https://www.onto.app/en), [1Inch Wallet](https://1inch.io/wallet/), [Coin98](https://coin98.com/wallet), [Onto](https://onto.app/), [Slope](https://slope.finance/)
 | Web (burner) Wallets| [Torus](https://toruswallet.io/),[MyEtherWallet (MEW)](https://www.myetherwallet.com/), [Guarda](https://guarda.com/coins/binance-coin-wallet/)
