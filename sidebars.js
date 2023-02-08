@@ -298,12 +298,60 @@ const sidebars = {
             ]
           },
 
+          {
+            type: 'category',
+            collapsed: true,
+            label: 'BNB Greenfield',
+            items:[ 'greenfield/overview',
+                  { 
+                    type: 'category',
+                    collapsed: true,
+                    label: 'Design of BNB Greenfield',
+                    items:[//'greenfield/design/overview', 
+                    'greenfield/design/design-principles', 
+                    'greenfield/design/assumptions', 'greenfield/design/architecture',
+                    'greenfield/design/greenfield-core', 'greenfield/design/data-storage',
+                    'greenfield/design/storage-economics', 'greenfield/design/economy-of-data-assets',
+                    'greenfield/design/not-end-ack'],
+                  },
+
+                  { 
+                    type: 'category',
+                    collapsed: true,
+                    label: 'Potential UseCases',
+                    items:[//'greenfield/showcases-in-labs/overview', 
+                    'greenfield/use-cases/decentralized-storage', 
+                    'greenfield/use-cases/digital-publishing', 
+                    'greenfield/use-cases/user-generated-content',
+                    'greenfield/use-cases/personal-data-market']
+                  },
+
+                  { 
+                    type: 'category',
+                    collapsed: true,
+                    label: 'Technical Specifications',
+                    items:[//'greenfield/tech-specs/overview', 
+                    'greenfield/tech-specs/ecosystem-players', 
+                    'greenfield/tech-specs/user-identifier', 
+                    'greenfield/tech-specs/greenfield-blockchain',
+                    'greenfield/tech-specs/storage-metadata-models',
+                    'greenfield/tech-specs/payload-storage-mngt',
+                    'greenfield/tech-specs/data-availability-challenge',
+                    'greenfield/tech-specs/storage-transactions',
+                    'greenfield/tech-specs/billing-and-payment',
+                    'greenfield/tech-specs/cross-chain-models',
+                    'greenfield/tech-specs/sp-apis']
+                  }
+
+
+            ]
+          },
 
           {
             type: 'category',
             collapsed: true,
             label: 'zkBNB',
-              items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
+            items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
           },
           
     ],
@@ -337,6 +385,13 @@ const sidebars = {
           id: 'BNBSidechain/faqs-bas',
           label: 'BNB Sidechain FAQs',
         },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'BNB Greenfield FAQs',
+          items: [ 'greenfield/faqs/validators', 'greenfield/faqs/storage-providers',
+                  'greenfield/faqs/users'  ],
+        },  
         {
           type: 'doc',
           id: 'zkbnb/zkbnb-faqs',

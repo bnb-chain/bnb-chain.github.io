@@ -13,7 +13,8 @@ This tutorial will help you gain knowledge on the following learning points:
 -	Using Nodereal’s Meganode API;
 -	Deploying static pages onto localhost using http-server.
 
-## Technology Stack Details-	node v16.13.0
+## Technology Stack Details
+-	node v16.13.0
 -	npm v8.1.0
 -	Web3.js
 -	http-server 

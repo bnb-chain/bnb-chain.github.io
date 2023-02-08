@@ -36,7 +36,7 @@ When deploying a smart contract to a blockchain or when making a transaction to 
 
 ### Adding BNB Smart Chain Test Network to MetaMask Wallet
 
-Visit [ChainIDE](<(https://chainide.com/)>), create a project, and click on the "unconnected button" in the upper right corner, select the "Injected Web3 Provider" button, and then click the "MetaMask" to connect to the MetaMask wallet ("BNB Chain Mainnet" is the main network, and "BNB Chain Testnet" is the test network, click on the "BNB Chain Testnet" and it will be added to your MetaMask wallet.
+Visit [ChainIDE](https://chainide.com/), create a project, and click on the "unconnected button" in the upper right corner, select the "Injected Web3 Provider" button, and then click the "MetaMask" to connect to the MetaMask wallet ("BNB Chain Mainnet" is the main network, and "BNB Chain Testnet" is the test network, click on the "BNB Chain Testnet" and it will be added to your MetaMask wallet.
 ![](<https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/Untitled+design+(19).png>)
 
 ### Enabling the BNB Smart Chain Test Network to Binance Wallet
