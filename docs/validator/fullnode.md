@@ -67,7 +67,7 @@ Make sure you use the version of geth you downloaded with wget above, and not yo
 :::
 
 :::tip
-It is recommended to run fullnode with `--tries-verify-mode none` if you want high performance and care little about state consistency.
+It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
 Check [here](./BSC-fast-node.md) for full details on running a fast node.
 ```
 ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
@@ -86,6 +86,11 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 ```
 
 ### Sync From Genesis Block (Not Recommended)
+
+:::note
+To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server. 
+:::
+
 1. Write genesis state locally
 
 ```bash

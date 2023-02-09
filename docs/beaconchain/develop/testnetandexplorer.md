@@ -32,6 +32,6 @@ You can use [Binance Extension Wallet](https://docs.bnbchain.org/docs/binance#tr
 
 
 ### Explorers for Testnet
-* BscScan - https://testnet.bscscan.com/
+* BNB Smart Chain Explorer - https://testnet.bscscan.com/
 * Beacon Chain Explorer - https://testnet-explorer.binance.org/
 
