@@ -9,7 +9,8 @@ hide_table_of_contents: false
 
 * VPS running recent versions of Mac OS X or Linux.
 * 2 TB of free disk space, accessible at a minimum read/write speed of 200 MB/s.
-* 16 cores of CPU and 32 gigabytes of memory (RAM).
+* 8 cores of CPU and 16 gigabytes of memory (RAM).
+* Suggest m5.2xlarge instance type on AWS, or c2-standard-8 on Google cloud.
 * A broadband Internet connection with upload/download speeds of at least 10 megabyte per second.
 
 ## Setting up Validator Node
