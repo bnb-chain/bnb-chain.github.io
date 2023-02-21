@@ -1,6 +1,6 @@
 ---
 sidebar_label: Run Validator
-sidebar_position: 2
+sidebar_position: 3
 hide_table_of_contents: false
 ---
 # Run Validator
@@ -16,7 +16,7 @@ hide_table_of_contents: false
 
 ### 1. Install Fullnode
 
-Follow the instructions [here to set up a full node](../fullnode.md).
+Follow the instructions [here to set up a full node](../develop/node/join-mainnet.md).
 
 ### 2. Start Validator Node
 
@@ -36,9 +36,20 @@ Put `priv_validator_key.json`, which contains your validator key, into `config` 
 ```
 
 Then start your node.
-```bash
-bnbchaind start --home /usr/local/beaconchain-testnet &
+
+```shell
+bnbchaind start &
 ```
+
+:::note
+Alternatively, if you choose a different $BNCHOME location and you are not using the suggested default `~/.bnbchaind`, you may start the full node by using below script, where $BNCHOME is your selected directory.
+
+Example: If you set `/usr/local/beacon-chain` as your home directory. Run the Full Node with:
+
+```shell
+bnbchaind start --home /usr/local/beacon-chain &
+```
+:::
 
 ## Post Running
 

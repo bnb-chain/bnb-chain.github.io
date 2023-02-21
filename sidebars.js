@@ -252,7 +252,9 @@ const sidebars = {
                           type: 'category',
                           label:'Validator',
                           items:[
-                            {type:'doc', id:'beaconchain/validator/run-val', label:'Run Validator'},
+                              {type:'doc', id:'beaconchain/validator/overview', label:'Overview'},
+                              {type:'doc', id:'beaconchain/validator/create-val', label:'Create Validator'},
+                              {type:'doc', id:'beaconchain/validator/run-val', label:'Run Validator'},
                           ]
                       },
                       {
