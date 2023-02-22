@@ -4,11 +4,13 @@ sidebar_label: RPC
 
 # JSON-RPC Endpoint
 
-## BNB Smart Chain
+JSON-RPC endpoints refers to the network location where a program could transfer its RPC requests to access server data. Once you connect a decentralized application to an RPC endpoint, you can access the functionalities of different operations, which could enable real-time usage of blockchain data. BNB Chain provides several RPC endpoints for connectinto both its Minent and Testnet. In this section, we list the JSON-RPC endpoints that can be used for connecting to BNB Smart Chain.
+
+## RPC Endpoints for BNB Smart Chain 
 
 :::info
 
-The rate limit of BSC endpoint on Testnet and Mainnet is 10K/5min.
+The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.
 
 :::
 
@@ -19,7 +21,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 
 :::
 
-### Mainnet (ChainID 0x38, 56 in decimal)
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
 
 * https://bsc-dataseed.binance.org
 * https://bsc-dataseed1.defibit.io
@@ -28,9 +30,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
-### Testnet (ChainID 0x61, 97 in decimal)
-
-BSC RPC Endpoints:
+### BSC Testnet (ChainID 0x61, 97 in decimal)
 
 * https://data-seed-prebsc-1-s1.binance.org:8545
 * https://data-seed-prebsc-2-s1.binance.org:8545
@@ -39,7 +39,7 @@ BSC RPC Endpoints:
 * https://data-seed-prebsc-1-s3.binance.org:8545
 * https://data-seed-prebsc-2-s3.binance.org:8545
 
-### 3rd Party Provider
+### Thrid-Party RPC Providers
 
 <!--* [Moralis](https://moralis.io/): <https://moralis.io/speedy-nodes/>-->
 
@@ -55,7 +55,7 @@ BSC RPC Endpoints:
   
 * BlockVision: <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
 
-### Start HTTP JSON-RPC
+### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
 ```bash
@@ -70,7 +70,7 @@ geth attach https://data-seed-prebsc-1-s1.binance.org:8545
 
 Please refer to this [wiki page](https://github.com/ethereum/wiki/wiki/JSON-RPC) or use Postman: <https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest>
 
-## BNB Beacon Chain
+## RPC Endpoints for BNB Beacon Chain
 
 ### Mainnet
 
