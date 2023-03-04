@@ -125,7 +125,9 @@ The **snap** sync mode is used for initial sync, which will download the latest 
 
 The **full** sync mode can also be used to do initial sync, which will apply all the blocks since genesis.
 
-Since the amount of historical data is too large, the initial sync is **not recommended** for running a full node. Instead, you can download a snapshot from the official repo and start from the snapshot. Default value is **full** when you start geth with an existing data folder so there is no need to explicitly add it when syncing from snapshot.
+The default sync mode is **snap**, but if you start with an existing data folder, it could be switched to **full** sync mode. So you'd better specify the sync mode by flag **--syncmode**, since the actual sync mode to be used will depend on the state of the data folder.
+
+Since the amount of historical data is too large, the initial sync is **not recommended** for running a full node. Instead, you can download a snapshot from the [official repo](https://github.com/bnb-chain/bsc-snapshots) and start from the snapshot.
 
 ## Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
