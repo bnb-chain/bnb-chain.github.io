@@ -121,13 +121,11 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 
 There are two sync modes for running a full node: **snap** and **full** which can be specified by flag **--syncmode**.
 
-The **snap** sync mode is used for initial sync, which will download the latest states rather than apply the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.
+The **snap** sync mode is used for initial sync, which will download the latest states rather than execute the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.
 
-The **full** sync mode can also be used to do initial sync, which will apply all the blocks since genesis.
+The **full** sync mode can also be used to do initial sync, which will execute all the blocks since genesis. But it is **not recommended**, since the amount of historical data is too large. Instead, you can download a snapshot from the [official repo](https://github.com/bnb-chain/bsc-snapshots) and start full sync from the snapshot.
 
-The default sync mode is **snap**, but if you start with an existing data folder, it could be switched to **full** sync mode. So you'd better specify the sync mode by flag **--syncmode**, since the actual sync mode to be used will depend on the state of the data folder.
-
-Since the amount of historical data is too large, the initial sync is **not recommended** for running a full node. Instead, you can download a snapshot from the [official repo](https://github.com/bnb-chain/bsc-snapshots) and start from the snapshot.
+If the flag **--syncmode** is not provided, the default sync mode will depend on the state of the data folder. It will be **snap** mode if you sync from genesis or **full** mode if you start from a snapshot.
 
 ## Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
