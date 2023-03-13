@@ -54,7 +54,14 @@ unzip mainnet.zip
 Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
 
 :::note
-Your --datadir flag should point to the extracted chaindata folder path
+Your --datadir flag should point to the folder where the extracted snapshot data is. 
+In our case, we created a new folder named node, and we moved the extracted snapshot data to this folder.
+
+```
+mv server/data-seed/geth/chaindata node/geth/chaindata
+mv server/data-seed/geth/chaindata node/geth/triecache
+```
+
 :::
 
 4. Start a full node
