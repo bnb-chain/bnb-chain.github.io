@@ -29,7 +29,7 @@ Since BSC uses PoSA as its consensus engine, all the delegators of validators ca
 
 ### Main Workflow:
 1. ValidatorSet is updated in BreatheBlock, the frequency is once a day. let’s assume it happens on day N.
-2. The info of validator set changes of day N would be transmitted to BSCthrough interchain communication.
+2. The info of validator set changes of day N would be transmitted to BSC through interchain communication.
 3. The validator set contract on BSC would receive and update the new validatorset. After that, it would trigger several interchain transfer to transfer the fees that every **previous validators** collected in this period to their addresses on BC. we can see that fees belongs to the validators of day N-1.
 4. To make some room for the error handling, we distribute the fees of day N-1 in the next breathe block (day N+1).
 
