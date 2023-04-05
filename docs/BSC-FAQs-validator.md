@@ -47,7 +47,7 @@ Processing transactions is mostly CPU bound. Therefore we recommend running CPU 
 
 ### How many BNB are required to create a validator?
 
-Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders. These bonded BNB acts as collateral and cause each delegate, including validators, to have “skin in the game” so to speak. If any equivocation or byzantine behavior by a validator were to be committed, the validator and its delegates would be slashed a predefined amount of bonded stake. The minimum self-delegated amount is 10000BNB.
+Validators can self-bond, meaning they can delegate BNB to themselves, and they can also receive delegations from any other BNB holders. These bonded BNB acts as collateral and cause each delegate, including validators, to have “skin in the game” so to speak. If any equivocation or byzantine behavior by a validator were to be committed, the validator and its delegates would be slashed a predefined amount of bonded stake. The minimum self-delegated amount is 2000BNB.
 
 ### When are rewards paid out?
 
@@ -64,7 +64,7 @@ Slashing is a punitive function that is triggered by a validator ’s bad action
 
 ### What is the process of getting selected as a validator node on BSC?
 
-On BNB Smart Chain (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 50 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **10000BNB**. Only the top 29 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.bnbchain.org/docs/validator/overview.html).
+On BNB Smart Chain (BSC) network, validators are responsible for securing the network by processing transactions and signing blocks. Validator nodes are incentivized in the form of transaction fees for their good behavior. Currently, there are 11 validators on the testnest and 50 validators on the mainnet. Validators are selected every 24 hours. Anyone can become a candidate for the validator. To become part of the selection process of validators, the nodes have to stake their BNB. Validators can self-delegate (self-bound) BNB to themselves and can also receive delegations from any other BNB holders. The minimum amount for self-delegation is **2000BNB**. Only the top 29 highest-stake nodes are chosen to be part of the validator set. Get more details [here](https://docs.bnbchain.org/docs/validator/overview.html).
 
 ### How is the bad or malicious behavior of the validator nodes controlled in the BSC?
 
@@ -79,11 +79,11 @@ The validators are slashed in cases of self-bound less than the required minimum
 *_Unavailability/ Downtime in a 24 hour period:_* the slash fee for a validator being offline is self-delegated **50BNB** accompanied with a jail time of 2 days. If a validator misses at least 50 blocks (~52 minutes of downtime) during 24 hours, they will not be able to receive any rewards during that period of time.
 Instead their reward will be distributed amongst other better performing validators of the set. Another case of unavailability is when a validator misses over 150 blocks (~157.5 minutes of downtime) during 24 hours. In this case, the validator will not receive reward instead it will be propagated back to BC. 
 
-*_Self‐bond below minimum:_* Validators are jailed for 1 day if their self‐bond falls below **10000BNB**.
+*_Self‐bond below minimum:_* Validators are jailed for 1 day if their self‐bond falls below **2000BNB**.
 
 ### What is the minimum amount for self-delegation to avoid being jailed?
 
-The [minimum self-delegated amount](parameters.md) is **10000BNB**.
+The [minimum self-delegated amount](parameters.md) is **2000BNB**.
 
 ### What is the unbounding time period?
 
