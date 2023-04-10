@@ -5,7 +5,7 @@
 ## Transaction Validation
 *   Validator address must not be empty.
 *  The side chain id exists.
-*  Self-delegation of the validator exists and must be greater than the min-self-delegation setting by **_10,000 BNB_**.
+*  Self-delegation of the validator exists and must be greater than the min-self-delegation setting by **_2,000 BNB_**.
 *  Requestor is in 'jailed' state when requesting to be un-jailed.
 *  Complete the required jailed term.
 

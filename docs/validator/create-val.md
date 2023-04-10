@@ -34,7 +34,7 @@ bnbcli staking bsc-create-validator \
 --side-fee-addr {wallet address on BSC} \
 --address-delegator {wallet address on BC} \
 --side-chain-id bsc \
---amount 10000000000:BNB \
+--amount 2000000000:BNB \
 --commission-rate {10000000 represent 10%} \
 --commission-max-rate {20000000 represent 20%} \
 --commission-max-change-rate {500000000 represent 5%} \
@@ -52,7 +52,7 @@ tbnbcli staking bsc-create-validator \
 --side-fee-addr {wallet address on BSC} \
 --address-delegator {wallet address on BC} \
 --side-chain-id chapel \
---amount 10000000000:BNB \
+--amount 1000000000:BNB \
 --commission-rate {10000000 represent 10%} \
 --commission-max-rate {20000000 represent 20%} \
 --commission-max-change-rate {10000000 represent 1%} \

@@ -68,4 +68,4 @@ Penalty for Offline Slash:
 
 #### Loss for Too Low self-delegation
 
-Validator candidates must stake 10000BNB as self-delegation. If the self-delegation amount is lower, the Jail time is 1 day.
+Validator candidates must stake 2000 BNB as self-delegation. If the self-delegation amount is lower, the Jail time is 1 day.

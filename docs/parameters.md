@@ -19,13 +19,13 @@ sidebar_position: 2
 
 #### Mainnet
 
-* **Minimiun Self-delegate Amount**: 10000BNB on Mainnet .
+* **Minimiun Self-delegate Amount**: 2000BNB on Mainnet .
 * **Claim reward frequency**: everyday at 0:00 UTC
 * **Unbonding Period**: 7 days
 
 #### Testnet
 
-* **Minimiun Self-delegate Amount**: 100BNB on testnet.
+* **Minimiun Self-delegate Amount**: 1000BNB on testnet.
 * **Claim reward frequency**: every 2 hours
 * **Unbonding Period**: 4 hours
 
