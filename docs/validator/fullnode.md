@@ -59,7 +59,7 @@ In our case, we created a new folder named node, and we moved the extracted snap
 
 ```
 mv server/data-seed/geth/chaindata node/geth/chaindata
-mv server/data-seed/geth/chaindata node/geth/triecache
+mv server/data-seed/geth/triecache node/geth/triecache
 ```
 
 :::
