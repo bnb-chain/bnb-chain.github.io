@@ -27,7 +27,8 @@ Follow the instructions [here to set up a full node](fullnode.md).
 ```bash
 ## generate the consensus key and input the password
 echo {your-password to the mining account} > password.txt
-geth --config ./config.toml --datadir ./node --syncmode snap -unlock {the address of your mining account} --password password.txt  --mine  --allow-insecure-unlock --cache 18000
+echo {your-password for the bls wallet} > blspassword.txt
+geth --config ./config.toml --datadir ./node --syncmode snap -unlock {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000
 ```
 
 ## Post Running

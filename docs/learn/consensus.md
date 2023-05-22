@@ -18,9 +18,11 @@ BSC here proposes to combine DPoS and PoA for consensus, so that:
 2. Validators take turns to produce blocks in a PoA manner, similar to [Ethereum's Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
 3. Validator set are elected in and out based on a staking based governance
 
+Fast finalization can greatly improve user experience. The `Fast Finality` feature will be enabled upon the coming Plato upgrade. This will be a major advantage of BSC, and many dapps will benefit from it.
+
 The consensus protocol of BSC fulfills the following goals:
 1. Short Blocking time, 3 seconds on mainnet.
-2. It requires limited time to confirm the finality of transactions, around 45s for mainnet.
+2. It requires quite short time to confirm the finality of transactions, around 6s for mainnet after the coming Plato upgrade.
 3. There is no inflation of native token: BNB, the block reward is collected from transaction fees, and it will be paid in BNB.
 4. It is 100% compatible with Ethereum system .
 5. It allows modern proof-of-stake blockchain network governance.
@@ -54,6 +56,12 @@ However, given that validators would be economically incentivized to seal blocks
 ### Extending the ruling of the current validator set via temporary censorship
 If the transaction that updates the validator is sent to the BSC right on the epoch period, then it is possible for the in-turn validator to censor the transaction and not change the set of validators for that epoch. While a transaction cannot be forever censored without the help of other n/2 validators, by this it can extend the time of the current validator set and gain some rewards. In general, the probability of this scheme can increase by colluding with other validators. It is relatively benign issue that a block may be approximately 3 secs and one epoch being 200 blocks, i.e. 20 mins so the validators could only be extended for another 10 mins.
 
-## Security and Finality
-Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the [Clone Attack](https://arxiv.org/pdf/1902.10244.pdf). To secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.
-With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. However, besides such arrangement, BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute. With this enhancement, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+## Security
+Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the [Clone Attack](https://arxiv.org/pdf/1902.10244.pdf). BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute.
+
+## Fast Finality
+Finality is critical for blockchain security, once the block is finalized, it wouldn’t be reverted anymore. The fast finality feature is very useful, the users can make sure they get the accurate information from the latest finalized block, then they can decide what to do next instantly. More details of design, please to refer [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEP126.md)
+
+Before the coming Plato upgrade,to secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. With above enhancement by slashing mechanism, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+
+After the coming Plato upgrade, the feature `Fast Finality` will be enabled. The chain will be finalized within two blocks if ⅔*N or more validators vote normally, otherwise the chain has a fixed number of blocks to reach probabilistic finality as before.

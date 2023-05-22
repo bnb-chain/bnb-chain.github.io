@@ -27,7 +27,7 @@ bnbcli slashing side-signing-info 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --s
 | ------------------- | ----------------- | ---------------------------------------------------- | ------------ |
 | --chan-id           | Binance-Chain-XXX | the chain id of bnb chain                       | Yes          |
 | --infraction-height | 100               | infraction height                                    | Yes          |
-| --infraction-type   | DoubleSign        | infraction type, 'DoubleSign;Downtime'               | Yes          |
+| --infraction-type   | DoubleSign        | infraction type, 'DoubleSign;Downtime;MaliciousVote'               | Yes          |
 | --side-chain-id     | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
 
 #### Example
@@ -43,7 +43,7 @@ bnbcli slashing side-slash-history 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --
 | **parameter name** | **example**       | **comments**                                         | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
 | --chan-id          | Binance-Chain-XXX | the chain id of bnb chain                       | Yes          |
-| --infraction-type  | DoubleSign        | infraction type, 'DoubleSign;Downtime'               | Option       |
+| --infraction-type  | DoubleSign        | infraction type, 'DoubleSign;Downtime;MaliciousVote'               | Option       |
 | --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
 
 #### Example
