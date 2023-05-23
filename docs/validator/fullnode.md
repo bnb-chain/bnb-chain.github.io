@@ -75,7 +75,7 @@ Make sure you use the version of geth you downloaded with wget above, and not yo
 
 :::tip
 It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
-Check [here](./BSC-fast-node.md) for full details on running a fast node.
+Check [here](BSC-fast-node.md) for full details on running a fast node.
 ```
 ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
 ```
@@ -138,8 +138,8 @@ If the flag **--syncmode** is not provided, the default sync mode will depend on
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
 
 ## Node Maintenance
-Please read [this guide](./validator/node-maintenance.md)
+Please read [this guide](node-maintenance.md)
 
 ## Upgrade Geth
-Please read [this guide](./validator/upgrade-fullnode.md)
+Please read [this guide](upgrade-fullnode.md)
 

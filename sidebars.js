@@ -4,12 +4,16 @@
  - render a sidebar for each doc of that group
  - provide next/previous navigation
 
+
  The sidebars can be generated from the filesystem, or explicitly defined here.
+
 
  Create as many sidebars as you want.
  */
 
+
 // @ts-check
+
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -18,27 +22,29 @@ const sidebars = {
     {
       type: 'category',
       label: 'BNB Chain',
-     // collapsible: true,
+      collapsible: true,
       collapsed: true,
       items: [
          'overview', 'getting-started',
-          
+         
           {
             type: 'category',
             collapsible: true,
             collapsed: true,
             label: 'BNB Smart Chain',
-            items: ['learn/intro', 
+            items: ['learn/intro',
+
 
                 {type: 'doc', label: 'Tutorials', id:'bsc-tutorials'},
+
 
                 {
                 type: 'category',
                 collapsed: true,
                 label: 'Core Concepts',
-                items: ['learn/consensus', 
+                items: ['learn/consensus',
                           {type: 'category',
-                          //collapsible: true,
+                          collapsible: true,
                           collapsed: true,
                           label: 'BC and BSC Cross-Chain Mechanism',
                           items: ['learn/cross-chain', 'learn/system-contract',
@@ -46,10 +52,10 @@ const sidebars = {
                                   'learn/oracle-module','learn/oracle-relayer', 'learn/cross-chain-api']},
                                   'learn/bsc-gov']
                 },
-
-      
-              {type: 'category',
-              //collapsible: true,
+     
+            {
+              type: 'category',
+              collapsible: true,
               collapsed: true,
               label: 'Develop',
               items: [
@@ -83,13 +89,13 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'BEP20 Tokens',
-                        items: ['BEP20', 'issue-BEP20', 
+                        items: ['BEP20', 'issue-BEP20',
                                   {
                                     type: 'category',
                                     //collapsible: true,
                                     collapsed: true,
                                     label: 'Bind Tokens',
-                                    items: ['tokens-cross-chain', 'bind-tokens', 'mirror', 
+                                    items: ['tokens-cross-chain', 'bind-tokens', 'mirror',
                                     'circulation-model', 'sync' ]
                                   },
                                   {
@@ -100,7 +106,7 @@ const sidebars = {
                                     items: ['proxy', 'verify-proxy']
                                   },
                               ]
-                      }, 
+                      },
                       {
                         type: 'category',
                         collapsed: true,
@@ -111,7 +117,7 @@ const sidebars = {
                       {type: 'doc', id: 'dstorages', label: 'dStorages'},
                       {type: 'doc', id: 'learn/cross-chain-bridges', label: 'Cross-Chain Bridges'},
             ]},  
-            
+           
             {
               type: 'category',
               //collapsible: true,
@@ -145,26 +151,27 @@ const sidebars = {
                   type: 'category',
                   collapsed: true,
                   label: 'Solana',
-                  items:['migration/non-evm-chains/solana/architecture-comparison', 
+                  items:['migration/non-evm-chains/solana/architecture-comparison',
                          'migration/non-evm-chains/solana/token-migration']
                  },
                  {
                   type: 'category',
                   collapsed: true,
                   label: 'Polygon',
-                  items:['migration/evm-chains/chain-comparison', 
+                  items:['migration/evm-chains/chain-comparison',
                          'migration/evm-chains/token-comparison',
                          'migration/evm-chains/token-migration']
                  }
                 ]
             },
 
+
             {
               type: 'category',
               //collapsible: true,
               collapsed: true,
               label: 'Wallet',
-              items: ['Wallet', 'create-wallet', 
+              items: ['Wallet', 'create-wallet',
               {
                 type: 'category',
                 //collapsible: true,
@@ -183,14 +190,13 @@ const sidebars = {
             },
               ]
             },
-          
           ],
-          }, 
-                    
+          },
+                   
           {
             type: 'category',
             label: 'BNB Beacon Chain',
-          // collapsible: true,
+            collapsible: true,
             collapsed: true,
             items: ['learn/beaconIntro',
                       {type: 'doc', label: 'Tutorials', id:'beaconchain/bc-tutorials'},
@@ -200,7 +206,7 @@ const sidebars = {
                         collapsed: true,
                         items:[ 'beaconchain/learn/architecture', 'beaconchain/governance', 'beaconchain/learn/accounts', 'beaconchain/learn/escrow-accounts', 'beaconchain/learn/assets',
                             'beaconchain/learn/breathe-block', 'beaconchain/learn/transactions', 'beaconchain/learn/genesis', 'beaconchain/learn/signature', 'beaconchain/learn/BEP8',
-                        
+                       
                         {
                             type: 'category',
                             label: 'Encoding',
@@ -245,7 +251,7 @@ const sidebars = {
                             {type:'link', href:"pathname:///rpc-swagger/index.html", label: 'Node RPC Swagger'}
                           ]
                         },
-                        
+                       
                         ]
                       },
                       {
@@ -276,94 +282,20 @@ const sidebars = {
             ],
           },
 
-          {
-            type: 'category',
-            collapsed: true,
-            label: 'BNB Sidechain', 
-            //link: {type: "doc", id: 'BNBSidechain/overview/bas'}, //SUPPORTED in 2.0.0-beta.10 unrealeased version 
-            items:[
-               'BNBSidechain/overview/bs-overview', 
-               'BNBSidechain/bs-tutorials', 
-               'BNBSidechain/overview/whenBNBSidechain',
-               {
-                  type: 'doc',
-                  label: 'Architecture',
-                  id: 'BNBSidechain/architecture/bs-arch'
-               },
-              {
-                type: 'doc',
-                label: 'Development Tools',
-                id: 'BNBSidechain/develop/BNBSidechainTestnet/development-tools'
-              },
-              'BNBSidechain/develop/BNBSidechainTestnet/launch-bs',
-               {
-                  type: 'category',
-                  collapsed: true,
-                  label: 'Security',
-                  items:['BNBSidechain/security/blockchain-and-evm-security', 
-                        'BNBSidechain/security/bridge-security']
-               },
-              {type: 'doc', label: 'BNB Sidechain Pilot Projects', id:'BNBSidechain/bs-pilot-projects'},
-            
-            ]
-          },
 
           {
-            type: 'category',
-            collapsed: true,
+            type: 'link',
             label: 'BNB Greenfield',
-            items:[ 'greenfield/overview',
-                  { 
-                    type: 'category',
-                    collapsed: true,
-                    label: 'Design of BNB Greenfield',
-                    items:[//'greenfield/design/overview', 
-                    'greenfield/design/design-principles', 
-                    'greenfield/design/assumptions', 'greenfield/design/architecture',
-                    'greenfield/design/greenfield-core', 'greenfield/design/data-storage',
-                    'greenfield/design/storage-economics', 'greenfield/design/economy-of-data-assets',
-                    'greenfield/design/not-end-ack'],
-                  },
-
-                  { 
-                    type: 'category',
-                    collapsed: true,
-                    label: 'Potential UseCases',
-                    items:[//'greenfield/showcases-in-labs/overview', 
-                    'greenfield/use-cases/decentralized-storage', 
-                    'greenfield/use-cases/digital-publishing', 
-                    'greenfield/use-cases/user-generated-content',
-                    'greenfield/use-cases/personal-data-market']
-                  },
-
-                  { 
-                    type: 'category',
-                    collapsed: true,
-                    label: 'Technical Specifications',
-                    items:[//'greenfield/tech-specs/overview', 
-                    'greenfield/tech-specs/ecosystem-players', 
-                    'greenfield/tech-specs/user-identifier', 
-                    'greenfield/tech-specs/greenfield-blockchain',
-                    'greenfield/tech-specs/storage-metadata-models',
-                    'greenfield/tech-specs/payload-storage-mngt',
-                    'greenfield/tech-specs/data-availability-challenge',
-                    'greenfield/tech-specs/storage-transactions',
-                    'greenfield/tech-specs/billing-and-payment',
-                    'greenfield/tech-specs/cross-chain-models',
-                    'greenfield/tech-specs/sp-apis']
-                  }
-
-
-            ]
+            href: 'https://greenfield.bnbchain.org/docs/guide/introduction/overview.html',
           },
+
 
           {
-            type: 'category',
-            collapsed: true,
+            type: 'link',
             label: 'zkBNB',
-            items:['zkbnb/zkbnb-overview','zkbnb/zkbnb-architecture', 'zkbnb/zkbnb-tokenomics'],
+            href:'https://test.zkbnbchain.org/docs/',
           },
-          
+         
     ],
     },
     {
@@ -372,6 +304,7 @@ const sidebars = {
       label: 'Future Developments',
       items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/community'],
     },
+
 
     {
       type: 'category',
@@ -383,38 +316,23 @@ const sidebars = {
           type: 'category',
           collapsed: true,
           label: 'BNB Smart Chain FAQs',
-          items: ['BSC-FAQs-general', 'BSC-FAQs-tokens', 
-                  'BSC-FAQs-validator', 'BSC-FAQs-delegator', 
+          items: ['BSC-FAQs-general', 'BSC-FAQs-tokens',
+                  'BSC-FAQs-validator', 'BSC-FAQs-delegator',
                   'parameters', 'cross',  'faq'],
         },
         {
           type: 'doc', label: 'BNB Beacon Chain FAQs', id: 'beaconchain/faq/faq',
         },
-        {
-          type: 'doc',
-          id: 'BNBSidechain/faqs-bas',
-          label: 'BNB Sidechain FAQs',
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'BNB Greenfield FAQs',
-          items: [ 'greenfield/faqs/validators', 'greenfield/faqs/storage-providers',
-                  'greenfield/faqs/users'  ],
-        },  
-        {
-          type: 'doc',
-          id: 'zkbnb/zkbnb-faqs',
-          label: 'zkBNB FAQs',
-        },  
      ],
 
+
     },
-    
+   
     {type: 'doc',   id: 'contribute',   label: 'Contribute to BSC'},
     {type: 'doc',   id: 'more-help',   label: 'More Help'},
   ],
    
 };
+
 
 module.exports = sidebars;

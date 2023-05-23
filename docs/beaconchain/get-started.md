@@ -12,7 +12,7 @@ Both provide the functions below:
 - Showing the balances of assets on the addresses
 - Sending and receiving assets
 
-Beacon Chain  Web Wallet also presents a trading UI similar to Binance.com, where you can examine market data and manage your orders to trade among the listed assets.<br/>
+Beacon Chain Web Wallet also presents a trading UI similar to Binance.com, where you can examine market data and manage your orders to trade among the listed assets.<br/>
 Learn about the list of wallet available [here](wallets.md).
 
 ## Chain Explorer
@@ -21,11 +21,11 @@ On Beacon Chain  Explorer, you can also check different asset types, the distrib
 
 ## REST API
 There are [Accelerated Nodes](faq/faq.md#what-is-the-accelerated-node) which provide advanced API services for the public.<br/>
-Here is a list of all the Rest API information Accelerated Node provides: [paths](./api-reference/dex-api/paths.md)
+Here is a list of all the Rest API information Accelerated Node provides: [paths](../api-reference/dex-api/paths.md)
 
 ### Node RPC
 There are data seed nodes in the network which allow users to perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
-If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: [node-rpc](./api-reference/node-rpc.md)
+If you run a full node by yourself, you can also use those RPC functions. Here is a list of all the Node RPC services it provides: [node-rpc](../api-reference/node-rpc.md)
 
 ## Advanced Ways To Use Blockchain
 ### Run your own full node
@@ -39,7 +39,7 @@ Please refer to this guide about [how to run your own light client](light-client
 ### Access via Node Command Line Interface (CLI)
 
 A Command Line Interface is available for Linux and Mac platforms.<br/>
-Please refer to the [CLI Reference](./api-reference/cli.md).
+Please refer to the [CLI Reference](../api-reference/cli.md).
 
 ### Use SDKs
 

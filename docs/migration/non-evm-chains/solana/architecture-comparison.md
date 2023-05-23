@@ -41,7 +41,6 @@ BNB Chain is an ecosystem comprising two major blockchains that serve different 
 
 - [**BNB Beacon Chain**](https://docs.bnbchain.org/docs/learn/beaconIntro) - BNB Chain Governance (Staking, Voting)
 - [**BNB Smart Chain (BSC)**](https://docs.bnbchain.org/docs/learn/intro) - EVM compatible, consensus layers, and with hubs to multi-chains
-- [**BNB Sidechain**](https://docs.bnbchain.org/docs/BNBSidechain/overview/bs-overview) - Ready-to-use PoS solutions for developing custom blockchains and dApps with existing BSC functionality.
 - **BNB ZkRolllup**- ZkRollup solution to scale BSC as a super high-performance blockchain.
 
 ![image](https://user-images.githubusercontent.com/93580180/201682988-ca74e288-bf3b-4b31-ab2b-5e748342ef4b.png)
@@ -91,7 +90,7 @@ In this section, we discuss and compare the differences in the architecture and 
 
   The Solana mainnet operates in a delegated-Proof-of-Stake (dPoS) fashion. SOL holders can participate in the block production process and earn rewards by either becoming a validator through staking SOLs or by delegating their tokens. Any individual can become a validator on the network and contribute to the overall security of the protocol. There is no minimum staking requirement, although the leader selection process (which validator gets to propose the next block) is stake-weighted.
 
-- **Scalability and Block Time:** BSC offers several different features, such as BNB Sidechains, ZkRolls, etc., to overcome any scalability issues commonly faced by blockchain networks. The average block time of BSC is approximately 3 seconds even during periods with the highest congestion. Solana, on the other hand, offers an average block time of 0.610 seconds and allows 700 transactions per second. Nevertheless, this block time has faced consistency issues, and you are likely to face several slower block times. Notably, Solana has suffered several outages this year.
+- **Scalability and Block Time:** BSC offers several different features, such as ZkRolls, etc., to overcome any scalability issues commonly faced by blockchain networks. The average block time of BSC is approximately 3 seconds even during periods with the highest congestion. Solana, on the other hand, offers an average block time of 0.610 seconds and allows 700 transactions per second. Nevertheless, this block time has faced consistency issues, and you are likely to face several slower block times. Notably, Solana has suffered several outages this year.
 
 - **Transaction Speed and Fees:** Theoretically, Solana claims to have the power of processing over 60,000 TPS without relying on scaling solutions. However, this figure is hugely inflated when compared to other blockchains’ TPS figures. Solana’s TPS is measured by Block Explorers can be misleading — it counts internal consensus messages as transactions, which no other blockchain does. Roughly[ 80% of Solana’s throughput](https://dune.xyz/queries/396417/756581) is consensus messages.
 

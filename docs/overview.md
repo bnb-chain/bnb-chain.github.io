@@ -11,8 +11,8 @@ BNB Chain, one of the most popular blockchains in the world, dedicates to delive
 BNB Chain is comprised of:
 1. **[BNB Beacon Chain](learn/beaconIntro.md)** - BNB Beacon Chain is the staking and governance layer of the BNB ecosystem.
 2. **[BNB Smart Chain (BSC)](learn/intro.md)** - An EVM-compatible blockchain that brings programmability and interoperability to the BNB ecosystem.
-3. **[ZkBNB](zkbnb/zkbnb-overview.md)** - ZkBNB is an infrastructure that is built on ZK Rollup architecture for developers that helps them to build large-scale BSC-based apps with higher throughput and much lower or even zero transaction fees.
-4. **[BNB Greenfield](greenfield/overview.md)** - BNB Greenfield introduces an entirely new structural and economic paradigm for data in the Web3 era. The ownership, usage, and monetization of data are now possible first and foremost for users, as well as all participants in the BNB Chain ecosystem.
+3. **[ZkBNB](https://test.zkbnbchain.org/docs/)** - ZkBNB is an infrastructure that is built on ZK Rollup architecture for developers that helps them to build large-scale BSC-based apps with higher throughput and much lower or even zero transaction fees.
+4. **[BNB Greenfield](https://greenfield.bnbchain.org/docs/guide/introduction/overview.html)** - BNB Greenfield introduces an entirely new structural and economic paradigm for data in the Web3 era. The ownership, usage, and monetization of data are now possible first and foremost for users, as well as all participants in the BNB Chain ecosystem.
 
 ![BSC 2022](../static/img/assets/BNB-Chain-Ecosytem.png)
 

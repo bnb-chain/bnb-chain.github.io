@@ -54,7 +54,7 @@ Your wallet will be unlocked and you can get your address here (for this example
 
 ### Account Management With Bnbcli
 
-You can get `bnbcli` by following instructions [here](./api-reference/cli.md).
+You can get `bnbcli` by following instructions [here](../api-reference/cli.md).
 
 You should get `mnemonic` if you follow the instructions above. You can restore you key via `bnbcli` or `tbnbcli`.
 
