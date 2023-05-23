@@ -13,12 +13,26 @@ You need to create an account that represents a key pair first. Use the followin
 geth account new --datadir ./node
 ```
 
-This command will return the public address and the path to your private key. BACKUP of keyfile is necessory!
+This command will return the public address and the path to your private key. BACKUP of the keyfile is necessary!
 
 If you already have an account, use the seed phrase to recover it:
 
 ```bash
 geth account import --datadir ./node
+```
+
+## Create a voting key
+You are incentivized to set a voting key which will be used for fast finality voting. Voters will receive due rewards.
+```bash
+geth bls account new --datadir ./node
+```
+
+This command will create a bls wallet and generate a voting key. During the process, you will need to set the wallet password and another password used to encrypt the voting key. The former is required when running the validator, and the latter is only used to import the voting key into the existing wallet. Do not disclose the voting key, otherwise it may be used for malicious voting!
+
+If you already have a voting key, create a bls wallet and use the keyfile to recover it:
+```bash
+geth bls wallet create --datadir ./node
+geth bls account import <keyfile> --datadir ./node
 ```
 
 ### Become a Validator Candidate
