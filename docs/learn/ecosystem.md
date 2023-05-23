@@ -43,7 +43,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 |-|-|-
 |API/Node access| [Nodereal](https://nodereal.io/), [Ankr](https://www.ankr.com/), [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [NowNodes](https://nownodes.io/blog/binance-smart-chain-an-introduction), [QuickNode](https://www.quicknode.com/), [Covalent](https://www.covalenthq.com/), [Infstones](https://infstones.com/), [Moralis](http://moralis.io/)
 | NFT APIs| [NFTScan](https://bnb.nftscan.com/), [BlockVision](https://blockvision.org/), [Venly](https://www.venly.io/), [Gomu](https://www.gomu.co/), [Bounce Finance](https://bounce.finance/), [NFTrade](https://nftrade.com/)
-|Archive Node Service| [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/), [Nodereal’s Meganode](https://docs.nodereal.io/nodereal/meganode/archive-node)
+|Archive Node Service| [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/)
 |Public RPC Endpoints| [RPC Endpoints](https://docs.binance.org/smart-chain/developer/rpc.html)| More public nodes are encouraged
 |Community Polling Dashboard| |
 |Gas Station Network| [opengsn](https://opengsn.org/)
