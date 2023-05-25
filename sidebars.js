@@ -179,7 +179,6 @@ const sidebars = {
                 label: 'BNB Chain Extension Wallet',
                 items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
               },
-              {type:'doc', id:'wallet/wallet_api', label:'Binance Extension Wallet API'},
               {
                 type: 'category',
                 collapsed: true,
