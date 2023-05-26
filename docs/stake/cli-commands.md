@@ -28,7 +28,7 @@ Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/node/r
 | --commission-max-change-rate | 3000000   (0.03 or 3%)               | The maximum commission  change rate percentage (per day). You can not update this rate.     | Yes          |
 | --side-chain-id              | chapel                               | chain-id of the side  chain the validator belongs to         | Yes          |
 | --side-cons-addr             | 0x1234abcd                           | consensus address of the  validator on side chain, please use hex format prefixed with 0x | Yes          |
-| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x, supported after BEP126 | No |
+| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x, supported after BEP126 | Yes |
 | --side-fee-addr              | 0xabcd1234                           | address that validator  collects fee rewards on side chain, please use hex format prefixed with 0x. | Yes          |
 | --home                       | /path/to/cli_home                    | home directory of bnbcli  data and config, default to “~/.bnbcli” | No           |
 
@@ -140,7 +140,7 @@ Verify your transaction in [mainnet-explorer](https://explorer.binance.org/) or 
 | --website          | www.example.com                  | optional website (default  "[do-not-modify]")                | No           |
 | --details          | some details                     | optional details (default  "[do-not-modify]")                | No           |
 | --commission-rate  | 80000000(that means 0.8  or 80%) | The new commission rate  percentage                          | No           |
-| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x, supported after BEP126 | No |
+| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x, supported after BEP126 | Yes |
 | --side-fee-addr    | 0xabcd1234                       | address that validator  collects fee rewards on side chain, please use hex format prefixed with 0x. | No           |
 
 
