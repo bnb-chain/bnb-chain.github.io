@@ -77,12 +77,12 @@ Congratulations! you have create your MetaMask account!
    
 ![img](https://lh3.googleusercontent.com/3-6iXj8gVhTYrhzkDHcRBWOMvkkfUwm2W8aDssNTZ5bFqCsjq1BlY-nhCJDZWwT8kx-9URnQur1JxmAot-3Nu1lhypqVM068MovqDlv-oXPDJtz4PwsNTYGM3TZM_F5uRlnUwrP3)
 
-1. Go to faucet page: https://testnet.binance.org/faucet-smart, then paste your address in the box and click on “Give me BNB”
+1. Go to faucet page: https://discord.gg/bnbchain, select `testnet-faucet` channel, then type `/faucet your_wallet_address` and hit enter.
 
 !!! Tip
-    Please note that you can only claim once every minute
+    Please note that you can only claim once every day.
 
-![img](https://lh6.googleusercontent.com/DqxU17JcP9iW5f1yUujY5S8w2m32yv00jrQgJJ0vp_OptrNwCWotbb1_X7msseR72OpXSj8fxbLXhWZgpVEtaMJ_STof2D2mZcGsl6Qh4-KWJH8LsYu97SXySMToDnx15qS4po5z)
+![](https://github.com/bnb-chain.github.io/static/img/assets/faucet/faucet-command.png)
 
 After the transfer transaction is sent, you will see an increase of your balance
 

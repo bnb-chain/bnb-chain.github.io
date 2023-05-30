@@ -83,7 +83,7 @@ Now you are all set!
 
 ## Get Testnet BNB from Faucet
 
-* Go to <https://testnet.binance.org/faucet-smart/>
+* Go to <https://discord.gg/bnbchain>
 
 ![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
 
@@ -95,14 +95,11 @@ Now you are all set!
 
 ![img](https://lh3.googleusercontent.com/4h1Wh2lAYXDOe2j6pxqK97jAmY_RtDr2Uzosc4ZabwcGkRIHC_sbY2wO3MhZu-7mHel5XBIOFeDkjpPVmrJ3z7WNKKFQE73mO4ugIHhQm-AQa6TCV8rgtzoj81HL_Gg7PVFZscIY)
 
-* Paste your address in the box and click on “Give me BNB”
-* Click on the “+” and add “BNB” token
+* Go to `testnet-faucet` channel  
+* Type `/faucet your_wallet_address` and hit enter
 
-![img](https://lh5.googleusercontent.com/5NuQ64U7VodRM815S-2EEElre-ox0CMWuKpTHeXfbI5R7kYwUO_nSqoyrcRukrZf5fR5HsZD9E2ZGggMPcvlewNpmFSNelT26gXkuoQdN6W9Xl69ofvCbrsNB38ivKFBZamQAUgN)
-
-After the transfer transaction is sent, you will see an increase in your balance
-
-![img](https://lh6.googleusercontent.com/RTAOcHcPxUIthhOLlHHJ1_wrFnvmZvbZ4DJUvpNR453E4mnWWRjHLBEABMTZZdSQGYMktX5eXJPOIt7iEijMsbmMJBEL29RAShDBD8ZRIDiCnXpfwi741DM7-XiDDyJO4uiLHyNL)
+![](https://github.com/bnb-chain.github.io/static/img/assets/faucet/faucet-channel.png)
+![](https://github.com/bnb-chain.github.io/static/img/assets/faucet/faucet-command.png)
 
 ## Transfer Testnet BNB from BSC to BC
 * Switch to Beacon Chain testnet and copy your address after unlock your extension wallet, start with `tbnb1`

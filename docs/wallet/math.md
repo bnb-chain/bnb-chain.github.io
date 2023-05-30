@@ -43,7 +43,9 @@ It’s ready, and now you can get some testnet BNB from the faucet.
 
 <img src="https://lh3.googleusercontent.com/1WquPDgLagkXcni9u9yPXzgaagCRd0nzm49cZ516XZSRB_rlOuybVG48C4R2ozhiSlIizxEMI_J7GexZz64E4vUpH362rrAn74GP1ALLOFOZusF8qjM1Xk71cTo5-EWcFvvqpIRL" alt="img" style={{zoom:"33%"}} />
 
-2. Go to <https://testnet.binance.org/faucet-smart/>
+2. Go to <https://discord.gg/bnbchain> and select testnet-faucet channel.
+
+3. Type `/faucet your_wallet_address` and hit enter.
 
 Go to explorer to verify BNB is sent: <https://testnet.bscscan.com/>
 

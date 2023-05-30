@@ -69,9 +69,9 @@
 
 ## 获得测试网BNB
 
-* 打开以下页面 <https://testnet.binance.org/faucet-smart/>
+* 打开以下页面 <https://discord.gg/bnbchain>，点击`#testnet-faucet`频道
 
-![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
+![](https://github.com/bnb-chain.github.io/static/img/assets/faucet/faucet-channel.png)
 
 * 打开钱包后，切换到Binance Smart Chain Testnet
 
@@ -81,10 +81,9 @@
 
 ![img](https://lh3.googleusercontent.com/4h1Wh2lAYXDOe2j6pxqK97jAmY_RtDr2Uzosc4ZabwcGkRIHC_sbY2wO3MhZu-7mHel5XBIOFeDkjpPVmrJ3z7WNKKFQE73mO4ugIHhQm-AQa6TCV8rgtzoj81HL_Gg7PVFZscIY)
 
-* 粘贴到输入框并点击 “Give me BNB”
-* 点击 “+” and 添加“BNB” 代币
+* 使用 `/faucet 地址` 命令获取测试网BNB
 
-![img](https://lh5.googleusercontent.com/5NuQ64U7VodRM815S-2EEElre-ox0CMWuKpTHeXfbI5R7kYwUO_nSqoyrcRukrZf5fR5HsZD9E2ZGggMPcvlewNpmFSNelT26gXkuoQdN6W9Xl69ofvCbrsNB38ivKFBZamQAUgN)
+![](https://github.com/bnb-chain.github.io/static/img/assets/faucet/faucet-command.png)
 
 交易完成后，你很快就能看到账户上的BNB
 
