@@ -30,7 +30,9 @@ Validator gets: 100\*20% + Commission = 36 BNB
 All delegators get: 100\*80% - Commission = 64 BNB
 ```
 
-If validators double sign, or frequently offline, their staked BNB (not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
+The rewards for motivating validators to vote for Fast Finality also comes from transaction fees. The specific rules can refer to [BEP126](https://github.com/bnb-chain/BEPs/blob/master/BEP126.md#43-reward)
+
+If validators double sign, malicious vote or frequently offline, their staked BNB (not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
 
 You can learn to see the revenue history from BitQuery's [chart](https://explorer.bitquery.io/bsc/miners) or a table of [BscScan](https://bscscan.com/validatorset)
 
@@ -52,6 +54,17 @@ Penalty for Double-Sign Slash:
 2. The Double-Sign Jail time is 2^63-1 seconds, which means the candidate cannot become a validator anymore.
 
 > Note: Rewards for submitting double-sign evidence: 1000BNB Anyone can submit a slashing request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator.
+
+
+#### Loss for Malicious Vote Slash
+
+Running your validators with the same consensus keys and voting keys concurrently on two or more machines  will result in Malicious Vote slashing.
+
+Penalty for Malicious Vote Slash:
+1. 10000 staked BNB will be slashed for the validator.
+2. The Double-Sign Jail time is 2^63-1 seconds, which means the candidate cannot become a validator anymore.
+
+> Note: Rewards for submitting Malicious Vote evidence: 50BNB. Only relayers can submit a slash request on BSC with the evidence of Malicious Vote of BSC for now, which should contain the 2 votes, signed by the offending validator. Open access to anyone is planned.
 
 
 #### Loss for Offline Slash:
