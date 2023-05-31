@@ -47,8 +47,8 @@ If you want to continue with Binance Wallet, install Binance Wallet, and After i
 
 ### Obtaining Test BNB tokens
 
-Once BNB Smart Chain Test Network has been added to MetaMask, navigate to the [BNB Smart Chain Faucet](https://testnet.binance.org/faucet-smart) to receive test tokens. Tokens are needed to pay for gas fees to deploy and interact with the smart contract. On the faucet page, paste your MetaMask wallet address. Then, click submit and the faucet will send you some test BNBs.
-![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/BNB_Smart_Chain_Faucet.png)
+Once BNB Smart Chain Test Network has been added to MetaMask, navigate to the [BNB Smart Chain Faucet](https://discord.gg/bnbchain) to receive test tokens. Tokens are needed to pay for gas fees to deploy and interact with the smart contract. On the `testnet-faucet` channel, type `/faucet your_wallet_address` and hit enter.
+![](https://github.com/bnb-chain.github.io/static/img/assets/faucet/faucet-channel.png)
 
 ## Write down a Storage Smart Contract
 

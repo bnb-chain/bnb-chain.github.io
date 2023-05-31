@@ -19,7 +19,7 @@ The validators on the testnet are mainly from the development team.
 
 ## How to get Testnet Fund?
 
-The testnet faucet for BNB Chain can be accessed [here](https://testnet.binance.org/faucet-smart).
+The testnet faucet for BNB Chain can be accessed [here](https://discord.gg/bnbchain).
 
 ## Explorers for Testnet
 

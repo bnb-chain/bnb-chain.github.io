@@ -25,7 +25,7 @@ You must set up all of the following Pre-requisites to be able to deploy your so
 1. [Create a Replit account](https://replit.com/signup)
 2. [Download Metamask wallet](https://metamask.io/)
 3. [Configure BNB Smart Chain Testnet on Metamask](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
-4. [Get BNB testnet tokens](https://testnet.binance.org/faucet-smart)
+4. [Get BNB testnet tokens (Use `testnet-faucet` channel)](https://discord.gg/bnbchain)
  
 ## Working with a Repl
  
