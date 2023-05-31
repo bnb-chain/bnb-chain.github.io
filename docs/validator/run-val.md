@@ -29,6 +29,9 @@ Follow the instructions [here to set up a full node](fullnode.md).
 
 ### 2. Start Validator Node
 
+There are 2 ways to start the validator node.
+
+1. Using the command line as below:
 !!! Warning
 	Please do not expose your RPC endpoints to public network.
 
@@ -38,6 +41,9 @@ echo {your-password to the mining account} > password.txt
 echo {your-password for the bls wallet} > blspassword.txt
 geth --config ./config.toml --datadir ./node --syncmode snap -unlock {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000
 ```
+OR
+
+2. Update `node` and `eth.miner` section in `config.toml` file. For more details, please look into this: https://forum.bnbchain.org/t/bnb-smart-chain-testnet-luban-upgrade-announcement/1331 (section: https://forum.bnbchain.org/t/bnb-smart-chain-testnet-luban-upgrade-announcement/1331#h-22important-for-validator-operator-8)
 
 ## Post Running
 
