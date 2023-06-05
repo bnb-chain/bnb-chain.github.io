@@ -1,13 +1,13 @@
 # Ledger Nano S Usage Guide
 
-This guide will show you how to use your Ledger Nano S hardware wallet with Binance Chain and Binance DEX.
+This guide will show you how to use your Ledger Nano S hardware wallet with BNB Beacon Chain and Binance DEX.
 
-> Please Note: When using a Ledger to secure your Binance Chain wallet, your private keys are not exposed and never leave the device, guarding you against loss, malware and phishing attacks.
+> Please Note: When using a Ledger to secure your BNB Chain wallet, your private keys are not exposed and never leave the device, guarding you against loss, malware and phishing attacks.
 Therefore, using a hardware wallet device such as the Ledger Nano S is strongly recommended over using a less secure wallet storage method that relies on your computer’s local storage, such as Keystore File.
 
 ## Requirements
 
-In order to use a Ledger device with Binance Chain and Binance DEX, you will need:
+In order to use a Ledger device with BNB Beacon Chain and Binance DEX, you will need:
 
 - Supported web browser: Chrome (including Brave, Vivaldi, and other Chromium variants), Opera or Firefox
 - Access to the Binance Extension Web Wallet (https://binance.org/unlock) using your web browser
@@ -20,8 +20,8 @@ In order to use a Ledger device with Binance Chain and Binance DEX, you will nee
 
 ![img](assets/ledger-nano-s-usage-guide/manage.png)
 
-2) Within the "Manager" pane, type in "Binance" in the search field.<br/>
-Locate "Binance Chain", then click on "Install".
+2) Within the "Manager" pane, type in "BNB" in the search field.<br/>
+Locate "BNB Beacon Chain", then click on "Install".
 
 ![img](assets/ledger-nano-s-usage-guide/install.png)
 
@@ -32,12 +32,12 @@ Locate "Binance Chain", then click on "Install".
 
 ![img](assets/ledger-nano-s-usage-guide/installing.png)
 
-4) When you see a popup message indicating "Successfully installed Binance Chain", the installation is complete.
+4) When you see a popup message indicating "Successfully installed BNB Beacon Chain", the installation is complete.
 
 ![img](assets/ledger-nano-s-usage-guide/success.png)
 
 
-5) Check that the "Binance Chain" app is shown on your Ledger device dashboard as in the photo below.<br/>
+5) Check that the "BNB Beacon Chain" app is shown on your Ledger device dashboard as in the photo below.<br/>
 If it is, the installation has been successful.
 
 ![img](assets/ledger-nano-s-usage-guide/app.png)

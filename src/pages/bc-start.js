@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout
       title={` ${siteConfig.title}`}
-      description="Binance Document Start Page />">
+      description="BNB Chain Document Start Page />">
       <main>
         <CardPrint/>
         {/*<HomepageFeatures />*/}

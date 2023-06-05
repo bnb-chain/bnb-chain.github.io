@@ -196,7 +196,7 @@ For detailed usage, you can refer to:
 - [staking](../../learn/bc-staking.md)
 - [slashing](../../learn/bc-slashing.md)
 - [bridge](../../learn/bc-bridge.md)
-- [Binance Smart Chain Governance](../../learn/bsc-gov.md)
+- [BNB Smart Chain Governance](../../learn/bsc-gov.md)
 
 
 

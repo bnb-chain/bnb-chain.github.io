@@ -112,7 +112,7 @@ The `tokens` module handles tokens, which contains the information of Beacon Cha
 ```json
 "tokens": [
     {
-        "name": "Binance Chain Native Token",
+        "name": "BNB Chain Native Token",
         "symbol": "BNB",
         "total_supply": "20000000000000000",
         "owner": "bnb1ultyhpw2p2ktvr68swz56570lgj2rdsadq3ym2",

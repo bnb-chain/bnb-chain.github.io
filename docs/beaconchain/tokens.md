@@ -18,7 +18,7 @@ An issuance transaction contains:
 > Note: [BEP87](https://github.com/bnb-chain/BEPs/pull/87) is implemented after Lagrange Upgrade. It changes the minimal symbol length to **two**
 
 * Source Address: the sender address of the transaction and it will become the `owner` of the token, all created tokens will be in this account.
-* Token Name: it is the long official name, such as "Binance Coin". It is limited to 32 characters.
+* Token Name: it is the long official name, such as "Build N Build Coin". It is limited to 32 characters.
 * Symbol: identifier of the token, limited to alphanumeric characters and is case insensitive, for example, "BNB". The length of symbol should be between 2 and 8. <br/>
 "B" suffixed symbol is also allowed for migrating tokens that already exist on other chains.<br/>
 The symbol doesn't have to be unique, "-" followed by random 3 letters will be appended to the provided symbol to avoid uniqueness constraint.<br/>

@@ -31,7 +31,7 @@ A segment archive node is a node which has all the data from one starting block 
 
 You can get snapshot from BNB Chain official documentation:
 - [BNB Chain Chaindata Snapshot](https://docs.bnbchain.org/docs/validator/snapshot)
-- [BNB Chain Snapshot Repo](https://github.com/binance-chain/bsc-snapshots).
+- [BNB Chain Snapshot Repo](https://github.com/bnb-chain/bsc-snapshots).
 
 * Command to run:
 
@@ -41,11 +41,11 @@ You can get snapshot from BNB Chain official documentation:
 
 #### 1.2 Build one full archive node with segmented archive nodes
 
-Instead of putting all archive data on a single Geth instance, it is suggested to create multiple segment instances, each of them only serving part of the chain. To get better performance, it is suggested that each segment's size is better to control under 4TB. There will be around 40TB data in all(up to March, 2023). For all BSC snapshots you can refer to [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot). The owner has put all BSC archive snapshots on S3. As described this path is public but is configured as requester-pays. This means you'll need an AWS account in order to download them. After having all the segments, you need one proxy to dispatch the requests to the right segment. And thanks the owner, one proxy was also implemented. Please follow the owner's guide to build.
+Instead of putting all archive data on a single Geth instance, it is suggested to create multiple segment instances, each of them only serving part of the chain. To get better performance, it is suggested that each segment's size is better to control under 4TB. There will be around 40TB data in all(up to March, 2023). For all BSC snapshots you can refer to [Free public BNB Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot). The owner has put all BSC archive snapshots on S3. As described this path is public but is configured as requester-pays. This means you'll need an AWS account in order to download them. After having all the segments, you need one proxy to dispatch the requests to the right segment. And thanks the owner, one proxy was also implemented. Please follow the owner's guide to build.
 
 ### 2. Run with an Erigon client
 
-[Erigon](https://github.com/ledgerwatch/erigon) has supported BSC mainnet. You can also refer to [Free public Binance Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot) for the guide to run a BSC archive node with an Erigon client. The owner has switched to using an Erigon client for a BSC archive node recently. You can download the archive snapshot which is a tarball from aws s3. The s3 path is "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd". This path is public, but is configured as requester-pays. Also this means you'll need an AWS account in order to download it.
+[Erigon](https://github.com/ledgerwatch/erigon) has supported BSC mainnet. You can also refer to [Free public BNB Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot) for the guide to run a BSC archive node with an Erigon client. The owner has switched to using an Erigon client for a BSC archive node recently. You can download the archive snapshot which is a tarball from aws s3. The s3 path is "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd". This path is public, but is configured as requester-pays. Also this means you'll need an AWS account in order to download it.
 
 * Command to download to local dir:
 

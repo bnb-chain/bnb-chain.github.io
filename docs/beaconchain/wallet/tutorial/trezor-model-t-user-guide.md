@@ -5,7 +5,7 @@ Please follow best security practices when using any hardware wallet to store cr
 > Please note that the Trezor Model One is not supported yet.
 
 ## Requirements
-In order to use a Trezor with Beacon Chain  and Binance DEX, you will need:
+In order to use a Trezor with Beacon Chain and Binance DEX, you will need:
 * A supported web browser: Chrome or Firefox
 * Access to the Beacon Chain  web wallet (https://binance.org/unlock) using your web browser
 * An initialized Trezor Model T device with the most recent firmware updates installed

@@ -77,7 +77,7 @@ You can see the list [here](Wallet.md)
 
 ## How to track Cross-chain transfer tx From BSC to BC?
 
-1. Get Cross-chain transfer tx hash of Binance Smart Chain
+1. Get Cross-chain transfer tx hash of BNB Smart Chain
 
 For example:  https://bscscan.com/tx/0xb6b941a3d44fec69902ea632eb96c6ffa51b3098576629c26ab34ce10deaf357 
 
@@ -98,7 +98,7 @@ For example: https://api.binance.org/cross_chain/v1/tx/0xb6b941a3d44fec69902ea63
 
 If "has_refund" is false, it means this transaction is successful. 
 
-The corresponding transaction hash on Binance chain is “cross_chain_tx_hash"
+The corresponding transaction hash on Beacon chain is “cross_chain_tx_hash"
 
 The tokens were sent to “receiverAddresses”. 
 

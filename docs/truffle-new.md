@@ -119,7 +119,7 @@ Run this command in root of the project directory:
 $ truffle migrate --network testnet
 ```
 
-Contract will be deployed on Binance Chain Chapel Testnet, it look like this:
+Contract will be deployed on BNB Smart Chain Testnet, it look like this:
 
 ```js
 1_initial_migration.js

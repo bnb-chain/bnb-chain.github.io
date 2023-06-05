@@ -16,8 +16,8 @@ Currently, the following token symbols are supported. Going forward, this list w
 
 |              Token Name               | Symbol |
 | :-----------------------------------: | :----: |
-|             Binance Coin              |  BNB   |
-|              Binance USD              |  BUSD  |
+|             BNB Coin                  |  BNB   |
+|              BNB USD                  |  BUSD  |
 |                Bitcoin                |  BTC   |
 |               Ethereum                |  ETH   |
 |                Tether                 |  USDT  |

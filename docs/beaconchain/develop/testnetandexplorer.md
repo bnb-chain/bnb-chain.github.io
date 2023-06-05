@@ -12,17 +12,17 @@ You can connect a node to the testnet by downloading the node binary and testnet
 ### What is the Testnet good for?
 
 - Create your test address and get your testnet funds.
-- Develop applications and try tutorials on Binance Chain without the potential to lose your own assets.
-- Test your applications against new versions of Binance Chain.
+- Develop applications and try tutorials on BNB Chain without the potential to lose your own assets.
+- Test your applications against new versions of BNB Chain.
 - Analyze blockchain data on a smaller, non-trivial data set compared to the public network.
 
 ### How to get Testnet Fund?
 
-> Note: The previous Binance Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: https://testnet.binance.org/faucet-smart
+> Note: The previous BNB Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: https://testnet.binance.org/faucet-smart
 
 **Steps to claim testnet BNB:**
 
-1. Create a new Wallet of Binance Smart Chain testnet with [Trust Wallet or Binance Extension Wallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
+1. Create a new Wallet of BNB Smart Chain testnet with [Trust Wallet or Binance Extension Wallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
 
 2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
 

@@ -1,4 +1,4 @@
-In this article, we are going to take a tour about how to manage your BEP8 tokens in Binance Testnet [web wallet](https://testnet.binance.org/en/tokens).
+In this article, we are going to take a tour about how to manage your BEP8 tokens in BNB Chain Testnet [web wallet](https://testnet.binance.org/en/tokens).
 
 ## What is BEP8 Token
 Since the [Nightingale upgrade](https://community.binance.org/topic/2828) of Binance Chain testnet, a new token protocol [BEP8](https://github.com/binance-chain/BEPs/blob/master/BEP8.md) is introduced. BEP8 protocol targets a different marketplace and provides several potential business cases in areas like micro-financing.
@@ -24,7 +24,7 @@ Currently, the cost to get a BEP2 token listed on Binance DEX is quite expensive
 * **Maximum Supply**: BEP8 tokens can be categorized by its maximum supply, which could be either 10K or 1million. You have to pay for more for a larger maximum supply.
 * **Supply**: This amount of token will appear under the balance of token issuer
 * **Mintable**: Whether this token can be inflationary.
-* **Token URI**: you can paste URL of your project’s website or the URI points to a JSON file that conforms to the "Mini-BEP2 Metadata JSON Schema". https://docs.binance.org/guides/concepts/BEP8.html#set-token-uri
+* **Token URI**: you can paste URL of your project’s website or the URI points to a JSON file that conforms to the "Mini-BEP2 Metadata JSON Schema". <https://docs.bnbchain.org/docs/beaconchain/learn/BEP8/#set-token-uri>
 
 4. Confirm Token Info
 
@@ -34,7 +34,7 @@ You should wait for a little time before this token appears at your token list.
 
 ## List BEP8 Token
 
-The listing process is different from BEP2 token list. BEP8 token issuer can list the BEP8 token without the agreement of Binance Chain validators. The BEP8 token can only be listed against BNB or BUSD and they cannot be listed as a quote symbol.
+The listing process is different from BEP2 token list. BEP8 token issuer can list the BEP8 token without the agreement of BNB Beacon Chain validators. The BEP8 token can only be listed against BNB or BUSD and they cannot be listed as a quote symbol.
 
 1. Click on the list button
 

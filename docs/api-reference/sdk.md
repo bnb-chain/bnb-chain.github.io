@@ -1,6 +1,6 @@
-# SDKs for Binance Chain
+# SDKs for BNB Beacon Chain
 
-Here the client SDK is used to connect to Binance Chain and DEX. There are libraries in a few programming languages, including:
+Here the client SDK is used to connect to BNB Beacon Chain and DEX. There are libraries in a few programming languages, including:
 
 - [Go](https://github.com/binance-chain/go-sdk)([Documentation](https://github.com/binance-chain/go-sdk/wiki))
 - [Java](https://github.com/binance-chain/java-sdk)([Documentation](https://github.com/binance-chain/java-sdk/wiki))

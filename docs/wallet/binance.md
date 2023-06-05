@@ -102,7 +102,7 @@ After the transfer transaction is sent, you will see an increase in your balance
 ![img](https://lh6.googleusercontent.com/RTAOcHcPxUIthhOLlHHJ1_wrFnvmZvbZ4DJUvpNR453E4mnWWRjHLBEABMTZZdSQGYMktX5eXJPOIt7iEijMsbmMJBEL29RAShDBD8ZRIDiCnXpfwi741DM7-XiDDyJO4uiLHyNL)
 
 ## Transfer Testnet BNB from BSC to BC
-* Switch to Binance Chain testnet and copy your address after unlock your extension wallet, start with `tbnb1`
+* Switch BNB Beacon Chain testnet and copy your address after unlock your extension wallet, start with `tbnb1`
 
 ![img](https://lh3.googleusercontent.com/K5w_Mbk4rT9Az6eIY130MHaj_ZCicU4Tp3w93z40dtrGdzwFCMZ5qAfwytI5PY_TdztTPrK5WPAf1uHM5ej-1YdEWu7GtVgghRBub1KSf0e63tgi1L-4MkwPBG3pG0SDYHfMpt_J)
 
@@ -116,7 +116,7 @@ After the transfer transaction is sent, you will see an increase in your balance
 
 ![img](https://lh5.googleusercontent.com/zPPVgR5I9s6cQPYfDbBU9E5Ddr5VtBhWt7iyHHE7IUEvaa5sTIMEA79VEGD-DHJJyrnJO-28m3QiVxrmSh82oCFnfjA63lpk-M1mQsdQ3aeTUskla0u8bpDNI3J0oLOFYa5Ahbr4)
 
-* Switch back to Binance Chain Testnet to confirm this cross-chain transfer
+* Switch back to BNB Beacon Chain Testnet to confirm this cross-chain transfer
 
 ![img](https://lh3.googleusercontent.com/4PMk41qA7tXxRes-0Oc12A28U_W7JZHQAlJ9WW5njdGcozY8njSVEuPeZzTRt1xfRpiXPUZiea6ES74DQyjnyZNzjPw9NJhL_QNXvSMPich2o54MlbXVgoMJHaMx66xVpqm-2XAu)
 
@@ -130,7 +130,7 @@ After the transfer transaction is sent, you will see an increase in your balance
 * Click on the “+” and add “BNB” token
 
 
-* Switch to Binance Chain testnet and click on “Send”
+* Switch to BNB Beacon Chain testnet and click on “Send”
 
 <img src="https://lh3.googleusercontent.com/JuCCpF4-U2FBHIZEIcwf7DNsCBA_RavVtmSX1dRe-thAL3FSm__Maf27aVkEIxaCQ28hl17NEYthBKyAWLJT72NMZ0Lkxzt7AIcVEuej2KDaKzT6ElR-wv_DTy1ip6MKfQk0-U7-" alt="img" style={{zoom:"33%"}} />
 
@@ -144,7 +144,7 @@ After the transfer transaction is sent, you will see an increase in your balance
 
 * Follow the instructions above to Install Binance Extension Wallet if not ready
 * Follow the instructions above to create or Recover your account
-* Switch to Binance Chain testnet after unlock your extension wallet and Click at “+” to add your BEP2 token if necessary
+* Switch to BNB Beacon Chain testnet after unlock your extension wallet and Click at “+” to add your BEP2 token if necessary
 
 <img src="https://lh5.googleusercontent.com/P9NrmUZF4yC0_G_KgSuqCtLq3Q0GLw6ZBfyYwBn6f6HFqTxOcER2wChJJtZvAkF8QsEJz9AxN6Ixi2oqlJEHKsig-KTz3qUIAi8Kt7TfhyPalMMzO7Yh3btfyVLMm9MNCcA1bXYL" alt="img" style= { { zoom:"33%" } } />
 
@@ -158,7 +158,7 @@ Click at “+” to add your BEP20 token if necessary
 
 <img src="https://lh5.googleusercontent.com/fW06aH1A5_7P93r8zSp4kgs5Us1AqYHvnfs6sRxg6aCLsQ7u9Ht_z6zLSExGjbr6J-D0vOmDWXghw544WhaNnkTP-nDAO3TFou5g_WYVvp7nOSrNX7w15PmvmZLyHkhBzLW_i-xi" alt="img" style= { { zoom:"33%" } } />
 
-* Switch to Binance Chain testnet and click on “Send”
+* Switch to BNB Beacon Chain testnet and click on “Send”
 
 <img src="https://lh5.googleusercontent.com/OHYhS0DdJsg6Jt_E-qRrPOxgDi_VMwXlRYVD8OVTrr1w5kwubse2boOfffWpl8PjP15j_h0atYB4O1GEQqNGCFzoKcoRSgmdMgAYQPazoe_I7X6gilZazMqqIGntSz9rz6j47DGk" alt="img" style={{zoom:"33%"}} />
 
@@ -180,7 +180,7 @@ Click at “+” to add your BEP20 token if necessary
 
 **Verify your balance has enough BNB to pay transfer fee**
 
-* Switch to Binance Chain testnet and copy your address, start with `tbnb1`
+* Switch to BNB Beacon Chain testnet and copy your address, start with `tbnb1`
 
 Note: for mainnet, the address starts with `bnb1`
 

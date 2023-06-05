@@ -147,7 +147,7 @@ Future coding competitions; Hackathons
 
 ### What are Pegged tokens on BNB Smart Chain?
 
-Soon after the launch of Beacon Chain, Binance issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Beacon Chain.
+Soon after the launch of Beacon Chain, BNB Chain issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Beacon Chain.
 
 Current list:
 
@@ -173,7 +173,7 @@ Current list:
 Details are [here](https://www.bnbchain.org/en/blog/binance-presents-project-token-canal-2/)
 
 
-### How to Send and Receive BNB on Smart Chain?
+### How to Send and Receive BNB on BNB Smart Chain?
 
 [Binance.com](https:/www.binance.com) can withdraw BNB to BSC.
 
@@ -218,7 +218,7 @@ Please try to contact the support of the receiver address to help with the depos
 
 ## How to track Cross-chain transfer tx From BC to BSC?
 
-1. Get the Cross-chain transfer transaction hash of the Binance Chain
+1. Get the Cross-chain transfer transaction hash of the Beacon Chain
 
 For example https://explorer.binance.org/tx/8B9B066BAF9DC1C233A9D316C75E8139B985518868C1120B656C5B3EBAC7C498 
 
@@ -228,7 +228,7 @@ Please make sure the “Transaction Type” is “Cross-chain transfer out”
 
 2. Get Destination Address
 
-The “TxHash on BSC” is linked to Binance smart chain explorer
+The “TxHash on BSC” is linked to BNB smart chain explorer
 
 ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216076/original/YdIbat5IAnpWgQO0SuNX4zHY_rsF97fErA.png?1629968302)
 

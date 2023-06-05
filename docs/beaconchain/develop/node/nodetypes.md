@@ -7,14 +7,10 @@ There are two types of Full Nodes in Beacon Chain  network: validator nodes and 
 
 ### What is a Validator Node?
 
-Validators are a group/IT infrastructure that take the responsibility to maintain the Binance
-Chain/DEX data and validate all the transactions. They join the consensus procedure and
+Validators are a group/IT infrastructure that take the responsibility to maintain the Beacon Chain data and validate all the transactions. They join the consensus procedure and
 vote to produce blocks. The fees are collected and distributed among all validators.
 You can consider Validator as "miner" in Bitcoin and Ethereum and similar concepts exist in dPoS
-blockchain as EOS or dBFT in NEO. The initial validators are selected from trusted members of the
-Binance community, and will eventually expand to more members as the Binance blockchain and
-ecosystem matures, this responsibility will be distributed. The decentralized governance procedure
-will be introduced and executed. More qualified organization/individual can become Validators.
+blockchain as EOS or dBFT in NEO. The initial validators are selected from trusted members of the BNB Chain community, and will eventually expand to more members as the BNB Chain blockchain and ecosystem matures, this responsibility will be distributed. The decentralized governance procedure will be introduced and executed. More qualified organization/individual can become Validators.
 
 
 ### What is a Witness Node?

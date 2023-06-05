@@ -200,7 +200,7 @@ No. This was an intentional design decision to improve the performance of the sy
 having to support unnecessary features.
 
 If you have certain must-have feature-s, it might be added as a native implementation instead of using smart contract.<br/>
-Feel free to talk to Binance community.
+Feel free to talk to BNB Chain community.
 
 ## How can I transfer tokens, such as Bitcoin, from other blockchains onto Beacon Chain?
 

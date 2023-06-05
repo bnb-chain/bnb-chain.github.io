@@ -18,7 +18,7 @@ For a BEP20 token which has been mirrored to BC, anyone can call the `sync` meth
 
 - Verify there is already mirrored
 - Check the total supply and token symbol is valid
-- Send a cross-chain package to modify a BEP2 token total supply on Binance Chain
+- Send a cross-chain package to modify a BEP2 token total supply on BNB Beacon Chain
 
 After syncing, the total supply on BC and BSC are the same.
 

@@ -60,7 +60,7 @@ function CardPrint() {
           <div className={styles.card}>
           <Link to="/docs/DEX"> <div className={styles.container}>
                   <h3> <FontAwesomeIcon icon={faChartBar} style={{fontSize:"1em"}}/> BC and Dex Trading </h3>
-                  <p >Understand how to trade using Binance Chain and DEX.</p>
+                  <p >Understand how to trade using BNB Beacon Chain and DEX.</p>
               </div></Link>
           </div>
         </div>

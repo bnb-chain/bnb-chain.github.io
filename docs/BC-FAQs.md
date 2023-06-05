@@ -18,7 +18,7 @@ The main focuses for the design of Beacon Chain  are:
 - High performance: low latency, high throughput for a large user base, and high liquidity trading.
    We target to achieve 1 second block times, with 1 confirmation finality.
 - Low cost: in both fees and liquidity cost.
-- Easy user experience <!-- : as friendly as Binance.com. -->
+- Easy user experience
 - Fair trading: minimize front-running, to the extent possible.
 - Evolvable: able to develop with forever-improving technology stack, architecture, and ideas.
 
@@ -38,7 +38,7 @@ Yes, Beacon Chain  team and community would cherish the technology advancements 
 
 ### What is the native coin on Beacon Chain ?
 
-The Binance Coin, BNB, is the native asset on Beacon Chain . There are 200MM BNB coins in total.
+The Build N Build Coin, BNB, is the native asset on Beacon Chain . There are 200MM BNB coins in total.
 There will be no mining. The existing coin burns and freezes will still be in effect on the new
 Beacon Chain  blockchain.
 

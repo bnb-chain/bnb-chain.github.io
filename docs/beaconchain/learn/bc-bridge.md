@@ -1,7 +1,7 @@
 # BC <-> BSC Token Bridge
 
 !!! Note
-	Please note that *BC <-> BSC Token Bridge* is a module of Beacon Chain  fullnode to facilitate cross-chain transfer between Beacon Chain  and BNB Smart Chain , while  [Binance Bridge](https://www.binance.org/en/bridge), a bridge service providing access to inter-blockchain liquidity for Beacon Chain , BNB Smart Chain  decentralized applications, and bring valuable assets to Beacon Chain  ecosystems.
+	Please note that *BC <-> BSC Token Bridge* is a module of Beacon Chain  fullnode to facilitate cross-chain transfer between Beacon Chain  and BNB Smart Chain , while [Binance Bridge](https://www.binance.org/en/bridge), a bridge service providing access to inter-blockchain liquidity for Beacon Chain , BNB Smart Chain  decentralized applications, and bring valuable assets to Beacon Chain  ecosystems.
 
 ## What is BC <-> BSC  bridge
 

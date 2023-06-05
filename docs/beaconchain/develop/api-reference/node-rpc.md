@@ -10,11 +10,11 @@ There are two main ways to connect to a node to send RPC commands.
 
 This page assumes that you have your own node running locally, so examples here use `localhost:27146` to represent using RPC commands on a local node.
 
-Alternatively, you are able to use a node that is hosted in the Binance Chain network.
+Alternatively, you are able to use a node that is hosted in the BNB Chain network.
 
 ### 1.2 Use an existing node on the network
 
-The Binance Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
+The BNB Chain infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
 
 Here is an example of a node that is available for RPC access. The following is the output of `localhost:27147/status`:
 

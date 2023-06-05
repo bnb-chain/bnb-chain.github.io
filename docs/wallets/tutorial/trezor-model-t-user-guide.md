@@ -1,11 +1,11 @@
 # Trezor User Guide
-This guide will show you how to use your [Trezor Model T](https://shop.trezor.io/product/trezor-model-t) hardware wallet with Binance Chain and Binance DEX.
+This guide will show you how to use your [Trezor Model T](https://shop.trezor.io/product/trezor-model-t) hardware wallet with BNB Beacon Chain and Binance DEX.
 Please follow best security practices when using any hardware wallet to store cryptocurrency.
 
 > Please note that the Trezor Model One is not supported yet.
 
 ## Requirements
-In order to use a Trezor with Binance Chain and Binance DEX, you will need:
+In order to use a Trezor with BNB Beacon Chain and Binance DEX, you will need:
 * A supported web browser: Chrome or Firefox
 * Access to the Binance Extension Web Wallet (https://binance.org/unlock) using your web browser
 * An initialized Trezor Model T device with the most recent firmware updates installed
@@ -54,7 +54,7 @@ Please make sure that you have seed phrase backed up.
 
 ![img](https://lh4.googleusercontent.com/d2YxOhj8kptDdPmwJ1QIWKn57BeHooCmR_6NYBH1FqRxxlMDm5PaOvz07HV9KGuUR3K-WG70n83v7vvOZ8WOe_kcippxedz3N4JV1DLlPLNXg_tQg0HoDiBrLy_tZS9hh5b4wREX)
 
-> Please note that Trezor only supports the Binance Chain mainnet
+> Please note that Trezor only supports the BNB Beacon Chain mainnet
 
 1) Click on the “Balances” navigation button in the Trading Interface to view your account balances.
 
