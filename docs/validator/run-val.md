@@ -43,7 +43,46 @@ geth --config ./config.toml --datadir ./node --syncmode snap -unlock {the addres
 ```
 OR
 
-2. Update `node` and `eth.miner` section in `config.toml` file. For more details, please look into this: https://forum.bnbchain.org/t/bnb-smart-chain-testnet-luban-upgrade-announcement/1331 (section: https://forum.bnbchain.org/t/bnb-smart-chain-testnet-luban-upgrade-announcement/1331#h-22important-for-validator-operator-8)
+2. Follow the below steps as an alternative:
+
+- Step 1. Create a voting key first: `./geth bls account new --datadir <path>`
+
+  - It will generate a wallet if it has not been created before, you have to keep the wallet password. If the wallet has been created before, you only need to provide the password.
+  - Then it will create an account, you have to keep the account password too, the password length should >=10 characters.
+
+    Note: Remember, you can create several accounts, but only one will be used.
+
+- Step 2. You can view keys in the wallet by: `./geth bls account list --datadir <path>`
+
+  - Remember the first one listed here will be used as the voting key, other keys are not used right now.
+
+- Step 3. Update the config file: config.toml (Update `node` and `eth.miner` section in `config.toml` file.)
+
+      - add 2 fields under `Node` section: `BLSPasswordFile` & `BLSWalletDir`
+
+  You need to provide the file: `/<path>/bls/blspassword.txt`, may generate it by: `echo <WalletPassword> >/<path>/bls/blspassword.txt` - add 1 field in `[Eth.Miner]` section: `VoteEnable = true` to enable it.
+  Or you may manually add an option on node start: `geth --vote` to enable it as well.
+
+- The content of the config.toml for example:
+  ```
+    ...
+    [Node]
+    BLSPasswordFile = "/<path>/bls/blspassword.txt"
+    BLSWalletDir = "/<path>/bls/wallet"
+    ...
+    [Eth.Miner]
+    VoteEnable = true
+    ...
+  ```
+
+**_Note: if the node prints: “BLS wallet did not exists.”,
+then you may add the flag to specify it: “–blswallet /<path>/bls/wallet”_**
+
+- Step 4: restart
+  - You may only provide the flag: `--vote`, if you did not specify it in config.toml
+    Then you may go ahead, just restart the node.
+
+For more details, please look into this: https://forum.bnbchain.org/t/bnb-smart-chain-testnet-luban-upgrade-announcement/1331 (section: https://forum.bnbchain.org/t/bnb-smart-chain-testnet-luban-upgrade-announcement/1331#h-22important-for-validator-operator-8)
 
 ## Post Running
 
