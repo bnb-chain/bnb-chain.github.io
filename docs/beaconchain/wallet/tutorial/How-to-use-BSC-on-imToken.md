@@ -49,7 +49,7 @@ Click on "Ecosystem Applications" on the asset homepage to view and experience r
 ![img](assets/4.png)
 
 
-###How to send funds from Binance to your imToken Wallet
+### How to send funds from Binance to your imToken Wallet
 
 To withdraw BSC assets from Binance to imToken, you can follow the steps below. We use the BNB token as an example.
 

@@ -19,7 +19,8 @@ Command Line Interface is currently available for Linux, Mac and Windows.<br/>
 Please refer to the [CLI Reference](api-reference/cli.md).
 
 ## SDKs
-There are multiple advanced SDK solutions available for Binance chain.<br/>
+There are multiple advanced SDK solutions available for BNB Beacon chain.
+
 Majority of SDKs provide simplified functions to:
 
 - Create wallets and manage keys

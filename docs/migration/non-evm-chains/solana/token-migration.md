@@ -36,7 +36,7 @@ One of the most widely used token standards is the ERC standard. Ethereum Reques
 
 #### BEP Token Standard
 
-Similarly to ERC, BNB Chain defines its own set of standards for token issuance, management, and implementation known as BEP (Binance Evolution Proposals). BEPs are token management rules and pre-defined criteria for launching on-chain assets on BNB Chain. The most popular BEP standards are BEP2 and BEP20. BEP2 is the native coin of the Beacon Chain. Whereas, BEP20 is popular for use on BSC. It is to note here that BEP20 is very similar to ERC20 and extends its functionality. Note that, BNB which is the native token of the BNB Chain ecosystem, is also a BEP20 token.
+Similarly to ERC, BNB Chain defines its own set of standards for token issuance, management, and implementation known as BEP (BNB Chain Evolution Proposals). BEPs are token management rules and pre-defined criteria for launching on-chain assets on BNB Chain. The most popular BEP standards are BEP2 and BEP20. BEP2 is the native coin of the Beacon Chain. Whereas, BEP20 is popular for use on BSC. It is to note here that BEP20 is very similar to ERC20 and extends its functionality. Note that, BNB which is the native token of the BNB Chain ecosystem, is also a BEP20 token.
 
 #### SPL Token Standard
 

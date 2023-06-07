@@ -1,7 +1,7 @@
 #  Binance DEX Trading Interface
 
 
-Binance DEX trading page is designed to provide a user-friendly trading interface to everyone. To get started, go to the trading page first at https://www.binance.org/trade. The trading page is composed of the following part:
+Binance DEX trading page is designed to provide a user-friendly trading interface to everyone. To get started, go to the trading page first at https://www..org/trade. The trading page is composed of the following part:
 
 * Tradig Pairs info
 * TradingView Chart
@@ -53,7 +53,7 @@ In the bottom left-hand side of the interface, you can locate Open Orders, Order
 - Open Orders: This section shows which orders are not filled in their entirety and are still currently open. You can view all of the orders on the blockchain by looking at their TxHash.
 - Order History: This section shows the orders you have placed, filled, unfilled or canceled. You can view all of the orders on the blockchain by looking at their TxHash.
 - Trade History: This section shows your executed trades on the exchange.
-- Balances: This section displays the current balance of your Binance Chain Wallet.
+- Balances: This section displays the current balance of your BNB Chain Wallet.
 
 ### Order Form
 Binance DEX currently only supports Limit orders. The Limit order section allows you to define the bid/ask price and the quantity you wish to trade. Please note that all order’s parameters’ constrains:

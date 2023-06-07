@@ -30,7 +30,7 @@ Explanations: Suffix is the first 3 bytes of the issue transaction’s hash, for
 
 ## BNB
 
-The Binance Coin, `BNB`, is the native asset on Beacon Chain . There are 200MM BNB coins in total. There will be no mining. The existing coin burns and freezes will still be in effect on the new Beacon Chain  blockchain.
+The Build N Build Coin, `BNB`, is the native asset on Beacon Chain . There are 200MM BNB coins in total. There will be no mining. The existing coin burns and freezes will still be in effect on the new Beacon Chain  blockchain.
 
 The exact number of BNB coins will be destroyed based on the same number of BNB ERC20 tokens that have already been destroyed.
 

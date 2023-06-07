@@ -155,9 +155,9 @@ When resetting your password for your Binance Extension wallet, you will need yo
 ![img](https://lh6.googleusercontent.com/ZeM4cYV3rirCo91zw3OVMYRqqpwqIsrWhPnv-t3sL7YhpD0M_DNQ4QQH-Rw8WmapLrX2OzwETLKcEwKA-Rakjuhlnoy7S707Yt8Y0nUC5OKjg04ADgM2bLSb-1f3GZvUxdkj-BuI)
 
 ## Which network does BEW support? 
- * Binance Chain(BEP2)
- * Binance Smart Chain(BEP20)
- * Ethereum(ERC20)
+ * Beacon Chain (BEP2)
+ * BNB Smart Chain (BEP20)
+ * Ethereum (ERC20)
 
 ## Why my Tokens are not visible?
 !!! Note : By default each wallet/network will shows the the main token they support. You will need to add additional token to your list. 
@@ -221,7 +221,7 @@ It is crucial that you have the latest version installed.
 ## Why are Tokens not visible after withdrawing from Binance?
 Many users who interact with a centralized exchange like Binance eventually want to withdraw to a wallet that they fully control, like Binance Extension wallet or MetaMask. So once you've used their withdrawal form, what could be scarier than not seeing your tokens?
 
-First, you'll need to use Binance Chain Mainnet (BC) mainnet or Binance Smart Chain (BSC) mainnet
+First, you'll need to use BNB Beacon Chain Mainnet (BC) mainnet or BNB Smart Chain (BSC) mainnet
 
 Once you've added the asset to your wallet, you will be able to select different networks to view the assets held by your selected account on that network.
 

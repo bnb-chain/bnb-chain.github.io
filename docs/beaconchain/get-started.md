@@ -12,7 +12,8 @@ Both provide the functions below:
 - Showing the balances of assets on the addresses
 - Sending and receiving assets
 
-Beacon Chain Web Wallet also presents a trading UI similar to Binance.com, where you can examine market data and manage your orders to trade among the listed assets.<br/>
+Beacon Chain Web Wallet also presents a trading UI where you can examine market data and manage your orders to trade among the listed assets.
+
 Learn about the list of wallet available [here](wallets.md).
 
 ## Chain Explorer

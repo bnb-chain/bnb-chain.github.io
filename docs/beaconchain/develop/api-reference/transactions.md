@@ -1,7 +1,7 @@
 # Transaction Data
 A transaction in tendermint is any sequence of bytes. It's up to the ABCI application to accept or reject the transactions.
 
-On Binance Chain, all kinds of transactions are wrapped in type `StdTx` before marshalling by [Amino](https://github.com/tendermint/go-amino):
+On BNB Beacon Chain, all kinds of transactions are wrapped in type `StdTx` before marshalling by [Amino](https://github.com/tendermint/go-amino):
 ```go
 type StdTx struct {
     Msg                       `json:"msg"`
@@ -92,7 +92,7 @@ There is an example on how this prefix is used in JavaScript [here](https://gith
 
 More documentation is available [here](../../learn/encoding/encoding.md)
 
-Binance Chain JavaScript SDK Amino API [example](https://github.com/bnb-chain/javascript-sdk/wiki/API-Examples#amino-js-amino)
+BNB Beacon Chain JavaScript SDK Amino API [example](https://github.com/bnb-chain/javascript-sdk/wiki/API-Examples#amino-js-amino)
 
 
 | Type | Name | Prefix | Length | Notes |

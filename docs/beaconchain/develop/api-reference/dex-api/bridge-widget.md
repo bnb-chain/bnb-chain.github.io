@@ -13,7 +13,7 @@ You should see a connection request from Binance Bridge. Click on the Connect bu
 
 <https://www.binance.org/en/bridge?wallet=$wallet_name>
 
-* Supported wallet name in desktop browser: metamask, binanceWallet.
+* Supported wallet name in desktop browser: metamask, Binance Wallet.
 
 * Supported wallet name in mobile app browser: metamask
 
@@ -26,6 +26,6 @@ https://www.binance.org/en/bridge?wallet=metamask
 
 This URL support both MathWallet and MetaMask. Open the link in the wallet browser.
 
-Note: please make sure the wallet is connected to Binance Smart Chain mainnet.
+Note: please make sure the wallet is connected to BNB Smart Chain mainnet.
 
 

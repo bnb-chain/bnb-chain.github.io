@@ -14,9 +14,9 @@ The public key is known as the wallet's receiving address or simply its address.
 
 In order to send cryptocurrencies to another address or to make any changes to the wallet, the private key is used for digitally signing the transactions. It is important to note that the private key must never be shared and should always be kept securely. If by any means access is gained to the private key attached to a wallet, the attacker can withdraw all the tokens contained. Furthermore, if the private key for a wallet is lost, any tokens that have been sent to or stored in that wallet's address are permanently lost.
 
-Different wallet solutions offer different approaches to keypair security, interacting with the keypair, and signing transactions to use/spend the tokens. Some are easier to use than others. Some store and back up private keys more securely. Binance Smart Chain supports several wallets, giving its users the right to choose the right wallet for their required security and convenience.
+Different wallet solutions offer different approaches to keypair security, interacting with the keypair, and signing transactions to use/spend the tokens. Some are easier to use than others. Some store and back up private keys more securely. BNB Smart Chain supports several wallets, giving its users the right to choose the right wallet for their required security and convenience.
 
-If you want to be able to receive BNB and other supported tokens on the Binance Smart Chain blockchain, you will first need to create a wallet and configure [key management](create-wallet.md).
+If you want to be able to receive BNB and other supported tokens on the BNB Smart Chain blockchain, you will first need to create a wallet and configure [key management](create-wallet.md).
 
 ## Supported Wallets 
 

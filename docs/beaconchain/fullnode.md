@@ -1,6 +1,6 @@
 # Run Full Node to Join Beacon Chain 
 
-A `full node` of Beacon Chain  is a `witness`, which observes the consensus messaging, downloads blocks from `data seed nodes` and executes business logic to achieve the consistent state as `validator node` (and other `full node`). Full nodes also help the network by accepting transactions from other nodes and then relaying them to the core Binance network.
+A `full node` of Beacon Chain  is a `witness`, which observes the consensus messaging, downloads blocks from `data seed nodes` and executes business logic to achieve the consistent state as `validator node` (and other `full node`). Full nodes also help the network by accepting transactions from other nodes and then relaying them to the core BNB Chain network.
 
 ## Supported Platforms
 

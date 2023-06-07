@@ -15,12 +15,12 @@ Or you can make your own build from the open source code https://github.com/Alph
 ## Setup Your Wallet for BNB Smart Chain
 1. Click Setting tab, Select Active Network
 
-2. Select Binance. If you want to enable the testnet as well, select Binance(test).
+2. Select BNB Chain. If you want to enable the testnet as well, select BNB Chain(test).
 
 ## Setup Your DApp browser for BNB Smart Chain
 1. Click Browser tab, Click the Ethereum 
 
-2. In the browser active network page, select Binance or Binance(Test) 
+2. In the browser active network page, select BNB Chain or BNB Chain(Test) 
 
 It’s ready, and now you can get some testnet BNB from the faucet.
 

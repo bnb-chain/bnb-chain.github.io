@@ -3,7 +3,7 @@ sidebar_label: Overview
 sidebar_position: 2
 ---
 # Overview
-In 2017, Binance and BNB were born. Three years later, Binance Smart Chain (BSC) was introduced to the world.  As Binance grew bigger and stronger, so did Binance Smart Chain.  BSC was born in time for the DeFi revolution, as the public showed increased interest in alternative financial solutions and use cases powered by blockchain. Today, both Binance and BSC remain connected by BNB.
+In 2017, Binance and BNB were born. Three years later, Binance Smart Chain (BSC) was introduced to the world. As Binance grew bigger and stronger, so did Binance Smart Chain.  BSC was born in time for the DeFi revolution, as the public showed increased interest in alternative financial solutions and use cases powered by blockchain. Today, both Binance and BSC remain connected by BNB.
 
 ![beyond-binance](https://public.bnbstatic.com/image/cms/blog/20220215/dde5a744-2e11-4a58-bf71-34a29786d777.jpg)
 

@@ -27,7 +27,7 @@ But knowing 3) is very hard for normal market participant. Even if they run powe
 
 So with the above, the usual traders and even trading bots cannot do much to front-run others.
 
-You might point out, that the validators have a chance to get information of 3) when they are "proposers" for the next block, i.e. they would "propose" what transactions to add for the next block. But the Binance Chain consensus model adds some additional randomness to make it more difficult:
+You might point out, that the validators have a chance to get information of 3) when they are "proposers" for the next block, i.e. they would "propose" what transactions to add for the next block. But the BNB Beacon Chain consensus model adds some additional randomness to make it more difficult:
 
 Due to the fast matching, the bad validator have to prepare everything with earlier information in order to front-run the price. However, he cannot be too fast, because he cannot know the execution price of the last block until the last block is concluded, and the last execution price has direct impact on the execution price according to the match logic. Even more, any validator ahead of the bad validator's proposer turn can run into an issue and increase the consensus round, which would ask for re-arrangement on the proposing sequence. This makes it very hard to pre-determine the exact proposal sequence, making it so hard that the validator cannot be 100% sure when they can delay any other transactions and add their own transactions to the block earlier. Besides all of this, the bad validator cannot hold other transactions for too long: it either makes the bad behavior very observable on chain, or other validators would include the transactions anyway via P2P communication.
 

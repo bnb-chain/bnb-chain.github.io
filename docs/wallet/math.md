@@ -76,13 +76,13 @@ Link: <https://explorer.binance.org/testnet>
 
 One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP20 tokens together. In Binance Chain Ganges Testnet, there are several pegged tokens:
 
-* Pegged BTC on [Binance Chain Testnet](https://explorer.binance.org/testnet/asset/BTC-E24) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8#code)
-* Pegged ETH on  [Binance Chain Testnet](
+* Pegged BTC on [BNB Beacon Chain Testnet](https://explorer.binance.org/testnet/asset/BTC-E24) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8#code)
+* Pegged ETH on  [BNB Beacon Chain Testnet](
 https://explorer.binance.org/testnet/asset/ETH-64F) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0xd66c6b4f0be8ce5b39d52e0fd1344c389929b378#code)
-* Pegged XRP on  [Binance Chain Testnet](
+* Pegged XRP on  [BNB Beacon Chain Testnet](
 https://explorer.binance.org/testnet/asset/XRP-C46) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0xa83575490d7df4e2f47b7d38ef351a2722ca45b9#code)
 
-You can get some of these pegged tokens from faucet and transfer them back to Binance Chain testnet.
+You can get some of these pegged tokens from faucet and transfer them back to BNB Beacon Chain testnet.
 
 ### 1. Approve this transaction![img](https://lh3.googleusercontent.com/bYfuPLKjeTopR_VUzr6MBEHZWy6UkJ10hlXICxbHh7LvoKi5Hdr2aW7Z_nSDgKphaCc9iOijoignzydzmYU1BGOyN6IRHJPHLKia1XD59651hS-EMU9vboqblgBSziivtZGdQ05e)
 

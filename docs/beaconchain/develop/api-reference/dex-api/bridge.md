@@ -5,7 +5,7 @@ API description for swap service
 **Version:** V1.0
 
 **Contact information:**
-Binance Chain
+BNB Beacon Chain
 
 **Base URL:** api.binance.org/bridge
 

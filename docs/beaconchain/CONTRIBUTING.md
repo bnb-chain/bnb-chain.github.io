@@ -1,6 +1,6 @@
 # How to Contribute to BNB Chain  Documentations Project
 
-Your contributions to the [BNB Chain](https://www.binance.org/en) will help build a fast and secure decentralized digital asset exchange.
+Your contributions to the [BNB Chain](https://www.bnbchain.org/) will help build a fast and secure decentralized digital asset exchange.
 
 We want to make it as easy as possible to contribute changes that help the BNB Chain  grow and thrive. There are a few guidelines that we ask contributors to follow so that we can merge your changes quickly.
 

@@ -10,7 +10,7 @@ DIA supports assets from various categories to be included into the oracle. A se
 
 |              Data Feed Name           | Data Type |
 | :-----------------------------------: | :----: |
-|             Binance Coin              |  Crypto Price   |
+|             BNB Coin              |  Crypto Price   |
 |                Bitcoin                |  Crypto Price  |
 |               Ethereum                |  Crypto Price   |
 |                Tether                 |  Crypto Price  |
@@ -42,7 +42,7 @@ struct CoinInfo {
 }
 ```
 
-The following snippet shows how to retrieve the BTC price of an asset (e.g. `Binance Coin`) using a smart contract.
+The following snippet shows how to retrieve the BTC price of an asset (e.g. `BNB Coin`) using a smart contract.
 
 ```
 pragma solidity ^0.4.24;

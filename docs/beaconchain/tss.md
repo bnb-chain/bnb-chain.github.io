@@ -15,7 +15,7 @@ Combining TSS feature  with Beacon Chain  client will help users manage their fu
 
 ## Implementation
 
-Many development resources have been poured into implementing TSS, a cryptographic protocol for distributed key generation and signing. TSS is now compatible and reusable for ECDSA-based blockchains, including Beacon Chain , Bitcoin, and Ethereum networks. We expect that members of the Binance ecosystem and partner community can integrate this TSS library with their applications, such as wallets and custodians, and further develop this exciting new technology.
+Many development resources have been poured into implementing TSS, a cryptographic protocol for distributed key generation and signing. TSS is now compatible and reusable for ECDSA-based blockchains, including Beacon Chain, Bitcoin, and Ethereum networks. We expect that members of the BNB Chain ecosystem and partner community can integrate this TSS library with their applications, such as wallets and custodians, and further develop this exciting new technology.
 
 With the support of the Beacon Chain  community, we are happy to share the open-source code at https://github.com/bnb-chain/tss-lib.
 

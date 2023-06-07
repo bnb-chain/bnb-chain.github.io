@@ -26,11 +26,11 @@ BSC relayer monitors cross chain packages on Beacon Chain, builds and broadcasts
 
 ### What's is an Oracle relayer?
 
-Oracle Relayer watches the state change of Binance Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of Beacon Chain are eligible to run Oracle relayers.
+Oracle Relayer watches the state change of BNB Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of Beacon Chain are eligible to run Oracle relayers.
 
 ### What's an oracle?
 
-In blockchain network, an oracle refers to the element that connects smart contracts with data from the outside world. In the network of Binance Smart Chain, the execution of the transaction wil emit Events, and such events can be packaged and relayed onto BC. In this way, BC will get updates about changes of BSC.
+In blockchain network, an oracle refers to the element that connects smart contracts with data from the outside world. In the network of BNB Smart Chain, the execution of the transaction wil emit Events, and such events can be packaged and relayed onto BC. In this way, BC will get updates about changes of BSC.
 
 ### How to send cross-chain transfer?
 

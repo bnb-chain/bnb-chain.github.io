@@ -104,8 +104,7 @@ A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.e
 
 ## BNB (and Other Coins) MainNet Switch
 
-Binance Coin (BNB) was an ERC20 token on the Ethereum network.<br/>
-After the launch of Beacon Chain , Binance Coin (BNB) is being converted into native BNB tokens on the main network via the exchange platform at [binance.com](https://www.binance.com), a pragmatic and efficient way to perform the initial token swap.
+Build N Build Coin (BNB) was an ERC20 token on the Ethereum network. After the launch of Beacon Chain, Build N Build Coin (BNB) is being converted into native BNB tokens on the main network via the exchange platform at [binance.com](https://www.binance.com), a pragmatic and efficient way to perform the initial token swap.
 
 Beacon Chain  is ready for other projects to migrate their tokens to take advantage of performant transactions with more liquidity options and native marketplace features.<br/>
 More information about how projects can set themselves up for this (via [binance.com](https://www.binance.com) or partners) will come soon.
