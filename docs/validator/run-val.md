@@ -58,10 +58,11 @@ OR
 
 - Step 3. Update the config file: config.toml (Update `node` and `eth.miner` section in `config.toml` file.)
 
-      - add 2 fields under `Node` section: `BLSPasswordFile` & `BLSWalletDir`
+    - add 2 fields under `Node` section: `BLSPasswordFile` & `BLSWalletDir`.
 
-  You need to provide the file: `/<path>/bls/blspassword.txt`, may generate it by: `echo <WalletPassword> >/<path>/bls/blspassword.txt` - add 1 field in `[Eth.Miner]` section: `VoteEnable = true` to enable it.
-  Or you may manually add an option on node start: `geth --vote` to enable it as well.
+      You need to provide the file: `/<path>/bls/blspassword.txt`, may generate it by: `echo <WalletPassword> >/<path>/bls/blspassword.txt` 
+    - add 1 field in `[Eth.Miner]` section: `VoteEnable = true` to enable it.
+      Or you may manually add an option on node start: `geth --vote` to enable it as well.
 
 - The content of the config.toml for example:
   ```
@@ -75,8 +76,8 @@ OR
     ...
   ```
 
-**_Note: if the node prints: “BLS wallet did not exists.”,
-then you may add the flag to specify it: “–blswallet /<path>/bls/wallet”_**
+**_Note: if the node prints: "BLS wallet did not exists.",
+then you may add the flag to specify it: `–blswallet /<path>/bls/wallet`_**
 
 - Step 4: restart
   - You may only provide the flag: `--vote`, if you did not specify it in config.toml
