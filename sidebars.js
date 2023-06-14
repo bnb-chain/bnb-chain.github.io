@@ -285,14 +285,14 @@ const sidebars = {
           {
             type: 'link',
             label: 'BNB Greenfield',
-            href: 'https://greenfield.bnbchain.org/docs/guide/introduction/overview.html',
+            href: 'https://docs.bnbchain.org/greenfield-docs/docs/guide/home',
           },
 
 
           {
             type: 'link',
             label: 'zkBNB',
-            href:'https://test.zkbnbchain.org/docs/',
+            href:'https://docs.bnbchain.org/zkBNB-docs/docs/guide/introduction/getting-started',
           },
          
     ],
