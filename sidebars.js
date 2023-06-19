@@ -285,14 +285,20 @@ const sidebars = {
           {
             type: 'link',
             label: 'BNB Greenfield',
-            href: 'https://docs.bnbchain.org/greenfield-docs/docs/guide/home',
+            href: 'https://docs.bnbchain.org/greenfield-docs/',
           },
 
 
           {
             type: 'link',
             label: 'zkBNB',
-            href:'https://docs.bnbchain.org/zkBNB-docs/docs/guide/introduction/getting-started',
+            href:'https://docs.bnbchain.org/zkBNB-docs/',
+          },
+
+         {
+            type: 'link',
+            label: 'opBNB',
+            href:'https://docs.bnbchain.org/opBNB-docs/',
           },
          
     ],
