@@ -30,9 +30,11 @@ The testnet faucet for BNB Chain can be accessed [here](https://testnet.binance.
 ## RPC Endpoints
 BSC RPC Endpoints(ChainID 0x61):
 
-- https://data-seed-prebsc-1-s1.binance.org:8545
-- https://data-seed-prebsc-2-s1.binance.org:8545
-- https://data-seed-prebsc-1-s2.binance.org:8545
-- https://data-seed-prebsc-2-s2.binance.org:8545
-- https://data-seed-prebsc-1-s3.binance.org:8545
-- https://data-seed-prebsc-2-s3.binance.org:8545
+https://docs.bnbchain.org/docs/BSCtestnet
+
+- https://data-seed-prebsc-1-s1.bnbchain.org:8545
+- https://data-seed-prebsc-2-s1.bnbchain.org:8545
+- https://data-seed-prebsc-1-s2.bnbchain.org:8545
+- https://data-seed-prebsc-2-s2.bnbchain.org:8545
+- https://data-seed-prebsc-1-s3.bnbchain.org:8545
+- https://data-seed-prebsc-2-s3.bnbchain.org:8545
