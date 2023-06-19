@@ -298,7 +298,7 @@ const sidebars = {
          {
             type: 'link',
             label: 'opBNB',
-            href:'https://docs.bnbchain.org/opBNB-docs/',
+            href:'https://docs.bnbchain.org/opbnb-docs/',
           },
          
     ],
