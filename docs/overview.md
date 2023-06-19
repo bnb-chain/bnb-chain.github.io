@@ -11,18 +11,19 @@ BNB Chain, one of the most popular blockchains in the world, dedicates to delive
 BNB Chain is comprised of:
 1. **[BNB Beacon Chain](learn/beaconIntro.md)** - BNB Beacon Chain is the staking and governance layer of the BNB ecosystem.
 2. **[BNB Smart Chain (BSC)](learn/intro.md)** - An EVM-compatible blockchain that brings programmability and interoperability to the BNB ecosystem.
-3. **[ZkBNB](https://test.zkbnbchain.org/docs/)** - ZkBNB is an infrastructure that is built on ZK Rollup architecture for developers that helps them to build large-scale BSC-based apps with higher throughput and much lower or even zero transaction fees.
-4. **[BNB Greenfield](https://greenfield.bnbchain.org/docs/guide/introduction/overview.html)** - BNB Greenfield introduces an entirely new structural and economic paradigm for data in the Web3 era. The ownership, usage, and monetization of data are now possible first and foremost for users, as well as all participants in the BNB Chain ecosystem.
+3. **[zkBNB](https://docs.bnbchain.org/zkBNB-docs/)** - zkBNB is an infrastructure that is built on zk-Rollup architecture for developers that helps them to build large-scale BSC-based apps with higher throughput and much lower or even zero transaction fees.
+4. **[opBNB](https://docs.bnbchain.org/opbnb-docs/)** - opBNB network is the Layer 2 scaling solution for the BNB Smart Chain powered by the [bedrock version](https://community.optimism.io/docs/developers/bedrock/) of Optimism opStack.
+5. **[BNB Greenfield](https://greenfield.bnbchain.org/docs/guide/introduction/overview.html)** - BNB Greenfield introduces an entirely new structural and economic paradigm for data in the Web3 era. The ownership, usage, and monetization of data are now possible first and foremost for users, as well as all participants in the BNB Chain ecosystem.
 
 ![BSC 2022](../static/img/assets/BNB-Chain-Ecosytem.png)
 
 ## BNB Token
-BNB stands for "**Build and Build**". Along with _fueling_ transactions on BNB Chain (similar to gas on Ethereum), BNB also acts as a governance token. Holding BNB gives you the right to make your voice heard and is necessary for participation in BNB Chain's decentralized on-chain governance. With this name change also comes more advancements to benefit users, projects and developers connected to the BNB Chain community.
+BNB stands for "**Build and Build**". Along with _fueling_ transactions on BNB Chain (similar to gas on Ethereum), BNB also acts as a governance token. Holding BNB gives you the right to make your voice heard and is necessary for participation in BNB Chain's decentralized on-chain governance. With this name change also comes more advancements to benefit users, projects, and developers connected to the BNB Chain community.
 
 ## Key Features
 Currently, BSC offers a considerable block size of **__140M gas ceiling__**. We plan to introduce a more advanced logic for blockchain storage and BSC client to cover it and allow further expansion.  Currently, to fully sync the BSC blockchain, validators need extensive storage and time. Scaling down the validator and node operator requirements is necessary to enable a seamless BSC experience.
 
-- New technologies, like Erigon, are being verified to decrease both time and storage demands for validators nodes while performing full sync. 
+- New technologies, like Erigon, are being verified to decrease both time and storage demands for validator nodes while performing full sync. 
 - Working with validators and infrastructure providers to deploy new solutions to address this issue, such as  
   - Parallel EVM
   - Better block process pipeline
