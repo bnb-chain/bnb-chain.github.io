@@ -15,7 +15,7 @@ const config = {
   organizationName: 'bnb-chain', 
   projectName: 'bnb-chain.github.io', 
   deploymentBranch: 'gh-pages',
- 
+  trailingSlash: false,
   
   plugins: [
              require.resolve("docusaurus-plugin-image-zoom"),
