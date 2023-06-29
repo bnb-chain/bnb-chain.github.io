@@ -33,8 +33,7 @@ const sidebars = {
             collapsed: true,
             label: 'BNB Smart Chain',
             items: ['learn/intro',
-
-
+                    'bsc-faucet',
                 {type: 'doc', label: 'Tutorials', id:'bsc-tutorials'},
 
 
