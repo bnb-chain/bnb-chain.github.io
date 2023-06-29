@@ -46,6 +46,7 @@ Use **bnbcli** to create an account or recover an account, make sure the account
 bnbcli staking bsc-create-validator \
 --side-cons-addr {mining account} \
 --side-vote-addr {validator vote pub key} \
+--bls-wallet {path to bls wallet} \
 --side-fee-addr {wallet address on BSC} \
 --address-delegator {wallet address on BC} \
 --side-chain-id bsc \
@@ -65,6 +66,7 @@ bnbcli staking bsc-create-validator \
 tbnbcli staking bsc-create-validator \
 --side-cons-addr {mining account} \
 --side-vote-addr {validator vote pub key} \
+--bls-wallet {path to bls wallet} \
 --side-fee-addr {wallet address on BSC} \
 --address-delegator {wallet address on BC} \
 --side-chain-id chapel \
