@@ -1,6 +1,6 @@
 # Wallet Support
 
-* List of Wallets Supporting Beacon Chain Mainnet
+* List of Wallets Supporting BNB Beacon Chain Mainnet
 
 | Number | Wallet Name                                            | Website                          |DEX Feature Available|Testnet Support|WalletConnect Support|
 | ------ | ------------------------------------------------------ | -------------------------------- |-----| -----|-----|

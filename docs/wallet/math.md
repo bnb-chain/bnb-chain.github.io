@@ -50,7 +50,7 @@ Go to explorer to verify BNB is sent: <https://testnet.bscscan.com/>
 ## Transfer BNB from BSC to BC in Testnet
 
 1. Create your Binance Chain Ganges Testnet address with tbnbcli
-* Download the binary [here](https://github.com/binance-chain/node/releases/tag/v0.8.1)
+* Download the binary [here](https://github.com/bnb-chain/node/releases/tag/v0.8.1)
 > If you already have a backup of your recovery phrase from Binance Chain Ganges Testnet, it can be reused here.
 ```
 tbnbcli keys add {wallet-alias}

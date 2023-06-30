@@ -11,7 +11,7 @@ hide_table_of_contents: false
 The BSC network is not only a Proof of Staked Authority blockchain network but also one that utilizes on-chain governance. Ideally, such governance logic should be built into the blockchain and automatically executed as the blocking happens. Cosmos Hub, which shares the same Tendermint consensus and libraries with BNB Beacon Chain, works in this way.
 The BNB Beacon Chain has been preparing to enable governance logic since the design days. In order to keep the compatibility and reuse the good foundation of BC, the governance logic of BSC is implemented on BC.
 
-What kind of changes are made via on-chain governance with BSC? Right now, there are many system parameters to control the behavior of the BSC, e.g. slash amount, cross-chain transfer fees. All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such process will be carried on BC, and the new parameter values will be picked up by either the management module on BC or corresponding system contracts via a cross-chain communication. The proposals can be classified into two groups: 1. Param Change Proposal if the parameter takes effect on the Beacon Chain; 2. Cross Param Change Proposal if the parameter takes effect on the BNB Smart Chain.
+What kind of changes are made via on-chain governance with BSC? Right now, there are many system parameters to control the behavior of the BSC, e.g. slash amount, cross-chain transfer fees. All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such process will be carried on BC, and the new parameter values will be picked up by either the management module on BC or corresponding system contracts via a cross-chain communication. The proposals can be classified into two groups: 1. Param Change Proposal if the parameter takes effect on the BNB Beacon Chain; 2. Cross Param Change Proposal if the parameter takes effect on the BNB Smart Chain.
 
 To understand process-wise how BSC governance works, it’s best to think of these network upgrades in the following stages which are enforced on the protocol level.
 
@@ -96,7 +96,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
+| --chan-id           | Binance-Chain-XXX                          | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --status            | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No          |
 | --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                | No           |
@@ -114,7 +114,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 
@@ -144,7 +144,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of beacon chain                                            | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of BNB Beacon Chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -166,7 +166,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of beacon chain                                            | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of BNB Beacon Chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -187,7 +187,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of beacon chain                                            | Yes          |
+| --chan-id          | Binance-Chain-XXX                                                  | the chain id of BNB Beacon Chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -207,7 +207,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --option           | Yes                                        | vote option {yes, no, no_with_veto, abstain}         | Yes          |
@@ -225,7 +225,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of beacon chain                       | Yes          |
+| --chan-id          | Binance-Chain-XXX                          | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --deposit          | Yes                                        | amount of deposit                                    | Yes          |

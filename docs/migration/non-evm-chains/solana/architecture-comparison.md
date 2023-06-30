@@ -11,7 +11,7 @@ This document covers the architectural differences between BNB Chain and Solana 
 
 Ethereum is considered the pioneer of blockchain platforms offering developers the option of developing decentralized applications (dApps) through the use of smart contracts. However, with obstacles like high gas cost and scalability issues, several other blockchain platforms offering better features to users have emerged. Amongst the most popular Layer-1 blockchains are BNB Chain and Solana.
 
-BNB Chain has since garnered immense popularity and is now the largest smart contract-powered blockchain network as it provides users with speed, security, scalability, and innovative features. BNB Chain comprises two parts, the Beacon Chain (BC) and the BNB Smart Chain (BSC). BSC offers dApp development, is Ethereum Virtual Machine (EVM) compatible and uses the EVM for smart contract execution. This means that all of the tools and infrastructure compatible with the Ethereum network can also be used with the BSC network. Also, porting projects onto BSC from other EVM-based chains is possible.
+BNB Chain has since garnered immense popularity and is now the largest smart contract-powered blockchain network as it provides users with speed, security, scalability, and innovative features. BNB Chain comprises two parts, the BNB Beacon Chain (BC) and the BNB Smart Chain (BSC). BSC offers dApp development, is Ethereum Virtual Machine (EVM) compatible and uses the EVM for smart contract execution. This means that all of the tools and infrastructure compatible with the Ethereum network can also be used with the BSC network. Also, porting projects onto BSC from other EVM-based chains is possible.
 
 On the other hand, one of the most popular non-EVM-based blockchain networks is the Solana blockchain. By being non-EVM based, this means that Solana has its own set of token standards, dev tools, infrastructure, etc., for dApp development. This also means that the majority of the Ethereum-compliant tools and standards cannot be used on the Solana network. Solana initially gained good traction in the Web3 ecosystem, though it also faced incidents of non-availability, scalability, and security issues, leading some projects to consider other options available in the market such as BNB Chain.
 
@@ -23,9 +23,9 @@ In this section, we provide an introductory overview of both of the blockchain g
 
 ### BNB Chain
 
-The BNB Chain ecosystem comprises two blockchain giants, namely, Beacon Chain (BC) and the BNB Smart Chain (BSC). The Beacon Chain is responsible for the Governance of the BNB Chain (Staking, Voting). Whereas, the BNB Smart Chain (BSC) blockchain, founded in 2020, is EVM compatible and contains consensus layers and hubs to multi-chains. The BNB Token is the native cryptocurrency of the ecosystem that is used for both staking purposes as well as for payments of transactions over the network.
+The BNB Chain ecosystem comprises two blockchain giants, namely, BNB Beacon Chain (BC) and the BNB Smart Chain (BSC). The BNB Beacon Chain is responsible for the Governance of the BNB Chain (Staking, Voting). Whereas, the BNB Smart Chain (BSC) blockchain, founded in 2020, is EVM compatible and contains consensus layers and hubs to multi-chains. The BNB Token is the native cryptocurrency of the ecosystem that is used for both staking purposes as well as for payments of transactions over the network.
 
-BSC runs parallel to the Beacon Chain and is the EVM-compatible component of the BNBChain ecosystem, and offers smart contract functionality for creating dApps and other blockchain-based products. BSC gained real popularity in early 2021 because of its lower gas fees and faster finality as compared to Ethereum's high gas fees and scalability problems. BSC uses the Proof-of-Staked-Authority (PoSA) consensus algorithm i.e, it merges delegated Proof-of-Stake with Proof-of-Authority (PoA).
+BSC runs parallel to the BNB Beacon Chain and is the EVM-compatible component of the BNBChain ecosystem, and offers smart contract functionality for creating dApps and other blockchain-based products. BSC gained real popularity in early 2021 because of its lower gas fees and faster finality as compared to Ethereum's high gas fees and scalability problems. BSC uses the Proof-of-Staked-Authority (PoSA) consensus algorithm i.e, it merges delegated Proof-of-Stake with Proof-of-Authority (PoA).
 
 ### Solana
 
@@ -37,7 +37,7 @@ In this section, we provide a brief overview of the architecture of both BSC and
 
 ### BSC Architecture Overview
 
-BNB Chain is an ecosystem comprising two major blockchains that serve different purposes, namely, Beacon Chain (BC) and BNB Smart Chain (BSC). To deal with the increased transactions and DAU, the BNB Chain ecosystem has evolved to add more scaling solutions and now comprises the following components with different responsibilities and purposes.
+BNB Chain is an ecosystem comprising two major blockchains that serve different purposes, namely, BNB Beacon Chain (BC) and BNB Smart Chain (BSC). To deal with the increased transactions and DAU, the BNB Chain ecosystem has evolved to add more scaling solutions and now comprises the following components with different responsibilities and purposes.
 
 - [**BNB Beacon Chain**](https://docs.bnbchain.org/docs/learn/beaconIntro) - BNB Chain Governance (Staking, Voting)
 - [**BNB Smart Chain (BSC)**](https://docs.bnbchain.org/docs/learn/intro) - EVM compatible, consensus layers, and with hubs to multi-chains
@@ -47,10 +47,10 @@ BNB Chain is an ecosystem comprising two major blockchains that serve different 
 
 #### Design principles of BSC
 
-- **Standalone Blockchain**: even though BSC runs in parallel to the Beacon chain, technically, it is a standalone blockchain. Most of the fundamental technical and business functions of BSC are self-contained, and it can run well even if the BC is stopped.
+- **Standalone Blockchain**: even though BSC runs in parallel to the BNB Beacon Chain, technically, it is a standalone blockchain. Most of the fundamental technical and business functions of BSC are self-contained, and it can run well even if the BC is stopped.
 - **Ethereum Compatibility**: To take advantage of the relatively mature applications and community of Ethereum, BSC chooses to be compatible with the existing Ethereum mainnet. This means most of the Ethereum-based **dApps**, ecosystem components, and toolings work with BSC and require zero or minimum changes. Furthermore, BSC nodes require similar (or a bit higher) hardware specifications and skills to run and operate.
 - **Staking Involved Consensus and Governance**: Staking-based consensus is more environmentally friendly and leaves more flexible options for community governance. Expectedly, this consensus enables better network performance over[ proof-of-work](https://en.wikipedia.org/wiki/Proof_of_work) blockchain systems, i.e., faster blocking time and higher transaction capacity.
-- **Native Cross-Chain Communication**: both BC and BSC are implemented with native support for cross-chain communication among the two blockchains. The communication protocol is designed to be bi-directional, decentralized, and trustless. It concentrates on moving digital assets between BC and BSC, i.e.,[ BEP2](https://github.com/binance-chain/BEPs/blob/master/BEP2.md) tokens, and eventually, any other BEP tokens introduced later.
+- **Native Cross-Chain Communication**: both BC and BSC are implemented with native support for cross-chain communication among the two blockchains. The communication protocol is designed to be bi-directional, decentralized, and trustless. It concentrates on moving digital assets between BC and BSC, i.e.,[ BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) tokens, and eventually, any other BEP tokens introduced later.
 
 ![image](https://user-images.githubusercontent.com/93580180/201683059-ef7983fa-6828-4c66-a87c-bf62ba4456b9.png)
 

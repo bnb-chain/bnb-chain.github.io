@@ -8,11 +8,11 @@ sidebar_position: 2
 
 ### What is BNB Smart Chain?
 
-BNB Smart Chain brings EVM-compatible programmability and native cross-chain communication with Beacon Chain using an innovative consensus of Proof of Staked Authority (PoSA).
+BNB Smart Chain brings EVM-compatible programmability and native cross-chain communication with BNB Beacon Chain using an innovative consensus of Proof of Staked Authority (PoSA).
 
-### Why is BNB Smart Chain designed as a separate chain from Beacon Chain?
+### Why is BNB Smart Chain designed as a separate chain from BNB Beacon Chain?
 
-The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. Even if that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on Tendermint, based on the current underlying consensus protocol and major RPC implementation of Beacon Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
+The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. Even if that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on Tendermint, based on the current underlying consensus protocol and major RPC implementation of BNB Beacon Chain. But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
 
 ### Where will the published whitepaper be found?
 
@@ -31,7 +31,7 @@ The codebase of BSC is open-sourced here:
 
 ## What is the consensus model of BSC?
 
-BNB Smart Chain is an innovative solution to bring programmability and interoperability to Beacon Chain. BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. For more details, refer [here](learn/consensus.md). 
 
 ## Where can I find some support?
 * Technical talk and support running our software: 
@@ -81,7 +81,7 @@ PoSA is a combination of PoA and PoS. Blocks are produced by a limited set of va
 
 * Fast block time, cheaper cost
 
-* Native cross-chain transfer & communication: Binance DEX remains a liquid venue of exchange of assets on Beacon Chain and BNB Smart Chain "
+* Native cross-chain transfer & communication: Binance DEX remains a liquid venue of exchange of assets on BNB Beacon Chain and BNB Smart Chain "
 
 ### What are the benefits for developers to build on BNB Chain?
 
@@ -107,7 +107,7 @@ Key Innovations:
 
 EVM means Ethereum Virtual Machine. Any smart contract written to run in EVM can be easily ported to BNB Smart Chain.
 
-### Can developers make hybrid Dapps using both Beacon Chain and BNB Smart Chain in one single Dapp?
+### Can developers make hybrid Dapps using both BNB Beacon Chain and BNB Smart Chain in one single Dapp?
 
 Yes, with the help of native cross-chain functions
 
@@ -147,7 +147,7 @@ Future coding competitions; Hackathons
 
 ### What are Pegged tokens on BNB Smart Chain?
 
-Soon after the launch of Beacon Chain, BNB Chain issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of Beacon Chain.
+Soon after the launch of BNB Beacon Chain, BNB Chain issued several pegged BEP2 tokens that are running on other blockchain networks, including BTC (BTCB), ETH, XRP, LTC, BCH, and ONT. These tokens are backed by real tokens locked in public addresses and have allowed users to benefit from both the volatility of these tokens as well as the fast transfer and trading experience of BNB Beacon Chain.
 
 Current list:
 
@@ -218,7 +218,7 @@ Please try to contact the support of the receiver address to help with the depos
 
 ## How to track Cross-chain transfer tx From BC to BSC?
 
-1. Get the Cross-chain transfer transaction hash of the Beacon Chain
+1. Get the Cross-chain transfer transaction hash of the BNB Beacon Chain
 
 For example https://explorer.binance.org/tx/8B9B066BAF9DC1C233A9D316C75E8139B985518868C1120B656C5B3EBAC7C498 
 

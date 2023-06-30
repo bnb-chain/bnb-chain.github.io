@@ -11,20 +11,20 @@ Traditional **MultiSig (multi-signature)** is a more refined unlocking system th
 
 With **Threshold Signatures**, all of the parties must forge the vault’s lock together, in a modular way, where each party owns a share of the key. A TSS vault is indistinguishable from a regular vault and is hence universal, and it has the same privacy and verification cost of a regular vault. Even if only a subset of the keys is available, the vault may still be unlocked (this is known as meeting a threshold of participation).
 
-Combining TSS feature  with Beacon Chain  client will help users manage their funds in a much safer way. TSS will be offered in an independent binary, but it will have some impact on the existing functions of *bnbcli/tbnbcli*.
+Combining TSS feature  with BNB Beacon Chain  client will help users manage their funds in a much safer way. TSS will be offered in an independent binary, but it will have some impact on the existing functions of *bnbcli/tbnbcli*.
 
 ## Implementation
 
-Many development resources have been poured into implementing TSS, a cryptographic protocol for distributed key generation and signing. TSS is now compatible and reusable for ECDSA-based blockchains, including Beacon Chain , Bitcoin, and Ethereum networks. We expect that members of the BNB Chain ecosystem and partner community can integrate this TSS library with their applications, such as wallets and custodians, and further develop this exciting new technology.
+Many development resources have been poured into implementing TSS, a cryptographic protocol for distributed key generation and signing. TSS is now compatible and reusable for ECDSA-based blockchains, including BNB Beacon Chain , Bitcoin, and Ethereum networks. We expect that members of the BNB Chain ecosystem and partner community can integrate this TSS library with their applications, such as wallets and custodians, and further develop this exciting new technology.
 
-With the support of the Beacon Chain  community, we are happy to share the open-source code at https://github.com/bnb-chain/tss-lib.
+With the support of the BNB Beacon Chain  community, we are happy to share the open-source code at https://github.com/bnb-chain/tss-lib.
 
 ## Security Audit
 
 
 The implementation of a multi-party threshold ECDSA [library](https://github.com/bnb-chain/tss-lib) is open source so it can be publicly audited by anyone. An independent third party auditors from [Kudelski Security](https://www.kudelskisecurity.com/)  are hired to validate the security of the cryptography in TSS solution. The latest report in October by can be found [here](../../assets/audit-binance-tss-lib-final.pdf).
 
-Security checks are routinely and continuously planed for all parts of TSS lib implmentations and future audits  will be reported to Beacon Chain  community.
+Security checks are routinely and continuously planed for all parts of TSS lib implmentations and future audits  will be reported to BNB Beacon Chain  community.
 
 ## Workflow
 Let’s take a look at the major steps in TSS:
@@ -35,14 +35,14 @@ Let’s take a look at the major steps in TSS:
 
 * **Signing**: this step involves a signature generation function. The input of each party will be its own secret share, created as output of the distributed key generation in the previous step. There is also public input known to all, which is the message to be signed. The output will be a digital signature, and the property of privacy ensures that no leakage of secret shares occurred during the computation.
 
-* **Verification**: the verification algorithm remains as it is in the classical setting. To be compatible with single key signatures, Beacon Chain  validator nodes can be able to verify the signature with the public key. The transaction will be no different from others.
+* **Verification**: the verification algorithm remains as it is in the classical setting. To be compatible with single key signatures, BNB Beacon Chain  validator nodes can be able to verify the signature with the public key. The transaction will be no different from others.
 
 * **Vault Regroup**:  Regroup will reset secret share and configs between all parties.It's recommend to switch the configuration periodically, say once a month. If some party lost his key, it's also necessory to reset the distribution once some party lost their key. Regroup will generate new_n secret share with new_t threshold. At least old_t + 1 should participant
 
 
 ##  Where can I download the Binance TSS CLI?
 
-You can download tss client and Beacon Chain  Commandline here:
+You can download tss client and BNB Beacon Chain  Commandline here:
 * Mainnet: <https://github.com/bnb-chain/node/releases>
 * Testnet: <https://github.com/bnb-chain/node/releases>
 

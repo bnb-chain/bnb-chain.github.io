@@ -1,7 +1,7 @@
 # Asset Management
 
 ## Introduction
-Assets are stored as `tokens` on Beacon Chain, and the below management actions are available. All the assets are complied with [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md).
+Assets are stored as `tokens` on BNB Beacon Chain, and the below management actions are available. All the assets are complied with [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md).
 
 The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of these operations can be executed. The fees for testnet and mainnet are different.
 

@@ -6,13 +6,13 @@ sidebar_position: 2
 
 # Wallet Connect
 <!--<img src="../assets/walletconnect.svg" width="60"> -->
-The Beacon Chain Web Wallet supports connecting with external wallet providers via the [WalletConnect protocol](https://docs.walletconnect.org/tech-spec).
+The BNB Beacon Chain Web Wallet supports connecting with external wallet providers via the [WalletConnect protocol](https://docs.walletconnect.org/tech-spec).
 
 WalletConnect allows the user to scan a QR code from the wallet app to unlock and use their wallet seamlessly in the web UI.
 
-In order for this to work, some modifications to the standard WalletConnect protocol are used in the Beacon Chain   wallet's implementation.
+In order for this to work, some modifications to the standard WalletConnect protocol are used in the BNB Beacon Chain   wallet's implementation.
 
-See the list of wallets which support WalletConnect on Beacon Chain [here](walletconnect-support.md)
+See the list of wallets which support WalletConnect on BNB Beacon Chain [here](walletconnect-support.md)
 
 ## Connecting via WalletConnect
 
@@ -22,7 +22,7 @@ Wallet providers should make use of the [WalletConnect Client SDK](https://docs.
 
 Since we do not use Ethereum transactions, there are some differences:
 
-* Typically `sendTransaction` is used with Ethereum transaction parameters in WalletConnect dApp integrations. But in Beacon Chain  's case, instead of invoking `sendTransaction` in the WalletConnect flow, the new [`sendCustomRequest`](https://docs.walletconnect.org/client-sdk#send-custom-request) call is used instead with a method called `bnb_sign` (see below).
+* Typically `sendTransaction` is used with Ethereum transaction parameters in WalletConnect dApp integrations. But in BNB Beacon Chain  's case, instead of invoking `sendTransaction` in the WalletConnect flow, the new [`sendCustomRequest`](https://docs.walletconnect.org/client-sdk#send-custom-request) call is used instead with a method called `bnb_sign` (see below).
 
 * The external wallet provider is responsible for sending back the signature and public key of the transaction but should _not_ broadcast the transaction itself. We have instead defined a custom `result` format in the form of stringified JSON containing the signature and public key. The reason for this is that the wallet app probably does not have access to the complete serialized binary form of the transaction (as this requires Amino encoding).
 

@@ -1,6 +1,6 @@
-# Run Full Node to Join Beacon Chain 
+# Run Full Node to Join BNB Beacon Chain 
 
-A `full node` of Beacon Chain  is a `witness`, which observes the consensus messaging, downloads blocks from `data seed nodes` and executes business logic to achieve the consistent state as `validator node` (and other `full node`). Full nodes also help the network by accepting transactions from other nodes and then relaying them to the core BNB Chain network.
+A `full node` of BNB Beacon Chain  is a `witness`, which observes the consensus messaging, downloads blocks from `data seed nodes` and executes business logic to achieve the consistent state as `validator node` (and other `full node`). Full nodes also help the network by accepting transactions from other nodes and then relaying them to the core BNB Chain network.
 
 ## Supported Platforms
 
@@ -14,7 +14,7 @@ The hardware must meet certain requirements to run a full node.
 - 500 GB of free disk space, accessible at a minimum read/write speed of 100 MB/s.
 - 4 cores of CPU and 8 gigabytes of memory (RAM).
 - A broadband Internet connection with upload/download speeds of at least 1 megabyte per second
-- Your full node has to run at least 4 hours per 24 hours in order to catch up with Beacon Chain 
+- Your full node has to run at least 4 hours per 24 hours in order to catch up with BNB Beacon Chain 
 More hours will be better, run your node continuously for best results.
 
 ## Steps to Run a Full Node
@@ -38,7 +38,7 @@ upzip linux_binary.zip
 
 ### Initialize Home Folder
 
-First you need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain .<br/>
+First you need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for BNB Beacon Chain .<br/>
 You can setup this by:
 
 ```
@@ -52,7 +52,7 @@ Put `app.toml`, `config.toml` and `genesis.json` from mainnet_config.zip/testnet
 
 ### Add Seed Nodes
 
-For a full node to function, it must connect to one or more known nodes to join Beacon Chain .<br/>
+For a full node to function, it must connect to one or more known nodes to join BNB Beacon Chain .<br/>
 There are several famous `seed nodes` that offer known node addresses in the network to newly joined full nodes.<br/>
 They are already in `config.toml` file, which sits in mainnet_config.zip/testnet_config.zip.
 
@@ -70,7 +70,7 @@ If you want to add seed nodes, please feel free to edit the field `seeds` of `$B
 
 ### Config Syncing
 
-Beacon Chain  is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to **[fast-sync](#fast-sync)** (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called **[state-sync](#state-sync)**. **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
+BNB Beacon Chain  is making blocks at a very fast pace and its block height is over 60 million. As a result, it will take a long time to **[fast-sync](#fast-sync)** (download all the blocks from genesis block). To decrease the waiting time, an innovative way of syncing a fullnode is introduced and it's called **[state-sync](#state-sync)**. **State Sync** is the default way of syncing in the published config files. If you need to switch to **Fast Sync**, you need to change the `config.toml` accordingly. You can read more in the following sections.
 
 #### Additional Configuration
 
@@ -89,7 +89,7 @@ Start the full node according to the place of your executables.<br/>
 bnbchaind start --home $BNCHOME&
 ```
 
-Only after catching up with Beacon Chain , the fullnode can handle requests correctly.
+Only after catching up with BNB Beacon Chain , the fullnode can handle requests correctly.
 
 #### Details on Sync Mode
 
@@ -126,7 +126,7 @@ Configuration is located in `$BNCHOME/config/config.toml`:
 * `pong_timeout` Recommendation is set to `450s`
 * `state_sync_height` Recommendation is set to `0`, so it allows to state sync from the peers's latest height. Please do not change the height to other number, unless you are doing some debug.
 
-State sync can help fullnode in same status with other peers within short time (according to our test, a one month ~800M DB snapshot in Beacon Chain  testnet can be synced in around 45 minutes) so that you can receive latest blocks/transactions and query latest status of orderbook, account balances etc.. But state sync DOES NOT download historical blocks before state sync height, if you start your node with state sync and it synced at height 10000, then your local database would only have blocks after height 10000.
+State sync can help fullnode in same status with other peers within short time (according to our test, a one month ~800M DB snapshot in BNB Beacon Chain  testnet can be synced in around 45 minutes) so that you can receive latest blocks/transactions and query latest status of orderbook, account balances etc.. But state sync DOES NOT download historical blocks before state sync height, if you start your node with state sync and it synced at height 10000, then your local database would only have blocks after height 10000.
 
 If full node has already started, suggested way is to delete the (after backup) `$BNCHOME/data` directory and `$BNCHOME/config/priv_validator_key.json` before enabling state sync.
 
@@ -139,7 +139,7 @@ If you turn on the `state_sync_reactor`, the snapshots of heights will be saved 
 
 > Please note that this feature is still expreimental and is not recommended.
 
-In Beacon Chain  network, almost every fullnode operator will first enable `state-sync` to get synced with peers. After downloading all the state machine changes, the fullnode will go back to `fast-sync` mode and eventually in `consensus` mode.  In fast-sync mode, the fullnode will have high delay because it needs to be aware of peers’ heights. It downloads all the blocks in parallel and verifying their commits. On the other hand, when a fullnode is under `consensus` state, it will consume a lot of bandwidth and CPU resources because it receives a lot of redundant messages for consensus engine and writes more WAL.
+In BNB Beacon Chain  network, almost every fullnode operator will first enable `state-sync` to get synced with peers. After downloading all the state machine changes, the fullnode will go back to `fast-sync` mode and eventually in `consensus` mode.  In fast-sync mode, the fullnode will have high delay because it needs to be aware of peers’ heights. It downloads all the blocks in parallel and verifying their commits. On the other hand, when a fullnode is under `consensus` state, it will consume a lot of bandwidth and CPU resources because it receives a lot of redundant messages for consensus engine and writes more WAL.
 To increase the efficiency for fullnodes, the `hot-sync` protocol is introduced. A fullnode under `hot-sync` protocol will pull the blocks from its peers and it will subscribe these blocks in advance. It will skip the message for prevotes and only subscribe to maj23 precommit and block proposal messages. At the same time, it will put its peers in different buckets and subscribe to peers in active buckets. `Hot-Sync` can help fullnodes gossip blocks in low latency, while cost less network, memory, cpu and disk resources than Tendermint consensus protocol. Even cheap hardware can easily run a fullnode, and a  fullnode can connect with more peers than before by saving network and CPU resources.
 
 The state transition of a hot sync reactor can be of three part:

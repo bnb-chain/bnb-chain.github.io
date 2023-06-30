@@ -6,11 +6,11 @@ sidebar_position: 2
 
 ## What is BNB Smart Chain ?
 
-BNB Smart Chain  brings EVM-compatible programmability and native cross-chain communication with Beacon Chain  using an innovative consensus of Proof of Staked Authority(PoSA).
+BNB Smart Chain  brings EVM-compatible programmability and native cross-chain communication with BNB Beacon Chain  using an innovative consensus of Proof of Staked Authority(PoSA).
 
-## Why is BNB Smart Chain  designed as a separate chain from Beacon Chain ?
+## Why is BNB Smart Chain  designed as a separate chain from BNB Beacon Chain ?
 
-The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. Even if that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on Tendermint, based on the current underlying consensus protocol and major RPC implementation of Beacon Chain . But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
+The execution of a Smart Contract may slow down the exchange function and add non-deterministic factors to trading. Even if that compromise could be tolerated, it might be a straightforward idea to introduce a new Virtual Machine specification based on Tendermint, based on the current underlying consensus protocol and major RPC implementation of BNB Beacon Chain . But all these will increase the learning requirements for all existing dApp communities, and will not be very welcomed.
 
 ## Where will the published whitepaper be found?
 
@@ -75,7 +75,7 @@ PoSA is a combination of PoA and PoS. Blocks are produced by a limited set of va
 
 * EVM-compatible: BNB Smart Chain  supports all the existing Ethereum tooling
 Fast block time, cheaper cost
-* Native cross-chain trasfer & communication: Binance DEX remains a liquid venue of exchange of assets on Beacon Chain and BNB Smart Chain "
+* Native cross-chain trasfer & communication: Binance DEX remains a liquid venue of exchange of assets on BNB Beacon Chain and BNB Smart Chain "
 
 ## What are the benefits for developers to build on BNB Chain ?
 
@@ -101,7 +101,7 @@ Key Innovations:
 
 EVM means Ethereum Virtual Machine. Any smart-contract written to run in EVM can be easily ported to BNB Smart Chain .
 
-## Can developers make hybrid Dapps using both Beacon Chain  and BNB Smart Chain  in one single Dapp?
+## Can developers make hybrid Dapps using both BNB Beacon Chain  and BNB Smart Chain  in one single Dapp?
 
 Yes, with the help of native cross-chain functions
 

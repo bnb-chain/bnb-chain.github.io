@@ -17,7 +17,7 @@ There is an on-chain parameter `MaxValidators`. Only the validator candidates wh
 
 ## Become a Validator Candidate
 
-You will need [Beacon Chain CLI](../develop/api-reference/cli.md) for the commands.
+You will need [BNB Beacon Chain CLI](../develop/api-reference/cli.md) for the commands.
 
 ### Step1: Generate Consensus Key
 Use the command below to generate a consensus key. It will be used in the full node to sign the consensus message if the validator gets bonded.

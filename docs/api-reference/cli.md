@@ -1,12 +1,12 @@
 # Command Line Interface (CLI)
 
-BNB CLI is one of several ways to interact with Beacon Chain.
+BNB CLI is one of several ways to interact with BNB Beacon Chain.
 
 BNB CLI can be used as a local wallet, you can manage your keys via Beacon CLI. You can add a new
 key or restore your key from mnemonic words. And you can list your keys and show specified key info.
 
-With BNB CLI, you can send transactions to Beacon Chain, like placing an order, transferring token,
-issuing token and so on. Actually you can do almost everything you can do with Beacon Chain web wallet. What is
+With BNB CLI, you can send transactions to BNB Beacon Chain, like placing an order, transferring token,
+issuing token and so on. Actually you can do almost everything you can do with BNB Beacon Chain web wallet. What is
 more, you can propose to list trading pairs and join chain governance.
 
 In addition, you can do some simple queries through CLI. For example, you can query your account's
@@ -48,9 +48,9 @@ C:\> tbnbcli.exe
 
 ## Where to connect
 
-You can manage you keys locally without connecting to any node. But if you want to interact with Beacon Chain, you need to connect to one of Beacon Chain full nodes.
+You can manage you keys locally without connecting to any node. But if you want to interact with BNB Beacon Chain, you need to connect to one of BNB Beacon Chain full nodes.
 
-You can run your own full node, which may automatically connect to Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
+You can run your own full node, which may automatically connect to BNB Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
 
 You could query this API for for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
 

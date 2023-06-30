@@ -4,7 +4,7 @@ hide_table_of_contents: false
 sidebar_position: 2
 ---
 
-# Tokens in Beacon Chain and BNB Smart Chain 
+# Tokens in BNB Beacon Chain and BNB Smart Chain 
 
 ## What role does BNB play in securing BNB Smart Chain ?
 
@@ -16,7 +16,7 @@ BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP20.
 
 ## What is BEP2?
 
-A simple token protocol for easy management of asset on Beacon Chain  <https://github.com/bnb-chain/BEPs/blob/master/BEP2.md>
+A simple token protocol for easy management of asset on BNB Beacon Chain  <https://github.com/bnb-chain/BEPs/blob/master/BEP2.md>
 
 BNB is BEP2
 
@@ -98,7 +98,7 @@ For example: https://api.binance.org/cross_chain/v1/tx/0xb6b941a3d44fec69902ea63
 
 If "has_refund" is false, it means this transaction is successful. 
 
-The corresponding transaction hash on Beacon chain is “cross_chain_tx_hash"
+The corresponding transaction hash on BNB Beacon Chain is “cross_chain_tx_hash"
 
 The tokens were sent to “receiverAddresses”. 
 

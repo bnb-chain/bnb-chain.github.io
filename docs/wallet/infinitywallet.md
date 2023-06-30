@@ -136,7 +136,7 @@ The **Infinity Wallet** is currently available to be downloaded for desktop devi
 
 ## Connect to DeFi Platforms and Dapps
 
-Infinity Wallet supports the ability for users to connect securely to decentralized application on the BNB Smart Chain, Beacon Chain and Ethereum.
+Infinity Wallet supports the ability for users to connect securely to decentralized application on the BNB Smart Chain, BNB Beacon Chain and Ethereum.
 
 To connect your wallet make sure the platform you are connecting to supports Wallet Connect, then go to your Infinity Wallet and click **WalletConnect** in the bottom left corner.
 

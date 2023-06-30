@@ -6,25 +6,25 @@ There are the steps to get your tokens listed:
 
 ![workflow](../assets/listing-workflow.jpg)
 
-## 1. Issue Tokens on Beacon Chain 
-Please refer to this [token issue doc](tokens.md) to learn about how to issue your own asset on Beacon Chain .
+## 1. Issue Tokens on BNB Beacon Chain 
+Please refer to this [token issue doc](tokens.md) to learn about how to issue your own asset on BNB Beacon Chain .
 
 ## 2. Submit Proposal
 
 *On-Chain Proposal Request*
 
 
-Please refer to this [governance doc](governance.md) to learn about how to create a proposal about listing a new trading pair on Beacon Chain .
+Please refer to this [governance doc](governance.md) to learn about how to create a proposal about listing a new trading pair on BNB Beacon Chain .
 
 > Please ensure that you test EVERYTHING on our testnet (multiple times at least) before you officially execute this on the mainnet.
 
 *Community Thread Proposal (Recommended)*
 
-It is recommended that Token Issuers first create a thread under the “Token Issuance & Listings” category in the Beacon Chain Community Forum (https://community.binance.org/). The whole guideline is [here](https://community.binance.org/topic/18/guidelines-on-how-to-list-your-token-on-binance-dex)
+It is recommended that Token Issuers first create a thread under the “Token Issuance & Listings” category in the BNB Beacon Chain Community Forum (https://community.binance.org/). The whole guideline is [here](https://community.binance.org/topic/18/guidelines-on-how-to-list-your-token-on-binance-dex)
 
 ## 3. Send List Transaction
 
-Please refer to this [list doc](list.md) to learn about how to send a list transaction and finish listing process on Beacon Chain .
+Please refer to this [list doc](list.md) to learn about how to send a list transaction and finish listing process on BNB Beacon Chain .
 
 > Please ensure that  a `list` transaction must be sent before `expire-time`.
 
@@ -33,7 +33,7 @@ Please refer to this [list doc](list.md) to learn about how to send a list trans
 
 ###  Which trading pair can be listed?
 
-Simply allowing trading between two assets seems easy enough, however it is expensive for not only the network  but also its users in long term (and liquidity costs can be much larger). In order to efficiently use the network, Beacon Chain  only list assets against BNB and other widely accepted market quote assets.
+Simply allowing trading between two assets seems easy enough, however it is expensive for not only the network  but also its users in long term (and liquidity costs can be much larger). In order to efficiently use the network, BNB Beacon Chain  only list assets against BNB and other widely accepted market quote assets.
 
 ### How is a trading pair created on Binance DEX?
 

@@ -10,12 +10,12 @@ BInance Extension Wallet injects a global API into websites visited by its users
 
 This API specification borrows heavily from API MetaMask provided, considering the massive adoption. So Web3 site developers can easily connect their dApps with the Binance Extension Wallet. The APIs allow websites to request users' BNB Smart Chain addresses, read data from the blockchain the user is connected to, and prompt the users to sign messages and transactions.
 
-The presence of the provider object `window.BinanceChain` indicates a Beacon Chain/BNB Smart Chain user.
+The presence of the provider object `window.BinanceChain` indicates a BNB Beacon Chain/BNB Smart Chain user.
 
 The API this extension wallet provides includes API specified by [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) and API defined by [MetaMask](https://docs.metamask.io/guide/ethereum-provider.html) (including some massively relied on legacy ones).
 
 ## Development Progress
-Currently (version 1.112.8) as Binance Extension Wallet natively supports Beacon Chain, we are planning to open a series of APIs for dApp developers to interact with Beacon Chain. At the end of the day, most [APIs available in Beacon Chain javascript sdk](https://github.com/bnb-chain/javascript-sdk/tree/master/docs) would be available.
+Currently (version 1.112.8) as Binance Extension Wallet natively supports BNB Beacon Chain, we are planning to open a series of APIs for dApp developers to interact with BNB Beacon Chain. At the end of the day, most [APIs available in BNB Beacon Chain javascript sdk](https://github.com/bnb-chain/javascript-sdk/tree/master/docs) would be available.
 
 Currently, only the following is supported:
 * [`transfer`](https://github.com/bnb-chain/javascript-sdk/tree/master/docs#transfer-tokens) 
@@ -93,7 +93,7 @@ function App( ) {
   const { account, connect, reset, status } = useWallet()
   return (
     <div>
-      <h1>Beacon Chain Connector</h1>
+      <h1>BNB Beacon Chain Connector</h1>
       {status === 'disconnected' ? (
         <button onClick={() => connect('bsc')}>Connect</button>
       ) : (
@@ -144,12 +144,12 @@ These are the IDs of the BNB Smart Chains that Binance Extension Wallet supports
 | 0x38 | 56      | BNB Smart Chain Main Network (bsc-mainnet) |
 | 0x61 | 97      | BNB Smart Chain Test Network (bsc-testnet) |
 
-This API can also return chain ids of Beacon Chains if users switch to them. The possible return value would be:
+This API can also return chain ids of BNB Beacon Chains if users switch to them. The possible return value would be:
 
 | Chain Id             | Network                                  |
 | -------------------- | ---------------------------------------- |
-| Binance-Chain-Tigris | Beacon Chain Main Network (bbc-mainnet) |
-| Binance-Chain-Ganges | Beacon Chain Test Network (bbc-testnet) |
+| Binance-Chain-Tigris | BNB Beacon Chain Main Network (bbc-mainnet) |
+| Binance-Chain-Ganges | BNB Beacon Chain Test Network (bbc-testnet) |
 
 ## Properties
 
@@ -245,13 +245,13 @@ BinanceChain
 
 *We prepared an example for this API, please check out: https://github.com/bnb-chain/js-eth-personal-sign-examples for more detail*
 
-Like `eth_sign` enable dApp to verify a user has control over an ethereum address by signing an arbitrary message. We provide this method for dApp developers to request the signature of arbitrary messages for Beacon Chain (BC) and BNB Smart Chain (BSC).
+Like `eth_sign` enable dApp to verify a user has control over an ethereum address by signing an arbitrary message. We provide this method for dApp developers to request the signature of arbitrary messages for BNB Beacon Chain (BC) and BNB Smart Chain (BSC).
 
-If `address` parameter is a Beacon Chain address (start with `bnb` or `tbnb`), we will simply **calculate sha256 hash of the message** and let the user sign the hash with their BNB Beacon Chain address' private key. Note: Beacon Chain uses the same elliptic curve (`secp256k1`) as Ethereum.
+If `address` parameter is a BNB Beacon Chain address (start with `bnb` or `tbnb`), we will simply **calculate sha256 hash of the message** and let the user sign the hash with their BNB Beacon Chain address' private key. Note: BNB Beacon Chain uses the same elliptic curve (`secp256k1`) as Ethereum.
 
 If `address` parameter is a BNB Smart Chain address (start with `0x`), the message would be hashed in the same way as with [`eth_sign`](https://eth.wiki/json-rpc/API#eth_sign).
 
-The returned `publicKey` would be a compressed encoded format (a hex string encoded 33 bytes starting with "0x02", "0x03") for Beacon Chain. And uncompressed encoded format (a hex string encoded 65 bytes starting with "0x04").
+The returned `publicKey` would be a compressed encoded format (a hex string encoded 33 bytes starting with "0x02", "0x03") for BNB Beacon Chain. And uncompressed encoded format (a hex string encoded 65 bytes starting with "0x04").
 
 The returned `signature` would be bytes encoded in hex string starting with `0x`. For BinanceChain, its r,s catenated 64 bytes in total. For BNB Smart Chain, like `eth_sign`, its r, s catenated 64 bytes and a recover byte in the end.
 
@@ -261,17 +261,17 @@ The returned `signature` would be bytes encoded in hex string starting with `0x`
 
 ### BinanceChain.switchNetwork(networkId: string): Promise<{networkId: string}>
 
-As Binance Extension Wallet natively supports Beacon Chain and BNB Smart Chain which are heterogeneous blockchains run in parallel. APIs would be different in any situation. (We would open APIs for Beacon Chain very soon).
+As Binance Extension Wallet natively supports BNB Beacon Chain and BNB Smart Chain which are heterogeneous blockchains run in parallel. APIs would be different in any situation. (We would open APIs for BNB Beacon Chain very soon).
 
 Developers could judge which network is selected by users currently via `BinanceChain.chainId` or listening to the `chainChanged` event via `BinanceChain.on('chainChanged', callback)`.
 
-To request for network switching, developers could invoke this API with `bbc-mainnet` (Beacon Chain Main Network), `bsc-mainnet` (BNB Smart Chain Main Network), `bbc-testnet` (Beacon Chain Test Network), `bsc-testnet` (BNB Smart Chain Test Network) to prompt user to agree on network switching.
+To request for network switching, developers could invoke this API with `bbc-mainnet` (BNB Beacon Chain Main Network), `bsc-mainnet` (BNB Smart Chain Main Network), `bbc-testnet` (BNB Beacon Chain Test Network), `bsc-testnet` (BNB Smart Chain Test Network) to prompt user to agree on network switching.
 
 ### BinanceChain.requestAccounts()
 
 Request all accounts maintained by this extension.
 
-The `id` in response would be used as `accountId` for the APIs for Beacon Chain. 
+The `id` in response would be used as `accountId` for the APIs for BNB Beacon Chain. 
 
 This method would return an array of Account:
 ```
@@ -310,7 +310,7 @@ For example:
 
 ### BinanceChain.transfer({fromAddress:string, toAddress:string, asset:string, amount:number, memo?: string, sequence?: number, accountId:string, networkId:string})>
 
-Transfer certain `amount` of `asset` (BNB or BEP2) on Beacon Chain.
+Transfer certain `amount` of `asset` (BNB or BEP2) on BNB Beacon Chain.
 
 `accountId` could be retrieved from the `BinanceChain.requestAccounts` API (`id` field of each account)
 

@@ -1,20 +1,20 @@
 # Command Line Interface (CLI)
 
-Beacon Chain CLI is one of several ways to interact with Beacon Chain.
+BNB Beacon Chain CLI is one of several ways to interact with BNB Beacon Chain.
 
-Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
+BNB Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
 key or restore your key from mnemonic words. And you can list your keys and show specified key info.
 
-With Beacon Chain CLI, you can send transactions to Beacon Chain, like transferring tokens,
-issuing tokens and so on. Actually you can do almost everything you can do with Beacon Chain web wallet. What is
+With BNB Beacon Chain CLI, you can send transactions to BNB Beacon Chain, like transferring tokens,
+issuing tokens and so on. Actually you can do almost everything you can do with BNB Beacon Chain web wallet. What is
 more, you can propose to list trading pairs and join chain governance.
 
 In addition, you can do some simple queries through CLI. For example, you can query your account's
 balance, transaction detail by transaction hash and etc.
 
-## Where can I download the Beacon Chain CLI?
+## Where can I download the BNB Beacon Chain CLI?
 
-You can download Beacon Chain CLI releases here: [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases)
+You can download BNB Beacon Chain CLI releases here: [https://github.com/bnb-chain/node/releases](https://github.com/bnb-chain/node/releases)
 
 You can choose to download the version for testnet (`tbnbcli`) or mainnet (`bnblci`).
 
@@ -48,9 +48,9 @@ C:\> tbnbcli.exe
 
 ## Where to connect
 
-You can manage your keys locally without connecting to any node. But if you want to interact with Beacon Chain, you need to connect to one of Beacon Chain full nodes.
+You can manage your keys locally without connecting to any node. But if you want to interact with BNB Beacon Chain, you need to connect to one of BNB Beacon Chain full nodes.
 
-You can run your own full node, which may automatically connect to Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
+You can run your own full node, which may automatically connect to BNB Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
 
 You could query this API for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
 
@@ -133,7 +133,7 @@ Please confirm if address displayed on ledger is identical to bnb15339dcwlq5nza4
 
 ## How to use
 
-When you have downloaded Beacon Chain CLI, you can use `help` subcommand to see all the available commands:
+When you have downloaded BNB Beacon Chain CLI, you can use `help` subcommand to see all the available commands:
 
 ```bash
 $  ./bnbcli help

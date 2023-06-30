@@ -21,7 +21,7 @@ The hardware must meet certain requirements to run a Full Node.
 
 ### Sync From Snapshot (Recommended)
 
-1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
+1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for BNB Beacon Chain. You can setup this by:
 
 ```
 mkdir ~/.bnbchaind
@@ -81,7 +81,7 @@ bnbchaind start --home /usr/local/beacon-chain &
 If you encounter any issue when running a Full Node, you can read the FAQ list [here](fullnodeissue.md).
 
 ### Sync From Genesis Block (Not Recommended)
-1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
+1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for BNB Beacon Chain. You can setup this by:
 
 ```
 mkdir ~/.bnbchaind

@@ -1,7 +1,7 @@
 # Incentive Mechanism 
 
 The BSC relayers play an important role in relaying interchain packages from BC to BSC.
-All BSC relayers build their stable infrastructure, watch any event happened on the Beacon Chain, and act timely to get paid accordingly. The following discussion is about how to distribute the rewards to let the relayers are willing to make a long-term contribution.
+All BSC relayers build their stable infrastructure, watch any event happened on the BNB Beacon Chain, and act timely to get paid accordingly. The following discussion is about how to distribute the rewards to let the relayers are willing to make a long-term contribution.
 
 ## Principle
 Considering the following points:
@@ -55,7 +55,7 @@ To prevent the relayer who has the best network always winning the game, we gath
 
 1. S to be 100. Some rewards come from gas fee, we can not guarantee enough rewards during a small round, a large round may dismiss deviation and let relayer give up relaying when it has made its max profit.
 2. N to be 40. We think the redundancy of relayer around 3-5 is best. If N is too large, the redundancy will decrease. If N is too small, then there will not be enough relayers. Set N as 40 may be a reasonable value, at least 3 relayers can compete.
-3. The relayFee of a single package and the ratio of reward for header relayer can be modified by governance on Beacon Chain.
+3. The relayFee of a single package and the ratio of reward for header relayer can be modified by governance on BNB Beacon Chain.
 
 ### Distribution And Claim Reward
 
@@ -78,6 +78,6 @@ Block header sync transaction with `validatorSet` change will claim reward to re
 For example, a relayer may deliver packages using a different address in round robin, we can’t recognize this. We try to introduce registration and BNB deposit for relayer to raise the cost of cheat.  How it works:
 
 * A BSC account needs to call the `register` of [RelayerHub](https://bscscan.com/address/0x0000000000000000000000000000000000001006) contract to deposit 100BNB(more or less than 100 BNB will be rejected) to become a BSC relayer.
-* Only a valid relayer can sync Beacon Chain Headers and deliver cross-chain packages.
+* Only a valid relayer can sync BNB Beacon Chain Headers and deliver cross-chain packages.
 * Relayer can withdraw its deposit, but we will charge 0.1 BNB as the transaction fee so that it will receive 99.9 BNB back.
 * The charged fee will directly go to the system reward pool.

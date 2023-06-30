@@ -1,6 +1,6 @@
 # Asset Transfer
 
-`Transfer` is the most basic transaction Beacon Chain  supports, it moves assets among different addresses.
+`Transfer` is the most basic transaction BNB Beacon Chain  supports, it moves assets among different addresses.
 
 Please note the fees must be paid first in BNB before the transaction can be executed.
 
@@ -169,7 +169,7 @@ Flags:
       --account-number int   AccountNumber number to sign the tx
       --amount string        Amount of coins to send
       --async                broadcast transactions asynchronously
-      --chain-id string      Chain ID of Beacon Chain  node
+      --chain-id string      Chain ID of BNB Beacon Chain  node
       --dry-run              ignore the perform a simulation of a transaction, but don't broadcast it
       --from string          Name or address of private key with which to sign
       --generate-only        build an unsigned transaction and write it to STDOUT

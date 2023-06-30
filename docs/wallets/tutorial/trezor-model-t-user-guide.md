@@ -64,7 +64,7 @@ Please make sure that you have seed phrase backed up.
 
 ![img](https://lh6.googleusercontent.com/h7xez7MrpBQt8n888v8mmWujn4rNKH88h11zesBkBe-pvCKtqiPM_IE3MZRRGuQi47DOLRAgrVMY3g8a-QXvhkpnJOLacHgyTeUe5FvKT2LAVTX7t8NMfaHdzoP53dbbG4pz4j_2)
 
-## How to send Beacon Chain crypto assets
+## How to send BNB Beacon Chain crypto assets
 
 1) Click on the “Balances” navigation button in the Trading Interface to view your account balances.
 
@@ -85,7 +85,7 @@ Please make sure that you have seed phrase backed up.
 
 ![img](https://lh4.googleusercontent.com/CgV9tpPpgGZFowBeka3VUqgA5zCfT7gLxi3m1qujN00lFKGJu8uSoTpP8_VnF5qCasdPHb-S2FQEEKHGm37xjXJhCmxyxvpWN_mQ6CHb6Q4aCaHb4Y4MmOeZrUibQeGLPtyqFON2)
 
-## How to trade Beacon Chain crypto assets
+## How to trade BNB Beacon Chain crypto assets
 
 1) You can place your order on trading page
 

@@ -6,7 +6,7 @@ There is a [\#validator-support](http://discord.com/invite/bnbchain) Discord cha
 
 - Main portal to get community support is our [Online Forum](https://www.buildnbuild.dev).
 
-- To keep track of the latest news in Beacon Chain/DEX, visit [Online Forum](https://www.buildnbuild.dev/).
+- To keep track of the latest news in BNB Beacon Chain/DEX, visit [Online Forum](https://www.buildnbuild.dev/).
 
 - Network Explorer - [BSCScan Explorer](https://bscscan.com/)
 

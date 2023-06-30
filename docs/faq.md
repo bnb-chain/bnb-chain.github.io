@@ -60,9 +60,9 @@ Remember transactions can’t be reversed and wallets can’t be easily recovere
 
 Many users who interact with a centralized exchange like Binance eventually want to withdraw to a wallet that they fully control, like MetaMask. So once you've used their withdraw form, what could be scarier than not seeing your tokens?
 
-First, you'll need to use the MetaMask add Custom Network feature to add the Beacon Chain or BNB Smart Chain's RPC URLs endpoints to your MetaMask.
+First, you'll need to use the MetaMask add Custom Network feature to add the BNB Beacon Chain or BNB Smart Chain's RPC URLs endpoints to your MetaMask.
 
-Once you've added the Beacon Chain or the BNB Smart Chain to your MetaMask, you will be able to select different networks to view the assets (you may need to add Custom Tokens too) held by your selected account on that network.
+Once you've added the BNB Beacon Chain or the BNB Smart Chain to your MetaMask, you will be able to select different networks to view the assets (you may need to add Custom Tokens too) held by your selected account on that network.
 
 
 ## How Much BNB You Need To Send Tokens
@@ -155,7 +155,7 @@ When resetting your password for your Binance Extension wallet, you will need yo
 ![img](https://lh6.googleusercontent.com/ZeM4cYV3rirCo91zw3OVMYRqqpwqIsrWhPnv-t3sL7YhpD0M_DNQ4QQH-Rw8WmapLrX2OzwETLKcEwKA-Rakjuhlnoy7S707Yt8Y0nUC5OKjg04ADgM2bLSb-1f3GZvUxdkj-BuI)
 
 ## Which network does BEW support? 
- * Beacon Chain (BEP2)
+ * BNB Beacon Chain (BEP2)
  * BNB Smart Chain (BEP20)
  * Ethereum (ERC20)
 
@@ -163,7 +163,7 @@ When resetting your password for your Binance Extension wallet, you will need yo
 !!! Note : By default each wallet/network will shows the the main token they support. You will need to add additional token to your list. 
 
 **For Binance Extension Wallet users**
-You'll need to switch to Beacon Chain Mainnet (BC) mainnet or BNB Smart Chain (BSC) mainnet
+You'll need to switch to BNB Beacon Chain Mainnet (BC) mainnet or BNB Smart Chain (BSC) mainnet
 
 Once you've added the asset to your wallet, you will be able to select different networks to view the assets held by your selected account on that network.
 
@@ -244,7 +244,7 @@ If it's sent to accounts in a different wallet, please
 * Then you should see your tokens in asset list.
 
 ## Why should I use Wallet Direct?
-* **Seamless Token Transfer**:  Transfer tokens (which support Beacon Chain, BNB Smart Chain and Ethereum) between paired Binance.com account and Binance Extension Wallet. Without the trouble of copy/paste address and memo every time
+* **Seamless Token Transfer**:  Transfer tokens (which support BNB Beacon Chain, BNB Smart Chain and Ethereum) between paired Binance.com account and Binance Extension Wallet. Without the trouble of copy/paste address and memo every time
 
 * **BNB Holding**: The BNB  positions of your Binance.com account will not change.
 
