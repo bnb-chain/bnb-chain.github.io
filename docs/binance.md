@@ -7,7 +7,7 @@ hide_table_of_contents: false
 # Use Binance Extension Wallet 
 
 ## What is it?
-Binance Extension Wallet is a Crypto Wallet for Beacon Chain, BNB Smart Chain. You can send and receive funds on Beacon Chain, BNB Smart Chain  and cross-chain transfers between both of BNB Chain’s blockchains.
+Binance Extension Wallet is a Crypto Wallet for BNB Beacon Chain, BNB Smart Chain. You can send and receive funds on BNB Beacon Chain, BNB Smart Chain  and cross-chain transfers between both of BNB Chain’s blockchains.
 
 In the future, Binance Extension Wallet will add support for Ethereum blockchain and enable access for distributed applications, or "Dapps" in your browser!
 
@@ -105,7 +105,7 @@ After the transfer transaction is sent, you will see an increase in your balance
 ![img](https://lh6.googleusercontent.com/RTAOcHcPxUIthhOLlHHJ1_wrFnvmZvbZ4DJUvpNR453E4mnWWRjHLBEABMTZZdSQGYMktX5eXJPOIt7iEijMsbmMJBEL29RAShDBD8ZRIDiCnXpfwi741DM7-XiDDyJO4uiLHyNL)
 
 ## Transfer Testnet BNB from BSC to BC
-* Switch to Beacon Chain testnet and copy your address after unlock your extension wallet, start with `tbnb1`
+* Switch to BNB Beacon Chain testnet and copy your address after unlock your extension wallet, start with `tbnb1`
 
 ![img](https://lh3.googleusercontent.com/K5w_Mbk4rT9Az6eIY130MHaj_ZCicU4Tp3w93z40dtrGdzwFCMZ5qAfwytI5PY_TdztTPrK5WPAf1uHM5ej-1YdEWu7GtVgghRBub1KSf0e63tgi1L-4MkwPBG3pG0SDYHfMpt_J)
 

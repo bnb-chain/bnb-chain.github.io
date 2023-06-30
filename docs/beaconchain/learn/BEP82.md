@@ -4,9 +4,9 @@
 
 ## Introduction
 
-Before implementing BEP82, many token-related transactions, such as token listing, minting, burning, can only be proposed by the token owner.  The owner of any BEP2/BEP8  token can not be changed once the token is issued on Beacon Chain .
+Before implementing BEP82, many token-related transactions, such as token listing, minting, burning, can only be proposed by the token owner.  The owner of any BEP2/BEP8  token can not be changed once the token is issued on BNB Beacon Chain .
 
-BEP82 introduced the changes related to the token owner who issued a token on Beacon Chain . It provides more convenience and flexibility for these transactions.
+BEP82 introduced the changes related to the token owner who issued a token on BNB Beacon Chain . It provides more convenience and flexibility for these transactions.
 
 ## Status
 

@@ -41,7 +41,7 @@ make build
    --to 0xde9Aa1d632b48d881B50528FC524C88474Ec8809 --amount 100000000:BNB
    ```
    
-   2.2 You can also transfer BNB from other BNB Smart Chain account with [Metamask](https://docs.binance.org/smart-chain/wallet/metamask.html).
+   2.2 You can also transfer BNB from other BNB Smart Chain account with [Metamask](https://docs.bnbchain.org/smart-chain/wallet/metamask.html).
 
 ## Bind BEP2 token with BEP20 token
 
@@ -49,9 +49,9 @@ make build
 
 Suppose you have already issued a BEP2 token, and you want to deploy a BEP20 token and bind it with existing BEP2 token:
 
-1. Import bep2 token owner key(Send bind transaction on Beacon Chain):
+1. Import bep2 token owner key(Send bind transaction on BNB Beacon Chain):
 
-    1.1 From ledger: connect ledger to your computer and open Beacon Chain App
+    1.1 From ledger: connect ledger to your computer and open BNB Beacon Chain App
     ```shell script
     bnbcli keys add bep2TokenIssuer --ledger --index {your ledger key index}
     ```

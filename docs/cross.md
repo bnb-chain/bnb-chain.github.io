@@ -10,7 +10,7 @@ sidebar_position: 2
 
 The total cost of transfer from BC to BSC is composed of 2 parts:
 
-* Fee for executing `bridge transfer-out` transaction is 0.004BNB, pay validators on Beacon Chain
+* Fee for executing `bridge transfer-out` transaction is 0.004BNB, pay validators on BNB Beacon Chain
 
 * Fee for BSC-relayers 0.004BNB. it will cover the fees of calling TokenHub Contract on BSC.
 
@@ -22,11 +22,11 @@ The total cost of transfer from BSC to BC is composed of 2 parts:
 
 ### What's is a BSC relayer?
 
-BSC relayer monitors cross chain packages on Beacon Chain, builds and broadcasts transactions to BSC to deliver these packages, which is the key of cross chain communication from Beacon Chain to BSC.
+BSC relayer monitors cross chain packages on BNB Beacon Chain, builds and broadcasts transactions to BSC to deliver these packages, which is the key of cross chain communication from BNB Beacon Chain to BSC.
 
 ### What's is an Oracle relayer?
 
-Oracle Relayer watches the state change of BNB Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of Beacon Chain are eligible to run Oracle relayers.
+Oracle Relayer watches the state change of BNB Smart Chain. Once it catches Cross-Chain Communication Events, it will submit to vote for the requests. After Oracle Relayers from ⅔ of the voting power of BC validators vote for the changes, the cross-chain actions will be performed. Only validators of BNB Beacon Chain are eligible to run Oracle relayers.
 
 ### What's an oracle?
 

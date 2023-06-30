@@ -1,6 +1,6 @@
 # Chain Data Snapshots
 
-A snapshot is a recording of the state of Beacon Chain  at a particular block height.
+A snapshot is a recording of the state of BNB Beacon Chain  at a particular block height.
 
 Latest snapshot of April 1st: [download](https://s3.ap-northeast-1.amazonaws.com/dex-bin.bnbstatic.com/s3-witness-data-download/data_20210401.tgz?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Expires=1643611407&Signature=DNHRq9emOD%2FwBLmBSCU9aHt3ENI%3D)
 
@@ -48,7 +48,7 @@ Size: 309 GB
 
 sha256sum: c6ba5edbf1b424696eec670f4dad864e09ebbae46c3c127360e1d1f15e27d4df)
 
-This snapshot can be used for jumpstarting a newly setup fullnode to avoid waiting a long time for getting all blocks. In Beacon Chain , the average block time is less than a second. As a result, it will take several weeks to sync from genesis block.
+This snapshot can be used for jumpstarting a newly setup fullnode to avoid waiting a long time for getting all blocks. In BNB Beacon Chain , the average block time is less than a second. As a result, it will take several weeks to sync from genesis block.
 
 
 !!! Note

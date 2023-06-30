@@ -13,7 +13,7 @@ Binance Extension Wallet v1.121.1 is released and verified on **Firefox and Chro
 Next:
 
 1. Your first step is to plug your[ Ledger](https://shop.ledger.com/pages/back-to-school?r=da6d9b98e517) into your computer. Ensure it powers on and then input the pin you chose when setting up your ledger.
-2. Select and open the Ethereum Application. If you haven't installed Ethereum Application, please read this [guide](https://docs.binance.org/smart-chain/wallet/ledger.html#app-installation-instructions)
+2. Select and open the Ethereum Application. If you haven't installed Ethereum Application, please read this [guide](https://docs.bnbchain.org/smart-chain/wallet/ledger.html#app-installation-instructions)
 3. Enabling contract data for BEP20. The first item in the settings menu is “Contract Data”. Push down both buttons to select it. Once you have set your ledger up like this the first time, you won’t have to do it again each time you want to use it with Binance Extension wallet.
 4. Open BNB Chain Extension Wallet and select "BNB Smart Chain" network
 5. Choose "Hardware Wallet" in Settings. Then, click on "Connect"

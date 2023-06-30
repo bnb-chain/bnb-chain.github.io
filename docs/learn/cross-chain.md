@@ -13,10 +13,10 @@ Cross-chain communication is the key foundation to allow the community to take a
 ## Architecture Diagram
 ![img](../../static/img/cross-transfer-architecture.png)
 
-A native cross chain communication protocol is developed between BC (Beacon Chain) and BSC (BNB Smart Chain). It has the following key parts:
+A native cross chain communication protocol is developed between BC (BNB Beacon Chain) and BSC (BNB Smart Chain). It has the following key parts:
 
 * [Build-in System Contract](system-contract.md)
-* [Oracle on Beacon Chain](oracle-module.md)
+* [Oracle on BNB Beacon Chain](oracle-module.md)
 * [BSC Relayer](bsc-relayer.md)
 * [BSC Relayer Incentive Mechanism](incentives.md)
 * [Oracle Relayer](oracle-relayer.md)

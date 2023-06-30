@@ -1,8 +1,8 @@
-# Get Started with Beacon Chain 
+# Get Started with BNB Beacon Chain 
 
 ## Wallet
 
-The easiest way to use Beacon Chain  is through a wallet with support for Beacon Chain  accounts and transfers.
+The easiest way to use BNB Beacon Chain  is through a wallet with support for BNB Beacon Chain  accounts and transfers.
 
 For example, Binance provides a Web Wallet at [https://www.binance.org](https://www.binance.org)<br/>
 Binance also provides Web Wallet for testnet at [https://testnet.binance.org](https://testnet.binance.org)<br/>
@@ -12,13 +12,13 @@ Both provide the functions below:
 - Showing the balances of assets on the addresses
 - Sending and receiving assets
 
-Beacon Chain Web Wallet also presents a trading UI where you can examine market data and manage your orders to trade among the listed assets.
+BNB Beacon Chain Web Wallet also presents a trading UI where you can examine market data and manage your orders to trade among the listed assets.
 
 Learn about the list of wallet available [here](wallets.md).
 
 ## Chain Explorer
 Chain Explorer provides a portal to explore blocks and transaction details.<br/>
-On Beacon Chain  Explorer, you can also check different asset types, the distribution of their ownerships, and owners' transactions.
+On BNB Beacon Chain  Explorer, you can also check different asset types, the distribution of their ownerships, and owners' transactions.
 
 ## REST API
 There are [Accelerated Nodes](faq/faq.md#what-is-the-accelerated-node) which provide advanced API services for the public.<br/>
@@ -45,12 +45,12 @@ Please refer to the [CLI Reference](../api-reference/cli.md).
 ### Use SDKs
 
 SDKs are also provided as a starting point for your apps.<br/>
-There are two advanced SDK solutions for Beacon Chain : [Java](<https://github.com/bnb-chain/java-sdk>) and [Golang](<https://github.com/bnb-chain/go-sdk>).<br/>
+There are two advanced SDK solutions for BNB Beacon Chain : [Java](<https://github.com/bnb-chain/java-sdk>) and [Golang](<https://github.com/bnb-chain/go-sdk>).<br/>
 Both solutions provide functions for:<br/>
 
 * Create wallets and manage keys
-* Encode/sign transactions and submit to Beacon Chain /DEX, including Transfer, New Order, Cancel Order, etc.
-* Communicate with Beacon Chain /DEX Node RPC calls through public node RPC services or your own private full nodes
+* Encode/sign transactions and submit to BNB Beacon Chain /DEX, including Transfer, New Order, Cancel Order, etc.
+* Communicate with BNB Beacon Chain /DEX Node RPC calls through public node RPC services or your own private full nodes
 
 Please refer to specific SDK documentation for more information:
 

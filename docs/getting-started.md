@@ -5,7 +5,7 @@ sidebar_label: Getting Started
 This document serve as a starting point for new users to the BNB Chain ecosystem. General knowledge of cryptocurrency is assumed, and in particular familiarity with the Ethereum ecosystem. If you don't understand something right away, that's OK. Search for an answer online, and if you don't find it, ask on our [Discord](http://discord.com/invite/bnbchain). 
 
 ## What can users do with BNB Smart Chain (BSC)?
-BNB Smart Chain (BSC) is the blockchain component of the BNB Chain ecosystem that is equipped with the smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM) and is used for developing various kinds of decentralized applications. The design goal of BSC was to leave the high throughput of Beacon Chain intact while introducing smart contracts into the BNB Chain ecosystem. Being EVM-compatible, other than easy portability, BSC enjoys support of the rich universe of [Ethereum](https://academy.binance.com/en/articles/what-is-ethereum) tools and dApps
+BNB Smart Chain (BSC) is the blockchain component of the BNB Chain ecosystem that is equipped with the smart contract functionality and compatibility with the Ethereum Virtual Machine (EVM) and is used for developing various kinds of decentralized applications. The design goal of BSC was to leave the high throughput of BNB Beacon Chain intact while introducing smart contracts into the BNB Chain ecosystem. Being EVM-compatible, other than easy portability, BSC enjoys support of the rich universe of [Ethereum](https://academy.binance.com/en/articles/what-is-ethereum) tools and dApps
 
 ### Tokenization
 On the BNB Smart Chain, users can: 
@@ -18,7 +18,7 @@ On the BNB Smart Chain, users can:
 ### BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 
 
-Although initially based on the Ethereum network, the ERC-20 BNB tokens were later swapped with [BEP-2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) BNB at a 1:1 ratio. The BEP-2 BNB is the native coin of the Beacon Chain, and the mainnet.
+Although initially based on the Ethereum network, the ERC-20 BNB tokens were later swapped with [BEP-2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) BNB at a 1:1 ratio. The BEP-2 BNB is the native coin of the BNB Beacon Chain, and the mainnet.
 
 In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network that runs in parallel with the BNB Beacon Chain. This means that BNB can be found in three different forms:
 
@@ -55,4 +55,4 @@ BSC empowers developers to build dApps of different kinds. Below is a list of tu
 
 ### Node RPC
 There are data seed nodes in the network which allow users to perform low-level operations like executing ABCI queries, viewing network/consensus state or broadcasting a transaction.
-If you run a full node by yourself, you can also use RPC functions. For a list of all the Node RPC services for Beacon Chain refer [here](beaconchain/develop/api-reference/node-rpc.md) and for BNB Smart Chain refer [here](rpc.md).
+If you run a full node by yourself, you can also use RPC functions. For a list of all the Node RPC services for BNB Beacon Chain refer [here](beaconchain/develop/api-reference/node-rpc.md) and for BNB Smart Chain refer [here](rpc.md).

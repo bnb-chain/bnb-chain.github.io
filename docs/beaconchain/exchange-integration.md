@@ -19,13 +19,13 @@ Command Line Interface is currently available for Linux, Mac and Windows.<br/>
 Please refer to the [CLI Reference](api-reference/cli.md).
 
 ## SDKs
-There are multiple advanced SDK solutions available for BNB Beacon chain.
+There are multiple advanced SDK solutions available for BNB Beacon Chain.
 
 Majority of SDKs provide simplified functions to:
 
 - Create wallets and manage keys
-- Encode/sign transactions and submit to Beacon Chain/DEX, including Transfer, New Order, Cancel Order, etc.
-- Communicate with Beacon Chain/DEX via Node RPC calls through public node RPC services or your own private full nodes
+- Encode/sign transactions and submit to BNB Beacon Chain/DEX, including Transfer, New Order, Cancel Order, etc.
+- Communicate with BNB Beacon Chain/DEX via Node RPC calls through public node RPC services or your own private full nodes
 
 List of currently available SDKs and their respective documentations:
 

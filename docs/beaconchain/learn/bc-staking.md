@@ -2,13 +2,13 @@
 
 ## PoSA Consensus of BNB Smart Chain 
 
-[BNB Smart Chain ](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [Beacon Chain ](https://www.binance.org). BNB Smart Chain  relies on a system of 50 validators with Proof of [Staked Authority (PoSA) consensus](../../beaconchain/learn/genesis.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+[BNB Smart Chain ](https://community.binance.org/topic/2686) is an innovative solution to bring programmability and interoperability to [BNB Beacon Chain ](https://www.binance.org). BNB Smart Chain  relies on a system of 50 validators with Proof of [Staked Authority (PoSA) consensus](../../beaconchain/learn/genesis.md) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
-## Staking on Beacon Chain 
+## Staking on BNB Beacon Chain 
 
-Ideally, BNB Smart Chain  should build such staking and reward logic into the blockchain, and automatically distribute rewards as the blocking happens. [Cosmos Hub](https://hub.cosmos.network/), who also build on top of Tendermint consensus like Beacon Chain , works in this way.
+Ideally, BNB Smart Chain  should build such staking and reward logic into the blockchain, and automatically distribute rewards as the blocking happens. [Cosmos Hub](https://hub.cosmos.network/), who also build on top of Tendermint consensus like BNB Beacon Chain , works in this way.
 
-However, as BSC wants to remain compatible with Ethereum as much as possible. On the other side, Beacon Chain  already has a staking module and could be extended to support both BC and BSC. In this way, all the staking related operations are recorded in BC. Once there are any changes about BSC's validator set or voting power, the new message will be transferred to BSC through cross-chain communication.
+However, as BSC wants to remain compatible with Ethereum as much as possible. On the other side, BNB Beacon Chain  already has a staking module and could be extended to support both BC and BSC. In this way, all the staking related operations are recorded in BC. Once there are any changes about BSC's validator set or voting power, the new message will be transferred to BSC through cross-chain communication.
 
 ## Staking Economics
 
@@ -119,7 +119,7 @@ Some address parameters we need to highlight here:
 | ValidatorAddr | validator  operator’s address, used in governance ops like voting. |
 | SideConsAddr  | block  producer’s address on side chain, i.e. consensus address. BC has another  parameter named `PubKey`, here SideConsAddr replaced that for BSC.  Only  BSC validators need this parameter. |
 | SideVoteAddr  | A bls public key. It's used by validators to vote for blocks, so the BSC chain can finalize blocks within two block periods in normal.|
-| SideFeeAddr   | fees  are collected in this address on BSC,   Only  BSC validators need this parameter. Due to different token units, there are some BNB left as dust when sending block rewards from BNB Smart Chain  to Beacon Chain . Those BNB will be sent to fee address.|
+| SideFeeAddr   | fees  are collected in this address on BSC,   Only  BSC validators need this parameter. Due to different token units, there are some BNB left as dust when sending block rewards from BNB Smart Chain  to BNB Beacon Chain . Those BNB will be sent to fee address.|
 
 
 
@@ -389,7 +389,7 @@ bnbcli staking side-unbonding-delegation [delegator-addr] [operator-addr] [flags
 
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 **For example**
@@ -410,7 +410,7 @@ bnbcli staking side-unbonding-delegations [delegator-addr] [flags]
 
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 **For example**
@@ -431,7 +431,7 @@ bnbcli staking side-val-unbonding-delegation [operator-addr] [flags]
 
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 **For example**
@@ -451,7 +451,7 @@ bnbcli staking side-redelegation [delegator-addr] [src-operator-addr] [dst-opera
 
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 **For example**
@@ -472,7 +472,7 @@ bnbcli staking side-redelegations [delegator-addr] [flags]
 
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 **For example**
@@ -491,7 +491,7 @@ bnbcli staking side-val-redelegations [operator-addr] [flags]
 ```
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 **For example**
@@ -507,7 +507,7 @@ bnbcli staking side-val-redelegations bva12hlquylu78cjylk5zshxpdj6hf3t0tahqmr98n
 
 | **parameter  name** | **example**       | **comments**                                        | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                        | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                        | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 
@@ -524,7 +524,7 @@ bnbcli staking     side-pool --side-chain-id=bsc --chain-id=Binance-Chain-Tigris
 
 | **parameter  name** | **example**       | **comments**                                                 | **required** |
 | ------------------- | ----------------- | ------------------------------------------------------------ | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                                 | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                                 | Yes          |
 | --side-chain-id     | chapel            | chain-id of the side chain the validator belongs to          | Yes          |
 | --top               | 10                | number of validators to be returned. set as maximum number of  validators  by default | Option       |
 
@@ -540,7 +540,7 @@ bnbcli staking side-top-validators --top 10 --side-chain-id=bsc --chain-id=Binan
 
 | **parameter  name** | **example**       | **comments**                                                 | **required** |
 | ------------------- | ----------------- | ------------------------------------------------------------ | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of Beacon Chain                                 | Yes          |
+| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                                 | Yes          |
 | --side-chain-id     | chapel            | chain-id of the side chain the validator belongs to          | Yes          |
 | --jail-involved     | true              | if true, meaning that the jailed validators will be involved to count | Option       |
 

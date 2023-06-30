@@ -1,5 +1,5 @@
 
-# Beacon Chain Testnet
+# BNB Beacon Chain Testnet
 
 ### What is a Testnet?
 
@@ -26,12 +26,12 @@ You can connect a node to the testnet by downloading the node binary and testnet
 
 2. Get Testnet Fund: https://testnet.binance.org/faucet-smart
 
-3. Transfer From BNB Smart Chain to Beacon Chain
+3. Transfer From BNB Smart Chain to BNB Beacon Chain
 
 You can use [Binance Extension Wallet](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) for cross-chain transfer.
 
 
 ### Explorers for Testnet
 * BNB Smart Chain Explorer - https://testnet.bscscan.com/
-* Beacon Chain Explorer - https://testnet-explorer.binance.org/
+* BNB Beacon Chain Explorer - https://testnet-explorer.binance.org/
 

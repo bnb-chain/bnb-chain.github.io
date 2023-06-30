@@ -10,14 +10,14 @@ Atomic swaps can be used for trading between BEP2 tokens, or for trading across 
 
 ## Hash Timer Locked Contract
 
-[HTLC](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) has been used for Atomic Swap and cross payment channel for a few years on Bitcoin and its variant blockchains, and also Ethereum. This BEP defines native transactions to support HTLC on Beacon Chain , and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token, which is called `Atomic Peg`.
+[HTLC](https://en.bitcoin.it/wiki/Hash_Time_Locked_Contracts) has been used for Atomic Swap and cross payment channel for a few years on Bitcoin and its variant blockchains, and also Ethereum. This BEP defines native transactions to support HTLC on BNB Beacon Chain , and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token, which is called `Atomic Peg`.
 
-## HTLC on Beacon Chain 
+## HTLC on BNB Beacon Chain 
 
 
-As explained in [BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on Beacon Chain  and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
+As explained in [BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md), Hash Timer Locked Contract(HTLC) has been used for Atomic Swap and cross payment channels between different blockchains. BEP3 defines native transactions to support HTLC on BNB Beacon Chain  and also proposes the standard infrastructure and procedure to use HTLC for inter-chain atomic swap to easily create and use pegged token.
 During the swap process, the related fund will be locked to a purely-code-controlled escrow account.
-A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in Beacon Chain  protocol. This kind of account has no its own private key and it's only controled by code in protocol. The code for calculating escrow account is the same as how it's done in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
+A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in BNB Beacon Chain  protocol. This kind of account has no its own private key and it's only controled by code in protocol. The code for calculating escrow account is the same as how it's done in [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/blob/82a2c5d6d86ffd761f0162b93f0aaa57b7f66fe7/x/supply/internal/types/account.go#L40):
 ```
 AtomicSwapCoinsAccAddr = sdk.AccAddress(crypto.AddressHash([]byte("BinanceChainAtomicSwapCoins")))
 ```
@@ -26,7 +26,7 @@ The account for mainnet is: **bnb1wxeplyw7x8aahy93w96yhwm7xcq3ke4f8ge93u** and t
 
 ### Hash Timer Locked Transfer
 
-Hash Timer Locked Transfer (HTLT) is a new transaction type on Beacon Chain , to serve as HTLC in the first step of Atomic Swap,
+Hash Timer Locked Transfer (HTLT) is a new transaction type on BNB Beacon Chain , to serve as HTLC in the first step of Atomic Swap,
 
 
 #### Parameters
@@ -109,9 +109,9 @@ Data:[77 137 139 200 85 141 170 77 129 116 134 215 169 59 119 178 200 47 206 194
 swapID: 4d898bc8558daa4d817486d7a93b77b2c82fcec2123abf4a1eb7d2521237eccd
 ```
 
-2. Swap from Beacon Chain  to Ethereum
+2. Swap from BNB Beacon Chain  to Ethereum
 
-* Clients send HTLT on Beacon Chain  on *testnet*:
+* Clients send HTLT on BNB Beacon Chain  on *testnet*:
 
 Command line:
 ```shell
@@ -138,11 +138,11 @@ Javascript:
   const res = client.swap.HTLT(from, recipient, recipientOtherChain, "", randomNumberHash, timestamp, amount, expectedIncome, heightSpan, true)
 ```
 
-3. Swap from Ethereum to Beacon Chain 
+3. Swap from Ethereum to BNB Beacon Chain 
 
 > Note: Once cross-chain is true, --recipient-other-chain must not be empty
 
-* Deputy send HTLT on Beacon Chain  on *testnet*:
+* Deputy send HTLT on BNB Beacon Chain  on *testnet*:
 
 Command line:
 ```shell
@@ -413,9 +413,9 @@ refundHTLT | N/A |  0.000375 BNB | Y
 * ERC20 contract has been deployed here: <https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098>
 * Token Symbol: **PPC**
 * SmartContract has been deployed here:  <https://ropsten.etherscan.io/address/0x12dcbf79be178479870a473a99d91f535ed960ad>
-* Its corresponding address on testnet is: `tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr`on Beacon Chain  and `0xD93395B2771914E1679155F3EA58C41d89D96098` on Ethereum testnet
+* Its corresponding address on testnet is: `tbnb1pk45lc2k7lmf0pnfa59l0uhwrvpk8shsema7gr`on BNB Beacon Chain  and `0xD93395B2771914E1679155F3EA58C41d89D96098` on Ethereum testnet
 
-### Swap Tokens from Ethereum to Beacon Chain 
+### Swap Tokens from Ethereum to BNB Beacon Chain 
 ![image-20190918193751444](../../assets/eth2bnc.png)
 #### 1.  Approve Swap Transaction
 
@@ -446,12 +446,12 @@ Go to [smartcontract](https://ropsten.etherscan.io/address/0xd93395b2771914e1679
 
 Example of `htlt` [transaction](https://ropsten.etherscan.io/tx/0xa2444cc1e52e09027ec68bf8955e7084235255f9f18d9b837a12fd63e6f0145c)
 
-#### 3. Deputy Call HTLT on Beacon Chain 
+#### 3. Deputy Call HTLT on BNB Beacon Chain 
 Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.binance.org/tx/99CBC2896F0CF14DDAB0684BDA0A3E9FF2271056E68EC3559AB7FB24E0EE97DE)
 
-#### 4. Claim HTLT on Beacon Chain 
+#### 4. Claim HTLT on BNB Beacon Chain 
 
-* Get the `swapID` on Beacon Chain 
+* Get the `swapID` on BNB Beacon Chain 
 
 ```
 ./tbnbcli token query-swapIDs-by-recipient  --recipient-addr tbnb1cs0j4p0p6d3fvd77zg3qzlwwgmrv3e9e63423w --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
@@ -502,7 +502,7 @@ You can also get swapID by [calculateSwapID in javascript-sdk](https://github.co
 	- `out_amount` should be reasonable. Please note that the decimals of bep2 tokens is 8, the out_amount should be something around 10000000000:PPC, deputy will deduct some fees.
 	- `expire_height` must not be passed and should be enough for send claim transaction
 
-* Send claim transaction on Beacon Chain 
+* Send claim transaction on BNB Beacon Chain 
 
 ```
 ./tbnbcli token claim --swap-id  12aacc3bdc2cef97e8e45cc9b409796df57904a4e9c76863ad8420ff75f13128  --random-number <random-number> --from <from-key>  --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
@@ -594,7 +594,7 @@ This is a javascript implementation for client app to swap [PPC](https://ropsten
   await wait(20000)
 
   //----------------------------------------------------------------------------
-  //Step3 query swap created by deputy on Beacon Chain  and verify swap parameters
+  //Step3 query swap created by deputy on BNB Beacon Chain  and verify swap parameters
   //----------------------------------------------------------------------------
   const swapID = calculateSwapID(randomNumberHash.replace("0x", ""), deputyBNBWalletAddr, clientEthWalletAddr).toString()
   console.log(swapID)
@@ -614,7 +614,7 @@ This is a javascript implementation for client app to swap [PPC](https://ropsten
   expect(Number(atomicSwap.result.expireHeight)).toBeGreaterThan(Number(status.sync_info.latest_block_height)+100)
 
   //----------------------------------------------------------------------------
-  //Step4 claim on Beacon Chain 
+  //Step4 claim on BNB Beacon Chain 
   //----------------------------------------------------------------------------
   const res = await bnbClient.swap.claimHTLT(clientBnbWalletAddr, swapID, randomNumber)
   console.log(res)
@@ -624,10 +624,10 @@ This is a javascript implementation for client app to swap [PPC](https://ropsten
   //----------------------------------------------------------------------------
 ```
 
-### Swap Tokens from Beacon Chain  to Ethereum
+### Swap Tokens from BNB Beacon Chain  to Ethereum
 ![image-20190918193910521](../../assets/bnc2eth.png)
 
-#### 1. Send `HTLT` Transaction from Beacon Chain 
+#### 1. Send `HTLT` Transaction from BNB Beacon Chain 
 
 Please read this [section](#hash-timer-locked-transfer) to generate a valid `HTLT` transaction. Please write down the `randomNumber` and `randomNumberHash`.
 
@@ -675,9 +675,9 @@ You should see that **Deputy** has already approved enough tokens and
 
 In its [event log](https://ropsten.etherscan.io/tx/0x142fb8db7eb66feb241ca710a028678e36595fc8aea03858672288fcac8e4494#eventlog), you should see the `swapID`. Before calling `claim` function on ethereum, clients should verify the parameters in the `HTLT` event.
 
-- `_randomNumberHash` must equal to the randomNumberHash in client HTLT transaction on Beacon Chain 
+- `_randomNumberHash` must equal to the randomNumberHash in client HTLT transaction on BNB Beacon Chain 
 - `_recipientAddr` must equal to client ethereum wallet address
-- `_timestamp` must equal to the timestamp in client HTLT transaction on Beacon Chain 
+- `_timestamp` must equal to the timestamp in client HTLT transaction on BNB Beacon Chain 
 - `_outAmount` should be reasonable. Please note that the decimals erc20 contract and deputy will deduct some fees.
 - `_expireHeight` must not be passed and should be enough for send claim transaction
 
@@ -690,7 +690,7 @@ Then, you can call the `claim` function:
 
 Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b4950324d656e6937a38b91786894f52c76f41b)
 
-#### 5. Deputy Claim on Beacon Chain 
+#### 5. Deputy Claim on BNB Beacon Chain 
 
 `Claim HTLT` transaction from **Deputy** is [sent](https://testnet-explorer.binance.org/tx/8C616DEFD2EAA41E13D2DC4844B218DFF8CFE24B4C7A693AAD700381B5FF7B48) afterwards:
 
@@ -723,7 +723,7 @@ This is a javascript implementation for client app to swap  [PPC-00A](https://te
   const swapContract = new web3.eth.Contract([{"constant":true,"inputs":[],"name":"ERC20ContractAddr","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"isSwapExist","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"refund","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_swapSender","type":"address"},{"name":"_bep2SenderAddr","type":"bytes20"}],"name":"calSwapID","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"_swapID","type":"bytes32"},{"name":"_randomNumber","type":"bytes32"}],"name":"claim","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_timestamp","type":"uint64"},{"name":"_heightSpan","type":"uint256"},{"name":"_recipientAddr","type":"address"},{"name":"_bep2SenderAddr","type":"bytes20"},{"name":"_bep2RecipientAddr","type":"bytes20"},{"name":"_outAmount","type":"uint256"},{"name":"_bep2Amount","type":"uint256"}],"name":"htlt","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"claimable","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"refundable","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_swapID","type":"bytes32"}],"name":"queryOpenSwap","outputs":[{"name":"_randomNumberHash","type":"bytes32"},{"name":"_timestamp","type":"uint64"},{"name":"_expireHeight","type":"uint256"},{"name":"_outAmount","type":"uint256"},{"name":"_sender","type":"address"},{"name":"_recipient","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_erc20Contract","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"},{"indexed":false,"name":"_timestamp","type":"uint64"},{"indexed":false,"name":"_bep2Addr","type":"bytes20"},{"indexed":false,"name":"_expireHeight","type":"uint256"},{"indexed":false,"name":"_outAmount","type":"uint256"},{"indexed":false,"name":"_bep2Amount","type":"uint256"}],"name":"HTLT","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"}],"name":"Refunded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_msgSender","type":"address"},{"indexed":true,"name":"_recipientAddr","type":"address"},{"indexed":true,"name":"_swapID","type":"bytes32"},{"indexed":false,"name":"_randomNumberHash","type":"bytes32"},{"indexed":false,"name":"_randomNumber","type":"bytes32"}],"name":"Claimed","type":"event"}], swapContractAddr)
 
   //--------------------------------------------
-  //Step1 send htlt on Beacon Chain 
+  //Step1 send htlt on BNB Beacon Chain 
   //--------------------------------------------
   const randomNumber = "e8eae926261ab77d018202434791a335249b470246a7b02e28c3b2fb6ffad8f3"
   const timestamp = Math.floor(Date.now()/1000)
@@ -782,7 +782,7 @@ This is a javascript implementation for client app to swap  [PPC-00A](https://te
   await wait(20000)
 
   //----------------------------------------------------------------------------
-  //If step2 or step3 are failed and the expire height on Beacon Chain  is passed, try to send refundHTLT transaction on Beacon Chain 
+  //If step2 or step3 are failed and the expire height on BNB Beacon Chain  is passed, try to send refundHTLT transaction on BNB Beacon Chain 
   //----------------------------------------------------------------------------
 ```
 

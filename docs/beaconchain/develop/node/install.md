@@ -1,6 +1,6 @@
 # Install Binaries
 
-This guide will explain how to install the binaries: `bnbchaind`  and `bnbcli`, onto your server. With these installed on a server, you can participate in the mainnet or testnet as a Full Node. Full Nodes of Beacon Chain  also help the network by accepting transactions from other nodes and then relaying them to the core BNB Chain network.
+This guide will explain how to install the binaries: `bnbchaind`  and `bnbcli`, onto your server. With these installed on a server, you can participate in the mainnet or testnet as a Full Node. Full Nodes of BNB Beacon Chain  also help the network by accepting transactions from other nodes and then relaying them to the core BNB Chain network.
 
 ## Supported Platforms
 We support running a full node on `Mac OS`, `Windows` and `Linux`.

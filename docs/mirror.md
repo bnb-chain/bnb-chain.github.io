@@ -18,7 +18,7 @@ Anyone can call the `mirror` [method](https://github.com/bnb-chain/bsc-genesis-c
 
 - Verify there is no pending mirror request
 - Check the total supply and token symbol is valid
-- Send a cross-chain package to issue a BEP2 token on Beacon Chain
+- Send a cross-chain package to issue a BEP2 token on BNB Beacon Chain
 - The newly created BEP2 token is locked until the token holder send cross-chain transfer
 
 After binding, all liquid circulation is on BSC.

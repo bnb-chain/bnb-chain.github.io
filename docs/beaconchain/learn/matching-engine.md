@@ -3,7 +3,7 @@ id: matching-engine
 title: Matching Engine
 ---
 
-Binance DEX is the native marketplace on Beacon Chain , allowing you to exchange digital assets issued and listed on it.
+Binance DEX is the native marketplace on BNB Beacon Chain , allowing you to exchange digital assets issued and listed on it.
 The matching happens within the blockchain nodes and all of the transactions are recorded on-chain, therefore forming a complete, auditable ledger of activity.
 
 > ATTENTION: The match logic on DEX is quite different from normal centralized exchange.

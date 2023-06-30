@@ -41,7 +41,7 @@ version of the software.
 ### Consensus Parameters
 
 Next, the genesis file defines consensus parameters. Consensus parameters regroup all the parameters that are related to
-the consensus layer, which is `Tendermint` in the case of `Beacon Chain`. Let us look at these parameters:
+the consensus layer, which is `Tendermint` in the case of `BNB Beacon Chain`. Let us look at these parameters:
 
 - `block_size`
     - `max_bytes`: Maximum number of bytes per block is 1048576.
@@ -107,7 +107,7 @@ You can see the three different address of all **11** validators. Let us break d
 
 #### Token
 
-The `tokens` module handles tokens, which contains the information of Beacon Chain native token `BNB`.
+The `tokens` module handles tokens, which contains the information of BNB Beacon Chain native token `BNB`.
 
 ```json
 "tokens": [

@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "HTTP API",
-    "description": "The Binance Chain HTTP API provides access to a Beacon Chain node deployment and related data services.",
+    "description": "The Binance Chain HTTP API provides access to a BNB Beacon Chain node deployment and related data services.",
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"

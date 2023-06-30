@@ -1,5 +1,5 @@
 # Escrow Accounts
-A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in Beacon Chain protocol. This kind of account doesn't have its own private key and it's only controlled by code of the protocol. The code for calculating escrow account is the same that is used in cosmos-sdk.
+A purely-code-controlled escrow account is a kind of account which is derived from a hard-coded string in BNB Beacon Chain protocol. This kind of account doesn't have its own private key and it's only controlled by code of the protocol. The code for calculating escrow account is the same that is used in cosmos-sdk.
 
 ## Addresses of Escrow Accounts
 

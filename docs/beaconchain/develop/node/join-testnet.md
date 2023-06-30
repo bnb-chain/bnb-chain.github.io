@@ -19,7 +19,7 @@ The hardware must meet certain requirements to run a Full Node.
 
 ## Setting Up a New Node
 
-1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for Beacon Chain. You can setup this by:
+1. You need to choose a home folder `$BNCHOME` (i.e. ~/.bnbchaind) for BNB Beacon Chain. You can setup this by:
 
 ```
 mkdir ~/.bnbchaind

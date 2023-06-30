@@ -61,7 +61,7 @@ You will then be redirected to the Trading Interface.
 For your security, please read the information displayed in the following popup and confirm that the address shown on your Ledger device matches the one shown on-screen.<br/>
 Press the right button on your device to confirm that the address matches (You must do this to continue).
 
-## How to send Beacon Chain crypto assets
+## How to send BNB Beacon Chain crypto assets
 
 Confirming a trade on a Ledger Wallet:
 

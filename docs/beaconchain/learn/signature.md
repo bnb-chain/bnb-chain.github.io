@@ -4,7 +4,7 @@ Signature is the evidence to prove the sender owns the transaction. It will be c
 
 1. Compose a data structure. please note `msgs`, `memo`, `source`, `data` are the same as in the above `payload`.
 
-    - `chain_id`: a string, unique ID for the Chain, it stays the same for most time, but may vary as Beacon Chain  evolves;
+    - `chain_id`: a string, unique ID for the Chain, it stays the same for most time, but may vary as BNB Beacon Chain  evolves;
     - `account_number`: a string for a 64-bit integer, an identifier number associated with the signing address
     - `sequence`: a string for a a 64-bit integer, please check [accounts](accounts.md)
     - `memo`: a string, a short sentence of remark for the transaction
@@ -34,4 +34,4 @@ type StdSignMsg struct {
 
 3. Sign SHA256 of the encoded byte array, to create an ECDSA signature on curve Secp256k1 and serialize the `R` and `S` result into a 64-byte array. (both `R` and `S` are encoded into 32-byte big endian integers, and then `R` is put into the first 32 bytes and `S` are put into the last 32 bytes of the byte array. In order to break `S` 's malleability, `S` set to `curve.Order() - S` if `S > curnve.Order()/2`.)
 
-The `signature` will be encoded together with transaction message and sent as `payload` to Beacon Chain  node via RPC or http REST API, as described in the above section.
+The `signature` will be encoded together with transaction message and sent as `payload` to BNB Beacon Chain  node via RPC or http REST API, as described in the above section.

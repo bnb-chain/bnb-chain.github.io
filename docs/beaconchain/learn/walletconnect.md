@@ -3,7 +3,7 @@ id: walletconnect
 title: Wallet Connect
 ---
 
-- [ ] https://docs.binance.org/walletconnect.html
+- [ ] https://docs.bnbchain.org/walletconnect.html
 
 ## What is WalletConnect?
 WalletConnect is an open protocol for connecting desktop Dapps to mobile Wallets using end-to-end encryption by scanning a QR code. Opening up a whole world of Dapps that were once only available to Metamask. The user can interact with any Dapp without comprising their private keys and will be notified to sign any transaction requests on their mobile.
@@ -11,9 +11,9 @@ WalletConnect is an open protocol for connecting desktop Dapps to mobile Wallets
 ## How does it work?
 WalletConnect is a simple infrastructure that can be setup by any developer. Using a Bridge server to relay the messages without having access to any of its contents. The contents are encrypted using the session data shared by the QR code between the desktop and mobile. There are libraries for Web, iOS and Android. Read more about it in our documentation introduction.
 
-## Wallets with WalletConnect Support for Beacon Chain 
+## Wallets with WalletConnect Support for BNB Beacon Chain 
 
-* List of Wallets Supporting WalletConnect on Beacon Chain 
+* List of Wallets Supporting WalletConnect on BNB Beacon Chain 
 
 
 | Number | Wallet Name                                            | Network                          |
@@ -33,13 +33,13 @@ Currently the WalletConnect protocol has references implementations written in T
 
 To learn more about how to develop, please read the [official documentation](https://docs.walletconnect.org/).
 
-The Beacon Chain  Web Wallet supports connecting with external wallet providers via the [WalletConnect protocol](https://docs.walletconnect.org/tech-spec).
+The BNB Beacon Chain  Web Wallet supports connecting with external wallet providers via the [WalletConnect protocol](https://docs.walletconnect.org/tech-spec).
 
 WalletConnect allows the user to scan a QR code from the wallet app to unlock and use their wallet seamlessly in the web UI.
 
-In order for this to work, some modifications to the standard WalletConnect protocol are used in the Beacon Chain  wallet's implementation.
+In order for this to work, some modifications to the standard WalletConnect protocol are used in the BNB Beacon Chain  wallet's implementation.
 
-See the list of wallets which support WalletConnect on Beacon Chain  [here](../../wallets/walletconnect-support.md)
+See the list of wallets which support WalletConnect on BNB Beacon Chain  [here](../../wallets/walletconnect-support.md)
 
 ## Connecting via WalletConnect
 
@@ -49,7 +49,7 @@ Wallet providers should make use of the [WalletConnect Client SDK](https://docs.
 
 Since we do not use Ethereum transactions, there are some differences:
 
-* Typically `sendTransaction` is used with Ethereum transaction parameters in WalletConnect dApp integrations. But in Beacon Chain 's case, instead of invoking `sendTransaction` in the WalletConnect flow, the new [`sendCustomRequest`](https://docs.walletconnect.org/client-sdk#send-custom-request) call is used instead with a method called `bnb_sign` (see below).
+* Typically `sendTransaction` is used with Ethereum transaction parameters in WalletConnect dApp integrations. But in BNB Beacon Chain 's case, instead of invoking `sendTransaction` in the WalletConnect flow, the new [`sendCustomRequest`](https://docs.walletconnect.org/client-sdk#send-custom-request) call is used instead with a method called `bnb_sign` (see below).
 
 * The external wallet provider is responsible for sending back the signature and public key of the transaction but should _not_ broadcast the transaction itself. We have instead defined a custom `result` format in the form of stringified JSON containing the signature and public key. The reason for this is that the wallet app probably does not have access to the complete serialized binary form of the transaction (as this requires Amino encoding).
 

@@ -6,7 +6,7 @@ hide_table_of_contents: false
 # Overview
 
 [BEP159](https://github.com/bnb-chain/BEPs/blob/master/BEP159.md) introduces a permissionless validator election mechanism
-and brings the staking economy onto Beacon Chain(BC).
+and brings the staking economy onto BNB Beacon Chain(BC).
 
 Anyone can stake their BNB to become a validator candidate or delegate their BNB to the validator candidates they trust.
 The validator set will be determined by the rank of the accumulated bonded tokens on validator candidates. The validators

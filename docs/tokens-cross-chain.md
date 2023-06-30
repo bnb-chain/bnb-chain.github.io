@@ -5,9 +5,9 @@ sidebar_position: 2
 
 # Cross-chain Token Management
 
-The dual-chain architecture of Beacon Chain & BNB Smart Chain empowers you to build your own decentralized apps. The native cross-chain communication mechanism allows tokens to be transferred between BC and BSC easily.
+The dual-chain architecture of BNB Beacon Chain & BNB Smart Chain empowers you to build your own decentralized apps. The native cross-chain communication mechanism allows tokens to be transferred between BC and BSC easily.
 
-BNB Smart Chain and Beacon Chain work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases.
+BNB Smart Chain and BNB Beacon Chain work together to ensure that one token can circulate in both formats with confirmed total supply and be used in different use cases.
 
 
 ## BEP2/BEP8 Token Owner

@@ -2,7 +2,7 @@
 
 ## Encoding Output
 
-Beacon Chain  (Amino) encoding logic may encode a data structure into two output formats: Binary and JSON.
+BNB Beacon Chain  (Amino) encoding logic may encode a data structure into two output formats: Binary and JSON.
 
 ### JSON Marshal
 Amino supports JSON encoding natively, which is the same as other usual json marshalers. Except that it can add one more `type` info for registered type, as shown below.
@@ -16,7 +16,7 @@ Amino supports JSON encoding natively, which is the same as other usual json mar
 
 ### Examples in Go-SDK
 
-Let's take a look at an [example function](https://github.com/bnb-chain/go-sdk/blob/fe7524098533a6ce6077cf5f28f677329963d17b/client/rpc/dex_client.go#L373) of Beacon Chain  go-sdk.
+Let's take a look at an [example function](https://github.com/bnb-chain/go-sdk/blob/fe7524098533a6ce6077cf5f28f677329963d17b/client/rpc/dex_client.go#L373) of BNB Beacon Chain  go-sdk.
 
 ```golang
 func (c *HTTP) GetProposal(proposalId int64) (types.Proposal, error) {
@@ -64,7 +64,7 @@ Binary encoding is a variant of Google protocol buffer. The bytes are layed out 
 
 ### Examples in Go-SDK
 
-Let's take a look at an example function of Beacon Chain  go-sdk. The signed transaction needs to be amino-encoded, thus ready to be posted to BncChain API.
+Let's take a look at an example function of BNB Beacon Chain  go-sdk. The signed transaction needs to be amino-encoded, thus ready to be posted to BncChain API.
 
 ```golang
 rawBz, err := c.keyManager.Sign(*signMsg)
@@ -85,9 +85,9 @@ rawBz, err := c.keyManager.Sign(*signMsg)
 
 ```
 
-## Beacon Chain Transaction Encoding
+## BNB Beacon Chain Transaction Encoding
 
-Below are the data types that can be sent to Beacon Chain  as requests, and their encoding layout. To simplify the presentation, we will use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, other fields will use the default `proto3` encoding logic.
+Below are the data types that can be sent to BNB Beacon Chain  as requests, and their encoding layout. To simplify the presentation, we will use a variant of [Google protocol buffer proto3](https://developers.google.com/protocol-buffers/docs/proto3) language to illustrate how the data fields are organized. Except the all-capitalized fields, other fields will use the default `proto3` encoding logic.
 
 
 ### Standard Transaction
@@ -194,7 +194,7 @@ message StdSignature {
 ```
 
 ### Message Types
-Messages represent the individual operations possible on Beacon Chain , and these can be inserted into `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangeably in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
+Messages represent the individual operations possible on BNB Beacon Chain , and these can be inserted into `StdTx.msgs` field. Message types are otherwise known as "transaction types", and these terms are used interchangeably in this document and in our technical documentation. So far every `StdTx` transaction "container" can only contain one "message".
 
 #### Transfer
 Transfer is the transaction for transferring funds to different addresses.
@@ -268,7 +268,7 @@ OptionNoWithVeto    = 0x04  // no with veto
 ```
 
 #### Issue
-Issue (create) new asset on Beacon Chain .
+Issue (create) new asset on BNB Beacon Chain .
 ```go
 message IssueTokenValue  {
   0x17EFAB80 // hardcoded, object type prefix in 4 bytes
@@ -388,7 +388,7 @@ message Timerelock{
 
 #### HTLT
 
-Hash Timer Locked Transfer (HTLT) is a new transaction type on Beacon Chain , to serve as HTLC in the first step of Atomic Swap
+Hash Timer Locked Transfer (HTLT) is a new transaction type on BNB Beacon Chain , to serve as HTLC in the first step of Atomic Swap
 
 ```go
 message HTLT{

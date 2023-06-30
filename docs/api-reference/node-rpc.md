@@ -10,11 +10,11 @@ There are two main ways to connect to a node to send RPC commands.
 
 This page assumes that you have your own node running locally, so examples here use `localhost:27146` to represent using RPC commands on a local node.
 
-Alternatively, you are able to use a node that is hosted in the Beacon Chain  network.
+Alternatively, you are able to use a node that is hosted in the BNB Beacon Chain  network.
 
 ### 1.2 Use an existing node on the network
 
-The Beacon Chain  infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
+The BNB Beacon Chain  infrastructure deployment contains so-called "data seed" nodes, which have their RPC ports available for access. To find a seed node that is available, you can use the [peers](./dex-api/paths.md#apiv1peers) endpoint to get a list of network peers.
 
 Here is an example of a node that is available for RPC access. The following is the output of `localhost:27147/status`:
 
@@ -685,7 +685,7 @@ genesis, err := client.Genesis()
       "app_state": {
         "tokens": [
           {
-            "name": "Beacon Chain  Native Token",
+            "name": "BNB Beacon Chain  Native Token",
             "symbol": "BNB",
             "total_supply": "20000000000000000",
             "owner": "tbnb12hlquylu78cjylk5zshxpdj6hf3t0tahwjt3ex",
@@ -1738,7 +1738,7 @@ The account balance information is the following:
 {"type":"bnbchain/Account","value":{"base":{"address":"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5","coins":[{"denom":"000-0E1","amount":"10530"},{"denom":"AGRI-BD2","amount":"102842693026"},{"denom":"ALIS-95B","amount":"1008261"},{"denom":"ANN-457","amount":"10100000000000"},{"denom":"AVT-B74","amount":"2280343"},{"denom":"BC1-3A1","amount":"1826704"},{"denom":"BNB","amount":"10221947267999"},{"denom":"BNN-411","amount":"10100000000000"},{"denom":"BTC.B-918","amount":"113218800"},{"denom":"BTMGL-C72","amount":"204562981873"},{"denom":"CNN-210","amount":"10100000000000"},{"denom":"COSMOS-587","amount":"50000101983748977"},{"denom":"DC1-4B8","amount":"1826704"},{"denom":"DUIT-31C","amount":"121112394964"},{"denom":"EDU-DD0","amount":"139885964"},{"denom":"FRI-D5F","amount":"11251373129"},{"denom":"IAA-C81","amount":"9448420"},{"denom":"IBB-8DE","amount":"9448420"},{"denom":"ICC-6EF","amount":"9448420"},{"denom":"IDD-516","amount":"9448420"},{"denom":"IEE-DCA","amount":"9448420"},{"denom":"IFF-804","amount":"9448420"},{"denom":"IGG-013","amount":"9448420"},{"denom":"IHH-D4E","amount":"9448420"},{"denom":"III-25C","amount":"9448420"},{"denom":"IJJ-65E","amount":"9448420"},{"denom":"KOGE48-35D","amount":"10000000000"},{"denom":"LC1-7FC","amount":"1826704"},{"denom":"LCQ-AC5","amount":"9133568718"},{"denom":"MFH-9B5","amount":"1258976083286"},{"denom":"NASC-137","amount":"0"},{"denom":"NC1-279","amount":"1826704"},{"denom":"NC2-249","amount":"1411566"},{"denom":"OCB-B95","amount":"10000000000"},{"denom":"PIC-F40","amount":"102842693026"},{"denom":"PPC-00A","amount":"205150260"},{"denom":"RBT-CB7","amount":"1008261"},{"denom":"RC1-943","amount":"1826704"},{"denom":"RC1-A1E","amount":"1826704"},{"denom":"RC1-F49","amount":"1826704"},{"denom":"SVC-A14","amount":"18267042"},{"denom":"TC1-F43","amount":"1826704"},{"denom":"TFA-3B4","amount":"5731324"},{"denom":"TGT-9FC","amount":"33251102828"},{"denom":"UCX-CC8","amount":"1398859649"},{"denom":"UDO-638","amount":"5041308481"},{"denom":"USDT.B-B7C","amount":"138793116268"},{"denom":"WWW76-A8F","amount":"4611856"},{"denom":"XSX-072","amount":"10228149"},{"denom":"YLC-D8B","amount":"210572645"},{"denom":"ZEBRA-16D","amount":"1000"},{"denom":"ZZZ-21E","amount":"13988596"}],"public_key":{"type":"tendermint/PubKeySecp256k1","value":"AhOb3ZXecsIqwqKw+HhTscyi6K35xYpKaJx10yYwE0Qa"},"account_number":"406226","sequence":"52"},"name":"","frozen":null,"locked":[{"denom":"BNB","amount":"800"}]}}
 ```
 
-You can also query from `/account/`. This is how [go-sdk](https://github.com/binance-chain/go-sdk/blob/master/client/rpc/dex_client.go#L144) handles balance query, because it relects account changes which are not committed in a block too.
+You can also query from `/account/`. This is how [go-sdk](https://github.com/bnb-chain/go-sdk/blob/master/client/rpc/dex_client.go#L144) handles balance query, because it relects account changes which are not committed in a block too.
 
 ```shell
 curl 'https://data-seed-pre-0-s3.binance.org/abci_query?path="/account/tbnb1hn8ym9xht925jkncjpf7lhjnax6z8nv2mu9wy3"'
@@ -2368,7 +2368,7 @@ You need to enable indexer in `config.tml`. You can modify the `index_tags` to i
 
 **Available Query Path**
 
-Right now, you can only query by transaction height: `tx.height`. Please note that on Beacon Chain  testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
+Right now, you can only query by transaction height: `tx.height`. Please note that on BNB Beacon Chain  testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
 
 **Example**
 
