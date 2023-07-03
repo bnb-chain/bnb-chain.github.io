@@ -11,7 +11,7 @@ All the clients are suggested to upgrade to the latest release. The [latest vers
 
 #### Prune State
 
-According to the test, the performance of a full node will degrade when the storage size exceeds 1.5 TB. We suggest that the fullnode always keep light storage by pruning the storage. 
+According to the test, the performance of a full node will degrade when the storage size reaches a high volume(previously it was 1.5TB, which is an experimental value, the latest number needs to be updated). We suggest that the fullnode always keep light storage by pruning the storage.
 
 How to prune:
 
