@@ -34,7 +34,7 @@ Support for the EVM allows interoperability between BSC, Polygon Network, and th
 BNB Chain is an ecosystem comprising of two major blockchains that serve different purposes, namely, BNB Beacon Chain (BC) and BNB Smart Chain (BSC). To deal with the increased volumes of transactions and daily active users (DAU), BNB Chain ecosystem has evolved to add more scaling solutions and now includes the following components with different responsibilities and purposes.
 1.	[BNB Beacon Chain](https://docs.bnbchain.org/docs/learn/beaconIntro) - BNB Chain Governance (staking, voting)
 2.	[BNB Smart Chain (BSC)](https://docs.bnbchain.org/docs/learn/intro) - EVM compatible, consensus layers, and with hubs to multi-chains
-3.  [ZkBNB](https://docs.bnbchain.org/docs/zkbnb/zkbnb-overview)- ZkRollup solution to scale BSC as a super high-performance blockchain.
+3.  [ZkBNB](https://docs.bnbchain.org/zkBNB-docs)- ZkRollup solution to scale BSC as a super high-performance blockchain.
  
 ![bnb-chain-ecosystem](./BNBChain2022.png)
 

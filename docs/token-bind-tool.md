@@ -41,7 +41,7 @@ make build
    --to 0xde9Aa1d632b48d881B50528FC524C88474Ec8809 --amount 100000000:BNB
    ```
    
-   2.2 You can also transfer BNB from other BNB Smart Chain account with [Metamask](https://docs.bnbchain.org/smart-chain/wallet/metamask.html).
+   2.2 You can also transfer BNB from other BNB Smart Chain account with [Metamask](https://docs.bnbchain.org/docs/wallet/metamask).
 
 ## Bind BEP2 token with BEP20 token
 
