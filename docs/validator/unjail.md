@@ -24,7 +24,7 @@ bnbcli slashing side-unjail
 \--from= {this address has to be the operator address of the validator to be unjailed.
           Name or address of private key with which to sign}
  \--side-chain-id= {chain-id of the side chain the validator belongs to} 
- \--chain-id= {the chain id of binance chain}
+ \--chain-id= {the chain id of BNB Chain}
 ```
 
 

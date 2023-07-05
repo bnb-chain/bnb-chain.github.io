@@ -31,7 +31,7 @@ Yes, BNB Beacon Chain team and community would cherish the technology advancemen
 
 ## What is the native coin on BNB Beacon Chain?
 
-The Binance Coin, BNB, is the native asset on BNB Beacon Chain. There are 200MM BNB coins in total.
+The Build N Build Coin, BNB, is the native asset on BNB Beacon Chain. There are 200M BNB coins in total.
 There will be no mining. The existing coin burns and freezes will still be in effect on the new
 BNB Beacon Chain blockchain.
 

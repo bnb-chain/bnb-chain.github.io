@@ -27,11 +27,11 @@ Firefox App Store Link: <https://addons.mozilla.org/en-US/firefox/addon/binance-
 
 * Open Extension in Firefox: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
-* Search for Binance Chain
+* Search for BNB Chain
 
 ![img](https://lh5.googleusercontent.com/ks5BM5SBqrjbDWdbGhsKymWvuLIJina_JZ4lo_j-skzhnFXvF8laumgJpl8nCv7XC_2Z6bwOhrt7v-oHLXv-eHNLlfY_9qSiQWyiyWuDlN8XKfc329MgTiyUpq9D8K562nH_zdkS)
 
-Note: Make sure it’s offered by Binance Chain
+Note: Make sure it’s offered by BNB Chain
 
 
 * Click on “Add to Firefox”
