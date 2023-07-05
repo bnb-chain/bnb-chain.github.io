@@ -20,7 +20,7 @@ With tokens, the amount of gas is typically  gas, so the total TX fee increases 
 ## Current Gas Price
 
 ```
-curl --location --request POST 'https://bsc-dataseed2.binance.org' \
+curl --location --request POST 'https://bsc-dataseed2.bnbchain.org' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc":"2.0", "id":1, "method":"eth_gasPrice", "params": []}'
 ```

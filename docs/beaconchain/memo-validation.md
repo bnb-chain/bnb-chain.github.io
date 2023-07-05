@@ -72,7 +72,7 @@ This transaction is aimed to set account flags to any hex value.
 * Example on testnet:
 
 ```
-./tbnbcli token account_flags set-account-flags --from <your-key-name> --account-flags 0x01 --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token account_flags set-account-flags --from <your-key-name> --account-flags 0x01 --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```
 
 ### Enable-memo-checker
@@ -89,7 +89,7 @@ This transaction is aimed to aimed to enable transfer memo checker scripts.
 * Example on testnet:
 
 ```
-./tbnbcli account_flags enable-memo-checker --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli account_flags enable-memo-checker --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```
 
 ### Disable-memo-checker
@@ -106,5 +106,5 @@ This transaction is aimed to disable transfer memo checker.
 * Example on testnet:
 
 ```
-./tbnbcli account_flag disable-memo-checker --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli account_flag disable-memo-checker --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```

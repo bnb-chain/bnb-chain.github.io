@@ -125,7 +125,7 @@ Validator nodes that have been jailed due to their malicious or bad behavior can
 _Example:_
 
 ~~~~
-bnbcli slashing side-unjail --side-chain-id=bsc –node http://dataseed4.binance.org:80 --chain-id=Binance-Chain-Tigris --trust-node --output=json  --from {the address of the validaator operator}
+bnbcli slashing side-unjail --side-chain-id=bsc –node http://dataseed4.bnbchain.org:80 --chain-id=Binance-Chain-Tigris --trust-node --output=json  --from {the address of the validaator operator}
 ~~~~
 
 ### What is 'self-delegation'? How can I increase my 'self-delegation'?

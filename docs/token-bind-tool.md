@@ -31,13 +31,13 @@ make build
    2.1 Cross chain transfer
    ```shell script
     bnbcli bridge transfer-out --expire-time `expr $(date +%s) + 3600` \
-    --chain-id Binance-Chain-Tigris --from {keyName} --node http://dataseed4.binance.org:80 \
+    --chain-id Binance-Chain-Tigris --from {keyName} --node http://dataseed4.bnbchain.org:80 \
     --to {temp account address} --amount 100000000:BNB
     ```
    Example command:
    ```shell script
    bnbcli bridge transfer-out --expire-time `expr $(date +%s) + 3600` \
-   --chain-id Binance-Chain-Tigris --from bep2TokenIssuer --node http://dataseed4.binance.org:80 \
+   --chain-id Binance-Chain-Tigris --from bep2TokenIssuer --node http://dataseed4.bnbchain.org:80 \
    --to 0xde9Aa1d632b48d881B50528FC524C88474Ec8809 --amount 100000000:BNB
    ```
    

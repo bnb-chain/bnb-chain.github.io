@@ -114,7 +114,7 @@ Yes, with the help of native cross-chain functions
 ### How to query the current system parameters
 
 ```
-bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.binance.org:80   --chain-id=Binance-Chain-Tigris --trust-node --output=json
+bnbcli  params side-params  --side-chain-id=bsc   --node  http://dataseed4.bnbchain.org:80   --chain-id=Binance-Chain-Tigris --trust-node --output=json
 ```
 
 * minimum self-delegated amount: **2000BNB**

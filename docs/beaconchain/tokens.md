@@ -41,14 +41,14 @@ Example on **testnet**:
 
 ```bash
 # To issue a NNB mintable token with total-supply 1 billion on testnet
-> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --mintable --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --mintable --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --trust-node
 
 Committed at block 1887 (tx hash: B90A055DDD570AE42A7050182993A0B4DBC81A0D, ... Issued NNB-B90...)
 ```
 
 ```bash
 # To issue a NNB non-mintable token with total-supply 1 billion on testnet
-> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token issue --token-name "new bnb" --total-supply 100000000000000000 --symbol NNB --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --trust-node
 
 Committed at block 1887 (tx hash: B90A055DDD570AE42A7050182993A0B4DBC81A0D, ... Issued NNB-B90...)
 ```
@@ -64,7 +64,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
- > ./tbnbcli token mint --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+ > ./tbnbcli token mint --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --trust-node
 ```
 
 ## Burn
@@ -79,7 +79,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
- > ./tbnbcli token burn --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+ > ./tbnbcli token burn --amount 100000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --trust-node
 ```
 
 ## Freeze & Unfreeze
@@ -101,11 +101,11 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
-> ./tbnbcli token freeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token freeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --trust-node
 ```
 
 ```bash
-> ./tbnbcli token unfreeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --trust-node
+> ./tbnbcli token unfreeze --amount 20000000000000000 --symbol NNB-B90 --from alice --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --trust-node
 ```
 
 ## TransferOwnership
@@ -123,5 +123,5 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
-./tbnbcli token transfer-ownership --from  $current-owner --symbol $symbol --new-owner $new-owner --chain-id Binance-Chain-Nile  --node=data-seed-pre-2-s1.binance.org:80--trust-node
+./tbnbcli token transfer-ownership --from  $current-owner --symbol $symbol --new-owner $new-owner --chain-id Binance-Chain-Nile  --node=data-seed-pre-2-s1.bnbchain.org:80--trust-node
 ```

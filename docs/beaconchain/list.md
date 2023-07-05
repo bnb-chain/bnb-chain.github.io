@@ -38,7 +38,7 @@ Example on **testnet**:
 
 ```bash
 $  ./tbnbcli dex list -s AAA-254 --quote-asset-symbol BNB --from test \
---init-price 100000000 --proposal-id 15 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json
+--init-price 100000000 --proposal-id 15 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --json
 {
    "Height":"282409",
    "TxHash":"77AE3D190F430FE6E4B1A9659BEBB3F022CF7631",

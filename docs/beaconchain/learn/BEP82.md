@@ -33,7 +33,7 @@ Example on **mainnet**:
 Example on **testnet**:
 
 ```bash
-./tbnbcli token transfer-ownership --from  $current-owner --symbol $symbol --new-owner $new-owner --chain-id Binance-Chain-Nile  --node=data-seed-pre-2-s1.binance.org:80--trust-node
+./tbnbcli token transfer-ownership --from  $current-owner --symbol $symbol --new-owner $new-owner --chain-id Binance-Chain-Nile  --node=data-seed-pre-2-s1.bnbchain.org:80--trust-node
 ```
 
 ## Fees

@@ -73,7 +73,7 @@ You can query your balance on mainnet before send tokens.
 You can query your balance on testnet before send tokens.
 
 ```bash
-./tbnbcli account tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5 --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --indent
+./tbnbcli account tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5 --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --indent
 
 {
   "type": "bnbchain/Account",
@@ -131,7 +131,7 @@ Password to sign with 'test':
 
 Example on **testnet**:
 ```bash
-./tbnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer"
+./tbnbcli send --from from-key-name --to to-address --amount 200000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --json --memo "Test transfer"
 
 Password to sign with 'test':
 {
@@ -271,7 +271,7 @@ Example on **testnet**:
 
 ```bash
 
-./tbnbcli token multi-send --home ./testnodecli --from test --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80  --transfers "[{\"to\":\"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"tbnb1e244vmvym7g6cn9lk4hmhf9p2f9jaf0x9hxmwc\",\"amount\":\"100000000000000:BNB\"}]" --json
+./tbnbcli token multi-send --home ./testnodecli --from test --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80  --transfers "[{\"to\":\"tbnb1sylyjw032eajr9cyllp26n04300qzzre38qyv5\",\"amount\":\"100000000000000:BNB\"},{\"to\":\"tbnb1e244vmvym7g6cn9lk4hmhf9p2f9jaf0x9hxmwc\",\"amount\":\"100000000000000:BNB\"}]" --json
 
 Password to sign with 'test':
 {
@@ -350,7 +350,7 @@ Password to sign with 'test':
 
 Example on **testnet**:
 ```bash
- ./tbnbcli token multi-send --home ./testnodecli --from test--chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80  --transfers-file ./transaction.json --json
+ ./tbnbcli token multi-send --home ./testnodecli --from test--chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80  --transfers-file ./transaction.json --json
 
 Password to sign with 'test':
 {

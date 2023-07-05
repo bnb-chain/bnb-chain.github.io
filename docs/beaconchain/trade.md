@@ -6,7 +6,7 @@ Binance DEX is the native marketplace which allows you to exchange digital asset
 You could place a new order with the following command on testnet:
 
 ```
-$ tbnbcli dex order  --symbol ZEBRA-16D_BNB  --side 1 --price 1000000 --qty 1000 --from guest --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte
+$ tbnbcli dex order  --symbol ZEBRA-16D_BNB  --side 1 --price 1000000 --qty 1000 --from guest --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 -t gte
 ```
 
 You will be able to place order on mainnet by replaceing `chain-id` and `node`.
@@ -32,7 +32,7 @@ The order id is needed if you want to cancel this order later.
 To cancel an order, you could use the following command to cencel order on testnet:
 
 ```
-tbnbcli dex cancel --symbol ZEBRA-16D_BNB   --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --refid  813E4939F1567B219704FFC2AD4DF58BDE010879-30 --from guest
+tbnbcli dex cancel --symbol ZEBRA-16D_BNB   --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --refid  813E4939F1567B219704FFC2AD4DF58BDE010879-30 --from guest
 ```
 Please note that `refid` is what you got from `order` command.
 
@@ -47,7 +47,7 @@ bnbcli dex cancel --symbol ZEBRA-16D_BNB   --chain-id Binance-Chain-Tigris   --n
 To verify that your commands are executed as expected, you could query the orderbook of testnet.
 
 ```
-tbnbcli dex show -l ZEBRA-16D_BNB   --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli dex show -l ZEBRA-16D_BNB   --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 ```
 Example output is the following:
 ```
