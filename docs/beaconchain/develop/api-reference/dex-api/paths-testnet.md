@@ -944,7 +944,7 @@ varies with msg type, if you query with --format=json.
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| name | string |  | Binance Chain Mini Token |
+| name | string |  | BNB Chain Mini Token |
 | symbol | string |  | BTC-000 |
 | original_symbol | string |  | BTC |
 | total_supply | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |

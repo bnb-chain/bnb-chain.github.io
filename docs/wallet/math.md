@@ -49,9 +49,9 @@ Go to explorer to verify BNB is sent: <https://testnet.bscscan.com/>
 
 ## Transfer BNB from BSC to BC in Testnet
 
-1. Create your Binance Chain Ganges Testnet address with tbnbcli
+1. Create your BNB Chain Ganges Testnet address with tbnbcli
 * Download the binary [here](https://github.com/bnb-chain/node/releases/tag/v0.8.1)
-> If you already have a backup of your recovery phrase from Binance Chain Ganges Testnet, it can be reused here.
+> If you already have a backup of your recovery phrase from BNB Chain Ganges Testnet, it can be reused here.
 ```
 tbnbcli keys add {wallet-alias}
 ```
@@ -74,7 +74,7 @@ Link: <https://explorer.binance.org/testnet>
 
 ## Transfer BEP20 from BSC to BC in Testnet
 
-One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP20 tokens together. In Binance Chain Ganges Testnet, there are several pegged tokens:
+One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP20 tokens together. In BNB Chain Ganges Testnet, there are several pegged tokens:
 
 * Pegged BTC on [BNB Beacon Chain Testnet](https://explorer.binance.org/testnet/asset/BTC-E24) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8#code)
 * Pegged ETH on  [BNB Beacon Chain Testnet](

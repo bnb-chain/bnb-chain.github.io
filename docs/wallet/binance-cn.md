@@ -17,11 +17,11 @@
 
 * 打开火狐浏览器市场: <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
-* 搜索"Binance Chain"
+* 搜索"BNB Chain"
 
 ![img](https://lh5.googleusercontent.com/ks5BM5SBqrjbDWdbGhsKymWvuLIJina_JZ4lo_j-skzhnFXvF8laumgJpl8nCv7XC_2Z6bwOhrt7v-oHLXv-eHNLlfY_9qSiQWyiyWuDlN8XKfc329MgTiyUpq9D8K562nH_zdkS)
 
-注意⚠️: 请确认开发者是Binance Chain
+注意⚠️: 请确认开发者是BNB Chain
 
 
 * 点击 “Add to Firefox”
@@ -73,7 +73,7 @@
 
 ![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
 
-* 打开钱包后，切换到Binance Smart Chain Testnet
+* 打开钱包后，切换到BNB Smart Chain Testnet
 
 ![img](https://lh6.googleusercontent.com/RolgUaF7n1Gxh8FV7_oUqJ4Fgx0cjRob9LPn4jMMS9yGrbZ15ssPo1rsrPpavy8VVooM0Rqr3dDh00Om5C3OvMN-D2s4nhBub6dIJBhtuod6ZCQ0j8fWFGZ0WUOQQXBDOScaap98)
 
@@ -94,13 +94,13 @@
 
 以测试网为例：
 
-* 打开钱包后，切换到Binance Chain Testnet。复制地址，以 `tbnb1`开头
+* 打开钱包后，切换到BNB Chain Testnet。复制地址，以 `tbnb1`开头
 
 ![img](https://lh3.googleusercontent.com/K5w_Mbk4rT9Az6eIY130MHaj_ZCicU4Tp3w93z40dtrGdzwFCMZ5qAfwytI5PY_TdztTPrK5WPAf1uHM5ej-1YdEWu7GtVgghRBub1KSf0e63tgi1L-4MkwPBG3pG0SDYHfMpt_J)
 
 * 点击 “+” and 添加“BNB” 代币
 
-* 切换到Binance Smart Chain Testnet，点击 “Send”
+* 切换到BNB Smart Chain Testnet，点击 “Send”
 
 ![img](https://lh5.googleusercontent.com/nD5EwfFWmqRuHK21u5D5bcVg2MkXHa-OrAX-rhGMKQQmEGxgLLh57-zVdx4WnAYIUbCjAYaStt0PYt-gthrHK_hsWW0jAh34xOT2maf1skY3Dvy0-vAlaAjred96UihBabkglDMZ)
 
@@ -108,21 +108,21 @@
 
 ![img](https://lh5.googleusercontent.com/zPPVgR5I9s6cQPYfDbBU9E5Ddr5VtBhWt7iyHHE7IUEvaa5sTIMEA79VEGD-DHJJyrnJO-28m3QiVxrmSh82oCFnfjA63lpk-M1mQsdQ3aeTUskla0u8bpDNI3J0oLOFYa5Ahbr4)
 
-* 切换到Binance Chain Testnet，确认转账完成
+* 切换到BNB Chain Testnet，确认转账完成
 
 ![img](https://lh3.googleusercontent.com/4PMk41qA7tXxRes-0Oc12A28U_W7JZHQAlJ9WW5njdGcozY8njSVEuPeZzTRt1xfRpiXPUZiea6ES74DQyjnyZNzjPw9NJhL_QNXvSMPich2o54MlbXVgoMJHaMx66xVpqm-2XAu)
 
 
 ## BNB从BC转到BSC
 
-* 打开钱包后，切换到Binance Smart Chain Testnet。复制地址，以 `0x`开头
+* 打开钱包后，切换到BNB Smart Chain Testnet。复制地址，以 `0x`开头
 
 <img src="https://lh3.googleusercontent.com/kidAixmzNbNt_ujj0BQqZdZ4ZBXdEkxJLSVIOsWnWxZGOeXUJBjhxYsLlxH6VSQWxNX-dzqBFhqXSW3zmshkL99QYcVxIFGxw6tF7xF9ffXZPMPKnXlt0sWCKvPV6RMJWHSx1H0O" alt="img" style={{zoom:"33%"}} />
 
 * 点击 “+” and 添加“BNB” 代币
 
 
-* 切换到Binance Chain Testnet，点击 “Send”
+* 切换到BNB Chain Testnet，点击 “Send”
 
 <img src="https://lh3.googleusercontent.com/JuCCpF4-U2FBHIZEIcwf7DNsCBA_RavVtmSX1dRe-thAL3FSm__Maf27aVkEIxaCQ28hl17NEYthBKyAWLJT72NMZ0Lkxzt7AIcVEuej2KDaKzT6ElR-wv_DTy1ip6MKfQk0-U7-" alt="img" style={{zoom:"33%"}} />
 
@@ -130,7 +130,7 @@
 
 <img src="https://lh4.googleusercontent.com/Ab98BfFApDok7qZdHAerglPc-vEYAKdEa2K-04CBdNfaQy8fE2CiJ_1sRjophAqsAt8p9c3CxA5IAGuhnPjJuZqotCq8zPRUkoEpB2tQir1nneBopVGNSNKlzq4wRVmSrfuQEZFw" alt="img" style={{zoom:"33%"}} />
 
-* 切换到Binance Smart Chain Testnet，确认转账完成
+* 切换到BNB Smart Chain Testnet，确认转账完成
 
 ## 在测试网上完将BEP2代币转换为BEP20格式
 
@@ -142,7 +142,7 @@
 
 **确认BNB余额够支付跨链转账费用**
 
-* 切换到Binance Chain Testnet。复制地址，以 `tbnb1`开头
+* 切换到BNB Chain Testnet。复制地址，以 `tbnb1`开头
 
 <img src="https://lh3.googleusercontent.com/kidAixmzNbNt_ujj0BQqZdZ4ZBXdEkxJLSVIOsWnWxZGOeXUJBjhxYsLlxH6VSQWxNX-dzqBFhqXSW3zmshkL99QYcVxIFGxw6tF7xF9ffXZPMPKnXlt0sWCKvPV6RMJWHSx1H0O" alt="img" style={{zoom:"33%"}} />
 
@@ -150,7 +150,7 @@
 
 <img src="https://lh5.googleusercontent.com/fW06aH1A5_7P93r8zSp4kgs5Us1AqYHvnfs6sRxg6aCLsQ7u9Ht_z6zLSExGjbr6J-D0vOmDWXghw544WhaNnkTP-nDAO3TFou5g_WYVvp7nOSrNX7w15PmvmZLyHkhBzLW_i-xi" alt="img" style={{zoom:"33%"}} />
 
-* 切换到Binance Chain Testnet，点击 “Send”
+* 切换到BNB Chain Testnet，点击 “Send”
 
 <img src="https://lh5.googleusercontent.com/OHYhS0DdJsg6Jt_E-qRrPOxgDi_VMwXlRYVD8OVTrr1w5kwubse2boOfffWpl8PjP15j_h0atYB4O1GEQqNGCFzoKcoRSgmdMgAYQPazoe_I7X6gilZazMqqIGntSz9rz6j47DGk" alt="img" style={{zoom:"33%"}} />
 
@@ -158,7 +158,7 @@
 
 <img src="https://lh6.googleusercontent.com/gcaynPouCk8R0cRFo10i6tXUp8yVO3N1MB9ihJvo-NmO0i8PWae1Vz83O5i8cAIbuoZ1PIO_8de6PrxtUA3mix3FdxWZePH4KZt4_-Uwr64CZWyJog5d1iYcNgwHp_RumNOGc7B4" alt="img" style={{zoom:"33%"}} />
 
-* 切换到Binance Smart Chain Testnet，确认收到BEP20代币
+* 切换到BNB Smart Chain Testnet，确认收到BEP20代币
 
 <img src="https://lh5.googleusercontent.com/ThOnhoHRzITPpIqfYOj6_Q0NHGSmVXMqmJ11SPjcvVqEzHZ6vcWpxyb9jILtnJ9GxAFDz527jCapq64-8N8l_aqMU1phv2MoAmTIKb1Nse7NjzhFRhdiyObk1mZBb7YQbq7ZkqTV" alt="img" style={{zoom:"33%"}} />
 
@@ -166,13 +166,13 @@
 
 * 根据以上指令完成安装
 * 根据以上指令完成账户的创建或恢复
-* 打开钱包后，切换到Binance Smart Chain Testnet。点击“+” 添加你的BEP20代币
+* 打开钱包后，切换到BNB Smart Chain Testnet。点击“+” 添加你的BEP20代币
 
 <img src="https://lh5.googleusercontent.com/fW06aH1A5_7P93r8zSp4kgs5Us1AqYHvnfs6sRxg6aCLsQ7u9Ht_z6zLSExGjbr6J-D0vOmDWXghw544WhaNnkTP-nDAO3TFou5g_WYVvp7nOSrNX7w15PmvmZLyHkhBzLW_i-xi" alt="img" style={{zoom:"33%"}} />
 
 **确认BNB余额够支付跨链转账费用**
 
-* 切换到Binance Chain Testnet。复制地址，以 `tbnb1`开头
+* 切换到BNB Chain Testnet。复制地址，以 `tbnb1`开头
 
 注意⚠️：主网地址以 `bnb1`开头
 
@@ -183,9 +183,9 @@
 <img src="https://lh5.googleusercontent.com/P9NrmUZF4yC0_G_KgSuqCtLq3Q0GLw6ZBfyYwBn6f6HFqTxOcER2wChJJtZvAkF8QsEJz9AxN6Ixi2oqlJEHKsig-KTz3qUIAi8Kt7TfhyPalMMzO7Yh3btfyVLMm9MNCcA1bXYL" alt="img" style={{zoom:"33%"}} />
 
 
-* 切换到Binance Smart Chain Testnet，点击 “Send”
+* 切换到BNB Smart Chain Testnet，点击 “Send”
 
 <img src="https://lh6.googleusercontent.com/m-lXjzWHuiVteM0n0ukSmMCxHm7XSQtO8wJ0LMXMUYL6spDObSmgbN7zoBVuc0hrhBL2mQ1C3GhBvzHpnHYoP_mbOcKSYtZZojQ46R5-2QA_ULXMPlmHyqXcg1Ht_M8Ix0xdUxJb" alt="img" style={{zoom:"33%"}} />
 
 
-* 切换到Binance Chain Testnet，确认收到BEP2代币
+* 切换到BNB Chain Testnet，确认收到BEP2代币

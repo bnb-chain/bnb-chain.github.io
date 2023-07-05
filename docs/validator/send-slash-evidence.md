@@ -16,7 +16,7 @@ bnbcli slashing bsc-submit-evidence
  \--from={Name or address of private key with which to sign}
  \--evidence={Evidence details, including two bsc block headers with json format} 
  \--evidence-file={File of evidence details} 
- \--chain-id={the chain id of binance chain}
+ \--chain-id={the chain id of BNB Chain}
 ```
 #### Parameters for  slashing bsc-submit-evidence
 

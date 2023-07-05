@@ -63,7 +63,7 @@ Often blockchain projects begin as whitepapers promising innovative technologies
 
 ### Migrating Tokens from Solana to BSC
 
-The process of bridging between Solana and Binance Smart Chain (BSC) is a little difficult because they are not compatible chains. There are two options to migrate your tokens from Solana to BSC. First, you can use cross-chain bridges to migrate the tokens to BSC from Solana. The second is to create new tokens on the BSC network, deposit equivalent amounts to the holders and discontinue the previously deployed token on Solana. In this section, we provide readers with a guide on how to create custom BEP20 tokens on BSC and later how to bridge tokens from Solana to BSC.
+The process of bridging between Solana and BNB Smart Chain (BSC) is a little difficult because they are not compatible chains. There are two options to migrate your tokens from Solana to BSC. First, you can use cross-chain bridges to migrate the tokens to BSC from Solana. The second is to create new tokens on the BSC network, deposit equivalent amounts to the holders and discontinue the previously deployed token on Solana. In this section, we provide readers with a guide on how to create custom BEP20 tokens on BSC and later how to bridge tokens from Solana to BSC.
 
 #### Creating BEP20 Token on BSC
 
