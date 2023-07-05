@@ -78,7 +78,7 @@ tbnbcli staking bsc-create-validator \
 --website {website for validator} \
 --from {key name} \
 --chain-id Binance-Chain-Ganges \
---node=http://data-seed-pre-1-s3.binance.org:80
+--node=http://data-seed-pre-1-s3.bnbchain.org:80
 ```
 
 Please ensure that the newly created mining account

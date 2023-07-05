@@ -23,7 +23,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 
 ### BSC Mainnet (ChainID 0x38, 56 in decimal)
 
-* https://bsc-dataseed.binance.org
+* https://bsc-dataseed.bnbchain.org
 * https://bsc-dataseed1.defibit.io
 * https://bsc-dataseed1.ninicoin.io
 * https://bsc.nodereal.io
@@ -32,12 +32,12 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 ### BSC Testnet (ChainID 0x61, 97 in decimal)
 
-* https://data-seed-prebsc-1-s1.binance.org:8545
-* https://data-seed-prebsc-2-s1.binance.org:8545
-* https://data-seed-prebsc-1-s2.binance.org:8545
-* https://data-seed-prebsc-2-s2.binance.org:8545
-* https://data-seed-prebsc-1-s3.binance.org:8545
-* https://data-seed-prebsc-2-s3.binance.org:8545
+* https://data-seed-prebsc-1-s1.bnbchain.org:8545
+* https://data-seed-prebsc-2-s1.bnbchain.org:8545
+* https://data-seed-prebsc-1-s2.bnbchain.org:8545
+* https://data-seed-prebsc-2-s2.bnbchain.org:8545
+* https://data-seed-prebsc-1-s3.bnbchain.org:8545
+* https://data-seed-prebsc-2-s3.bnbchain.org:8545
 
 ### Thrid-Party RPC Providers
 
@@ -60,10 +60,10 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 You can start the HTTP JSON-RPC with the --http flag
 ```bash
 ## mainnet
-geth attach https://bsc-dataseed.binance.org
+geth attach https://bsc-dataseed.bnbchain.org
 
 ## testnet
-geth attach https://data-seed-prebsc-1-s1.binance.org:8545
+geth attach https://data-seed-prebsc-1-s1.bnbchain.org:8545
 ```
 
 ### JSON-RPC methods
@@ -74,10 +74,10 @@ Please refer to this [wiki page](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 
 ### Mainnet
 
-* https://dataseed1.binance.org:443
-* https://dataseed2.binance.org:443
-* https://dataseed3.binance.org:443
-* https://dataseed4.binance.org:443
+* https://dataseed1.bnbchain.org:443
+* https://dataseed2.bnbchain.org:443
+* https://dataseed3.bnbchain.org:443
+* https://dataseed4.bnbchain.org:443
 * https://dataseed1.defibit.io:443
 * https://dataseed2.defibit.io:443
 * https://dataseed3.defibit.io:443
@@ -89,7 +89,7 @@ Please refer to this [wiki page](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 
 ### Testnet
 
-*  https://data-seed-pre-0-s1.binance.org:443
-*  https://data-seed-pre-1-s1.binance.org:443
-*  https://data-seed-pre-2-s1.binance.org:443
-*  https://data-seed-pre-0-s3.binance.org:443
+*  https://data-seed-pre-0-s1.bnbchain.org:443
+*  https://data-seed-pre-1-s1.bnbchain.org:443
+*  https://data-seed-pre-2-s1.bnbchain.org:443
+*  https://data-seed-pre-0-s3.bnbchain.org:443

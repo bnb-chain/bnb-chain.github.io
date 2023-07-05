@@ -7,10 +7,10 @@ RPC endpoints may be used to interact with a node directly over HTTP or websocke
 
 ## Mainnet
 
-* https://dataseed1.binance.org:443
-* https://dataseed2.binance.org:443
-* https://dataseed3.binance.org:443
-* https://dataseed4.binance.org:443
+* https://dataseed1.bnbchain.org:443
+* https://dataseed2.bnbchain.org:443
+* https://dataseed3.bnbchain.org:443
+* https://dataseed4.bnbchain.org:443
 * https://dataseed1.defibit.io:443
 * https://dataseed2.defibit.io:443
 * https://dataseed3.defibit.io:443
@@ -22,7 +22,7 @@ RPC endpoints may be used to interact with a node directly over HTTP or websocke
 
 ## Testnet
 
-*  https://data-seed-pre-0-s1.binance.org:443
-*  https://data-seed-pre-1-s1.binance.org:443
-*  https://data-seed-pre-2-s1.binance.org:443
-*  https://data-seed-pre-0-s3.binance.org:443
+*  https://data-seed-pre-0-s1.bnbchain.org:443
+*  https://data-seed-pre-1-s1.bnbchain.org:443
+*  https://data-seed-pre-2-s1.bnbchain.org:443
+*  https://data-seed-pre-0-s3.bnbchain.org:443

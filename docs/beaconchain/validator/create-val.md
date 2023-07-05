@@ -72,8 +72,8 @@ $ tbnbcli staking create-validator-open \
 --website {website for validator} \  
 --from {key name} \  
 --chain-id Binance-Chain-Ganges \  
---node=http://data-seed-pre-2-s1.binance.org:80
+--node=http://data-seed-pre-2-s1.bnbchain.org:80
 
 ## Query validators on testnet
-./tbnbcli staking  validators  --chain-id Binance-Chain-Ganges  --node=http://data-seed-pre-2-s1.binance.org:80
+./tbnbcli staking  validators  --chain-id Binance-Chain-Ganges  --node=http://data-seed-pre-2-s1.bnbchain.org:80
 ```

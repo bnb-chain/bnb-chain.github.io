@@ -33,12 +33,12 @@ You must use `--broadcast` to submit your transaction to the blockchain, otherwi
 
 On testnet, you can lock 1BNB for 1 day.
 ```
-./tbnbcli token time-lock --amount "100000000:BNB" --from <key-name> --description " test timelock" --lock-time <lock-timestamp> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80 --broadcast
+./tbnbcli token time-lock --amount "100000000:BNB" --from <key-name> --description " test timelock" --lock-time <lock-timestamp> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80 --broadcast
 ```
 
 On mainnet, you can lock 1BNB for 1 day.
 ```
-./bnbcli token time-lock --amount "100000000:BNB" --from <key-name> --description " test timelock" --lock-time <lock-timestamp> --chain-id Binance-Chain-Tigris --node http://dataseed1.binance.org:80 --broadcast
+./bnbcli token time-lock --amount "100000000:BNB" --from <key-name> --description " test timelock" --lock-time <lock-timestamp> --chain-id Binance-Chain-Tigris --node http://dataseed1.bnbchain.org:80 --broadcast
 ```
 
 ## TimeUnlock
@@ -61,12 +61,12 @@ TimeUnlock will claim the locked tokens back when the specified lock time has pa
 On testnet, you can unlock tokens
 
 ```
-./tbnbcli token time-unlock --from <your-address> --time-lock-id <lock-id> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token time-unlock --from <your-address> --time-lock-id <lock-id> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```
 
 On mainnet, you can unlock tokens.
 ```
-./bnbcli token time-unlock --from <key-name> --time-lock-id <lock-id> --chain-id Binance-Chain-Tigris --node http://dataseed1.binance.org:80
+./bnbcli token time-unlock --from <key-name> --time-lock-id <lock-id> --chain-id Binance-Chain-Tigris --node http://dataseed1.bnbchain.org:80
 ```
 
 
@@ -99,12 +99,12 @@ PLease note that you either increase the `expire time` or amount of your lock of
 On testnet, you can relock tokens
 
 ```
-./tbnbcli token time-relock --time-lock-id <lock-id> --increase-amount-to <amount of tokens> --from <key-name> --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --broadcast
+./tbnbcli token time-relock --time-lock-id <lock-id> --increase-amount-to <amount of tokens> --from <key-name> --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --broadcast
 ```
 On mainnet, you can relock tokens
 
 ```
-./bnbcli token time-relock --time-lock-id <lock-id> --increase-amount-to <amount of tokens> --from <key-name> --chain-id Binance-Chain-Tigris --node http://dataseed1.binance.org:80 --broadcast
+./bnbcli token time-relock --time-lock-id <lock-id> --increase-amount-to <amount of tokens> --from <key-name> --chain-id Binance-Chain-Tigris --node http://dataseed1.bnbchain.org:80 --broadcast
 ```
 
 Output if you don't add more tokens or don't extend your locking period, you will get the following error:
@@ -127,13 +127,13 @@ QueryTimeLock will query a lock record of a given address by the id. If this loc
 
 On testnet, you can query lock history by ID:
 ```
-./tbnbcli token query-time-lock --from <your-key-name> --time-lock-id <lock-id> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-time-lock --from <your-key-name> --time-lock-id <lock-id> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```
 
 
 On mainnet, you can query lock history:
 ```
-./bnbcli token query-time-lock --from <your-key-name> --time-lock-id <lock-id> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.binance.org:80
+./bnbcli token query-time-lock --from <your-key-name> --time-lock-id <lock-id> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.bnbchain.org:80
 ```
 
 Example output:
@@ -170,12 +170,12 @@ QueryTimeLocks will query all lock records of a given address.
 On testnet, you can query lock history by address:
 
 ```
-./tbnbcli token query-time-locks --address <your-address> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli token query-time-locks --address <your-address> --chain-id Binance-Chain-Ganges --trust-node --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```
 On mainnet, you can query lock history by address:
 
 ```
-./bnbcli token query-time-locks --address <your-address> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.binance.org:80
+./bnbcli token query-time-locks --address <your-address> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.bnbchain.org:80
 ```
 Example output:
 

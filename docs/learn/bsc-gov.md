@@ -107,7 +107,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 ./bnbcli gov  query-proposals --side-chain-id  bsc  --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov  query-proposals --side-chain-id  chapel --node http://data-seed-pre-1-s1.binance.org:80 --trust-node --chain-id Binance-Chain-Ganges
+./tbnbcli gov  query-proposals --side-chain-id  chapel --node http://data-seed-pre-1-s1.bnbchain.org:80 --trust-node --chain-id Binance-Chain-Ganges
 ```
 
 ### Query side chain proposal
@@ -123,7 +123,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 ./bnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  bsc --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --node http://data-seed-pre-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges
+./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --node http://data-seed-pre-1-s1.bnbchain.org:80 --chain-id Binance-Chain-Ganges
 ```
 
 ### Query side chain parameters
@@ -137,7 +137,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
  ./bnbcli params side-params --side-chain-id bsc  --trust-node --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli params side-params --side-chain-id chapel  --trust-node --node http://data-seed-pre-1-s1.binance.org:80
+ ./tbnbcli params side-params --side-chain-id chapel  --trust-node --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Submit cross chain param change proposal
@@ -159,7 +159,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 ./bnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+./tbnbcli params  submit-cscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Submit cross chain channel management proposal
@@ -180,7 +180,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 ./bnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Submit side chain module param change proposal
@@ -200,7 +200,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
 ./bnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  bsc  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Vote for side chain proposal
@@ -217,7 +217,7 @@ Such processes will be carried on BC, and the new parameter values will be picke
  ./bnbcli gov vote --from alice   --side-chain-id  bsc    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+ ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Deposit for side chain proposal
@@ -232,8 +232,8 @@ Such processes will be carried on BC, and the new parameter values will be picke
 
 ```bash
 ## mainnet
- ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.binance.org:80
+ ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.bnbchain.org:80
 
 ## testnet
- ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+ ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```

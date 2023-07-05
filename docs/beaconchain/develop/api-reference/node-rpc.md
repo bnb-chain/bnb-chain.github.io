@@ -62,7 +62,7 @@ Here is an example of a node that is available for RPC access. The following is 
 So, using this node, we are able to use raw RPC commands below or the `bnbcli` tool to make a query:
 
 ```bash
-$ bnbcli dex show -l NNB-0AB_BNB --chain-id Binance-Chain-Ganges --node data-seed-pre-2-s1.binance.org:80
+$ bnbcli dex show -l NNB-0AB_BNB --chain-id Binance-Chain-Ganges --node data-seed-pre-2-s1.bnbchain.org:80
 ```
 
 ## 2. Protocols
@@ -1702,7 +1702,7 @@ In this example, we will explain how to query account info with `abci_query`.
 
 2. Run query
 ```shell
-curl 'https://data-seed-pre-0-s3.binance.org/abci_query?path="/store/acc/key"&data=0x6163636F756E743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886'
+curl 'https://data-seed-pre-0-s3.bnbchain.org/abci_query?path="/store/acc/key"&data=0x6163636F756E743A89F856CB39D25C1BDDAAEC74A381577CA8E2F886'
 ```
 
 ```go
@@ -1741,7 +1741,7 @@ The account balance information is the following:
 You can also query from `/account/`. This is how [go-sdk](https://github.com/bnb-chain/go-sdk/blob/master/client/rpc/dex_client.go#L144) handles balance query, because it relects account changes which are not committed in a block too.
 
 ```shell
-curl 'https://data-seed-pre-0-s3.binance.org/abci_query?path="/account/tbnb1hn8ym9xht925jkncjpf7lhjnax6z8nv2mu9wy3"'
+curl 'https://data-seed-pre-0-s3.bnbchain.org/abci_query?path="/account/tbnb1hn8ym9xht925jkncjpf7lhjnax6z8nv2mu9wy3"'
 
 ```go
 client := client.NewHTTP("tcp://0.0.0.0:27147", "/websocket")
@@ -2462,11 +2462,11 @@ type ResultBroadcastTx struct {
 
 1. Query the account number and sequence of your address
 ```
-tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
+tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```
@@ -2474,7 +2474,7 @@ The returned value is the transaction to be sent without signature：
 ```
 3. Generate amino-encoded  transaction with `dry-run`
 ```shell
-tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
+tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 -t gte --dry --account-number account-number
 ```
 This transaction is generatedas as a signed transaction in amino encoding:
 ```json
@@ -2516,7 +2516,7 @@ The above command returns JSON structured like this:
 ```
 Please note that the returned data contains no confirmation about whether this transaction has been committed or not. You will be able to verify the transaction status on blockchain with the following query:
 ```
-tbnbcli tx 721B67C1772EA5FC7E80D70DEAA3C52034204FC60C057FF1117EE45468C1A980  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli tx 721B67C1772EA5FC7E80D70DEAA3C52034204FC60C057FF1117EE45468C1A980  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 ```
 It returns the height which it was committed:
 ```json
@@ -2557,11 +2557,11 @@ type ResultBroadcastTxCommit struct {
 
 1. Query the account number and sequence of your address
 ```
-tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+tbnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
+tbnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```json
@@ -2569,7 +2569,7 @@ The returned value is the transaction to be sent without signature：
 ```
 3. Generate amino-encoded  transaction with `dry-run`
 ```shell
-tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
+tbnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 -t gte --dry --account-number account-number
 ```
 This transaction is generatedas as a signed transaction in amino encoding:
 ```json
@@ -2652,11 +2652,11 @@ type ResultBroadcastTx struct {
 **Example of Calling REST**
 1. Query the account number and sequence of your address
 ```
-bnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+bnbcli account your-address  --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 ```
 2. Generate your transaction json and save this output to a json file
 ```
-bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --memo "Test transfer" --generate-only
+bnbcli send --from name --to=to-address --amount=500000000:BNB --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --json --memo "Test transfer" --generate-only
 ```
 The returned value is the transaction to be sent without signature：
 ```
@@ -2664,7 +2664,7 @@ The returned value is the transaction to be sent without signature：
 ```
 3. Generate amino-encoded  transaction with `dry-run`
 ```shell
-bnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 -t gte --dry --account-number account-number
+bnbcli dex order  --symbol ABC-16D_BNB  --side 1 --price 1000000 --qty 10000 --from account --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 -t gte --dry --account-number account-number
 ```
 This transaction is generatedas as a signed transaction in amino encoding:
 ```json

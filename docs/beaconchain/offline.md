@@ -10,7 +10,7 @@ First step is that you need to generate your unsigned transaction and save it in
 
 You can generate an unsigned transfer transaction on testnet:
 ```
-./tbnbcli send --from <your-key-name> --account-number <your-sccount-number> --to <destination-address> --amount 200000000:BNB --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --generate-only --offline >> unsigned.json
+./tbnbcli send --from <your-key-name> --account-number <your-sccount-number> --to <destination-address> --amount 200000000:BNB --chain-id Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --generate-only --offline >> unsigned.json
 ```
 You can generate an unsigned transfer transaction on mainnet:
 ```
@@ -42,7 +42,7 @@ Please then copy your signed.json to a different server and broadcast this trans
 
 You can broadcast your transaction on testnet:
 ```
-./tbnbcli broadcast signed.json --node http://data-seed-pre-0-s3.binance.org:80
+./tbnbcli broadcast signed.json --node http://data-seed-pre-0-s3.bnbchain.org:80
 ```
 You can broadcast your transaction on mainnet:
 ```

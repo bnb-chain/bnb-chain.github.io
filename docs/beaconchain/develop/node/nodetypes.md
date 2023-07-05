@@ -26,16 +26,16 @@ You can see the witness node information from this endpoint: https://dex.binance
 
 For mainnet, there are some witness nodes.
 
-- `http://dataseed1.binance.org/`
-- `http://dataseed2.binance.org/`
-- `http://dataseed3.binance.org/`
-- `https://dataseed4.binance.org/`
+- `http://dataseed1.bnbchain.org/`
+- `http://dataseed2.bnbchain.org/`
+- `http://dataseed3.bnbchain.org/`
+- `https://dataseed4.bnbchain.org/`
 
 For testnet, there are some witness nodes.
 
-- `https://data-seed-pre-0-s3.binance.org/`
-- `https://data-seed-pre-1-s3.binance.org/`
-- `https://data-seed-pre-2-s3.binance.org/`
+- `https://data-seed-pre-0-s3.bnbchain.org/`
+- `https://data-seed-pre-1-s3.bnbchain.org/`
+- `https://data-seed-pre-2-s3.bnbchain.org/`
 
 To see the existing RPC endpoints provided by witness node, check the list  [here](../api-reference/node-rpc.md)!
 

@@ -96,7 +96,7 @@ $  ./bnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --ch
 Example on **testnet**:
 
 ```bash
-$  ./tbnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+$  ./tbnbcli account bnc1wwgakqy32m7vdnlf00pctf9hnaak37eh7wkmqa --trust-node --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 {
    "type":"bnbchain/Account",
    "value":{

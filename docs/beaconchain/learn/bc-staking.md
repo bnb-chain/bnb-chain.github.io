@@ -167,10 +167,10 @@ b. both validator operator(--from) and self-delegator(--address-delegator) use �
 
 ```bash
 ## mainnet
-./bnbcli sign unsigned.json --from {delegator-address} --node dataseed4.binance.org:80 --chain-id Binance-Chain-Tigris >> delegator-signed.json
+./bnbcli sign unsigned.json --from {delegator-address} --node dataseed4.bnbchain.org:80 --chain-id Binance-Chain-Tigris >> delegator-signed.json
 
 ## testnet
-./tbnbcli sign unsigned.json --from {delegator-address} --node data-seed-pre-0-s3.binance.org:80 --chain-id Binance-Chain-Ganges >> delegator-signed.json
+./tbnbcli sign unsigned.json --from {delegator-address} --node data-seed-pre-0-s3.bnbchain.org:80 --chain-id Binance-Chain-Ganges >> delegator-signed.json
 ```
 
 * Offline Mode
@@ -189,10 +189,10 @@ Then, **validator** operator addres will sign it later.
 
 ```bash
 ## mainnet
-./bnbcli sign delegator-signed.json --from {validator-address} --node dataseed4.binance.org:80 --chain-id Binance-Chain-Tigris >> both-signed.json
+./bnbcli sign delegator-signed.json --from {validator-address} --node dataseed4.bnbchain.org:80 --chain-id Binance-Chain-Tigris >> both-signed.json
 
 ## testnet
-./tbnbcli sign delegator-signed.json --from {validator-address} --node data-seed-pre-0-s3.binance.org:80 --chain-id Binance-Chain-Ganges >> both-signed.json
+./tbnbcli sign delegator-signed.json --from {validator-address} --node data-seed-pre-0-s3.bnbchain.org:80 --chain-id Binance-Chain-Ganges >> both-signed.json
 ```
 
 * Offline Mode
@@ -209,10 +209,10 @@ c. use “**bnbcli broadcast**” to send the transaction from above to the bloc
 
 ```bash
 ## mainnet
-./bnbcli broadcast both-signed.json  --node dataseed4.binance.org:80 --chain-id Binance-Chain-Tigris
+./bnbcli broadcast both-signed.json  --node dataseed4.bnbchain.org:80 --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli broadcast both-signed.json  --node data-seed-pre-0-s3.binance.org:80 --chain-id Binance-Chain-Ganges
+./tbnbcli broadcast both-signed.json  --node data-seed-pre-0-s3.bnbchain.org:80 --chain-id Binance-Chain-Ganges
 ```
 
 Verify your transaction in [mainnet-explorer](https://explorer.binance.org/) or [testnet-explorer](https://testnet-explorer.binance.org/)

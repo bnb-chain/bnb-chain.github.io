@@ -26,9 +26,9 @@ Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](wallet
 ```js
 const Web3 = require('web3');
 // mainnet
-const web3 = new Web3('https://bsc-dataseed.binance.org');
+const web3 = new Web3('https://bsc-dataseed.bnbchain.org');
 // testnet
-const web3 = new Web3('https://data-seed-prebsc-1-s1.binance.org:8545');
+const web3 = new Web3('https://data-seed-prebsc-1-s1.bnbchain.org:8545');
 ```
 
 ### Create a Wallet

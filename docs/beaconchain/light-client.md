@@ -83,12 +83,12 @@ print (seeds)
 
 ### Example for Mainnet:
 ```bash
-./lightd --chain-id "Binance-Chain-Tigris" --node tcp://dataseed1.binance.org:80 > node.log  &
+./lightd --chain-id "Binance-Chain-Tigris" --node tcp://dataseed1.bnbchain.org:80 > node.log  &
 ```
 
 ### Example for Testnet:
 ```bash
-./lightd --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.binance.org:80 > node.log  &
+./lightd --chain-id "Binance-Chain-Ganges" --node tcp://data-seed-pre-0-s1.bnbchain.org:80 > node.log  &
 ```
 
 

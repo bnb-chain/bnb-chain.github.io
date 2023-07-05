@@ -51,7 +51,7 @@ Please refer to [this](https://docs.bnbchain.org/docs/learn/bsc-gov/#workflow) f
 ./bnbcli gov query-proposals --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov query-proposals --node http://data-seed-pre-1-s1.binance.org:80 --trust-node --chain-id Binance-Chain-Ganges
+./tbnbcli gov query-proposals --node http://data-seed-pre-1-s1.bnbchain.org:80 --trust-node --chain-id Binance-Chain-Ganges
 ```
 
 ### Query proposal
@@ -66,7 +66,7 @@ Please refer to [this](https://docs.bnbchain.org/docs/learn/bsc-gov/#workflow) f
 ./bnbcli gov query-proposal --proposal-id 1 --node http://dataseed2.defibit.io:80 --trust-node --chain-id Binance-Chain-Tigris
 
 ## testnet
-./tbnbcli gov query-proposal --proposal-id 1 --trust-node --node http://data-seed-pre-1-s1.binance.org:80 --chain-id Binance-Chain-Ganges
+./tbnbcli gov query-proposal --proposal-id 1 --trust-node --node http://data-seed-pre-1-s1.bnbchain.org:80 --chain-id Binance-Chain-Ganges
 ```
 
 **Note:** Trying to query proposal that didn't enter the voting period will result in `error`.
@@ -92,7 +92,7 @@ $ ./bnbcli gov query-proposal --chain-id Binance-Chain-Tigris --node https://dat
  ./bnbcli params show-fees --trust-node --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli params show-fees --trust-node --node http://data-seed-pre-1-s1.binance.org:80
+ ./tbnbcli params show-fees --trust-node --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Submit a list proposal
@@ -120,7 +120,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 ## testnet
 ./tbnbcli gov submit-list-proposal --from test --deposit 200000000000:BNB
 --base-asset-symbol AAA-254 --quote-asset-symbol BNB --init-price 100000000 --title "list AAA-254/BNB"
---description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80 --json --voting-period 604800
+--description "list AAA-254/BNB" --expire-time 1570665600 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80 --json --voting-period 604800
 ```
 
 ### Submit a delist proposal
@@ -145,7 +145,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 ./bnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443 --trust-node
 
 # testnet
-./tbnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Ganges --trust-node --node https://seed-pre-s3.binance.org:443
+./tbnbcli gov submit-delist-proposal --title "delist EDD-0AC" --voting-period 7200 --deposit "200000000000:BNB" --justification " justification " --base-asset-symbol EDD-0AC --quote-asset-symbol BNB --from <your-key-name> --chain-id Binance-Chain-Ganges --trust-node --node https://seed-pre-s3.bnbchain.org:443
 ```
 
 ### Submit fee param change proposal
@@ -164,7 +164,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 ./bnbcli params  submit-fee-change-proposal --fee-param-file param.json --deposit 200000000000:BNB  --voting-period 100 --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
-./tbnbcli params  submit-fee-change-proposal --fee-param-file param.json --deposit 200000000000:BNB  --voting-period 100 --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+./tbnbcli params  submit-fee-change-proposal --fee-param-file param.json --deposit 200000000000:BNB  --voting-period 100 --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Vote for proposal
@@ -180,7 +180,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
  ./bnbcli gov vote --from alice --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris --node http://dataseed2.defibit.io:80 
 
 ## testnet
- ./tbnbcli gov vote --from alice --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+ ./tbnbcli gov vote --from alice --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Deposit for proposal
@@ -194,10 +194,10 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 ```bash
 ## mainnet
- ./bnbcli gov deposit --from alice --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.binance.org:80
+ ./bnbcli gov deposit --from alice --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris --node http://data-seed-pre-1-s1.bnbchain.org:80
 
 ## testnet
- ./tbnbcli gov deposit --from alice --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.binance.org:80
+ ./tbnbcli gov deposit --from alice --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges --node http://data-seed-pre-1-s1.bnbchain.org:80
 ```
 
 ### Query votes of proposal
@@ -213,5 +213,5 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
  ./bnbcli gov query-votes --proposal-id 1 --chain-id Binance-Chain-Tigris --node https://dataseed5.defibit.io:443
 
 ## testnet
- ./tbnbcli gov query-votes --proposal-id 1 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.binance.org:80
+ ./tbnbcli gov query-votes --proposal-id 1 --chain-id=Binance-Chain-Ganges --node=data-seed-pre-2-s1.bnbchain.org:80
 ```
