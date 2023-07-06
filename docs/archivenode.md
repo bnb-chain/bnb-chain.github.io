@@ -65,16 +65,10 @@ The known Issue with an Erigon client is that it does not really keep up with th
 
 ## Comparison between Geth and Erigon
 
-* **Data size**
+* **Data size:** Up to now(June, 2022), the whole data size is about 35TB with Geth client while it is about 6TB with Erigon client, much smaller.
 
-  Up to now(June, 2022), the whole data size is about 35TB with Geth client while it is about 6TB with Erigon client, much smaller.
+* **Maturity:** Erigon is new and not yet battle tested while Geth has been running a long  time, more stable. Archive nodes with Geth client can support all RPC APIs while some of them are not supported well by Erigon client such as eth_getProof.
 
-* **Maturity**
-
-  Erigon is new and not yet battle tested while Geth has been running a long  time, more stable. Archive nodes with Geth client can support all RPC APIs while some of them are not supported well by Erigon client such as eth_getProof.
-
-* **Complexity**
-
-  It is easier to run one BSC archive node with an Erigon client than that with a Geth client. And it is nearly the same complexity if you want to keep up the latest blocks with a Erigon archive node & a Geth full node at the same time.
+* **Complexity:** It is easier to run one BSC archive node with an Erigon client than that with a Geth client. And it is nearly the same complexity if you want to keep up the latest blocks with a Erigon archive node & a Geth full node at the same time.
 
 All in all, people can choose one of the methods above to run a BSC archive node based on their own requirements.

@@ -36,7 +36,7 @@ Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/node/r
 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
 | --from              | alice                                      | account name                                         | Yes          |
 | --symbol            | DEF-0E9                                    | chain-id of the side  chain the validator belongs to | Yes          |
 | --amount            | 1000000000                                 | amount of tokens to bind                             | Yes          |
@@ -57,7 +57,7 @@ bnbcli bridge bind --symbol DEF-0F9 --amount 6000000000000000 --expire-time 1594
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | ------------------ | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
 | --from             | alice                                      | account name                                         | Yes          |
 | --symbol           | DEF-0E9                                    | chain-id of the side  chain the validator belongs to | Yes          |
 
@@ -74,7 +74,7 @@ bnbcli bridge unbind --symbol DEF-0F9 --from alice --chain-id Binance-Chain-Tigr
 
 | **parameter name** | **example**                                | **comments**                           | **required** |
 | ------------------ | ------------------------------------------ | -------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain         | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain         | Yes          |
 | --from             | alice                                      | account name                           | Yes          |
 | --to               | 0xf9f609f9f4309f191654aa1fd691a6be6aefa7ac | receiver address in smart  chain       | Yes          |
 | --amount           | 1000000000:BNB  (10 BNB)                   | amount of token to  transfer           | Yes          |

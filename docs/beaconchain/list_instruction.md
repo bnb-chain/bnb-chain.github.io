@@ -26,7 +26,7 @@ It is recommended that Token Issuers first create a thread under the “Token Is
 
 Please refer to this [list doc](list.md) to learn about how to send a list transaction and finish listing process on BNB Beacon Chain .
 
-> Please ensure that  a `list` transaction must be sent before `expire-time`.
+> Please ensure that a `list` transaction must be sent before `expire-time`.
 
 
 ## FAQ about Listing  Tokens

@@ -6,10 +6,10 @@ All BSC relayers build their stable infrastructure, watch any event happened on 
 ## Principle
 Considering the following points:
 
-1. Fairness, competitiveness, and redundancy: Everyone has a chance to run a relayer even on cheap hardware. It should be hard for someone to get all the rewards.
-2. Simplicity.
-3. Robustness: The relayer may have a strategy to make its largest profit accordingly, under any condition, the interchain communication should not be blocked.
-4. Low Risk: The relayer should take a little risk to play in this game. For the top N relayers, they should gain enough rewards to cover the cost.
+1. **Fairness, competitiveness, and redundancy:** Everyone has a chance to run a relayer even on cheap hardware. It should be hard for someone to get all the rewards.
+2. **Simplicity**.
+3. **Robustness:** The relayer may have a strategy to make its largest profit accordingly, under any condition, the interchain communication should not be blocked.
+4. **Low Risk:** The relayer should take a little risk to play in this game. For the top N relayers, they should gain enough rewards to cover the cost.
 
 It is tough hard to achieve all these goals; we make some trade-off on robustness and low risk in the following design.
 
@@ -17,8 +17,8 @@ It is tough hard to achieve all these goals; we make some trade-off on robustnes
 
 We have three reward sources:
 
-1. Users paid rewards: Users who send **bind** or **cross chain transfer** transactions need to pay extra fee as BSC relayer rewards.
-2. System rewards: Rewards comes from **SystemReward** contract.
+1. **Users paid rewards:** Users who send **bind** or **cross chain transfer** transactions need to pay extra fee as BSC relayer rewards.
+2. **System rewards:** Rewards comes from **SystemReward** contract.
 
 The role of relayers and their rewards comes from:
 
@@ -33,11 +33,11 @@ The role of relayers and their rewards comes from:
 To prevent the relayer who has the best network always winning the game, we gather the reward into two reward pools (header relayer reward pool and package relayer reward pool) and reallocate to the relayers to achieve redundancy:
 
 1. *S* is a constant number of transactions that in around. Each round, there are *S* transactions, and the last transaction of the round will trigger reward distribution.
-2. *N* is the maximum weight that a relayer can gain in a round. *R* is the total reward in this round. *Ki* is the number of successful transactions from Relayer i. *Wi* is the reward weight of Relayer i. *Ri* is the rewards of Relayer i.
+2. *N* is the maximum weight that a relayer can gain in a round. *R* is the total reward in this round. *Ki* is the number of successful transactions from Relayer `i`. *Wi* is the reward weight of Relayer `i`. *Ri* is the rewards of Relayer `i`.
 3. *R* is the total reward in this round.
-4. *Ki* is the number of successful transactions from Relayer i.
-5. *Wi* is the reward weight of Relayer i.
-6. *Ri* is the rewards of Relayer i.
+4. *Ki* is the number of successful transactions from Relayer `i`.
+5. *Wi* is the reward weight of Relayer `i`.
+6. *Ri* is the rewards of Relayer `i`.
 
 ### Weight formula for package relayers:
 
@@ -53,9 +53,9 @@ To prevent the relayer who has the best network always winning the game, we gath
 
 ### We consider setting these parameters a reasonable value:
 
-1. S to be 100. Some rewards come from gas fee, we can not guarantee enough rewards during a small round, a large round may dismiss deviation and let relayer give up relaying when it has made its max profit.
-2. N to be 40. We think the redundancy of relayer around 3-5 is best. If N is too large, the redundancy will decrease. If N is too small, then there will not be enough relayers. Set N as 40 may be a reasonable value, at least 3 relayers can compete.
-3. The relayFee of a single package and the ratio of reward for header relayer can be modified by governance on BNB Beacon Chain.
+1. `S` to be 100. Some rewards come from gas fee, we can not guarantee enough rewards during a small round, a large round may dismiss deviation and let relayer give up relaying when it has made its max profit.
+2. `N` to be 40. We think the redundancy of relayer around 3-5 is best. If `N` is too large, the redundancy will decrease. If `N` is too small, then there will not be enough relayers. Set `N` as 40 may be a reasonable value, at least 3 relayers can compete.
+3. The `relayFee` of a single package and the ratio of reward for header relayer can be modified by governance on BNB Beacon Chain.
 
 ### Distribution And Claim Reward
 

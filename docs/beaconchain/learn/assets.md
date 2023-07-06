@@ -18,7 +18,7 @@ Assets are stored as `tokens` on BNB Beacon Chain , and the below management act
 
 [Symbol][b]-[Suffix]
 
-Explanations: Suffix is the first 3 bytes of the issue transaction’s hash, for example: [BUSD-BD1](https://explorer.binance.org/asset/BUSD-BD1). It helps to remove the constraint of requiring unique token names. If this token pegs to an existing blockchain, there should be an additional suffix of “B”.
+Explanations: Suffix is the first 3 bytes of the issue transaction’s hash, for example: [BUSD-BD1](https://explorer.bnbchain.org/asset/BUSD-BD1). It helps to remove the constraint of requiring unique token names. If this token pegs to an existing blockchain, there should be an additional suffix of “B”.
 
 ### Issue Process:
 

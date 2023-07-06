@@ -18,7 +18,7 @@ You can connect a node to the testnet by downloading the node binary and testnet
 
 ### How to get Testnet Fund?
 
-> Note: The previous BNB Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: https://testnet.binance.org/faucet-smart
+> Note: The previous BNB Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: <https://testnet.binance.org/faucet-smart>
 
 **Steps to claim testnet BNB:**
 

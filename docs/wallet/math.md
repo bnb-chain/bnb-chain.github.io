@@ -70,7 +70,7 @@ Please note the fees are also deducted for paying gas and cross-chain transfer.
 ![img](https://lh3.googleusercontent.com/1LZhflItAfxbbPLppP_2mZQXhKlKbvAhk51-Or41wTaHY7Rs3B5g62QO1_4ymA0rgx8HoEmvCyEWbWSm_LOrxXyvHWZ24EsRVSJoLELHdprSiLAMLd5cDiDm_89Nd5z78CP0fPw5)
 
 4. Confirm Reception in explorer
-Link: <https://explorer.binance.org/testnet>
+Link: <https://testnet-explorer.binance.org/>
 
 ## Transfer BEP20 from BSC to BC in Testnet
 

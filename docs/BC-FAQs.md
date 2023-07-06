@@ -330,7 +330,7 @@ The only exception is it will not participate in the consensus if the full node 
 No. This was an intentional design decision to improve the performance of the system and eliminate having to support unnecessary features.
 
 If you have certain must-have features, it might be added as a native implementation instead of using smart contract.<br/>
-Feel free to talk to [BNB Chain Community](https://www.buildnbuild.dev/).
+Feel free to talk to [BNB Chain Community](https://forum.bnbchain.org/).
 
 ### How can I transfer tokens, such as Bitcoin, from other block chains onto BNB Beacon Chain ?
 

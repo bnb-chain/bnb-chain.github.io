@@ -5,24 +5,24 @@ hide_table_of_contents: false
 ---
 # Overview
 
-BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of 50 validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of **50** validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
-Other than the 29 active validators, BSC will introduce more validators, e.g. another 20 inactive validators, into the validator set as backups, which will be called “Candidates”.
+Other than the **29** active validators, BSC will introduce more validators, e.g. another **20** inactive validators, into the validator set as backups, which will be called “_Candidates_”.
 
-Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 29 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
+Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of **29** elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 
-In an extreme case, if a majority of the active 29 validators get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
+In an extreme case, if a majority of the active **29** validators get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
 
 ## What is Validator?
 
-BNB Smart Chain relies on a set of validators who are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by signing blocks that contain cryptographic signatures signed by each validator's private key.  The validator set is determined by a staking module built on BNB Beacon Chain for BNB Smart Chain, and propagated every day UTC 00:00 from BC to BSC via Cross-Chain communication.
+BNB Smart Chain relies on a set of validators who are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by signing blocks that contain cryptographic signatures signed by each validator's private key.  The validator set is determined by a staking module built on BNB Beacon Chain for BNB Smart Chain, and propagated every day **00:00 UTC** from BC to BSC via Cross-Chain communication.
 
 
 ## Economics
 
 Validator's rewards come from transaction fees and commission fees from delegators.
 
-Let us also assume that the reward for a block is 100 BNB and that a certain validator has 20% of self-bonded BNB and sets its commission rate to 20%. These tokens do not go directly to the proposer. Instead, they are shared among validators and delegators.  These 100 BNB will be distributed according to each participant's stake:
+Let us also assume that the reward for a block is 100 BNB and that a certain validator has **20%** of self-bonded BNB and sets its commission rate to **20%**. These tokens do not go directly to the proposer. Instead, they are shared among validators and delegators.  These **100 BNB** will be distributed according to each participant's stake:
 
 ```
 Commission: 80*20%= 16 BNB
@@ -48,35 +48,34 @@ If you try to cheat the system, or act contrary to the specification, you will b
 
 Running your validator keys simultaneously on two or more machines will result in Double-Sign slashing.
 
-Penalty for Double-Sign Slash:
+##### Penalty for Double-Sign Slash
 
-1. 10000 staked BNB will be slashed for the validator.
-2. The Double-Sign Jail time is 2^63-1 seconds, which means the candidate cannot become a validator anymore.
+1. **10000 staked BNB** will be slashed for the validator.
+2. The Double-Sign Jail time is **2^63-1 seconds**, which means the candidate cannot become a validator anymore.
 
-> Note: Rewards for submitting double-sign evidence: 1000BNB Anyone can submit a slashing request on BC with the evidence of Double Sign of BSC, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator.
+> Note: **Rewards for submitting double-sign evidence:** **1000BNB** Anyone can submit a slashing request on BC with the evidence of Double Sign of BSC, which should contain the **2 block headers** with the same height and parent block, sealed by the offending validator.
 
 
 #### Loss for Malicious Vote Slash
 
 Running your validators with the same consensus keys and voting keys concurrently on two or more machines  will result in Malicious Vote slashing.
 
-Penalty for Malicious Vote Slash:
-1. 10000 staked BNB will be slashed for the validator.
-2. The Double-Sign Jail time is 2^63-1 seconds, which means the candidate cannot become a validator anymore.
+##### Penalty for Malicious Vote Slash
 
-> Note: Rewards for submitting Malicious Vote evidence: 50BNB. Only relayers can submit a slash request on BSC with the evidence of Malicious Vote of BSC for now, which should contain the 2 votes, signed by the offending validator. Open access to anyone is planned.
+1. **10000 staked BNB** will be slashed for the validator.
+2. The Double-Sign Jail time is **2^63-1 seconds**, which means the candidate cannot become a validator anymore.
 
-
-#### Loss for Offline Slash:
+> Note: **Rewards for submitting Malicious Vote evidence:** **50BNB**. Only relayers can submit a slash request on BSC with the evidence of Malicious Vote of BSC for now, which should contain the **2 votes**, signed by the offending validator. Open access to anyone is planned.
 
 
-If a validator missed more than 50 blocks every 24h, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. If it missed more than 150 blocks every 24h, then this will be propagated back to BC where another Slashing will happen
+#### Loss for Offline Slash
 
-Penalty for Offline Slash:
+If a validator missed more than **50 blocks** every **24 hours**, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. If it missed more than **150 blocks** every **24 hours**, then this will be propagated back to BC where another slashing will happen
 
-1. 50 staked BNB will be slashed for the validator.
-2. The Downtime Jail time is 2 days, which means the candidate can send a `unjail` transaction to become a candidate again.
+##### Penalty for Offline Slash
 
+1. **50 staked BNB** will be slashed for the validator.
+2. The Downtime Jail time is **2 days**, which means the candidate can send a `unjail` transaction to become a candidate again.
 
 
 #### Loss for Too Low self-delegation

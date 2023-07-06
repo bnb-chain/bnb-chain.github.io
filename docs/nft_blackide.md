@@ -33,7 +33,7 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 *	Ensure that you have the Metamask Wallet extension installed and running on our browser.
 *	Configure the Metamask wallet for use with the BSC Testnet. Use the following details to add the BSC Testnet. For further details, refer here.
 *	Network Name: BSC Testnet
-*	RPC URL: https://data-seed-prebsc-1-s1.binance.org:8545/
+*	RPC URL: https://data-seed-prebsc-1-s1.bnbchain.org:8545
 *	Chain ID: 97
 *	Currency Symbol: BNB
 *	Block Explorer URL: https://testnet.bscscan.com 
@@ -71,10 +71,11 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 ## Write your smart contract code
 8.	Copy the following code into your smart contract file. We have used the contract code from this [repo](https://github.com/RumeelHussainbnb/ERC721_NFT/blob/main/BSC-NFT.sol).
 9.	Remember to change the ```MINT_PRICE```, ```MAX_SUPPLY```, ```name```, and ```symbol``` of the token as per your need. Also, remember to change the ```_baseURI``` as per your token.
-10.	
+
 ![image](https://user-images.githubusercontent.com/93580180/177949895-a095fdb5-f770-4530-84f6-8854a0d7a5eb.png)
 
 ## Edit default project settings
+
 10.	Click on the config.json file to change the default setting. Change the main file name to the name of your contract, BSC-NFT.sol in our case. Similarly, change the name of the smart contract to deploy, BSCNFT.json in our case. 
 
 ![image](https://user-images.githubusercontent.com/93580180/177948095-b6a905da-792c-47da-86d6-8a5d5db6a40b.png)

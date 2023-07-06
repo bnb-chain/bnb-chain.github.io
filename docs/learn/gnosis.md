@@ -63,7 +63,7 @@ Please read the list [here](https://docs.gnosis.io/safe/docs/intro_projects/)
 
 - Review safe settings
 
-![img](https://lh5.googleusercontent.com/Y6iP6Nbw4toivC483_OnL9Jkz0b8IOOcUNnfgU_RTY7VAdYSk5uM-nDQQGxpw1bcDfZ6kIV8XDTXw7rff9tILf8QPGcrfeFE0KfzUBidFcUb6db4tbbeH_sXdYTITri7I3Y83nCb" alt="img" style="zoom: 50%;" />
+![img](https://lh5.googleusercontent.com/Y6iP6Nbw4toivC483_OnL9Jkz0b8IOOcUNnfgU_RTY7VAdYSk5uM-nDQQGxpw1bcDfZ6kIV8XDTXw7rff9tILf8QPGcrfeFE0KfzUBidFcUb6db4tbbeH_sXdYTITri7I3Y83nCb)
 
 
 - Sign transactions to create your safe
@@ -82,9 +82,7 @@ Great! You have created a Gnosis safe.
 
 - Click on "Receive" to get QR code for receiving funds
 
-![img](https://lh6.googleusercontent.com/MvPGRkXPlmPXKgNI0xVRDHW0ZNCup_gJAN1kMWKlYW2ampd8QJ-vAlLZMuTQW1w9vWqe25Q9pEaNfzImntJvUPqoBLhqkp7uRid0maDJInYNVDYHNbe6l_YG45Rvfs7IFjrjrg05)
-
-
+<img src="https://lh6.googleusercontent.com/MvPGRkXPlmPXKgNI0xVRDHW0ZNCup_gJAN1kMWKlYW2ampd8QJ-vAlLZMuTQW1w9vWqe25Q9pEaNfzImntJvUPqoBLhqkp7uRid0maDJInYNVDYHNbe6l_YG45Rvfs7IFjrjrg05" style={{zoom:"50%"}}/>
 
 ### Send Funds from Multi-sig Wallet
 
@@ -95,64 +93,47 @@ Great! You have created a Gnosis safe.
 
 - Click on "Send" to create a transaction
 
-![img](https://lh5.googleusercontent.com/Yrvc4kToZj-9z2RZWWFMPbkTRrRIpYdNXgg0Ybo5OU6SKNwjn7QpRxl21MbwiSEe-4oKxnbwIzH70Ga-HZ6eHcR2gCsX17Bvx09dHEc7NbWo84uR-MFzbYEE88Eh4rSOA-OllarZ)
+<img src="https://lh5.googleusercontent.com/Yrvc4kToZj-9z2RZWWFMPbkTRrRIpYdNXgg0Ybo5OU6SKNwjn7QpRxl21MbwiSEe-4oKxnbwIzH70Ga-HZ6eHcR2gCsX17Bvx09dHEc7NbWo84uR-MFzbYEE88Eh4rSOA-OllarZ" style={{zoom:"50%"}}/>
 
 - Submit transaction
 
-![img](https://lh3.googleusercontent.com/qDOpx1PjjJvc6bULaRgD9iablaG07hH4VXqupshvLVvGN-RMUMoMI6uPOQFomz8wYdiA7zrCov4GjRmGAoluHx43WakVJMOidSTQB7ib-7NLqw_Yp7dcV8Ap8v4c4PFZJgzX0v0D)
-
-
+<img src="https://lh3.googleusercontent.com/qDOpx1PjjJvc6bULaRgD9iablaG07hH4VXqupshvLVvGN-RMUMoMI6uPOQFomz8wYdiA7zrCov4GjRmGAoluHx43WakVJMOidSTQB7ib-7NLqw_Yp7dcV8Ap8v4c4PFZJgzX0v0D" style={{zoom:"50%"}}/>
 
 - Signing your request
 
-![img](https://lh4.googleusercontent.com/1ma8Hs2KZmXvofn1sY_isWkLKkVUOVn9aCglf6A6KYwRkGWgoWzrmjvt2JjpmzkdwtvWcUcCz9uFfh0Ed03nm7i57QtNHa9RNfXtGDU4IBlQ34nMH6W-YqaBvpjSVemz3pBLFmTx)
-
-
+<img src="https://lh4.googleusercontent.com/1ma8Hs2KZmXvofn1sY_isWkLKkVUOVn9aCglf6A6KYwRkGWgoWzrmjvt2JjpmzkdwtvWcUcCz9uFfh0Ed03nm7i57QtNHa9RNfXtGDU4IBlQ34nMH6W-YqaBvpjSVemz3pBLFmTx" style={{zoom:"50%"}}/>
 
 - Another key person needs to connect with Gnosis to confirm this transaction
 
-
-
-![img](https://lh6.googleusercontent.com/aCUpAR271_k_G3WJYsUAC8MtknIo9wsCTXbrMYsueZXV1prsTQPVy3YhUMGHRfroThQjLXfcOliaqevVfQzVctD_4taBsJJcaoW5eJ-GO5f6J2NRfNSmv4Ds5moVIGwMeAK_9zCE)
-
-
+<img src="https://lh6.googleusercontent.com/aCUpAR271_k_G3WJYsUAC8MtknIo9wsCTXbrMYsueZXV1prsTQPVy3YhUMGHRfroThQjLXfcOliaqevVfQzVctD_4taBsJJcaoW5eJ-GO5f6J2NRfNSmv4Ds5moVIGwMeAK_9zCE" style={{zoom:"50%"}}/>
 
 - Approve Transaction
 
-
-
-![img](https://lh6.googleusercontent.com/6MRCgkiZmveRdKfUUKBGnQTIoXvDEoW1YXcB456PqgF5k1lPHAwfCI_8yoVFSdqG9dt-Pe7oGu0-Bkcl3xM265z0icLBdxQA2RB8Yrd9KGLbZ3PuIaV3Ot4F8S-6Bb3z_t3oRVZt)
-
-
+<img src="https://lh6.googleusercontent.com/6MRCgkiZmveRdKfUUKBGnQTIoXvDEoW1YXcB456PqgF5k1lPHAwfCI_8yoVFSdqG9dt-Pe7oGu0-Bkcl3xM265z0icLBdxQA2RB8Yrd9KGLbZ3PuIaV3Ot4F8S-6Bb3z_t3oRVZt" style={{zoom:"50%"}}/>
 
 - Sign transaction
 
-![img](https://lh6.googleusercontent.com/tGBjZJt6OfWkdlfy7xL2PmHzb8cqWfO6gZYM2WNolVPc5EuF7P2CsiVoqKose2g0QZH0EseuANrmpI46kqTSibDpr0pW98d6QOfKVm63RWLoNOu_92nO91vQBem6tSr6UEL61oJY)
-
-
+<img src="https://lh6.googleusercontent.com/tGBjZJt6OfWkdlfy7xL2PmHzb8cqWfO6gZYM2WNolVPc5EuF7P2CsiVoqKose2g0QZH0EseuANrmpI46kqTSibDpr0pW98d6QOfKVm63RWLoNOu_92nO91vQBem6tSr6UEL61oJY" style={{zoom:"50%"}}/>
 
 - Transaction will be sent after the second signature is sent
 
 ![img](https://lh3.googleusercontent.com/q3Tijw1a03N0977IhkA9wKvLTupHoGw8URsZbz7kUt6eQI2valiYwmMp_96w8Q21fsEboUcLw4khooEyGOx-RDj0fXmJlWWdnP_Oh1M1mmX71O4vZe-HYywzo5Nh7I6GSRUO-i6J)
 
 
-
 - The others may reject the transaction, they only need to send a different transaction
 
+<img src="https://lh6.googleusercontent.com/dtRFFmHa6jWGFTk-Xw2dYEZQNvg_j8GmpyJ0E_0uD3kQGVM00YD0KUbhQYdBA2Iz5DYebpLwvwQpCFd8sijvRAF4WthKI_ZqkbZjDVL7Qu-x4yRD6I7QEHj0GECzjELi1J1Fw84Q" style={{zoom:"50%"}}/>
 
-
-![img](https://lh6.googleusercontent.com/dtRFFmHa6jWGFTk-Xw2dYEZQNvg_j8GmpyJ0E_0uD3kQGVM00YD0KUbhQYdBA2Iz5DYebpLwvwQpCFd8sijvRAF4WthKI_ZqkbZjDVL7Qu-x4yRD6I7QEHj0GECzjELi1J1Fw84Q)
 
 ### Load existing Safe
 
 - Select "Load Existing Safe"
 
-![img](https://lh4.googleusercontent.com/DYaHT6oyXmvoHIg4jl9XHI1wIWPwvwKQe2aWszProoaTaFu0W1Zoosfw_1hMBiJeRXbJjoIeLiznp5lUxYLV5EtsgptGfD8DVyXLoFsNZn19D4crxXljyOlmvhfr3hIxkkR2_xHI)
+<img src="https://lh4.googleusercontent.com/DYaHT6oyXmvoHIg4jl9XHI1wIWPwvwKQe2aWszProoaTaFu0W1Zoosfw_1hMBiJeRXbJjoIeLiznp5lUxYLV5EtsgptGfD8DVyXLoFsNZn19D4crxXljyOlmvhfr3hIxkkR2_xHI" style={{zoom:"50%"}}/>
 
 - Input address
 
 ![img](https://lh5.googleusercontent.com/lNSIVde-IGWoW7fxcWsR0RblUIo9ppM8uXBvWOxtEfES4vS7bzvszkseNuXp9mx2p583keqMM3KkmZysy1Q4kSO9lgJohM1a5zxbptcX3V2A8ntXCLJhcJwW8PlAV-Hr5FqACZtJ)
-
 
 
 - Verify owner

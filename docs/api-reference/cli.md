@@ -103,7 +103,7 @@ For instance, if you want to send a token transfer transaction, you can use the 
 * Create a local key
 
 Before creating a new ledger key, make sure you have performed these steps:
-1. Ledger device is installed binance ledger app and the version should be later or equal to **v1.1.3**.
+1. Ledger device is installed, binance ledger app and the version should be later or equal to **v1.1.3**.
 2. Connect your ledger device to your machine and input pin code to unlock it.
 3. Open the binance ledger app on your ledger device.
 ```
@@ -197,8 +197,6 @@ For detailed usage, you can refer to:
 - [slashing](../beaconchain/learn/bc-slashing.md)
 - [BNB Smart Chain Governance](../learn/bsc-gov.md)
   
-
-
 
 ## Use CLI for Different Blockchains
 

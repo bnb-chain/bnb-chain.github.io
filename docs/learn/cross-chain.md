@@ -6,9 +6,9 @@ hide_table_of_contents: false
 # Cross-Chain Communication
 
 Cross-chain communication is the key foundation to allow the community to take advantage of the dual chain structure:
-- users are free to create any tokenization, financial products, and digital assets on BSC or BC as they wish.
-- the items on BSC can be manually and programmingly traded and circulated in a stable, high throughput, lighting fast and friendly environment of BC.
-- users can operate these in one UI and tooling ecosystem.
+- Users are free to create any tokenization, financial products, and digital assets on BSC or BC as they wish.
+- The items on BSC can be manually and programmingly traded and circulated in a stable, high throughput, lighting fast and friendly environment of BC.
+- Users can operate these in one UI and tooling ecosystem.
 
 ## Architecture Diagram
 ![img](../../static/img/cross-transfer-architecture.png)

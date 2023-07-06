@@ -15,7 +15,7 @@ Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/node/r
 
 | **Parameter Name**          | **Example**                        | **Explanation**                                                  | **Required** |
 | ---------------------------- | ------------------------------------ | ------------------------------------------------------------ | ------------ |
-| --chan-id                    | Binance-Chain-XXX                    | the chain id of binance  chain                               | Yes          |
+| --chain-id                   | Binance-Chain-XXX                    | the chain id of binance  chain                               | Yes          |
 | --from                       | bnb1xxx/tbnb1xxx                     | address of private key  with which to sign this tx, also be used as the validator operator address | Yes          |
 | --address-delegator          | bnb1xxx/tbnb1xxx                     | optional, bech32 address  of the self-delegator. if not provided, --from address will be used as  self-delegator. | No           |
 | --amount                     | 2000000000000:BNB  (means 20000 BNB) | self-delegation amount,  it has 8 decimal places             | Yes          |
@@ -132,7 +132,7 @@ Verify your transaction in [mainnet-explorer](https://explorer.binance.org/) or 
 
 | **Parameter Name**| **Example**                     | **Explanation**                                                 | **Required** |
 | ------------------ | -------------------------------- | ------------------------------------------------------------ | ------------ |
-| --chan-id          | Binance-Chain-XXX                | the chain id of binance  chain                               | Yes          |
+| --chain-id         | Binance-Chain-XXX                | the chain id of binance  chain                               | Yes          |
 | --from             | bnb1xxx/tbnb1xxx                 | address of private key  with which to sign this tx, that also indicate the validator that you want to  edit. | Yes          |
 | --side-chain-id    | chapel                           | chain-id of the side  chain the validator belongs to         | Yes          |
 | --moniker          | myval1                           | validator name (default  "[do-not-modify]")                  | No           |
@@ -160,7 +160,7 @@ bash tbnbcli staking bsc-edit-validator --chain-id Binance-Chain-Ganges --side-c
 
 | **Parameter Name**| **Example**             | **Explanation**                                                 | **Required** |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------------ |
-| --chan-id          | Binance-Chain-XXX        | the chain id of binance  chain                               | Yes          |
+| --chain-id         | Binance-Chain-XXX        | the chain id of binance  chain                               | Yes          |
 | --from             | bnb1xxx/tbnb1xxx         | address of private key  with which to sign this tx, that is also the delegator address | Yes          |
 | --side-chain-id    | chapel                   | chain-id of the side  chain the validator belongs to         | Yes          |
 | --validator        | bva1xxx                  | bech32 address of the  validator, starts with “bva”          | Yes          |
@@ -184,7 +184,7 @@ tbnbcli staking bsc-delegate --chain-id Binance-Chain-Ganges --side-chain-id cha
 
 | **Parameter Name**     | **Example**             | **Explanation**                                                 | **Required** |
 | ----------------------- | ------------------------ | ------------------------------------------------------------ | ------------ |
-| --chan-id               | Binance-Chain-XXX        | the chain id of binance  chain                               | Yes          |
+| --chain-id              | Binance-Chain-XXX        | the chain id of binance  chain                               | Yes          |
 | --from                  | bnb1xxx/tbnb1xxx         | address of private key  with which to sign this tx, that is also the delegator address | Yes          |
 | --side-chain-id         | chapel                   | chain-id of the side  chain the validator belongs to         | Yes          |
 | --addr-validator-source | bva1xxx                  | bech32 address of the  source validator, starts with “bva”   | Yes          |
@@ -210,7 +210,7 @@ tbnbcli staking bsc-redelegate --chain-id Binance-Chain-Ganges --side-chain-id c
 
 | **Parameter Name**| **Example**             | **Explanation**                                                 | **Required** |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------------ |
-| --chan-id          | Binance-Chain-XXX        | the chain id of binance  chain                               | Yes          |
+| --chain-id         | Binance-Chain-XXX        | the chain id of binance  chain                               | Yes          |
 | --from             | bnb1xxx/tbnb1xxx         | address of private key  with which to sign this tx, that is also the delegator address | Yes          |
 | --side-chain-id    | chapel                   | chain-id of the side  chain the validator belongs to         | Yes          |
 | --validator        | bva1xxx                  | bech32 address of the  validator, starts with “bva”          | Yes          |
@@ -231,7 +231,7 @@ bnbcli staking bsc-unbond --chain-id Binance-Chain-Ganges --side-chain-id chapel
 
 | **Parameter Name**| **Example**      | **Explanation**                                        | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | chapel            | chain-id of the side  chain the validator belongs to | Yes          |
 
 ### Example
@@ -248,7 +248,7 @@ bnbcli staking side-validator bva1hz5sg3u0v4gq2veyw5355z7qx6y7uuqhcuzf3f  --side
 
 | **Parameter Name**| **Example**      | **Explanation**                                        | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | chapel            | chain-id of the side  chain the validator belongs to | Yes          |
 
 ### Example
@@ -266,7 +266,7 @@ bnbcli staking side-delegation bnb1hz5sg3u0v4gq2veyw5355z7qx6y7uuqhcqre0d bva1hz
 
 | **Parameter Name**| **Example**      | **Explanation**                                        | **required** |
 | ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | chapel            | chain-id of the side  chain the validator belongs to | Yes          |
 
 ### Example
@@ -287,7 +287,7 @@ bnbcli staking side-unbonding-delegation [delegator-addr] [operator-addr] [flags
 
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 ### Example
@@ -309,7 +309,7 @@ bnbcli staking side-unbonding-delegations [delegator-addr] [flags]
 
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 ### Example
@@ -330,7 +330,7 @@ bnbcli staking side-val-unbonding-delegation [operator-addr] [flags]
 
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 ### Example
@@ -350,7 +350,7 @@ bnbcli staking side-redelegation [delegator-addr] [src-operator-addr] [dst-opera
 
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 ### Example
@@ -371,7 +371,7 @@ bnbcli staking side-redelegations [delegator-addr] [flags]
 
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 ### Example
@@ -390,7 +390,7 @@ bnbcli staking side-val-redelegations [operator-addr] [flags]
 ```
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 ### Example
@@ -406,7 +406,7 @@ bnbcli staking side-val-redelegations bva12hlquylu78cjylk5zshxpdj6hf3t0tahqmr98n
 
 | **parameter  name** | **Example**      | **Explanation**                                       | **required** |
 | ------------------- | ----------------- | --------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                       | Yes          |
 | --side-chain-id     | bsc/chapel            | chain-id of the side chain the validator belongs to | Yes          |
 
 
@@ -423,7 +423,7 @@ bnbcli staking     side-pool --side-chain-id=bsc --chain-id=Binance-Chain-Tigris
 
 | **parameter  name** | **Example**      | **Explanation**                                                | **required** |
 | ------------------- | ----------------- | ------------------------------------------------------------ | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                                | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                                | Yes          |
 | --side-chain-id     | chapel            | chain-id of the side chain the validator belongs to          | Yes          |
 | --top               | 10                | number of validators to be returned. set as maximum number of  validators  by default | Option       |
 
@@ -439,7 +439,7 @@ bnbcli staking side-top-validators --top 10 --side-chain-id=bsc --chain-id=Binan
 
 | **Parameter Name**| **Example**     | **Explanation**                                                 | **Required** |
 | ------------------- | ----------------- | ------------------------------------------------------------ | ------------ |
-| --chan-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                                | Yes          |
+| --chain-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                                | Yes          |
 | --side-chain-id     | chapel            | chain-id of the side chain the validator belongs to          | Yes          |
 | --jail-involved     | true              | if true, meaning that the jailed validators will be involved to count | Option       |
 

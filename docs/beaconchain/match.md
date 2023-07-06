@@ -39,8 +39,7 @@ Please check [this article](match-examples.md) with detailed examples for this i
 After the execution price is concluded. Order match would happen in sequence of the price and time, i.e.
 
 - Orders with best bid price would match with order with best ask price;
-- If the orders on one price cannot be fully filled by the opposite orders:
-for the orders with the same price, the orders from the earlier blocks would be selected and filled first
+- If the orders on one price cannot be fully filled by the opposite orders for the orders with the same price, the orders from the earlier blocks would be selected and filled first
 - If the orders have the same price and block height, and cannot be fully filled, the execution
 would be allocated to each order in proportion to their quantity (floored if the number has a partial lot).
 If the allocation cannot be accurately divided, a deterministic algorithm would guarantee that no consistent

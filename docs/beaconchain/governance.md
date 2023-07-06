@@ -41,7 +41,7 @@ Please refer to [this](https://docs.bnbchain.org/docs/learn/bsc-gov/#workflow) f
 
 | **parameter name** | **example**                                | **comments**                                                                              | **required** |
 |--------------------|--------------------------------------------|-------------------------------------------------------------------------------------------|--------------|
-| --chan-id          | Binance-Chain-XXX                          | the chain id of BNB Beacon Chain                                                              | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of BNB Beacon Chain                                                              | Yes          |
 | --status           | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No           |
 | --voter            | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                                                     | No           |
 
@@ -58,7 +58,7 @@ Please refer to [this](https://docs.bnbchain.org/docs/learn/bsc-gov/#workflow) f
 
 | **parameter name** | **example**       | **comments**                         | **required** |
 |--------------------|-------------------|--------------------------------------|--------------|
-| --chan-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain         | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain         | Yes          |
 | --proposal-id      | 1                 | proposalID of proposal being queried | Yes          |
 
 ```bash
@@ -85,7 +85,7 @@ $ ./bnbcli gov query-proposal --chain-id Binance-Chain-Tigris --node https://dat
 
 | **parameter name** | **example**       | **comments**                 | **required** |
 |--------------------|-------------------|------------------------------|--------------|
-| --chan-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain | No           |
+| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain | No           |
 
 ```bash
 ## mainnet
@@ -102,7 +102,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 | **parameter name**   | **example**       | **comments**                                      | **required** |
 |:---------------------|:------------------|:--------------------------------------------------|:-------------|
-| --chan-id            | Binance-Chain-XXX | the chain id of BNB Beacon Chain                      | Yes          |
+| --chain-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                      | Yes          |
 | --deposit            | 200000000000:BNB  | deposit of proposal                               | Yes          |
 | --from               | alice             | Name or address of private key with which to sign | Yes          |
 | --title              | "list"            | title of proposal                                 | Yes          |
@@ -130,7 +130,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 | **parameter name**   | **example**       | **comments**                                      | **required** |
 |:---------------------|:------------------|:--------------------------------------------------|:-------------|
-| --chan-id            | Binance-Chain-XXX | the chain id of BNB Beacon Chain                      | Yes          |
+| --chain-id           | Binance-Chain-XXX | the chain id of BNB Beacon Chain                      | Yes          |
 | --deposit            | 200000000000:BNB  | deposit of proposal                               | Yes          |
 | --from               | alice             | Name or address of private key with which to sign | Yes          |
 | --title              | "list"            | title of proposal                                 | Yes          |
@@ -152,7 +152,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 | **parameter name** | **example**           | **comments**                                      | **required** |
 |:-------------------|:----------------------|:--------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX     | the chain id of BNB Beacon Chain                      | Yes          |
+| --chain-id         | Binance-Chain-XXX     | the chain id of BNB Beacon Chain                      | Yes          |
 | --deposit          | 200000000000:BNB      | deposit of proposal                               | Yes          |
 | --from             | alice                 | Name or address of private key with which to sign | Yes          |
 | --title            | "test csc change"     | title of proposal                                 | Yes          |
@@ -171,7 +171,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 | **parameter name** | **example**       | **comments**                                 | **required** |
 |--------------------|-------------------|----------------------------------------------|--------------|
-| --chan-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain                 | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain                 | Yes          |
 | --proposal-id      | 1                 | proposalID of proposal being queried         | Yes          |
 | --option           | Yes               | vote option {yes, no, no_with_veto, abstain} | Yes          |
 
@@ -188,7 +188,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 | **parameter name** | **example**       | **comments**                         | **required** |
 |--------------------|-------------------|--------------------------------------|--------------|
-| --chan-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain         | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain         | Yes          |
 | --proposal-id      | 1                 | proposalID of proposal being queried | Yes          |
 | --deposit          | Yes               | amount of deposit                    | Yes          |
 
@@ -205,7 +205,7 @@ Note: this kind of proposal is not supported on mainnet and testnnet now.
 
 | **parameter name** | **example**       | **comments**                         | **required** |
 |--------------------|-------------------|--------------------------------------|--------------|
-| --chan-id          | Binance-Chain-XXX | the chain id of BNB Beacon Chain         | Yes          |
+| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain         | Yes          |
 | --proposal-id      | 1                 | proposalID of proposal being queried | Yes          |
 
 ```bash

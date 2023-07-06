@@ -59,7 +59,7 @@ Congratulations! you have create your MetaMask account!
 
 2. Add a new network
    
-<img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ" alt="img" style={{zoom:"30%"}}/>
+<img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ" alt="img" style={{zoom:"80%"}}/>
 
   * **Testnet**
     * [RPC URLs](rpc.md)

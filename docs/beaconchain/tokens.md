@@ -1,7 +1,7 @@
 # Asset Management
 
 ## Introduction
-Assets are stored as `tokens` on BNB Beacon Chain , and the below management actions are available. All the assets are complied with [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md).
+Assets are stored as `tokens` on BNB Beacon Chain and the below management actions are available. All the assets are complied with [BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md).
 
 The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of these operations can be executed. The fees for testnet and mainnet are different.
 
@@ -17,15 +17,15 @@ An issuance transaction contains:
 
 > Note: [BEP87](https://github.com/bnb-chain/BEPs/pull/87) is implemented after Lagrange Upgrade. It changes the minimal symbol length to **two**
 
-* Source Address: the sender address of the transaction and it will become the `owner` of the token, all created tokens will be in this account.
-* Token Name: it is the long official name, such as "Build N Build Coin". It is limited to 32 characters.
-* Symbol: identifier of the token, limited to alphanumeric characters and is case insensitive, for example, "BNB". The length of symbol should be between 2 and 8. <br/>
+* **Source Address:** the sender address of the transaction and it will become the `owner` of the token, all created tokens will be in this account.
+* **Token Name:** it is the long official name, such as "Build N Build Coin". It is limited to 32 characters.
+* **Symbol:** identifier of the token, limited to alphanumeric characters and is case insensitive, for example, "BNB". The length of symbol should be between 2 and 8. <br/>
 "B" suffixed symbol is also allowed for migrating tokens that already exist on other chains.<br/>
 The symbol doesn't have to be unique, "-" followed by random 3 letters will be appended to the provided symbol to avoid uniqueness constraint.<br/>
 Those 3 letters are the first three letters of tx hash of the `issue` transaction.<br/>
 For example, "NNB-B90". **Only BNB does not have this suffix.**<br/>
-* Total Supply: an int64 boosted by **1e8** for decimal part. The max total supply is 90 billion.
-* Mintable: that means whether this token can be minted in the future. To set the tokes to be mintable, you need to add `--mintable`, otherwise just omit this field to set this token to be non-mintable.
+* **Total Supply:** an int64 boosted by **1e8** for decimal part. The max total supply is 90 billion.
+* **Mintable:** that means whether this token can be minted in the future. To set the tokes to be mintable, you need to add `--mintable`, otherwise just omit this field to set this token to be non-mintable.
 
 Example on **mainnet**:
 

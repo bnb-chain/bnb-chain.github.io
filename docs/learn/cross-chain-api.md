@@ -5,9 +5,9 @@ hide_table_of_contents: false
 ---
 # Cross-Chain API
 
-To facilitate querying cross chain transactions between BNB Beacon Chain and BNB Smart Chain, following apis are provided.
+To facilitate querying cross chain transactions between BNB Beacon Chain and BNB Smart Chain, following APIs are provided.
 
-Mainnet base path: <https://api.bnbchain.org>
+**Mainnet base path:** <https://api.bnbchain.org>
 
 **Version:** 1.0.0
 

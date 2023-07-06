@@ -43,17 +43,17 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 <!--* [Moralis](https://moralis.io/): <https://moralis.io/speedy-nodes/>-->
 
-* NodeReal: <https://docs.nodereal.io/nodereal/meganode/introduction>
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
 
-* Ankr: <https://app.ankr.com/api>
+* **Ankr:** <https://app.ankr.com/api>
 
-* Chainstack: <https://chainstack.com/build-better-with-binance-smart-chain/>
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
 
-* GetBlock: <https://getblock.io/nodes/bsc>
+* **GetBlock:** <https://getblock.io/nodes/bsc>
 
-* QuickNode: <https://quicknode.com>
+* **QuickNode:** <https://quicknode.com>
   
-* BlockVision: <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
 
 ### Starting HTTP JSON-RPC
 

@@ -17,7 +17,8 @@ to catch up with core network.
 
 ### Platforms
 
-We support running light client node on `Mac OS X`, `Windows` and `Linux`.<br/>
+We support running light client node on `Mac OS X`, `Windows` and `Linux`.
+
 The light client will soon be open sourced, afterwards you can cross compile light client binary and run it on other platforms.
 
 ### Requirements
@@ -26,10 +27,9 @@ The light client will soon be open sourced, afterwards you can cross compile lig
 
 ## Run a light client node
 
-Download:
-[node repo](https://github.com/bnb-chain/node/releases)
+* Download [node repo](https://github.com/bnb-chain/node/releases)
 
-Download the configuration files according to the network you want to join in (mainnet_config.zip/testnet_config.zip).
+* Download the [configuration files](mainnet_config.zip/testnet_config.zip) according to the network you want to join in.
 
 Help info:
 
@@ -63,15 +63,22 @@ Start the light client node according to the Platform. Replace the `platform` va
 ./{{platform}}/lightd --chain-id "{chain-id}" --node tcp://{full node addr}:80 > node.log  &
 ```
 
-There are two required parameters to start a light client node: `chain id` and `full node addr`.<br/>
-The `chain id` of the network that you want join in.<br/>
-You can find chain id at [genesis file in test network](https://github.com/bnb-chain/node/releases/download/v0.9.1/testnet_config.zip)
-or [genesis file in prod network](https://github.com/bnb-chain/node/releases/download/v0.9.1/mainnet_config.zip).<br/>
-The `full node addr` field can be an address of any full node that you have deployed.<br/>
-You can refer to [Run a BNB Beacon Chain  full node](fullnode.md) to get more details.<br/>
+There are two required parameters to start a light client node: `chain id` and `full node addr`.
 
-We supply a bunch of full nodes that you can connect to for both mainnet and testnet.<br/>
-You cat get full nodes info through a simple python script(notice to replace domain according to different network):<br/>
+The `chain id` of the network that you want join in.
+
+You can find chain id at [genesis file in test network](https://github.com/bnb-chain/node/releases/download/v0.9.1/testnet_config.zip)
+or [genesis file in prod network](https://github.com/bnb-chain/node/releases/download/v0.9.1/mainnet_config.zip).
+
+The `full node addr` field can be an address of any full node that you have deployed.
+
+You can refer to [Run a BNB Beacon Chain  full node](fullnode.md) to get more details.
+
+
+We supply a bunch of full nodes that you can connect to for both mainnet and testnet.
+
+You cat get full nodes info through a simple python script(notice to replace domain according to different network):
+
 
 ```python
 import requests, json
@@ -94,5 +101,6 @@ print (seeds)
 
 ## Working with the light client
 
-Light client has the same RPC interface as [rpc-api](api-reference/node-rpc.md).<br/>
+Light client has the same RPC interface as [rpc-api](api-reference/node-rpc.md).
+
 The default port of light client is `27147`.

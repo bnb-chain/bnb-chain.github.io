@@ -2,12 +2,9 @@
 
 BNB Beacon Chain CLI is one of several ways to interact with BNB Beacon Chain.
 
-BNB Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new
-key or restore your key from mnemonic words. And you can list your keys and show specified key info.
+BNB Beacon Chain CLI can be used as a local wallet, you can manage your keys via Binance CLI. You can add a new key or restore your key from mnemonic words. And you can list your keys and show specified key info.
 
-With BNB Beacon Chain CLI, you can send transactions to BNB Beacon Chain, like transferring tokens,
-issuing tokens and so on. Actually you can do almost everything you can do with BNB Beacon Chain web wallet. What is
-more, you can propose to list trading pairs and join chain governance.
+With BNB Beacon Chain CLI, you can send transactions to BNB Beacon Chain, like transferring tokens, issuing tokens and so on. Actually you can do almost everything you can do with BNB Beacon Chain web wallet. What is more, you can propose to list trading pairs and join chain governance.
 
 In addition, you can do some simple queries through CLI. For example, you can query your account's
 balance, transaction detail by transaction hash and etc.

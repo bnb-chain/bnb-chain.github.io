@@ -300,7 +300,7 @@ The `fee_for`parameter indicate the different distribution way:
 
 ## How to query fees in every block
 
-The rewards for BNB Chain  validators are displayed in explorer. For example: in block [59947302](https://explorer.binance.org/block/59947302), validator [bnb1tpagqqqx36gq09kzw4f5a3a9sk3tq54dpl5ldn](https://explorer.binance.org/address/bnb1tpagqqqx36gq09kzw4f5a3a9sk3tq54dpl5ldn) get `0.00005 BNB` as rewards.
+The rewards for BNB Chain  validators are displayed in explorer. For example: in block [59947302](https://explorer.bnbchain.org/block/59947302), validator [bnb1tpagqqqx36gq09kzw4f5a3a9sk3tq54dpl5ldn](https://explorer.bnbchain.org/address/bnb1tpagqqqx36gq09kzw4f5a3a9sk3tq54dpl5ldn) get `0.00005 BNB` as rewards.
 
 If you have a fullnode running, you can also get the rewards details exported. To achieve this, you need to set `publishBlockFee` to be true in your `app.toml`. To receive rewards stream, there aretwo options `publishKafka` and `publishLocal`
 

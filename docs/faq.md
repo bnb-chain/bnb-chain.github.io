@@ -169,7 +169,7 @@ Once you've added the asset to your wallet, you will be able to select different
 
 **For Metamask wallet users**
 
-You'll need to add BNB Smart Chain (BSC) mainnet network https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain
+You'll need to add BNB Smart Chain (BSC) mainnet network, refer [here](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain) for more details. 
 
 Then add tokens manually: https://docs.yearn.finance/how-to-guides/how-to-add-a-custom-token-to-metamask
 
@@ -184,32 +184,28 @@ You can remedy this by sending 0.001 BNB to that account in order to be able to 
 
 ## How to Recover Crypto Transferred to the Wrong Network on Binance?
 
-Please read this article: https://academy.binance.com/en/articles/how-to-recover-crypto-transferred-to-the-wrong-network-on-binance
+Please read [this](https://academy.binance.com/en/articles/how-to-recover-crypto-transferred-to-the-wrong-network-on-binance) article
 
-## Extension Wallet Update : Chrome 
+## Extension Wallet Update: Chrome 
 It is crucial that you always have the latest wallet version installed. If you know that a new version of an extension is out but Chrome hasn’t updated it, here’s how to do it manually.
 
 1. Start Google Chrome.
    
-2. Click the vertical ellipsis icon ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67023397042/original/wFxPkU0MkBsPoaTd8oZr3ffcpAoX6i4_4g.png?1633502662) on the browser toolbar.
+2. Click the vertical ellipsis icon on the browser toolbar.
 
-3. Select More Tools -> Extensions.
+3. Click on "Extensions" -> "Manage Extensions".
 
 4. Click the Developer Mode button on the right side of the header
 
-5. From there, you should see the “Update” button pop right up.
-
-![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67023397043/original/jZ4fzIgSe5JbszoWQQ3NDi19ZJRV0vpGXw.jpeg?1633502665)
+5. From there, you should see the “Update” button below the search bar. Click on it to update the extensions.
 
 ## Extension Wallet Update : Firefox 
 
 It is crucial that you have the latest version installed. 
 
-1. Click the menu button ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67023397186/original/u6iq0Le_iTgiAVUsvbTJexNZKNgrxlGTug.png?1633502819), click Add-ons and Themes and select Extensions.
+1. Click the menu button, click "Add-ons and Themes" and select "Extensions".
 
-2. Click the gear icon ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67023397187/original/I9CD5HUT4HYb8kRfjx9g3mSuq0yrRJdgZA.png?1633502819) in the upper-right area of the Extensions panel.
-
-![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67023397188/original/JTMKK6DuYM0yDYW_m9RcHsEfCtaOVZj-Sg.png?1633502820)
+2. Click the gear icon in the upper-right area of the Extensions panel.
 
 3. Choose one of the options below:
 
@@ -268,4 +264,4 @@ Please read this doc: https://binance-wallet.gitbook.io/binance-chain-wallet/bew
 
 ## How to get support about technical issue on full node?
 
-Join our node support discord channel : https://discord.com/channels/789402563035660308/912296664004452362
+Join our [node support discord channel](https://discord.com/channels/789402563035660308/912296664004452362)

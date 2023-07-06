@@ -46,42 +46,32 @@ This contract implements tendermint header verification algorithm. The input par
 This contract implements a [Tendermint merkle proof verification algorithm](https://github.com/tendermint/tendermint/blob/master/docs/architecture/adr-026-general-merkle-proof.md).
 
 ### Build-in System Contract
-* **Merkle Proof Verification Library**
+#### **Merkle Proof Verification Library**
+This library provides an util to verify merkle proof from BC. Contracts which need to verify Merkle proof just need to import this library.
 
-    This library provides an util to verify merkle proof from BC. Contracts which need to verify Merkle proof just need to import this library.
+#### **TokenHub Contract**
+This contract focuses on cross chain token transfer.
 
-* **TokenHub Contract**
+#### **TokenManager Contract**
+This contract focuses on binding and unbinding tokens on two chains.
 
-    This contract focuses on cross chain token transfer.
+#### **BSCValidatorSet Contract**
+It is a watcher of validators change of BSC on BNB Beacon Chain. It will interact with light client contracts to verify the interchain transaction, and apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute it to validators when receiving cross chain package of validatorSet change.
 
-* **TokenManager Contract**
+#### **System Reward Contract**
+The incentive mechanism for relayers to maintain system contracts. They will get rewards from system reward contract.
 
-    This contract focuses on binding and unbinding tokens on two chains.
+#### **Liveness Slash Contract**
+The liveness of BSC relies on validator set can produce blocks timely when it is their turn. Validators can miss their turns due to any reason. This instability of the operation will hurt the performance of the network and introduce more non-deterministic into the system. This contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators.
 
-* **BSCValidatorSet Contract**
+#### **BscValidatorSet Contract**
+This contract focuses on handling staking change package from BC. It also provides the validatorset data query for BSC consensus engine.
 
-    It is a watcher of validators change of BSC on BNB Beacon Chain. It will interact with light client contracts to verify the interchain transaction, and apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute it to validators when receiving cross chain package of validatorSet change.
+#### **RelayerHub Contract**
+This contract manages the authority of bsc-relayer. Someone who wants to run a bsc-relayer must call the contract to deposit some BNB to get the authorization.
 
-* **System Reward Contract**
+#### **Governance Contract**
+This contract handles the governance package from BC. The governance package contains the target contract address, parameter name and new parameter value. Once the package is verified, this contract will call the parameter update method of the target contract to update the parameter to new value.
 
-    The incentive mechanism for relayers to maintain system contracts. They will get rewards from system reward contract.
-
-* **Liveness Slash Contract**
-
-    The liveness of BSC relies on validator set can produce blocks timely when it is their turn. Validators can miss their turns due to any reason. This instability of the operation will hurt the performance of the network and introduce more non-deterministic into the system. This contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators.
-
-* **BscValidatorSet Contract**
-
-    This contract focuses on handling staking change package from BC. It also provides the validatorset data query for BSC consensus engine.
-
-* **RelayerHub Contract**
-
-    This contract manages the authority of bsc-relayer. Someone who wants to run a bsc-relayer must call the contract to deposit some BNB to get the authorization.
-
-* **Governance Contract**
-
-    This contract handles the governance package from BC. The governance package contains the target contract address, parameter name and new parameter value. Once the package is verified, this contract will call the parameter update method of the target contract to update the parameter to new value.
-
-* **Cross Chain Contract**
-
-    This contract focuses on cross chain packages pretreatment and sending cross chain packages to BC by emit event. The packages pretreatment includes sequence validation and the merkle proof verification. Once they are passed, the package will be routed to application build-in system contract, such as tokenhub or bscvalidator. Besides, if tokenhub or bscvalidator wants to send packages to BC, they need to encode their packages with rlp and call this contract to send them.
+#### **Cross Chain Contract**
+This contract focuses on cross chain packages pretreatment and sending cross chain packages to BC by emit event. The packages pretreatment includes sequence validation and the merkle proof verification. Once they are passed, the package will be routed to application build-in system contract, such as tokenhub or bscvalidator. Besides, if tokenhub or bscvalidator wants to send packages to BC, they need to encode their packages with rlp and call this contract to send them.

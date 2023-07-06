@@ -42,7 +42,7 @@ Let’s take a look at the major steps in TSS:
 
 ##  Where can I download the Binance TSS CLI?
 
-You can download tss client and BNB Beacon Chain Commandline here:
+You can download TSS client and BNB Beacon Chain Command Line here:
 
 * Mainnet: <https://github.com/bnb-chain/node/releases>
 
@@ -240,7 +240,7 @@ In this steo, A and B decided to sign a transaction together. Both A and B will 
 
 |                            | A                                                            | B                                                            | C    |
 | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
-| command                    | tbnbcli send --amount 1000000:BNB --to tbnb1mh3w2kxmdmnvctt7t5nu7hhz9jnp422edqdw2d --from tss_tss1_vault1 --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.binance.org:443 --trust-node | tbnbcli send --amount 1000000:BNB --to tbnb1mh3w2kxmdmnvctt7t5nu7hhz9jnp422edqdw2d --from tss_tss2_vault1 --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.binance.org:443 --trust-node | NA   |
+| command                    | tbnbcli send --amount 1000000:BNB --to tbnb1mh3w2kxmdmnvctt7t5nu7hhz9jnp422edqdw2d --from tss_tss1_vault1 --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.bnbchain.org:443 --trust-node | tbnbcli send --amount 1000000:BNB --to tbnb1mh3w2kxmdmnvctt7t5nu7hhz9jnp422edqdw2d --from tss_tss2_vault1 --chain-id Binance-Chain-Ganges --node https://data-seed-pre-0-s1.bnbchain.org:443 --trust-node | NA   |
 | Interactive input          | Password to sign with tss_tss1_vault1:<br/>[Enter password]<br/>> Channel id:<br/>5185D3EF597<br/>please input password (AGREED offline with peers) of this session: <br/>[Enter password] | Password to sign with tss_tss2_vault1:<br/>[Enter password]<br/>> Channel id:<br/>5185D3EF597<br/>please input password (AGREED offline with peers) of this session: <br/>[Enter password] | N/A  |
 | output                     | Committed at block 33600477 (tx hash: 4FB8096A93D545612A3B5DCE520622608C299C7742103A6BE34C444829BD83A5 | ERROR: broadcast_tx_commit: Response error: RPC error -32603 - Internal error: Error on broadcastTxCommit: Tx already exists in cache | N/A  |
 | Files touched or generated | N/A                                                          | N/A                                                          | N/A  |

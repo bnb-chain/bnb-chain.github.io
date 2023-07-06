@@ -138,4 +138,4 @@ Prometheus is enabled on port `28660` by default, and the endpoint is `/metrics`
 
 ## Mainnet Tools
 
-* [Explorer](https://explorer.binance.org/)
+* [Explorer](https://explorer.bnbchain.org/)

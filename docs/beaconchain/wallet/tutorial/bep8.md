@@ -3,7 +3,7 @@
 In this article, we are going to take a tour about how to manage your BEP8 tokens in BNB Chain Testnet [web wallet](https://testnet.binance.org/en/tokens).
 
 ## What is BEP8 Token
-Since the [Nightingale upgrade](https://community.binance.org/topic/2828) of BNB Beacon Chain  testnet, a new token protocol [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is introduced. BEP8 protocol targets a different marketplace and provides several potential business cases in areas like micro-financing.
+Since the Nightingale upgrade of BNB Beacon Chain  testnet, a new token protocol [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is introduced. BEP8 protocol targets a different marketplace and provides several potential business cases in areas like micro-financing.
 
 Currently, the cost to get a BEP2 token issued on BNB Beacon Chain is not very cheap, as it takes more system resources, which is more suitable for the mature and large scale projects with enough recognition in the markets.  At the same time, more micro-financing cases like copyright owners, peer production, and community incentive points are looking for flexible tokenization and trading platforms to support their current works and share their potential future success.  New BEP8 tokens protocol is introduced to meet these demands and will increase the liquidity of utility tokens, which is similar to Small and Medium Enterprise (SME) board in the traditional stock markets.
 

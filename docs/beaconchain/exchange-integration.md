@@ -45,7 +45,7 @@ In brief, transactions pass through several [phases](https://tendermint.com/docs
 
 The status "code" recorded for each of these phases can differ, so be sure to check that it is `0` (meaning success) for each of them. A non-zero "code" indicates that there was a problem with the transaction during processing.
 
-For example, [this transaction](https://explorer.binance.org/tx/F296E84917A92FC4876AFE77DE662CC9417F9D6F2EB8ED1AD723A5433EBB8362) was invalid because the order was already canceled. You can query that the code for this transaction is `405`.
+For example, [this transaction](https://explorer.bnbchain.org/tx/F296E84917A92FC4876AFE77DE662CC9417F9D6F2EB8ED1AD723A5433EBB8362) was invalid because the order was already canceled. You can query that the code for this transaction is `405`.
 ```json
 {
 code: 393621,

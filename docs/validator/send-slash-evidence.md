@@ -22,7 +22,7 @@ bnbcli slashing bsc-submit-evidence
 
 | **Parameter Name** | **Example**                                                  | **Explanation**                                                 | **Required** |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
-| --chan-id          | Binance-Chain-Tigris                                          | the chain id of binance  chain                               | Yes          |
+| --chain-id          | Binance-Chain-Tigris                                          | the chain id of binance  chain                               | Yes          |
 | --from             | bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd                   | Name or address of  private key with which to sign           | Yes          |
 | --evidence         | [{"difficulty":"0x2","extraData":"0xd98301...},{"difficulty":"0x3","extraData":"0xd64372...}] | Evidence details,  including two bsc block headers with json format | Option       |
 | --evidence-file    | /user/evidence.json                                          | File of evidence details,  if evidence-file is not empty, --evidence will be ignored | Option       |

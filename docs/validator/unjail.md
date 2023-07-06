@@ -30,7 +30,7 @@ bnbcli slashing side-unjail
 
 | **Parameter Name** | **Example**                                | **Explanation**                                                 | **Required** |
 | ------------------ | ------------------------------------------ | ------------------------------------------------------------ | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                               | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                               | Yes          |
 | --from             | bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd | This address has to be  the operator address of the validator to be unjailed. Name or address of  private key with which to sign. | Yes          |
 | --side-chain-id    | BSC-XXX                                    | chain-id of the side  chain the validator belongs to         | Yes          |
 

@@ -1,6 +1,6 @@
 # BNB Beacon Chain FAQ
 
-## What is BNB Beacon Chain, or Binance DEX?
+## What is BNB Beacon Chain and Binance DEX?
 
 BNB Beacon Chain is the blockchain initially developed by Binance and community. Binance DEX, which is disabled now, is the
 decentralized exchange module developed on top of the BNB Beacon Chain blockchain.
@@ -9,13 +9,13 @@ decentralized exchange module developed on top of the BNB Beacon Chain blockchai
 
 The main focuses for the design of BNB Beacon Chain are:
 
-- No custody of funds: traders maintain control of their private keys and funds.
-- High performance: low latency, high throughput for a large user base, and high liquidity trading.
+- **No custody of funds:** traders maintain control of their private keys and funds.
+- **High performance:** low latency, high throughput for a large user base, and high liquidity trading.
 We target to achieve 1 second block times, with 1 confirmation finality.
-- Low cost: in both fees and liquidity cost.
-- Easy user experience: as friendly as Binance.com.
-- Fair trading: minimize front-running, to the extent possible.
-- Evolvable: able to develop with forever-improving technology stack, architecture, and ideas.
+- **Low cost:** in both fees and liquidity cost.
+- **Easy user experience:** super user friendly UI for a better experience.
+- **Fair trading:** minimize front-running, to the extent possible.
+- **Evolvable:** able to develop with forever-improving technology stack, architecture, and ideas.
 
 ## What can you do on BNB Beacon Chain?
 
@@ -31,15 +31,11 @@ Yes, BNB Beacon Chain team and community would cherish the technology advancemen
 
 ## What is the native coin on BNB Beacon Chain?
 
-The Build N Build Coin, BNB, is the native asset on BNB Beacon Chain. There are 200M BNB coins in total.
-There will be no mining. The existing coin burns and freezes will still be in effect on the new
-BNB Beacon Chain blockchain.
+BNB is the native asset on BNB Beacon Chain. There are 200M BNB coins in total. There will be no mining. The existing coin burns and freezes will still be in effect on the new BNB Beacon Chain blockchain.
 
-The exact number of BNB coins will be destroyed based on the same number of BNB ERC20 tokens
-that have already been destroyed.
+The exact number of BNB coins will be destroyed based on the same number of BNB ERC20 tokens that have already been destroyed.
 
-Since BNB Beacon Chain is live, all BNB ERC20 tokens will be swapped for BNB Beacon Chain coins. All
-users who hold BNB ERC20 tokens can deposit them to Binance.com, and upon withdrawal, the new
+Since BNB Beacon Chain is live, all BNB ERC20 tokens will be swapped for BNB Beacon Chain coins. All users who hold BNB ERC20 tokens can deposit them to Binance.com, and upon withdrawal, the new
 BNB Beacon Chain native coins will be sent to their new wallets.
 
 ## What is the current Fee Table on BNB Beacon Chain Mainnet?

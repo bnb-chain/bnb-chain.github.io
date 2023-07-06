@@ -28,7 +28,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name**  | **example**                                | **comments**                                         | **required** |
 | ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id           | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chain-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
 | --side-chain-id     | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --status            | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No          |
 | --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                | No           |
@@ -46,7 +46,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 
@@ -76,7 +76,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --chain-id         | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -98,7 +98,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --chain-id         | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -119,7 +119,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name** | **example**                                                        | **comments**                                                              | **required** |
 |:-------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|
-| --chan-id          | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
+| --chain-id         | Binance-Chain-XXX                                                  | the chain id of binance  chain                                            | Yes          |
 | --side-chain-id    | chapel                                                             | the id of side chain, default is native chain                             | Yes          |
 | --deposit          | 200000000000:BNB                                                   | deposit of proposal                                                       | Yes          |
 | --from             | alice                                                              | Name or address of private key with which to sign                         | Yes          |
@@ -139,7 +139,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --option           | Yes                                        | vote option {yes, no, no_with_veto, abstain}         | Yes          |
@@ -157,7 +157,7 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 | **parameter name** | **example**                                | **comments**                                         | **required** |
 | -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chan-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
 | --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
 | --deposit          | Yes                                        | amount of deposit                                    | Yes          |
