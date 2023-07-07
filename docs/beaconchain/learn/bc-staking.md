@@ -215,7 +215,7 @@ c. use “**bnbcli broadcast**” to send the transaction from above to the bloc
 ./tbnbcli broadcast both-signed.json  --node data-seed-pre-0-s3.bnbchain.org:80 --chain-id Binance-Chain-Ganges
 ```
 
-Verify your transaction in [mainnet-explorer](https://explorer.binance.org/) or [testnet-explorer](https://testnet-explorer.binance.org/)
+Verify your transaction in [mainnet-explorer](https://explorer.bnbchain.org/) or [testnet-explorer](https://testnet-explorer.bnbchain.org/)
 
 ### Edit BSC Validator
 

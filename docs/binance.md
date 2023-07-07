@@ -30,11 +30,11 @@ It’s supported in Firefox and Chrome browsers.
 
 * **Open Extension in Firefox:** <https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search>
 
-* **Search for Binance Chain Wallet**
+* **Search for BNB Chain Wallet**
 
 ![img](https://lh5.googleusercontent.com/ks5BM5SBqrjbDWdbGhsKymWvuLIJina_JZ4lo_j-skzhnFXvF8laumgJpl8nCv7XC_2Z6bwOhrt7v-oHLXv-eHNLlfY_9qSiQWyiyWuDlN8XKfc329MgTiyUpq9D8K562nH_zdkS)
 
-**_Note:_** _Make sure it’s offered by Binance Chain_
+**_Note:_** _Make sure it’s offered by BNB Chain_
 
 
 * Click on “**Add to Firefox**”

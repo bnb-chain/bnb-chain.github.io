@@ -51,4 +51,4 @@ You can broadcast your transaction on mainnet:
 
 You can find the list of nodes [here](develop/api-reference/cli.md#where-to-connect)
 
-If the broadcast is successful, you will see the transaction hash in returned info. Please go and verify it in [Explorer](https://testnet-explorer.binance.org).
+If the broadcast is successful, you will see the transaction hash in returned info. Please go and verify it in [Explorer](https://testnet-explorer.bnbchain.org).

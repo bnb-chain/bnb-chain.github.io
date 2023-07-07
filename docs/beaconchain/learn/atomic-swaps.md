@@ -447,7 +447,7 @@ Go to [smartcontract](https://ropsten.etherscan.io/address/0xd93395b2771914e1679
 Example of `htlt` [transaction](https://ropsten.etherscan.io/tx/0xa2444cc1e52e09027ec68bf8955e7084235255f9f18d9b837a12fd63e6f0145c)
 
 #### 3. Deputy Call HTLT on BNB Beacon Chain 
-Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.binance.org/tx/99CBC2896F0CF14DDAB0684BDA0A3E9FF2271056E68EC3559AB7FB24E0EE97DE)
+Then, Deputy will send `HTLT` transaction [here](https://testnet-explorer.bnbchain.org/tx/99CBC2896F0CF14DDAB0684BDA0A3E9FF2271056E68EC3559AB7FB24E0EE97DE)
 
 #### 4. Claim HTLT on BNB Beacon Chain 
 
@@ -516,7 +516,7 @@ Deputy will claim ERC20 tokens afterwards with [claim transaction](https://ropst
 
 #### 6. Demo for Client APP: swap erc20 to bep2
 
-This is a javascript implementation for client app to swap [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) to [PPC-00A](https://testnet-explorer.binance.org/asset/PPC-00A) with deputy.
+This is a javascript implementation for client app to swap [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) to [PPC-00A](https://testnet-explorer.bnbchain.org/asset/PPC-00A) with deputy.
 
 ```javascript
   const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"
@@ -648,7 +648,7 @@ Committed at block 634510 (
 
 Please write down the `random number`, `random number hash`, `swapID` and `timestamp` for next steps.
 
-Example is [here](https://testnet-explorer.binance.org/tx/9ECECE9E0F08EE78583CFA37FD4C3F03521289F0F229A612886B8B21B9C62D7F)
+Example is [here](https://testnet-explorer.bnbchain.org/tx/9ECECE9E0F08EE78583CFA37FD4C3F03521289F0F229A612886B8B21B9C62D7F)
 
 Then, you can query the the swap by `SwapID`:
 
@@ -692,11 +692,11 @@ Example is [here](https://ropsten.etherscan.io/tx/0x9cf7cc7891b86987c4eef59e3b49
 
 #### 5. Deputy Claim on BNB Beacon Chain 
 
-`Claim HTLT` transaction from **Deputy** is [sent](https://testnet-explorer.binance.org/tx/8C616DEFD2EAA41E13D2DC4844B218DFF8CFE24B4C7A693AAD700381B5FF7B48) afterwards:
+`Claim HTLT` transaction from **Deputy** is [sent](https://testnet-explorer.bnbchain.org/tx/8C616DEFD2EAA41E13D2DC4844B218DFF8CFE24B4C7A693AAD700381B5FF7B48) afterwards:
 
 #### 6. Demo for Client APP: swap bep2 to erc20
 
-This is a javascript implementation for client app to swap  [PPC-00A](https://testnet-explorer.binance.org/asset/PPC-00A) to [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) with deputy.
+This is a javascript implementation for client app to swap  [PPC-00A](https://testnet-explorer.bnbchain.org/asset/PPC-00A) to [PPC](https://ropsten.etherscan.io/address/0xd93395b2771914e1679155f3ea58c41d89d96098) with deputy.
 
 ```javascript
   const erc20ContractAddr = "0xd93395b2771914e1679155f3ea58c41d89d96098"

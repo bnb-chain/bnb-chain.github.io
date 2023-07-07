@@ -137,7 +137,7 @@ Fees can be paid in any asset, but the network will charge BNB first and apply a
 address has BNB balance.
 
 The fee is subject to periodical review and adjustment, after agreement from validators, via a
-proposal-vote procedure. See a fee-change proposal [here](https://explorer.binance.org/tx/B1E78D8275598CB0538C716997EEDD2F1198B82F4D73959C5BF69CBAF4281240)
+proposal-vote procedure. See a fee-change proposal [here](https://explorer.bnbchain.org/tx/B1E78D8275598CB0538C716997EEDD2F1198B82F4D73959C5BF69CBAF4281240)
 
 - Trade fee is calculated based on trade notional value, while fees for other transactions are fixed.
 - It is free to send a new GET order, cancel a partially filled order, or expire a partially filled order.
@@ -342,7 +342,7 @@ Right now, there are 2 ways to transfer tokens cross-chain:
 
 Any developer is welcome to test the solutions in testnet and then use them in mainnet.
 
-1. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on BNB Beacon Chain  (BEP2 token format): [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.binance.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.binance.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.binance.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.binance.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
+1. via Binance.com. [Binance](https://wwww.binance.com),the largest cryptocurrency exchange, has issued a number of crypto-pegged tokens on BNB Beacon Chain  (BEP2 token format): [BEP2 Bitcoin](https://explorer.bnbchain.org/asset/BTCB-1DE), [BEP2 BCH](https://explorer.bnbchain.org/asset/BCH-1FD),[BEP2 XRP](https://explorer.bnbchain.org/asset/XRP-BF2), [BEP2 LTC](https://explorer.bnbchain.org/asset/LTC-F07). Pegged tokens such as [BEP2 Bitcoin](https://explorer.bnbchain.org/asset/BTCB-1DE), are 100% backed by the native coin in [reserve](https://btc.com/3LYJfcfHPXYJreMsASk2jkn69LWEYKzexb). The reserve addresses are published for anyone to audit. Read this [blog](https://www.binance.com/en/blog/347360878904684544/Introducing-BitcoinPegged-Token-on-Binance-Chain) to learn about the reserved address. Users are free to convert between native and BEP2 Bitcoin via deposit/withdrawal. This has a higher degree of ease-of-use for most traders. More swap channels will be provided on partner wallets soon.
 
 Atomic swap and this centralized approach are not exclusive to other decentralized approaches, which can also be implemented in parallel. There are many cross-chain solutions being developed and we are very interested in them.
 

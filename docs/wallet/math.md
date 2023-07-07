@@ -70,17 +70,17 @@ Please note the fees are also deducted for paying gas and cross-chain transfer.
 ![img](https://lh3.googleusercontent.com/1LZhflItAfxbbPLppP_2mZQXhKlKbvAhk51-Or41wTaHY7Rs3B5g62QO1_4ymA0rgx8HoEmvCyEWbWSm_LOrxXyvHWZ24EsRVSJoLELHdprSiLAMLd5cDiDm_89Nd5z78CP0fPw5)
 
 4. Confirm Reception in explorer
-Link: <https://testnet-explorer.binance.org/>
+Link: <https://testnet-explorer.bnbchain.org/>
 
 ## Transfer BEP20 from BSC to BC in Testnet
 
 One of the key innovations of a dual-chain architecture is that token issuer can manage its assets on both chains. They could bind BEP2 tokens and BEP20 tokens together. In BNB Chain Ganges Testnet, there are several pegged tokens:
 
-* Pegged BTC on [BNB Beacon Chain Testnet](https://explorer.binance.org/testnet/asset/BTC-E24) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8#code)
+* Pegged BTC on [BNB Beacon Chain Testnet](https://explorer.bnbchain.org/testnet/asset/BTC-E24) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8#code)
 * Pegged ETH on  [BNB Beacon Chain Testnet](
-https://explorer.binance.org/testnet/asset/ETH-64F) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0xd66c6b4f0be8ce5b39d52e0fd1344c389929b378#code)
+https://explorer.bnbchain.org/testnet/asset/ETH-64F) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0xd66c6b4f0be8ce5b39d52e0fd1344c389929b378#code)
 * Pegged XRP on  [BNB Beacon Chain Testnet](
-https://explorer.binance.org/testnet/asset/XRP-C46) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0xa83575490d7df4e2f47b7d38ef351a2722ca45b9#code)
+https://explorer.bnbchain.org/testnet/asset/XRP-C46) and  [BNB Smart Chain Testnet](https://testnet.bscscan.com/address/0xa83575490d7df4e2f47b7d38ef351a2722ca45b9#code)
 
 You can get some of these pegged tokens from faucet and transfer them back to BNB Beacon Chain testnet.
 

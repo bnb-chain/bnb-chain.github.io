@@ -105,4 +105,4 @@ Prometheus is enabled on port `28660` by default, and the endpoint is `/metrics`
 
 ## Testnet Tools
 
-* [Explorer](https://testnet-explorer.binance.org/)
+* [Explorer](https://testnet-explorer.bnbchain.org/)

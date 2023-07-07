@@ -3,7 +3,7 @@ info:
   title: 'HTTP API'
   version: 1.0.0
   description: |
-    Within the ecosystem of Binance Chain, there are several accelerated nodes which provides more secure and faster lines to access Binance Chain data service including HTTP API.
+    Within the ecosystem of BNB Chain, there are several accelerated nodes which provides more secure and faster lines to access BNB Chain data service including HTTP API.
 
 
     For testnet, there are 2 accelerated nodes setup as below. API users should try to use them directly.
@@ -1211,7 +1211,7 @@ definitions:
       name:
         type: string
         description: token name
-        example: Binance Chain Native Token
+        example: BNB Chain Native Token
         required: true
       symbol:
         type: string
@@ -1659,7 +1659,7 @@ definitions:
     properties:
         name:
           type: string
-          example: Binance Chain Mini Token
+          example: BNB Chain Mini Token
           x-omitempty: false
         symbol:
           type: string
