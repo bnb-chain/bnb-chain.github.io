@@ -28,7 +28,7 @@ Install Binance Extension Wallet
 3. Click on “Add to Firefox”
 ![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67023396147/original/bvX8Y5NViWZJcFgaBt76ipaB1F8V87TgIw.png?1633501818)
 
-That’s it! You have successfully installed the Binance Chain Wallet extension in Firefox! 
+That’s it! You have successfully installed the BNB Chain Wallet extension in Firefox! 
 
 **Binance Wallet Mobile**: Binance Mobile is a secure and trusted multi-chain wallet. It is your one-stop gateway to store, exchange and earn crypto. 
 

@@ -11,10 +11,10 @@
   },
   "servers" : [ {
     "url" : "http://dataseed1.binance.org",
-    "description" : "Binance Chain mainnet node to interact with the Tendermint RPC"
+    "description" : "BNB Chain mainnet node to interact with the Tendermint RPC"
   }, {
     "url" : "http://data-seed-pre-0-s3.binance.org",
-    "description" : "Binance Chain testnet node to interact with the Tendermint RPC"
+    "description" : "BNB Chain testnet node to interact with the Tendermint RPC"
   }, {
     "url" : "http://localhost:26657",
     "description" : "Interact with the Tendermint RPC locally on your device"

@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "HTTP API",
-    "description": "The Binance Chain HTTP API provides access to a BNB Beacon Chain node deployment and related data services.",
+    "description": "The BNB Chain HTTP API provides access to a BNB Beacon Chain node deployment and related data services.",
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
@@ -12,11 +12,11 @@
   "servers": [
     {
       "url": "https://dex.binance.org",
-      "description": "Binance Chain mainnet HTTP API server url"
+      "description": "BNB Chain mainnet HTTP API server url"
     },
     {
       "url": "https://testnet-dex.binance.org",
-      "description": "Binance Chain testnet HTTP API server url"
+      "description": "BNB Chain testnet HTTP API server url"
     }
   ],
   "tags": [
@@ -1521,7 +1521,7 @@
           "name": {
             "type": "string",
             "description": "token name",
-            "example": "Binance Chain Native Token"
+            "example": "BNB Chain Native Token"
           },
           "symbol": {
             "type": "string",

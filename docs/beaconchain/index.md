@@ -42,7 +42,7 @@ network for the assets
 
 **For developers**, you can also:
 
-- Explore the transaction history and blocks on the chain, via [BNB Beacon Chain  Explore](https://explorer.binance.org), [API](develop/api-reference/dex-api/paths.md)
+- Explore the transaction history and blocks on the chain, via [BNB Beacon Chain  Explore](https://explorer.bnbchain.org), [API](develop/api-reference/dex-api/paths.md)
 and [node RPC](develop/api-reference/node-rpc.md) interfaces.
 - Run a [full node](fullnode.md) to listen to and broadcast live updates on transactions, blocks, and consensus activities
 - Extract other data of BNB Beacon Chain  via full node or [APIs](develop/api-reference/dex-api/paths.md#apiv1markets)
