@@ -11,7 +11,7 @@ hide_table_of_contents: false
 - Go to the staking page:
 
     - Mainnet: <https://www.bnbchain.org/en/staking>
-    - Testnet: <https://testnet-staking.binance.org/en/staking>
+    - Testnet: <https://testnet-staking.bnbchain.org/en/staking>
 
 **Testnet example**
 
