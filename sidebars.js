@@ -306,7 +306,13 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       label: 'Future Developments',
-      items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/community'],
+      items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/community',
+             {
+              type: 'link',
+              label: 'State Expiry',
+              href: 'https://github.com/bnb-chain/BSC-State-Expiry',
+             },
+            ],
     },
 
 
