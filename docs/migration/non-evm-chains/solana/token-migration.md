@@ -82,7 +82,7 @@ You must set up all of the following prerequisites to be able to deploy your sol
 
 - [Download Metamask wallet](https://metamask.io/)
 - [Configure BNB Smart Chain Testnet on Metamask](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
-- [Get BNB testnet tokens](https://testnet.binance.org/faucet-smart)
+- [Get BNB testnet tokens](https://testnet.bnbchain.org/faucet-smart)
 
 #### Setting Up Remix IDE
 [_For details, refer here_](https://docs.bnbchain.org/docs/remix-new#setting-up-remix-ide)

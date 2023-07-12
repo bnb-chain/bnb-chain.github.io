@@ -77,7 +77,7 @@ Congratulations! you have create your MetaMask account!
    
 ![img](https://lh3.googleusercontent.com/3-6iXj8gVhTYrhzkDHcRBWOMvkkfUwm2W8aDssNTZ5bFqCsjq1BlY-nhCJDZWwT8kx-9URnQur1JxmAot-3Nu1lhypqVM068MovqDlv-oXPDJtz4PwsNTYGM3TZM_F5uRlnUwrP3)
 
-1. Go to faucet page: https://testnet.binance.org/faucet-smart, then paste your address in the box and click on “Give me BNB”
+1. Go to faucet page: https://testnet.bnbchain.org/faucet-smart, then paste your address in the box and click on “Give me BNB”
 
 !!! Tip
     Please note that you can only claim once every minute

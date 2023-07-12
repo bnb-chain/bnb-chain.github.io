@@ -109,6 +109,6 @@ For the second one, we should have that to ensure all the validators info and ch
 So the solution is we enable the staking functionality of BSC first on BC. So people can apply to be a validator or delegate to these candidates. We can have a time limit. After that, we collect all the elected validators and write them to the genesis of BSC.
 
 ## Account and Address
-For normal users, all the keys and addresses can be generated via [Binance Extension Wallet](../binance.md).
+For normal users, all the keys and addresses can be generated via [Binance Extension Wallet](../bnb-chain-wallet.md).
 
 This default wallet would use a similar way to generate keys as Ethereum, i.e. use 256 bits entropy to generate a 24-word mnemonic based on BIP39, and then use the mnemonic and an empty passphrase to generate a seed; finally use the seed to generate a master key, and derive the private key using BIP32/BIP44 with HD prefix as "44'/60'/", which is the same as Ethereum's derivation path.

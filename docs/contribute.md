@@ -33,9 +33,3 @@ Of course, feel free to create a new issue if you think something needs to be ad
 - Include a descriptive [commit message][commit-msg].
 - Changes contributed via pull request should focus on a single issue at a time.
 - Rebase your local changes against the master branch. Resolve any conflicts that arise.
-
-
-This document is inspired by:
-- <https://github.com/puppetlabs/puppet/blob/master/CONTRIBUTING.md>
-- <https://github.com/thoughtbot/factory_girl_rails/blob/master/CONTRIBUTING.md>
-- <https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md>

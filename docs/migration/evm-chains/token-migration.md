@@ -20,7 +20,7 @@ All you require is a browser-based Web3 wallet (e.g. MetaMask) to interact with 
 You must set up all of the following prerequisites to be able to deploy your Solidity smart contract on BSC:
 * [Download Metamask wallet](https://metamask.io/)
 * [Configure BNB Smart Chain Testnet on Metamask](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
-* [Get BNB Testnet tokens](https://testnet.binance.org/faucet-smart)
+* [Get BNB Testnet tokens](https://testnet.bnbchain.org/faucet-smart)
 
 ### Setting Up Remix IDE
 * Remix is an online IDE to develop smart contracts.

@@ -9,7 +9,7 @@ BNB Smart Chain (BSC) is the blockchain component of the BNB Chain ecosystem tha
 
 ### Tokenization
 On the BNB Smart Chain, users can: 
-- Send and receive [BNB](binance.md#transfer-testnet-bnb-from-bsc-to-bc), [BEP2 tokens](./wallet/binance.md#swap-testnet-bep2-token-to-its-bep20-equivalent) and other supported token standards cross-chain.
+- Send and receive [BNB](bnb-chain-wallet.md#transfer-testnet-bnb-from-bsc-to-bc), [BEP2 tokens](./wallet/bnb-chain-wallet.md#swap-testnet-bep2-token-to-its-bep20-equivalent) and other supported token standards cross-chain.
 - [Stake your BNB](wallet/staking.md) to earn some block rewards.
 - Issue Fungible tokens like [BEP20 Tokens](./BEP20.md) to digitalize assets.
 - Issue [Non-Fungible Tokens (NFTs)](./ERC721.md).
@@ -28,7 +28,7 @@ In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network tha
 
 ### How to Buy BNB Tokens
 As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Smart Chain network you will need to have some BNB tokens. 
-- BNB tokens can also be received for usage on testnet through the **[Testnet Faucet](https://testnet.binance.org/faucet-smart)**.
+- BNB tokens can also be received for usage on testnet through the **[Testnet Faucet](https://testnet.bnbchain.org/faucet-smart)**.
 - Refer [here](wallets/wallet-tutorial-overview) for tutorials on different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
 
 ### Extensive Support of Wallets

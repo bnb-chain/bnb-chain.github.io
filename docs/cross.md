@@ -34,6 +34,6 @@ In blockchain network, an oracle refers to the element that connects smart contr
 
 ### How to send cross-chain transfer?
 
-You can use [Binance Extension Wallet](wallet/binance.md) or
+You can use [Binance Extension Wallet](wallet/bnb-chain-wallet.md) or
 
 use [Trust wallet](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)

@@ -3,11 +3,11 @@ sidebar_label: Staking with Binance Extension Wallet
 hide_table_of_contents: false
 ---
 
-# Staking with Binance Extension Wallet
+# Staking with BNB Chain Wallet
 
-## How to Delegate Your BNB with the Binance Extension Wallet
+## How to Delegate Your BNB with the BNB Chain Wallet
 
-- [Install Binance Extension Wallet](binance.md)
+- [Install Binance Extension Wallet](bnb-chain-wallet.md)
 - Go to the staking page:
 
     - Mainnet: <https://www.bnbchain.org/en/staking>

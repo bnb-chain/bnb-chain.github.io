@@ -42,14 +42,15 @@ BNB Smart Chain is an innovative solution to bring programmability and interoper
 
 ## Which are BNB Smart Chain's official channels for communication and information?
 
-* Binance DEX announcements: <https://t.me/Binance_DEX_Announcement>
+* Telegram: <http://t.me/bnbchain> or <https://t.me/BNBchaincommunity>
+* Discord: <https://discord.com/invite/bnbchain>
 * Twitter: <https://twitter.com/bnbchain>
 * BNB Chain Forum: <https://forum.bnbchain.org/>
 
 
 ### Wallet support for BNB Smart Chain 
 
-  - [Binance Extension Wallet](wallet/binance.md)
+  - [Binance Extension Wallet](wallet/bnb-chain-wallet.md)
   - [MetaMask](wallet/metamask.md)
   - [Math Wallet](wallet/math.md)
   - [Arkane](wallet/arkane.md)
@@ -83,7 +84,7 @@ PoSA is a combination of PoA and PoS. Blocks are produced by a limited set of va
 
 * **Cheaper Cost**
 
-* **Native cross-chain transfer & communication:** Binance DEX remains a liquid venue of exchange of assets on BNB Beacon Chain and BNB Smart Chain "
+* **Native cross-chain transfer & communication** 
 
 ### What are the benefits for developers to build on BNB Chain?
 

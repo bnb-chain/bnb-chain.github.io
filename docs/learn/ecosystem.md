@@ -47,7 +47,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | **Public RPC Endpoints** | [RPC Endpoints](https://docs.bnbchain.org/docs/rpc)| More public nodes are encouraged
 | **Community Polling Dashboard** | |
 | **Gas Station Network** | [opengsn](https://opengsn.org/)
-| **Faucet** | [BSC Test Faucet](https://testnet.binance.org/faucet-smart)
+| **Faucet** | [BSC Test Faucet](https://testnet.bnbchain.org/faucet-smart)
 | **Browser** | [Opera](https://www.opera.com/crypto/)
 | **Dapp Store** | [Dapp Bay](https://dappbay.bnbchain.org/), [Magic Square](https://magicsquare.io/)
 

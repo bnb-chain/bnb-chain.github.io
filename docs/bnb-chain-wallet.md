@@ -4,7 +4,7 @@ sidebar_position: 2
 hide_table_of_contents: false
 ---
 
-# Using Binance Extension Wallet 
+# Using BNB Chain Wallet 
 
 ## What is it?
 Binance Extension Wallet is a Crypto Wallet for BNB Beacon Chain and BNB Smart Chain. You can send and receive funds on both BNB Beacon Chain and BNB Smart Chain as well as perform cross-chain transfers between both of BNB Chain’s blockchains.
@@ -84,7 +84,7 @@ Now you are all set!
 
 ## Get Testnet BNB from Faucet
 
-* Go to <https://testnet.binance.org/faucet-smart/>
+* Go to <https://testnet.bnbchain.org/faucet-smart/>
 
 ![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
 

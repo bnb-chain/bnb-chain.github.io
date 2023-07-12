@@ -56,7 +56,7 @@ Because BSC is EVM-compatible, it launched with support for the rich universe of
 
 You can:
 
-- Send and receive [BNB](https://docs.bnbchain.org/docs/binance#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](https://docs.bnbchain.org/docs/binance#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
+- Send and receive [BNB](https://docs.bnbchain.org/docs/bnb-chain-wallet#transfer-testnet-bnb-from-bsc-to-bc) and other [BEP2 tokens](https://docs.bnbchain.org/docs/bnb-chain-wallet#swap-testnet-bep2-token-to-its-bep20-equivalent) cross-chain
 - Explore the transaction history and blocks on the chain, via [bscscan](https://bscscan.com), API
 and node RPC interfaces.
 - [Stake you BNB](../wallet/staking.md) to earn some block rewards

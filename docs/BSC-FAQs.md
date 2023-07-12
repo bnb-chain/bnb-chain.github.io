@@ -44,7 +44,7 @@ The codebase of BSC is open-sourced here:
 
 ## Wallet support for BNB Smart Chain 
 
-  - [Binance Extension Wallet ](wallet/binance.md)
+  - [Binance Extension Wallet ](wallet/bnb-chain-wallet.md)
   - [MetaMask](wallet/metamask.md)
   - [Math Wallet](wallet/math.md)
   - [Arkane](wallet/arkane.md)

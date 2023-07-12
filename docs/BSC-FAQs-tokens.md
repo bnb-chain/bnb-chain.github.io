@@ -57,7 +57,7 @@ The [minimum delegated amount](parameters.md) is **1BNB**.
 You can use:
 
 * [command line tool](https://github.com/bnb-chain/node/releases/tag/v0.8.1)
-* [Binance Extension Wallet](wallet/binance.md)
+* [Binance Extension Wallet](wallet/bnb-chain-wallet.md)
 * [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
 
 ## Where can I find out more about staking economics and rewards?

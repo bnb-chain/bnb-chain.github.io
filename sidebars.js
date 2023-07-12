@@ -176,7 +176,7 @@ const sidebars = {
                 //collapsible: true,
                 collapsed: true,
                 label: 'BNB Chain Extension Wallet',
-                items: ['binance','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
+                items: ['bnb-chain-wallet','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
               },
               {
                 type: 'category',
