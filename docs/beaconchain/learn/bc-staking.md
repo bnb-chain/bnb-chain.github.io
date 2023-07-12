@@ -107,7 +107,8 @@ Please download `tbnbcli` binary from [here](https://github.com/bnb-chain/node/r
 | --commission-max-change-rate | 3000000   (0.03 or 3%)               | The maximum commission  change rate percentage (per day). You can not update this rate.     | Yes          |
 | --side-chain-id              | chapel                               | chain-id of the side  chain the validator belongs to         | Yes          |
 | --side-cons-addr             | 0x1234abcd                           | consensus address of the  validator on side chain, please use hex format prefixed with 0x | Yes          |
-| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x, supported after BEP126 | Yes |
+| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x | Yes |
+| --bls-wallet |    /path/to/bls/wallet     |absolute path of BLS wallet| Yes |
 | --side-fee-addr              | 0xabcd1234                           | address that validator  collects fee rewards on side chain, please use hex format prefixed with 0x. | Yes          |
 | --home                       | /path/to/cli_home                    | home directory of bnbcli  data and config, default to “~/.bnbcli” | No           |
 
@@ -231,7 +232,8 @@ Verify your transaction in [mainnet-explorer](https://explorer.bnbchain.org/) or
 | --website          | www.example.com                  | optional website (default  "[do-not-modify]")                | No           |
 | --details          | some details                     | optional details (default  "[do-not-modify]")                | No           |
 | --commission-rate  | 80000000(that means 0.8  or 80%) | The new commission rate  percentage                          | No           |
-| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x, supported after BEP126 | Yes |
+| --side-vote-addr | 0x1234abcd | vote pub key of the validator on side chain, please use hex format prefixed with 0x | No |
+| --bls-wallet |    /path/to/bls/wallet     |absolute path of BLS wallet, should be provided if the side vote address is provided| No |
 | --side-fee-addr    | 0xabcd1234                       | address that validator  collects fee rewards on side chain, please use hex format prefixed with 0x. | No           |
 
 
@@ -241,13 +243,13 @@ Verify your transaction in [mainnet-explorer](https://explorer.bnbchain.org/) or
 * Mainnet
 
 ```bash
-bnbcli staking bsc-edit-validator --chain-id Binance-Chain-Tigris --side-chain-id bsc --moniker bsc_v1_new --from bnb1tfh30c67mkzfz06as2hk0756mgdx8mgypu7ajl --side-vote-addr 0x85e6972fc98cd3c81d64d40e325acfed44365b97a7567a27939c14dbc7512ddcf54cb1284eb637cfa308ae4e00cb5588 --home ~/home_cli
+bnbcli staking bsc-edit-validator --chain-id Binance-Chain-Tigris --side-chain-id bsc --moniker bsc_v1_new --from bnb1tfh30c67mkzfz06as2hk0756mgdx8mgypu7ajl --side-vote-addr 0x85e6972fc98cd3c81d64d40e325acfed44365b97a7567a27939c14dbc7512ddcf54cb1284eb637cfa308ae4e00cb5588 --bls-wallet /home/bls/wallet --home ~/home_cli
 ```
 
 * Testnet
 
 ```bash
-tbnbcli staking bsc-edit-validator --chain-id Binance-Chain-Ganges --side-chain-id chapel --moniker bsc_v1_new --from bnb1tfh30c67mkzfz06as2hk0756mgdx8mgypu7ajl --side-vote-addr 0x85e6972fc98cd3c81d64d40e325acfed44365b97a7567a27939c14dbc7512ddcf54cb1284eb637cfa308ae4e00cb5588 --home ~/home_cli
+tbnbcli staking bsc-edit-validator --chain-id Binance-Chain-Ganges --side-chain-id chapel --moniker bsc_v1_new --from bnb1tfh30c67mkzfz06as2hk0756mgdx8mgypu7ajl --side-vote-addr 0x85e6972fc98cd3c81d64d40e325acfed44365b97a7567a27939c14dbc7512ddcf54cb1284eb637cfa308ae4e00cb5588 --bls-wallet /home/bls/wallet --home ~/home_cli
 ```
 
 
