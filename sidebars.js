@@ -306,7 +306,7 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       label: 'Future Developments',
-      items:['dev-outlook-2022', 'dev-outlook/scaling', 'dev-outlook/community',
+      items:['dev-outlook-2022', 'dev-outlook/scaling',
              {
               type: 'link',
               label: 'State Expiry',
