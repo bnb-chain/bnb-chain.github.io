@@ -54,6 +54,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **QuickNode:** <https://quicknode.com>
   
 * **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+  
+* **Chainbase:** <https://docs.chainbase.com/docs/chain-api-overview>
 
 ### Starting HTTP JSON-RPC
 
