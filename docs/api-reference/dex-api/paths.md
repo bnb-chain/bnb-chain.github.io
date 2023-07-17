@@ -26,18 +26,18 @@ For mainnet, there are more accelerated nodes.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/time](https://dex.binance.org/api/v1/time)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/time](https://dex.bnbchain.org/api/v1/time)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/time](https://testnet-dex.bnbchain.org/api/v1/time)
 
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [Times](#times) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
+| Code    | Description            | Schema          |
+|---------|------------------------|-----------------|
+| 200     | Success                | [Times](#times) |
+| 400     | Bad Request            | [Error](#error) |
+| 404     | Not Found              |                 |
 | default | Generic error response | [Error](#error) |
 
 ### /api/v1/node-info
@@ -51,16 +51,16 @@ For mainnet, there are more accelerated nodes.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/node-info](https://dex.binance.org/api/v1/node-info)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/node-info](https://dex.bnbchain.org/api/v1/node-info)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/node-info](https://testnet-dex.bnbchain.org/api/v1/node-info)
 
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ResultStatus](#resultstatus) |
+| Code | Description | Schema                        |
+|------|-------------|-------------------------------|
+| 200  | Success     | [ResultStatus](#resultstatus) |
 
 ### /api/v1/validators
 ---
@@ -73,19 +73,19 @@ For mainnet, there are more accelerated nodes.
 
 **Rate Limit:** 10 requests per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/validators](https://dex.binance.org/api/v1/validators)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/validators](https://dex.bnbchain.org/api/v1/validators)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/validators](https://testnet-dex.bnbchain.org/api/v1/validators)
 
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Validators](#validators) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                        |
+|---------|------------------------|-------------------------------|
+| 200     | Success                | [ [Validators](#validators) ] |
+| 400     | Bad Request            | [Error](#error)               |
+| 404     | Not Found              |                               |
+| default | Generic error response | [Error](#error)               |
 
 ### /api/v1/peers
 ---
@@ -98,19 +98,19 @@ For mainnet, there are more accelerated nodes.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/peers](https://dex.binance.org/api/v1/peers)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/peers](https://dex.bnbchain.org/api/v1/peers)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/peers](https://testnet-dex.bnbchain.org/api/v1/peers)
 
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Peer](#peer) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema            |
+|---------|------------------------|-------------------|
+| 200     | Success                | [ [Peer](#peer) ] |
+| 400     | Bad Request            | [Error](#error)   |
+| 404     | Not Found              |                   |
+| default | Generic error response | [Error](#error)   |
 
 ### /api/v1/account/{address}
 ---
@@ -123,25 +123,25 @@ For mainnet, there are more accelerated nodes.
 
 **Rate Limit:** 5 requests per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.bnbchain.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.bnbchain.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
+| Name    | Located in | Description                  | Required | Schema |
+|---------|------------|------------------------------|----------|--------|
+| address | path       | The account address to query | Yes      | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [Account](#account) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found | [Error](#error) |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema              |
+|---------|------------------------|---------------------|
+| 200     | Success                | [Account](#account) |
+| 400     | Bad Request            | [Error](#error)     |
+| 404     | Not Found              | [Error](#error)     |
+| default | Generic error response | [Error](#error)     |
 
 ### /api/v1/account/{address}/sequence
 ---
@@ -154,25 +154,25 @@ For mainnet, there are more accelerated nodes.
 
 **Rate Limit:** 5 requests per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence](https://dex.bnbchain.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.bnbchain.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
+| Name    | Located in | Description                  | Required | Schema |
+|---------|------------|------------------------------|----------|--------|
+| address | path       | The account address to query | Yes      | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [AccountSequence](#accountsequence) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                              |
+|---------|------------------------|-------------------------------------|
+| 200     | Success                | [AccountSequence](#accountsequence) |
+| 400     | Bad Request            | [Error](#error)                     |
+| 404     | Not Found              |                                     |
+| default | Generic error response | [Error](#error)                     |
 
 ### /api/v1/tx/{hash}
 ---
@@ -260,19 +260,19 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| hash | path | The transaction hash to query | Yes | string |
-| format | query | Response format (`json` or amino) | No | string |
+| Name   | Located in | Description                       | Required | Schema |
+|--------|------------|-----------------------------------|----------|--------|
+| hash   | path       | The transaction hash to query     | Yes      | string |
+| format | query      | Response format (`json` or amino) | No       | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 0 | Success | [Transaction](#transaction) |
-| 404 | Not Found |  |
-| 500 | Bad Request | [Error](#error) |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                      |
+|---------|------------------------|-----------------------------|
+| 0       | Success                | [Transaction](#transaction) |
+| 404     | Not Found              |                             |
+| 500     | Bad Request            | [Error](#error)             |
+| default | Generic error response | [Error](#error)             |
 
 ### /api/v1/tokens
 ---
@@ -285,26 +285,26 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/tokens](https://dex.binance.org/api/v1/tokens)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/tokens](https://dex.bnbchain.org/api/v1/tokens)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/tokens](https://testnet-dex.bnbchain.org/api/v1/tokens)
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 100. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
+| Name   | Located in | Description              | Required | Schema  |
+|--------|------------|--------------------------|----------|---------|
+| limit  | query      | default 100.             | No       | integer |
+| offset | query      | start with 0; default 0. | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Token](#token) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema              |
+|---------|------------------------|---------------------|
+| 200     | Success                | [ [Token](#token) ] |
+| 400     | Bad Request            | [Error](#error)     |
+| 404     | Not Found              |                     |
+| default | Generic error response | [Error](#error)     |
 
 ### /api/v1/markets
 ---
@@ -317,26 +317,26 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/markets](https://dex.binance.org/api/v1/markets)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/markets](https://dex.bnbchain.org/api/v1/markets)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/markets](https://testnet-dex.binance.org/api/v1/markets)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/markets](https://testnet-dex.bnbchain.org/api/v1/markets)
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
+| Name   | Located in | Description              | Required | Schema  |
+|--------|------------|--------------------------|----------|---------|
+| limit  | query      | default 500; max 1000.   | No       | integer |
+| offset | query      | start with 0; default 0. | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Market](#market) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                |
+|---------|------------------------|-----------------------|
+| 200     | Success                | [ [Market](#market) ] |
+| 400     | Bad Request            | [Error](#error)       |
+| 404     | Not Found              |                       |
+| default | Generic error response | [Error](#error)       |
 
 ### /api/v1/fees
 ---
@@ -349,16 +349,16 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/fees](https://dex.binance.org/api/v1/fees)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/fees](https://dex.bnbchain.org/api/v1/fees)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/fees](https://testnet-dex.bnbchain.org/api/v1/fees)
 
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Fee](#fee) ] |
+| Code    | Description            | Schema          |
+|---------|------------------------|-----------------|
+| 200     | Success                | [ [Fee](#fee) ] |
 | default | Generic error response | [Error](#error) |
 
 ### /api/v1/depth
@@ -374,26 +374,26 @@ The given _limit_ must be one of the allowed limits below.
 
 **Rate Limit:** 10 requests per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/depth?symbol=xxx-000_BNB](https://dex.bnbchain.org/api/v1/depth?symbol=xxx-000_BNB)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.binance.org/api/v1/depth?symbol=xxx-000_BNB)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/depth?symbol=xxx-000_BNB](https://testnet-dex.bnbchain.org/api/v1/depth?symbol=xxx-000_BNB)
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | Market pair symbol, e.g. NNB-0AD_BNB | Yes | string |
-| limit | query | The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000] | No | integer |
+| Name   | Located in | Description                                                           | Required | Schema  |
+|--------|------------|-----------------------------------------------------------------------|----------|---------|
+| symbol | query      | Market pair symbol, e.g. NNB-0AD_BNB                                  | Yes      | string  |
+| limit  | query      | The limit of results. Allowed limits: [5, 10, 20, 50, 100, 500, 1000] | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [MarketDepth](#marketdepth) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                      |
+|---------|------------------------|-----------------------------|
+| 200     | Success                | [MarketDepth](#marketdepth) |
+| 400     | Bad Request            | [Error](#error)             |
+| 404     | Not Found              |                             |
+| default | Generic error response | [Error](#error)             |
 
 ### /api/v1/broadcast
 ---
@@ -406,27 +406,27 @@ The given _limit_ must be one of the allowed limits below.
 
 **Rate Limit:** 5 requests per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/broadcast](https://dex.binance.org/api/v1/broadcast)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/broadcast](https://dex.bnbchain.org/api/v1/broadcast)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/broadcast](https://testnet-dex.bnbchain.org/api/v1/broadcast)
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| sync | query | Synchronous broadcast (wait for [DeliverTx](https://github.com/tendermint/tendermint/wiki/Application-Developers#delivertx))?  | No | boolean |
-| body | body |  | Yes | binary |
+| Name | Located in | Description                                                                                                                   | Required | Schema  |
+|------|------------|-------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| sync | query      | Synchronous broadcast (wait for [DeliverTx](https://github.com/tendermint/tendermint/wiki/Application-Developers#delivertx))? | No       | boolean |
+| body | body       |                                                                                                                               | Yes      | binary  |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [ [Transaction](#transaction) ] |
-| 400 | Bad Request | [Error](#error) |
-| 401 | Bad Signature | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                          |
+|---------|------------------------|---------------------------------|
+| 200     | Success                | [ [Transaction](#transaction) ] |
+| 400     | Bad Request            | [Error](#error)                 |
+| 401     | Bad Signature          | [Error](#error)                 |
+| 404     | Not Found              |                                 |
+| default | Generic error response | [Error](#error)                 |
 
 ### /api/v1/klines
 ---
@@ -439,10 +439,10 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Rate Limit:** 10 requests per IP per second.
 
-**URL for mainnet:** [https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
+**URL for mainnet:** [https://dex.bnbchain.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://dex.bnbchain.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
 
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.binance.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
+**URL for testnet:** [https://testnet-dex.bnbchain.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m](https://testnet-dex.bnbchain.org/api/v1/klines?symbol=NNB-338_BNB&interval=5m)
 
 **Example**
 
@@ -463,19 +463,19 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | Yes | string |
-| interval | query | interval. Allowed value: [1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | Yes | enum string |
-| limit | query | default 300; max 1000. | No | integer |
-| startTime | query | start time in Milliseconds | No | long |
-| endTime | query | end time in Milliseconds | No | long |
+| Name      | Located in | Description                                                                              | Required | Schema      |
+|-----------|------------|------------------------------------------------------------------------------------------|----------|-------------|
+| symbol    | query      | symbol                                                                                   | Yes      | string      |
+| interval  | query      | interval. Allowed value: [1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | Yes      | enum string |
+| limit     | query      | default 300; max 1000.                                                                   | No       | integer     |
+| startTime | query      | start time in Milliseconds                                                               | No       | long        |
+| endTime   | query      | end time in Milliseconds                                                                 | No       | long        |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [ [Candlestick](#candlestick) ] |
+| Code | Description | Schema                          |
+|------|-------------|---------------------------------|
+| 200  | OK          | [ [Candlestick](#candlestick) ] |
 
 ### /api/v1/orders/closed
 ---
@@ -491,23 +491,23 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| end | query | end time in Milliseconds | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| status | query | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No | enum string |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name    | Located in | Description                                                                                                                 | Required | Schema      |
+|---------|------------|-----------------------------------------------------------------------------------------------------------------------------|----------|-------------|
+| address | query      | the owner address                                                                                                           | Yes      | string      |
+| end     | query      | end time in Milliseconds                                                                                                    | No       | long        |
+| limit   | query      | default 500; max 1000.                                                                                                      | No       | integer     |
+| offset  | query      | start with 0; default 0.                                                                                                    | No       | integer     |
+| side    | query      | order side. 1 for buy and 2 for sell.                                                                                       | No       | integer     |
+| start   | query      | start time in Milliseconds                                                                                                  | No       | long        |
+| status  | query      | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No       | enum string |
+| symbol  | query      | symbol                                                                                                                      | No       | string      |
+| total   | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response             | No       | integer     |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [OrderList](#orderlist) |
+| Code | Description | Schema                  |
+|------|-------------|-------------------------|
+| 200  | OK          | [OrderList](#orderlist) |
 
 ### /api/v1/orders/open
 ---
@@ -521,22 +521,22 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name    | Located in | Description                                                                                                     | Required | Schema  |
+|---------|------------|-----------------------------------------------------------------------------------------------------------------|----------|---------|
+| address | query      | the owner address                                                                                               | Yes      | string  |
+| limit   | query      | default 500; max 1000.                                                                                          | No       | integer |
+| offset  | query      | start with 0; default 0.                                                                                        | No       | integer |
+| symbol  | query      | symbol                                                                                                          | No       | string  |
+| total   | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [OrderList](#orderlist) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                  |
+|---------|------------------------|-------------------------|
+| 200     | OK                     | [OrderList](#orderlist) |
+| 400     | Bad Request            | [Error](#error)         |
+| 404     | Not Found              |                         |
+| default | Generic error response | [Error](#error)         |
 
 ### /api/v1/orders/{id}
 ---
@@ -551,16 +551,16 @@ If the time window is larger than limits, only the first n klines will return. I
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path | order id | Yes | string |
+|------|------------|-------------|----------|--------|
+| id   | path       | order id    | Yes      | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [Order](#order) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
+| Code    | Description            | Schema          |
+|---------|------------------------|-----------------|
+| 200     | OK                     | [Order](#order) |
+| 400     | Bad Request            | [Error](#error) |
+| 404     | Not Found              |                 |
 | default | Generic error response | [Error](#error) |
 
 ### /api/v1/ticker/24hr
@@ -575,18 +575,18 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | No | string |
+| Name   | Located in | Description | Required | Schema |
+|--------|------------|-------------|----------|--------|
+| symbol | query      | symbol      | No       | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [ [TickerStatistics](#tickerstatistics) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                                    |
+|---------|------------------------|-------------------------------------------|
+| 200     | OK                     | [ [TickerStatistics](#tickerstatistics) ] |
+| 400     | Bad Request            | [Error](#error)                           |
+| 404     | Not Found              |                                           |
+| default | Generic error response | [Error](#error)                           |
 
 ### /api/v1/trades
 ---
@@ -602,29 +602,29 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the buyer/seller address | No | string |
-| buyerOrderId | query | buyer order id | No | string |
-| end | query | end time in Milliseconds | No | long |
-| height | query | block height | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| quoteAsset | query | quote asset | No | string |
-| sellerOrderId | query | seller order id | No | string |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name          | Located in | Description                                                                                                     | Required | Schema  |
+|---------------|------------|-----------------------------------------------------------------------------------------------------------------|----------|---------|
+| address       | query      | the buyer/seller address                                                                                        | No       | string  |
+| buyerOrderId  | query      | buyer order id                                                                                                  | No       | string  |
+| end           | query      | end time in Milliseconds                                                                                        | No       | long    |
+| height        | query      | block height                                                                                                    | No       | long    |
+| limit         | query      | default 500; max 1000.                                                                                          | No       | integer |
+| offset        | query      | start with 0; default 0.                                                                                        | No       | integer |
+| quoteAsset    | query      | quote asset                                                                                                     | No       | string  |
+| sellerOrderId | query      | seller order id                                                                                                 | No       | string  |
+| side          | query      | order side. 1 for buy and 2 for sell.                                                                           | No       | integer |
+| start         | query      | start time in Milliseconds                                                                                      | No       | long    |
+| symbol        | query      | symbol                                                                                                          | No       | string  |
+| total         | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [TradePage](#tradepage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                  |
+|---------|------------------------|-------------------------|
+| 200     | OK                     | [TradePage](#tradepage) |
+| 400     | Bad Request            | [Error](#error)         |
+| 404     | Not Found              |                         |
+| default | Generic error response | [Error](#error)         |
 
 ### /api/v1/block-exchange-fee
 ---
@@ -638,20 +638,20 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the seller/buyer address | No | string |
-| end | query | end time | No | long |
-| limit | query | default 50; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name    | Located in | Description                                                                                                     | Required | Schema  |
+|---------|------------|-----------------------------------------------------------------------------------------------------------------|----------|---------|
+| address | query      | the seller/buyer address                                                                                        | No       | string  |
+| end     | query      | end time                                                                                                        | No       | long    |
+| limit   | query      | default 50; max 1000.                                                                                           | No       | integer |
+| offset  | query      | start with 0; default 0.                                                                                        | No       | integer |
+| start   | query      | start time in Milliseconds                                                                                      | No       | long    |
+| total   | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [BlockExchangeFeePage](#blockexchangefeepage) |
+| Code | Description | Schema                                        |
+|------|-------------|-----------------------------------------------|
+| 200  | OK          | [BlockExchangeFeePage](#blockexchangefeepage) |
 
 ### /api/v1/transactions
 ---
@@ -670,27 +670,27 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | address | Yes | string |
-| blockHeight | query | blockHeight | No | long |
-| endTime | query | endTime in Milliseconds | No | long |
-| limit | query | limit | No | integer |
-| offset | query | offset | No | integer |
-| side | query | transaction side. Allowed value: [ RECEIVE, SEND] | No | enum string |
-| startTime | query | start time in Milliseconds | No | long |
-| txAsset | query | txAsset | No | string |
-| txType | query | transaction type. Allowed value: [ TRANSFER,NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL] | No | enum string |
+| Name        | Located in | Description                                                                                                                                                                                                                                                                                               | Required | Schema      |
+|-------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------|
+| address     | query      | address                                                                                                                                                                                                                                                                                                   | Yes      | string      |
+| blockHeight | query      | blockHeight                                                                                                                                                                                                                                                                                               | No       | long        |
+| endTime     | query      | endTime in Milliseconds                                                                                                                                                                                                                                                                                   | No       | long        |
+| limit       | query      | limit                                                                                                                                                                                                                                                                                                     | No       | integer     |
+| offset      | query      | offset                                                                                                                                                                                                                                                                                                    | No       | integer     |
+| side        | query      | transaction side. Allowed value: [ RECEIVE, SEND]                                                                                                                                                                                                                                                         | No       | enum string |
+| startTime   | query      | start time in Milliseconds                                                                                                                                                                                                                                                                                | No       | long        |
+| txAsset     | query      | txAsset                                                                                                                                                                                                                                                                                                   | No       | string      |
+| txType      | query      | transaction type. Allowed value: [ TRANSFER,NEW_ORDER,ISSUE_TOKEN,BURN_TOKEN,LIST_TOKEN,CANCEL_ORDER,FREEZE_TOKEN,UN_FREEZE_TOKEN,TRANSFER,PROPOSAL,VOTE,MINT,DEPOSIT,CREATE_VALIDATOR,REMOVE_VALIDATOR,TIME_LOCK,TIME_UNLOCK,TIME_RELOCK,SET_ACCOUNT_FLAG,HTL_TRANSFER,CLAIM_HTL,DEPOSIT_HTL,REFUND_HTL] | No       | enum string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [TxPage](#txpage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| 403 | Tx is not within 24h query window|  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description                       | Schema            |
+|---------|-----------------------------------|-------------------|
+| 200     | OK                                | [TxPage](#txpage) |
+| 400     | Bad Request                       | [Error](#error)   |
+| 404     | Not Found                         |                   |
+| 403     | Tx is not within 24h query window |                   |
+| default | Generic error response            | [Error](#error)   |
 
 ### /api/v1/transactions-in-block/{blockHeight}
 ---
@@ -708,18 +708,18 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | block height | Yes | string |
+| Name        | Located in | Description  | Required | Schema |
+|-------------|------------|--------------|----------|--------|
+| blockHeight | path       | block height | Yes      | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [BlockTx](#blocktx) |
-| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description                                                           | Schema              |
+|---------|-----------------------------------------------------------------------|---------------------|
+| 200     | OK                                                                    | [BlockTx](#blocktx) |
+| 400     | Bad Request. The block to query is higher than current highest block. | [Error](#error)     |
+| 404     | Not Found                                                             |                     |
+| default | Generic error response                                                | [Error](#error)     |
 
 ### /api/v2/transactions-in-block/{blockHeight}
 
@@ -738,16 +738,16 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | blockHeight | Yes | long |
+| Name        | Located in | Description | Required | Schema |
+|-------------|------------|-------------|----------|--------|
+| blockHeight | path       | blockHeight | Yes      | long   |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [BlockTxV2](#blocktxv2) |
-| 400 | Bad Request. The block to query is higher than current highest block. | [Error](#error) |
+| Code | Description                                                           | Schema                  |
+|------|-----------------------------------------------------------------------|-------------------------|
+| 200  | OK                                                                    | [BlockTxV2](#blocktxv2) |
+| 400  | Bad Request. The block to query is higher than current highest block. | [Error](#error)         |
 
 ### /api/v1/atomic-swaps
 ---
@@ -763,20 +763,20 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| endTime | query | end time of blockTimestamp | No | long |
-| fromAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
-| limit | query | default 25; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| startTime | query | start time of blockTimestamp in Milliseconds; The maximum start - end query window is 3 months; Default query window is the latest 30 days. | No | long |
-| toAddress | query | At least one of toAddress and fromAddress should be provided as parameter | No | string |
+| Name        | Located in | Description                                                                                                                                 | Required | Schema  |
+|-------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|
+| endTime     | query      | end time of blockTimestamp                                                                                                                  | No       | long    |
+| fromAddress | query      | At least one of toAddress and fromAddress should be provided as parameter                                                                   | No       | string  |
+| limit       | query      | default 25; max 1000.                                                                                                                       | No       | integer |
+| offset      | query      | start with 0; default 0.                                                                                                                    | No       | integer |
+| startTime   | query      | start time of blockTimestamp in Milliseconds; The maximum start - end query window is 3 months; Default query window is the latest 30 days. | No       | long    |
+| toAddress   | query      | At least one of toAddress and fromAddress should be provided as parameter                                                                   | No       | string  |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [AtomicSwapPage](#atomicswappage) |
+| Code | Description | Schema                            |
+|------|-------------|-----------------------------------|
+| 200  | OK          | [AtomicSwapPage](#atomicswappage) |
 
 ### /api/v1/atomic-swaps/{id}
 ---
@@ -793,14 +793,14 @@ If the time window is larger than limits, only the first n klines will return. I
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path | swap id | Yes | string |
+|------|------------|-------------|----------|--------|
+| id   | path       | swap id     | Yes      | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [AtomicSwap](#atomicswap) |
+| Code | Description | Schema                    |
+|------|-------------|---------------------------|
+| 200  | OK          | [AtomicSwap](#atomicswap) |
 
 ### /api/v1/timelocks/{address}
 ---
@@ -809,18 +809,18 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
-| id | query | the record id of timelock to query | No | long |
+| Name    | Located in | Description                        | Required | Schema |
+|---------|------------|------------------------------------|----------|--------|
+| address | path       | The account address to query       | Yes      | string |
+| id      | query      | the record id of timelock to query | No       | long   |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [TimeLocks](#timelocks) |
-| 400 | Bad Request | [Error](#error) |
-| 500 | internal server error | [Error](#error) |
+| Code | Description           | Schema                  |
+|------|-----------------------|-------------------------|
+| 200  | Success               | [TimeLocks](#timelocks) |
+| 400  | Bad Request           | [Error](#error)         |
+| 500  | internal server error | [Error](#error)         |
 
 ### /api/v1/timelock/{account_addr}?(id={recordid})
 ---
@@ -833,19 +833,19 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | path | The account address to query | Yes | string |
-| id | query | the record id of timelock to query | No | long |
+| Name    | Located in | Description                        | Required | Schema |
+|---------|------------|------------------------------------|----------|--------|
+| address | path       | The account address to query       | Yes      | string |
+| id      | query      | the record id of timelock to query | No       | long   |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [TimeLocks](#timelocks) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| 500 | internal server error | [Error](#error) |
+| Code | Description           | Schema                  |
+|------|-----------------------|-------------------------|
+| 200  | Success               | [TimeLocks](#timelocks) |
+| 400  | Bad Request           | [Error](#error)         |
+| 404  | Not Found             |                         |
+| 500  | internal server error | [Error](#error)         |
 
 ### /api/v1/mini/tokens
 ---
@@ -854,18 +854,18 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| offset | query | offset | No | integer |
-| limit | query | limit | No | integer |
+| Name   | Located in | Description | Required | Schema  |
+|--------|------------|-------------|----------|---------|
+| offset | query      | offset      | No       | integer |
+| limit  | query      | limit       | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [MiniTokens](#minitokens) |
-| 400 | Bad Request | [Error](#error) |
-| 500 | internal server error | [Error](#error) |
+| Code | Description           | Schema                    |
+|------|-----------------------|---------------------------|
+| 200  | Success               | [MiniTokens](#minitokens) |
+| 400  | Bad Request           | [Error](#error)           |
+| 500  | internal server error | [Error](#error)           |
 
 ### /api/v1/mini/markets
 ---
@@ -874,17 +874,17 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| offset | query | offset | No | integer |
-| limit | query | limit | No | integer |
+| Name   | Located in | Description | Required | Schema  |
+|--------|------------|-------------|----------|---------|
+| offset | query      | offset      | No       | integer |
+| limit  | query      | limit       | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success | [Markets](#markets) |
-| 400 | Bad Request | [Error](#error) |
+| Code | Description | Schema              |
+|------|-------------|---------------------|
+| 200  | Success     | [Markets](#markets) |
+| 400  | Bad Request | [Error](#error)     |
 
 ### /api/v1/mini/klines
 ---
@@ -916,19 +916,19 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | Yes | string |
-| interval | query | interval. Allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | Yes | enum string |
-| limit | query | default 300; max 1000. | No | integer |
-| startTime | query | start time in Milliseconds | No | long |
-| endTime | query | end time in Milliseconds | No | long |
+| Name      | Located in | Description                                                        | Required | Schema      |
+|-----------|------------|--------------------------------------------------------------------|----------|-------------|
+| symbol    | query      | symbol                                                             | Yes      | string      |
+| interval  | query      | interval. Allowed value: [1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M] | Yes      | enum string |
+| limit     | query      | default 300; max 1000.                                             | No       | integer     |
+| startTime | query      | start time in Milliseconds                                         | No       | long        |
+| endTime   | query      | end time in Milliseconds                                           | No       | long        |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [ [Candlestick](#candlestick) ] |
+| Code | Description | Schema                          |
+|------|-------------|---------------------------------|
+| 200  | OK          | [ [Candlestick](#candlestick) ] |
 
 ### /api/v1/mini/orders/closed
 ---
@@ -944,23 +944,23 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| end | query | end time in Milliseconds | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| status | query | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No | enum string |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name    | Located in | Description                                                                                                                 | Required | Schema      |
+|---------|------------|-----------------------------------------------------------------------------------------------------------------------------|----------|-------------|
+| address | query      | the owner address                                                                                                           | Yes      | string      |
+| end     | query      | end time in Milliseconds                                                                                                    | No       | long        |
+| limit   | query      | default 500; max 1000.                                                                                                      | No       | integer     |
+| offset  | query      | start with 0; default 0.                                                                                                    | No       | integer     |
+| side    | query      | order side. 1 for buy and 2 for sell.                                                                                       | No       | integer     |
+| start   | query      | start time in Milliseconds                                                                                                  | No       | long        |
+| status  | query      | order status list. Allowed value: [Ack, IocExpire, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching] | No       | enum string |
+| symbol  | query      | symbol                                                                                                                      | No       | string      |
+| total   | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response             | No       | integer     |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [OrderList](#orderlist) |
+| Code | Description | Schema                  |
+|------|-------------|-------------------------|
+| 200  | OK          | [OrderList](#orderlist) |
 
 ### /api/v1/mini/orders/open
 ---
@@ -973,22 +973,22 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the owner address | Yes | string |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name    | Located in | Description                                                                                                     | Required | Schema  |
+|---------|------------|-----------------------------------------------------------------------------------------------------------------|----------|---------|
+| address | query      | the owner address                                                                                               | Yes      | string  |
+| limit   | query      | default 500; max 1000.                                                                                          | No       | integer |
+| offset  | query      | start with 0; default 0.                                                                                        | No       | integer |
+| symbol  | query      | symbol                                                                                                          | No       | string  |
+| total   | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [OrderList](#orderlist) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                  |
+|---------|------------------------|-------------------------|
+| 200     | OK                     | [OrderList](#orderlist) |
+| 400     | Bad Request            | [Error](#error)         |
+| 404     | Not Found              |                         |
+| default | Generic error response | [Error](#error)         |
 
 ### /api/v1/mini/orders/{id}
 ---
@@ -1002,16 +1002,16 @@ If the time window is larger than limits, only the first n klines will return. I
 **Parameters**
 
 | Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| id | path | order id | Yes | string |
+|------|------------|-------------|----------|--------|
+| id   | path       | order id    | Yes      | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [Order](#order) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
+| Code    | Description            | Schema          |
+|---------|------------------------|-----------------|
+| 200     | OK                     | [Order](#order) |
+| 400     | Bad Request            | [Error](#error) |
+| 404     | Not Found              |                 |
 | default | Generic error response | [Error](#error) |
 
 ### /api/v1/mini/ticker/24hr
@@ -1025,18 +1025,18 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| symbol | query | symbol | No | string |
+| Name   | Located in | Description | Required | Schema |
+|--------|------------|-------------|----------|--------|
+| symbol | query      | symbol      | No       | string |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [ [TickerStatistics](#tickerstatistics) ] |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                                    |
+|---------|------------------------|-------------------------------------------|
+| 200     | OK                     | [ [TickerStatistics](#tickerstatistics) ] |
+| 400     | Bad Request            | [Error](#error)                           |
+| 404     | Not Found              |                                           |
+| default | Generic error response | [Error](#error)                           |
 
 ### /api/v1/mini/trades
 ---
@@ -1050,89 +1050,89 @@ If the time window is larger than limits, only the first n klines will return. I
 
 **Parameters**
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | the buyer/seller address | No | string |
-| buyerOrderId | query | buyer order id | No | string |
-| end | query | end time in Milliseconds | No | long |
-| height | query | block height | No | long |
-| limit | query | default 500; max 1000. | No | integer |
-| offset | query | start with 0; default 0. | No | integer |
-| quoteAsset | query | quote asset | No | string |
-| sellerOrderId | query | seller order id | No | string |
-| side | query | order side. 1 for buy and 2 for sell. | No | integer |
-| start | query | start time in Milliseconds | No | long |
-| symbol | query | symbol | No | string |
-| total | query | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No | integer |
+| Name          | Located in | Description                                                                                                     | Required | Schema  |
+|---------------|------------|-----------------------------------------------------------------------------------------------------------------|----------|---------|
+| address       | query      | the buyer/seller address                                                                                        | No       | string  |
+| buyerOrderId  | query      | buyer order id                                                                                                  | No       | string  |
+| end           | query      | end time in Milliseconds                                                                                        | No       | long    |
+| height        | query      | block height                                                                                                    | No       | long    |
+| limit         | query      | default 500; max 1000.                                                                                          | No       | integer |
+| offset        | query      | start with 0; default 0.                                                                                        | No       | integer |
+| quoteAsset    | query      | quote asset                                                                                                     | No       | string  |
+| sellerOrderId | query      | seller order id                                                                                                 | No       | string  |
+| side          | query      | order side. 1 for buy and 2 for sell.                                                                           | No       | integer |
+| start         | query      | start time in Milliseconds                                                                                      | No       | long    |
+| symbol        | query      | symbol                                                                                                          | No       | string  |
+| total         | query      | total number required, 0 for not required and 1 for required; default not required, return total=-1 in response | No       | integer |
 
 **Responses**
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [TradePage](#tradepage) |
-| 400 | Bad Request | [Error](#error) |
-| 404 | Not Found |  |
-| default | Generic error response | [Error](#error) |
+| Code    | Description            | Schema                  |
+|---------|------------------------|-------------------------|
+| 200     | OK                     | [TradePage](#tradepage) |
+| 400     | Bad Request            | [Error](#error)         |
+| 404     | Not Found              |                         |
+| default | Generic error response | [Error](#error)         |
 
 ### Models
 ---
 
 ### Error
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| code | long | error code | 400 |
-| message | string | error message |  |
+| Name    | Type   | Description   | Example |
+|---------|--------|---------------|---------|
+| code    | long   | error code    | 400     |
+| message | string | error message |         |
 
 ### Times
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| ap_time | string | event time | e.g. 2019-01-21T10:30:00Z |
+| Name       | Type   | Description              | Example                   |
+|------------|--------|--------------------------|---------------------------|
+| ap_time    | string | event time               | e.g. 2019-01-21T10:30:00Z |
 | block_time | string | the time of latest block | e.g. 2019-01-21T10:30:00Z |
 
 ### Validators
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| block_height | long | Current block height | 12345 |
-| validators | [ [Validator](#validator) ] |  |  |
+| Name         | Type                        | Description          | Example |
+|--------------|-----------------------------|----------------------|---------|
+| block_height | long                        | Current block height | 12345   |
+| validators   | [ [Validator](#validator) ] |                      |         |
 
 ### Validator
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| address | string (hex address) | Address |  |
-| pub_key | [ integer ] | Public key bytes |  |
-| voting_power | integer | validator's voting power |  |
-| accum | integer | validator's accumulated voting power |  |
+| Name         | Type                 | Description                          | Example |
+|--------------|----------------------|--------------------------------------|---------|
+| address      | string (hex address) | Address                              |         |
+| pub_key      | [ integer ]          | Public key bytes                     |         |
+| voting_power | integer              | validator's voting power             |         |
+| accum        | integer              | validator's accumulated voting power |         |
 
 ### Peer
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| id | string | Authenticated identifier | 8c379d4d3b9995c712665dc9a9414dbde5b30483 |
-| original_listen_addr | string (RemoteAddr) | Original listen address before PeersService changed it |  |
-| listen_addr | string (RemoteAddr) | Listen address |  |
-| access_addr | string (RemoteAddr) | Access address (HTTP) |  |
-| stream_addr | string (RemoteAddr) | Stream address (WS) |  |
-| network | string | Chain ID | Binance-Chain-Ganges |
-| version | string | Version | 0.30.1 |
-| moniker | string | Moniker (Name) | data-seed-1 |
-| capabilities | [ string ] | Array of capability tags: node, qs, ap, ws | node,ap |
-| accelerated | boolean | Is an accelerated path to a validator node |  |
+| Name                 | Type                | Description                                            | Example                                  |
+|----------------------|---------------------|--------------------------------------------------------|------------------------------------------|
+| id                   | string              | Authenticated identifier                               | 8c379d4d3b9995c712665dc9a9414dbde5b30483 |
+| original_listen_addr | string (RemoteAddr) | Original listen address before PeersService changed it |                                          |
+| listen_addr          | string (RemoteAddr) | Listen address                                         |                                          |
+| access_addr          | string (RemoteAddr) | Access address (HTTP)                                  |                                          |
+| stream_addr          | string (RemoteAddr) | Stream address (WS)                                    |                                          |
+| network              | string              | Chain ID                                               | Binance-Chain-Ganges                     |
+| version              | string              | Version                                                | 0.30.1                                   |
+| moniker              | string              | Moniker (Name)                                         | data-seed-1                              |
+| capabilities         | [ string ]          | Array of capability tags: node, qs, ap, ws             | node,ap                                  |
+| accelerated          | boolean             | Is an accelerated path to a validator node             |                                          |
 
 ### Transaction
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| hash | string (hex) | Hash of transaction, it returned as bytes before, and now it returns as hex string |  |
-| log | string | Log of transaction |  |
-| data | string | Data of transaction |  |
-| height | string | Height of transaction |  |
-| code | integer | Result code of transaction |  |
-| ok | boolean |  |  |
-| tx | object | Detail of transaction, like transaction type, messages and signature
+| Name   | Type         | Description                                                                        | Example |
+|--------|--------------|------------------------------------------------------------------------------------|---------|
+| hash   | string (hex) | Hash of transaction, it returned as bytes before, and now it returns as hex string |         |
+| log    | string       | Log of transaction                                                                 |         |
+| data   | string       | Data of transaction                                                                |         |
+| height | string       | Height of transaction                                                              |         |
+| code   | integer      | Result code of transaction                                                         |         |
+| ok     | boolean      |                                                                                    |         |
+| tx     | object       | Detail of transaction, like transaction type, messages and signature               
 
 For example, below is the detail of a send transaction. Most of the fields are fixed, but the detail of msg
 varies with msg type, if you query with --format=json.
@@ -1191,383 +1191,383 @@ varies with msg type, if you query with --format=json.
 
 ### Account
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| account_number | integer |  |  |
-| address | string (address) |  |  |
-| balances | [ [Balance](#balance) ] |  |  |
-| public_key | [ integer ] | Public key bytes |  |
-| sequence | long | sequence is for preventing replay attack |  |
+| Name           | Type                    | Description                              | Example |
+|----------------|-------------------------|------------------------------------------|---------|
+| account_number | integer                 |                                          |         |
+| address        | string (address)        |                                          |         |
+| balances       | [ [Balance](#balance) ] |                                          |         |
+| public_key     | [ integer ]             | Public key bytes                         |         |
+| sequence       | long                    | sequence is for preventing replay attack |         |
 
 ### AccountSequence
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| sequence | long | number used for preventing replay attack | 1 |
+| Name     | Type | Description                              | Example |
+|----------|------|------------------------------------------|---------|
+| sequence | long | number used for preventing replay attack | 1       |
 
 ### Balance
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| symbol | string (currency) | asset symbol | BNB |
-| free | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
-| locked | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
-| frozen | string (fixed8) | In decimal form, e.g. 0.00000000 | 0.00000000 |
+| Name   | Type              | Description                      | Example    |
+|--------|-------------------|----------------------------------|------------|
+| symbol | string (currency) | asset symbol                     | BNB        |
+| free   | string (fixed8)   | In decimal form, e.g. 0.00000000 | 0.00000000 |
+| locked | string (fixed8)   | In decimal form, e.g. 0.00000000 | 0.00000000 |
+| frozen | string (fixed8)   | In decimal form, e.g. 0.00000000 | 0.00000000 |
 
 ### Token
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| name | string | token name | BNB Chain Native Token |
-| symbol | string | unique token trade symbol | BTC-000 |
-| original_symbol | string | token symbol | BTC |
-| total_supply | string (fixed8) | total token supply in decimal form, e.g. 1.00000000 | 0.00000000 |
-| owner | string (address) | Address which issue the token |  |
-| contract_address | string | smart contract address for this token |  |
-| contract_decimals | int | the token decimals |  |
+| Name              | Type             | Description                                         | Example                |
+|-------------------|------------------|-----------------------------------------------------|------------------------|
+| name              | string           | token name                                          | BNB Chain Native Token |
+| symbol            | string           | unique token trade symbol                           | BTC-000                |
+| original_symbol   | string           | token symbol                                        | BTC                    |
+| total_supply      | string (fixed8)  | total token supply in decimal form, e.g. 1.00000000 | 0.00000000             |
+| owner             | string (address) | Address which issue the token                       |                        |
+| contract_address  | string           | smart contract address for this token               |                        |
+| contract_decimals | int              | the token decimals                                  |                        |
 
 ### Market
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| base_asset_symbol | string (currency) | symbol of base asset | BNB |
-| quote_asset_symbol | string (currency) | symbol of quote asset | ABC-5CA |
-| list_price | string (fixed8) | In decimal form | 1.00000000 |
-| tick_size | string (fixed8) | Minimium price change in decimal form | 0.00000001 |
-| lot_size | string (fixed8) | Minimium trading quantity in decimal form | 1.00000000 |
+| Name               | Type              | Description                               | Example    |
+|--------------------|-------------------|-------------------------------------------|------------|
+| base_asset_symbol  | string (currency) | symbol of base asset                      | BNB        |
+| quote_asset_symbol | string (currency) | symbol of quote asset                     | ABC-5CA    |
+| list_price         | string (fixed8)   | In decimal form                           | 1.00000000 |
+| tick_size          | string (fixed8)   | Minimium price change in decimal form     | 0.00000001 |
+| lot_size           | string (fixed8)   | Minimium trading quantity in decimal form | 1.00000000 |
 
 ### Fee
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
-| fee | number | The fee amount | 1000000000 |
-| fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
-| multi_transfer_fee | string | Fee for multi-transfer | 200000 |
-| lower_limit_as_multi | string | e.g. 2 | 2 |
-| fixed_fee_params | [FixedFeeParams](#fixedfeeparams) | Set if the fee is fixed |  |
-| dex_fee_fields | [DexFeeFieldParams](#dexfeefieldparams) | dex fee |  |
+| Name                 | Type                                    | Description                                   | Example         |
+|----------------------|-----------------------------------------|-----------------------------------------------|-----------------|
+| msg_type             | string                                  | Transaction msg type that this fee applies to | submit_proposal |
+| fee                  | number                                  | The fee amount                                | 1000000000      |
+| fee_for              | integer                                 | 1 = proposer, 2 = all, 3 = free               | 1               |
+| multi_transfer_fee   | string                                  | Fee for multi-transfer                        | 200000          |
+| lower_limit_as_multi | string                                  | e.g. 2                                        | 2               |
+| fixed_fee_params     | [FixedFeeParams](#fixedfeeparams)       | Set if the fee is fixed                       |                 |
+| dex_fee_fields       | [DexFeeFieldParams](#dexfeefieldparams) | dex fee                                       |                 |
 
 ### FixedFeeParams
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| msg_type | string | Transaction msg type that this fee applies to | submit_proposal |
-| fee | number | The fixed fee amount | 1000000000 |
-| fee_for | integer | 1 = proposer, 2 = all, 3 = free | 1 |
+| Name     | Type    | Description                                   | Example         |
+|----------|---------|-----------------------------------------------|-----------------|
+| msg_type | string  | Transaction msg type that this fee applies to | submit_proposal |
+| fee      | number  | The fixed fee amount                          | 1000000000      |
+| fee_for  | integer | 1 = proposer, 2 = all, 3 = free               | 1               |
 
 ### DexFeeFieldParams
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| fee_name | string | fee name |  |
-| fee_value | integer | fee value |  |
+| Name      | Type    | Description | Example |
+|-----------|---------|-------------|---------|
+| fee_name  | string  | fee name    |         |
+| fee_value | integer | fee value   |         |
 
 ### MarketDepth
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| asks | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| bids | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000 | ["1.00000000","800.00000000"] |
-| pending_match | boolean | If new orders inserted in current block and the matching process has not started in the block, return true. |  |
+| Name          | Type                | Description                                                                                                 | Example                       |
+|---------------|---------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------|
+| asks          | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000                                                              | ["1.00000000","800.00000000"] |
+| bids          | [ string (fixed8) ] | Price and qty in decimal form, e.g. 1.00000000                                                              | ["1.00000000","800.00000000"] |
+| pending_match | boolean             | If new orders inserted in current block and the matching process has not started in the block, return true. |                               |
 
 ### Candlestick
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| close | number | closing price |  |
-| closeTime | long | time of closing trade |  |
-| high | number | the highest price |  |
-| low | number | the lowest price |  |
-| numberOfTrades | integer | total trades |  |
-| open | number | open price |  |
-| openTime | long | time of open trade |  |
-| quoteAssetVolume | number | the total trading volume in quote asset |  |
-| volume | number | the total trading volume |  |
+| Name             | Type    | Description                             | Example |
+|------------------|---------|-----------------------------------------|---------|
+| close            | number  | closing price                           |         |
+| closeTime        | long    | time of closing trade                   |         |
+| high             | number  | the highest price                       |         |
+| low              | number  | the lowest price                        |         |
+| numberOfTrades   | integer | total trades                            |         |
+| open             | number  | open price                              |         |
+| openTime         | long    | time of open trade                      |         |
+| quoteAssetVolume | number  | the total trading volume in quote asset |         |
+| volume           | number  | the total trading volume                |         |
 
 ### OrderList
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| order | [ [Order](#order) ] | list of orders |  |
-| total | long |  |  |
+| Name  | Type                | Description    | Example |
+|-------|---------------------|----------------|---------|
+| order | [ [Order](#order) ] | list of orders |         |
+| total | long                |                |         |
 
 ### Order
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| cumulateQuantity | string | total amount of trades that have made |  |
-| fee | string | trading fee on the latest updated block of this order. Multiple assets are split by semicolon. |  |
-| lastExecutedPrice | string | price of last execution |  |
-| lastExecutedQuantity | string | quantity of last execution |  |
-| orderCreateTime | dateTime | time of order creation |  |
-| orderId | string | order ID |  |
-| owner | string | order issuer |  |
-| price | string | order price |  |
-| quantity | string | order quantity |  |
-| side | integer | 1 for buy and 2 for sell |  |
-| status | string | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |  |
-| symbol | string | trading pair symbol |  |
-| timeInForce | integer | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC) |  |
-| tradeId | string | trade ID |  |
-| transactionHash | string | hash of transaction |  |
-| transactionTime | dateTime | time of latest order update, for example, cancel, expire |  |
-| type | integer | only 2 is available for now, meaning limit order |  |
+| Name                 | Type     | Description                                                                                                 | Example |
+|----------------------|----------|-------------------------------------------------------------------------------------------------------------|---------|
+| cumulateQuantity     | string   | total amount of trades that have made                                                                       |         |
+| fee                  | string   | trading fee on the latest updated block of this order. Multiple assets are split by semicolon.              |         |
+| lastExecutedPrice    | string   | price of last execution                                                                                     |         |
+| lastExecutedQuantity | string   | quantity of last execution                                                                                  |         |
+| orderCreateTime      | dateTime | time of order creation                                                                                      |         |
+| orderId              | string   | order ID                                                                                                    |         |
+| owner                | string   | order issuer                                                                                                |         |
+| price                | string   | order price                                                                                                 |         |
+| quantity             | string   | order quantity                                                                                              |         |
+| side                 | integer  | 1 for buy and 2 for sell                                                                                    |         |
+| status               | string   | enum [Ack, PartialFill, IocNoFill, FullyFill, Canceled, Expired, FailedBlocking, FailedMatching, IocExpire] |         |
+| symbol               | string   | trading pair symbol                                                                                         |         |
+| timeInForce          | integer  | 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)                                       |         |
+| tradeId              | string   | trade ID                                                                                                    |         |
+| transactionHash      | string   | hash of transaction                                                                                         |         |
+| transactionTime      | dateTime | time of latest order update, for example, cancel, expire                                                    |         |
+| type                 | integer  | only 2 is available for now, meaning limit order                                                            |         |
 
 ### SubTx
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockHeight | long |  |  |
-| fromAddr | string |  |  |
-| toAddr | string |  |  |
-| txAsset | string |  |  |
-| txFee | string |  |  |
-| txHash | string |  |  |
-| txType | string |  |  |
-| value | string |  |  |
+| Name        | Type   | Description | Example |
+|-------------|--------|-------------|---------|
+| blockHeight | long   |             |         |
+| fromAddr    | string |             |         |
+| toAddr      | string |             |         |
+| txAsset     | string |             |         |
+| txFee       | string |             |         |
+| txHash      | string |             |         |
+| txType      | string |             |         |
+| value       | string |             |         |
 
 ### TickerStatistics
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| askPrice | string | sell price |  |
-| askQuantity | string | sell quantity |  |
-| bidPrice | string | buy price |  |
-| bidQuantity | string | buy quantity |  |
-| closeTime | long | time of closing |  |
-| count | long | total trade count |  |
-| firstId | string | ID of first trade |  |
-| highPrice | string | highest price |  |
-| lastId | string | ID of last trade |  |
-| lastPrice | string | last price |  |
-| lastQuantity | string | last quantity |  |
-| lowPrice | string | lowest price |  |
-| openPrice | string | open price |  |
-| openTime | long | open time |  |
-| prevClosePrice | string | last close price |  |
-| priceChange | string | change of price |  |
-| priceChangePercent | string | change of price in percentage |  |
-| quoteVolume | string | trading volume in quote asset |  |
-| symbol | string | trading symbol |  |
-| volume | string | trading volume |  |
-| weightedAvgPrice | string | weighted average price |  |
+| Name               | Type   | Description                   | Example |
+|--------------------|--------|-------------------------------|---------|
+| askPrice           | string | sell price                    |         |
+| askQuantity        | string | sell quantity                 |         |
+| bidPrice           | string | buy price                     |         |
+| bidQuantity        | string | buy quantity                  |         |
+| closeTime          | long   | time of closing               |         |
+| count              | long   | total trade count             |         |
+| firstId            | string | ID of first trade             |         |
+| highPrice          | string | highest price                 |         |
+| lastId             | string | ID of last trade              |         |
+| lastPrice          | string | last price                    |         |
+| lastQuantity       | string | last quantity                 |         |
+| lowPrice           | string | lowest price                  |         |
+| openPrice          | string | open price                    |         |
+| openTime           | long   | open time                     |         |
+| prevClosePrice     | string | last close price              |         |
+| priceChange        | string | change of price               |         |
+| priceChangePercent | string | change of price in percentage |         |
+| quoteVolume        | string | trading volume in quote asset |         |
+| symbol             | string | trading symbol                |         |
+| volume             | string | trading volume                |         |
+| weightedAvgPrice   | string | weighted average price        |         |
 
 ### TradePage
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| total | long | total number of trades |  |
-| trade | [ [Trade](#trade) ] |  |  |
+| Name  | Type                | Description            | Example |
+|-------|---------------------|------------------------|---------|
+| total | long                | total number of trades |         |
+| trade | [ [Trade](#trade) ] |                        |         |
 
 ### Trade
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| baseAsset | string | base asset symbol |  |
-| blockHeight | long | block height |  |
-| buyFee | string | trading fee for the buyer address on the block of this trade |  |
-| buyerId | string | id of buyer |  |
-| buyerOrderId | string | order id for buyer |  |
-| buySingleFee | string | trading fee for the buyer address on this single trade | BNB:0.00000172; |
-| buyerSource | long | tx source of buy order | 1 |
-| price | string | trade price |  |
-| quantity | string | trade quantity |  |
-| quoteAsset | string | quote asset symbol |  |
-| sellFee | string | trading fee for the seller address on the block of this trade |  |
-| sellerId | string | seller ID |  |
-| sellerOrderId | string | seller order ID |  |
-| sellSingleFee | string | trading fee for the seller address on this single trade | BNB:0.00000216; |
-| sellerSource | long | tx source of sell order | 1 |
-| symbol | string | asset symbol |  |
-| tickType | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |  |
-| time | long | trade time |  |
-| tradeId | string | trade ID |  |
+| Name          | Type   | Description                                                      | Example         |
+|---------------|--------|------------------------------------------------------------------|-----------------|
+| baseAsset     | string | base asset symbol                                                |                 |
+| blockHeight   | long   | block height                                                     |                 |
+| buyFee        | string | trading fee for the buyer address on the block of this trade     |                 |
+| buyerId       | string | id of buyer                                                      |                 |
+| buyerOrderId  | string | order id for buyer                                               |                 |
+| buySingleFee  | string | trading fee for the buyer address on this single trade           | BNB:0.00000172; |
+| buyerSource   | long   | tx source of buy order                                           | 1               |
+| price         | string | trade price                                                      |                 |
+| quantity      | string | trade quantity                                                   |                 |
+| quoteAsset    | string | quote asset symbol                                               |                 |
+| sellFee       | string | trading fee for the seller address on the block of this trade    |                 |
+| sellerId      | string | seller ID                                                        |                 |
+| sellerOrderId | string | seller order ID                                                  |                 |
+| sellSingleFee | string | trading fee for the seller address on this single trade          | BNB:0.00000216; |
+| sellerSource  | long   | tx source of sell order                                          | 1               |
+| symbol        | string | asset symbol                                                     |                 |
+| tickType      | string | enum [Unknown,SellTaker,BuyTaker,BuySurplus,SellSurplus,Neutral] |                 |
+| time          | long   | trade time                                                       |                 |
+| tradeId       | string | trade ID                                                         |                 |
 
 ### BlockExchangeFeePage
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockExchangeFee | [ [BlockExchangeFee](#blockexchangefee) ] |  |  |
-| total | long |  |  |
+| Name             | Type                                      | Description | Example |
+|------------------|-------------------------------------------|-------------|---------|
+| blockExchangeFee | [ [BlockExchangeFee](#blockexchangefee) ] |             |         |
+| total            | long                                      |             |         |
 
 ### BlockExchangeFee
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| address | string |  |  |
-| blockHeight | long |  |  |
-| blockTime | long | timestamp of a block |  |
-| fee | string | total fee collected. Multiple assets are split by semicolon. |  |
-| tradeCount | long | trade count of the address on the block |  |
+| Name        | Type   | Description                                                  | Example |
+|-------------|--------|--------------------------------------------------------------|---------|
+| address     | string |                                                              |         |
+| blockHeight | long   |                                                              |         |
+| blockTime   | long   | timestamp of a block                                         |         |
+| fee         | string | total fee collected. Multiple assets are split by semicolon. |         |
+| tradeCount  | long   | trade count of the address on the block                      |         |
 
 ### TxPage
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| total | long | total sum of transactions |  |
-| tx | [ [Tx](#tx) ] |  |  |
+| Name  | Type          | Description               | Example |
+|-------|---------------|---------------------------|---------|
+| total | long          | total sum of transactions |         |
+| tx    | [ [Tx](#tx) ] |                           |         |
 
 ### BlockTx
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockHeight | long | block height |  |
-| tx | [ [Tx](#tx) ] |  |  |
+| Name        | Type          | Description  | Example |
+|-------------|---------------|--------------|---------|
+| blockHeight | long          | block height |         |
+| tx          | [ [Tx](#tx) ] |              |         |
 
 ### BlockTxV2
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockHeight | long | block height |  |
-| tx | [ [TxV2](#txv2) ] |  |  |
+| Name        | Type              | Description  | Example |
+|-------------|-------------------|--------------|---------|
+| blockHeight | long              | block height |         |
+| tx          | [ [TxV2](#txv2) ] |              |         |
 
 ### Tx
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockHeight | long | block height |  |
-| code | integer | transaction result code | 0 |
-| confirmBlocks | long |  |  |
-| data | string |  |  |
-| fromAddr | string | from address |  |
-| orderId | string | order ID |  |
-| timeStamp | dateTime | time of transaction |  |
-| toAddr | string | to address |  |
-| txAge | long |  |  |
-| txAsset | string |  |  |
-| txFee | string |  |  |
-| txHash | string | hash of transaction |  |
-| txType | string | type of transaction |  |
-| value | string | value of transaction |  |
-| source | long |  |  |
-| sequence | long |  |  |
-| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
-| proposalId | string |  |  |
+| Name          | Type     | Description                                                                                              | Example |
+|---------------|----------|----------------------------------------------------------------------------------------------------------|---------|
+| blockHeight   | long     | block height                                                                                             |         |
+| code          | integer  | transaction result code                                                                                  | 0       |
+| confirmBlocks | long     |                                                                                                          |         |
+| data          | string   |                                                                                                          |         |
+| fromAddr      | string   | from address                                                                                             |         |
+| orderId       | string   | order ID                                                                                                 |         |
+| timeStamp     | dateTime | time of transaction                                                                                      |         |
+| toAddr        | string   | to address                                                                                               |         |
+| txAge         | long     |                                                                                                          |         |
+| txAsset       | string   |                                                                                                          |         |
+| txFee         | string   |                                                                                                          |         |
+| txHash        | string   | hash of transaction                                                                                      |         |
+| txType        | string   | type of transaction                                                                                      |         |
+| value         | string   | value of transaction                                                                                     |         |
+| source        | long     |                                                                                                          |         |
+| sequence      | long     |                                                                                                          |         |
+| swapId        | string   | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |         |
+| proposalId    | string   |                                                                                                          |         |
 
 ### ExchangeRate
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| ExchangeRate | object |  |  |
+| Name         | Type   | Description | Example |
+|--------------|--------|-------------|---------|
+| ExchangeRate | object |             |         |
 
 ### ResultStatus
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| validator_info | [ [ValidatorInfo](#validatorinfo) ] |  |  |
-| sync_info | [ [SyncInfo](#syncinfo) ] |  |  |
-| node_info | [ [NodeInfo](#nodeinfo) ] |  |  |
+| Name           | Type                                | Description | Example |
+|----------------|-------------------------------------|-------------|---------|
+| validator_info | [ [ValidatorInfo](#validatorinfo) ] |             |         |
+| sync_info      | [ [SyncInfo](#syncinfo) ]           |             |         |
+| node_info      | [ [NodeInfo](#nodeinfo) ]           |             |         |
 
 ### NodeInfo
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| Protocol_Version | [ [ProtocolVersion](#protocolversion) ] |  |  |
-| ID | string |  |  |
-| listen_addr | string |  |  |
-| network | string |  |  |
-| version | string |  |  |
-| channels | string |  |  |
-| moniker | string |  |  |
-| other | object |  |  |
+| Name             | Type                                    | Description | Example |
+|------------------|-----------------------------------------|-------------|---------|
+| Protocol_Version | [ [ProtocolVersion](#protocolversion) ] |             |         |
+| ID               | string                                  |             |         |
+| listen_addr      | string                                  |             |         |
+| network          | string                                  |             |         |
+| version          | string                                  |             |         |
+| channels         | string                                  |             |         |
+| moniker          | string                                  |             |         |
+| other            | object                                  |             |         |
 
 ### SyncInfo
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| latest_block_hash | string (hex) |  |  |
-| latest_app_hash | string (hex) |  |  |
-| latest_block_height | long |  |  |
-| latest_block_time | time |  |  |
-| catching_up | boolean |  |  |
+| Name                | Type         | Description | Example |
+|---------------------|--------------|-------------|---------|
+| latest_block_hash   | string (hex) |             |         |
+| latest_app_hash     | string (hex) |             |         |
+| latest_block_height | long         |             |         |
+| latest_block_time   | time         |             |         |
+| catching_up         | boolean      |             |         |
 
 ### ProtocolVersion
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| P2P | integer (uint64) |  |  |
-| block | integer (uint64) |  |  |
-| app | integer (uint64) |  |  |
+| Name  | Type             | Description | Example |
+|-------|------------------|-------------|---------|
+| P2P   | integer (uint64) |             |         |
+| block | integer (uint64) |             |         |
+| app   | integer (uint64) |             |         |
 
 ### ValidatorInfo
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| address | string | hex address |  |
-| pub_key | string | hex-encoded |  |
-| voting_power | long |  |  |
+| Name         | Type   | Description | Example |
+|--------------|--------|-------------|---------|
+| address      | string | hex address |         |
+| pub_key      | string | hex-encoded |         |
+| voting_power | long   |             |         |
 
 ### AtomicSwapPage
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| atomicSwaps | [ [AtomicSwap](#atomicswap) ] |  |  |
-| total | long |  |  |
+| Name        | Type                          | Description | Example |
+|-------------|-------------------------------|-------------|---------|
+| atomicSwaps | [ [AtomicSwap](#atomicswap) ] |             |         |
+| total       | long                          |             |         |
 
 ### AtomicSwap
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockTimestamp | long | Timestamp of block in which the swap is initiated. The unit is millisecond. |  |
-| closedTime | long |  |  |
-| crossChain | integer |  |  |
-| expectedIncome | string |  |  |
-| expireHeight | long |  |  |
-| fromAddr | string |  |  |
-| inAmount | string |  |  |
-| outAmount | string |  |  |
-| randomNumber | string |  |  |
-| randomNumberHash | string |  |  |
-| recipientOtherChain | string |  |  |
-| status | integer |  |  |
-| swapId | string |  |  |
-| timestamp | string (int64) | The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second. |  |
-| toAddr | string |  |  |
+| Name                | Type           | Description                                                                                                           | Example |
+|---------------------|----------------|-----------------------------------------------------------------------------------------------------------------------|---------|
+| blockTimestamp      | long           | Timestamp of block in which the swap is initiated. The unit is millisecond.                                           |         |
+| closedTime          | long           |                                                                                                                       |         |
+| crossChain          | integer        |                                                                                                                       |         |
+| expectedIncome      | string         |                                                                                                                       |         |
+| expireHeight        | long           |                                                                                                                       |         |
+| fromAddr            | string         |                                                                                                                       |         |
+| inAmount            | string         |                                                                                                                       |         |
+| outAmount           | string         |                                                                                                                       |         |
+| randomNumber        | string         |                                                                                                                       |         |
+| randomNumberHash    | string         |                                                                                                                       |         |
+| recipientOtherChain | string         |                                                                                                                       |         |
+| status              | integer        |                                                                                                                       |         |
+| swapId              | string         |                                                                                                                       |         |
+| timestamp           | string (int64) | The timestamp for randomNumberHash calculation, randomNumberHash=sha256(randomNumber, timestamp). The unit is second. |         |
+| toAddr              | string         |                                                                                                                       |         |
 
 ### TxV2
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| blockHeight | long |  |  |
-| code | integer |  | 0 |
-| data | string |  |  |
-| fromAddr | string |  |  |
-| memo | string |  |  |
-| orderId | string | Optional. Available when the transaction type is NEW_ORDER |  |
-| proposalId | string | Optional. Available when the transaction type is PROPOSAL |  |
-| sequence | long |  |  |
-| source | long |  |  |
-| subTransactions | [ [SubTx](#subtx) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |  |
-| swapId | string | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL |  |
-| timeStamp | dateTime |  |  |
-| toAddr | string |  |  |
-| txAsset | string |  |  |
-| txFee | string |  |  |
-| txHash | string |  |  |
-| txType | string |  |  |
-| value | string |  |  |
+| Name            | Type                | Description                                                                                                                         | Example |
+|-----------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------|---------|
+| blockHeight     | long                |                                                                                                                                     |         |
+| code            | integer             |                                                                                                                                     | 0       |
+| data            | string              |                                                                                                                                     |         |
+| fromAddr        | string              |                                                                                                                                     |         |
+| memo            | string              |                                                                                                                                     |         |
+| orderId         | string              | Optional. Available when the transaction type is NEW_ORDER                                                                          |         |
+| proposalId      | string              | Optional. Available when the transaction type is PROPOSAL                                                                           |         |
+| sequence        | long                |                                                                                                                                     |         |
+| source          | long                |                                                                                                                                     |         |
+| subTransactions | [ [SubTx](#subtx) ] | Optional. Available when the transaction has sub-transactions, such as multi-send transaction or a transaction have multiple assets |         |
+| swapId          | string              | Optional. Available when the transaction type is one of HTL_TRANSFER, CLAIM_HTL, REFUND_HTL, DEPOSIT_HTL                            |         |
+| timeStamp       | dateTime            |                                                                                                                                     |         |
+| toAddr          | string              |                                                                                                                                     |         |
+| txAsset         | string              |                                                                                                                                     |         |
+| txFee           | string              |                                                                                                                                     |         |
+| txHash          | string              |                                                                                                                                     |         |
+| txType          | string              |                                                                                                                                     |         |
+| value           | string              |                                                                                                                                     |         |
 
 ### TimeLocks
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| id | long | The record id of the timelock transaction |  |
-| description | string | The description of the timelock transaction |  |
-| amount | [  ] |  |  |
-| locktime | string | The available unlock time |  |
+| Name        | Type   | Description                                 | Example |
+|-------------|--------|---------------------------------------------|---------|
+| id          | long   | The record id of the timelock transaction   |         |
+| description | string | The description of the timelock transaction |         |
+| amount      | [  ]   |                                             |         |
+| locktime    | string | The available unlock time                   |         |
 
 ### MiniTokens
 
-| Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
-| name | string |  | BNB Chain Mini Token |
-| symbol | string |  | BTC-000 |
-| original_symbol | string |  | BTC |
-| total_supply | string (fixed8) | In decimal form, e.g. 1.00000000 | 0.00000000 |
-| token_type | integer | Type of the mini token |  |
-| owner | string (address) | Address |  |
-| mintable | boolean | mintable |  |
-| token_uri | string | URI for token description |  |
-| contract_address | string | smart contract address for this token |  |
-| contract_decimals | int | the token decimals |  |
+| Name              | Type             | Description                           | Example              |
+|-------------------|------------------|---------------------------------------|----------------------|
+| name              | string           |                                       | BNB Chain Mini Token |
+| symbol            | string           |                                       | BTC-000              |
+| original_symbol   | string           |                                       | BTC                  |
+| total_supply      | string (fixed8)  | In decimal form, e.g. 1.00000000      | 0.00000000           |
+| token_type        | integer          | Type of the mini token                |                      |
+| owner             | string (address) | Address                               |                      |
+| mintable          | boolean          | mintable                              |                      |
+| token_uri         | string           | URI for token description             |                      |
+| contract_address  | string           | smart contract address for this token |                      |
+| contract_decimals | int              | the token decimals                    |                      |

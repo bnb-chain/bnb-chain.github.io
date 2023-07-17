@@ -141,7 +141,7 @@ Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 
 ### Mainnet Fees API
 
-View system fees updated in real time [here](https://dex.binance.org/api/v1/fees).
+View system fees updated in real time [here](https://dex.bnbchain.org/api/v1/fees).
 
 
 ### Multi-send Fees
@@ -180,7 +180,7 @@ Transaction Type | Pay in non-BNB Asset | Pay in BNB
 -- | -- | --
 Trade | 0.1% | 0.05%
 
-Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=amino). It's under the "params/DexFeeParam/".  "FeeRate" and "FeeRateNative" are both under unit of 10^-6.
+Trading fee can be queried at [here](https://dex.bnbchain.org/api/v1/fees?format=amino). It's under the "params/DexFeeParam/".  "FeeRate" and "FeeRateNative" are both under unit of 10^-6.
 
 ### Current Fees Table on Testnet
 
@@ -231,7 +231,7 @@ Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
 
 ### Testnet Fees API
 
-View system fees updated in real time [here](https://testnet-dex.binance.org/api/v1/fees).
+View system fees updated in real time [here](https://testnet-dex.bnbchain.org/api/v1/fees).
 
 ### Notes
 

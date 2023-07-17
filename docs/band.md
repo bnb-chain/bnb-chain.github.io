@@ -15,9 +15,9 @@ Developers building on BNB Smart Chain can now leverage Band’s decentralized o
 Currently, the following token symbols are supported. Going forward, this list will continue to expand based on developer needs and community feedback.
 
 |              Token Name               | Symbol |
-| :-----------------------------------: | :----: |
-|             BNB Coin                  |  BNB   |
-|              BNB USD                  |  BUSD  |
+|:-------------------------------------:|:------:|
+|               BNB Coin                |  BNB   |
+|                BNB USD                |  BUSD  |
 |                Bitcoin                |  BTC   |
 |               Ethereum                |  ETH   |
 |                Tether                 |  USDT  |
@@ -142,10 +142,10 @@ contract DemoOracle {
 
 #### Contract Addresses
 
-| Blockchain    |         Aggregator Contract Address          | Update Every |                           Explorer                           |
-| :------------ | :------------------------------------------: | :----------: | :----------------------------------------------------------: |
+| Blockchain    |         Aggregator Contract Address          | Update Every |                                        Explorer                                        |
+|:--------------|:--------------------------------------------:|:------------:|:--------------------------------------------------------------------------------------:|
 | BSC (Testnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    | [link](https://testnet.bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
-| BSC (Mainnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    | [link](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3) |
+| BSC (Mainnet) | `0xDA7a001b254CD22e46d3eAB04d937489c93174C3` |    5 mins    |     [link](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)     |
 
 ### BandChain.JS
 

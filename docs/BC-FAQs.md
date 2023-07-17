@@ -153,93 +153,92 @@ all the receiving asset and its residual balance will be charged.
 
 Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for **Mainnet** as of **2021-03-21** is as follows:
 
-Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
--- | -- | -- | --
-New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-Order Expire (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-IOC (No Fill) | Equivalent 0.00025 BNB | 0.000005 BNB | Y
-Transfer | N/A | 0.000075 BNB | N
-crossTransferOut| N/A | 0.000075 BNB | N
-Multi-send | N/A | 0.00006 BNB | N
-Issue Asset | N/A | 10 BNB |
-Mint Asset | N/A | 0.002 BNB | N
-Transfer ownership| N/A | 0.002 BNB | N
-Burn Asset | N/A | 0.002 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.001 BNB | N
-Lock/unlock/relock Asset | N/A | 0.002 BNB | N
-List Asset | N/A | 200 BNB | N
-Submit Proposal | N/A | 1 BNB | N
-Deposit | N/A | 0.000125 BNB | N
-Enable Memo Check | N/A | 0.2 BNB | N
-Disable Memo Check | N/A | 0.2 BNB | N
-HTLT | N/A | 0.000075 BNB | N
-depositHTLT | N/A |  0.000075 BNB | N
-claimHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-TinyIssueFee | N/A | 0.4 BNB | N
-MiniIssueFee | N/A | 0.6 BNB | N
-SetTokenUri | N/A| 0.000075 BNB | N
-List BEP8 Token| N/A| 1 BNB | N
-Create A New Smart Chain Validator | N/A |2 BNB |N
-Edit Smart Chain Validator Information|N/A| 0.2 BNB |N
-Delegate Smart Chain Validator |N/A| 0.0002 BNB |N
-Redelegate Smart Chain Validator | N/A|0.0006 BNB |N
-Undelegate Smart Chain Validator | N/A|0.0004 BNB |N
-Unjail A Smart Chain Validator | N/A| 0.5 BNB | N
-Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 0.5 BNB| N
-Submit Smart Chain Proposal | N/A| 1 BNB    | N
-Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
-Smart Chain Proposal Vote   | N/A| 0 BNB   | N
-Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
-
+| Transaction Type                                              | Pay in Non-BNB Asset   | Pay in BNB   | Exchange (DEX) Related |
+|---------------------------------------------------------------|------------------------|--------------|------------------------|
+| New Order                                                     | 0                      | 0            | Y                      |
+| Cancel (No Fill)                                              | Equivalent 0.00005 BNB | 0.00001 BNB  | Y                      |
+| Order Expire (No Fill)                                        | Equivalent 0.00005 BNB | 0.00001 BNB  | Y                      |
+| IOC (No Fill)                                                 | Equivalent 0.00025 BNB | 0.000005 BNB | Y                      |
+| Transfer                                                      | N/A                    | 0.000075 BNB | N                      |
+| crossTransferOut                                              | N/A                    | 0.000075 BNB | N                      |
+| Multi-send                                                    | N/A                    | 0.00006 BNB  | N                      |
+| Issue Asset                                                   | N/A                    | 10 BNB       |                        |
+| Mint Asset                                                    | N/A                    | 0.002 BNB    | N                      |
+| Transfer ownership                                            | N/A                    | 0.002 BNB    | N                      |
+| Burn Asset                                                    | N/A                    | 0.002 BNB    | N                      |
+| Freeze/Unfreeze Asset                                         | N/A                    | 0.001 BNB    | N                      |
+| Lock/unlock/relock Asset                                      | N/A                    | 0.002 BNB    | N                      |
+| List Asset                                                    | N/A                    | 200 BNB      | N                      |
+| Submit Proposal                                               | N/A                    | 1 BNB        | N                      |
+| Deposit                                                       | N/A                    | 0.000125 BNB | N                      |
+| Enable Memo Check                                             | N/A                    | 0.2 BNB      | N                      |
+| Disable Memo Check                                            | N/A                    | 0.2 BNB      | N                      |
+| HTLT                                                          | N/A                    | 0.000075 BNB | N                      |
+| depositHTLT                                                   | N/A                    | 0.000075 BNB | N                      |
+| claimHTLT                                                     | N/A                    | 0.000075 BNB | N                      |
+| refundHTLT                                                    | N/A                    | 0.000075 BNB | N                      |
+| refundHTLT                                                    | N/A                    | 0.000075 BNB | N                      |
+| TinyIssueFee                                                  | N/A                    | 0.4 BNB      | N                      |
+| MiniIssueFee                                                  | N/A                    | 0.6 BNB      | N                      |
+| SetTokenUri                                                   | N/A                    | 0.000075 BNB | N                      |
+| List BEP8 Token                                               | N/A                    | 1 BNB        | N                      |
+| Create A New Smart Chain Validator                            | N/A                    | 2 BNB        | N                      |
+| Edit Smart Chain Validator Information                        | N/A                    | 0.2 BNB      | N                      |
+| Delegate Smart Chain Validator                                | N/A                    | 0.0002 BNB   | N                      |
+| Redelegate Smart Chain Validator                              | N/A                    | 0.0006 BNB   | N                      |
+| Undelegate Smart Chain Validator                              | N/A                    | 0.0004 BNB   | N                      |
+| Unjail A Smart Chain Validator                                | N/A                    | 0.5 BNB      | N                      |
+| Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A                    | 0.5 BNB      | N                      |
+| Submit Smart Chain Proposal                                   | N/A                    | 1 BNB        | N                      |
+| Smart Chain Proposal Deposit                                  | N/A                    | 0.00025 BNB  | N                      |
+| Smart Chain Proposal Vote                                     | N/A                    | 0 BNB        | N                      |
+| Cross transfer out relayer reward                             | N/A                    | 0.0004 BNB   | N                      |
 
 ### What is the current Fee Table on BNB Beacon Chain  Testnet?
 
 Fees are variable and may change over time as governance proposals are proposed and voted on. The current fees table for Testnet as of **2021-03-17** is as follows:
 
 
-Transaction Type | Pay in Non-BNB Asset | Pay in BNB | Exchange (DEX) Related
--- | -- | -- | --
-New Order | 0 | 0 | Y
-Cancel (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-Order Expire (No Fill) | Equivalent 0.00005 BNB | 0.00001 BNB | Y
-IOC (No Fill) | Equivalent 0.00025 BNB | 0.000005 BNB | Y
-Transfer | N/A | 0.000075 BNB | N
-crossTransferOut| N/A | 0.000075 BNB | N
-Multi-send | N/A | 0.00006 BNB | N
-Issue Asset | N/A | 10 BNB |
-Mint Asset | N/A | 0.002 BNB | N
-Transfer ownership| N/A | 0.002 BNB | N
-Burn Asset | N/A | 0.002 BNB | N
-Freeze/Unfreeze Asset | N/A | 0.001 BNB | N
-Lock/unlock/relock Asset | N/A | 0.002 BNB | N
-List Asset | N/A | 200 BNB | N
-Submit Proposal | N/A | 1 BNB | N
-Deposit | N/A | 0.000125 BNB | N
-Enable Memo Check | N/A | 0.2 BNB | N
-Disable Memo Check | N/A | 0.2 BNB | N
-HTLT | N/A | 0.000075 BNB | N
-depositHTLT | N/A |  0.000075 BNB | N
-claimHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-refundHTLT | N/A |  0.000075 BNB | N
-TinyIssueFee | N/A | 0.4 BNB | N
-MiniIssueFee | N/A | 0.6 BNB | N
-SetTokenUri | N/A| 0.000075 BNB | N
-List BEP8 Token| N/A| 1 BNB | N
-Create A New Smart Chain Validator | N/A |2 BNB |N
-Edit Smart Chain Validator Information|N/A| 0.2 BNB |N
-Delegate Smart Chain Validator |N/A| 0.0002 BNB |N
-Redelegate Smart Chain Validator | N/A|0.0006 BNB |N
-Undelegate Smart Chain Validator | N/A|0.0004 BNB |N
-Unjail A Smart Chain Validator | N/A| 0.5 BNB | N
-Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A| 0.5 BNB| N
-Submit Smart Chain Proposal | N/A| 1 BNB    | N
-Smart Chain Proposal Deposit | N/A|0.00025 BNB | N
-Smart Chain Proposal Vote   | N/A| 0 BNB   | N
-Cross transfer out relayer reward  | N/A| 0.0004 BNB    | N
+| Transaction Type                                              | Pay in Non-BNB Asset   | Pay in BNB   | Exchange (DEX) Related |
+|---------------------------------------------------------------|------------------------|--------------|------------------------|
+| New Order                                                     | 0                      | 0            | Y                      |
+| Cancel (No Fill)                                              | Equivalent 0.00005 BNB | 0.00001 BNB  | Y                      |
+| Order Expire (No Fill)                                        | Equivalent 0.00005 BNB | 0.00001 BNB  | Y                      |
+| IOC (No Fill)                                                 | Equivalent 0.00025 BNB | 0.000005 BNB | Y                      |
+| Transfer                                                      | N/A                    | 0.000075 BNB | N                      |
+| crossTransferOut                                              | N/A                    | 0.000075 BNB | N                      |
+| Multi-send                                                    | N/A                    | 0.00006 BNB  | N                      |
+| Issue Asset                                                   | N/A                    | 10 BNB       |                        |
+| Mint Asset                                                    | N/A                    | 0.002 BNB    | N                      |
+| Transfer ownership                                            | N/A                    | 0.002 BNB    | N                      |
+| Burn Asset                                          s         | N/A                    | 0.002 BNB    | N                      |
+| Freeze/Unfreeze Asset                                         | N/A                    | 0.001 BNB    | N                      |
+| Lock/unlock/relock Asset                                      | N/A                    | 0.002 BNB    | N                      |
+| List Asset                                                    | N/A                    | 200 BNB      | N                      |
+| Submit Proposal                                               | N/A                    | 1 BNB        | N                      |
+| Deposit                                                       | N/A                    | 0.000125 BNB | N                      |
+| Enable Memo Check                                             | N/A                    | 0.2 BNB      | N                      |
+| Disable Memo Check                                            | N/A                    | 0.2 BNB      | N                      |
+| HTLT                                                          | N/A                    | 0.000075 BNB | N                      |
+| depositHTLT                                                   | N/A                    | 0.000075 BNB | N                      |
+| claimHTLT                                                     | N/A                    | 0.000075 BNB | N                      |
+| refundHTLT                                                    | N/A                    | 0.000075 BNB | N                      |
+| refundHTLT                                                    | N/A                    | 0.000075 BNB | N                      |
+| TinyIssueFee                                                  | N/A                    | 0.4 BNB      | N                      |
+| MiniIssueFee                                                  | N/A                    | 0.6 BNB      | N                      |
+| SetTokenUri                                                   | N/A                    | 0.000075 BNB | N                      |
+| List BEP8 Token                                               | N/A                    | 1 BNB        | N                      |
+| Create A New Smart Chain Validator                            | N/A                    | 2 BNB        | N                      |
+| Edit Smart Chain Validator Information                        | N/A                    | 0.2 BNB      | N                      |
+| Delegate Smart Chain Validator                                | N/A                    | 0.0002 BNB   | N                      |
+| Redelegate Smart Chain Validator                              | N/A                    | 0.0006 BNB   | N                      |
+| Undelegate Smart Chain Validator                              | N/A                    | 0.0004 BNB   | N                      |
+| Unjail A Smart Chain Validator                                | N/A                    | 0.5 BNB      | N                      |
+| Submit Byzaitine Behavior Evidence of A Smart Chain Validator | N/A                    | 0.5 BNB      | N                      |
+| Submit Smart Chain Proposal                                   | N/A                    | 1 BNB        | N                      |
+| Smart Chain Proposal Deposit                                  | N/A                    | 0.00025 BNB  | N                      |
+| Smart Chain Proposal Vote                                     | N/A                    | 0 BNB        | N                      |
+| Cross transfer out relayer reward                             | N/A                    | 0.0004 BNB   | N                      |
 
 ### Can I see orders/balances of others or can other people see my orders/balances?
 

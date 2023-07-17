@@ -2,8 +2,8 @@
 
 Several data streams are exposed over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
 
-- The base endpoint for mainnet is: **wss://dex.binance.org/api/**.
-- The base endpoint for testnet is: **wss://testnet-dex.binance.org/api/**.
+- The base endpoint for mainnet is: **wss://dex.bnbchain.org/api/**.
+- The base endpoint for testnet is: **wss://testnet-dex.bnbchain.org/api/**.
 - Each connection can consume a single stream or multiple streams may be multiplexed through one connection for more complex apps.
 - All symbols in stream names are lowercase.
 
@@ -23,20 +23,20 @@ Using this method, stream names are specified in the URLs used to connect to the
 
 ```javascript
   // for personal streams, ex: Account & Transfers
-  const accountAndOrdersFeeds = new WebSocket("wss://dex.binance.org/api/ws/<USER_ADDRESS>");
+  const accountAndOrdersFeeds = new WebSocket("wss://dex.bnbchain.org/api/ws/<USER_ADDRESS>");
 
   // for all symbols
-  const blockHeight = new WebSocket("wss://dex.binance.org/api/ws/$all@blockheight");
+  const blockHeight = new WebSocket("wss://dex.bnbchain.org/api/ws/$all@blockheight");
 ```
 
 **Testnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
 
 ```javascript
   // for personal streams, ex: Account & Transfers
-  const accountAndOrdersFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<USER_ADDRESS>");
+  const accountAndOrdersFeeds = new WebSocket("wss://testnet-dex.bnbchain.org/api/ws/<USER_ADDRESS>");
 
   // for all symbols
-  const blockHeight = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@blockheight");
+  const blockHeight = new WebSocket("wss://testnet-dex.bnbchain.org/api/ws/$all@blockheight");
 ```
 
 ### Method 2: Subscribe to streams on demand
@@ -46,7 +46,7 @@ Using this method, streams are be consumed via subscribe and unsubscribe command
 **Note: one connection is only allowed to subscribe to one address.**
 
 ```javascript
-    const conn = new WebSocket("wss://dex.binance.org/api/ws");
+    const conn = new WebSocket("wss://dex.bnbchain.org/api/ws");
     conn.onopen = function(evt) {
         // send Subscribe/Unsubscribe messages here (see below)
     }
@@ -63,7 +63,7 @@ After connecting successfully you can subscribe/unsubscribe to different topics.
 **Example:** To subscribe to transfer events, you should send a socket message with the `subscribe` payload as below:
 
 ```javascript
-    const conn = new WebSocket("wss://dex.binance.org/api/ws/bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x");
+    const conn = new WebSocket("wss://dex.bnbchain.org/api/ws/bnb17zw3mqjx64x4dxtwqjqz5tssql6qp2m0cgv06x");
     conn.onopen = function(evt) {
         // for personal topics such as accounts & transfers, an `address` is required
         // Note: one connection is only allowed to subscribe to one address.

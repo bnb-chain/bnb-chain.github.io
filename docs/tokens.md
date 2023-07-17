@@ -7,7 +7,7 @@ The [fees](trading-spec.md#fees) that are due must be paid in BNB before any of 
 
 **Please note:** Before you run any command examples on this page, and if you have not done so already, you must [generate or add a key to bnbcli](keys.md).
 
-**Also remember:** The `chain-id` and `node` parameters passed to bnbcli may vary, and the`chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Ganges` for testnet. To find the latest list of  endpoints for the mainnet, please check [the peers list](https://dex.binance.org/api/v1/peers). To find the latest endpoints for the testnet, please check [the peers list](https://testnet-dex.binance.org/api/v1/peers).
+**Also remember:** The `chain-id` and `node` parameters passed to bnbcli may vary, and the`chain-id` for mainnet is `Binance-Chain-Tigris`, and is `Binance-Chain-Ganges` for testnet. To find the latest list of  endpoints for the mainnet, please check [the peers list](https://dex.bnbchain.org/api/v1/peers). To find the latest endpoints for the testnet, please check [the peers list](https://testnet-dex.bnbchain.org/api/v1/peers).
 
 ## Issue
 

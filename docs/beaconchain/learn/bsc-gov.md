@@ -10,12 +10,12 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ## Fee Table
 
-| Transaction Type                   | Fee         | Fee For                      |
-| -------------------------- | ----------- | ---------------------------- |
-| Submit Smart Chain Proposal | 10 BNBs     | Proposer                     |
-| Smart Chain Proposal Deposit        | 0.00125 BNB | Proposer                     |
-| Smart Chain Proposal Vote           | 1 BNB       | Proposer                     |
-| Relayer reward             | 0.001 BNB    | system reward pool |
+| Transaction Type             | Fee         | Fee For            |
+|------------------------------|-------------|--------------------|
+| Submit Smart Chain Proposal  | 10 BNBs     | Proposer           |
+| Smart Chain Proposal Deposit | 0.00125 BNB | Proposer           |
+| Smart Chain Proposal Vote    | 1 BNB       | Proposer           |
+| Relayer reward               | 0.001 BNB   | system reward pool |
 
 ### Global Parameters
 
@@ -26,12 +26,12 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ### Query side chain proposals
 
-| **parameter name**  | **example**                                | **comments**                                         | **required** |
-| ------------------- | ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chain-id          | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id     | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --status            | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No          |
-| --voter             | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                | No           |
+| **parameter name** | **example**                                | **comments**                                                                              | **required** |
+|--------------------|--------------------------------------------|-------------------------------------------------------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                                                            | Yes          |
+| --side-chain-id    | chapel                                     | the id of side chain, default is native chain                                             | Yes          |
+| --status           | passed                                     | filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected | No           |
+| --voter            | bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu | filter by proposals voted on by voted                                                     | No           |
 
 
 ```bash
@@ -44,11 +44,11 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ### Query side chain proposal
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
-| -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
+| **parameter name** | **example**       | **comments**                                  | **required** |
+|--------------------|-------------------|-----------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                | Yes          |
+| --side-chain-id    | chapel            | the id of side chain, default is native chain | Yes          |
+| --proposal-id      | 1                 | proposalID of proposal being queried          | Yes          |
 
 ```bash
 ## mainnet
@@ -60,9 +60,9 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ### Query side chain parameters
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
-| -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
+| **parameter name** | **example** | **comments**                                  | **required** |
+|--------------------|-------------|-----------------------------------------------|--------------|
+| --side-chain-id    | chapel      | the id of side chain, default is native chain | Yes          |
 
 ```bash
 ## mainnet
@@ -137,12 +137,12 @@ All these parameters will be determined by BSC Validator Set together through a 
 
 ### Vote for side chain proposal
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
-| -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
-| --option           | Yes                                        | vote option {yes, no, no_with_veto, abstain}         | Yes          |
+| **parameter name** | **example**       | **comments**                                  | **required** |
+|--------------------|-------------------|-----------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                | Yes          |
+| --side-chain-id    | chapel            | the id of side chain, default is native chain | Yes          |
+| --proposal-id      | 1                 | proposalID of proposal being queried          | Yes          |
+| --option           | Yes               | vote option {yes, no, no_with_veto, abstain}  | Yes          |
 
 ```bash
 ## mainnet
@@ -155,12 +155,12 @@ All these parameters will be determined by BSC Validator Set together through a 
 ### Deposit for side chain proposal
 
 
-| **parameter name** | **example**                                | **comments**                                         | **required** |
-| -------------------| ------------------------------------------ | ---------------------------------------------------- | ------------ |
-| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                       | Yes          |
-| --side-chain-id    | chapel                                     | the id of side chain, default is native chain        | Yes          |
-| --proposal-id      | 1                                          | proposalID of proposal being queried                 | Yes          |
-| --deposit          | Yes                                        | amount of deposit                                    | Yes          |
+| **parameter name** | **example**       | **comments**                                  | **required** |
+|--------------------|-------------------|-----------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                | Yes          |
+| --side-chain-id    | chapel            | the id of side chain, default is native chain | Yes          |
+| --proposal-id      | 1                 | proposalID of proposal being queried          | Yes          |
+| --deposit          | Yes               | amount of deposit                             | Yes          |
 
 ```bash
 ## mainnet
