@@ -22,7 +22,7 @@ and produce blocks, they take care of:
 - They serve as data replicas and help to propagate the chain state around the network.
 - They receive transactions and broadcast them to all other nodes including Validator nodes.
 
-You can see the witness node information from this endpoint: https://dex.binance.org/api/v1/peers
+You can see the witness node information from this endpoint: https://dex.bnbchain.org/api/v1/peers
 
 For mainnet, there are some witness nodes.
 

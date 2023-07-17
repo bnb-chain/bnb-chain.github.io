@@ -51,10 +51,10 @@ When your validator is `unjailed` on BNB Beacon Chain, it must wait for the next
 
 ## Fee Table
 
-Transaction Type  | Pay in BNB |
--- | -- |
-Unjail A Smart Chain Validator | 1 |
-Submit Byzaitine Behavior Evidence of A Smart Chain Validator | 10 |
+| Transaction Type                                              | Pay in BNB |
+|---------------------------------------------------------------|------------|
+| Unjail A Smart Chain Validator                                | 1          |
+| Submit Byzaitine Behavior Evidence of A Smart Chain Validator | 10         |
 
 
 ## Commands
@@ -69,12 +69,12 @@ Slashing validators of BSC for the malicious behavior of **double-sign** by subm
 
 #### Parameters for  slashing bsc-submit-evidence
 
-| **parameter name** | **example**                                                  | **comments**                                                 | **required** |
-| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
-| --chain-id         | Binance-Chain-Tigris                                          | the chain id of binance  chain                               | Yes          |
-| --from             | bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd                   | Name or address of  private key with which to sign           | Yes          |
-| --evidence         | [{"difficulty":"0x2","extraData":"0xd98301...},{"difficulty":"0x3","extraData":"0xd64372...}] | Evidence details,  including two bsc block headers with json format | Option       |
-| --evidence-file    | /user/evidence.json                                          | File of evidence details,  if evidence-file is not empty, --evidence will be ignored | Option       |
+| **parameter name** | **example**                                                                                   | **comments**                                                                         | **required** |
+|--------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-Tigris                                                                          | the chain id of binance  chain                                                       | Yes          |
+| --from             | bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd                                                    | Name or address of  private key with which to sign                                   | Yes          |
+| --evidence         | [{"difficulty":"0x2","extraData":"0xd98301...},{"difficulty":"0x3","extraData":"0xd64372...}] | Evidence details,  including two bsc block headers with json format                  | Option       |
+| --evidence-file    | /user/evidence.json                                                                           | File of evidence details,  if evidence-file is not empty, --evidence will be ignored | Option       |
 
 #### Examples
 * Mainnet
@@ -88,11 +88,11 @@ bnbcli slashing bsc-submit-evidence --from=bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm
 
 #### Parameters for slashing side-unjail
 
-| **parameter name** | **example**                                | **comments**                                                 | **required** |
-| ------------------ | ------------------------------------------ | ------------------------------------------------------------ | ------------ |
-| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                               | Yes          |
+| **parameter name** | **example**                                | **comments**                                                                                                                      | **required** |
+|--------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX                          | the chain id of binance  chain                                                                                                    | Yes          |
 | --from             | bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd | This address has to be  the operator address of the validator to be unjailed. Name or address of  private key with which to sign. | Yes          |
-| --side-chain-id    | BSC-XXX                                    | chain-id of the side  chain the validator belongs to         | Yes          |
+| --side-chain-id    | BSC-XXX                                    | chain-id of the side  chain the validator belongs to                                                                              | Yes          |
 
 
 
@@ -109,7 +109,7 @@ bnbcli slashing side-unjail --from bnb19awsmku5ch689lp0rj0c6su7x0n5wxhjm65hdd --
 #### Parameters for slashing side-signing-info
 
 | **parameter name** | **example**       | **comments**                                         | **required** |
-| ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
+|--------------------|-------------------|------------------------------------------------------|--------------|
 | --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
 | --side-chain-id    | BSC-XXX           | chain-id of the side  chain the validator belongs to | Yes          |
 
@@ -125,12 +125,12 @@ bnbcli slashing side-signing-info 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --s
 
 #### Parameters for slashing side-slash-history [validator-sideConsAddr]
 
-| **parameter name**  | **example**       | **comments**                                         | **required** |
-| ------------------- | ----------------- | ---------------------------------------------------- | ------------ |
-| --chain-id          | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
-| --infraction-height | 100               | infraction height                                    | Yes          |
-| --infraction-type   | DoubleSign        | infraction type, 'DoubleSign;Downtime'               | Yes          |
-| --side-chain-id     | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
+| **parameter name**  | **example**       | **comments**                                        | **required** |
+|---------------------|-------------------|-----------------------------------------------------|--------------|
+| --chain-id          | Binance-Chain-XXX | the chain id of binance  chain                      | Yes          |
+| --infraction-height | 100               | infraction height                                   | Yes          |
+| --infraction-type   | DoubleSign        | infraction type, 'DoubleSign;Downtime'              | Yes          |
+| --side-chain-id     | BSC-XXX           | chain-id of the side chain the validator belongs to | Yes          |
 
 #### For example
 
@@ -143,11 +143,11 @@ bnbcli slashing side-slash-history 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F --
 
 #### Parameters for slashing side-slash-histories
 
-| **parameter name** | **example**       | **comments**                                         | **required** |
-| ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                       | Yes          |
-| --infraction-type  | DoubleSign        | infraction type, 'DoubleSign;Downtime'               | Option       |
-| --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
+| **parameter name** | **example**       | **comments**                                        | **required** |
+|--------------------|-------------------|-----------------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX | the chain id of binance  chain                      | Yes          |
+| --infraction-type  | DoubleSign        | infraction type, 'DoubleSign;Downtime'              | Option       |
+| --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to | Yes          |
 
 #### For example
 
@@ -161,10 +161,10 @@ bnbcli slashing side-slash-histories 0x625448c3f21AB4636bBCef84Baaf8D6cCdE13c3F 
 
 #### Parameters for slashing side-all-slash-histories
 
-| **parameter name** | **example**       | **comments**                                         | **required** |
-| ------------------ | ----------------- | ---------------------------------------------------- | ------------ |
-| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain                         | Yes          |
-| --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to  | Yes          |
+| **parameter name** | **example**       | **comments**                                        | **required** |
+|--------------------|-------------------|-----------------------------------------------------|--------------|
+| --chain-id         | Binance-Chain-XXX | the chain id of BNB Beacon Chain                    | Yes          |
+| --side-chain-id    | BSC-XXX           | chain-id of the side chain the validator belongs to | Yes          |
 
 #### For example
 

@@ -2368,7 +2368,7 @@ You need to enable indexer in `config.tml`. You can modify the `index_tags` to i
 
 **Available Query Path**
 
-Right now, you can only query by transaction height: `tx.height`. Please note that on BNB Chain testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.binance.org>
+Right now, you can only query by transaction height: `tx.height`. Please note that on BNB Chain testnet, you can only use this data seed node for tx search: <https://data-seed-pre-0-s3.bnbchain.org>
 
 **Example**
 

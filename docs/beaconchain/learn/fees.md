@@ -15,7 +15,7 @@ Transaction Type | Pay in non-BNB Asset | Pay in BNB
 -- | -- | --
 Trade | 0.1% | 0.05%
 
-Trading fee can be queried at [here](https://dex.binance.org/api/v1/fees?format=amino). It's under the "params/DexFeeParam/".  "FeeRate" and "FeeRateNative" are both under unit of 10^-6.
+Trading fee can be queried at [here](https://dex.bnbchain.org/api/v1/fees?format=amino). It's under the "params/DexFeeParam/".  "FeeRate" and "FeeRateNative" are both under unit of 10^-6.
 
 ### Fix Fee Table
 
@@ -141,7 +141,7 @@ You will pay on mainnet/testnet
 ```
 ## How are rewards distributed between validators?
 
-you can use [API](https://dex.binance.org/api/v1/fees) to get the latest fee params.
+you can use [API](https://dex.bnbchain.org/api/v1/fees) to get the latest fee params.
 ```json
 [
 {

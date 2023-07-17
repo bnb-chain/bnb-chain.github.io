@@ -8,18 +8,18 @@ DApp developers who want to leverage DIA oracles can access the published data o
 
 DIA supports assets from various categories to be included into the oracle. A selection of assets is listed here:
 
-|              Data Feed Name           | Data Type |
-| :-----------------------------------: | :----: |
-|             BNB Coin              |  Crypto Price   |
-|                Bitcoin                |  Crypto Price  |
-|               Ethereum                |  Crypto Price   |
-|                Tether                 |  Crypto Price  |
-|                  XRP                  |  Crypto price   |
-|              Barnbridge Protocol      |  Farming Pool Data |
-|              yearn.finance            |  Farming Pool Data |
-|              CREX on Crex            |  Chart Point on Exchange |
-|              DAI on CurveFi            |  Chart Point on Exchange |
-|              WBNB on PancakeSwap           |  Chart Point on Exchange |
+|   Data Feed Name    |        Data Type        |
+|:-------------------:|:-----------------------:|
+|      BNB Coin       |      Crypto Price       |
+|       Bitcoin       |      Crypto Price       |
+|      Ethereum       |      Crypto Price       |
+|       Tether        |      Crypto Price       |
+|         XRP         |      Crypto price       |
+| Barnbridge Protocol |    Farming Pool Data    |
+|    yearn.finance    |    Farming Pool Data    |
+|    CREX on Crex     | Chart Point on Exchange |
+|   DAI on CurveFi    | Chart Point on Exchange |
+| WBNB on PancakeSwap | Chart Point on Exchange |
 
 ## Data Access
 
@@ -116,9 +116,9 @@ contract DiaAssetBtcOracle {
 
 #### Deployed Addresses
 
-| Chain name    |        Oracle Contract Address          | Update Frequency |
-| :------------ | :------------------------------------------: | :----------: |
-| BSC: Testnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |    1/day    |
-| BSC: Mainnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |    1/day    |
+| Chain name   |           Oracle Contract Address            | Update Frequency |
+|:-------------|:--------------------------------------------:|:----------------:|
+| BSC: Testnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |      1/day       |
+| BSC: Mainnet | `0xf35bEE4B6727D2D1c9167C5fB4D51855D6bB693c` |      1/day       |
 
 The full documentation of the DIA oracle is located [here](https://docs.diadata.org/documentation/oracle-documentation).

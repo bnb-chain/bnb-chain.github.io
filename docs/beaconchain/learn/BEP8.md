@@ -131,20 +131,20 @@ Example on **mainnet**:
 ## Fee Table
 
 ### Mainnet
-API URL: <https://dex.binance.org/api/v1/fees?format=amino>
+API URL: <https://dex.bnbchain.org/api/v1/fees?format=amino>
 
-Transaction Type  | Pay in BNB |
--- | -- |
-TinyIssueFee | 4 |
-MiniIssueFee | 6 |
-SetUri| 0.00075 |
+| Transaction Type | Pay in BNB |
+|------------------|------------|
+| TinyIssueFee     | 4          |
+| MiniIssueFee     | 6          |
+| SetUri           | 0.00075    |
 
 ### Testnet
-API URL: <https://testnet-dex.binance.org/api/v1/fees?format=amino>
+API URL: <https://testnet-dex.bnbchain.org/api/v1/fees?format=amino>
 
-Transaction Type  | Pay in BNB |
--- | -- |
-TinyIssueFee | 4 |
-MiniIssueFee | 6 |
-SetUri| 0.00075 |
+| Transaction Type | Pay in BNB |
+|------------------|------------|
+| TinyIssueFee     | 4          |
+| MiniIssueFee     | 6          |
+| SetUri           | 0.00075    |
 

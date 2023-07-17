@@ -17,19 +17,19 @@ Rate Limit: 500 request per IP in 5 minutes.
 
 ##### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| endHeight | query | end of block height, endHeight-startHeight <= 50 | Yes | long |
-| startHeight | query | start of block height, startHeight should bigger than 0 | Yes | long |
+| Name        | Located in | Description                                             | Required | Schema |
+|-------------|------------|---------------------------------------------------------|----------|--------|
+| endHeight   | query      | end of block height, endHeight-startHeight <= 50        | Yes      | long   |
+| startHeight | query      | start of block height, startHeight should bigger than 0 | Yes      | long   |
 
 ##### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [BlocksVO](#blocksvo) |
-| 401 | Unauthorized |  |
-| 403 | Forbidden |  |
-| 404 | Not Found |  |
+| Code | Description  | Schema                |
+|------|--------------|-----------------------|
+| 200  | OK           | [BlocksVO](#blocksvo) |
+| 401  | Unauthorized |                       |
+| 403  | Forbidden    |                       |
+| 404  | Not Found    |                       |
 
 ### /api/v1/blocks/{blockHeight}
 
@@ -42,18 +42,18 @@ Rate Limit: in together with `/api/v1/blocks/{blockHeight}/txs` 1500 request per
 
 ##### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | height of block | Yes | long |
+| Name        | Located in | Description     | Required | Schema |
+|-------------|------------|-----------------|----------|--------|
+| blockHeight | path       | height of block | Yes      | long   |
 
 ##### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [BlockVO](#blockvo) |
-| 401 | Unauthorized |  |
-| 403 | Forbidden |  |
-| 404 | Not Found |  |
+| Code | Description  | Schema              |
+|------|--------------|---------------------|
+| 200  | OK           | [BlockVO](#blockvo) |
+| 401  | Unauthorized |                     |
+| 403  | Forbidden    |                     |
+| 404  | Not Found    |                     |
 
 ### /api/v1/blocks/{blockHeight}/txs
 
@@ -66,18 +66,18 @@ Rate Limit: in together with `/api/v1/blocks/{blockHeight}` 1500 request per IP 
 
 ##### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| blockHeight | path | height of block | Yes | long |
+| Name        | Located in | Description     | Required | Schema |
+|-------------|------------|-----------------|----------|--------|
+| blockHeight | path       | height of block | Yes      | long   |
 
 ##### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [TxsVO](#txsvo) |
-| 401 | Unauthorized |  |
-| 403 | Forbidden |  |
-| 404 | Not Found |  |
+| Code | Description  | Schema          |
+|------|--------------|-----------------|
+| 200  | OK           | [TxsVO](#txsvo) |
+| 401  | Unauthorized |                 |
+| 403  | Forbidden    |                 |
+| 404  | Not Found    |                 |
 
 ### /api/v1/txs
 
@@ -90,16 +90,16 @@ Rate Limit: 500 request per IP in 5 minutes (please read notes for more details)
 
 ##### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| address | query | address | Yes | string |
-| addressType | query | address type: FROM or TO | No | string |
-| asset | query | asset | No | string |
-| endTime | query | end time in in milliseconds, endTime - startTime should be smaller than 7 days | Yes | long |
-| limit | query | default 10, max 50 | No | integer |
-| offset | query | default 0, max 10000 | No | integer |
-| startTime | query | start time in milliseconds | Yes | long |
-| type | query | type | No | string |
+| Name        | Located in | Description                                                                    | Required | Schema  |
+|-------------|------------|--------------------------------------------------------------------------------|----------|---------|
+| address     | query      | address                                                                        | Yes      | string  |
+| addressType | query      | address type: FROM or TO                                                       | No       | string  |
+| asset       | query      | asset                                                                          | No       | string  |
+| endTime     | query      | end time in in milliseconds, endTime - startTime should be smaller than 7 days | Yes      | long    |
+| limit       | query      | default 10, max 50                                                             | No       | integer |
+| offset      | query      | default 0, max 10000                                                           | No       | integer |
+| startTime   | query      | start time in milliseconds                                                     | Yes      | long    |
+| type        | query      | type                                                                           | No       | string  |
 
 Notes:
 1. The timeframe between endTime and startTime should be less than 7 days. The shorter timeframe will get faster response, and longer timeframe will trigger more strict rate limiter.
@@ -108,12 +108,12 @@ Notes:
 
 ##### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [TxsVO](#txsvo) |
-| 401 | Unauthorized |  |
-| 403 | Forbidden |  |
-| 404 | Not Found |  |
+| Code | Description  | Schema          |
+|------|--------------|-----------------|
+| 200  | OK           | [TxsVO](#txsvo) |
+| 401  | Unauthorized |                 |
+| 403  | Forbidden    |                 |
+| 404  | Not Found    |                 |
 
 ### /api/v1/txs/{txHash}
 
@@ -126,80 +126,80 @@ Rate Limit: 1500 request per IP in 5 minutes.
 
 ##### Parameters
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| txHash | path | hash of tx | Yes | string |
+| Name   | Located in | Description | Required | Schema |
+|--------|------------|-------------|----------|--------|
+| txHash | path       | hash of tx  | Yes      | string |
 
 ##### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | OK | [TxVO](#txvo) |
-| 401 | Unauthorized |  |
-| 403 | Forbidden |  |
-| 404 | Not Found |  |
+| Code | Description  | Schema        |
+|------|--------------|---------------|
+| 200  | OK           | [TxVO](#txvo) |
+| 401  | Unauthorized |               |
+| 403  | Forbidden    |               |
+| 404  | Not Found    |               |
 
 ### Models
 
 #### BlockVO
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| consumeTime | long | elapsed time from last block   | No |
-| fees | [ [FeeVO](#feevo) ] | fees | No |
-| hash | string | block hash | No |
-| height | long | block height | No |
-| parentHash | string | block's parent hash  | No |
-| proposerAddr | string | proposer's address of the block | No |
-| proposerNode | string | proposer's name | No |
-| size | long | size | No |
-| time | long | block timestamp | No |
-| txCount | integer | the count of tx in the block | No |
+| Name         | Type                | Description                     | Required |
+|--------------|---------------------|---------------------------------|----------|
+| consumeTime  | long                | elapsed time from last block    | No       |
+| fees         | [ [FeeVO](#feevo) ] | fees                            | No       |
+| hash         | string              | block hash                      | No       |
+| height       | long                | block height                    | No       |
+| parentHash   | string              | block's parent hash             | No       |
+| proposerAddr | string              | proposer's address of the block | No       |
+| proposerNode | string              | proposer's name                 | No       |
+| size         | long                | size                            | No       |
+| time         | long                | block timestamp                 | No       |
+| txCount      | integer             | the count of tx in the block    | No       |
 
 #### BlocksVO
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| blocks | [ [BlockVO](#blockvo) ] | blocks | No |
+| Name   | Type                    | Description | Required |
+|--------|-------------------------|-------------|----------|
+| blocks | [ [BlockVO](#blockvo) ] | blocks      | No       |
 
 #### FeeVO
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| address | string | address | No |
-| asset | string | fee asset | No |
-| blockHeight | long | height of block | No |
-| quantity | long | quantity of the asset | No |
+| Name        | Type   | Description           | Required |
+|-------------|--------|-----------------------|----------|
+| address     | string | address               | No       |
+| asset       | string | fee asset             | No       |
+| blockHeight | long   | height of block       | No       |
+| quantity    | long   | quantity of the asset | No       |
 
 #### FeesVO
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| fees | [ [FeeVO](#feevo) ] | fees | No |
+| Name | Type                | Description | Required |
+|------|---------------------|-------------|----------|
+| fees | [ [FeeVO](#feevo) ] | fees        | No       |
 
 #### TxVO
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| amount | long | amount of the asset | No |
-| asset | string | asset | No |
-| blockHeight | long | height of the block | No |
-| blockTime | long | timestamp of the block | No |
-| code | integer | code | No |
-| data | string | different schemas for different tx types | No |
-| fee | long | fee | No |
-| fromAddr | string | from address | No |
-| hash | string | hash of the tx | No |
-| log | string | log | No |
-| memo | string | memo | No |
-| sequence | long | sequence | No |
-| source | long | source | No |
-| toAddr | string | to address | No |
-| type | string | tx type | No |
+| Name        | Type    | Description                              | Required |
+|-------------|---------|------------------------------------------|----------|
+| amount      | long    | amount of the asset                      | No       |
+| asset       | string  | asset                                    | No       |
+| blockHeight | long    | height of the block                      | No       |
+| blockTime   | long    | timestamp of the block                   | No       |
+| code        | integer | code                                     | No       |
+| data        | string  | different schemas for different tx types | No       |
+| fee         | long    | fee                                      | No       |
+| fromAddr    | string  | from address                             | No       |
+| hash        | string  | hash of the tx                           | No       |
+| log         | string  | log                                      | No       |
+| memo        | string  | memo                                     | No       |
+| sequence    | long    | sequence                                 | No       |
+| source      | long    | source                                   | No       |
+| toAddr      | string  | to address                               | No       |
+| type        | string  | tx type                                  | No       |
 
 #### TxsVO
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| total | long | total count of txs | No |
-| txs | [ [TxVO](#txvo) ] | txs | No |
+| Name  | Type              | Description        | Required |
+|-------|-------------------|--------------------|----------|
+| total | long              | total count of txs | No       |
+| txs   | [ [TxVO](#txvo) ] | txs                | No       |

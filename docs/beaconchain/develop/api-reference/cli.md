@@ -49,9 +49,9 @@ You can manage your keys locally without connecting to any node. But if you want
 
 You can run your own full node, which may automatically connect to BNB Beacon Chain, and you can run your CLI there with your own full node. In the mean time, you can connect to any full nodes provided by other people.
 
-You could query this API for a list of full node on mainnet: <https://dex.binance.org/api/v1/peers>.
+You could query this API for a list of full node on mainnet: <https://dex.bnbchain.org/api/v1/peers>.
 
-For testnet, visit  <https://testnet-dex.binance.org/api/v1/peers>.
+For testnet, visit  <https://testnet-dex.bnbchain.org/api/v1/peers>.
 
 Full nodes will be denoted as the format of `ip:port`, you could use `access_addr` as your peer to get connected, such as `https://dataseed4.defibit.io:443`
 

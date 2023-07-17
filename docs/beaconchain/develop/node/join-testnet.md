@@ -73,7 +73,7 @@ If you encounter any issue when running a Full Node, you should read the FAQ pro
 
 ### Additional Configuration
 - Seed node: Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $BNCHOME/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
-If those seeds aren't working, you can find more seeds and persistent peers in the HTTP API endpoints: https://testnet-dex.binance.org/api/v1/peers
+If those seeds aren't working, you can find more seeds and persistent peers in the HTTP API endpoints: https://testnet-dex.bnbchain.org/api/v1/peers
 - Sync type: By default, new nodes will sync with `state-sync` mode. To change sync mode, read the instructions [here](synctypes.md)
 - Log: The log file is under `home`- the directory specified when starting `bnbchaind`.
   The latest log file is `bnc.log`. The process will create a new log file every one hour.
