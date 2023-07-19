@@ -129,7 +129,7 @@ const sidebars = {
               //collapsible: true,
               collapsed: true,
               label: 'Staking',
-              items: ['stake/Staking', 'stake/cli-commands', 'wallet/staking',
+              items: ['stake/Staking', 'stake/cli-commands', 'stake/bsc-cross-chain-staking', 'wallet/staking',
               {
                 type: 'category',
                 collapsed: true,
