@@ -260,3 +260,9 @@ If the user has a seed phrase then the user can refer to [here](wallet/extension
 
 The [self-service window](https://www.binance.com/en/my/wallet/uncredited_deposit/form?&coin=&network=&amount=&txId=tx) for [BNB Pioneer Burn Program](https://www.binance.com/en/support/announcement/7bcf4da5671d44a0a5118c2277773bb4) is now live. Eligible users who lose tokens as part of mistakes they made while making transactions on BNB Smart Chain can access this page and fill in the application form. We will investigate your case and help retrieve the assets if your case is qualified for the Program. 
 
+## Why does my Metamask wallet display different asset balance compared to explorer?
+The Explorer balance shall prevail. Please try changing your MM wallet RPC URL with endpoints from [BNBChainlist](https://www.bnbchainlist.org)
+
+## Why am I getting the error "transaction underpriced" when performing a transaction from my web3 wallet app?
+The error **"Transaction Underpriced"** typically occurs when the gas price set for a transaction on the BSC network is too low.<br/>
+To resolve this, you can try increasing the gas price for your transaction. If you're using a wallet like Metamask, you can adjust the gas price in the "Advanced Options" when sending a transaction.

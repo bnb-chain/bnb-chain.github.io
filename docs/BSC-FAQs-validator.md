@@ -219,3 +219,15 @@ Due to network congestion, it is possible for the tx to appear after a delay. An
 
 ### Can the location of the validator nodes be considered as playing factor in performance? Is there any way to get the enode or ips of the validator nodes?
 The validators are usually running in a private network making it hard to connect or trace their location. Furthermore, it is suggested by community developers that EU is considered a better location in terms of performance.
+
+### Why does my node always show "xxx blocks behind"?
+Lagging node is mainly due to limited hardware resources. Please find the basic requirement [here](https://docs.bnbchain.org/docs/validator/fullnode#suggested-requirements).<br/>
+For more details, please refer to: https://github.com/bnb-chain/bsc/issues/258 
+
+### Why can't my node find peers and keeps getting "Looking for peers" or "Synchronisation failed" error?
+  * Check you geth vesion and update it to the latest, along with the config files.
+  * If it's already the latest, try replacing the static nodes in config.toml with nodes from https://api.binance.org/v1/discovery/peers
+  * Restart the node and let it run for a while.
+
+### Why does the node keep getting rewinding log and can't get synced?
+Try to modify your validator-config.toml by replacing `StaticNodes` with `BootstrapNodes` without changing the values and set `NoDiscovery` = `false`.

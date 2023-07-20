@@ -37,3 +37,13 @@ In blockchain network, an oracle refers to the element that connects smart contr
 You can use [Binance Extension Wallet](wallet/bnb-chain-wallet.md) or
 
 use [Trust wallet](https://community.trustwallet.com/t/how-to-send-and-receive-bnb-on-smart-chain/67430)
+
+## How to trigger withdraw/claim for a low staking rewards amount on BSC staking contract 
+To claim rewards in Native Staking:
+* Find your derived/reward address using the provided query:<br/>
+
+Mainnet:<br/>`./bnbcli staking cross-stake-info <Your_bscAddress> --node http://dataseed2.defibit.io:80 --chain-id Binance-Chain-Tigris --side-chain-id bsc --trust-node`<br/>
+Testnet:<br/>`./tbnbcli staking cross-stake-info <Your_bscAddress> --node https://data-seed-pre-0-s1.binance.org:443 --chain-id Binance-Chain-Ganges --side-chain-id chapel --trust-node`<br/>
+* Send 1 tBNB or more to the derived address.
+* Wait for the UTC 00:00 block for automatic transfer from BC to BSC.
+* Trigger the withdrawal/claim rewards function once rewards exceed 1 tBNB.

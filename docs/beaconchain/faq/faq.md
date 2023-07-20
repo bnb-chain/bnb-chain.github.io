@@ -217,3 +217,12 @@ Please do __NOT__ try to transfer anything on existing network to BNB Beacon Cha
 ## How would a third-party integrate with BNB Beacon Chain and Binance DEX?
 
 A wallet provider may choose to support the feature set of BNB Beacon Chain, which would cover wallets, addresses, balances, transfers and etc.<br/>
+
+## Why am I getting the following error when running bnbcli client?
+`ERROR: missing valid certifier to verify data from distrusted node`<br/>
+Please add --trust-node in the executive command to solve the problem.
+
+## Why am I getting the following error message when subscribing to events via Websocket on BNB Beacon Chain?
+`Error: subscription was cancelled (reason: client is not pulling messages fast enough)`<br/>
+Tendermint Websocket has a requirement on client to keep the connection alive by making use of pings. You can use the official GO SDK, which caters for the pings and will keep the websocket connection alive:
+[BNB Go-SDK](https://github.com/bnb-chain/go-sdk)
