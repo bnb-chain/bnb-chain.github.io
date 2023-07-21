@@ -31,7 +31,7 @@ BNB Smart Chain is compatible with MetaMask. Users can use MetaMask as a bridge 
     * [RPC URLs](../rpc.md)
     * ChainID: 56
     * Symbol: BNB
-    * Block Explorer](https://bscscan.com)
+    * [Block Explorer](https://bscscan.com)
 
 <img src="https://lh5.googleusercontent.com/rKKpjCDqHacvAPuSZwdMlaD7bGcpN3QRNvcDieBpm3WHCsOWlFDTZN4j3LFw9R1VJ5zGfqoUW3U61GpN4WdfOeSoviSs6NldK4Ypt2O6wnbl-O8wJbpG6uMKBxdNRiH0B5yqRLP1" alt="img" style={{zoom:"50%"}} />
 
