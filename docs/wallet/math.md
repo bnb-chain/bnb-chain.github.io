@@ -22,22 +22,16 @@ hide_table_of_contents: false
 
 <img src="https://lh5.googleusercontent.com/vAIW4n_vrcfuqkUJibumqPSGwv3_HeTazQSz0nEFyQz9hntjytTF-i_QiGmPUayUXqMM42dgjJIEdB-dBSygz7i1mrrIJmvQ-6IJNx_HLGtFajxuBDQgXeZd7TTokOX19CSR_OEh" alt="img" style={{zoom:"33%"}} />
 
-3. Choose BNB Smart Chain from this list and follow the following steps:
+3. Choose Binance Smart Chain and follow the following steps to add `BSC Testnet`:
    
-- Click on Settings:    
- ![img](../assets/wallets/math_wallet/Setting_icon.png)
+- Go to this link: https://mathwallet.org/evm/#/bsctestnet/assets to add BSC Testnet in Networks and,
+- Click on `Login via Math Wallet Browser Extension` button:  
+ ![img](../assets/wallets/math_wallet/Add_BSC_Testnet_Step1.png)
 
-- Select/Click `Networks` button:
-![img](../assets/wallets/math_wallet/Networks_in_settings.png)
+- Prompt will open for confirmation and click `OK`:
+![img](../assets/wallets/math_wallet/Add_BSC_Testnet_Step2.png)
 
-- Edit `Binance Smart Chain` to `BSC Testnet`:
-![img](../assets/wallets/math_wallet/Edit_Binance_Smart_Chain.png)
-
-- Use the following config:
-```
-Name: BSC Testnet
-Node Address: https://data-seed-pre-1-s1.bnbchain.org:443
-```
+- Add the BSC Testnet by clicking `Accept` button:
 ![img](../assets/wallets/math_wallet/BSC_Testnet_config.png)
 
 4. Create Your Wallet
