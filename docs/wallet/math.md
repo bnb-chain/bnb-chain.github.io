@@ -15,7 +15,7 @@ hide_table_of_contents: false
 
 ## Setup Your Wallet
 1. Set your password
-2. 
+
 <img src="https://lh4.googleusercontent.com/04v_hzZBF2wOiNk3XYDKgXi0CzVtfChzC9bIoT0EwCtHMYpGk1OaDfz1bCHAgegKxNHzA14mtHQDoeFnaOTX_BStwTC_GNb-bTzpOihIwjSumdnb2uZtR1obgDYoJwb3aiURKMMz" alt="img" style={{zoom:"50%"}} />
 
 2. Choose BSC network
