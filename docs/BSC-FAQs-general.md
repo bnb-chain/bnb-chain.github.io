@@ -227,13 +227,13 @@ For example <https://explorer.bnbchain.org/tx/8B9B066BAF9DC1C233A9D316C75E8139B9
 
 Please make sure the “Transaction Type” is “Cross-chain transfer out”
 
-![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020215774/original/qZ5KzDcOjCyKO2H42HftM15NEtcZTHwjfw.png?1629968129)
+![img](./assets/bsc_faqs_general/Txn_Type_Cross-chain_transfer_out.png)
 
 2. Get Destination Address
 
 The “TxHash on BSC” is linked to BNB smart chain explorer
 
-![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216076/original/YdIbat5IAnpWgQO0SuNX4zHY_rsF97fErA.png?1629968302)
+![img](./assets/bsc_faqs_general/txn_hash_receiver_add_bsc.png)
 
 For example https://www.bscscan.com/tx/0x43980b4f9ae4c03685dd61172d23ccae07eb8abb0d677c579bfc7059e447ead9
 
@@ -241,7 +241,7 @@ If "status" is a success, it means this transaction is successful.
 
 The tokens were sent from "BSC: Token Hub" to the receiver address. 
 
-![img](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/67020216406/original/FsSI7rAvaRuwQ-60br8EmVgrWoFvxYN-_Q.png?1629968479)
+![img](./assets/bsc_faqs_general/cross_chain_txn_bsc.png)
 
 ## How to connect Metamask to BNB Smart Chain?
 Please refer [here](wallet/metamask.md)
