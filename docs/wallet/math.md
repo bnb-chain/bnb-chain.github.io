@@ -22,15 +22,29 @@ hide_table_of_contents: false
 
 <img src="https://lh5.googleusercontent.com/vAIW4n_vrcfuqkUJibumqPSGwv3_HeTazQSz0nEFyQz9hntjytTF-i_QiGmPUayUXqMM42dgjJIEdB-dBSygz7i1mrrIJmvQ-6IJNx_HLGtFajxuBDQgXeZd7TTokOX19CSR_OEh" alt="img" style={{zoom:"33%"}} />
 
-3. Choose BNB Smart Chain from this list
+3. Choose BNB Smart Chain from this list and follow the following steps:
    
-<img src="https://lh5.googleusercontent.com/k9zfSDN3dSEZDwqqjQriozV-8QiC0Rk1V8U3hWf6i_OD8WvDdmaKL4ZRUVh7nvkAtH0Jl8ZJTj1OEalWwvDY_tdTlRd6jsx3NKYF9pffkMIW97dUMjqmCEDpOcQMNHLv02dfCYHk" alt="img" style={{zoom:"33%"}} />
+- Click on Settings:    
+ ![img](../assets/wallets/math_wallet/Setting_icon.png)
+
+- Select/Click `Networks` button:
+![img](../assets/wallets/math_wallet/Networks_in_settings.png)
+
+- Edit `Binance Smart Chain` to `BSC Testnet`:
+![img](../assets/wallets/math_wallet/Edit_Binance_Smart_Chain.png)
+
+- Use the following config:
+```
+Name: BSC Testnet
+Node Address: https://data-seed-pre-1-s1.bnbchain.org:443
+```
+![img](../assets/wallets/math_wallet/BSC_Testnet_config.png)
 
 4. Create Your Wallet
 
-<img src="https://lh5.googleusercontent.com/ov1JDt8uLKJc8Q8gECGlree_rBkDu6oIUaXLuST6EimwmMSdVlPJIFPBItPIIKl4LqpasKS63y4jRRzKXi5qoT5T_73pD64Q6le9eRI3nXNXEuWSURRdXI-jjl2Pfk0iTQyGMRkz" alt="img" style={{zoom:"33%"}} />
+![img](../assets/wallets/math_wallet/BSC_Testnet_NW.png)
 
-<img src="https://lh6.googleusercontent.com/dzx1pjMPq7F4e1N-1UJXrguzRh6W5DNJ3x1t1TsfJktpe2PkhPXWe3gytm-wMroCnhWv-StxFOaz2H54iSUSmIvwup-LshE3-z2AWnVG7ygpyhtE5BK_nOnTasw-CWJAvhOzxtFn" alt="img" style={{zoom:"33%"}} />
+![img](../assets/wallets/math_wallet/BSC_Testnet_Account.png)
 
 5. Save your private key
 
