@@ -83,6 +83,10 @@ https://explorer.bnbchain.org/testnet/asset/XRP-C46) and  [BNB Smart Chain Testn
 
 You can get some of these pegged tokens from faucet and transfer them back to BNB Beacon Chain testnet.
 
-### 1. Approve this transaction![img](https://lh3.googleusercontent.com/bYfuPLKjeTopR_VUzr6MBEHZWy6UkJ10hlXICxbHh7LvoKi5Hdr2aW7Z_nSDgKphaCc9iOijoignzydzmYU1BGOyN6IRHJPHLKia1XD59651hS-EMU9vboqblgBSziivtZGdQ05e)
+### 1. Approve this transaction
 
-### 2. Send BEP20 To BC![img](https://lh5.googleusercontent.com/_RKYU23BD2xhw-g63K8O3RRF1sEKGAC5zyTOIpWUJl9scDyn1kbjwEO6gjFPkVCeFMoG-8D0xvqNH17sJSlZP_FxCrduCqEKZqHfk8DtTnBk6XKHnHDLPAaR8VjVcNNWZsAw74FB)
+![img](../assets/math_across_transfer_03.jpg)
+
+### 2. Send BEP20 To BC
+
+![img](https://lh5.googleusercontent.com/_RKYU23BD2xhw-g63K8O3RRF1sEKGAC5zyTOIpWUJl9scDyn1kbjwEO6gjFPkVCeFMoG-8D0xvqNH17sJSlZP_FxCrduCqEKZqHfk8DtTnBk6XKHnHDLPAaR8VjVcNNWZsAw74FB)
