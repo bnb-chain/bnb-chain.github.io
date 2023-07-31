@@ -23,14 +23,13 @@ hide_table_of_contents: false
 <img src="https://lh5.googleusercontent.com/vAIW4n_vrcfuqkUJibumqPSGwv3_HeTazQSz0nEFyQz9hntjytTF-i_QiGmPUayUXqMM42dgjJIEdB-dBSygz7i1mrrIJmvQ-6IJNx_HLGtFajxuBDQgXeZd7TTokOX19CSR_OEh" alt="img" style={{zoom:"33%"}} />
 
 3. Choose BNB Smart Chain from this list
-   
-<img src="https://lh5.googleusercontent.com/k9zfSDN3dSEZDwqqjQriozV-8QiC0Rk1V8U3hWf6i_OD8WvDdmaKL4ZRUVh7nvkAtH0Jl8ZJTj1OEalWwvDY_tdTlRd6jsx3NKYF9pffkMIW97dUMjqmCEDpOcQMNHLv02dfCYHk" alt="img" style={{zoom:"33%"}} />
+
+![img](../assets/math_choose_network.png)
 
 4. Create Your Wallet
 
-<img src="https://lh5.googleusercontent.com/ov1JDt8uLKJc8Q8gECGlree_rBkDu6oIUaXLuST6EimwmMSdVlPJIFPBItPIIKl4LqpasKS63y4jRRzKXi5qoT5T_73pD64Q6le9eRI3nXNXEuWSURRdXI-jjl2Pfk0iTQyGMRkz" alt="img" style={{zoom:"33%"}} />
-
-<img src="https://lh6.googleusercontent.com/dzx1pjMPq7F4e1N-1UJXrguzRh6W5DNJ3x1t1TsfJktpe2PkhPXWe3gytm-wMroCnhWv-StxFOaz2H54iSUSmIvwup-LshE3-z2AWnVG7ygpyhtE5BK_nOnTasw-CWJAvhOzxtFn" alt="img" style={{zoom:"33%"}} />
+![img](../assets/math_create_wallet_1.png)
+![img](../assets/math_create_wallet_2.png)
 
 5. Save your private key
 
@@ -61,13 +60,13 @@ Go to this page for mainnet: <https://developer.mathwallet.org/bsc01/>
 
 
 Paste your testnet address to `Recipient` and fill the transfer amount.
-![img](https://lh6.googleusercontent.com/jBLdydCWQEKJ-ksWfixIUH8qrFC9JEaLw4SbGRWngKCWXAjQDzl0ZCKs3Ajn2ZILcnd2XJzZxK6x62DHNb7_VHaJFm78qvU6zD-fhp5p7KGyDesNz5q6hilLLRbuv1Ygw-46JoBq)
+![img](../assets/math_across_transfer_02.jpg)
 
 Please note the fees are also deducted for paying gas and cross-chain transfer.
 
 3. Approve your transaction
 
-![img](https://lh3.googleusercontent.com/1LZhflItAfxbbPLppP_2mZQXhKlKbvAhk51-Or41wTaHY7Rs3B5g62QO1_4ymA0rgx8HoEmvCyEWbWSm_LOrxXyvHWZ24EsRVSJoLELHdprSiLAMLd5cDiDm_89Nd5z78CP0fPw5)
+![img](../assets/math_across_transfer_01.jpg)
 
 4. Confirm Reception in explorer
 Link: <https://testnet-explorer.bnbchain.org/>
