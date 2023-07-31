@@ -17,7 +17,6 @@ BNB Smart Chain offers extensive support of third-party wallets that can be used
 | Alpha Wallet | [How to use Alpha Wallet with BNB Smart Chain](../wallet/AlphaWallet.md) |
 | Arkane Wallet | [How to use Arkane Wallet with BNB Smart Chain](../wallet/arkane.md) |
 | Coin98 Wallet | [How to use Coin98 Wallet with BNB Smart Chain](../wallet/coin98wallet.md) |
-| ezDeFi Wallet | [How to use ezDeFi with BNB Smart Chain](../wallet/ezdefi.md) |
 | Infinity Wallet | [How to use Infinity Wallet with BNB Smart Chain](../wallet/infinitywallet.md) |
 | Ledger Nano S Hardware Wallet | [How to use Ledger Nano S Hardware Wallet with BNB Smart Chain](../wallet/ledger.md) |
 | Math Wallet | [How to use Math Wallet with BNB Smart Chain](../wallet/math.md) |

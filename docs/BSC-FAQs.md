@@ -51,7 +51,6 @@ The codebase of BSC is open-sourced here:
   - [Ledger](wallet/ledger.md)
   - [MEW](wallet/myetherwallet.md)
   - [Trust Wallet](wallet/trustwallet.md)
-  - [ezDeFi](wallet/ezdefi.md)
   - [SafePal](https://blog.safepal.io/pre-announcement-trade-on-dex-with-safepal/)
   - [TokenPocket](https://tokenpocket-gm.medium.com/defi-with-tokenpocket-how-to-use-binance-smart-chain-swap-with-tokenpocket-e76d6cd7986)
 

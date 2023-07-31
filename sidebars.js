@@ -183,7 +183,7 @@ const sidebars = {
                 collapsed: true,
                 label: 'Tutorials on Third Party Wallets',
                 items:['wallets/wallet-tutorial-overview','wallet/trustwallet', 'wallet/metamask','wallet/arkane', 'wallet/math', 'wallet/myetherwallet',
-                  'wallet/ezdefi', 'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
+                  'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
                   'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken', 'learn/gnosis']
             },
               ]
