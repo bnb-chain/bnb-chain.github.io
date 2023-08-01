@@ -35,11 +35,10 @@ If you want to be able to receive BNB and other supported tokens on the BNB Smar
 |9      | Ledger       |<https://www.ledger.com/>|Yes|
 |10     | Trezor       |<https://wallet.trezor.io>|No|
 |11     | MEW          |<https://www.myetherwallet.com/>|No|
-|12     | ezDeFi       |<http://ezdefi.com>|No|
-|13     | 1inch wallet |<https://1inch.io/wallet/>|No|
-|14     | Infinity wallet (Desktop)| <https://infinitywallet.io/download/> |No|
-|15     | BitKeep (App&Chrome)|<https://bitkeep.com>|No|
-|16     | Coin98 Wallet (App Web Extension)|<https://coin98.com/wallet>|No|
-|17     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|No|
-|18     | Rabby Wallet |<https://rabby.io/>|No|
-|19     | Atomic Wallet | <https://atomicwallet.io/> | Yes |
+|12     | 1inch wallet |<https://1inch.io/wallet/>|No|
+|13     | Infinity wallet (Desktop)| <https://infinitywallet.io/download/> |No|
+|14     | BitKeep (App&Chrome)|<https://bitkeep.com>|No|
+|15     | Coin98 Wallet (App Web Extension)|<https://coin98.com/wallet>|No|
+|16     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|No|
+|17     | Rabby Wallet |<https://rabby.io/>|No|
+|18     | Atomic Wallet | <https://atomicwallet.io/> | Yes |
