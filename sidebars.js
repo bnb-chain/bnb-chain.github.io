@@ -328,7 +328,7 @@ const sidebars = {
           label: 'BNB Smart Chain FAQs',
           items: ['BSC-FAQs-general', 'BSC-FAQs-tokens',
                   'BSC-FAQs-validator', 'BSC-FAQs-delegator',
-                  'parameters', 'cross',  'faq'],
+                  'parameters', 'cross'],
         },
         {
           type: 'doc', label: 'BNB Beacon Chain FAQs', id: 'beaconchain/faq/faq',

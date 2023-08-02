@@ -31,10 +31,6 @@ The current  **UnbondingTime**  in BNB Smart Chain mainnet is **7 days**.
 
 Redelegations between a unique delegator, source validator, and destination validator can only happen once every **UnbondingTime**
 
-### How many tokens are required to stake BNB?
-
-The [minimum delegated amount](parameters.md) is **1BNB**.
-
 ### How to claim my rewards?
 
 The rewards will be distributed to every delegators from `bscvalidator` [smart contract](https://bscscan.com/address/0x0000000000000000000000000000000000001000) everyday.
@@ -61,9 +57,6 @@ By delegating to a validator, a user delegates voting power.  This does not mean
 
 ### Can I receive my staking rewards if my chosen validator is inactive?
 No, you cannot.
-
-### When can I receive my unstaked BNB? 
-After you sent `undelegate` transaction, you have to wait 7 days. This period starts at UTC 00:00 next day.
 
 ### What is APR? 
 Annual Percentage Rate (APR) is the annual rate of interest paid to delegators net of commission. The calculation is based on the income of this validator 2 days ago. It is not compounded and updated every 24 hours. 
