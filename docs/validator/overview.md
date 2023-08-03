@@ -30,7 +30,7 @@ Validator gets: 100\*20% + Commission = 36 BNB
 All delegators get: 100\*80% - Commission = 64 BNB
 ```
 
-The rewards for motivating validators to vote for Fast Finality also comes from transaction fees. The specific rules can refer to [BEP126](https://github.com/bnb-chain/BEPs/blob/master/BEP126.md#43-reward)
+The rewards for motivating validators to vote for Fast Finality also comes from transaction fees. The specific rules can refer to [BEP126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md#43-reward)
 
 If validators double sign, malicious vote or frequently offline, their staked BNB (not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
 

@@ -76,7 +76,7 @@ and node RPC interfaces.
 | No. of Validators | 11            | up to 50                               |
 | Mean Block Time   | <1s           | ~5s                                    |
 | Programmability   | BEPs          | Support EVM-compatible smart contracts |
-| Cross Chain       |[BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEP3.md) introduces *Hash Timer Locked Contract functions* and further [mechanism](https://community.binance.org/topic/1892) to handle inter-blockchain tokens peg.    | BSC comes with efficient [native dual chain communication](../learn/cross-chain.md); Optimized for scaling high-performance dApps that require fast and smooth user experience.                    |
+| Cross Chain       |[BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP3.md) introduces *Hash Timer Locked Contract functions* and further [mechanism](https://community.binance.org/topic/1892) to handle inter-blockchain tokens peg.    | BSC comes with efficient [native dual chain communication](../learn/cross-chain.md); Optimized for scaling high-performance dApps that require fast and smooth user experience.                    |
 
 ## Get Started
 
@@ -97,7 +97,7 @@ The features listed below are currently supported on BNB Beacon Chain :
 
 ### BEP20 Asset
 
-A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`. Read the full proposal here: <https://github.com/bnb-chain/BEPs/blob/master/BEP20.md>
+A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`. Read the full proposal here: <https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP20.md>
 
 - [Issue BEP20](../issue-BEP20.md)
 - [Wallet](../Wallet.md)

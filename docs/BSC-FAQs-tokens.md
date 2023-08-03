@@ -6,21 +6,25 @@ sidebar_position: 2
 
 # Tokens in BNB Beacon Chain and BNB Smart Chain 
 
-### What are tokens on BNB Smart Chain ?
+## What role does BNB play in securing BNB Smart Chain ?
+
+BNB is the token used to prevent `nothing-at-stake` problem.
+
+## What are tokens on BNB Smart Chain ?
 
 BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP20.
 
-### What is BEP2?
+## What is BEP2?
 
-[BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) is a simple token protocol for easy management of asset on BNB Beacon Chain.
+[BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP2.md) is a simple token protocol for easy management of asset on BNB Beacon Chain.
 
 BNB is BEP2
 
-### What is BEP20?
+## What is BEP20?
 
 A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`.
 
-Read the full proposal here: [BEP20](https://github.com/bnb-chain/BEPs/blob/master/BEP20.md)
+Read the full proposal here: [BEP20](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP20.md)
 
 ### What is BEP8?
 
@@ -28,26 +32,49 @@ It is proposed to accommodate the small or micro projects, intellectual properti
 
 Details:
 
-* [BEP8 Proposal](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md)
+* [BEP8 Proposal](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP8.md)
 * [Commandline Instructions](beaconchain/learn/BEP8.md)
 
-### How to issue BEP2 tokens?
+## How to issue BEP2 tokens?
 
 Please follow the guide [here](https://community.binance.org/topic/2487/)
 
-### How to issue BEP20 tokens?
+## How to issue BEP20 tokens?
 
 Please follow the guide [here](issue-BEP20.md)
 
-### Where can I find out more about staking economics and rewards?
+## How can I stake my BNB?
 
-You can read details in [White Paper](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#rewarding)
+Please follow the guide [here](staking-with-ext-wallet.md)
 
-### Which wallets can I use to store BNB?
+## How many tokens are required to stake BNB?
+
+The [minimum delegated amount](parameters.md) is **1BNB**.
+
+## Which wallets can be used to stake BNB?
+
+You can use:
+
+* [command line tool](https://github.com/bnb-chain/node/releases/tag/v0.8.1)
+* [Binance Extension Wallet](wallet/bnb-chain-wallet.md)
+* [Math Wallet](http://blog.mathwallet.xyz/?p=3890)
+
+## Where can I find out more about staking economics and rewards?
+
+You can read details in White Paper: <https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#rewarding>
+
+## Where do network rewards come from?
+
+Validators and delegators will earn rewards from the following sources:
+
+* Calling smart contracts on BSC is metered by gas.
+* Rewards for running a BSC Relayer if validators have one
+
+## Which wallets can I use to store BNB?
 
 You can see the list [here](Wallet.md)
 
-### How to track Cross-chain transfer tx From BSC to BC?
+## How to track Cross-chain transfer tx From BSC to BC?
 
 1. Get Cross-chain transfer tx hash of BNB Smart Chain
 

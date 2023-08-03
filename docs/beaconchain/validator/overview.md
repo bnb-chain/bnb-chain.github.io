@@ -5,7 +5,7 @@ hide_table_of_contents: false
 ---
 # Overview
 
-[BEP159](https://github.com/bnb-chain/BEPs/blob/master/BEP159.md) introduces a permissionless validator election mechanism
+[BEP159](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP159.md) introduces a permissionless validator election mechanism
 and brings the staking economy onto BNB Beacon Chain(BC).
 
 Anyone can stake their BNB to become a validator candidate or delegate their BNB to the validator candidates they trust.
@@ -50,4 +50,4 @@ bonded when bad behaviors are caught.
 - Any remaining fees are distributed among all validators equally, including the proposer.
 - The fees will be distributed and accumulated in the system-controlled addresses in every block. The FeeForAll part will go to a fixed address and the FeeForProposer part will go to a custody address which is derived from the proposer’s validator address. Nobody can spend money on the FeeForAll address and validators’ custody addresses. They can only be distributed to validators and delegators during the reward distribution period.
 - To reduce the cost of frequent block reward distribution, the reward distribution to delegators will happen every day around UTC 00:00(in the breath block).
-- The [BEP-128](https://github.com/bnb-chain/BEPs/blob/master/BEP128.md) introduced an optimized mechanism that distributes staking rewards in many consecutive blocks, to minimize the burden on the specific block. It's expected to use the same mechanism in BC reward distribution. The BC reward distribution will happen right after the BSC reward distribution.
+- The [BEP-128](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP128.md) introduced an optimized mechanism that distributes staking rewards in many consecutive blocks, to minimize the burden on the specific block. It's expected to use the same mechanism in BC reward distribution. The BC reward distribution will happen right after the BSC reward distribution.

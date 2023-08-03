@@ -89,7 +89,7 @@ BNB Chain opens the gate for users to take advantage of the fast transferring an
 
 There are already [140 assets](https://explorer.bnbchain.org/assets/bep2) on BNB Chain.
 
-The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md) is an innovative way for tokenization of properties.
+The introduction of [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP8.md) is an innovative way for tokenization of properties.
 
 ## What make BNB Smart Chain  different?
 

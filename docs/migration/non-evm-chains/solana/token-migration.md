@@ -51,11 +51,11 @@ BNB Chain is an ecosystem that runs on two blockchain giants, namely, BNB Beacon
 
 #### BEP2 Tokens
 
-The BNB Beacon Chain is responsible for the governance of the BNB Chain ecosystem which includes staking and voting. BEP2 is the token standard for BNB Chain's native currency, BNB, on Binance's crypto exchanges. It is a unique token standard, BEP2 is not compatible with blockchains other than BNB Chain. Additionally, BNB in the BEP2 format can only be used as a transaction fee on both Binance cryptocurrency exchanges. One limitation of BEP2 is its lack of support for smart contract development. For more information, you can read the full BEP2 proposal [here](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md).
+The BNB Beacon Chain is responsible for the governance of the BNB Chain ecosystem which includes staking and voting. BEP2 is the token standard for BNB Chain's native currency, BNB, on Binance's crypto exchanges. It is a unique token standard, BEP2 is not compatible with blockchains other than BNB Chain. Additionally, BNB in the BEP2 format can only be used as a transaction fee on both Binance cryptocurrency exchanges. One limitation of BEP2 is its lack of support for smart contract development. For more information, you can read the full BEP2 proposal [here](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP2.md).
 
 #### BEP20 Tokens
 
-BSC is the blockchain component of the BNB Chain that provides its users with a smart contract facility and is a platform for dApp development. BEP20 is a token interface standard for creating token contracts on BSC. The BEP20 tokens are designed to be compatible with BEP2 and[ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 for compatibility with EVM chain and Ethereum smart contracts. Other than the ERC20 functionalities, the BEP20 standard contains additional interfaces, such as getOwner and decimals. For more information on BEP20, read the full proposal [here](https://github.com/bnb-chain/BEPs/blob/master/BEP20.md).
+BSC is the blockchain component of the BNB Chain that provides its users with a smart contract facility and is a platform for dApp development. BEP20 is a token interface standard for creating token contracts on BSC. The BEP20 tokens are designed to be compatible with BEP2 and[ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 for compatibility with EVM chain and Ethereum smart contracts. Other than the ERC20 functionalities, the BEP20 standard contains additional interfaces, such as getOwner and decimals. For more information on BEP20, read the full proposal [here](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP20.md).
 
 ## Token migration
 

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Introduction
 
-As explained in [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md),the idea of BEP8 Tokens is raised to accommodate the small or micro projects, intellectual properties, and other small token economies to build a more comprehensive venue for token trading.
+As explained in [BEP8](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP8.md),the idea of BEP8 Tokens is raised to accommodate the small or micro projects, intellectual properties, and other small token economies to build a more comprehensive venue for token trading.
 
 Based on the limitation usage of the network, the cost of issuing of such BEP8 tokens are minimized to a different magnitude. 
 
