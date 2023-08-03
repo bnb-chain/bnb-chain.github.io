@@ -18,7 +18,7 @@ On the BNB Smart Chain, users can:
 ### BNB Token and Fees
 BNB is the cryptocurrency coin that powers the BNB Chain ecosystem. As one of the world's most popular utility tokens, not only can you trade BNB like any other cryptocurrency, you can also use BNB in a wide range of applications and use cases. 
 
-Although initially based on the Ethereum network, the ERC-20 BNB tokens were later swapped with [BEP-2](https://github.com/bnb-chain/BEPs/blob/master/BEP2.md) BNB at a 1:1 ratio. The BEP-2 BNB is the native coin of the BNB Beacon Chain, and the mainnet.
+Although initially based on the Ethereum network, the ERC-20 BNB tokens were later swapped with [BEP-2](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP2.md) BNB at a 1:1 ratio. The BEP-2 BNB is the native coin of the BNB Beacon Chain, and the mainnet.
 
 In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network that runs in parallel with the BNB Beacon Chain. This means that BNB can be found in three different forms:
 
