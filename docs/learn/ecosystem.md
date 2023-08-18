@@ -78,7 +78,7 @@ Goto [BSC Developer Ecosystem](https://github.com/bnb-chain/bsc-ecosystem/blob/m
 | **Oracle** | [Binance Oracle](https://oracle.binance.com/), [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Pyth](https://pyth.network/)||
 | **Archive Data** |[InfStones](https://infstones.com/)||
 | **Decentralized Storage** | [IPFS](https://ipfs.io/), [Filecoin](https://filecoin.io/build/), [Arweave](https://www.arweave.org/), [pinata.cloud](https://www.pinata.cloud/) ||
-| **Cross Chain Bridges** | [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/),[PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/), [Celer cbridge](https://cbridge.celer.network/), [ChainHop](https://chainhop.exchange/), [LayerZero](https://layerzero.network/), [HashFlow](https://www.hashflow.com/) , [Axelar](https://axelar.network/)| Decentralized, trustless, Open Access|
+| **Cross Chain Bridges** | [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/),[PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/), [Multichain](https://multichain.xyz/), [Celer cbridge](https://cbridge.celer.network/), [ChainHop](https://chainhop.exchange/), [LayerZero](https://layerzero.network/), [HashFlow](https://www.hashflow.com/) , [Axelar](https://axelar.network/)| Decentralized, trustless, Open Access|
 | **Automation** | [Gelato](https://www.gelato.network/)||
 | **Browsers** | [Brave](https://brave.com/), [Opera](https://www.opera.com/)||
 | **Identity/DID/Credentials** | [Ontology](https://ont.io/), [Galaxy](https://galaxy.eco/), [Space ID](https://space.id/), [CyberConnect](https://cyberconnect.me/)||
