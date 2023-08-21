@@ -28,7 +28,7 @@ Two stages of voting are required to successfully commit a block, i.e., pre-vote
 A block is committed when more than 2/3 of validators pre-commit for the same block in the same round.
 A block may fail to be committed, e.g., the current proposer may be offline, or the network may be slow, in which case the protocol moves to the next round, and a new validator gets to propose a block for that height. 
 
-Currently, there are **11** validators in BNB Beacon Chain mainnet, and more participants can join as validators after the launch of [BEP159](https://github.com/bnb-chain/BEPs/blob/master/BEP159.md).
+Currently, there are **11** validators in BNB Beacon Chain mainnet, and more participants can join as validators after the launch of [BEP159](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP159.md).
 
 ## Native Token
 

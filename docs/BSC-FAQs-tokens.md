@@ -16,7 +16,7 @@ BNB is the native token for BSC, and pegged BEP2 tokens on BSC is called BEP20.
 
 ## What is BEP2?
 
-A simple token protocol for easy management of asset on BNB Beacon Chain  <https://github.com/bnb-chain/BEPs/blob/master/BEP2.md>
+[BEP2](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP2.md) is a simple token protocol for easy management of asset on BNB Beacon Chain.
 
 BNB is BEP2
 
@@ -24,16 +24,15 @@ BNB is BEP2
 
 A token protocol on BSC which is compatible with BEP2 and [ERC20](https://eips.ethereum.org/EIPS/eip-20). It extends ERC20 and contains more interfaces, such as `getOwner` and `decimals`.
 
+Read the full proposal here: [BEP20](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP20.md)
 
-Read the full proposal here: <https://github.com/bnb-chain/BEPs/blob/master/BEP20.md>
-
-## What is BEP8?
+### What is BEP8?
 
 It is proposed to accommodate the small or micro projects, intellectual properties, and other small token economies. Similar to SME board in the traditional stock markets, BEP8 tokens markets will increase the liquidity of utility tokens of startups or Intellectual Property (IP) tokens by removing the capital requirements for listing. Besides, any BEP8 token issuer can choose to directly list against BNB and BUSD without the voting process of validators.
 
 Details:
 
-* [BEP8 Proposal](https://github.com/bnb-chain/BEPs/blob/master/BEP8.md)
+* [BEP8 Proposal](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP8.md)
 * [Commandline Instructions](beaconchain/learn/BEP8.md)
 
 ## How to issue BEP2 tokens?
