@@ -24,4 +24,3 @@ BNB Smart Chain (BSC) provides explorers for both its mainnet and testnet.
 
 * BscScan - https://testnet.bscscan.com/
 
-* Bitquery - https://explorer.bitquery.io/bsc_testnet
