@@ -73,61 +73,44 @@ Congratulations! you have create your MetaMask account!
     * Symbol: BNB
     * Block Explorer: https://bscscan.com
 
-3. Claim some testnet token to your account. Click on your address for copy
-   
-![img](https://lh3.googleusercontent.com/3-6iXj8gVhTYrhzkDHcRBWOMvkkfUwm2W8aDssNTZ5bFqCsjq1BlY-nhCJDZWwT8kx-9URnQur1JxmAot-3Nu1lhypqVM068MovqDlv-oXPDJtz4PwsNTYGM3TZM_F5uRlnUwrP3)
-
-1. Go to faucet page: https://testnet.bnbchain.org/faucet-smart, then paste your address in the box and click on “Give me BNB”
-
-!!! Tip
-    Please note that you can only claim once every minute
-
-![img](https://lh6.googleusercontent.com/DqxU17JcP9iW5f1yUujY5S8w2m32yv00jrQgJJ0vp_OptrNwCWotbb1_X7msseR72OpXSj8fxbLXhWZgpVEtaMJ_STof2D2mZcGsl6Qh4-KWJH8LsYu97SXySMToDnx15qS4po5z)
-
-After the transfer transaction is sent, you will see an increase of your balance
-
-![img](https://lh6.googleusercontent.com/Azy6npo0J6hrV_H_X2-IfVcYHE7U6vaMEh2_GPnVb_5oKZSy9Qqa43QYlzEZlmgcJHnMYbyAvyFNJ16Opcn4xbNRO_6Z11Gnl0eePqOkwOfgOptGT0H9gWG2uepkRaHlYsOZ1w4b)
-
 ## Transfer BNB to other BNB Smart Chain address
 
 1. Log in to your MetaMask
    
-<imgg src="https://lh3.googleusercontent.com/7HKZWIzMtfolKrO42OI6Zw3XCUj4CjKo15mXT8n_B3J6CC4Po3nDK59ORv2qvgL_G84I_JOYrnp3oNXcfSO3u0IsXBo4vvB3CpaberJ86ORb9_02campWQOyBr-Y07yYPI68qR85" alt="img" style={{zoom:"30%"}}/>
+<img src="https://lh3.googleusercontent.com/7HKZWIzMtfolKrO42OI6Zw3XCUj4CjKo15mXT8n_B3J6CC4Po3nDK59ORv2qvgL_G84I_JOYrnp3oNXcfSO3u0IsXBo4vvB3CpaberJ86ORb9_02campWQOyBr-Y07yYPI68qR85" alt="img" style={{zoom:"80%"}}/>
 
 2. Click on Send button
-   
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/b6e6e2f0-bbae-4335-8932-f7295e36121e" alt="img" style={{zoom:"30%"}}/>
+
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/6a464455-14aa-4140-a900-1c95c01cdf25" alt="img" style={{zoom:"30%"}}/>
 
 3. Copy the receiver’s address in the box
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/38e04a74-d2af-4af4-8b6f-9f57e8d200e9" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/7e74846e-ce1d-4c40-a783-c59ebebfe98e" alt="img" style={{zoom:"30%"}}/>
 
 4. Input the the amount of tokens you want to transfer and then press the "Next" button
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/88cc3b8e-907f-4b28-b0be-f31311c6eac8" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/c41e133e-dcd8-41bd-89b3-286e0adb0af4" alt="img" style={{zoom:"30%"}}/>
 
-5. Click on the "Market" icon to modify the defautl gas fees
+5. Click on the "Market" icon to modify the default gas fees
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/b72d9f37-495d-47aa-aa37-459bfa0cfa91" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/8c77a81d-55c0-4937-a3a8-ab7e1a5301c2" alt="img" style={{zoom:"80%"}}/>
 
 6. Go to Advanced Options to edit the default gas fees
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/4798d34e-73df-41b6-98ef-5c61c84583cc" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/e8dea871-e6f7-4a8e-ad6e-8612e599951c" alt="img" style={{zoom:"80%"}}/>
 
-7. Update the "Max Base Fee" and the "Priority Fee" options to a higher value than the default. For e.g., in our case 5 GWEI. Make sure to select the "Always use these value and advanced setting as default". Then click on the save button.
+7. Update the "Max Base Fee" and the "Priority Fee" options to a higher value than the default. For mainnet set it to **3 GWEI**. Make sure to select the "Always use these value and advanced setting as default". Then click on the save button.
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/458504df-0146-4ed1-897c-f06d46be3891" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/95bbc589-81d0-42dd-9c32-45c114318232" alt="img" style={{zoom:"80%"}}/>
 
 8. Confirm your transaction by clicking the confirm button.
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/11b2c7ac-4a9b-4628-a370-3205cb35e33b" alt="img" style={{zoom:"30%"}}/>
-
 9. Once your transaction is confirmed, check it on block explorer. Click on the transaction to open its details and then on "View on Block Explorer".
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/d44c89bf-4eeb-48f5-b0e6-a8b8ddfc18d6" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/7657bcb2-50c2-4f80-9f8e-acdea1cd4401" alt="img" style={{zoom:"80%"}}/>
 
 :::caution
 
-Since the release of v8.1.3, MetaMask sometimes displays the warning message "Invalid Custom Network". To solve this issue, click on "'Settings" and enter Chain ID of BNB Smart Chain network again. If **56** doesn’t work, try **0x38**. 
+Since the release of v8.1.3, MetaMask sometimes displays the warning message "Invalid Custom Network". To solve this issue, click on "Settings" and enter Chain ID of BNB Smart Chain network again. If **56** doesn’t work, try **0x38**. 
 
 :::
