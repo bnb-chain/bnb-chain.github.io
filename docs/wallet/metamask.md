@@ -77,15 +77,15 @@ Congratulations! you have create your MetaMask account!
 
 1. Log in to your MetaMask
    
-<img src="https://lh3.googleusercontent.com/7HKZWIzMtfolKrO42OI6Zw3XCUj4CjKo15mXT8n_B3J6CC4Po3nDK59ORv2qvgL_G84I_JOYrnp3oNXcfSO3u0IsXBo4vvB3CpaberJ86ORb9_02campWQOyBr-Y07yYPI68qR85" alt="img" style={{zoom:"80%"}}/>
+<img src="https://lh3.googleusercontent.com/7HKZWIzMtfolKrO42OI6Zw3XCUj4CjKo15mXT8n_B3J6CC4Po3nDK59ORv2qvgL_G84I_JOYrnp3oNXcfSO3u0IsXBo4vvB3CpaberJ86ORb9_02campWQOyBr-Y07yYPI68qR85" alt="img" style={{zoom:"50%"}}/>
 
 2. Click on Send button
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/6a464455-14aa-4140-a900-1c95c01cdf25" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/6a464455-14aa-4140-a900-1c95c01cdf25" alt="img" style={{zoom:"80%"}}/>
 
 3. Copy the receiver’s address in the box
 
-<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/7e74846e-ce1d-4c40-a783-c59ebebfe98e" alt="img" style={{zoom:"30%"}}/>
+<img src="https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/7e74846e-ce1d-4c40-a783-c59ebebfe98e" alt="img" style={{zoom:"80%"}}/>
 
 4. Input the the amount of tokens you want to transfer and then press the "Next" button
 
