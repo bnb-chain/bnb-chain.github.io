@@ -42,3 +42,4 @@ If you want to be able to receive BNB and other supported tokens on the BNB Smar
 |16     | Guarda Wallet |<https://guarda.com/coins/binance-coin-wallet/>|No|
 |17     | Rabby Wallet |<https://rabby.io/>|No|
 |18     | Atomic Wallet | <https://atomicwallet.io/> | Yes |
+|19     | Gem Wallet | <https://gemwallet.com/> | Yes |
