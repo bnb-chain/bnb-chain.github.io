@@ -13,6 +13,9 @@ sidebar_position: 2
 
 **License:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
+**Rate Limit:** 
+2000 request per IP in 5 minutes
+
 ### /v1/staking/accounts/{address}/balance
 ---
 
