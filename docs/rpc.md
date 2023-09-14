@@ -24,20 +24,17 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 ### BSC Mainnet (ChainID 0x38, 56 in decimal)
 
 * https://bsc-dataseed.bnbchain.org
-* https://bsc-dataseed1.defibit.io
-* https://bsc-dataseed1.ninicoin.io
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
 * https://bsc.nodereal.io
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 ### BSC Testnet (ChainID 0x61, 97 in decimal)
 
-* https://data-seed-prebsc-1-s1.bnbchain.org:8545
-* https://data-seed-prebsc-2-s1.bnbchain.org:8545
-* https://data-seed-prebsc-1-s2.bnbchain.org:8545
-* https://data-seed-prebsc-2-s2.bnbchain.org:8545
-* https://data-seed-prebsc-1-s3.bnbchain.org:8545
-* https://data-seed-prebsc-2-s3.bnbchain.org:8545
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
 
 ### Thrid-Party RPC Providers
 
@@ -63,7 +60,7 @@ You can start the HTTP JSON-RPC with the --http flag
 geth attach https://bsc-dataseed.bnbchain.org
 
 ## testnet
-geth attach https://data-seed-prebsc-1-s1.bnbchain.org:8545
+geth attach https://bsc-testnet-dataseed.bnbchain.org
 ```
 
 ### JSON-RPC methods
