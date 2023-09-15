@@ -28,6 +28,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 * https://bsc-dataseed.defibit.io
 * https://bsc-dataseed.ninicoin.io
 * https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
@@ -35,6 +36,7 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * https://bsc-testnet-dataseed.bnbchain.org
 * https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
 
 ### Thrid-Party RPC Providers
 
