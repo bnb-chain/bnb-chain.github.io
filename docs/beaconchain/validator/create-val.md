@@ -46,7 +46,7 @@ $ bnbcli staking create-validator-open \
 --pubkey {the concensus pubkey created in step 1} \
 --commission-rate {10000000 represent 10%} \  
 --commission-max-rate {20000000 represent 20%} \  
---commission-max-change-rate {500000000 represent 5%} \  
+--commission-max-change-rate {5000000 represent 5%} \  
 --moniker {validator name} \
 --details {validator detailed description} \  
 --identity {keybase identity} \  
@@ -65,7 +65,7 @@ $ tbnbcli staking create-validator-open \
 --pubkey {the concensus pubkey created in step 1} \
 --commission-rate {10000000 represent 10%} \  
 --commission-max-rate {20000000 represent 20%} \  
---commission-max-change-rate {10000000 represent 1%} \  
+--commission-max-change-rate {1000000 represent 1%} \  
 --moniker {validator name} \  
 --details {validator detailed description} \  
 --identity {keybase identity} \  
