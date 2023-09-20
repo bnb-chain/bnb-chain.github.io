@@ -67,7 +67,7 @@ Once you've added the BNB Beacon Chain or the BNB Smart Chain to your MetaMask, 
 
 ## How Much BNB You Need To Send Tokens
 
-if you try to send tokens without having any BNB in your account you will be told you have insufficient funds. This means you do not have enough BNB in your account to cover the cost of gas. Each transaction (including token and contract transactions) require gas and that gas is paid in BNB. You can think of this like a transaction fee.
+if you try to send tokens without having any BNB in your account you will be told you have insufficient funds. This means you do not have enough BNB in your account to cover the cost of gas. Each transaction (including token and contract transactions) requires gas and that gas is paid in BNB. You can think of this like a transaction fee.
 
 You can remedy this by sending 0.001 BNB to that account in order to be able to make the transaction.
 
@@ -86,7 +86,7 @@ curl --location --request POST 'https://bsc-dataseed2.bnbchain.org' \
 ## How to Reveal Your Seed Phrase
 When dealing with cryptocurrencies or crypto assets like BNB or BUSD, it is important to always be aware of and have your private keys, seed phrases and passwords backed up in case the unexpected occurs.
 
-## What do i do if i lost/forgot my Seed Phrase?
+## What do I do if I lost/forgot my Seed Phrase?
 
 1. Seed phrase is only made known to user directly. In the event that is lost, there is no way of recovering it. 
 
@@ -160,7 +160,7 @@ When resetting your password for your Binance Extension wallet, you will need yo
  * Ethereum (ERC20)
 
 ## Why my Tokens are not visible?
-!!! Note : By default each wallet/network will shows the the main token they support. You will need to add additional token to your list. 
+!!! Note : By default each wallet/network will show the main token they support. You will need to add additional token to your list. 
 
 **For Binance Extension Wallet users**
 You'll need to switch to BNB Beacon Chain Mainnet (BC) mainnet or BNB Smart Chain (BSC) mainnet
@@ -178,7 +178,7 @@ Then add tokens manually: https://docs.yearn.finance/how-to-guides/how-to-add-a-
 A standard Ether transfer TX will be 21000 gas & a gas price of 5 GWEI. With tokens, the amount of gas is typically gas, so the total TX fee increases to 0.0005 BNB - 0.0007 BNB.
 
 
-if you try to send tokens without having any BNB in your account you will be told you have insufficient funds. This means you do not have enough BNB in your account to cover the cost of gas. Each transaction (including token and contract transactions) require gas and that gas is paid in BNB. You can think of this like a transaction fee.
+if you try to send tokens without having any BNB in your account you will be told you have insufficient funds. This means you do not have enough BNB in your account to cover the cost of gas. Each transaction (including token and contract transactions) requires gas and that gas is paid in BNB. You can think of this like a transaction fee.
 
 You can remedy this by sending 0.001 BNB to that account in order to be able to make the transaction.
 
@@ -224,7 +224,7 @@ Once you've added the asset to your wallet, you will be able to select different
 ## Can I use Extension wallet for Binance DEX
 No, you cannot now. The support will be added in future release.
 
-## How to Recover funds send to Ethereum network
+## How to Recover funds sent to Ethereum network
 If the fund is sent to one of your existing accounts, please
 
 * Switch to Ethereum network
