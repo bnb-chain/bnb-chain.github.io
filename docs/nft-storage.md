@@ -9,7 +9,7 @@ sidebar_position: 2
 
 After the preview two tutorials, you must have learned how to write NFT smart contract and deploy it on BSC testNet. The most important part for any NFT project is that where your NFT assets are stored. If you want to avoid the risk of losing your NFT assets or not able to access them, storing your NFTs on decentralized network is the better option for you.
 
-So in this tutorial, we will walk you through the process of storing your NFT assets on decentralied storage network, like [IPFS](https://ipfs.io/) & [Filecoin](https://filecoin.io/).  We will use [NFT.Storage](https://nft.storage/) in this tutorial since it provides easy to use API/SDK for developers to upload their NFT assets on both IPFS and Filecoin. 
+So in this tutorial, we will walk you through the process of storing your NFT assets on decentralized storage network, like [IPFS](https://ipfs.io/) & [Filecoin](https://filecoin.io/).  We will use [NFT.Storage](https://nft.storage/) in this tutorial since it provides easy to use API/SDK for developers to upload their NFT assets on both IPFS and Filecoin. 
 
 What we will use in this tutorial:
 
@@ -25,15 +25,15 @@ NFT.Storage is a storage service that lets you store off-chain NFT assets decent
 
 NFT.Storage provides multiple ways to upload your NFTs, from user-friendly web UI and NFTUp application to easy to use API to support developers. So it is especially useful for individual creators who are minting NFTs, or NFT tooling developers looking to support creators and collectors! 
 
-In this tutorial, we will more focus on developers who is integrating [NFT.Storage](https://nft.storage/) into their application to Mint NFTs. If you want to learn more about different ways to upload and manager your NFTs, you can check this [Quick Start docs](https://nft.storage/docs/quickstart/). 
+In this tutorial, we will more focus on developers who are integrating [NFT.Storage](https://nft.storage/) into their application to Mint NFTs. If you want to learn more about different ways to upload and manager your NFTs, you can check this [Quick Start docs](https://nft.storage/docs/quickstart/). 
 
 Then let's get started. 
 
 ### Create an account and get an API token
 
-If this is the first time you use NFT.Storage, you need to create a NFT.Storage account to get a API token which you can use in your applications when you upload NFTs. 
+If this is the first time you use NFT.Storage, you need to create a NFT.Storage account to get an API token which you can use in your applications when you upload NFTs. 
 
-You can sign up an account for free using either your email or GitHub.
+You can sign up for an account for free using either your email or GitHub.
 
 1. Go to [nft.storage/login](https://nft.storage/login) to get started.
 
@@ -41,17 +41,17 @@ You can sign up an account for free using either your email or GitHub.
 
 3. **Authorize** NFT.Storage when asked by GitHub.
 
-4. Once you are logged in success, you can click the **API Keys** to create an token.
+4. Once you are logged in success, you can click the **API Keys** to create a token.
 
    ![API Token](https://bafybeic55jy6d5gr5uvquz6jqg53wdqqqqtwqsgsch2dmoltsxirmtf3we.ipfs.w3s.link/API-token.png)
 
 5. Click **+ New Key**, and enter a descriptive name for your API token and click **Create**.
 
-6. Now you have successfully create a API Token, you can click **Action- Copy** to copy it to your clipboard to use it later.
+6. Now you have successfully create an API Token, you can click **Action- Copy** to copy it to your clipboard to use it later.
 
 ### Upload NFTs using Javascript Client
 
-The NFT.Storage [JavaScript client](https://nft.storage/docs/quickstart/client/js/) makes it simple to upload files and create ERC-1155 compatible NFT metadata in your NFT applications.  Both NFT and its metadata will be stored on IPFS and Filecoin, you will receive a IPFS URL for you metadata which you can use to mint your NFT.
+The NFT.Storage [JavaScript client](https://nft.storage/docs/quickstart/client/js/) makes it simple to upload files and create ERC-1155 compatible NFT metadata in your NFT applications.  Both NFT and its metadata will be stored on IPFS and Filecoin, you will receive an IPFS URL for your metadata which you can use to mint your NFT.
 
 We will use a simple node JS script to demonstrate the code to upload NFT and receive the corresponding IPFS URL for its metadata. You can easily integrate this function in your JavaScript or TypeScript applications.
 
@@ -78,14 +78,14 @@ You'll need [Node.js](https://nodejs.org/) version 16 or later for this example.
 
 3. **Create a file called `upload.mjs` and open it with your VS Code.**
 
-   Below is the code you need to upload an image with ERC-1155 compatible NFT metadata.This code here will be used only as example, you can add similar upload logic in your application.
+   Below is the code you need to upload an image with ERC-1155 compatible NFT metadata. This code here will be used only as example, you can add similar upload logic in your application.
 
    ```javascript
    import { NFTStorage, File } from "nft.storage"
    import fs from 'fs'
    import dotenv from 'dotenv'
    dotenv.config()
-   //This the the API token you have created earlier which is added as one env variable.
+   //This is the API token you have created earlier which is added as one env variable.
    const API_KEY = process.env.NFT_STORAGE_API_KEY 
    
    async function storeAsset() {
@@ -120,13 +120,13 @@ You'll need [Node.js](https://nodejs.org/) version 16 or later for this example.
    node upload.mjs
    ```
 
-   The output should look like down blow. You can directly use the IPFS URL to mint NFT token, or use the URL of NFT.Strorage gateway. For instance, `https://nftstorage.link/ipfs/<CID of your NFT>/metadata.json`
+   The output should look like down below. You can directly use the IPFS URL to mint NFT token, or use the URL of NFT.Storage gateway. For instance, `https://nftstorage.link/ipfs/<CID of your NFT>/metadata.json`
 
    ```shell
    Metadata stored on Filecoin and IPFS with URL: ipfs://bafyreihegljuej4y4ai5ftzb2rdztseb5mmjzba5f5xcdktgd43rkoxhw4/metadata.json
    ```
 
-Now you have your NFT assets stored on IPFS and Filecoin, you can access it via [NFT.Strorage gateway](https://nftstorage.link/ipfs/bafyreihegljuej4y4ai5ftzb2rdztseb5mmjzba5f5xcdktgd43rkoxhw4/metadata.json) and you are ready to mint your NFT. Please record the metadata url which we will use to mint NFT later.
+Now you have your NFT assets stored on IPFS and Filecoin, you can access it via [NFT.Storage gateway](https://nftstorage.link/ipfs/bafyreihegljuej4y4ai5ftzb2rdztseb5mmjzba5f5xcdktgd43rkoxhw4/metadata.json) and you are ready to mint your NFT. Please record the metadata url which we will use to mint NFT later.
 
 ## Mint NFTs
 
@@ -142,7 +142,7 @@ In this section, I will simply use Remix to write NFT contract, deploy and invok
 
 We will use Remix IDE to write your NFT contract. In this example, we are going to use ERC721URIStorage from OpenZeppenlin. 
 
-Open [Remix IDE](https://remix.ethereum.org/), create a new solidify file, name it `NFTExample.sol` and copy the contract code down blow. 
+Open [Remix IDE](https://remix.ethereum.org/), create a new solidify file, name it `NFTExample.sol` and copy the contract code down below. 
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -185,7 +185,7 @@ You can also directly interact with the deployed NFT contract on Remix IDE. Try 
 
 Now, we are all set to mint the NFT. Instead of using metadata storing on centralized server, we will use the metadata which we stored on IPFS & Filecoin using NFT.Storage in previous steps. 
 
-We will copy the NFT metedata URL, something like `ipfs://bafyreihegljuej4y4ai5ftzb2rdztseb5mmjzba5f5xcdktgd43rkoxhw4/metadata.json` and mint NFT on Remix IDE. 
+We will copy the NFT metadata URL, something like `ipfs://bafyreihegljuej4y4ai5ftzb2rdztseb5mmjzba5f5xcdktgd43rkoxhw4/metadata.json` and mint NFT on Remix IDE. 
 
 + On Remix IDE, go to the `Deployed Contracts` section and find `mintItem` method.
 
@@ -198,6 +198,6 @@ We will copy the NFT metedata URL, something like `ipfs://bafyreihegljuej4y4ai5f
 + **Verify your newly minted NFT**
   Once the transaction is confirmed on BSC TestNet, you will be able to verify whether your NFT is minted successfully or not by invoking either  `balanceOf` or `ownerOf`. I will take `balanceOf` as the example here. 
 
-  ![Balance of Image](https://bafybeibcjnrijqdlwml6iuknkg6c6ydwlcqihiobzomelctmcbond75ima.ipfs.w3s.link/balanceOf.png)You can also verify your NFT on [Opensea Testnets](https://testnets.opensea.io/account) once you connect to MetaMask account. Then you will be see the freshly minted NFT under your account. 
+  ![Balance of Image](https://bafybeibcjnrijqdlwml6iuknkg6c6ydwlcqihiobzomelctmcbond75ima.ipfs.w3s.link/balanceOf.png)You can also verify your NFT on [Opensea Testnets](https://testnets.opensea.io/account) once you connect to MetaMask account. Then you will see the freshly minted NFT under your account. 
 
   ![Your NFT on OpenSea](https://bafybeiapuxvoxxfdxjgyta6nl6uc65aoknvv57dq73x6vowfkq4c26ehb4.ipfs.w3s.link/NFT-OS.png)
