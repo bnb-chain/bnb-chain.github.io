@@ -4,47 +4,62 @@ sidebar_position: 2
 ---
 
 # Issue BEP20 Tokens
+This document provides a brief walk through on how to issue BEP20 tokens on the BNB Smart Chain. For this tutorial we have used [Remix IDE](https://remix.ethereum.org) and [Metamask Wallet](https://metamask.io/). Further, in this guide, we provide steps for issuing BEP20 tokens on the BSC Testnet, however, the steps for mainnet are also the same.
 
-## **Compile and Deploy BEP20 Contract**
+## Compile and Deploy BEP20 Contract
 
-1. Open Remix IDE: [https://remix.ethereum.org](https://remix.ethereum.org/)
+1. Navigate to [Remix IDE](https://remix.ethereum.org)
 
-![img](https://lh6.googleusercontent.com/zwki3hgBILOzXHtayDLvNCrmOXv6LTUQAIG02lRkOtzOtNJsUbIBXB7LUoN6RF8PbvkUGcRuLCA36I_RdqJCQVrfeZpwfbpfwlN7R0s3fJGMSTdMT8y56ngL3qCocUPW65UJ2bQZ)
+![image](https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/47f4950f-4715-4617-b477-c8966b9503d8)
 
-2. Select solidity language
+2. Create a new workspace
 
-![img](https://lh3.googleusercontent.com/aLlINgoy2Luj45ZKVxPTExUS4I2QoX3WHzmLbO7_CJHQiL3plGvx0iCaI2YTGE8QmnhytN-HDOPvhGixQ7utrA_o9UJJVaujmQ5yj7ET8ju12Jh0luVtZHgpLGmOx9LUoFnzu2Eg)
+![image](https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/e04476b8-43a4-47dd-ae12-e2a18b884fe7)
 
-3. Create new contract BEP20Token.sol and copy contract code from the bep20 token template [here](BEP20Token.template)
+3. Choose Blank Template and an appropriate name for the workspace, then click "Ok". 
 
-4. Modify “name”, “symbol”, “decimals” and “totalSupply” according to your requirements.
+![image](https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/735c656c-6a90-4bbc-8390-229654c328a2)
 
-![img](https://lh4.googleusercontent.com/hgxDh_hXCFKwwlkAYG6h9qfxvzyeeD3k-t3tNBD-VSvwTtM4AnaFylZ6SjSmfTKCuIqhs66Z9vi7mRplIfN5ER7n1yMz0EKpO_RDOcTQTrsh5R1DC0doVC7FT05Hu2bboM2o57Qg)
+4. Create new contract file, by clicking on the ![image](https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/d46b95cd-273f-49d4-9a9b-c4afa367688e) icon in the file explorer section. Name the file as `BEP20Token.sol`
 
-5. Compile the BEP20 token contract
+5. Copy contract code from the bep20 token template [here](BEP20Token.template) and paste it into your `BEP20Token.sol` file.
 
-    a. Step1: Click button to switch to compile page
+6. Modify `name`, `symbol`, `decimals` and `totalSupply` according to your requirements. 
 
-    b. Step2: Select “BEP20Token” contract
+```javascript
+    string public name = "MyBEP20Token";
+    string public symbol = "MBT";
+    uint8 public decimals = 18;
+    uint256 public _totalSupply = 100;
+```
 
-    c. Step3: Enable “Auto compile” and “optimization”
+7. Compile the BEP20 token contract
 
-    d. Step4: Click “ABI” to copy the contract abi and save it.
+    a. Step1: Click on the Compile button to switch to compile page
 
-![img](https://lh6.googleusercontent.com/qY_5g3ZMnJca6n84W2JxIoBvd8iHRQ0qkOQuJ60pRIcKvgZB5-bXcGq6gS7dFwA5rYXbiS2NyaUQ1Qptcagqa0pb7kmq_S-Dh8drA4R-hDg9_NVp1zPl-tmqIDanlcgLibaR3CV7)
+    b. Step2: Select the latest Solidity compiler version
 
-6. Deploy the contract to BSC
+    c. Step3: Enable _Auto compile_ and _Optimization_
 
-    a. Step1: Click button to switch to compile button.
+    d. Step4: Click _ABI_ to copy the contract ABI and save it.
 
-    b. Step2: Select “Injected Web3”
 
-    c. Step3: Select “BEP20Token”
+![image](https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/98c4879a-f9a7-4b4d-84ed-5ea7ae529ae9)
 
-    d. Step4: Client “Deploy” button and Metamask will pop up
 
-    e. Client “confirm” button to sign and broadcast transaction to BSC.
+8. Deploy the contract to BSC
 
-![img](https://lh5.googleusercontent.com/lsWXpUN12iRTzMSJZpb8HFBL2ycH7JVPlrMqlK7aLOl4zLanqlp-3UHbranHk__tugeqWfnjg1k_2_0VnZlzJkJucJw3R-JDoxP84rAPWOJc1Oi5dgJZA3wRzyjwxKiy_6BdcBMb)
+    a. Step1: Click the Deploy button to switch to deploy page
 
-<img src="https://lh4.googleusercontent.com/9awuDudNSuUOZDQAlW5FPZ5SbRkWsKPlJSYWGUL7R4raJ5o2mprRP7jt87hP_wbuYeoJy75ErwDcKVC7_spf8YkumCkwOP4Eak9SfcV6dZvyVhy84JqKfVUvmEeLw5mWEZ3-aCED" alt="img" style={{zoom:"50%"}}/>
+    b. Step2: Select _Injected Web3_
+
+    c. Step3: Select _BEP20Token_
+
+    d. Step4: Click on the _Deploy_ button and your wallet will pop up
+
+    e. Client _Confirm_ button to sign and broadcast transaction to BSC.
+
+![image](https://github.com/bnb-chain/bnb-chain.github.io/assets/93580180/5b375fd1-fabf-4ae2-a6bb-5857b795ce70)
+
+9. You can view the details of your deployed smart contract in the BSC Scan block explorer.
+

@@ -1,4 +1,6 @@
-pragma solidity 0.6.4;
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.4.0 <= 0.9.0;
 
 interface IBEP20 {
     /**
