@@ -13,7 +13,7 @@ BEP20 tokens are very popular on BSC, and they are used for a variety of purpose
 
 ## Difference between BEP20 and ERC20
 
-BEP20 and ERC20 are both token standards, but they are used on different blockchains. BEP20 is used on Binance Smart Chain (BSC), while ERC20 is used on Ethereum. Both standards define a set of rules that all tokens must follow, such as how to transfer, burn, and mint tokens.
+BEP20 and ERC20 are both token standards, but they are used on different blockchains. BEP20 is used on BNB Smart Chain (BSC), while ERC20 is used on Ethereum. Both standards define a set of rules that all tokens must follow, such as how to transfer, burn, and mint tokens.
 
 Here is a summary of the key differences between BEP20 and ERC20 tokens:
 | Feature | BEP20 | ERC20 |
