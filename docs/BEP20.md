@@ -18,7 +18,7 @@ BEP20 and ERC20 are both token standards, but they are used on different blockch
 Here is a summary of the key differences between BEP20 and ERC20 tokens:
 | Feature | BEP20 | ERC20 |
 |---|---|---|
-| Blockchain | Binance Smart Chain (BSC) | Ethereum |
+| Blockchain | BNB Smart Chain (BSC) | Ethereum |
 | Transaction fees | Low | High |
 | Transaction speed | Fast | Slow |
 | Smart contract compatibility | Compatible with Ethereum smart contracts | Not compatible with BSC smart contracts |
