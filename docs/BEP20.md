@@ -3,21 +3,66 @@ sidebar_label: Introduction
 sidebar_position: 2
 ---
 
-# BEP20 Token Introduction
-A BEP20 token must implement the interface `IBEP20` in [IBEP20.sol](IBEP20.sol). This is a template contract [BEP20Token.template](BEP20Token.template). Users just need to fill in `_name`, `_symbol`, `_decimals` and `_totalSupply` according to their own requirements:
-```
-  constructor() public {
-    _name = {{TOKEN_NAME}};
-    _symbol = {{TOKEN_SYMBOL}};
-    _decimals = {{DECIMALS}};
-    _totalSupply = {{TOTAL_SUPPLY}};
-    _balances[msg.sender] = _totalSupply;
+# BEP20 Token
 
-    emit Transfer(address(0), msg.sender, _totalSupply);
-  }
+## Introduction
+
+BEP20 is a token standard on BNB Smart Chain (BSC). It is an extension of the Ethereum ERC-20 token standard, and it defines a set of rules that all BEP20 tokens must follow. These rules include how tokens can be transferred, burned, and minted. It is designed to enable developers to create and deploy tokens on the BNB Smart Chain.
+
+BEP20 tokens are very popular on BSC, and they are used for a variety of purposes, including decentralized finance (DeFi), non-fungible tokens (NFTs), and gaming.
+
+## Difference between BEP20 and ERC20
+
+BEP20 and ERC20 are both token standards, but they are used on different blockchains. BEP20 is used on BNB Smart Chain (BSC), while ERC20 is used on Ethereum. Both standards define a set of rules that all tokens must follow, such as how to transfer, burn, and mint tokens.
+
+Here is a summary of the key differences between BEP20 and ERC20 tokens:
+| Feature | BEP20 | ERC20 |
+|---|---|---|
+| Blockchain | BNB Smart Chain (BSC) | Ethereum |
+| Transaction fees | Low | High |
+| Transaction speed | Fast | Slow |
+| Smart contract compatibility | Compatible with Ethereum smart contracts | Not compatible with BSC smart contracts |
+
+## Implementing BEP20 Tokens
+
+To implement a BEP20 token on BNB Smart Chain, you must use the `IBEP20` interface. The IBEP20 interface defines the following functions: `totalSupply()`, `balanceOf(address account)`, `transfer(address recipient, uint256 amount)`, `allowance(address owner, address spender)`, `approve(address spender, uint256 amount)`, `transferFrom(address sender, address recipient, uint256 amount)`.
+
+```javascript
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface IBEP20 {
+    function totalSupply() external view returns (uint256);
+    function decimals() external view returns (uint8);
+    function symbol() external view returns (string memory);
+    function name() external view returns (string memory);
+    function getOwner() external view returns (address);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address _owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
 ```
 
-Then users can use [Remix IDE](https://remix.ethereum.org) and [Metamask](wallet/metamask.md) to compile and deploy the BEP20 contract to BSC.
+In addition to these functions, the IBEP20 interface also defines a number of events that can be emitted by tokens, such as the Transfer event when tokens are transferred, the Approval event when an account approves another account to spend its tokens, and the Burn event when tokens are burned.
+
+The IBEP20 interface is used by all tokens on the BSC, and it provides a common set of functions and events that can be used to interact with tokens. This makes it easier for developers to build applications that interact with tokens on the BSC, and it also makes it easier for users to understand how tokens on the BSC work.
+
+### Methods that Need to be Implemented
+
+All BEP20 tokens must implement the following methods:
+
+* **totalSupply():** Returns the total supply of tokens.
+* **balanceOf():** Returns the balance of tokens held by a specific address.
+* **transfer():** Transfers a specific number of tokens to another address.
+* **allowance():** Returns the maximum amount of tokens that an address is allowed to transfer on behalf of another address.
+* **approve():** Sets the maximum amount of tokens that an address is allowed to transfer on behalf of another address.
+* **transferFrom():** Transfers a specific number of tokens from one address to another address, on behalf of the first address.
+
+To implement, compile, and deploy BEP20 tokens on BNB Smart Chain, users can use various different IDEs like [Remix IDE](https://remix.ethereum.org), [Truffle](https://trufflesuite.com/), [Hardhat](https://hardhat.org/), etc. They can use Web3 wallets like [Trust Wallet](wallet/trustwallet.md) and [Metamask](wallet/metamask.md) for signing transactions and paying any gas cost that may incur.
 
 ## Interact with Contract with [Web3](https://www.npmjs.com/package/web3) and NodeJS.
 

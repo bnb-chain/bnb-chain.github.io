@@ -59,15 +59,15 @@ Congratulations! you have create your MetaMask account!
 
 2. Add a new network
    
-<img src="https://lh5.googleusercontent.com/wRHX351ldc2PWT1wXE6U1NYyUkaEmVHVoA0Ex4LKz51prqRgwJcBCs2DhL0lQ3PVmE7Sv2dE02ReXcHlXNaf0lczFZtFl5htOtAzUYkDzu5eySe7y4wpcMaCzY6GaHv6NCXM1qZQ" alt="img" style={{zoom:"80%"}}/>
-
   * **Testnet**
+    * Network Name: BNB Smart Chain Testnet
     * [RPC URLs](rpc.md)
     * ChainID: 0x61, 97 in decimal (if 97 doesn’t work, try 0x61)
     * Symbol: BNB
     * Block Explorer: https://testnet.bscscan.com
 
   * **Mainnet**
+    * Network Name: BNB Smart Chain Mainnet
     * [RPC URLs](rpc.md)
     * ChainID: 0x38, 56 in decimal (if 56 doesn’t work, try 0x38)
     * Symbol: BNB

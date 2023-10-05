@@ -70,8 +70,8 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Separate Node',
-                        items: ['BSC-separate-node','BSC-verify-node', 'BSC-fast-node']
+                        label: 'Nodes',
+                        items: ['BSC-separate-node','BSC-verify-node', 'BSC-fast-node', 'boot-nodes']
                       },
                       {
                         type: 'category',
