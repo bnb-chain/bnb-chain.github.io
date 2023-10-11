@@ -39,7 +39,7 @@ There are 2 ways to start the validator node.
 ## generate the consensus key and input the password
 echo {your-password to the mining account} > password.txt
 echo {your-password for the bls wallet} > blspassword.txt
-geth --config ./config.toml --datadir ./node --syncmode snap -unlock {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000
+geth --config ./config.toml --datadir ./node --syncmode snap -unlock {accounts to sign txs, including your mining account at least} --miner.etherbase {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000
 ```
 OR
 
