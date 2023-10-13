@@ -306,7 +306,13 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       label: 'Future Developments',
-      items:['dev-outlook-2022', 'dev-outlook/scaling',
+      items:[
+             {
+              type: 'link',
+              label: 'Upgrades for 2023',
+              href: 'https://forum.bnbchain.org/t/bnb-chain-upgrades-mainnet/936#year-of-2023-3',
+             },
+            'dev-outlook/scaling',
              {
               type: 'link',
               label: 'State Expiry',
