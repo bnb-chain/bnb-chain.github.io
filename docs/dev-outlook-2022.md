@@ -16,4 +16,4 @@ With this name change also comes more advancements to benefit users, projects an
 - Scaling from one chain to multi-chain
 - Boosting the throughput of BSC
 - Introducing on-chain governance mechanisms
-- Improving scaling solutions and an expansion of the validator set of BSC from 21 to 50 (with 29 validators functioning as candidate block producers)
+- Improving scaling solutions and an expansion of the validator set of BSC from 21 to 50 (with 32 validators functioning as candidate block producers)

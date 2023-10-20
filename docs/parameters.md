@@ -13,7 +13,7 @@ sidebar_position: 2
 ### Max Validator Count
 
 - **11** validators on Testnet
-- **29** active validators on Mainnet
+- **32** active validators on Mainnet
 
 ### Validator Candidate
 
