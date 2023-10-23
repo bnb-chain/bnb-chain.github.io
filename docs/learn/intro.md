@@ -6,8 +6,8 @@ hide_table_of_contents: false
 
 # Introduction
 
-BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of 50 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection, malicious vote detection and other slashing logic guarantee security, stability, and chain finality. 
-Other than the 32 active validators, BSC will introduce more validators, e.g. another 20 inactive validators, into the validator set as backups, which will be called "Candidates".
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of 55 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection, malicious vote detection and other slashing logic guarantee security, stability, and chain finality. 
+Other than the 32 active validators, BSC will introduce more validators, e.g. another 23 inactive validators, into the validator set as backups, which will be called "Candidates".
 
 Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 32 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 

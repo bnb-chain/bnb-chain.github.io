@@ -10,7 +10,7 @@ In order to decentralize the network further, more validators should be introduc
 
 Meanwhile BSC has 32 active validators and many inactive validators. The inactive validators have no reward so the incentive for the runner to ensure the node quality and the delegation from the BNB holders are not enough.
 
-BSC will introduce more validators, e.g. another 20 inactive validators, into the validator set as backups, which will be called “Candidates”.
+BSC will introduce more validators, e.g. another 23 inactive validators, into the validator set as backups, which will be called “Candidates”.
 
 Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 32 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 
