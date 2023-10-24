@@ -7,11 +7,11 @@ hide_table_of_contents: false
 
 BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of **55** validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum) that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
 
-Other than the **32** active validators, BSC will introduce more validators, e.g. another **23** inactive validators, into the validator set as backups, which will be called “_Candidates_”.
+Other than the **32** active validators (21 Cabinets and 11 Candidates), BSC will introduce more validators, e.g. another **23** inactive validators, into the validator set as backups, which will be called “_Candidates_”.
 
-Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of **29** elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
+Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of **32** elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 
-In an extreme case, if a majority of the active **32** validators get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
+In an extreme case, if a majority of the active **32** validators (21 Cabinets and 11 Candidates) get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
 
 ## What is Validator?
 
