@@ -28,6 +28,3 @@ To get an overview of the BNB Smart Chain, refer [here](learn/intro.md). To lear
 
 ## How to Build on BSC
 You can build deploy [smart contracts](remix-new.md), [NFTs](nft-metadata-standard.md), [BEP20 Tokens](BEP20.md), and [BEP20 Upgradable Contracts](proxy.md) on the BNB Smart Chain.
-
-## BSC Outlook
-To get an overview of what is the current state and the future developements that BNB Chain's team is working refer [here](dev-outlook-2022.md).
