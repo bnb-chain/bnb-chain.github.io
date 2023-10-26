@@ -28,7 +28,7 @@ The consensus protocol of BSC fulfills the following goals:
 5. It allows modern proof-of-stake blockchain network governance.
 
 ## Validator Quorum
-In the genesis stage, a few trusted nodes will run as the initial Validator Set. After the blocking starts, anyone can compete to join as candidates to elect as a validator. The staking status decides the top 29 most staked nodes to be the next validator set, and such an election will repeat every 24 hours.
+In the genesis stage, a few trusted nodes will run as the initial Validator Set. After the blocking starts, anyone can compete to join as candidates to elect as a validator. The staking status decides the top 32 most staked nodes to be the next validator set, and such an election will repeat every 24 hours.
 
 BNB is the token used to stake for BSC.
 

@@ -8,13 +8,13 @@ sidebar_position: 2
 ## Candidate ValidatorSet
 In order to decentralize the network further, more validators should be introduced. Besides increasing the anti-censorship, it always increases the robustness and availability of the network. BSC should survive even if more than half of the validator set were censored or taken down in a hostile way.
 
-Meanwhile BSC has 29 active validators and many inactive validators. The inactive validators have no reward so the incentive for the runner to ensure the node quality and the delegation from the BNB holders are not enough.
+Meanwhile BSC has 32 active validators and many inactive validators. The inactive validators have no reward so the incentive for the runner to ensure the node quality and the delegation from the BNB holders are not enough.
 
-BSC will introduce more validators, e.g. another 20 inactive validators, into the validator set as backups, which will be called “Candidates”.
+BSC will introduce more validators, e.g. another 23 inactive validators, into the validator set as backups, which will be called “Candidates”.
 
-Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 29 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
+Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 32 elected. The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
 
-In an extreme case, if a majority of the active 29 validators get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
+In an extreme case, if a majority of the active 32 validators get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of active validator set.
 
 ## Temporary Maintenance Mode for Validators
 Due to the design of ‘Parlia’ consensus, the absence of the validator, even if it is due to scheduled maintenance, will cause instability and capacity of BSC due to the extra waiting time and chain reorganization.
