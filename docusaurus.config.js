@@ -17,6 +17,17 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
   
+  clientModules: [
+    require.resolve('./embedValue.js'),
+  ],
+  scripts: [
+    {
+      src: 'https://reiki.web3go.xyz/aiweb/embed.js',
+      id: "F03vpUuT3em6KopZ",
+      defer: true,
+    },
+  ],
+
   plugins: [
              require.resolve("docusaurus-plugin-image-zoom"),
               
