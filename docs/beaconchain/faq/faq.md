@@ -217,3 +217,9 @@ Please do __NOT__ try to transfer anything on existing network to BNB Beacon Cha
 ## How would a third-party integrate with BNB Beacon Chain and Binance DEX?
 
 A wallet provider may choose to support the feature set of BNB Beacon Chain, which would cover wallets, addresses, balances, transfers and etc.<br/>
+
+## How to prevent the occurrence of unconfirmed transactions on BNB Beacon Chain?
+
+Due to possible network congestion around UTC 00:00, it is advisable to perform transaction after UTC 01:00. 
+For fast BNB Beacon Chain connectivity, please switch to endpoints:  https://dataseed1.defibit.io/, https://dataseed1.ninicoin.io:443.
+
