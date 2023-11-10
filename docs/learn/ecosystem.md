@@ -42,7 +42,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | **Components** | **Existing Projects** | **Potentially Interesting Projects**
 |-|-|-
 | **API/Node Access** | [Nodereal](https://nodereal.io/), [Ankr](https://www.ankr.com/), [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [NowNodes](https://nownodes.io/blog/binance-smart-chain-an-introduction), [QuickNode](https://www.quicknode.com/), [Covalent](https://www.covalenthq.com/), [Infstones](https://infstones.com/), [Moralis](http://moralis.io/)
-| **NFT APIs** | [Moralis](https://moralis.io/api/nft), [NFTScan](https://bnb.nftscan.com/), [BlockVision](https://blockvision.org/), [Venly](https://www.venly.io/), [Gomu](https://www.gomu.co/), [Bounce Finance](https://bounce.finance/), [NFTrade](https://nftrade.com/)
+| **NFT APIs** | [Moralis](https://moralis.io/api/nft), [NFTScan](https://bnb.nftscan.com/), [BlockVision](https://blockvision.org/), [Venly](https://www.venly.io/), [Gomu](https://www.gomu.co/), [Bounce Finance](https://bounce.finance/), [NFTrade](https://nftrade.com/), [SubQuery](https://subquery.network/)
 | **Archive Node Service** | [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/), [Nodereal’s Meganode](https://docs.nodereal.io/nodereal/meganode/archive-node)
 | **Public RPC Endpoints** | [RPC Endpoints](https://docs.bnbchain.org/docs/rpc)| More public nodes are encouraged
 | **Community Polling Dashboard** | |
@@ -73,13 +73,14 @@ Goto [BSC Developer Ecosystem](https://github.com/bnb-chain/bsc-ecosystem/blob/m
 ### Dapps infra
 | **Components** | **Existing Projects** | **Potentially Interesting Projects** |
 |-|-|-|
-| **Data Analytics & Visualization** | [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/), [Nakji](https://nakji.network/), [Dune](http://dune.com/), [YeildWatch](https://www.yieldwatch.net/), [DeBank](http://debank.com/), [Bloxy](http://bloxy.info/), [Footprint Analytics](https://www.footprint.network/about), [Web3Go](https://web3go.xyz/)||
+| **Data Analytics & Visualization** | [The Graph](https://thegraph.com/en/),[DappRadar](https://dappradar.com/rankings/protocol/binance-smart-chain),[dapp.com](https://www.dapp.com/search_product?chain=BSC),[CMC](https://coinmarketcap.com/yield-farming/),[dapp.review](https://dapp.review/explore/bsc),[DefiStation](https://www.defistation.io/),[BitQuery](https://bitquery.io/),[PARSIQ](https://www.parsiq.io/), [CryptoSlam](https://cryptoslam.io/), [Nakji](https://nakji.network/), [Dune](http://dune.com/), [YeildWatch](https://www.yieldwatch.net/), [DeBank](http://debank.com/), [Bloxy](http://bloxy.info/), [Footprint Analytics](https://www.footprint.network/about), [Web3Go](https://web3go.xyz/), [SubQuery](https://subquery.network/)||
 | **NFT Marketplaces** | [Rareboard](http://rareboard.com/), [Venly](https://www.venly.io/), [NFTrade](https://nftrade.com/), [Element](https://www.element.market/bsc)||
 | **Oracle** | [Binance Oracle](https://oracle.binance.com/), [Band Protocol](https://bandprotocol.com/), [ChainLink](https://chain.link/), [Pyth](https://pyth.network/)||
 | **Archive Data** |[InfStones](https://infstones.com/)||
 | **Decentralized Storage** | [IPFS](https://ipfs.io/), [Filecoin](https://filecoin.io/build/), [Arweave](https://www.arweave.org/), [pinata.cloud](https://www.pinata.cloud/) ||
 | **Cross Chain Bridges** | [renVM](https://renproject.io/), [NerveNetwork](https://nerve.network/),[PolyNetwork](https://www.poly.network/), [Orbit Bridge](https://bridge.orbitchain.io/), [Celer cbridge](https://cbridge.celer.network/), [ChainHop](https://chainhop.exchange/), [LayerZero](https://layerzero.network/), [HashFlow](https://www.hashflow.com/) , [Axelar](https://axelar.network/)| Decentralized, trustless, Open Access|
 | **Automation** | [Gelato](https://www.gelato.network/)||
+| **Indexers** | [SubQuery](https://subquery.network/)||
 | **Browsers** | [Brave](https://brave.com/), [Opera](https://www.opera.com/)||
 | **Identity/DID/Credentials** | [Ontology](https://ont.io/), [Galaxy](https://galaxy.eco/), [Space ID](https://space.id/), [CyberConnect](https://cyberconnect.me/)||
 | **Easy Wallet Onboarding**	| [Web3auth](https://web3auth.io/), [Venly](https://www.venly.io/), [Sequence](https://sequence.xyz/)||
