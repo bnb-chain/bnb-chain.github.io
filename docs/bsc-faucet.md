@@ -7,14 +7,6 @@ dir:
 ---
 # Claim test tBNB Tokens
 
-## Claim tBNB Tokens from Discord Faucet
-
-tBNB is the test BNB Tokens used on the BNB Smart Chain (BSC) Testnet. To get some tBNB of BSC testnet for testing purposes, you can join the [BNB discord](http://discord.gg/bnbchain) and go to the test-faucet channel under the faucet section. There you can claim your tBNB for free.
-
-1. Type the command */faucet ${your-wallet-address}*.
-
-2. Switch to the BNB smart chain testnet in your wallet and check your balance. 
-
 ## Claim tBNB from Online Faucet
 
 To get some tBNB of BSC testnet for testing purposes, you can use the [online faucet](https://testnet.bnbchain.org/faucet-smart) to claim your tokens.
