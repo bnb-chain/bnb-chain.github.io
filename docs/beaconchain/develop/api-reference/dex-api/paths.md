@@ -28,8 +28,6 @@ For mainnet, there are more accelerated nodes.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/time](https://dex.binance.org/api/v1/time)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
-
 
 **Responses**
 
@@ -53,8 +51,6 @@ For mainnet, there are more accelerated nodes.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/node-info](https://dex.binance.org/api/v1/node-info)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
-
 
 **Responses**
 
@@ -74,8 +70,6 @@ For mainnet, there are more accelerated nodes.
 **Rate Limit:** 10 requests per IP per second.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/validators](https://dex.binance.org/api/v1/validators)
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
 
 
 **Responses**
@@ -100,8 +94,6 @@ For mainnet, there are more accelerated nodes.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/peers](https://dex.binance.org/api/v1/peers)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
-
 
 **Responses**
 
@@ -124,8 +116,6 @@ For mainnet, there are more accelerated nodes.
 **Rate Limit:** 5 requests per IP per second.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m)
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
 
 
 **Parameters**
@@ -155,8 +145,6 @@ For mainnet, there are more accelerated nodes.
 **Rate Limit:** 5 requests per IP per second.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence](https://dex.binance.org/api/v1/account/bnb1jxfh2g85q3v0tdq56fnevx6xcxtcnhtsmcu64m/sequence)
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
 
 
 **Parameters**
@@ -287,8 +275,6 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/tokens](https://dex.binance.org/api/v1/tokens)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
-
 
 **Parameters**
 
@@ -319,8 +305,6 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/fees](https://dex.binance.org/api/v1/fees)
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
-
 
 **Responses**
 
@@ -341,8 +325,6 @@ Below is an example response of a send transaction when `?format=json` is used.
 **Rate Limit:** 5 requests per IP per second.
 
 **URL for mainnet:** [https://dex.binance.org/api/v1/broadcast](https://dex.binance.org/api/v1/broadcast)
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
 
 
 **Parameters**
