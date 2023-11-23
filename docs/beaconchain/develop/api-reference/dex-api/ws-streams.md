@@ -19,20 +19,6 @@ Return account updates.
     }
 ```
 
-
-**Testnet Connection Example:**
-
-```javascript
-    // URL connection
-    const accountAndOrderAndTransfers = new WebSocket("wss://testnet-dex.binance.org/api/ws/tbnb1qtuf578qs9wfl0wh3vs0r5nszf80gvxd28hkrc");
-
-    // Or Subscribe method
-    const conn = new WebSocket("wss://testnet-dex.binance.org/api/ws");
-    conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "accounts", address: "tbnb1qtuf578qs9wfl0wh3vs0r5nszf80gvxd28hkrc" }));
-    }
-```
-
 **Received Payload:**
 
 ```javascript
@@ -84,19 +70,6 @@ Return transfer updates if address is involved (as sender or receiver) in a tran
     }
 ```
 
-**Testnet Connection Example:**
-
-```javascript
-    // URL connection
-    const accountAndOrderAndTransfers = new WebSocket("wss://testnet-dex.binance.org/api/ws/tbnb1c346qk3yfk89lzcacwzxsx402rv25gu6v40ghf");
-
-    // Or Subscribe method
-    const conn = new WebSocket("wss://testnet-dex.binance.org/api/ws");
-    conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "transfers", address: "tbnb1c346qk3yfk89lzcacwzxsx402rv25gu6v40ghf" }));
-    }
-```
-
 **Received Payload:**
 
 ```javascript
@@ -135,19 +108,6 @@ Streams the latest block height.
 
     // Or Subscribe method
     const conn = new WebSocket("wss://dex.binance.org/api/ws");
-    conn.onopen = function(evt) {
-        conn.send(JSON.stringify({ method: "subscribe", topic: "blockheight", symbols: ["$all"] }));
-    }
-```
-
-**Testnet Connection Example:**
-
-```javascript
-    // URL connection
-    const blockHeights = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@blockheight");
-
-    // Or Subscribe method
-    const conn = new WebSocket("wss://testnet-dex.binance.org/api/ws");
     conn.onopen = function(evt) {
         conn.send(JSON.stringify({ method: "subscribe", topic: "blockheight", symbols: ["$all"] }));
     }
