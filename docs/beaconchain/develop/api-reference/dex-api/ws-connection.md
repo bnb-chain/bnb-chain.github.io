@@ -3,7 +3,6 @@
 Several data streams are exposed over standard WebSocket connections, which can be consumed by modern web browsers and server-side WebSocket libraries.
 
 - The base endpoint for mainnet is: **wss://dex.binance.org/api/**.
-- The base endpoint for testnet is: **wss://testnet-dex.binance.org/api/**.
 - Each connection can consume a single stream or multiple streams may be multiplexed through one connection for more complex apps.
 - All symbols in stream names are lowercase.
 
@@ -27,16 +26,6 @@ Using this method, stream names are specified in the URLs used to connect to the
 
   // for all symbols
   const blockHeight = new WebSocket("wss://dex.binance.org/api/ws/$all@blockheight");
-```
-
-**Testnet Example:** Various methods of connecting to streams where stream names are provided in URLs:
-
-```javascript
-  // for personal streams, ex: Account & Transfers
-  const accountAndOrdersFeeds = new WebSocket("wss://testnet-dex.binance.org/api/ws/<USER_ADDRESS>");
-
-  // for all symbols
-  const blockHeight = new WebSocket("wss://testnet-dex.binance.org/api/ws/$all@blockheight");
 ```
 
 ### Method 2: Subscribe to streams on demand
