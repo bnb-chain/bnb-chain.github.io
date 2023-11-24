@@ -25,7 +25,6 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/time](https://testnet-dex.binance.org/api/v1/time)
 
 
 **Responses**
@@ -48,8 +47,6 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/node-info](https://testnet-dex.binance.org/api/v1/node-info)
-
 
 **Responses**
 
@@ -68,7 +65,6 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 
 **Rate Limit:** 10 requests per IP per second.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/validators](https://testnet-dex.binance.org/api/v1/validators)
 
 
 **Responses**
@@ -91,7 +87,6 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/peers](https://testnet-dex.binance.org/api/v1/peers)
 
 
 **Responses**
@@ -113,8 +108,6 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 **Destination:** Witness node.
 
 **Rate Limit:** 5 requests per IP per second.
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn](https://testnet-dex.binance.org/api/v1/account/tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn)
 
 
 **Parameters**
@@ -142,8 +135,6 @@ For testnet, there are 2 accelerated nodes setup as below. API users should try 
 **Destination:** Validator node.
 
 **Rate Limit:** 5 requests per IP per second.
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence](https://testnet-dex.binance.org/api/v1/account/tbnb13g2le062t340klgm2l2khzr57y3qxlekuhfuch/sequence)
 
 
 **Parameters**
@@ -272,8 +263,6 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/tokens](https://testnet-dex.binance.org/api/v1/tokens)
-
 
 **Parameters**
 
@@ -302,8 +291,6 @@ Below is an example response of a send transaction when `?format=json` is used.
 
 **Rate Limit:** 1 request per IP per second.
 
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/fees](https://testnet-dex.binance.org/api/v1/fees)
-
 
 **Responses**
 
@@ -322,8 +309,6 @@ Below is an example response of a send transaction when `?format=json` is used.
 **Destination:** Witness node.
 
 **Rate Limit:** 5 requests per IP per second.
-
-**URL for testnet:** [https://testnet-dex.binance.org/api/v1/broadcast](https://testnet-dex.binance.org/api/v1/broadcast)
 
 
 **Parameters**
