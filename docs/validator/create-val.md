@@ -27,7 +27,7 @@ You are incentivized to set a voting key which will be used for fast finality vo
 geth bls account new --datadir ./node
 ```
 
-This command will create a bls wallet and generate a voting key. During the process, you will need to set the wallet password and another password used to encrypt the voting key. The former is required when running the validator, and the latter is only used to import the voting key into the existing wallet. Do not disclose the voting key, otherwise it may be used for malicious voting!
+This command will create a bls wallet and generate a voting key. During the process, you will need to set the wallet password to encrypt the voting key. The wallet password is required when running the validator. Do not disclose the voting key, otherwise it may be used for malicious voting!
 
 If you already have a voting key, create a bls wallet and use the keyfile to recover it:
 ```bash
