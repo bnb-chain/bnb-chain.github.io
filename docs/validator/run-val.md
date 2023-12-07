@@ -47,8 +47,7 @@ OR
 
 - Step 1. Create a voting key first: `./geth bls account new --datadir <path>`
 
-  - It will generate a wallet if it has not been created before, you have to keep the wallet password. If the wallet has been created before, you only need to provide the password.
-  - Then it will create an account, you have to keep the account password too, the password length should >=10 characters.
+  - It will generate a wallet if it has not been created before, you have to keep the wallet password. If the wallet has been created before, you only need to provide the password. The password length should >=10 characters. Then it will create an account.
 
     Note: Remember, you can create several accounts, but only one will be used.
 
