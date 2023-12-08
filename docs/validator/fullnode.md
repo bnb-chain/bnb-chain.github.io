@@ -45,8 +45,13 @@ chmod -v u+x geth
 Download **genesis.json** and **config.toml** by:
 
 ```bash
+# mainnet
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
+
+# testnet
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+unzip testnet.zip
 ```
 
 3. Download snapshot
@@ -55,11 +60,24 @@ Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-
 
 :::note
 Your --datadir flag should point to the folder where the extracted snapshot data is. 
-In our case, we created a new folder named node, and we moved the extracted snapshot data to this folder.
+In our case, we created a new folder named `node`, and we moved the extracted snapshot data to this folder.
 
 ```
 mv server/data-seed/geth/chaindata node/geth/chaindata
 mv server/data-seed/geth/chaindata node/geth/triecache
+```
+
+:::
+
+:::note
+If you can not download the chaindata snapshot and want to sync from genesis, then you have to generate the genesis block first, which you have already get the genesis.json in Step 2. So just run:
+
+```
+## It will init genesis with Hash-Base Storage Scheme by default.
+geth --datadir <datadir> init ./genesis.json
+
+## It will init genesis with Path-Base Storage Scheme.
+geth --datadir <datadir> --state.scheme path init ./genesis.json
 ```
 
 :::
@@ -73,11 +91,26 @@ mv server/data-seed/geth/chaindata node/geth/triecache
 Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
 :::
 
+:::caution
+1. Since `v1.3.1`, the flags `--txlookuplimit` has been replaced by `--history.transactions`. Make sure you no longer use `--txlookuplimit`, otherwise, node may not start.
+2. For all geth nodes, DO NOT use `-pipecommit` flag
+
+Note: Please refer this docs: https://www.bnbchain.org/en/blog/hotfix-hardfork-for-bsc-testnet-and-mainnet for more details.
+:::
+
 :::tip
 It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
-Check [here](BSC-fast-node.md) for full details on running a fast node.
+Check [here](BSC-fast-node.md) for full details on running a fast node.  
+  
+It will run with Hash-Base Storage Scheme by default
 ```
 ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
+```
+
+It will run with Path-Base Storage Scheme.  
+It will enable inline state prune, keeping the latest 90000 blocks' history state by default.
+```
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none --state.scheme path
 ```
 :::
 
