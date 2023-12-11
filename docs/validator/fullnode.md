@@ -69,19 +69,6 @@ mv server/data-seed/geth/chaindata node/geth/triecache
 
 :::
 
-:::note
-If you can not download the chaindata snapshot and want to sync from genesis, then you have to generate the genesis block first, which you have already get the genesis.json in Step 2. So just run:
-
-```
-## It will init genesis with Hash-Base Storage Scheme by default.
-geth --datadir <datadir> init ./genesis.json
-
-## It will init genesis with Path-Base Storage Scheme.
-geth --datadir <datadir> --state.scheme path init ./genesis.json
-```
-
-:::
-
 4. Start a full node
 ```
 ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
@@ -128,13 +115,19 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 ### Sync From Genesis Block (Not Recommended)
 
 :::note
-To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server. 
+To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.  
+
+If you can not download the chaindata snapshot and want to sync from genesis, then you have to generate the genesis block first, for which you have already downloaded the genesis.json in the Step - 2 above where you have downloaded config files.
 :::
 
 1. Write genesis state locally
 
-```bash
-./geth --datadir node init genesis.json
+```
+## It will init genesis with Hash-Base Storage Scheme by default.
+./geth --datadir ./node init ./genesis.json
+
+## It will init genesis with Path-Base Storage Scheme.
+./geth --datadir ./node --state.scheme path init ./genesis.json
 ```
 
 You could see the following output:
