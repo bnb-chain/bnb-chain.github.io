@@ -16,11 +16,20 @@ sidebar_position: 2
 We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
 ## Suggested Requirements
+
+The hardware must meet certain requirements to run a full node on **_mainnet_**:  
+
 - VPS running recent versions of Mac OS X, Linux, or Windows.
 - **IMPORTANT** 3 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250 MB/S throughput, read latency <1ms. (if node is started with snap sync, it will need NVMe SSD)
 - 16 cores of CPU and 64 GB of memory (RAM)
-- Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
+- Suggest m5zn.3xlarge or r7iz.4xlarge instance type on AWS, c2-standard-16 on Google cloud.
 - A broadband Internet connection with upload/download speeds of 5 MB/S
+
+The requirement for **_testnet_**:  
+
+- VPS running recent versions of Mac OS X, Linux, or Windows.
+- 500G of storage for testnet.
+- 4 cores of CPU and 16 gigabytes of memory (RAM).
 
 ## Steps to Run a Fullnode
 
@@ -45,8 +54,13 @@ chmod -v u+x geth
 Download **genesis.json** and **config.toml** by:
 
 ```bash
+# mainnet
 wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
 unzip mainnet.zip
+
+# testnet
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+unzip testnet.zip
 ```
 
 3. Download snapshot
@@ -55,7 +69,7 @@ Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-
 
 :::note
 Your --datadir flag should point to the folder where the extracted snapshot data is. 
-In our case, we created a new folder named node, and we moved the extracted snapshot data to this folder.
+In our case, we created a new folder named `node`, and we moved the extracted snapshot data to this folder.
 
 ```
 mv server/data-seed/geth/chaindata node/geth/chaindata
@@ -73,11 +87,26 @@ mv server/data-seed/geth/chaindata node/geth/triecache
 Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
 :::
 
+:::caution
+1. Since `v1.3.1`, the flags `--txlookuplimit` has been replaced by `--history.transactions`. Make sure you no longer use `--txlookuplimit`, otherwise, node may not start.
+2. For all geth nodes, DO NOT use `-pipecommit` flag
+
+Note: Please refer this docs: https://www.bnbchain.org/en/blog/hotfix-hardfork-for-bsc-testnet-and-mainnet for more details.
+:::
+
 :::tip
 It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
-Check [here](BSC-fast-node.md) for full details on running a fast node.
+Check [here](BSC-fast-node.md) for full details on running a fast node.  
+  
+It will run with Hash-Base Storage Scheme by default
 ```
 ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
+```
+
+It will run with Path-Base Storage Scheme.  
+It will enable inline state prune, keeping the latest 90000 blocks' history state by default.
+```
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none --state.scheme path
 ```
 :::
 
@@ -94,14 +123,21 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 
 ### Sync From Genesis Block (Not Recommended)
 
+:::caution
+It is recommended to use HBSS with level DB for archive node, PBSS for archive node is not supported yet.
+:::
+
 :::note
-To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server. 
+To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.  
+
+If you can not download the chaindata snapshot and want to sync from genesis, then you have to generate the genesis block first, for which you have already downloaded the genesis.json in the Step - 2 above where you have downloaded config files.
 :::
 
 1. Write genesis state locally
 
-```bash
-./geth --datadir node init genesis.json
+```
+## It will init genesis with Hash-Base Storage Scheme by default.
+./geth --datadir ./node init ./genesis.json
 ```
 
 You could see the following output:
