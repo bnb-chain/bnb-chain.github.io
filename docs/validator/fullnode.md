@@ -123,6 +123,10 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 
 ### Sync From Genesis Block (Not Recommended)
 
+:::caution
+It is recommended to use HBSS with level DB for archive node, PBSS for archive node is not supported yet.
+:::
+
 :::note
 To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.  
 
@@ -134,9 +138,6 @@ If you can not download the chaindata snapshot and want to sync from genesis, th
 ```
 ## It will init genesis with Hash-Base Storage Scheme by default.
 ./geth --datadir ./node init ./genesis.json
-
-## It will init genesis with Path-Base Storage Scheme.
-./geth --datadir ./node --state.scheme path init ./genesis.json
 ```
 
 You could see the following output:
