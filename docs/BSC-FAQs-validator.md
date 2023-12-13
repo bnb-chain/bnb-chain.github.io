@@ -91,3 +91,12 @@ Run screen then press enter, anytime you lose connection via ssh, run screen -r 
 
 ### Why is the tx from my dapp not visible on the bscscan even though its hash is generated?
 Due to network congestion, it is possible for the tx to appear after a delay. Another possibility is that the number of pending txs have exceeded the size of the limited tx pool of the network and hence the txs have been dropped.
+
+### Why some of the validators do not follow the GasPrice order, i.e. low GasPrice transactions are executed ahead of high GasPrice transactions within a block?
+
+As GasPrice order is not part of the Parlia consensus, validators can sort the transaction with any order they want. Currently, it is the default behavior for validators to put high GasPrice transaction first. But if the validator thought it could get more rewards by arranging the transactions in different order, they could modify the code and no longer follow the default behavior. Most likely MEV related.
+There is not much that chain dev team can help right now, except:
+  - raise a new proposal to put the GasPrice order as part of the consensus and to discuss with the community.
+  - notify the validators, hope the MEV solution could be updated to follow the GasPrice rule.  
+
+Here is the reference of [Rationale](https://github.com/bnb-chain/bsc/issues/1947#issue-1962563416)

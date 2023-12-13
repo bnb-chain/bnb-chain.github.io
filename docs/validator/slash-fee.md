@@ -38,7 +38,7 @@ If the evidence is valid:
 
 1. **10,000BNB** would be slashed from the **self-delegated** BNB of the validator
 2. If the self-delegator’s stake amount on the validator is less than 10,000BNB, then the unbonded delegation balance would be slashed if it exists until totally 10,000BNB slashed from the self-delegator of the validator. However, if all the slashed BNB is less than 10,000, all the remaining stake of the self-delegator will be slashed
-3. **50BNB** would allocate to the submitter from the systemreward contract as a reward if the validator is active when the evidence submitted
+3. **5BNB** would allocate to the submitter from the systemreward contract as a reward if the validator is active when the evidence submitted
 4. The slashed BNB will allocate to the custody addresses of which validators would take part in the next distribution. If no matched validators found, then the slashed BNB will allocate to validators on BC as block fee
 5. Set the validator ‘jailed’ with a duration of 292 years, and remove it from validator set by an instance BSC validator set update Cross-Chain update
 

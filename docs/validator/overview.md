@@ -65,7 +65,7 @@ Running your validators with the same consensus keys and voting keys concurrentl
 1. **10000 staked BNB** will be slashed for the validator.
 2. The Double-Sign Jail time is **2^63-1 seconds**, which means the candidate cannot become a validator anymore.
 
-> Note: **Rewards for submitting Malicious Vote evidence:** **50BNB**. Only relayers can submit a slash request on BSC with the evidence of Malicious Vote of BSC for now, which should contain the **2 votes**, signed by the offending validator. Open access to anyone is planned.
+> Note: **Rewards for submitting Malicious Vote evidence:** **5BNB**. Only relayers can submit a slash request on BSC with the evidence of Malicious Vote of BSC for now, which should contain the **2 votes**, signed by the offending validator. Open access to anyone is planned.
 
 
 #### Loss for Offline Slash
