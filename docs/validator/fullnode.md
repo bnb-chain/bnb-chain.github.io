@@ -28,7 +28,7 @@ The hardware must meet certain requirements to run a full node on **_mainnet_**:
 The requirement for **_testnet_**:  
 
 - VPS running recent versions of Mac OS X, Linux, or Windows.
-- 1 TB of storage for testnet.
+- ~1.5 TB of storage for testnet.
 - 4 cores of CPU and 16 gigabytes of memory (RAM).
 
 ## Steps to Run a Fullnode
