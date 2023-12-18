@@ -124,7 +124,7 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 
 ## Acquire BNB Test Tokens
 
-* Initially, the balance of a newly created key pair is 0.0 ETH. To get BNB test tokens, you can use the [BSC Testnet Faucet](https://testnet.bnbchain.org/faucet-smart/).
+* Initially, the balance of a newly created key pair is 0.0 ETH. To get BNB test tokens, you can use the [BSC Testnet Faucet](https://www.bnbchain.org/en/testnet-faucet/).
 
 * Copy your public address from the keypair manager
 

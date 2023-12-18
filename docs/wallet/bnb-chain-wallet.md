@@ -80,7 +80,7 @@ Now you are all set!
 
 ## Get Testnet BNB from Faucet
 
-* Go to <https://testnet.bnbchain.org/faucet-smart/>
+* Go to <https://www.bnbchain.org/en/testnet-faucet/>
 
 ![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
 
