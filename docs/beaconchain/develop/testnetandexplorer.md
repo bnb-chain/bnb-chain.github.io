@@ -18,13 +18,13 @@ You can connect a node to the testnet by downloading the node binary and testnet
 
 ### How to get Testnet Fund?
 
-> Note: The previous BNB Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: <https://testnet.bnbchain.org/faucet-smart>
+> Note: The previous BNB Chain Testnet [Faucet](https://www.binance.com/en/dex/testnet/address) is retired at 2020/08/11 at 1:00 PM (UTC). The testnet faucet has migrated to this page: <https://www.bnbchain.org/en/testnet-faucet>
 
 **Steps to claim testnet BNB:**
 
 1. Create a new Wallet of BNB Smart Chain testnet with [Trust Wallet or Binance Extension Wallet](https://docs.bnbchain.org/docs/Wallet#supported-wallets)
 
-2. Get Testnet Fund: https://testnet.bnbchain.org/faucet-smart
+2. Get Testnet Fund: https://www.bnbchain.org/en/testnet-faucet
 
 3. Transfer From BNB Smart Chain to BNB Beacon Chain
 

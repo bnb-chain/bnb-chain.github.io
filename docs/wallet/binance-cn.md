@@ -69,7 +69,7 @@
 
 ## 获得测试网BNB
 
-* 打开以下页面 <https://testnet.bnbchain.org/faucet-smart/>
+* 打开以下页面 <https://www.bnbchain.org/en/testnet-faucet/>
 
 ![img](https://lh6.googleusercontent.com/Q1uDI7LH2lZXvew9selrT5NzL7wKKPtvEnQlPB4mEZW46xb-fphq_Azi9EouvzYKx3IudqwppX6Pai2oFzGlyuJrOvLYlPnZySl2AmHPhpBMeIgEag4sdK_QkycMB826O95tqNQv)
 

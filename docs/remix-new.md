@@ -17,7 +17,7 @@ You must set up all of the following Pre-requisites to be able to deploy your so
 
 * [Download Metamask wallet](https://metamask.io/)
 * [Configure BNB Smart Chain Testnet on Metamask](https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain)
-* [Get BNB testnet tokens](https://testnet.bnbchain.org/faucet-smart)
+* [Get BNB testnet tokens](https://www.bnbchain.org/en/testnet-faucet)
  
 ### Setting Up Remix IDE
 
@@ -88,7 +88,7 @@ Now, We have to deploy our smart contract on BNB Smart Chain Network. For that, 
 - Go ahead and click save
 - Copy your address from Metamask
 
-- Head over to [Faucet](https://testnet.bnbchain.org/faucet-smart) and request test BNB
+- Head over to [Faucet](https://www.bnbchain.org/en/testnet-faucet) and request test BNB
 
 ## Deploy Smart Contract 
 

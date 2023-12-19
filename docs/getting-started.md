@@ -28,7 +28,7 @@ In 2020, the BNB Smart Chain (BSC) was launched. BSC is a blockchain network tha
 
 ### How to Buy BNB Tokens
 As all fees on BNB Chain are paid in BNB, therefore, in order to interact with the BNB Smart Chain network you will need to have some BNB tokens. 
-- BNB tokens can also be received for usage on testnet through the **[Testnet Faucet](https://testnet.bnbchain.org/faucet-smart)**.
+- BNB tokens can also be received for usage on testnet through the **[Testnet Faucet](https://www.bnbchain.org/en/testnet-faucet)**.
 - Refer [here](wallets/wallet-tutorial-overview) for tutorials on different wallets for use with BNB Chain to send/receive/purchase BNB Tokens.
 
 ### Extensive Support of Wallets

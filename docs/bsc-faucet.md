@@ -9,7 +9,7 @@ dir:
 
 ## Claim tBNB from Online Faucet
 
-To get some tBNB of BSC testnet for testing purposes, you can use the [online faucet](https://testnet.bnbchain.org/faucet-smart) to claim your tokens.
+To get some tBNB of BSC testnet for testing purposes, you can use the [online faucet](https://www.bnbchain.org/en/testnet-faucet) to claim your tokens.
 
 1. Copy your wallet address and paste the address into the textbox
 

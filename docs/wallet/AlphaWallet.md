@@ -27,4 +27,4 @@ It’s ready, and now you can get some testnet BNB from the faucet.
 ## Get Testnet Fund
 1. Copy your address.
 
-2. Go to <https://testnet.bnbchain.org/faucet-smart/>
+2. Go to <https://www.bnbchain.org/en/testnet-faucet/>
