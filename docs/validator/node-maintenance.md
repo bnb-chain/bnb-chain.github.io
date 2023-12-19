@@ -20,7 +20,7 @@ According to the test, the performance of a full node will degrade when the stor
 3. Start the node once it is done.
 
 The maintainers should always have a few backup nodes in case one of the nodes is getting pruned.
-The hardware is also important, **make sure the SSD meets: 2 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms**.
+The hardware is also important, **make sure the SSD meets: 3 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms (if node is started with snap sync, it will need NVMe SSD)**.
 
 
 #### Prune Ancient Data in Real Time
