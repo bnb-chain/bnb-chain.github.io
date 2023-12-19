@@ -1,7 +1,7 @@
 ---
 sidebar_label: Staking
 sidebar_position: 2
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 
 # Staking with BNB Chain Wallet
