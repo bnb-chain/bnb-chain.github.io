@@ -26,3 +26,27 @@ RPC endpoints may be used to interact with a node directly over HTTP or websocke
 *  https://data-seed-pre-1-s1.bnbchain.org:443
 *  https://data-seed-pre-2-s1.bnbchain.org:443
 *  https://data-seed-pre-0-s3.bnbchain.org:443
+
+## Websocket
+
+## Mainnet
+
+* [wss://dataseed1.bnbchain.org/websocket](wss://dataseed1.bnbchain.org/websocket)
+* [wss://dataseed2.bnbchain.org/websocket](wss://dataseed2.bnbchain.org/websocket)
+* [wss://dataseed3.bnbchain.org/websocket](wss://dataseed3.bnbchain.org/websocket)
+* [wss://dataseed4.bnbchain.org/websocket](wss://dataseed4.bnbchain.org/websocket)
+* [wss://dataseed1.defibit.io/websocket](wss://dataseed1.defibit.io/websocket)
+* [wss://dataseed2.defibit.io/websocket](wss://dataseed2.defibit.io/websocket)
+* [wss://dataseed3.defibit.io/websocket](wss://dataseed3.defibit.io/websocket)
+* [wss://dataseed4.defibit.io/websocket](wss://dataseed4.defibit.io/websocket)
+* [wss://dataseed1.ninicoin.io/websocket](wss://dataseed1.ninicoin.io/websocket)
+* [wss://dataseed2.ninicoin.io/websocket](wss://dataseed2.ninicoin.io/websocket)
+* [wss://dataseed3.ninicoin.io/websocket](wss://dataseed3.ninicoin.io/websocket)
+* [wss://dataseed4.ninicoin.io/websocket](wss://dataseed4.ninicoin.io/websocket)
+
+## Testnet
+
+*  [wss://data-seed-pre-0-s1.bnbchain.org/websocket](wss://data-seed-pre-0-s1.bnbchain.org/websocket)
+*  [wss://data-seed-pre-1-s1.bnbchain.org/websocket](wss://data-seed-pre-1-s1.bnbchain.org/websocket)
+*  [wss://data-seed-pre-2-s1.bnbchain.org/websocket](wss://data-seed-pre-2-s1.bnbchain.org/websocket)
+*  [wss://data-seed-pre-0-s3.bnbchain.org/websocket](wss://data-seed-pre-0-s3.bnbchain.org/websocket)
