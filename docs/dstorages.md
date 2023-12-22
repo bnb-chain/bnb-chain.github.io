@@ -11,4 +11,4 @@ Following is the list of decentralized Storage protocols or networks that you ca
 
 - [**IPFS**](https://ipfs.tech/): The InterPlanetary File System (IPFS) is a distributed file system allows users to store and access verifiable and content-addressable data in a peer-to-peer network.. It is a distributed protocol designed to preserve and grow humanity's knowledge by making the web upgradeable, resilient and more open.
 - [**Filecoin**](https://filecoin.io/build/): Filecoin is a peer-to-peer network that stores files, with built-in economic incentives to ensure files are stored reliably over time. Filecoin combines the benefits of storage on [IPFS](https://docs.filecoin.io/developers/introduction/overview/#) with blockchain-powered verifiability and persistency. The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
-
+- [**SpheronNetwork**](https://spheron.network/): Deploy, manage & scale your applications utilising Web3 Infrastructure.  
