@@ -18,6 +18,8 @@ BNB Smart Chain (BSC) provides explorers for both its mainnet and testnet.
 
 * BSCTrace - https://bsctrace.com/
 
+* Tokenview - https://bsc.tokenview.io
+
 ## Explorers for Testnet
 
 * BscScan - https://testnet.bscscan.com/
