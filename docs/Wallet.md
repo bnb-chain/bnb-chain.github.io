@@ -6,7 +6,7 @@ hide_table_of_contents: false
 # Wallet Guide
 
 ## What is a Wallet?
-A crypto wallet is a device or program used for transfer and storage of cryptocurrency. Crypto wallets can be of different types, such as paper wallets, hardware wallets, and software wallets. There are also several smartphone mobile apps and computer programs that provide a user-friendly way to create and manage wallets. Along with crytocurreny, crypto wallets store a collection of crypto keys that are used for sending, receiving, and taracking ownership of cryptocurrencies.
+A crypto wallet is a device or program used for transfer and storage of cryptocurrency. Crypto wallets can be of different types, such as paper wallets, hardware wallets, and software wallets. There are also several smartphone mobile apps and computer programs that provide a user-friendly way to create and manage wallets. Along with crytocurreny, crypto wallets store a collection of crypto keys that are used for sending, receiving, and tracking ownership of cryptocurrencies.
 
 A keypair is a cryptographically-derived securely generated private and public keys. A private key and its corresponding public key are together known as a keypair. A wallet contains a collection of one or more keypairs and provides some means to interact with them. The security of any crypto wallet depends upon how the private key is stored.
 
