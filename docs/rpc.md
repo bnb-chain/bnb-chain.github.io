@@ -44,6 +44,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
 
+* **Nodies DLB:** <https://nodies.app>
+
 * **Ankr:** <https://app.ankr.com/api>
 
 * **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
