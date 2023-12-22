@@ -27,7 +27,7 @@ npx create-docusaurus@latest [name] [template]
 
 ### How to Run Locally
 
-Clone the reository and run the following commands.
+Clone the repository and run the following commands.
 
 ### Local Development
 
@@ -92,7 +92,7 @@ Using Yarn
 $ yarn run serve
 ```
 
-The website is run locally on your deault browser on http://localhost:3000.
+The website is run locally on your default browser on http://localhost:3000.
 
 
 ## Additional Notes
