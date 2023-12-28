@@ -64,8 +64,8 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Running Fullnode',
-                        items: ['validator/fullnode', 'archivenode', 'validator/best-practice', 'validator/node-maintenance', 'validator/upgrade-fullnode', 'validator/docker']
+                        label: 'Running BSC Nodes',
+                        items: ['validator/best-practice','validator/fullnode', 'archivenode', 'validator/node-maintenance', 'validator/upgrade-fullnode', 'validator/docker']
                       },
                       {
                         type: 'category',
