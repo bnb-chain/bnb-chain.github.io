@@ -299,8 +299,42 @@ const sidebars = {
             label: 'opBNB',
             href:'https://docs.bnbchain.org/opbnb-docs/',
           },
-         
-    ],
+
+          {
+              type: 'category',
+              label: 'BNB Chain Fusion',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                  {type: 'doc', label: 'Overview', id:'bcfusion/overview'},
+                  {
+                      type: 'category',
+                      label:'For Users',
+                      items:[
+                          {type:'doc', id:'bcfusion/users/assets', label:'Manange Your Assets'},
+                          {type:'doc', id:'bcfusion/users/swaps', label:'Manage Your Atomic Swaps'},
+                          {type:'doc', id:'bcfusion/users/delegations', label:'Manage Your Delegations'},
+                      ]
+                  },
+                  {
+                      type: 'category',
+                      label:'For Token Issuers',
+                      items:[
+                          {type:'doc', id:'bcfusion/owners/bind', label:'Bind Your Tokens'},
+                      ]
+                  },
+                  {
+                      type: 'category',
+                      label:'For Validators',
+                      items:[
+                          {type:'doc', id:'bcfusion/validators/migrations', label:'Migrate Your Validators'},
+                          {type:'doc', id:'bcfusion/validators/creation', label:'Create New Validator'},
+                      ]
+                  },
+              ],
+          },
+
+      ],
     },
     {
       type: 'category',
