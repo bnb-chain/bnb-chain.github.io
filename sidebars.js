@@ -302,7 +302,7 @@ const sidebars = {
 
           {
               type: 'category',
-              label: 'BNB Chain Fusion',
+              label: '🔥BNB Chain Fusion',
               collapsible: true,
               collapsed: true,
               items: [
