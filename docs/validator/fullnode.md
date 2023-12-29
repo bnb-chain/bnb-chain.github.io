@@ -15,22 +15,6 @@ sidebar_position: 2
 
 We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
-## Suggested Requirements
-
-The hardware must meet certain requirements to run a full node on **_mainnet_**:  
-
-- VPS running recent versions of Mac OS X, Linux, or Windows.
-- **IMPORTANT** 3 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms. (if node is started with snap sync, it will need NVMe SSD).
-- 16 cores of CPU and 64 GB of memory (RAM)
-- Suggest m5zn.3xlarge or r7iz.4xlarge instance type on AWS, c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 5 MB/S
-
-The requirement for **_testnet_**:  
-
-- VPS running recent versions of Mac OS X, Linux, or Windows.
-- ~1.5 TB of storage for testnet.
-- 4 cores of CPU and 16 gigabytes of memory (RAM).
-
 ## Steps to Run a Fullnode
 
 ### Sync From Snapshot (Recommended)
