@@ -328,7 +328,7 @@ const sidebars = {
                       label:'For Validators',
                       items:[
                           {type:'doc', id:'bcfusion/validators/migrations', label:'Migrate Your Validators'},
-                          {type:'doc', id:'bcfusion/validators/creation', label:'Create New Validator'},
+                          {type:'doc', id:'bcfusion/validators/creation', label:'Create New Validators'},
                       ]
                   },
               ],

@@ -1,4 +1,4 @@
-# Asset Management
+# Atomic Swap Management
 
 HTLC based atomic swaps are introduced in
 [BEP3](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP3.md),
@@ -11,8 +11,7 @@ and take proactive steps.
 
 # Query Atomic Swaps
 
-The [atomic swap
-api](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths#apiv1atomic-swaps)
+The [atomic swap api](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths#apiv1atomic-swaps)
 is provided to query existing atomic swaps. Usually, user can provide a
 from address to query the related atomic swaps, for example:
 
@@ -44,7 +43,7 @@ accounts on Beacon Chain. The refund will proceed in many Beacon Chain
 blocks, depending on how many atomic swaps still exist on the
 blockchain. After refund, users should be able to find the assets in
 their accounts. Then users can handle the assets as other BEP2/BEP8
-tokens. For how to cross transfer them to Binance Smart Chain, please
+tokens. For how to cross transfer them to BNB Smart Chain, please
 refer to [this tutorial](./assets.md).
 
 ## After BC Fusion
