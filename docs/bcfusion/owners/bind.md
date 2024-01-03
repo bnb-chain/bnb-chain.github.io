@@ -15,7 +15,7 @@ Please check the tutorial [**Confirm if the Assets Support Cross-chain Transfers
 token allows cross-chain
 transfers. If the answer is positive, congratulations! You don't need
 to do anything. Otherwise, it is highly recommended to follow the
-[Token Bind Tool here](https://github.com/bnb-chain/token-bind-tool) to
+[Token Bind Tool](https://github.com/bnb-chain/token-bind-tool) to
 deploy a BEP20 token on BSC and enable cross-chain functionality.
 
 Due to the time limitation, the Token Issuer should take actions as soon as possbile. It is
