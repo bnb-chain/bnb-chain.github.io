@@ -1,3 +1,6 @@
+import Wallet1 from '../../assets/bcfusion/user-asset-management3.png';
+import Wallet2 from '../../assets/bcfusion/user-asset-management4.png';
+
 # Asset Management
 
 The BNB Chain community recently introduced [BEP333: BNB Chain
@@ -60,12 +63,13 @@ suggested for this case. Taking BNB Chain Wallet as an example, once
 users import the accounts that have the tokens, they need to switch the
 network to "BNB Beacon Chain Network":
 
-![img](../../assets/bcfusion/user-asset-management3.png)
+<img src={Wallet1} width="400"/>
+
 
 Then, select the asset to transfer, enter the BSC account and the token
 amount.
 
-![img](../../assets/bcfusion/user-asset-management4.png)
+<img src={Wallet2} width="400"/>
 
 The BSC wallet will receive the token after approximately one minute.
 

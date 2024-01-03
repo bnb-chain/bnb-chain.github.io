@@ -313,6 +313,7 @@ const sidebars = {
                       items:[
                           {type:'doc', id:'bcfusion/users/assets', label:'Manange Your Assets'},
                           {type:'doc', id:'bcfusion/users/swaps', label:'Manage Your Atomic Swaps'},
+                          {type:'doc', id:'bcfusion/users/timelocks', label:'Manage Your TimeLocks'},
                           {type:'doc', id:'bcfusion/users/delegations', label:'Manage Your Delegations'},
                       ]
                   },
