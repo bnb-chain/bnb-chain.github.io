@@ -30,13 +30,6 @@ const config = {
 
   plugins: [
     require.resolve("docusaurus-plugin-image-zoom"),
-
-    [require.resolve('docusaurus-gtm-plugin'),
-    {
-      id: 'GTM-W9BVQXM', // GTM Container ID
-      preview: 'live',
-    }],
-
   ],
 
   presets: [
@@ -57,14 +50,11 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-LSRFL0KHRR',
+          anonymizeIP: true,
+        },
       }),
-    ],
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-LSRFL0KHRR',
-        anonymizeIP: true,
-      },
     ],
   ],
 
