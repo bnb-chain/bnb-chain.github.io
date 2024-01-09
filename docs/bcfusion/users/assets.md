@@ -55,11 +55,8 @@ Chain, the funds will be lost forever and can not be recovered.**
 
 **Step2: Simply Transfer the Assets to the BSC Network**
 
-[BNB Chain
-Wallet](https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp)
-and [Trust
-wallet](https://trustwallet.com/browser-extension) are
-suggested for this case. Taking BNB Chain Wallet as an example, once
+[BNB Chain Wallet](https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp)
+is suggested for this case. Taking BNB Chain Wallet as an example, once
 users import the accounts that have the tokens, they need to switch the
 network to "BNB Beacon Chain Network":
 
