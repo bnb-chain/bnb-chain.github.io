@@ -1,5 +1,7 @@
 import Wallet1 from '../../assets/bcfusion/user-asset-management3.png';
 import Wallet2 from '../../assets/bcfusion/user-asset-management4.png';
+import Tw1 from '../../assets/bcfusion/tw1.PNG';
+import Tw2 from '../../assets/bcfusion/tw2.PNG';
 
 # Asset Management
 
@@ -56,8 +58,8 @@ Chain, the funds will be lost forever and can not be recovered.**
 **Step2: Simply Transfer the Assets to the BSC Network**
 
 [BNB Chain Wallet](https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp)
-is suggested for this case. Taking BNB Chain Wallet as an example, once
-users import the accounts that have the tokens, they need to switch the
+and [Trust Wallet](https://trustwallet.com/) mobile are suggested for this case. Taking BNB Chain Wallet as an example,
+once users import the accounts that have the tokens, they need to switch the
 network to "BNB Beacon Chain Network":
 
 <img src={Wallet1} width="400"/>
@@ -69,6 +71,18 @@ amount.
 <img src={Wallet2} width="400"/>
 
 The BSC wallet will receive the token after approximately one minute.
+
+For Trust Wallet mobile multi-chain wallet users, they can transfer their assets in the following way.
+
+<img src={Tw1} width="400"/>
+
+Firstly, you need to open the `Swap` tab, choose From network as `BNB Beacon Chain` and To network as `BNB Smart Chain`,
+then find the asset you want to transfer and input the transfer amount.
+After you click the `Continue` button, it will redirect you to the approval page as below.
+
+<img src={Tw2} width="400"/>
+
+Finally, the related asset will be transferred to BSC after you confirm the transaction.
 
 ## After BC Fusion
 
