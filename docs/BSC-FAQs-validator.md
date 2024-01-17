@@ -100,3 +100,14 @@ There is not much that chain dev team can help right now, except:
   - notify the validators, hope the MEV solution could be updated to follow the GasPrice rule.  
 
 Here is the reference of [Rationale](https://github.com/bnb-chain/bsc/issues/1947#issue-1962563416)
+
+### What can be done when getting error msg: `Cannot start mining without etherbase`, with err: `etherbase must be explicitly specified` while running BSC Validator?
+
+~~~~
+lvl=error msg="Cannot start mining without etherbase" err="etherbase must be explicitly specified"
+~~~~
+
+Add `--miner.etherbase` flag in the command like this:
+`--unlock <minerAddr> --miner.etherbase <minerAddr>` 
+
+For more details, please refer here: [Start Validator Node command.](./validator/run-val.md#2-start-validator-node)
