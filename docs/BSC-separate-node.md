@@ -1,5 +1,5 @@
 ---
-sidebar_label: Separate Node
+sidebar_label: BNB Smart Chain Separate Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---

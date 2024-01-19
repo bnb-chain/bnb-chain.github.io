@@ -65,13 +65,7 @@ const sidebars = {
                         type: 'category',
                         collapsed: true,
                         label: 'Running BSC Nodes',
-                        items: ['validator/best-practice','validator/fullnode', 'archivenode', 'validator/node-maintenance', 'validator/upgrade-fullnode', 'validator/docker']
-                      },
-                      {
-                        type: 'category',
-                        collapsed: true,
-                        label: 'Nodes',
-                        items: ['BSC-separate-node','BSC-verify-node', 'BSC-fast-node', 'boot-nodes']
+                        items: ['validator/best-practice','validator/fullnode','BSC-fast-node','archivenode','BSC-separate-node','BSC-verify-node', 'boot-nodes', 'validator/node-maintenance', 'validator/upgrade-fullnode', 'validator/docker']
                       },
                       {
                         type: 'category',

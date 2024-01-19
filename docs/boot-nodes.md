@@ -1,6 +1,6 @@
 ---
 title: Boot Nodes
-sidebar_label: Boot Nodes
+sidebar_label: BNB Smart Chain Boot Nodes
 sidebar_position: 2
 hide_table_of_contents: false
 ---
