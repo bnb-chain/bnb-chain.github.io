@@ -63,7 +63,7 @@ Please read this [guide](./wallet/withdraw-en.md)
 
 ## How does BNB Smart Chain  work? What is the architecture and consensus used?
 
-BNB Smart Chain relies on a system of 55 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.
+BNB Smart Chain relies on a system of 56 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees.
 
 There will be fewer validators on BNB Smart Chain  testnet.
 
