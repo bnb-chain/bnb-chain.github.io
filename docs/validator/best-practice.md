@@ -1,4 +1,45 @@
-# Best Practice
+# BNB Smart Chain (BSC) Node Configuration: Best Practices
+
+## Hardware Specifications
+
+To ensure optimal performance and reliability, it is crucial to select the appropriate node type based on your specific requirements for transaction processing and state querying on the BNB Smart Chain.
+
+### Fast Node (Recommended Configuration)
+For users requiring access to the latest world state in a lightweight mode, the fast node is the ideal choice. It demands less from your system’s CPU and disk space.
+- **Processor**: Minimum 16-core CPU.
+- **Memory**: At least 32 GB RAM.
+- **Storage**: Solid State Drive (SSD) with a minimum capacity of 2TB.
+- **Network**: Stable and high-speed internet connection, minimum 5 MBps.
+
+### Archive Node
+For comprehensive access to the entire historical world state of the BSC mainnet, consider deploying an Archive Node. Detailed instructions are available at [BSC Erigon GitHub repository](https://github.com/node-real/bsc-erigon).
+- **Processor**: Minimum 16-core CPU.
+- **Memory**: At least 128 GB RAM.
+- **Storage**: SSD with a minimum capacity of 10TB (NVME SSDs are recommended for optimal performance).
+- **Network**: Stable and high-speed internet connection, minimum 5 MBps.
+
+### Full Node
+To obtain the latest world state and verify the validity of the state or to generate data proofs, a standard Full Node is suitable.
+- **Processor**: Minimum 16-core CPU.
+- **Memory**: At least 64 GB RAM.
+- **Storage**: Solid State Drive (SSD) with a minimum capacity of 3TB.
+- **Network**: Stable and high-speed internet connection, minimum 5 MBps.
+
+## Monitoring Metrics and Alerts
+
+To maintain node health and performance, monitor the following key metrics:
+
+- **Transaction Pool Alert**: Triggered when the transaction pool exceeds 5000 transactions.
+- **Block Import Time Alert**: Activated if block import time exceeds 3 seconds.
+- **RPC Latency Alert**: Initiated when RPC latency surpasses 100ms.
+
+## Performance Optimization
+
+BSC nodes offer configurable cache settings to enhance performance. It is advisable to allocate approximately one-third of the physical memory to the cache. For example, with 64GB of physical memory, the cache setting can be configured as:
+```
+--cache 20000
+```
+
 ## Keep Track of Syncing Speed
 
 ```

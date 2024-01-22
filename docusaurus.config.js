@@ -7,16 +7,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BNB Chain Documentation',
-  url: 'https://bnb-chain.github.io/',
+  url: 'https://docs.bnbchain.org',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/icon/favicon.ico',
-  organizationName: 'bnb-chain', 
-  projectName: 'bnb-chain.github.io', 
+  organizationName: 'bnb-chain',
+  projectName: 'bnb-chain.github.io',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  
+
   clientModules: [
     require.resolve('./embedValue.js'),
   ],
@@ -29,15 +29,8 @@ const config = {
   ],
 
   plugins: [
-             require.resolve("docusaurus-plugin-image-zoom"),
-              
-              [require.resolve('docusaurus-gtm-plugin'),
-              {
-                  id: 'GTM-W9BVQXM', // GTM Container ID
-                  preview: 'live',
-              }],
-              
-            ],
+    require.resolve("docusaurus-plugin-image-zoom"),
+  ],
 
   presets: [
     [
@@ -57,15 +50,19 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-LSRFL0KHRR',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    
+
     ({
-      
+
       zoom: {
         selector: '.markdown :not(em) > img',
         config: {
@@ -76,28 +73,28 @@ const config = {
           }
         }
       },
-      
+
       algolia: {
         // The application ID provided by Algolia
         appId: '3LF005YNGZ',
-  
+
         // Public API key: it is safe to commit it
         apiKey: 'dbc11ec6638f9c767ef6ed2856871f58',
-  
+
         indexName: 'bnbchain',
-  
+
         // Optional: see doc section below
         // contextualSearch: true,
-  
+
         // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
         externalUrlRegex: 'https://docs.bnbchain.org/',
-  
+
         // Optional: Algolia search parameters
         //searchParameters: {},
-  
+
         // Optional: path for search page that enabled by default (`false` to disable it)
-      //  searchPagePath: 'search',
-  
+        //  searchPagePath: 'search',
+
         //... other Algolia params
       },
 
@@ -115,7 +112,7 @@ const config = {
           alt: 'BNB',
           src: 'img/image.png',
         },
-        
+
       },
       footer: {
         style: 'dark',
@@ -133,7 +130,7 @@ const config = {
             title: 'Community',
             items: [
               {
-                label:'BNB Chain Forum',
+                label: 'BNB Chain Forum',
                 href: 'https://forum.bnbchain.org/',
               },
               {
@@ -154,11 +151,11 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'http://t.me/bnbchain',              
+                href: 'http://t.me/bnbchain',
               }
             ],
           },
-          
+
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Build N Build.`,
       },

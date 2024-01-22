@@ -10,6 +10,7 @@ In this section, we have provided tutorials on usage of different components of 
 * Tutorial on [How to Join BNB Smart Chain as Validator](validator/run-val.md)
 * Tutorial on [How to Create a Validator on BNB Smart Chain](validator/create-val.md)
 ### Full Node
+* Tutorial on [BNB Smart Chain (BSC) Node Configuration: Best Practices](validator/best-practice.md)
 * Tutorial on [How to Run a Full Node on BNB Smart Chain](validator/fullnode.md)
 * Tutorial on [How to Upgrade Geth (Full Node) on BNB Smart Chain](validator/upgrade-fullnode.md)
 ### Archive Node

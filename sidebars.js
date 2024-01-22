@@ -64,8 +64,8 @@ const sidebars = {
                       {
                         type: 'category',
                         collapsed: true,
-                        label: 'Running Fullnode',
-                        items: ['validator/fullnode', 'archivenode', 'validator/best-practice', 'validator/node-maintenance', 'validator/upgrade-fullnode', 'validator/docker']
+                        label: 'Running BSC Nodes',
+                        items: ['validator/best-practice','validator/fullnode', 'archivenode', 'validator/node-maintenance', 'validator/upgrade-fullnode', 'validator/docker']
                       },
                       {
                         type: 'category',
@@ -299,8 +299,43 @@ const sidebars = {
             label: 'opBNB',
             href:'https://docs.bnbchain.org/opbnb-docs/',
           },
-         
-    ],
+
+          {
+              type: 'category',
+              label: '🌅BNB Beacon Chain Sunset',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                  {type: 'doc', label: 'Overview', id:'bcfusion/overview'},
+                  {
+                      type: 'category',
+                      label:'For Users',
+                      items:[
+                          {type:'doc', id:'bcfusion/users/assets', label:'Manange Your Assets'},
+                          {type:'doc', id:'bcfusion/users/swaps', label:'Manage Your Atomic Swaps'},
+                          {type:'doc', id:'bcfusion/users/timelocks', label:'Manage Your TimeLocks'},
+                          {type:'doc', id:'bcfusion/users/delegations', label:'Manage Your Delegations'},
+                      ]
+                  },
+                  {
+                      type: 'category',
+                      label:'For Token Issuers',
+                      items:[
+                          {type:'doc', id:'bcfusion/owners/bind', label:'Bind Your Tokens'},
+                      ]
+                  },
+                  {
+                      type: 'category',
+                      label:'For Validators',
+                      items:[
+                          {type:'doc', id:'bcfusion/validators/migrations', label:'Migrate Your Validators'},
+                          {type:'doc', id:'bcfusion/validators/creation', label:'Create New Validators'},
+                      ]
+                  },
+              ],
+          },
+
+      ],
     },
     {
       type: 'category',
