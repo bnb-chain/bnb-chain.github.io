@@ -105,5 +105,5 @@ The tokens were sent to “receiverAddresses”.
 
 ![img](./assets/bsc_tokens_faqs/cross_chain_txn_bc.png)
 
-
-
+## How to burn BEP20 tokens and reduce the MAX TOTAL SUPPLY on blockchain explorer?
+Please check if the smart contract support `burn(0x42966c68)` interface and submit the amount you wish to burn via the function.
