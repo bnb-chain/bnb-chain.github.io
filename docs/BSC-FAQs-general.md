@@ -100,3 +100,79 @@ Coinholmes.com is supported by the Peckshield team (A professional security comp
 
 The [self-service window](https://www.binance.com/en/my/wallet/uncredited_deposit/form?&coin=&network=&amount=&txId=tx) for [BNB Pioneer Burn Program](https://www.binance.com/en/support/announcement/7bcf4da5671d44a0a5118c2277773bb4) is now live. Eligible users who lose tokens as part of mistakes they made while making transactions on BNB Smart Chain can access this page and fill in the application form. We will investigate your case and help retrieve the assets if your case is qualified for the Program. 
 
+
+### How to gracefully shut down BSC node when running as a system service?
+
+Basically, bsc node can be shutdown gracefully, it could take around 15 seconds in general. But sometimes, some nodes failed to graceful shutdown due to the incorrect use of this flag: `--history.transactions 0`, if you just upgrade from `v1.2.x` to `v1.3.x`, please notice that `--txlookuplimit` has been replaced by `--history.transactions` since `v1.3.x`. [Reference](https://github.com/bnb-chain/bsc/issues/2163#issuecomment-1897652226)  
+
+Here is the service file and script that can be used to start/stop bsc node, for your reference. 
+
+`bsc.service`
+```
+[Unit]
+Description=bsc
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/server/node/chaind.sh -start
+ExecReload=/server/node/chaind.sh -restart
+ExecStop=/server/node/chaind.sh -stop
+PrivateTmp=true
+Restart=always
+LimitNOFILE=500000
+RestartSec=5
+TimeoutStopSec=120
+StartLimitInterval=0
+
+[Install]
+```
+ 
+And `/server/node/chaind.sh` file:
+```
+#!/bin/bash
+export GOGC=100
+
+function startChaind() {
+    workspace=/server/node
+    ${workspace}/bsc --cache 18000 --history.transactions 0  --datadir ${workspace}/  --config ${workspace}/config.toml >> ${workspace}/bscnode.log 2>&1
+}
+
+function stopChaind() {
+    pid=`ps -ef | grep /server/node/bsc | grep -v grep | awk '{print $2}'`
+    if [ -n "$pid" ]; then
+        kill -TERM $pid
+        for((i=1;i<=40;i++));
+        do
+            pid=`ps -ef | grep /server/node/bsc | grep -v grep | awk '{print $2}'`
+            if [ -z "$pid" ]; then
+                break
+            fi
+            sleep 10
+        done
+    fi
+}
+
+CMD=$1
+
+case $CMD in
+-start)
+    echo "start"
+    startChaind
+    ;;
+-stop)
+    echo "stop"
+    stopChaind
+    ;;
+-restart)
+    stopChaind
+    sleep 3
+    startChaind
+    ;;
+*)
+    echo "Usage: chaind.sh -start | -stop | -restart .Or use systemctl start | stop | restart bsc.service "
+    ;;
+esac
+```
