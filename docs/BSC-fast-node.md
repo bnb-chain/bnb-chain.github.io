@@ -1,5 +1,5 @@
 ---
-sidebar_label: Fast Node
+sidebar_label: BNB Smart Chain Fast Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
