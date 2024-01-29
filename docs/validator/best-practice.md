@@ -25,6 +25,24 @@ To obtain the latest world state and verify the validity of the state or to gene
 - **Storage**: Solid State Drive (SSD) with a minimum capacity of 3TB.
 - **Network**: Stable and high-speed internet connection, minimum 5 MBps.
 
+## Peers Configuration
+
+### Mainnet
+- There is no need to specify static nodes, only Bootnodes are required for mainnet which are already configured in the code. Also, Make sure to use the config.toml file from the latest release. For more details, Please refer this [blog](https://forum.bnbchain.org/t/try-bootnodes-after-bsc-release-v1-2-12/1998#h-32to-join-the-network-with-bootnodes-5).
+
+### Testnet
+- Testnet still need to configure the StaticNodes manually and hence, the StaticNodes list is contained in the latest release's config.toml. For eg: For geth v1.3.7, the updated config.toml with static nodes can be looked over here: [geth v1.3.7 testnet config](https://github.com/bnb-chain/bsc/releases/download/v1.3.7/testnet.zip)
+
+## Troubleshooting for no peers in testnet 
+
+- Check for configuration issues like wrong chain id, wrong config file/dir.
+- Make sure to update the config.toml file as per the latest release
+- Don't use bootnodes on testnet, it's not required.
+- Deleting the `geth/nodes` and `geth/nodekey` file/dir might help
+- Re-download the snapshot and try again.  
+
+Reference over [here](https://github.com/bnb-chain/bsc/issues/2164#issuecomment-1897980997)
+
 ## Monitoring Metrics and Alerts
 
 To maintain node health and performance, monitor the following key metrics:

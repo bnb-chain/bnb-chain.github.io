@@ -1,5 +1,5 @@
 ---
-sidebar_label: Verify Node
+sidebar_label: BNB Smart Chain Verify Node
 hide_table_of_contents: false
 sidebar_position: 2
 ---
