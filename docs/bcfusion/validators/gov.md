@@ -18,10 +18,11 @@ stage has its own requirements and parameters, which can be configured by the BN
 
 ### Submit Proposal
 
-To submit a proposal, a staking credit holder needs to send a `propose` transaction to the BNB smart chain, specifying
-the following information:
+To submit a proposal, a staking credit holder needs to send a `propose` transaction to the `Governor` contract,
+which is a system contract and the address is `0x0000000000000000000000000000000000002004`,
+specifying the following information:
 
-- **Proposer address**: The BEP20 address of the proposer, who initiates the proposal and pays the proposal fee.
+- **Proposer address**: The address of the proposer, who initiates the proposal and pays the proposal fee.
 - **Targets**: The list of addresses of the contracts or accounts that the proposal wants to interact with.
 - **Values**: The list of amounts of BNB or other tokens that the proposal wants to transfer to the targets.
 - **Signatures**: The list of function signatures of the contracts that the proposal wants to call on the targets.
@@ -29,17 +30,16 @@ the following information:
 - **Description**: The description of the proposal, which provides more details and rationale for the proposal.
 
 A delegator should delegate more the 200 staked BNB as the minimal requirement for submitting a proposal.
-The `propose` transaction will deduct the proposal fee (TODO: currently there is no such fee, we may add the fee) 
-from the proposer address and create a new proposal on the BNB
-smart chain. The proposal will have a unique proposal ID, and a proposal status of `Pending`. The proposal will then
+The `propose` transaction will  and create a new proposal on the BNB smart chain. 
+The proposal will have a unique proposal ID, and a proposal status of `Pending`. The proposal will then
 enter the voting period, which is the time window for the staking credit holders to cast their votes on the proposal.
 
 ### Cast Vote
 
-To cast a vote on a proposal, a staking credit holder needs to send a `castVote` transaction to the BNB smart chain,
+To cast a vote on a proposal, a staking credit holder needs to send a `castVote` transaction to the `Governor` contract,
 specifying the following information:
 
-- **Voter address**: The BEP20 address of the voter, who casts the vote on the proposal. The voter address can be the
+- **Voter address**: The address of the voter, who casts the vote on the proposal. The voter address can be the
   same as the staking credit holder address, or a different address that is delegated by the staking credit holder to
   participate in governance on their behalf.
 - **Proposal ID**: The ID of the proposal, which identifies the proposal that the voter wants to vote on.
@@ -57,7 +57,7 @@ ends. The voting period is one of the BNB smart chain governance parameters, and
 
 ### Execute Proposal
 
-To execute a proposal, anyone can send an `execute` transaction to the BNB smart chain, specifying the following
+To execute a proposal, anyone can send an `execute` transaction to the `Governor` contract, specifying the following
 information:
 
 - **Proposal ID**: The ID of the proposal, which identifies the proposal that wants to be executed.
@@ -88,11 +88,12 @@ delegating their voting power to a trusted party, such as a validator, a friend,
 benefit from their knowledge and experience, and also avoid the risk of losing their staking rewards due to abstaining
 from voting.
 
-To delegate their voting power, a staking credit holder needs to send a `delegateVote` transaction to the BNB
-smart chain, specifying the following information:
+To delegate their voting power, a staking credit holder needs to send a `delegateVote` transaction to the `GovToekn` 
+contract, which is a system contract and the address is `0x0000000000000000000000000000000000002005`, 
+specifying the following information:
 
-- **Delegator address**: The BEP20 address of the delegator, who delegates their voting power to another address.
-- **Delegatee address**: The BEP20 address of the delegatee, who receives the voting power from the delegator and
+- **Delegator address**: The address of the delegator, who delegates their voting power to another address.
+- **Delegatee address**: The address of the delegatee, who receives the voting power from the delegator and
   participates in governance on their behalf.
 
 The `delegateVote` transaction will record the delegation relationship and the voting power of the delegator on
