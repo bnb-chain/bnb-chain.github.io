@@ -12,16 +12,20 @@ The operator key is used for operating a validator, including creating a validat
 validator, and undelegating. When creating a validator, the operator key is also used for self-delegating with more than
 2000 BNB. When interacting with the new BSC staking dApp, the operator key is mostly involved.
 
-**Recommendation: Use a hardware wallet or an MPC wallet; when creating validators, there should be more than 2000 BNB in
+Be noted that the operator address can not be changed for a validator.
+
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet; when creating validators, there should be more than 2000 BNB in
 the operator key.**
 
 ## Staking Key
 
-For a validator, it can also use another key, different from the operator key, to manage self-delegation if needed.
+For a validator, it can also use another key, different from the operator key, to manage his/her delegation if needed.
 Then, such a staking key will be used to delegate/undelegate/redelegate to different validators and claim rewards.
 This key could be used frequently, depending on how a validator manages its delegations and rewards.
 
-**Recommendation: Use a hardware wallet or an MPC wallet.**
+Be noted that this key is optional, depending on the needs of a validator.
+
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet.**
 
 ## Consensus Key
 
@@ -43,5 +47,7 @@ The [BEP-297](https://github.com/bnb-chain/BEPs/pull/297) introduces the native 
 A delegator (including validators for self-delegation) can delegate someone else to participate in governance on his/her
 behalf. When there is governance delegation, the governance vote key will be used for casting votes to BSC proposals.
 The related wallet should store some BNB for gas fees of the voting transaction.
+
+Be noted that this key is optional, depending on the needs of a validator.
 
 **Recommendation: Use a hardware wallet or a hot wallet.**
