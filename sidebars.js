@@ -332,6 +332,23 @@ const sidebars = {
                           {type:'doc', id:'bcfusion/validators/creation', label:'Create New Validators'},
                       ]
                   },
+                  {
+                      type: 'category',
+                      label:'For Developers',
+                      items:[
+                          {type:'doc', id:'bcfusion/developers/staking', label:'New Staking'},
+                          {type:'doc', id:'bcfusion/developers/gov', label:'New Governance'},
+                          {type:'doc', id:'bcfusion/developers/crosschain-redelegation', label:'Cross Chain Redelegation'},
+                      ]
+                  },
+                  {
+                      type: 'category',
+                      label:'New Staking & Governance',
+                      items:[
+                          {type:'doc', id:'bcfusion/validators/staking', label:'Staking'},
+                          {type:'doc', id:'bcfusion/validators/gov', label:'Governance'},
+                      ]
+                  },
               ],
           },
 

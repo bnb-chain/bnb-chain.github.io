@@ -30,7 +30,8 @@ specifying the following information:
 - **Description**: The description of the proposal, which provides more details and rationale for the proposal.
 
 A delegator should delegate more the 200 staked BNB as the minimal requirement for submitting a proposal.
-The `propose` transaction will  and create a new proposal on the BNB smart chain. 
+Meanwhile, a delegator can only submit a new propopal if there is no pending proposal created by him/her.
+The `propose` transaction will create a new proposal on the BNB smart chain. 
 The proposal will have a unique proposal ID, and a proposal status of `Pending`. The proposal will then
 enter the voting period, which is the time window for the staking credit holders to cast their votes on the proposal.
 
