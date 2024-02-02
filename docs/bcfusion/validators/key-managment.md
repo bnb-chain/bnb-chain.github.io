@@ -10,12 +10,13 @@ recommended.
 
 The operator key is used for operating a validator, including creating a validator, editing the information of a
 validator, and undelegating. When creating a validator, the operator key is also used for self-delegating with more than
-2000 BNB. When interacting with the new BSC staking dApp, the operator key is mostly involved.
+2001 BNB. When interacting with the new BSC staking dApp, the operator key is mostly involved.
 
 Be noted that the operator address can not be changed for a validator.
 
-**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet; when creating validators, there should be more than 2000 BNB in
-the operator key.**
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet; when creating validators, there should be more
+than 2001 BNB in
+the operator account.**
 
 ## Staking Key
 
@@ -29,17 +30,17 @@ Be noted that this key is optional, depending on the needs of a validator.
 
 ## Consensus Key
 
-The consensus key is used for signing proposed blocks when mining blocks. No fund is needed for this key.
+The consensus key is used for signing proposed blocks when mining blocks. No fund is needed for this account.
 
-**Recommendation: Use a hot wallet so that it can be easily accessed by a validator’s BSC node.**
+**Recommendation: Use a hot wallet so that it can be easily accessed by a validator node.**
 
 ## Fast Finality Vote Key
 
 The fast finality vote key (BLS vote key) is used in
 the [fast finality feature](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md) for signing votes of recently
-mined blocks. No fund is needed for this key.
+mined blocks. No fund is needed for this account.
 
-**Recommendation: Use a hot wallet so that it can be easily accessed by a validator's BSC node.**
+**Recommendation: Use a hot wallet so that it can be easily accessed by a validator node.**
 
 ## Governance Vote Key
 
@@ -50,4 +51,4 @@ The related wallet should store some BNB for gas fees of the voting transaction.
 
 Be noted that this key is optional, depending on the needs of a validator.
 
-**Recommendation: Use a hardware wallet or a hot wallet.**
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet.**
