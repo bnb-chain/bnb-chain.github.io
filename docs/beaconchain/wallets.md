@@ -30,3 +30,4 @@
 | 24     | Infinity Wallet (Desktop Wallet) | <https://infinitywallet.io/>     |Yes  | No|Yes|
 | 25     | BitKeep Wallet (App & Chrome)    | <https://bitkeep.com/> |Yes|No| Yes|
 | 26     | imToken (App)  | <https://token.im> |Yes|Yes| Yes|
+| 27     | Gem Wallet  | <https://gemwallet.com> |No|No| Yes|
