@@ -24,9 +24,9 @@ Running an archive node will take a high cost as it includes all the block and s
 
 ## How to run an archive node for BSC mainnet?
 
-### 1. Run with a Geth client
+### 1. (Deprecated) Run with a Geth client
 
-#### 1.1 Run one segment archive node with a snapshot
+#### 1.1 (Deprecated) Run one segment archive node with a snapshot
 A segment archive node is a node which has all the data from one starting block height to one ending block height, such as [19000000, latest]. To create such one archive node, you need a snapshot with starting block number, less than 19000000.
 
 You can get snapshot from BNB Chain official documentation:
@@ -39,13 +39,13 @@ You can get snapshot from BNB Chain official documentation:
 ./geth --config local_config_dir/config.toml --datadir local_data_dir --pprof.addr 0.0.0.0 --rpc.allow-unprotected-txs --rpccorsdomain * --light.serve 50 --cache 5000 --metrics --snapshot=true --rangelimit --gcmode archive --txlookuplimit 0 --syncmode full --pprof
 ```
 
-#### 1.2 Build one full archive node with segmented archive nodes
+#### 1.2 (Deprecated) Build one full archive node with segmented archive nodes
 
 Instead of putting all archive data on a single Geth instance, it is suggested to create multiple segment instances, each of them only serving part of the chain. To get better performance, it is suggested that each segment's size is better to control under 4TB. There will be around 40TB data in all(up to March, 2023). For all BSC snapshots you can refer to [Free public BNB Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot). The owner has put all BSC archive snapshots on S3. As described this path is public but is configured as requester-pays. This means you'll need an AWS account in order to download them. After having all the segments, you need one proxy to dispatch the requests to the right segment. And thanks the owner, one proxy was also implemented. Please follow the owner's guide to build.
 
 ### 2. Run with an Erigon client
 
-[Erigon](https://github.com/ledgerwatch/erigon) has supported BSC mainnet. You can also refer to [Free public BNB Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot) for the guide to run a BSC archive node with an Erigon client. The owner has switched to using an Erigon client for a BSC archive node recently. You can download the archive snapshot which is a tarball from aws s3. The s3 path is "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd". This path is public, but is configured as requester-pays. Also this means you'll need an AWS account in order to download it.
+[Erigon](https://github.com/node-real/bsc-erigon) has supported BSC mainnet. You can also refer to [Free public BNB Smart Chain Archive Snapshot](https://github.com/allada/bsc-archive-snapshot) for the guide to run a BSC archive node with an Erigon client. The owner has switched to using an Erigon client for a BSC archive node recently. You can download the archive snapshot which is a tarball from aws s3. The s3 path is "s3://public-blockchain-snapshots/bsc/erigon-latest.tar.zstd". This path is public, but is configured as requester-pays. Also this means you'll need an AWS account in order to download it.
 
 * Command to download to local dir:
 

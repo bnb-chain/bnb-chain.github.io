@@ -349,16 +349,9 @@ const sidebars = {
       ],
     },
     {
-      type: 'category',
-      collapsed: true,
-      label: 'Future Developments',
-      items:['dev-outlook/scaling',
-             {
-              type: 'link',
-              label: 'State Expiry',
-              href: 'https://github.com/bnb-chain/BSC-State-Expiry',
-             },
-            ],
+      type: 'link',
+      label: 'BSC Roadmap',
+      href: 'https://forum.bnbchain.org/t/bnb-chain-upgrades-mainnet/936',
     },
 
 

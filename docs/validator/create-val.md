@@ -89,4 +89,4 @@ in the above step is assigned as the **side-cons-addr**.
 Go to [explorer](https://explorer.bnbchain.org/) to verify your transactions.
 
 ### Running a Validator
-Refer to [Running as Validator](run-val) to start a real running validator. 
+Refer to [Running as Validator](https://docs.bnbchain.org/docs/validator/run-val/) to start a real running validator. 
