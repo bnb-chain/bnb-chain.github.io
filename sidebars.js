@@ -379,6 +379,7 @@ const sidebars = {
    
     {type: 'doc',   id: 'contribute',   label: 'Contribute to BSC'},
     {type: 'doc',   id: 'more-help',   label: 'More Help'},
+    {type: 'doc',   id: 'submit-dapp',   label: 'Join BNBChain Ecosystem'},
   ],
    
 };
