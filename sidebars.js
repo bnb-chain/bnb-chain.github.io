@@ -340,6 +340,7 @@ const sidebars = {
                       label:'New Staking & Governance',
                       items:[
                           {type:'doc', id:'bcfusion/validators/staking', label:'Staking'},
+                          {type:'doc', id:'bcfusion/validators/slash', label:'Slash'},
                           {type:'doc', id:'bcfusion/validators/gov', label:'Governance'},
                       ]
                   },
