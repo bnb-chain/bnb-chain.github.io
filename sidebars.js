@@ -340,6 +340,7 @@ const sidebars = {
                       label:'New Staking & Governance',
                       items:[
                           {type:'doc', id:'bcfusion/validators/staking', label:'Staking'},
+                          {type:'doc', id:'bcfusion/validators/slash', label:'Slash'},
                           {type:'doc', id:'bcfusion/validators/gov', label:'Governance'},
                       ]
                   },
@@ -349,16 +350,9 @@ const sidebars = {
       ],
     },
     {
-      type: 'category',
-      collapsed: true,
-      label: 'Future Developments',
-      items:['dev-outlook/scaling',
-             {
-              type: 'link',
-              label: 'State Expiry',
-              href: 'https://github.com/bnb-chain/BSC-State-Expiry',
-             },
-            ],
+      type: 'link',
+      label: 'BSC Roadmap',
+      href: 'https://forum.bnbchain.org/t/bnb-chain-upgrades-mainnet/936',
     },
 
 
@@ -385,6 +379,7 @@ const sidebars = {
     },
    
     {type: 'doc',   id: 'contribute',   label: 'Contribute to BSC'},
+    {type: 'doc',   id: 'submit-dapp',   label: 'Join BNBChain Ecosystem'},
     {type: 'doc',   id: 'more-help',   label: 'More Help'},
   ],
    

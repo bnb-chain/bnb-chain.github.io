@@ -11,7 +11,19 @@ mechanism after BNB chain fusion, which has several differences:
 
 In this section, we will explain the basic concepts and operations of staking on the BSC.
 
-## Validator Set
+## Basic Concepts
+
+### Consensus Engine
+
+BSC uses a consensus mechanism which combines DPoS and PoA for consensus, so that:
+
+* Blocks are produced by a limited set of validators.
+* Validators take turns to produce blocks in a PoA manner.
+* Validator set are elected in and out based on a staking based governance.
+
+To determinate which validators are eligible to produce blocks, that's why staking mechanism is needed.
+
+### Validator Set
 
 The validator set is the group of nodes that are responsible for validating transactions and producing blocks on the
 BSC. The validator set is determined by the amount of staking credit each validator has, which reflects the amount of
@@ -20,9 +32,60 @@ active validator set, and they take turns to propose and vote on blocks. The res
 validator set, and they can join the active validator set if their staking credit increases or if some active validators
 drop out.
 
-The validator set is updated every 24 hours, based on the latest staking information. Validators can join or leave the
-validator set by creating or editing their validator information. Validators can also be removed from the validator set
-by slashing, which is a penalty for misbehaving or being offline.
+Validators can join or leave the validator set by creating or editing their validator information.
+Validators can also be removed from the validator set by slashing, which is a penalty for misbehaving or being offline.
+
+### Validator Election
+
+There are different rols for validators:
+
+* Cabinet: the top K (which is 21 currently) validators who get the most chance of producing blocks.
+* Candidate: the top (k, K+NumOfCandidates] validators who get a small chance of producing blocks.
+* Inactive: the reset validators who get no chance of producing blocks.
+
+![img](../../assets/bcfusion/validator-election.png)
+
+To determinate the roles of all validators, the validator set is updated every 24 hours,
+based on the latest staking information. At the first block after UTC 00:00, the consensus engine
+will sort all the validators and update the BSC validator set contract to save the ranking information.
+Be noted: during the BC fusion, the validators created on Beacon Chain and the validators created on BSC
+will be sorted together to decide the top validators. However, the validators created on BSC will receive
+triple voting power compared with the validators created on Beacon Chain for the same amount of BNB staked.
+
+### Sytems Contracts
+
+There are several built-in contracts (i.e., system contracts) to facilitate the BSC staking.
+
+* Validator Set Contract. The contract periodically elects a validator set.
+  The contract also serves as a vault for temporarily storing validator rewards.
+  Periodically, these rewards are sent back to the BC or transferred to the BSC native staking module.
+
+* System Reward Contract. This contract acts as a vault to collect part of transaction fees. The funds are used for
+  various public purposes, like distributing fast finality rewards.
+
+* Slash Contract. This contract is used to keep track of the number of times a validator becomes unavailable and
+  triggers penalties once a certain threshold is reached. Additionally, this contract also handles other types of slash
+  events, such as double signing and malicious voting in fast finality.
+
+* Stake Hub Contract. This contract serves as the entry point for managing validators and delegations,
+  while also implementing the logic for slashing specific validators. For delegation/undelegation/redelegation
+  operations,
+  it will call different validators' implementation contracts to manage a user's stake.
+
+### Credit Contract
+
+Each validator has its own validator contract that manages staking credit and facilitates the exchange
+between credit and BNB. The token name of a staking credit is "stake {{validator moniker}} credit",
+and the symbol is "st{{validator moniker}}". The contract will be created by the Stake Hub Contract when a validator
+is created.
+
+### Reward Distribution
+
+The staking reward comes from transaction fee - when a block is produced, the majority of the block fee will be
+collected as reward for the validator who proposed the block.
+Every day, a portion of the rewards collected will be directly sent to the operator account of the validator as
+commission, while the remaining portion will be sent to the corresponding validator credit contract. And when a user
+undelegates and claims his/her stakes, the accumulated reward and the original stake will be sent back to him/her.
 
 ## Validator Operations
 
