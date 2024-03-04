@@ -70,7 +70,7 @@ Running your validators with the same consensus keys and voting keys concurrentl
 
 #### Loss for Offline Slash
 
-If a validator missed more than **50 blocks** every **24 hours**, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. If it missed more than **150 blocks** every **24 hours**, then this will be propagated back to BC where another slashing will happen
+If a validator missed more than **50 blocks** every **24 hours**, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators. If a validator continue to miss more than **150 blocks** every **24 hours**, then this will be propagated back to BC and trigger the following penalty for being offline:
 
 ##### Penalty for Offline Slash
 
