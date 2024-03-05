@@ -3,51 +3,54 @@ import Validator2 from '../../assets/bcfusion/create-validator2.png';
 import Validator3 from '../../assets/bcfusion/create-validator3.png';
 import Validator4 from '../../assets/bcfusion/create-validator4.png';
 
-# Validator Creation
+# Validator Creation Guide
 
-If you are migrating old validators created on
-the BNB Beacon Chain, please refer to [this document](migrations.md) for more information.
+This guide outlines the process for creating a new validator on the BNB Smart Chain. If you're migrating validators
+from an older version, please consult [the migration document](migrations.md) for detailed instructions.
 
-You can new the BNB staking dApp to create your validators.
+To create a validator, access the BNB staking dApp:
 
-BNB Staking dApp on testnet: https://testnet-staking.bnbchain.org/en/bnb-staking
+- **Testnet
+  **: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
+- **Mainnet**: *To be announced*
 
-BNB Staking dapp on mainnet: To be updated.
+Navigate to the dApp and select the `Become a Validator` button to initiate the creation process.
 
-After opening the dapp, you can click the `Become a Validator` button to create a new validator.
-
-The following information will be required in the `Create Validator` page.
-
-## Basic Info
+## Basic Information
 
 <img src={Validator1} width="400"/>
 
-- **Validator Name**: The name of your validator.
-- **Website**: Your website for sharing more information about your validator.
-- **Description**: Description of your validator.
+You'll need to provide the following details on the `Create Validator` page:
 
-You can upload more information in the [BSC validator directory](https://github.com/bnb-chain/bsc-validator-directory).
-After you uploading the avatar in the repo, it will be displayed in the staking dApp.
+- **Validator Name**: Choose a name consisting of 3-9 alphanumeric characters, excluding special characters.
+- **Website**: Provide a URL to a website with additional information about your validator.
+- **Description**: A brief description of your validator.
+
+To enhance your validator's visibility, consider uploading additional information to
+the [BSC validator directory](https://github.com/bnb-chain/bsc-validator-directory). Your avatar, once uploaded, will be
+displayed in the staking dApp.
 
 ## Addresses
 
 <img src={Validator2} width="400"/>
 
-- **Consensus address**: The consensus address of the validator's node.
-- **Vote Address**: The address for participating fast finality voting.
-- **BLS Proof**: A BLS signature to prove that the validator owns the vote address.
-- **Identity**: If you are f you are a old validator operator on the BC side, please make a validator mapping signature
-  via the following steps.
+The following addresses are required:
 
-### Create vote address & BLS proof
+- **Consensus Address**: A unique address for your validator's node.
+- **Vote Address**: An address used for fast finality voting.
+- **BLS Proof**: A BLS signature verifying ownership of the vote address.
+- **Identity**: For associating a new validator with an existing one from the Beacon Chain. This is optional unless
+  you're migrating an old validator.
 
-Please down load BSC geth binary here: https://github.com/bnb-chain/bsc/releases/tag/v1.3.10
+### Generating Vote Address and BLS Proof
 
-Create a BLS account or import an existing BLS account you already have.
+Download the BSC geth binary from [the official release page](https://github.com/bnb-chain/bsc/releases/tag/v1.3.10).
+
+To create or import a BLS account please use the following commands.
 
 ```shell
  geth bls account new
- geth bls account new
+ geth bls account import
 ```
 
 Then you can get your vote address by running the following command.
@@ -68,13 +71,17 @@ geth_macos bls account generate-proof --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRE
 An example proof
 is `0xaf762123d031984f5a7ae5d46b98208ca31293919570f51ae2f0a03069c5e8d6d47b775faba94d88dbbe591c51c537d718a743b9069e63b698ba1ae15d9f6bf7018684b0a860a46c812716117a59c364e841596c3f0a484ae40a1178130b76a5`.
 
-- `BSC_CHAIN_ID`: 56 for BSC mainnet, and 97 for BSC testnet.
+- `BSC_CHAIN_ID`: `56` for BSC mainnet, and `97` for BSC testnet.
 - `OPEATOR_ADDRESS`: The address of your account, which will be reconginzed as the operator of the new validator.
 - `VOTE_ADDRESS`: The vote address created in the last step.
 
 ### Create indentity
 
-Please down load BC client binary here: https://github.com/bnb-chain/node/releases/tag/v0.10.18
+Identity is used for assocaiting the new validator to the old validator created on the Beacon Chain, to facilitate
+delegators moving their stakes to the same validator operator when [migrations](../users/stake-migration.md).
+If you are creating a new validator without any need for such association, you can leave it empty.
+
+Please down load BC client binary here: https://github.com/bnb-chain/node/releases/tag/v0.10.19
 
 #### Local Key
 
