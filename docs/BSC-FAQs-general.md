@@ -176,3 +176,18 @@ case $CMD in
     ;;
 esac
 ```
+
+### How to enable periodic log deletion function in config.toml?
+
+From config.toml, add MaxBackups in Node.LogConfig. MaxBackups means the log file that would be retained, by default it would be 0, which means there is no limitation. If set MaxBackups = 240, only logs of the most recent 240 hours(10 days) would be kept, since the default rotate time is 1 hour. [Reference](https://github.com/bnb-chain/bsc/pull/2186)
+
+Example
+```
+[Node.LogConfig]
+FileRoot = ""
+FilePath = "bsc.log"
+MaxBytesSize = 10485760
+Level = "info"
+MaxBackups = 240
+```
+
