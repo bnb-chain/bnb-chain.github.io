@@ -6,7 +6,7 @@ import Validator4 from '../../assets/bcfusion/create-validator4.png';
 # Validator Creation Guide
 
 This guide outlines the process for creating a new validator on the BNB Smart Chain. If you're migrating validators
-from an older version, please consult [the migration document](migrations.md) for detailed instructions.
+from the Beacon Chain to BSC, please pay attention to the instruction for setting the `identity` field correctly.
 
 To create a validator, access the BNB staking dApp:
 
@@ -79,9 +79,9 @@ is `0xaf762123d031984f5a7ae5d46b98208ca31293919570f51ae2f0a03069c5e8d6d47b775fab
 
 Identity is used for assocaiting the new validator to the old validator created on the Beacon Chain, to facilitate
 delegators moving their stakes to the same validator operator when [migrations](../users/stake-migration.md).
-If you are creating a new validator without any need for such association, you can leave it empty.
+If you never create a validator in this [page](https://www.bnbchain.org/en/staking), you can leave it empty.
 
-Please down load BC client binary here: https://github.com/bnb-chain/node/releases/tag/v0.10.19
+Please download BC client binary here: https://github.com/bnb-chain/node/releases/tag/v0.10.19
 
 #### Local Key
 

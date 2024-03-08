@@ -38,7 +38,7 @@ For testnet, you
 can [BNB Chain Wallet](https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp) to
 connect.
 
-For mainnet, you can use BEW or [Trust](https://trustwallet.com/browser-extension) to connect.
+For mainnet, you can use BEW or [TrustWallet](https://trustwallet.com/browser-extension) to connect.
 
 <img src={Migrate1} width="400"/>
 
@@ -92,7 +92,7 @@ After the unbonding period (7 days in mainnet), the stake be returned to your Be
 
 #### Step 3: Cross chain transfer
 
-You can use BNB Chain Wallet (BEW) or Trust to cross chain transfer your BNB from the Beacon Chain to the BSC.
+You can use BNB Chain Wallet (BEW) or TrustWallet to cross chain transfer your BNB from the Beacon Chain to the BSC.
 
 For BEW, you need to switch the network to "BNB Beacon Chain Network"/"BNB Beacon Chain Testnet Network":
 
@@ -104,7 +104,7 @@ Then, select the asset to transfer, enter the BSC account and the token amount.
 
 The BSC wallet will receive the token after approximately one minute.
 
-For Trust mobile multi-chain users, you need to open the `Swap` tab, and
+For TrustWallet mobile multi-chain users, you need to open the `Swap` tab, and
 choose From network as `BNB Beacon Chain` and To network as `BNB Smart Chain` for mainnet asset transfer.
 
 Then find the asset you want to transfer and input the transfer amount.

@@ -20,7 +20,7 @@ Leverage the BNB staking dApp for streamlined management of your stakes. This gu
 
 <img src={Stake1} width="400"/>
 
-To interact with the dApp, first connect your web3 wallet. Currently, `Trust` (mainnet only) and `MetaMask` are supported, along with any wallets compatible with `WalletConnect`.
+To interact with the dApp, first connect your web3 wallet. Currently, `TrustWallet` (mainnet only) and `MetaMask` are supported, along with any wallets compatible with `WalletConnect`.
 
 ## Delegating Stakes
 
