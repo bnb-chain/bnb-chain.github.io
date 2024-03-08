@@ -308,7 +308,8 @@ const sidebars = {
                           {type:'doc', id:'bcfusion/users/assets', label:'Manange Your Assets'},
                           {type:'doc', id:'bcfusion/users/swaps', label:'Manage Your Atomic Swaps'},
                           {type:'doc', id:'bcfusion/users/timelocks', label:'Manage Your TimeLocks'},
-                          {type:'doc', id:'bcfusion/users/delegations', label:'Manage Your Delegations'},
+                          {type:'doc', id:'bcfusion/users/stake-migration', label:'Manage Your Old Delegations'},
+                          {type:'doc', id:'bcfusion/users/new-stake', label:'Manage Your New Delegations'},
                       ]
                   },
                   {
