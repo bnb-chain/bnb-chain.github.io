@@ -17,3 +17,9 @@ Multiple IDEs and libraries can be used for developing and deploying smart contr
 * [Truffle](https://www.trufflesuite.com/docs/teams/quickstart): development tool that allows users to compile, test, debug and deploy smart contracts.
   
 * [Web3JS](https://web3js.readthedocs.io/en/v1.2.11/): collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.
+
+# RPC Node Providers
+
+* [GetBlock](https://getblock.io/nodes/bsc/): GetBlock RPC Node Provider offers instant API connection to over 50 multiple blockchains, including BNB Smart Chain.
+
+* [Alchemy](https://www.alchemy.com/list-of/rpc-node-providers-on-bnb-chain): The Alchemy Node Provider offers infrastructure solution for developers seeking access to blockchain networks.
