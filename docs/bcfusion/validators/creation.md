@@ -46,11 +46,20 @@ The following addresses are required:
 
 Download the BSC geth binary from [the official release page](https://github.com/bnb-chain/bsc/releases/tag/v1.3.10).
 
-To create or import a BLS account please use the following commands.
+Note: Make sure you are downloading the correct binary based on your machine's platform, e.g., if you are using MacOS,
+you should download the `geth_mac` file. In the following, we will refer the binary as `geth` for simplicity.
+
+To create a new BLS account please use the following command.
 
 ```shell
  geth bls account new
  geth bls account import
+```
+
+If you already have a voting key, create a bls wallet and use the keyfile to recover it, using the following command.
+
+```shell
+ geth bls account import <keyFile>
 ```
 
 Then you can get your vote address by running the following command.
@@ -65,7 +74,7 @@ is `b5fe571aa1b39e33c2735a184885f737a59ba689177f297cba67da94bea5c23dc71fd4deefe2
 Then you can get your bls proof by running the following command.
 
 ```shell
-geth_macos bls account generate-proof --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRESS} ${VOTE_ADDRESS}
+geth bls account generate-proof --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRESS} ${VOTE_ADDRESS}
 ```
 
 An example proof
@@ -81,7 +90,12 @@ Identity is used for assocaiting the new validator to the old validator created 
 delegators moving their stakes to the same validator operator when [migrations](../users/stake-migration.md).
 If you never create a validator in this [page](https://www.bnbchain.org/en/staking), you can leave it empty.
 
-Please download BC client binary here: https://github.com/bnb-chain/node/releases/tag/v0.10.19
+Please download BC client binary
+from [the official release page](https://github.com/bnb-chain/node/releases/tag/v0.10.19).
+
+Note: Make sure you are downloading the correct binary based on your machine's platform, e.g., if you are using MacOS,
+you should download the `macos_binary.zip` file, and after unzip it your will find `bnbcli` (for mainet)
+and `tbnbcli`(for testnet). In the following, we will refer the binary as `bnbcli` for simplicity.
 
 #### Local Key
 
@@ -112,7 +126,7 @@ ${workspace}/bin/bnbcli \
   will be mapped.
 
 - `--chain-id ${BC_CHAIN_ID}`: Specifies the chain ID for the BC(BNB beacon chain). By default, the mainnet chain ID
-  is `Binance-Chain-Tigris`.
+  is `Binance-Chain-Tigris`. And the testnet chain ID is `Binance-Chain-Ganges`.
 
 - `--from ${ACCOUNT_NAME}`: Specifies the account name from which the sign will be performed.
 
