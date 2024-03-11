@@ -64,7 +64,7 @@ mv server/data-seed/geth/chaindata node/geth/triecache
 
 4. Start a full node
 ```
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
 
 :::note
@@ -84,13 +84,13 @@ Check [here](BSC-fast-node.md) for full details on running a fast node.
   
 It will run with Hash-Base Storage Scheme by default
 ```
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --tries-verify-mode none
 ```
 
 It will run with Path-Base Storage Scheme.  
 It will enable inline state prune, keeping the latest 90000 blocks' history state by default.
 ```
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0 --tries-verify-mode none --state.scheme path
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --tries-verify-mode none --state.scheme path
 ```
 :::
 
@@ -141,7 +141,7 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 
 ```bash
 ## start a full node
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
 
 ## Sync Mode
