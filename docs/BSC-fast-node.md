@@ -62,7 +62,7 @@ You can start Fast Node without snapshot verification by verify nodes.
 
 ```bash
 ## start a fast node
-./geth --tries-verify-mode none --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --tries-verify-mode none --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
 
 Or start Fast Node With Snapshot Verification
@@ -83,5 +83,5 @@ EnableMsgEvents = false
 
 ```bash
 ## start a fast node
-./geth --tries-verify-mode full --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --txlookuplimit 0
+./geth --tries-verify-mode full --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
