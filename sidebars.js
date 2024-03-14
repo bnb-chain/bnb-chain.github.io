@@ -58,6 +58,22 @@ const sidebars = {
               collapsed: true,
               label: 'Develop',
               items: [
+                      {
+                        type: 'category',
+                        label:'Wallet',
+                        items:['beaconchain/wallets',
+                          {
+                            type: 'category',
+                            label:'Tutorials',
+                            items:[
+                            {type:'doc', id:'beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet', label:'Trust Wallet Guide'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/ledger-nano-s-usage-guide', label:'Ledger Wallet Guide'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'Trezor Wallet Guide'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'How to manage BEP8 token with Web Wallet'},
+                          ]
+                          }
+                        ]
+                      },
                       {type: 'doc', label: 'Development Tools', id:'learn/ecosystem'},
                       {type:'doc', id:'rpc', label:'RPC Endpoints'},
                       'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
@@ -254,23 +270,8 @@ const sidebars = {
                               {type:'doc', id:'beaconchain/validator/create-val', label:'Create Validator'},
                               {type:'doc', id:'beaconchain/validator/run-val', label:'Run Validator'},
                           ]
-                      },
-                      {
-                        type: 'category',
-                        label:'Wallet',
-                        items:['beaconchain/wallets',
-                          {
-                            type: 'category',
-                            label:'Tutorials',
-                            items:[
-                            {type:'doc', id:'beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet', label:'Trust Wallet Guide'},
-                            {type:'doc', id:'beaconchain/wallet/tutorial/ledger-nano-s-usage-guide', label:'Ledger Wallet Guide'},
-                            {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'Trezor Wallet Guide'},
-                            {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'How to manage BEP8 token with Web Wallet'},
-                          ]
-                          }
-                        ]
                       }
+                      
             ],
           },
 
