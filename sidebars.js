@@ -334,6 +334,7 @@ const sidebars = {
                           {type:'doc', id:'bcfusion/developers/staking', label:'New Staking'},
                           {type:'doc', id:'bcfusion/developers/gov', label:'New Governance'},
                           {type:'doc', id:'bcfusion/developers/crosschain-redelegation', label:'Cross Chain Redelegation'},
+                          {type:'doc', id:'bcfusion/developers/system-contracts', label:'Build-in System Contracts'},
                       ]
                   },
                   {
