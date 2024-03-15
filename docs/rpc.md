@@ -54,6 +54,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
   
 * **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
 
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
