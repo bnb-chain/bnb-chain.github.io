@@ -67,7 +67,7 @@ When Hardhat is run, it searches for the closest ```hardhat.config.js``` file st
 
 ## Create Smart Contract
 
-You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template), place it in the ```contracts``` directory of your project and remane it as ```BEP20Token.sol```.
+You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template), place it in the ```contracts``` directory of your project and rename it as ```BEP20Token.sol```.
 
 ## Configure Hardhat for BSC
 
