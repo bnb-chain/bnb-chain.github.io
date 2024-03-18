@@ -89,7 +89,12 @@ const sidebars = {
                         },
                         ]
                       },
-                      {type: 'doc', label: 'Development Tools', id:'learn/ecosystem'},
+                      {
+                        type: 'link',
+                        label: 'Developer Tooling Landscape',
+                        href: 'https://www.bnbchain.org/en/dev-tools',
+                      },
+                      {type: 'doc', label: 'Tools', id:'learn/ecosystem'},
                       {type:'doc', id:'rpc', label:'RPC Endpoints'},
                       'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
                       {
