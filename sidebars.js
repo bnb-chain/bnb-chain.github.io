@@ -61,7 +61,7 @@ const sidebars = {
                       {
                         type: 'category',
                         label:'Wallet',
-                        items:['beaconchain/wallets',
+                        items:['Wallet', 'beaconchain/wallets', 'create-wallet',
                           {
                             type: 'category',
                             label:'Tutorials',
@@ -71,10 +71,30 @@ const sidebars = {
                             {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'Trezor Wallet Guide'},
                             {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'How to manage BEP8 token with Web Wallet'},
                           ]
-                          }
+                          }, 
+                          {
+                            type: 'category',
+                            //collapsible: true,
+                            collapsed: true,
+                            label: 'BNB Chain Extension Wallet',
+                            items: ['bnb-chain-wallet','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
+                          },
+                          {
+                            type: 'category',
+                            collapsed: true,
+                            label: 'Tutorials on Third Party Wallets',
+                            items:['wallets/wallet-tutorial-overview','wallet/trustwallet', 'wallet/metamask','wallet/arkane', 'wallet/math', 'wallet/myetherwallet',
+                              'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
+                              'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken', 'learn/gnosis']
+                        },
                         ]
                       },
-                      {type: 'doc', label: 'Development Tools', id:'learn/ecosystem'},
+                      {
+                        type: 'link',
+                        label: 'Developer Tooling Landscape',
+                        href: 'https://www.bnbchain.org/en/dev-tools',
+                      },
+                      {type: 'doc', label: 'Tools', id:'learn/ecosystem'},
                       {type:'doc', id:'rpc', label:'RPC Endpoints'},
                       'BSCmainnet', 'BSCtestnet', 'BSCexplorers',
                       {
@@ -172,32 +192,7 @@ const sidebars = {
                          'migration/evm-chains/token-migration']
                  }
                 ]
-            },
-
-
-            {
-              type: 'category',
-              //collapsible: true,
-              collapsed: true,
-              label: 'Wallet',
-              items: ['Wallet', 'create-wallet',
-              {
-                type: 'category',
-                //collapsible: true,
-                collapsed: true,
-                label: 'BNB Chain Extension Wallet',
-                items: ['bnb-chain-wallet','manual', 'add-account', 'wallet_api','staking-with-ext-wallet']
-              },
-              {
-                type: 'category',
-                collapsed: true,
-                label: 'Tutorials on Third Party Wallets',
-                items:['wallets/wallet-tutorial-overview','wallet/trustwallet', 'wallet/metamask','wallet/arkane', 'wallet/math', 'wallet/myetherwallet',
-                  'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
-                  'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken', 'learn/gnosis']
-            },
-              ]
-            },
+            }
           ],
           },
                    

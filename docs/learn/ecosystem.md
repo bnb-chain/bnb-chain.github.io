@@ -1,7 +1,7 @@
 ---
 sidebar_label: Tools 
 sidebar_position: 2
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 
 # BNB Chain Development Tools
