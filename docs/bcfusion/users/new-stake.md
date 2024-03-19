@@ -43,8 +43,7 @@ Within the `My Staking` page, you can manage your current delegations.
 
 - Click `Redelegate` to shift your stake to a different validator. 
 
-Note: A redelegation fee applies to discourage frequent switching between validators. 
-On testnet the fee rate is 0.02% and on mainnet the fee rate is 0.002%.
+Note: A redelegation fee of 0.002% applies to discourage frequent switching between validators.
 
 <img src={Stake6} width="400"/>
 
