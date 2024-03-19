@@ -38,7 +38,7 @@ and claiming rewards.
 
 ### Stake Credit Contract
 
-The Stake Credit contract is a template proxy contract. When a is created, a new stake credit contract is deployed,
+The Stake Credit contract is a template proxy contract. When a validator is created, a new stake credit contract is deployed,
 to manage staking credit and facilitate the exchange between credit and BNB.
 
 ### Governor Contract
