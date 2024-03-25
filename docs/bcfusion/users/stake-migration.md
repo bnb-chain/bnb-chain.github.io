@@ -40,11 +40,11 @@ connect.
 
 For mainnet, you can use BEW or [TrustWallet](https://trustwallet.com/browser-extension) to connect.
 
-<img src={Migrate1} width="400"/>
+<img src={Migrate1} width="600"/>
 
 Open `My Staking` page, Then you can find you existing delegations as the following.
 
-<img src={Migrate2} width="400"/>
+<img src={Migrate2} width="800"/>
 
 #### Step 2:  Choose the native BSC validators to migrate to.
 
