@@ -12,10 +12,10 @@ import Tally11 from '../../assets/bcfusion/tally11.png';
 
 # Governance with Tally
 
-This document provides a guide on how to participate in governance on the Binance Smart Chain (BSC) using Tally. It
+This document provides a guide on how to participate in governance on the BNB Smart Chain (BSC) using Tally. It
 covers the process of delegating voting power, creating proposals, voting on proposals, and executing proposals.
 
-BSC daos are created on Tally both for the mainnet and testnet.
+BNB Chain DAOs are created on Tally both for the mainnet and testnet.
 
 * Testnet: https://www.tally.xyz/gov/bnb-chain-testnet
 * Mainnet: to be announced
