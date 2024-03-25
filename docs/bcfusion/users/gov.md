@@ -63,7 +63,7 @@ governance.
 ### Create Proposals
 
 If you have sufficient voting power (i.e., greater than the `proposalThreshold`), you can create proposals on the BSC
-network.
+network. Be noted that a user can only has one proposal in ative/pending state at a time to prevent spamming.
 
 To create a proposal, click on the "Create new proposal" button on the top right corner of the screen.
 
