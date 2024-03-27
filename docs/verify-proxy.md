@@ -38,6 +38,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 
 ![img](../../static/img/deployImplementation.png)
 
+
 > Note: `Owner` should be the address who send the deploy transaction before.
 
 - Click on the “Copy” icon to save the initializatioin data: Like the following: ```
