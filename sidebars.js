@@ -306,6 +306,7 @@ const sidebars = {
                           {type:'doc', id:'bcfusion/users/timelocks', label:'Manage Your TimeLocks'},
                           {type:'doc', id:'bcfusion/users/stake-migration', label:'Manage Your Old Delegations'},
                           {type:'doc', id:'bcfusion/users/new-stake', label:'Manage Your New Delegations'},
+                          {type:'doc', id:'bcfusion/users/gov', label:'Participate in Governance'},
                       ]
                   },
                   {
@@ -321,6 +322,7 @@ const sidebars = {
                       items:[
                           {type:'doc', id:'bcfusion/validators/migrations', label:'Migrate Your Validators'},
                           {type:'doc', id:'bcfusion/validators/creation', label:'Create New Validators'},
+                          {type:'doc', id:'bcfusion/validators/key-management', label:'Key Management'},
                       ]
                   },
                   {

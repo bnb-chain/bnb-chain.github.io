@@ -177,7 +177,7 @@ corresponding staking credit to the destination validator. The delegator will th
 the destination validator, according to the commission rate and the slashing rate of the destination validator.
 The `Redelegate` transaction does not incur the unbonding period, but it will incur the redelegation fee,
 which is designed to prevent delegators from frequently switching between validators to chase
-the highest rewards or avoid the highest risks. The current fee rate is 0.02%.
+the highest rewards or avoid the highest risks. The current fee rate is 0.002%.
 
 ### Undelegate
 

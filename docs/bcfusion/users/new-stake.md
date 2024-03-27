@@ -41,7 +41,9 @@ To interact with the dApp, first connect your web3 wallet. Currently, `TrustWall
 
 Within the `My Staking` page, you can manage your current delegations.
 
-- Click `Redelegate` to shift your stake to a different validator. Note: A redelegation fee of 0.02% applies to discourage frequent switching between validators.
+- Click `Redelegate` to shift your stake to a different validator. 
+
+Note: A redelegation fee of 0.002% applies to discourage frequent switching between validators.
 
 <img src={Stake6} width="400"/>
 

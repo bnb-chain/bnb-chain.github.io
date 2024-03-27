@@ -128,7 +128,8 @@ ${workspace}/bin/bnbcli \
 - `--chain-id ${BC_CHAIN_ID}`: Specifies the chain ID for the BC(BNB beacon chain). By default, the mainnet chain ID
   is `Binance-Chain-Tigris`. And the testnet chain ID is `Binance-Chain-Ganges`.
 
-- `--from ${ACCOUNT_NAME}`: Specifies the account name from which the sign will be performed.
+- `--from ${ACCOUNT_NAME}`: Specifies the account name from which the sign will be performed. The account should
+  be the operator of the validator created on the Beacon Chain.
 
 And you will get the output like this:
 
