@@ -36,7 +36,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 - Click the “confirm” button to sign and broadcast the transaction to BSC.
 - Then, you need to initialize the token: fill in all the parameters and click on “transact”
 
-![img](../static/img/deployImplementation.png)
+![img](../static/img/deployImplementation.png=250x250)
 
 
 > Note: `Owner` should be the address who send the deploy transaction before.
