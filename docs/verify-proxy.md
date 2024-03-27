@@ -51,7 +51,7 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 - Confirm your transaction in MetaMask
 
 
-<img src="https://lh5.googleusercontent.com/kPAo0FyEgt0vNDkBMxIHNIFqdq0mP4BhFT21vXvusa8-wlP-BXr4FcHjYV-NZEuQZrgwq74fV2oXAKIrAovpXi7KHChXtowSI3sbu5wTQL-_3-x8Qd-6-z7xRDkRXzJZLcakxrR3" alt="img" style={{zoom:"40%"}}/>
+![img](../static/img/confirmTxn.png)
 
 ## Compile Proxy Contract
 
