@@ -35,9 +35,8 @@ $ truffle-flattener BEP20UpgradeableProxy.sol > BEP20UpgradeableProxyFlattened.s
 - Click the “Deploy” button and Metamask will pop up
 - Click the “confirm” button to sign and broadcast the transaction to BSC.
 - Then, you need to initialize the token: fill in all the parameters and click on “transact”
-
-![img](../static/img/deployImplementation.png =250x250)
-
+  
+<img src="../static/img/deployImplementation.png" alt="drawing" width="200"/>
 
 > Note: `Owner` should be the address who send the deploy transaction before.
 
