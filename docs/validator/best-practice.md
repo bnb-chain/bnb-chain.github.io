@@ -34,7 +34,7 @@ To obtain the latest world state and verify the validity of the state or to gene
 - Testnet still need to configure the StaticNodes manually and hence, the StaticNodes list is contained in the latest release's config.toml. For eg: For geth v1.3.7, the updated config.toml with static nodes can be looked over here: [geth v1.3.7 testnet config](https://github.com/bnb-chain/bsc/releases/download/v1.3.7/testnet.zip)
 
 ## Clarification of the snapshots
-As BSC will mainly support [PBSS & PebbleDB](https://forum.bnbchain.org/t/faq-pbss-pebbledb/2260), we will only cover snapshots of PBSS&PebbleDB and ignore snapshot of HashBased&LevelDB here. Please refer this [reference](https://github.com/bnb-chain/bsc-snapshots/issues/349).
+As BSC will mainly support [PBSS & PebbleDB](https://forum.bnbchain.org/t/faq-pbss-pebbledb/2260), we will only cover snapshots of PBSS&PebbleDB and ignore snapshot of HashBased&LevelDB here. Please refer to this [reference](https://github.com/bnb-chain/bsc-snapshots/issues/349).
 
 ## Troubleshooting for no peers in testnet 
 
