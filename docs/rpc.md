@@ -40,7 +40,7 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 ### Thrid-Party RPC Providers
 
-<!--* [Moralis](https://moralis.io/): <https://moralis.io/speedy-nodes/>-->
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
 
 * **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
 
