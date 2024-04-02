@@ -12,7 +12,7 @@
 2. How does the validator choose the best bid?
 
    The block reward is calculated as **gasFee**, the validator reward is
-   calculated as **gasFee\*(1 - commissionRate) - tipToBuilder.** Every
+   calculated as **gasFee*commissionRate - builderFee**. Every
    time the validator receives a new bid, it will compare its reward with
    the existing best bid. If it has better block reward and validator
    reward, the new bid will go into simulation. If simulation succeeds
