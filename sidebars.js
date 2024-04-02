@@ -192,7 +192,17 @@ const sidebars = {
                          'migration/evm-chains/token-migration']
                  }
                 ]
-            }
+            },
+                {
+                    type: 'category',
+                    label:'MEV Integration',
+                    items:[
+                        {type:'doc', id:'mev/overview', label:'Overview'},
+                        {type:'doc', id:'mev/validator-integration', label:'Validator Integration Guide'},
+                        {type:'doc', id:'mev/builder-integration', label:'Builder Integration Guide'},
+                        {type:'doc', id:'mev/faqs', label:'FAQs'},
+                    ]
+                }
           ],
           },
                    
