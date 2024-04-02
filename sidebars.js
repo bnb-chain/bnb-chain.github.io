@@ -152,7 +152,18 @@ const sidebars = {
               //collapsible: true,
               collapsed: true,
               label: 'Validator',
-              items: ['validator/overview', 'validator/create-val', 'validator/run-val'],
+              items: ['validator/overview', 'validator/create-val', 'validator/run-val',
+                  {
+                      type: 'category',
+                      label:'MEV',
+                      items:[
+                          {type:'doc', id:'mev/overview', label:'Overview'},
+                          {type:'doc', id:'mev/validator-integration', label:'Validator Integration Guide'},
+                          {type:'doc', id:'mev/builder-integration', label:'Builder Integration Guide'},
+                          {type:'doc', id:'mev/faqs', label:'FAQs'},
+                      ]
+                  }
+              ],
             },
             {
               type: 'category',
