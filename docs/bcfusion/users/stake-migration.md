@@ -29,7 +29,7 @@ Therefore this is the recommended way for stake migration.
 
 Go to the staking website and connect to your web3 wallet.
 
-Mainnet Staking Website: [https://staking.bnbchain.org/en/staking](https://staking.bnbchain.org/en/staking)
+Mainnet Staking Website: [https://www.bnbchain.org/en/staking](https://www.bnbchain.org/en/staking)
 
 Testnet Staking
 Website: [https://testnet-staking.bnbchain.org/en/staking](https://testnet-staking.bnbchain.org/en/staking)
