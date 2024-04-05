@@ -56,6 +56,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
 
+* **dRPC** <https://drpc.org/chainlist/bsc>
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
