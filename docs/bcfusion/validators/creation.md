@@ -44,7 +44,7 @@ to initiate the creation process.
 
 The following information is required to create a validator.
 
-### Basic Information
+#### Basic Information
 
 <img src={Validator1} width="600"/>
 
@@ -58,7 +58,7 @@ To enhance your validator's visibility, consider uploading additional informatio
 the [BSC validator directory](https://github.com/bnb-chain/bsc-validator-directory). Your avatar, once uploaded, will be
 displayed in the staking dApp.
 
-### Addresses
+#### Addresses
 
 <img src={Validator2} width="600"/>
 
@@ -70,7 +70,7 @@ The following addresses are required:
 - **Identity**: For associating a new validator with an existing one from the Beacon Chain. This is optional unless
   you're migrating an old validator.
 
-#### Generate Consensus Address
+##### Generate Consensus Address
 
 Download the BSC geth binary from [the official release page](https://github.com/bnb-chain/bsc/releases/tag/v1.3.10).
 
@@ -98,7 +98,7 @@ geth account import --datadir ${DATA_DIR}
 
 If you have created a validator on the Beacon Chain, please use a different one for the consensus address.
 
-#### Generate Vote Address and BLS Proof
+##### Generate Vote Address and BLS Proof
 
 To create a new BLS account please use the following command.
 
@@ -138,7 +138,7 @@ geth bls account generate-proof --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRESS} ${
 An example proof
 is `0xaf762123d031984f5a7ae5d46b98208ca31293919570f51ae2f0a03069c5e8d6d47b775faba94d88dbbe591c51c537d718a743b9069e63b698ba1ae15d9f6bf7018684b0a860a46c812716117a59c364e841596c3f0a484ae40a1178130b76a5`.
 
-#### Create indentity
+##### Create indentity
 
 Identity is used for assocaiting the new validator to the old validator created on the Beacon Chain, to facilitate
 delegators moving their stakes to the same validator operator when [migrations](../users/stake-migration.md).
@@ -151,7 +151,7 @@ Note: Make sure you are downloading the correct binary based on your machine's p
 you should download the `macos_binary.zip` file, and after unzip it your will find `bnbcli` (for mainet)
 and `tbnbcli`(for testnet). In the following, we will refer the binary as `bnbcli` for simplicity.
 
-##### Local Key
+###### Local Key
 
 ```shell
 ${workspace}/bin/bnbcli \
@@ -162,7 +162,7 @@ ${workspace}/bin/bnbcli \
   --chain-id ${BC_CHAIN_ID} \
 ```
 
-##### Ledger Key
+###### Ledger Key
 
 ```shell
 ${workspace}/bin/bnbcli \
@@ -197,7 +197,7 @@ PubKey: 0x021afe2e504c2e08941643fbe6422e256d581ebb13cb7f4678e755f886934440cd
 
 The `Signature` is your `identity` for associating to the old validator created on the Beacon Chain.
 
-### Commissions
+#### Commissions
 
 <img src={Validator3} width="600"/>
 
@@ -205,7 +205,7 @@ The `Signature` is your `identity` for associating to the old validator created 
 - **Max Rate**: The maximum commission rate that the validator can set.
 - **Max Change Rate**: The maximum rate change the validator can set to every epoch (1 day).
 
-### Self-delegation
+#### Self-delegation
 
 <img src={Validator4} width="600"/>
 
