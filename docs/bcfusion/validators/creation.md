@@ -86,7 +86,7 @@ geth account new --datadir ${DATA_DIR}
 - `DATA_DIR`: The directory where you want to store your key store files.
 
 This command will return the public address (i.e. consensus address) and the path to your private key.
-Please backup of the keyfile!
+Please backup the key file!
 
 An example consensus address is `0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5`.
 
