@@ -25,7 +25,7 @@ There will be several pahses to retrie Beacon Chain:
   wallet. All the BSC delegation will be undelegated automatically. (Estimated time on mainnet: 2024 Jun)
 - **Final Sunset Fork** - Cross-chain communication between the Beacon Chain and BSC will be completely stopped. (
   Estimated time on mainnet: 2024 Jun)
-- **Post BC Fusion** - Beacon Chain will be dumped and and a merkle tree will be generated for recover the assets, which
+- **Post BC Fusion** - Beacon Chain will be dumped and a merkle tree will be generated for recover the assets, which
   are binded to BSC however not transffered to BSC yet.
 
 All stakholders (e.g., token holders/owners, validators, project owners) should pay attention BNB Chain blog for
