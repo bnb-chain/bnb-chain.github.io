@@ -151,8 +151,37 @@ Note: Make sure you are downloading the correct binary based on your machine's p
 you should download the `macos_binary.zip` file, and after unzip it your will find `bnbcli` (for mainet)
 and `tbnbcli`(for testnet). In the following, we will refer the binary as `bnbcli` for simplicity.
 
-###### Local Key
+###### Setup account
 
+If you have mnemonic, you can import your account by running the following command:
+
+```shell
+$ ${workspace}/bin/bnbcli keys add <your-account-name> --recover --home ${HOME}/.bnbcli
+Enter a passphrase for your key:
+Repeat the passphrase:
+> Enter your recovery seed phrase:
+```
+
+You will be asked to set a password for this account and input your mnemonic. After that, you will get your account info.
+
+- `${workspace}/bin/bnbcli`: The path to the `bnbcli` binary executable. For testnnet, you should use `tbnbcli` instead.
+- `${HOME}`: The folder where you store your account information.
+
+Or if you have a ledger, you can import your account by running the following command:
+
+```shell
+${workspace}/bin/bnbcli keys add <your-account-name> --ledger --index ${index} --home ${HOME}/.bnbcli
+```
+
+- `${workspace}/bin/bnbcli`: The path to the `bnbcli` binary executable. For testnnet, you should use `tbnbcli` instead.
+- `${HOME}`: The folder where you store your account information.
+- `${index}`: The index of the ledger account you want to import.
+
+###### Get identity
+
+After the account is imported, you can get your identity by running the following command:
+
+For local key:
 ```shell
 ${workspace}/bin/bnbcli \
   validator-ownership \
@@ -162,8 +191,7 @@ ${workspace}/bin/bnbcli \
   --chain-id ${BC_CHAIN_ID} \
 ```
 
-###### Ledger Key
-
+For ledger key:
 ```shell
 ${workspace}/bin/bnbcli \
   validator-ownership \
