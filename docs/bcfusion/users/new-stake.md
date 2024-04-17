@@ -14,7 +14,7 @@ import Stake10 from '../../assets/bcfusion/user-stake10.png';
 Leverage the BNB staking dApp for streamlined management of your stakes. This guide provides a step-by-step walkthrough for using the dApp on both testnet and mainnet.
 
 - **Testnet**: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
-- **Mainnet**: *To be announced*
+- **Mainnet**: [https://www.bnbchain.org/en/bnb-staking](https://www.bnbchain.org/en/bnb-staking)
 
 ## Connecting Your Wallet
 

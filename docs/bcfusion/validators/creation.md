@@ -11,7 +11,7 @@ The BNB staking dApp is the official tool for creating and managing validators o
 
 - **Testnet
   **: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
-- **Mainnet**: *To be announced*
+- **Mainnet**: [https://www.bnbchain.org/en/bnb-staking](https://www.bnbchain.org/en/bnb-staking)
 
 ## Terminology
 
