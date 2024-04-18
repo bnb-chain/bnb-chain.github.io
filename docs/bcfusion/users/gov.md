@@ -18,7 +18,7 @@ covers the process of delegating voting power, creating proposals, voting on pro
 BNB Chain DAOs are created on Tally both for the mainnet and testnet.
 
 * Testnet: https://www.tally.xyz/gov/bnb-chain-testnet
-* Mainnet: to be announced
+* Mainnet: https://www.tally.xyz/gov/bnb-chain
 
 ## Parameters
 
