@@ -1,81 +1,111 @@
-# Wallet provider for Dapps 
+# Wallet provider for Dapps
 
-A wallet provider is a service that allows DApps to provide wallets to their end-users without having to deal with the security concerns of key management. It is a great way to make your Dapp ready to onboard a more mainstream audience.
+A wallet provider is a service that allows DApps to provide wallets to their end-users without having to deal with key management's security concerns. It is a great way to prepare your Dapp for onboarding a more mainstream audience.
 
-[Arkane](https://arkane.network/?utm_source=binance&utm_medium=documentation) allows you to easily integrate your app with the BNB Smart Chain, whether you already have an Dapp integrated with web3 or are building a new application from scratch. Arkane provides a smooth and delightful experience for you, your users on both web and mobile.
+[**Venly**](https://www.venly.io/?utm_source=binance&utm_medium=documentation) allows you to easily integrate your app with the BNB Smart Chain, whether you already have a Dapp integrated with web3 or are building a new application from scratch. **Venly** provides a smooth and delightful experience for you and your users on both web and mobile.
 
-Arkane will help you interact with the BNB Smart Chain, create blockchain wallets, create different asset types such as fungible (BEP20, ERC20), and non-fungible tokens - NFTs - (ERC721, and ERC1155) and interact with smart contracts. Next to a superior developer experience, you can give your users a user-friendly interface.
+Venly will help you interact with the BNB Smart Chain, create blockchain wallets, create different asset types such as fungible (BEP20, ERC20) and non-fungible tokens (NFTs—ERC721 and ERC1155), and interact with smart contracts. In addition to a superior developer experience, you can give your users a user-friendly interface.
 
-Each application is unique and has different needs, therefore they provide different ways of interacting with Arkane. Applications that have support for Web3 are recommended to integrate the [Arkane Web3 provider](https://docs.arkane.network/widget/web3-provider/getting-started), others are suggested to use the [Arkane Widget](https://docs.arkane.network/widget/widget/introduction).
-
+Each application is unique and has different needs, so it provides different ways of interacting with Venly. Applications that support Web3 are recommended to integrate the [Venly Web3 Provider](https://docs.venly.io/docs/web3js), while others are suggested to use the [Venly Widget](https://docs.venly.io/docs/widget-overview) or [Wallet-API](https://docs.venly.io/docs/wallet-api-overview).
 
 ## Key features
+
 - Support for Web and mobile applications
 - Offers social logins
 - Offers a fiat-on-ramp
 - Only wallet that supports NFTs (ERC721 and ERC1155) on BNB Smart Chain
-- Multichain, supports both BSC and Ethereum
+- Multichain supports both BSC and Ethereum
 - Easy to integrate using web3 
 - Build for a mainstream audience
 - Offers in-app customer support
 - Provide a complete test environment
 - Wallet creation via APIs
 
-
 ## Getting Started 🎉
-If you already support Web3-technology, you can improve the UX within your application by integrating the Arkane Web3 provider, a smart wrapper around the existing Web3 Ethereum JavaScript API.
 
-By making use of our Web3 provider you are able to leverage the full potential of Arkane with minimal effort and you will be able to onboard users that are less tech savvy without making them leave your application or download third party plugins. Integrating just takes 2 steps and 5 minutes
+If you already support Web3 technology, you can improve your application's UX by integrating the [Venly Web3 Provider](https://docs.venly.io/docs/web3js), a smart wrapper around the existing Web3 Ethereum JavaScript API.
 
-
-
+By using our [Web3 provider](https://docs.venly.io/docs/web3js), you can leverage the full potential of Venly with minimal effort, and you will be able to onboard less tech-savvy users without making them leave your application or download third-party plugins. Integrating just takes two steps and 5 minutes!
 
 **Don't support Web3 yet?**
->Don't worry we've got you covered with our 📦 [Widget - Arkane Connect](https://docs.arkane.network/widget/).
 
+> Don't worry we've got you covered with our 📦 [Venly - Widget](https://docs.venly.io/docs/widget-overview).
 
+### Step 1: Add the library to your project
 
-
-### Step 1: Add the library to your project 
 Install the library by downloading it to your project via NPM
 
-```
-npm i @arkane-network/web3-arkane-provider
-```
-
-followed by adding the script to the head of your page.
-
-```
-<script src="/node_modules/@arkane-network/web3-arkane-provider/dist/web3-arkane-provider.js"></script>
+```javascript
+npm i @venly/web3-provider
 ```
 
-After adding the javascript file to your page, a global Arkane object is added to your window. This object is the gateway for creating the web3 wrapper and fully integrates the widget - Arkane Connect.
+Alternatively, you could also include the library directly from a CDN
 
-### Step 2: Initialize the web3 provider
-Add the following lines of code to your project, it will load the Arkane web3 provider.
-
+```javascript
+<script src="https://unpkg.com/@venly/web3-provider/umd/index.js"></script>
 ```
-Arkane.createArkaneProviderEngine({clientId: ‘Arketype’}).then(provider => {
-    web3 = new Web3(provider);
-});
+
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/@venly/web3-provider/umd/index.js"></script>
 ```
-The web3 instance now works as if it was injected by parity or metamask. You can fetch wallets, sign transactions, and messages.
-### Congratulations, your dapp now supports Arkane 🎉
->🧙 To connect to Arkanes production environment and mainnet, you will need to [register your app](https://arkane-network.typeform.com/to/hzbcGJ) and request your [Client ID](https://docs.arkane.network/widget/deep-dive/authentication#client-id).
 
-Want to know more about the wonderful world Arkane has to offer, [check out their documentation](https://docs.arkane.network/widget/)
+## Step 2: Initialize the web3 provider
 
+Add the following lines of code to your project, it will load the Venly web3 provider.
 
+### Simple:
+
+```javascript
+import Web3 from 'web3';
+import { VenlyProvider } from '@venly/web3-provider';
+
+const Venly = new VenlyProvider();
+const options: VenlyProviderOptions = {
+  clientId: 'YOUR_CLIENT_ID'
+};
+
+const provider = await Venly.createProvider(options);
+const web3 = new Web3(provider);
+```
+
+### Advanced:
+
+```javascript
+import Web3 from 'web3';
+import { VenlyProvider } from '@venly/web3-provider';
+
+const Venly = new VenlyProvider();
+const options = {
+  clientId: 'YOUR_CLIENT_ID',
+  environment: 'staging', //optional, production by default
+  signMethod: 'POPUP', //optional, REDIRECT by default
+  bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
+  //optional: you can set an identity provider to be used when authenticating
+  authenticationOptions: {
+    idpHint: 'google'
+  },
+  secretType: 'ETHEREUM' //optional, ETHEREUM by default
+};
+
+const provider = await Venly.createProvider(options);
+const web3 = new Web3(provider);
+```
+
+You can fetch wallets, sign transactions, and messages.
+
+> Congratulations, your dapp now supports Venly 🎉
+> Ready to try out the Wallet-Widget? [Click here to get started](https://docs.venly.io/docs/widget-getting-started).
+
+> Want to know more about the wonderful world Venly has to offer, [check out their documentation](https://docs.venly.io/docs/widget-overview)
 
 ## Receive BNB and BEP20 tokens
 
-Every BSC wallet in Arkane is able to send and receive BNB or BEP20 tokens. They will automatically  appear in your wallet.
+Every BSC wallet in Venly can send and receive BNB or BEP20 tokens. They will automatically appear in your wallet.
 
 ![img](https://github.com/ArkaneNetwork/content-management/blob/master/tutorials/bsc/create_wallet/09.png?raw=true)
 
 ## Resources:
-* [BNB Smart Chain partners with Arkane](https://arkane.network/blog/binance-smart-chain-partners-with-arkane?utm_source=binance&utm_medium=documentation)
-* [Arkane Developer Introduction Video (25min)](https://www.youtube.com/watch?v=F5yFvIKHCPk)
 
-
-
+- [Venly Widget](https://docs.venly.io/docs/widget-overview)
+- [Web3 Wallet Providers](https://docs.venly.io/docs/ethersjs)
+- [Web3.js](https://docs.venly.io/docs/web3js)
