@@ -17,6 +17,9 @@ delegations to the new native staking system through two primary methods:
 * Cross Chain Redelegation
 * Undelegation, Cross Chain Transfer, New Delegation
 
+Be noted, for delegations which are created in [BEP-153](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP153.md) 
+format, please refer to [this document](bep153-stake-migration.md) for the migration process.
+
 ## Cross Chain Redelegation
 
 Cross chain redelegation allow users to migrate their delegations to BSC as delegations to native BSC validators,

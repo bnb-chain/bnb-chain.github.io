@@ -1,15 +1,17 @@
 # Stake Migration For BEP153
 
 The [BEP-153](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP153.md) has been introduced as a native staking
-protocol onto BNB Smart Chain. With this BEP, individual or institution delegators can stake BNB to specified validators
+protocol onto BNB Smart Chain before [BNB Chain fusion](https://www.bnbchain.org/en/bnb-chain-fusion).
+With this BEP, individual or institution delegators can stake BNB to specified validators
 and get staking rewards on the BSC side directly.
 
 However, underlying the protocol users' BNB are crosschain transferred
 to the Beacon Chain and then staked there. With the [BNB Chain fusion](https://www.bnbchain.org/en/bnb-chain-fusion),
 the delegators of BEP-153 needs to migrate their stakes to the [new staking system](new-stake.md).
 
-For BEP-153 stakes, the delegators need to undelegate, wait for the unbounding period (7 days), and then can get their
-BNB back to staking on the new staking system.
+For BEP-153 stakes, the delegators need to undelegate, wait for the unbounding period (7 days), and then get their
+BNB back to stake on the new staking system.
+
 This document will guide you through the process of stake migration for BEP-153 delegators, including Liquid
 Staking Derivatives (LSD) protocol's users.
 
@@ -50,4 +52,4 @@ Staking Derivatives (LSD) protocol's users.
 For LSD protocol projects, you **MUST** finish your undelegations before
 the [Second Sunset Fork](https://www.bnbchain.org/en/bnb-chain-fusion) of Beacon Chain.
 In the Second Sunset Fork, all the delegations will automatically be returned to the delegator addressess.
-If your delegation address is not a EOA address, you will lose the control of your stakes and the fund will be lost.
+If your delegation address is not an EOA address, you will lose the control of your stakes and the fund will be lost.
