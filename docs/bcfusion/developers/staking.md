@@ -209,7 +209,7 @@ apy := math.Pow(1+rate, 365) - 1.0
 
 ### How to get the unbonding delegations of a delegator, and his/her unbonding requests which can be claimed?
 
-The `StakeHub` contract provides the `getUnbondingRequest` function to get the unbonding delegation count for a
+The credit contract provides the `pendingUnbondRequest` function to get the unbonding delegation count for a
 delegator.
 To review the details of a unbond request, please call the `unbondRequest` function with a `index` parameter to
 define which unbond request will be returned.
