@@ -83,7 +83,7 @@ const sidebars = {
                             type: 'category',
                             collapsed: true,
                             label: 'Tutorials on Third Party Wallets',
-                            items:['wallets/wallet-tutorial-overview','wallet/trustwallet', 'wallet/metamask','wallet/arkane', 'wallet/math', 'wallet/myetherwallet',
+                            items:['wallets/wallet-tutorial-overview','wallet/trustwallet', 'wallet/metamask','wallet/venly', 'wallet/math', 'wallet/myetherwallet',
                               'wallet/infinitywallet', 'wallet/AlphaWallet', 'wallet/coin98wallet',
                               'wallet/ledger', 'wallet/trezor', 'wallets/tutorial/BSCimToken', 'learn/gnosis']
                         },
@@ -316,6 +316,7 @@ const sidebars = {
                           {type:'doc', id:'bcfusion/users/swaps', label:'Manage Your Atomic Swaps'},
                           {type:'doc', id:'bcfusion/users/timelocks', label:'Manage Your TimeLocks'},
                           {type:'doc', id:'bcfusion/users/stake-migration', label:'Manage Your Old Delegations'},
+                          {type:'doc', id:'bcfusion/users/bep153-stake-migration', label:'BEP153 and LSD Stake Migration'},
                           {type:'doc', id:'bcfusion/users/new-stake', label:'Manage Your New Delegations'},
                           {type:'doc', id:'bcfusion/users/gov', label:'Participate in Governance'},
                       ]
