@@ -68,3 +68,20 @@ To undelegate:
 After the unbonding period, you can claim your stakes by clicking the `Claim` button.
 
 <img src={Stake10} width="400"/>
+
+## FAQs
+
+### Which wallet can be used to delegate to the new validators?
+
+Currently, `MetaMask` and `TrustWallet` (mainnet only) and are supported, along with any wallets compatible
+with `WalletConnect`.
+
+### As a validator operator, should I keep both the original validator after I create a new validator on the BSC?
+
+It is recommended to keep both validators for a period of time to allow for smooth migration.
+It would be better to ask your delegators to [migrate their stakes](stake-migration.md) to the new validator.
+After your new validator is elected as cabinet or candidate, you can safely retire the old validator.
+
+### How should I migrate my delegations if my BNB was delegated through the BSC smart contract?
+
+Please refer to the [stake migration guide](bep153-stake-migration.md) for BEP153 delegations.
