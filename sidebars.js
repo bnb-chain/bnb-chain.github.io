@@ -67,6 +67,7 @@ const sidebars = {
                             label:'Tutorials',
                             items:[
                             {type:'doc', id:'beaconchain/wallet/tutorial/how-to-create-a-wallet-on-trustwallet', label:'Trust Wallet Guide'},
+                            {type:'doc', id:'beaconchain/wallet/tutorial/assets/how-to-create-venly-wallet', label:'Venly Wallet Guide'},
                             {type:'doc', id:'beaconchain/wallet/tutorial/ledger-nano-s-usage-guide', label:'Ledger Wallet Guide'},
                             {type:'doc', id:'beaconchain/wallet/tutorial/trezor-model-t-user-guide', label:'Trezor Wallet Guide'},
                             {type:'doc', id:'beaconchain/wallet/tutorial/bep8', label:'How to manage BEP8 token with Web Wallet'},
