@@ -1,7 +1,3 @@
-# BNBChain Knowlege Base
-
-https://docs.bnbchain.org
-
 # Welcome to BNBChain Knowledge Base
 
 This is the BNBChain Knowledge Base documentation for the BNBChain developers.  

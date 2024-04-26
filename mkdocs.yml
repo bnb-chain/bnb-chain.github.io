@@ -1,0 +1,14 @@
+site_name: BNBChain Knowledge Base
+theme:
+  name: material
+  features:
+    - navigation.instant
+  palette:
+    primary: custom
+  plugins:
+    - search
+extra_css:
+- stylesheets/extra.css
+extra:
+  homepage: https://bnbchain.org
+
