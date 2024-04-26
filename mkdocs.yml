@@ -1,14 +1,65 @@
+# Project information
 site_name: BNBChain Knowledge Base
+site_url: https://www.bnbchain.org
+site_author: BNB Chain
+site_description: >-
+  Write your documentation in Markdown and create a professional static site in
+  minutes – searchable, customizable, in 60+ languages, for all devices
+# Repository
+repo_name: bnbchain
+repo_url: https://github.com/bnb-chain/
+
+# Copyright
+copyright: Copyright &copy; 2016 - 2024 Martin Donath
+markdown_extensions:
+  - md_in_html
+plugins:
+  - offline
+  - search
+nav:
+  - Home: index.md
+  - Announcements: ./announce/index.md
+  - BNB Smart Chain: 
+    - Overview: ./bnb_smart_chain/index.md
+  - BNB opBNB:
+    - Overview: ./bnb_opbnb/index.md
+  - BNB Greenfield:
+    - Overview: ./bnb_greenfield/index.md
 theme:
   name: material
+  logo: assets/bnb.svg
+  favicon: assets/bnb.svg
   features:
     - navigation.instant
+    - navigation.tabs
+    - navigation.sections
   palette:
-    primary: custom
-  plugins:
-    - search
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 extra_css:
 - stylesheets/extra.css
+
 extra:
   homepage: https://bnbchain.org
+  alternate:
+    - name: English
+      link: /
+      lang: en
+
+# Copyright
+copyright: Copyright &copy; 2024 BNB Chain
 

@@ -1,7 +1,3 @@
-# BNBChain Knowlege Base
-
-https://docs.bnbchain.org
-
 # Welcome to BNBChain Knowledge Base
 
 This is the BNBChain Knowledge Base documentation for the BNBChain developers.  
@@ -21,3 +17,8 @@ This doc site is built with MkDocs, a static site generator. Please visit [mkdoc
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+## 📜 License
+
+Copyright (c) 2024 BNBChain 
+

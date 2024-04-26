@@ -1,19 +1,23 @@
-# Welcome to BNBChain Knowledge Base
+---
+hide:
+- navigation
+- toc
+---
 
-This is the BNBChain Knowledge Base documentation for the BNBChain developers.  
+<style>
 
-This doc site is built with MkDocs, a static site generator. Please visit [mkdocs.org](https://www.mkdocs.org).
+.md-content__button.md-icon {
+	display: none;
+}
 
-## Commands
+.hero-content-flex {
+	bottom: 5px;
+}
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+</style>
 
-## Project layout
+<div class="main">
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<p>test</p>
+
+</div>
