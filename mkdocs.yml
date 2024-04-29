@@ -14,23 +14,33 @@ markdown_extensions:
 plugins:
   - offline
   - search
+  # Page tree
 nav:
   - Home: index.md
-  - Announcements: ./announce/index.md
-  - BNB Smart Chain: 
+  - Annoucements: ./announce/index.md
+  - BNB Smart Chain:
     - Overview: ./bnb_smart_chain/index.md
   - BNB opBNB:
-    - Overview: ./bnb_opbnb/index.md
-  - BNB Greenfield:
-    - Overview: ./bnb_greenfield/index.md
+    - Introduction: ./bnb_opbnb/index.md
+    - Core Concepts:
+      - Why BSC Requires opBNB: ./bnb_opbnb/core-concepts/why-bsc-requires-opbnb.md
+      - Why OP Stack: ./bnb_opbnb/core-concepts/why-opstack.md
+      - Optimizations on OP Stack: ./bnb_opbnb/core-concepts/optimisations-on-opstack.md
+      - Metrics: ./bnb_opbnb/core-concepts/opbnb-metrics.md
+      - Protocol Addresses: ./bnb_opbnb/core-concepts/opbnb-protocol-addresses.md
+      - BNBChain Rollup as Service: ./bnb_opbnb/core-concepts/raas.md
+
 theme:
   name: material
   logo: assets/bnb.svg
   favicon: assets/bnb.svg
   features:
-    - navigation.instant
-    - navigation.tabs
+    - navigation.footer
+    - navigation.indexes
     - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
