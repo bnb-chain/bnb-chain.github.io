@@ -4,13 +4,11 @@ site_url: https://www.bnbchain.org
 site_author: BNB Chain
 site_description: >-
   Write your documentation in Markdown and create a professional static site in
-  minutes – searchable, customizable, in 60+ languages, for all devices
+  minutes – searchable, customizable for all devices
 # Repository
 repo_name: bnbchain
 repo_url: https://github.com/bnb-chain/
 
-# Copyright
-copyright: Copyright &copy; 2016 - 2024 Martin Donath
 markdown_extensions:
   - md_in_html
 plugins:
@@ -36,7 +34,7 @@ theme:
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: black
+      primary: white
       scheme: default
       toggle:
         icon: material/brightness-7

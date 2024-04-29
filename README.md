@@ -1,8 +1,10 @@
 # Welcome to BNBChain Knowledge Base
 
-This is the BNBChain Knowledge Base documentation for the BNBChain developers.  
+This is the BNBChain Knowledge Base documentation for the BNBChain developers. It is based on the Mkdocs Material theme. 
 
-This doc site is built with MkDocs, a static site generator. Please visit [mkdocs.org](https://www.mkdocs.org).
+## Prerequisite  
+
+* `pip install mkdocs-material` - install mkdocs-material.
 
 ## Commands
 
