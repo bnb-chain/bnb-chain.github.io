@@ -69,7 +69,7 @@ Optimize L1 receipt retrieval performance
 
 ## Import JSON Model
 
-Monitor your node's health by importing the [rpc_nodes.json](../monitor/rpc_nodes.json) model.
+Monitor your node's health by importing the [rpc_nodes.json](./rpc_nodes.json) model.
 
 ## Important Metrics
 

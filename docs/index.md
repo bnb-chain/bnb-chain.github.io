@@ -33,3 +33,7 @@ hide:
 
 
 </div>
+
+##### Follow us to stay updated on everything BNB Chain!
+
+[Website](https://www.bnbchain.org/en?ref=binance.ghost.io) | [Twitter](https://twitter.com/BNBCHAIN?ref=binance.ghost.io) | [Twitter (Devs)](https://twitter.com/BNBChainDevs?ref=binance.ghost.io) | [Telegram](https://t.me/bnbchain?ref=binance.ghost.io) | [dApp Store](https://dappbay.bnbchain.org/?ref=binance.ghost.io) | [YouTube](https://www.youtube.com/@BNBChainOfficial?ref=binance.ghost.io) | [Discord](https://discord.gg/bnbchain?ref=binance.ghost.io) | [LinkedIn](https://www.linkedin.com/company/bnbchaininnovation/?ref=binance.ghost.io) | [Build N' Build Forum](https://www.buildnbuild.dev/?ref=binance.ghost.io) | [Dev Community](https://bnbdev.community/?ref=binance.ghost.io)

@@ -9,3 +9,4 @@ Besides the [differentiators of bedrock](https://docs.optimism.io/stack/differen
 - Capacity can reach to > 100m gas per second, which is much higher than other layer 2 solutions on the Ethereum.
 - Gas fee of transfer can reach as low as $0.001 on average.
 - block time is 1 second.
+

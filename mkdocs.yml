@@ -67,6 +67,13 @@ nav:
       - BEP20 CrossChain Introduction: ./bnb_opbnb/developers/bep20-crosschain.md
       - Geth P2P Sync Feature: ./bnb_opbnb/developers/geth-sync.md
       - Developers Cheat Sheet: ./bnb_opbnb/developers/cheat-sheet.md
+    - Advanced Topics:
+      - Local Development: ./bnb_opbnb/advanced/local-dev-env.md
+      - Build a Full Stack dApp on opBNB: ./bnb_opbnb/advanced/full-stack-dapp.md
+      - Verify Smart Contract on opBNBScan explorer: ./bnb_opbnb/advanced/verify-on-opbnbscan.md
+      - Node Best Practices: ./bnb_opbnb/advanced/node-best-practices.md
+      - Local Node: ./bnb_opbnb/advanced/local-node.md
+      - Run with PebbleDB and PBSS: ./bnb_opbnb/advanced/run-with-pebbledb-and-pbss.md
 
 theme:
   name: material
