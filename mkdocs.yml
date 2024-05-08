@@ -14,7 +14,7 @@ markdown_extensions:
 plugins:
   - offline
   - search
-  # Page tree
+# Page tree
 nav:
   - Home: index.md
   - Announcements: ./announce/index.md
