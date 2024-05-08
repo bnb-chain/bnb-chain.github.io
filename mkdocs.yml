@@ -18,6 +18,31 @@ plugins:
 nav:
   - Home: index.md
   - Announcements: ./announce/index.md
+  - BNB Beacon Chain Fusion:
+    - Overview: ./bc_fusion/index.md
+    - For Users:
+      - Manage Your Assets: ./bc_fusion/users/assets.md
+      - Manage Your Atomic Swaps: ./bc_fusion/users/swaps.md
+      - Manage Your TimeLocks: ./bc_fusion/users/timelocks.md
+      - Manage Your Old Delegations: ./bc_fusion/users/stake-migration.md
+      - BEP153 and LSD Stake Migration: ./bc_fusion/users/bep153-stake-migration.md
+      - Manage Your New Delegations: ./bc_fusion/users/new-stake.md
+      - Participate in Governance: ./bc_fusion/users/gov.md
+    - For Token Issuers:
+      - Bind Your Tokens: ./bc_fusion/owners/bind.md
+    - For Validators:
+      - Create New Validators: ./bc_fusion/validators/creation.md
+      - Migrate Your Validators: ./bc_fusion/validators/migrations.md
+      - Key Management: ./bc_fusion/validators/key-management.md
+    - For Developers:
+      - New Staking: ./bc_fusion/developers/staking.md
+      - New Governance: ./bc_fusion/developers/gov.md
+      - Cross Chain Redelegation: ./bc_fusion/developers/crosschain-redelegation.md
+      - Build-in System Contracts: ./bc_fusion/developers/system-contracts.md
+    - Native Staking & Governance:
+      - Staking: ./bc_fusion/validators/staking.md
+      - Slash: ./bc_fusion/validators/slash.md
+      - Governance: ./bc_fusion/validators/gov.md
   - BNB Smart Chain:
     - Overview: ./bnb_smart_chain/index.md
   - BNB opBNB:
