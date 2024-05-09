@@ -1,4 +1,4 @@
-[# Staking
+# Staking
 
 This guide provides an overview of the key operations of staking, including creating validators,
 editing validator information, and performing delegation operations.
