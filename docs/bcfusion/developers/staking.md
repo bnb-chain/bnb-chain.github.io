@@ -249,4 +249,4 @@ To get more information of a specific validator, please refer to the following f
 ## Contract ABI
 
 For the full interfaces of `StakeHub`, please refer
-to [the ABI file](https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi/stakehub.abi).]()
+to [the ABI file](https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi/stakehub.abi).
