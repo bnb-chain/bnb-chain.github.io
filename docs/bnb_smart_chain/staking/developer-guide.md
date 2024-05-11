@@ -1,4 +1,4 @@
-# Build Staking dApps on BSC
+# BSC Staking Developer Guide
 
 This guide covers essential staking operations like creating validators, editing their information, and delegating.
 Developers can use these interfaces to build stake-related dApps.
