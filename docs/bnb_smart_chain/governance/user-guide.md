@@ -1,5 +1,5 @@
 
-# Governance with Tally
+# Manage Governance with Tally dApp
 
 This document provides a guide on how to participate in governance on the BNB Smart Chain (BSC) using Tally. It
 covers the process of delegating voting power, creating proposals, voting on proposals, and executing proposals.
@@ -12,8 +12,6 @@ BNB Chain DAOs are created on Tally both for the mainnet and testnet.
 ## Parameters
 
 There are several parameters which will affect the governance process on the BSC.
-Especially, the governance process on the BSC only enabled after enough voting power is migrated from the Beacon Chain
-to the BSC (i.e., the `startGovThreshold` parameter).
 
 | Parameter               | Description                                                                      | Mainnet Value | Testnet Value |
 |-------------------------|----------------------------------------------------------------------------------|---------------|---------------|
@@ -35,16 +33,16 @@ After you have delegated your BNB to a BSC validator, you can start participatin
 To participate in BSC governance, you first need to delegate your voting power to a validator or yourself if you wish to
 vote directly.
 
-<img src="../../assets/bcfusion/tally1.png" width="800"/>
+<img src="../img/gov/tally1.png" width="800"/>
 
-You can click the `My voting power` button on the top right corner of the screen to delegate your voting power.
+You can click the `My voting power` button in the top right corner of the screen to delegate your voting power.
 
-<img src="../../assets/bcfusion/tally2.png" width="800"/>
+<img src="../img/gov/tally2.png" width="800"/>
 
 You can delegate your voting power to yourself if you want to vote/create proposals directly, or to others if you want
 him/her to vote/create proposals on your behalf.
 
-<img src="../../assets/bcfusion/tally3.png" width="800"/>
+<img src="../img/gov/tally3.png" width="800"/>
 
 If you delegate the voting power to yourself, you will see the current number of your voting power to participate in the
 governance.
@@ -56,15 +54,15 @@ network. Be noted that a user can only has one proposal in ative/pending state a
 
 To create a proposal, click on the "Create new proposal" button on the top right corner of the screen.
 
-<img src="../../assets/bcfusion/tally11.png" width="800"/>
+<img src="../img/gov/tally11.png" width="800"/>
 
 After you have created a proposal, you can add a title, description, and a list of actions for the proposal.
 
-<img src="../../assets/bcfusion/tally4.png" width="800"/>
+<img src="../img/gov/tally4.png" width="800"/>
 
 A text proposal only requires a title and a description, and it will not be executed by the network for there is no action.
 
-<img src="../../assets/bcfusion/tally5.png" width="800"/>
+<img src="../img/gov/tally5.png" width="800"/>
 
 To add an action, click on the "Add action" button, and fill in the details of the action.
 
@@ -76,7 +74,7 @@ To add an action, click on the "Add action" button, and fill in the details of t
 
 After you intpur all the details, click on the "Publish" will publish your proposal.
 
-<img src="../../assets/bcfusion/tally6.png" width="800"/>
+<img src="../img/gov/tally6.png" width="800"/>
 
 You can also cancel a proposal by clicking on the "Cancel proposal" button.
 
@@ -85,11 +83,11 @@ You can also cancel a proposal by clicking on the "Cancel proposal" button.
 Once a proposal is live (i.e., after the `votingDelay` and before the `votingPeriod`), you can cast your vote to
 support or oppose the proposal. To vote on a proposal, click on the "Vote on chain" button.
 
-<img src="../../assets/bcfusion/tally7.png" width="800"/>
+<img src="../img/gov/tally7.png" width="800"/>
 
 You can cast `For`, or `Against`, or `Abstain` votes to the proposal.
 
-<img src="../../assets/bcfusion/tally8.png" width="400"/>
+<img src="../img/gov/tally8.png" width="400"/>
 
 ### Execute Proposals
 
@@ -98,12 +96,12 @@ If a proposal reaches the quorum (i.e., reaches the `quorumNumberRator` of the t
 
 To execute a proposal, fistly the proposal needs to be queued by clicking the `Queue` button.
 
-<img src="../../assets/bcfusion/tally9.png" width="800"/>
+<img src="../img/gov/tally9.png" width="800"/>
 
 After the proposal is queued and exceeds the timelock duration (i.e, the `timerlockDelay` duration),
 it can be executed by anyone by clicking the `Execute` button.
 
-<img src="../../assets/bcfusion/tally10.png" width="800"/>
+<img src="../img/gov/tally10.png" width="800"/>
 
 ### More References
 

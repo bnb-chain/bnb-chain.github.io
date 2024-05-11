@@ -20,34 +20,30 @@ Staking Derivatives (LSD) protocol's users.
 1. Open the [Staking contract](https://bscscan.com/address/0x0000000000000000000000000000000000002001) on BSCScan
 
 2. You can find your delegation information on the "Transactions" tab, or you can query the contract as the following:
-    * Go to
-      the [Staking contract tab](https://bscscan.com/address/0x0000000000000000000000000000000000002001#readContract)
+    * Go to the [Staking contract tab](https://bscscan.com/address/0x0000000000000000000000000000000000002001#readContract)
     * Query the `getDelegated` function with your address as the parameter
-
-![img](../../assets/bcfusion/bep153-migration1.png)
+   ![img](../../assets/bcfusion/bep153-migration1.png)
 
 3. Undelegate your delegations by calling
    the `undelegate` [function](https://bscscan.com/address/0x0000000000000000000000000000000000002001#writeContract)
-
-![img](../../assets/bcfusion/bep153-migration2.png)
+   ![img](../../assets/bcfusion/bep153-migration2.png)
 
 4. Afther the unbounding period (7 days), call
    the `claimUndelegated` [function](https://bscscan.com/address/0x0000000000000000000000000000000000002001#writeContract)
    to get your BNB back
-
-![img](../../assets/bcfusion/bep153-migration3.png)
+   ![img](../../assets/bcfusion/bep153-migration3.png)
 
 5. Then you can delegate your BNB to the new staking system by following the [new staking guide](new-stake.md)
 
-## For LSD Protocal Delegators
+## For LSD Protocol Delegators
 
-1. Go to your LSD protocal dApps and undelegate your delegations
+1. Go to your LSD protocol dApps and undelegate your delegations
 
 2. Wait for the unbounding period (7 days)
 
 3. Then you can delegate your BNB to the new staking system by following the [new staking guide](new-stake.md)
 
-## For LSD Protocal Projects
+## For LSD Protocol Projects
 
 For LSD protocol projects, you **MUST** finish your undelegations before
 the [Second Sunset Fork](https://www.bnbchain.org/en/bnb-chain-fusion) of Beacon Chain.
