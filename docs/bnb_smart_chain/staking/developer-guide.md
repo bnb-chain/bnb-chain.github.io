@@ -1,4 +1,4 @@
-# BSC Staking Developer Guide
+# Build BSC Staking dApps Guide
 
 This guide covers essential staking operations like creating validators, editing their information, and delegating.
 Developers can use these interfaces to build stake-related dApps.
@@ -145,6 +145,7 @@ The credit contract is a BEP20 contract, and the ABI is the same
 as [Stake Credit contract](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/stakecredit.abi).
 
 It provides functions for querying delegations, including:
+
 * `balanceOf(address)`: Get the credit balance of a delegator.
 * `getPooledBNB(address)`: Get the pooled BNB amount of a delegator.
 * `getPooledBNBByShares(uint256)`: Get the pooled BNB amount for a specific amount of shares.

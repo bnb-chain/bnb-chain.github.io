@@ -1,4 +1,4 @@
-# BSC Slashing Events
+# BSC Slash Rules
 
 Three types of malicious behaviors can lead to slashing on the BSC network.
 
@@ -13,11 +13,9 @@ Anyone can submit a slash request with evidence of Double Sign. The evidence mus
 
 If the evidence is valid:
 
-1. **10,000BNB** would be slashed from the **self-delegated** BNB of the validator
-2. If the self-delegator’s stake amount on the validator is less than 10,000BNB, then the unbonding delegation balance would be slashed if it exists until totally 10,000BNB slashed from the self-delegator of the validator. However, if all the slashed BNB is less than 10,000, all the remaining stake of the self-delegator will be slashed
-3. **1000** of slashed BNB would allocate to the submitter as a reward
-4. The remaining slashed BNB will be allocated to the custody addresses of validators participating in the next distribution
-5. Set the validator ‘jailed’ with a duration of **292 years**, and remove it from the active validator set
+1. **200BNB** would be slashed from the **self-delegated** BNB of the validator
+2. The remaining slashed BNB will be allocated to the custody addresses of validators participating in the next distribution 
+3. Set the validator ‘jailed’ with a duration of **30 days**, and remove it from the active validator set
 
 
 ## Malicious Vote
@@ -34,7 +32,7 @@ If the evidence is valid:
 
 1. **200BNB** would be slashed from the **self-delegated** BNB of the validator
 2. **5BNB** would allocate to the submitter from the system reward contract as a reward if the validator is active when the evidence submitted
-3. The remaining slashed BNB will be allocated to the custody addresses of validators participating in the next distribution
+3. The remaining slashed BNB will be allocated to the credit addresses of validators participating in the next distribution
 4. Set the validator ‘jailed’ with a duration of **30 days**, and remove it from the active validator set
 
 ## Unavailability
@@ -45,6 +43,6 @@ If a validator misses over 50 blocks in 24 hours, they will not receive the bloc
 
 If a validator misses more than 150 blocks in 24 hours:
 
-1. **50BNB** would be slashed from the  **self-delegated** BNB of the validator
+1. **10BNB** would be slashed from the  **self-delegated** BNB of the validator
 2. The slashed BNB will be allocated to the custody addresses of validators participating in the next distribution
 3. Set the validator ‘jailed’ with a duration of **2 days**, and remove it from the active validator set

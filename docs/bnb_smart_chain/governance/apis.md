@@ -1,4 +1,4 @@
-# BSC Governance Developer Guide
+# BSC Governance APIs
 
 This guide gives an overview of governance operations for BSC, such as creating proposals, casting votes, and executing them.
 

@@ -12,7 +12,7 @@ The governance module is derived from [OpenZeppelin Governor](https://docs.openz
 ## Workflow
 
 The workflow of the governance module consists of three stages: submit proposal, cast vote, and execute proposal. Each
-stage has its own requirements and parameters, which can be configured by the BNB smart chain governance parameters.
+stage has its own requirements and parameters, which can be configured by the BNB smart chain governance too.
 
 ### Submit Proposal
 

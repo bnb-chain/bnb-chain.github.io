@@ -21,18 +21,20 @@ BSC uses a consensus mechanism which combines DPoS and PoA for consensus, so tha
 * Validators take turns to produce blocks in a PoA manner.
 * Validator set are elected in and out based on a staking based governance.
 
-To determinate which validators are eligible to produce blocks, that's why staking mechanism is needed.
+The staking mechanism is essential for determining the eligibility of validators to produce blocks.
 
 ### Validator Set
 
 The validator set is the group of nodes that are responsible for validating transactions and producing blocks on the
-BSC. The validator set is determined by the amount of staking credit each validator has, which reflects the amount of
-BNB staked by the validator and its delegators. The top validators with the most staking credit are selected as the
+BSC. The validator set is determined by the amount of staking each validator has, which reflects the amount of
+BNB staked by the validator and its delegators. The top validators with the most staking are selected as the
 active validator set, and they take turns to propose and vote on blocks. The rest of the validators are in the standby
-validator set, and they can join the active validator set if their staking credit increases or if some active validators
+validator set, and they can join the active validator set if their staking increases or if some active validators
 drop out.
 
-Validators can join or leave the validator set by creating or editing their validator information.
+Any organization or individual can become part of the validator set by creating their validator on-chain and securing sufficient delegations.
+Similarly, they can opt-out by simply withdrawing all their BNB delegations.
+
 Validators can also be removed from the validator set by slashing, which is a penalty for misbehaving or being offline.
 
 ### Validator Election
@@ -40,7 +42,7 @@ Validators can also be removed from the validator set by slashing, which is a pe
 There are different rols for validators:
 
 * Cabinet: the top K (which is 21 currently) validators who get the most chance of producing blocks.
-* Candidate: the top (k, K+NumOfCandidates] validators who get a small chance of producing blocks.
+* Candidate: the top (K, K+NumOfCandidates] (which is (21,45] currently) validators who get a small chance of producing blocks.
 * Inactive: the reset validators who get no chance of producing blocks.
 
 ![img](../../assets/bcfusion/validator-election.png)
@@ -67,7 +69,7 @@ There are several built-in contracts (i.e., system contracts) to facilitate the 
   triggers penalties once a certain threshold is reached. Additionally, this contract also handles other types of slash
   events, such as double signing and malicious voting in fast finality.
 
-* Stake Hub Contract. This contract serves as the entry point for managing validators and delegations,
+* Stake Hub Contract. This contract serves as the entrypoint for managing validators and delegations,
   while also implementing the logic for slashing specific validators. For delegation/undelegation/redelegation
   operations,
   it will call different validators' implementation contracts to manage a user's stake.
@@ -79,6 +81,9 @@ between credit and BNB. The token name of a staking credit is "stake {{validator
 and the symbol is "st{{validator moniker}}". The contract will be created by the Stake Hub Contract when a validator
 is created.
 
+Whenever a user delegates BNB, an equivalent quantity of credit tokens are created. On the other hand,
+when a user withdraws their delegation, a corresponding amount of credit tokens are destroyed, thereby releasing the BNB.
+
 ### Reward Distribution
 
 The staking reward comes from transaction fee - when a block is produced, the majority of the block fee will be
@@ -89,10 +94,9 @@ undelegates and claims his/her stakes, the accumulated reward and the original s
 
 ## Validator Operations
 
-Validators are the nodes that run the BNB smart chain software and participate in the consensus process. Validators need
-to have a minimum amount of BNB staked to their own validator address, and they can also accept delegations from other
-BNB holders who want to stake with them. Validators earn rewards from the transaction fees, and
-they share a portion of their rewards with their delegators.
+Validators are nodes running BNB Smart Chain software, participating in the consensus process.
+They require a minimum BNB stake at their validator address and can receive delegations from other BNB holders.
+Validators earn rewards from transaction fees and share most of these rewards with their delegators.
 
 ### Create Validator
 
@@ -121,7 +125,7 @@ A validator can edit their validator information by sending  `EditConsensusAddre
 accordingly:
 
 - **New consensus address**: The new consensus address of the validator's node.
-- **New commission**: The new percentage of the rewards that the validator will keep for themselves, which can
+- **New commission rate**: The new percentage of the rewards that the validator will keep for themselves, which can
   only be increased within a maximum change rate limit.
 - **New description**: The new information about the validator, such as moniker, identiy, website, etc.
 - **New vote address**: The new vote address for participating fast finality.
@@ -132,10 +136,8 @@ the previous rewards will be distributed according to the previous commission ra
 
 ## Delegator Operations
 
-Delegators are the BNB holders who stake their BNB to a validator of their choice, and share the rewards and the risks
-with the validator. Delegators can choose any validator from the active or the standby validator set, and they can
-switch between validators at any time. Delegators can also undelegate their BNB from a validator, and claim their
-rewards at any time.
+Delegators are BNB holders who stake their BNB with a validator, sharing rewards.
+They can select any active or standby validator, switch between them, undelegate their BNB, and claim rewards anytime.
 
 ### Delegate
 
@@ -148,8 +150,7 @@ the following information:
   to the validator for governance.
 
 The `Delegate` transaction will deduct the amount of BNB from the delegator address and issue the corresponding staking
-credit to the validator. The delegator will then share the rewards and the risks with the validator, according to the
-commission rate and the slashing rate of the validator.
+credit to the validator. The validator will then share the rewards with the delegator, according to the commission rate.
 
 The credit tokens (or share) a delgator will get is calculated
 as - `delegation amount` * `total supply of credit token` / `total pooled BNB`.
@@ -172,9 +173,9 @@ contract, specifying the following information:
 - **Delegate Voting Power**: The flag to indicate whether the delegator would like to delegate his/her voting power
   to the destination validator for governance.
 
-The `Redelegate` transaction will deduct the amount of staking credit from the source validator and issue the
-corresponding staking credit to the destination validator. The delegator will then share the rewards and the risks with
-the destination validator, according to the commission rate and the slashing rate of the destination validator.
+The `Redelegate` transaction will deduct the amount of source validator staking credit and issue the corresponding dest validator staking credit to the user.
+The destination validator will then share the rewards with the delegator, according to the commission rate of the destination validator.
+
 The `Redelegate` transaction does not incur the unbonding period, but it will incur the redelegation fee,
 which is designed to prevent delegators from frequently switching between validators to chase
 the highest rewards or avoid the highest risks. The current fee rate is 0.002%.
@@ -187,10 +188,9 @@ specifying the following information:
 - **Operator address**: The address of the validator, which will send the BNB to the delegator.
 - **Amount**: The amount of BNB that the delegator wants to unstake from the validator.
 
-The `Undelegate` transaction will deduct the amount of staking credit from the validator and return the corresponding
-BNB to the delegator address. However, the BNB will be locked for a period of time, called the **unbonding period**,
-before the delegator can use it. The unbonding period is currently set to 7 days, and it is designed to prevent
-delegators from quickly withdrawing their BNB in case of a validator misbehavior or a network attack.
+The `Undelegate` transaction will burn the amount of staking credit from the user and moves the BNB to a withdraw queue.
+The BNB gets locked for an **unbonding period** before the delegator can claim it.
+The unbonding period is currently set to 7 days, and it is designed to prevent delegators from quickly withdrawing their BNB in case of a validator misbehavior or a network attack.
 
 ### Claim
 

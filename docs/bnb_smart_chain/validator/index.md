@@ -1,14 +1,13 @@
 
 # BSC Validator Overview
 
-BNB Smart Chain(BSC) relies on a system of **56** validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum)
+BNB Smart Chain(BSC) relies on a system of multiple validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum)
 that can support short block time and lower fees. The most bonded validators in staking will have the opportunity to produce blocks.
 The double-sign detection and other slashing logics ensure security, stability, and chain finality.
 
-In a pool of **56** Validators, BSC conducts a daily election process post **00:00 UTC** to select the top **45** active validators
-based on their staking rankings for block production. Among these, the **21** validators with the highest staked amounts are
-referred to as **Cabinets**, while the remaining **24** validators are known as **Candidates**. The remaining inactive
-validators must wait for the next round of elections to become active validators before they can participate in block production.
+BSC conducts a daily election process post **00:00 UTC** to select the top **45** active validators based on their staking rankings for block production.
+Among these, the **21** validators with the highest staked amounts are referred to as **Cabinets**, while the remaining **24** validators are known as **Candidates**.
+The remaining inactive validators must wait for the next round of elections to become active validators before they can participate in block production.
 
 In the set of **45** active validators, each epoch selects **18** validators from the **Cabinets** and **3** validators
 from the **Candidates**, forming a group of **21** validators as the consensus validators set for the current epoch to
@@ -51,15 +50,15 @@ If validators attempt to cheat the system or violate the specifications, they ma
 Running your validator keys simultaneously on two or more machines will result in Double-Sign slashing.
 The penalty for double-sign slash:
 
-1. **10000 staked BNB** will be slashed for the validator.
-2. The double sign jail time is **2^63-1 seconds**, which means the validator cannot become an active validator anymore.
+1. **200 staked BNB** will be slashed for the validator.
+2. The double sign jail time is **30 days**, preventing the malicious validator from participating in consensus until manual intervention is taken.
 
 > Note:
 > **Rewards for submitting double-sign evidence:** **1000BNB**. 
 > Anyone can submit a slashing request with the evidence of double sign, which should contain the **2 block headers** with the same height and parent block, sealed by the offending validator.
 
 
-### Malicious Vote Slash
+### Malicious Fast Finality Vote Slash
 
 Running your validators with the same consensus keys and bls voting keys concurrently on two or more machines will result in malicious vote slash.
 The penalty for malicious vote slash:

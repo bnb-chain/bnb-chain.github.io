@@ -48,11 +48,11 @@ nav:
     - Staking:
         - Overview: ./bnb_smart_chain/staking/index.md
         - User Guide: ./bnb_smart_chain/staking/user-guide.md
-        - Developer Guide: ./bnb_smart_chain/staking/developer-guide.md
+        - Build Staking dApps: ./bnb_smart_chain/staking/developer-guide.md
     - Governance:
         - Overview: ./bnb_smart_chain/governance/index.md
         - User Guide: ./bnb_smart_chain/governance/user-guide.md
-        - Developer Guide: ./bnb_smart_chain/governance/developer-guide.md
+        - Governance APIs: ./bnb_smart_chain/governance/apis.md
     - Validator:
         - Overview: ./bnb_smart_chain/validator/index.md
         - Run Validator: ./bnb_smart_chain/validator/run-val.md
@@ -66,7 +66,7 @@ nav:
             - FAQs: ./bnb_smart_chain/validator/mev/faqs.md
     - Slashing:
         - Overview: ./bnb_smart_chain/slashing/index.md
-        - Slash Events: ./bnb_smart_chain/slashing/slash-events.md
+        - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
         - Unjail Validator: ./bnb_smart_chain/slashing/unjail.md
         - Monitor Slashing: ./bnb_smart_chain/slashing/monitor.md
   - BNB opBNB:

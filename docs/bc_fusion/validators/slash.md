@@ -32,7 +32,7 @@ actions can lead to network forks, undermining the blockchain's security and con
 Anyone can send a `submitDoubleSignEvidence` transaction to the `SlashIndicator` contract,
 specifying the following information:
 
-- **Header 1**: A header of BSC with a the validator's signed signature.
+- **Header 1**: A header of BSC with a validator's signed signature.
 - **Header 2**: Another header of BSC signed by the validator. The two headers have the same height.
 
 - The off-chain services monitor for double signing by validators by comparing the signatures and hashes of the blocks
@@ -41,14 +41,14 @@ specifying the following information:
   200BNB and moving them to a "jailed" state for 30 days, preventing them from participating in consensus until manual
   intervention is taken.
 
-## Malicious Vote Slash
+## Malicious Fast Finality Vote Slash
 
 Validators who violates the [fast finality vote rules](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)
 will be also slashed.
 Anyone can send a `submitFinalityViolationEvidence` transaction to the `SlashIndicator` contract,
 specifying the following information:
 
-- **Evidence**: The evidence proves the valiator violates the fast finality rules.
+- **Evidence**: The evidence proves the validator violates the fast finality rules.
 
 - The off-chain services monitor fast finality vote data to identify malicious votes.
 - If a validator is caught for malicious vote, the validator will be slashed for 200BNB and move to "jailed" status for

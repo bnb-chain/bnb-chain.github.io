@@ -12,10 +12,10 @@ Upon receiving the evidence, the contract will verify its validity.
 The validator will be removed from validator set, a predefined amount of BNB would be slashed from the self-delegated BNB of the validator.
 Both validator and its delegators will not receive the staking rewards.
 Part of the slashed BNB will be allocated to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction.
-The rest of the slashed BNB will be allocated to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
+The rest of the slashed BNB will be allocated to the other validators’ credit addresses, and distributed to all delegators in the same way as blocking reward.
 
-## Malicious Vote
-It is quite a serious error and very likely a deliberate offense when a validator signs two votes with the same target height or the span of one vote including the span of another vote.
+## Malicious Fast Finality Vote
+It is quite a serious error and very likely a deliberate offense when a validator signs two fast finality votes with the same target height or the span of one vote including the span of another vote.
 The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. 
 When Malicious Vote happens, the validator should be removed from the Validator Set right away.
 
@@ -26,7 +26,7 @@ Upon receiving the evidence, the contract will verify its validity.
 The validator will be removed from the current set of validators, and the submitter will receive the reward from the system contract.
 A predefined amount of BNB would be slashed from the self-delegated BNB of the validator.
 Both validator and its delegators will not receive the staking rewards.
-The slashed BNB will be allocated to the other validators’ custody addresses, and distributed to all delegators in the same way as blocking reward.
+The slashed BNB will be allocated to the other validators’ credit addresses, and distributed to all delegators in the same way as blocking reward.
 
 ## Unavailability
 The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn.
