@@ -67,8 +67,7 @@ nav:
     - Slashing:
         - Overview: ./bnb_smart_chain/slashing/index.md
         - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
-        - Unjail Validator: ./bnb_smart_chain/slashing/unjail.md
-        - Monitor Slashing: ./bnb_smart_chain/slashing/monitor.md
+        - Slash Monitor: ./bnb_smart_chain/slashing/monitor.md
   - BNB opBNB:
     - Introduction: ./bnb_opbnb/index.md
     - Core Concepts:

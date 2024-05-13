@@ -4,8 +4,7 @@
 This guide outlines the process for creating a new validator on the BNB Smart Chain (BSC).
 The BNB staking dApp is the official tool for creating and managing validators on the BSC.
 
-- **Testnet
-  **: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
+- **Testnet**: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
 - **Mainnet**: [https://www.bnbchain.org/en/bnb-staking](https://www.bnbchain.org/en/bnb-staking)
 
 ## Terminology

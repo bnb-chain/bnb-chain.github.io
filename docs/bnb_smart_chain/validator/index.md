@@ -54,7 +54,7 @@ The penalty for double-sign slash:
 2. The double sign jail time is **30 days**, preventing the malicious validator from participating in consensus until manual intervention is taken.
 
 > Note:
-> **Rewards for submitting double-sign evidence:** **1000BNB**. 
+> **Rewards for submitting double-sign evidence:** **5BNB**. 
 > Anyone can submit a slashing request with the evidence of double sign, which should contain the **2 block headers** with the same height and parent block, sealed by the offending validator.
 
 

@@ -94,7 +94,7 @@ You can cast `For`, or `Against`, or `Abstain` votes to the proposal.
 If a proposal reaches the quorum (i.e., reaches the `quorumNumberRator` of the total voting power) and it passes
 (i.e., more than 50% of the voted voting power supports the proposal), it can be executed by the network.
 
-To execute a proposal, fistly the proposal needs to be queued by clicking the `Queue` button.
+To execute a proposal, firstly the proposal needs to be queued by clicking the `Queue` button.
 
 <img src="../img/gov/tally9.png" width="800"/>
 

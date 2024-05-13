@@ -1,15 +1,14 @@
 # BSC Staking Overview
 
-BNB Smart Chain (BSC) is a Proof-of-Staked-Authority (PoSA) blockchain.
-[BEP-294](https://github.com/bnb-chain/BEPs/pull/294) propose the staking mechanism on BSC.
-It allows BNB holders to stake BNB to the specified validators to secure the network and get staking rewards in return.
-This section covers the fundamental staking concepts and operations on BSC.
+BNB Smart Chain (BSC) operates on a Proof-of-Staked-Authority (PoSA) blockchain, with the staking mechanism proposed in [BEP-294](https://github.com/bnb-chain/BEPs/pull/294).
+This enables BNB holders to stake their tokens with specified validators to secure the network and earn staking rewards.
+Here's an overview covering the core staking concepts and operations on BSC.
 
 ## Basic Concepts
 
 ### Consensus Engine
 
-BSC uses a consensus mechanism which combines DPoS and PoA for consensus, so that:
+BSC uses a consensus mechanism which combines DPoS and PoA for consensus, in this system:
 
 * Blocks are produced by a limited set of validators.
 * Validators take turns to produce blocks in a PoA manner.
@@ -90,105 +89,16 @@ Validators earn rewards from transaction fees and share most of these rewards wi
 
 ### Create Validator
 
-To create a validator, a BNB holder needs to send a `CreateValidator` transaction to the `StakeHub` contract,
-which is a system contract and the address is `0x0000000000000000000000000000000000002002`,
-with minimum amount of BNB that the validator needs to stake to their own validator
-address (2000 BNB), specifying the following information:
-
-- **Operator address**: The address of the validator, which will receive the staking credit and the rewards.
-- **Consensus address**: The consensus address of the validator's node.
-- **Vote Address**: The address for participating fast finality voting.
-- **BLS Proof**: A BLS signature to prove that the validator owns the vote address.
-- **Commission**: The commission rate defines the percentage of the rewards that the validator will keep for themselves,
-  and the rest will be distributed to the delegators. It also contains the max commission rate, the max change rate during
-  a predefined timespan for validator to set.
-- **Description**: The optional information about the validator, such as moniker, identify, website, etc.
-
-The `CreateValidator` transaction will deduct the minimum self-delegation amount from the validator address and issue
-the corresponding staking credit to the validator. The validator will then join the standby validator set, and wait for
-the next validator set update to see if they can enter the active validator set.
+To ensure the security of the network, becoming a validator on the BSC requires a minimum self-delegation of 2000 BNB.
+BNB holders can initiate a `CreateValidator` transaction with the `StakeHub` contract to become a validator.
+For more information, refer to [Create BSC Validator](../validator/create-val.md).
 
 ### Edit Validator
 
-A validator can edit their validator information by sending  `EditConsensusAddress`, `EditCommissionRate`,
-`EditDescription`, `EditVoteAddress` transactions to the `StakeHub` contract, specifying the following information
-accordingly:
-
-- **New consensus address**: The new consensus address of the validator's node.
-- **New commission rate**: The new percentage of the rewards that the validator will keep for themselves, which can
-  only be increased within a maximum change rate limit.
-- **New description**: The new information about the validator, such as moniker, identify, website, etc.
-- **New vote address**: The new vote address for participating fast finality.
-
-These transactions will update the validator information on the BNB smart chain, and the changes will take
-effect immediately. However, the new commission rate will only apply to the rewards earned after the transaction, and
-the previous rewards will be distributed according to the previous commission rate.
+Validators can update their information using transactions like `EditConsensusAddress`, `EditCommissionRate`, `EditDescription`, and `EditVoteAddress`.
 
 ## Delegator Operations
 
 Delegators are BNB holders who stake their BNB with a validator, sharing rewards.
 They can select any active or standby validator, switch between them, undelegate their BNB, and claim rewards anytime.
-
-### Delegate
-
-To delegate BNB to a validator, a BNB holder needs to send a `Delegate` transaction to the `StakeHub` contract,
-specifying the following information:
-
-- **Operator address**: The address of the validator, which will receive the BNB from the delegator.
-- **Delegate Voting Power**: The flag to indicate whether the delegator would like to delegate his/her voting power
-  to the validator for governance.
-
-The `Delegate` transaction will deduct the amount of BNB from the delegator address and issue the corresponding staking
-credit to the validator. The validator will then share the rewards with the delegator, according to the commission rate.
-
-The credit tokens (or share) a delegator will get is calculated as: `delegation amount` * `total supply of credit token` / `total pooled BNB`.
-The `total pooled BNB` includes the delegation BNB and unclaimed reaward BNB of the validator. 
-It means that a delegator will get credit tokens based on the ratio of his/her delegation BNB amount to the total staked and reward BNB.
-
-When the validator receives the block reward, the "total pooled BNB" amount will increase. This increase benefits the
-delegator when they unbond, as they will receive their delegation along with BNB rewards from the pool.
-
-### Redelegate
-
-To redelegate BNB from one validator to another, a delegator needs to send a `Redelegate` transaction to the `StakeHub`
-contract, specifying the following information:
-
-- **Source operator address**: The address of the source validator, which will send the BNB to the destination
-  validator.
-- **Destination operator address**: The address of the destination validator, which will receive the BNB from the
-  source validator.
-- **Amount**: The amount of BNB that the delegator wants to redelegate from the source validator to the destination
-  validator.
-- **Delegate Voting Power**: The flag to indicate whether the delegator would like to delegate his/her voting power
-  to the destination validator for governance.
-
-The `Redelegate` transaction will deduct the amount of source validator staking credit and issue the corresponding dest validator staking credit to the user.
-The destination validator will then share the rewards with the delegator, according to the commission rate of the destination validator.
-
-The `Redelegate` transaction does not incur the unbonding period, but it will incur the redelegation fee,
-which is designed to prevent delegators from frequently switching between validators to chase
-the highest rewards or avoid the highest risks. The current fee rate is 0.002%.
-
-### Undelegate
-
-To undelegate BNB from a validator, a delegator needs to send an `Undelegate` transaction to the `StakeHub` contract,
-specifying the following information:
-
-- **Operator address**: The address of the validator, which will send the BNB to the delegator.
-- **Amount**: The amount of BNB that the delegator wants to unstake from the validator.
-
-The `Undelegate` transaction will burn the amount of staking credit from the user and moves the BNB to a withdraw queue.
-The BNB gets locked for an **unbonding period** before the delegator can claim it.
-The unbonding period is currently set to 7 days, and it is designed to prevent delegators from quickly withdrawing their BNB in case of a validator misbehavior or a network attack.
-
-### Claim
-
-To claim the unbond BNB and the rewards, a delegator should send a `Claim` transaction to the `StakeHub` contract,
-specifying the following information:
-
-- **Delegator address**: The BEP20 address of the delegator, which will receive the rewards from the validator.
-- **Queued unbond number**: The number of unbond requests to be claimed, and 0 means claim BNB and rewards from
-  all the unbond requests.
-
-The `Claim` transaction will return the delegated BNB and rewards to the delegator. Be noted, a delegator can only get
-the rewards after unbond. Before undelegation, the reward will be further staked to boost a delegator's income.
+Users can refer to the [user guide](./user-guide.md) for instructions on these actions.
