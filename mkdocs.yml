@@ -83,10 +83,10 @@ nav:
       - Guide:
           - Overview : ./bnb_greenfield/guide/index.md
           - Introduction:
-            - What is BNB Greenfield:  ./bnb_greenfield/guide/introduction/index.md
+            - What is BNB Greenfield:  ./bnb_greenfield/guide/index.md
             - Why do we need BNB Greenfield: ./bnb_greenfield/guide/introduction/why-greenfield.md
           - Getting Started:
-              - Overview: ./bnb_greenfield/guide/getting-started/index.md
+              - Overview: ./bnb_greenfield/guide/getting-started/overview.md
               - Ecosystem: ./bnb_greenfield/guide/getting-started/ecosystem.md
               - Wallet Configuration: ./bnb_greenfield/guide/getting-started/wallet-configuration.md
               - BNB Transfer: ./bnb_greenfield/guide/getting-started/token-transfer.md
@@ -111,7 +111,7 @@ nav:
               - Data Storage: ./bnb_greenfield/guide/core-concept/data-storage.md
               - Gas and Fees: ./bnb_greenfield/guide/core-concept/gas-fees.md
           - Greenfield Blockchain:
-              - Overview: ./bnb_greenfield/guide/greenfield-blockchain/index.md
+              - Overview: ./bnb_greenfield/guide/greenfield-blockchain/overview.md
               - Run Node:
                   - Interacting with the Node : ./bnb_greenfield/guide/greenfield-blockchain/run-node/interact-node.md
                   - Run Local Network : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-local-network.md
@@ -122,7 +122,7 @@ nav:
           - Bundle Service: ./bnb_greenfield/guide/bundle-service/bundle-service.md
           - Storage Provider:
               - Overview:
-                  - Overview: ./bnb_greenfield/guide/storage-provider/introduction/index.md
+                  - Overview: ./bnb_greenfield/guide/storage-provider/introduction/overview.md
                   - SP Workflow: ./bnb_greenfield/guide/storage-provider/introduction/workflow.md
                   - The Greenfield Storage Provider Standard : ./bnb_greenfield/guide/storage-provider/introduction/standard.md
               - Run Storage Provider:
@@ -142,6 +142,7 @@ nav:
               - Access Control Management with CLI: ./bnb_greenfield/tutorials/get-started/cmd-access-control.md
               - How to transition from S3 to Greenfield: ./bnb_greenfield/tutorials/get-started/transitioning-from-s3-to-greenfield.md
           - Greenfield App:
+              - Overview: ./bnb_greenfield/tutorials/app/overview.md
               - Data Marketplace:
                   - Data Marketplace with Programmable Access Control: ./bnb_greenfield/tutorials/app/data-marketplace/overview.md
               - File Management:
