@@ -1,0 +1,42 @@
+---
+id: attested-challenge
+title: "AttestedChallenge"
+description: "Queries the attested challenge by challenge id."
+sidebar_label: "AttestedChallenge"
+hide_title: true
+hide_table_of_contents: true
+api: {"operationId":"AttestedChallenge","responses":{"200":{"description":"A successful response.","content":{"*/*":{"schema":{"type":"object","properties":{"challenge":{"type":"object","properties":{"id":{"type":"string","format":"uint64","description":"The id of the challenge."},"result":{"description":"The attestation result of the challenge.","type":"string","enum":["CHALLENGE_FAILED","CHALLENGE_SUCCEED"],"default":"CHALLENGE_FAILED"}},"description":"AttestedChallenge records the challenge which are attested."}},"description":"QueryAttestedChallengeResponse is response type for the Query/AttestedChallenge RPC method."}}}},"default":{"description":"An unexpected error response.","content":{"*/*":{"schema":{"type":"object","properties":{"error":{"type":"string"},"code":{"type":"integer","format":"int32"},"message":{"type":"string"},"details":{"type":"array","items":{"type":"object","properties":{"type_url":{"type":"string"},"value":{"type":"string","format":"byte"}}}}}}}}}},"parameters":[{"name":"challenge_id","description":"The id of the challenge.","in":"query","required":false,"schema":{"type":"string","format":"uint64"}}],"tags":["challenge"],"description":"Queries the attested challenge by challenge id.","method":"get","path":"/greenfield/challenge/attested_challenge","servers":[{"url":"https://greenfield-chain.bnbchain.org","description":"Mainnet RPC (uses live data)"},{"url":"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org","description":"Testnet RPC (uses test data)"}],"info":{"title":"Greenfield - gRPC Gateway docs","description":"A REST interface for state queries","version":"1.0.0"},"postman":{"name":"AttestedChallenge","description":{"content":"Queries the attested challenge by challenge id.","type":"text/plain"},"url":{"path":["greenfield","challenge","attested_challenge"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"The id of the challenge.","type":"text/plain"},"key":"challenge_id","value":""}],"variable":[]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/greenfield-api/greenfield-grpc-gateway-docs
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## AttestedChallenge
+
+
+
+Queries the attested challenge by challenge id.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"challenge_id","description":"The id of the challenge.","in":"query","required":false,"schema":{"type":"string","format":"uint64"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+A successful response.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>challenge</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+AttestedChallenge records the challenge which are attested.
+
+</div><SchemaItem collapsible={false} name={"id"} required={false} schemaName={"uint64"} qualifierMessage={undefined} schema={{"type":"string","format":"uint64","description":"The id of the challenge."}}></SchemaItem><SchemaItem collapsible={false} name={"result"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`CHALLENGE_FAILED`, `CHALLENGE_SUCCEED`]"} schema={{"description":"The attestation result of the challenge.","type":"string","enum":["CHALLENGE_FAILED","CHALLENGE_SUCCEED"],"default":"CHALLENGE_FAILED"}}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"challenge\": {\n    \"id\": \"string\",\n    \"result\": \"CHALLENGE_FAILED\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"default"} value={"default"}><div>
+
+An unexpected error response.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"error"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"code"} required={false} schemaName={"int32"} qualifierMessage={undefined} schema={{"type":"integer","format":"int32"}}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>details</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"type_url"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"value"} required={false} schemaName={"byte"} qualifierMessage={undefined} schema={{"type":"string","format":"byte"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": \"string\",\n  \"code\": 0,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      

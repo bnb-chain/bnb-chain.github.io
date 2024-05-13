@@ -1,0 +1,38 @@
+---
+id: storage-provider-maintenance-records-by-operator-address
+title: "StorageProviderMaintenanceRecordsByOperatorAddress"
+description: "Queries a StorageProvider by specify operator address."
+sidebar_label: "StorageProviderMaintenanceRecordsByOperatorAddress"
+hide_title: true
+hide_table_of_contents: true
+api: {"operationId":"StorageProviderMaintenanceRecordsByOperatorAddress","responses":{"200":{"description":"A successful response.","content":{"*/*":{"schema":{"type":"object","properties":{"records":{"type":"array","items":{"type":"object","properties":{"height":{"type":"string","format":"int64","title":"block height that request to be in Maintenance mode"},"request_duration":{"type":"string","format":"int64","title":"request duration"},"actual_duration":{"type":"string","format":"int64","title":"actual duration"},"request_at":{"type":"string","format":"int64","title":"request timestamp"}},"title":"MaintenanceRecord is to keep track of every time a sp request to be in Maintenance mode"}}}}}}},"default":{"description":"An unexpected error response.","content":{"*/*":{"schema":{"type":"object","properties":{"error":{"type":"string"},"code":{"type":"integer","format":"int32"},"message":{"type":"string"},"details":{"type":"array","items":{"type":"object","properties":{"type_url":{"type":"string"},"value":{"type":"string","format":"byte"}}}}}}}}}},"parameters":[{"name":"operator_address","in":"query","required":false,"schema":{"type":"string"}}],"tags":["sp"],"description":"Queries a StorageProvider by specify operator address.","method":"get","path":"/greenfield/sp/storage_provider_maintenance_records_by_operator_address","servers":[{"url":"https://greenfield-chain.bnbchain.org","description":"Mainnet RPC (uses live data)"},{"url":"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org","description":"Testnet RPC (uses test data)"}],"info":{"title":"Greenfield - gRPC Gateway docs","description":"A REST interface for state queries","version":"1.0.0"},"postman":{"name":"StorageProviderMaintenanceRecordsByOperatorAddress","description":{"content":"Queries a StorageProvider by specify operator address.","type":"text/plain"},"url":{"path":["greenfield","sp","storage_provider_maintenance_records_by_operator_address"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"operator_address","value":""}],"variable":[]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/greenfield-api/greenfield-grpc-gateway-docs
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## StorageProviderMaintenanceRecordsByOperatorAddress
+
+
+
+Queries a StorageProvider by specify operator address.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"operator_address","in":"query","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+A successful response.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>records</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"height"} required={false} schemaName={"int64"} qualifierMessage={undefined} schema={{"type":"string","format":"int64","title":"block height that request to be in Maintenance mode"}}></SchemaItem><SchemaItem collapsible={false} name={"request_duration"} required={false} schemaName={"int64"} qualifierMessage={undefined} schema={{"type":"string","format":"int64","title":"request duration"}}></SchemaItem><SchemaItem collapsible={false} name={"actual_duration"} required={false} schemaName={"int64"} qualifierMessage={undefined} schema={{"type":"string","format":"int64","title":"actual duration"}}></SchemaItem><SchemaItem collapsible={false} name={"request_at"} required={false} schemaName={"int64"} qualifierMessage={undefined} schema={{"type":"string","format":"int64","title":"request timestamp"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"records\": [\n    {\n      \"height\": \"string\",\n      \"request_duration\": \"string\",\n      \"actual_duration\": \"string\",\n      \"request_at\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"default"} value={"default"}><div>
+
+An unexpected error response.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"error"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"code"} required={false} schemaName={"int32"} qualifierMessage={undefined} schema={{"type":"integer","format":"int32"}}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>details</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"type_url"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"value"} required={false} schemaName={"byte"} qualifierMessage={undefined} schema={{"type":"string","format":"byte"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": \"string\",\n  \"code\": 0,\n  \"message\": \"string\",\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
