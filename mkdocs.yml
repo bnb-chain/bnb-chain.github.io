@@ -45,6 +45,29 @@ nav:
       - Governance: ./bc_fusion/validators/gov.md
   - BNB Smart Chain:
     - Overview: ./bnb_smart_chain/index.md
+    - Staking:
+        - Overview: ./bnb_smart_chain/staking/index.md
+        - User Guide: ./bnb_smart_chain/staking/user-guide.md
+        - Build Staking dApps: ./bnb_smart_chain/staking/developer-guide.md
+    - Governance:
+        - Overview: ./bnb_smart_chain/governance/index.md
+        - User Guide: ./bnb_smart_chain/governance/user-guide.md
+        - Governance APIs: ./bnb_smart_chain/governance/apis.md
+    - Validator:
+        - Overview: ./bnb_smart_chain/validator/index.md
+        - Run Validator: ./bnb_smart_chain/validator/run-val.md
+        - Create Validator: ./bnb_smart_chain/validator/create-val.md
+        - Secure Validator: ./bnb_smart_chain/validator/security.md
+        - Key Management: ./bnb_smart_chain/validator/manage-keys.md
+        - MEV:
+            - Overview: ./bnb_smart_chain/validator/mev/index.md
+            - Validator Guide: ./bnb_smart_chain/validator/mev/validator-integration.md
+            - Builder Guide: ./bnb_smart_chain/validator/mev/builder-integration.md
+            - FAQs: ./bnb_smart_chain/validator/mev/faqs.md
+    - Slashing:
+        - Overview: ./bnb_smart_chain/slashing/index.md
+        - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
+        - Slash Monitor: ./bnb_smart_chain/slashing/monitor.md
   - BNB opBNB:
     - Introduction: ./bnb_opbnb/index.md
     - Core Concepts:
