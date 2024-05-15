@@ -8,7 +8,7 @@
 | 2      | Trubi Wallet                  | <https://trubi.io/>              |Yes| No|Yes|
 | 3      | Ledger          | <https://www.ledger.com/>        |Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|
 | 4      | CoolWallet (Hardware Wallet) | <https://coolwallet.io/>         |Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|Yes, via Binance.org and Trubi|
-| 5      | Venly Wallet                      | <https://wallet.venly.io/>        |No|Yes|Yes|
+| 5      | Venly Wallet                      | <https://wallet.venly.io/>        |Yes|Yes|Yes|
 | 6      | Enjin                             | <https://enjinwallet.io/>        |No|No|No|
 | 7      | Coinomi Wallet            | <http://coinomi.com/>            |Yes|No| Yes|
 | 8      | Atomic Wallet           | <https://atomicwallet.io/>       |No|No| Yes|
