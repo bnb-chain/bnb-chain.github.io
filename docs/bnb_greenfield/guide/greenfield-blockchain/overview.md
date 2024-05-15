@@ -6,7 +6,7 @@ order: 1
 
 ## What is the Greenfield Blockchain
 
-The **Greenfield blockchain** plays a pivotal role in the [Greenfield ecosystem](../getting-started/ecosystem.md). 
+The **Greenfield blockchain** plays a pivotal role in the [Greenfield ecosystem](../introduction/introduction.md#ecosystem). 
 It forms the core of the platform and is constructed on the **Cosmos/Tendermint** infrastructure. 
 Within the Greenfield blockchain, there are two categories of states that exist **on-chain**: 
 - Accounts and their BNB balance ledger.
@@ -19,7 +19,7 @@ make up the majority of the BNB Greenfield economic data.
 ## How Greenfield Blockchain Works
 The **Greenfield Blockchain** utilizes the [Tendermint consensus](https://tutorials.cosmos.network/) mechanism, 
 implementing a [Proof-of-Stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) approach to ensure network security. 
-Validator election and governance are managed through a [proposal-vote mechanism](modules/governance.md), following 
+Validator election and governance are managed through a [proposal-vote mechanism](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/governance.md), following 
 the governance module of Cosmos SDK. Greenfield's validators produce blocks every **2 seconds**.
 
 As for the blockchain's native token, **BNB** serves as both gas and governance token. The initial BNB is locked on BNB 
@@ -72,5 +72,5 @@ The validators of the Greenfield Blockchain are integral to the network's securi
 
 ## Get Started with Greenfield Blockchain
 - [Quick start with Greenfield Blockchain](run-node/interact-node.md)
-- [Learn more about the ecosystem players of Greenfield](../getting-started/ecosystem.md)
-- [Learn more about the module design of Greenfield Blockchain](modules/storage-module.md)
+- [Learn more about the ecosystem players of Greenfield](../introduction/introduction.md#ecosystem)
+- [Learn more about the module design of Greenfield Blockchain](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-module.md)

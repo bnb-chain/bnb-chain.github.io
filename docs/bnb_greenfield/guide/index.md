@@ -19,15 +19,15 @@ BNB Greenfield is a decentralized storage and blockchain storage solution platfo
 
 Dive into what is BNB Greenfield and start the journey with Greenfield.
 
-- [An overview about BNB Greenfield](./introduction/overview.md)
-- [Get Started with detailed tutorial](./getting-started/overview.md)
+- [An overview about BNB Greenfield](./introduction/introduction.md)
+- [Get Started with detailed tutorial](./getting-started/wallet-configuration.md)
 
 ## Explore the Greenfield Blockchain
 
 Get familiar with the Greenfield Blockchain and explore its main modules.
 
 - [An overview about Greenfield Blockchain](./greenfield-blockchain/overview.md)
-- [Explore modules in Greenfield Blockchain](./greenfield-blockchain/modules/storage-module.md)
+- [Explore modules in Greenfield Blockchain](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-module.md)
 
 
 ## Explore the Storage Provider
@@ -37,7 +37,7 @@ Get familiar with the Greenfield Blockchain and explore its main modules.
 
 Start building dapps to create value based on the data assets and its related economy.
 - [An overview about programmability on Greenfield](../tutorials/index.md)
-- [Start building with SDK](/docs/tutorials/core/access-control/quick-start.mdx)
+- [Start building with SDK](../tutorials/core/access-control/quick-start.md)
 
 ## Help & Support 
 Check out the Greenfield Developer community for technical support.

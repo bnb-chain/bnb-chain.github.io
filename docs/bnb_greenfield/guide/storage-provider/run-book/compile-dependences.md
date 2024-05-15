@@ -75,7 +75,7 @@ If a user wants to start SP in local mode or testnet mode, you must prepare `SPD
 
 ### SPDB and BSDB
 
-SP uses [SPDB](../modules/spdb.md) and [BSDB](../modules/bsdb.md) to store some metadata such as object info, object integrity hash, etc. These two DBs now use `RDBMS` to complete corresponding function.
+SP uses [SPDB](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/spdb.md) and [BSDB](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/bsdb.md) to store some metadata such as object info, object integrity hash, etc. These two DBs now use `RDBMS` to complete corresponding function.
 
 Users now can use `MySQL` or `MariaDB` to store metadata.The following lists the supported RDBMS:
 
@@ -86,7 +86,7 @@ More types of database such as `PostgreSQL` or NewSQL will be supported in the f
 
 ### PieceStore
 
-Greenfield is a decentralized data storage system which uses object storage as the main data storage system. SP encapsulates data storage as [PieceStore](../modules/piece-store.md) which provides common interfaces to be compatible with multiple data storage systems. Therefore, if a user wants to join SP or test the function of SP, you must use a data storage system.
+Greenfield is a decentralized data storage system which uses object storage as the main data storage system. SP encapsulates data storage as [PieceStore](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/piece-store.md) which provides common interfaces to be compatible with multiple data storage systems. Therefore, if a user wants to join SP or test the function of SP, you must use a data storage system.
 
 The following lists the supported data storage systems:
 

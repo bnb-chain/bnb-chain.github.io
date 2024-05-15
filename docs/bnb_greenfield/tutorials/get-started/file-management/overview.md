@@ -17,6 +17,7 @@ In this tutorial, we will guide you through the process of setting up your envir
 We will also cover how to interact with the CLI tool, choose storage providers, manage your account balance, and manage buckets and uploaded files.
 
 ## Setting Up the Environment
+
 ### Installation
 
 [Greenfield Command](https://github.com/bnb-chain/greenfield-cmd) is a powerful command line to interact with Greenfield.

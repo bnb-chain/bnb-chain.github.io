@@ -95,4 +95,4 @@ signatures for download billing.
 If the users and the SPs cannot agree on the bill, users may just select another Primary SP.
 
 For more tech details, please refer to
-the [stream payment module design](../greenfield-blockchain/modules/billing-and-payment.md).
+the [stream payment module design](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/billing-and-payment.md).

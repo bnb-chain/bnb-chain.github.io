@@ -23,15 +23,15 @@ Data marketplace is a data exchange platform where users can freely create, list
 ## Developing with smart contracts on BSC
 One of the primary methods for building dApps with BNB Greenfield is by deploying smart contracts to the BSC. Smart contracts are self-executing programs that facilitate and enforce the execution of agreements without the need for intermediaries.
 
-* [How to develop BSC smart contract for Greenfield](/docs/tutorials/core/access-control/quick-start.mdx)
+* [How to develop BSC smart contract for Greenfield](../../tutorials/core/access-control/quick-start.md)
 
 ## CLI
 
-* [Basic File Management](/docs/tutorials/get-started/file-management/overview)
-* [Hosting a Website](/docs/tutorials/middleware/web-hosting/hosting-websites/overview)
+* [Basic File Management](../../tutorials/get-started/file-management/overview.md)
+* [Hosting a Website](../../tutorials/get-started/hosting-websites/overview.md)
 
 ## SDK Demo
 
-* [Basic File Management](/docs/tutorials/app/file-management/basic-file-management)
-* [Resumable Upload & Download](/docs/tutorials/app/file-management/resumable-upload/overview)
-* [Batch operations](/docs/tutorials/app/file-management/batch-upload)
+* [Basic File Management](../../tutorials/app/file-management/basic-file-management.md)
+* [Resumable Upload & Download](../../tutorials/app/file-management/resumable-upload/overview.md)
+* [Batch operations](../../tutorials/app/file-management/batch-upload.md)

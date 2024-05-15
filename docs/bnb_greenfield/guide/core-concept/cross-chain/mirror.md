@@ -6,7 +6,7 @@
 
     #### Pre-requisite Readings
     
-    * [Native cross chain Resource Mirror](../../greenfield-blockchain/modules/cross-chain.md#resource-mirror-layer)
+    * [Native cross chain Resource Mirror](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md#resource-mirror-layer)
 
 
 The Greenfield Blockchain provides a comprehensive set of resources that can be mirrored on the EVM-compatible chains, like BSC and opBNB.

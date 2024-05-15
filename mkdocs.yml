@@ -16,6 +16,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+#  - toc:
+#      toc_depth: 2
 plugins:
   - offline
   - search
@@ -82,12 +84,8 @@ nav:
   - BNB Greenfield:
       - Guide:
           - Overview : ./bnb_greenfield/guide/index.md
-          - Introduction:
-            - What is BNB Greenfield:  ./bnb_greenfield/guide/index.md
-            - Why do we need BNB Greenfield: ./bnb_greenfield/guide/introduction/why-greenfield.md
+          - Introduction: ./bnb_greenfield/guide/introduction/introduction.md
           - Getting Started:
-              - Overview: ./bnb_greenfield/guide/getting-started/overview.md
-              - Ecosystem: ./bnb_greenfield/guide/getting-started/ecosystem.md
               - Wallet Configuration: ./bnb_greenfield/guide/getting-started/wallet-configuration.md
               - BNB Transfer: ./bnb_greenfield/guide/getting-started/token-transfer.md
               - Network Information: ./bnb_greenfield/guide/getting-started/network-info.md
@@ -141,6 +139,7 @@ nav:
               - Basic File Management with CLI: ./bnb_greenfield/tutorials/get-started/file-management/overview.md
               - Access Control Management with CLI: ./bnb_greenfield/tutorials/get-started/cmd-access-control.md
               - How to transition from S3 to Greenfield: ./bnb_greenfield/tutorials/get-started/transitioning-from-s3-to-greenfield.md
+              - Hosting a Website on Greenfield: ./bnb_greenfield/tutorials/get-started/hosting-websites/overview.md
           - Greenfield App:
               - Overview: ./bnb_greenfield/tutorials/app/overview.md
               - Data Marketplace:
@@ -163,15 +162,6 @@ nav:
           - RPC Endpoints: ./bnb_greenfield/api/endpoints.md
           - Blockchain Command Line:
               - overview: ./bnb_greenfield/api/blockchain-cli/README.md
-              - Key Management: ./bnb_greenfield/api/blockchain-cli/key-management.md
-              - Account Balance: ./bnb_greenfield/api/blockchain-cli/bank.md
-              - Storage Object: ./bnb_greenfield/api/blockchain-cli/storage.md
-              - Storage Provider: ./bnb_greenfield/api/blockchain-cli/storage-provider.md
-              - Cross Chain Transfer: ./bnb_greenfield/api/blockchain-cli/bridge.md
-              - On-chain Governance: ./bnb_greenfield/api/blockchain-cli/governance.md
-              - Payment: ./bnb_greenfield/api/blockchain-cli/payment.md
-              - Validator Staking: ./bnb_greenfield/api/blockchain-cli/validator-staking.md
-              - Challenge: ./bnb_greenfield/api/blockchain-cli/challenge.md
           - Storage Command Line: ./bnb_greenfield/api/sp-cli.md
           - Blockchain Events: ./bnb_greenfield/api/events.md
           - SDKs:
@@ -186,6 +176,8 @@ nav:
           - Release Notes: ./bnb_greenfield/release-notes/releaseNotes.md
           - Roadmap: ./bnb_greenfield/release-notes/roadmap.md
           - Feature Lists: ./bnb_greenfield/release-notes/features.md
+      - Contribute: ./bnb_greenfield/contribute.md
+      - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
       - FAQs:
           - Overview: ./bnb_greenfield/faq/index.md
           - General FAQ: ./bnb_greenfield/faq/general-faqs.md
@@ -194,8 +186,6 @@ nav:
           - Mirroring FAQ: ./bnb_greenfield/faq/mirroring-faqs.md
           - Challenger FAQ: ./bnb_greenfield/faq/challenge-faqs.md
 
-      - Contribute: ./bnb_greenfield/contribute.md
-      - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
 theme:
   name: material
   logo: assets/bnb.svg
@@ -207,7 +197,6 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
-    - navigation.expand
     - content.tabs.link
   palette:
     # Palette toggle for light mode

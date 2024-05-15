@@ -11,7 +11,7 @@ If you're interested in knowing the real-time pricing for storage and querying o
 
 ### How is my billing calculated?
 
-In Greenfield, bsides transaction fee, users are required to pay two kinds of storage service fees: `storage fee` and `download quota fee`. These storage service fees are charged by Storage Providers (SPs) in a [stream payment](../guide/greenfield-blockchain/modules/billing-and-payment.md). Users need to lock some BNB when they start using the service.
+In Greenfield, bsides transaction fee, users are required to pay two kinds of storage service fees: `storage fee` and `download quota fee`. These storage service fees are charged by Storage Providers (SPs) in a [stream payment](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/billing-and-payment.md). Users need to lock some BNB when they start using the service.
 
 ```math
 Storage Fee = sum(ChargedSize) * (PrimaryStorePrice + SecondaryStorePrice*SecondarySPNumber) * (1+Validator Tax Rate) * ReserveTime
@@ -33,7 +33,7 @@ If object is an empty folder, ChargedSize = 128K
 You can query the value from [this API](https://docs.bnbchain.org/greenfield-docs/docs/greenfield-api/storage-params)
 
 ### What is Primary/Secondary Store Price?
-Every SP can set their own suggested store price and read price via on-chain transactions. At the first block of each month, the median all SPs' store prices will be calculated as the Primary SP Store Price, the Secondary SP Store Price will be calculated as [SecondaryPriceRatio](https://docs.bnbchain.org/greenfield-docs/docs/greenfield-api/sp-params) (e.g. 12%, which can be governed) multiply the Primary SP Store Price , and the median of all SPs' read prices will be calculated as the Primary SP Read Price. To learn more about it, please refer to [this](../guide/greenfield-blockchain/modules/billing-and-payment.md#storage-fee-price-and-adjustment)
+Every SP can set their own suggested store price and read price via on-chain transactions. At the first block of each month, the median all SPs' store prices will be calculated as the Primary SP Store Price, the Secondary SP Store Price will be calculated as [SecondaryPriceRatio](https://docs.bnbchain.org/greenfield-docs/docs/greenfield-api/sp-params) (e.g. 12%, which can be governed) multiply the Primary SP Store Price , and the median of all SPs' read prices will be calculated as the Primary SP Read Price. To learn more about it, please refer to [this](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/billing-and-payment.md#storage-fee-price-and-adjustment)
 
 ### What is Validator Tax Rate?
 For each data related operation on Greenfield, validators can get some rewards for protecting the security and integrity of data (i.e. challenge). Through charging validator tax, part of user's cost will go to validator tax pool, and then become validators' rewards.

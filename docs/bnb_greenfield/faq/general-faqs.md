@@ -5,7 +5,7 @@ keywords: [BNB Greenfield token, BNB Greenfield usage]
 ---
 
 ### Why can't I send BNB tokens on BNB Greenfield using my wallet?
-Wallet does not support transfers on BNB Greenfield because BNB Greenfield uses a different transaction format than other EVM chains. You may encounter the following error when you transfer your token with your wallet. To send BNB tokens on BNB Greenfield, you need to use [dCellar Transfer function](../guide/getting-started/token-transfer.md#internal-transfers-within-greenfield).
+Wallet does not support transfers on BNB Greenfield because BNB Greenfield uses a different transaction format than other EVM chains. You may encounter the following error when you transfer your token with your wallet. To send BNB tokens on BNB Greenfield, you need to use [dCellar Transfer function](../guide/getting-started/token-transfer.md#bnb-transfers-in-greenfield).
 
 <img src="../static/img/transfer_error.png" alt="transfer_error.png" style="width:50%;"/>
 
@@ -23,7 +23,7 @@ You can acquire BNB in multiple ways:
 
 1. [Buy BNB](https://www.binance.com/en/how-to-buy/bnb) if you never own it.
 2. Cross-chain transfer BNB from BSC network to Greenfield using [DCellar](https://dcellar.io/) if you already own any BNB. You can read the detailed steps [here](https://docs.nodereal.io/docs/dcellar-get-started). The cross-chain token transfer is really fast, you are supposed to receive your BNB within a minute.
-3. Receive BNB from other Greenfield users with [internal transactions](../guide/getting-started/token-transfer.md#internal-transfers-within-greenfield)
+3. Receive BNB from other Greenfield users with [internal transactions](../guide/getting-started/token-transfer.md#bnb-transfers-in-greenfield)
 
 ### What is the utility of BNB on Greenfield?
 

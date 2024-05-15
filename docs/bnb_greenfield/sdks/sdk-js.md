@@ -409,11 +409,11 @@ Now let's make a complete example, includes:
 
 ### Prepare
 
-To begin, create an account and deposit tokens into it on Greenfield. Follow the instructions provided in [Token Transfer](/docs/guide/getting-started/token-transfer). Please be aware that if your account does not have any BNB, the transaction will not be executed.
+To begin, create an account and deposit tokens into it on Greenfield. Follow the instructions provided in [Token Transfer](../guide/getting-started/token-transfer.md). Please be aware that if your account does not have any BNB, the transaction will not be executed.
 
 #### Choose Storage Provider
 
-Storing data is one of the most important features of Greenfield. All storage-related apis require the [storage provider](/docs/guide/storage-provider/introduction/overview) to be chose.
+Storing data is one of the most important features of Greenfield. All storage-related apis require the [storage provider](../guide/storage-provider/introduction/overview.md) to be chose.
 
 ```js title="select sp"
 const spList = await client.sp.getStorageProviders();
@@ -425,9 +425,9 @@ const sp = {
 
 #### ECDSA / OffChainAuth
 
-[ECDSA](/docs/api/storage-provider-rest#for-auth-type-gnfd1-ecdsa) require users to use private key for authentication.
+[ECDSA](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/storage-provider-rest-api/README.md#for-auth-type-gnfd1-ecdsa) require users to use private key for authentication.
 
-[OffChainAuth](/docs/guide/storage-provider/modules/authenticator) is used to authenticate yourself to the provider.
+[OffChainAuth](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/authenticator.md) is used to authenticate yourself to the provider.
 
 > Code can't access user's private key on browser, so we use `OffChainAuth` on browser and use `ECDSA` on Nodejs.
 

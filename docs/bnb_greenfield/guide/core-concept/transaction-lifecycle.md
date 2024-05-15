@@ -15,7 +15,7 @@ The transaction will be referred to as `Tx`.
 ### Transaction Creation
 
 There are various ways to create transactions. 
-While the command-line is a straightforward method to interact with an application, transactions can also be generated through a [gRPC or REST interface](../../api/blockchain-rest.md) or another entry point specified by the application developer. 
+While the command-line is a straightforward method to interact with an application, transactions can also be generated through a [gRPC or REST interface](https://greenfield-chain.bnbchain.org/openapi) or another entry point specified by the application developer. 
 The interaction between the user and the application varies based on the web interface or wallet they use. 
 For example, users can create `Tx` through platforms like [Lunie.io](https://lunie.io/#/) and sign them using a Ledger Nano S.
 
@@ -92,7 +92,7 @@ changes while in the process of verifying transactions, but still need a copy of
 state in order to answer queries - they should not respond using state with uncommitted changes.
 
 In order to verify a `Tx`, full-nodes call the `CheckTx` ABCI function, which includes both _stateless_ and _stateful_
-checks. Further validation happens later in the [`DeliverTx`](#delivertx) stage. `CheckTx` goes
+checks. Further validation happens later in the [`DeliverTx`](#delivertx-abci-function) stage. `CheckTx` goes
 through several steps, beginning with decoding `Tx`.
 
 ### Decoding the transactions
@@ -157,7 +157,7 @@ passes all checks at this stage, it is still possible to be found invalid later 
 
 Consensus occurs in **rounds**, during which validator nodes agree on which transactions to accept.
 Each round begins with a proposer creating a block of the most
-recent transactions and ends with [**validators**](../getting-started/ecosystem.md#validators), special full-nodes with voting power responsible
+recent transactions and ends with [**validators**](../introduction/introduction.md#validators), special full-nodes with voting power responsible
 for consensus, agreeing to accept the block or go with a `nil` block instead. Validator nodes execute the consensus algorithm, the [Tendermint BFT](https://docs.tendermint.com/master/spec/consensus/consensus.html#terms), confirming the transactions using ABCI requests to the application, in order to come to this agreement.
 
 The first step of consensus is the **block proposal**. One proposer amongst the validators is chosen by the consensus algorithm to create and propose a block - in order for a `Tx` to be included, it must be in this proposer's mempool.

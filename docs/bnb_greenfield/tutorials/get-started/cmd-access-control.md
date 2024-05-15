@@ -12,7 +12,7 @@ To dive furthur into advanced concepts of Greenfield, we will  cover how to hand
 
 ## Verifying the Environment
 
-Please refer to [this doc](./file-management/overview.md#Installation) to make sure you have completed installation of `gnfd-cmd` and setting up your accounts.
+Please refer to [this doc](./file-management/overview.md#installation) to make sure you have completed installation of `gnfd-cmd` and setting up your accounts.
 
 ## Query Bucket Info
 To query the bucket, execute:

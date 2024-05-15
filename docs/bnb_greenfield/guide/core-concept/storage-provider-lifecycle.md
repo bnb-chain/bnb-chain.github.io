@@ -54,7 +54,7 @@ SPs assume a critical role in maintaining the availability, integrity, and confi
 At this stage, SPs must create virtual groups within the Greenfield network to efficiently serve buckets and objects. These virtual groups, resembling disk sectors, allow SPs to manage data storage in a more organized and optimized manner. By associating objects with virtual groups, SPs can limit the range of secondary storage providers responsible for storing object replica data, which enhances data redundancy and resilience.
 
 !!! note
-    For more information, please see [Virtual Group](../greenfield-blockchain/modules/virtual-group.md#abstract)
+    For more information, please see [Virtual Group](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/virtual-group.md#abstract)
 
 Additionally, SPs are required to provide corresponding stakes for the amount of data they store. This staking mechanism further incentivizes SPs to offer reliable and high-quality services to users. By staking tokens or digital assets, SPs demonstrate their commitment to maintaining a robust and trustworthy network, aligning their interests with the overall security and success of the storage ecosystem.
 
@@ -73,7 +73,7 @@ The maintenance mode for service providers (SPs) is a status in which SPs do not
 !!! note  
     Note: The SP needs to send a transaction to Greenfield to update its status back `STATUS_IN_SERVICE` before its request duration ends, or Greenfield would do it mandatorily.
 
-There are two restrictions that apply when an SP requests to be in maintenance. These restrictions work with the parameters `num_of_historical_blocks_for_maintenance_records`, `maintenance_duration_quota` and `num_of_lockup_blocks_for_maintenance`. Refer to [Params](../greenfield-blockchain/modules/storage-provider.md#params)
+There are two restrictions that apply when an SP requests to be in maintenance. These restrictions work with the parameters `num_of_historical_blocks_for_maintenance_records`, `maintenance_duration_quota` and `num_of_lockup_blocks_for_maintenance`. Refer to [Params](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-provider.md#params)
 
 * The total maintenance duration for each SP, within the number of blocks defined by `num_of_historical_blocks_for_maintenance_records`, should not exceed the `maintenance_duration_quota`.
 * An SP is not allowed to make two consecutive requests to `STATUS_IN_MAINTENANCE` within `num_of_lockup_blocks_for_maintenance`, even if there are enough quotas for it.
@@ -111,4 +111,4 @@ Greenfield governance will force the SP to exit, make it enter `STATUS_FORCED_EX
 However, a forced exit SP will face penalties, and its staked BNB will be locked into the Payment module governance account, this payment account is used to receive forced settlement fee, and pay for potential debt from late forced settlement.
 
 !!! note
-    For more information, please see [SP exit](../greenfield-blockchain/modules/virtual-group.md#sp-exit-workflow)
+    For more information, please see [SP exit](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/virtual-group.md#sp-exit-workflow)

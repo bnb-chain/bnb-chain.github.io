@@ -14,9 +14,9 @@ Greenfield Simple Storage Service offers developers comparable API primitives an
 Greenfield has storage management features thart you can use to manage your resources, such as buckets, objects and groups. All the metadata of the resources are on-chain and can be only changed through transactions onto the greenfield blockchain. 
 
 * Basic Operations - Create, Delete, Update, Delete, Get and List for buckets, objects and groups
-* Miragte Bucket(**WIP**) - Users can easily migrate bucket to other Primary Storage Provider (PrimarySP) through a single transaction. For more information, please see [Bucket Migration](../greenfield-blockchain//modules/virtual-group.md#bucket-migration-workflow)
+* Miragte Bucket(**WIP**) - Users can easily migrate bucket to other Primary Storage Provider (PrimarySP) through a single transaction. For more information, please see [Bucket Migration](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/virtual-group.md#bucket-migration-workflow)
 
-for more informations, see [Storage Module Design](../greenfield-blockchain/modules/storage-module.md).
+for more information, see [Storage Module Design](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-module.md).
   
 ### Permission Management
 
@@ -26,7 +26,7 @@ Greenfield Providers features for managing permissions to your buckets and objec
 * Public Access - If the bucket or object set to public, every one can access it but not modify it.
 * Resource-Based Policy - The owner can configure resource-based permissions for his buckets and the objects in them.
 
-for more information, see [Permission Module Design](../greenfield-blockchain/modules/permission.md).
+for more information, see [Permission Module Design](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/permission.md).
 
 ## Keys
 

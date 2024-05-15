@@ -11,7 +11,7 @@ In this tutorial we’ll use the go-SDK library to manage your buckets and objec
 
 ## Prerequisites
 Before getting started, you should be familiar with:
-* [Greenfield basics](/docs/guide/introduction/overview.md)
+* [Greenfield basics](../../../guide/introduction/introduction.md)
 * Greenfield command line [examples](https://github.com/bnb-chain/greenfield-cmd#examples)
 
 Also, make sure you have the following dependencies installed with the latest version:
@@ -61,7 +61,7 @@ go mod tidy
 
 ### Test a simple function
 
-You can refer to the [overview](/docs/tutorials/app/file-management/basic-file-management) to learn about how to create a simple `main.go`
+You can refer to the [overview](../../../tutorials/app/file-management/basic-file-management.md) to learn about how to create a simple `main.go`
 
 If everything is set up correctly, your code will be able to connect to the Greenfield node and return the chain data as shown above.
 

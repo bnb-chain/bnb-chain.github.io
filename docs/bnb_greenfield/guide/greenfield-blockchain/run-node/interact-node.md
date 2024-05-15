@@ -137,7 +137,7 @@ gnfdClient := NewGreenfieldClient("localhost:9090",
 
 ## Using the REST Endpoints
 
-As described in the [gRPC guide](../../../api/blockchain-rest.md), all gRPC services on the Cosmos SDK are made available for 
+As described in the [gRPC guide](https://greenfield-chain.bnbchain.org/openapi), all gRPC services on the Cosmos SDK are made available for 
 more convenient REST-based queries. The format of the URL path is based on the Protobuf service 
 method's full-qualified name, but may contain small customizations so that final URLs look more idiomatic. 
 For example, the REST endpoint for the `cosmos.bank.v1beta1.Query/AllBalances` method is `GET /cosmos/bank/v1beta1/balances/{address}`. 

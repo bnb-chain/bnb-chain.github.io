@@ -20,7 +20,6 @@ This guide helps you set up an SP Node. Once you set up the SP Node successfully
         - [Generate config template](#generate-config-template)
         - [Write config](#write-config)
     - [3. Run SP](#3-run-sp)
-    - [4. Deploy Dashboard](#4-deploy-dashboard)
 
 ## Prerequisites
 
@@ -276,7 +275,3 @@ It's recommended to deploy Kubernetes cluster following this [guide](https://git
 # start sp
 ./gnfd-sp --config ${config_file_path}
 ```
-
-### 4. Deploy Dashboard
-
-You can prepare your monitoring dashboard following [this guide](./infra-deployment/grafana/grafana.md)

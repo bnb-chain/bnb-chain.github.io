@@ -8,7 +8,7 @@ order: 2
 In `Greenfield`, uploading an object to a bucket is a two-stage process. First, a transaction including the object metadata 
 needs to be broadcasted to the Greenfield Chain and confirmed. After confirmation, PUT the object to a Greenfield Storage 
 Provider. In the first stage, every transaction needs to be signed by the primary key(also known as `account`, refer to
-[accounts](/docs/guide/core-concept/accounts.md) for more details). And if you are accessing `Greenfield` via front-end app and connecting
+[accounts](../../../guide/core-concept/accounts.md) for more details). And if you are accessing `Greenfield` via front-end app and connecting
 wallet like Metamask(or other compatible wallets), you will be asked for approval to sign the transaction.
 
 For people who may have encountered the need to upload large amounts of objets, while uploading objects to `Greenfield` individually 
@@ -106,7 +106,7 @@ func genTemporaryAccount(acct *types.Account, signPayload string) (*types.Accoun
 
 To entitle the temporary account to create objects on behalf of the primary account, two types of permissions are 
 required. Both need to be granted by the primary account:
-- Grant the creating object permission in the bucket. `Policy` defines that the operation that can be enforced on a resource by an account or a group. Refer to [permission](/docs/guide/greenfield-blockchain/modules/permission.md) to get more details
+- Grant the creating object permission in the bucket. `Policy` defines that the operation that can be enforced on a resource by an account or a group. Refer to [permission](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/permission.md) to get more details
 - Grant an allowance so that the gas fee will be deducted from the primary account, and the primary account will be the owner of objects. 
 
 Again, we would need to broadcast transaction including these two types of granting messages to `Greenfield` using the primary account. 

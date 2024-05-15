@@ -67,9 +67,9 @@ facilitates a higher bandwidth and faster bridge.
 The relayer system will be continuously monitored and maintained by the validators to 
 ensure that it is running at optimal efficiency.
 
-More details are discussed in [Cross Chain Module design](../greenfield-blockchain/modules/cross-chain.md).
+More details are discussed in [Cross Chain Module design](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md).
 
 ## Get Started with building dapp
 
-- [Learn more about the cross-chain mechanism](../greenfield-blockchain/modules/cross-chain.md)
+- [Learn more about the cross-chain mechanism](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md)
 - [Start building dapps with Greenfield](../../tutorials/index.md)
