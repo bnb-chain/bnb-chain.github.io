@@ -188,7 +188,7 @@ access-control-expose-headers: *
 
 After you finish the configuration, you can verify if it works in DCellar.
 
-1. Go to https://dcellar.io
+1. Go to [https://dcellar.io](https://dcellar.io)
 2. Press F12 to launch web developer tools and go to "Network" tab.
 3. Connect your wallet
 4. Find the "OPTIONS" request to your SP and check its status and response headers. If you see a similar result to the following screenshot, it means your CORS configuration is correct.

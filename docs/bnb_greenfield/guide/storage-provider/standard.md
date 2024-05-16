@@ -62,7 +62,7 @@ It requires users to use a private key to sign for authentication.
 * `GNFD2-EDDSA`
 It is used for web-based applications and users to store the “off chain auth” EdDSA account key in SPs. Users can communicate with the SP without explicit signature for most interactions.
 * `GNFD1-ETH-PERSONAL_SIGN`
-It is only used to verify wallet personal signature when registering EdDSA account key in SP from a web application (e.g. https://dcellar.io).
+It is only used to verify wallet personal signature when registering EdDSA account key in SP from a web application (e.g. [https://dcellar.io](https://dcellar.io)).
 
 ## Open source Implementation
 

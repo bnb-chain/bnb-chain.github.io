@@ -11,7 +11,7 @@ order: 2
 ### Erdos Upgrade
 The Erdos hardfork will introduce server features in this upgrade:
 1. Improve payment user experience: It is a storage fee paymaster solution for sponsors to cover storage costs on Greenfield, making it easier for regular users to utilize the platform. Please refer to [BEP362](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-362.md).
-2. Improve Greenfield cross-chain programming capability. It introduces enhanced cross-chain programming through a multi-message channel and a general Greenfield executor channel. It allows triggering Greenfield operations on BSC/opBNB without users having to switch between networks. Please refer to [BEP363]https://github.com/bnb-chain/BEPs/pull/363
+2. Improve Greenfield cross-chain programming capability. It introduces enhanced cross-chain programming through a multi-message channel and a general Greenfield executor channel. It allows triggering Greenfield operations on BSC/opBNB without users having to switch between networks. Please refer to [BEP363](https://github.com/bnb-chain/BEPs/pull/363)
 
 
 ## Long Term

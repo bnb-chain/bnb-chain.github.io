@@ -98,7 +98,7 @@ sealing...
 upload index.html to gnfd://my-plato-website/index.html
 ```
 
-Now, let's eagerly click the link to view our brand new website at https://gnfd-testnet-sp1.bnbchain.org/view/my-plato-website/index.html and feel the anticipation building up.
+Now, let's eagerly click the link to view our brand new website at [https://gnfd-testnet-sp1.bnbchain.org/view/my-plato-website/index.html](https://gnfd-testnet-sp1.bnbchain.org/view/my-plato-website/index.html) and feel the anticipation building up.
 
 🥁Drum beat... 
 
@@ -124,7 +124,7 @@ And reupload the html file, this time accompanied by the content-type flag:
 
 🥁🥁Drum beat intensifies... 
 
-Oh, no! The website still looks horrendous, and worse yet, the image of Plato is nowhere to be found. Frustration turned into disappointment as we discovered that the browser was throwing an error due to an incorrect MIME type. It refused to apply the styles from https://gnfd-testnet-sp-2.bnbchain.org/view/my-plato-website/styles.css because the MIME type was set as 'text/plain', which is not a supported stylesheet MIME type when strict MIME checking is enabled.
+Oh, no! The website still looks horrendous, and worse yet, the image of Plato is nowhere to be found. Frustration turned into disappointment as we discovered that the browser was throwing an error due to an incorrect MIME type. It refused to apply the styles from [https://gnfd-testnet-sp-2.bnbchain.org/view/my-plato-website/styles.css](https://gnfd-testnet-sp-2.bnbchain.org/view/my-plato-website/styles.css) because the MIME type was set as 'text/plain', which is not a supported stylesheet MIME type when strict MIME checking is enabled.
 Fear not! The error looks familiar and we already know exactly what needed to be done. So swiftly deleting the problematic files and reuploading them correctly this time:
 ```bash
 ./gnfd-cmd object rm gnfd://my-plato-website/plato.jpg

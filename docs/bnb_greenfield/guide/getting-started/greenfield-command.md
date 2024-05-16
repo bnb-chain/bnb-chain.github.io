@@ -86,7 +86,7 @@ voltbot  0x6651ED78A4058d8A93CA4979b7AD516D1C9010ac https://greenfield-sp.voltbo
 nodereal 0x03c0799AD70d19e723359E036a83E8f44f4B8Ba7 https://greenfield-sp.nodereal.io:443  IN_SERVICE
 ```
 And the Users can obtain detailed information about a certain SP by "sp head" and "sp get-price" commands.
-Here is an example of obtaining information about an SP with endpoint https://greenfield-sp.nodereal.io:443.
+Here is an example of obtaining information about an SP with endpoint [https://greenfield-sp.nodereal.io:443](https://greenfield-sp.nodereal.io:443).
 ```shell
 // get storage provider info
 $ gnfd-cmd sp head  https://greenfield-sp.nodereal.io:443

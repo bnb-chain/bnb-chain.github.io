@@ -116,7 +116,7 @@ To transfer test BNB from the BSC to BNB Greenfield, users can utilize the [dCel
 
 ![Transfer Tokens](transfer-tokens.png)
 
-For testnet, users can acquire test BNB tokens for testing purposes by using a test faucet provided by BNB Greenfield which can be accessed at https://gnfd-bsc-faucet.bnbchain.org/. By visiting the faucet website, users can request a certain amount of test BNB tokens to be sent to their BSC testnet address.
+For testnet, users can acquire test BNB tokens for testing purposes by using a test faucet provided by BNB Greenfield which can be accessed at [https://gnfd-bsc-faucet.bnbchain.org/](https://gnfd-bsc-faucet.bnbchain.org/). By visiting the faucet website, users can request a certain amount of test BNB tokens to be sent to their BSC testnet address.
 
 The balance can be checked using the following command:
 

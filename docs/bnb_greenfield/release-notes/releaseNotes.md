@@ -9,14 +9,16 @@ title: Release Notes
 # Release Notes
 ## Greenfield v1.7.0 - Erdos Upgrade
 BNB Greenfield v1.7.0 introduces the Erdos Hardfork, which includes the following major features:
-- Add new cross-chain channel `ExecutorChannel` and corresponding cross-app `ExecutorApp`. See https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-363.md
-- Add multi-message support for greenfield crosschain app. See https://github.com/bnb-chain/greenfield-cosmos-sdk/pull/417
-- Implement storage fee paymaster. See https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-362.md
+
+- Add new cross-chain channel `ExecutorChannel` and corresponding cross-app `ExecutorApp`. See [https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-363.md](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-363.md)
+- Add multi-message support for greenfield cross-chain app. See [https://github.com/bnb-chain/greenfield-cosmos-sdk/pull/417](https://github.com/bnb-chain/greenfield-cosmos-sdk/pull/417)
+- Implement storage fee paymaster. See [https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-362.md](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-362.md)
 
 ## Greenfield v1.6.0 - Serengeti Upgrade
 BNB Greenfield v1.6.0 introduces the Serengeti Hardfork, which includes the following major features:
-- Primary Storage Provider acts as the upload agent for object creation and update on Greenfield. See https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-364.md
-- Streamline off-chain authentication on Greenfield: it introduces GNFD2-EDDSA, a simplified off-chain authentication signature verification method. It streamlines the authentication process, reducing developer integration complexity and improving user interaction. See https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-346.md
+
+- Primary Storage Provider acts as the upload agent for object creation and update on Greenfield. See [https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-364.md](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-364.md)
+- Streamline off-chain authentication on Greenfield: it introduces GNFD2-EDDSA, a simplified off-chain authentication signature verification method. It streamlines the authentication process, reducing developer integration complexity and improving user interaction. See [https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-346.md](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-346.md)
 - SP Free Monthly Quota: To further incentivize users to utilize Greenfield and simplify the process of purchasing read quota, SPs can offer a certain amount of free data to each Bucket every month.
 
 Greenfield v1.6.0 also includes several optimization features and bug fixes. For more details about this release, please
@@ -24,17 +26,18 @@ refer to [Greenfield Blockchain](https://github.com/bnb-chain/greenfield/release
 
 ## Greenfield v1.5.0 - Pawnee Upgrade
 BNB Greenfield v1.5.0 introduces the Pawnee Hardfork, which includes the following major feature:
+
 - Support Greenfield Atomic Object Update: Previously, users face the inconvenience of having to delete and recreate objects in Greenfield in order to replace their content. 
-   v1.5.0 offer a more efficient and seamless object update process. See https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-366.md
+   v1.5.0 offer a more efficient and seamless object update process. See [https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-366.md](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-366.md)
 
 Greenfield v1.5.0 also includes several optimization features and bug fixes. For more details about this release, please
 refer to [Greenfield Blockchain](https://github.com/bnb-chain/greenfield/releases/tag/v1.5.0) and [Greenfield SP](https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.5.0).
 
 ## Greenfield v1.4.0 - Ural Upgrade
 BNB Greenfield v1.4.0 introduces the Ural Hardfork, which includes the following features:
+
 1. Support setting resource tags by accounts with permission: Previously, only the owner of a resource could set tags.
    However, in certain scenarios, users may desire other authorized accounts to be able to set tags on behalf of the owner.
-
 2. Support bucket migration: In Greenfield, each bucket is associated with a primary SP. If a user is dissatisfied with
    the service from their current primary SP, they have the option to migrate their bucket to another SP.
 
@@ -43,9 +46,9 @@ refer to [Greenfield Blockchain](https://github.com/bnb-chain/greenfield/release
 
 ## Greenfield v1.3.0 - Hulunbeier Upgrade
 BNB Greenfield v1.3.0 introduces the Hulunbeier Hardfork, which includes the following features:
+
 1. Cross-chain permission module: With this new feature, users can now grant permissions from the BSC/opBNB side. This
    enhancement provides greater programmability and flexibility. For more details, please refer to [here](https://github.com/bnb-chain/BEPs/pull/334).
-
 2. Support the exit of SP: With this new feature, SPs on Greenfield can now exit without any restrictions. For more
    details, please refer to [here](https://github.com/bnb-chain/BEPs/pull/338).
 
@@ -101,6 +104,7 @@ Please refer to [Greenfield Blockchain](https://github.com/bnb-chain/greenfield/
 ## Greenfield v0.2.6 - Final release before mainnet
 [v0.2.6](https://github.com/bnb-chain/greenfield/releases/tag/v0.2.6) This is the final version before the mainnet launch, 
 which mainly includes bug fixes and security enhancement.
+
 - Change few events the blockchain and enhance the parameter verification.
 - Refactor the code for getObject and Universal apis.
 - Strength the authentication and verification processes between storage providers.
@@ -118,6 +122,7 @@ The Nagqu upgrade took place at block height 471350, estimated to be on Sep 15th
 All buckets and objects stored on the Greenfield Testnet before will remain accessible.*
 
 This version has undergone comprehensive security enhancements as the final hardfork version prior to the mainnet launch. This mainly includes:
+
 - The Greenfield resource mirror smart contracts apply more stringent parameter checks.
 - Preventing funds in payment accounts from being permanently trapped in the Cosmos Bank module through intelligent detection.
 - Introducing timer-lock mechanism: funds exceeding 100 BNB will be subject to a one-day lock-up period upon withdrawal from the payment account.
@@ -125,6 +130,7 @@ This version has undergone comprehensive security enhancements as the final hard
 
 
 To enhance the user experience, the developer community is introducing new features and improvements.
+
 - Introduce the official native SDK for Ali Oss-based SP to enhance stability.
 - Improve the performance and stability of SP processing for file uploads. The standard specifications of SP allow for the stable processing of 10 files per second with a size of 1M.
 - Optimize user read traffic billing based on actual usage rather than download count.

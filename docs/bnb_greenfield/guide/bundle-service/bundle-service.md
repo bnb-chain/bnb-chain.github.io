@@ -160,9 +160,9 @@ The Bundle Service Server API provides several endpoints for managing and intera
 - **Get Bundler Account for a User (POST /bundlerAccount/{userAddress}):** This endpoint returns the bundler account for a given user.
 - **Set New Bundling Rules (POST /setBundleRule):** This endpoint allows users to set new rules or replace old rules for bundling, including constraints like maximum size and number of files.
 
-For more detailed information about each endpoint, including required parameters and response formats, please refer to the swagger.yaml file in https://github.com/node-real/greenfield-bundle-service.
+For more detailed information about each endpoint, including required parameters and response formats, please refer to the swagger.yaml file in [https://github.com/node-real/greenfield-bundle-service](https://github.com/node-real/greenfield-bundle-service).
 
-For detailed usage cases, you can refer to the e2e test cases in https://github.com/node-real/greenfield-bundle-service/tree/main/e2e.
+For detailed usage cases, you can refer to the e2e test cases in [https://github.com/node-real/greenfield-bundle-service/tree/main/e2e](https://github.com/node-real/greenfield-bundle-service/tree/main/e2e).
 
 
 ### Endpoints

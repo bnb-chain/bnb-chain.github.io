@@ -207,8 +207,9 @@ As a new SP, you need deposit a minimum amount of BNB into the funding address.
 Please note the initial deposit requirement varies on different environments.
 You can check the `sp.params.min_deposit` value (in wei BNB) from genesis endpoint response of Greenfield testnet/mainnet.
 By the time when this doc is written,
-- According to https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org/genesis, SP in testnet requires minimum **1000BNB** deposited in funding address.
-- According to https://greenfield-chain.bnbchain.org/genesis, SP in mainnet requires minimum **500BNB** deposited in funding address.
+
+- According to [https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org/genesis](https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org/genesis), SP in testnet requires minimum **1000BNB** deposited in funding address.
+- According to [https://greenfield-chain.bnbchain.org/genesis](https://greenfield-chain.bnbchain.org/genesis), SP in mainnet requires minimum **500BNB** deposited in funding address.
 
 In addition, to join the network in [Step 2](#2-deposit-bnb-to-proposal), an SP must initiate a proposal using a funding address and stake 1 BNB to enter the voting phase.
 After the voting concludes, the 1 BNB will be refunded to the original account.

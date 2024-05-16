@@ -14,7 +14,7 @@ This guide provides configuration information, sample code, and an introduction 
 ## Install
 
 
-The Greenfield SDK for Go requires [Go 1.20 or later](https://go.dev/).You can view your current version of Go by running the go version command. For information about installing or upgrading your version of Go, see https://golang.org/doc/install.
+The Greenfield SDK for Go requires [Go 1.20 or later](https://go.dev/).You can view your current version of Go by running the go version command. For information about installing or upgrading your version of Go, see [https://golang.org/doc/install](https://golang.org/doc/install).
 
 To install the SDK and its dependencies, run the following Go command.
 
