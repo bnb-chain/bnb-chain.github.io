@@ -11,7 +11,7 @@ It forms the core of the platform and is constructed on the **Cosmos/Tendermint*
 Within the Greenfield blockchain, there are two categories of states that exist **on-chain**: 
 
 - Accounts and their BNB balance ledger.
-- The metadata related to the object storage system, [Service Providers (SPs)](../storage-provider/introduction/index.md), objects stored on this system, 
+- The metadata related to the object storage system, [Service Providers (SPs)](../storage-provider/index.md), objects stored on this system, 
 and permission and billing information associated with this storage.
 
 Transactions conducted on the Greenfield blockchain can alter the aforementioned states. These states and transactions 

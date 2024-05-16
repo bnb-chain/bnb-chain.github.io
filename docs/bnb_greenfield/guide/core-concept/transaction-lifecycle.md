@@ -34,7 +34,7 @@ it to the specified peer node.
 There are several required and optional flags for transaction creation. The `--from` flag specifies which [account](accounts.md) 
 the transaction is originating from. For example, if the transaction is sending coins, the funds will be drawn from the specified `from` address.
 
-##### Gas and Fees
+#### Gas and Fees
 
 Additionally, there are several [flags](../../api/blockchain-cli/README.md) users can use to indicate how much they are willing to pay in [fees](gas-fees.md):
 
@@ -53,7 +53,7 @@ Later, validators decide whether to include the transaction in their block by co
 `gas-prices` to their local `min-gas-prices`. `Tx` will be rejected if its `gas-prices` is not high enough, so users 
 are incentive to pay more.
 
-##### CLI Example
+#### CLI Example
 
 Users of the application `app` can enter the following command into their CLI to generate a transaction to send 
 1000wei BNB from a `senderAddress` to a `recipientAddress`. 

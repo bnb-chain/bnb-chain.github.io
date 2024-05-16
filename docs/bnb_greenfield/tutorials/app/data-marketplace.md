@@ -16,16 +16,16 @@ Data marketplace is a data exchange platform where users can freely create, list
 
 In this tutorial, we have to solve the question: How can Alice share/sell her private files to Bob?
 
-![Transaction Details](../../../static/asset/datamarketplace-1.png)
+![Transaction Details](../../static/asset/datamarketplace-1.png)
 
 The Greenfield Blockchain offers a comprehensive set of resources, including buckets, objects, and groups, which can be mirrored on the BNB Smart Chain (BSC) as non-fungible tokens (NFTs) adhering to the ERC-721 standard. Buckets serve as logical containers for storing objects, where an object represents a fundamental storage unit containing data and metadata. Groups are collections of accounts with similar permissions. These resources, along with group members' permissions as ERC-1155 tokens, can be mirrored on the BSC. Currently, these NFTs are non-transferable but will gain transferability in the near future. Smart contracts on BSC can directly manage these mirrored resources, impacting storage formats, access permissions, and other data aspects on Greenfield. This integration enhances flexibility and accessibility, streamlining and optimizing data management across both platforms.
 
-To learn more about the **mirroring** implementation details, please read [this doc](../../../guide/core-concept/cross-chain/mirror.md)
+To learn more about the **mirroring** implementation details, please read [this doc](../../guide/core-concept/cross-chain/mirror.md)
 
 
 To solve her problem with resource mirroring, Alice should complete the following:
 
-![Transaction Details](../../../static/asset/datamarketplace-2.png)
+![Transaction Details](../../static/asset/datamarketplace-2.png)
 
 
 1. Create a group on Greenfield
@@ -35,19 +35,19 @@ To solve her problem with resource mirroring, Alice should complete the followin
 5. List the group on BSC data marketplace smart contract, setting price
 
 
-![Transaction Details](../../../static/asset/datamarketplace-3.png)
+![Transaction Details](../../static/asset/datamarketplace-3.png)
 
 
 To access data asset from BSC
 
-![Transaction Details](../../../static/asset/datamarketplace-4.png)
+![Transaction Details](../../static/asset/datamarketplace-4.png)
 
 ## Greenfield Contract SDK
 
 The [Smart Contract SDK](https://github.com/bnb-chain/greenfield-contracts-sdk), designed to facilitate the development of community-driven projects. The SDK serves as an upper layer wrapper for the
 [Greenfield-Contracts](https://github.com/bnb-chain/greenfield-contracts) library, which implements the cross-chain communication functionality. By providing a user-friendly interface to the underlying interface, the SDK simplifies the development process and enables developers to create and manage a variety of greenfield resources, like bucket, group, and object on BSC through smart contract directly.
 
-To learn more about the mirroring implementation details, please read [this doc](../../../guide/core-concept/cross-chain/sdk.md) and [Primitive Interfaces](../../../guide/core-concept/cross-chain/interface.md)
+To learn more about the mirroring implementation details, please read [this doc](../../guide/core-concept/cross-chain/sdk.md) and [Primitive Interfaces](../../guide/core-concept/cross-chain/interface.md)
 
 
 ## Ebook Data Marketplace Example

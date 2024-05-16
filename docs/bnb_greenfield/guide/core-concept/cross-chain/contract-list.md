@@ -4,6 +4,9 @@ order: 7
 ---
 
 # Contract Entrypoint
+Greenfield is based on a cross-chain programming model. It allows for the manipulation of data models on 
+Greenfield via smart contracts on BSC or opBNB. These data models include objects, buckets, file 
+permissions, and more. Below are the contract addresses deployed on various networks.
 
 ## BSC Mainnet
 DeployCommitId: c8e6a293b628f9063918ba8cd9c00ca41ded18db

@@ -4,8 +4,6 @@ description: How to use bundle service to combine small objects.
 keywords: [BNB Greenfield, NodeReal, Bundle, Bundle Service]
 ---
 
-!!! note
-    This blog post is contributed by [NodeReal](https://docs.nodereal.io/docs/greenfield-bundle-service).
 
 With more and more developers joining BNB Greenfield ecosystem, many good practices utilizing decentralized storage
 continue to emerge. On the other hand, sending small files to Greenfield is not an economic way. When small files are
@@ -168,6 +166,7 @@ For detailed usage cases, you can refer to the e2e test cases in https://github.
 
 
 ### Endpoints
+Opensource implement from [NodeReal](https://docs.nodereal.io/docs/greenfield-bundle-service)
 
 #### Greenfield Testnet
 Using the testnet's bundle service, the bundle file will be uploaded to the Greenfield testnet. Endpoint:

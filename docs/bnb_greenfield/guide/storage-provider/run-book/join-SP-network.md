@@ -1,8 +1,8 @@
 ---
-title: Join Greenfield SP Network
+title: Join SP Network
 ---
 
-This guide will help you join Greenfield SP Network: Mainnet and Testnet.
+This guide will help you join SP Network: Mainnet and Testnet.
 
 - [Prerequisite for Becoming a Mainnet SP](#prerequisite-for-becoming-a-mainnet-sp)
 - [How to Join SP Network?](#how-to-join-sp-network)

@@ -3,10 +3,6 @@ title: Become Validator
 order: 6
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-
 # Become Validator
 
 ## Minimum Requirements

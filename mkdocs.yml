@@ -87,15 +87,16 @@ nav:
           - Introduction: ./bnb_greenfield/guide/introduction/introduction.md
           - Getting Started:
               - Wallet Configuration: ./bnb_greenfield/guide/getting-started/wallet-configuration.md
-              - BNB Transfer: ./bnb_greenfield/guide/getting-started/token-transfer.md
-              - Network Information: ./bnb_greenfield/guide/getting-started/network-info.md
-              - Getting Test tBNB: ./bnb_greenfield/guide/getting-started/get-test-bnb.md
-              - Greenfield Command: ./bnb_greenfield/guide/getting-started/greenfield-command.md
+              - Bridge and Transfer BNB: ./bnb_greenfield/guide/getting-started/token-transfer.md
               - Developer Quick Guide: ./bnb_greenfield/guide/getting-started/get-started-dev.md
+              - Greenfield Command: ./bnb_greenfield/guide/getting-started/greenfield-command.md
+              - Faucet: ./bnb_greenfield/guide/getting-started/get-test-bnb.md
+              - Network Info: ./bnb_greenfield/guide/getting-started/network-info.md
               - Contract Entrypoint: ./bnb_greenfield/guide/core-concept/cross-chain/contract-list.md
           - Core Concepts:
               - Accounts: ./bnb_greenfield/guide/core-concept/accounts.md
               - Key Management: ./bnb_greenfield/guide/core-concept/key-management.md
+              - BNB Token Model: ./bnb_greenfield/guide/core-concept/bnb-token-model.md
               - Billing and Payment: ./bnb_greenfield/guide/core-concept/billing-payment.md
               - Cross-Chain Programmability:
                   - Cross-Chain Programmability: ./bnb_greenfield/guide/core-concept/programmability.md
@@ -112,25 +113,23 @@ nav:
           - Greenfield Blockchain:
               - Overview: ./bnb_greenfield/guide/greenfield-blockchain/overview.md
               - Run Node:
-                  - Interacting with the Node : ./bnb_greenfield/guide/greenfield-blockchain/run-node/interact-node.md
-                  - Run Local Network : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-local-network.md
+                  - Interact with the Chain : ./bnb_greenfield/guide/greenfield-blockchain/run-node/interact-node.md
                   - Run Node : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-node.md
                   - Run Relayer : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-relayer.md
                   - Run Challenger : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-challenger.md
                   - Become Validator : ./bnb_greenfield/guide/greenfield-blockchain/run-node/become-validator.md
           - Bundle Service: ./bnb_greenfield/guide/bundle-service/bundle-service.md
           - Storage Provider:
-              - Overview:
-                  - Overview: ./bnb_greenfield/guide/storage-provider/introduction/index.md
-                  - SP Workflow: ./bnb_greenfield/guide/storage-provider/introduction/workflow.md
-                  - The Greenfield Storage Provider Standard : ./bnb_greenfield/guide/storage-provider/introduction/standard.md
+              - Overview: ./bnb_greenfield/guide/storage-provider/index.md
+              - SP Workflow: ./bnb_greenfield/guide/storage-provider/workflow.md
+              - Data Service Quality Standard : ./bnb_greenfield/guide/storage-provider/standard.md
               - Run Storage Provider:
                   - SP Compiling and Dependencies: ./bnb_greenfield/guide/storage-provider/run-book/compile-dependences.md
                   - Run Local SP Network: ./bnb_greenfield/guide/storage-provider/run-book/run-local-SP-network.md
                   - Run SP Node: ./bnb_greenfield/guide/storage-provider/run-book/run-SP-node.md
-                  - Join Greenfield SP Network: ./bnb_greenfield/guide/storage-provider/run-book/join-SP-network.md
-                  - Exit Greenfield SP Network: ./bnb_greenfield/guide/storage-provider/run-book/exit-SP-network.md
-                  - How to deploy Piece Store: ./bnb_greenfield/guide/storage-provider/run-book/piece-store.md
+                  - Join SP Network: ./bnb_greenfield/guide/storage-provider/run-book/join-SP-network.md
+                  - Exit SP Network: ./bnb_greenfield/guide/storage-provider/run-book/exit-SP-network.md
+                  - Deploy Piece Store: ./bnb_greenfield/guide/storage-provider/run-book/piece-store.md
                   - SP Config: ./bnb_greenfield/guide/storage-provider/run-book/config.md
                   - SP Common Issues: ./bnb_greenfield/guide/storage-provider/run-book/common-issues.md
 
@@ -143,8 +142,7 @@ nav:
               - Hosting a Website on Greenfield: ./bnb_greenfield/tutorials/get-started/hosting-websites/overview.md
           - Greenfield App:
               - Overview: ./bnb_greenfield/tutorials/app/overview.md
-              - Data Marketplace:
-                  - Data Marketplace with Programmable Access Control: ./bnb_greenfield/tutorials/app/data-marketplace/overview.md
+              - Data Marketplace: ./bnb_greenfield/tutorials/app/data-marketplace.md
               - File Management:
                   - Simple Tool for File Management: ./bnb_greenfield/tutorials/app/file-management/basic-file-management.md
                   - Simple Tool for File Management (JS): ./bnb_greenfield/tutorials/app/file-management/js-file-managemet.md
@@ -163,7 +161,7 @@ nav:
           - RPC Endpoints: ./bnb_greenfield/api/endpoints.md
           - Blockchain Command Line:
               - overview: ./bnb_greenfield/api/blockchain-cli/README.md
-          - Storage Command Line: ./bnb_greenfield/api/sp-cli.md
+          - SP Command Line: ./bnb_greenfield/api/sp-cli.md
           - Blockchain Events: ./bnb_greenfield/api/events.md
           - SDKs:
               - Overview: ./bnb_greenfield/sdks/index.md

@@ -39,6 +39,7 @@ Download Quota Fee Fee = ChargedReadQuota * ReadPrice * (1 + Validator Tax Rate)
 
 ### Global Virtual Group Family & Global Virtual Group
 For storage fees, it will be not streamed to storage providers directly. It will be streamed to:
+
 - Global Virtual Group Family's virtual funding address for **data package fee** and primary sp's **object storage fee**
 - Global Virtual Group's virtual funding address for all secondary sp's **object storage fee**
 - Validator tax pool for extra tax fee (e.g. 1%), which will be used for rewarding data availability challenge submitters.

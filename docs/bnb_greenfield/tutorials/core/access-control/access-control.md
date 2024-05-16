@@ -11,11 +11,9 @@ In this tutorial we’ll use the go-SDK library to manage your buckets and objec
 
 ## Prerequisites
 Before getting started, you should be familiar with:
+
 * [Greenfield basics](../../../guide/introduction/introduction.md)
 * Greenfield command line [examples](https://github.com/bnb-chain/greenfield-cmd#examples)
-
-Also, make sure you have the following dependencies installed with the latest version:
-* Go version above 1.20
 
 ## Access Control Features
 
