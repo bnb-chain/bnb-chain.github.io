@@ -214,7 +214,7 @@ The [Greenfield Blockchain v0.2.2](https://github.com/bnb-chain/greenfield/relea
 * [#276](https://github.com/bnb-chain/greenfield/pull/276) This feature support adding keyManager into txOpt, so that allow large batch of transactions sent by a single client.
 * [#502](https://github.com/bnb-chain/greenfield-storage-provider/pull/502) This feature allow SP to use B2 as its underlying storage.
 * [#512](https://github.com/bnb-chain/greenfield-storage-provider/pull/512) This feature enables universal endpoint for private object.
-* [SP Standard Framework](../guide/storage-provider/introduction/standard.md) This document outlines the updated implementation of the SP standard and establishes a clear set of guidelines that encompass the SP API, protocols, and performance indicators. Community developers are able to customize their own SP functions in a flexible manner that adheres to the established standard. 
+* [SP Standard Framework](../guide/storage-provider/standard.md) This document outlines the updated implementation of the SP standard and establishes a clear set of guidelines that encompass the SP API, protocols, and performance indicators. Community developers are able to customize their own SP functions in a flexible manner that adheres to the established standard. 
 
 For other small features, bug fixes, and refactoring, please refer to the changelog in the release.
 

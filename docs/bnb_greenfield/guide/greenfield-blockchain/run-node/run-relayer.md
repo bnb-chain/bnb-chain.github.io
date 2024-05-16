@@ -46,8 +46,7 @@ cd greenfield-relayer
 Modify `config/config.json`. Or, you can create a new one and specify the config path by `--config-path` flag when start the relayer.
 
 !!! info
-For Testnet config, refer to [Testnet configure](https://github.com/bnb-chain/bnb-chain-charts/blob/master/gnfd-relayer-testnet-values/values.yaml#L4).
-You can use it as a template for your Mainnet config by adapting a few changes as illustrated below.
+    For Testnet config, refer to [Testnet configure](https://github.com/bnb-chain/bnb-chain-charts/blob/master/gnfd-relayer-testnet-values/values.yaml#L4). You can use it as a template for your Mainnet config by adapting a few changes as illustrated below.
 
 
 1. Set relayer private key and bls private key import method (via file or aws secret) and keys, the block monitoring start heights.
@@ -146,7 +145,7 @@ You can use it as a template for your Mainnet config by adapting a few changes a
           "greenfield_light_client_contract_addr": "0xc50791892F6528E42A58DD07869726079C71F3f2",
           "relayer_hub_contract_addr": "0x59ACcF658CC4589C3C41720fd48e869B97A748a1"
         }
-           ```
+        ```
 
 3. Config the database settings.
     
@@ -170,15 +169,14 @@ You can use it as a template for your Mainnet config by adapting a few changes a
 
 Build the binary:
 
-```shell script
+
+```shell
 make build
 ```
 
-Or
+Or Build docker image:
 
-Build docker image:
-
-```shell script
+```shell
 make build_docker
 ```
 
@@ -195,17 +193,17 @@ CREATE SCHEMA IF NOT EXISTS `greenfield-relayer` DEFAULT CHARACTER SET utf8 COLL
 
 ### Start Relayer
 
-```shell script
+```shell
 ./build/greenfield-relayer --config-type [local or aws] --config-path config_file_path  --aws-region [aws region or omit] --aws-secret-key [aws secret key for config or omit]
 ```
 
 Example:
-```shell script
+```shell
 ./build/greenfield-relayer --config-type local --config-path config/config.json
 ```
 
 Run docker:
-```shell script
+```shell
 docker run -it -v /your/data/path:/greenfield-relayer -e CONFIG_TYPE="local" -e CONFIG_FILE_PATH=/your/config/file/path/in/container -d greenfield-relayer
 ```
 

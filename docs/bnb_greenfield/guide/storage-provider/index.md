@@ -25,7 +25,7 @@ recommended that they advertise their information and prove to the community.
 
 ## Architecture
 
-![sp-arch-flow](../../../static/asset/05-SP-Arch.jpg)
+![sp-arch-flow](../../static/asset/05-SP-Arch.jpg)
 
 <div style={{textAlign:'center'}}><i>Storage Provider Architecture</i></div>
 

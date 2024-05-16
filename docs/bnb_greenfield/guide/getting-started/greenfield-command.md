@@ -22,28 +22,6 @@ For Greenfield Mainnet, you can refer to [Greenfield Mainnet RPC Endpoints](../.
 The rpcAddr indicates the Tendermint RPC address with the port info.
 
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-defaultValue="mainnet"
-values={[
-{label: 'Mainnet', value: 'mainnet'},
-{label: 'Testnet', value: 'testnet'},
-]}>
-<TabItem value="mainnet">
-
-	rpcAddr = "https://greenfield-chain.bnbchain.org:443"
-	chainId = "greenfield_1017-1"
-
-  </TabItem>
-  <TabItem value="testnet">
-
-	rpcAddr = "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"
-	chainId = "greenfield_5600-1"
-  </TabItem>
-</Tabs>
-
 The command has the ability to intelligently select the correct storage provider to respond to the request. The user only needs to set the storage provider operator-address if they want to create a bucket on a specific SP. For example, the user can run "gnfd-cmd storage put test gnfd://bucket1/object1" to upload a file to bucket1 and then run "gnfd-cmd storage put test gnfd://bucket2/object" to upload a file to bucket2, which is stored on another SP without changing the config.
 
 ## Basic Operations

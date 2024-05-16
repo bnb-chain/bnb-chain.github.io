@@ -11,11 +11,9 @@ In this tutorial we’ll use the go-SDK library to transfer control over objects
 
 ## Prerequisites
 Before getting started, you should be familiar with:
-* [Greenfield basics](https://docs.bnbchain.org/greenfield-docs/docs/guide/introduction/overview)
-* Greenfield command line [examples](https://github.com/bnb-chain/greenfield-cmd#examples)
 
-Also, make sure you have the following dependencies installed with the latest version:
-* Go version above 1.20
+- [Greenfield basics](https://docs.bnbchain.org/greenfield-docs/docs/guide/introduction/overview)
+- Greenfield command line [examples](https://github.com/bnb-chain/greenfield-cmd#examples)
 
 ## Cross Chain Mechanism
 Cross-chain communication serves as the foundation for enabling the exchange of assets, data, and functionalities across disparate blockchains, facilitating a more connected and efficient decentralised ecosystem.
@@ -31,7 +29,6 @@ Cross-communication between BNB Greenfield and BSC stands apart from the approac
 | Tokenomics                             | BNB                                        | ATOM                       | DOT                                       | LINK                                         |
 | Address Scheme                         | Unified - same addresses                   | Can be different addresses | Can be different addresses                | Can be different addresses                   |
 | Composability                          | Shared components with BNB Chain ecosystem | Implementation in progress | Shared components with Polkadot ecosystem | New implementation for each network          |
-https://www.bnbchain.org/en/blog/cross-chain-innovation-in-the-bnb-greenfield-programmable-environment
 
 ## Account Setup
 ### Create a Go Project

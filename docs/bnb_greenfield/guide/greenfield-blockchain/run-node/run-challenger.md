@@ -3,9 +3,6 @@ title: Run Challenger
 order: 6
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Prerequisites
 
 ### Recommended Hardware
@@ -111,13 +108,13 @@ Modify `config/config.json`. Or, you can create a new one and specify the config
 
 Build binary:
 
-```shell script
+```shell
 make build
 ```
 
 Build docker image:
 
-```shell script
+```shell
 make build_docker
 ```
 

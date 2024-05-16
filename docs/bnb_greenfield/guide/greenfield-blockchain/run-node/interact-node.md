@@ -1,9 +1,9 @@
 ---
-title: Interacting with the Node
+title: Interact with the Chain
 order: 1
 ---
 
-# Interacting with the Node
+# Interact with the Chain
 
 There are multiple ways to interact with a node: using the CLI, using gRPC or using the REST endpoints.
 

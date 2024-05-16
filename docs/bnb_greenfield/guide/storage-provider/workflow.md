@@ -169,7 +169,7 @@ GC ZombiePiece is an abstract interface to record the information for collecting
 
 The flow chart is shown below:
 
-![gc-zombie-flow](../../../static/asset/13-gc-zombie.png)
+![gc-zombie-flow](../../static/asset/13-gc-zombie.png)
 
 <div style={{textAlign:'center'}}><i>GC ZombiePiece</i></div>
 
@@ -185,7 +185,7 @@ GCMetaTask is an abstract interface to record the information for collecting the
 
 The flow chart is shown below:
 
-![gc-meta-flow](../../../static/asset/13-gc-meta.png)
+![gc-meta-flow](../../static/asset/13-gc-meta.png)
 
 <div style={{textAlign:'center'}}><i>GC Meta</i></div>
 
@@ -198,7 +198,7 @@ The flow chart is shown below:
 GC StaleVersion is used to gc stale version of object data in piece store and metadata in DB when the object update is performed.
 The flow chart is shown below:
 
-![gc-stale-object-flow](../../../static/asset/gc-stale-object.png)
+![gc-stale-object-flow](../../static/asset/gc-stale-object.png)
 
 <div style={{textAlign:'center'}}><i>GC StaleVersion</i></div>
 

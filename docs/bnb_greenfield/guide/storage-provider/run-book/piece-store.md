@@ -1,5 +1,5 @@
 ---
-title: How to deploy Piece Store
+title: Deploy Piece Store
 ---
 
 Greenfield SP is a storage infrastructure for Greenfield decentralized storgage platform. Greenfield SP uses `PieceStore` to store users' payload data.

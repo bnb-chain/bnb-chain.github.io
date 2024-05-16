@@ -57,7 +57,7 @@ BNB Greenfield operates on two layers:
 
 The [BNB Greenfield Blockchain](../greenfield-blockchain/overview.md) maintains the ledger for users and records the storage metadata as the common blockchain state data. Its native token for gas and governance is BNB, which is transferred from BNB Smart Chain. Additionally, BNB Greenfield blockchain has its own staking logic designed for governance.
 
-The [Storage Providers (SP)](../storage-provider/introduction/index.md) are storage service infrastructures provided by organizations or individuals that use Greenfield as the ledger and the single source of truth. Each SP is responsible for responding to user requests to upload and download data, while also serving as the gatekeeper for user rights and authentications.
+The [Storage Providers (SP)](../storage-provider/index.md) are storage service infrastructures provided by organizations or individuals that use Greenfield as the ledger and the single source of truth. Each SP is responsible for responding to user requests to upload and download data, while also serving as the gatekeeper for user rights and authentications.
 
 Together, BNB Greenfield blockchain and the SPs comprise a decentralized object storage system that serves as the core of this new economy. Developers can construct decentralized applications (dApps) using the BNB Greenfield platform, which can act as client tools that facilitate user interactions with Greenfield; or applications that provide significant value to users' real lives using Greenfield as their infrastructure. These applications will use blockchain addresses as user identifiers and connect with features and smart contracts on the Greenfield blockchain, Greenfield SPs, and BNBChain.
 
@@ -83,7 +83,7 @@ Storage Providers (SPs) are a crucial part of the Greenfield blockchain. They of
 
 Each Service Provider (SP) is accountable for handling user requests to upload and download data. They act as gatekeepers for user rights and authentications, which makes them integral in ensuring the security and accessibility of user data at all times.
 
-For more information about the storage providers, have a look at the [Storage Provider's page](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/storage-provider.md).
+For further details on storage providers, kindly explore our dedicated [Storage Provider's page](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/storage-provider.md).
 
 ### Greenfield Features
 
@@ -93,11 +93,11 @@ Greenfield dApps are applications that leverage the unique features of the Green
 Users can interact with the BNB Greenfield Core Infrastructure through the use of BNB Greenfield dApps, which are decentralized applications that enable seamless interaction with the Greenfield ecosystem. Furthermore, the Greenfield blockchain provides an intuitive smart contract library on the cross-chain facility, making it easy for dApp developers to integrate these features into their applications. This user-friendly approach allows developers to efficiently build and deploy dApps that can solve real-world problems.
 
 #### Relayers
-The Greenfield Relayer is a powerful bi-directional relaying service designed to facilitate seamless communication between Greenfield and BSC. It can only be operated by Greenfield validators and functions as a standalone process.
+The Greenfield Relayer is a powerful bi-directional relaying service designed to facilitate seamless communication between Greenfield and BSC/opBNB. It can only be operated by Greenfield validators and functions as a standalone process.
 
-This innovative system independently monitors and tracks cross-chain events that take place on both the Greenfield and BSC networks, storing this data securely in a database. When an event is confirmed, the relayer generates a Boneh–Lynn–Shacham (BLS) signed message that is then shared through the P2P network on the Greenfield network, known as "the vote".
+This innovative system independently monitors and tracks cross-chain events that take place on both the Greenfield and BSC/opBNB networks, storing this data securely in a database. When an event is confirmed, the relayer generates a Boneh–Lynn–Shacham (BLS) signed message that is then shared through the P2P network on the Greenfield network, known as "the vote".
 
-As more votes are collected, the Greenfield Relayer assembles the necessary cross-chain package transaction and submits it to either the BSC or Greenfield network. This streamlined process ensures that communication between the two networks is efficient and error-free.
+As more votes are collected, the Greenfield Relayer assembles the necessary cross-chain package transaction and submits it to either the BSC/opBNB or Greenfield network. This streamlined process ensures that communication between the two networks is efficient and error-free.
 
 #### Challenge Verifier
 Challenge Verifier is an off-chain service that verifies data availability, data integrity and service quality by monitoring storage provider’s activities. This mechanism works by penalizing and gradually eliminating storage providers with poor service quality, in order to ensure the good performance and reliability of the entire network.
@@ -112,11 +112,8 @@ Challenge Verifier can only be operated by Greenfield validators right now, and 
 
 - [Quick Start with BNB Greenfield](../getting-started/wallet-configuration.md)
 - [Overview about Greenfield Blockchain](../greenfield-blockchain/overview.md)
-- [Overview about Storage Provider](../storage-provider/introduction/index.md)
+- [Overview about Storage Provider](../storage-provider/index.md)
 - [Pricing Calculator](https://dcellar.io/pricing-calculator)
-- [Become A Validator](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/validator-staking.md): validators secure the Greenfield by validating and relaying transactions,
-  proposing, verifying and finalizing blocks.
-- [Become A Storage Provider](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/storage-provider.md): SPs store the objects' real data, i.e. the payload data. and get paid
-  by providing storage services.
-- [Control Your Data](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/storage.md): store and manage your data in a decentralized way, control and own it all by yourself.
-
+- [Become a Validator](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/validator-staking.md)
+- [Become a Storage Provider](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/storage-provider.md)
+- [Own Your Data](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/storage.md)

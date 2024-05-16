@@ -66,7 +66,7 @@ Create a private bucket and share it with specific individuals.
 
 ### Show Case: Data Marketplace
 
-[Data Marketplace Overview](../../tutorials/app/data-marketplace/overview.md)
+[Data Marketplace Overview](../../tutorials/app/data-marketplace.md)
 
 ## Developer Starter Kit
 
@@ -75,27 +75,11 @@ Create a private bucket and share it with specific individuals.
 - [Greenfield Go SDK](https://docs.bnbchain.org/greenfield-docs/docs/sdks/sdk-go), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
 - [Greenfield Javascript SDK](https://docs.bnbchain.org/greenfield-docs/docs/sdks/sdk-js), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
 
-### Examples
-
-- https://docs.bnbchain.org/greenfield-docs/docs/sdks/sdk-go
-- https://docs.bnbchain.org/greenfield-docs/docs/sdks/sdk-js
-- https://github.com/bnb-chain/greenfield-python-sdk/tree/main/examples
-
 ## Setup
 
 - [Key management](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/key-management)
 - [Transfer](token-transfer.md) between greenfield address
 - [Token bridge](https://dcellar.io/wallet)
-
-## What to build
-
-Follow the decision-making guide below, to see which resource is recommended for your use case:
-![](../../static/asset/dev-get-started.jpg)
-
-### Wishlist
-
-- https://github.com/bnb-chain/community-contributions/blob/main/bnb-greenfield-wishlist-corechain.md
-- https://github.com/bnb-chain/community-contributions/blob/main/bnb-greenfield-wishlist-dapp.md
 
 ### Developer Resource
 

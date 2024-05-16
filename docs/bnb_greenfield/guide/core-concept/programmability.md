@@ -29,8 +29,6 @@ many new business opportunities based on the data and its operations.
 
 ![](../../static/asset/03-Cross-chain-Architecture.jpg)
 
-<div style={{textAlign:'center'}}><i>Figure Cross-chain Architecture</i></div>
-
 The Greenfield ecosystem consists of three distinct layers. 
 
 The first layer is the `Cross-Chain Communication Layer`, which is responsible for handling and verifying 
