@@ -83,7 +83,7 @@ Create a private bucket and share it with specific individuals.
 
 ## Setup
 
-- [Key managemen](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/key-management)
+- [Key management](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/key-management)
 - [Transfer](token-transfer.md) between greenfield address
 - [Token bridge](https://dcellar.io/wallet)
 
@@ -96,8 +96,6 @@ Follow the decision-making guide below, to see which resource is recommended for
 
 - https://github.com/bnb-chain/community-contributions/blob/main/bnb-greenfield-wishlist-corechain.md
 - https://github.com/bnb-chain/community-contributions/blob/main/bnb-greenfield-wishlist-dapp.md
-
-
 
 ### Developer Resource
 
@@ -116,9 +114,8 @@ Follow the decision-making guide below, to see which resource is recommended for
 - [opBNB developer tools](https://docs.bnbchain.org/opbnb-docs/docs/build-on-opbnb/developer-tools)
 
 - Data Marketplace boilerplate
-
-- - [Frontend](https://github.com/bnb-chain/greenfield-data-marketplace-frontend)
-  - [Smart Contracts](https://github.com/bnb-chain/greenfield-data-marketplace-contracts)
+  	- [Frontend](https://github.com/bnb-chain/greenfield-data-marketplace-frontend)
+    - [Smart Contracts](https://github.com/bnb-chain/greenfield-data-marketplace-contracts)
 
 ### Storage onramp
 

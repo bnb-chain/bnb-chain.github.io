@@ -413,7 +413,7 @@ To begin, create an account and deposit tokens into it on Greenfield. Follow the
 
 #### Choose Storage Provider
 
-Storing data is one of the most important features of Greenfield. All storage-related apis require the [storage provider](../guide/storage-provider/introduction/overview.md) to be chose.
+Storing data is one of the most important features of Greenfield. All storage-related apis require the [storage provider](../guide/storage-provider/introduction/index.md) to be chose.
 
 ```js title="select sp"
 const spList = await client.sp.getStorageProviders();

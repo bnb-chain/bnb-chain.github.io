@@ -92,6 +92,7 @@ nav:
               - Getting Test tBNB: ./bnb_greenfield/guide/getting-started/get-test-bnb.md
               - Greenfield Command: ./bnb_greenfield/guide/getting-started/greenfield-command.md
               - Developer Quick Guide: ./bnb_greenfield/guide/getting-started/get-started-dev.md
+              - Contract Entrypoint: ./bnb_greenfield/guide/core-concept/cross-chain/contract-list.md
           - Core Concepts:
               - Accounts: ./bnb_greenfield/guide/core-concept/accounts.md
               - Key Management: ./bnb_greenfield/guide/core-concept/key-management.md
@@ -101,7 +102,7 @@ nav:
                   - Resource Mirroring: ./bnb_greenfield/guide/core-concept/cross-chain/mirror.md
                   - Smart Contract SDK: ./bnb_greenfield/guide/core-concept/cross-chain/sdk.md
                   - Primitive Interfaces: ./bnb_greenfield/guide/core-concept/cross-chain/interface.md
-                  - Contract Entrypoint: ./bnb_greenfield/guide/core-concept/cross-chain/contract-list.md
+
               - Simple Storage Service: ./bnb_greenfield/guide/core-concept/simple-storage-service.md
               - Data Integrity and Availability: ./bnb_greenfield/guide/core-concept/data-availability.md
               - Transaction Lifecycle: ./bnb_greenfield/guide/core-concept/transaction-lifecycle.md
@@ -120,7 +121,7 @@ nav:
           - Bundle Service: ./bnb_greenfield/guide/bundle-service/bundle-service.md
           - Storage Provider:
               - Overview:
-                  - Overview: ./bnb_greenfield/guide/storage-provider/introduction/overview.md
+                  - Overview: ./bnb_greenfield/guide/storage-provider/introduction/index.md
                   - SP Workflow: ./bnb_greenfield/guide/storage-provider/introduction/workflow.md
                   - The Greenfield Storage Provider Standard : ./bnb_greenfield/guide/storage-provider/introduction/standard.md
               - Run Storage Provider:
@@ -176,15 +177,13 @@ nav:
           - Release Notes: ./bnb_greenfield/release-notes/releaseNotes.md
           - Roadmap: ./bnb_greenfield/release-notes/roadmap.md
           - Feature Lists: ./bnb_greenfield/release-notes/features.md
-      - Contribute: ./bnb_greenfield/contribute.md
-      - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
+      - <b>Contribute</b>: ./bnb_greenfield/contribute/contribute.md
+      - <b>Whitepaper</b>: https://github.com/bnb-chain/greenfield-whitepaper
       - FAQs:
           - Overview: ./bnb_greenfield/faq/index.md
           - General FAQ: ./bnb_greenfield/faq/general-faqs.md
-          - Storage FAQ: ./bnb_greenfield/faq/storage-faqs.md
           - SP FAQ: ./bnb_greenfield/faq/sp-faqs.md
           - Mirroring FAQ: ./bnb_greenfield/faq/mirroring-faqs.md
-          - Challenger FAQ: ./bnb_greenfield/faq/challenge-faqs.md
 
 theme:
   name: material
