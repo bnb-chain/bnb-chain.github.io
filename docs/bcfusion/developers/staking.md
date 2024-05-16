@@ -171,7 +171,7 @@ shares.
 To do the vice visa, please use the `getSharesByPooledBNB` function to calculate the shares for some
 specific BNB amount.
 
-### How to calculte the APR/APY of a validator?
+### How to calculate the APR/APY of a validator?
 
 Please be noted that each validator will have its own APR/APY, and the staking system will auto compound the rewards.
 
