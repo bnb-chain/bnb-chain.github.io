@@ -6,6 +6,8 @@ import Wallet1 from '../../assets/bcfusion/user-asset-management3.png';
 import Wallet2 from '../../assets/bcfusion/user-asset-management4.png';
 import Tw1 from '../../assets/bcfusion/tw1.PNG';
 import Tw2 from '../../assets/bcfusion/tw2.PNG';
+import videoURL from '../../assets/bcfusion/migration_guide.mp4';
+
 
 # Stake Migration
 
@@ -27,6 +29,10 @@ facilitaling users for easier migration compared to the second option.
 Therefore this is the recommended way for stake migration.
 
 ### Steps
+
+<video controls width="800">
+  <source src={videoURL}/>
+</video>
 
 #### Step 1: Find your delegations
 
