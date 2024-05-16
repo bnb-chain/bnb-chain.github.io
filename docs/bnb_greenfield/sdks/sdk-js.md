@@ -30,8 +30,8 @@ The SDK offers two types of operations - sending transactions to BNB Greenfield,
 
 The SDK consists of two parts:
 
-* Chain: https://docs.bnbchain.org/greenfield-docs/docs/api/blockchain-rest
-* Storage Provider: https://docs.bnbchain.org/greenfield-docs/docs/api/storage-provider-rest
+* Chain: [Greenfield Chain API](https://github.com/bnb-chain/greenfield/tree/master/docs/greenfield-api)
+* Storage Provider: [Greenfield Storage Provider API](https://github.com/bnb-chain/greenfield-storage-provider/tree/master/docs/storage-provider-rest-api)
 
 ### Transactions
 
@@ -314,11 +314,11 @@ Example output
 
 ### Storage Provider Client
 
-> https://docs.bnbchain.org/greenfield-docs/docs/api/storgae-provider-rest
+> [https://github.com/bnb-chain/greenfield-storage-provider/tree/master/docs/storage-provider-rest-api](https://github.com/bnb-chain/greenfield-storage-provider/tree/master/docs/storage-provider-rest-api)
 
 In addition, the SDK provides support for querying the list of storage providers available and offers generic search capabilities for exploring metadata attributes.
 
-SDK support two [authentication type](https://docs.bnbchain.org/greenfield-docs/docs/api/storage-provider-rest#authentication-type):
+SDK support two [authentication type](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/storage-provider-rest-api/README.md#authentication-type):
 
 * ECDSA: It is usually used on Node.js (Because it need to use a private key)
 * EDDSA: It is usually used in a browser

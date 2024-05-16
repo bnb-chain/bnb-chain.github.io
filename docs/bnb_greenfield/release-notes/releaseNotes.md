@@ -137,7 +137,7 @@ and [Greenfield SP](https://github.com/bnb-chain/greenfield/blob/master/CHANGELO
 
 ## Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset.
 
-Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset.[](https://docs.bnbchain.org/greenfield-docs/docs/release-notes/releaseNotes#greenfield-v023---testnet-maintenance-upgrade-reset)
+Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset.[](#greenfield-v023---testnet-maintenance-upgrade-reset)
 
 On August 31st, we reset the Greenfield Testnet and upgrade the Greenfield version to [v0.2.4](https://github.com/bnb-chain/greenfield/tree/v0.2.4). Here are key changes to note.
 

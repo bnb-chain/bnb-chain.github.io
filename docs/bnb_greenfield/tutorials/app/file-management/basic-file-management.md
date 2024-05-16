@@ -13,7 +13,7 @@ In this tutorial we’ll use the go-SDK library to interact with testnet.
 
 ## Prerequisites
 Before getting started, you should be familiar with:
-* [Greenfield basics](https://docs.bnbchain.org/greenfield-docs/docs/guide/introduction/overview)
+* [Greenfield basics](../../../guide/introduction/introduction.md)
 * Greenfield command line [examples](https://github.com/bnb-chain/greenfield-cmd#examples)
 
 Also, make sure you have the following dependencies installed with the latest version:
@@ -188,7 +188,7 @@ With a given greenfield wallet address, you can query its balance by calling ```
   log.Printf("%s Current balance: %s", account.GetAddress().String(), balance.String())
 ```
 
-Apart from the basic data queries shown above, there are many more features. Please see the [JSON-RPC API Reference](https://docs.bnbchain.org/greenfield-docs/docs/api-sdk/endpoints) for all Greenfield API definitions.
+Apart from the basic data queries shown above, there are many more features. Please see the [JSON-RPC API Reference](../../../api/endpoints.md) for all Greenfield API definitions.
 
 ## Manage Wallet
 Greenfield wallets hold addresses that you can use to manage objects, sign transactions, and pay for gas fees. In this section, we will demonstrate different ways to manage your wallet.
@@ -289,7 +289,7 @@ Bucket can be private or public. You can customize it with options.
   }
   log.Printf("Create bucket response: %s", bucketTx)
 ```
-To understand how does `quota` work, read [this doc](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/billing-payment#storage-service-fee).
+To understand how does `quota` work, read [this doc](../../../guide/core-concept/billing-payment.md#storage-service-fee).
 
 ### 4. Upload your object
 Objects can also be private or public.

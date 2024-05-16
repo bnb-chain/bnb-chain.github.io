@@ -12,7 +12,7 @@ In this tutorial we’ll use the go-SDK library to transfer control over objects
 ## Prerequisites
 Before getting started, you should be familiar with:
 
-- [Greenfield basics](https://docs.bnbchain.org/greenfield-docs/docs/guide/introduction/overview)
+- [Greenfield basics](../../../guide/introduction/introduction.md)
 - Greenfield command line [examples](https://github.com/bnb-chain/greenfield-cmd#examples)
 
 ## Cross Chain Mechanism

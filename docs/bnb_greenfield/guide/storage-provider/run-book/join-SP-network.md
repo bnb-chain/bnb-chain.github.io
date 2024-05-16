@@ -39,7 +39,7 @@ To ensure the stable provision of data services, Storage Providers must meet spe
 
 Greenfield Blockchain validators are responsible for selecting storage providers. For each on-chain proposal to add new storage provider, there are deposit period for depositing BNB and voting period for validators to make votes. Once the proposal passes, new SP can join the network afterwards.
 
-You can query the governance parameters [here](https://docs.bnbchain.org/greenfield-docs/docs/greenfield-api/gov-v-1-params).
+You can query the governance parameters [here](https://github.com/bnb-chain/greenfield/blob/master/docs/greenfield-api/gov-v-1-params.api.mdx).
 
 ### 1. Submit Proposal
 

@@ -16,8 +16,8 @@ In this tutorial, we’ll use the JS-SDK library to interact with testnet.
 
 Before getting started, you should be familiar with:
 
-* [Greenfield basics](https://docs.bnbchain.org/greenfield-docs/docs/guide/introduction/overview)
-* Follow the instructions provided in [Token Transfer](https://docs.bnbchain.org/greenfield-docs/docs/guide/getting-started/token-transfer). Please be aware that if your account does not have any BNB, the transaction will not be executed.
+* [Greenfield basics](../../../guide/introduction/introduction.md)
+* Follow the instructions provided in [Token Transfer](../../../guide/getting-started/token-transfer.md). Please be aware that if your account does not have any BNB, the transaction will not be executed.
 
 <!-- * [basic](https://github.com/bnb-chain/greenfield-js-sdk/blob/main/packages/js-sdk/src/api/basic.ts): includes the basic functions to fetch the blockchain info.
 * [bucket](https://github.com/bnb-chain/greenfield-js-sdk/blob/main/packages/js-sdk/src/api/bucket.ts):  -->

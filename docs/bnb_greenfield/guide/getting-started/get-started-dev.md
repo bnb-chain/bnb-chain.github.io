@@ -17,11 +17,11 @@ Here’s a quick guide to get you from zero to hero. This doc provides a guide t
 
 ### Greenfield 101
 
-Read Greenfield Overview [here](https://docs.bnbchain.org/greenfield-docs/docs/guide/introduction/overview)
+Read Greenfield Overview [here](../introduction/introduction.md)
 
 ### Uniform Address Format
 
-Greenfield defines its [account](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/accounts) in the same format as BSC and Ethereum. It starts with ECDSA secp256k1 curve for keys and is compliant with [EIP84](https://github.com/ethereum/EIPs/issues/84) for full [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) paths.
+Greenfield defines its [account](../core-concept/accounts.md) in the same format as BSC and Ethereum. It starts with ECDSA secp256k1 curve for keys and is compliant with [EIP84](https://github.com/ethereum/EIPs/issues/84) for full [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) paths.
 
 
 ### Account Operation
@@ -47,7 +47,7 @@ Create a public bucket to upload and share objects.
 Create a private bucket and share it with specific individuals.
 
 * [Greenfield CLI Example](../../tutorials/get-started/cmd-access-control.md)
-* [GO-SDK Example]( https://github.com/bnb-chain/greenfield-go-sdk/blob/v1.1.1/examples/permission.go)
+* [GO-SDK Example](https://github.com/bnb-chain/greenfield-go-sdk/blob/v1.1.1/examples/permission.go)
 * [JS-SDK Example](https://docs.bnbchain.org/greenfield-js-sdk/api/bucket#putbucketpolicy-) and [JS-SDK API](https://docs.bnbchain.org/greenfield-js-sdk/api/object#putobjectpolicy-)
 
 ### Enhanced permission control
@@ -72,12 +72,12 @@ Create a private bucket and share it with specific individuals.
 
 ### SDK
 
-- [Greenfield Go SDK](https://docs.bnbchain.org/greenfield-docs/docs/sdks/sdk-go), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
-- [Greenfield Javascript SDK](https://docs.bnbchain.org/greenfield-docs/docs/sdks/sdk-js), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
+- [Greenfield Go SDK](../../sdks/sdk-go.md), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
+- [Greenfield Javascript SDK](../../sdks/sdk-js.md), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
 
 ## Setup
 
-- [Key management](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/key-management)
+- [Key management](../../guide/core-concept/key-management.md)
 - [Transfer](token-transfer.md) between greenfield address
 - [Token bridge](https://dcellar.io/wallet)
 
@@ -87,7 +87,7 @@ Create a private bucket and share it with specific individuals.
 
 - Explore datasets with [explorer](https://greenfieldscan.com/) or [dcellar.io ](https://dcellar.io/)
 
-- [RPC list](https://docs.bnbchain.org/greenfield-docs/docs/api/endpoints)
+- [RPC list](../../api/endpoints.md)
 
 - [Bundle service](https://docs.nodereal.io/docs/greenfield-bundle-service)
 

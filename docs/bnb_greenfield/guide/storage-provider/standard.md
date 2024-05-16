@@ -140,11 +140,11 @@ gfsp.Start(ctx)
 ## Documents
 
 * [Greenfield Whitepaper](https://github.com/bnb-chain/greenfield-whitepaper): The official Greenfield Whitepaper.
-* [Greenfield](https://docs.bnbchain.org/greenfield-docs/docs/guide/home): The Greenfield documents.
-* [Storage Module on Greenfield](https://docs.bnbchain.org/greenfield-docs/docs/guide/greenfield-blockchain/modules/storage-module): The storage module on Greenfield Chain.
-* [Storage Provider on Greenfield](https://docs.bnbchain.org/greenfield-docs/docs/guide/greenfield-blockchain/modules/storage-provider): The storage provider on Greenfield Chain.
-* [Data Availability Challenge](https://docs.bnbchain.org/greenfield-docs/docs/guide/greenfield-blockchain/modules/data-availability-challenge): The correctness of payload be stored in SP.
-* [Storage Provider Introduction](https://docs.bnbchain.org/greenfield-docs/docs/guide/storage-provider/overview): The Greenfield Storage Provider documents.
-* [Storage Provider Compiling and Dependencies](https://docs.bnbchain.org/greenfield-docs/docs/guide/storage-provider/run-book/compile-dependences): The detailed introduction to sp compiling and dependencies.
-* [Run Local Storage Provider Network](https://docs.bnbchain.org/greenfield-docs/docs/guide/storage-provider/run-book/run-local-SP-network): The introduction to run local SP env for testing.
-* [Run Testnet Storage Provider Node](https://docs.bnbchain.org/greenfield-docs/docs/guide/storage-provider/run-book/run-testnet-SP-node): The introduction to run testnet SP node.
+* [Greenfield](../../guide/introduction): The Greenfield documents.
+* [Storage Module on Greenfield](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/storage-module.md): The storage module on Greenfield Chain.
+* [Storage Provider on Greenfield](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/storage-provider.md): The storage provider on Greenfield Chain.
+* [Data Availability Challenge](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/data-availability-challenge.md): The correctness of payload be stored in SP.
+* [Storage Provider Introduction](../storage-provider/index.md): The Greenfield Storage Provider documents.
+* [Storage Provider Compiling and Dependencies](../storage-provider/run-book/compile-dependences.md): The detailed introduction to sp compiling and dependencies.
+* [Run Local Storage Provider Network](../storage-provider/run-book/run-local-SP-network.md): The introduction to run local SP env for testing.
+* [Join SP Network](../storage-provider/run-book/join-SP-network.md): The introduction to join SP network in testnet or mainnet
