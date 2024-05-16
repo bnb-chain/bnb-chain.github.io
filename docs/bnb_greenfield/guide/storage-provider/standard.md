@@ -140,7 +140,7 @@ gfsp.Start(ctx)
 ## Documents
 
 * [Greenfield Whitepaper](https://github.com/bnb-chain/greenfield-whitepaper): The official Greenfield Whitepaper.
-* [Greenfield](../../guide/introduction): The Greenfield documents.
+* [Greenfield](../../guide/index.md): The Greenfield documents.
 * [Storage Module on Greenfield](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/storage-module.md): The storage module on Greenfield Chain.
 * [Storage Provider on Greenfield](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/storage-provider.md): The storage provider on Greenfield Chain.
 * [Data Availability Challenge](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/data-availability-challenge.md): The correctness of payload be stored in SP.

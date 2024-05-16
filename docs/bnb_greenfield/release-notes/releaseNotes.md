@@ -141,9 +141,9 @@ For other detailed features, bug fixes, and refactoring, please refer to the cha
 and [Greenfield SP](https://github.com/bnb-chain/greenfield/blob/master/CHANGELOG.md) repo.
 
 
-## Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset.
+## Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset
 
-Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset.[](#greenfield-v023---testnet-maintenance-upgrade-reset)
+Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset
 
 On August 31st, we reset the Greenfield Testnet and upgrade the Greenfield version to [v0.2.4](https://github.com/bnb-chain/greenfield/tree/v0.2.4). Here are key changes to note.
 
@@ -175,7 +175,7 @@ On August 31st, we reset the Greenfield Testnet and upgrade the Greenfield versi
 - [#981](https://github.com/bnb-chain/greenfield-storage-provider/pull/981) Add transaction confirmation function and support virtual group retry
 - [#968](https://github.com/bnb-chain/greenfield-storage-provider/pull/968) Support bucket migration verification when loading from db
 
-## Greenfield v0.2.3 - Testnet Maintenance Upgrade Reset.
+## Greenfield v0.2.3 - Testnet Maintenance Upgrade Reset
 
 On August 3rd, we reset the Greenfield Testnet and upgrade the Greenfield version to [v0.2.3](https://github.com/bnb-chain/greenfield/tree/v0.2.3). Here are key changes to note.
 

@@ -10,7 +10,7 @@ Storage Providers(SP) should meet the following requirements:
 	* Each SP candidate has to deposit **500 BNB** as collateral
 	* SP needs to pledge additional funds to store more data at 200% of the storage fees of the data stored as Primary SP, which is 0.023 * 1024 * 2 = $47.104/TB.
 
-* [Hardware requirements](../guide/storage-provider/run-book/run-SP-node#recommended-hardware)
+* [Hardware requirements](../guide/storage-provider/run-book/run-SP-node.md#recommended-hardware)
 
 ### How does SP receive their rewards?
 
@@ -18,7 +18,7 @@ SP will receive their rewards in `funding address` after sending `Settlement Tra
 
 ### When to update store price and read price?
 
-Every SP can set their own suggested store price and read price via on-chain transactions. Read how to send commands [here](../guide/storage-provider/run-book/join-SP-network#update-sp-price)
+Every SP can set their own suggested store price and read price via on-chain transactions. Read how to send commands [here](../guide/storage-provider/run-book/join-SP-network.md#update-sp-price)
 
 There are some [constrains](https://github.com/bnb-chain/greenfield/blob/master/docs/modules/billing-and-payment.md#storage-fee-price-and-adjustment
 ):
