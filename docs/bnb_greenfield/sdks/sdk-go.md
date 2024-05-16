@@ -371,7 +371,7 @@ Bucket can be private or public. You can customize it with options.
 	opts := types.CreateBucketOptions{Visibility: visibility, ChargedQuota: chargedQuota}
 ```
 
-To understand how does `quota` work, read [this](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/billing-payment#storage-service-fee).
+To understand how does `quota` work, read [this](../guide/core-concept/billing-payment.md#storage-service-fee).
 
 
 
