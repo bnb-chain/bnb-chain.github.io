@@ -4,9 +4,22 @@ The opBNB network is the Layer 2 scaling solution for the BNB Smart Chain powere
 
 ![image-20230621190244472](./img/opBNB-intro.png)
 
-Besides the [differentiators of bedrock](https://docs.optimism.io/stack/differences), opBNB is the solution that we aim to provide the best optimistic solution on the BSC.
 
-- Capacity can reach to > 100m gas per second, which is much higher than other layer 2 solutions on the Ethereum.
-- Gas fee of transfer can reach as low as $0.001 on average.
-- block time is 1 second.
+### Key Features and Advantages
+
+1. **Optimistic Rollup Technology:**
+   opBNB employs Optimistic Rollup, a Layer-2 scaling solution that processes transactions off-chain while maintaining the security of the main BSC chain. By bundling multiple transactions into a single batch and then submitting them to the main chain, Optimistic Rollup reduces the computational load on BSC, resulting in faster and cheaper transactions.
+
+2. **Increased Transaction Throughput:**
+   The adoption of Optimistic Rollup allows opBNB to achieve significantly higher transaction throughput compared to the BSC main chain. As of early 2024, opBNB supports up to 5,000 transactions per second (TPS), addressing one of the critical bottlenecks in blockchain scalability.
+
+3. **Lower Transaction Fees:**
+   One of the primary benefits of opBNB is the reduction in transaction fees. By processing transactions off-chain and only settling the final state on the BSC main chain, opBNB dramatically lowers the costs associated with executing transactions. This makes it an attractive option for developers and users alike, particularly for micro-transactions and DeFi applications.
+
+4. **Enhanced User Experience:**
+   With faster transaction confirmations and lower fees, opBNB significantly enhances the overall user experience. This improvement is crucial for the mass adoption of blockchain technology, as it makes interactions with DApps and DeFi platforms more seamless and affordable.
+
+5. **Robust Security:**
+   Despite processing transactions off-chain, opBNB maintains a high level of security by relying on the security model of the underlying BSC main chain. Optimistic Rollup's fraud-proof mechanism ensures that any invalid transactions can be challenged and corrected, safeguarding the integrity of the network.
+
 
