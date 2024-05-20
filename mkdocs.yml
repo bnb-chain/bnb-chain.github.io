@@ -82,10 +82,9 @@ nav:
       - Local Node: ./bnb_opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb_opbnb/advanced/run-with-pebbledb-and-pbss.md
   - BNB Greenfield:
-
       - Overview : ./bnb_greenfield/guide/index.md
       - Introduction: ./bnb_greenfield/guide/introduction/introduction.md
-      - Getting Started:
+      - <b>Getting Started</b>:
           - Wallet Configuration: ./bnb_greenfield/guide/getting-started/wallet-configuration.md
           - Bridge and Transfer BNB: ./bnb_greenfield/guide/getting-started/token-transfer.md
           - Use Greenfield in Dcellar: ./bnb_greenfield/guide/getting-started/dcellar.md
@@ -93,44 +92,44 @@ nav:
           - Faucet: ./bnb_greenfield/guide/getting-started/get-test-bnb.md
           - General FAQ: ./bnb_greenfield/faq/general-faqs.md
       - Core Concepts:
-          - Accounts: ./bnb_greenfield/guide/core-concept/accounts.md
-          - Key Management: ./bnb_greenfield/guide/core-concept/key-management.md
+          - Accounts & Keys: ./bnb_greenfield/guide/core-concept/accounts.md
           - BNB Token Model: ./bnb_greenfield/guide/core-concept/bnb-token-model.md
           - Billing and Payment: ./bnb_greenfield/guide/core-concept/billing-payment.md
+          - Data Storage:
+              - Simple Storage Service: ./bnb_greenfield/guide/core-concept/simple-storage-service.md
+              - Underlying Storage Model: ./bnb_greenfield/guide/core-concept/data-storage.md
+              - Data Integrity and Availability: ./bnb_greenfield/guide/core-concept/data-availability.md
           - Cross-Chain Programmability:
               - Cross-Chain Programmability: ./bnb_greenfield/guide/core-concept/programmability.md
               - Resource Mirroring: ./bnb_greenfield/guide/core-concept/cross-chain/mirror.md
               - Smart Contract SDK: ./bnb_greenfield/guide/core-concept/cross-chain/sdk.md
               - Primitive Interfaces: ./bnb_greenfield/guide/core-concept/cross-chain/interface.md
-
-          - Simple Storage Service: ./bnb_greenfield/guide/core-concept/simple-storage-service.md
-          - Data Integrity and Availability: ./bnb_greenfield/guide/core-concept/data-availability.md
-          - Transaction Lifecycle: ./bnb_greenfield/guide/core-concept/transaction-lifecycle.md
-          - Storage Provider Lifecycle: ./bnb_greenfield/guide/core-concept/storage-provider-lifecycle.md
-          - Data Storage: ./bnb_greenfield/guide/core-concept/data-storage.md
-          - Gas and Fees: ./bnb_greenfield/guide/core-concept/gas-fees.md
       - For Developers:
           - Developer Quick Guide: ./bnb_greenfield/guide/getting-started/get-started-dev.md
-          - Network Info: ./bnb_greenfield/guide/getting-started/network-info.md
+          - Network & Endpoints:
+              - Network Info: ./bnb_greenfield/guide/getting-started/network-info.md
+              - RPC Endpoints: ./bnb_greenfield/api/endpoints.md
+              - Contract Entrypoint: ./bnb_greenfield/guide/core-concept/cross-chain/contract-list.md
           - Bundle Service: ./bnb_greenfield/guide/bundle-service/bundle-service.md
-          - Contract Entrypoint: ./bnb_greenfield/guide/core-concept/cross-chain/contract-list.md
-          - Mirroring FAQ: ./bnb_greenfield/faq/mirroring-faqs.md
-          - Contribute: ./bnb_greenfield/contribute/contribute.md
-          - RPC Endpoints: ./bnb_greenfield/api/endpoints.md
+
+
+
           - Tutorials:
               - Overview: ./bnb_greenfield/tutorials/index.md
-              - Get Started:
-                  - Basic File Management with CLI: ./bnb_greenfield/tutorials/get-started/file-management/overview.md
-                  - How to transition from S3 to Greenfield: ./bnb_greenfield/tutorials/get-started/transitioning-from-s3-to-greenfield.md
-                  - Hosting a Website on Greenfield: ./bnb_greenfield/tutorials/get-started/hosting-websites/overview.md
-                  - Access Control:
-                      - Access Control Management with CLI: ./bnb_greenfield/tutorials/get-started/cmd-access-control.md
-                      - Cross Chain Access Control by CMD: ./bnb_greenfield/tutorials/core/access-control/quick-start.md
-                      - Native Access Control: ./bnb_greenfield/tutorials/core/access-control/access-control.md
-                      - Cross Chain Access Control by SDK: ./bnb_greenfield/tutorials/core/access-control/cross-chain.md
+
+              - Basic File Management with CLI: ./bnb_greenfield/tutorials/get-started/file-management/overview.md
+              - How to transition from S3 to Greenfield: ./bnb_greenfield/tutorials/get-started/transitioning-from-s3-to-greenfield.md
+              - Hosting a Website on Greenfield: ./bnb_greenfield/tutorials/get-started/hosting-websites/overview.md
+              - Access Control:
+                  - Access Control Management with CLI: ./bnb_greenfield/tutorials/get-started/cmd-access-control.md
+                  - Cross Chain Access Control by CMD: ./bnb_greenfield/tutorials/core/access-control/quick-start.md
+                  - Native Access Control: ./bnb_greenfield/tutorials/core/access-control/access-control.md
+                  - Cross Chain Access Control by SDK: ./bnb_greenfield/tutorials/core/access-control/cross-chain.md
+              - Cross Chain Integration:
                   - Resources Mirroring with CLI: ./bnb_greenfield/tutorials/core/mirror.md
                   - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb_greenfield/tutorials/core/dapp-integration.md
-              - Apps on Greenfield:
+                  - Mirroring FAQ: ./bnb_greenfield/faq/mirroring-faqs.md
+              - Sample Apps on Greenfield:
                   - Overview: ./bnb_greenfield/tutorials/app/overview.md
                   - Data Marketplace: ./bnb_greenfield/tutorials/app/data-marketplace.md
                   - File Management:
@@ -145,33 +144,36 @@ nav:
               - Javascript SDK Example: ./bnb_greenfield/sdks/sdk-js.md
               - Go SDK Official Doc: https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
+          - How to Contribute: ./bnb_greenfield/contribute/contribute.md
+
 
       - Greenfield Blockchain:
           - Overview: ./bnb_greenfield/guide/greenfield-blockchain/overview.md
-          - Blockchain Command Line:
-              - overview: ./bnb_greenfield/api/blockchain-cli/README.md
+          - Blockchain Command Line:  ./bnb_greenfield/api/blockchain-cli/gnfd-cli.md
           - Blockchain Events: ./bnb_greenfield/api/events.md
           - Interact with the Chain : ./bnb_greenfield/guide/greenfield-blockchain/run-node/interact-node.md
-          - Run Node : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-node.md
-          - Run Relayer : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-relayer.md
-          - Run Challenger : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-challenger.md
-          - Become Validator : ./bnb_greenfield/guide/greenfield-blockchain/run-node/become-validator.md
+          - Run Greenfield Blockchain:
+              - Run Node : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-node.md
+              - Run Relayer : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-relayer.md
+              - Run Challenger : ./bnb_greenfield/guide/greenfield-blockchain/run-node/run-challenger.md
+              - Become Validator : ./bnb_greenfield/guide/greenfield-blockchain/run-node/become-validator.md
 
       - Storage Provider:
           - Overview: ./bnb_greenfield/guide/storage-provider/index.md
+          - Storage Provider Lifecycle: ./bnb_greenfield/guide/core-concept/storage-provider-lifecycle.md
           - SP Command Line: ./bnb_greenfield/api/sp-cli.md
           - SP Workflow: ./bnb_greenfield/guide/storage-provider/workflow.md
           - Data Service Quality Standard : ./bnb_greenfield/guide/storage-provider/standard.md
-
-          - SP Compiling and Dependencies: ./bnb_greenfield/guide/storage-provider/run-book/compile-dependences.md
-          - Run Local SP Network: ./bnb_greenfield/guide/storage-provider/run-book/run-local-SP-network.md
-          - Run SP Node: ./bnb_greenfield/guide/storage-provider/run-book/run-SP-node.md
-          - Join SP Network: ./bnb_greenfield/guide/storage-provider/run-book/join-SP-network.md
-          - Exit SP Network: ./bnb_greenfield/guide/storage-provider/run-book/exit-SP-network.md
-          - Deploy Piece Store: ./bnb_greenfield/guide/storage-provider/run-book/piece-store.md
-          - SP Config: ./bnb_greenfield/guide/storage-provider/run-book/config.md
-          - SP Common Issues: ./bnb_greenfield/guide/storage-provider/run-book/common-issues.md
-          - SP FAQ: ./bnb_greenfield/faq/sp-faqs.md
+          - Run Storage Provider:
+              - SP Compiling and Dependencies: ./bnb_greenfield/guide/storage-provider/run-book/compile-dependences.md
+              - Run Local SP Network: ./bnb_greenfield/guide/storage-provider/run-book/run-local-SP-network.md
+              - Run SP Node: ./bnb_greenfield/guide/storage-provider/run-book/run-SP-node.md
+              - Join SP Network: ./bnb_greenfield/guide/storage-provider/run-book/join-SP-network.md
+              - Exit SP Network: ./bnb_greenfield/guide/storage-provider/run-book/exit-SP-network.md
+              - Deploy Piece Store: ./bnb_greenfield/guide/storage-provider/run-book/piece-store.md
+              - SP Config: ./bnb_greenfield/guide/storage-provider/run-book/config.md
+              - SP Common Issues: ./bnb_greenfield/guide/storage-provider/run-book/common-issues.md
+              - SP FAQ: ./bnb_greenfield/faq/sp-faqs.md
 
 
       - Releases:

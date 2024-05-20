@@ -24,15 +24,15 @@ Follow the instructions [here to set up a full node](./run-node.md).
 ### 2. Prepare validator, delegator, validator BLS, relayer, and challenger accounts
 
 !!! warning
-    The current key generation and storage procedures are not very secure. It is highly recommended to implement a more
+    The current key generation and storage procedures are not very secure. It is highly recommended to implement a more  
     robust method, particularly when dealing with keys like the `delegator` and `operator` keys.
     
     For enhanced security and best practices, the usage of the `Cold Wallet` and `MPC Wallet` is strongly encouraged.
-    These wallets are fully compatible with the `gnfd-tx-sender` tool, you can refer to [transaction data](../../../api/blockchain-cli/README.md#transaction-data) for more details.
+    These wallets are fully compatible with the `gnfd-tx-sender` tool, you can refer to [transaction data](../../../api/blockchain-cli/gnfd-cli.md#transaction-data) for more details.
 
 !!! note
     The `keyring-backend` supports multiple storage backends, some of which may not be available on all operating systems.
-    See more details [here](../../core-concept/key-management.md).
+    See more details [here](../../core-concept/accounts.md#key-management).
 
 ```bash
 gnfd keys add validator --keyring-backend test
@@ -152,7 +152,7 @@ gnfd tx staking create-validator ./create_validator_proposal.json --from ${DELEG
 ```
 
 Submit the transaction using [gnfd-tx-sender](https://gnfd-tx-sender.nodereal.io/).
-Please refer to [this guide](../../../api/blockchain-cli/README.md#transaction-data) for instructions.
+Please refer to [this guide](../../../api/blockchain-cli/gnfd-cli.md#transaction-data) for instructions.
 
 ![submit-proposal](../../../static/asset/14-gnfd-tx-sender.png)
 

@@ -68,9 +68,6 @@ gnfd start
     gnfd start --home /usr/local/gnfd
     ```
 
-If you encounter any issue when running a Full Node, you should read the FAQ provided [here](../../../faq/index.md).
-
-
 ### Additional Configuration
 - Seed node: Your Full Node needs to know how to find peers in the blockchain network. You'll need to add healthy seed nodes to $NODE_HOME/config/config.toml. The recommended `config.toml` already contains links to some seed nodes.
 

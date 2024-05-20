@@ -77,7 +77,7 @@ Create a private bucket and share it with specific individuals.
 
 ## Setup
 
-- [Key management](../../guide/core-concept/key-management.md)
+- [Key management](../../guide/core-concept/accounts.md#key-management)
 - [Transfer](token-transfer.md) between greenfield address
 - [Token bridge](https://dcellar.io/wallet)
 

@@ -27,7 +27,7 @@ You can acquire BNB in multiple ways:
 
 ### What is the utility of BNB on Greenfield?
 
-BNB is used as a staking token, gas token, storage service fee token, and governance token. Refer to [token economics](../guide/core-concept/gas-fees.md)
+BNB is used as a staking token, gas token, storage service fee token, and governance token. Refer to [token economics](../guide/core-concept/billing-payment.md#gas-and-fees)
 for more details.
 
 ### Does Greenfield support smart contract?
