@@ -105,18 +105,14 @@ nav:
               - Smart Contract SDK: ./bnb_greenfield/guide/core-concept/cross-chain/sdk.md
               - Primitive Interfaces: ./bnb_greenfield/guide/core-concept/cross-chain/interface.md
       - For Developers:
-          - Developer Quick Guide: ./bnb_greenfield/guide/getting-started/get-started-dev.md
+          - Quick Guide: ./bnb_greenfield/guide/getting-started/get-started-dev.md
           - Network & Endpoints:
               - Network Info: ./bnb_greenfield/guide/getting-started/network-info.md
               - RPC Endpoints: ./bnb_greenfield/api/endpoints.md
               - Contract Entrypoint: ./bnb_greenfield/guide/core-concept/cross-chain/contract-list.md
           - Bundle Service: ./bnb_greenfield/guide/bundle-service/bundle-service.md
-
-
-
           - Tutorials:
               - Overview: ./bnb_greenfield/tutorials/index.md
-
               - Basic File Management with CLI: ./bnb_greenfield/tutorials/get-started/file-management/overview.md
               - How to transition from S3 to Greenfield: ./bnb_greenfield/tutorials/get-started/transitioning-from-s3-to-greenfield.md
               - Hosting a Website on Greenfield: ./bnb_greenfield/tutorials/get-started/hosting-websites/overview.md

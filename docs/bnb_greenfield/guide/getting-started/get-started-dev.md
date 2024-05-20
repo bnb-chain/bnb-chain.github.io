@@ -1,5 +1,5 @@
 ---
-title: Developer Quick Guide
+title: Quick Guide
 description: Quick guide for BNB Greenfield developers. You will understand what you need to build your project.
 keywords: [BNB Greenfield development, data storage development]
 order: 8
