@@ -82,7 +82,7 @@ transfer of BNB tokens between these two chains.
 To facilitate cross-chain accessibility between Greenfield and opBNB, validators need to upgrade their relayers running
 between Greenfield and BSC to [Relayer v1.1.1](https://github.com/bnb-chain/greenfield-relayer/releases/tag/v1.1.1) before
 the Pampas Hardfork. Additionally, they should deploy an additional relayer for Greenfield and opBNB, following the
-instructions in the [Run Relayer](../guide/greenfield-blockchain/run-node/run-relayer.md).
+instructions in the [Run Relayer](../greenfield-blockchain/run-node/run-relayer.md).
 
 Furthermore, in version v1.1.0, we have temporarily disabled the SP Exit and Bucket Migration processes due to their
 complexity and the difficulty in ensuring stability. We are working on optimizing these features and will introduce a
@@ -220,7 +220,7 @@ The [Greenfield Blockchain v0.2.2](https://github.com/bnb-chain/greenfield/relea
 * [#276](https://github.com/bnb-chain/greenfield/pull/276) This feature support adding keyManager into txOpt, so that allow large batch of transactions sent by a single client.
 * [#502](https://github.com/bnb-chain/greenfield-storage-provider/pull/502) This feature allow SP to use B2 as its underlying storage.
 * [#512](https://github.com/bnb-chain/greenfield-storage-provider/pull/512) This feature enables universal endpoint for private object.
-* [SP Standard Framework](../guide/storage-provider/standard.md) This document outlines the updated implementation of the SP standard and establishes a clear set of guidelines that encompass the SP API, protocols, and performance indicators. Community developers are able to customize their own SP functions in a flexible manner that adheres to the established standard. 
+* [SP Standard Framework](../storage-provider/standard.md) This document outlines the updated implementation of the SP standard and establishes a clear set of guidelines that encompass the SP API, protocols, and performance indicators. Community developers are able to customize their own SP functions in a flexible manner that adheres to the established standard. 
 
 For other small features, bug fixes, and refactoring, please refer to the changelog in the release.
 
