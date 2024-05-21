@@ -28,7 +28,7 @@ There are some [constrains](https://github.com/bnb-chain/greenfield/blob/master/
 
 ### How much BNB is required by SP to stake in relation to how much space they want to provide?
 
-SP needs to stake additional funds to store user's data. It's based on formula: storage_staking_price * stored_size, and the price is now 160000 wei/byte, which could be fetched from [this API](https://github.com/bnb-chain/greenfield/blob/master/docs/greenfield-api/virtual-group-params.api.mdx) .
+SP needs to stake additional funds to store user's data. It's based on formula: storage_staking_price * stored_size, and the price is now 160000 wei/byte, which could be fetched from [this API](https://greenfield-chain.bnbchain.org/openapi#/Query/VirtualGroupParams) .
 
 
 ### What's the limit of Storage Provider capacity?
