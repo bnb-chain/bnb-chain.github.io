@@ -3,3 +3,7 @@
     --md-primary-fg-color--light: #f2f20b;
     --md-primary-fg-color--dark:  #f9f6f6;
   }
+
+h1, h2, h3, label {
+    color: var(--main-black) !important;
+}
