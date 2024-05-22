@@ -73,9 +73,7 @@
     --md-primary-fg-color: var(--doc-dark-layer-2);
     --md-primary-fg-color--light: var(--doc-dark-layer-2);
     --md-primary-fg-color--dark: var(--doc-dark-layer-2);
-
     --md-accent-fg-color: var(--doc-light-text-brand);
-
     --md-text-font: 'Space Grotesk';
 }
 
@@ -112,7 +110,7 @@ body {
 
 @media (max-width: 767px) {
     .md-grid {
-        max-width: 100%;
+        max-width: calc(100% - 40px);
         width: 1320px;
     }
 }
@@ -129,4 +127,12 @@ body {
     color: var(--doc-text-primary);
     line-height: 1.333;
     font-size: 1.365em;
+}
+
+.md-typeset a {
+    color: var(--doc-text-brand);
+}
+
+.md-typeset a:focus, .md-typeset a:hover {
+    text-decoration: underline;
 }
