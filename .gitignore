@@ -1,3 +1,5 @@
 site/
 
 .idea/
+
+.cache
