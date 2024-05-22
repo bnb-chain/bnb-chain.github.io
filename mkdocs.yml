@@ -62,7 +62,7 @@ theme:
 nav:
   - Home: index.md
   - Announcements: ./announce/index.md
-  - BNB Beacon Chain Fusion:
+  - BNB Chain Fusion:
     - Overview: ./bc_fusion/index.md
     - For Users:
       - Manage Your Assets: ./bc_fusion/users/assets.md
