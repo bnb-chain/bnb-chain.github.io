@@ -1,26 +1,63 @@
 # Project information
 site_name: BNBChain Knowledge Base
-site_url: https://www.bnbchain.org
+site_url: https://docs.bnbchain.org
 site_author: BNB Chain
 site_description: >-
   Write your documentation in Markdown and create a professional static site in
   minutes – searchable, customizable for all devices
 # Repository
-repo_name: bnbchain
-repo_url: https://github.com/bnb-chain/
+repo_name: BNB Chain GitHub
+repo_url: https://github.com/0xPolygon/polygon-docs
+edit_uri: edit/main/docs/
 
-markdown_extensions:
-  - md_in_html
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-#  - toc:
-#      toc_depth: 2
-plugins:
-  - offline
-  - search
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/bnb.svg
+  custom_dir: overrides
+  language: en
+  font:
+    text: 'Space Grotesk'
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+#    - announce.dismiss
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.instant
+#    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.integration
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+#    - navigation.expand
+    - navigation.prune
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
+    - content.tooltips
+#    - content.action.view
+
+
 # Page tree
 nav:
   - Home: index.md
@@ -201,45 +238,68 @@ nav:
           - Feature Lists: ./bnb_greenfield/release-notes/features.md
       - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
 
-theme:
-  name: material
-  logo: assets/bnb.svg
-  favicon: assets/bnb.svg
-  features:
-    - navigation.footer
-    - navigation.indexes
-    - navigation.sections
-    - navigation.tabs
-    - navigation.top
-    - navigation.tracking
-    - content.tabs.link
-  palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      primary: white
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+markdown_extensions:
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+      toc_depth: 4
+  - codehilite
+  - admonition
+  - footnotes
+  - def_list
+  - attr_list
+  - abbr
+  - meta
+  - smarty
+  - md_in_html
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.extra
 
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      primary: black
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+plugins:
+  - offline
+  - search
 
 extra_css:
-- stylesheets/extra.css
+  - assets/style/index.css
+  - assets/style/components/banner.css
+  - assets/style/components/nav.css
+  - assets/style/components/sidebar.css
+  - assets/style/components/footer-nav.css
+  - assets/style/components/footer.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 extra:
-  homepage: https://bnbchain.org
-  alternate:
-    - name: English
-      link: /
-      lang: en
-
-# Copyright
-copyright: Copyright &copy; 2024 BNB Chain
-
+  generator: false
+  homepage: https://www.bnbchain.org
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.

@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "color-emoji";
+    src: local("Apple Color Emoji"),
+    local("Twemoji Mozilla"),
+    local("Segoe UI Emoji"),
+    local("Segoe UI Symbol"),
+    local("Noto Color Emoji"),
+    local("EmojiOne Color"),
+    local("Android Emoji");
+}
+
+:root {
+    --doc-text-primary: #181A1E;
+    --doc-text-secondary: #5C5F6A;
+    --doc-text-tertiary: #5C5F6A;
+    --doc-text-placeholder: #888A97;
+    --doc-text-brand: #FF8A38;
+    --doc-text-on-color: #fff;
+    --doc-bg-1: #FFFFFF;
+    --doc-bg-2: #F1F2F3;
+    --doc-layer-2: #F1F2F3;
+    --doc-layer-3: #fff;
+    --doc-layer-4: #E1E2E5;
+    --doc-layer-inverse: #181A1E;
+    --doc-border-2: #F1F2F3;
+    --doc-border-3: #E1E2E5;
+    --doc-border-4: #E1E2E5;
+    --doc-input-1: #F7F7F8;
+    --doc-button-primary: #181A1E;
+    --doc-support-brand-2: #FF8A38;
+    --doc-support-warning-2: #933D00;
+
+    --doc-light-text-primary: #181A1E;
+    --doc-light-text-secondary: #5C5F6A;
+    --doc-light-text-tertiary: #5C5F6A;
+    --doc-light-text-placeholder: #888A97;
+    --doc-light-text-brand: #FF8A38;
+    --doc-light-text-on-color: #fff;
+    --doc-light-bg-1: #FFFFFF;
+    --doc-light-bg-2: #F1F2F3;
+    --doc-light-layer-2: #F1F2F3;
+    --doc-light-layer-3: #fff;
+    --doc-light-layer-4: #E1E2E5;
+    --doc-light-layer-inverse: #181A1E;
+    --doc-light-border-2: #F1F2F3;
+    --doc-light-border-3: #E1E2E5;
+    --doc-light-border-4: #E1E2E5;
+    --doc-light-input-1: #F7F7F8;
+    --doc-light-button-primary: #181A1E;
+    --doc-light-support-brand-2: #FF8A38;
+    --doc-light-support-warning-2: #933D00;
+
+    --doc-dark-text-primary: #fff;
+    --doc-dark-text-secondary: #C4C5CB;
+    --doc-dark-text-tertiary: #8C8F9B;
+    --doc-dark-text-placeholder: #8C8F9B;
+    --doc-dark-text-brand: #FFE900;
+    --doc-dark-text-on-color: #181A1E;
+    --doc-dark-bg-1: #181A1E;
+    --doc-dark-bg-2: #1E2026;
+    --doc-dark-layer-2: #181A1E;
+    --doc-dark-layer-3: #1E2026;
+    --doc-dark-layer-4: #373943;
+    --doc-dark-layer-inverse: #F7F7F8;
+    --doc-dark-border-2: #1E2026;
+    --doc-dark-border-3: #373943;
+    --doc-dark-border-4: #5C5F6A;
+    --doc-dark-input-1: #373943;
+    --doc-dark-button-primary: #F1F2F3;
+    --doc-dark-support-brand-2: #FFF15C;
+    --doc-dark-support-warning-2: #FFA260;
+
+    --md-primary-fg-color: var(--doc-dark-layer-2);
+    --md-primary-fg-color--light: var(--doc-dark-layer-2);
+    --md-primary-fg-color--dark: var(--doc-dark-layer-2);
+
+    --md-accent-fg-color: var(--doc-light-text-brand);
+
+    --md-text-font: 'Space Grotesk';
+}
+
+body {
+    --md-text-font-family: var(--md-text-font), -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, color-emoji;
+}
+
+[data-md-color-scheme=slate] {
+    --doc-text-primary: var(--doc-dark-text-primary);
+    --doc-text-secondary: var(--doc-dark-text-secondary);
+    --doc-text-tertiary: var(--doc-dark-text-tertiary);
+    --doc-text-placeholder: var(--doc-dark-text-placeholder);
+    --doc-text-brand: var(--doc-dark-text-brand);
+    --doc-text-on-color: var(--doc-dark-text-on-color);
+    --doc-bg-1: var(--doc-dark-bg-1);
+    --doc-bg-2: var(--doc-dark-bg-2);
+    --doc-layer-2: var(--doc-dark-layer-2);
+    --doc-layer-3: var(--doc-dark-layer-3);
+    --doc-layer-4: var(--doc-dark-layer-4);
+    --doc-layer-inverse: var(--doc-dark-layer-inverse);
+    --doc-border-2: var(--doc-dark-border-2);
+    --doc-border-3: var(--doc-dark-border-3);
+    --doc-border-4: var(--doc-dark-border-4);
+    --doc-input-1: var(--doc-dark-input-1);
+    --doc-button-primary: var(--doc-dark-button-primary);
+    --doc-support-brand-2: var(--doc-dark-support-brand-2);
+    --doc-support-warning-2: var(--doc-dark-support-warning-2);
+}
+
+.md-grid {
+    max-width: calc(100% - 80px);
+    width: 1320px;
+}
+
+@media (max-width: 767px) {
+    .md-grid {
+        max-width: 100%;
+        width: 1320px;
+    }
+}
+
+.md-typeset h1 {
+    font-weight: 700;
+    font-size: 1.8em;
+    line-height: 1.25;
+    color: var(--doc-text-primary);
+}
+
+.md-typeset h2 {
+    font-weight: 700;
+    color: var(--doc-text-primary);
+    line-height: 1.333;
+    font-size: 1.365em;
+}
