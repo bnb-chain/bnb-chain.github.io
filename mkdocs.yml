@@ -61,7 +61,8 @@ nav:
   - Home: index.md
   - Announcements: ./announce/index.md
   - BNB Chain Fusion:
-    - Overview: ./bc_fusion/index.md
+    - BNB Chain Fusion: ./bc_fusion/index.md
+    - Overview: ./bc_fusion/overview.md
     - For Users:
       - Manage Your Assets: ./bc_fusion/users/assets.md
       - Manage Your Atomic Swaps: ./bc_fusion/users/swaps.md
@@ -112,7 +113,8 @@ nav:
         - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb_smart_chain/slashing/monitor.md
   - BNB opBNB:
-    - Introduction: ./bnb_opbnb/index.md
+    - BNB opBNB: ./bnb_opbnb/index.md
+    - Overview: ./bnb_opbnb/overview.md
     - Core Concepts:
       - Why BSC Requires opBNB: ./bnb_opbnb/core-concepts/why-bsc-requires-opbnb.md
       - Why OP Stack: ./bnb_opbnb/core-concepts/why-opstack.md
