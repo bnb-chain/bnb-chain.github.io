@@ -11,3 +11,9 @@
 .md-nav__item .md-nav__link--active, .md-nav__item .md-nav__link--active code {
     color: var(--doc-text-brand);
 }
+
+@media screen and (max-width: 76.234375em) {
+    [data-md-toggle=drawer]:checked~.md-container .md-sidebar--primary {
+        width: 260px;
+    }
+}

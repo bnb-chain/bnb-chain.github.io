@@ -7,7 +7,7 @@ site_description: >-
   minutes – searchable, customizable for all devices
 # Repository
 repo_name: BNB Chain GitHub
-repo_url: https://github.com/0xPolygon/polygon-docs
+repo_url: https://github.com/huihzhao/docsite
 edit_uri: edit/main/docs/
 
 theme:
@@ -59,7 +59,9 @@ theme:
 # Page tree
 nav:
   - Home: index.md
-  - Announcements: ./announce/index.md
+  - Announcements:
+    - Overview: ./announce/index.md
+    - v.9.5.18: ./announce/v.9.5.18.md
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc_fusion/index.md
     - Overview: ./bc_fusion/overview.md
@@ -291,7 +293,6 @@ extra_css:
 
 extra_javascript:
   - assets/js/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js

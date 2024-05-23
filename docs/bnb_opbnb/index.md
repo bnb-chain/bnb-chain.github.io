@@ -15,7 +15,7 @@ hide:
         <p>BNB opBNB is the Layer 2 scaling solution for the BNB Smart Chain powered by bedrock version of Optimism OP Stack.</p>
     </div>
     <div class="image">
-        <img src="../assets/bsc/bnb_smart_chain.png" alt="BNB Smart Chain" loading="lazy">
+        <img src="img/opbnb.png" alt="opBNB" loading="lazy">
     </div>
 </div>
 
@@ -26,15 +26,15 @@ hide:
         <div>Get Started</div>
         <p>Deposit BNB to opBNB to start your journey</p>
     </a>
-    <a href="./developers/developer-tools.md">
+    <a href="./developers/developer-tools.html">
         <div>Summary of opBNB infrastructure</div>
         <p></p>
     </a>
-    <a href="./advanced/run-with-pebbledb-and-pbss.md">
+    <a href="./advanced/run-with-pebbledb-and-pbss.html">
         <div>Run Node</div>
         <p>Run a fullnode on opBNB network</p>
     </a>
-    <a href="./advanced/full-stack-dapp.md">
+    <a href="./advanced/full-stack-dapp.html">
         <div>Build Dapp</div>
         <p>Deploy a simple HelloWorld smart contract on opBNB and build a Web3 frontend</p>
     </a>

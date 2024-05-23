@@ -15,18 +15,18 @@ hide:
         <p>BNB Smart Chain is a high-performance blockchain platform designed to enable the development of scalable and user-friendly decentralized applications (DApps), particularly in the decentralized finance (DeFi) space.</p>
     </div>
     <div class="image">
-        <img src="../assets/bsc/bnb_smart_chain.png" alt="BNB Smart Chain" loading="lazy">
+        <img src="img/bnb_smart_chain.png" alt="BNB Smart Chain" loading="lazy">
     </div>
 </div>
 
 
 
 <div class="section-body">
-    <a href="./staking">
+    <a href="./staking" class="grid-item">
         <div>Staking</div>
         <p>BSC operates on a Proof-of-Staked-Authority (PoSA) blockchain</p>
     </a>
-    <a href="./governance">
+    <a href="./governance" class="grid-item">
         <div>Governance</div>
         <p>BSC is a community-oriented ecosystem, meticulously built upon the foundation of decentralized governance.</p>
     </a>

@@ -15,18 +15,18 @@ hide:
         <p>BNB Greenfield is a cutting-edge decentralized storage and blockchain storage solution, designed to harness the power of decentralized technology in the field of data ownership and the data economy. The platform focuses on providing decentralized data management and access, to revolutionize the data economy by simplifying the process of storing and managing data, while connecting data ownership with the DeFi context of BNB Chain.</p>
     </div>
     <div class="image">
-        <img src="static/img/banner.png" alt="BNB Greenfield" loading="lazy">
+        <img src="static/img/greenfield.png" alt="BNB Greenfield" loading="lazy">
     </div>
 </div>
 
 
 
 <div class="section-body">
-    <a href="./getting-started/dcellar.md">
+    <a href="./getting-started/dcellar.html">
         <div>Get Started</div>
         <p>Dive into what is BNB Greenfield and start the journey with Greenfield.</p>
     </a>
-    <a href="./for-developers/tutorials/overview.md">
+    <a href="./for-developers/tutorials/overview.html">
         <div>Build on Gnfd</div>
         <p>Start building dapps to create value based on the data assets and its related economy.</p>
     </a>
@@ -34,11 +34,11 @@ hide:
         <div>Cross Chain Programmability</div>
         <p>The real power of the Greenfield lies in its programmability to support the creation of value based on the data assets and its related economy.</p>
     </a>
-    <a href="./greenfield-blockchain/overview.md">
+    <a href="./greenfield-blockchain/overview.html">
         <div>Greenfield Blockchain</div>
         <p>Get familiar with the Greenfield Blockchain and explore its main modules.</p>
     </a>
-    <a href="./storage-provider/overview.md">
+    <a href="./storage-provider/overview.html">
         <div>Storage Provider</div>
         <p>Explore the Storage Provider.</p>
     </a>

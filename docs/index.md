@@ -10,7 +10,7 @@ hide:
    }
 </style>
 <div class="home-hero">
-    <img src="./assets/bsc/bnb_smart_chain.png">
+    <img src="./assets/home-hero.png">
 </div>
 
 # BNB Chain: Empowering the Future of Decentralized Applications
@@ -27,13 +27,27 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
 * **Community-Driven Growth:** BNB Chain is supported by a vibrant community of developers, validators, and users who contribute to its ongoing development and expansion.
 
-## **Chains:**
+## **Chains**
 
-* **BNB Smart Chain:** BNB Smart Chain (BSC) is a high-performance blockchain platform designed to enable the development of scalable and user-friendly decentralized applications (DApps). As a core component of the BNB Chain ecosystem, BSC offers a robust infrastructure for building a wide range of applications, particularly in the decentralized finance (DeFi) space.
+<div class="doc-cards" markdown>
+<div markdown>
+**BNB Smart Chain (BSC)**
 
-* **opBNB:** A layer-2 scaling solution for BNB Smart Chain that significantly increases transaction speed and reduces fees. It achieves this by leveraging Optimistic Rollups technology, making BNB Chain even more suitable for high-throughput applications.
+BNB Smart Chain (BSC) is a high-performance blockchain platform designed to enable the development of scalable and user-friendly decentralized applications (DApps). As a core component of the BNB Chain ecosystem, BSC offers a robust infrastructure for building a wide range of applications, particularly in the decentralized finance (DeFi) space.
+</div>
 
-* **BNB Greenfield:** A decentralized storage infrastructure designed to provide a secure and scalable platform for storing and managing data on the blockchain. It enables users to store files, NFTs, and other digital assets in a decentralized manner, promoting data ownership and control.
+<div markdown>
+**opBNB**
+
+A layer-2 scaling solution for BNB Smart Chain that significantly increases transaction speed and reduces fees. It achieves this by leveraging Optimistic Rollups technology, making BNB Chain even more suitable for high-throughput applications.
+</div>
+
+<div markdown>
+**BNB Greenfield**
+
+A decentralized storage infrastructure designed to provide a secure and scalable platform for storing and managing data on the blockchain. It enables users to store files, NFTs, and other digital assets in a decentralized manner, promoting data ownership and control.
+</div>
+</div>
 
 ## **Use Cases:**
 
