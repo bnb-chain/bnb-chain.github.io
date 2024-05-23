@@ -16,8 +16,6 @@ theme:
   favicon: assets/bnb.svg
   custom_dir: overrides
   language: en
-  font:
-    text: 'Space Grotesk'
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -88,7 +86,8 @@ nav:
       - Slash: ./bc_fusion/validators/slash.md
       - Governance: ./bc_fusion/validators/gov.md
   - BNB Smart Chain:
-    - Overview: ./bnb_smart_chain/index.md
+    - BNB Smart Chain: ./bnb_smart_chain/index.md
+    - Overview: ./bnb_smart_chain/overview.md
     - Staking:
         - Overview: ./bnb_smart_chain/staking/index.md
         - User Guide: ./bnb_smart_chain/staking/user-guide.md
@@ -278,10 +277,12 @@ plugins:
   - search
 
 extra_css:
+  - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
   - assets/style/index.css
   - assets/style/components/banner.css
   - assets/style/components/nav.css
   - assets/style/components/sidebar.css
+  - assets/style/components/content.css
   - assets/style/components/footer-nav.css
   - assets/style/components/footer.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css

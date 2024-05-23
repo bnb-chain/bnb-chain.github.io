@@ -4,6 +4,15 @@ hide:
 - toc
 ---
 
+<style>
+   .md-source-file, .md-content__button.md-icon {
+      display: none;
+   }
+</style>
+<div class="home-hero">
+    <img src="./assets/bsc/bnb_smart_chain.png">
+</div>
+
 # BNB Chain: Empowering the Future of Decentralized Applications
 
 BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3). Offering a unique combination of speed, scalability, and affordability, BNB Chain has become a popular choice for developers building decentralized applications (DApps) and for users seeking to participate in the world of decentralized finance (DeFi).
