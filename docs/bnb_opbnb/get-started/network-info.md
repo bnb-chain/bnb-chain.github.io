@@ -1,14 +1,14 @@
 ## Network Information
 
-| Name            | Value                                                        |
-| --------------- | ------------------------------------------------------------ |
-| Network Name    | opBNB                                                        |
-| Description     | The Layer 2 network of BNB Smart Chain.                      |
-| RPC Endpoint    | [See here](#opbnb-rpc-endpoints)                             |
-| Chain ID        | 5611(Testnet), 204(Mainnet)                                  |
-| Currency Symbol | tBNB(Testnet) BNB(Mainnet)                                   |
-| Block Explorer  | https://testnet.opbnbscan.com, https://opbnbscan.com, https://opbnb.bscscan.com/|
-| Bridge          | https://opbnb-testnet-bridge.bnbchain.org, https://opbnb-bridge.bnbchain.org |
+| Name            | Value                                                                            |
+| --------------- |----------------------------------------------------------------------------------|
+| Network Name    | opBNB                                                                            |
+| Description     | The Layer 2 network of BNB Smart Chain.                                          |
+| RPC Endpoint    | [See here](#rpc-endpoints)                                                       |
+| Chain ID        | 5611(Testnet), 204(Mainnet)                                                      |
+| Currency Symbol | tBNB(Testnet) BNB(Mainnet)                                                       |
+| Block Explorer  | https://testnet.opbnbscan.com, https://opbnbscan.com, https://opbnb.bscscan.com/ |
+| Bridge          | https://opbnb-testnet-bridge.bnbchain.org, https://opbnb-bridge.bnbchain.org     |
 
 
 ## RPC Endpoints

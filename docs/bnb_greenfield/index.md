@@ -1,47 +1,50 @@
 ---
-title: Guide to BNB Greenfield
-description: BNB Greenfield is a decentralized storage and blockchain storage solution platform that aims to revolutionize data ownership and the data economy.
-keywords: [BNB Greenfield, decentralized storage, blockchain storage solution, decentralized storage providers]
-#icon: list
-#index: false
-#hide_table_of_contents: false
-#displayed_sidebar: "guideSidebar"
-#sidebar_position: 1
+hide:
+- toc
 ---
 
-# Guide to BNB Greenfield
+<style>
+   .md-source-file, .md-content__button.md-icon {
+      display: none;
+   }
+</style>
 
-BNB Greenfield is a decentralized storage and blockchain storage solution platform that aims to revolutionize data ownership and the data economy.
-
-![greenfield-header](static/img/banner.png)
-
-## Getting Started
-
-Dive into what is BNB Greenfield and start the journey with Greenfield.
-
-- [An overview about BNB Greenfield](introduction.md)
-- [Get Started with detailed tutorial](getting-started/wallet-configuration.md)
-
-## Explore the Greenfield Blockchain
-
-Get familiar with the Greenfield Blockchain and explore its main modules.
-
-- [An overview about Greenfield Blockchain](greenfield-blockchain/overview.md)
-- [Explore modules in Greenfield Blockchain](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-module.md)
+<div class="section-head">
+    <div class="left">
+        <h1>BNB Greenfield</h1></h1>
+        <p>BNB Greenfield is a cutting-edge decentralized storage and blockchain storage solution, designed to harness the power of decentralized technology in the field of data ownership and the data economy. The platform focuses on providing decentralized data management and access, to revolutionize the data economy by simplifying the process of storing and managing data, while connecting data ownership with the DeFi context of BNB Chain.</p>
+    </div>
+    <div class="image">
+        <img src="static/img/banner.png" alt="BNB Greenfield" loading="lazy">
+    </div>
+</div>
 
 
-## Explore the Storage Provider
-- [An overview about Storage Provider](storage-provider/overview.md)
 
-## Building Dapps on Greenfield
+<div class="section-body">
+    <a href="./getting-started/dcellar.md">
+        <div>Get Started</div>
+        <p>Dive into what is BNB Greenfield and start the journey with Greenfield.</p>
+    </a>
+    <a href="./for-developers/tutorials/overview.md">
+        <div>Build on Gnfd</div>
+        <p>Start building dapps to create value based on the data assets and its related economy.</p>
+    </a>
+    <a href="./core-concept/cross-chain">
+        <div>Cross Chain Programmability</div>
+        <p>The real power of the Greenfield lies in its programmability to support the creation of value based on the data assets and its related economy.</p>
+    </a>
+    <a href="./greenfield-blockchain/overview.md">
+        <div>Greenfield Blockchain</div>
+        <p>Get familiar with the Greenfield Blockchain and explore its main modules.</p>
+    </a>
+    <a href="./storage-provider/overview.md">
+        <div>Storage Provider</div>
+        <p>Explore the Storage Provider.</p>
+    </a>
+    <a href="./for-developers/sdks">
+        <div>SDKs</div>
+        <p>Utilize the SDKs to build the app</p>
+    </a>
+</div>
 
-Start building dapps to create value based on the data assets and its related economy.
-- [An overview about programmability on Greenfield](for-developers/tutorials/overview.md)
-- [Start building with SDK](for-developers/tutorials/access-control/cross-chain-access-control-by-cmd.md)
-
-## Help & Support 
-Check out the Greenfield Developer community for technical support.
-
-* [Discord](https://discord.com/invite/bnbchain)
-* [Build N'Build Forum](https://forum.bnbchain.org/c/bnb-greenfield/)
-* [GitHub](https://github.com/bnb-chain/greenfield)
