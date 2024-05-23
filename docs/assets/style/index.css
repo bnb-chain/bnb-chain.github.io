@@ -73,12 +73,14 @@
     --md-primary-fg-color: var(--doc-dark-layer-2);
     --md-primary-fg-color--light: var(--doc-dark-layer-2);
     --md-primary-fg-color--dark: var(--doc-dark-layer-2);
-    --md-accent-fg-color: var(--doc-light-text-brand);
+    --md-accent-fg-color: var(--doc-text-brand);
     --md-text-font: 'Space Grotesk';
 }
 
 body {
     --md-text-font-family: var(--md-text-font), -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, color-emoji;
+    color: var(--doc-text-secondary);
+    background: var(--doc-bg-1);
 }
 
 [data-md-color-scheme=slate] {
@@ -101,6 +103,8 @@ body {
     --doc-button-primary: var(--doc-dark-button-primary);
     --doc-support-brand-2: var(--doc-dark-support-brand-2);
     --doc-support-warning-2: var(--doc-dark-support-warning-2);
+    --md-accent-fg-color: var(--doc-text-brand);
+    --md-default-bg-color: var(--doc-bg-1);
 }
 
 .md-grid {
@@ -117,9 +121,10 @@ body {
 
 .md-typeset h1 {
     font-weight: 700;
-    font-size: 1.8em;
+    font-size: 2em;
     line-height: 1.25;
     color: var(--doc-text-primary);
+    margin: 0 0 .8em;
 }
 
 .md-typeset h2 {
@@ -129,10 +134,71 @@ body {
     font-size: 1.365em;
 }
 
-.md-typeset a {
+.md-typeset h3 {
+    font-weight: 700;
+    color: var(--doc-text-primary);
+}
+
+.md-typeset p a {
     color: var(--doc-text-brand);
 }
 
-.md-typeset a:focus, .md-typeset a:hover {
+.md-typeset p a:focus, .md-typeset p a:hover {
     text-decoration: underline;
+}
+
+.md-typeset {
+    font-size: 16px;
+}
+
+.md-typeset strong {
+    color: var(--doc-text-primary);
+}
+
+.doc-center {
+    text-align: center;
+}
+
+.doc-round {
+    border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+    .md-typeset {
+        font-size: 14px;
+    }
+}
+
+.doc-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.doc-cards > div {
+    border-radius: 8px;
+    border: 1px solid var(--doc-border-3);
+    background: var(--doc-layer-2);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.doc-cards > div > p {
+    margin: 0;
+}
+
+.divider {
+    margin: 0 10px;
+}
+
+.md-typeset img, .md-typeset video {
+    border-radius: 12px;
+}
+
+.doc-footer,
+.md-footer {
+    position: relative;
 }

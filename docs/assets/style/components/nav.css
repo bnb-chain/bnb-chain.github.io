@@ -116,6 +116,11 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
+
+}
+
+[dir=ltr] .md-source__icon + .md-source__repository {
+    padding-left: 44px;
 }
 
 .md-source__facts {
@@ -177,6 +182,10 @@
     .md-header__inner {
         max-width: 100%;
     }
+
+    [dir=ltr] .md-header__title {
+        margin-left: 0;
+    }
 }
 
 .md-tabs {
@@ -236,19 +245,121 @@
     border-bottom: 1px solid var(--doc-border-3);
 }
 
-.md-nav__item  {
+.md-nav__item {
     color: var(--doc-text-tertiary);
 }
 
 @media screen and (min-width: 76.25em) {
-    .md-nav__item--section>.md-nav__link {
+    .md-nav__item--section > .md-nav__link {
         font-weight: 700;
         color: var(--doc-text-secondary);
     }
 }
 
 @media screen and (min-width: 76.25em) {
-    .md-nav__item--section>.md-nav__link[for] {
+    .md-nav__item--section > .md-nav__link[for] {
         color: var(--doc-text-secondary);
     }
+}
+
+@media screen and (min-width: 60em) {
+    .md-search__inner {
+        width: 201px;
+    }
+}
+
+.md-header__button {
+    margin: 0 0.8rem;
+}
+
+@media (max-width: 767px) {
+    .md-header__option .md-header__button:first-of-type {
+        margin: 0 -16px 0 0;
+    }
+}
+
+
+.md-nav__link {
+    margin-top: 12px;
+}
+
+@media screen and (min-width: 76.25em) {
+    .md-nav__item--section {
+        margin: 20px 0;
+    }
+}
+
+.md-nav {
+    font-size: 16px;
+}
+
+@media (max-width: 767px) {
+    .md-nav {
+        font-size: 14px;
+    }
+}
+
+
+.md-nav--lifted .md-logo {
+    max-width: 127px;
+}
+
+.md-nav--lifted .md-nav__source {
+    padding-bottom: 10px;
+}
+
+.md-nav--lifted .md-nav__title {
+    color: var(--doc-text-primary);
+}
+@media screen and (min-width: 60em) {
+    .md-search__inner {
+        width: 201px;
+    }
+}
+
+.md-header__button {
+    margin: 0 0.8rem;
+}
+
+@media (max-width: 767px) {
+    .md-header__option .md-header__button:first-of-type {
+        margin: 0 -16px 0 0;
+    }
+}
+
+
+.md-nav__link {
+    margin-top: 12px;
+}
+
+@media screen and (min-width: 76.25em) {
+    .md-nav__item--section {
+        margin: 20px 0;
+    }
+}
+
+.md-nav {
+    font-size: 16px;
+}
+
+@media (max-width: 767px) {
+    .md-nav {
+        font-size: 14px;
+    }
+}
+
+.md-nav--secondary .md-nav__item {
+    font-size: 12px;
+}
+
+.md-nav--lifted .md-logo {
+    max-width: 127px;
+}
+
+.md-nav--lifted .md-nav__source {
+    padding-bottom: 10px;
+}
+
+.md-nav--lifted .md-nav__title {
+    color: var(--doc-text-primary);
 }

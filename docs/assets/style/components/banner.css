@@ -1,6 +1,7 @@
 .md-banner {
     background-color: var(--doc-support-warning-2);
     text-align: center;
+    color: var(--doc-text-on-color);
 }
 
 .md-banner a {
