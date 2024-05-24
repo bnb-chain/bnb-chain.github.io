@@ -6,7 +6,7 @@ sidebar_label: What is BNB Greenfield
 ---
 
 
-# BNB Greenfield Introduction
+# BNB Greenfield Overview
 
 BNB Greenfield is a decentralized storage and blockchain storage solution platform that aims to revolutionize data ownership and the data economy.
 

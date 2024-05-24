@@ -145,8 +145,8 @@ nav:
       - Local Node: ./bnb_opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb_opbnb/advanced/run-with-pebbledb-and-pbss.md
   - BNB Greenfield:
-      - Overview : ./bnb_greenfield/index.md
-      - Introduction: ./bnb_greenfield/introduction.md
+      - BNB Greenfield : ./bnb_greenfield/index.md
+      - Overview: ./bnb_greenfield/introduction.md
       - Getting Started:
           - Wallet Configuration: ./bnb_greenfield/getting-started/wallet-configuration.md
           - Bridge and Transfer BNB: ./bnb_greenfield/getting-started/token-transfer.md
