@@ -61,7 +61,10 @@ nav:
   - Home: index.md
   - Announcements:
     - Overview: ./announce/index.md
-    - v.9.5.18: ./announce/v.9.5.18.md
+    - Haber Hardfork(BSC): ./announce/haber_bsc.md
+    - Haber Hardfork(opBNB): ./announce/haber_opbnb.md
+    - Serengeti Hardfork: ./announce/serengeti_greenfield.md
+
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc_fusion/index.md
     - Overview: ./bc_fusion/overview.md
