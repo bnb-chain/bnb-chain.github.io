@@ -30,12 +30,16 @@ hide:
         <div>Governance</div>
         <p>BSC is a community-oriented ecosystem, meticulously built upon the foundation of decentralized governance.</p>
     </a>
-    <a href="./validator">
+    <a href="./validator" >
         <div>Validator</div>
         <p>Validators secure the network based on the POSA consensus algorithm.</p>
     </a>
     <a href="./slashing">
         <div>Slashing</div>
         <p>Slashing is a component of on-chain governance that penalizes malicious or negative actions. </p>
+    </a>
+    <a href="./validator/mev/builder-integration.md">
+        <div>MEV Builder</div>
+        <p>Become a builder and creat blocks and offering them to the validator</p>
     </a>
 </div>

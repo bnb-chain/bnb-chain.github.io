@@ -19,8 +19,6 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
 ## **Key Features and Benefits:**
 
-* **Proof of Staked Authority (PoSA) Consensus:**  This consensus mechanism balances security with efficiency, enabling high transaction throughput and low fees.
-
 * **Compatibility with the Ethereum Ecosystem:** Developers can easily port their existing Ethereum-based projects to BNB Chain, benefiting from its enhanced performance.
 
 * **Thriving DeFi Ecosystem:** BNB Chain boasts a vast array of DeFi applications, including decentralized exchanges (DEXs), lending protocols, yield farming platforms, and more.

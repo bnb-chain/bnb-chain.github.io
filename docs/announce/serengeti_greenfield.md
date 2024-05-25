@@ -1,7 +1,7 @@
-# Haber Hardfork of opBNB
+# Sereengeti Upgrade of Greenfield
 
 <div class="doc-announce-info">
-    <span class="version-tag">sereengeti-hardfork</span>
+    <span class="version-tag">Hardfork</span>
     <span class="announce-date">2024 May 24</span>
 </div>
 

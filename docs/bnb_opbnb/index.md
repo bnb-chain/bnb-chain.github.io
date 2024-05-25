@@ -38,4 +38,8 @@ hide:
         <div>Build Dapp</div>
         <p>Deploy a simple HelloWorld smart contract on opBNB and build a Web3 frontend</p>
     </a>
+    <a href="./developers/multisig-wallet.md">
+        <div>Multisig Wallet</div>
+        <p>Use multi-sig wallet service based on the Gnosis Safe protocol to secure assets and projects</p>
+    </a>
 </div>

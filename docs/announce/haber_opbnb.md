@@ -1,7 +1,7 @@
-# Haber Hardfork of opBNB
+# Haber Upgrade of opBNB
 
 <div class="doc-announce-info">
-    <span class="version-tag">haber-hardfork</span>
+    <span class="version-tag">Hardfork</span>
     <span class="announce-date">2024 May 24</span>
 </div>
 
@@ -26,6 +26,6 @@ One of the significant enhancements in this release is the introduction of a pre
 
 ### Upgrade Instructions
 
-**Download the latest release** from the https://github.com/bnb-chain/op-geth/releases/tag/v0.4.1
-**Follow the upgrade guide** provided in the release notes to ensure a smooth transition.
+- **Download the latest release** from the https://github.com/bnb-chain/op-geth/releases/tag/v0.4.1
+- **Follow the upgrade guide** provided in the release notes to ensure a smooth transition.
 
