@@ -1,3 +1,4 @@
+![validator](../img/Validator.png)
 
 # BSC Validator Overview
 

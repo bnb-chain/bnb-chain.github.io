@@ -1,3 +1,5 @@
+![Staking](../img/Staking.png)
+
 # BSC Staking Overview
 
 BNB Smart Chain (BSC) operates on a Proof-of-Staked-Authority (PoSA) blockchain, with the staking mechanism proposed in [BEP-294](https://github.com/bnb-chain/BEPs/pull/294).
