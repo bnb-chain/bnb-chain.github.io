@@ -95,15 +95,15 @@ nav:
     - BNB Smart Chain: ./bnb_smart_chain/index.md
     - Overview: ./bnb_smart_chain/overview.md
     - Staking:
-        - Overview: ./bnb_smart_chain/staking/index.md
+        - Overview: ./bnb_smart_chain/staking/overview.md
         - User Guide: ./bnb_smart_chain/staking/user-guide.md
         - Build Staking dApps: ./bnb_smart_chain/staking/developer-guide.md
     - Governance:
-        - Overview: ./bnb_smart_chain/governance/index.md
+        - Overview: ./bnb_smart_chain/governance/overview.md
         - User Guide: ./bnb_smart_chain/governance/user-guide.md
         - Governance APIs: ./bnb_smart_chain/governance/apis.md
     - Validator:
-        - Overview: ./bnb_smart_chain/validator/index.md
+        - Overview: ./bnb_smart_chain/validator/overview.md
         - Run Validator: ./bnb_smart_chain/validator/run-val.md
         - Create Validator: ./bnb_smart_chain/validator/create-val.md
         - Secure Validator: ./bnb_smart_chain/validator/security.md
