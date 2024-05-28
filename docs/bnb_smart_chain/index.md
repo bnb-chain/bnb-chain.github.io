@@ -22,35 +22,35 @@ hide:
 
 
 <div class="section-body">
-    <a href="./developers/overview.html" class="grid-item">
+    <a href="./developers/overview" class="grid-item">
         <div>Developers</div>
         <p>User guide to get started on BNB Smart Chain</p>
     </a>
-    <a href="./staking/overview.html" class="grid-item">
+    <a href="./staking/overview" class="grid-item">
         <div>Staking</div>
         <p>BSC operates on a Proof-of-Staked-Authority (PoSA) blockchain</p>
     </a>
-    <a href="./governance/overview.html" class="grid-item">
+    <a href="./governance/overview" class="grid-item">
         <div>Governance</div>
         <p>BSC is a community-oriented ecosystem, meticulously built upon the foundation of decentralized governance.</p>
     </a>
-    <a href="./validator/overview.html" >
+    <a href="./validator/overview" >
         <div>Validator</div>
         <p>Validators secure the network based on the POSA consensus algorithm.</p>
     </a>
-    <a href="./slashing/index.html">
+    <a href="./slashing">
         <div>Slashing</div>
         <p>Slashing is a component of on-chain governance that penalizes malicious or negative actions. </p>
     </a>
-    <a href="./developers/ecosystem.html">
+    <a href="./developers/ecosystem">
         <div>BSC Ecosystem</div>
         <p>BSC ecosystem and developer tools</p>
     </a>
-    <a href="./developers/node_operators/full_node.html">
+    <a href="./developers/node_operators/full_node">
         <div>Run a Node</div>
         <p>Run a BSC node</p>
     </a>
-    <a href="./validator/mev/index.html">
+    <a href="./validator/mev/">
         <div>MEV Builder</div>
         <p>Become a builder and creat blocks and offering them to the validator</p>
     </a>

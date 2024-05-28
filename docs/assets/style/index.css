@@ -132,12 +132,16 @@ body {
     color: var(--doc-text-primary);
 }
 
-.md-typeset p a {
+.md-typeset a {
     color: var(--doc-text-brand);
 }
 
-.md-typeset p a:focus, .md-typeset p a:hover {
+.md-typeset a:focus, .md-typeset a:hover {
     text-decoration: underline;
+}
+
+.md-typeset a.headerlink:focus, .md-typeset a.headerlink:hover {
+    text-decoration: none;
 }
 
 .md-typeset {
@@ -177,6 +181,7 @@ body {
 .doc-cards > a:hover,
 .doc-cards > a:active {
     background: var(--doc-layer-4);
+    text-decoration: none;
 }
 
 .doc-cards > a > h3 {

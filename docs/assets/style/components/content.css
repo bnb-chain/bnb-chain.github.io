@@ -172,6 +172,7 @@
 
 .doc-announce > a:hover {
     background: var(--doc-layer-4);
+    text-decoration: none;
 }
 
 .doc-announce-info > span {
