@@ -25,7 +25,7 @@ The BNB staking dApp is the official tool for creating and managing validators o
 Please connect to the staking dApp using your **Operator Address**. `Trust Wallet`, `MetaMask`, and `WalletConnect`
 options are available for the step. Make sure that the account has more than 2001 BNB before moving on to the next step.
 
-<img src="../img/validator/create-validator0.png" width="400"/>
+![](../img/validator/create-validator0.png){:style="width:400px"}
 
 ### 2. Filling out the form
 
@@ -36,7 +36,7 @@ The following information is required to create a validator.
 
 #### 2.1 Basic Information
 
-<img src="../img/validator/create-validator1.png" width="600"/>
+![](../img/validator/create-validator1.png){:style="width:600px"}
 
 You'll need to provide the following details on the `Create Validator` page:
 
@@ -50,7 +50,7 @@ displayed in the staking dApp.
 
 #### 2.2 Addresses
 
-<img src="../img/validator/create-validator2.png" width="600"/>
+![](../img/validator/create-validator2.png){:style="width:600px"}
 
 The following addresses are required:
 
@@ -127,7 +127,7 @@ Identity is used to associate the new validator with the old validator created o
 
 #### 2.3 Commissions
 
-<img src="../img/validator/create-validator3.png" width="600"/>
+![](../img/validator/create-validator3.png){:style="width:600px"}
 
 - **Rate**: The commission rate of the validator.
 - **Max Rate**: The maximum commission rate that the validator can set.
@@ -135,7 +135,7 @@ Identity is used to associate the new validator with the old validator created o
 
 #### 2.4 Self-delegation
 
-<img src="../img/validator/create-validator4.png" width="600"/>
+![](../img/validator/create-validator4.png){:style="width:600px"}
 
 - **Self Delegate Amount**: The amnout to delegate when creating the validator. The minimal number to input is `2001` -
   for the minimal self delegation amount is 2000 BNB and extra 1 BNB for locking to a dead address.

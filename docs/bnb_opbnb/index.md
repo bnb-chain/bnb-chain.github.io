@@ -26,19 +26,19 @@ hide:
         <div>Get Started</div>
         <p>Deposit BNB to opBNB to start your journey</p>
     </a>
-    <a href="./developers/developer-tools.html">
+    <a href="./developers/developer-tools">
         <div>Summary of opBNB infrastructure</div>
         <p></p>
     </a>
-    <a href="./advanced/run-with-pebbledb-and-pbss.html">
+    <a href="./advanced/run-with-pebbledb-and-pbss">
         <div>Run Node</div>
         <p>Run a fullnode on opBNB network</p>
     </a>
-    <a href="./advanced/full-stack-dapp.html">
+    <a href="./advanced/full-stack-dapp">
         <div>Build Dapp</div>
         <p>Deploy a simple HelloWorld smart contract on opBNB and build a Web3 frontend</p>
     </a>
-    <a href="./developers/multisig-wallet.md">
+    <a href="./developers/multisig-wallet">
         <div>Multisig Wallet</div>
         <p>Use multi-sig wallet service based on the Gnosis Safe protocol to secure assets and projects</p>
     </a>

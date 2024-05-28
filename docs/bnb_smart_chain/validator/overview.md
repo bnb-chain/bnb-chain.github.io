@@ -1,6 +1,6 @@
-![validator](../img/Validator.png)
-
 # BSC Validator Overview
+
+![validator](../img/Validator.png)
 
 BNB Smart Chain(BSC) relies on a system of multiple validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum)
 that can support short block time and lower fees. The most bonded validators in staking will have the opportunity to produce blocks.

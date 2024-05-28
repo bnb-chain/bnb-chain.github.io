@@ -16,7 +16,7 @@ You can check your validator's slash indicator in the above contract. Pay attent
 Once a Validator is slashed into a jailed state, the Validator must wait for a specific period before being able to unjail.
 Once the waiting period elapses, the Validator can access the BNB Staking dApp and proceed to click on the `unjail` button to initiate the unjail transaction.
 
-<img src="../img/slashing/slash01.png" width="800"/>
+![](../img/slashing/slash01.png){:style="width:800px"}
 
 **BNB Staking dApp:**
 

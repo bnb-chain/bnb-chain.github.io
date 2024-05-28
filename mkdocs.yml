@@ -1,13 +1,13 @@
 # Project information
-site_name: BNBChain Knowledge Base
-site_url: https://docs.bnbchain.org
+site_name: Documentation
+#site_url: https://docs.bnbchain.org
+site_url: https://unclezoro.github.io/bnbchain-docsite
 site_author: BNB Chain
 site_description: >-
-  Write your documentation in Markdown and create a professional static site in
-  minutes – searchable, customizable for all devices
+  BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3).
 # Repository
-repo_name: BNB Chain GitHub
-repo_url: https://github.com/huihzhao/docsite
+repo_name: BNB Chain Doc GitHub
+repo_url: https://github.com/bnb-chain/bnbchain-doc
 edit_uri: edit/main/docs/
 
 theme:
@@ -18,19 +18,20 @@ theme:
   language: en
   icon:
     repo: fontawesome/brands/github
+    share: octicons/share-android-24
   palette:
-    - scheme: default
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
     - scheme: slate
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-sunny
+        icon: octicons/sun-24
         name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: octicons/moon-24
+        name: Switch to dark mode
   features:
 #    - announce.dismiss
     - search.suggest
@@ -280,7 +281,6 @@ markdown_extensions:
   - pymdownx.extra
 
 plugins:
-  - offline
   - search
 
 extra_css:

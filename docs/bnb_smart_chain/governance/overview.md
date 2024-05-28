@@ -1,5 +1,5 @@
-![governance](../img/Governance.png)
 # BSC Governance Overview
+![governance](../img/Governance.png)
 
 [BEP-297](https://github.com/bnb-chain/BEPs/pull/297) introduces the native governance module for BSC, drawing inspiration from the [OpenZeppelin Governor](https://docs.openzeppelin.com/contracts/4.x/governance).
 Here are the key features of BSC Governance:

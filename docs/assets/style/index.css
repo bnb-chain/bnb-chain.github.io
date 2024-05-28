@@ -112,13 +112,6 @@ body {
     width: 1320px;
 }
 
-@media (max-width: 767px) {
-    .md-grid {
-        max-width: calc(100% - 40px);
-        width: 1320px;
-    }
-}
-
 .md-typeset h1 {
     font-weight: 700;
     font-size: 2em;
@@ -163,19 +156,13 @@ body {
     border-radius: 12px;
 }
 
-@media (max-width: 767px) {
-    .md-typeset {
-        font-size: 14px;
-    }
-}
-
 .doc-cards {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.doc-cards > div {
+.doc-cards > a {
     border-radius: 8px;
     border: 1px solid var(--doc-border-3);
     background: var(--doc-layer-2);
@@ -184,9 +171,25 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+    transition: all .15s;
 }
 
-.doc-cards > div > p {
+.doc-cards > a:hover,
+.doc-cards > a:active {
+    background: var(--doc-layer-4);
+}
+
+.doc-cards > a > h3 {
+    font-size: 14px;
+}
+
+.doc-cards > a > p {
+    color: var(--doc-text-secondary);
+    font-size: 12px;
+}
+
+.doc-cards > a > p,
+.doc-cards > a > h3 {
     margin: 0;
 }
 
@@ -201,4 +204,51 @@ body {
 .doc-footer,
 .md-footer {
     position: relative;
+}
+
+.md-typeset .md-button {
+    background-color: var(--doc-light-bg-1);
+    border-color: var(--doc-dark-layer-2);
+    color: var(--doc-dark-layer-2);
+}
+
+.md-typeset .md-button--primary {
+    background-color: var(--doc-dark-layer-2);
+    border-color: var(--doc-dark-layer-2);
+    color: var(--doc-dark-text-primary);
+}
+
+.md-search-result__more>summary>div {
+    color: var(--doc-text-secondary);
+}
+
+[data-md-color-scheme=slate] {
+    .md-typeset .md-button {
+        background-color: var(--doc-dark-bg-1);
+        border-color: var(--doc-light-layer-2);
+        color: var(--doc-dark-text-primary);
+    }
+
+    .md-typeset .md-button--primary {
+        background-color: var(--doc-light-layer-2);
+        border-color: var(--doc-light-layer-2);
+        color: var(--doc-light-text-primary);
+    }
+
+    .md-typeset .md-button:focus, .md-typeset .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        border-color: var(--md-accent-fg-color);
+        color: var(--doc-dark-text-primary);
+    }
+}
+
+@media (max-width: 767px) {
+    .md-grid {
+        max-width: calc(100% - 40px);
+        width: 1320px;
+    }
+
+    .md-typeset {
+        font-size: 14px;
+    }
 }

@@ -58,25 +58,24 @@ and [Trust Wallet](https://trustwallet.com/) mobile are suggested for this case.
 once users import the accounts that have the tokens, they need to switch the
 network to "BNB Beacon Chain Network":
 
-<img src="../../assets/bcfusion/user-asset-management3.png" width="400"/>
-
+![](./../../assets/bcfusion/user-asset-management3.png){:style="width:400px"}
 
 Then, select the asset to transfer, enter the BSC account and the token
 amount.
 
-<img src="../../assets/bcfusion/user-asset-management4.png" width="400"/>
+![](./../../assets/bcfusion/user-asset-management4.png){:style="width:400px"}
 
 The BSC wallet will receive the token after approximately one minute.
 
 For Trust Wallet mobile multi-chain wallet users, they can transfer their assets in the following way.
 
-<img src="../../assets/bcfusion/tw1.PNG" width="400"/>
+![](./../../assets/bcfusion/tw1.PNG){:style="width:400px"}
 
 Firstly, you need to open the `Swap` tab, choose From network as `BNB Beacon Chain` and To network as `BNB Smart Chain`,
 then find the asset you want to transfer and input the transfer amount.
 After you click the `Continue` button, it will redirect you to the approval page as below.
 
-<img src="../../assets/bcfusion/tw2.PNG" width="400"/>
+![](./../../assets/bcfusion/tw2.PNG){:style="width:400px"}
 
 Finally, the related asset will be transferred to BSC after you confirm the transaction.
 

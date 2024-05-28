@@ -35,18 +35,18 @@ connect.
 
 For mainnet, you can use BEW or [TrustWallet](https://trustwallet.com/browser-extension) to connect.
 
-<img src="../../assets/bcfusion/stake-migration1.png" width="600"/>
+![](./../../assets/bcfusion/stake-migration1.png){:style="width:600px"}
 
 Open `My Staking` page, Then you can find you existing delegations as the following.
 
-<img src="../../assets/bcfusion/stake-migration2.png" width="800"/>
+![](./../../assets/bcfusion/stake-migration2.png){:style="width:600px"}
 
 #### Step 2:  Choose the native BSC validators to migrate to.
 
 Choose one delegation and click `Migrate to BSC` button. The following window will be poped up for choosing
 which BSC valiadtor you want to migrate to.
 
-<img src="../../assets/bcfusion/stake-migration3.png" width="400"/>
+![](./../../assets/bcfusion/stake-migration3.png){:style="width:400px"}
 
 The window mainly contains the following fields:
 
@@ -59,7 +59,7 @@ The window mainly contains the following fields:
 
 Finally, you can sign the transaction and migration will be started.
 
-<img src="../../assets/bcfusion/stake-migration4.png" width="400"/>
+![](./../../assets/bcfusion/stake-migration4.png){:style="width:400px"}
 
 If the migration fails, the fund will
 be returned to your Beacon Chain, and you can check it in your web3 wallet.
@@ -91,11 +91,11 @@ You can use BNB Chain Wallet (BEW) or TrustWallet to cross chain transfer your B
 
 For BEW, you need to switch the network to "BNB Beacon Chain Network"/"BNB Beacon Chain Testnet Network":
 
-<img src="../../assets/bcfusion/user-asset-management3.png" width="400"/>
+![](./../../assets/bcfusion/user-asset-management3.png){:style="width:400px"}
 
 Then, select the asset to transfer, enter the BSC account and the token amount.
 
-<img src="../../assets/bcfusion/user-asset-management4.png" width="400"/>
+![](./../../assets/bcfusion/user-asset-management4.png){:style="width:400px"}
 
 The BSC wallet will receive the token after approximately one minute.
 
@@ -104,11 +104,11 @@ choose From network as `BNB Beacon Chain` and To network as `BNB Smart Chain` fo
 
 Then find the asset you want to transfer and input the transfer amount.
 
-<img src="../../assets/bcfusion/tw1.PNG" width="400"/>
+![](./../../assets/bcfusion/tw1.PNG){:style="width:400px"}
 
 After you click the `Continue` button, it will redirect you to the approval page as below.
 
-<img src="../../assets/bcfusion/tw2.PNG" width="400"/>
+![](./../../assets/bcfusion/tw2.PNG){:style="width:400px"}
 
 Finally, the related asset will be transferred to BSC after you confirm the transaction.
 

@@ -22,11 +22,11 @@ hide:
 
 
 <div class="section-body">
-    <a href="./getting-started/dcellar.html">
+    <a href="./getting-started/dcellar">
         <div>Get Started</div>
         <p>Dive into what is BNB Greenfield and start the journey with Greenfield.</p>
     </a>
-    <a href="./for-developers/tutorials/overview.html">
+    <a href="./for-developers/tutorials/overview">
         <div>Build on Gnfd</div>
         <p>Start building dapps to create value based on the data assets and its related economy.</p>
     </a>
@@ -34,11 +34,11 @@ hide:
         <div>Cross Chain Programmability</div>
         <p>The real power of the Greenfield lies in its programmability to support the creation of value based on the data assets and its related economy.</p>
     </a>
-    <a href="./greenfield-blockchain/overview.html">
+    <a href="./greenfield-blockchain/overview">
         <div>Greenfield Blockchain</div>
         <p>Get familiar with the Greenfield Blockchain and explore its main modules.</p>
     </a>
-    <a href="./storage-provider/overview.html">
+    <a href="./storage-provider/overview">
         <div>Storage Provider</div>
         <p>Explore the Storage Provider.</p>
     </a>

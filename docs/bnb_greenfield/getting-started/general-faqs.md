@@ -7,14 +7,12 @@ keywords: [BNB Greenfield token, BNB Greenfield usage]
 ### Why can't I send BNB tokens on BNB Greenfield using my wallet?
 Wallet does not support transfers on BNB Greenfield because BNB Greenfield uses a different transaction format than other EVM chains. You may encounter the following error when you transfer your token with your wallet. To send BNB tokens on BNB Greenfield, you need to use [dCellar Transfer function](token-transfer.md#bnb-transfers-in-greenfield).
 
-<img src="../static/img/transfer_error.png" alt="transfer_error.png" style="width:50%;"/>
-
+![transfer_error.png](../static/img/transfer_error.png){:style="width:50%"}
 
 ### How to understand the amount field in the signature message when using BNB Greenfield?
 When users perform actions on the BNB Greenfield, such as creating buckets or uploading files, they need to sign a message that contains the amount of BNB they are spending. However, this amount is not in BNB units, but in WEI units, which are much smaller. One WEI is equal to 10^-18 BNB. Therefore, the amount field in the signature message may look very large, but it is actually a very small fraction of a BNB.
 
-<img src="../static/img/signature.png" alt="transfer_error.png" style="width:50%;"/>
-
+![transfer_error.png](../static/img/signature.png){:style="width:50%"}
 
 ### Does Greenfield have a token? How can I get it?
 
