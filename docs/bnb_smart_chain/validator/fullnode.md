@@ -1,2 +1,0 @@
-
-# Run BSC Fullnode

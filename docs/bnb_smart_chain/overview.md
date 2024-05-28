@@ -7,13 +7,10 @@ BNB Smart Chain (BSC) is a high-performance blockchain network. Officially launc
 1. **Ethereum Virtual Machine (EVM) Compatibility:**
    BSC is fully compatible with the Ethereum Virtual Machine (EVM), enabling developers to port their Ethereum-based DApps and DeFi projects to BSC with minimal modifications. This compatibility extends to the use of popular Ethereum tools and applications, such as MetaMask, Truffle, and Remix.
 
-2. **Proof-of-Staked-Authority (PoSA) Consensus Mechanism:**
-   BSC employs a unique Proof-of-Staked-Authority consensus mechanism, which is a hybrid of Proof-of-Stake (PoS) and Proof-of-Authority (PoA). This mechanism enhances the network's security and efficiency by combining staking-based economic incentives with a limited set of validators responsible for confirming transactions and producing new blocks. As of May 2024, BSC has over 45 active validators, ensuring decentralization and security.
-
-3. **Low Transaction Fees and Fast Block Times:**
+2. **Low Transaction Fees and Fast Block Times:**
    One of BSC's primary advantages is its low transaction fees. As of early 2024, the average transaction fee on BSC is around $0.10, significantly lower compared to Ethereum's average fee of $10-$20 during periods of high network congestion. Additionally, BSC block time of approximately is 3 seconds, ensuring rapid transaction confirmations and an overall smoother user experience.
 
-4. **Robust Ecosystem and Growing Adoption:**
+3. **Robust Ecosystem and Growing Adoption:**
    Since its inception, BSC has seen rapid growth in its ecosystem. By May 2024, BSC supports over 1,500 DApps, with popular platforms such as PancakeSwap, Venus, and BakerySwap leading the charge. The total value locked (TVL) in BSC-based DeFi protocols exceeds $20 billion, reflecting its substantial market adoption and user trust.
 
 ### Role of BNB

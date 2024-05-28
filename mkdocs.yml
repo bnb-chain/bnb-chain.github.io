@@ -6,7 +6,7 @@ site_author: BNB Chain
 site_description: >-
   BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3).
 # Repository
-repo_name: BNB Chain Doc GitHub
+repo_name: BNB Chain GitHub
 repo_url: https://github.com/bnb-chain/bnbchain-doc
 edit_uri: edit/main/docs/
 
@@ -95,6 +95,22 @@ nav:
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb_smart_chain/index.md
     - Overview: ./bnb_smart_chain/overview.md
+    - Developers:
+        - Overview: ./bnb_smart_chain/developers/overview.md
+        - Ecosystem: ./bnb_smart_chain/developers/ecosystem.md
+        - RPC: ./bnb_smart_chain/developers/rpc.md
+        - Faucet: ./bnb_smart_chain/developers/faucet.md
+        - Node Operators:
+            - Node Best Practices: ./bnb_smart_chain/developers/node_operators/node_best_practices.md
+            - Full Node: ./bnb_smart_chain/developers/node_operators/full_node.md
+            - Archive Node: ./bnb_smart_chain/developers/node_operators/archive_node.md
+            - Fast Node: ./bnb_smart_chain/developers/node_operators/fast_node.md
+            - Boot Node: ./bnb_smart_chain/developers/node_operators/boot_node.md
+            - Separate Node: ./bnb_smart_chain/developers/node_operators/separate_node.md
+            - Docker Image: ./bnb_smart_chain/developers/node_operators/docker.md
+            - Upgrade Geth: ./bnb_smart_chain/developers/node_operators/upgrade_geth.md
+            - Verify Node: ./bnb_smart_chain/developers/node_operators/verify_node.md
+            - Node Maintenance: ./bnb_smart_chain/developers/node_operators/node_maintenance.md
     - Staking:
         - Overview: ./bnb_smart_chain/staking/overview.md
         - User Guide: ./bnb_smart_chain/staking/user-guide.md
