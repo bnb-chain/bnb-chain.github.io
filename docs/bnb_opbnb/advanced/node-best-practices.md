@@ -9,6 +9,7 @@ The principal distinctions between them lie in their methods of preserving histo
 The Merkle Patricia Trie (MPT), an advanced data structure, is adept at storing and retrieving key-value pairs with efficiency. It amalgamates the principles of a Patricia trie and a Merkle tree to forge a secure and immutable representation of data within the Ethereum Virtual Machine (EVM).
 
 The MPT endows the following capabilities:
+
 - Access to historical data: Enables retrieval of an account's balance at a specified block height, simulation of calls, and debugging of traces at particular block heights, among others.
 - Verification of Inclusion and Exclusion:
 The MPT facilitates proofs of both inclusion and exclusion of key-value pairs, a pivotal feature for transaction verification and blockchain integrity maintenance.
@@ -16,6 +17,7 @@ The MPT facilitates proofs of both inclusion and exclusion of key-value pairs, a
 Nevertheless, the preservation of entire history trie data on disk can demand substantial resources and may be superfluous for certain applications. opBNB introduces diverse node modes and storage schemes to accommodate a range of requirements.
 
 The variances between the modes and storage schemes are encapsulated as follows:
+
 - Archive node mode conserves the complete history trie data. Full node mode archives recent trie data (128 blocks), whereas the fast node mode retains only the current state, excluding trie data.
     - Functions such as block, transaction, receipt, and log retrieval are supported across all node modes. Since block data is preserved in the block database, it remains unaffected by the trie data storage scheme.
     - The capability to access historical state data varies by node mode. Archive nodes support comprehensive historical state data retrieval, whereas full and fast nodes facilitate access to recent 128 blocks' state data.
@@ -61,6 +63,7 @@ For implementation details and further information, refer to [the PR](https://gi
 ### Full Node
 
 Operating a full node is recommended if you require:
+
 - Enhanced security and reliability assurances. The full node meticulously executes and locally verifies all blocks.
 - The facility to query trie data of the most recent 128 blocks, such as retrieving an account's balance at a specific block height, simulating calls, and debugging traces.
 
