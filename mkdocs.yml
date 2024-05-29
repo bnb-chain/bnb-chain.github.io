@@ -1,13 +1,12 @@
 # Project information
 site_name: Documentation
-#site_url: https://docs.bnbchain.org
-site_url: https://unclezoro.github.io/bnbchain-docsite
+site_url: https://docs.bnbchain.org
 site_author: BNB Chain
 site_description: >-
   BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3).
 # Repository
 repo_name: BNB Chain GitHub
-repo_url: https://github.com/bnb-chain/bnbchain-doc
+repo_url: https://github.com/bnb-chain/bnb-chain.github.io
 edit_uri: edit/main/docs/
 
 theme:
