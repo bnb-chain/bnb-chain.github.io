@@ -93,10 +93,6 @@ Create a private bucket and share it with specific individuals.
 
 - [Web hosting](https://docs.4everland.org/hositng/what-is-hosting/greenfield-hosting#id-4everland-greenfield-hosting)
 
-- [BSC developer tools](https://docs.bnbchain.org/docs/learn/ecosystem)
-
-- [opBNB developer tools](https://docs.bnbchain.org/opbnb-docs/docs/build-on-opbnb/developer-tools)
-
 - Data Marketplace boilerplate
   	- [Frontend](https://github.com/bnb-chain/greenfield-data-marketplace-frontend)
     - [Smart Contracts](https://github.com/bnb-chain/greenfield-data-marketplace-contracts)

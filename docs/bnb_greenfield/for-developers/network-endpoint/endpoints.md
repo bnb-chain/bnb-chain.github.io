@@ -44,7 +44,7 @@ order: 3
   - `https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3`
   - `https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5`
 
-  For more details, you can refer to [here](https://docs.bnbchain.org/opbnb-docs/docs/build-on-opbnb/opbnb-network-info).
+  For more details, you can refer to [here](network-info.md).
 
 ## Testnet
 ### Greenfield Testnet (chain-id: greenfield_5600-1)
@@ -83,4 +83,4 @@ order: 3
   - `https://opbnb-testnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3`
   - `https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5`
 
-  For more details, you can refer to [here](https://docs.bnbchain.org/opbnb-docs/docs/build-on-opbnb/opbnb-network-info).
+  For more details, you can refer to [here](network-info.md).

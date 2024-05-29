@@ -84,7 +84,7 @@ Please follow the naming rules, carefully select your bucket name:
 By selecting a primary storage provider, you will decide the main storage service provider for all the datas within this particular bucket.
 
 By selecting a payment account, all storage service fee will be charged from this selected payment account, while gas fee will charged from your current login account, which is also your owner account. If your balance is insufficient, you will be informed to Transfer In first.  
-For more information about Owner Account and Payment Account, Please Go to Greenfield Doc- [Greenfield Documentation](https://docs.bnbchain.org/greenfield-docs/docs/guide/core-concept/billing-payment).
+For more information about Owner Account and Payment Account, Please Go to Greenfield Doc- [Greenfield Documentation](../core-concept/billing-payment.md).
 
 ## Upload Object
 
@@ -93,7 +93,7 @@ you will be able to choose a locally stored object.
 
 
 When you are uploading a object, gas fee will be charged from your current login account, which is also your owner account.  
-Besides, once your object is uploaded successfully, you will be charging a storage fee under a certain flow rate. Learn more about storage fee at [Greenfield Doc](https://docs.bnbchain.org/greenfield-docs/docs/guide/home/).  
+Besides, once your object is uploaded successfully, you will be charging a storage fee under a certain flow rate. 
 Therefore, when you are uploading a object, you need to make sure that your owner account has enough balance to cover the storage fee for the following six months. which will be shown as Prepaid fee as follows.
 
 ![dcellar-folder](../static/asset/dcellar-folder.png)

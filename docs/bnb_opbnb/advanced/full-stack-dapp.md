@@ -27,8 +27,8 @@ By the end of this tutorial, you will be able to achieve the following
 - [Metamask Web Wallet](https://metamask.io/)
 - [Truffle v5.10.0](https://trufflesuite.com/docs/truffle/how-to/install/)
 - Get tBNB in your Metamask wallet configured with opBNB Testnet
-  - [Metamask Wallet Configuration for opBNB.](https://docs.bnbchain.org/opbnb-docs/docs/build-on-opbnb/wallet-configuration)
-  - [Deposit tBNB to your opBNB account](https://docs.bnbchain.org/opbnb-docs/docs/build-on-opbnb/deposit-to-opbnb)
+  - [Metamask Wallet Configuration for opBNB.](../get-started/wallet-configuration.md)
+  - [Deposit tBNB to your opBNB account](../get-started/deposit-to-opbnb.md)
 
 ## Demo Step-by-Step Guide
 

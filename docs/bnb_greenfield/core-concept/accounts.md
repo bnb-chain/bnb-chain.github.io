@@ -103,7 +103,7 @@ that a type needs to implement to be used as a key storage backend. These method
 By implementing these methods, you can create a custom key storage backend that meets the specific needs of your application.
 
 !!! tip
-It means you don't have to follow the `Keyring` interface to manage your key, any existing Ethereum wallets are applicable to
+    It means you don't have to follow the `Keyring` interface to manage your key, any existing Ethereum wallets are applicable to
 Greenfield as well.
 
 

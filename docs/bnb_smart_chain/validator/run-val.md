@@ -21,7 +21,7 @@
 
 ### 1. Install BSC Fullnode
 
-Follow the instructions [here to set up a full node](fullnode.md).
+Follow the instructions [here to set up a full node](../developers/node_operators/full_node.md).
 
 ### 2. Prepare Accounts
 

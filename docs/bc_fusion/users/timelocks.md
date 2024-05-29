@@ -8,8 +8,7 @@ Users should proactively actionsj to transfer these assets to BSC after receivin
 
 ## Query TimeLocks
 
-The [time lock api](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths#apiv1timelocksaddress)
-is provided to query existing timelocks. Usually, user can provide a
+The time lock api is provided to query existing timelocks. Usually, user can provide a
 from address to query the related timelocks, for example:
 
 [https://dex.bnbchain.org/api/v1/timelocks/bnb1rmet5j5pwc3xvhd82rwdjkvewzgmreh6we72sf](https://dex.bnbchain.org/api/v1/timelocks/bnb1rmet5j5pwc3xvhd82rwdjkvewzgmreh6we72sf)

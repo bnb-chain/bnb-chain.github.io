@@ -40,9 +40,9 @@ CPU Type: Intel Xeon Scalable processors (Ice Lake) or newer
 
 # Running Your Own opBNB Node
 
-- Local development node setup: [Running a Local Development Environment](https://docs.bnbchain.org/opbnb-docs/docs/tutorials/running-a-local-development-environment)
-- Mainnet/testnet node setup: [Running a Local Node](https://docs.bnbchain.org/opbnb-docs/docs/tutorials/running-a-local-node)
-- Smart Contract Verification: [opBNBScan Verify with Hardhat & Truffle](https://docs.bnbchain.org/opbnb-docs/docs/tutorials/opbnbscan-verify-hardhat-truffle)
+- Local development node setup: [Running a Local Development Environment](../advanced/local-dev-env.md)
+- Mainnet/testnet node setup: [Running a Local Node](../advanced/local-node.md)
+- Smart Contract Verification: [opBNBScan Verify with Hardhat & Truffle](../advanced/verify-on-opbnbscan.md)
 
 # Performance Stability Optimization
 

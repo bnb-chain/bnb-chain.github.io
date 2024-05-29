@@ -1,11 +1,5 @@
 # Build-in System Contracts
 
-This section will provide a brief overview of the new build-in system contracts in the BNB Smart Chain.
-There contracts are are introduced in the [Feynman upgrade](https://github.com/bnb-chain/bsc/releases/tag/v1.3.10).
-
-For the sytem contracts which are already existed, please refer
-to [this document](https://docs.bnbchain.org/docs/learn/system-contract/).
-
 GitHub Implementation link: https://github.com/bnb-chain/bsc-genesis-contract
 
 | Contract Name                 | Contract Address                           | ABI File                                                                                                       |

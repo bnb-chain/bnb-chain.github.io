@@ -38,7 +38,7 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | **API/Node Access** | [Nodereal](https://nodereal.io/), [Ankr](https://www.ankr.com/), [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [NowNodes](https://nownodes.io/blog/binance-smart-chain-an-introduction), [QuickNode](https://www.quicknode.com/), [Covalent](https://www.covalenthq.com/), [Infstones](https://infstones.com/), [Moralis](http://moralis.io/)
 | **NFT APIs** | [Moralis](https://moralis.io/api/nft), [NFTScan](https://bnb.nftscan.com/), [BlockVision](https://blockvision.org/), [Venly](https://www.venly.io/), [Gomu](https://www.gomu.co/), [Bounce Finance](https://bounce.finance/), [NFTrade](https://nftrade.com/), [SubQuery](https://subquery.network/)
 | **Archive Node Service** | [Chainstack](https://chainstack.com/build-better-with-binance-smart-chain/), [InfStones](https://infstones.com/), [QuickNode](https://www.quicknode.com/), [Nodereal’s Meganode](https://docs.nodereal.io/nodereal/meganode/archive-node)
-| **Public RPC Endpoints** | [RPC Endpoints](https://docs.bnbchain.org/docs/rpc)| More public nodes are encouraged
+| **Public RPC Endpoints** | [RPC Endpoints](rpc.md)| More public nodes are encouraged
 | **Community Polling Dashboard** | |
 | **Gas Station Network** | [opengsn](https://opengsn.org/)
 | **Faucet** | [BSC Test Faucet](https://www.bnbchain.org/en/testnet-faucet)
@@ -55,7 +55,6 @@ In the below sections you can find a list of different layers of the BSC Stack.
 | **IDEs** | [BSC Studio](https://github.com/ObsidianLabs/BSC-Studio),[Remix](https://remix.ethereum.org/),[Intellij Solidity Plugin](https://jetbrains.com/idea/), [ChainIDE](https://eth.chainide.com/project/welcome)
 | **Lint Tools** | [Solhint](https://github.com/protofire/solhint), [Ethlint](https://github.com/duaraghav8/Ethlint), [Manticore](https://github.com/trailofbits/manticore), [Slither](https://github.com/crytic/slither), [Echidna](https://github.com/crytic/echidna)
 | **Testing Tools** | [Solidity code coverage](https://github.com/0xProject/0x-monorepo/tree/development/packages/sol-coverage), [Solidity function profiler](https://github.com/EricR/sol-function-profiler), [eth-tester](https://github.com/ethereum/eth-tester)
-| **Test Blockchain Networks** | [bscnode](https://docs.bnbchain.org/smart-chain/developer/fullnode.html), [Ganache](https://github.com/trufflesuite/ganache)
 | **Security Tools** | [MythX](https://mythx.io/), [Mythril](https://github.com/ConsenSys/mythril), [Oyente](https://github.com/melonproject/oyente), [Securify](https://securify.chainsecurity.com/), [Solgraph](https://github.com/raineorshine/solgraph), [solc-verify](https://github.com/SRI-CSL/solidity/)
 | **ABI (Application Binary Interface) Tools** | [ABI decoder](https://github.com/ConsenSys/abi-decoder), [ABI-gen](https://github.com/0xProject/0x-monorepo/tree/development/packages/abi-gen), [Ethereum ABI UI](https://github.com/hiddentao/ethereum-abi-ui)
 | **Monitoring** | [Neufund - Smart Contract Watch](https://github.com/Neufund/smart-contract-watch), [BlockScout](https://github.com/poanetwork/blockscout), [Terminal](https://terminal.co/), [Ethereum-watcher](https://github.com/HydroProtocol/ethereum-watcher)

@@ -40,6 +40,4 @@ BNB is transferred from BSC to Greenfield as the first cross-chain action. The i
 The initial BNB allocation on greenfield is around 500K BNB.
 
 !!! tip
-No initial donors, foundation, or company will get funds in the genesis setup.
-
-    No token inflation.
+    No initial donors, foundation, or company will get funds in the genesis setup.

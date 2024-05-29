@@ -20,6 +20,9 @@ Therefore this is the recommended way for stake migration.
 
 ### Steps
 
+![type:video](../../assets/bcfusion/migration_guide.mp4)
+
+
 #### Step 1: Find your delegations
 
 Go to the staking website and connect to your web3 wallet.

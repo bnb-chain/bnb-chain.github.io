@@ -83,7 +83,7 @@ If the service is not resumed for a long time, it is the SPs' discretionary deci
 in a similar way to how SPs claim to stop services to certain objects. In such a case, the data may be gone
 from Greenfield completely.
 
-!!! warning "asdf"
+!!! warning
     If users fail to renew their subscription on time, **there is a risk of their stored data being permanently deleted.** 
 
 ### Trust or Shift
@@ -125,8 +125,8 @@ and the transactions are queued based on the gas price, besides that the gas pri
 gas price on Greenfield: 5gwei.
 
 !!! warning
-**This means that Greenfield does not refund any excess gas fees to the transaction sender.
-Therefore, when constructing transactions, it is important to exercise caution when specifying the fees.**
+    This means that Greenfield does not refund any excess gas fees to the transaction sender.
+Therefore, when constructing transactions, it is important to exercise caution when specifying the fees.
 
 ### GasHub
 

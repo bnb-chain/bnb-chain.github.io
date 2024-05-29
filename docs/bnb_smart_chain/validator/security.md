@@ -16,7 +16,7 @@ To setup your sentry node architecture you can follow the instructions below:
 
 ### 1. Setup Nodes
 Construct a private network and establish trusted connections between the validator node and its sentry nodes.
-Refer to the [fullnode guide](fullnode.md) for setting up your validator and sentry nodes.
+Refer to the [fullnode guide](../developers/node_operators/full_node.md) for setting up your validator and sentry nodes.
 Avoid exposing your validator's RPC endpoints to the public network.
 
 ### 2. Add Peers

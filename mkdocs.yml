@@ -175,7 +175,7 @@ nav:
           - Faucet: ./bnb_greenfield/getting-started/get-test-bnb.md
           - General FAQ: ./bnb_greenfield/getting-started/general-faqs.md
       - Core Concepts:
-          - Accounts & Keys: ./bnb_greenfield/core-concept/accounts.md
+          - Accounts and Keys: ./bnb_greenfield/core-concept/accounts.md
           - BNB Token Model: ./bnb_greenfield/core-concept/bnb-token-model.md
           - Billing and Payment: ./bnb_greenfield/core-concept/billing-payment.md
           - Data Storage:
@@ -298,6 +298,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - mkdocs-video
 
 extra_css:
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap

@@ -11,8 +11,7 @@ and take proactive steps.
 
 ## Query Atomic Swaps
 
-The [atomic swap api](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths#apiv1atomic-swaps)
-is provided to query existing atomic swaps. Usually, user can provide a
+The atomic swap api is provided to query existing atomic swaps. Usually, user can provide a
 from address to query the related atomic swaps, for example:
 
 [https://dex.bnbchain.org/api/v1/atomic-swaps?fromAddress=bnb1xz3xqf4p2ygrw9lhp5g5df4ep4nd20vsywnmpr](https://dex.bnbchain.org/api/v1/atomic-swaps?fromAddress=bnb1xz3xqf4p2ygrw9lhp5g5df4ep4nd20vsywnmpr)
@@ -33,9 +32,6 @@ transaction is looks like this:
 ```shell
 ./bnbcli token refund --swap-id <swapID> --from <from-key> --chain-id Binance-Chain-Tigris --trust-node --node http://dataseed1.bnbchain.org:80
 ```
-
-For more information about the command, please refer to
-the [Refund HTLC section](https://docs.bnbchain.org/docs/beaconchain/atomic-swap#refund-htlt).
 
 If no proactive refunds are submitted, in [the second sunset hardfork](https://github.com/bnb-chain/bEPs/pull/333), all
 existing atomic swaps will be automatically refunded to the creators'
@@ -61,8 +57,3 @@ creation and deposit of atomic swaps will be disabled, so project owners
 need to disable related functions in their projects IN ADVANCE and
 notify their uses to take proactive actions to refund their tokens.
 
-## Other Useful References
-
-- [Refund Atomic Swap](https://docs.bnbchain.org/docs/beaconchain/atomic-swap#refund-htlt)
-
-- [Query Atomic Swap](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths#apiv1atomic-swaps)
