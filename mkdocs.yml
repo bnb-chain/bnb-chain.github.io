@@ -137,18 +137,18 @@ nav:
   - BNB opBNB:
     - BNB opBNB: ./bnb_opbnb/index.md
     - Overview: ./bnb_opbnb/overview.md
-    - Core Concepts:
-      - Why BSC Requires opBNB: ./bnb_opbnb/core-concepts/why-bsc-requires-opbnb.md
-      - Why OP Stack: ./bnb_opbnb/core-concepts/why-opstack.md
-      - Optimizations on OP Stack: ./bnb_opbnb/core-concepts/optimisations-on-opstack.md
-      - Metrics: ./bnb_opbnb/core-concepts/opbnb-metrics.md
-      - Protocol Addresses: ./bnb_opbnb/core-concepts/opbnb-protocol-addresses.md
-      - BNBChain Rollup as Service: ./bnb_opbnb/core-concepts/raas.md
     - Get Started:
       - Network Information: ./bnb_opbnb/get-started/network-info.md
       - Wallet Configuration: ./bnb_opbnb/get-started/wallet-configuration.md
       - Deposit to opBNB: ./bnb_opbnb/get-started/deposit-to-opbnb.md
       - Withdraw from opBNB: ./bnb_opbnb/get-started/withdraw-from-opbnb.md
+    - Core Concepts:
+        - Why BSC Requires opBNB: ./bnb_opbnb/core-concepts/why-bsc-requires-opbnb.md
+        - Why OP Stack: ./bnb_opbnb/core-concepts/why-opstack.md
+        - Optimizations on OP Stack: ./bnb_opbnb/core-concepts/optimisations-on-opstack.md
+        - Metrics: ./bnb_opbnb/core-concepts/opbnb-metrics.md
+        - Protocol Addresses: ./bnb_opbnb/core-concepts/opbnb-protocol-addresses.md
+        - BNBChain Rollup as Service: ./bnb_opbnb/core-concepts/raas.md
     - Developers:
       - Developer Tools: ./bnb_opbnb/developers/developer-tools.md
       - Network Faucet: ./bnb_opbnb/developers/network-faucet.md
