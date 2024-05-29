@@ -32,7 +32,7 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
 * **Most Diversified Assets APIs**
 
-    Full support on all popular tokens via the most powerful Binance Bridge. The greatest opportunity for composability.
+    Full support on all popular tokens. The greatest opportunity for composability.
 
 ## **Chains**
 
