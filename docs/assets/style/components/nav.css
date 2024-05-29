@@ -303,3 +303,9 @@
         margin-top: 20px;
     }
 }
+
+@media screen and (max-width: 76.234375em) {
+    .md-nav--primary .md-nav__item--active>.md-nav__link {
+        color: var(--doc-text-brand);
+    }
+}
