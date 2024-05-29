@@ -36,6 +36,12 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
 ## **Chains**
 
+![image](assets/chains.png)
+
+BNB Chain is composed of three blockchains - BNB Smart Chain (BSC), opBNB and BNB Greenfield.
+Powering and coordinating the ecosystem is the BNB token. Along with fueling transactions on BNB Chain, the BNB token also acts as a governance token.
+Within this ecosystem, the ownership, usage, and monetization of data are possible for all users and participants in the BNB Chain ecosystem.
+
 <div class="doc-cards">
 <a href="./bnb_smart_chain">
 <h3>BNB Smart Chain (BSC)</h3>
