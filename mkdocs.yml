@@ -136,8 +136,8 @@ nav:
         - Overview: ./bnb_smart_chain/slashing/overview.md
         - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb_smart_chain/slashing/monitor.md
-  - BNB opBNB:
-    - BNB opBNB: ./bnb_opbnb/index.md
+  - opBNB:
+    - opBNB: ./bnb_opbnb/index.md
     - Overview: ./bnb_opbnb/overview.md
     - Get Started:
       - Network Information: ./bnb_opbnb/get-started/network-info.md

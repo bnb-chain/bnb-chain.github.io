@@ -11,8 +11,8 @@ hide:
 
 <div class="section-head">
     <div class="left">
-        <h1>BNB opBNB</h1>
-        <p>BNB opBNB is the Layer 2 scaling solution for the BNB Smart Chain powered by bedrock version of Optimism OP Stack.</p>
+        <h1>opBNB</h1>
+        <p>opBNB is the Layer 2 scaling solution for the BNB Smart Chain powered by bedrock version of Optimism OP Stack.</p>
     </div>
     <div class="image">
         <img src="img/opbnb.png" alt="opBNB" loading="lazy">
