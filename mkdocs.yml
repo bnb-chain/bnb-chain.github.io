@@ -131,7 +131,7 @@ nav:
             - Builder Guide: ./bnb_smart_chain/validator/mev/builder-integration.md
             - FAQs: ./bnb_smart_chain/validator/mev/faqs.md
     - Slashing:
-        - Overview: ./bnb_smart_chain/slashing/index.md
+        - Overview: ./bnb_smart_chain/slashing/overview.md
         - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb_smart_chain/slashing/monitor.md
   - BNB opBNB:

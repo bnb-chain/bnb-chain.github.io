@@ -44,7 +44,7 @@ You can learn to see the revenue history from BitQuery's [chart](https://explore
 
 ## Risks for Validators
 
-If validators attempt to cheat the system or violate the specifications, they may incur a penalty known as **[slashing](../slashing/index.md)**.
+If validators attempt to cheat the system or violate the specifications, they may incur a penalty known as **[slashing](../slashing/overview.md)**.
 
 ### Double Sign Slash
 
