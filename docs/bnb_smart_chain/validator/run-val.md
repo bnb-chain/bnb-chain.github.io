@@ -98,12 +98,13 @@ docker run -it -d -p 9090:9090 \
 ### 2. Update validator profile
 
 You can submit a PullRequest to this repository to update your information: <https://github.com/bnb-chain/validator-directory>
+
 Reference: <https://grafana.com/grafana/dashboards/6976>
 
 
 ### 3. Publish Validator Information
 
-Please submit a Pull Request to this repo <https://github.com/bnb-chain/validator-directory>
+Please submit a Pull Request to this repo <https://github.com/bnb-chain/bsc-validator-directory>
 
 This repository is a place for validator candidates to give potential delegators a brief introduction about your team and infrastructure, and present your ecosystem contributions.
 
