@@ -38,7 +38,7 @@ hide:
         <div>Validator</div>
         <p>Validators secure the network based on the POSA consensus algorithm.</p>
     </a>
-    <a href="./slashing">
+    <a href="./slashing/overview">
         <div>Slashing</div>
         <p>Slashing is a component of on-chain governance that penalizes malicious or negative actions. </p>
     </a>

@@ -22,7 +22,7 @@ hide:
 
 
 <div class="section-body">
-    <a href="./get-started">
+    <a href="./overview">
         <div>Get Started</div>
         <p>Deposit BNB to opBNB to start your journey</p>
     </a>
