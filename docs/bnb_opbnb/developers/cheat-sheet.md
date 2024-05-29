@@ -8,29 +8,35 @@ Setting up a node in the BNB Chain ecosystem requires understanding hardware req
 CPU Type: Intel Xeon Scalable processors (Ice Lake) or newer 
 
 **op-node:**  
+
 - Minimum: 4 cores
 - Recommended: 8 cores or more
 
 **op-geth:** 
+
 - Minimum: 12 cores
 - Recommended: 16 cores or more
 
 ## Memory
 
 **op-node:**  
+
 - Minimum: 4 GB
 - Recommended: 16 GB
 
 **op-geth:** 
+
 - Minimum: 10 GB
 - Recommended: 32 GB
 
 ## Storage
 
 **op-node:**  
+
 - No additional permanent storage required
 
 **op-geth:** 
+
 - Requires 3000 IOPS or above
 - 1TB or more for extended transaction history
 
@@ -57,6 +63,7 @@ For example:
   --l1=rpc1,rpc2…
 ```
 Optimize L1 receipt retrieval performance
+
 - **op-node:** `--l1.rpckind=bsc_fullnode`
 
 

@@ -4,6 +4,7 @@
 ## Validator Hardware Requirements
 
 ### Mainnet
+
 - VPS running recent versions of Mac OS X or Linux.
 - **IMPORTANT** 3T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms (if start with snap sync, it will need NVMe SSD).
 - 16 cores of CPU and 64 gigabytes of memory (RAM).
@@ -11,6 +12,7 @@
 - A broadband Internet connection with upload/download speeds of 5 megabyte per second
 
 ### Testnet
+
 - CPU: 4core, Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 - Memory: 16 GB
 - Disk: ~1.5 TB

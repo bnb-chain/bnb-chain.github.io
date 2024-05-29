@@ -1,6 +1,7 @@
 # Token Bind
 
-Token binding was introduced to faciliate that one token can circulate in both BC and BSC with confirmed total supply. 
+Token binding was introduced to faciliate that one token can circulate in both BC and BSC with confirmed total supply.
+
 - If a token is binded, then it can be transferred bewteen BC and BSC for different use cases.
 After [the final sunset
 hardfork](https://github.com/bnb-chain/bEPs/pull/333), the cross chain between BC and BSC will be shutdown. 
