@@ -166,7 +166,7 @@ nav:
   - BNB Greenfield:
       - BNB Greenfield : ./bnb_greenfield/index.md
       - Overview: ./bnb_greenfield/introduction.md
-      - Getting Started:
+      - Get Started:
           - Wallet Configuration: ./bnb_greenfield/getting-started/wallet-configuration.md
           - Bridge and Transfer BNB: ./bnb_greenfield/getting-started/token-transfer.md
           - Use Greenfield in Dcellar: ./bnb_greenfield/getting-started/dcellar.md
