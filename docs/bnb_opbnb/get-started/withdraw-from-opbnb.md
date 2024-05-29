@@ -16,3 +16,9 @@ There are 2 steps after you submit your withdrawal request.
 
 ![withdraw-status](../img/withdraw-status.png)
 
+## Third-party Bridges
+
+There are also third-party bridges with shorter withdrawal time.
+
+- [zkbridge](https://www.zkbridge.com/gallery/opbnb)
+

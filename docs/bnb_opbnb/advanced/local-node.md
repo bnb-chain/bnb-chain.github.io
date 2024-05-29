@@ -329,4 +329,5 @@ making sure to replace {yourDataDir} and {targetBlockStateRootHash} with your ow
 6. Be patient and observe the logs. The entire process may take dozens of hours.
 7. Restart your node after pruning is complete.
 
-**Reminder: Pruning is very dangerous and may damage the data of the node. This could result in having to rerun the new node. Please only perform this operation if you are familiar with the process.**
+!!!info
+    Pruning is very dangerous and may damage the data of the node. This could result in having to rerun the new node. Please only perform this operation if you are familiar with the process.

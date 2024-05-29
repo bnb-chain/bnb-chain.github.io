@@ -60,10 +60,13 @@ theme:
 nav:
   - Home: index.md
   - Announcements:
-    - Overview: ./announce/index.md
-    - Haber Hardfork(BSC): ./announce/haber_bsc.md
-    - Haber Hardfork(opBNB): ./announce/haber_opbnb.md
-    - Serengeti Hardfork(Greenfield): ./announce/serengeti_greenfield.md
+    - Announcements: ./announce/index.md
+    - Upcoming:
+      - Haber Hardfork(BSC): ./announce/haber_bsc.md
+      - Haber Hardfork(opBNB): ./announce/haber_opbnb.md
+      - Serengeti Hardfork(Greenfield): ./announce/serengeti_greenfield.md
+    - Passed:
+      - Feynman Hardfork(BSC): ./announce/feynman_bsc.md
 
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc_fusion/index.md
@@ -96,7 +99,7 @@ nav:
     - Overview: ./bnb_smart_chain/overview.md
     - Developers:
         - Overview: ./bnb_smart_chain/developers/overview.md
-        - Ecosystem: ./bnb_smart_chain/developers/ecosystem.md
+        - Ecosystem: https://www.bnbchain.org/en/dev-tools
         - RPC: ./bnb_smart_chain/developers/rpc.md
         - Faucet: ./bnb_smart_chain/developers/faucet.md
         - Node Operators:
@@ -146,6 +149,8 @@ nav:
         - Why OP Stack: ./bnb_opbnb/core-concepts/why-opstack.md
         - Optimizations on OP Stack: ./bnb_opbnb/core-concepts/optimisations-on-opstack.md
         - Metrics: ./bnb_opbnb/core-concepts/opbnb-metrics.md
+        - Gas and Fees: ./bnb_opbnb/core-concepts/gas-and-fees.md
+        - Account Abstraction: ./bnb_opbnb/core-concepts/account-abstraction-on-opbnb.md
         - Protocol Addresses: ./bnb_opbnb/core-concepts/opbnb-protocol-addresses.md
         - BNBChain Rollup as Service: ./bnb_opbnb/core-concepts/raas.md
     - Developers:
@@ -163,6 +168,12 @@ nav:
       - Node Best Practices: ./bnb_opbnb/advanced/node-best-practices.md
       - Local Node: ./bnb_opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb_opbnb/advanced/run-with-pebbledb-and-pbss.md
+    - FAQs:
+      - Protocol FAQs: ./bnb_opbnb/faq/protocol-faqs.md
+      - Gas and Fees FAQs: ./bnb_opbnb/faq/gas-and-fees-faqs.md
+      - opBNB Bridge FAQs: ./bnb_opbnb/faq/opbnb-bridge-faqs.md
+      - Cross Chain FAQs: ./bnb_opbnb/faq/cross-chain-faqs.md
+      - Build on opBNB FAQs: ./bnb_opbnb/faq/build-on-opbnb-faqs.md
   - BNB Greenfield:
       - BNB Greenfield : ./bnb_greenfield/index.md
       - Overview: ./bnb_greenfield/introduction.md

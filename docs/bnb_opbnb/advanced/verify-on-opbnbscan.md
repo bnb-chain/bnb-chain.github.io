@@ -101,6 +101,7 @@ npx truffle run verify {{Your-Contract-Name}} --network dashboard
 
 Then you can go to the [opBNBScan explorer](https://testnet.opbnbscan.com/address/0x57996bA7FC3F0C61E7A949ac050b9E2437eA1972?p=1&tab=Contract) to check if your smart contract has been verified.
 
-*Note: For the mainnet contract verification, please change the following URLs:
-url: "https://opbnb-testnet-rpc.bnbchain.org/" change to "https://opbnb-mainnet-rpc.bnbchain.org/"
-apiUrl: 'https://open-platform.nodereal.io/{{YOUR-NODEREAL-API-KEY}}/op-bnb-testnet/contract/' change to 'https://open-platform.nodereal.io/{{YOUR-NODEREAL-API-KEY}}/op-bnb-mainnet/contract/'*
+!!!info
+    For the mainnet contract verification, please change the following URLs:
+    url: "https://opbnb-testnet-rpc.bnbchain.org/" change to "https://opbnb-mainnet-rpc.bnbchain.org/"
+    apiUrl: 'https://open-platform.nodereal.io/{{YOUR-NODEREAL-API-KEY}}/op-bnb-testnet/contract/' change to 'https://open-platform.nodereal.io/{{YOUR-NODEREAL-API-KEY}}/op-bnb-mainnet/contract/'

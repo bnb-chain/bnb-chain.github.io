@@ -40,44 +40,40 @@ For this tutorial, we will be using Truffle IDE to develop, compile and deploy a
 
 2. Install Truffle globally by running the following command
 
-```shell
-npm install -g truffle
-```
+    ```shell
+    npm install -g truffle
+    ```
 
 3. Create a new directory for your project and navigate into it
 
-```shell
-mkdir HelloWorldDapp
-cd HelloWorldDapp
-```
+    ```shell
+    mkdir HelloWorldDapp
+    cd HelloWorldDapp
+    ```
 
 4. Initialize a new Truffle project. Create a [bare Truffle project](https://trufflesuite.com/docs/truffle/getting-started/creating-a-project.html) which generates the required directory structure to test and deploy contracts:
 
-```shell
-truffle init
-```
+    ```shell
+    truffle init
+    ```
+    Truffle creates the following directory structure for your project:
 
-Truffle creates the following directory structure for your project:
-
-- `contracts/`: directory for your [Solidity contracts](https://trufflesuite.com/docs/truffle/getting-started/interacting-with-your-contracts).
-- `migrations/`: directory for the [scriptable deployment files](https://trufflesuite.com/docs/truffle/getting-started/running-migrations#migration-files).
-- `test/`: directory for files that [test your application and contracts](https://trufflesuite.com/docs/truffle/testing/testing-your-contracts).
-- `truffle-config.js`: the Truffle [configuration file](https://trufflesuite.com/docs/truffle/reference/configuration).
+     - `contracts/`: directory for your [Solidity contracts](https://trufflesuite.com/docs/truffle/getting-started/interacting-with-your-contracts).
+     - `migrations/`: directory for the [scriptable deployment files](https://trufflesuite.com/docs/truffle/getting-started/running-migrations#migration-files).
+     - `test/`: directory for files that [test your application and contracts](https://trufflesuite.com/docs/truffle/testing/testing-your-contracts).
+     - `truffle-config.js`: the Truffle [configuration file](https://trufflesuite.com/docs/truffle/reference/configuration).
 
 5. Install Create React App globally by running the following command
-
    ```shell
    npm install -g create-react-app
    ```
 
 6. Create the React app frontend using the following command
-
    ```shell
    npx create-react-app frontend
    ```
 
 7. Navigate into the client directory using the following command
-
    ```shell
    cd frontend
    ```
@@ -136,259 +132,257 @@ Inside the contracts directory, create a new file named `HelloWorld.sol` and add
 
 1. Open the `truffle-config.js` file and add the following code:
 
-```jsx
-const HDWalletProvider = require("@truffle/hdwallet-provider");
-// create a file at the root of your project and name it .env -- there you can set process variables
-// like the mnemonic etc. Note: .env is ignored by git to keep your private information safe
-
-require("dotenv").config();
-
-const mnemonic = process.env["MNEMONIC"].toString().trim();
-
-module.exports = {
-  networks: {
-    development: {
-      host: "127.0.0.1", // Localhost (default: none)
-      port: 8545, // Standard Ethereum port (default: none)
-      network_id: "*", // Any network (default: none)
-    },
-    opBNBTestnet: {
-      provider: () =>
-        new HDWalletProvider(
-          mnemonic,
-          `https://opbnb-testnet-rpc.bnbchain.org`
-        ),
-      network_id: 5611,
-      confirmations: 3,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-    },
-  },
-
-  // Set default mocha options here, use special reporters etc.
-  mocha: {
-    // timeout: 100000
-  },
-
-  // Configure your compilers
-  compilers: {
-    solc: {
-      version: "0.8.19",
-    },
-  },
-};
-```
+    ```jsx
+    const HDWalletProvider = require("@truffle/hdwallet-provider");
+    // create a file at the root of your project and name it .env -- there you can set process variables
+    // like the mnemonic etc. Note: .env is ignored by git to keep your private information safe
+    
+    require("dotenv").config();
+    
+    const mnemonic = process.env["MNEMONIC"].toString().trim();
+    
+    module.exports = {
+      networks: {
+        development: {
+          host: "127.0.0.1", // Localhost (default: none)
+          port: 8545, // Standard Ethereum port (default: none)
+          network_id: "*", // Any network (default: none)
+        },
+        opBNBTestnet: {
+          provider: () =>
+            new HDWalletProvider(
+              mnemonic,
+              `https://opbnb-testnet-rpc.bnbchain.org`
+            ),
+          network_id: 5611,
+          confirmations: 3,
+          timeoutBlocks: 200,
+          skipDryRun: true,
+        },
+      },
+    
+      // Set default mocha options here, use special reporters etc.
+      mocha: {
+        // timeout: 100000
+      },
+    
+      // Configure your compilers
+      compilers: {
+        solc: {
+          version: "0.8.19",
+        },
+      },
+    };
+    ```
 
 ### Step#6: Deploy the smart contract on opBNB
 
 1. In the root directory of your project, create a new file named `1_deploy_contract.js` inside the `migrations` directory and add the following code:
 
-```jsx
-const HelloWorld = artifacts.require("HelloWorld");
-
-module.exports = function (deployer) {
-  deployer.deploy(HelloWorld, "Hello, World!");
-};
-```
+    ```jsx
+    const HelloWorld = artifacts.require("HelloWorld");
+    
+    module.exports = function (deployer) {
+      deployer.deploy(HelloWorld, "Hello, World!");
+    };
+    ```
 
 2. Deploy the smart contract to the opBNB testnet by running the following command
 
-```shell
-truffle migrate --network opBNBTestnet
-```
+    ```shell
+    truffle migrate --network opBNBTestnet
+    ```
 
-![deploy-smart-contract](../img/opBNB-deploy-contract.PNG)
+    ![deploy-smart-contract](../img/opBNB-deploy-contract.PNG)
 
 ### Step#7: Set up the React frontend
 
 1. Inside the `frontend/src` directory, replace the contents of the `App.js` file with the following code:
 
-```jsx
-import React, { useEffect, useState } from "react";
-import Web3 from "web3";
-import HelloWorldContract from "./contracts/HelloWorld.json";
-import "./App.css";
-
-function App() {
-  const [contract, setContract] = useState(null);
-  const [message, setMessage] = useState("");
-  const [newMessage, setNewMessage] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const loadBlockchainData = async () => {
-      try {
-        const web3 = new Web3(window.ethereum);
-        const networkId = await web3.eth.net.getId();
-        const deployedNetwork = HelloWorldContract.networks[networkId];
-        const instance = new web3.eth.Contract(
-          HelloWorldContract.abi,
-          deployedNetwork && deployedNetwork.address
-        );
-        setContract(instance);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    loadBlockchainData();
-  }, []);
-
-  const getMessage = async () => {
-    if (contract) {
-      try {
-        setLoading(true);
-        const message = await contract.methods.message().call();
-        setMessage(message);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
-
-  const updateMessage = async () => {
-    if (contract && newMessage !== "") {
-      try {
-        setLoading(true);
-        await contract.methods
-          .updateMessage(newMessage)
-          .send({ from: (await window.ethereum.enable())[0] });
-        setNewMessage("");
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
-
-  return (
-    <div className="App">
-      <h1 className="header">HelloWorld dApp</h1>
-      <div className="content">
-        <div className="message">
-          <h2>Current Message</h2>
-          <p className="messageValue">{loading ? "Loading..." : message}</p>
-          <button onClick={getMessage}>Refresh</button>
+    ```jsx
+    import React, { useEffect, useState } from "react";
+    import Web3 from "web3";
+    import HelloWorldContract from "./contracts/HelloWorld.json";
+    import "./App.css";
+    
+    function App() {
+      const [contract, setContract] = useState(null);
+      const [message, setMessage] = useState("");
+      const [newMessage, setNewMessage] = useState("");
+      const [loading, setLoading] = useState(false);
+    
+      useEffect(() => {
+        const loadBlockchainData = async () => {
+          try {
+            const web3 = new Web3(window.ethereum);
+            const networkId = await web3.eth.net.getId();
+            const deployedNetwork = HelloWorldContract.networks[networkId];
+            const instance = new web3.eth.Contract(
+              HelloWorldContract.abi,
+              deployedNetwork && deployedNetwork.address
+            );
+            setContract(instance);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        loadBlockchainData();
+      }, []);
+    
+      const getMessage = async () => {
+        if (contract) {
+          try {
+            setLoading(true);
+            const message = await contract.methods.message().call();
+            setMessage(message);
+          } catch (error) {
+            console.error(error);
+          } finally {
+            setLoading(false);
+          }
+        }
+      };
+    
+      const updateMessage = async () => {
+        if (contract && newMessage !== "") {
+          try {
+            setLoading(true);
+            await contract.methods
+              .updateMessage(newMessage)
+              .send({ from: (await window.ethereum.enable())[0] });
+            setNewMessage("");
+          } catch (error) {
+            console.error(error);
+          } finally {
+            setLoading(false);
+          }
+        }
+      };
+    
+      return (
+        <div className="App">
+          <h1 className="header">HelloWorld dApp</h1>
+          <div className="content">
+            <div className="message">
+              <h2>Current Message</h2>
+              <p className="messageValue">{loading ? "Loading..." : message}</p>
+              <button onClick={getMessage}>Refresh</button>
+            </div>
+          </div>
+          <div className="content">
+            <div className="update">
+              <h2>Update Message</h2>
+              <input
+                type="text"
+                placeholder="New Message"
+                value={newMessage}
+                onChange={(e) => setNewMessage(e.target.value)}
+                className="inputMessage"
+              />
+              <br />
+              <button onClick={updateMessage}>Update</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="content">
-        <div className="update">
-          <h2>Update Message</h2>
-          <input
-            type="text"
-            placeholder="New Message"
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            className="inputMessage"
-          />
-          <br />
-          <button onClick={updateMessage}>Update</button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default App;
-```
+      );
+    }
+    
+    export default App;
+    ```
 
 2. Replace the contents of the `App.css` file with the following code:
 
-```css
-.App {
-  text-align: center;
-}
+    ```css
+    .App {
+      text-align: center;
+    }
+    
+    .header {
+      background-color: #f3ba2f;
+      min-height: 20vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(40px + 2vmin);
+      color: white;
+    }
+    
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: auto;
+      text-align: center;
+    }
+    
+    .message,
+    .update {
+      padding: auto;
+      margin: 20px;
+    }
+    .messageValue {
+      color: whitesmoke;
+      font-size: large;
+    }
+    
+    .inputMessage {
+      float: center;
+      padding: 10px;
+      width: 100%;
+      font-family: "IBM Plex Sans", "Raleway", "Source Sans Pro", "Arial";
+    }
+    
+    button {
+      float: center;
+      margin: 1em 0;
+      padding: 10px 3em;
+      font-weight: bold;
+      max-width: fit-content;
+      font-family: "IBM Plex Sans", "Raleway", "Source Sans Pro", "Arial";
+    }
+    
+    body {
+      background-color: #292929;
+      color: #f3ba2f;
+      align-items: center;
+      font-family: "IBM Plex Sans", "Raleway", "Source Sans Pro", "Arial";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ```
 
-.header {
-  background-color: #f3ba2f;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(40px + 2vmin);
-  color: white;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: auto;
-  text-align: center;
-}
-
-.message,
-.update {
-  padding: auto;
-  margin: 20px;
-}
-.messageValue {
-  color: whitesmoke;
-  font-size: large;
-}
-
-.inputMessage {
-  float: center;
-  padding: 10px;
-  width: 100%;
-  font-family: "IBM Plex Sans", "Raleway", "Source Sans Pro", "Arial";
-}
-
-button {
-  float: center;
-  margin: 1em 0;
-  padding: 10px 3em;
-  font-weight: bold;
-  max-width: fit-content;
-  font-family: "IBM Plex Sans", "Raleway", "Source Sans Pro", "Arial";
-}
-
-body {
-  background-color: #292929;
-  color: #f3ba2f;
-  align-items: center;
-  font-family: "IBM Plex Sans", "Raleway", "Source Sans Pro", "Arial";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-### Step 6: Start the development server
+### Step#8: Start the development server
 
 1. In the frontend directory, install the required dependencies by running the following command
 
-```shell
-npm install
-```
+    ```shell
+    npm install
+    ```
 
 2. Start the React development server:
 
-```shell
-npm start
-```
+    ```shell
+    npm start
+    ```
 
 3. Visit `http://localhost:3000` in your browser, and you should see the `HelloWorld` dApp with the current message and the ability to update it.
 
-*Make sure you have the MetaMask extension installed and set to the opBNB testnet.*
-
-
-![helloworld-opbnb-ui](../img/opbnb-helloworld-ui.PNG)
+    *Make sure you have the MetaMask extension installed and set to the opBNB testnet.*
+    ![helloworld-opbnb-ui](../img/opbnb-helloworld-ui.PNG)
 
 4. When you enter a new message and click the update button, if your dapp is already not connected to Metamask wallet, you will get a Metamask notification asking for permission to connect your wallet to the dapp.
 
-![connect-metamask](../img/opbnb-connect-wallet.PNG)
+    ![connect-metamask](../img/opbnb-connect-wallet.PNG)
 
 5. It will also ask for your confirmation to confirm the transaction. Proceed by clicking the confirm button.
 
-![opbnb-metamask-tx](../img/opbnb-metamask-tx.PNG)
+    ![opbnb-metamask-tx](../img/opbnb-metamask-tx.PNG)
 
 6. Once the transaction is confirmed, click the `Refresh` button to load the new message.
 
-![helloworld-opbnb-output-ui](../img/opbnb-helloworld-ui-2.PNG)
+    ![helloworld-opbnb-output-ui](../img/opbnb-helloworld-ui-2.PNG)
 
 ## Conclusion
 

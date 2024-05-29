@@ -6,9 +6,8 @@ To start op-geth with PBSS and PebbleDB, include the following flags:
 --state.scheme path --db.engine pebble
 ```
 
-:::info
-We recommend using version v0.3.1-alpha or later to activate this feature.
-:::
+!!!info
+    We recommend using version v0.3.1-alpha or later to activate this feature.
 
 Upon successful startup, the logs will confirm the initiation of PBSS and PebbleDB:
 

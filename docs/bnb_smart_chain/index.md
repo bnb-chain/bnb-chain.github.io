@@ -42,7 +42,7 @@ hide:
         <div>Slashing</div>
         <p>Slashing is a component of on-chain governance that penalizes malicious or negative actions. </p>
     </a>
-    <a href="./developers/ecosystem">
+    <a href="https://www.bnbchain.org/en/dev-tools">
         <div>BSC Ecosystem</div>
         <p>BSC ecosystem and developer tools</p>
     </a>

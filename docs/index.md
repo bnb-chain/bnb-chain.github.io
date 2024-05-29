@@ -16,6 +16,12 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
     Developers can easily port their existing Ethereum-based projects to BNB Chain, benefiting from its enhanced performance.
 
+* **Massive User Base**
+    BNB Chain Handle the largest daily active users and the highest peak EVM transactions with economical fees.
+
+* **Strongest Ecosystem**
+    It is Supported by a robust ecosystem of top-tier RPC plants, wallets, blockchain explorers, data indices, and substantial grants.
+
 * **Thriving DeFi Ecosystem**
 
     BNB Chain boasts a vast array of DeFi applications, including decentralized exchanges (DEXs), lending protocols, yield farming platforms, and more.
@@ -23,6 +29,10 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 * **Community-Driven Growth**
 
     BNB Chain is supported by a vibrant community of developers, validators, and users who contribute to its ongoing development and expansion.
+
+* **Most Diversified Assets APIs**
+
+    Full support on all popular tokens via the most powerful Binance Bridge. The greatest opportunity for composability.
 
 ## **Chains**
 
@@ -49,6 +59,9 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
     BNB Chain is a hub for DeFi activities, providing users with access to a wide range of financial products and services, all powered by blockchain technology.
 
+* **LSD and Restaking**
+    BNB Chain is secured by more than 20M BNB staking and 20K delegators. The development for LSD and Restaking has been bolstered by a substantial amount of assets and a solid user base.
+
 * **Gaming and Non-Fungible Tokens (NFTs)**
 
     The platform's fast transaction speeds and low fees make it ideal for gaming and NFT applications. opBNB further enhances this capability.
@@ -60,4 +73,8 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 * **Data Storage and Management**
 
     BNB Greenfield opens up new possibilities for decentralized data storage and management, catering to a wide range of use cases.
+
+* **AI with blockchain technology**
+
+    With the growing demand for Artificial Intelligence or AI, there is now more than ever a need to integrate AI with blockchain technology to reap its benefits. BNB Chain is making this integration a reality by providing a robust platform that easily integrates blockchain and AI.
 
