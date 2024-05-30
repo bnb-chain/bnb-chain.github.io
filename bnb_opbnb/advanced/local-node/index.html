@@ -1,0 +1,2622 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3).">
+      
+      
+        <meta name="author" content="BNB Chain">
+      
+      
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb_opbnb/advanced/local-node/">
+      
+      
+        <link rel="prev" href="../node-best-practices/">
+      
+      
+        <link rel="next" href="../run-with-pebbledb-and-pbss/">
+      
+      
+      <link rel="icon" href="../../../assets/bnb.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+    
+        <title>Local Node - BNB Chain Documentation</title>
+    
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    
+      <link rel="stylesheet" href="../../../assets/style/index.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running-a-local-testnet-or-mainnet-node" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div>
+    BNB Beacon Chain is sunsetting. <a href="https://www.bnbchain.org/en/bnb-chain-fusion" target="_blank">Check for
+    more details</a>
+</div>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+
+        <!-- Link to home -->
+        <a
+                href="https://www.bnbchain.org"
+                title="Documentation"
+                class="md-header__button md-logo"
+                aria-label="Documentation"
+                data-md-component="logo"
+        >
+            
+  <img src="../../../assets/logo.svg" alt="logo">
+
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__site_name">
+                  <span class="md-ellipsis">
+                    Documentation
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color palette toggle -->
+        
+            
+                <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11Zm-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0ZM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06ZM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0ZM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12Zm8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20Zm12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12Zm-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061Zm2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></svg>
+      </label>
+    
+  
+</form>
+            
+        
+
+        <!-- User preference: color palette -->
+        
+            <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+        
+
+        <!-- Site language selector -->
+        
+
+        <!-- Button to open search modal -->
+        
+            <label class="md-header__button md-icon" for="__search">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+            </label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.498 3.498 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.499 3.499 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5Zm-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001Zm0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5ZM5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+        <!-- Repository information -->
+        
+        <div class="md-header__source">
+            <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../announce/" class="md-tabs__link">
+          
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bc_fusion/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Chain Fusion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb_smart_chain/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Smart Chain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  opBNB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb_greenfield/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Greenfield
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../announce/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Announcements
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bc_fusion/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Chain Fusion
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb_smart_chain/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    opBNB
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            opBNB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Get Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Get Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/network-info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/wallet-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/deposit-to-opbnb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deposit to opBNB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/withdraw-from-opbnb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Withdraw from opBNB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Core Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/why-bsc-requires-opbnb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why BSC Requires opBNB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/why-opstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why OP Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/optimisations-on-opstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimizations on OP Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/opbnb-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/gas-and-fees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gas and Fees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/account-abstraction-on-opbnb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Account Abstraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/opbnb-protocol-addresses/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocol Addresses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/raas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BNBChain Rollup as Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/developer-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developer Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/network-faucet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Faucet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/set-gas-price/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Gas Price Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/multisig-wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-sig Wallet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/bep20-crosschain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BEP20 CrossChain Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/geth-sync/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geth P2P Sync Feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developers/cheat-sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developers Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Advanced Topics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-dev-env/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full-stack-dapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build a Full Stack dApp on opBNB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../verify-on-opbnbscan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verify Smart Contract on opBNBScan explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node-best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Local Node
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Local Node
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Docker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-with-binaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Binaries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run with Binaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-op-node-and-op-geth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build op-node and op-geth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-with-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Snapshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not-synced-for-a-long-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not synced for a long time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-local-nodes-chain-has-forked-from-the-canonical-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The local node&rsquo;s chain has forked from the canonical chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-block-is-stuck-and-op-geth-log-prints-database-compacting-degraded-performance-databasedatagethchaindata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node block is stuck and op-geth log prints: Database compacting, degraded performance database=/data/geth/chaindata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-with-pebbledb-and-pbss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with PebbleDB and PBSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/protocol-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocol FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/gas-and-fees-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gas and Fees FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/opbnb-bridge-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    opBNB Bridge FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/cross-chain-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Chain FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/build-on-opbnb-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build on opBNB FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb_greenfield/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Greenfield
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fast-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fast Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Docker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-with-binaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Binaries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run with Binaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-op-node-and-op-geth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build op-node and op-geth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-with-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Snapshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not-synced-for-a-long-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not synced for a long time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-local-nodes-chain-has-forked-from-the-canonical-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The local node&rsquo;s chain has forked from the canonical chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-block-is-stuck-and-op-geth-log-prints-database-compacting-degraded-performance-databasedatagethchaindata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node block is stuck and op-geth log prints: Database compacting, degraded performance database=/data/geth/chaindata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb_opbnb/advanced/local-node.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<div><h1 id="running-a-local-testnet-or-mainnet-node">Running a Local Testnet or Mainnet Node<a class="headerlink" href="#running-a-local-testnet-or-mainnet-node" title="Link to this section">¶</a></h1>
+<p>If you’re looking to build an app on opBNB you’ll need access to an opBNB node.
+You can simply use the public rpc(Testnet: <a href="https://opbnb-testnet-rpc.bnbchain.org">https://opbnb-testnet-rpc.bnbchain.org</a>, Mainnet: <a href="https://opbnb-mainnet-rpc.bnbchain.org">https://opbnb-mainnet-rpc.bnbchain.org</a>) or run your own node.</p>
+<p>This guide will walk you through setting up your own Testnet/Mainnet node.</p>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Link to this section">¶</a></h2>
+<p>Replicas must store the transaction history of opBNB and run Geth. For optimal performance, they should be powerful machines (real or virtual) with at least 16 GB RAM and an SSD drive with 500 GB free space (for production network).</p>
+<h3 id="fast-node">Fast Node<a class="headerlink" href="#fast-node" title="Link to this section">¶</a></h3>
+<p>For users that just to run normal rpc node without debug functions, you can run the fast node which has faster sync speed and less hardware requirements.</p>
+<p>The fast node don’t have MPT states and only use the snapshot to sync the latest state. The security is not as good as the full node, but it’s enough for most of the users and 
+validated in many production nodes. The advantage of the fast node is that it’s faster to sync for it doesn’t need to calculate the MPT states and store and query the MPT trees.</p>
+<p>You can start the fast node with the flags <code>--allow-insecure-no-tries</code>. The gc mode should not be <code>archive</code> if you start with the fast node.</p>
+<p>For more information, you can refer to the <a href="https://github.com/bnb-chain/op-geth/pull/75">fast node pr</a>.</p>
+<h2 id="run-with-docker">Run with Docker<a class="headerlink" href="#run-with-docker" title="Link to this section">¶</a></h2>
+<p>There are official Docker images available for the opBNB node. You can use the latest versions of these images from the following links:
+-  <a href="https://github.com/bnb-chain/opbnb/pkgs/container/op-node">op-node</a>
+-  <a href="https://github.com/bnb-chain/op-geth/pkgs/container/op-geth">op-geth</a></p>
+<p>Additionally, you can find a docker-compose file example in this <a href="https://github.com/bnb-chain/opbnb-node-docker">repository</a> to run the opBNB node with Docker. This allows you to set up a Testnet/Mainnet node quickly, within minutes. 
+If you use different infrastructure providers, please consult the docker-compose file and adjust the configuration as needed.</p>
+<h2 id="run-with-binaries">Run with Binaries<a class="headerlink" href="#run-with-binaries" title="Link to this section">¶</a></h2>
+<h3 id="build-op-node-and-op-geth">Build op-node and op-geth<a class="headerlink" href="#build-op-node-and-op-geth" title="Link to this section">¶</a></h3>
+<p>dependencies
+- golang 1.20+
+- make
+- git
+- gcc
+- libc-dev</p>
+<p>You can refer to the Docker files for Alpine Linux: <a href="https://github.com/bnb-chain/opbnb/blob/develop/op-node/Dockerfile">op-node</a> and <a href="https://github.com/bnb-chain/op-geth/blob/develop/Dockerfile">op-geth</a>.
+If you are using a different OS, please find the alternative packages for your OS.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OPBNB_WORKSPACE</span><span class="o">=</span>/tmp/opbnb
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bnb-chain/opbnb.git
+<span class="nb">cd</span><span class="w"> </span>opbnb/op-node
+git<span class="w"> </span>checkout<span class="w"> </span>develop
+make<span class="w"> </span>op-node
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-node-data
+cp<span class="w"> </span>./bin/op-node<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-node-data
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bnb-chain/op-geth.git
+<span class="nb">cd</span><span class="w"> </span>op-geth
+git<span class="w"> </span>checkout<span class="w"> </span>develop
+make<span class="w"> </span>geth
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-geth-data
+cp<span class="w"> </span>./build/bin/geth<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-geth-data/op-geth
+</code></pre></div>
+<h3 id="data-preparation">Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>
+<span class="c1"># for testnet</span>
+cp<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/opbnb/assets/testnet/genesis.json<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-geth-data
+<span class="c1"># for mainnet</span>
+<span class="c1"># cp $OPBNB_WORKSPACE/opbnb/assets/mainnet/genesis.json $OPBNB_WORKSPACE/op-geth-data</span>
+
+openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span><span class="w"> </span>&gt;<span class="w"> </span>jwt.txt
+cp<span class="w"> </span>jwt.txt<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-geth-data
+cp<span class="w"> </span>jwt.txt<span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-node-data
+
+<span class="c1"># init op-geth genesis</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-geth-data
+mkdir<span class="w"> </span>datadir
+./op-geth<span class="w"> </span>--datadir<span class="w"> </span>./datadir<span class="w"> </span>init<span class="w"> </span>genesis.json
+</code></pre></div>
+<h3 id="start-components">Start components<a class="headerlink" href="#start-components" title="Link to this section">¶</a></h3>
+<p>op-geth</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /usr/bin/bash</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$OPBNB_WORKSPACE</span>/op-geth-data
+
+<span class="c1"># for testnet</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CHAIN_ID</span><span class="o">=</span><span class="m">5611</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">L2_RPC</span><span class="o">=</span>https://opbnb-testnet-rpc.bnbchain.org
+<span class="nb">export</span><span class="w"> </span><span class="nv">P2P_BOOTNODES</span><span class="o">=</span><span class="s2">"enr:-KO4QKFOBDW--pF4pFwv3Al_jiLOITj_Y5mr1Ajyy2yxHpFtNcBfkZEkvWUxAKXQjWALZEFxYHooU88JClyzA00e8YeGAYtBOOZig2V0aMfGhE0ZYGqAgmlkgnY0gmlwhDREiqaJc2VjcDI1NmsxoQM8pC_6wwTr5N2Q-yXQ1KGKsgz9i9EPLk8Ata65pUyYG4RzbmFwwIN0Y3CCdl-DdWRwgnZf,enr:-KO4QFJc0KR09ye818GT2kyN9y6BAGjhz77sYimxn85jJf2hOrNqg4X0b0EsS-_ssdkzVpavqh6oMX7W5Y81xMRuEayGAYtBSiK9g2V0aMfGhE0ZYGqAgmlkgnY0gmlwhANzx96Jc2VjcDI1NmsxoQPwA1XHfWGd4umIt7j3Fc7hKq_35izIWT_9yiN_tX8lR4RzbmFwwIN0Y3CCdl-DdWRwgnZf"</span>
+
+<span class="c1"># for mainnet</span>
+<span class="c1"># export CHAIN_ID=204</span>
+<span class="c1"># export L2_RPC=https://opbnb-mainnet-rpc.bnbchain.org</span>
+<span class="c1"># export P2P_BOOTNODES="enr:-KO4QHs5qh_kPFcjMgqkuN9dbxXT4C5Cjad4SAheaUxveCbJQ3XdeMMDHeHilHyqisyYQAByfdhzyKAdUp2SvyzWeBqGAYvRDf80g2V0aMfGhHFtSjqAgmlkgnY0gmlwhDaykUmJc2VjcDI1NmsxoQJUevTL3hJwj21IT2GC6VaNqVQEsJFPtNtO-ld5QTNCfIRzbmFwwIN0Y3CCdl-DdWRwgnZf,enr:-KO4QKIByq-YMjs6IL2YCNZEmlo3dKWNOy4B6sdqE3gjOrXeKdNbwZZGK_JzT1epqCFs3mujjg2vO1lrZLzLy4Rl7PyGAYvRA8bEg2V0aMfGhHFtSjqAgmlkgnY0gmlwhDbjSM6Jc2VjcDI1NmsxoQNQhJ5pqCPnTbK92gEc2F98y-u1OgZVAI1Msx-UiHezY4RzbmFwwIN0Y3CCdl-DdWRwgnZf"</span>
+
+
+./op-geth<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--datadir<span class="o">=</span><span class="s2">"./datadir"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--verbosity<span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--http<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--http.corsdomain<span class="o">=</span><span class="s2">"*"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--http.vhosts<span class="o">=</span><span class="s2">"*"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--http.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--http.port<span class="o">=</span><span class="m">8545</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--http.api<span class="o">=</span>net,eth,engine<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ws<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ws.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ws.port<span class="o">=</span><span class="m">8545</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ws.origins<span class="o">=</span><span class="s2">"*"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ws.api<span class="o">=</span>eth,engine<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--syncmode<span class="o">=</span>full<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--maxpeers<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--networkid<span class="o">=</span><span class="nv">$CHAIN_ID</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--miner.gaslimit<span class="o">=</span><span class="m">150000000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--triesInMemory<span class="o">=</span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.globalslots<span class="o">=</span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.globalqueue<span class="o">=</span><span class="m">5000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.accountqueue<span class="o">=</span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.accountslots<span class="o">=</span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cache<span class="w"> </span><span class="m">32000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cache.preimages<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--allow-insecure-unlock<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--authrpc.addr<span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--authrpc.port<span class="o">=</span><span class="s2">"8551"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--authrpc.vhosts<span class="o">=</span><span class="s2">"*"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--authrpc.jwtsecret<span class="o">=</span>./jwt.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gcmode<span class="o">=</span>archive<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.port<span class="w"> </span><span class="m">6060</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.addr<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rollup.sequencerhttp<span class="o">=</span><span class="nv">$L2_RPC</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bootnodes<span class="o">=</span><span class="nv">$P2P_BOOTNODES</span>
+</code></pre></div>
+<p>op-geth runs with <a href="../run-with-pebbledb-and-pbss/">PBSS(Path-Base Scheme Storage) and PebbleDB</a> by adding the flags <code>--state.scheme path</code> and <code>--db.engine pebble</code>.
+<strong>It’s recommended to start a new node with this mode, which provides better performance and less disk space usage.</strong></p>
+<p>To start the op-geth node for a fast node, you can add the flag <code>--allow-insecure-no-tries</code>. but the <code>gcmode</code> should be <code>full</code>.</p>
+<p>op-node</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /usr/bin/bash</span>
+
+<span class="nb">set</span><span class="w"> </span>-ex
+
+<span class="nb">cd</span><span class="w"> </span>op-node-data
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">L2_RPC</span><span class="o">=</span>http://localhost:8551
+<span class="c1"># replace the p2p private key with yours</span>
+<span class="c1"># you can generate a new one with `openssl rand -hex 32`</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">P2P_PRIV_KEY</span><span class="o">=</span>ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+<span class="c1"># for testnet</span>
+<span class="c1"># it's better to replace the L1_RPC with your own BSC Testnet RPC Endpoint for stability</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">L1_RPC</span><span class="o">=</span>https://bsc-testnet.bnbchain.org
+<span class="nb">export</span><span class="w"> </span><span class="nv">P2P_BOOTNODES</span><span class="o">=</span><span class="s2">"enr:-J24QGQBeMsXOaCCaLWtNFSfb2Gv50DjGOKToH2HUTAIn9yXImowlRoMDNuPNhSBZNQGCCE8eAl5O3dsONuuQp5Qix2GAYjB7KHSgmlkgnY0gmlwhDREiqaHb3BzdGFja4PrKwCJc2VjcDI1NmsxoQL4I9wpEVDcUb8bLWu6V8iPoN5w8E8q-GrS5WUCygYUQ4N0Y3CCIyuDdWRwgiMr,enr:-J24QJKXHEkIhy0tmIk2EscMZ2aRrivNsZf_YhgIU51g4ZKHWY0BxW6VedRJ1jxmneW9v7JjldPOPpLkaNSo6cXGFxqGAYpK96oCgmlkgnY0gmlwhANzx96Hb3BzdGFja4PrKwCJc2VjcDI1NmsxoQMOCzUFffz04eyDrmkbaSCrMEvLvn5O4RZaZ5k1GV4wa4N0Y3CCIyuDdWRwgiMr"</span>
+
+<span class="c1"># for mainnet</span>
+<span class="c1"># export L1_RPC=https://bsc-dataseed.bnbchain.org</span>
+<span class="c1"># export P2P_BOOTNODES="enr:-J24QA9sgVxbZ0KoJ7-1gx_szfc7Oexzz7xL2iHS7VMHGj2QQaLc_IQZmFthywENgJWXbApj7tw7BiouKDOZD4noWEWGAYppffmvgmlkgnY0gmlwhDbjSM6Hb3BzdGFja4PMAQCJc2VjcDI1NmsxoQKetGQX7sXd4u8hZr6uayTZgHRDvGm36YaryqZkgnidS4N0Y3CCIyuDdWRwgiMs,enr:-J24QPSZMaGw3NhO6Ll25cawknKcOFLPjUnpy72HCkwqaHBKaaR9ylr-ejx20INZ69BLLj334aEqjNHKJeWhiAdVcn-GAYv28FmZgmlkgnY0gmlwhDTDWQOHb3BzdGFja4PMAQCJc2VjcDI1NmsxoQJ-_5GZKjs7jaB4TILdgC8EwnwyL3Qip89wmjnyjvDDwoN0Y3CCIyuDdWRwgiMs"</span>
+
+./op-node<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.trustrpc<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--sequencer.l1-confs<span class="o">=</span><span class="m">15</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--verifier.l1-confs<span class="o">=</span><span class="m">15</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.http-poll-interval<span class="w"> </span>3s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.epoch-poll-interval<span class="w"> </span>45s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.rpc-max-batch-size<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rollup.config<span class="o">=</span>./rollup.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rpc.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rpc.port<span class="o">=</span><span class="m">8546</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--p2p.sync.req-resp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--p2p.listen.ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--p2p.listen.tcp<span class="o">=</span><span class="m">9003</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--p2p.listen.udp<span class="o">=</span><span class="m">9003</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--snapshotlog.file<span class="o">=</span>./snapshot.log<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--p2p.bootnodes<span class="o">=</span><span class="nv">$P2P_BOOTNODES</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.enabled<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.port<span class="o">=</span><span class="m">7300</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pprof.enabled<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rpc.enable-admin<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1<span class="o">=</span><span class="si">${</span><span class="nv">L1_RPC</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l2<span class="o">=</span><span class="si">${</span><span class="nv">L2_RPC</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l2.jwt-secret<span class="o">=</span>./jwt.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l2.engine-sync<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l2.skip-sync-start-check<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\ </span><span class="w"> </span>
+<span class="w">  </span>--log.level<span class="o">=</span>debug
+</code></pre></div>
+<h2 id="run-with-snapshots">Run with Snapshots<a class="headerlink" href="#run-with-snapshots" title="Link to this section">¶</a></h2>
+<p>To improve the synchronization speed of the node, you can utilize snapshots to initialize it. </p>
+<p>The most recent snapshot is maintained in the repository <a href="https://github.com/bnb-chain/opbnb-snapshot">opbnb-snapshot</a>.
+Please visit the repository for download links and usage instructions.</p>
+<h2 id="check-status">Check status<a class="headerlink" href="#check-status" title="Link to this section">¶</a></h2>
+<p>Wait for the node to sync. You’ll see log in <code>op-geth</code> if there’s any new block.</p>
+<div class="highlight"><pre><span></span><code>INFO [11-15|10:10:05.569] Syncing beacon headers                   downloaded=1,762,304 left=11,403,991 eta=27m1.039s
+INFO [11-15|10:10:06.440] Forkchoice requested sync to new head    number=13,164,499 hash=d78cb3..a2e94d finalized=unknown
+</code></pre></div>
+<p>You can check the block number with curl:</p>
+<div class="highlight"><pre><span></span><code>$ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' http://localhost:8545
+</code></pre></div>
+<p>Once all headers have been downloaded, the node will begin downloading the blocks.
+You will notice that the block height is increasing.</p>
+<div class="highlight"><pre><span></span><code>{"jsonrpc":"2.0","id":1,"result":"0x1a"}
+</code></pre></div>
+<p>To verify if the node has synchronized to the latest height, you can compare the block with the one requested from public endpoints.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># local</span>
+$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">'{"jsonrpc":"2.0","method":"eth_getBlockByNumber","id": 1, "params": ["0x1a", false]}'</span><span class="w"> </span>http://localhost:8545
+
+<span class="c1"># testnet</span>
+$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">'{"jsonrpc":"2.0","method":"eth_getBlockByNumber","id": 1, "params": ["0x1a", false]}'</span><span class="w"> </span>https://opbnb-testnet-rpc.bnbchain.org
+
+<span class="c1"># mainnet</span>
+$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">'{"jsonrpc":"2.0","method":"eth_getBlockByNumber","id": 1, "params": ["0x1a", false]}'</span><span class="w"> </span>https://opbnb-mainnet-rpc.bnbchain.org
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this section">¶</a></h2>
+<p>If the problem you are facing is not addressed here, please open an issue on GitHub by visiting this link: <a href="https://github.com/bnb-chain/opbnb/issues">open an issue</a>.</p>
+<h3 id="not-synced-for-a-long-time">Not synced for a long time<a class="headerlink" href="#not-synced-for-a-long-time" title="Link to this section">¶</a></h3>
+<p>The default sync mechanism involves two P2P networks, the op-node network and op-geth network.
+If you are not connected to the op-node network, you can not receive the latest blocks from broadcast, and can’t trigger the engine sync of op-geth.
+If you are not connected to the op-geth network, you can receive the latest blocks from broadcast, but can’t get the historical blocks from op-geth P2P network.</p>
+<p>Check the op-geth logs.</p>
+<p>If you can find the following logs, it means that the op-node network is connected successfully and you are receiving the latest blocks from broadcast.</p>
+<div class="highlight"><pre><span></span><code>INFO [11-15|10:32:02.801] Forkchoice requested sync to new head    number=8,290,596 hash=1dbff3..9a306a finalized=unknown
+</code></pre></div>
+<p>If you can find the following logs, it means that the op-geth network is connected successfully and you are receiving the historical block headers from op-geth P2P network.</p>
+<div class="highlight"><pre><span></span><code>INFO [11-15|10:32:52.240] Syncing beacon headers                   downloaded=210,432 left=8,084,773 eta=31m39.748s
+</code></pre></div>
+<p>Check the op-node p2p network with the command below:</p>
+<div class="highlight"><pre><span></span><code>$ curl -X POST -H "Content-Type: application/json" --data \
+    '{"method":"opp2p_peers","params":[true],"id":1,"jsonrpc":"2.0"}'  \
+    http://localhost:8546
+</code></pre></div>
+<p>Check the op-geth p2p network with the command below. You have to enable admin API in op-geth to use this API.
+Refer to <a href="https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-admin">https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-admin</a> for more details.</p>
+<div class="highlight"><pre><span></span><code>$ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"admin_peers","params":[],"id":1}' http://localhost:8545 | jq .
+</code></pre></div>
+<h3 id="the-local-nodes-chain-has-forked-from-the-canonical-chain">The local node’s chain has forked from the canonical chain<a class="headerlink" href="#the-local-nodes-chain-has-forked-from-the-canonical-chain" title="Link to this section">¶</a></h3>
+<p>If your local node is already running and tracking blocks, the following situations may indicate that your local node’s chain has forked from the canonical chain:
+1. The block hash at the same height obtained through the <code>eth_getBlockByNumber</code> method does not match the data returned by the public node.
+2. Your local chain consistently lags behind a fixed number of blocks and cannot catch up with the latest block height.</p>
+<p>In this case, we recommend that you check the code version of the running node through the following steps:
+</p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>op-node<span class="w"> </span>-v
+op-node<span class="w"> </span>version<span class="w"> </span>v0.0.0-515ebd51-1698742099
+
+$<span class="w"> </span>op-geth<span class="w"> </span>version
+Geth
+Version:<span class="w"> </span><span class="m">0</span>.1.0-unstable
+Git<span class="w"> </span>Commit:<span class="w"> </span>f8871fc80dbf2aa0178b504e76c20c21b890c6d5
+Git<span class="w"> </span>Commit<span class="w"> </span>Date:<span class="w"> </span><span class="m">20231026</span>
+Upstream<span class="w"> </span>Version:<span class="w"> </span><span class="m">1</span>.11.5-stable
+Architecture:<span class="w"> </span>arm64
+Go<span class="w"> </span>Version:<span class="w"> </span>go1.20.2
+Operating<span class="w"> </span>System:<span class="w"> </span>darwin
+<span class="nv">GOPATH</span><span class="o">=</span>
+</code></pre></div>
+Please make sure to use the latest code version. If the code version is incorrect, please completely clear the node data and run the new node again according to this guide. 
+<p>You also need to check if the <code>genesis.json</code> and <code>rollup.json</code> files are up to date. </p>
+<p>In the latest code, we hardcoded the configuration of rollup.json. Instead of using <code>--rollup.config=./rollup.json</code>, you just need to use <code>--network=opBNBTestnet</code> (for the mainnet network it is opBNBMainnet). This change ensures that the contents of rollup.json will not be incorrect.</p>
+<h3 id="node-block-is-stuck-and-op-geth-log-prints-database-compacting-degraded-performance-databasedatagethchaindata">Node block is stuck and op-geth log prints: Database compacting, degraded performance database=/data/geth/chaindata<a class="headerlink" href="#node-block-is-stuck-and-op-geth-log-prints-database-compacting-degraded-performance-databasedatagethchaindata" title="Link to this section">¶</a></h3>
+<p>If your node suddenly gets stuck and cannot grow, and your op-geth log keeps printing: Database compacting, degraded performance database=/data/geth/chaindata, 
+then you need to consider upgrading your machine specifications, increasing CPU, memory, and disk maximum throughput.</p>
+<p>This is because the current OP Stack only supports the archive mode of Geth, and the disk space usage increases over time. The Leveldb that Geth relies on requires more machine resources to complete the compact process.
+We are working hard to support full mode Geth, and further support PBSS and Pebble to completely solve this problem.</p>
+<p>If you don’t want to upgrade your machine’s specifications, You can choose to download the pruned snapshot from the <a href="https://github.com/bnb-chain/opbnb-snapshot">opbnb-snapshot</a> repository, and use it to start a new node. 
+The new node will not have this issue, but it will lose all state data before a certain block height.</p>
+<p>If you are an advanced player, you can also try to perform offline pruning on your nodes (Note that this is a dangerous operation and after pruning, the state data of the blocks before the target block height will no longer be available).
+You can follow these steps:
+1. Shut down your machine and make sure that op-geth prints the following log: “Blockchain stopped”.
+2. Search for the keyword “Chain head was updated” in the logs to confirm the block height of the last inserted block before the node was shut down. For the sake of explanation, let’s assume the block height is 16667495.
+3. Wait for 16667495 to become the final state on the chain, ensuring that no reorganization has occurred. You can go to the blockchain explorer (<a href="https://opbnbscan.com/">https://opbnbscan.com/</a>) to query this block height,
+and compare the block height hash with the one in the log. If the hashes match and a long time has passed, then we believe that this block height will not be reorganized.
+4. Get the state root hash of this block height through JSON-RPC.
+5. To execute pruning, use the following command: <code>geth snapshot prune-state --datadir {yourDataDir} --triesInMemory=32 {targetBlockStateRootHash}</code>, 
+making sure to replace {yourDataDir} and {targetBlockStateRootHash} with your own values.
+6. Be patient and observe the logs. The entire process may take dozens of hours.
+7. Restart your node after pruning is complete.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Pruning is very dangerous and may damage the data of the node. This could result in having to rerun the new node. Please only perform this operation if you are familiar with the process.</p>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../node-best-practices/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Node Best Practices">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Node Best Practices
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../run-with-pebbledb-and-pbss/" class="md-footer__link md-footer__link--next" aria-label="Next: Run with PebbleDB and PBSS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Run with PebbleDB and PBSS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+<div class="doc-footer">
+    <div class="doc-footer__inner md-grid">
+        <div>
+            <div>Explore</div>
+            <ul>
+                <li><a href="https://trustwallet.com/" target="_blank">Trust Wallet</a></li>
+                <li><a href="https://www.bnbchain.org/en/binance-wallet" target="_blank">BNB Chain Wallet</a></li>
+                <li><a href="https://dappbay.bnbchain.org/" target="_blank">DappBay</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Build</div>
+            <ul>
+                <li><a href="https://github.com/bnb-chain/whitepaper" target="_blank">Whitepaper</a></li>
+                <li><a href="https://forum.bnbchain.org/" target="_blank">Build N' Build Forum</a></li>
+                <li><a href="https://www.bnbchain.org/en/bnb-chain-bridges" target="_blank">Bridges</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Participate</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/events" target="_blank">Events</a></li>
+                <li><a href="https://www.bnbchain.org/en/bsc-mvb-program" target="_blank">MVB Program</a></li>
+                <li><a href="https://www.bnbchain.org/en/hackathon" target="_blank">Hackathon</a></li>
+                <li><a href="https://www.bnbchain.org/en/developers/developer-programs" target="_blank">Developer
+                    Programs</a></li>
+                <li><a href="https://www.bnbchain.org/en/martians-program" target="_blank">Martians Program</a></li>
+                <li><a href="https://bugbounty.bnbchain.org" target="_blank">Bug Bounty</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>About</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><a href="https://www.bnbchain.org/en/terms" target="_blank">Terms of Use</a></li>
+                <li><a href="https://jobs.bnbchain.org/companies/bnb-chain#content" target="_blank">Careers</a></li>
+                <li><a href="https://www.bnbchain.org/en/official-verification" target="_blank">Verification</a></li>
+                <li><a href="https://www.bnbchain.org/en/contact" target="_blank">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="doc-copyright">
+    <div class="doc-copyright__inner md-grid">
+        © 2024 Bnbchain.org. All rights reserved.
+    </div>
+</div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../../assets/js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
