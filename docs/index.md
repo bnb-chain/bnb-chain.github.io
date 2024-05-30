@@ -45,17 +45,17 @@ Powering and coordinating the ecosystem is the BNB token. Along with fueling tra
 Within this ecosystem, the ownership, usage, and monetization of data are possible for all users and participants in the BNB Chain ecosystem.
 
 <div class="doc-cards">
-<a href="./bnb_smart_chain">
+<a href="./bnb-smart-chain">
 <h3>BNB Smart Chain (BSC)</h3>
 <p>BNB Smart Chain (BSC) is a high-performance blockchain platform designed to enable the development of scalable and user-friendly decentralized applications (DApps). As a core component of the BNB Chain ecosystem, BSC offers a robust infrastructure for building a wide range of applications, particularly in the decentralized finance (DeFi) space.</p>
 </a>
 
-<a href="./bnb_opbnb">
+<a href="./bnb-opbnb">
 <h3>opBNB</h3>
 <p>A layer-2 scaling solution for BNB Smart Chain that significantly increases transaction speed and reduces fees. It achieves this by leveraging Optimistic Rollups technology, making BNB Chain even more suitable for high-throughput applications.</p>
 </a>
 
-<a href="./bnb_greenfield">
+<a href="./bnb-greenfield">
 <h3>BNB Greenfield</h3>
 <p>A decentralized storage infrastructure designed to provide a secure and scalable platform for storing and managing data on the blockchain. It enables users to store files, NFTs, and other digital assets in a decentralized manner, promoting data ownership and control.</p>
 </a>

@@ -62,213 +62,213 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Haber Hardfork(BSC): ./announce/haber_bsc.md
-      - Haber Hardfork(opBNB): ./announce/haber_opbnb.md
-      - Serengeti Hardfork(Greenfield): ./announce/serengeti_greenfield.md
+      - Haber Hardfork(BSC): ./announce/haber-bsc.md
+      - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
+      - Serengeti Hardfork(Greenfield): ./announce/serengeti-greenfield.md
     - Passed:
-      - Feynman Hardfork(BSC): ./announce/feynman_bsc.md
+      - Feynman Hardfork(BSC): ./announce/feynman-bsc.md
 
   - BNB Chain Fusion:
-    - BNB Chain Fusion: ./bc_fusion/index.md
-    - Overview: ./bc_fusion/overview.md
+    - BNB Chain Fusion: ./bc-fusion/index.md
+    - Overview: ./bc-fusion/overview.md
     - For Users:
-      - Manage Your Assets: ./bc_fusion/users/assets.md
-      - Manage Your Atomic Swaps: ./bc_fusion/users/swaps.md
-      - Manage Your TimeLocks: ./bc_fusion/users/timelocks.md
-      - Manage Your Old Delegations: ./bc_fusion/users/stake-migration.md
-      - BEP153 and LSD Stake Migration: ./bc_fusion/users/bep153-stake-migration.md
-      - Manage Your New Delegations: ./bc_fusion/users/new-stake.md
-      - Participate in Governance: ./bc_fusion/users/gov.md
+      - Manage Your Assets: ./bc-fusion/users/assets.md
+      - Manage Your Atomic Swaps: ./bc-fusion/users/swaps.md
+      - Manage Your TimeLocks: ./bc-fusion/users/timelocks.md
+      - Manage Your Old Delegations: ./bc-fusion/users/stake-migration.md
+      - BEP153 and LSD Stake Migration: ./bc-fusion/users/bep153-stake-migration.md
+      - Manage Your New Delegations: ./bc-fusion/users/new-stake.md
+      - Participate in Governance: ./bc-fusion/users/gov.md
     - For Token Issuers:
-      - Bind Your Tokens: ./bc_fusion/owners/bind.md
+      - Bind Your Tokens: ./bc-fusion/owners/bind.md
     - For Validators:
-      - Create New Validators: ./bc_fusion/validators/creation.md
-      - Migrate Your Validators: ./bc_fusion/validators/migrations.md
-      - Key Management: ./bc_fusion/validators/key-management.md
+      - Create New Validators: ./bc-fusion/validators/creation.md
+      - Migrate Your Validators: ./bc-fusion/validators/migrations.md
+      - Key Management: ./bc-fusion/validators/key-management.md
     - For Developers:
-      - New Staking: ./bc_fusion/developers/staking.md
-      - New Governance: ./bc_fusion/developers/gov.md
-      - Cross Chain Redelegation: ./bc_fusion/developers/crosschain-redelegation.md
-      - Build-in System Contracts: ./bc_fusion/developers/system-contracts.md
+      - New Staking: ./bc-fusion/developers/staking.md
+      - New Governance: ./bc-fusion/developers/gov.md
+      - Cross Chain Redelegation: ./bc-fusion/developers/crosschain-redelegation.md
+      - Build-in System Contracts: ./bc-fusion/developers/system-contracts.md
     - Native Staking & Governance:
-      - Staking: ./bc_fusion/validators/staking.md
-      - Slash: ./bc_fusion/validators/slash.md
-      - Governance: ./bc_fusion/validators/gov.md
+      - Staking: ./bc-fusion/validators/staking.md
+      - Slash: ./bc-fusion/validators/slash.md
+      - Governance: ./bc-fusion/validators/gov.md
   - BNB Smart Chain:
-    - BNB Smart Chain: ./bnb_smart_chain/index.md
-    - Overview: ./bnb_smart_chain/overview.md
+    - BNB Smart Chain: ./bnb-smart-chain/index.md
+    - Overview: ./bnb-smart-chain/overview.md
     - Developers:
-        - Overview: ./bnb_smart_chain/developers/overview.md
+        - Overview: ./bnb-smart-chain/developers/overview.md
         - Ecosystem: https://www.bnbchain.org/en/dev-tools
-        - RPC: ./bnb_smart_chain/developers/rpc.md
-        - Faucet: ./bnb_smart_chain/developers/faucet.md
+        - RPC: ./bnb-smart-chain/developers/rpc.md
+        - Faucet: ./bnb-smart-chain/developers/faucet.md
         - Node Operators:
-            - Node Best Practices: ./bnb_smart_chain/developers/node_operators/node_best_practices.md
-            - Full Node: ./bnb_smart_chain/developers/node_operators/full_node.md
-            - Archive Node: ./bnb_smart_chain/developers/node_operators/archive_node.md
-            - Fast Node: ./bnb_smart_chain/developers/node_operators/fast_node.md
-            - Boot Node: ./bnb_smart_chain/developers/node_operators/boot_node.md
-            - Separate Node: ./bnb_smart_chain/developers/node_operators/separate_node.md
-            - Docker Image: ./bnb_smart_chain/developers/node_operators/docker.md
-            - Upgrade Geth: ./bnb_smart_chain/developers/node_operators/upgrade_geth.md
-            - Verify Node: ./bnb_smart_chain/developers/node_operators/verify_node.md
-            - Node Maintenance: ./bnb_smart_chain/developers/node_operators/node_maintenance.md
+            - Node Best Practices: ./bnb-smart-chain/developers/node_operators/node_best_practices.md
+            - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
+            - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
+            - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
+            - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
+            - Separate Node: ./bnb-smart-chain/developers/node_operators/separate_node.md
+            - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
+            - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
+            - Verify Node: ./bnb-smart-chain/developers/node_operators/verify_node.md
+            - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
     - Staking:
-        - Overview: ./bnb_smart_chain/staking/overview.md
-        - User Guide: ./bnb_smart_chain/staking/user-guide.md
-        - Build Staking dApps: ./bnb_smart_chain/staking/developer-guide.md
+        - Overview: ./bnb-smart-chain/staking/overview.md
+        - User Guide: ./bnb-smart-chain/staking/user-guide.md
+        - Build Staking dApps: ./bnb-smart-chain/staking/developer-guide.md
     - Governance:
-        - Overview: ./bnb_smart_chain/governance/overview.md
-        - User Guide: ./bnb_smart_chain/governance/user-guide.md
-        - Governance APIs: ./bnb_smart_chain/governance/apis.md
+        - Overview: ./bnb-smart-chain/governance/overview.md
+        - User Guide: ./bnb-smart-chain/governance/user-guide.md
+        - Governance APIs: ./bnb-smart-chain/governance/apis.md
     - Validator:
-        - Overview: ./bnb_smart_chain/validator/overview.md
-        - Run Validator: ./bnb_smart_chain/validator/run-val.md
-        - Create Validator: ./bnb_smart_chain/validator/create-val.md
-        - Secure Validator: ./bnb_smart_chain/validator/security.md
-        - Key Management: ./bnb_smart_chain/validator/manage-keys.md
+        - Overview: ./bnb-smart-chain/validator/overview.md
+        - Run Validator: ./bnb-smart-chain/validator/run-val.md
+        - Create Validator: ./bnb-smart-chain/validator/create-val.md
+        - Secure Validator: ./bnb-smart-chain/validator/security.md
+        - Key Management: ./bnb-smart-chain/validator/manage-keys.md
         - MEV:
-            - Overview: ./bnb_smart_chain/validator/mev/index.md
-            - Validator Guide: ./bnb_smart_chain/validator/mev/validator-integration.md
-            - Builder Guide: ./bnb_smart_chain/validator/mev/builder-integration.md
-            - FAQs: ./bnb_smart_chain/validator/mev/faqs.md
+            - Overview: ./bnb-smart-chain/validator/mev/index.md
+            - Validator Guide: ./bnb-smart-chain/validator/mev/validator-integration.md
+            - Builder Guide: ./bnb-smart-chain/validator/mev/builder-integration.md
+            - FAQs: ./bnb-smart-chain/validator/mev/faqs.md
     - Slashing:
-        - Overview: ./bnb_smart_chain/slashing/overview.md
-        - Slash Rules: ./bnb_smart_chain/slashing/slash-rules.md
-        - Slash Monitor: ./bnb_smart_chain/slashing/monitor.md
+        - Overview: ./bnb-smart-chain/slashing/overview.md
+        - Slash Rules: ./bnb-smart-chain/slashing/slash-rules.md
+        - Slash Monitor: ./bnb-smart-chain/slashing/monitor.md
   - opBNB:
-    - opBNB: ./bnb_opbnb/index.md
-    - Overview: ./bnb_opbnb/overview.md
+    - opBNB: ./bnb-opbnb/index.md
+    - Overview: ./bnb-opbnb/overview.md
     - Get Started:
-      - Network Information: ./bnb_opbnb/get-started/network-info.md
-      - Wallet Configuration: ./bnb_opbnb/get-started/wallet-configuration.md
-      - Deposit to opBNB: ./bnb_opbnb/get-started/deposit-to-opbnb.md
-      - Withdraw from opBNB: ./bnb_opbnb/get-started/withdraw-from-opbnb.md
+      - Network Information: ./bnb-opbnb/get-started/network-info.md
+      - Wallet Configuration: ./bnb-opbnb/get-started/wallet-configuration.md
+      - Deposit to opBNB: ./bnb-opbnb/get-started/deposit-to-opbnb.md
+      - Withdraw from opBNB: ./bnb-opbnb/get-started/withdraw-from-opbnb.md
     - Core Concepts:
-        - Why BSC Requires opBNB: ./bnb_opbnb/core-concepts/why-bsc-requires-opbnb.md
-        - Why OP Stack: ./bnb_opbnb/core-concepts/why-opstack.md
-        - Optimizations on OP Stack: ./bnb_opbnb/core-concepts/optimisations-on-opstack.md
-        - Metrics: ./bnb_opbnb/core-concepts/opbnb-metrics.md
-        - Gas and Fees: ./bnb_opbnb/core-concepts/gas-and-fees.md
-        - Account Abstraction: ./bnb_opbnb/core-concepts/account-abstraction-on-opbnb.md
-        - Protocol Addresses: ./bnb_opbnb/core-concepts/opbnb-protocol-addresses.md
-        - BNBChain Rollup as Service: ./bnb_opbnb/core-concepts/raas.md
+        - Why BSC Requires opBNB: ./bnb-opbnb/core-concepts/why-bsc-requires-opbnb.md
+        - Why OP Stack: ./bnb-opbnb/core-concepts/why-opstack.md
+        - Optimizations on OP Stack: ./bnb-opbnb/core-concepts/optimisations-on-opstack.md
+        - Metrics: ./bnb-opbnb/core-concepts/opbnb-metrics.md
+        - Gas and Fees: ./bnb-opbnb/core-concepts/gas-and-fees.md
+        - Account Abstraction: ./bnb-opbnb/core-concepts/account-abstraction-on-opbnb.md
+        - Protocol Addresses: ./bnb-opbnb/core-concepts/opbnb-protocol-addresses.md
+        - BNBChain Rollup as Service: ./bnb-opbnb/core-concepts/raas.md
     - Developers:
-      - Developer Tools: ./bnb_opbnb/developers/developer-tools.md
-      - Network Faucet: ./bnb_opbnb/developers/network-faucet.md
-      - Wallet Gas Price Setting: ./bnb_opbnb/developers/set-gas-price.md
-      - Multi-sig Wallet: ./bnb_opbnb/developers/multisig-wallet.md
-      - BEP20 CrossChain Introduction: ./bnb_opbnb/developers/bep20-crosschain.md
-      - Geth P2P Sync Feature: ./bnb_opbnb/developers/geth-sync.md
-      - Developers Cheat Sheet: ./bnb_opbnb/developers/cheat-sheet.md
+      - Developer Tools: ./bnb-opbnb/developers/developer-tools.md
+      - Network Faucet: ./bnb-opbnb/developers/network-faucet.md
+      - Wallet Gas Price Setting: ./bnb-opbnb/developers/set-gas-price.md
+      - Multi-sig Wallet: ./bnb-opbnb/developers/multisig-wallet.md
+      - BEP20 CrossChain Introduction: ./bnb-opbnb/developers/bep20-crosschain.md
+      - Geth P2P Sync Feature: ./bnb-opbnb/developers/geth-sync.md
+      - Developers Cheat Sheet: ./bnb-opbnb/developers/cheat-sheet.md
     - Advanced Topics:
-      - Local Development: ./bnb_opbnb/advanced/local-dev-env.md
-      - Build a Full Stack dApp on opBNB: ./bnb_opbnb/advanced/full-stack-dapp.md
-      - Verify Smart Contract on opBNBScan explorer: ./bnb_opbnb/advanced/verify-on-opbnbscan.md
-      - Node Best Practices: ./bnb_opbnb/advanced/node-best-practices.md
-      - Local Node: ./bnb_opbnb/advanced/local-node.md
-      - Run with PebbleDB and PBSS: ./bnb_opbnb/advanced/run-with-pebbledb-and-pbss.md
+      - Local Development: ./bnb-opbnb/advanced/local-dev-env.md
+      - Build a Full Stack dApp on opBNB: ./bnb-opbnb/advanced/full-stack-dapp.md
+      - Verify Smart Contract on opBNBScan explorer: ./bnb-opbnb/advanced/verify-on-opbnbscan.md
+      - Node Best Practices: ./bnb-opbnb/advanced/node-best-practices.md
+      - Local Node: ./bnb-opbnb/advanced/local-node.md
+      - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
     - FAQs:
-      - Protocol FAQs: ./bnb_opbnb/faq/protocol-faqs.md
-      - Gas and Fees FAQs: ./bnb_opbnb/faq/gas-and-fees-faqs.md
-      - opBNB Bridge FAQs: ./bnb_opbnb/faq/opbnb-bridge-faqs.md
-      - Cross Chain FAQs: ./bnb_opbnb/faq/cross-chain-faqs.md
-      - Build on opBNB FAQs: ./bnb_opbnb/faq/build-on-opbnb-faqs.md
+      - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
+      - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
+      - opBNB Bridge FAQs: ./bnb-opbnb/faq/opbnb-bridge-faqs.md
+      - Cross Chain FAQs: ./bnb-opbnb/faq/cross-chain-faqs.md
+      - Build on opBNB FAQs: ./bnb-opbnb/faq/build-on-opbnb-faqs.md
   - BNB Greenfield:
-      - BNB Greenfield : ./bnb_greenfield/index.md
-      - Overview: ./bnb_greenfield/introduction.md
+      - BNB Greenfield : ./bnb-greenfield/index.md
+      - Overview: ./bnb-greenfield/introduction.md
       - Get Started:
-          - Wallet Configuration: ./bnb_greenfield/getting-started/wallet-configuration.md
-          - Bridge and Transfer BNB: ./bnb_greenfield/getting-started/token-transfer.md
-          - Use Greenfield in Dcellar: ./bnb_greenfield/getting-started/dcellar.md
-          - Greenfield Command: ./bnb_greenfield/getting-started/greenfield-command.md
-          - Faucet: ./bnb_greenfield/getting-started/get-test-bnb.md
-          - General FAQ: ./bnb_greenfield/getting-started/general-faqs.md
+          - Wallet Configuration: ./bnb-greenfield/getting-started/wallet-configuration.md
+          - Bridge and Transfer BNB: ./bnb-greenfield/getting-started/token-transfer.md
+          - Use Greenfield in Dcellar: ./bnb-greenfield/getting-started/dcellar.md
+          - Greenfield Command: ./bnb-greenfield/getting-started/greenfield-command.md
+          - Faucet: ./bnb-greenfield/getting-started/get-test-bnb.md
+          - General FAQ: ./bnb-greenfield/getting-started/general-faqs.md
       - Core Concepts:
-          - Accounts and Keys: ./bnb_greenfield/core-concept/accounts.md
-          - BNB Token Model: ./bnb_greenfield/core-concept/bnb-token-model.md
-          - Billing and Payment: ./bnb_greenfield/core-concept/billing-payment.md
+          - Accounts and Keys: ./bnb-greenfield/core-concept/accounts.md
+          - BNB Token Model: ./bnb-greenfield/core-concept/bnb-token-model.md
+          - Billing and Payment: ./bnb-greenfield/core-concept/billing-payment.md
           - Data Storage:
-              - Simple Storage Service: ./bnb_greenfield/core-concept/data-storage/simple-storage-service.md
-              - Underlying Storage Model: ./bnb_greenfield/core-concept/data-storage/data-storage.md
-              - Data Integrity and Availability: ./bnb_greenfield/core-concept/data-storage/data-availability.md
+              - Simple Storage Service: ./bnb-greenfield/core-concept/data-storage/simple-storage-service.md
+              - Underlying Storage Model: ./bnb-greenfield/core-concept/data-storage/data-storage.md
+              - Data Integrity and Availability: ./bnb-greenfield/core-concept/data-storage/data-availability.md
           - Cross-Chain Programmability:
-              - Cross-Chain Programmability: ./bnb_greenfield/core-concept/cross-chain/programmability.md
-              - Resource Mirroring: ./bnb_greenfield/core-concept/cross-chain/mirror.md
-              - Smart Contract SDK: ./bnb_greenfield/core-concept/cross-chain/sdk.md
-              - Primitive Interfaces: ./bnb_greenfield/core-concept/cross-chain/interface.md
+              - Cross-Chain Programmability: ./bnb-greenfield/core-concept/cross-chain/programmability.md
+              - Resource Mirroring: ./bnb-greenfield/core-concept/cross-chain/mirror.md
+              - Smart Contract SDK: ./bnb-greenfield/core-concept/cross-chain/sdk.md
+              - Primitive Interfaces: ./bnb-greenfield/core-concept/cross-chain/interface.md
       - For Developers:
-          - Quick Guide: ./bnb_greenfield/for-developers/get-started-dev.md
+          - Quick Guide: ./bnb-greenfield/for-developers/get-started-dev.md
           - Network & Endpoint:
-              - Network Info: ./bnb_greenfield/for-developers/network-endpoint/network-info.md
-              - RPC Endpoints: ./bnb_greenfield/for-developers/network-endpoint/endpoints.md
-              - Contract Entrypoint: ./bnb_greenfield/for-developers/network-endpoint/contract-list.md
-          - Bundle Service: ./bnb_greenfield/for-developers/bundle-service.md
+              - Network Info: ./bnb-greenfield/for-developers/network-endpoint/network-info.md
+              - RPC Endpoints: ./bnb-greenfield/for-developers/network-endpoint/endpoints.md
+              - Contract Entrypoint: ./bnb-greenfield/for-developers/network-endpoint/contract-list.md
+          - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
           - Tutorials:
-              - Overview: ./bnb_greenfield/for-developers/tutorials/overview.md
-              - Basic File Management with CLI: ./bnb_greenfield/for-developers/tutorials/file-management-overview.md
-              - How to transition from S3 to Greenfield: ./bnb_greenfield/for-developers/tutorials/transitioning-from-s3-to-greenfield.md
-              - Hosting a Website on Greenfield: ./bnb_greenfield/for-developers/tutorials/hosting-websites-overview.md
+              - Overview: ./bnb-greenfield/for-developers/tutorials/overview.md
+              - Basic File Management with CLI: ./bnb-greenfield/for-developers/tutorials/file-management-overview.md
+              - How to transition from S3 to Greenfield: ./bnb-greenfield/for-developers/tutorials/transitioning-from-s3-to-greenfield.md
+              - Hosting a Website on Greenfield: ./bnb-greenfield/for-developers/tutorials/hosting-websites-overview.md
               - Access Control:
-                  - Access Control Management with CLI: ./bnb_greenfield/for-developers/tutorials/access-control/cmd-access-control.md
-                  - Cross Chain Access Control by CMD: ./bnb_greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-cmd.md
-                  - Native Access Control: ./bnb_greenfield/for-developers/tutorials/access-control/access-control.md
-                  - Cross Chain Access Control by SDK: ./bnb_greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-sdk.md
+                  - Access Control Management with CLI: ./bnb-greenfield/for-developers/tutorials/access-control/cmd-access-control.md
+                  - Cross Chain Access Control by CMD: ./bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-cmd.md
+                  - Native Access Control: ./bnb-greenfield/for-developers/tutorials/access-control/access-control.md
+                  - Cross Chain Access Control by SDK: ./bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-sdk.md
               - Cross Chain Integration:
-                  - Resources Mirroring with CLI: ./bnb_greenfield/for-developers/tutorials/cross-chain-integration/mirror.md
-                  - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb_greenfield/for-developers/tutorials/cross-chain-integration/dapp-integration.md
-                  - Mirroring FAQ: ./bnb_greenfield/for-developers/tutorials/cross-chain-integration/mirroring-faqs.md
+                  - Resources Mirroring with CLI: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirror.md
+                  - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/dapp-integration.md
+                  - Mirroring FAQ: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirroring-faqs.md
               - Sample Apps on Greenfield:
-                  - Overview: ./bnb_greenfield/for-developers/tutorials/app/overview.md
-                  - Data Marketplace: ./bnb_greenfield/for-developers/tutorials/app/data-marketplace.md
+                  - Overview: ./bnb-greenfield/for-developers/tutorials/app/overview.md
+                  - Data Marketplace: ./bnb-greenfield/for-developers/tutorials/app/data-marketplace.md
                   - File Management:
-                      - Simple Tool for File Management: ./bnb_greenfield/for-developers/tutorials/app/file-management/basic-file-management.md
-                      - Simple Tool for File Management (JS): ./bnb_greenfield/for-developers/tutorials/app/file-management/js-file-managemet.md
-                      - Dataset Batch operations: ./bnb_greenfield/for-developers/tutorials/app/file-management/batch-upload.md
-                      - Resumable Upload/Download Demo: ./bnb_greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview.md
+                      - Simple Tool for File Management: ./bnb-greenfield/for-developers/tutorials/app/file-management/basic-file-management.md
+                      - Simple Tool for File Management (JS): ./bnb-greenfield/for-developers/tutorials/app/file-management/js-file-managemet.md
+                      - Dataset Batch operations: ./bnb-greenfield/for-developers/tutorials/app/file-management/batch-upload.md
+                      - Resumable Upload/Download Demo: ./bnb-greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview.md
 
           - SDKs:
-              - Overview: ./bnb_greenfield/for-developers/sdks/index.md
-              - Go SDK Example: ./bnb_greenfield/for-developers/sdks/sdk-go.md
-              - Javascript SDK Example: ./bnb_greenfield/for-developers/sdks/sdk-js.md
+              - Overview: ./bnb-greenfield/for-developers/sdks/index.md
+              - Go SDK Example: ./bnb-greenfield/for-developers/sdks/sdk-go.md
+              - Javascript SDK Example: ./bnb-greenfield/for-developers/sdks/sdk-js.md
               - Go SDK Official Doc: https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
-          - How to Contribute: ./bnb_greenfield/for-developers/contribute.md
+          - How to Contribute: ./bnb-greenfield/for-developers/contribute.md
 
 
       - Greenfield Blockchain:
-          - Overview: ./bnb_greenfield/greenfield-blockchain/overview.md
-          - Blockchain Command Line:  ./bnb_greenfield/greenfield-blockchain/gnfd-cli.md
-          - Blockchain Events: ./bnb_greenfield/greenfield-blockchain/events.md
-          - Interact with the Chain : ./bnb_greenfield/greenfield-blockchain/interact-node.md
+          - Overview: ./bnb-greenfield/greenfield-blockchain/overview.md
+          - Blockchain Command Line:  ./bnb-greenfield/greenfield-blockchain/gnfd-cli.md
+          - Blockchain Events: ./bnb-greenfield/greenfield-blockchain/events.md
+          - Interact with the Chain : ./bnb-greenfield/greenfield-blockchain/interact-node.md
           - Run Greenfield Blockchain:
-              - Run Node : ./bnb_greenfield/greenfield-blockchain/run-node/run-node.md
-              - Run Relayer : ./bnb_greenfield/greenfield-blockchain/run-node/run-relayer.md
-              - Run Challenger : ./bnb_greenfield/greenfield-blockchain/run-node/run-challenger.md
-              - Become Validator : ./bnb_greenfield/greenfield-blockchain/run-node/become-validator.md
+              - Run Node : ./bnb-greenfield/greenfield-blockchain/run-node/run-node.md
+              - Run Relayer : ./bnb-greenfield/greenfield-blockchain/run-node/run-relayer.md
+              - Run Challenger : ./bnb-greenfield/greenfield-blockchain/run-node/run-challenger.md
+              - Become Validator : ./bnb-greenfield/greenfield-blockchain/run-node/become-validator.md
 
       - Storage Provider:
-          - Overview: ./bnb_greenfield/storage-provider/overview.md
-          - Storage Provider Lifecycle: ./bnb_greenfield/storage-provider/storage-provider-lifecycle.md
-          - SP Command Line: ./bnb_greenfield/storage-provider/sp-cli.md
-          - SP Workflow: ./bnb_greenfield/storage-provider/workflow.md
-          - Data Service Quality Standard : ./bnb_greenfield/storage-provider/standard.md
+          - Overview: ./bnb-greenfield/storage-provider/overview.md
+          - Storage Provider Lifecycle: ./bnb-greenfield/storage-provider/storage-provider-lifecycle.md
+          - SP Command Line: ./bnb-greenfield/storage-provider/sp-cli.md
+          - SP Workflow: ./bnb-greenfield/storage-provider/workflow.md
+          - Data Service Quality Standard : ./bnb-greenfield/storage-provider/standard.md
           - Run Storage Provider:
-              - SP Compiling and Dependencies: ./bnb_greenfield/storage-provider/run-book/compile-dependences.md
-              - Run Local SP Network: ./bnb_greenfield/storage-provider/run-book/run-local-SP-network.md
-              - Run SP Node: ./bnb_greenfield/storage-provider/run-book/run-SP-node.md
-              - Join SP Network: ./bnb_greenfield/storage-provider/run-book/join-SP-network.md
-              - Exit SP Network: ./bnb_greenfield/storage-provider/run-book/exit-SP-network.md
-              - Deploy Piece Store: ./bnb_greenfield/storage-provider/run-book/piece-store.md
-              - SP Config: ./bnb_greenfield/storage-provider/run-book/config.md
-              - SP Common Issues: ./bnb_greenfield/storage-provider/run-book/common-issues.md
-              - SP FAQ: ./bnb_greenfield/storage-provider/run-book/sp-faqs.md
+              - SP Compiling and Dependencies: ./bnb-greenfield/storage-provider/run-book/compile-dependences.md
+              - Run Local SP Network: ./bnb-greenfield/storage-provider/run-book/run-local-SP-network.md
+              - Run SP Node: ./bnb-greenfield/storage-provider/run-book/run-SP-node.md
+              - Join SP Network: ./bnb-greenfield/storage-provider/run-book/join-SP-network.md
+              - Exit SP Network: ./bnb-greenfield/storage-provider/run-book/exit-SP-network.md
+              - Deploy Piece Store: ./bnb-greenfield/storage-provider/run-book/piece-store.md
+              - SP Config: ./bnb-greenfield/storage-provider/run-book/config.md
+              - SP Common Issues: ./bnb-greenfield/storage-provider/run-book/common-issues.md
+              - SP FAQ: ./bnb-greenfield/storage-provider/run-book/sp-faqs.md
 
 
       - Releases:
-          - Release Notes: ./bnb_greenfield/release-notes/releaseNotes.md
-          - Roadmap: ./bnb_greenfield/release-notes/roadmap.md
-          - Feature Lists: ./bnb_greenfield/release-notes/features.md
+          - Release Notes: ./bnb-greenfield/release-notes/releaseNotes.md
+          - Roadmap: ./bnb-greenfield/release-notes/roadmap.md
+          - Feature Lists: ./bnb-greenfield/release-notes/features.md
       - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
 
 markdown_extensions:
