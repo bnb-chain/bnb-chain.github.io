@@ -97,7 +97,7 @@ Modify `config/config.json`. Or, you can create a new one and specify the config
    Note:
    Refer to [Greenfield Endpoints](../../for-developers/network-endpoint/endpoints.md) for Greenfield RPC address,
    [BSC Endpoints](https://docs.bscscan.com/misc-tools-and-utilities/public-rpc-nodes) for BSC RPC address, and use the appropriate ones based on your location,
-   [opBNB Endpoints](../../../bnb_opbnb/get-started/network-info.md) for opBNB RPC address, and use the appropriate ones based on your location.
+   [opBNB Endpoints](../../../bnb-opbnb/get-started/network-info.md) for opBNB RPC address, and use the appropriate ones based on your location.
    You might encounter `Rate limit` issue for using official BSC/opBNB endpoints, we would highly recommend using 3rd Party RPCs, like the [NodeReal MegaNode](https://nodereal.io/meganode)
 
 2. Config crossChain, greenfield light client and relayer hub smart contracts addresses, others can keep the default value, refer to this
