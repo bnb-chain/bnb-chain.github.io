@@ -1,0 +1,2439 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3).">
+      
+      
+        <meta name="author" content="BNB Chain">
+      
+      
+        <link rel="canonical" href="https://docs.bnbchain.org/bc-fusion/developers/staking/">
+      
+      
+        <link rel="prev" href="../../validators/key-management/">
+      
+      
+        <link rel="next" href="../gov/">
+      
+      
+      <link rel="icon" href="../../../assets/bnb.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+    
+        <title>New Staking - BNB Chain Documentation</title>
+    
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    
+      <link rel="stylesheet" href="../../../assets/style/index.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#staking" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div>
+    BNB Beacon Chain is sunsetting. <a href="https://www.bnbchain.org/en/bnb-chain-fusion" target="_blank">Check for
+    more details</a>
+</div>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+
+        <!-- Link to home -->
+        <a
+                href="https://www.bnbchain.org"
+                title="Documentation"
+                class="md-header__button md-logo"
+                aria-label="Documentation"
+                data-md-component="logo"
+        >
+            
+  <img src="../../../assets/logo.svg" alt="logo">
+
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__site_name">
+                  <span class="md-ellipsis">
+                    Documentation
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color palette toggle -->
+        
+            
+                <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11Zm-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0ZM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06ZM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0ZM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12Zm8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20Zm12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12Zm-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061Zm2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></svg>
+      </label>
+    
+  
+</form>
+            
+        
+
+        <!-- User preference: color palette -->
+        
+            <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+        
+
+        <!-- Site language selector -->
+        
+
+        <!-- Button to open search modal -->
+        
+            <label class="md-header__button md-icon" for="__search">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+            </label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.498 3.498 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.499 3.499 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5Zm-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001Zm0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5ZM5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+        <!-- Repository information -->
+        
+        <div class="md-header__source">
+            <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../announce/" class="md-tabs__link">
+          
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Chain Fusion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Smart Chain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+          
+  
+    
+  
+  opBNB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Greenfield
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../announce/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Announcements
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    BNB Chain Fusion
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            BNB Chain Fusion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For Users
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            For Users
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/assets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Your Assets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/swaps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Your Atomic Swaps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/timelocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Your TimeLocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/stake-migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Your Old Delegations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/bep153-stake-migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BEP153 and LSD Stake Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/new-stake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Your New Delegations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../users/gov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Participate in Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For Token Issuers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            For Token Issuers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../owners/bind/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bind Your Tokens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For Validators
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            For Validators
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validators/creation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create New Validators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validators/migrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrate Your Validators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validators/key-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Key Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            For Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    New Staking
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    New Staking
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Validator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-validator-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing Validator Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Validator Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-consensus-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Consensus Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-commission-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Commission Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-vote-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Vote Address
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegation-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delegation Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delegation Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delegate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undelegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undelegate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redelegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redelegate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-functionsinterfaces-of-each-validators-credit-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the functions/interfaces of each validator&rsquo;s credit contract?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-sharesbnb-amount-for-a-delegator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the shares/BNB amount for a delegator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-calculte-the-bnb-amount-for-a-specific-amount-of-shares" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to calculte the BNB amount for a specific amount of shares?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-calculate-the-aprapy-of-a-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to calculate the APR/APY of a validator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-unbonding-delegations-of-a-delegator-and-hisher-unbonding-requests-which-can-be-claimed" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the unbonding delegations of a delegator, and his/her unbonding requests which can be claimed?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-reward-of-a-delegator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the reward of a delegator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-total-staking-address-of-a-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the total staking address of a validator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-all-validators-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get all validators&rsquo; information?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-abi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contract ABI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crosschain-redelegation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Chain Redelegation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-contracts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build-in System Contracts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Native Staking & Governance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Native Staking & Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validators/staking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Staking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validators/slash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../validators/gov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    opBNB
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-greenfield/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Greenfield
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Validator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-validator-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing Validator Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing Validator Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-consensus-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Consensus Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-commission-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Commission Rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-vote-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Vote Address
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegation-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delegation Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delegation Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delegate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undelegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undelegate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redelegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redelegate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faqs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-functionsinterfaces-of-each-validators-credit-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the functions/interfaces of each validator&rsquo;s credit contract?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-sharesbnb-amount-for-a-delegator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the shares/BNB amount for a delegator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-calculte-the-bnb-amount-for-a-specific-amount-of-shares" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to calculte the BNB amount for a specific amount of shares?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-calculate-the-aprapy-of-a-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to calculate the APR/APY of a validator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-unbonding-delegations-of-a-delegator-and-hisher-unbonding-requests-which-can-be-claimed" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the unbonding delegations of a delegator, and his/her unbonding requests which can be claimed?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-reward-of-a-delegator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the reward of a delegator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-the-total-staking-address-of-a-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get the total staking address of a validator?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-all-validators-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to get all validators&rsquo; information?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-abi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contract ABI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bc-fusion/developers/staking.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<div><h1 id="staking">Staking<a class="headerlink" href="#staking" title="Link to this section">¶</a></h1>
+<p>This guide provides an overview of the key operations of staking, including creating validators,
+editing validator information, and performing delegation operations.
+For the general introduction of staking, please refer to <a href="../../validators/staking/">Staking Mechanism</a>.</p>
+<h2 id="contract">Contract<a class="headerlink" href="#contract" title="Link to this section">¶</a></h2>
+<p>The BSC staking mainly uses the smart contracts <code>StakeHub</code> for validator management and delegation management.</p>
+<ul>
+<li><code>StakeHub</code>: Manages validator creations, user delegations, and executs penalty for validator slash.
+  (Address: <code>0x0000000000000000000000000000000000002002</code>)</li>
+</ul>
+<h2 id="creating-a-validator">Creating a Validator<a class="headerlink" href="#creating-a-validator" title="Link to this section">¶</a></h2>
+<p>To create a validator, use the <code>createValidator</code> function with the following parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">function</span><span class="w"> </span><span class="nv">createValidator</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">consensusAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>voteAddress<span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>blsProof<span class="p">,</span>
+<span class="w">    </span>Commission<span class="w"> </span>calldata<span class="w"> </span>commission<span class="p">,</span>
+<span class="w">    </span>Description<span class="w"> </span>calldata<span class="w"> </span>description
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span>
+</code></pre></div>
+<ul>
+<li><code>consensusAddress</code>: The consensus address of the validator.</li>
+<li><code>voteAddress</code>: The vote address of the validator.</li>
+<li><code>blsProof</code>: The BLS signature as proof of the vote address.</li>
+<li><code>commission</code>: The commission structure, including rate, maxRate, and maxChangeRate.</li>
+<li><code>description</code>: The description of the validator, including moniker, identity, website, and details.</li>
+</ul>
+<p><strong>Note</strong>: Creating a validator requires locking 1 BNB, and the transaction must be sent with a sufficient BNB amount to
+cover this lock amount plus any self-delegation, in total 2001BNB.</p>
+<h2 id="editing-validator-information">Editing Validator Information<a class="headerlink" href="#editing-validator-information" title="Link to this section">¶</a></h2>
+<h3 id="edit-consensus-address">Edit Consensus Address<a class="headerlink" href="#edit-consensus-address" title="Link to this section">¶</a></h3>
+<p>To change the consensus address of a validator, use the <code>editConsensusAddress</code> function with the following paramters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">editConsensusAddress</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">newConsensusAddress</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>newConsensusAddress</code>: The new consensus address of the validator.</li>
+</ul>
+<h3 id="edit-commission-rate">Edit Commission Rate<a class="headerlink" href="#edit-commission-rate" title="Link to this section">¶</a></h3>
+<p>To update the commission rate of a validator, use the <code>editCommissionRate</code> function with the following paramters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">editCommissionRate</span><span class="p">(</span><span class="kt">uint64</span><span class="w"> </span><span class="nv">newCommissionRate</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>newCommissionRate</code>: The new commission structure, including rate, maxRate, and maxChangeRate.</li>
+</ul>
+<h3 id="edit-description">Edit Description<a class="headerlink" href="#edit-description" title="Link to this section">¶</a></h3>
+<p>To update the description of a validator, use the <code>editDescription</code> function with the following parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">editDescription</span><span class="p">(</span>Description<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>newDescription<span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>newDescription</code>: The new description of the validator, including moniker, identity, website, and details.</li>
+</ul>
+<h3 id="edit-vote-address">Edit Vote Address<a class="headerlink" href="#edit-vote-address" title="Link to this section">¶</a></h3>
+<p>To change the vote address of a validator, use the <code>editVoteAddress</code> function with the following parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">editVoteAddress</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>newVoteAddress<span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>blsProof<span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>newVoteAddress</code>: The new vote address of the validator.</li>
+<li><code>blsProof</code>: The BLS signature as proof of the vote address.</li>
+</ul>
+<h2 id="delegation-operations">Delegation Operations<a class="headerlink" href="#delegation-operations" title="Link to this section">¶</a></h2>
+<h3 id="delegate">Delegate<a class="headerlink" href="#delegate" title="Link to this section">¶</a></h3>
+<p>To delegate BNB to a validator, call the <code>delegate</code> function with the following parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">delegate</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">operatorAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nv">delegateVotePower</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span>
+</code></pre></div>
+<ul>
+<li><code>operatorAddress</code>: The operator address of the validator.</li>
+<li><code>delegateVotePower</code>: The flag to indicate whether the delegator would like to delegate his/her voting power
+  to the validator for governance.</li>
+</ul>
+<h3 id="undelegate">Undelegate<a class="headerlink" href="#undelegate" title="Link to this section">¶</a></h3>
+<p>To undelegate BNB from a validator, use the <code>undelegate</code> function with the following parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">undelegate</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">operatorAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">shares</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>operatorAddress</code>: The operator address of the validator.</li>
+<li><code>shares</code>: The amount of shares to undelegate from the validator.</li>
+</ul>
+<h3 id="redelegate">Redelegate<a class="headerlink" href="#redelegate" title="Link to this section">¶</a></h3>
+<p>To redelegate BNB from one validator to another, use the <code>redelegate</code> function with the following parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">redelegate</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">srcValidator</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="w"> </span><span class="nv">dstValidator</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">shares</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nv">delegateVotePower</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>srcValidator</code>: The operator address of the source validator to redelegate from.</li>
+<li><code>dstValidator</code>: The operator address of the destination validator to redelegate to.</li>
+<li><code>delegateVotePower</code>: The flag to indicate whether the delegator would like to delegate his/her voting power
+  to the destination validator for governance.</li>
+</ul>
+<h2 id="claim">Claim<a class="headerlink" href="#claim" title="Link to this section">¶</a></h2>
+<p>To claim undelegated BNB after the unbonding period, use the <code>claim</code> function for a single request or <code>claimBatch</code> for
+multiple requests:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">claim</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">operatorAddress</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">requestNumber</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>operatorAddress</code>: The operator address of the validator.</li>
+<li><code>requestNumber</code>: The number of unbonding requests to claim from. <code>0</code> means claiming from all unbonding requests.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">claimBatch</span><span class="p">(</span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span>calldata<span class="w"> </span>operatorAddresses<span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">[]</span><span class="w"> </span>calldata<span class="w"> </span>requestNumbers<span class="p">)</span><span class="w"> </span><span class="kt">external</span>
+</code></pre></div>
+<ul>
+<li><code>operatorAddress</code>: The operator addresses of the validatores.</li>
+<li><code>requestNumber</code>: The numbers of unbonding requests to claim from the validators.</li>
+</ul>
+<h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Link to this section">¶</a></h2>
+<h3 id="what-are-the-functionsinterfaces-of-each-validators-credit-contract">What are the functions/interfaces of each validator’s credit contract?<a class="headerlink" href="#what-are-the-functionsinterfaces-of-each-validators-credit-contract" title="Link to this section">¶</a></h3>
+<p>For each validator, there is a credit contract which will be automatically deployed when it is created.
+Meanwhile, the conctract cannot be upgraded or changed by any validator operator.</p>
+<p>The credit contract is a BEP20 contract, and the ABI is the same
+as <a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/stakecredit.abi">Stake Credit contract</a>.</p>
+<p>It provides functions for querying delegations, including:</p>
+<ul>
+<li><code>balanceOf(address)</code>: Get the credit balance of a delegator.</li>
+<li><code>getPooledBNB(address)</code>: Get the pooled BNB amount of a delegator.</li>
+<li><code>getPooledBNBByShares(uint256)</code>: Get the pooled BNB amount for a specific amount of shares.</li>
+<li><code>getSharesByPooledBNB(uint256)</code>: Get the shares for a specific amount of pooled BNB.</li>
+<li><code>pendingUnbondingRequests(address)</code>: Get the count of unbonding requests for a delegator.</li>
+<li><code>unbondRequest(address, uint256)</code>: Get the details of a unbond request for a delegator.</li>
+<li><code>claimableUnbondRequest(address)</code>: Get the count of claimable unbonding requests for a delegator.</li>
+<li><code>lockedBNBs(address, uint256)</code>: Get the locked BNBs for a delegator’s unbond queue.</li>
+</ul>
+<h3 id="how-to-get-the-sharesbnb-amount-for-a-delegator">How to get the shares/BNB amount for a delegator?<a class="headerlink" href="#how-to-get-the-sharesbnb-amount-for-a-delegator" title="Link to this section">¶</a></h3>
+<p>For any specific validator, please call the <code>balanceOf</code> function of the validator’s creat contract to get the
+delegator’s shares. To get the BNB amount instead of shares, the function <code>getPooledBNB</code> can be used.</p>
+<p>To get the shares of all validators, please call the <code>balanceOf</code> function for each valiator and sum up
+the results. Please refer to the following to see how to get the information of all validators, and use a
+muticall contract to improve the efficiency.</p>
+<h3 id="how-to-calculte-the-bnb-amount-for-a-specific-amount-of-shares">How to calculte the BNB amount for a specific amount of shares?<a class="headerlink" href="#how-to-calculte-the-bnb-amount-for-a-specific-amount-of-shares" title="Link to this section">¶</a></h3>
+<p>The credit contract provides the <code>getPooledBNBByShares</code> function to calculate the BNB amount for some specific amount of
+shares.</p>
+<p>To do the vice visa, please use the <code>getSharesByPooledBNB</code> function to calculate the shares for some
+specific BNB amount.</p>
+<h3 id="how-to-calculate-the-aprapy-of-a-validator">How to calculate the APR/APY of a validator?<a class="headerlink" href="#how-to-calculate-the-aprapy-of-a-validator" title="Link to this section">¶</a></h3>
+<p>Please be noted that each validator will have its own APR/APY, and the staking system will auto compound the rewards.</p>
+<p>The reward is distributed to each validator’s BNB pool at 00:00:00 UTC time every day. To calculate the APR/APY of a
+validator, the total pooled BNB amount and the crrospanding reward amount for the same day are needed.</p>
+<p>The <code>StakeHub</code> contract provides the <code>getValidatorTotalPooledBNBRecord(address,uint256)(uint256)</code>
+and <code>getValidatorRewardRecord(address,uint256)(uint256)</code> for the purpose.</p>
+<p>The following code shows shows how to calculate the APY at a given day:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// example code, do not use it in production</span>
+
+<span class="c1">// stakehub is the instance of StakeHub contract</span>
+<span class="nx">stakeHub</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">contracts</span><span class="p">.</span><span class="nx">NewStakeHub</span><span class="p">(</span><span class="nx">ethcommon</span><span class="p">.</span><span class="nx">HexToAddress</span><span class="p">(</span><span class="s">"0x0000000000000000000000000000000000002002"</span><span class="p">),</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">GetEthClient</span><span class="p">())</span>
+
+<span class="c1">// get how many blocks are in a day</span>
+<span class="nx">interval</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">stakeHub</span><span class="p">.</span><span class="nx">BREATHEBLOCKINTERVAL</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
+
+<span class="c1">// get the block time of a given block</span>
+<span class="nx">header</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">GetBlockHeader</span><span class="p">(</span><span class="nx">blockHeight</span><span class="p">)</span>
+
+<span class="c1">// calculate the index paramter to call the following functions</span>
+<span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">interval</span><span class="p">.</span><span class="nx">Int64</span><span class="p">()</span>
+
+<span class="c1">// get the total pooled BNB amount and the crrospanding reward amount for the given validator and index</span>
+<span class="nx">totalPooledBNB</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">stakeHub</span><span class="p">.</span><span class="nx">GetValidatorTotalPooledBNBRecord</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">validatorOperatorAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span>
+<span class="nx">reward</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">stakeHub</span><span class="p">.</span><span class="nx">GetValidatorRewardRecord</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">validatorOperatorAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span>
+
+<span class="c1">// calculate the APY</span>
+<span class="nx">rate</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">big</span><span class="p">.</span><span class="nx">NewFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">Quo</span><span class="p">(</span><span class="nx">big</span><span class="p">.</span><span class="nx">NewFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">SetInt</span><span class="p">(</span><span class="nx">reward</span><span class="p">),</span><span class="w"> </span><span class="nx">big</span><span class="p">.</span><span class="nx">NewFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">SetInt</span><span class="p">(</span><span class="nx">totalPooledBNB</span><span class="p">)).</span><span class="nx">Float64</span><span class="p">()</span>
+<span class="nx">apy</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">Pow</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nx">rate</span><span class="p">,</span><span class="w"> </span><span class="mi">365</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1.0</span>
+</code></pre></div>
+<h3 id="how-to-get-the-unbonding-delegations-of-a-delegator-and-hisher-unbonding-requests-which-can-be-claimed">How to get the unbonding delegations of a delegator, and his/her unbonding requests which can be claimed?<a class="headerlink" href="#how-to-get-the-unbonding-delegations-of-a-delegator-and-hisher-unbonding-requests-which-can-be-claimed" title="Link to this section">¶</a></h3>
+<p>The credit contract provides the <code>pendingUnbondRequest</code> function to get the unbonding delegation count for a
+delegator.
+To review the details of a unbond request, please call the <code>unbondRequest</code> function with a <code>index</code> parameter to
+define which unbond request will be returned.</p>
+<p>To get the claimable unbonding requests, please call the <code>claimableUnbondRequest</code> function to get the count of
+claimable ones.</p>
+<p>To get the locked BNBs for unbonding requests, please use the <code>lockedBNBs</code> function. It has the parameter <code>number</code> to
+define the sum of first <code>number</code> unbonding requests’ BNB locked in the delegator’s unbond queue. Set the <code>number</code>
+to <code>0</code> to get all the locked BNBs.</p>
+<h3 id="how-to-get-the-reward-of-a-delegator">How to get the reward of a delegator?<a class="headerlink" href="#how-to-get-the-reward-of-a-delegator" title="Link to this section">¶</a></h3>
+<p>The contracts does not save the initial delegation amount of a delegator. To get the accumulated
+reward, the following steps can be taken: 1) track the initial delegation amount in your system, 2) call
+the <code>getPooledBNB</code> of the credit contract of a validator, 3) do the math.</p>
+<h3 id="how-to-get-the-total-staking-address-of-a-validator">How to get the total staking address of a validator?<a class="headerlink" href="#how-to-get-the-total-staking-address-of-a-validator" title="Link to this section">¶</a></h3>
+<p>The contract does not provide a function to get the total staking address of a validator.
+It needs a offchain service to index <code>Delegated</code>, <code>Redelegated</code>, <code>Undelegated</code> events for the purpose.</p>
+<h3 id="how-to-get-all-validators-information">How to get all validators’ information?<a class="headerlink" href="#how-to-get-all-validators-information" title="Link to this section">¶</a></h3>
+<p>The <code>StakeHub</code> contract provides the <code>getValidators</code> function to get all validators’ information, including the
+<code>operator</code> addresses and <code>credit contract</code> addresses.</p>
+<p>To get more information of a specific validator, please refer to the following functions:</p>
+<ul>
+<li><code>getValidatorConsensusAddress</code></li>
+<li><code>getValidatorCreditContract</code></li>
+<li><code>getValidatorVoteAddress</code></li>
+<li><code>getValidatorBasicInfo</code></li>
+<li><code>getValidatorDescription</code></li>
+<li><code>getValidatorCommission</code></li>
+</ul>
+<h2 id="contract-abi">Contract ABI<a class="headerlink" href="#contract-abi" title="Link to this section">¶</a></h2>
+<p>For the full interfaces of <code>StakeHub</code>, please refer
+to <a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi/stakehub.abi">the ABI file</a>.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../validators/key-management/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Key Management">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Key Management
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../gov/" class="md-footer__link md-footer__link--next" aria-label="Next: New Governance">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                New Governance
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+<div class="doc-footer">
+    <div class="doc-footer__inner md-grid">
+        <div>
+            <div>Explore</div>
+            <ul>
+                <li><a href="https://trustwallet.com/" target="_blank">Trust Wallet</a></li>
+                <li><a href="https://www.bnbchain.org/en/binance-wallet" target="_blank">BNB Chain Wallet</a></li>
+                <li><a href="https://dappbay.bnbchain.org/" target="_blank">DappBay</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Build</div>
+            <ul>
+                <li><a href="https://github.com/bnb-chain/whitepaper" target="_blank">Whitepaper</a></li>
+                <li><a href="https://forum.bnbchain.org/" target="_blank">Build N' Build Forum</a></li>
+                <li><a href="https://www.bnbchain.org/en/bnb-chain-bridges" target="_blank">Bridges</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Participate</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/events" target="_blank">Events</a></li>
+                <li><a href="https://www.bnbchain.org/en/bsc-mvb-program" target="_blank">MVB Program</a></li>
+                <li><a href="https://www.bnbchain.org/en/hackathon" target="_blank">Hackathon</a></li>
+                <li><a href="https://www.bnbchain.org/en/developers/developer-programs" target="_blank">Developer
+                    Programs</a></li>
+                <li><a href="https://www.bnbchain.org/en/martians-program" target="_blank">Martians Program</a></li>
+                <li><a href="https://bugbounty.bnbchain.org" target="_blank">Bug Bounty</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>About</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><a href="https://www.bnbchain.org/en/terms" target="_blank">Terms of Use</a></li>
+                <li><a href="https://jobs.bnbchain.org/companies/bnb-chain#content" target="_blank">Careers</a></li>
+                <li><a href="https://www.bnbchain.org/en/official-verification" target="_blank">Verification</a></li>
+                <li><a href="https://www.bnbchain.org/en/contact" target="_blank">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="doc-copyright">
+    <div class="doc-copyright__inner md-grid">
+        © 2024 Bnbchain.org. All rights reserved.
+    </div>
+</div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../../assets/js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

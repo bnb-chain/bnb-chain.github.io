@@ -1,0 +1,3259 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3).">
+      
+      
+        <meta name="author" content="BNB Chain">
+      
+      
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/release-notes/releaseNotes/">
+      
+      
+        <link rel="prev" href="../../storage-provider/run-book/sp-faqs/">
+      
+      
+        <link rel="next" href="../roadmap/">
+      
+      
+      <link rel="icon" href="../../../assets/bnb.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+    
+        <title>Release Notes - BNB Chain Documentation</title>
+    
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    
+      <link rel="stylesheet" href="../../../assets/style/index.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#release-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div>
+    BNB Beacon Chain is sunsetting. <a href="https://www.bnbchain.org/en/bnb-chain-fusion" target="_blank">Check for
+    more details</a>
+</div>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+
+        <!-- Link to home -->
+        <a
+                href="https://www.bnbchain.org"
+                title="Documentation"
+                class="md-header__button md-logo"
+                aria-label="Documentation"
+                data-md-component="logo"
+        >
+            
+  <img src="../../../assets/logo.svg" alt="logo">
+
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__site_name">
+                  <span class="md-ellipsis">
+                    Documentation
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color palette toggle -->
+        
+            
+                <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11Zm-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0ZM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06ZM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0ZM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12Zm8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20Zm12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12Zm-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061Zm2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></svg>
+      </label>
+    
+  
+</form>
+            
+        
+
+        <!-- User preference: color palette -->
+        
+            <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+        
+
+        <!-- Site language selector -->
+        
+
+        <!-- Button to open search modal -->
+        
+            <label class="md-header__button md-icon" for="__search">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+            </label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.498 3.498 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.499 3.499 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5Zm-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001Zm0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5ZM5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+        <!-- Repository information -->
+        
+        <div class="md-header__source">
+            <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../announce/" class="md-tabs__link">
+          
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Chain Fusion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Smart Chain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+          
+  
+    
+  
+  opBNB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Greenfield
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../announce/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Announcements
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bc-fusion/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Chain Fusion
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    opBNB
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    BNB Greenfield
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            BNB Greenfield
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Get Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Get Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/wallet-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/token-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bridge and Transfer BNB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/dcellar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Greenfield in Dcellar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/greenfield-command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greenfield Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/get-test-bnb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Faucet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/general-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Core Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concept/accounts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accounts and Keys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concept/bnb-token-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BNB Token Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concept/billing-payment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing and Payment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../core-concept/data-storage/simple-storage-service/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data Storage
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../core-concept/cross-chain/programmability/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Cross-Chain Programmability
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    For Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            For Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/get-started-dev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../for-developers/network-endpoint/network-info/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Network & Endpoint
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/bundle-service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bundle Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../for-developers/tutorials/overview/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../for-developers/sdks/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    SDKs
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-developers/contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Contribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Greenfield Blockchain
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Greenfield Blockchain
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../greenfield-blockchain/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../greenfield-blockchain/gnfd-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blockchain Command Line
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../greenfield-blockchain/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blockchain Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../greenfield-blockchain/interact-node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interact with the Chain
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../greenfield-blockchain/run-node/run-node/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Run Greenfield Blockchain
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Storage Provider
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Storage Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage-provider/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage-provider/storage-provider-lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Provider Lifecycle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage-provider/sp-cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SP Command Line
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage-provider/workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SP Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage-provider/standard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Service Quality Standard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../storage-provider/run-book/compile-dependences/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Run Storage Provider
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v170-erdos-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.7.0 - Erdos Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v160-serengeti-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.6.0 - Serengeti Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v150-pawnee-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.5.0 - Pawnee Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v140-ural-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.4.0 - Ural Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v130-hulunbeier-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.3.0 - Hulunbeier Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v120-manchurian-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.2.0 - Manchurian Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v110-pampas-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.1.0 - Pampas Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v100-initial-version-for-mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.0.0 - Initial version for Mainnet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v026-final-release-before-mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.6 - Final release before mainnet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v025-testnet-nagqu-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.5 - Testnet Nagqu Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v024-testnet-maintenance-upgrade-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v023-testnet-maintenance-upgrade-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.3 - Testnet Maintenance Upgrade Reset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v022-testnet-maintenance-upgrade-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.2 - Testnet Maintenance Upgrade Reset.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.2.2 - Testnet Maintenance Upgrade Reset.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancement-and-feature-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancement and Feature List 📝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v021-mekong-testnet-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.1 - Mekong Testnet reset.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.2.1 - Mekong Testnet reset.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancement-and-feature-list_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancement and Feature List 📝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v012-the-maintenance-testnet-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.1.2 - The maintenance testnet release.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.1.2 - The maintenance testnet release.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfix-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfix List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature List
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v010-the-initial-testnet-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.1.0 - The initial testnet release.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.1.0 - The initial testnet release.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features List
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-balance-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Account &amp;&amp; Balance &amp;&amp; Transaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-cross-chain-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Native Cross Chain Communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validator-and-staking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validator and Staking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/bnb-chain/greenfield-whitepaper" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Whitepaper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v170-erdos-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.7.0 - Erdos Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v160-serengeti-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.6.0 - Serengeti Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v150-pawnee-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.5.0 - Pawnee Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v140-ural-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.4.0 - Ural Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v130-hulunbeier-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.3.0 - Hulunbeier Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v120-manchurian-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.2.0 - Manchurian Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v110-pampas-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.1.0 - Pampas Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v100-initial-version-for-mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v1.0.0 - Initial version for Mainnet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v026-final-release-before-mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.6 - Final release before mainnet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v025-testnet-nagqu-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.5 - Testnet Nagqu Upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v024-testnet-maintenance-upgrade-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v023-testnet-maintenance-upgrade-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.3 - Testnet Maintenance Upgrade Reset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v022-testnet-maintenance-upgrade-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.2 - Testnet Maintenance Upgrade Reset.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.2.2 - Testnet Maintenance Upgrade Reset.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancement-and-feature-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancement and Feature List 📝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v021-mekong-testnet-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.2.1 - Mekong Testnet reset.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.2.1 - Mekong Testnet reset.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancement-and-feature-list_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancement and Feature List 📝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v012-the-maintenance-testnet-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.1.2 - The maintenance testnet release.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.1.2 - The maintenance testnet release.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bugfix-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bugfix List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature List
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-v010-the-initial-testnet-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield v0.1.0 - The initial testnet release.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield v0.1.0 - The initial testnet release.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features List
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-balance-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Account &amp;&amp; Balance &amp;&amp; Transaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-cross-chain-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Native Cross Chain Communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validator-and-staking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validator and Staking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/release-notes/releaseNotes.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<div><h1 id="release-notes">Release Notes<a class="headerlink" href="#release-notes" title="Link to this section">¶</a></h1>
+<h2 id="greenfield-v170-erdos-upgrade">Greenfield v1.7.0 - Erdos Upgrade<a class="headerlink" href="#greenfield-v170-erdos-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.7.0 introduces the Erdos Hardfork, which includes the following major features:</p>
+<ul>
+<li>Add new cross-chain channel <code>ExecutorChannel</code> and corresponding cross-app <code>ExecutorApp</code>. See <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-363.md">https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-363.md</a></li>
+<li>Add multi-message support for greenfield cross-chain app. See <a href="https://github.com/bnb-chain/greenfield-cosmos-sdk/pull/417">https://github.com/bnb-chain/greenfield-cosmos-sdk/pull/417</a></li>
+<li>Implement storage fee paymaster. See <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-362.md">https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-362.md</a></li>
+</ul>
+<h2 id="greenfield-v160-serengeti-upgrade">Greenfield v1.6.0 - Serengeti Upgrade<a class="headerlink" href="#greenfield-v160-serengeti-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.6.0 introduces the Serengeti Hardfork, which includes the following major features:</p>
+<ul>
+<li>Primary Storage Provider acts as the upload agent for object creation and update on Greenfield. See <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-364.md">https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-364.md</a></li>
+<li>Streamline off-chain authentication on Greenfield: it introduces GNFD2-EDDSA, a simplified off-chain authentication signature verification method. It streamlines the authentication process, reducing developer integration complexity and improving user interaction. See <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-346.md">https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-346.md</a></li>
+<li>SP Free Monthly Quota: To further incentivize users to utilize Greenfield and simplify the process of purchasing read quota, SPs can offer a certain amount of free data to each Bucket every month.</li>
+</ul>
+<p>Greenfield v1.6.0 also includes several optimization features and bug fixes. For more details about this release, please
+refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.6.0">Greenfield Blockchain</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.6.0">Greenfield SP</a>.</p>
+<h2 id="greenfield-v150-pawnee-upgrade">Greenfield v1.5.0 - Pawnee Upgrade<a class="headerlink" href="#greenfield-v150-pawnee-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.5.0 introduces the Pawnee Hardfork, which includes the following major feature:</p>
+<ul>
+<li>Support Greenfield Atomic Object Update: Previously, users face the inconvenience of having to delete and recreate objects in Greenfield in order to replace their content. 
+   v1.5.0 offer a more efficient and seamless object update process. See <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-366.md">https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-366.md</a></li>
+</ul>
+<p>Greenfield v1.5.0 also includes several optimization features and bug fixes. For more details about this release, please
+refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.5.0">Greenfield Blockchain</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.5.0">Greenfield SP</a>.</p>
+<h2 id="greenfield-v140-ural-upgrade">Greenfield v1.4.0 - Ural Upgrade<a class="headerlink" href="#greenfield-v140-ural-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.4.0 introduces the Ural Hardfork, which includes the following features:</p>
+<ol>
+<li>Support setting resource tags by accounts with permission: Previously, only the owner of a resource could set tags.
+   However, in certain scenarios, users may desire other authorized accounts to be able to set tags on behalf of the owner.</li>
+<li>Support bucket migration: In Greenfield, each bucket is associated with a primary SP. If a user is dissatisfied with
+   the service from their current primary SP, they have the option to migrate their bucket to another SP.</li>
+</ol>
+<p>Greenfield v1.4.0 also includes several optimization features and bug fixes. For more details about this release, please
+refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.4.0">Greenfield Blockchain</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.4.0">Greenfield SP</a>.</p>
+<h2 id="greenfield-v130-hulunbeier-upgrade">Greenfield v1.3.0 - Hulunbeier Upgrade<a class="headerlink" href="#greenfield-v130-hulunbeier-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.3.0 introduces the Hulunbeier Hardfork, which includes the following features:</p>
+<ol>
+<li>Cross-chain permission module: With this new feature, users can now grant permissions from the BSC/opBNB side. This
+   enhancement provides greater programmability and flexibility. For more details, please refer to <a href="https://github.com/bnb-chain/BEPs/pull/334">here</a>.</li>
+<li>Support the exit of SP: With this new feature, SPs on Greenfield can now exit without any restrictions. For more
+   details, please refer to <a href="https://github.com/bnb-chain/BEPs/pull/338">here</a>.</li>
+</ol>
+<p>Greenfield v1.3.0 also includes several optimization features and bug fixes. For more details about this release, please
+refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.3.0">Greenfield Blockchain</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.3.0">Greenfield SP</a>.</p>
+<h2 id="greenfield-v120-manchurian-upgrade">Greenfield v1.2.0 - Manchurian Upgrade<a class="headerlink" href="#greenfield-v120-manchurian-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.2.0 introduces the Manchurian Hardfork, which includes the following features:</p>
+<ol>
+<li>
+<p>Support setting tags for buckets, objects, and groups. We encourage the community to create an indexing service for tags to enhance
+query capabilities. For additional information, please visit <a href="https://github.com/bnb-chain/community-contributions/blob/main/bnb-greenfield-wishlist-corechain.md#challenge-greenfield-tagging-and-indexing-service">here</a>.</p>
+</li>
+<li>
+<p>Users can query object before the object is sealed. Currently, users have to wait for an object to be sealed before
+they can download the object. However, sealing the object requires coordination among SPs. If some SPs are temporarily
+unavailable, it can affect the sealing process and consequently impact user access. In this version, the Primary SP will
+make every effort to ensure successful sealing of the file on the blockchain. Until then, users can access the object in
+advance. It is important to note that there is still a small probability that the file may fail to seal, in which case
+the SP will reject it and users will need to handle such exceptional situations.</p>
+</li>
+</ol>
+<p>Greenfield v1.2.0 also includes several optimization features and bug fixes. For more details about this release, please
+refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.2.0">Greenfield Blockchain</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.2.0">Greenfield SP</a>.</p>
+<h2 id="greenfield-v110-pampas-upgrade">Greenfield v1.1.0 - Pampas Upgrade<a class="headerlink" href="#greenfield-v110-pampas-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield v1.1.0 introduces the Pampas Hardfork, which enables cross-chain resource interoperability between
+Greenfield and opBNB. With this upgrade, developers can now control resources on Greenfield by writing applications on
+opBNB. This cross-chain programmability is similar to the interoperability between BSC and Greenfield. However, compared
+to BSC, opBNB offers cheaper gas fees and faster cross-chain finality. It’s important to note that the cross-chain
+access between Greenfield and opBNB is limited to storage resources (bucket, object, group) and does not support the
+transfer of BNB tokens between these two chains.</p>
+<p>To facilitate cross-chain accessibility between Greenfield and opBNB, validators need to upgrade their relayers running
+between Greenfield and BSC to <a href="https://github.com/bnb-chain/greenfield-relayer/releases/tag/v1.1.1">Relayer v1.1.1</a> before
+the Pampas Hardfork. Additionally, they should deploy an additional relayer for Greenfield and opBNB, following the
+instructions in the <a href="../../greenfield-blockchain/run-node/run-relayer/">Run Relayer</a>.</p>
+<p>Furthermore, in version v1.1.0, we have temporarily disabled the SP Exit and Bucket Migration processes due to their
+complexity and the difficulty in ensuring stability. We are working on optimizing these features and will introduce a
+more efficient and robust solution in the next version.</p>
+<p>Greenfield v1.1.0 also includes several optimization features and bug fixes. For more details about this release, please
+refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.1.0">Greenfield Blockchain</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.1.0">Greenfield SP</a>.</p>
+<h2 id="greenfield-v100-initial-version-for-mainnet">Greenfield v1.0.0 - Initial version for Mainnet<a class="headerlink" href="#greenfield-v100-initial-version-for-mainnet" title="Link to this section">¶</a></h2>
+<p>This is the official version released for Greenfield Mainnet, which includes most of the features that have been
+thoroughly tested during the Testnet phase. You can refer to our <a href="../features/">Feature Lists</a>.</p>
+<p>Currently, we need to conduct more testing and make improvements on the Testnet for the complexity of SP Exit and
+Bucket Migration. We plan to enable these two features on the Mainnet in the near future.</p>
+<p>Please refer to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v1.0.0">Greenfield Blockchain</a> and
+<a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.0.0">Greenfield SP</a> for more details about the release.</p>
+<h2 id="greenfield-v026-final-release-before-mainnet">Greenfield v0.2.6 - Final release before mainnet<a class="headerlink" href="#greenfield-v026-final-release-before-mainnet" title="Link to this section">¶</a></h2>
+<p><a href="https://github.com/bnb-chain/greenfield/releases/tag/v0.2.6">v0.2.6</a> This is the final version before the mainnet launch, 
+which mainly includes bug fixes and security enhancement.</p>
+<ul>
+<li>Change few events the blockchain and enhance the parameter verification.</li>
+<li>Refactor the code for getObject and Universal apis.</li>
+<li>Strength the authentication and verification processes between storage providers.</li>
+<li>Fix the vulnerability of not comparing the chain hash when uploading data.</li>
+<li>Fix few bugs, like panic, memory leakage on storage provider.</li>
+<li>Addressed several security vulnerabilities in the smart contract.</li>
+</ul>
+<h2 id="greenfield-v025-testnet-nagqu-upgrade">Greenfield v0.2.5 - Testnet Nagqu Upgrade<a class="headerlink" href="#greenfield-v025-testnet-nagqu-upgrade" title="Link to this section">¶</a></h2>
+<p>BNB Greenfield is undergoing Nagqu upgrade for the testnet version to <a href="https://github.com/bnb-chain/greenfield/releases/tag/v0.2.5">v0.2.5</a>. 
+The Nagqu upgrade took place at block height 471350, estimated to be on Sep 15<sup>th</sup> at 
+03:20 AM considering the current block generation rate.</p>
+<p><em>Please be aware that the upcoming hardfork will not impact your account balance on Greenfield. 
+All buckets and objects stored on the Greenfield Testnet before will remain accessible.</em></p>
+<p>This version has undergone comprehensive security enhancements as the final hardfork version prior to the mainnet launch. This mainly includes:</p>
+<ul>
+<li>The Greenfield resource mirror smart contracts apply more stringent parameter checks.</li>
+<li>Preventing funds in payment accounts from being permanently trapped in the Cosmos Bank module through intelligent detection.</li>
+<li>Introducing timer-lock mechanism: funds exceeding 100 BNB will be subject to a one-day lock-up period upon withdrawal from the payment account.</li>
+<li>Enhance authentication logic between storage providers.</li>
+</ul>
+<p>To enhance the user experience, the developer community is introducing new features and improvements.</p>
+<ul>
+<li>Introduce the official native SDK for Ali Oss-based SP to enhance stability.</li>
+<li>Improve the performance and stability of SP processing for file uploads. The standard specifications of SP allow for the stable processing of 10 files per second with a size of 1M.</li>
+<li>Optimize user read traffic billing based on actual usage rather than download count.</li>
+<li>Command line optimization, like support folder upload.</li>
+</ul>
+<p>For other detailed features, bug fixes, and refactoring, please refer to the changelog in <a href="https://github.com/bnb-chain/greenfield/blob/master/CHANGELOG.md">Greenfield Blockchain</a> 
+and <a href="https://github.com/bnb-chain/greenfield/blob/master/CHANGELOG.md">Greenfield SP</a> repo.</p>
+<h2 id="greenfield-v024-testnet-maintenance-upgrade-reset">Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset<a class="headerlink" href="#greenfield-v024-testnet-maintenance-upgrade-reset" title="Link to this section">¶</a></h2>
+<p>Greenfield v0.2.4 - Testnet Maintenance Upgrade Reset</p>
+<p>On August 31<sup>st</sup>, we reset the Greenfield Testnet and upgrade the Greenfield version to <a href="https://github.com/bnb-chain/greenfield/tree/v0.2.4">v0.2.4</a>. Here are key changes to note.</p>
+<p><strong>Greenfield Blockchain Changelog</strong></p>
+<ul>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/408">#408</a> This refactors the payment system to streamline billing calculations and simplifies billing with a consistent pricing model and periodic updates:</li>
+<li><strong>Global Price</strong>: Introduces a single global storage price, a median of individual storage prices, for both read and store operations.</li>
+<li><strong>Updates</strong>: This global price is updated every 30 days to reflect changes in storage costs.</li>
+<li><strong>Billing</strong>: Bucket fees, including read and store costs, are now based on this global price.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/411">#411</a> Add RemoveExpiredPolicies to remove expired data from kvstore. This new feature will reduce blockchain data size.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/413">#413</a> Implement cross-chain mechanism between opBNB and BNB Greenfield</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/415">#415</a> Enable plain store for full node</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/420">#420</a> Skip signature verification on genesis block</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/374">#374</a> Group member expiration</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/390">#390</a> Add a flag to enable/disable heavy queries and refactor APIs</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/399">#399</a> Add new query APIs for querying storage group and group members</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/403">#403</a> Introduce Storage Provider maintenance mode</li>
+</ul>
+<p><strong>Greenfield Storage Provider changelog</strong></p>
+<ul>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/989">#989</a> Implement Group APIs</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/1008">#1008</a> Change auth api response from JSON to XML</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/1010">#1010</a> Add real-time mode to blocksyncer</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/1015">#1015</a> Add new API to retrieve groups where the user is the owner</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/1012">#1012</a> Enhance error handling to deliver meaningful and informative update messages.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/1025">#1025</a> Change Metadata API response from JSON to XML</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/857">#857</a> Implement validation for virtual group families to handle bucket creation requests through RPC calls to the chain, followed by SP-driven family selection using the designated strategy.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/985">#985</a> Implement Time Ticker for BlockSyncer</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/981">#981</a> Add transaction confirmation function and support virtual group retry</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/968">#968</a> Support bucket migration verification when loading from db</li>
+</ul>
+<h2 id="greenfield-v023-testnet-maintenance-upgrade-reset">Greenfield v0.2.3 - Testnet Maintenance Upgrade Reset<a class="headerlink" href="#greenfield-v023-testnet-maintenance-upgrade-reset" title="Link to this section">¶</a></h2>
+<p>On August 3<sup>rd</sup>, we reset the Greenfield Testnet and upgrade the Greenfield version to <a href="https://github.com/bnb-chain/greenfield/tree/v0.2.3">v0.2.3</a>. Here are key changes to note.</p>
+<p><strong>Greenfield Blockchain Changelog</strong></p>
+<ul>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/328">#328</a> Significant model adjustments in the latest version. New concepts such as Virtual Group, Family, etc., has been introduced, to make bucket migration and storage provider exit more lightweight and reduces the storage of chain metadata. More details can be found here.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/287">#287</a>, <a href="https://github.com/bnb-chain/greenfield/pull/288">#288</a>, <a href="https://github.com/bnb-chain/greenfield/pull/315">#315</a> Improvement in payment module. A new algorithm to get the secondary SP price is introduced to avoid unfair competition; Changing the frequency of reading quota is limited to avoid some issues with charging; More payment APIs are available for frontend use.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/323">#323</a> A chain-based reconciliation module was introduced to ensure global security at the level of funds.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/328">#328</a> More lightweight object-sealing transactions are achieved by introducing the BLS signature mechanism.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/368">#368</a> In order to reduce the losses caused by software instability during the initial SP run, the amount of BNB slashed by the storage provider will be strictly limited within a certain period of time.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/346">#346</a>,<a href="https://github.com/bnb-chain/greenfield/pull/292"> #292</a> SDK enhancement. The ordinary RPC requests can be sent via websocket through the Gnfd full node, even if a complex balancer is used, the request always being serviced by the same full node; Custom http client with different settings is allowed to initialize a client;</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/290">#290</a> The encoding format of cross-chain communication has been changed from RLP to ABI in order to save on gas usage.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/370">#370</a>, <a href="https://github.com/bnb-chain/greenfield/pull/326">#326</a>, <a href="https://github.com/bnb-chain/greenfield/pull/312">#312</a>, <a href="https://github.com/bnb-chain/greenfield/pull/279">#279</a> Security enhancement, such as preventing replay attacks and rogue key attacks in BLS signatures, calculation accuracy errors, etc.</li>
+</ul>
+<p><strong>Greenfield Storage Provider changelog</strong></p>
+<ul>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/480">#480</a> Support resumable upload for big files. The resumable upload can bring these advantages for big files, including a: Quick recovery from any network issues, b: Pause and resume object uploads.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/638">#638</a> Support data recovery. Including a: recovering segments data when downloading object finds the wrong data, b: supporting recovery in client, c: recovery segment (for primary SP) or EC piece (for secondary SP) if challenge misses the data d: cmd “recovery.object” to recovery lost object for the primary SP or secondary SP.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/681">#681</a>, <a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/735">#735</a>, <a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/797">#797</a> Support using Alicloud OSS as the underlying storage of SP.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/699">#699</a> Support sharding of large-capacity data tables to provide stronger service capabilities.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/795">#795</a> Significant model adjustments in the latest version. New concepts such as Virtual Group, Family, etc., have been introduced. Complete the original process adaptation.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/824">#824</a> Based on the Virtual Group model, it supports Bucket migration and SP exit. Users can complete bucket migration as needed, and SP owners can also complete withdrawal according to actual conditions.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/412">#412</a>, <a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/851">#851</a>, <a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/814">#814</a> Support more powerful metadata query capabilities, such as getting single bucket/object, query SP Info, etc.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/834">#834</a> Remove v2 authorization.</li>
+</ul>
+<h2 id="greenfield-v022-testnet-maintenance-upgrade-reset">Greenfield v0.2.2 - Testnet Maintenance Upgrade Reset.<a class="headerlink" href="#greenfield-v022-testnet-maintenance-upgrade-reset" title="Link to this section">¶</a></h2>
+<p>On June 25<sup>th</sup>, we reset the Greenfield Testnet and upgrade the Greenfield version to v0.2.2. Here are key changes to note.</p>
+<p>🔸All buckets/objects previously stored on Greenfield Testnet will be cleared and won’t be available for query anymore. Friendly reminder: Please do not save important data on the testnet. The team will periodically delete outdated data.</p>
+<p>🔸All account balances will also be reset. However, accounts with a balance under 10 tBNBs can look forward to an airdrop after the reset. For new users, Greenfield will not provide redundant faucets any longer, please get the test BNB from the official faucet <a href="https://discord.gg/bnbchain">discord channel</a> and use <a href="https://dcellar.io/">Dcellar</a> to convert it to the BNB on Greenfield.</p>
+<p>Greenfield v0.2.2 - Maintenance Release🎉</p>
+<p>The <a href="https://github.com/bnb-chain/greenfield/releases/tag/v0.2.2">Greenfield Blockchain v0.2.2</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v0.2.2">Storage Provider v0.2.2</a> introduces several enhancement exciting features. Let’s take a look at these:</p>
+<h3 id="enhancement-and-feature-list">Enhancement and Feature List 📝<a class="headerlink" href="#enhancement-and-feature-list" title="Link to this section">¶</a></h3>
+<ul>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/249">#249</a> This feature will support multiple messages in a transaction using <code>EIP712</code>sign approach. Allowing multiple messages will provide a better user experience for dApp users.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/250">#250</a> This feature allows mirroring bucket/object/group by using <code>id</code> or <code>name</code>. By using name, we can package some messages in a single tx, e.g., <code>CreateBucket</code>  <code>MirrorBucket</code> in one tx.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/268">#268</a> This feature records the challenge attestation results for the recent challenges.</li>
+<li><a href="https://github.com/bnb-chain/greenfield/pull/276">#276</a> This feature support adding keyManager into txOpt, so that allow large batch of transactions sent by a single client.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/502">#502</a> This feature allow SP to use B2 as its underlying storage.</li>
+<li><a href="https://github.com/bnb-chain/greenfield-storage-provider/pull/512">#512</a> This feature enables universal endpoint for private object.</li>
+<li><a href="../../storage-provider/standard/">SP Standard Framework</a> This document outlines the updated implementation of the SP standard and establishes a clear set of guidelines that encompass the SP API, protocols, and performance indicators. Community developers are able to customize their own SP functions in a flexible manner that adheres to the established standard. </li>
+</ul>
+<p>For other small features, bug fixes, and refactoring, please refer to the changelog in the release.</p>
+<h2 id="greenfield-v021-mekong-testnet-reset">Greenfield v0.2.1 - Mekong Testnet reset.<a class="headerlink" href="#greenfield-v021-mekong-testnet-reset" title="Link to this section">¶</a></h2>
+<p>On May 25<sup>th</sup>, we reset the Greenfield Testnet and upgrade the Greenfield version to v0.2.1. We’re excited to introduce this as the Mekong Testnet. Here are key changes to note.</p>
+<p>🔸The Greenfield BSC Testnet (Chain ID: 5601) will be discontinued. Instead, we’ll deploy the Greenfield Cross-Chain contracts on the BSC Chapel Testnet (Chain ID: 97).  This means you can fully utilize all the infrastructure of the current BSC Chapel Testnet, such as bscscan, tenderly, theGraph, and so on. BNB and Greenfield resources can still flow freely between Greenfield testnet and BSC testnet.</p>
+<p>🔸The Greenfield Blockchain gRPC Endpoint will no longer be provided. The ETH-API endpoint has now been integrated with the Tendermint endpoint. All you need is the Tendermint endpoint for the Greenfield Blockchain. Please use <a href="https://www.bnbchainlist.org/">Chainlist</a> to quickly add BSC Testnet and Greenfield Mekong Testnet.</p>
+<p>🔸All buckets/objects previously stored on Greenfield Testnet will be cleared and won’t be available for query anymore. Friendly reminder: Please do not save important data on the testnet. The team will periodically delete outdated data.</p>
+<p>🔸All account balances will also be reset. However, accounts with a balance under 10 tBNBs can look forward to an airdrop after the reset. For new users, Greenfield will not provide redundant faucets any longer, please get the test BNB from the official faucet <a href="https://discord.gg/bnbchain">discord channel</a> and use <a href="https://dcellar.io/">Dcellar</a> to convert it to the BNB on Greenfield.</p>
+<p>🔸As this is a breaking upgrade, the team will update the document as soon as possible the maintenance is done.</p>
+<p>Greenfield v0.2.1 - Release for Mekong Testnet 🎉</p>
+<p>The <a href="https://github.com/bnb-chain/greenfield/releases/tag/v0.2.0">Greenfield Blockchain v0.2.1</a> and <a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v0.2.1">Storage Provider v0.2.1</a> introduces several enhancement exciting features. Let’s take a look at these:</p>
+<h3 id="enhancement-and-feature-list_1">Enhancement and Feature List 📝<a class="headerlink" href="#enhancement-and-feature-list_1" title="Link to this section">¶</a></h3>
+<ul>
+<li>Bump cosmos-sdk core to version v0.47.2. Cosmos-sdk v0.47.x and v0.46.x have significant differences in consensus engine, ABCI, encoding, dependency injection, and other aspects. Greenfield hopes to update to this version this morning to avoid future upgrade difficulties.</li>
+<li><a href="https://greenfield.bnbchain.org/docs/guide/introduction/ecosystem.html#challenge-verifier">Challenge Verifier</a> is introduced in  Mekong Testnet. By using Challenge Verifier, the network can ensure that only reliable and trustworthy storage providers are allowed to participate, protecting the network from any potential data loss, corruption, or low-quality service.</li>
+<li>Discontinue object and stale permission GC is introduced in v0.2.1. These two features allow for a lighter blockchain state and allow SPs on the testnet to periodically clean up data to maintain long-term operation even without incentives.</li>
+<li>Support for more diverse methods of file searches, such as listing objects by prefix or by folder.</li>
+<li>Implemented a garbage collection module for the storage provider, reducing the operating costs of the storage provider.</li>
+</ul>
+<h2 id="greenfield-v012-the-maintenance-testnet-release">Greenfield v0.1.2 - The maintenance testnet release.<a class="headerlink" href="#greenfield-v012-the-maintenance-testnet-release" title="Link to this section">¶</a></h2>
+<p><a href="https://github.com/bnb-chain/greenfield/releases/tag/v0.1.2">Greenfield Blockchain v0.1.2</a> and
+<a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v0.1.2">Storage Provider v0.1.2</a>
+was a regular maintenance testnet version of BNB Greenfield. This version fixed several bugs from the
+previous version and introduced some features.</p>
+<h3 id="bugfix-list">Bugfix List<a class="headerlink" href="#bugfix-list" title="Link to this section">¶</a></h3>
+<ul>
+<li>Modification of Storage Fee Destination: Previously, storage fees were directed to the SP operator address.
+ This has been adjusted to the funding address, ensuring smoother transactions and fee collection.</li>
+<li>Default SP Price Adjustment: To better reflect actual prices, the default prices in create_sp.json and payment.
+ Param have been modified to align more closely with the current market rates.</li>
+<li>Fixing List Group Error: A crucial fix has been made to the listGroup function to adapt it to the new indexing
+ structure of the group, which uses two levels of indexing.</li>
+<li>Fixing CLI Bugs: We have addressed some command usage issues, such as those relating to update-group-member and
+ put-policy, and improved the description of some commands.</li>
+</ul>
+<h3 id="feature-list">Feature List<a class="headerlink" href="#feature-list" title="Link to this section">¶</a></h3>
+<ul>
+<li>Off-Chain-Auth Solution:  Implementing an off-chain-auth solution, which includes APIs for “request nonce”,
+ “update user key”, and “verify off chain auth sig”. This will greatly improve the user experience for Dapp users,
+ eliminating the need for repetitive wallet popups for signatures.</li>
+<li>Path-style API and Upload Progress API: Introducing support for the path-style API and a new query upload progress API.</li>
+<li>Seal Object Metrics and Code Refinement: The TaskNode service now includes seal object metrics. We have also refined
+ the replicate task and added some DB logs.</li>
+<li>Verify Permission API: The new verify permission API replaces the current chain interface, improving overall
+ performance and reducing latency.</li>
+<li>Block Syncer TXHash &amp; Juno Version Update: Updating the block syncer to add txhash info when exporting events.
+ Additionally, updating the Juno version to support the new “stop serving” feature and included the SP module and GC function.</li>
+<li>Metadata Block Syncer Schema Update &amp; ListExpiredBucketsBySp: Updating the block syncer schema according to changes
+ on the chain and events. Also introducing a new method, ListExpiredBucketsBySp, to support GC operations within SP.</li>
+</ul>
+<h2 id="greenfield-v010-the-initial-testnet-release">Greenfield v0.1.0 - The initial testnet release.<a class="headerlink" href="#greenfield-v010-the-initial-testnet-release" title="Link to this section">¶</a></h2>
+<p><a href="https://github.com/bnb-chain/greenfield/releases/tag/v0.1.0">Greenfield Blockchain v0.1.0</a> and
+<a href="https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v0.1.0">Storage Provider v0.1.0</a>
+was the first testnet version of BNB Greenfield. It represented a fundamental implementation of the 
+<a href="https://github.com/bnb-chain/greenfield-whitepaper">Greenfield Whitepaper</a>. </p>
+<p>This version contained a variety of functions, including payment, storage, storage provider, 
+cross-chain, challenge, staking, and governance. It is an important milestone for BNB Greenfield, 
+implementing many core functions and laying the foundation for future development and improvement.</p>
+<h3 id="features-list">Features List<a class="headerlink" href="#features-list" title="Link to this section">¶</a></h3>
+<h4 id="account-balance-transaction">Account &amp;&amp; Balance &amp;&amp; Transaction<a class="headerlink" href="#account-balance-transaction" title="Link to this section">¶</a></h4>
+<ul>
+<li>Users can create accounts and transfer BNB through Metamask or other EVM compatible wallets.</li>
+<li>Users can grant permission to other users to spend their BNB as transaction fees.</li>
+</ul>
+<h4 id="storage">Storage<a class="headerlink" href="#storage" title="Link to this section">¶</a></h4>
+<ul>
+<li>Users can create and manage group, bucket, and object on Greenfield.</li>
+<li>Users can upload files onto Greenfield in a decentralized way and download them anytime.</li>
+<li>Users can upload private files onto Greenfield safely.</li>
+<li>Users can grant permission to other users to access their files.</li>
+<li>Users can grant permission to other users to manage their resources, including group, bucket, and object.</li>
+<li>Users can pay for storage fees using BNB in a streaming manner.</li>
+<li>If the storage provider provides poor service, users can challenge them.</li>
+</ul>
+<h4 id="native-cross-chain-communication">Native Cross Chain Communication<a class="headerlink" href="#native-cross-chain-communication" title="Link to this section">¶</a></h4>
+<ul>
+<li>User can transfer BNB between BSC and Greenfield.</li>
+<li>User can mirror Group, Bucket, Object to BSC as NFT.</li>
+<li>User can manage Group, Bucket, Object on BSC through smart contract directly.</li>
+<li>BSC developer can easily integrate Greenfield into their dApp through <a href="https://github.com/bnb-chain/greenfield-contracts-sdk">SDK</a>. </li>
+</ul>
+<h4 id="storage-provider">Storage Provider<a class="headerlink" href="#storage-provider" title="Link to this section">¶</a></h4>
+<ul>
+<li>Storage Provider can register and update their information.</li>
+<li>Storage Provider can update the storage price.</li>
+<li>Storage Provider can garbage collect stale storage data on Testnet.</li>
+</ul>
+<h4 id="validator-and-staking">Validator and Staking<a class="headerlink" href="#validator-and-staking" title="Link to this section">¶</a></h4>
+<ul>
+<li>User can stake BNB to become a validator.</li>
+<li>Validator update their information.</li>
+<li>Validator can get part of revenue from storage fees.</li>
+<li>Validator can take part in the governance of Greenfield.</li>
+</ul></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../storage-provider/run-book/sp-faqs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SP FAQ">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SP FAQ
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../roadmap/" class="md-footer__link md-footer__link--next" aria-label="Next: Roadmap">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Roadmap
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+<div class="doc-footer">
+    <div class="doc-footer__inner md-grid">
+        <div>
+            <div>Explore</div>
+            <ul>
+                <li><a href="https://trustwallet.com/" target="_blank">Trust Wallet</a></li>
+                <li><a href="https://www.bnbchain.org/en/binance-wallet" target="_blank">BNB Chain Wallet</a></li>
+                <li><a href="https://dappbay.bnbchain.org/" target="_blank">DappBay</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Build</div>
+            <ul>
+                <li><a href="https://github.com/bnb-chain/whitepaper" target="_blank">Whitepaper</a></li>
+                <li><a href="https://forum.bnbchain.org/" target="_blank">Build N' Build Forum</a></li>
+                <li><a href="https://www.bnbchain.org/en/bnb-chain-bridges" target="_blank">Bridges</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Participate</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/events" target="_blank">Events</a></li>
+                <li><a href="https://www.bnbchain.org/en/bsc-mvb-program" target="_blank">MVB Program</a></li>
+                <li><a href="https://www.bnbchain.org/en/hackathon" target="_blank">Hackathon</a></li>
+                <li><a href="https://www.bnbchain.org/en/developers/developer-programs" target="_blank">Developer
+                    Programs</a></li>
+                <li><a href="https://www.bnbchain.org/en/martians-program" target="_blank">Martians Program</a></li>
+                <li><a href="https://bugbounty.bnbchain.org" target="_blank">Bug Bounty</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>About</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><a href="https://www.bnbchain.org/en/terms" target="_blank">Terms of Use</a></li>
+                <li><a href="https://jobs.bnbchain.org/companies/bnb-chain#content" target="_blank">Careers</a></li>
+                <li><a href="https://www.bnbchain.org/en/official-verification" target="_blank">Verification</a></li>
+                <li><a href="https://www.bnbchain.org/en/contact" target="_blank">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="doc-copyright">
+    <div class="doc-copyright__inner md-grid">
+        © 2024 Bnbchain.org. All rights reserved.
+    </div>
+</div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../../assets/js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
