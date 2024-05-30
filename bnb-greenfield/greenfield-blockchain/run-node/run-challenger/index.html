@@ -2578,19 +2578,22 @@ provided in the <a href="#key-preparation">key preparation</a> section.</p>
 </li>
 <li>
 <p>Set your RPC Address and Chain ID </p>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Mainnet</label><label for="__tabbed_1_2">Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="s2">"greenfield_config"</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="nv">rpcAddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://greenfield-chain.bnbchain.org:443"</span>
 <span class="w">    </span><span class="nv">chainId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"greenfield_1017-1"</span>
 <span class="o">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="s2">"greenfield_config"</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="nv">rpcAddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span>
 <span class="w">    </span><span class="nv">chainId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"greenfield_5600-1"</span>
 <span class="o">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 </li>

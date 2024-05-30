@@ -2468,17 +2468,20 @@
 mkdir ~/.gnfd/config
 </code></pre></div>
 2. Download <code>app.toml</code>,  <code>config.toml</code> and <code>genesis.json</code> from <code>https://github.com/bnb-chain/greenfield/releases</code> and copy them into <code>$NODE_HOME/config</code>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">mainnet</label><label for="__tabbed_1_2">testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>wget<span class="w">  </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/bnb-chain/greenfield/releases/latest<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>browser_<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>mainnet_config<span class="w"> </span><span class="p">|</span>cut<span class="w"> </span>-d<span class="se">\"</span><span class="w"> </span>-f4<span class="k">)</span>
 unzip<span class="w"> </span>mainnet_config.zip
 cp<span class="w"> </span>mainnet_config/*<span class="w">  </span>~/.gnfd/config/
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>wget<span class="w">  </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/bnb-chain/greenfield/releases/latest<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>browser_<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>testnet_config<span class="w"> </span><span class="p">|</span>cut<span class="w"> </span>-d<span class="se">\"</span><span class="w"> </span>-f4<span class="k">)</span>
 unzip<span class="w"> </span>testnet_config.zip
 cp<span class="w"> </span>testnet_config/*<span class="w">  </span>~/.gnfd/config/
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>You can edit this moniker later, in the <code>$NODE_HOME/config/config.toml</code> file:

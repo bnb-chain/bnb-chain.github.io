@@ -2644,15 +2644,18 @@ the access to his private file through BSC contract.</p>
 <p>Before starting, please make sure you created related accounts by <code>gnfd-cmd account import</code> or  <code>gnfd-cmd account new</code> and have the config.toml file in the current directory.
 Please note that the account should have enough balance before sending transactions to greenfield.</p>
 <p>The content of the <code>config.toml</code> is as follows:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Mainnet</label><label for="__tabbed_1_2">Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>rpcAddr = "https://greenfield-chain.bnbchain.org:443"
 chainId = "greenfield_1017-1"
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>rpcAddr = "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"
 chainId = "greenfield_5600-1"
 </code></pre></div>
+</div>
 </div>
 </div>
 <ol>
@@ -2716,7 +2719,9 @@ run<span class="w"> </span><span class="nb">command</span><span class="w"> </spa
 </li>
 <li>
 <p>Grant the access to Account B through the contract.</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Mainnet</label><label for="__tabbed_2_2">Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RPC_MAIN</span><span class="o">=</span>https://bsc-dataseed.bnbchain.org
 $<span class="w"> </span>forge<span class="w"> </span>script<span class="w"> </span>foundry-scripts/GroupHub.s.sol:GroupHubScript<span class="w"> </span><span class="se">\</span>
 --sig<span class="w"> </span><span class="s2">"addMember(address operator, uint256 groupId, address member)"</span><span class="w"> </span><span class="se">\</span>
@@ -2727,7 +2732,7 @@ $<span class="w"> </span>forge<span class="w"> </span>script<span class="w"> </s
 --broadcast<span class="w">     </span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio"><label for="__tabbed_2_2">Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RPC_TEST</span><span class="o">=</span>https://bsc-testnet-dataseed.bnbchain.org
 $<span class="w"> </span>forge<span class="w"> </span>script<span class="w"> </span>foundry-scripts/GroupHub.s.sol:GroupHubScript<span class="w"> </span><span class="se">\</span>
 --sig<span class="w"> </span><span class="s2">"addMember(address operator, uint256 groupId, address member)"</span><span class="w"> </span><span class="se">\</span>
@@ -2737,6 +2742,7 @@ $<span class="w"> </span>forge<span class="w"> </span>script<span class="w"> </s
 --legacy<span class="w"> </span><span class="se">\</span>
 --broadcast
 </code></pre></div>
+</div>
 </div>
 </div>
 </li>

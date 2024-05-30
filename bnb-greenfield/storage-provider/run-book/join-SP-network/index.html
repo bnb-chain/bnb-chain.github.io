@@ -2977,15 +2977,18 @@
 <p>You can query the governance parameters <a href="https://greenfield-chain.bnbchain.org/openapi#/Query/GovV1Params">here</a>.</p>
 <h3 id="1-submit-proposal">1. Submit Proposal<a class="headerlink" href="#1-submit-proposal" title="Link to this section">¶</a></h3>
 <p>The SP needs to initiate an on-chain proposal that specifies the Msg information to be automatically executed after the vote is approved. In this case, the Msg is <code>MsgCreateStorageProvider</code>. It’s worth noting that the deposit tokens needs to be greater than the minimum deposit tokens specified on the chain.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Mainnet</label><label for="__tabbed_1_2">Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>rpcAddr = "https://greenfield-chain.bnbchain.org:443"
 chainId = "greenfield_1017-1"
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>rpcAddr = "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"
 chainId = "greenfield_5600-1"
 </code></pre></div>
+</div>
 </div>
 </div>
 <h4 id="hot-wallet-manual">Hot Wallet Manual<a class="headerlink" href="#hot-wallet-manual" title="Link to this section">¶</a></h4>

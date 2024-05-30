@@ -3300,7 +3300,9 @@
 <blockquote>
 <p>Code can’t access user’s private key on browser, so we use <code>OffChainAuth</code> on browser and use <code>ECDSA</code> on Nodejs.</p>
 </blockquote>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Browser</label><label for="__tabbed_1_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">Browser</span><pre><span></span><code><span class="c1">// MetaMask</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">;</span>
 
@@ -3317,7 +3319,7 @@
 <span class="p">},</span><span class="w"> </span><span class="nx">provider</span><span class="p">);</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Nodejs don’t need offchainauth.</p>
@@ -3328,6 +3330,7 @@
 <span class="c1">// your account's private key</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">ACCOUNT_PRIVATEKEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'0x....'</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h3 id="1-create-bucket">1. Create Bucket<a class="headerlink" href="#1-create-bucket" title="Link to this section">¶</a></h3>
@@ -3354,7 +3357,9 @@
 <span class="p">});</span>
 </code></pre></div>
 <h4 id="13-broadcast-create-bucket-tx">1.3 broadcast create bucket tx<a class="headerlink" href="#13-broadcast-create-bucket-tx" title="Link to this section">¶</a></h4>
-<div class="tabbed-set" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Browser</label><label for="__tabbed_2_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">broadcast create bucket tx</span><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createBucketTx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">({</span>
 <span class="w">   </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s1">'BNB'</span><span class="p">,</span>
 <span class="w">   </span><span class="nx">gasLimit</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">simulateInfo</span><span class="o">?</span><span class="p">.</span><span class="nx">gasLimit</span><span class="p">),</span>
@@ -3364,7 +3369,7 @@
 <span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio"><label for="__tabbed_2_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">broadcast create bucket tx</span><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createBucketTx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">({</span>
 <span class="w">   </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s1">'BNB'</span><span class="p">,</span>
 <span class="w">   </span><span class="nx">gasLimit</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">createBucketTxSimulateInfo</span><span class="o">?</span><span class="p">.</span><span class="nx">gasLimit</span><span class="p">),</span>
@@ -3378,6 +3383,7 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h3 id="2-create-object">2. Create Object<a class="headerlink" href="#2-create-object" title="Link to this section">¶</a></h3>
 <h4 id="21-construct-create-object-tx">2.1 construct create object tx<a class="headerlink" href="#21-construct-create-object-tx" title="Link to this section">¶</a></h4>
 <p>Like the <a href="#11-construct-create-bucket-tx">visibility of bucket</a>, object also has a visibility:</p>
@@ -3386,7 +3392,9 @@
 <li><code>VISIBILITY_TYPE_PRIVATE</code></li>
 </ul>
 <p>Getting file’s checksum need <a href="https://github.com/bnb-chain/greenfield-js-sdk/tree/main/packages/reed-solomon">reed-solomon</a>:</p>
-<div class="tabbed-set" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Browser</label><label for="__tabbed_3_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ReedSolomon</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@bnb-chain/reed-solomon'</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ReedSolomon</span><span class="p">();</span>
@@ -3396,7 +3404,7 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">expectCheckSums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rs</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">fileBytes</span><span class="p">));</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio"><label for="__tabbed_3_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'node:fs'</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NodeAdapterReedSolomon</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@bnb-chain/reed-solomon/node.adapter'</span><span class="p">);</span>
 
@@ -3405,6 +3413,7 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">NodeAdapterReedSolomon</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">expectCheckSums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">rs</span><span class="p">.</span><span class="nx">encodeInWorker</span><span class="p">(</span><span class="nx">__filename</span><span class="p">,</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">fileBuffer</span><span class="p">));</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">createObjectTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">createObject</span><span class="p">(</span>
@@ -3427,7 +3436,9 @@
 <span class="p">});</span>
 </code></pre></div>
 <h4 id="23-broadcast-create-object-tx">2.3 broadcast create object tx<a class="headerlink" href="#23-broadcast-create-object-tx" title="Link to this section">¶</a></h4>
-<div class="tabbed-set" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><label for="__tabbed_4_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Browser</label><label for="__tabbed_4_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createObjectTx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">({</span>
 <span class="w">   </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s1">'BNB'</span><span class="p">,</span>
 <span class="w">   </span><span class="nx">gasLimit</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">simulateInfo</span><span class="o">?</span><span class="p">.</span><span class="nx">gasLimit</span><span class="p">),</span>
@@ -3437,7 +3448,7 @@
 <span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio"><label for="__tabbed_4_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">createObjectTxRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createObjectTx</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">({</span>
 <span class="w">   </span><span class="nx">denom</span><span class="o">:</span><span class="w"> </span><span class="s1">'BNB'</span><span class="p">,</span>
 <span class="w">   </span><span class="nx">gasLimit</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">createObjectTxSimulateInfo</span><span class="o">?</span><span class="p">.</span><span class="nx">gasLimit</span><span class="p">),</span>
@@ -3451,8 +3462,11 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h4 id="24-upload-object">2.4 upload object<a class="headerlink" href="#24-upload-object" title="Link to this section">¶</a></h4>
-<div class="tabbed-set" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><label for="__tabbed_5_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Browser</label><label for="__tabbed_5_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">uploadRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">uploadObject</span><span class="p">(</span>
 <span class="w">   </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">createObjectInfo</span><span class="p">.</span><span class="nx">bucketName</span><span class="p">,</span>
@@ -3471,7 +3485,7 @@
 <span class="p">);</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio"><label for="__tabbed_5_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">uploadRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">uploadObject</span><span class="p">(</span>
 <span class="w">   </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span>
@@ -3502,8 +3516,11 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h3 id="3-download-object">3. Download Object<a class="headerlink" href="#3-download-object" title="Link to this section">¶</a></h3>
-<div class="tabbed-set" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><label for="__tabbed_6_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Browser</label><label for="__tabbed_6_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">downloadFile</span><span class="p">(</span>
 <span class="w">   </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="s1">'bucket_name'</span><span class="p">,</span>
@@ -3520,7 +3537,7 @@
 <span class="p">);</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_6_2" name="__tabbed_6" type="radio"><label for="__tabbed_6_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">getObject</span><span class="p">(</span>
 <span class="w">   </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="s1">'bucket_name'</span><span class="p">,</span>
@@ -3539,6 +3556,7 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">([</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">]);</span>
 <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">'your_output_file'</span><span class="p">,</span><span class="w"> </span><span class="nx">buffer</span><span class="p">)</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h2 id="code-repository">Code Repository<a class="headerlink" href="#code-repository" title="Link to this section">¶</a></h2>

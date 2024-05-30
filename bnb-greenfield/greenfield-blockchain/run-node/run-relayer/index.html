@@ -2600,7 +2600,9 @@ gnfd<span class="w"> </span>keys<span class="w"> </span><span class="nb">export<
 <li>
 <p>Config crossChain, greenfield light client and relayer hub smart contracts addresses, others can keep the default value, refer to this
    <a href="../../../for-developers/network-endpoint/contract-list/">contract-list</a> to get addresses for Mainnet/Testnet.</p>
-<div class="tabbed-set" data-tabs="1:4"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">BSC-Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">BSC-Mainnet</label><label for="__tabbed_1_2">BSC-Testnet</label><label for="__tabbed_1_3">opBNB-Mainnet</label><label for="__tabbed_1_4">opBNB-Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">"relay_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="err">...</span><span class="w"> </span>
 <span class="w">    </span><span class="nt">"cross_chain_contract_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x77e719b714be09F70D484AB81F70D02B0E182f7d"</span><span class="p">,</span>
@@ -2609,7 +2611,7 @@ gnfd<span class="w"> </span>keys<span class="w"> </span><span class="nb">export<
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">BSC-Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">"relay_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="err">...</span><span class="w"> </span>
 <span class="w">  </span><span class="nt">"cross_chain_contract_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa5B2c9194131A4E0BFaCbF9E5D6722c873159cb7"</span><span class="p">,</span>
@@ -2618,7 +2620,7 @@ gnfd<span class="w"> </span>keys<span class="w"> </span><span class="nb">export<
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio"><label for="__tabbed_1_3">opBNB-Mainnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">"relay_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="err">...</span><span class="w"> </span>
 <span class="w">  </span><span class="nt">"cross_chain_contract_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7E376AEFAF05E20e3eB5Ee5c08fE1B9832b175cE"</span><span class="p">,</span>
@@ -2627,7 +2629,7 @@ gnfd<span class="w"> </span>keys<span class="w"> </span><span class="nb">export<
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio"><label for="__tabbed_1_4">opBNB-Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">"relay_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="err">...</span><span class="w"> </span>
 <span class="w">  </span><span class="nt">"cross_chain_contract_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xF0Bcf6E4F72bCB33b944275dd5c9d4540a259eB9"</span><span class="p">,</span>
@@ -2635,6 +2637,7 @@ gnfd<span class="w"> </span>keys<span class="w"> </span><span class="nb">export<
 <span class="w">  </span><span class="nt">"relayer_hub_contract_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x59ACcF658CC4589C3C41720fd48e869B97A748a1"</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 </li>

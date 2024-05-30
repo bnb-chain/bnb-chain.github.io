@@ -2736,15 +2736,18 @@ Furthermore, repositories may not effectively handle non-code files and operatio
 To begin, you will need to install the BNB Greenfield command line tool follow the instruction from CLI github page.</p>
 <p>When running commands that interact with the greenfield, if there is no config/config.toml file under the path and the commands runs without “–config” flag, the tool will generate the config/config.toml file automatically which is consistent with the network configuration under the path.</p>
 <p>Config file example will set up the necessary RPC address and chain id:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Mainnet</label><label for="__tabbed_1_2">Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>rpcAddr = "https://greenfield-chain.bnbchain.org:443"
 chainId = "greenfield_1017-1"
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>rpcAddr = "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"
 chainId = "greenfield_5600-1"
 </code></pre></div>
+</div>
 </div>
 </div>
 <h3 id="impport-account-and-generating-keystore">Impport Account and Generating Keystore<a class="headerlink" href="#impport-account-and-generating-keystore" title="Link to this section">¶</a></h3>

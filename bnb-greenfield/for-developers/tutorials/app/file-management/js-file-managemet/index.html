@@ -3073,10 +3073,13 @@
 
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Link to this section">¶</a></h2>
 <h3 id="create-project">Create Project<a class="headerlink" href="#create-project" title="Link to this section">¶</a></h3>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Browser</label><label for="__tabbed_1_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Follow <a href="https://docs.bnbchain.org/greenfield-js-sdk/getting-started/quick-start">Quick Start</a> to create the project.</p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Nodejs</label><div class="tabbed-content"></div>
+<div class="tabbed-block"></div>
+</div>
 </div>
 <p>Create a new <code>index.js</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">```</span><span class="n">bash</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="ss">"Nodejs create project"</span>
@@ -3094,13 +3097,15 @@
 </code></pre></div>
 
 <h3 id="create-greenfield-client">Create Greenfield Client<a class="headerlink" href="#create-greenfield-client" title="Link to this section">¶</a></h3>
-<div class="tabbed-set" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><label for="__tabbed_2_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Browser</label><label for="__tabbed_2_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">Create testnet Client</span><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Client</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@bnb-chain/greenfield-js-sdk'</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Client</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'https://gnfd-testnet-fullnode-tendermint-ap.bnbchain.org, '</span><span class="mf">5600</span><span class="err">'</span><span class="p">);</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio"><label for="__tabbed_2_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">Create testnet client</span><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">Client</span><span class="p">}</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@bnb-chain/greenfield-js-sdk'</span><span class="p">);</span>
 
 <span class="c1">// testnet</span>
@@ -3108,8 +3113,11 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h3 id="test-a-simple-function">Test a simple function<a class="headerlink" href="#test-a-simple-function" title="Link to this section">¶</a></h3>
-<div class="tabbed-set" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><label for="__tabbed_3_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Browser</label><label for="__tabbed_3_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span>
 <span class="na">className</span><span class="o">=</span><span class="s">"button is-primary"</span>
 <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -3122,7 +3130,7 @@
 <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio"><label for="__tabbed_3_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">index.js</span><pre><span></span><code><span class="p">;(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">latestBlockHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">basic</span><span class="p">.</span><span class="nx">getLatestBlockHeight</span><span class="p">()</span>
 
@@ -3137,10 +3145,13 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h2 id="get-address-balance">Get Address balance<a class="headerlink" href="#get-address-balance" title="Link to this section">¶</a></h2>
 <p>In the previous step, we verified that the client was OK.</p>
 <p>Now we try more features for an account.</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><label for="__tabbed_4_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Browser</label><label for="__tabbed_4_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span>
 <span class="na">className</span><span class="o">=</span><span class="s">"button is-primary"</span>
 <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -3158,7 +3169,7 @@
 <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio"><label for="__tabbed_4_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>You can query an account’s balance by calling <code>account.getAccountBalance</code> function.</p>
 <div class="highlight"><span class="filename">get account's balance</span><pre><span></span><code><span class="p">;(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">account</span><span class="p">.</span><span class="nx">getAccountBalance</span><span class="p">({</span>
@@ -3174,10 +3185,13 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <p>Apart from the basic data queries shown above, there are many more features. Please see the <a href="https://docs.bnbchain.org/greenfield-js-sdk/category/api">API Reference</a> for all Greenfield API definitions.</p>
 <h2 id="manage-wallet">Manage Wallet<a class="headerlink" href="#manage-wallet" title="Link to this section">¶</a></h2>
 <p>The wallet in Nodejs is generated by a private key, but the wallet plugin(MetaMask, CollectWallet, etc) can’t get the user’s private key in the browser, so another way is needed.</p>
-<div class="tabbed-set" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><label for="__tabbed_5_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Browser</label><label for="__tabbed_5_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span>
 <span class="na">className</span><span class="o">=</span><span class="s">"button is-primary"</span>
 <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -3222,7 +3236,7 @@
 <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_5_2" name="__tabbed_5" type="radio"><label for="__tabbed_5_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>In general, we need to put the private key in the <code>.env</code> file and ignore this file in the <code>.gitignore</code> file (for account security).</p>
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>touch<span class="w"> </span>.env
 </code></pre></div>
@@ -3308,21 +3322,27 @@
 
 </div>
 </div>
+</div>
 <p>More TxClient <a href="https://docs.bnbchain.org/greenfield-js-sdk/client/tx-client">References</a>.</p>
 <h2 id="make-a-storage-deal">Make a storage deal<a class="headerlink" href="#make-a-storage-deal" title="Link to this section">¶</a></h2>
 <p>Storing data is one of the most important features of Greenfield. In this section, we’ll walk through the end-to-end process of storing your data on the Greenfield network. We’ll start by importing your data, then make a storage deal with a storage provider, and finally wait for the deal to complete.</p>
 <h3 id="0-create-the-main-file">0. Create the main file<a class="headerlink" href="#0-create-the-main-file" title="Link to this section">¶</a></h3>
-<div class="tabbed-set" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><label for="__tabbed_6_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Browser</label><label for="__tabbed_6_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>The browser doesn’t need the main file.</p>
 </div>
-<input id="__tabbed_6_2" name="__tabbed_6" type="radio"><label for="__tabbed_6_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>touch<span class="w"> </span>storage.js
 </code></pre></div>
 </div>
 </div>
+</div>
 <h3 id="1-choose-your-own-sp">1. Choose your own SP<a class="headerlink" href="#1-choose-your-own-sp" title="Link to this section">¶</a></h3>
 <p>You can query the list of SP:</p>
-<div class="tabbed-set" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><label for="__tabbed_7_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Browser</label><label for="__tabbed_7_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">utils/offchainAuth.ts</span><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">getSps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">sps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">sp</span><span class="p">.</span><span class="nx">getStorageProviders</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">finalSps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">sps</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="p">[]).</span><span class="nx">filter</span><span class="p">((</span><span class="nx">v</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'nodereal'</span><span class="p">));</span>
@@ -3398,7 +3418,7 @@
 <span class="p">};</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio"><label for="__tabbed_7_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">storage.js</span><pre><span></span><code><span class="p">;(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="c1">// get storage providers list</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">sps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">sp</span><span class="p">.</span><span class="nx">getStorageProviders</span><span class="p">()</span>
@@ -3407,6 +3427,7 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">primarySP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sps</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">operatorAddress</span><span class="p">;</span>
 <span class="p">})()</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h3 id="2-create-your-bucket">2. Create your bucket<a class="headerlink" href="#2-create-your-bucket" title="Link to this section">¶</a></h3>
@@ -3445,7 +3466,9 @@
 <h3 id="3-create-object-and-upload-object">3. Create Object and Upload Object<a class="headerlink" href="#3-create-object-and-upload-object" title="Link to this section">¶</a></h3>
 <p>Objects can also be private or public.</p>
 <p>Getting the file’s checksum needs <a href="https://github.com/bnb-chain/greenfield-js-sdk/tree/main/packages/reed-solomon">reed-solomon</a>:</p>
-<div class="tabbed-set" data-tabs="8:2"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><label for="__tabbed_8_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Browser</label><label for="__tabbed_8_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ReedSolomon</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@bnb-chain/reed-solomon'</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ReedSolomon</span><span class="p">();</span>
@@ -3455,7 +3478,7 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">expectCheckSums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rs</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">fileBytes</span><span class="p">));</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_8_2" name="__tabbed_8" type="radio"><label for="__tabbed_8_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'node:fs'</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NodeAdapterReedSolomon</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'@bnb-chain/reed-solomon/node.adapter'</span><span class="p">);</span>
 
@@ -3464,6 +3487,7 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">NodeAdapterReedSolomon</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">expectCheckSums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">rs</span><span class="p">.</span><span class="nx">encodeInWorker</span><span class="p">(</span><span class="nx">__filename</span><span class="p">,</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">fileBuffer</span><span class="p">));</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>Getting approval of creating an object and sending <code>createObject</code> txn to the Greenfield network:</p>
@@ -3493,7 +3517,9 @@
 <span class="p">});</span>
 </code></pre></div>
 <p>Upload Object:</p>
-<div class="tabbed-set" data-tabs="9:2"><input checked id="__tabbed_9_1" name="__tabbed_9" type="radio"><label for="__tabbed_9_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">Browser</label><label for="__tabbed_9_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">uploadObject</span><span class="p">(</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">bucketName</span><span class="p">,</span>
@@ -3510,7 +3536,7 @@
 <span class="p">);</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_9_2" name="__tabbed_9" type="radio"><label for="__tabbed_9_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">uploadObject</span><span class="p">(</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span>
@@ -3539,9 +3565,12 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h3 id="4-object-management">4. Object management<a class="headerlink" href="#4-object-management" title="Link to this section">¶</a></h3>
 <h4 id="41-download-object">4.1 Download object<a class="headerlink" href="#41-download-object" title="Link to this section">¶</a></h4>
-<div class="tabbed-set" data-tabs="10:2"><input checked id="__tabbed_10_1" name="__tabbed_10" type="radio"><label for="__tabbed_10_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">Browser</label><label for="__tabbed_10_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">downloadFile</span><span class="p">(</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">bucketName</span><span class="p">,</span>
@@ -3556,7 +3585,7 @@
 <span class="p">);</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_10_2" name="__tabbed_10" type="radio"><label for="__tabbed_10_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><span class="filename">manage.js</span><pre><span></span><code><span class="p">;(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
 <span class="c1">// download object</span>
@@ -3576,8 +3605,11 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h4 id="42-update-object-visibility">4.2 Update object visibility<a class="headerlink" href="#42-update-object-visibility" title="Link to this section">¶</a></h4>
-<div class="tabbed-set" data-tabs="11:2"><input checked id="__tabbed_11_1" name="__tabbed_11" type="radio"><label for="__tabbed_11_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">Browser</label><label for="__tabbed_11_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">updateObjectInfo</span><span class="p">({</span>
 <span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">bucketName</span><span class="p">,</span>
 <span class="nx">objectName</span><span class="o">:</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">objectName</span><span class="p">,</span>
@@ -3598,7 +3630,7 @@
 <span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_11_2" name="__tabbed_11" type="radio"><label for="__tabbed_11_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">updateObjectInfo</span><span class="p">({</span>
 <span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="s1">'extfkdcxxd'</span><span class="p">,</span>
 <span class="nx">objectName</span><span class="o">:</span><span class="w"> </span><span class="s1">'yhulwcfxye'</span><span class="p">,</span>
@@ -3621,8 +3653,11 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h4 id="43-delete-object">4.3 Delete Object<a class="headerlink" href="#43-delete-object" title="Link to this section">¶</a></h4>
-<div class="tabbed-set" data-tabs="12:2"><input checked id="__tabbed_12_1" name="__tabbed_12" type="radio"><label for="__tabbed_12_1">Browser</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked id="__tabbed_12_1" name="__tabbed_12" type="radio"><input id="__tabbed_12_2" name="__tabbed_12" type="radio"><div class="tabbed-labels"><label for="__tabbed_12_1">Browser</label><label for="__tabbed_12_2">Nodejs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">deleteObject</span><span class="p">({</span>
 <span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">bucketName</span><span class="p">,</span>
 <span class="nx">objectName</span><span class="o">:</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">objectName</span><span class="p">,</span>
@@ -3642,7 +3677,7 @@
 <span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_12_2" name="__tabbed_12" type="radio"><label for="__tabbed_12_2">Nodejs</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">;(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">deleteObject</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">bucketName</span><span class="o">:</span><span class="w"> </span><span class="s1">'extfkdcxxd'</span><span class="p">,</span>
@@ -3668,6 +3703,7 @@
 <span class="p">}</span>
 <span class="p">})()</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Link to this section">¶</a></h2>

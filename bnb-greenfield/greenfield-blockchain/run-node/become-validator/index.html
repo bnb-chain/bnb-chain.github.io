@@ -2672,13 +2672,16 @@ you can verify that the node has become a validator. </p>
 running as expected.</p>
 </div>
 <h3 id="6-query-all-validators">6. Query all validators<a class="headerlink" href="#6-query-all-validators" title="Link to this section">¶</a></h3>
-<div class="tabbed-set" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><label for="__tabbed_1_1">Mainnet</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Mainnet</label><label for="__tabbed_1_2">Testnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>gnfd<span class="w"> </span>query<span class="w"> </span>staking<span class="w"> </span>validators<span class="w"> </span>--node<span class="w"> </span><span class="s2">"https://greenfield-chain.bnbchain.org:443"</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio"><label for="__tabbed_1_2">Testnet</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>gnfd<span class="w"> </span>query<span class="w"> </span>staking<span class="w"> </span>validators<span class="w"> </span>--node<span class="w"> </span><span class="s2">"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span>
 </code></pre></div>
+</div>
 </div>
 </div></div>
 
