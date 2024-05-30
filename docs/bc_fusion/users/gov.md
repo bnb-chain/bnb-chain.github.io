@@ -32,7 +32,7 @@ You need to connect to your Web3 wallet (e.g., TrustWallet, BEW, Metamask) for t
 ### Delegate Voting Power
 
 After you have delegated your BNB to a BSC validator, you can start participating in the BSC governance.
-To participate in BSC governance, you first need to delegate your voting power to a validator or yourself if you wish to
+To participate in BSC governance, you first need to delegate your voting power to someone or yourself if you wish to
 vote directly.
 
 ![](../../assets/bcfusion/tally1.png){:style="width:800px"}
