@@ -17,9 +17,11 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
     Developers can easily port their existing Ethereum-based projects to BNB Chain, benefiting from its enhanced performance.
 
 * **Massive User Base**
+
     BNB Chain Handle the largest daily active users and the highest peak EVM transactions with economical fees.
 
 * **Strongest Ecosystem**
+
     It is Supported by a robust ecosystem of top-tier RPC plants, wallets, blockchain explorers, data indices, and substantial grants.
 
 * **Thriving DeFi Ecosystem**
@@ -66,6 +68,7 @@ Within this ecosystem, the ownership, usage, and monetization of data are possib
     BNB Chain is a hub for DeFi activities, providing users with access to a wide range of financial products and services, all powered by blockchain technology.
 
 * **LSD and Restaking**
+
     BNB Chain is secured by more than 20M BNB staking and 20K delegators. The development for LSD and Restaking has been bolstered by a substantial amount of assets and a solid user base.
 
 * **Gaming and Non-Fungible Tokens (NFTs)**
