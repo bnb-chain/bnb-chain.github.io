@@ -25,6 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
           pip install mkdocs-video
+          pip install mkdocs-redirects
 
       - name: Build MkDocs site
         run: mkdocs build

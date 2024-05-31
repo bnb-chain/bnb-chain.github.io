@@ -6,6 +6,7 @@ This is the BNBChain Knowledge Base documentation for the BNBChain developers. I
 
 * `pip install mkdocs-material` - install mkdocs-material.
 * `pip install mkdocs-video` - install mkdocs-video.
+* `pip install mkdocs-redirects` - install mkdocs-redirects plugin.
 
 ## Commands
 
