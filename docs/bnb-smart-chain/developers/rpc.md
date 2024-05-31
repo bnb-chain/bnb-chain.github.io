@@ -51,6 +51,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **NOWNodes:** <https://nownodes.io/nodes/bsc>
 
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
