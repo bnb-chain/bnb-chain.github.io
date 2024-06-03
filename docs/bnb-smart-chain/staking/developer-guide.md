@@ -134,6 +134,17 @@ function claimBatch(address[] calldata operatorAddresses, uint256[] calldata req
 - `operatorAddress`: The operator addresses of the validators.
 - `requestNumber`: The numbers of unbonding requests to claim from the validators.
 
+## Precision Loss
+During the conversion process between credit tokens and BNB, it is inevitably encounter the usage of integer division, 
+which may results in a precision loss. It can lead to tangible issues. For example, a user who delegates 1 BNB and then 
+decides to undelegate immediately. Due to the aforementioned precision loss, they will only be able to claim back 0.99..99 BNB, 
+which is essentially 1 minus a tiny fraction (1e-18) of BNB. 
+
+In staking pools like Lido and Rocket Pool, users might encounter similar issues. 
+However, these issues can be effectively addressed through thoughtful product design. 
+For instance, when displaying information to users, rounding up to only preserve eight decimal places could be one solution. 
+Or instead of undelegating, users can exchange their credit tokens for BNB, with the exact conversion results prominently displayed.
+
 ## FAQs
 
 ### What is validator's credit contract?
