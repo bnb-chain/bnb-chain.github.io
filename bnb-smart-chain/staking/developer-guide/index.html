@@ -1178,6 +1178,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#precision-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#faqs" class="md-nav__link">
     <span class="md-ellipsis">
       FAQs
@@ -2040,6 +2049,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#precision-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#faqs" class="md-nav__link">
     <span class="md-ellipsis">
       FAQs
@@ -2253,6 +2271,15 @@ multiple requests:</p>
 <li><code>operatorAddress</code>: The operator addresses of the validators.</li>
 <li><code>requestNumber</code>: The numbers of unbonding requests to claim from the validators.</li>
 </ul>
+<h2 id="precision-loss">Precision Loss<a class="headerlink" href="#precision-loss" title="Link to this section">¶</a></h2>
+<p>During the conversion process between credit tokens and BNB, it is inevitably encounter the usage of integer division, 
+which may results in a precision loss. It can lead to tangible issues. For example, a user who delegates 1 BNB and then 
+decides to undelegate immediately. Due to the aforementioned precision loss, they will only be able to claim back 0.99..99 BNB, 
+which is essentially 1 minus a tiny fraction (1e-18) of BNB. </p>
+<p>In staking pools like Lido and Rocket Pool, users might encounter similar issues. 
+However, these issues can be effectively addressed through thoughtful product design. 
+For instance, when displaying information to users, rounding up to only preserve eight decimal places could be one solution. 
+Or instead of undelegating, users can exchange their credit tokens for BNB, with the exact conversion results prominently displayed.</p>
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Link to this section">¶</a></h2>
 <h3 id="what-is-validators-credit-contract">What is validator’s credit contract?<a class="headerlink" href="#what-is-validators-credit-contract" title="Link to this section">¶</a></h3>
 <p>For each validator, there is a credit contract which will be automatically deployed when it is created.
