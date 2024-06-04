@@ -320,6 +320,20 @@ plugins:
   - redirects:
       redirect_maps:
         'docs.md': 'bnb-smart-chain/index.md'
+        'docs/learn/beaconIntro.md': 'bc-fusion/index.md'
+        'docs/learn/beaconIntro/beaconchain/learn/architecture.md': 'bc-fusion/index.md'
+        'docs/learn.md': 'bnb-smart-chain/overview.md'
+        'docs/bcfusion/overview.md': 'bc-fusion/overview.md'
+        'docs/bcfusion/users/stake-migration.md': 'bc-fusion/users/stake-migration.md'
+        'docs/bcfusion/users/assets.md': 'bc-fusion/users/assets.md'
+        'docs/bcfusion/users/swaps.md': 'bc-fusion/users/swaps.md'
+        'docs/bcfusion/users/timelocks.md': 'bc-fusion/users/timelocks.md'
+        'docs/bcfusion/users/bep153-stake-migration.md': 'bc-fusion/users/bep153-stake-migration.md'
+        'docs/bcfusion/users/new-stake.md': 'bc-fusion/users/new-stake.md'
+        'docs/bcfusion/users/gov.md': 'bc-fusion/users/gov.md'
+        'docs/bcfusion/owners/bind.md': 'bc-fusion/owners/bind.md'
+        'docs/bsc-faucet.md': 'bnb-smart-chain/developers/faucet.md'
+
 
 extra_css:
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
