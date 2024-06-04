@@ -333,7 +333,9 @@ plugins:
         'docs/bcfusion/users/gov.md': 'bc-fusion/users/gov.md'
         'docs/bcfusion/owners/bind.md': 'bc-fusion/owners/bind.md'
         'docs/bsc-faucet.md': 'bnb-smart-chain/developers/faucet.md'
-
+        'docs/validator/fullnode.md': 'bnb-smart-chain/developers/node_operators/full_node.md'
+        'docs/rpc.md': 'bnb-smart-chain/developers/rpc.md'
+        'docs/learn/intro.md': 'index.md'
 
 extra_css:
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
