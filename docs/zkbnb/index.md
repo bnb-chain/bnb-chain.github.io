@@ -15,7 +15,7 @@ hide:
         <p>zkBNB is the launchpad to achieve infinite scaling for all things Web3 and GameFi. It offers incredible scalability, Layer-1 level security, and frictionless developer experience to build dApps that can onboard the next billion users.</p>
     </div>
     <div class="image">
-        <img src="static/zkbnb.png" alt="BNB Chain Fusion" loading="lazy">
+        <img src="static/zkBNB.png" alt="BNB Chain Fusion" loading="lazy">
     </div>
 </div>
 
