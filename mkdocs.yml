@@ -344,13 +344,13 @@ extra_css:
   - assets/style/components/content.css
   - assets/style/components/footer-nav.css
   - assets/style/components/footer.css
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  - https://unpkg.com/katex@0.16.10/dist/katex.min.css
 
 extra_javascript:
   - assets/js/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
+  - https://unpkg.com/katex@0.16.10/dist/katex.min.js
+  - https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js
 
 extra:
   generator: false
