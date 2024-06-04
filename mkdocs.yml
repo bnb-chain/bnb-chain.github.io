@@ -270,6 +270,13 @@ nav:
           - Roadmap: ./bnb-greenfield/release-notes/roadmap.md
           - Feature Lists: ./bnb-greenfield/release-notes/features.md
       - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
+  - zkBNB:
+      - zkBNB: ./zkbnb/index.md
+      - Overview: ./zkbnb/overview.md
+      - Core Concepts:
+          - Overview: ./zkbnb/core-concept/overview.md
+          - Architecture: ./zkbnb/core-concept/zkbnb-arch.md
+      - Resources: ./zkbnb/resources.md
 
 markdown_extensions:
   - toc:
