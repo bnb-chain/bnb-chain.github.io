@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
     
@@ -254,7 +254,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -2290,7 +2290,8 @@ reward, the following steps can be taken: 1) track the initial delegation amount
 the <code>getPooledBNB</code> of the credit contract of a validator, 3) do the math.</p>
 <h3 id="how-to-get-the-total-staking-address-of-a-validator">How to get the total staking address of a validator?<a class="headerlink" href="#how-to-get-the-total-staking-address-of-a-validator" title="Link to this section">¶</a></h3>
 <p>The contract does not provide a function to get the total staking address of a validator.
-It needs a offchain service to index <code>Delegated</code>, <code>Redelegated</code>, <code>Undelegated</code> events for the purpose.</p>
+It needs a offchain service to index <code>Delegated</code>, <code>Redelegated</code>, <code>Undelegated</code> events for the purpose.
+For example, you can consider building an indexer to crawl <code>Delegated</code>, <code>Redelegated</code>, <code>Undelegated</code> events on <a href="https://bscscan.com/address/0x0000000000000000000000000000000000002002">stakeHub contract</a> first. Then sort the events according to your requirements.</p>
 <h3 id="how-to-get-all-validators-information">How to get all validators’ information?<a class="headerlink" href="#how-to-get-all-validators-information" title="Link to this section">¶</a></h3>
 <p>The <code>StakeHub</code> contract provides the <code>getValidators</code> function to get all validators’ information, including the
 <code>operator</code> addresses and <code>credit contract</code> addresses.</p>
@@ -2500,7 +2501,7 @@ to <a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi
     <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="../../../assets/js/mathjax.js"></script>
       
