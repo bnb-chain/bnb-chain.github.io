@@ -232,6 +232,7 @@ the `getPooledBNB` of the credit contract of a validator, 3) do the math.
 
 The contract does not provide a function to get the total staking address of a validator.
 It needs a offchain service to index `Delegated`, `Redelegated`, `Undelegated` events for the purpose.
+For example, you can consider building an indexer to crawl `Delegated`, `Redelegated`, `Undelegated` events on [stakeHub contract](https://bscscan.com/address/0x0000000000000000000000000000000000002002) first. Then sort the events according to your requirements.
 
 ### How to get all validators' information?
 
