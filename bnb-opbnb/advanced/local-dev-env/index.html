@@ -1507,24 +1507,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Additional Information
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1990,24 +1972,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Additional Information
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2035,10 +1999,12 @@
 <p>Install and start the entire opbnb system locally, including L1 (BNB Smart Chain) and L2 development nodes. Running a local development environment is a great way to test the behavior of your code and contracts.</p>
 <h2 id="how-to-do-it">How to do it<a class="headerlink" href="#how-to-do-it" title="Link to this section">¶</a></h2>
 <ol>
-<li>Make sure the following software is installed: golang, node 16+, yarn, make, python2, python3, docker, foundry.<br>
+<li>Make sure the following software is installed: golang, nodejs 16+, make, pnpm, python3, docker, foundry, poetry, jq
    Tips:</li>
 </ol>
-<p>Install Foundry by following <a href="https://getfoundry.sh/">the instructions located here</a>.</p>
+<p>Install Foundry by following <a href="https://getfoundry.sh/">the instructions located here</a>.<br>
+   Please make sure your Foundry version matches the one described in opbnb/versions.json.
+   If they do not match, please use a command such as <code>foundryup -C xxxxxx</code> to modify it.</p>
 <ol>
 <li>Clone opbnb monorepo:</li>
 </ol>
@@ -2046,8 +2012,8 @@
 <span class="w">    </span><span class="nb">cd</span><span class="w"> </span>opbnb
 </code></pre></div>
 <ol>
-<li>Running <code>yarn</code> and then running <code>yarn build</code>.</li>
-<li>Running <code>make devnet-up-deploy</code> and wait for the docker container to start.(The first run will be relatively slow because it needs to download the image and deploy the contract, and then it will be fast)</li>
+<li>Running <code>pnpm install</code> and then running <code>pnpm build</code>.</li>
+<li>Running <code>make devnet-up</code> and wait for the docker container to start.(The first run will be relatively slow because it needs to download the image and deploy the contract, and then it will be fast)</li>
 <li>Through the <code>docker ps</code> command, you can see that 5 containers have been started: <code>ops-bedrock_l1_1</code>, <code>ops-bedrock_l2_1</code>, <code>ops-bedrock_op-node_1</code>, <code>ops-bedrock_op-batcher_1</code>, <code>ops-bedrock_op-proposer_1</code></li>
 </ol>
 <p>Now L1 is accessible at <code>http://localhost:8545</code>, and L2 is accessible at <code>http://localhost:9545</code></p>
@@ -2055,12 +2021,10 @@
 <p>To stop, run (in the root directory of the monorepo) <code>make devnet-down</code>.<br>
 To clean everything, run (in the root directory of the monorepo) <code>make devnet-clean</code>.
 To view logs, run <code>make devnet-logs</code></p>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Link to this section">¶</a></h2>
+<h1 id="notes">Notes<a class="headerlink" href="#notes" title="Link to this section">¶</a></h1>
 <ol>
-<li>If you encounter a ValueError: invalid mode: ‘rU’ while trying to load binding.gyp error when executing <code>yarn</code>, this may be caused by python3 installed on your computer but Npm requires python 2.7. You need to install python 2.7 and configure the environment variable to specify the python version to use: <code>export npm_config_python=/path/to/executable/python</code>.</li>
-<li>When executing for the first time, please be patient if you see the message “wait L1 up…”, as the BSC network takes time to initialize.</li>
+<li>When executing for the first time, please be patient if you see the message “Waiting for RPC server at…”, as the BSC network takes time to initialize.</li>
 <li>If you encounter an error during the “Deploying contracts” step, please try again as it usually recovers.</li>
-<li>Do not use the <code>make devnet-up</code> command, use the <code>make devnet-up-deploy</code> command to start devnet. The <code>devnet-up</code> command is not well adapted.</li>
 </ol>
 <h2 id="additional-information">Additional Information<a class="headerlink" href="#additional-information" title="Link to this section">¶</a></h2>
 <p>L1 chain ID is <code>714</code>.<br>
