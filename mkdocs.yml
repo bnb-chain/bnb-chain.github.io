@@ -64,9 +64,9 @@ nav:
     - Upcoming:
       - Haber Hardfork(BSC): ./announce/haber-bsc.md
       - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
-      - Serengeti Hardfork(Greenfield): ./announce/serengeti-greenfield.md
     - Passed:
       - Feynman Hardfork(BSC): ./announce/feynman-bsc.md
+      - Serengeti Hardfork(Greenfield): ./announce/serengeti-greenfield.md
 
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc-fusion/index.md
