@@ -16,13 +16,6 @@
         </div>
         <span class="announce-date">2023 MAY 24</span>
     </a>
-     <a href="./serengeti-greenfield">
-        <div>
-            <div class="announce-title">Greenfield Serengeti Hardfork</div>
-            <div class="announce-desc">Introduce major updates and enhancements to the platform, including storage fee paymaster</div>
-        </div>
-        <span class="announce-date">2023 MAY 24</span>
-    </a>
     
     
 </div>
