@@ -57,7 +57,7 @@ For SPs interested in becoming successors, you need to perform the following dat
 #### 2.1 ReserveSwapIn
 
 The perspective successor SP needs to determine Global Virtual group(GVG) and Global Virtual Group Family(VGF) that exiting SP has, 
-This information can be obtained from [GreenfieldScan](https://greenfieldscan-mainnet.fe.nodereal.cc/account/0x2901fddef924f077ec6811a4a6a1cb0f13858e8f?tab=gvg) or by using the provided CLI.
+This information can be obtained from [GreenfieldScan](https://greenfieldscan.com/account/0x2901fddef924f077ec6811a4a6a1cb0f13858e8f?tab=gvg) or by using the provided CLI.
 
 Usage:
 ```shell
