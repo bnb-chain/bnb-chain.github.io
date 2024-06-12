@@ -16,6 +16,12 @@
         </div>
         <span class="announce-date">2023 MAY 24</span>
     </a>
-    
+    <a href="./second-sunset-bc-testent">
+        <div>
+            <div class="announce-title">BC Second Sunset Hardfork (Testnet) </div>
+            <div class="announce-desc">Enable Second Sunset Hardfork on BC testnet</div>
+        </div>
+        <span class="announce-date">2023 June 21</span>
+    </a>
     
 </div>
