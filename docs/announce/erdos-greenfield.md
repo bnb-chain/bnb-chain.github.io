@@ -1,4 +1,4 @@
-# Sereengeti Upgrade of Greenfield
+# Erdos Upgrade of Greenfield
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>

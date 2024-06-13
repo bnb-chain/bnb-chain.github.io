@@ -6,7 +6,16 @@ title: Release Notes
 #order: 7
 ---
 
+
 # Release Notes
+## Greenfield v1.8.0 - Veld Upgrade
+BNB Greenfield v1.8.0 introduces the Veld Hardfork, which includes the following bug fixing features:
+
+* [#621](https://github.com/bnb-chain/greenfield/pull/621) fix: add bucket status to bucket migration related events
+* [#625](https://github.com/bnb-chain/greenfield/pull/625) fix: discontinued bucket can't be migrated
+* [#626](https://github.com/bnb-chain/greenfield/pull/626) fix: principal value supports group name
+* [#632](https://github.com/bnb-chain/greenfield/pull/632) fix: ignore register channel error
+
 ## Greenfield v1.7.0 - Erdos Upgrade
 BNB Greenfield v1.7.0 introduces the Erdos Hardfork, which includes the following major features:
 

@@ -65,9 +65,10 @@ nav:
       - Haber Hardfork(BSC): ./announce/haber-bsc.md
       - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
       - Second Sunset Hardfork(BC testnet): ./announce/second-sunset-bc-testnet.md
+      - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
     - Passed:
       - Feynman Hardfork(BSC): ./announce/feynman-bsc.md
-      - Serengeti Hardfork(Greenfield): ./announce/serengeti-greenfield.md
+      - Erdos Hardfork(Greenfield): ./announce/erdos-greenfield.md
 
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc-fusion/index.md

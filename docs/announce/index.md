@@ -23,5 +23,18 @@
         </div>
         <span class="announce-date">2023 June 21</span>
     </a>
-    
+    <a href="./veld-greenfield/">
+        <div>
+            <div class="announce-title">Greenfield Veld Hardfork (Testnet) </div>
+            <div class="announce-desc">Bugfixing on Greenfield Testnet</div>
+        </div>
+        <span class="announce-date">2024 June 25</span>
+    </a>
+    <a href="./veld-greenfield/">
+        <div>
+            <div class="announce-title">Greenfield Veld Hardfork (Mainnet) </div>
+            <div class="announce-desc">Bugfixing on Greenfield Mainnet</div>
+        </div>
+        <span class="announce-date">2024 July 08</span>
+    </a>
 </div>
