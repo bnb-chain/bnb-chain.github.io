@@ -29,4 +29,4 @@ No new feature is introduced.
 * [#632](https://github.com/bnb-chain/greenfield/pull/632) fix: ignore register channel error
 
 
-Reference: https://www.bnbchain.org/en/blog/bnb-greenfield-veld-hardfork
+[//]: # (Reference: https://www.bnbchain.org/en/blog/bnb-greenfield-veld-hardfork)
