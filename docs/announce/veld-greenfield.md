@@ -7,9 +7,9 @@
 
 ## Upgrade Timeline
 
-- Testnet: June 25th at 07:00 AM UTC Blockheight: 9,581,218
+- Testnet: June 25 2024 07:00:00 AM UTC Blockheight: 9,581,218
 
-- Mainnet: July 8th at 07:00 AM UTC Blockheight: 9,269,910 
+- Mainnet: July 8 2024 07:00:00 AM UTC Blockheight: 9,269,910 
 
 ## Validators and SPs should complete upgrading to the latest version before hardfork: 
 
