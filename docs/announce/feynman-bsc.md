@@ -2,14 +2,13 @@
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>
-    <span class="announce-date">2024 April 10</span>
 </div>
 
 ## Upgrade Timeline
 The Haber upgrade will happen at:
 
-- Testnet:  11th March 2024 at 6:00 UTC
-- Mainnet:  18th April 2024 at 05:49 UTC
+- Testnet:  March 11 2024 06:00:00 AM UTC
+- Mainnet:  April 18 2024 05:49:00 AM UTC
 
 ## Upgrade to BSC Node v1.3.13 Before Hardfork
 

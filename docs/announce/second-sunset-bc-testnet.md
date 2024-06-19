@@ -2,14 +2,13 @@
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>
-    <span class="announce-date">2024 June 21</span>
 </div>
 
 ## Upgrade Timeline
 
 The Second Sunset Hardfork will happen at:
 
-- Testnet: June 21, 2024, at 6:00 AM UTC
+- Testnet: June 21 2024 6:00:00 AM UTC
 
 ## Upgrade to BC Node v0.10.21 Before Hardfork
 
