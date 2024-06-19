@@ -2,7 +2,6 @@
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>
-    <span class="announce-date">2024 June 21</span>
 </div>
 
 ## Upgrade Timeline
