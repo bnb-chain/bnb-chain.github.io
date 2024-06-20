@@ -114,5 +114,3 @@ sections in the config.toml. Example:
 
 It is highly recommended to publish information in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info)
 so other builders can find it.
-
- 
