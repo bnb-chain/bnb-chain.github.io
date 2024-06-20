@@ -77,8 +77,7 @@ Deploy the sentry service according to the readme of [sentry repo](https://githu
 
 Here are a few key points to highlight.
 
-- ❗❗❗This is an important security notice: Please do not configure any validator's private key in the config file of the sentry. 
-Please create entirely new accounts as pay bid accounts.
+- ❗❗❗This is an important security notice: Please do not configure any validator's private key in the config file of the sentry. Please create entirely new accounts as pay bid accounts.
 
 - One sentry service can manage multiple validators.
 
