@@ -41,7 +41,7 @@ The validator should open its RPC access to the mev-sentry. The mev-sentry shoul
 
 ### Hardware Spec
 
-Mev-Sentry: 2 CPUs and 4 GB of RAM.
+Mev-Sentry: The recommended specifications for the mev-sentry machine are 2 CPUs and 4 GB of RAM.
 
 ## Preparation
 
