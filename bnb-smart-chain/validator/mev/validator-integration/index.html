@@ -1476,6 +1476,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Validator Topology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Spec
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1920,6 +1935,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Validator Topology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Spec
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2004,6 +2034,9 @@ need to carefully evaluate these risk accordingly:</p>
    potential threats.</p>
 </li>
 </ol>
+<p>The validator should open its RPC access to the mev-sentry. The mev-sentry should open its RPC to the public network with a domain host. The information of validator should be registered in <a href="https://github.com/bnb-chain/bsc-mev-info">bsc-mev-info</a>.</p>
+<h3 id="hardware-spec">Hardware Spec<a class="headerlink" href="#hardware-spec" title="Link to this section">¶</a></h3>
+<p>Mev-Sentry: The recommended specifications for the mev-sentry machine are 2 CPUs and 4 GB of RAM.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Link to this section">¶</a></h2>
 <p>The BNB Chain community has maintained an open-source version of the
 Sentry service. You can clone the code repository from
@@ -2026,7 +2059,7 @@ consider and determine several key parameters:</p>
    congestion.</p>
 </li>
 </ol>
-<p>It is suggested that to purchase a domain that is related to the moniker
+<p>It is suggested to purchase a domain that is related to the moniker
 name of the validator. The builders will send requests through this
 domain. A BSC account should be created in advance as the payment
 account. No BNB is required in that account if <strong>BidFeeCeil</strong> is zero,
@@ -2068,6 +2101,8 @@ sections in the config.toml. Example:</p>
 <span class="w">  </span><span class="n">ValidatorCommission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="c1"># validator claim 1% from block reward</span>
 <span class="w">  </span><span class="n">BidSimulationLeftOver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50000000</span><span class="w"> </span><span class="c1"># 50ms, the time left for bid simulation</span>
 <span class="w">  </span><span class="n">SentryURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://bsc-mev-sentry.io"</span><span class="w"> </span><span class="c1"># it is used for the validator to access the sentry, it should be a private URL or IP:Port.</span>
+
+<span class="w">  </span><span class="c1"># Find builders in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info)</span>
 
 <span class="w">  </span><span class="k">[[Eth.Miner.Mev.Builders]]</span>
 <span class="w">  </span><span class="n">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0x45EbEBe8...664D59c12"</span><span class="w"> </span><span class="c1"># builder address which validator is willing to receive bid from</span>
