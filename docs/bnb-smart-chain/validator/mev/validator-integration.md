@@ -37,7 +37,11 @@ It is suggested that to split the internal network into two part:
    safeguards on the network gateway to prevent DoS attacks and other
    potential threats.
 
-The validator shoule grant its RPC port access only to the mev-sentry. The mev-sentry should open its RPC port to the public and register a domain. The domain should be registered in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info) to allow builders access. The recommended specifications for the mev-sentry machine are 2 CPUs and 4 GB of RAM.
+The validator should open its RPC access to the mev-sentry. The mev-sentry should open its RPC to the public network with a domain host. The information of validator should be registered in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info).
+
+### Hardware Spec
+
+Mev-Sentry: 2 CPUs and 4 GB of RAM.
 
 ## Preparation
 
