@@ -37,6 +37,8 @@ It is suggested that to split the internal network into two part:
    safeguards on the network gateway to prevent DoS attacks and other
    potential threats.
 
+The validator shoule grant its RPC port access only to the mev-sentry. The mev-sentry should open its RPC port to the public and register a domain. The domain should be registered in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info) to allow builders access. The recommended specifications for the mev-sentry machine are 2 CPUs and 4 GB of RAM.
+
 ## Preparation
 
 The BNB Chain community has maintained an open-source version of the
@@ -58,7 +60,7 @@ consider and determine several key parameters:
    being broadcast too late and subsequently discarded during network
    congestion.
 
-It is suggested that to purchase a domain that is related to the moniker
+It is suggested to purchase a domain that is related to the moniker
 name of the validator. The builders will send requests through this
 domain. A BSC account should be created in advance as the payment
 account. No BNB is required in that account if **BidFeeCeil** is zero,
@@ -102,6 +104,8 @@ sections in the config.toml. Example:
   ValidatorCommission = 100 # validator claim 1% from block reward
   BidSimulationLeftOver = 50000000 # 50ms, the time left for bid simulation
   SentryURL = "http://bsc-mev-sentry.io" # it is used for the validator to access the sentry, it should be a private URL or IP:Port.
+
+  # Find builders in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info)
 
   [[Eth.Miner.Mev.Builders]]
   Address = "0x45EbEBe8...664D59c12" # builder address which validator is willing to receive bid from
