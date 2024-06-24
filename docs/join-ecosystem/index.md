@@ -20,7 +20,7 @@ hide:
 
 <div class="section-body">
     <a href="./platforms/dappbay.md">
-        <div>DappBay</div>
+        <div>DappBay & DappRader</div>
         <p>Discover top dApps built on BNB Smart Chain, opBNB & BNB Greenfield, the leading blockchain scaling solution.</p>
     </a>
     <a href="./platforms/dev-tool.md">
