@@ -12,8 +12,7 @@ hide:
 <div class="section-head">
     <div class="left">
         <h1>Join BNB Ecosystem</h1>
-        <p>There are several ways to share your project with BNBChain Ecosystem or seeking for cooperations. 
-        
+        <p>There are several ways to share your project with BNBChain Ecosystem or seeking for cooperations.
         We want to make it as easy as possible for prjects to get more exposure in BNBChain Ecosystem or ask for support from the team. Below is the guideline that we ask projects to follow so that we can get achieve this efficiently. If you find anything to improve, pls contact us on [**BNBChain official discord**](https://discord.com/invite/bnbchain).</p>
     </div>
 </div>
