@@ -19,15 +19,15 @@ hide:
 
 
 <div class="section-body">
-    <a href="./platforms/dappbay.md">
-        <div>DappBay & DappRadar</div>
+    <a href="./platforms/dappbay">
+        <div>DappBay</div>
         <p>Discover top dApps built on BNB Smart Chain, opBNB & BNB Greenfield, the leading blockchain scaling solution.</p>
     </a>
-    <a href="./platforms/dev-tool.md">
+    <a href="./platforms/dev-tool">
         <div>Developer Tools</div>
         <p>List your project on the tool page or find the right tools for your development.</p>
     </a>
-    <a href="./platforms/electrical-capital.md">
+    <a href="./platforms/electrical-capital">
         <div>Electrical Capital</div>
         <p>Add your project to BNB ecosystem and contribute on BNB chain developer data</p>
     </a>
