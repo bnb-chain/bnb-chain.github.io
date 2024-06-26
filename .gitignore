@@ -5,3 +5,7 @@ site/
 .cache
 
 .DS_Store
+
+build
+
+.docusaurus
