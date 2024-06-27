@@ -1,4 +1,4 @@
-# Second Sunset Hardfork of BC Testnet
+# Second Sunset Hardfork of BC
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>
