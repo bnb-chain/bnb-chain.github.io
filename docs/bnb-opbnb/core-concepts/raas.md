@@ -14,7 +14,7 @@ The demand for RaaS within the BNB Chain ecosystem is not just a trend; it's a s
 
 # Building with RaaS Aligned with BNB Chain’s Future
 
-Building with Rollup as a Service (RaaS) on the BNB Chain involves leveraging specialized services from providers like [NodeReal](https://nodereal.io/semita), [AltLayer](https://altlayer.io/), [Movement Labs](https://movementlabs.xyz/), [Lumoz](https://lumoz.org/rollups), and [4EVERLAND](https://docs.4everland.org/raas-beta/whats-rollups), each offering unique tools to enhance blockchain application development. By adopting these specialized RaaS solutions, developers can leverage the strengths of the BNB Chain ecosystem to create innovative, reliable, and user-centric blockchain applications.
+Building with Rollup as a Service (RaaS) on the BNB Chain involves leveraging specialized services from providers like [NodeReal](https://nodereal.io/semita), [AltLayer](https://altlayer.io/), [Movement Labs](https://movementlabs.xyz/), [Lumoz](https://lumoz.org/rollups), and [4everland](https://docs.4everland.org/raas-beta/whats-rollups), each offering unique tools to enhance blockchain application development. By adopting these specialized RaaS solutions, developers can leverage the strengths of the BNB Chain ecosystem to create innovative, reliable, and user-centric blockchain applications.
 
 | Service Provider | Developer tools and tech stack                               | How to Start                                       |
 | ---------------- | ------------------------------------------------------------ | -------------------------------------------------- |

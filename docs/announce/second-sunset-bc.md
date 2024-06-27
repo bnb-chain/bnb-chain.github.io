@@ -1,4 +1,4 @@
-# Second Sunset Hardfork of BC Testnet
+# Second Sunset Hardfork of BC
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>
@@ -8,29 +8,29 @@
 
 The Second Sunset Hardfork will happen at:
 
-- Testnet: June 21 2024 6:00:00 AM UTC
+- Mainnet: July 14 2024 6:00:00 AM UTC
 
-## Upgrade to BC Node v0.10.21 Before Hardfork
+## Upgrade to BC Node v0.10.22 Before Hardfork
 
 BC node need to be upgraded before the hardfork time.
 
-- https://github.com/bnb-chain/node/releases/tag/v0.10.21
+- https://github.com/bnb-chain/node/releases/tag/v0.10.22
 
 ### Upgrade Instructions
 
 As a fullnode runner, you need to take the following steps before the hardfork block height.
 
-1) Download the new v0.10.21 binary and replace the previous version.
+1) Download the new v0.10.22 binary and replace the previous version.
 
 2) Download the new config
-   file [app.toml](https://github.com/bnb-chain/node/releases/download/v0.10.21/testnet_config.zip) to replace the
+   file [app.toml](https://github.com/bnb-chain/node/releases/download/v0.10.22/mainnet_config.zip) to replace the
    previous version or add the following under the [upgrade] module of `app.toml`.
 
 ```toml
-SecondSunsetHeight = 54554742
+SecondSunsetHeight = 378062790
 ```
 
-3) Stop the bnbchaind process and restart it with v0.10.21.
+3) Stop the bnbchaind process and restart it with v0.10.22.
 
 ```shell
 service bnbchaind restart
