@@ -1,4 +1,4 @@
-## Submit Project on DappBay & DappRadar
+# Submit Project on DappBay & DappRadar
 
 DappBay & DappRadar are 2 hubs for users to discover top dApps built on BNB Ecosystem. Projects are encouraged to submit dApp informations to them to get full exposure to users. 
 
