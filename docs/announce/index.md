@@ -14,6 +14,6 @@
             <div class="announce-title">BC Second Sunset Hardfork</div>
             <div class="announce-desc">Enable Second Sunset Hardfork on BC</div>
         </div>
-        <span class="announce-date">2024 June 08</span>
+        <span class="announce-date">2024 June 26</span>
     </a>
 </div>
