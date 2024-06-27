@@ -22,4 +22,4 @@ Building with Rollup as a Service (RaaS) on the BNB Chain involves leveraging sp
 | Altlayer         | Versatile rollup-up stack support and no-code setup dashboard | https://altlayer.io/                               |
 | Movement Labs    | Move based L2 on BSC support                                 | https://movementlabs.xyz/                          |
 | Lumoz            | Support zkevm on BSC                                         | https://lumoz.org/rollups                          |
-| 4everland        | One-click deplopyment of rollups on BSC                      | https://docs.4everland.org/raas-beta/whats-rollups |
+| 4EVERLAND        | One-click deplopyment of rollups on BSC                      | https://docs.4everland.org/raas-beta/whats-rollups |
