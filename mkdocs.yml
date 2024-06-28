@@ -62,6 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
+      - Harber Fix Hardfork(BSC): ./announce/harber-fix.md
       - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
       - Second Sunset Hardfork(BC): ./announce/second-sunset-bc.md
     - Passed:

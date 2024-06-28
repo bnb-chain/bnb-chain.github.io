@@ -2,6 +2,13 @@
 # Announcement
 
 <div class="doc-announce">
+    <a href="./harber-fix/">
+        <div>
+            <div class="announce-title">BSC Harber Fix Upgrade</div>
+            <div class="announce-desc">Bugfixing on BSC testnet</div>
+        </div>
+        <span class="announce-date">2024 July 3rd</span>
+    </a>
     <a href="./veld-greenfield/">
         <div>
             <div class="announce-title">Greenfield Veld Hardfork</div>
