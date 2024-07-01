@@ -238,6 +238,7 @@ nav:
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
           - How to Contribute: ./bnb-greenfield/for-developers/contribute.md
 
+          - Blob Hub: ./bnb-greenfield/for-developers/blob-hub.md
 
       - Greenfield Blockchain:
           - Overview: ./bnb-greenfield/greenfield-blockchain/overview.md
