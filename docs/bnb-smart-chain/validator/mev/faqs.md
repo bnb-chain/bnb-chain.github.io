@@ -38,8 +38,15 @@
    builder API could be the BNBChain validator.
 
 ### 5. Where can I find the BNBChain builders information? 
-   You can find the BNBChain builders through a public [builder info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/builders)
-   Besides the addresses and corresponding websites, you can also view the MEV statistics from [MEV Stats Dashboard](https://dune.com/bnbchain/bnb-smart-chain-mev-stats)
+   You can find the BNBChain builders through a public 
+   [builder info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/builders) 
+   Besides the addresses and corresponding websites, you can also view the MEV statistics 
+   from [MEV Stats Dashboard](https://dune.com/bnbchain/bnb-smart-chain-mev-stats)
 
-### 5. How many validators have been integrated with the builders?
-   You can find the validators that has implemented the PBS solution from [validator info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/validators)
+### 6. How many validators have been integrated with the builders?
+   You can find the validators that has implemented the PBS solution from 
+   [validator info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/validators)
+
+### 7. Where can I find the BNBChain MEV statistic dashboard? 
+   You can view the MEV statistics 
+   from [MEV Stats Dashboard](https://dune.com/bnbchain/bnb-smart-chain-mev-stats)
