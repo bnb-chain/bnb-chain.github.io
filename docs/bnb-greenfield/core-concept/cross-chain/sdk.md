@@ -32,7 +32,6 @@ The BaseApp provides the following core functions:
 1. `_getTotalFee():` This function returns the total value required to send a cross-chain package.
 2. `Setters:` There are several setters available for configuring various aspects of the smart contract, such as:
    - `callbackGasLimit`: Sets the gas limit for the callback function.
-   - `refundAddress`: Sets the address to which refunds should be sent.
    - `failureHandleStrategy`: Sets the strategy for handling failures during the execution of the smart contract.
 
 In addition to these functions, BaseApp provides three virtual functions:
@@ -61,8 +60,8 @@ various bucket resource operations. Below, we provide a detailed overview of the
 1. `_bucketGreenfieldCall(uint32 status, uint8 operationType, uint256 resourceId, bytes calldata callbackData)`: This function serves as a router for bucket resource callback. It processes and directs the call based on the provided parameters.
 2. `_retryBucketPackage()`: This function retries a failed bucket resource package.
 3. `_skipBucketPackage()`: This function skips a failed bucket resource package.
-4. `_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, bytes calldata _sig, uint64 _chargedReadQuota)`: This function sends a create bucket cross-chain request to greenfield without a callback. It takes various parameters, such as creator, name, visibility type, charged read quota, service provider address, expire height, and signature.
-5. `_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, bytes calldata _sig, uint64 _chargedReadQuota, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)`: This function sends a create bucket cross-chain request to greenfield with a callback. It takes the same parameters as the previous function, along with some additional parameters for the callback.
+4. `_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, uint32 _globalVirtualGroupFamilyId, bytes calldata _sig, uint64 _chargedReadQuota)`: This function sends a create bucket cross-chain request to greenfield without a callback. It takes various parameters, such as creator, name, visibility type, charged read quota, service provider address, expire height, global virtual family id and signature.
+5. `_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, uint32 _globalVirtualGroupFamilyId, bytes calldata _sig, uint64 _chargedReadQuota, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)`: This function sends a create bucket cross-chain request to greenfield with a callback. It takes the same parameters as the previous function, along with some additional parameters for the callback.
 6. `_deleteBucket(uint256 _tokenId)`: This function sends a delete bucket cross-chain request to greenfield without a callback, using the provided token ID.
 7. `_deleteBucket(uint256 _tokenId, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)`: This function sends a delete bucket cross-chain request to greenfield with a callback, using the provided token ID and callback data.
 
@@ -105,7 +104,7 @@ delete, update, and manage groups. Below, we provide a detailed overview of the 
 2. `_retryGroupPackage()`: This function retries a failed group resource package.
 3. `_skipGroupPackage()`: This function skips a failed group resource package.
 4. `_createGroup(address _owner, string memory _groupName)`: This function creates a new group with the provided owner address and group name.
-5. `_createGroup(address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, address _owner, string memory _groupName, bytes memory _callbackData, uint256 _callbackGasLimit)`: This function creates a new group with a callback, using the provided owner address, group name, and callback data.
+5. `_createGroup(address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData,, address _owner, string memory _groupName, uint256 _callbackGasLimit)`: This function creates a new group with a callback, using the provided owner address, group name, and callback data.
 6. `_deleteGroup(uint256 _tokenId)`: This function deletes a group using the provided token ID.
 7. `_deleteGroup(uint256 _tokenId, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)`: This function deletes a group with a callback, using the provided token ID and callback data.
 8. `_updateGroup(address _owner, uint256 _tokenId, uint8 _opType, address[] memory _members, uint64[] memory _expiration)`: This function updates a group based on the provided owner address, token ID, operation type, and an array of member addresses.
