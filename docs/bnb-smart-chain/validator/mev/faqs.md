@@ -1,6 +1,17 @@
 # FAQs
 
-### 1. Do builders fetch the in-turn proposer's GasCeil to build block？
+### 1. Why is the MEV solution important for the BNBChain ecosystem?
+
+   BNBChain's MEV solution leverages Proposer Builder Separation (PBS) 
+   architecture to foster a more transparent and fair block space market. 
+   Through PBS, users gain the power to select their preferred builder for transaction 
+   submission, while MEV rewards are equitably distributed among searchers, validators, builders, and BNB stakers. 
+   This approach promotes transparency, fairness, user choice, and network security. 
+   By distributing rewards across various roles, BNBChain encourages wider 
+   participation and reduces the risk of centralization, to build a decentralized and inclusive blockchain ecosystem.
+
+
+### 2. Do builders fetch the in-turn proposer's GasCeil to build block？
 
    Yes, you could using RPC mev_params to query validator's MEV information
    before building block, it can help to 1) calculate a valid header with gas no
@@ -9,7 +20,7 @@
    validatorCommission.
 
 
-### 2. How does the validator choose the best bid?
+### 3. How does the validator choose the best bid?
 
    The block reward is calculated as **gasFee**, the validator reward is
    calculated as **gasFee*commissionRate - builderFee**. Every
@@ -21,6 +32,7 @@
    local block, it will be sealed by the validator.
 
 
-### 3. Who can become the builder?
+### 4. Who can become the builder?
 
-   Anyone is allowed to become a builder.
+   BNBChain is a permission-less ecosystem, anyone who implements the standard 
+   builder API could be the BNBChain validator.
