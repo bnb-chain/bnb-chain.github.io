@@ -1,5 +1,5 @@
 ---
-title: Protocol FAQs
+title: Protocol FAQs - opBNB FAQs
 ---
 
 ### How does opBNB achieve high performance and cheap gas fees?

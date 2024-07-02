@@ -1,5 +1,5 @@
 ---
-title: Blockchain Command Line
+title: Blockchain Command Line - BNB Greenfield
 index: true
 dir:
   order: 4

@@ -1,6 +1,6 @@
 ---
 sidebar_label: Rollup as a Service (RaaS) on BNB Chain
-title: Rollup as a Service (RaaS) on BNB Chain
+title: Rollup as a Service (RaaS) on BNB Chain - opBNB
 description: Rollup as a Service (RaaS) on BNB Chain
 ---
 

@@ -1,6 +1,8 @@
 ---
 hide:
 - toc
+
+title: BNB Greenfield
 ---
 
 <style>

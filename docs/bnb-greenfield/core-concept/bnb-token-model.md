@@ -1,5 +1,6 @@
 ---
 sidebar_label: BNB Token Model
+title: BNB Token Model - BNB Greenfield Core Concepts
 ---
 
 # BNB Token Model

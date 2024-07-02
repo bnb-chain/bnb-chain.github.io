@@ -1,5 +1,5 @@
 ---
-title: SP Common Issues
+title: SP Common Issues - BNB Greenfield SP
 ---
 
 This is a list of solutions to common SP deployment issues

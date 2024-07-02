@@ -1,5 +1,5 @@
 ---
-title: SP Compiling and Dependencies
+title: SP Compiling and Dependencies - BNB Greenfield SP
 ---
 
 ## Compile SP

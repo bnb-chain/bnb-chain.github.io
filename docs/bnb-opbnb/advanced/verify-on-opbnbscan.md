@@ -1,3 +1,7 @@
+---
+title: Verify on opbnbscan - opBNB
+---
+
 # Use opBNBScan to verify your contract via Hardhat and Truffle
 
 opBNBScan provides a convenient and user-friendly platform for developers to verify their smart contracts using popular developer tools like Truffle and Hardhat. Here are the step-by-step instructions to get started with opBNBScan's smart contract verification APIs.

@@ -1,3 +1,7 @@
+---
+title: Smart Contract SDK - BNB Greenfield Cross Chain
+---
+
 # Smart Contract SDK
 
 The [Smart Contract SDK](https://github.com/bnb-chain/greenfield-contracts-sdk),

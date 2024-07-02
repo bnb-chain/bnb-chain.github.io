@@ -1,5 +1,5 @@
 ---
-title: Run Node
+title: Run Node - BNB Greenfield Node
 order: 4
 ---
 

@@ -1,3 +1,6 @@
+---
+title: Geth P2P Sync - opBNB Develop
+---
 # Geth P2P Sync Feature
 
 We're excited to introduce a new feature in this release: The Geth P2P Sync Feature. This feature significantly enhances the speed of block data synchronization by leveraging peer-to-peer syncing among geth nodes, as opposed to the previous method of deriving transactions from L1 for each synchronization.

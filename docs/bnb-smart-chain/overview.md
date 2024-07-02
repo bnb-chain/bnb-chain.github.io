@@ -1,3 +1,7 @@
+---
+title: Overview - BNB Smart Chain
+---
+
 # BNB Smart Chain - High Performance DeFi Hub
 
 BNB Smart Chain (BSC) is a high-performance blockchain network. Officially launched on September 1, 2020, BSC is designed to enhance the functionality of the BNB Chain and facilitate the development and interaction of decentralized applications (DApps), decentralized finance (DeFi) platforms, and other blockchain-based innovations.

@@ -1,3 +1,7 @@
+---
+title: Workflow - BNB Greenfield SP
+---
+
 # SP Workflow
 
 This section will combine all the current and existing workflows of SP to help you understand how SP works and how internal state flows.

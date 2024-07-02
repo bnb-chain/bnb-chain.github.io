@@ -1,3 +1,6 @@
+---
+title: Hardware Requirements - opBNB Develop
+---
 
 # Hardware Requirements
 

@@ -1,5 +1,5 @@
 ---
-title: Contract Entrypoint
+title: Contract Entrypoint - BNB Greenfield
 order: 7
 ---
 

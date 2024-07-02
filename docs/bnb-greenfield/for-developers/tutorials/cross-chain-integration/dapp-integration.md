@@ -1,5 +1,5 @@
 ---
-title: Integrating BSC Smart Contracts with Greenfield Projects
+title: Integrating BSC Smart Contracts with Greenfield Projects - BNB Greenfield Cross Chain Integration
 order: 4
 ---
 

@@ -1,6 +1,6 @@
 ---
 sidebar_label: Optimizations on OP Stack
-title: Optimizations on OP Stack
+title: Optimizations on OP Stack - opBNB
 description: Optimizations to OP Stack for enhanced performance & low gas fees
 ---
 
