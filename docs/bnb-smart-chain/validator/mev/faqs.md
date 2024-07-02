@@ -35,7 +35,7 @@
 ### 4. Who can become the builder?
 
    BNBChain is a permission-less ecosystem, anyone who implements the standard 
-   builder API could be the BNBChain validator.
+   builder API could be the BNBChain builder.
 
 ### 5. Where can I find the BNBChain builders information? 
    You can find the BNBChain builders through a public 
