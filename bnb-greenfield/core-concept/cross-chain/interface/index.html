@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
     
@@ -2448,37 +2448,36 @@ They provide the following interfaces respectively:</p>
 <p>The <code>GroupHub</code> contract provides the following interfaces to manage Group on BSC/opBNB directly.</p>
 <div class="highlight"><pre><span></span><code>interface<span class="w"> </span>IGroupHub<span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="cm">/** </span>
-<span class="cm">     * @dev  Query the contract address of group NFT</span>
-<span class="cm">     * @return The contract address of group token</span>
+<span class="cm">     * @dev  Query the contract address of group NFT.</span>
+<span class="cm">     * @return The contract address of group token.</span>
 <span class="cm">     * Each group will be mapped as a NFT on BSC.</span>
 <span class="cm">     * Group ID and NFT token ID are the same.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">ERC721Token</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">);</span>
-<span class="w">   </span><span class="cm">/** </span>
-<span class="cm">     * @dev  Query the contract address of member NFT</span>
-<span class="cm">     * @return The contract address of member token</span>
+<span class="w">    </span><span class="cm">/** </span>
+<span class="cm">     * @dev  Query the contract address of member NFT.</span>
+<span class="cm">     * @return The contract address of member token.</span>
 <span class="cm">     * The member inside a group  will be mapped as a ERC1155 token on BSC.</span>
 <span class="cm">     * The ID of the ERC1155 token is same with the group ID.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">ERC1155Token</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">);</span>
 
-<span class="w">   </span><span class="cm">/**</span>
-<span class="cm">     * @dev create a group and send cross-chain request from BSC to GNFD</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev create a group and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param creator The group's owner</span>
-<span class="cm">     * @param name The group's name</span>
+<span class="cm">     * @param creator The group's owner.</span>
+<span class="cm">     * @param name The group's name.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createGroup</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">creator</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>name<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w">   </span><span class="cm">/**</span>
+<span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * @dev create a group and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     * Callback function will be called when the request is processed.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param creator The group's owner</span>
-<span class="cm">     * @param name The group's name</span>
-<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
-<span class="cm">     * @param extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">     * It will be reset as the `msg.sender` all the time.</span>
+<span class="cm">     * @param creator The group's owner.</span>
+<span class="cm">     * @param name The group's name.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function.</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createGroup</span><span class="p">(</span>
 <span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">creator</span><span class="p">,</span>
@@ -2488,52 +2487,94 @@ They provide the following interfaces respectively:</p>
 <span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * @dev delete a group and send cross-chain request from BSC to GNFD</span>
+<span class="cm">     * @dev delete a group and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param id The group's id</span>
+<span class="cm">     * @param id The group's id.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deleteGroup</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * @dev delete a group and send cross-chain request from BSC to GNFD</span>
+<span class="cm">     * @dev delete a group and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     * Callback function will be called when the request is processed.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param id The group's id</span>
-<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
-<span class="cm">     * @param extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">     * It will be reset as the `msg.sender` all the time.</span>
+<span class="cm">     * @param id The group's id.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function.</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deleteGroup</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span><span class="w"> </span>CmnStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * @dev update a group's member and send cross-chain request from BSC to GNFD</span>
+<span class="cm">     * @dev update a group's member and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param synPkg Package containing information of the group to be updated</span>
+<span class="cm">     * @param synPkg Package containing information of the group to be updated.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">updateGroup</span><span class="p">(</span>GroupStorage<span class="p">.</span>UpdateGroupSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * @dev update a group's member and send cross-chain request from BSC to GNFD</span>
+<span class="cm">     * @dev update a group's member and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     * Callback function will be called when the request is processed.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param synPkg Package containing information of the group to be updated</span>
-<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
-<span class="cm">     * @param extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">     * It will be reset as the `msg.sender` all the time.</span>
+<span class="cm">     * @param synPkg Package containing information of the group to be updated.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function.</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">updateGroup</span><span class="p">(</span>
 <span class="w">        </span>GroupStorage<span class="p">.</span>UpdateGroupSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg<span class="p">,</span>
 <span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span>
 <span class="w">        </span>CmnStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData
 <span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the create group cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param owner The group's owner.</span>
+<span class="cm">     * @param name The group's name.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareCreateGroup</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">owner</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>name
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete group cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The group's id.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeleteGroup</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the update group cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param synPkg Package containing information of the group to be updated.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareUpdateGroup</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span>GroupStorage<span class="p">.</span>UpdateGroupSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>IBucketHub</strong></p>
 <p>The <code>BucketHub</code> contract provides the following interfaces to manage bucket on EVM-compatible chains, like BSC and opBNB, directly.
    </p><div class="highlight"><pre><span></span><code>interface<span class="w"> </span>IBucketHub<span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="cm">/** </span>
-<span class="cm">     * @dev  Query the contract address of bucket NFT</span>
-<span class="cm">     * @return The contract address of bucket token</span>
+<span class="w">    </span><span class="cm">/** </span>
+<span class="cm">     * @dev  Query the contract address of bucket NFT.</span>
+<span class="cm">     * @return The contract address of bucket token.</span>
 <span class="cm">     * Each bucket will be mapped as a NFT on BSC.</span>
 <span class="cm">     * Bucket ID and NFT token ID are the same.</span>
 <span class="cm">     */</span>
@@ -2546,14 +2587,13 @@ They provide the following interfaces respectively:</p>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createBucket</span><span class="p">(</span>BucketStorage<span class="p">.</span>CreateBucketSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w">     </span><span class="cm">/**</span>
+<span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * @dev create a bucket and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     * Callback function will be called when the request is processed.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param synPkg Package containing information of the bucket to be created</span>
-<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
-<span class="cm">     * @param extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">     * It will be reset as the `msg.sender` all the time.</span>
+<span class="cm">     * @param synPkg Package containing information of the bucket to be created.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function.</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createBucket</span><span class="p">(</span>
 <span class="w">        </span>BucketStorage<span class="p">.</span>CreateBucketSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg<span class="p">,</span>
@@ -2561,98 +2601,252 @@ They provide the following interfaces respectively:</p>
 <span class="w">        </span>CmnStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData
 <span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w">   </span><span class="cm">/**</span>
-<span class="cm">     * @dev delete a bucket and send cross-chain request from BSC to GNFD</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev delete a bucket and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param id The bucket's id</span>
+<span class="cm">     * @param id The bucket's id.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deleteBucket</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w">   </span><span class="cm">/**</span>
+<span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * @dev delete a bucket and send cross-chain request from BSC to GNFD.</span>
 <span class="cm">     * Callback function will be called when the request is processed.</span>
 <span class="cm">     *</span>
-<span class="cm">     * @param id The bucket's id</span>
-<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
-<span class="cm">     * @param extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">     * It will be reset as the `msg.sender` all the time.</span>
+<span class="cm">     * @param id The bucket's id.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function.</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deleteBucket</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span><span class="w"> </span>CmnStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the create bucket cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param synPkg Package containing information of the bucket to be created.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareCreateBucket</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span>CreateBucketSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the create bucket cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param synPkg Package containing information of the bucket to be created.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareCreateBucket</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span>CreateBucketSynPackage<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>synPkg<span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span>
+<span class="w">        </span>CmnStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete bucket cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The bucket's id.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeleteBucket</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete bucket cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The bucket's id.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeleteBucket</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span>
+<span class="w">        </span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>IObjectHub</strong></p>
 <p>The <code>ObjectHub</code> contract provides the following interfaces to manage object on EVM-compatible chains, like BSC and opBNB, directly.</p>
 <div class="highlight"><pre><span></span><code>interface<span class="w"> </span>IObjectHub<span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="cm">/** </span>
-<span class="cm">     * @dev  Query the contract address of object NFT</span>
-<span class="cm">     * @return The contract address of object token</span>
+<span class="cm">     * @dev  Query the contract address of object NFT.</span>
+<span class="cm">     * @return The contract address of object token.</span>
 <span class="cm">     * Each object will be mapped as a NFT on BSC.</span>
 <span class="cm">     * Object ID and NFT token ID are the same.</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">ERC721Token</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">);</span>
 
-<span class="w">   </span><span class="cm">/**</span>
-<span class="cm">    * @dev delete a object and send cross-chain request from BSC to GNFD</span>
-<span class="cm">    *</span>
-<span class="cm">    * @param id, the Id of the object</span>
-<span class="cm">    */</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev delete a object and send cross-chain request from BSC to GNFD.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param id The object's id.</span>
+<span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deleteObject</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
-<span class="w">   </span><span class="cm">/**</span>
-<span class="cm">    * @dev delete a object and send cross-chain request from BSC to GNFD</span>
-<span class="cm">    * Callback function will be called when the request is processed</span>
-<span class="cm">    *</span>
-<span class="cm">    * @param id, the Id of the object</span>
-<span class="cm">    * @param callbackGasLimit The gas limit for callback function</span>
-<span class="cm">    * @param extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">    * It will be reset as the `msg.sender` all the time</span>
-<span class="cm">    */</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev delete a object and send cross-chain request from BSC to GNFD.</span>
+<span class="cm">     * Callback function will be called when the request is processed.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param id The object's id.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function.</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
+<span class="cm">     */</span>
 <span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deleteObject</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span><span class="w"> </span>CmnStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete object cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The object's id.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeleteObject</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete object cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The object's id.</span>
+<span class="cm">     * @param callbackGasLimit The gas limit for callback function</span>
+<span class="cm">     * @param extraData Extra data for callback function.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeleteObject</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">callbackGasLimit</span><span class="p">,</span>
+<span class="w">        </span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>extraData
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>IPermissionHub</strong></p>
 <p>The <code>PermissionHub</code> contract provides the following interfaces to manage permission on EVM-compatible chains, like BSC and opBNB, directly.</p>
 <div class="highlight"><pre><span></span><code>interface<span class="w"> </span>IPermissionHub<span class="w"> </span><span class="p">{</span>
-<span class="w"> </span><span class="cm">/** </span>
-<span class="cm">  * @dev  Query the contract address of permission NFT</span>
-<span class="cm">  * @return The contract address of permission token</span>
-<span class="cm">  * Each permission policy will be mapped as a NFT on BSC.</span>
-<span class="cm">  * Policy ID and NFT token ID are the same.</span>
-<span class="cm">  */</span>
-<span class="w"> </span><span class="kt">function</span><span class="w"> </span><span class="nv">ERC721Token</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** </span>
+<span class="cm">     * @dev  Query the contract address of permission NFT.</span>
+<span class="cm">     * @return The contract address of permission token.</span>
+<span class="cm">     * Each permission policy will be mapped as a NFT on BSC.</span>
+<span class="cm">     * Policy ID and NFT token ID are the same.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">ERC721Token</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">);</span>
 
-<span class="w"> </span><span class="cm">/**</span>
-<span class="cm">  * @dev delete a policy and send cross-chain request from BSC to GNFD</span>
-<span class="cm">  *</span>
-<span class="cm">  * @param id The policy id</span>
-<span class="cm">  */</span>
-<span class="w"> </span><span class="kt">function</span><span class="w"> </span><span class="nv">deletePolicy</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev delete a policy and send cross-chain request from BSC to GNFD.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param id The policy's id.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deletePolicy</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w"> </span><span class="cm">/**</span>
-<span class="cm">  * @dev delete a policy and send cross-chain request from BSC to GNFD</span>
-<span class="cm">  *</span>
-<span class="cm">  * @param id The policy id</span>
-<span class="cm">  * @param _extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">  */</span>
-<span class="w"> </span><span class="kt">function</span><span class="w"> </span><span class="nv">deletePolicy</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span>PermissionStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_extraData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev delete a policy and send cross-chain request from BSC to GNFD.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param id The policy's id.</span>
+<span class="cm">     * @param _extraData Extra data for callback function.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">deletePolicy</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span>PermissionStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_extraData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w"> </span><span class="cm">/**</span>
-<span class="cm">  * @dev create a policy and send cross-chain request from BSC to GNFD</span>
-<span class="cm">  *</span>
-<span class="cm">  * @param data policy data encoded by protobuf</span>
-<span class="cm">  * @param _extraData Extra data for callback function. The `appAddress` in `extraData` will be ignored.</span>
-<span class="cm">  */</span>
-<span class="w"> </span><span class="kt">function</span><span class="w"> </span><span class="nv">createPolicy</span><span class="p">(</span>
-<span class="w">     </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>_data<span class="p">,</span>
-<span class="w">     </span>PermissionStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_extraData
-<span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev create a policy and send cross-chain request from BSC to GNFD.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param data policy data encoded by protobuf.</span>
+<span class="cm">     * @param _extraData Extra data for callback function.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createPolicy</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>_data<span class="p">,</span><span class="w"> </span>
+<span class="w">        </span>PermissionStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_extraData
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
 
-<span class="w"> </span><span class="cm">/**</span>
-<span class="cm">  * @dev create a policy and send cross-chain request from BSC to GNFD</span>
-<span class="cm">  *</span>
-<span class="cm">  * @param data policy data encoded by protobuf</span>
-<span class="cm">  */</span>
-<span class="w"> </span><span class="kt">function</span><span class="w"> </span><span class="nv">createPolicy</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>_data<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev create a policy and send cross-chain request from BSC to GNFD.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param _data policy data encoded by protobuf.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createPolicy</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>_data<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the create policy cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param _data policy data encoded by protobuf.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareCreatePolicy</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>_data
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the create policy cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param _data policy data encoded by protobuf.</span>
+<span class="cm">     * @param _extraData Extra data for callback function.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareCreatePolicy</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>_data<span class="p">,</span><span class="w"> </span>
+<span class="w">        </span>PermissionStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_extraData
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete policy cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The policy's id.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeletePolicy</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @dev Prepare the delete policy cross-chain msg data.</span>
+<span class="cm">     * This function is used to assist with `MultiMessage`.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param sender The supposed msg sender of the cross-chain request.</span>
+<span class="cm">     * @param id The policy's id.</span>
+<span class="cm">     * @param _extraData Extra data for callback function.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return (ChannelID, MsgBytes, RelayerFee, AckRelayerFee, SenderAddress).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">prepareDeletePolicy</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span>PermissionStorage<span class="p">.</span>ExtraData<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_extraData
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="callback-handling">CallBack Handling<a class="headerlink" href="#callback-handling" title="Link to this section">¶</a></h2>
 <p>dApps on EVM-compatible chains, i.e. smart contracts on BSC, are allowed to implement their own logic to handle ACK and FAIL_ACK packages.
@@ -2864,7 +3058,7 @@ a higher gas limit, skipping the package to tolerate failure, or upgrading their
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
         <script src="../../../../assets/js/mathjax.js"></script>
       

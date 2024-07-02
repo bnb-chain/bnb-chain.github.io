@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
     
@@ -2521,7 +2521,6 @@ The BaseApp provides the following core functions:</p>
 <li><code>_getTotalFee():</code> This function returns the total value required to send a cross-chain package.</li>
 <li><code>Setters:</code> There are several setters available for configuring various aspects of the smart contract, such as:</li>
 <li><code>callbackGasLimit</code>: Sets the gas limit for the callback function.</li>
-<li><code>refundAddress</code>: Sets the address to which refunds should be sent.</li>
 <li><code>failureHandleStrategy</code>: Sets the strategy for handling failures during the execution of the smart contract.</li>
 </ol>
 <p>In addition to these functions, BaseApp provides three virtual functions:</p>
@@ -2548,8 +2547,8 @@ various bucket resource operations. Below, we provide a detailed overview of the
 <li><code>_bucketGreenfieldCall(uint32 status, uint8 operationType, uint256 resourceId, bytes calldata callbackData)</code>: This function serves as a router for bucket resource callback. It processes and directs the call based on the provided parameters.</li>
 <li><code>_retryBucketPackage()</code>: This function retries a failed bucket resource package.</li>
 <li><code>_skipBucketPackage()</code>: This function skips a failed bucket resource package.</li>
-<li><code>_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, bytes calldata _sig, uint64 _chargedReadQuota)</code>: This function sends a create bucket cross-chain request to greenfield without a callback. It takes various parameters, such as creator, name, visibility type, charged read quota, service provider address, expire height, and signature.</li>
-<li><code>_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, bytes calldata _sig, uint64 _chargedReadQuota, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)</code>: This function sends a create bucket cross-chain request to greenfield with a callback. It takes the same parameters as the previous function, along with some additional parameters for the callback.</li>
+<li><code>_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, uint32 _globalVirtualGroupFamilyId, bytes calldata _sig, uint64 _chargedReadQuota)</code>: This function sends a create bucket cross-chain request to greenfield without a callback. It takes various parameters, such as creator, name, visibility type, charged read quota, service provider address, expire height, global virtual family id and signature.</li>
+<li><code>_createBucket(address _creator, string memory _name, BucketStorage.BucketVisibilityType _visibility, address _paymentAddress, address _spAddress, uint256 _expireHeight, uint32 _globalVirtualGroupFamilyId, bytes calldata _sig, uint64 _chargedReadQuota, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)</code>: This function sends a create bucket cross-chain request to greenfield with a callback. It takes the same parameters as the previous function, along with some additional parameters for the callback.</li>
 <li><code>_deleteBucket(uint256 _tokenId)</code>: This function sends a delete bucket cross-chain request to greenfield without a callback, using the provided token ID.</li>
 <li><code>_deleteBucket(uint256 _tokenId, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)</code>: This function sends a delete bucket cross-chain request to greenfield with a callback, using the provided token ID and callback data.</li>
 </ol>
@@ -2588,7 +2587,7 @@ delete, update, and manage groups. Below, we provide a detailed overview of the 
 <li><code>_retryGroupPackage()</code>: This function retries a failed group resource package.</li>
 <li><code>_skipGroupPackage()</code>: This function skips a failed group resource package.</li>
 <li><code>_createGroup(address _owner, string memory _groupName)</code>: This function creates a new group with the provided owner address and group name.</li>
-<li><code>_createGroup(address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, address _owner, string memory _groupName, bytes memory _callbackData, uint256 _callbackGasLimit)</code>: This function creates a new group with a callback, using the provided owner address, group name, and callback data.</li>
+<li><code>_createGroup(address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData,, address _owner, string memory _groupName, uint256 _callbackGasLimit)</code>: This function creates a new group with a callback, using the provided owner address, group name, and callback data.</li>
 <li><code>_deleteGroup(uint256 _tokenId)</code>: This function deletes a group using the provided token ID.</li>
 <li><code>_deleteGroup(uint256 _tokenId, address _refundAddress, PackageQueue.FailureHandleStrategy _failureHandleStrategy, bytes memory _callbackData, uint256 _callbackGasLimit)</code>: This function deletes a group with a callback, using the provided token ID and callback data.</li>
 <li><code>_updateGroup(address _owner, uint256 _tokenId, uint8 _opType, address[] memory _members, uint64[] memory _expiration)</code>: This function updates a group based on the provided owner address, token ID, operation type, and an array of member addresses.</li>
@@ -2796,7 +2795,7 @@ group-related operations and handle the corresponding callbacks as needed.</p></
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
         <script src="../../../../assets/js/mathjax.js"></script>
       
