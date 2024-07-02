@@ -1,3 +1,7 @@
+---
+title: User Guide - BSC Governance
+---
+
 
 # Manage Governance with Tally dApp
 

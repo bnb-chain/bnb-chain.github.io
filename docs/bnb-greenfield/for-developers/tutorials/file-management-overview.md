@@ -1,5 +1,5 @@
 ---
-title: Basic File Management with CLI
+title: Basic File Management with CLI - BNB Greenfield Tutorials
 order: 1
 ---
 

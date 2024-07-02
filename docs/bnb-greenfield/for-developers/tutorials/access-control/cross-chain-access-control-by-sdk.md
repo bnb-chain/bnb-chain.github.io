@@ -1,5 +1,5 @@
 ---
-title: Cross Chain Access Control by SDK
+title: Cross Chain Access Control by SDK - BNB Greenfield Access Control
 description: How to use the go-SDK library to transfer permission control over objects to the smart contract on BSC and allowing on-chain management.
 keywords: [BNB Greenfield, Access control, Permission]
 order: 2

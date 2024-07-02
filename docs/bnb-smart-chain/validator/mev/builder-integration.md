@@ -1,3 +1,7 @@
+---
+title: Integration Guide for Builder - BSC MEV
+---
+
 # Integration Guide for Builder
 
 The [Builder API Specification](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md)

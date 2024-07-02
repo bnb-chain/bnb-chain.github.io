@@ -1,5 +1,5 @@
 ---
-title: Run SP Node
+title: Run SP Node - BNB Greenfield SP
 ---
 
 This guide helps you set up an SP Node. Once you set up the SP Node successfully, you can follow the [Join SP Network guide](join-SP-network.md) to make it online.

@@ -1,3 +1,8 @@
+---
+title: Archive Node - BSC Develop
+---
+
+
 # How to Run an Archive Node on BNB Smart Chain
 
 ## What is an archive node?

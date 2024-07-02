@@ -1,5 +1,5 @@
 ---
-title: Join SP Network
+title: Join SP Network - BNB Greenfield SP
 ---
 
 This guide will help you join SP Network: Mainnet and Testnet.

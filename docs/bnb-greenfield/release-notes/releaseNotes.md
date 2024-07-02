@@ -1,5 +1,5 @@
 ---
-title: Release Notes
+title: Release Notes - BNB Greenfield
 #icon: proposal
 #dir:
 #  order: 7

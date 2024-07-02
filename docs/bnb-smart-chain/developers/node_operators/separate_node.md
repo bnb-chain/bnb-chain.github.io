@@ -1,3 +1,7 @@
+---
+title: Separate Node - BSC Develop
+---
+
 # Separate Node on BNB Smart Chain
 
 ## Introduction

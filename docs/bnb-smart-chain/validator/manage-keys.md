@@ -1,3 +1,7 @@
+---
+title: Key Management for BSC Validator - BNB Smart Chain
+---
+
 # Key Management for BSC Validator
 
 [BEP-294](https://github.com/bnb-chain/BEPs/pull/294) and [BEP-297](https://github.com/bnb-chain/BEPs/pull/297)

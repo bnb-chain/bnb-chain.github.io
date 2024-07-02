@@ -1,5 +1,5 @@
 ---
-title: Cross Chain FAQs
+title: Cross Chain - opBNB FAQs
 ---
 
 ### How does opBNB ensure data availability and security for off-chain transactions?

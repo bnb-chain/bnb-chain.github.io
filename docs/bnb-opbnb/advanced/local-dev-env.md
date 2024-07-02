@@ -1,3 +1,7 @@
+---
+title: Local Development - opBNB
+---
+
 # Running a local development environment
 
 Install and start the entire opbnb system locally, including L1 (BNB Smart Chain) and L2 development nodes. Running a local development environment is a great way to test the behavior of your code and contracts.

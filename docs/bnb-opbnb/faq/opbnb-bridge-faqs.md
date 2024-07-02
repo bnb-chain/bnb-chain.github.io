@@ -1,5 +1,5 @@
 ---
-title: opBNB Bridge FAQs
+title: opBNB Bridge - opBNB FAQs
 ---
 
 ### What is the status of the integration between opBNB and Optimism's Superchain?

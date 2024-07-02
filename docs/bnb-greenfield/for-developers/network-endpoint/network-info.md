@@ -1,6 +1,6 @@
 ---
 siebar_label: Network Information 
-Title: Greenfield network information
+Title: Greenfield network information - BNB Greenfield
 description: Greenfield network information and explorer link
 Keywords: [Greenfield Mainnet, Greenfield Testnet, Greenfield explorer]
 order: 4

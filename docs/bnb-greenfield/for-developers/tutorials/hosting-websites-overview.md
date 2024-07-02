@@ -1,5 +1,5 @@
 ---
-title: Hosting a Website on Greenfield
+title: Hosting a Website on Greenfield - BNB Greenfield Tutorials
 order: 1
 ---
 

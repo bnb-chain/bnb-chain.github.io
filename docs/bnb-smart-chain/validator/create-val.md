@@ -1,3 +1,6 @@
+---
+title: Create BSC Validator - BNB Smart Chain
+---
 
 # Create BSC Validator
 

@@ -1,3 +1,8 @@
+---
+title: Monitor - BSC Slashing
+---
+
+
 # BSC Slash Monitor
 
 ## Monitor Slash

@@ -1,5 +1,5 @@
 ---
-title: Simple Storage Service
+title: Simple Storage Service - BNB Greenfield Data Storage
 order: 5
 ---
 

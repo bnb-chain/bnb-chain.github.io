@@ -1,3 +1,7 @@
+---
+title: Dcellar - BNB Greenfield
+---
+
 # Use Greenfield in Dcellar
 
 DCellar is a powerful tool that allows users to initiate their decentralized data management journey on the Greenfield platform. 

@@ -2,6 +2,8 @@
 hide:
 - navigation
 - toc
+
+title: BNB Chain
 ---
 
 # BNB Chain: Empowering the Future of Decentralized Applications

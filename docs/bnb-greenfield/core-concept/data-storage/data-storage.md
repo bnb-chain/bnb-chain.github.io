@@ -1,5 +1,5 @@
 ---
-title: Underlying Storage Model
+title: Underlying Storage Model - BNB Greenfield Data Storage
 order: 8
 ---
 

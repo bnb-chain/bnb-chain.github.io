@@ -1,3 +1,7 @@
+---
+title: Node Maintenance - BSC Develop
+---
+
 # Node Maintenance
 ### Binary
 All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and has better performance.

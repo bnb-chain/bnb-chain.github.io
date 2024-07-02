@@ -1,5 +1,5 @@
 ---
-title: Storage Provider Command Line Interface
+title: Storage Provider Command Line Interface - BNB Greenfield SP
 ---
 
 There is no set way to create a CLI, but Greenfield Storage Provider typically use the [urfave cli library v2](https://github.com/urfave/cli).

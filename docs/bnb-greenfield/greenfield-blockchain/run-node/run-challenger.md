@@ -1,5 +1,5 @@
 ---
-title: Run Challenger
+title: Run Challenger - BNB Greenfield Node
 order: 6
 ---
 

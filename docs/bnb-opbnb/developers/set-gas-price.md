@@ -1,3 +1,6 @@
+---
+title: Set Gas Price - opBNB Develop
+---
 
 This document shows you how to set the priority price and base price for opBNB transactions in wallet. These prices determine how much you are willing to pay for your transaction to be included in the next block (Priority Gas Price) and how much you are willing to pay for the gas used by your transaction. Setting these prices correctly can help you save money and avoid delays.
 

@@ -1,3 +1,7 @@
+---
+title: Resources - zkBNB 
+---
+
 # Resources
 
 ## 📔 Repos

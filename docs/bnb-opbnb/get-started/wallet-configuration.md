@@ -1,3 +1,8 @@
+---
+title: Wallet Configuration - opBNB 
+---
+
+
 # Wallet configuration
 
 You can use any Ethereum or BSC wallet with opBNB. For instance, I will show you how to set up Metamask and Trustwallet for opBNB.

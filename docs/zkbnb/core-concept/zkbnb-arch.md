@@ -1,5 +1,5 @@
 ---
-title: zkBNB Architecture
+title: zkBNB Architecture - zkBNB
 ---
 
 # zkBNB Architecture

@@ -1,5 +1,5 @@
 ---
-sidebar_lable: Cross Chain Communication 
+sidebar_lable: Cross Chain Communication - opBNB
 ---
 # opBNB Protocol addresses
 

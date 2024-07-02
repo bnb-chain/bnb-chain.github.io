@@ -1,5 +1,5 @@
 ---
-title: Data Marketplace with Programmable Access Control
+title: Data Marketplace with Programmable Access Control - BNB Greenfield App
 ---
 # Data Marketplace with Programmable Access Control
 

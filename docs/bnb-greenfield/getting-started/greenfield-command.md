@@ -1,5 +1,5 @@
 ---
-title: Greenfield Command
+title: Greenfield Command - BNB Greenfield
 description: Guidelines for how to use Greenfield command line tool
 order: 7
 ---

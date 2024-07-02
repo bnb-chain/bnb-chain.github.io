@@ -1,3 +1,7 @@
+---
+title: BSC Validator Overview - BNB Smart Chain
+---
+
 # BSC Validator Overview
 
 ![validator](../img/Validator.png)

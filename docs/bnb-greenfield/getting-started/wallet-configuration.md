@@ -1,5 +1,5 @@
 ---
-title: Wallet Configuration
+title: Wallet Configuration - BNB Greenfield
 description: In this guide, you will learn how to use the extension wallets to interact with Greenfield. 
 order: 3
 ---

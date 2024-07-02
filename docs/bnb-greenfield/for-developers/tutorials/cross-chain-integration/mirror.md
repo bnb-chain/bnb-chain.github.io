@@ -1,5 +1,5 @@
 ---
-title: Resources Mirroring with CLI
+title: Resources Mirroring with CLI - BNB Greenfield Cross Chain Integration
 order: 3
 ---
 

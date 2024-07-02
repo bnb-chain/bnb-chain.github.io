@@ -1,3 +1,6 @@
+---
+title: Overview - BSC Slashing
+---
 
 # BSC Slashing Overview
 Slashing is a component of on-chain governance that penalizes malicious or negative actions. Anyone can submit a slash transaction on BSC, which involves providing evidence and paying fees. Successful submissions yield significant rewards.

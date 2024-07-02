@@ -1,5 +1,5 @@
 ---
-title: Deploy Piece Store
+title: Deploy Piece Store - BNB Greenfield SP
 ---
 
 Greenfield SP is a storage infrastructure for Greenfield decentralized storgage platform. Greenfield SP uses `PieceStore` to store users' payload data.

@@ -1,3 +1,7 @@
+---
+title: Best Practices - opBNB Node Configuration
+---
+
 # Best Practices for opBNB Node Configuration
 ## Selecting the Appropriate Mode and Storage Scheme
 

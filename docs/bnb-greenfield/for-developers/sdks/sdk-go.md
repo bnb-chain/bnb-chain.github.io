@@ -1,5 +1,5 @@
 ---
-title: Go SDK Example
+title: Go SDK Example - BNB Greenfield SDK
 ---
 
 # Quickstart

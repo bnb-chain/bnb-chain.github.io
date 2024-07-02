@@ -1,5 +1,5 @@
 ---
-title: Data Integrity and Availability
+title: Data Integrity and Availability - BNB Greenfield Data Storage
 order: 6
 ---
 

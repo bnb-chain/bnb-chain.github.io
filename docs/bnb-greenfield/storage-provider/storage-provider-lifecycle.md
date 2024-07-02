@@ -1,5 +1,5 @@
 ---
-title: Storage Provider Lifecycle
+title: Storage Provider Lifecycle - BNB Greenfield SP
 order: 8
 ---
 

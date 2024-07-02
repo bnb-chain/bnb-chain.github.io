@@ -1,5 +1,5 @@
 ---
-title: Billing and Payment
+title: Billing and Payment - BNB Greenfield Core Concepts
 order: 4
 ---
 

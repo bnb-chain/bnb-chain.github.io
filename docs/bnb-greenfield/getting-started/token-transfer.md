@@ -1,6 +1,6 @@
 ---
 siebar_label: Bridge and Transfer BNB
-title: BNB Transfer
+title: BNB Transfer - BNB Greenfield
 description: Guideline about how to transfer BNB in Greenfield and cross-chain
 order: 5
 ---
