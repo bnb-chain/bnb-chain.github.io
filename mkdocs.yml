@@ -103,7 +103,8 @@ nav:
     - Overview: ./bnb-smart-chain/overview.md
     - Developers:
         - Overview: ./bnb-smart-chain/developers/overview.md
-        - Ecosystem: https://www.bnbchain.org/en/dev-tools
+        - Ecosystem: https://dappbay.bnbchain.org/
+        - Dev-Tools: https://www.bnbchain.org/en/dev-tools
         - RPC: ./bnb-smart-chain/developers/rpc.md
         - Faucet: ./bnb-smart-chain/developers/faucet.md
         - Node Operators:
@@ -454,6 +455,7 @@ extra_css:
 
 extra_javascript:
   - assets/js/mathjax.js
+  - assets/js/custom.js
   - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
   - https://unpkg.com/katex@0.16.10/dist/katex.min.js
   - https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js
