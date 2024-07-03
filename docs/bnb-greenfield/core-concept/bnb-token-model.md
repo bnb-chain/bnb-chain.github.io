@@ -32,7 +32,7 @@ Greenfield use Lock/Unlock mechanism to ensure the total circulation of BNB on b
 
 3. Both networks will never mint BNB.
 
-Refer to [cross chain model](../core-concept/cross-chain/programmability.md) to get more details about the mechanism.
+Refer to [cross chain model](../core-concept/programmability.md) to get more details about the mechanism.
 
 ## Genesis Setup
 

@@ -1,37 +1,86 @@
 ---
-title: Primitive Interfaces - BNB Greenfield Cross Chain
+title: EVM Programmability - BNB Greenfield Cross Chain
 
 ---
 
-# Primitive Interfaces
+# EVM Programmability
 
-This document give a detailed introduction of cross-chain primitives that have been defined on EVM-compatible chains to enable developers to manage greenfield resources on the EVM-compatible chains directly.
+This document give a detailed introduction of cross-chain primitives that have been defined on EVM-compatible chains to 
+enable developers to manage greenfield resources on the EVM-compatible chains directly.
 
 The [Greenfield-Contracts Repo](https://github.com/bnb-chain/greenfield-contracts) is the underlying backbone of the
-cross chain communication protocol. It is responsible for implementing the core cross-chain communication functionality that enables seamless interaction between Greenfield and EVM-compatible chains, like BSC and opBNB. The library handles the complexities of cross-chain operations, ensuring secure and efficient communication.
+cross chain communication protocol. It is responsible for implementing the core cross-chain communication functionality that enables seamless interaction between Greenfield and EVM-compatible chains, like BSC and opBNB. 
+The library handles the complexities of cross-chain operations, ensuring secure and efficient communication.
 
-During the development process, developers are most likely to interact with the following contracts: `CrossChain`, `BucketHub`, `ObjectHub` and `GroupHub`. 
+During the development process, developers are most likely to interact with the following contracts: `CrossChain`, `BucketHub`, `ObjectHub`, `GroupHub`, `PermissionHub`, `MultiMessage` and `GreenfieldExecutor`.
+
+## Quick Glance
+
+| Contract name      | Usage                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TokenHub           | Use to transfer BNB from BSC to Greenfield                                                                                                                                                                                                                                                                                                                                                                                                |
+| BucketHub          | Create/delete bucket                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ObjectHub          | Delete object                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| GroupHub           | Create/delete group, update group member                                                                                                                                                                                                                                                                                                                                                                                                  |
+| PermissionHub      | The user can use Resource-Based Policy to grant permissions to other accounts. Any resources, such as buckets, objects and groups, can associate several policy. Only the resource owner can put a policy which associate to a resource he owned. 1. A policy associate to a bucket can allow grantee to operate the bucket or the specific objects. 2. A policy associate to a object/group can only allow to operator the object/group. |
+| MultiMessage       | MultiMessage provides aggregation capabilities to support the atomicity of composite operations.                                                                                                                                                                                                                                                                                                                                          |
+| GreenfieldExecutor | Most native operations can be achieved by GreenfieldExecutor, like create payment account, deposit to payment account, withdraw from payment account, migrate bucket, cancel migrate bucket, update bucket info, toggle SP as delegated agent, set bucket flow ratelimit, copy object, update object info, set tag.                                                                                                                       |
+
+Refer to the [contract list](./contract-list.md) for detailed contract address on different network.
+
+
+## CallBack Handling
+dApps on EVM-compatible chains, i.e. smart contracts on BSC, are allowed to implement their own logic to handle ACK and FAIL_ACK packages.
+The smart contracts can register callback functions to handle the ACK packages.
+To avoid consuming too much gas in callbacks, a gas limitation estimation should be done by the smart contracts that register
+the callbacks.
+
+Errors and failures can occur during cross-chain communication. dApps on EVM-compatible chains can handle these by retrying the package with
+a higher gas limit, skipping the package to tolerate failure, or upgrading their contract to handle corner cases.
+
+The following are the interfaces for dapps to handle failures:
+
+```solidity
+ // retry the first failed package in the queue
+ function retryPackage() external;
+ // skip the first failed package in the queue
+ function skipPackage() external;
+```
+
+## Permission Programmability 
+Whether resources are created on BSC or mapped from Greenfield to BSC, such as Buckets, Objects, and Groups, by default, 
+only the owner account of these resources can manage them. However, with proper authorization, 
+other accounts or contracts can be allowed to operate on the owner's resources. 
+We provide two methods of authorization:
+
+### Role-based authorization
+BucketHub, ObjectHub, and GroupHub all implement the following interface. Through the `grant` interface, 
+other accounts can be granted the permission to create, delete, and update this type of resource for a certain period. 
+This permission can also be revoked through the `revoke` interface.
+```solidity
+function grant(address account, uint32 acCode, uint256 expireTime) external {
+ ...
+}
+function revoke(address account, uint32 acCode) external {
+    ...
+}
+```
+### NFT token authorization
+Since BucketHub and ObjectHub implement the NFT721 standard, and GroupHub implements the ERC1155 standard, 
+we use `approve` and `setApprovalForAll` to authorize specific resource Token IDs without restricting the types of operations, 
+meaning both deletion and updating are allowed.
+
+```solidity
+function approve(address to, uint256 tokenId) public virtual {
+    ...
+}
+function setApprovalForAll(address operator, bool approved) public virtual {
+    ...
+}
+```
+
+## Detailed Interface
 They provide the following interfaces respectively:
-
-**ICrossChain**
-
-Additional fees need to be paid to the relayer during the cross-chain process, and the latest value can be obtained through the `CrossChain` contract.
-   ```solidity
-   interface ICrossChain {
-       /** @dev Query relayFee and minAckRelayFee. 
-        * @return relayFee, the fee required for the relayer to relay the package to GNFD.
-        * @return minAckRelayFee, the minimum fee required for the relayer to circulate the ACK package to BSC.
-        * The caller will need to pay no less than this [relayFee+minAckRelayFee] to send the cross-chain request.
-        */
-       function getRelayFees() external returns (uint256 relayFee, uint256 minAckRelayFee);
-   
-       /** @dev Query the latest callback gas price.
-        * @return If the dapp contract has a callback function, the caller will need to pay extra [gas price * callback gas limit] fee 
-        * when the caller send the initial cross-chain request.
-        */
-       function callbackGasPrice() external returns (uint256);
-   }
-   ```
 
 **IGroupHub**
 
@@ -452,20 +501,26 @@ The `PermissionHub` contract provides the following interfaces to manage permiss
        ) external payable returns (uint8, bytes memory, uint256, uint256, address);
    ```
 
-## CallBack Handling
-dApps on EVM-compatible chains, i.e. smart contracts on BSC, are allowed to implement their own logic to handle ACK and FAIL_ACK packages.
-The smart contracts can register callback functions to handle the ACK packages.
-To avoid consuming too much gas in callbacks, a gas limitation estimation should be done by the smart contracts that register 
-the callbacks.
+**IMultiMessage**
 
-Errors and failures can occur during cross-chain communication. dApps on EVM-compatible chains can handle these by retrying the package with
-a higher gas limit, skipping the package to tolerate failure, or upgrading their contract to handle corner cases.
-
-The following are the interfaces for dapps to handle failures:
+`MultiMessage` provides aggregation capabilities to support the atomicity of composite operations. 
 
 ```solidity
- // retry the first failed package in the queue
- function retryPackage() external;
- // skip the first failed package in the queue
- function skipPackage() external;
+interface IMultiMessage {
+    function sendMessages(
+        address[] calldata _targets,
+        bytes[] calldata _data,
+        uint256[] calldata _values
+    ) external payable returns (bool);
+}
+```
+
+**IGreenfieldExecutor**
+
+Most native operations can be achieved by `GreenfieldExecutor`, like create payment account, deposit to payment account, withdraw from payment account, migrate bucket, cancel migrate bucket, update bucket info, toggle SP as delegated agent, set bucket flow ratelimit, copy object, update object info, set tag.                          
+
+```solidity
+interface IGreenfieldExecutor {
+    function execute(uint8[] calldata _msgTypes, bytes[] calldata _msgBytes) external payable returns (bool);
+}
 ```
