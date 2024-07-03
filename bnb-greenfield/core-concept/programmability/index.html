@@ -12,28 +12,28 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirror/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/core-concept/programmability/">
       
       
-        <link rel="prev" href="../../access-control/cross-chain-access-control-by-sdk/">
+        <link rel="prev" href="../data-storage/data-availability/">
       
       
-        <link rel="next" href="../dapp-integration/">
+        <link rel="next" href="../../for-developers/get-started-dev/">
       
       
-      <link rel="icon" href="../../../../../assets/bnb.svg">
+      <link rel="icon" href="../../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
     
-        <title>Resources Mirroring with CLI - BNB Greenfield Cross Chain Integration</title>
+        <title>Cross-Chain Programmability - BNB Greenfield Cross Chain</title>
     
 
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resources-mirroring-with-cli" class="md-skip">
+        <a href="#cross-chain-programmability" class="md-skip">
           Skip to content
         </a>
       
@@ -160,7 +160,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../announce/" class="md-tabs__link">
+        <a href="../../../announce/" class="md-tabs__link">
           
   
     
@@ -335,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -355,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../bnb-smart-chain/" class="md-tabs__link">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
           
   
     
@@ -375,7 +375,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -397,7 +397,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../zkbnb/" class="md-tabs__link">
+        <a href="../../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -460,7 +460,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -487,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +535,7 @@
         
   
   
-    <a href="../../../../../announce/" class="md-nav__link">
+    <a href="../../../announce/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -597,7 +597,7 @@
         
   
   
-    <a href="../../../../../bc-fusion/" class="md-nav__link">
+    <a href="../../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -659,7 +659,7 @@
         
   
   
-    <a href="../../../../../bnb-smart-chain/" class="md-nav__link">
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -721,7 +721,7 @@
         
   
   
-    <a href="../../../../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -793,7 +793,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -826,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../introduction/" class="md-nav__link">
+      <a href="../../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/wallet-configuration/" class="md-nav__link">
+      <a href="../../getting-started/wallet-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/token-transfer/" class="md-nav__link">
+      <a href="../../getting-started/token-transfer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/dcellar/" class="md-nav__link">
+      <a href="../../getting-started/dcellar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/greenfield-command/" class="md-nav__link">
+      <a href="../../getting-started/greenfield-command/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/get-test-bnb/" class="md-nav__link">
+      <a href="../../getting-started/get-test-bnb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/general-faqs/" class="md-nav__link">
+      <a href="../../getting-started/general-faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,6 +1037,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1065,11 +1067,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
         
           
           <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
@@ -1083,7 +1085,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             Core Concepts
@@ -1097,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core-concept/accounts/" class="md-nav__link">
+      <a href="../accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1118,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core-concept/bnb-token-model/" class="md-nav__link">
+      <a href="../bnb-token-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1139,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core-concept/billing-payment/" class="md-nav__link">
+      <a href="../billing-payment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1186,7 +1188,7 @@
         
   
   
-    <a href="../../../../core-concept/data-storage/simple-storage-service/" class="md-nav__link">
+    <a href="../data-storage/simple-storage-service/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1210,51 +1212,111 @@
                 
   
   
+    
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
-  
-    <a href="../../../../core-concept/cross-chain/programmability/" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
       
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
   <span class="md-ellipsis">
     Cross-Chain Programmability
   </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cross-Chain Programmability
+  </span>
   
 
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-chain-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Chain Bridge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Mirror
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-through-evm-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program Through EVM Contract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi Message
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started-with-building-dapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Started with building dapp
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1273,12 +1335,12 @@
                 
   
   
-    
-  
   
   
     
     
+      
+        
       
         
       
@@ -1305,11 +1367,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
         
           
           <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
@@ -1323,7 +1385,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             For Developers
@@ -1337,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../get-started-dev/" class="md-nav__link">
+      <a href="../../for-developers/get-started-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1364,8 +1426,6 @@
       
         
       
-        
-      
     
     
       
@@ -1384,7 +1444,7 @@
         
   
   
-    <a href="../../../network-endpoint/network-info/" class="md-nav__link">
+    <a href="../../for-developers/network-endpoint/network-info/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1410,8 +1470,67 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../for-developers/cross-chain-integration/interface/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Cross Chain Programmability
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../bundle-service/" class="md-nav__link">
+      <a href="../../for-developers/bundle-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1429,189 +1548,49 @@
                 
   
   
-    
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
-    
-    
+  
+    <a href="../../for-developers/tutorials/overview/" class="md-nav__link">
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     Tutorials
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_5_4">
-            <span class="md-nav__icon md-icon"></span>
-            Tutorials
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../file-management-overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basic File Management with CLI
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../transitioning-from-s3-to-greenfield/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    How to transition from S3 to Greenfield
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../hosting-websites-overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Hosting a Website on Greenfield
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../access-control/cmd-access-control/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Access Control
-  </span>
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
@@ -1628,266 +1607,6 @@
                 
   
   
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_4_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_5_4_6" id="__nav_6_5_4_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Cross Chain Integration
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_6_5_4_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_5_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            Cross Chain Integration
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Resources Mirroring with CLI
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Resources Mirroring with CLI
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mirror-objects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mirror Objects
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mirror-buckets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mirror Buckets
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mirror-group" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mirror Group
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dapp-integration/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Integrating BSC Smart Contracts with Greenfield Projects
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mirroring-faqs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Mirroring FAQ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../app/overview/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Sample Apps on Greenfield
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     
@@ -1923,7 +1642,7 @@
         
   
   
-    <a href="../../../sdks/" class="md-nav__link">
+    <a href="../../for-developers/sdks/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1950,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contribute/" class="md-nav__link">
+      <a href="../../for-developers/contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2036,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../greenfield-blockchain/overview/" class="md-nav__link">
+      <a href="../../greenfield-blockchain/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2057,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../greenfield-blockchain/gnfd-cli/" class="md-nav__link">
+      <a href="../../greenfield-blockchain/gnfd-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2078,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../greenfield-blockchain/events/" class="md-nav__link">
+      <a href="../../greenfield-blockchain/events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2099,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../greenfield-blockchain/interact-node/" class="md-nav__link">
+      <a href="../../greenfield-blockchain/interact-node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2148,7 +1867,7 @@
         
   
   
-    <a href="../../../../greenfield-blockchain/run-node/run-node/" class="md-nav__link">
+    <a href="../../greenfield-blockchain/run-node/run-node/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2242,7 +1961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../storage-provider/overview/" class="md-nav__link">
+      <a href="../../storage-provider/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2263,7 +1982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../storage-provider/storage-provider-lifecycle/" class="md-nav__link">
+      <a href="../../storage-provider/storage-provider-lifecycle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2284,7 +2003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../storage-provider/sp-cli/" class="md-nav__link">
+      <a href="../../storage-provider/sp-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2305,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../storage-provider/workflow/" class="md-nav__link">
+      <a href="../../storage-provider/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2326,7 +2045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../storage-provider/standard/" class="md-nav__link">
+      <a href="../../storage-provider/standard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2385,7 +2104,7 @@
         
   
   
-    <a href="../../../../storage-provider/run-book/compile-dependences/" class="md-nav__link">
+    <a href="../../storage-provider/run-book/compile-dependences/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2473,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../release-notes/releaseNotes/" class="md-nav__link">
+      <a href="../../release-notes/releaseNotes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2494,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../release-notes/roadmap/" class="md-nav__link">
+      <a href="../../release-notes/roadmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2515,7 +2234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../release-notes/features/" class="md-nav__link">
+      <a href="../../release-notes/features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2602,7 +2321,7 @@
         
   
   
-    <a href="../../../../../zkbnb/" class="md-nav__link">
+    <a href="../../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2648,36 +2367,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#framework" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Framework
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mirror-objects" class="md-nav__link">
+  <a href="#cross-chain-bridge" class="md-nav__link">
     <span class="md-ellipsis">
-      Mirror Objects
+      Cross-Chain Bridge
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mirror-buckets" class="md-nav__link">
+  <a href="#resource-mirror" class="md-nav__link">
     <span class="md-ellipsis">
-      Mirror Buckets
+      Resource Mirror
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mirror-group" class="md-nav__link">
+  <a href="#program-through-evm-contract" class="md-nav__link">
     <span class="md-ellipsis">
-      Mirror Group
+      Program Through EVM Contract
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi Message
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started-with-building-dapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Started with building dapp
     </span>
   </a>
   
@@ -2698,7 +2435,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirror.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/core-concept/programmability.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2706,44 +2443,77 @@
   
 
 
-<div><h1 id="resources-mirroring-with-cli">Resources Mirroring with CLI<a class="headerlink" href="#resources-mirroring-with-cli" title="Link to this section">¶</a></h1>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Link to this section">¶</a></h2>
-<p>During the mirroring process from BNB Greenfield to BSC, the content of the file itself is not copied. This means that neither the data nor the file metadata, which is stored on the BNB Greenfield blockchain, is transferred to BSC. Consequently, there is no size limit imposed on the mirroring process since the actual file content is not duplicated.</p>
-<h2 id="mirror-objects">Mirror Objects<a class="headerlink" href="#mirror-objects" title="Link to this section">¶</a></h2>
-<p>Objects can be mirrored on the BSC as ERC-721 NFTs</p>
-<p>Example command to mirror to BSC testnet:
-</p><div class="highlight"><pre><span></span><code>gnfd-cmd<span class="w"> </span>object<span class="w"> </span>mirror<span class="w"> </span>--bucketName<span class="w"> </span>yourBucketName<span class="w"> </span>--objectName<span class="w"> </span>yourObjectName<span class="w"> </span>--destChainId<span class="w"> </span><span class="m">97</span>
-</code></pre></div>
-<p>Example output:
-</p><div class="highlight"><pre><span></span><code>mirror object succ, txHash: 0774F400EBD42FAB009A6B3C303EF8625B57AB551E0F065C546B892167938122
-</code></pre></div>
-You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to view the details of mirror operation.
-<p>Then, go to <a href="https://testnet.bscscan.com">BscScan</a> and you can find out that there is a NFT transferred to you.</p>
-<p><img alt="Transaction Details" src="../../../../static/asset/mirror-object.png"></p>
-<h2 id="mirror-buckets">Mirror Buckets<a class="headerlink" href="#mirror-buckets" title="Link to this section">¶</a></h2>
-<p>Mirror buckets are the same procedure and mirror objects.</p>
-<p>Example command to mirror to BSC testnet:
-</p><div class="highlight"><pre><span></span><code>gnfd-cmd<span class="w"> </span>object<span class="w"> </span>mirror<span class="w"> </span>--bucketName<span class="w"> </span>yourBucketName<span class="w">  </span>--destChainId<span class="w"> </span><span class="m">97</span>
-</code></pre></div>
-<p>Example output:
-</p><div class="highlight"><pre><span></span><code>mirror bucket succ, txHash: 0xba1ca47a2271864b2010158b13535331301ba3289aab8e373503e91e3a41d0a7
-</code></pre></div>
-You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to view the details of mirror operation.
-<p>Then, go to <a href="https://testnet.bscscan.com">BscScan</a> and you can find out that there is a NFT transferred to you.</p>
-<h2 id="mirror-group">Mirror Group<a class="headerlink" href="#mirror-group" title="Link to this section">¶</a></h2>
-<p>The members within a group, which represent permissions to specify resources, can be mirrored as ERC-1155 token.</p>
-<p>Example command to mirror to BSC testnet:</p>
-<div class="highlight"><pre><span></span><code>//<span class="w"> </span>mirror<span class="w"> </span>a<span class="w"> </span>group<span class="w"> </span>as<span class="w"> </span>NFT<span class="w"> </span>to<span class="w"> </span>BSC,<span class="w"> </span>you<span class="w"> </span>might<span class="w"> </span>use<span class="w"> </span>group<span class="w"> </span>id<span class="w"> </span>or<span class="w"> </span>groupName<span class="w"> </span>to<span class="w"> </span>identidy<span class="w"> </span>the<span class="w"> </span>group
-gnfd-cmd<span class="w"> </span>group<span class="w"> </span>mirror<span class="w"> </span>--id<span class="w"> </span><span class="m">1</span>
-//<span class="w"> </span>irror<span class="w"> </span>a<span class="w"> </span>group<span class="w"> </span>with<span class="w"> </span>group<span class="w"> </span>id
-gnfd-cmd<span class="w"> </span>group<span class="w"> </span>mirror<span class="w"> </span>--groupName<span class="w"> </span>yourGroupName
-</code></pre></div>
-<p>Example output:</p>
-<p></p><div class="highlight"><pre><span></span><code>mirror_group:
-transaction hash: 99A749ECC3CEB8B7CF4B8132A19D1A04EF7247F8549477B6AD28CA69BD11E66A
-</code></pre></div>
-You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to view the details of mirror operation.
-<p>Then, go to <a href="https://testnet.bscscan.com">BscScan</a> and you can find out that there is a NFT transferred to you.</p></div>
+<div><h1 id="cross-chain-programmability">Cross-Chain Programmability<a class="headerlink" href="#cross-chain-programmability" title="Link to this section">¶</a></h1>
+<p>The real power of the Greenfield ecosystem lies in its platform designed not only to store the data, but also to
+support the creation of value based on the data assets and its related economy.</p>
+<p>The asset traits of the data are firstly established on the permissions, e.g. the permission to read the data. When 
+this right is disconnected from the data itself, they become tradable assets and enlarge the value of the data. This 
+can be amplified when the data itself can be executable (a new type of “Smart Code”), interact with each other, and 
+generate new data. This creates a lot of room to imagine building a new, data-intensive, trustless computing environment.</p>
+<p>Moreover, the data permissions can be transferred cross-chain onto BSC and become digital assets there. This creates a 
+variety of possibilities to integrate these assets with the existing DeFi protocols and models on BSC.</p>
+<p>This gets even further enhanced by the smart contracts on BSC, which enjoy the same address format as accounts on the 
+Greenfield blockchain and can be the owners of the data objects and inherit different permissions. This will unleash 
+many new business opportunities based on the data and its operations.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It does not mean developers have to build dapp based on BSC network. Excellent infrastructure, applications, 
+and tools can be built directly on the Greenfield network.</p>
+</div>
+<h2 id="framework">Framework<a class="headerlink" href="#framework" title="Link to this section">¶</a></h2>
+<p><img alt="" src="../../static/asset/03-Cross-chain-Architecture.jpg"></p>
+<p>The Greenfield ecosystem consists of three distinct layers. </p>
+<p>The first layer is the <code>Cross-Chain Communication Layer</code>, which is responsible for handling and verifying 
+the communication packages between the BSC and the Greenfield blockchain networks. This layer serves as the backbone of 
+the entire ecosystem, ensuring the smooth and secure transfer of information between the two platforms.</p>
+<p>The second layer is the <code>Resource Mirror Layer</code>. 
+This layer manages the resource assets defined on Greenfield, which are then mirrored onto BSC. 
+The <code>Resource Mirror Layer</code> enables users to interact with these assets on BSC using smart contracts, 
+which operate on the primitives defined by Greenfield. This layer plays a critical role in the 
+Greenfield ecosystem, enabling seamless cross-chain asset management and more efficient resource allocation.</p>
+<p>At the top of the Greenfield ecosystem is the <code>Application Layer</code>. This layer consists of smart contracts 
+that are developed by the community on BSC, enabling them to operate the mirrored resource entities on
+the <code>Resource Mirror Layer</code>. While Greenfield itself does not offer programmability, the <code>Application Layer</code>
+can interact with Greenfield Core and other supporting infrastructures. The <code>Application Layer</code> represents the true power and 
+potential of the Greenfield ecosystem. Developers are able to create and leverage a 
+wide range of innovative and decentralized applications while benefiting from Greenfield’s robust 
+infrastructure and cross-chain capabilities.</p>
+<h2 id="cross-chain-bridge">Cross-Chain Bridge<a class="headerlink" href="#cross-chain-bridge" title="Link to this section">¶</a></h2>
+<p>The native cross-chain bridge is an essential part of the Greenfield ecosystem, 
+as it enables seamless interoperability between BSC and Greenfield. 
+To ensure the security and integrity of the bridge, a new relayer system have been implemented for the validators of Greenfield
+based on an aggregated multisig scheme.</p>
+<p>Under this system, multiple validators will collaborate to approve and execute cross-chain transactions, 
+with each transaction requiring a certain threshold of signatures to be deemed valid. 
+The use of an aggregated multisig scheme not only ensures greater security but also 
+facilitates a higher bandwidth and faster bridge.</p>
+<p>The relayer system will be continuously monitored and maintained by the validators to 
+ensure that it is running at optimal efficiency.</p>
+<p>More details are discussed in <a href="https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md">Cross Chain Module design</a>.</p>
+<h2 id="resource-mirror">Resource Mirror<a class="headerlink" href="#resource-mirror" title="Link to this section">¶</a></h2>
+<p>In the context of BNB Greenfield, resource mirroring refers to the process of transferring control over objects/buckets/group
+stored on BNB Greenfield to a smart contract on BNB Smart Chain (BSC). When an object is mirrored, it means that the object 
+can be managed through BSC by sending messages to Greenfield through a network of relayers, which facilitate communication 
+and interaction between the two platforms. This allows the objects/buckets/group to be fully managed on-chain on BSC, meaning 
+that users or other smart contracts can perform various operations and changes to the object through on-chain transactions.</p>
+<h2 id="program-through-evm-contract">Program Through EVM Contract<a class="headerlink" href="#program-through-evm-contract" title="Link to this section">¶</a></h2>
+<p>Most native transactions that can be performed on the Greenfield chain can also be achieved on BSC, such as creating, 
+deleting, and updating buckets, groups, and objects. Additionally, you can bind a permission group to a bucket or object, 
+and grant other accounts the ability to operate on buckets, objects, or groups. Due to this feature, smart contracts on BSC 
+are also allowed to hold Greenfield resources.</p>
+<p>The only operation that cannot be performed on BSC is object uploading, because file uploads involve off-chain interactions, 
+which cannot be completed on-chain. However, BSC smart contracts can grant an EOA account the permission to upload files 
+via cross-chain authorization, allowing an off-chain account to upload files on its behalf through signing.</p>
+<h2 id="multi-message">Multi Message<a class="headerlink" href="#multi-message" title="Link to this section">¶</a></h2>
+<p>A cross-chain transaction can include multiple cross-chain operations, so-called multi-message. The composite operations is assemble
+by a MultiMessage contract. It is important to note that the MultiMessage contract is limited to supporting existing cross-chain operations such as 
+bucket, object, group, permission, and token cross chain transfer. It enhances these functionalities by providing aggregation 
+capabilities to support the atomicity of composite operations.</p>
+<h2 id="get-started-with-building-dapp">Get Started with building dapp<a class="headerlink" href="#get-started-with-building-dapp" title="Link to this section">¶</a></h2>
+<ul>
+<li><a href="https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md">Learn more about the cross-chain mechanism</a></li>
+<li><a href="../../for-developers/tutorials/overview/">Start building dapps with Greenfield</a></li>
+</ul></div>
 
 
 
@@ -2782,7 +2552,7 @@ You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../access-control/cross-chain-access-control-by-sdk/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cross Chain Access Control by SDK">
+          <a href="../data-storage/data-availability/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Integrity and Availability">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2792,20 +2562,20 @@ You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to
                 Previous
               </span>
               <div class="md-ellipsis">
-                Cross Chain Access Control by SDK
+                Data Integrity and Availability
               </div>
             </div>
           </a>
         
         
           
-          <a href="../dapp-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Integrating BSC Smart Contracts with Greenfield Projects">
+          <a href="../../for-developers/get-started-dev/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Integrating BSC Smart Contracts with Greenfield Projects
+                Quick Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2938,14 +2708,14 @@ You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../../../assets/js/mathjax.js"></script>
+        <script src="../../../assets/js/mathjax.js"></script>
       
-        <script src="../../../../../assets/js/custom.js"></script>
+        <script src="../../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       

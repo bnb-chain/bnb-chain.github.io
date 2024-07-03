@@ -176,22 +176,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/cross-chain/interface/</loc>
-         <lastmod>2024-07-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/cross-chain/mirror/</loc>
-         <lastmod>2024-07-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/cross-chain/programmability/</loc>
-         <lastmod>2024-07-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/cross-chain/sdk/</loc>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/programmability/</loc>
          <lastmod>2024-07-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -226,7 +211,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/contract-list/</loc>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/contract-list/</loc>
+         <lastmod>2024-07-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/dapp-integration/</loc>
+         <lastmod>2024-07-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/interface/</loc>
+         <lastmod>2024-07-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror-concept/</loc>
+         <lastmod>2024-07-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror/</loc>
+         <lastmod>2024-07-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirroring-faqs/</loc>
          <lastmod>2024-07-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -322,21 +332,6 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview/</loc>
-         <lastmod>2024-07-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/cross-chain-integration/dapp-integration/</loc>
-         <lastmod>2024-07-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirror/</loc>
-         <lastmod>2024-07-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirroring-faqs/</loc>
          <lastmod>2024-07-03</lastmod>
          <changefreq>daily</changefreq>
     </url>

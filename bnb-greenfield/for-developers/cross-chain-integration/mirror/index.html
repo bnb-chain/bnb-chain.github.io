@@ -12,13 +12,13 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/contract-list/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror/">
       
       
-        <link rel="prev" href="../endpoints/">
+        <link rel="prev" href="../mirror-concept/">
       
       
-        <link rel="next" href="../../bundle-service/">
+        <link rel="next" href="../dapp-integration/">
       
       
       <link rel="icon" href="../../../../assets/bnb.svg">
@@ -26,7 +26,7 @@
     
     
     
-        <title>Contract Entrypoint - BNB Greenfield</title>
+        <title>Resources Mirroring with CLI - BNB Greenfield Cross Chain Integration</title>
     
 
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contract-entrypoint" class="md-skip">
+        <a href="#resources-mirroring-with-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -1212,50 +1212,16 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="../../../core-concept/programmability/" class="md-nav__link">
         
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../../core-concept/cross-chain/programmability/" class="md-nav__link">
-      
   
   <span class="md-ellipsis">
     Cross-Chain Programmability
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
+      </a>
     </li>
   
 
@@ -1279,6 +1245,8 @@
   
     
     
+      
+        
       
         
       
@@ -1355,12 +1323,69 @@
                 
   
   
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../network-endpoint/network-info/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Network & Endpoint
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1382,24 +1407,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_5_3" id="__nav_6_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Network & Endpoint
+    Cross Chain Programmability
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_5_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_5_3">
             <span class="md-nav__icon md-icon"></span>
-            Network & Endpoint
+            Cross Chain Programmability
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1410,11 +1435,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-info/" class="md-nav__link">
+      <a href="../interface/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Network Info
+    EVM Programmability
   </span>
   
 
@@ -1431,11 +1456,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../endpoints/" class="md-nav__link">
+      <a href="../mirror-concept/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    RPC Endpoints
+    Resource Mirror
   </span>
   
 
@@ -1465,7 +1490,7 @@
           
   
   <span class="md-ellipsis">
-    Contract Entrypoint
+    Resources Mirroring with CLI
   </span>
   
 
@@ -1476,7 +1501,7 @@
         
   
   <span class="md-ellipsis">
-    Contract Entrypoint
+    Resources Mirroring with CLI
   </span>
   
 
@@ -1498,36 +1523,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bsc-mainnet" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      BSC Mainnet
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bsc-testnet" class="md-nav__link">
+  <a href="#mirror-objects" class="md-nav__link">
     <span class="md-ellipsis">
-      BSC Testnet
+      Mirror Objects
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opbnb-testnet" class="md-nav__link">
+  <a href="#mirror-buckets" class="md-nav__link">
     <span class="md-ellipsis">
-      opBNB Testnet
+      Mirror Buckets
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opbnb-mainnet" class="md-nav__link">
+  <a href="#mirror-group" class="md-nav__link">
     <span class="md-ellipsis">
-      opBNB Mainnet
+      Mirror Group
     </span>
   </a>
   
@@ -1537,6 +1562,69 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapp-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating BSC Smart Contracts with Greenfield Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contract-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contract Entrypoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirroring-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Chain FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1579,8 +1667,6 @@
   
     
     
-      
-        
       
         
       
@@ -2396,36 +2482,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bsc-mainnet" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      BSC Mainnet
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bsc-testnet" class="md-nav__link">
+  <a href="#mirror-objects" class="md-nav__link">
     <span class="md-ellipsis">
-      BSC Testnet
+      Mirror Objects
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opbnb-testnet" class="md-nav__link">
+  <a href="#mirror-buckets" class="md-nav__link">
     <span class="md-ellipsis">
-      opBNB Testnet
+      Mirror Buckets
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opbnb-mainnet" class="md-nav__link">
+  <a href="#mirror-group" class="md-nav__link">
     <span class="md-ellipsis">
-      opBNB Mainnet
+      Mirror Group
     </span>
   </a>
   
@@ -2446,7 +2532,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/for-developers/network-endpoint/contract-list.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/for-developers/cross-chain-integration/mirror.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2454,358 +2540,44 @@
   
 
 
-<div><h1 id="contract-entrypoint">Contract Entrypoint<a class="headerlink" href="#contract-entrypoint" title="Link to this section">¶</a></h1>
-<p>Greenfield is based on a cross-chain programming model. It allows for the manipulation of data models on 
-Greenfield via smart contracts on BSC or opBNB. These data models include objects, buckets, file 
-permissions, and more. Below are the contract addresses deployed on various networks.</p>
-<h2 id="bsc-mainnet">BSC Mainnet<a class="headerlink" href="#bsc-mainnet" title="Link to this section">¶</a></h2>
-<p>DeployCommitId: c8e6a293b628f9063918ba8cd9c00ca41ded18db</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GovHub</td>
-<td>0x1c9766EbcA1f38A06A04947129B394bF7FEc4599</td>
-</tr>
-<tr>
-<td>CrossChain</td>
-<td>0x77e719b714be09F70D484AB81F70D02B0E182f7d</td>
-</tr>
-<tr>
-<td>TokenHub</td>
-<td>0xeA97dF87E6c7F68C9f95A69dA79E19B834823F25</td>
-</tr>
-<tr>
-<td>LightClient</td>
-<td>0x433bB48Bd86c089375e53b2E2873A9C4bC0e986B</td>
-</tr>
-<tr>
-<td>RelayerHub</td>
-<td>0x31C477F05CE58bB81A9FB4b8c00560f1cBe185d1</td>
-</tr>
-<tr>
-<td>BucketHub</td>
-<td>0xE909754263572F71bc6aFAc837646A93f5818573</td>
-</tr>
-<tr>
-<td>ObjectHub</td>
-<td>0x634eB9c438b8378bbdd8D0e10970Ec88db0b4d0f</td>
-</tr>
-<tr>
-<td>GroupHub</td>
-<td>0xDd9af4573D64324125fCa5Ce13407be79331B7F7</td>
-</tr>
-<tr>
-<td>BucketERC721Token</td>
-<td>0xC92d1d4b64Aebe28042206656b9E70E571A0E5eF</td>
-</tr>
-<tr>
-<td>ObjectERC721Token</td>
-<td>0x4B92705a60d69f7A96aaDB8faa892526eB71adb7</td>
-</tr>
-<tr>
-<td>GroupERC721Token</td>
-<td>0x943FAC6CEBE6e45CE59bA911E5B6447c1a991450</td>
-</tr>
-<tr>
-<td>MemberERC1155Token</td>
-<td>0xAb73f243Be4d0fC5644c822351eC77e85DC2B5Ea</td>
-</tr>
-<tr>
-<td>PermissionHub</td>
-<td>0xe1776006dBE9B60d9eA38C0dDb80b41f2657acE8</td>
-</tr>
-<tr>
-<td>PermissionToken</td>
-<td>0xE8d6aC02dB463c1463116c72A6164462B0660dEc</td>
-</tr>
-</tbody>
-</table>
-<p>Extra:</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deployer</td>
-<td>0x4763c12b21a548BCbD22a682fb15930565e27C43</td>
-</tr>
-<tr>
-<td>ProxyAdmin</td>
-<td>0xf9010DC773eE3961418C96dc67Fc5DcCB3EA2C08</td>
-</tr>
-</tbody>
-</table>
-<p>For more details, you can refer to <a href="https://github.com/bnb-chain/greenfield-contracts/blob/master/deployment/56-deployment.json">Greenfield Contracts Mainnet Deployment</a>.</p>
-<h2 id="bsc-testnet">BSC Testnet<a class="headerlink" href="#bsc-testnet" title="Link to this section">¶</a></h2>
-<p>DeployCommitId: 20cc1f5784a621438114847753cda289f3ed76fa</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GovHub</td>
-<td>0xC8951B5DD89015DcD0606A63B23C8A67ae316302</td>
-</tr>
-<tr>
-<td>CrossChain</td>
-<td>0xa5B2c9194131A4E0BFaCbF9E5D6722c873159cb7</td>
-</tr>
-<tr>
-<td>TokenHub</td>
-<td>0xED8e5C546F84442219A5a987EE1D820698528E04</td>
-</tr>
-<tr>
-<td>LightClient</td>
-<td>0xa9249cefF9cBc9BAC0D9167b79123b6C7413F50a</td>
-</tr>
-<tr>
-<td>RelayerHub</td>
-<td>0x91cA83d95c8454277d1C297F78082B589e6E4Ea3</td>
-</tr>
-<tr>
-<td>BucketHub</td>
-<td>0x5BB17A87D03620b313C39C24029C94cB5714814A</td>
-</tr>
-<tr>
-<td>ObjectHub</td>
-<td>0x1b059D8481dEe299713F18601fB539D066553e39</td>
-</tr>
-<tr>
-<td>GroupHub</td>
-<td>0x50B3BF0d95a8dbA57B58C82dFDB5ff6747Cc1a9E</td>
-</tr>
-<tr>
-<td>BucketERC721Token</td>
-<td>0xF6CB188D3346de442b171d015202e605B0697A2a</td>
-</tr>
-<tr>
-<td>ObjectERC721Token</td>
-<td>0xc6a7192937961622D27956F412c4ce242F159311</td>
-</tr>
-<tr>
-<td>GroupERC721Token</td>
-<td>0x7fC61D6FCA8D6Ea811637bA58eaf6aB17d50c4d1</td>
-</tr>
-<tr>
-<td>MemberERC1155Token</td>
-<td>0x43bdF3d63e6318A2831FE1116cBA69afd0F05267</td>
-</tr>
-<tr>
-<td>PermissionHub</td>
-<td>0x25E1eeDb5CaBf288210B132321FBB2d90b4174ad</td>
-</tr>
-<tr>
-<td>PermissionToken</td>
-<td>0xEBda3C285f79bEAF34416732F1F8Fa1e6B4B9dF7</td>
-</tr>
-</tbody>
-</table>
-<p>Extra:</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deployer</td>
-<td>0x79aC4Ce73Cf5c4896a311CD39d2EB47E604D18E3</td>
-</tr>
-<tr>
-<td>ProxyAdmin</td>
-<td>0xdD1c0a54a9EDEa8d0821AEB5BE54c51B79fa4c2e</td>
-</tr>
-</tbody>
-</table>
-<p>For more details, you can refer to <a href="https://github.com/bnb-chain/greenfield-contracts/blob/master/deployment/97-deployment.json">Greenfield Contracts Testnet Deployment</a>.</p>
-<h2 id="opbnb-testnet">opBNB Testnet<a class="headerlink" href="#opbnb-testnet" title="Link to this section">¶</a></h2>
-<p>DeployCommitId: 6857ebfd2fd157c776cb8fc5f3dfb42696efeed2</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GovHub</td>
-<td>0x64cB82CF53BE02fF56a3D5527beEF7302E740911</td>
-</tr>
-<tr>
-<td>CrossChain</td>
-<td>0xF0Bcf6E4F72bCB33b944275dd5c9d4540a259eB9</td>
-</tr>
-<tr>
-<td>TokenHub</td>
-<td>0x59614C9e9B5Df6dF4dc9e457cc7F3a67D796d3b2</td>
-</tr>
-<tr>
-<td>LightClient</td>
-<td>0xc50791892F6528E42A58DD07869726079C71F3f2</td>
-</tr>
-<tr>
-<td>RelayerHub</td>
-<td>0x59ACcF658CC4589C3C41720fd48e869B97A748a1</td>
-</tr>
-<tr>
-<td>BucketHub</td>
-<td>0xCAB5728B7cc21D0056E237D371b28efEEBFd8C2d</td>
-</tr>
-<tr>
-<td>ObjectHub</td>
-<td>0xb23002c5C3DCe3312e190d9D186C4aB29F7cF26F</td>
-</tr>
-<tr>
-<td>GroupHub</td>
-<td>0xe53725ac14bD77fA4754fC5a09889135C2c7Bc25</td>
-</tr>
-<tr>
-<td>BucketERC721Token</td>
-<td>0xCacc33C05ad335c929e62D87BB96D5c5E5A19641</td>
-</tr>
-<tr>
-<td>ObjectERC721Token</td>
-<td>0xb3e4d757b36A76fd968C97ed922Bd77AB2c72f62</td>
-</tr>
-<tr>
-<td>GroupERC721Token</td>
-<td>0x8C74F8e6cD4DCb307d344F358683594A68d66CD9</td>
-</tr>
-<tr>
-<td>PermissionHub</td>
-<td>0x089e97333da0B4260131068b7492D10fbEeC67BC</td>
-</tr>
-<tr>
-<td>PermissionToken</td>
-<td>0x72705569ed3CC26dEC421f542191B8ac7F62c3e7</td>
-</tr>
-</tbody>
-</table>
-<p>Extra:</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deployer</td>
-<td>0x84b3418faA3be4Bed168E2D00C7696b21008DcfD</td>
-</tr>
-<tr>
-<td>ProxyAdmin</td>
-<td>0x9d067d0D30CA19bB24551c9b654B8b9BB83c8634</td>
-</tr>
-</tbody>
-</table>
-<p>For more details, you can refer to <a href="https://github.com/bnb-chain/greenfield-contracts/blob/master/deployment/5611-deployment.json">Greenfield Contracts Testnet Deployment</a>.</p>
-<h2 id="opbnb-mainnet">opBNB Mainnet<a class="headerlink" href="#opbnb-mainnet" title="Link to this section">¶</a></h2>
-<p>DeployCommitId: 6857ebfd2fd157c776cb8fc5f3dfb42696efeed2</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GovHub</td>
-<td>0xCc63407862619bc65e5E09aFe521C6078C7fa730</td>
-</tr>
-<tr>
-<td>CrossChain</td>
-<td>0x7E376AEFAF05E20e3eB5Ee5c08fE1B9832b175cE</td>
-</tr>
-<tr>
-<td>TokenHub</td>
-<td>0x723987D45BA424D562b087eE032b8C27F2E7b689</td>
-</tr>
-<tr>
-<td>LightClient</td>
-<td>0xf51ba131716776685A805E8E4Ecc95be2f923B93</td>
-</tr>
-<tr>
-<td>RelayerHub</td>
-<td>0xEd873b460C53D22f0FF3fc511854d9b8b16C4aE2</td>
-</tr>
-<tr>
-<td>BucketHub</td>
-<td>0xDbf8aEcB0F697A5c71baA0C1470Ba8D7f0395018</td>
-</tr>
-<tr>
-<td>ObjectHub</td>
-<td>0x8FcE352C1971cEa4c8b7b450C84780530713AcCd</td>
-</tr>
-<tr>
-<td>GroupHub</td>
-<td>0x2968a07d24699F0Ffe1e17eCaebeF6BB50BCed68</td>
-</tr>
-<tr>
-<td>BucketERC721Token</td>
-<td>0x18C5f966795BC105B7F1bDf3313A540a0D62c22b</td>
-</tr>
-<tr>
-<td>ObjectERC721Token</td>
-<td>0x9342750477676b257Cf28878320815dF94B78182</td>
-</tr>
-<tr>
-<td>GroupERC721Token</td>
-<td>0x488e054cc55Ba7a97e32B73122630364d4ffc050</td>
-</tr>
-<tr>
-<td>MemberERC1155Token</td>
-<td>0x9841F55651acd38019B8B895083F7B5f9933Ca44</td>
-</tr>
-<tr>
-<td>PermissionHub</td>
-<td>0x979876507F1395E5D391F9Dbef68468a22162B8D</td>
-</tr>
-<tr>
-<td>PermissionToken</td>
-<td>0xb8AE22AA0B0F125B74D385261b26282a44224aCc</td>
-</tr>
-</tbody>
-</table>
-<p>Extra:</p>
-<table>
-<thead>
-<tr>
-<th>contract name</th>
-<th>address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deployer</td>
-<td>0xC6AA4CE979fbd263B8B32b9A162cA68F44D723a3</td>
-</tr>
-<tr>
-<td>ProxyAdmin</td>
-<td>0xD2e5D66A683d2dd67e8C9aAFb317Db96acfc3F00</td>
-</tr>
-</tbody>
-</table>
-<p>For more details, you can refer to <a href="https://github.com/bnb-chain/greenfield-contracts/blob/master/deployment/204-deployment.json">Greenfield Contracts Mainnet Deployment</a>.</p></div>
+<div><h1 id="resources-mirroring-with-cli">Resources Mirroring with CLI<a class="headerlink" href="#resources-mirroring-with-cli" title="Link to this section">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Link to this section">¶</a></h2>
+<p>During the mirroring process from BNB Greenfield to BSC, the content of the file itself is not copied. This means that neither the data nor the file metadata, which is stored on the BNB Greenfield blockchain, is transferred to BSC. Consequently, there is no size limit imposed on the mirroring process since the actual file content is not duplicated.</p>
+<h2 id="mirror-objects">Mirror Objects<a class="headerlink" href="#mirror-objects" title="Link to this section">¶</a></h2>
+<p>Objects can be mirrored on the BSC as ERC-721 NFTs</p>
+<p>Example command to mirror to BSC testnet:
+</p><div class="highlight"><pre><span></span><code>gnfd-cmd<span class="w"> </span>object<span class="w"> </span>mirror<span class="w"> </span>--bucketName<span class="w"> </span>yourBucketName<span class="w"> </span>--objectName<span class="w"> </span>yourObjectName<span class="w"> </span>--destChainId<span class="w"> </span><span class="m">97</span>
+</code></pre></div>
+<p>Example output:
+</p><div class="highlight"><pre><span></span><code>mirror object succ, txHash: 0774F400EBD42FAB009A6B3C303EF8625B57AB551E0F065C546B892167938122
+</code></pre></div>
+You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to view the details of mirror operation.
+<p>Then, go to <a href="https://testnet.bscscan.com">BscScan</a> and you can find out that there is a NFT transferred to you.</p>
+<p><img alt="Transaction Details" src="../../../static/asset/mirror-object.png"></p>
+<h2 id="mirror-buckets">Mirror Buckets<a class="headerlink" href="#mirror-buckets" title="Link to this section">¶</a></h2>
+<p>Mirror buckets are the same procedure and mirror objects.</p>
+<p>Example command to mirror to BSC testnet:
+</p><div class="highlight"><pre><span></span><code>gnfd-cmd<span class="w"> </span>object<span class="w"> </span>mirror<span class="w"> </span>--bucketName<span class="w"> </span>yourBucketName<span class="w">  </span>--destChainId<span class="w"> </span><span class="m">97</span>
+</code></pre></div>
+<p>Example output:
+</p><div class="highlight"><pre><span></span><code>mirror bucket succ, txHash: 0xba1ca47a2271864b2010158b13535331301ba3289aab8e373503e91e3a41d0a7
+</code></pre></div>
+You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to view the details of mirror operation.
+<p>Then, go to <a href="https://testnet.bscscan.com">BscScan</a> and you can find out that there is a NFT transferred to you.</p>
+<h2 id="mirror-group">Mirror Group<a class="headerlink" href="#mirror-group" title="Link to this section">¶</a></h2>
+<p>The members within a group, which represent permissions to specify resources, can be mirrored as ERC-1155 token.</p>
+<p>Example command to mirror to BSC testnet:</p>
+<div class="highlight"><pre><span></span><code>//<span class="w"> </span>mirror<span class="w"> </span>a<span class="w"> </span>group<span class="w"> </span>as<span class="w"> </span>NFT<span class="w"> </span>to<span class="w"> </span>BSC,<span class="w"> </span>you<span class="w"> </span>might<span class="w"> </span>use<span class="w"> </span>group<span class="w"> </span>id<span class="w"> </span>or<span class="w"> </span>groupName<span class="w"> </span>to<span class="w"> </span>identidy<span class="w"> </span>the<span class="w"> </span>group
+gnfd-cmd<span class="w"> </span>group<span class="w"> </span>mirror<span class="w"> </span>--id<span class="w"> </span><span class="m">1</span>
+//<span class="w"> </span>irror<span class="w"> </span>a<span class="w"> </span>group<span class="w"> </span>with<span class="w"> </span>group<span class="w"> </span>id
+gnfd-cmd<span class="w"> </span>group<span class="w"> </span>mirror<span class="w"> </span>--groupName<span class="w"> </span>yourGroupName
+</code></pre></div>
+<p>Example output:</p>
+<p></p><div class="highlight"><pre><span></span><code>mirror_group:
+transaction hash: 99A749ECC3CEB8B7CF4B8132A19D1A04EF7247F8549477B6AD28CA69BD11E66A
+</code></pre></div>
+You can go to <a href="https://testnet.greenfieldscan.com">GreenfieldScan</a> to view the details of mirror operation.
+<p>Then, go to <a href="https://testnet.bscscan.com">BscScan</a> and you can find out that there is a NFT transferred to you.</p></div>
 
 
 
@@ -2844,7 +2616,7 @@ permissions, and more. Below are the contract addresses deployed on various netw
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../endpoints/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RPC Endpoints">
+          <a href="../mirror-concept/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Resource Mirror">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2854,20 +2626,20 @@ permissions, and more. Below are the contract addresses deployed on various netw
                 Previous
               </span>
               <div class="md-ellipsis">
-                RPC Endpoints
+                Resource Mirror
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../bundle-service/" class="md-footer__link md-footer__link--next" aria-label="Next: Bundle Service">
+          <a href="../dapp-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Integrating BSC Smart Contracts with Greenfield Projects">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Bundle Service
+                Integrating BSC Smart Contracts with Greenfield Projects
               </div>
             </div>
             <div class="md-footer__button md-icon">
