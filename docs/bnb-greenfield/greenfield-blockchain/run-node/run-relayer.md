@@ -101,7 +101,7 @@ Modify `config/config.json`. Or, you can create a new one and specify the config
    You might encounter `Rate limit` issue for using official BSC/opBNB endpoints, we would highly recommend using 3rd Party RPCs, like the [NodeReal MegaNode](https://nodereal.io/meganode)
 
 2. Config crossChain, greenfield light client and relayer hub smart contracts addresses, others can keep the default value, refer to this
-   [contract-list](../../for-developers/network-endpoint/contract-list.md) to get addresses for Mainnet/Testnet.
+   [contract-list](../../for-developers/cross-chain-integration/contract-list.md) to get addresses for Mainnet/Testnet.
 
     === "BSC-Mainnet"
     

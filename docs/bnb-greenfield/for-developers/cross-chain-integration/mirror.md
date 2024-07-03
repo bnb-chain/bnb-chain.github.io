@@ -26,7 +26,7 @@ You can go to [GreenfieldScan](https://testnet.greenfieldscan.com) to view the d
 
 Then, go to [BscScan](https://testnet.bscscan.com) and you can find out that there is a NFT transferred to you.
 
-![Transaction Details](../../../static/asset/mirror-object.png)
+![Transaction Details](../../static/asset/mirror-object.png)
 
 
 ## Mirror Buckets

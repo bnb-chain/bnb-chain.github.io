@@ -11,22 +11,24 @@ permissions, and more. Below are the contract addresses deployed on various netw
 ## BSC Mainnet
 DeployCommitId: c8e6a293b628f9063918ba8cd9c00ca41ded18db
 
-| contract name       | address                                    |
-|---------------------|--------------------------------------------|
-| GovHub              | 0x1c9766EbcA1f38A06A04947129B394bF7FEc4599 |
-| CrossChain          | 0x77e719b714be09F70D484AB81F70D02B0E182f7d |
-| TokenHub            | 0xeA97dF87E6c7F68C9f95A69dA79E19B834823F25 |
-| LightClient         | 0x433bB48Bd86c089375e53b2E2873A9C4bC0e986B |
-| RelayerHub          | 0x31C477F05CE58bB81A9FB4b8c00560f1cBe185d1 |
-| BucketHub           | 0xE909754263572F71bc6aFAc837646A93f5818573 |
-| ObjectHub           | 0x634eB9c438b8378bbdd8D0e10970Ec88db0b4d0f |
-| GroupHub            | 0xDd9af4573D64324125fCa5Ce13407be79331B7F7 |
-| BucketERC721Token   | 0xC92d1d4b64Aebe28042206656b9E70E571A0E5eF |
-| ObjectERC721Token   | 0x4B92705a60d69f7A96aaDB8faa892526eB71adb7 |
-| GroupERC721Token    | 0x943FAC6CEBE6e45CE59bA911E5B6447c1a991450 |
-| MemberERC1155Token  | 0xAb73f243Be4d0fC5644c822351eC77e85DC2B5Ea |
-| PermissionHub       | 0xe1776006dBE9B60d9eA38C0dDb80b41f2657acE8 |
-| PermissionToken     | 0xE8d6aC02dB463c1463116c72A6164462B0660dEc |
+| contract name      | address                                    |
+|--------------------|--------------------------------------------|
+| GovHub             | 0x1c9766EbcA1f38A06A04947129B394bF7FEc4599 |
+| CrossChain         | 0x77e719b714be09F70D484AB81F70D02B0E182f7d |
+| TokenHub           | 0xeA97dF87E6c7F68C9f95A69dA79E19B834823F25 |
+| LightClient        | 0x433bB48Bd86c089375e53b2E2873A9C4bC0e986B |
+| RelayerHub         | 0x31C477F05CE58bB81A9FB4b8c00560f1cBe185d1 |
+| BucketHub          | 0xE909754263572F71bc6aFAc837646A93f5818573 |
+| ObjectHub          | 0x634eB9c438b8378bbdd8D0e10970Ec88db0b4d0f |
+| GroupHub           | 0xDd9af4573D64324125fCa5Ce13407be79331B7F7 |
+| BucketERC721Token  | 0xC92d1d4b64Aebe28042206656b9E70E571A0E5eF |
+| ObjectERC721Token  | 0x4B92705a60d69f7A96aaDB8faa892526eB71adb7 |
+| GroupERC721Token   | 0x943FAC6CEBE6e45CE59bA911E5B6447c1a991450 |
+| MemberERC1155Token | 0xAb73f243Be4d0fC5644c822351eC77e85DC2B5Ea |
+| PermissionHub      | 0xe1776006dBE9B60d9eA38C0dDb80b41f2657acE8 |
+| PermissionToken    | 0xE8d6aC02dB463c1463116c72A6164462B0660dEc |
+| MultiMessage       | 0x26204702935e2D617EE75B795152B9623a7d9809 |
+| GreenfieldExecutor | 0xFa39D9111D927836b14D071d43e0aAD9cE83bBBf |
 
 Extra:
 
@@ -56,6 +58,8 @@ DeployCommitId: 20cc1f5784a621438114847753cda289f3ed76fa
 | MemberERC1155Token | 0x43bdF3d63e6318A2831FE1116cBA69afd0F05267 |
 | PermissionHub      | 0x25E1eeDb5CaBf288210B132321FBB2d90b4174ad |
 | PermissionToken    | 0xEBda3C285f79bEAF34416732F1F8Fa1e6B4B9dF7 |
+| MultiMessage       | 0x54be643072eB8cF38Ac0c57Abc72b9c0368C8699 |
+| GreenfieldExecutor | 0x3E3180883308e8B4946C9a485F8d91F8b15dC48e |
 
 Extra:
 
@@ -69,21 +73,23 @@ For more details, you can refer to [Greenfield Contracts Testnet Deployment](htt
 ## opBNB Testnet
 DeployCommitId: 6857ebfd2fd157c776cb8fc5f3dfb42696efeed2
 
-| contract name     | address                                    |
-|-------------------|--------------------------------------------|
-| GovHub            | 0x64cB82CF53BE02fF56a3D5527beEF7302E740911 |
-| CrossChain        | 0xF0Bcf6E4F72bCB33b944275dd5c9d4540a259eB9 |
-| TokenHub          | 0x59614C9e9B5Df6dF4dc9e457cc7F3a67D796d3b2 |
-| LightClient       | 0xc50791892F6528E42A58DD07869726079C71F3f2 |
-| RelayerHub        | 0x59ACcF658CC4589C3C41720fd48e869B97A748a1 |
-| BucketHub         | 0xCAB5728B7cc21D0056E237D371b28efEEBFd8C2d |
-| ObjectHub         | 0xb23002c5C3DCe3312e190d9D186C4aB29F7cF26F |
-| GroupHub          | 0xe53725ac14bD77fA4754fC5a09889135C2c7Bc25 |
-| BucketERC721Token | 0xCacc33C05ad335c929e62D87BB96D5c5E5A19641 |
-| ObjectERC721Token | 0xb3e4d757b36A76fd968C97ed922Bd77AB2c72f62 |
-| GroupERC721Token  | 0x8C74F8e6cD4DCb307d344F358683594A68d66CD9 |
-| PermissionHub     | 0x089e97333da0B4260131068b7492D10fbEeC67BC |
-| PermissionToken   | 0x72705569ed3CC26dEC421f542191B8ac7F62c3e7 |
+| contract name      | address                                    |
+|--------------------|--------------------------------------------|
+| GovHub             | 0x64cB82CF53BE02fF56a3D5527beEF7302E740911 |
+| CrossChain         | 0xF0Bcf6E4F72bCB33b944275dd5c9d4540a259eB9 |
+| TokenHub           | 0x59614C9e9B5Df6dF4dc9e457cc7F3a67D796d3b2 |
+| LightClient        | 0xc50791892F6528E42A58DD07869726079C71F3f2 |
+| RelayerHub         | 0x59ACcF658CC4589C3C41720fd48e869B97A748a1 |
+| BucketHub          | 0xCAB5728B7cc21D0056E237D371b28efEEBFd8C2d |
+| ObjectHub          | 0xb23002c5C3DCe3312e190d9D186C4aB29F7cF26F |
+| GroupHub           | 0xe53725ac14bD77fA4754fC5a09889135C2c7Bc25 |
+| BucketERC721Token  | 0xCacc33C05ad335c929e62D87BB96D5c5E5A19641 |
+| ObjectERC721Token  | 0xb3e4d757b36A76fd968C97ed922Bd77AB2c72f62 |
+| GroupERC721Token   | 0x8C74F8e6cD4DCb307d344F358683594A68d66CD9 |
+| PermissionHub      | 0x089e97333da0B4260131068b7492D10fbEeC67BC |
+| PermissionToken    | 0x72705569ed3CC26dEC421f542191B8ac7F62c3e7 |
+| MultiMessage       | 0xc461eCE1922978d0336B03942cE70aCef4C5D09C |
+| GreenfieldExecutor | 0x4bF975A172793FbcFff30Ffe5b3141A5C5aeBE52 |
 
 Extra:
 
@@ -113,6 +119,8 @@ DeployCommitId: 6857ebfd2fd157c776cb8fc5f3dfb42696efeed2
 | MemberERC1155Token | 0x9841F55651acd38019B8B895083F7B5f9933Ca44 |
 | PermissionHub      | 0x979876507F1395E5D391F9Dbef68468a22162B8D |
 | PermissionToken    | 0xb8AE22AA0B0F125B74D385261b26282a44224aCc |
+| MultiMessage       | 0x1aA380808eCef9BA5550fadaa97f2fD682B7f03A |
+| GreenfieldExecutor | 0xdFc5DC31bfbf992C19C171db273A028736322Ec4 |
 
 Extra:
 

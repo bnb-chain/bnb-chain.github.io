@@ -197,17 +197,19 @@ nav:
               - Simple Storage Service: ./bnb-greenfield/core-concept/data-storage/simple-storage-service.md
               - Underlying Storage Model: ./bnb-greenfield/core-concept/data-storage/data-storage.md
               - Data Integrity and Availability: ./bnb-greenfield/core-concept/data-storage/data-availability.md
-          - Cross-Chain Programmability:
-              - Cross-Chain Programmability: ./bnb-greenfield/core-concept/cross-chain/programmability.md
-              - Resource Mirroring: ./bnb-greenfield/core-concept/cross-chain/mirror.md
-              - Smart Contract SDK: ./bnb-greenfield/core-concept/cross-chain/sdk.md
-              - Primitive Interfaces: ./bnb-greenfield/core-concept/cross-chain/interface.md
+          - Cross-Chain Programmability: ./bnb-greenfield/core-concept/programmability.md
       - For Developers:
           - Quick Guide: ./bnb-greenfield/for-developers/get-started-dev.md
           - Network & Endpoint:
               - Network Info: ./bnb-greenfield/for-developers/network-endpoint/network-info.md
               - RPC Endpoints: ./bnb-greenfield/for-developers/network-endpoint/endpoints.md
-              - Contract Entrypoint: ./bnb-greenfield/for-developers/network-endpoint/contract-list.md
+          - Cross Chain Programmability:
+              - EVM Programmability: ./bnb-greenfield/for-developers/cross-chain-integration/interface.md
+              - Resource Mirror: ./bnb-greenfield/for-developers/cross-chain-integration/mirror-concept.md
+              - Resources Mirroring with CLI: ./bnb-greenfield/for-developers/cross-chain-integration/mirror.md
+              - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb-greenfield/for-developers/cross-chain-integration/dapp-integration.md
+              - Contract Entrypoint: ./bnb-greenfield/for-developers/cross-chain-integration/contract-list.md
+              - Cross Chain FAQ: ./bnb-greenfield/for-developers/cross-chain-integration/mirroring-faqs.md
           - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
           - Tutorials:
               - Overview: ./bnb-greenfield/for-developers/tutorials/overview.md
@@ -219,10 +221,6 @@ nav:
                   - Cross Chain Access Control by CMD: ./bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-cmd.md
                   - Native Access Control: ./bnb-greenfield/for-developers/tutorials/access-control/access-control.md
                   - Cross Chain Access Control by SDK: ./bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-sdk.md
-              - Cross Chain Integration:
-                  - Resources Mirroring with CLI: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirror.md
-                  - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/dapp-integration.md
-                  - Mirroring FAQ: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirroring-faqs.md
               - Sample Apps on Greenfield:
                   - Overview: ./bnb-greenfield/for-developers/tutorials/app/overview.md
                   - Data Marketplace: ./bnb-greenfield/for-developers/tutorials/app/data-marketplace.md
