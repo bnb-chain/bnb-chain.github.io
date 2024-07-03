@@ -1,3 +1,6 @@
+---
+title: Data Service Quality Standard - BNB Greenfield SP
+---
 # Data Service Quality Standard
 
 ## Abstract

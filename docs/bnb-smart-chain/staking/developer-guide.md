@@ -1,3 +1,7 @@
+---
+title: Build BSC Staking dApps Guide - BSC Staking
+---
+
 # Build BSC Staking dApps Guide
 
 This guide covers essential staking operations like creating validators, editing their information, and delegating.

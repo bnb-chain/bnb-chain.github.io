@@ -1,5 +1,5 @@
 ---
-title: Blockchain Events
+title: Blockchain Events - BNB Greenfield
 #icon: actions
 order: 2
 ---

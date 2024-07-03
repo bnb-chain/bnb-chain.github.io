@@ -1,3 +1,7 @@
+---
+title: BSC Slash Rules - BSC Slashing
+---
+
 # BSC Slash Rules
 
 Three types of malicious behaviors can lead to slashing on the BSC network.

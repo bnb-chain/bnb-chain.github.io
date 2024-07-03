@@ -1,5 +1,5 @@
 ---
-title: Mirroring FAQ
+title: Mirroring FAQ - BNB Greenfield Cross Chain Integration
 description: A list of BNB Greenfield frequently asks questions about cross-chain resource mirroring.  
 keywords: [BNB Greenfield Mirror, BNB Greenfield Access Control]
 ---

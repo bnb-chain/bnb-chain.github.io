@@ -1,5 +1,5 @@
 ---
-title: RPC Endpoints
+title: RPC Endpoints - BNB Greenfield
 #icon: http
 order: 3
 ---

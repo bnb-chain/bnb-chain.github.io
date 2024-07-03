@@ -1,3 +1,7 @@
+---
+title: Withdrawal - opBNB 
+---
+
 To transfer your tokens from opBNB to BSC, you can use the [opBNB bridge dApp(Testnet)](https://opbnb-testnet-bridge.bnbchain.org/) or [opBNB bridge dApp(Mainnet)](https://opbnb-bridge.bnbchain.org). Users who do not want to wait 7 days to claim their tokens can use a community bridge, but please note that community bridges may not be as secure as the official opBNB bridge.
 
 *Note that the default option is the community bridge. To use the opBNB bridge, switch to the "official bridge" tab.*

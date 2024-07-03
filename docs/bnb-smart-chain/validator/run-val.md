@@ -1,3 +1,6 @@
+---
+title: Run BSC Validator - BNB Smart Chain
+---
 
 # Run BSC Validator
 

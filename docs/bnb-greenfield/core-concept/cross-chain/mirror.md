@@ -1,3 +1,6 @@
+---
+title: Resource Mirroring - BNB Greenfield Cross Chain
+---
 # Resource Mirroring
 
 # Overview

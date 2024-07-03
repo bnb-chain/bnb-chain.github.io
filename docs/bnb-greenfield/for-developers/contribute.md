@@ -1,6 +1,7 @@
 ---
 sidebar_label: Contribute
 hide_table_of_contents: true
+title: Contribute to BNB Greenfield Documentation
 ---
 
 # How to Contribute to BNB Greenfield Documentation

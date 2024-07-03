@@ -1,3 +1,7 @@
+---
+title: Run a Local Node - opBNB
+---
+
 # Running a Local Testnet or Mainnet Node
 
 If you're looking to build an app on opBNB you'll need access to an opBNB node.

@@ -1,5 +1,5 @@
 ---
-title: Run Local SP Network
+title: Run Local SP Network - BNB Greenfield SP
 ---
 
 This guide helps you to set up a local Greenfield Storage Provider network for testing

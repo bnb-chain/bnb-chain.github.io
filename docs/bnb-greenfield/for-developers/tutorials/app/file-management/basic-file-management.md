@@ -1,5 +1,5 @@
 ---
-title: Simple Tool for File Management
+title: Simple Tool for File Management - BNB Greenfield File Management
 order: 1
 ---
 

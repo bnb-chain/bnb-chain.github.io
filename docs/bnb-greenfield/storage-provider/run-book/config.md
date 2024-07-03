@@ -1,5 +1,5 @@
 ---
-title: SP Config
+title: SP Config - BNB Greenfield SP
 ---
 
 ## SP Config

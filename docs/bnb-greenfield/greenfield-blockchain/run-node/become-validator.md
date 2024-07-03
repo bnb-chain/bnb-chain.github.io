@@ -1,5 +1,5 @@
 ---
-title: Become Validator
+title: Become Validator - BNB Greenfield Node
 order: 6
 ---
 

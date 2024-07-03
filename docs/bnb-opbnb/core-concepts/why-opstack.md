@@ -1,3 +1,7 @@
+---
+title: Why OP Stack - opBNB Core Concepts
+---
+
 # Why OP Stack as the Foundation of opBNB
 
 Our team had extensive discussions and research before we embarked on the mission of creating a high performance optimistic rollup for BNB Smart Chain. 

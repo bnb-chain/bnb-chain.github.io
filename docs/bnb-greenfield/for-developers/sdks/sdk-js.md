@@ -1,5 +1,5 @@
 ---
-title: Javascript SDK Example
+title: Javascript SDK Example - BNB Greenfield SDK
 ---
 
 # Quickstart

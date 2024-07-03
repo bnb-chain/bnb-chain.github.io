@@ -1,5 +1,5 @@
 ---
-title: Exit Greenfield SP Network
+title: Exit Greenfield SP Network - BNB Greenfield SP
 ---
 
 This guide provides step-by-step instructions for SPs to exit the Greenfield NextWork on the Mainnet or Testnet, along with 

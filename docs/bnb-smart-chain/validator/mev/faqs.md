@@ -1,3 +1,7 @@
+---
+title: FAQs - BSC MEV
+---
+
 # FAQs
 
 ### 1. Why is the MEV solution important for the BNBChain ecosystem?

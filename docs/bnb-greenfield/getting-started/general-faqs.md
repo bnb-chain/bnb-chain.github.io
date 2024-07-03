@@ -1,5 +1,5 @@
 ---
-title: General FAQ
+title: General FAQ - BNB Greenfield
 description: A list of BNB Greenfield frequently asks questions.  
 keywords: [BNB Greenfield token, BNB Greenfield usage]
 ---

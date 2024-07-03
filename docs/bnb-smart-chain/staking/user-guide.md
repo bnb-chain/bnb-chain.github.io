@@ -1,3 +1,6 @@
+---
+title: User Guide - BSC Staking
+---
 
 # Manage Stakes with BNB Staking dApp
 
