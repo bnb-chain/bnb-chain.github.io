@@ -223,6 +223,11 @@ nav:
                   - Cross Chain Access Control by CMD: ./bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-cmd.md
                   - Native Access Control: ./bnb-greenfield/for-developers/tutorials/access-control/access-control.md
                   - Cross Chain Access Control by SDK: ./bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-sdk.md
+              - Cross Chain Integration:
+                  - Resources Mirroring with CLI: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirror.md
+                  - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/dapp-integration.md
+                  - Mirroring FAQ: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/mirroring-faqs.md
+                  - Contract as Bucket Owner: ./bnb-greenfield/for-developers/tutorials/cross-chain-integration/demo-contract-as-bucket-owner.md
               - Sample Apps on Greenfield:
                   - Overview: ./bnb-greenfield/for-developers/tutorials/app/overview.md
                   - Data Marketplace: ./bnb-greenfield/for-developers/tutorials/app/data-marketplace.md
