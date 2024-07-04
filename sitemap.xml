@@ -241,6 +241,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/blob-hub/</loc>
+         <lastmod>2024-07-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/data-archive-layer/</loc>
+         <lastmod>2024-07-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/endpoints/</loc>
          <lastmod>2024-07-04</lastmod>
          <changefreq>daily</changefreq>
