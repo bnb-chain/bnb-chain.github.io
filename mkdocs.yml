@@ -236,9 +236,11 @@ nav:
               - Javascript SDK Example: ./bnb-greenfield/for-developers/sdks/sdk-js.md
               - Go SDK Official Doc: https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
-          - How to Contribute: ./bnb-greenfield/for-developers/contribute.md
 
+          - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
+          - Data Archive Layer: ./bnb-greenfield/for-developers/data-archive-layer.md
           - Blob Hub: ./bnb-greenfield/for-developers/blob-hub.md
+          - How to Contribute: ./bnb-greenfield/for-developers/contribute.md
 
       - Greenfield Blockchain:
           - Overview: ./bnb-greenfield/greenfield-blockchain/overview.md
