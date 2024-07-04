@@ -26,7 +26,7 @@
     
     
     
-        <title>Data Marketplace with Programmable Access Control - BNB Greenfield App</title>
+        <title>MindPress Data Marketplace Introduction - BNB Greenfield</title>
     
 
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-marketplace-with-programmable-access-control" class="md-skip">
+        <a href="#mindpress-data-marketplace-introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -2600,9 +2600,7 @@
   
 
 
-<div><h1 id="data-marketplace-with-programmable-access-control">Data Marketplace with Programmable Access Control<a class="headerlink" href="#data-marketplace-with-programmable-access-control" title="Link to this section">¶</a></h1>
-<h2>MindPress Data Marketplace</h2>
-
+<div><h1 id="mindpress-data-marketplace-introduction">MindPress Data Marketplace Introduction<a class="headerlink" href="#mindpress-data-marketplace-introduction" title="Link to this section">¶</a></h1>
 <h3>1. Overview</h3>
 
 <p><a href="https://testnet-marketplace.mindpress.io">MindPress Data Marketplace</a> is a demo built on the BNB Smart Chain and BNB Greenfield storage chains. It uses the image trading scenario as an example to demonstrate the use of BNB Greenfield’s latest release (V1.6&amp;V1.7), such as cross-chain programmability, delegate upload, and sponsor-paid storage fees. With these features, developers can easily create a web3 decentralized trading platform based on the BNB Chain ecosystem with a great user experience and comprehensive functions such as storage, trading, and content permission management, thereby accelerating project development and marketing.</p>
@@ -2748,6 +2746,10 @@
 <td>List Images</td>
 <td><img alt="search" src="../../../../../assets/gifs/list.gif"></td>
 </tr>
+<tr>
+<td>Delist Images</td>
+<td><img alt="search" src="../../../../../assets/gifs/delist.gif"></td>
+</tr>
 </tbody>
 </table>
 <h3>5. Environment Support</h3>
@@ -2792,7 +2794,7 @@
 <li>help the user to create a bucket to store the uploaded images and the paymaster of the bucket is set to mindpress contract.</li>
 <li>set the flow rate limit for the bucket to give the initial free charge.</li>
 </ol>
-<p><img alt="image7" src="https://github.com/bnb-chain/mindpress-data-marketplace/assets/165376388/37e0f978-bbae-45c3-be30-696f119228c0"></p>
+<p><img alt="" src="../../../../../assets/mindpress/create.png"></p>
 <ul>
 <li>List Object</li>
 </ul>
@@ -2801,14 +2803,14 @@
 <li>Send a list request to the MindPress contract with the object ID, group name and price, MindPress will create a new group where all members of the group have access to the object.</li>
 <li>Send a cross-chain put-policy transaction to bind the object and the created group.</li>
 </ol>
-<p><img alt="image9" src="https://github.com/bnb-chain/mindpress-data-marketplace/assets/165376388/095c990a-8b15-4081-81f5-e9d5258f5d49"></p>
+<p><img alt="" src="../../../../../assets/mindpress/list.png"></p>
 <ul>
 <li>
 <p>Buy Object</p>
 <p>To purchase an object, the user simply sends a purchase request and pays the appropriate fee in BNB. The mindpress contract will send a cross-chain package to add the user into the access group.</p>
 </li>
 </ul>
-<p><img alt="image5" src="https://github.com/bnb-chain/mindpress-data-marketplace/assets/165376388/a774d3fe-fb89-425c-bcc3-9b97614c3bad"></p>
+<p><img alt="" src="../../../../../assets/mindpress/buy.png"></p>
 <h4>6.3 Technical Considerations</h4>
 
 <ul>
