@@ -7,12 +7,12 @@ BNB Greenfield provides the ability for a contract to manage buckets through gre
 and we'll use a demo to briefly demonstrate the process.
 
 ## Source Code
-1. Greenfield Demo App Contract: [GreenfieldDemo](https://github.com/bnb-chain/greenfield-contracts/blob/develop/contracts/example/GreenfieldDemo.sol)
-2. Script to Interact with Demo: [Demo Script](https://github.com/bnb-chain/greenfield-contracts/blob/develop/scripts/11-demo-contract-approve-eoa-upload.ts) 
+- Greenfield Demo App Contract: [GreenfieldDemo](https://github.com/bnb-chain/greenfield-contracts/blob/develop/contracts/example/GreenfieldDemo.sol)
+- Script to Interact with Demo: [Demo Script](https://github.com/bnb-chain/greenfield-contracts/blob/develop/scripts/11-demo-contract-approve-eoa-upload.ts) 
 
 ## Greenfield Demo Contract
 The Demo includes the following parts:
-1. greenfield contracts constant:
+### greenfield contracts constant:
 ```solidity
     // BSC testnet
     address public constant TOKEN_HUB = 0xED8e5C546F84442219A5a987EE1D820698528E04;
@@ -24,14 +24,14 @@ The Demo includes the following parts:
 ```
 The version of greenfield contracts deployed on BSC testnet is configured here.
 
-2. create bucket and set bucket flow rate limit
+### create bucket and set bucket flow rate limit
 ```solidity
     function createBucket(string memory bucketName, uint256 transferOutAmount, bytes memory _executorData) external payable;
 ```
 Provides the bucket name, initial BNB amount transferred to the demo contract on Greenfield and the executor data 
 to set bucket flow rate limit.
 
-3. create policy to allow eoa account to upload files to the bucket
+### create policy to allow eoa account to upload files to the bucket
 ```solidity
     function createPolicy(bytes memory createPolicyData) external payable;
 ```
@@ -53,12 +53,12 @@ npx hardhat run scripts/11-demo-contract-approve-eoa-upload.ts  --network bsc-te
 ### Workflow
 
 The interact script includes 4 steps as follows: 
-1. deploy demo contract
+#### deploy demo contract
 ```typescript
     const demo = (await deployContract(operator, 'GreenfieldDemo')) as GreenfieldDemo;
 ```
 
-2. create bucket whose owner is the demo contract 
+#### create bucket whose owner is the demo contract 
 set bucket flow rate limit and cross-chain transfer 0.1 BNB to demo contract
 ```typescript
 const bucketName = 'test-' + demo.address.substring(2, 6).toLowerCase();
@@ -85,7 +85,7 @@ const receipt = await waitTx(
 log(`https://testnet.bscscan.com/tx/${receipt.transactionHash}`);
 ```
 
-3. get bucket id by name after bucket created
+#### get bucket id by name after bucket created
 ```typescript
 const bucketInfo = await client.bucket.getBucketMeta({ bucketName });
 const bucketId = bucketInfo.body!.GfSpGetBucketMetaResponse.Bucket.BucketInfo.Id;
@@ -96,7 +96,7 @@ const hexBucketId = `0x000000000000000000000000000000000000000000000000000000000
 log(`https://testnet.greenfieldscan.com/bucket/${hexBucketId}`);
 ```
 
-4. create policy to allow EOA account upload files to the bucket through cross-chain transaction
+#### create policy to allow EOA account upload files to the bucket through cross-chain transaction
 ```typescript
 const uploaderEoaAccount = operator.address; // TODO set your eoa account to upload files
 log('try to set uploader(eoa account) is', uploaderEoaAccount);
