@@ -1,10 +1,9 @@
 ---
-title: Data Marketplace with Programmable Access Control - BNB Greenfield App
+title: MindPress Data Marketplace Introduction - BNB Greenfield
 ---
-# Data Marketplace with Programmable Access Control
 
+# MindPress Data Marketplace Introduction
 
-<h2>MindPress Data Marketplace</h2>
 
 
 <h3>1. Overview</h3>
@@ -138,6 +137,7 @@ _Buyer_
 | -- | -- |
 | Upload Images | ![search](../../../../assets/gifs/upload.gif) |
 | List Images | ![search](../../../../assets/gifs/list.gif) |
+| Delist Images | ![search](../../../../assets/gifs/delist.gif) |
 
 
 <h3>5. Environment Support</h3>
@@ -214,7 +214,7 @@ The MindPress contract will do the following operations:
 1. help the user to create a bucket to store the uploaded images and the paymaster of the bucket is set to mindpress contract.
 2. set the flow rate limit for the bucket to give the initial free charge.
 
-![image7](https://github.com/bnb-chain/mindpress-data-marketplace/assets/165376388/37e0f978-bbae-45c3-be30-696f119228c0)
+![](../../../../assets/mindpress/create.png)
 
 
 
@@ -230,7 +230,7 @@ Users should go through the following 2 transactions to list an object:
 1. Send a list request to the MindPress contract with the object ID, group name and price, MindPress will create a new group where all members of the group have access to the object.
 2. Send a cross-chain put-policy transaction to bind the object and the created group.
 
-![image9](https://github.com/bnb-chain/mindpress-data-marketplace/assets/165376388/095c990a-8b15-4081-81f5-e9d5258f5d49)
+![](../../../../assets/mindpress/list.png)
 
 
 
@@ -242,7 +242,7 @@ Users should go through the following 2 transactions to list an object:
 
 
 
-![image5](https://github.com/bnb-chain/mindpress-data-marketplace/assets/165376388/a774d3fe-fb89-425c-bcc3-9b97614c3bad)
+![](../../../../assets/mindpress/buy.png)
 
 
 
