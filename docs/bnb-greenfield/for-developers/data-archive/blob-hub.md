@@ -4,7 +4,7 @@ description: Build “Blob” Data Archive on Greenfield
 keywords: [ BNB Greenfield, NodeReal, Data Archive Layer, Blob hub ]
 ---
 
-# Blob Hub: BNB Greenfield as Data Archive Layer
+# Blob Hub: BNB Greenfield as Data Archive Layer for EVM L1 Chains
 
 The Greenfield community has recently launched "BlobHub," a data archive layer designed for all layer 2 blockchains and
 Dapps which leverages EIP4844 blobs as data availability layer. All historical blobs can be persisted into Greenfield,
@@ -26,7 +26,7 @@ blob-syncer service continuously fetches blobs from Ethereum and other blockchai
 api-server handles historical blob query requests from users. The bundle-service can aggregate blobs together, validate
 their correctness, and upload them to Greenfield efficiently.
 
-![Blob Hub Solution](../static/asset/blob-hub-1.png)
+![Blob Hub Solution](../../static/asset/blob-hub-1.png)
 Blob Hub Solution
 
 The syncing process ensures that no blob is missing and each blob synced to Greenfield is consistent. This is achieved
@@ -51,7 +51,7 @@ tethered to centralized entities.
 # Query Blobs from Blob Hub
 
 Blob hub released its support to Ethereum and BSC now, it is going to support as many EVM chains as possible. The API is 100%
-compatible with the Beacon Chain and BSC API spec. Developers can get the supported [network and endpoints](../network-endpoint/endpoints.md) in the doc.
+compatible with the Beacon Chain and BSC API spec. Developers can get the supported [network and endpoints](../network-endpoint/endpoints.md#blob-hub) in the doc.
 
 For more details about the API spec, please refer to [BlobHub API](https://github.com/bnb-chain/blob-hub/?tab=readme-ov-file#blob-hub-api)
 

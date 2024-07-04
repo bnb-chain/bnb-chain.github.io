@@ -210,7 +210,9 @@ nav:
               - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb-greenfield/for-developers/cross-chain-integration/dapp-integration.md
               - Contract Entrypoint: ./bnb-greenfield/for-developers/cross-chain-integration/contract-list.md
               - Cross Chain FAQ: ./bnb-greenfield/for-developers/cross-chain-integration/mirroring-faqs.md
-          - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
+          - Data Archive Layer:
+              - Overview: ./bnb-greenfield/for-developers/data-archive/data-archive-layer.md
+              - Blob Hub: ./bnb-greenfield/for-developers/data-archive/blob-hub.md
           - Tutorials:
               - Overview: ./bnb-greenfield/for-developers/tutorials/overview.md
               - Basic File Management with CLI: ./bnb-greenfield/for-developers/tutorials/file-management-overview.md
@@ -238,8 +240,6 @@ nav:
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
 
           - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
-          - Data Archive Layer: ./bnb-greenfield/for-developers/data-archive-layer.md
-          - Blob Hub: ./bnb-greenfield/for-developers/blob-hub.md
           - How to Contribute: ./bnb-greenfield/for-developers/contribute.md
 
       - Greenfield Blockchain:

@@ -4,7 +4,7 @@ description: Learn about the Data Archive Layer on BNB Greenfield.
 keywords: [ BNB Greenfield, NodeReal, Data Archive Layer ]
 ---
 
-# What Is the Data Archive Layer?
+# What Is Data Archive Layer?
 
 Modular blockchains divide the core functions of a classic blockchain into distinct specialized layers. Data
 availability layer is the essential component that ensures that transaction data included in each produced block is
