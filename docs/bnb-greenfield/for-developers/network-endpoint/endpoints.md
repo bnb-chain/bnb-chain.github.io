@@ -46,6 +46,13 @@ order: 3
 
   For more details, you can refer to [here](network-info.md).
 
+### Blob hub
+- **Ethereum:**
+- `https://gnfd-blobhub.bnbchain.org`
+- **BSC:**
+- `https://gnfd-blobhub-bsc.bnbchain.org`
+
+
 ## Testnet
 ### Greenfield Testnet (chain-id: greenfield_5600-1)
 
