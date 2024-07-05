@@ -232,10 +232,10 @@ nav:
                       - Dataset Batch operations: ./bnb-greenfield/for-developers/tutorials/app/file-management/batch-upload.md
                       - Resumable Upload/Download Demo: ./bnb-greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview.md
 
-          - SDKs:
-              - Overview: ./bnb-greenfield/for-developers/sdks/index.md
-              - Go SDK Example: ./bnb-greenfield/for-developers/sdks/sdk-go.md
-              - Javascript SDK Example: ./bnb-greenfield/for-developers/sdks/sdk-js.md
+          - APIs and SDKs:
+              - Overview: ./bnb-greenfield/for-developers/apis-and-sdks/index.md
+              - Go SDK Example: ./bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md
+              - Javascript SDK Example: ./bnb-greenfield/for-developers/apis-and-sdks/sdk-js.md
               - Go SDK Official Doc: https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
 
@@ -573,8 +573,8 @@ plugins:
         'greenfield-docs/docs/release-notes/features.md': 'bnb-greenfield/release-notes/features.md'
         'greenfield-docs/docs/release-notes/releaseNotes.md': 'bnb-greenfield/release-notes/releaseNotes.md'
         'greenfield-docs/docs/release-notes/roadmap.md': 'bnb-greenfield/release-notes/roadmap.md'
-        'greenfield-docs/docs/sdks/sdk-go.md': 'bnb-greenfield/for-developers/sdks/sdk-go.md'
-        'greenfield-docs/docs/sdks/sdks.md': 'bnb-greenfield/for-developers/sdks/index.md'
+        'greenfield-docs/docs/sdks/sdk-go.md': 'bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md'
+        'greenfield-docs/docs/sdks/sdks.md': 'bnb-greenfield/for-developers/apis-and-sdks/index.md'
         'greenfield-docs/docs/tutorials/app/ai/hugging-face-intro.md': 'bnb-greenfield/for-developers/tutorials/app/overview.md'
         'greenfield-docs/docs/tutorials/app/data-marketplace/contract-list.md': 'bnb-greenfield/for-developers/cross-chain-integration/contract-list.md'
         'greenfield-docs/docs/tutorials/app/data-marketplace/overview.md': 'bnb-greenfield/for-developers/tutorials/app/overview.md'
