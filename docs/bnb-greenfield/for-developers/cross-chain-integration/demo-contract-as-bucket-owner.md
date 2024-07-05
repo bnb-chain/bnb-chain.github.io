@@ -22,19 +22,20 @@ The Demo includes the following parts:
     address public constant SP_ADDRESS_TESTNET = 0x5FFf5A6c94b182fB965B40C7B9F30199b969eD2f;
     address public constant GREENFIELD_EXECUTOR = 0x3E3180883308e8B4946C9a485F8d91F8b15dC48e;
 ```
-The version of greenfield contracts deployed on BSC testnet is configured here.
+The addresses of Greenfield contracts deployed on the BSC testnet are available and configured here. You can find contracts deployed on other networks [contract entrypoint](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/contract-list)
 
 ### create bucket and set bucket flow rate limit
 ```solidity
     function createBucket(string memory bucketName, uint256 transferOutAmount, bytes memory _executorData) external payable;
 ```
-Provides the bucket name, initial BNB amount transferred to the demo contract on Greenfield and the executor data 
-to set bucket flow rate limit.
+Provides the bucket name, initial BNB amount transferred to the demo contract on Greenfield and the executor data
+to set bucket flow rate limit.This API will create a new bucket owned by the smart contract and set the payment for it.
 
 ### create policy to allow eoa account to upload files to the bucket
 ```solidity
     function createPolicy(bytes memory createPolicyData) external payable;
 ```
+Construct the `createPolicyData` parameters to grant permission to the dedicated principle for the created bucket owned by the smart contract.
 
 ## Interact Script
 ### Installation
