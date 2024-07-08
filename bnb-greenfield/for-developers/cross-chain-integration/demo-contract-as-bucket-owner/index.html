@@ -6,34 +6,34 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Greenfield defines its account in the same format as BSC and Ethereum.">
+        <meta name="description" content="Get started with BNB Chain Docs. Explore the documentation for BNB Chain">
       
       
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/core-concept/accounts/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/demo-contract-as-bucket-owner/">
       
       
-        <link rel="prev" href="../../getting-started/general-faqs/">
+        <link rel="prev" href="../dapp-integration/">
       
       
-        <link rel="next" href="../bnb-token-model/">
+        <link rel="next" href="../contract-list/">
       
       
-      <link rel="icon" href="../../../assets/bnb.svg">
+      <link rel="icon" href="../../../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
     
-        <title>Accounts - BNB Greenfield Core Concepts</title>
+        <title>Contract as Bucket Owner - BNB Greenfield Demo</title>
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accounts" class="md-skip">
+        <a href="#greenfield-demo-contract-as-bucket-owner" class="md-skip">
           Skip to content
         </a>
       
@@ -160,7 +160,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../announce/" class="md-tabs__link">
+        <a href="../../../../announce/" class="md-tabs__link">
           
   
     
@@ -335,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -355,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
+        <a href="../../../../bnb-smart-chain/" class="md-tabs__link">
           
   
     
@@ -375,7 +375,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -397,7 +397,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../zkbnb/" class="md-tabs__link">
+        <a href="../../../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -460,7 +460,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -487,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +535,7 @@
         
   
   
-    <a href="../../../announce/" class="md-nav__link">
+    <a href="../../../../announce/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -597,7 +597,7 @@
         
   
   
-    <a href="../../../bc-fusion/" class="md-nav__link">
+    <a href="../../../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -659,7 +659,7 @@
         
   
   
-    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+    <a href="../../../../bnb-smart-chain/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -721,7 +721,7 @@
         
   
   
-    <a href="../../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -793,7 +793,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -826,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
+      <a href="../../../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/wallet-configuration/" class="md-nav__link">
+      <a href="../../../getting-started/wallet-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/token-transfer/" class="md-nav__link">
+      <a href="../../../getting-started/token-transfer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/dcellar/" class="md-nav__link">
+      <a href="../../../getting-started/dcellar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/greenfield-command/" class="md-nav__link">
+      <a href="../../../getting-started/greenfield-command/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/get-test-bnb/" class="md-nav__link">
+      <a href="../../../getting-started/get-test-bnb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/general-faqs/" class="md-nav__link">
+      <a href="../../../getting-started/general-faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,8 +1037,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1067,11 +1065,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
         
           
           <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
@@ -1085,7 +1083,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             Core Concepts
@@ -1096,28 +1094,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Accounts and Keys
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../core-concept/accounts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,150 +1106,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#accounts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accounts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Accounts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-balance" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Balance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#account-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Account Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signatures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Signatures
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#addresses" class="md-nav__link">
-    <span class="md-ellipsis">
-      Addresses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#eip-712-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      EIP-712 Support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keyring-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keyring Interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backend-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      System Options
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tools-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools Options
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supported-sign-algorithms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported Sign Algorithms
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1282,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnb-token-model/" class="md-nav__link">
+      <a href="../../../core-concept/bnb-token-model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1303,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../billing-payment/" class="md-nav__link">
+      <a href="../../../core-concept/billing-payment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1350,7 +1186,7 @@
         
   
   
-    <a href="../data-storage/simple-storage-service/" class="md-nav__link">
+    <a href="../../../core-concept/data-storage/simple-storage-service/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1377,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../programmability/" class="md-nav__link">
+      <a href="../../../core-concept/programmability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1403,6 +1239,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1437,11 +1275,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
         
           
           <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
@@ -1455,7 +1293,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             For Developers
@@ -1469,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/get-started-dev/" class="md-nav__link">
+      <a href="../../get-started-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1514,7 +1352,7 @@
         
   
   
-    <a href="../../for-developers/network-endpoint/network-info/" class="md-nav__link">
+    <a href="../../network-endpoint/network-info/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1538,57 +1376,377 @@
                 
   
   
+    
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
-  
-    <a href="../../for-developers/cross-chain-integration/interface/" class="md-nav__link">
+    
+    
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_3" id="__nav_6_5_3_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Cross Chain Programmability
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cross Chain Programmability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EVM Programmability
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror-concept/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource Mirror
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirror/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources Mirroring with CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dapp-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating BSC Smart Contracts with Greenfield Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Contract as Bucket Owner
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Contract as Bucket Owner
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-demo-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield Demo Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield Demo Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greenfield-contracts-constant" class="md-nav__link">
+    <span class="md-ellipsis">
+      greenfield contracts constant:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-bucket-and-set-bucket-flow-rate-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      create bucket and set bucket flow rate limit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-policy-to-allow-eoa-account-to-upload-files-to-the-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      create policy to allow eoa account to upload files to the bucket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interact-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interact Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interact Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-demo-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      deploy demo contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-bucket-whose-owner-is-the-demo-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      create bucket whose owner is the demo contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-bucket-id-by-name-after-bucket-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      get bucket id by name after bucket created
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-policy-to-allow-eoa-account-upload-files-to-the-bucket-through-cross-chain-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      create policy to allow EOA account upload files to the bucket through cross-chain transaction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contract-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contract Entrypoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mirroring-faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross Chain FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1626,7 +1784,7 @@
         
   
   
-    <a href="../../for-developers/data-archive/data-archive-layer/" class="md-nav__link">
+    <a href="../../data-archive/data-archive-layer/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1685,7 +1843,7 @@
         
   
   
-    <a href="../../for-developers/tutorials/overview/" class="md-nav__link">
+    <a href="../../tutorials/overview/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1744,7 +1902,7 @@
         
   
   
-    <a href="../../for-developers/sdks/" class="md-nav__link">
+    <a href="../../sdks/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1771,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/bundle-service/" class="md-nav__link">
+      <a href="../../bundle-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1792,7 +1950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../for-developers/contribute/" class="md-nav__link">
+      <a href="../../contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1878,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../greenfield-blockchain/overview/" class="md-nav__link">
+      <a href="../../../greenfield-blockchain/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1899,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../greenfield-blockchain/gnfd-cli/" class="md-nav__link">
+      <a href="../../../greenfield-blockchain/gnfd-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1920,7 +2078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../greenfield-blockchain/events/" class="md-nav__link">
+      <a href="../../../greenfield-blockchain/events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1941,7 +2099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../greenfield-blockchain/interact-node/" class="md-nav__link">
+      <a href="../../../greenfield-blockchain/interact-node/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1990,7 +2148,7 @@
         
   
   
-    <a href="../../greenfield-blockchain/run-node/run-node/" class="md-nav__link">
+    <a href="../../../greenfield-blockchain/run-node/run-node/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2084,7 +2242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage-provider/overview/" class="md-nav__link">
+      <a href="../../../storage-provider/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2105,7 +2263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage-provider/storage-provider-lifecycle/" class="md-nav__link">
+      <a href="../../../storage-provider/storage-provider-lifecycle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2126,7 +2284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage-provider/sp-cli/" class="md-nav__link">
+      <a href="../../../storage-provider/sp-cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2147,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage-provider/workflow/" class="md-nav__link">
+      <a href="../../../storage-provider/workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2168,7 +2326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage-provider/standard/" class="md-nav__link">
+      <a href="../../../storage-provider/standard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2227,7 +2385,7 @@
         
   
   
-    <a href="../../storage-provider/run-book/compile-dependences/" class="md-nav__link">
+    <a href="../../../storage-provider/run-book/compile-dependences/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2315,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/releaseNotes/" class="md-nav__link">
+      <a href="../../../release-notes/releaseNotes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2336,7 +2494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/roadmap/" class="md-nav__link">
+      <a href="../../../release-notes/roadmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2357,7 +2515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/features/" class="md-nav__link">
+      <a href="../../../release-notes/features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2444,7 +2602,7 @@
         
   
   
-    <a href="../../../zkbnb/" class="md-nav__link">
+    <a href="../../../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2480,6 +2638,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2488,46 +2648,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#accounts" class="md-nav__link">
+  <a href="#source-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Accounts
+      Source Code
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Accounts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greenfield-demo-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greenfield Demo Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Greenfield Demo Contract">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#user-balance" class="md-nav__link">
+  <a href="#greenfield-contracts-constant" class="md-nav__link">
     <span class="md-ellipsis">
-      User Balance
+      greenfield contracts constant:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#account-definition" class="md-nav__link">
+  <a href="#create-bucket-and-set-bucket-flow-rate-limit" class="md-nav__link">
     <span class="md-ellipsis">
-      Account Definition
+      create bucket and set bucket flow rate limit
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#signatures" class="md-nav__link">
+  <a href="#create-policy-to-allow-eoa-account-to-upload-files-to-the-bucket" class="md-nav__link">
     <span class="md-ellipsis">
-      Signatures
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#addresses" class="md-nav__link">
-    <span class="md-ellipsis">
-      Addresses
+      create policy to allow eoa account to upload files to the bucket
     </span>
   </a>
   
@@ -2539,56 +2699,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-management" class="md-nav__link">
+  <a href="#interact-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Management
+      Interact Script
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Key Management">
+    <nav class="md-nav" aria-label="Interact Script">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#eip-712-support" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      EIP-712 Support
+      Installation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#keyring-interface" class="md-nav__link">
+  <a href="#workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Keyring Interface
+      Workflow
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backend-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backend Options">
+    <nav class="md-nav" aria-label="Workflow">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#system-options" class="md-nav__link">
+  <a href="#deploy-demo-contract" class="md-nav__link">
     <span class="md-ellipsis">
-      System Options
+      deploy demo contract
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tools-options" class="md-nav__link">
+  <a href="#create-bucket-whose-owner-is-the-demo-contract" class="md-nav__link">
     <span class="md-ellipsis">
-      Tools Options
+      create bucket whose owner is the demo contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-bucket-id-by-name-after-bucket-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      get bucket id by name after bucket created
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-policy-to-allow-eoa-account-upload-files-to-the-bucket-through-cross-chain-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      create policy to allow EOA account upload files to the bucket through cross-chain transaction
     </span>
   </a>
   
@@ -2596,15 +2765,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supported-sign-algorithms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported Sign Algorithms
-    </span>
-  </a>
   
 </li>
         
@@ -2628,7 +2788,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/core-concept/accounts.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/for-developers/cross-chain-integration/demo-contract-as-bucket-owner.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2636,134 +2796,112 @@
   
 
 
-  <h1>Accounts and Keys</h1>
+<div><h1 id="greenfield-demo-contract-as-bucket-owner">Greenfield Demo: Contract as Bucket Owner<a class="headerlink" href="#greenfield-demo-contract-as-bucket-owner" title="Link to this section">¶</a></h1>
+<p>BNB Greenfield provides the ability for a contract to manage buckets through greenfield cross-chain transactions, 
+and we’ll use a demo to briefly demonstrate the process.</p>
+<h2 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Link to this section">¶</a></h2>
+<ul>
+<li>Greenfield Demo App Contract: <a href="https://github.com/bnb-chain/greenfield-contracts/blob/develop/contracts/example/GreenfieldDemo.sol">GreenfieldDemo</a></li>
+<li>Script to Interact with Demo: <a href="https://github.com/bnb-chain/greenfield-contracts/blob/develop/scripts/11-demo-contract-approve-eoa-upload.ts">Demo Script</a> </li>
+</ul>
+<h2 id="greenfield-demo-contract">Greenfield Demo Contract<a class="headerlink" href="#greenfield-demo-contract" title="Link to this section">¶</a></h2>
+<p>The Demo includes the following parts:</p>
+<h3 id="greenfield-contracts-constant">greenfield contracts constant:<a class="headerlink" href="#greenfield-contracts-constant" title="Link to this section">¶</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// BSC testnet</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>TOKEN_HUB<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xED8e5C546F84442219A5a987EE1D820698528E04</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>CROSS_CHAIN<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xa5B2c9194131A4E0BFaCbF9E5D6722c873159cb7</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>BUCKET_HUB<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5BB17A87D03620b313C39C24029C94cB5714814A</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>PERMISSION_HUB<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x25E1eeDb5CaBf288210B132321FBB2d90b4174ad</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>SP_ADDRESS_TESTNET<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5FFf5A6c94b182fB965B40C7B9F30199b969eD2f</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>GREENFIELD_EXECUTOR<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3E3180883308e8B4946C9a485F8d91F8b15dC48e</span><span class="p">;</span>
+</code></pre></div>
+The addresses of Greenfield contracts deployed on the BSC testnet are available and configured here. You can find contracts deployed on other networks <a href="https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/contract-list">contract entrypoint</a>
+<h3 id="create-bucket-and-set-bucket-flow-rate-limit">create bucket and set bucket flow rate limit<a class="headerlink" href="#create-bucket-and-set-bucket-flow-rate-limit" title="Link to this section">¶</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createBucket</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>bucketName<span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">transferOutAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_executorData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="p">;</span>
+</code></pre></div>
+Provides the bucket name, initial BNB amount transferred to the demo contract on Greenfield and the executor data
+to set bucket flow rate limit.This API will create a new bucket owned by the smart contract and set the payment for it.
+<h3 id="create-policy-to-allow-eoa-account-to-upload-files-to-the-bucket">create policy to allow eoa account to upload files to the bucket<a class="headerlink" href="#create-policy-to-allow-eoa-account-to-upload-files-to-the-bucket" title="Link to this section">¶</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">createPolicy</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>createPolicyData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="p">;</span>
+</code></pre></div>
+Construct the <code>createPolicyData</code> parameters to grant permission to the dedicated principle for the created bucket owned by the smart contract.
+<h2 id="interact-script">Interact Script<a class="headerlink" href="#interact-script" title="Link to this section">¶</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bnb-chain/greenfield-contracts.git
+<span class="nb">cd</span><span class="w"> </span>greenfield-contracts<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+npm<span class="w"> </span>install
+npx<span class="w"> </span>hardhat<span class="w"> </span>compile
 
-<div><h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Link to this section">¶</a></h2>
-<p>Each Greenfield user has their own address as the identifier for his/her account.
-The addresses can create objects to store on Greenfield, bear and manage
-the permissions, and pay fees.</p>
-<p>Greenfield defines its account in the same format as BSC and Ethereum.
-It starts with ECDSA secp256k1 curve for keys and is compliant with
-<a href="https://github.com/ethereum/EIPs/issues/84">EIP84</a> for
-full <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a>
-paths. The root HD path for Greenfield-based accounts is
-m/44’/60’/0’/0. In the readable presentation, a Greenfield address is
-a 42-character hexadecimal string derived from the last 20 bytes of the
-public key of the controlling account with 0x as the prefix.</p>
-<p>With this compatible address scheme, the users can reuse existing
-accounts and infrastructure from BSC on Greenfield. For example, they
-can use TrustWallet and Metamask (or other compatible wallets) to
-deposit their BNB from BSC to Greenfield and interact with dApps on
-Greenfield. It is also easy to identify the same owner by referring to
-the same addresses on both BSC and Greenfield.</p>
-<h3 id="user-balance">User Balance<a class="headerlink" href="#user-balance" title="Link to this section">¶</a></h3>
-<p>The account can hold a balance of BNB. These BNBs can be used to
-participate in staking, pay for gas fees of Greenfield transactions, and
-pay for Greenfield services.</p>
-<p>This balance can be added via native BNB transfer on Greenfield, or
-cross-chain transfer between Greenfield and BSC.</p>
-<h3 id="account-definition">Account Definition<a class="headerlink" href="#account-definition" title="Link to this section">¶</a></h3>
-<p>In the Greenfield, an <strong>account</strong> designates a pair of <code>PubKey</code> and <code>PrivKey</code>. 
-The <code>PubKey</code> can be derived to generate various <code>Addresses</code>, which are used to identify users (among other parties) in 
-the application.</p>
-<h3 id="signatures">Signatures<a class="headerlink" href="#signatures" title="Link to this section">¶</a></h3>
-<p>The principal way of authenticating a user is done using <a href="https://en.wikipedia.org/wiki/Digital_signature">digital signatures</a>. 
-Users sign transactions using their own private key. Signature verification is done with the associated public key. 
-For on-chain signature verification purposes, we store the public key in an <code>Account</code> object (alongside other data required 
-for a proper transaction validation).</p>
-<p>In the node, all data is stored using <a href="https://protobuf.dev/">Protocol Buffers</a> serialization.</p>
-<p>Greenfield only supports <a href="https://en.bitcoin.it/wiki/Secp256k1">secp256k1</a> key schemes for creating digital signatures:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Address length in bytes</th>
-<th style="text-align: center;">Public key length in bytes</th>
-<th style="text-align: center;">Used for transaction authentication</th>
-<th style="text-align: center;">Used for consensus (Tendermint)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>secp256k1</code></td>
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">33</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">no</td>
-</tr>
-</tbody>
-</table>
-<h3 id="addresses">Addresses<a class="headerlink" href="#addresses" title="Link to this section">¶</a></h3>
-<p><code>Addresses</code> and <code>PubKey</code>s are both public information that identifies actors in the application. <code>Account</code> is used to 
-store authentication information. The basic account implementation is provided by a <code>BaseAccount</code> object.</p>
-<p>To identify users, Greenfield uses the variable <code>AccAddress</code>. The address format follows <a href="https://eips.ethereum.org/EIPS/eip-55">ERC-55</a>.</p>
-<h2 id="key-management">Key Management<a class="headerlink" href="#key-management" title="Link to this section">¶</a></h2>
-<p>Greenfield blockchain is an application-specific chain without EVM.
-As a result, its transaction data structure and API are different from those of BSC.
-Greenfield will not support full functions in existing wallets, e.g. Transfer, Send Transactions, etc.
-However, these wallets can still sign transactions using the <a href="https://eips.ethereum.org/EIPS/eip-712">EIP712</a> standard.
-This standard allows wallets to display data in signing prompts in a structured and readable format.
-This is an <a href="https://medium.com/metamask/eip712-is-coming-what-to-expect-and-how-to-use-it-bb92fd1a7a26">example</a> of how to use it in Metamask.
-Eventually, wallets will start supporting Greenfield directly.</p>
-<h3 id="eip-712-support">EIP-712 Support<a class="headerlink" href="#eip-712-support" title="Link to this section">¶</a></h3>
-<p>The greenfield chain supports and only supports EIP-712 structured transaction.  These enable the existing wallet
-infrastructure to interact with Greenfield at the beginning naturally.</p>
-<p>To achieve this, the following changes have been made.</p>
-<ol>
-<li>An Ethereum-compatible RPC backend. Be noted that we only support necessary methods to connect a
-   wallet(<code>eth_chainId</code>, <code>eth_networkId</code>, <code>eth_blockNumber</code>, <code>eth_getBlockByNumber</code> and <code>eth_getBalance</code>). Other RPC methods are not implemented.</li>
-<li>Same signing algorithm(<code>eth_scep256k1</code>) as Ethereum.</li>
-</ol>
-<p>For developers, they can refer to <a href="https://github.com/bnb-chain/greenfield-go-sdk">greenfield-go-sdk</a> and
-<a href="https://github.com/bnb-chain/greenfield-js-sdk">greenfield-js-sdk</a> for easy integration.</p>
-<h3 id="keyring-interface">Keyring Interface<a class="headerlink" href="#keyring-interface" title="Link to this section">¶</a></h3>
-<p>The <code>Keyring</code> interface is the primary interface for key management in the greenfield-cosmos-sdk. It defines the methods
-that a type needs to implement to be used as a key storage backend. These methods include:</p>
-<ul>
-<li><code>Get</code>: retrieves a key by name.</li>
-<li><code>List</code>: lists all keys stored in the keyring.</li>
-<li><code>Delete</code>: deletes a key by name.</li>
-<li><code>Sign</code>: signs a message using a key.</li>
-</ul>
-<p>By implementing these methods, you can create a custom key storage backend that meets the specific needs of your application.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>It means you don’t have to follow the <code>Keyring</code> interface to manage your key, any existing Ethereum wallets are applicable to</p>
-</div>
-<p>Greenfield as well.</p>
-<h3 id="backend-options">Backend Options<a class="headerlink" href="#backend-options" title="Link to this section">¶</a></h3>
-<p>The greenfield-cosmos-sdk provides different options for key storage, each with its own strengths and weaknesses. The choice of backend will depend on your specific use case. Here are the available options:</p>
-<h4 id="system-options">System Options<a class="headerlink" href="#system-options" title="Link to this section">¶</a></h4>
-<ul>
-<li>
-<p><strong>os</strong>: This backend uses the <code>operating system</code>’s default credentials store to handle key storage operations securely.
-  The keyring may be kept unlocked for the whole duration of the user session.</p>
-</li>
-<li>
-<p><strong>memory</strong>: This backend uses a transient storage, meaning that Keys are discarded when the process terminates or the type
-  instance is garbage collected.</p>
-</li>
-</ul>
-<h4 id="tools-options">Tools Options<a class="headerlink" href="#tools-options" title="Link to this section">¶</a></h4>
-<ul>
-<li>
-<p><strong>file</strong>: This backend stores the keyring encrypted within the app’s configuration directory. This keyring will request a password each time it is accessed, which may occur multiple times in a single command resulting in repeated password prompts.</p>
-</li>
-<li>
-<p><strong>kwallet</strong>: This backend uses the <code>KDE Wallet Manager</code> as a credentials management application.</p>
-</li>
-<li>
-<p><strong>pass</strong>: This backend uses the <code>pass</code> command line utility to store and retrieve keys.</p>
-</li>
-<li>
-<p><strong>test</strong>: This backend stores keys insecurely to disk. It does not prompt for a password to be unlocked and should
-  only be used for testing purposes.</p>
-</li>
-</ul>
-<h3 id="supported-sign-algorithms">Supported Sign Algorithms<a class="headerlink" href="#supported-sign-algorithms" title="Link to this section">¶</a></h3>
-<p>The greenfield-cosmos-sdk supports as many sign algorithms as users want, but in Greenfield context, we only
-support <code>eth_secp256k1</code> and <code>ed25519</code>. These algorithms were chosen for their security and compatibility with the
-Ethereum and Tendermint ecosystems.</p></div>
+cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+<span class="c1"># set `DeployerPrivateKey` on .env</span>
+<span class="c1"># make sure the tBNB balance of the account &gt;= 0.5 BNB on BSC Testnet</span>
+npx<span class="w"> </span>hardhat<span class="w"> </span>run<span class="w"> </span>scripts/11-demo-contract-approve-eoa-upload.ts<span class="w">  </span>--network<span class="w"> </span>bsc-testnet
+</code></pre></div>
+<h3 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Link to this section">¶</a></h3>
+<p>The interact script includes 4 steps as follows: </p>
+<h4 id="deploy-demo-contract">deploy demo contract<a class="headerlink" href="#deploy-demo-contract" title="Link to this section">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">demo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">deployContract</span><span class="p">(</span><span class="nx">operator</span><span class="p">,</span><span class="w"> </span><span class="s1">'GreenfieldDemo'</span><span class="p">))</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">GreenfieldDemo</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="create-bucket-whose-owner-is-the-demo-contract">create bucket whose owner is the demo contract<a class="headerlink" href="#create-bucket-whose-owner-is-the-demo-contract" title="Link to this section">¶</a></h4>
+<p>set bucket flow rate limit and cross-chain transfer 0.1 BNB to demo contract
+</p><div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">bucketName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'test-'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">demo</span><span class="p">.</span><span class="nx">address</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="c1">// - transferOutAmt: 0.1 BNB to demo contract on Greenfield</span>
+<span class="c1">// - set bucket flow rate limit to this bucket</span>
+<span class="c1">// - create bucket: 'test-approve-eoa-upload', its owner is demo contract</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">dataSetBucketFlowRateLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ExecutorMsg</span><span class="p">.</span><span class="nx">getSetBucketFlowRateLimitParams</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">bucketName</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">bucketOwner</span><span class="o">:</span><span class="w"> </span><span class="kt">demo.address</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">operator</span><span class="o">:</span><span class="w"> </span><span class="kt">demo.address</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">paymentAddress</span><span class="o">:</span><span class="w"> </span><span class="kt">demo.address</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">flowRateLimit</span><span class="o">:</span><span class="w"> </span><span class="s1">'1000000000000000000'</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">executorData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dataSetBucketFlowRateLimit</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">transferOutAmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ethers</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">parseEther</span><span class="p">(</span><span class="s1">'0.1'</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">transferOutAmt</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">relayFee</span><span class="p">.</span><span class="nx">mul</span><span class="p">(</span><span class="mf">3</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="nx">ackRelayFee</span><span class="p">.</span><span class="nx">mul</span><span class="p">(</span><span class="mf">2</span><span class="p">)));</span>
+
+<span class="nx">log</span><span class="p">(</span><span class="s1">'- transfer out to demo contract on greenfield'</span><span class="p">,</span><span class="w"> </span><span class="nx">toHuman</span><span class="p">(</span><span class="nx">transferOutAmt</span><span class="p">));</span>
+<span class="nx">log</span><span class="p">(</span><span class="s1">'- create bucket'</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">);</span>
+<span class="nx">log</span><span class="p">(</span><span class="s1">'send crosschain tx!'</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">receipt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">waitTx</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">demo</span><span class="p">.</span><span class="nx">createBucket</span><span class="p">(</span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">transferOutAmt</span><span class="p">,</span><span class="w"> </span><span class="nx">executorData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="p">})</span>
+<span class="p">);</span>
+<span class="nx">log</span><span class="p">(</span><span class="sb">`https://testnet.bscscan.com/tx/</span><span class="si">${</span><span class="nx">receipt</span><span class="p">.</span><span class="nx">transactionHash</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="get-bucket-id-by-name-after-bucket-created">get bucket id by name after bucket created<a class="headerlink" href="#get-bucket-id-by-name-after-bucket-created" title="Link to this section">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">bucketInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">bucket</span><span class="p">.</span><span class="nx">getBucketMeta</span><span class="p">({</span><span class="w"> </span><span class="nx">bucketName</span><span class="w"> </span><span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bucketId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bucketInfo</span><span class="p">.</span><span class="nx">body</span><span class="o">!</span><span class="p">.</span><span class="nx">GfSpGetBucketMetaResponse</span><span class="p">.</span><span class="nx">Bucket</span><span class="p">.</span><span class="nx">BucketInfo</span><span class="p">.</span><span class="nx">Id</span><span class="p">;</span>
+<span class="nx">log</span><span class="p">(</span><span class="s1">'bucket created, bucket id'</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketId</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hexBucketId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`0x000000000000000000000000000000000000000000000000000000000000</span><span class="si">${</span><span class="nb">BigInt</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">bucketId</span>
+<span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mf">16</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="nx">log</span><span class="p">(</span><span class="sb">`https://testnet.greenfieldscan.com/bucket/</span><span class="si">${</span><span class="nx">hexBucketId</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="create-policy-to-allow-eoa-account-upload-files-to-the-bucket-through-cross-chain-transaction">create policy to allow EOA account upload files to the bucket through cross-chain transaction<a class="headerlink" href="#create-policy-to-allow-eoa-account-upload-files-to-the-bucket-through-cross-chain-transaction" title="Link to this section">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">uploaderEoaAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">operator</span><span class="p">.</span><span class="nx">address</span><span class="p">;</span><span class="w"> </span><span class="c1">// TODO set your eoa account to upload files</span>
+<span class="nx">log</span><span class="p">(</span><span class="s1">'try to set uploader(eoa account) is'</span><span class="p">,</span><span class="w"> </span><span class="nx">uploaderEoaAccount</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">policyDataToAllowUserOperateBucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Policy</span><span class="p">.</span><span class="nx">encode</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">'0'</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">resourceId</span><span class="o">:</span><span class="w"> </span><span class="kt">bucketId</span><span class="p">,</span><span class="w"> </span><span class="c1">// bucket id</span>
+<span class="w">    </span><span class="nx">resourceType</span><span class="o">:</span><span class="w"> </span><span class="kt">ResourceType.RESOURCE_TYPE_BUCKET</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">statements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">effect</span><span class="o">:</span><span class="w"> </span><span class="kt">Effect.EFFECT_ALLOW</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">actions</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">ActionType</span><span class="p">.</span><span class="nx">ACTION_CREATE_OBJECT</span><span class="p">],</span><span class="w"> </span><span class="c1">// allow upload file to the bucket</span>
+<span class="w">            </span><span class="nx">resources</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nx">principal</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">PrincipalType</span><span class="p">.</span><span class="nx">PRINCIPAL_TYPE_GNFD_ACCOUNT</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">uploaderEoaAccount</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">}).</span><span class="nx">finish</span><span class="p">();</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">waitTx</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">demo</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="nx">policyDataToAllowUserOperateBucket</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">relayFee.add</span><span class="p">(</span><span class="nx">ackRelayFee</span><span class="p">)</span><span class="w"> </span><span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Now the deployer account can upload files to the bucket on Greenfield.</p></div>
 
 
 
@@ -2802,7 +2940,7 @@ Ethereum and Tendermint ecosystems.</p></div>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../getting-started/general-faqs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General FAQ">
+          <a href="../dapp-integration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Integrating BSC Smart Contracts with Greenfield Projects">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2812,20 +2950,20 @@ Ethereum and Tendermint ecosystems.</p></div>
                 Previous
               </span>
               <div class="md-ellipsis">
-                General FAQ
+                Integrating BSC Smart Contracts with Greenfield Projects
               </div>
             </div>
           </a>
         
         
           
-          <a href="../bnb-token-model/" class="md-footer__link md-footer__link--next" aria-label="Next: BNB Token Model">
+          <a href="../contract-list/" class="md-footer__link md-footer__link--next" aria-label="Next: Contract Entrypoint">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                BNB Token Model
+                Contract Entrypoint
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2958,14 +3096,14 @@ Ethereum and Tendermint ecosystems.</p></div>
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../assets/js/mathjax.js"></script>
+        <script src="../../../../assets/js/mathjax.js"></script>
       
-        <script src="../../../assets/js/custom.js"></script>
+        <script src="../../../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
