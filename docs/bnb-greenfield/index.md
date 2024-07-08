@@ -44,9 +44,9 @@ title: BNB Greenfield
         <div>Storage Provider</div>
         <p>Explore the Storage Provider.</p>
     </a>
-    <a href="./for-developers/sdks">
-        <div>SDKs</div>
-        <p>Utilize the SDKs to build the app</p>
+    <a href="./for-developers/apis-and-sdks">
+        <div>APIs and SDKs</div>
+        <p>Utilize the APIs and SDKs to build the app</p>
     </a>
 </div>
 

@@ -70,10 +70,15 @@ Create a private bucket and share it with specific individuals.
 
 ## Developer Starter Kit
 
+### API
+
+- [Greenfield Chain API Docs](https://greenfield.bnbchain.org/openapi)
+- [Greenfield SP API Docs](https://github.com/bnb-chain/greenfield-storage-provider/tree/master/docs/storage-provider-rest-api)
+
 ### SDK
 
-- [Greenfield Go SDK](sdks/sdk-go.md), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
-- [Greenfield Javascript SDK](sdks/sdk-js.md), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
+- [Greenfield Go SDK](apis-and-sdks/sdk-go.md), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
+- [Greenfield Javascript SDK](apis-and-sdks/sdk-js.md), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
 
 ## Setup
 
