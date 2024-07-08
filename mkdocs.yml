@@ -208,6 +208,7 @@ nav:
               - Resource Mirror: ./bnb-greenfield/for-developers/cross-chain-integration/mirror-concept.md
               - Resources Mirroring with CLI: ./bnb-greenfield/for-developers/cross-chain-integration/mirror.md
               - Integrating BSC Smart Contracts with Greenfield Projects: ./bnb-greenfield/for-developers/cross-chain-integration/dapp-integration.md
+              - Contract as Bucket Owner: ./bnb-greenfield/for-developers/cross-chain-integration/demo-contract-as-bucket-owner.md
               - Contract Entrypoint: ./bnb-greenfield/for-developers/cross-chain-integration/contract-list.md
               - Cross Chain FAQ: ./bnb-greenfield/for-developers/cross-chain-integration/mirroring-faqs.md
           - Data Archive Layer:
