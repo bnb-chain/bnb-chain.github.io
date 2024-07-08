@@ -211,6 +211,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/</loc>
+         <lastmod>2024-07-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-go/</loc>
+         <lastmod>2024-07-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-js/</loc>
+         <lastmod>2024-07-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/contract-list/</loc>
          <lastmod>2024-07-08</lastmod>
          <changefreq>daily</changefreq>
@@ -262,21 +277,6 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/network-info/</loc>
-         <lastmod>2024-07-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/sdks/</loc>
-         <lastmod>2024-07-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/sdks/sdk-go/</loc>
-         <lastmod>2024-07-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/sdks/sdk-js/</loc>
          <lastmod>2024-07-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
