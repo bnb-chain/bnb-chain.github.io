@@ -85,6 +85,7 @@ nav:
       - Participate in Governance: ./bc-fusion/users/gov.md
     - For Token Issuers:
       - Bind Your Tokens: ./bc-fusion/owners/bind.md
+      - Cross Chain Liquidity Check and Repair: ./bc-fusion/owners/liquidity-check.md
     - For Validators:
       - Create New Validators: ./bc-fusion/validators/creation.md
       - Migrate Your Validators: ./bc-fusion/validators/migrations.md
