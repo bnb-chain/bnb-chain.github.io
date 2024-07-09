@@ -12,13 +12,13 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bc-fusion/developers/system-contracts/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bc-fusion/owners/liquidity-check/">
       
       
-        <link rel="prev" href="../crosschain-redelegation/">
+        <link rel="prev" href="../bind/">
       
       
-        <link rel="next" href="../../validators/staking/">
+        <link rel="next" href="../../validators/creation/">
       
       
       <link rel="icon" href="../../../assets/bnb.svg">
@@ -26,7 +26,7 @@
     
     
     
-        <title>Build-in System Contracts</title>
+        <title>Cross Chain Liquidity Check and Repair</title>
     
 
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#build-in-system-contracts" class="md-skip">
+        <a href="#cross-chain-liquidity-check-and-repair" class="md-skip">
           Skip to content
         </a>
       
@@ -870,6 +870,8 @@
                 
   
   
+    
+  
   
   
     
@@ -892,11 +894,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
@@ -910,7 +912,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             For Token Issuers
@@ -924,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../owners/bind/" class="md-nav__link">
+      <a href="../bind/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -942,10 +944,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../owners/liquidity-check/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cross Chain Liquidity Check and Repair
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -954,6 +976,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#circulation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circulation Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liquidity-check-and-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liquidity Check and Repair
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1095,8 +1155,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1123,11 +1181,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
@@ -1141,7 +1199,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             For Developers
@@ -1155,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../staking/" class="md-nav__link">
+      <a href="../../developers/staking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1176,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gov/" class="md-nav__link">
+      <a href="../../developers/gov/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1197,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../crosschain-redelegation/" class="md-nav__link">
+      <a href="../../developers/crosschain-redelegation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1215,30 +1273,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Build-in System Contracts
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../developers/system-contracts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1247,122 +1285,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#precompiled-contracts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Precompiled Contracts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#secp256k1-signature-recover" class="md-nav__link">
-    <span class="md-ellipsis">
-      Secp256k1 Signature Recover
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-double-sign-evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify Double Sign Evidence
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-in-system-contracts_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build-in System Contracts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Build-in System Contracts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stake-hub-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stake Hub Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stake-credit-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stake Credit Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#governor-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Governor Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gov-token-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gov Token Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timelock-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Timelock Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#token-recover-portal-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Token Recover Portal Contract
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1780,98 +1702,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#precompiled-contracts" class="md-nav__link">
+  <a href="#circulation-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Precompiled Contracts
+      Circulation Model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#secp256k1-signature-recover" class="md-nav__link">
+  <a href="#liquidity-check-and-repair" class="md-nav__link">
     <span class="md-ellipsis">
-      Secp256k1 Signature Recover
+      Liquidity Check and Repair
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-double-sign-evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify Double Sign Evidence
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-in-system-contracts_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build-in System Contracts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Build-in System Contracts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stake-hub-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stake Hub Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stake-credit-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stake Credit Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#governor-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Governor Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gov-token-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gov Token Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timelock-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Timelock Contract
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#token-recover-portal-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Token Recover Portal Contract
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1890,7 +1734,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bc-fusion/developers/system-contracts.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bc-fusion/owners/liquidity-check.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1898,76 +1742,43 @@
   
 
 
-<div><h1 id="build-in-system-contracts">Build-in System Contracts<a class="headerlink" href="#build-in-system-contracts" title="Link to this section">¶</a></h1>
-<p>GitHub Implementation link: <a href="https://github.com/bnb-chain/bsc-genesis-contract">https://github.com/bnb-chain/bsc-genesis-contract</a></p>
-<table>
-<thead>
-<tr>
-<th>Contract Name</th>
-<th>Contract Address</th>
-<th>ABI File</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stake Hub Contract</td>
-<td>0x0000000000000000000000000000000000002002</td>
-<td><a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/stakehub.abi">stakehub</a></td>
-</tr>
-<tr>
-<td>Stake Credit Contract</td>
-<td>0x0000000000000000000000000000000000002003</td>
-<td><a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/stakecredit.abi">stakecredit</a></td>
-</tr>
-<tr>
-<td>Governor Contract</td>
-<td>0x0000000000000000000000000000000000002004</td>
-<td><a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/bscgovernor.abi">bscgovernor</a></td>
-</tr>
-<tr>
-<td>Gov Token Contract</td>
-<td>0x0000000000000000000000000000000000002005</td>
-<td><a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/govtoken.abi">govtoken</a></td>
-</tr>
-<tr>
-<td>Timelock Contract</td>
-<td>0x0000000000000000000000000000000000002006</td>
-<td><a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/bsctimelock.abi">bsctimelock</a></td>
-</tr>
-<tr>
-<td>Token Recover Portal Contract</td>
-<td>0x0000000000000000000000000000000000003000</td>
-<td><a href="https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/tokenrecoverportal.abi">tokenrecoverportal</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="precompiled-contracts">Precompiled Contracts<a class="headerlink" href="#precompiled-contracts" title="Link to this section">¶</a></h3>
-<h3 id="secp256k1-signature-recover">Secp256k1 Signature Recover<a class="headerlink" href="#secp256k1-signature-recover" title="Link to this section">¶</a></h3>
-<p>The precompiled contract is used to verify the signature of a message signed using the secp256k1 elliptic curve
-cryptography algorithm. It will also retrun the Tendermint address of the signer.</p>
-<h3 id="verify-double-sign-evidence">Verify Double Sign Evidence<a class="headerlink" href="#verify-double-sign-evidence" title="Link to this section">¶</a></h3>
-<p>The precompiled contract is used to verify the submitted double sign evidence,
-which includes the two block headers signed by the same validator at different times.</p>
-<h2 id="build-in-system-contracts_1">Build-in System Contracts<a class="headerlink" href="#build-in-system-contracts_1" title="Link to this section">¶</a></h2>
-<h3 id="stake-hub-contract">Stake Hub Contract<a class="headerlink" href="#stake-hub-contract" title="Link to this section">¶</a></h3>
-<p>The Stake Hub contract is a contract that manages the staking process, including delegation, undelegation, redelegation,
-and claiming rewards.</p>
-<h3 id="stake-credit-contract">Stake Credit Contract<a class="headerlink" href="#stake-credit-contract" title="Link to this section">¶</a></h3>
-<p>The Stake Credit contract is a template proxy contract. When a validator is created, a new stake credit contract is deployed,
-to manage staking credit and facilitate the exchange between credit and BNB.</p>
-<h3 id="governor-contract">Governor Contract<a class="headerlink" href="#governor-contract" title="Link to this section">¶</a></h3>
-<p>The Governor contract is a contract that manages the BNB Smart Chain governance process.
-It allows users to propose and vote on changes to the protocol.</p>
-<h3 id="gov-token-contract">Gov Token Contract<a class="headerlink" href="#gov-token-contract" title="Link to this section">¶</a></h3>
-<p>The Gov Token contract is a contract that manages the governance token, i.e., <code>govBNB</code>.</p>
-<h3 id="timelock-contract">Timelock Contract<a class="headerlink" href="#timelock-contract" title="Link to this section">¶</a></h3>
-<p>The Timelock contract is a contract that allows executing a time lock on some specific operations (e.g., token
-recovery).
-After the timelock period, the locked tokens can be claimed or released.</p>
-<h3 id="token-recover-portal-contract">Token Recover Portal Contract<a class="headerlink" href="#token-recover-portal-contract" title="Link to this section">¶</a></h3>
-<p>The Token Recover Portal contract is a contract that allows users to recover their BEP2/BEP8 tokens,
-which must have been bound to BEP20 tokens, after the shutdown of the cross-chaind transfer between
-BNB Smart Chain and BNB Beacon Chain. </p></div>
+<div><h1 id="cross-chain-liquidity-check-and-repair">Cross-Chain Liquidity Check and Repair<a class="headerlink" href="#cross-chain-liquidity-check-and-repair" title="Link to this section">¶</a></h1>
+<p>After token binding, tokens can be seamlessly transferred between BC and BSC. 
+However, some improper operations may lead to eventual cross-chain transfer failures. 
+For example, performing a mint operation on one chain but not on the other can result in different supplies on the two chains, 
+making it impossible to transfer all assets from the chain with the larger total supply to the other chain. 
+This doc will introduce the token circulation model of BNB Chain and how to repair cross-chain liquidity issues. 
+We urge all token issuers to complete liquidity checks and repairs before BC Fusion, although this article remains valid after BC Fusion.</p>
+<h2 id="circulation-model">Circulation Model<a class="headerlink" href="#circulation-model" title="Link to this section">¶</a></h2>
+<p><img alt="img" src="../../../assets/bcfusion/circulation.png"></p>
+<p>The architecture of cross-chain communication is as in the above diagram. The cross-chain transfer is the key communication between the two blockchains. 
+Essentially the logic is:</p>
+<ol>
+<li>The transfer-out blockchain will lock the amount from source owner addresses into a system controlled address/contracts</li>
+<li>The transfer-in blockchain will unlock the amount from the system controlled address/contracts and send it to target addresses.</li>
+</ol>
+<p>The system controlled vault on BNB Beacon Chain is <a href="https://explorer.bnbchain.org/address/bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj">bnb1v8vkkymvhe2sf7gd2092ujc6hweta38xadu2pj</a> which is generated by code, 
+and the vault on BNB Smart Chain is a system smart contract called <a href="https://bscscan.com/address/0x0000000000000000000000000000000000001004">Token Hub</a>. The funds on these two addresses are 
+treated as locked which are not part of the circulating supply.</p>
+<h2 id="liquidity-check-and-repair">Liquidity Check and Repair<a class="headerlink" href="#liquidity-check-and-repair" title="Link to this section">¶</a></h2>
+<p>One of the objectives of BC Fusion is to transfer all tokens from the Beacon Chain to BSC. 
+Therefore, we must ensure that there is sufficient liquidity on BSC, meaning the total amount of tokens locked in BSC’s 
+Tokenhub is greater than the circulating supply on the Beacon Chain. </p>
+<p>Let’s use take DAI token as an example:</p>
+<ol>
+<li>Visit the basic information page of DAI on the Beacon Chain explorer to obtain the circulating supply on the Beacon Chain (Csupply) and the contract address on BSC.
+   <img alt="img" src="../../../assets/bcfusion/dai-token.png"></li>
+<li>Visit the BSC explorer to check the locked amount/liquidity of this token. The URL is <a href="https://bscscan.com/token/${BSC_contract_address}?a=0x0000000000000000000000000000000000001004">https://bscscan.com/token/${BSC_contract_address}?a=0x0000000000000000000000000000000000001004</a>. 
+   Replace ${BSC contract address} with the BSC contract address obtained in step 1. And you will see the balance as below:
+   <img alt="img" src="../../../assets/bcfusion/dai-onbsc.png"></li>
+</ol>
+<p>Therefore, Tokenhub on BSC still lacks 1,999,973.28 - 1.755760127949865335 = 1,999,971.5242398721 DAI. 
+To avoid issues caused by precision loss, we recommend adding slightly more liquidity than the calculated value. 
+In this case, it would be 1,999,972 DAI. If you find that the amount of locked tokens on BSC is greater than the circulating 
+supply (Csupply) on the Beacon Chain, it means there is sufficient liquidity, and no further action is needed.</p>
+<p>If there is a liquidity shortage, the issuer of the token should transfer the missing liquidity to Tokenhub, 
+for example, 1,999,972 DAI for the DAI token mentioned above. The source of these tokens is up to the issuer to determine: 
+they could be minted or collected from various accounts.</p></div>
 
 
 
@@ -2003,7 +1814,7 @@ BNB Smart Chain and BNB Beacon Chain. </p></div>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../crosschain-redelegation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cross Chain Redelegation">
+          <a href="../bind/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bind Your Tokens">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2013,20 +1824,20 @@ BNB Smart Chain and BNB Beacon Chain. </p></div>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Cross Chain Redelegation
+                Bind Your Tokens
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../validators/staking/" class="md-footer__link md-footer__link--next" aria-label="Next: Staking">
+          <a href="../../validators/creation/" class="md-footer__link md-footer__link--next" aria-label="Next: Create New Validators">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Staking
+                Create New Validators
               </div>
             </div>
             <div class="md-footer__button md-icon">
