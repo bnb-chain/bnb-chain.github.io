@@ -6,39 +6,27 @@ order: 2
 
 # Roadmap
 
-## Upcoming
-
-### Veld Upgrade
-The Veld hardfork will introduce server bug fixing in this upgrade:
-* [#621](https://github.com/bnb-chain/greenfield/pull/621) fix: add bucket status to bucket migration related events
-* [#625](https://github.com/bnb-chain/greenfield/pull/625) fix: discontinued bucket can't be migrated
-* [#626](https://github.com/bnb-chain/greenfield/pull/626) fix: principal value supports group name
-* [#632](https://github.com/bnb-chain/greenfield/pull/632) fix: ignore register channel error
-
-
-## Long Term
-
-### March 2023, Testnet Congo
+## March 2023, Testnet Congo
 
 - Support Ethereum compatible address and EIP-712 transactions
 - Support cross-chain token transfer between BSC and Greenfield
 - Support storage management, including bucket, object, and group operations
 - Support stream payment billing system
 
-### May 2023, Testnet Mekong
+## May 2023, Testnet Mekong
 
 - Support mirror storage resources from Greenfield to BSC, and cross-chain programming paradigm on BSC
 - Support permission management on buckets, objects, and groups
 - Support data challenge
 
-### September 2023, Launch Mainnet Lena
+## September 2023, Launch Mainnet Lena
 
 - Support SP standard framework
 - Support SP join by governance
 - Support data recovery
 - Support large object and breakpoint resume transfer
 
-### December 2023, Mainnet
+## December 2023, Mainnet
 
 - Enrich the ecosystem by building abundant toolchains and programming paradigms, such as data marketplace, NFT toolset,
   data migration toolset and so on
@@ -46,19 +34,19 @@ The Veld hardfork will introduce server bug fixing in this upgrade:
 - Greenfield bundle service
 - Resource tagging and indexing
 
-### March 2024, Mainnet
+## March 2024, Mainnet
 - Cross-chain permission control
 - Support the free exit of SP
 - Simple data migration
 - Object atomic update
 
-### June 2024, Mainnet
+## June 2024, Mainnet
 
 - Enhance user experience of using greenfield and cross-chain programming
 - Paymaster
 - Data availability layer for BSC and L2 blockchains
 
-### December 2024, Mainnet
+## December 2024, Mainnet
 
 - Support off-chain generic computing
 - Support permanent storage

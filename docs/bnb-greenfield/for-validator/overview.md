@@ -32,27 +32,8 @@ continue moving along the BNB Beacon Chain, BSC, and Greenfield.
     [Here is a good reading](https://docs.tendermint.com/v0.34/introduction/what-is-tendermint.html) about the working 
     principles of an application chain built on Tendermint.
 
-## Why Greenfield Blockchain
 
-### Core of Greenfield Blockchain
-The **Greenfield Blockchain**'s core revolves around data and includes several key aspects:
-
-- **Decentralized storage of data**: Any individual or organization can register as a storage provider on the Greenfield 
-blockchain. As a distributed ledger, Greenfield records the distribution of data stored on multiple storage 
-providers and coordinates data backup and recovery.
-- **Data ownership**: Greenfield empowers users with comprehensive data ownership management functions. Users can grant 
-   access, modify, create, delete, and execute permissions for their data to individuals or groups. On Greenfield, 
-   users can exercise complete control over their own data.
-- **Data assetization**: All data and access permissions on Greenfield can be presented as NFT assets on the BNB 
-   Smart Chain network. Users' operations on these NFT assets, like minting or burning, will ultimately transform into 
-    changes in their data permissions on Greenfield through cross-chain technology. These NFT assets follow the 
-    [ERC721](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/) and [ERC1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/) 
-    standards, maximizing the reuse of existing NFT browsers and markets on BSC.
-- **Programmable data ownership**: Users have the flexibility to program their data ownership rules on Greenfield, 
-    making it highly customizable as per individual requirements.
-- **Flow of data value**: Data assetization on BSC promotes the flow of data value through various decentralized applications (dapps).
-
-### Validator from Greenfield Blockchain
+## Validator from Greenfield Blockchain
 The validators of the Greenfield Blockchain are integral to the network's security and reliability. 
   However, their responsibilities extend well beyond that:
 
@@ -70,8 +51,3 @@ The validators of the Greenfield Blockchain are integral to the network's securi
    of Greenfield's ecosystem and adjust various network parameters as necessary. 
    This ensures that the network remains healthy and sustainable over time, 
    while accommodating the changing needs and demands of its users.
-
-## Get Started with Greenfield Blockchain
-- [Quick start with Greenfield Blockchain](interact-node.md)
-- [Learn more about the ecosystem players of Greenfield](../introduction.md#ecosystem)
-- [Learn more about the module design of Greenfield Blockchain](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-module.md)

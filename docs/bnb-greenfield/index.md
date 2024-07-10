@@ -36,7 +36,7 @@ title: BNB Greenfield
         <div>EVM Programmability</div>
         <p>The real power of the Greenfield lies in its programmability to support the creation of value based on the data assets and its related economy.</p>
     </a>
-    <a href="./greenfield-blockchain/overview">
+    <a href="./for-validator/overview">
         <div>Greenfield Blockchain</div>
         <p>Get familiar with the Greenfield Blockchain and explore its main modules.</p>
     </a>
