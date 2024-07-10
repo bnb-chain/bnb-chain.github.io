@@ -26,8 +26,8 @@ to install it.
 
 3. Find **Greenfield Mainnet** or **Greenfield Testnet**, and click **Add To Wallet** to add new RPC in Trust Wallet or Metamask.
 
-<img width="346" alt="Greenfield-Mainnet-Chain-List" src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/202-Greenfield-Mainnet-Chain-List.png" style={{width:"40%"}}/>
+<img width="346" alt="Greenfield-Mainnet-Chain-List" src="../../static/asset/202-Greenfield-Mainnet-Chain-List.png" style={{width:"40%"}}/>
 
 4. When extension wallet prompts a window, click **Approve**.
 
-<img width="346" alt="Approve-Add-Greenfield-Mainnet" src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/203-Approve-Add-Greenfield-Mainnet.png" style={{width:"40%"}}/>
+<img width="346" alt="Approve-Add-Greenfield-Mainnet" src="../../static/asset/203-Approve-Add-Greenfield-Mainnet.png" style={{width:"40%"}}/>

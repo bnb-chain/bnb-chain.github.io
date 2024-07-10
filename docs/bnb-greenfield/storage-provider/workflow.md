@@ -12,7 +12,7 @@ This section will combine all the current and existing workflows of SP to help y
 
 The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/07-get_approval.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/07-get_approval.jpg" width="1000" height="100" /></div>
 
 - Gateway receives GetApproval requests from the request originator.
 - Gateway verifies the signature of request to ensure that the request has not been tampered with.
@@ -29,7 +29,7 @@ See request and response details for this API: [GetApproval](https://github.com/
 Users do not need to ask approval to update existing objects, they can directly send the `MsgUpdateObjectContent` to Greenfield Chain.
 
 ## Create Bucket
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/07-create_bucket_object.png" /></div>
+<div align="center"><img src="../../static/asset/07-create_bucket_object.png" /></div>
 
 The `Create Bucket` operation initiates a request through the Go SDK. It then queries the greenfield-chain interface to obtain an optimal Global Virtual Group Family ID. This ID is used to request the creation of a bucket on the greenfield chain.
 
@@ -49,7 +49,7 @@ This API involves two steps: first, users manually upload an object to PrimarySP
 
 Upload to PrimarySP flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/08-put_object.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/08-put_object.jpg" width="1000" height="100" /></div>
 
 ### [Gateway](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/gateway.md)
 
@@ -69,7 +69,7 @@ Upload to PrimarySP flow chart is shown below:
 
 Replicate to SecondarySP flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/09-replicate_object.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/09-replicate_object.jpg" width="1000" height="100" /></div>
 
 - Executor fetch ReplicatePieceTask from the Manager which help pick a proper virtual group.
 - The object data is asynchronously replicated to virtual group secondary SPs.
@@ -95,7 +95,7 @@ See request and response details for this API: [PutObject](https://github.com/bn
 
 Users can download an object from PrimarySP. The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/10-get_object.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/10-get_object.jpg" width="1000" height="100" /></div>
 
 ### [Gateway](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/gateway.md)
 
@@ -119,7 +119,7 @@ See request and response details for this API: [GetObject](https://github.com/bn
 
 Users maybe want to query some metadata about buckets, objects, bucket read quota or bucket read records from SP. SP provides related APIs about querying metadata. The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/11-query_meta.jpg" width="800" height="100" /></div>
+<div align="center"><img src="../../static/asset/11-query_meta.jpg" width="800" height="100" /></div>
 
 ### [Gateway](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/gateway.md)
 
@@ -139,7 +139,7 @@ Ensuring data integrity and availability is always the top priority for any dece
 
 The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/12-challenge.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/12-challenge.jpg" width="1000" height="100" /></div>
 
 ### [Gateway](https://github.com/bnb-chain/greenfield-storage-provider/blob/master/docs/modules/gateway.md)
 
@@ -161,7 +161,7 @@ GC is used to delete objects whose metadata on Greenfield chain has already been
 
 The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/13-gc_object.jpg" width="800" height="100" /></div>
+<div align="center"><img src="../../static/asset/13-gc_object.jpg" width="800" height="100" /></div>
 
 - Manager dispatches GCObjectTask to TaskExecutor.
 - TaskExecutor send requests to Metadata to query deleted objects in order.
@@ -215,7 +215,7 @@ Bucket user can select primary sp freely and use the migration bucket to migrate
 
 The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/14-bucket_migrate.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/14-bucket_migrate.jpg" width="1000" height="100" /></div>
 
 - The bucket user should ask new primary sp for migration bucket, and get the approval of the new primary SP.
 - The bucket user submits a MigrationBucket transaction with the approval of the new primary SP.
@@ -229,7 +229,7 @@ Greenfield allows for the participation of SPs and also allows them to exit acco
 
 The flow chart is shown below:
 
-<div align="center"><img src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/14-sp_exit.jpg" width="1000" height="100" /></div>
+<div align="center"><img src="../../static/asset/14-sp_exit.jpg" width="1000" height="100" /></div>
 
 - The src sp self applying for exit by sending the StorageProviderExit transaction to the blockchain.
 - The src sp subscribes event from chain, and produce exit execute plan.
