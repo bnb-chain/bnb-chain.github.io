@@ -204,6 +204,7 @@ nav:
           - Network & Endpoint:
               - Network Info: ./bnb-greenfield/for-developers/network-endpoint/network-info.md
               - RPC Endpoints: ./bnb-greenfield/for-developers/network-endpoint/endpoints.md
+          - Interact with the Chain : ./bnb-greenfield/for-developers/interact-node.md
           - Cross Chain Programmability:
               - EVM Programmability: ./bnb-greenfield/for-developers/cross-chain-integration/interface.md
               - Resource Mirror: ./bnb-greenfield/for-developers/cross-chain-integration/mirror-concept.md
@@ -234,6 +235,8 @@ nav:
                       - Dataset Batch operations: ./bnb-greenfield/for-developers/tutorials/app/file-management/batch-upload.md
                       - Resumable Upload/Download Demo: ./bnb-greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview.md
 
+          - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
+
           - APIs and SDKs:
               - Overview: ./bnb-greenfield/for-developers/apis-and-sdks/index.md
               - Go SDK Example: ./bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md
@@ -241,25 +244,17 @@ nav:
               - Go SDK Official Doc: https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk
               - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
 
-          - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
-          - How to Contribute: ./bnb-greenfield/for-developers/contribute.md
-
-      - Greenfield Blockchain:
-          - Overview: ./bnb-greenfield/greenfield-blockchain/overview.md
-          - Blockchain Command Line:  ./bnb-greenfield/greenfield-blockchain/gnfd-cli.md
-          - Blockchain Events: ./bnb-greenfield/greenfield-blockchain/events.md
-          - Interact with the Chain : ./bnb-greenfield/greenfield-blockchain/interact-node.md
+      - For Chain Validator:
+          - Overview: ./bnb-greenfield/for-validator/overview.md
           - Run Greenfield Blockchain:
-              - Run Node : ./bnb-greenfield/greenfield-blockchain/run-node/run-node.md
-              - Run Relayer : ./bnb-greenfield/greenfield-blockchain/run-node/run-relayer.md
-              - Run Challenger : ./bnb-greenfield/greenfield-blockchain/run-node/run-challenger.md
-              - Become Validator : ./bnb-greenfield/greenfield-blockchain/run-node/become-validator.md
+              - Run Node : ./bnb-greenfield/for-validator/run-node/run-node.md
+              - Run Relayer : ./bnb-greenfield/for-validator/run-node/run-relayer.md
+              - Run Challenger : ./bnb-greenfield/for-validator/run-node/run-challenger.md
+              - Become Validator : ./bnb-greenfield/for-validator/run-node/become-validator.md
 
-      - Storage Provider:
+      - For Storage Provider:
           - Overview: ./bnb-greenfield/storage-provider/overview.md
           - Storage Provider Lifecycle: ./bnb-greenfield/storage-provider/storage-provider-lifecycle.md
-          - SP Command Line: ./bnb-greenfield/storage-provider/sp-cli.md
-          - SP Workflow: ./bnb-greenfield/storage-provider/workflow.md
           - Data Service Quality Standard : ./bnb-greenfield/storage-provider/standard.md
           - Run Storage Provider:
               - SP Compiling and Dependencies: ./bnb-greenfield/storage-provider/run-book/compile-dependences.md
@@ -273,11 +268,9 @@ nav:
               - SP FAQ: ./bnb-greenfield/storage-provider/run-book/sp-faqs.md
 
 
-      - Releases:
-          - Release Notes: ./bnb-greenfield/release-notes/releaseNotes.md
-          - Roadmap: ./bnb-greenfield/release-notes/roadmap.md
-          - Feature Lists: ./bnb-greenfield/release-notes/features.md
-      - Whitepaper: https://github.com/bnb-chain/greenfield-whitepaper
+      - Roadmap:
+          - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
+          - Feature Lists: ./bnb-greenfield/roadmap/features.md
   - zkBNB:
       - zkBNB: ./zkbnb/index.md
       - Overview: ./zkbnb/overview.md
@@ -444,21 +437,20 @@ plugins:
         'docs/BSC-FAQs-validator.md': 'bnb-smart-chain/overview.md'
         'docs/BSC-FAQs-delegator.md': 'bnb-smart-chain/overview.md'
         'docs/cross.md': 'bc-fusion/index.md'
-        'greenfield-docs/docs/api/blockchain-cli/README.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/bank.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/bridge.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/challenge.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/governance.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/key-management.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/payment.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/storage-provider.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/storage.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-cli/validator-staking.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
-        'greenfield-docs/docs/api/blockchain-rest.md': 'bnb-greenfield/greenfield-blockchain/gnfd-cli.md'
+        'greenfield-docs/docs/api/blockchain-cli/README.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/bank.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/bridge.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/challenge.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/governance.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/key-management.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/payment.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/storage-provider.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/storage.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-cli/validator-staking.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/api/blockchain-rest.md': 'bnb-greenfield/for-developers/interact-node.md'
         'greenfield-docs/docs/api/bundle-service.md': 'bnb-greenfield/for-developers/bundle-service.md'
         'greenfield-docs/docs/api/endpoints.md': 'bnb-greenfield/for-developers/network-endpoint/endpoints.md'
-        'greenfield-docs/docs/api/events.md': 'bnb-greenfield/greenfield-blockchain/events.md'
-        'greenfield-docs/docs/api/sp-cli.md': 'bnb-greenfield/storage-provider/sp-cli.md'
+        'greenfield-docs/docs/api/events.md': 'bnb-greenfield/for-developers/interact-node.md'
         'greenfield-docs/docs/api/storage-provider-rest/README.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/api/storage-provider-rest/delete_key.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/api/storage-provider-rest/get_approval.md': 'bnb-greenfield/storage-provider/overview.md'
@@ -485,7 +477,6 @@ plugins:
         'greenfield-docs/docs/api/storage-provider-rest/sp_response.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/api/storage-provider-rest/update_key.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/api/storage-provider-rest/verify_permission.md': 'bnb-greenfield/storage-provider/overview.md'
-        'greenfield-docs/docs/contribute.md': 'bnb-greenfield/for-developers/contribute.md'
         'greenfield-docs/docs/faq/challenge-faqs.md': 'bnb-greenfield/getting-started/general-faqs.md'
         'greenfield-docs/docs/faq/general-faqs.md': 'bnb-greenfield/getting-started/general-faqs.md'
         'greenfield-docs/docs/faq/greenfield-faqs.md': 'bnb-greenfield/getting-started/general-faqs.md'
@@ -506,39 +497,31 @@ plugins:
         'greenfield-docs/docs/guide/core-concept/simple-storage-service.md': 'bnb-greenfield/core-concept/data-storage/simple-storage-service.md'
         'greenfield-docs/docs/guide/core-concept/simple-storage-svc-model.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/guide/core-concept/storage-provider-lifecycle.md': 'bnb-greenfield/storage-provider/storage-provider-lifecycle.md'
-        'greenfield-docs/docs/guide/core-concept/transaction-lifecycle.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/getting-started/ecosystem.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
+        'greenfield-docs/docs/guide/core-concept/transaction-lifecycle.md': 'bnb-greenfield/for-validator/overview.md'
+        'greenfield-docs/docs/guide/getting-started/ecosystem.md': 'bnb-greenfield/index.md'
         'greenfield-docs/docs/guide/getting-started/get-started-dev.md': 'bnb-greenfield/for-developers/get-started-dev.md'
         'greenfield-docs/docs/guide/getting-started/get-test-bnb.md': 'bnb-greenfield/getting-started/get-test-bnb.md'
         'greenfield-docs/docs/guide/getting-started/greenfield-command.md': 'bnb-greenfield/getting-started/greenfield-command.md'
         'greenfield-docs/docs/guide/getting-started/network-info.md': 'bnb-greenfield/for-developers/network-endpoint/network-info.md'
-        'greenfield-docs/docs/guide/getting-started/overview.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
+        'greenfield-docs/docs/guide/getting-started/overview.md': 'bnb-greenfield/index.md'
         'greenfield-docs/docs/guide/getting-started/token-transfer.md': 'bnb-greenfield/getting-started/token-transfer.md'
         'greenfield-docs/docs/guide/getting-started/wallet-configuration.md': 'bnb-greenfield/getting-started/wallet-configuration.md'
         'greenfield-docs/docs/guide/greenfield-blockchain/modules/billing-and-payment.md': 'bnb-greenfield/core-concept/billing-payment.md'
         'greenfield-docs/docs/guide/greenfield-blockchain/modules/consensus-and-staking.md': 'bnb-greenfield/core-concept/bnb-token-model.md'
         'greenfield-docs/docs/guide/greenfield-blockchain/modules/cross-chain.md': 'bnb-greenfield/for-developers/cross-chain-integration/interface.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/data-availability-challenge.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/governance.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/permission.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/storage-module.md': 'bnb-greenfield/storage-provider/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/storage-provider.md': 'bnb-greenfield/storage-provider/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/virtual-group.md': 'bnb-greenfield/storage-provider/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/modules/world-state.md': 'bnb-greenfield/storage-provider/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/overview.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/become-validator.md': 'bnb-greenfield/greenfield-blockchain/run-node/become-validator.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/interact-node.md': 'bnb-greenfield/greenfield-blockchain/interact-node.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-challenger.md': 'bnb-greenfield/greenfield-blockchain/run-node/run-challenger.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-local-network.md': 'bnb-greenfield/greenfield-blockchain/run-node/run-node.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-node.md': 'bnb-greenfield/greenfield-blockchain/run-node/run-node.md'
-        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-relayer.md': 'bnb-greenfield/greenfield-blockchain/run-node/run-relayer.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/overview.md': 'bnb-greenfield/for-validator/overview.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/become-validator.md': 'bnb-greenfield/for-validator/run-node/become-validator.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/interact-node.md': 'bnb-greenfield/for-developers/interact-node.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-challenger.md': 'bnb-greenfield/for-validator/run-node/run-challenger.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-local-network.md': 'bnb-greenfield/for-validator/run-node/run-node.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-node.md': 'bnb-greenfield/for-validator/run-node/run-node.md'
+        'greenfield-docs/docs/guide/greenfield-blockchain/run-node/run-relayer.md': 'bnb-greenfield/for-validator/run-node/run-relayer.md'
         'greenfield-docs/docs/guide/greenfield-blockchain/wallet-integration.md': 'bnb-greenfield/getting-started/wallet-configuration.md'
-        'greenfield-docs/docs/guide/home.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/introduction/overview.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
-        'greenfield-docs/docs/guide/introduction/why-greenfield.md': 'bnb-greenfield/greenfield-blockchain/overview.md'
+        'greenfield-docs/docs/guide/home.md': 'bnb-greenfield/index.md'
+        'greenfield-docs/docs/guide/introduction/overview.md': 'bnb-greenfield/index.md'
+        'greenfield-docs/docs/guide/introduction/why-greenfield.md': 'bnb-greenfield/index.md'
         'greenfield-docs/docs/guide/storage-provider/introduction/overview.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/guide/storage-provider/introduction/standard.md': 'bnb-greenfield/storage-provider/standard.md'
-        'greenfield-docs/docs/guide/storage-provider/introduction/workflow.md': 'bnb-greenfield/storage-provider/workflow.md'
         'greenfield-docs/docs/guide/storage-provider/modules/approver.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/guide/storage-provider/modules/authenticator.md': 'bnb-greenfield/storage-provider/overview.md'
         'greenfield-docs/docs/guide/storage-provider/modules/blocksyncer.md': 'bnb-greenfield/storage-provider/overview.md'
@@ -572,9 +555,8 @@ plugins:
         'greenfield-docs/docs/guide/storage-provider/run-book/run-SP-node.md': 'bnb-greenfield/storage-provider/run-book/run-SP-node.md'
         'greenfield-docs/docs/guide/storage-provider/run-book/run-local-SP-network.md': 'bnb-greenfield/storage-provider/run-book/run-local-SP-network.md'
         'greenfield-docs/docs/intro.md': 'bnb-greenfield/introduction.md'
-        'greenfield-docs/docs/release-notes/features.md': 'bnb-greenfield/release-notes/features.md'
-        'greenfield-docs/docs/release-notes/releaseNotes.md': 'bnb-greenfield/release-notes/releaseNotes.md'
-        'greenfield-docs/docs/release-notes/roadmap.md': 'bnb-greenfield/release-notes/roadmap.md'
+        'greenfield-docs/docs/release-notes/features.md': 'bnb-greenfield/roadmap/features.md'
+        'greenfield-docs/docs/release-notes/roadmap.md': 'bnb-greenfield/roadmap/roadmap.md'
         'greenfield-docs/docs/sdks/sdk-go.md': 'bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md'
         'greenfield-docs/docs/sdks/sdks.md': 'bnb-greenfield/for-developers/apis-and-sdks/index.md'
         'greenfield-docs/docs/tutorials/app/ai/hugging-face-intro.md': 'bnb-greenfield/for-developers/tutorials/app/overview.md'

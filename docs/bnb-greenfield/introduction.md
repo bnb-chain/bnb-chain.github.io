@@ -1,3 +1,4 @@
+
 ---
 title: BNB Greenfield Introduction
 description: BNB Greenfield is a decentralized storage and blockchain storage solution that simplifies data management and access while connecting data ownership with the DeFi context of BNB Chain.
@@ -55,7 +56,7 @@ BNB Greenfield operates on two layers:
 
 2. It consists of a network of "storage providers".
 
-The [BNB Greenfield Blockchain](./greenfield-blockchain/overview.md) maintains the ledger for users and records the storage metadata as the common blockchain state data. Its native token for gas and governance is BNB, which is transferred from BNB Smart Chain. Additionally, BNB Greenfield blockchain has its own staking logic designed for governance.
+The [BNB Greenfield Blockchain](./for-validator/overview.md) maintains the ledger for users and records the storage metadata as the common blockchain state data. Its native token for gas and governance is BNB, which is transferred from BNB Smart Chain. Additionally, BNB Greenfield blockchain has its own staking logic designed for governance.
 
 The [Storage Providers (SP)](./storage-provider/overview.md) are storage service infrastructures provided by organizations or individuals that use Greenfield as the ledger and the single source of truth. Each SP is responsible for responding to user requests to upload and download data, while also serving as the gatekeeper for user rights and authentications.
 
@@ -111,7 +112,7 @@ Challenge Verifier can only be operated by Greenfield validators right now, and 
 ### Explore and Participate in BNB Greenfield
 
 - [Quick Start with BNB Greenfield](getting-started/wallet-configuration.md)
-- [Overview about Greenfield Blockchain](greenfield-blockchain/overview.md)
+- [Overview about Greenfield Blockchain](for-validator/overview.md)
 - [Overview about Storage Provider](storage-provider/overview.md)
 - [Pricing Calculator](https://dcellar.io/pricing-calculator)
 - [Become a Validator](https://github.com/bnb-chain/greenfield/blob/master/docs/blockchain-cli/validator-staking.md)
