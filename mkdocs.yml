@@ -158,7 +158,7 @@ nav:
         - Gas and Fees: ./bnb-opbnb/core-concepts/gas-and-fees.md
         - Account Abstraction: ./bnb-opbnb/core-concepts/account-abstraction-on-opbnb.md
         - Protocol Addresses: ./bnb-opbnb/core-concepts/opbnb-protocol-addresses.md
-        - BNBChain Rollup as Service: ./bnb-opbnb/core-concepts/raas.md
+        - BNB Chain Rollup as Service: ./bnb-opbnb/core-concepts/raas.md
     - Developers:
       - Developer Tools: ./bnb-opbnb/developers/developer-tools.md
       - Network Faucet: ./bnb-opbnb/developers/network-faucet.md
