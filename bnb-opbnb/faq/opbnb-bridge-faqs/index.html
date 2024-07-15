@@ -1142,7 +1142,7 @@
         
   
   <span class="md-ellipsis">
-    BNBChain Rollup as Service
+    BNB Chain Rollup as Service
   </span>
   
 
@@ -2027,7 +2027,7 @@
 
 <div><h3 id="what-is-the-status-of-the-integration-between-opbnb-and-optimisms-superchain">What is the status of the integration between opBNB and Optimism’s Superchain?<a class="headerlink" href="#what-is-the-status-of-the-integration-between-opbnb-and-optimisms-superchain" title="Link to this section">¶</a></h3>
 <p>opBNB is a project that aims to bring the benefits of L2 scaling and user-friendly UX to the BNB ecosystem. It will enable fast and cheap transactions on BNB L2, as well as smooth interoperability with Greenfield, a decentralized platform for building and running applications. 
-Superchain is an innovative solution that leverages OP Stack to provide L2/L3 scaling and security for Ethereum. It allows users to access various L2 protocols with a single wallet and enjoy low fees and high throughput. opBNB is interested in collaborating with Superchain and integrating OP Stack into BNBChain. </p>
+Superchain is an innovative solution that leverages OP Stack to provide L2/L3 scaling and security for Ethereum. It allows users to access various L2 protocols with a single wallet and enjoy low fees and high throughput. opBNB is interested in collaborating with Superchain and integrating OP Stack into BNB Chain. </p>
 <h3 id="what-is-the-reason-for-the-discrepancy-in-the-estimated-cost-of-withdrawdeposit-transactions-between-the-opbnb-bridge-page-and-my-wallet">What is the reason for the discrepancy in the estimated cost of withdraw/deposit transactions between the opBNB bridge page and my wallet?<a class="headerlink" href="#what-is-the-reason-for-the-discrepancy-in-the-estimated-cost-of-withdrawdeposit-transactions-between-the-opbnb-bridge-page-and-my-wallet" title="Link to this section">¶</a></h3>
 <p>When you use the bridge to deposit or withdraw assets from opBNB, the bridge will estimate the gas cost for your transaction. This is done by simulating the execution of the transaction on the blockchain, without actually sending it or changing the state of the network. The simulation returns a number that indicates how much gas units the transaction would use if it was executed in the current network state.</p>
 <p>To get this number, the bridge uses a function called estimateGas, which implements a binary search algorithm between a lower and an upper bound of gas units. The lower bound is usually 21,000, which is the minimum gas required for a simple ether transfer. The upper bound is either specified by the user or derived from the block gas limit of the pending block. The function tries to execute the transaction with different gas values within this range until it finds the smallest gas value that does not cause an out-of-gas exception. This is the estimated gas usage of the transaction.</p>
