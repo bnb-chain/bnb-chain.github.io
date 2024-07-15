@@ -9,7 +9,7 @@ DappBay currently supports BNB Smart Chain, opBNB and BNB Greenfield. It also pr
 2. Fill in the form by Clicking on [Submit-Dapps](https://dappbay.bnbchain.org/submit-dapp).
 3. Submit the updates by repeating steps 1-2 whenever there is a change of your project, including logo, description, github repo, contract address, ect.
 
- If you find anything to improve, pls contact us on [BNBChain official discord](https://discord.com/invite/bnbchain).
+ If you find anything to improve, pls contact us on [BNB Chain official discord](https://discord.com/invite/bnbchain).
 
 **Submit to DappRadar**
 DappRadar is a Dapp Store for user to explore NFTs, NFT Marketplaces, Blockchain Games, De-Fi, Dapps On The Blockchain. It currently supports BNB Smart Chain and opBNB. You can follow below steps to submit your project:

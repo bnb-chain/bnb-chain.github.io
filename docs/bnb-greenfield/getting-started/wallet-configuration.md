@@ -17,7 +17,7 @@ We assume you have installed Trust Wallet or MetaMask and have an account, if no
 to install it.
 
 ## Add Greenfield Network
-1. Visit [BNBChain List](https://www.bnbchainlist.org/).
+1. Visit [BNB Chain List](https://www.bnbchainlist.org/).
 
 2. Click **Connect Wallet**.
 

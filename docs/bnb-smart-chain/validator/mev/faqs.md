@@ -4,14 +4,14 @@ title: FAQs - BSC MEV
 
 # FAQs
 
-### 1. Why is the MEV solution important for the BNBChain ecosystem?
+### 1. Why is the MEV solution important for the BNB Chain ecosystem?
 
-   BNBChain's MEV solution leverages Proposer Builder Separation (PBS) 
+   BNB Chain's MEV solution leverages Proposer Builder Separation (PBS) 
    architecture to foster a more transparent and fair block space market. 
    Through PBS, users gain the power to select their preferred builder for transaction 
    submission, while MEV rewards are equitably distributed among searchers, validators, builders, and BNB stakers. 
    This approach promotes transparency, fairness, user choice, and network security. 
-   By distributing rewards across various roles, BNBChain encourages wider 
+   By distributing rewards across various roles, BNB Chain encourages wider 
    participation and reduces the risk of centralization, to build a decentralized and inclusive blockchain ecosystem.
 
 
@@ -38,17 +38,17 @@ title: FAQs - BSC MEV
 
 ### 4. Who can become the builder?
 
-   BNBChain is a permission-less ecosystem, anyone who implements the standard 
-   builder API could be the BNBChain builder.
+   BNB Chain is a permission-less ecosystem, anyone who implements the standard 
+   builder API could be the BNB Chain builder.
 
-### 5. Where can I find the BNBChain builders information? 
-   You can find the BNBChain builders through a public 
+### 5. Where can I find the BNB Chain builders information? 
+   You can find the BNB Chain builders through a public 
    [builder info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/builders) 
 
 ### 6. How many validators have been integrated with the builders?
    You can find the validators that has implemented the PBS solution from 
    [validator info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/validators)
 
-### 7. Where can I find the BNBChain MEV statistic dashboard? 
+### 7. Where can I find the BNB Chain MEV statistic dashboard? 
    You can view the MEV statistics 
    from [MEV Stats Dashboard](https://dune.com/bnbchain/bnb-smart-chain-mev-stats)
