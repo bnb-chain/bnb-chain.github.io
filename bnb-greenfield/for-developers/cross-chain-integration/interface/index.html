@@ -2520,8 +2520,24 @@ The library handles the complexities of cross-chain operations, ensuring secure 
 </thead>
 <tbody>
 <tr>
+<td>GovHub</td>
+<td>Handle system governance request</td>
+</tr>
+<tr>
+<td>CrossChain</td>
+<td>Handle cross-chain package</td>
+</tr>
+<tr>
 <td>TokenHub</td>
-<td>Use to transfer BNB from BSC to Greenfield</td>
+<td>Transfer BNB from BSC to Greenfield</td>
+</tr>
+<tr>
+<td>LightClient</td>
+<td>Verify cross-chain package and sync light block</td>
+</tr>
+<tr>
+<td>RelayerHub</td>
+<td>Relayers could claim rewards from RelayerHub</td>
 </tr>
 <tr>
 <td>BucketHub</td>
@@ -2536,8 +2552,28 @@ The library handles the complexities of cross-chain operations, ensuring secure 
 <td>Create/delete group, update group member</td>
 </tr>
 <tr>
+<td>BucketERC721Token</td>
+<td>ERC721 token address representing buckets ownership</td>
+</tr>
+<tr>
+<td>ObjectERC721Token</td>
+<td>ERC721 token address representing objects ownership</td>
+</tr>
+<tr>
+<td>GroupERC721Token</td>
+<td>ERC721 token address representing groups ownership</td>
+</tr>
+<tr>
+<td>MemberERC1155Token</td>
+<td>ERC71155 token address representing the identity of group members</td>
+</tr>
+<tr>
 <td>PermissionHub</td>
 <td>The user can use Resource-Based Policy to grant permissions to other accounts. Any resources, such as buckets, objects and groups, can associate several policy. Only the resource owner can put a policy which associate to a resource he owned. 1. A policy associate to a bucket can allow grantee to operate the bucket or the specific objects. 2. A policy associate to a object/group can only allow to operator the object/group.</td>
+</tr>
+<tr>
+<td>PermissionToken</td>
+<td>ERC721 token address representing resource policy</td>
 </tr>
 <tr>
 <td>MultiMessage</td>

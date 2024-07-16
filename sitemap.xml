@@ -2,852 +2,852 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.bnbchain.org/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/erdos-greenfield/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/feynman-bsc/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/haber-bsc/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/haber-fix/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/haber-opbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/second-sunset-bc-testnet/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/second-sunset-bc/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/announce/veld-greenfield/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/developers/crosschain-redelegation/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/developers/gov/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/developers/staking/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/developers/system-contracts/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/owners/bind/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/owners/liquidity-check/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/assets/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/bep153-stake-migration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/gov/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/new-stake/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/stake-migration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/swaps/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/users/timelocks/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/validators/creation/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/validators/gov/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/validators/key-management/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/validators/migrations/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/validators/slash/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bc-fusion/validators/staking/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/introduction/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/accounts/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/billing-payment/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/bnb-token-model/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/programmability/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/data-storage/data-availability/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/data-storage/data-storage/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/core-concept/data-storage/simple-storage-service/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/bundle-service/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/get-started-dev/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/interact-node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-go/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-js/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/contract-list/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/dapp-integration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/demo-contract-as-bucket-owner/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/interface/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror-concept/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirroring-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/blob-hub/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/data-archive-layer/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/endpoints/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/network-info/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/file-management-overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/hosting-websites-overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/transitioning-from-s3-to-greenfield/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/access-control/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/cmd-access-control/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-cmd/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-sdk/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/data-marketplace/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/basic-file-management/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/batch-upload/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/js-file-managemet/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-validator/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/become-validator/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/run-challenger/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/run-node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/run-relayer/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/getting-started/dcellar/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/getting-started/general-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/getting-started/get-test-bnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/getting-started/greenfield-command/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/getting-started/token-transfer/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/getting-started/wallet-configuration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/roadmap/features/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/roadmap/roadmap/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/standard/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/storage-provider-lifecycle/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/common-issues/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/compile-dependences/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/config/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/exit-SP-network/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/join-SP-network/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/piece-store/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/run-SP-node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/run-local-SP-network/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/sp-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/advanced/full-stack-dapp/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/advanced/local-dev-env/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/advanced/local-node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/advanced/node-best-practices/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/advanced/run-with-pebbledb-and-pbss/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/advanced/verify-on-opbnbscan/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/account-abstraction-on-opbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/gas-and-fees/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/opbnb-metrics/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/opbnb-protocol-addresses/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/optimisations-on-opstack/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/raas/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/why-bsc-requires-opbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/core-concepts/why-opstack/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/bep20-crosschain/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/cheat-sheet/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/developer-tools/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/geth-sync/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/multisig-wallet/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/network-faucet/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/set-gas-price/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/faq/build-on-opbnb-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/faq/cross-chain-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/faq/gas-and-fees-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/faq/opbnb-bridge-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/faq/protocol-faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/get-started/deposit-to-opbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/get-started/network-info/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/get-started/wallet-configuration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/get-started/withdraw-from-opbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/rpc/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/archive_node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/boot_node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/docker/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/fast_node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/full_node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_best_practices/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_maintenance/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/separate_node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/upgrade_geth/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/verify_node/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/governance/apis/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/governance/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/governance/user-guide/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/slashing/monitor/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/slashing/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/slashing/slash-rules/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/staking/developer-guide/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/staking/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/staking/user-guide/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/create-val/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/manage-keys/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/run-val/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/security/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/mev/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/mev/builder-integration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/mev/faqs/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/validator/mev/validator-integration/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/join-ecosystem/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/join-ecosystem/platforms/dappbay/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/join-ecosystem/platforms/dev-tool/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/join-ecosystem/platforms/electrical-capital/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/zkbnb/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/zkbnb/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/zkbnb/resources/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/zkbnb/core-concept/overview/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/zkbnb/core-concept/zkbnb-arch/</loc>
-         <lastmod>2024-07-15</lastmod>
+         <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

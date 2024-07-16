@@ -1268,36 +1268,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cross-chain-bridge" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Cross-Chain Bridge
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-mirror" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resource Mirror
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#program-through-evm-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Program Through EVM Contract
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multi-message" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multi Message
+      Key Features
     </span>
   </a>
   
@@ -2270,36 +2243,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cross-chain-bridge" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Cross-Chain Bridge
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-mirror" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resource Mirror
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#program-through-evm-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Program Through EVM Contract
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multi-message" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multi Message
+      Key Features
     </span>
   </a>
   
@@ -2338,17 +2284,7 @@
 
 
 <div><h1 id="cross-chain-programmability">Cross-Chain Programmability<a class="headerlink" href="#cross-chain-programmability" title="Link to this section">¶</a></h1>
-<p>The real power of the Greenfield ecosystem lies in its platform designed not only to store the data, but also to
-support the creation of value based on the data assets and its related economy.</p>
-<p>The asset traits of the data are firstly established on the permissions, e.g. the permission to read the data. When 
-this right is disconnected from the data itself, they become tradable assets and enlarge the value of the data. This 
-can be amplified when the data itself can be executable (a new type of “Smart Code”), interact with each other, and 
-generate new data. This creates a lot of room to imagine building a new, data-intensive, trustless computing environment.</p>
-<p>Moreover, the data permissions can be transferred cross-chain onto BSC and become digital assets there. This creates a 
-variety of possibilities to integrate these assets with the existing DeFi protocols and models on BSC.</p>
-<p>This gets even further enhanced by the smart contracts on BSC, which enjoy the same address format as accounts on the 
-Greenfield blockchain and can be the owners of the data objects and inherit different permissions. This will unleash 
-many new business opportunities based on the data and its operations.</p>
+<p>The Greenfield ecosystem leverages cross-chain programmability to enhance data asset value through innovative permission management and smart code execution. This platform supports the creation, management, and operation of data-intensive, trustless computing environments across different blockchains.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>It does not mean developers have to build dapp based on BSC network. Excellent infrastructure, applications, 
@@ -2356,53 +2292,20 @@ and tools can be built directly on the Greenfield network.</p>
 </div>
 <h2 id="framework">Framework<a class="headerlink" href="#framework" title="Link to this section">¶</a></h2>
 <p><img alt="" src="../../static/asset/03-Cross-chain-Architecture.jpg"></p>
-<p>The Greenfield ecosystem consists of three distinct layers. </p>
-<p>The first layer is the <code>Cross-Chain Communication Layer</code>, which is responsible for handling and verifying 
-the communication packages between the BSC and the Greenfield blockchain networks. This layer serves as the backbone of 
-the entire ecosystem, ensuring the smooth and secure transfer of information between the two platforms.</p>
-<p>The second layer is the <code>Resource Mirror Layer</code>. 
-This layer manages the resource assets defined on Greenfield, which are then mirrored onto BSC. 
-The <code>Resource Mirror Layer</code> enables users to interact with these assets on BSC using smart contracts, 
-which operate on the primitives defined by Greenfield. This layer plays a critical role in the 
-Greenfield ecosystem, enabling seamless cross-chain asset management and more efficient resource allocation.</p>
-<p>At the top of the Greenfield ecosystem is the <code>Application Layer</code>. This layer consists of smart contracts 
-that are developed by the community on BSC, enabling them to operate the mirrored resource entities on
-the <code>Resource Mirror Layer</code>. While Greenfield itself does not offer programmability, the <code>Application Layer</code>
-can interact with Greenfield Core and other supporting infrastructures. The <code>Application Layer</code> represents the true power and 
-potential of the Greenfield ecosystem. Developers are able to create and leverage a 
-wide range of innovative and decentralized applications while benefiting from Greenfield’s robust 
-infrastructure and cross-chain capabilities.</p>
-<h2 id="cross-chain-bridge">Cross-Chain Bridge<a class="headerlink" href="#cross-chain-bridge" title="Link to this section">¶</a></h2>
-<p>The native cross-chain bridge is an essential part of the Greenfield ecosystem, 
-as it enables seamless interoperability between BSC and Greenfield. 
-To ensure the security and integrity of the bridge, a new relayer system have been implemented for the validators of Greenfield
-based on an aggregated multisig scheme.</p>
-<p>Under this system, multiple validators will collaborate to approve and execute cross-chain transactions, 
-with each transaction requiring a certain threshold of signatures to be deemed valid. 
-The use of an aggregated multisig scheme not only ensures greater security but also 
-facilitates a higher bandwidth and faster bridge.</p>
-<p>The relayer system will be continuously monitored and maintained by the validators to 
-ensure that it is running at optimal efficiency.</p>
-<p>More details are discussed in <a href="https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md">Cross Chain Module design</a>.</p>
-<h2 id="resource-mirror">Resource Mirror<a class="headerlink" href="#resource-mirror" title="Link to this section">¶</a></h2>
-<p>In the context of BNB Greenfield, resource mirroring refers to the process of transferring control over objects/buckets/group
-stored on BNB Greenfield to a smart contract on BNB Smart Chain (BSC). When an object is mirrored, it means that the object 
-can be managed through BSC by sending messages to Greenfield through a network of relayers, which facilitate communication 
-and interaction between the two platforms. This allows the objects/buckets/group to be fully managed on-chain on BSC, meaning 
-that users or other smart contracts can perform various operations and changes to the object through on-chain transactions.</p>
-<h2 id="program-through-evm-contract">Program Through EVM Contract<a class="headerlink" href="#program-through-evm-contract" title="Link to this section">¶</a></h2>
-<p>Most native transactions that can be performed on the Greenfield chain can also be achieved on BSC, such as creating, 
-deleting, and updating buckets, groups, and objects. Additionally, you can bind a permission group to a bucket or object, 
-and grant other accounts the ability to operate on buckets, objects, or groups. Due to this feature, smart contracts on BSC 
-are also allowed to hold Greenfield resources.</p>
-<p>The only operation that cannot be performed on BSC is object uploading, because file uploads involve off-chain interactions, 
-which cannot be completed on-chain. However, BSC smart contracts can grant an EOA account the permission to upload files 
-via cross-chain authorization, allowing an off-chain account to upload files on its behalf through signing.</p>
-<h2 id="multi-message">Multi Message<a class="headerlink" href="#multi-message" title="Link to this section">¶</a></h2>
-<p>A cross-chain transaction can include multiple cross-chain operations, so-called multi-message. The composite operations is assemble
-by a MultiMessage contract. It is important to note that the MultiMessage contract is limited to supporting existing cross-chain operations such as 
-bucket, object, group, permission, and token cross chain transfer. It enhances these functionalities by providing aggregation 
-capabilities to support the atomicity of composite operations.</p>
+<p>The Greenfield ecosystem is structured into three primary layers, each serving a distinct purpose in facilitating cross-chain interactions and asset management.</p>
+<ul>
+<li><strong>Cross-Chain Communication Layer</strong>: Securely transfers data between BSC and Greenfield, enabling interoperability.</li>
+<li><strong>Resource Mirror Layer</strong>: Facilitates smart contract interactions by mirroring Greenfield’s resources onto BSC.</li>
+<li><strong>Application Layer</strong>: Utilizes smart contracts on BSC to develop decentralized applications leveraging Greenfield’s infrastructure.</li>
+</ul>
+<p>This layered architecture ensures robust cross-chain capabilities, enabling developers to create innovative applications while utilizing Greenfield’s unique features.</p>
+<h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Link to this section">¶</a></h2>
+<ul>
+<li><strong>Native Cross-Chain Bridge</strong>: Ensures seamless interoperability with enhanced security through a multisig scheme among validators. More details are discussed in <a href="https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md">Cross Chain Module design</a>.</li>
+<li><strong>Resource Mirroring</strong>: Allows on-chain management of Greenfield objects/buckets/groups via BSC, expanding operational possibilities.</li>
+<li><strong>EVM Contract Programming</strong>: Enables most native Greenfield transactions on BSC, except for file uploads, which require off-chain interactions.</li>
+<li><strong>Multi Message</strong>: Allows for the execution of multiple cross-chain operations within a single transaction. This is facilitated by the <code>MultiMessage</code> contract, which aggregates various operations into a cohesive unit. It is important to note that the MultiMessage contract is limited to supporting existing cross-chain operations such as bucket, object, group, permission, and token cross chain transfer.</li>
+</ul>
 <h2 id="get-started-with-building-dapp">Get Started with building dapp<a class="headerlink" href="#get-started-with-building-dapp" title="Link to this section">¶</a></h2>
 <ul>
 <li><a href="https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/cross-chain.md">Learn more about the cross-chain mechanism</a></li>
