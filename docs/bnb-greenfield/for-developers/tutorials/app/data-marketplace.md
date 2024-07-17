@@ -19,9 +19,9 @@ As an image stock, sellers can upload and list photos for sale, while buyers can
 _Seller_
 
 
-
 * **Upload objects (e.g. images) to BNB Greenfield:** Sellers can upload multiple images to BNB Greenfield at once under the BSC network.
 * **List objects on the BNB Smart Chain:** Sellers can list their uploaded images for sale on the BSC network and begin selling download/view permissions to buyers to earn money.
+* **Delist objects**: Sellers can delist their images from the marketplace.
 
 _Buyer_
 
