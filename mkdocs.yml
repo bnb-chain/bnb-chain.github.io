@@ -63,6 +63,7 @@ nav:
     - Announcements: ./announce/index.md
     - Upcoming:
       - Haber Fix Hardfork(BSC): ./announce/haber-fix.md
+      - Final Sunset Hardfork(BC testnet): ./announce/final-sunset-bc-testnet.md
     - Passed:
       - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
       - Second Sunset Hardfork(BC): ./announce/second-sunset-bc.md
