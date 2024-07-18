@@ -2551,23 +2551,29 @@
 <h2 id="hardware-specifications">Hardware Specifications<a class="headerlink" href="#hardware-specifications" title="Link to this section">¶</a></h2>
 <p>To ensure optimal performance and reliability, it is crucial to select the appropriate node type based on your specific requirements for transaction processing and state querying on the BNB Smart Chain.</p>
 <h3 id="fast-node-recommended-configuration">Fast Node (Recommended Configuration)<a class="headerlink" href="#fast-node-recommended-configuration" title="Link to this section">¶</a></h3>
-<p>For users requiring access to the latest world state in a lightweight mode, the fast node is the ideal choice. It demands less from your system’s CPU and disk space.
-- <strong>Processor</strong>: Minimum 16-core CPU.
-- <strong>Memory</strong>: At least 32 GB RAM.
-- <strong>Storage</strong>: Solid State Drive (SSD) with a minimum capacity of 2TB.
-- <strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</p>
+<p>For users requiring access to the latest world state in a lightweight mode, the fast node is the ideal choice. It demands less from your system’s CPU and disk space.</p>
+<ul>
+<li><strong>Processor</strong>: Minimum 16-core CPU.</li>
+<li><strong>Memory</strong>: At least 32 GB RAM.</li>
+<li><strong>Storage</strong>: Solid State Drive (SSD) with a minimum capacity of 2TB.</li>
+<li><strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</li>
+</ul>
 <h3 id="archive-node">Archive Node<a class="headerlink" href="#archive-node" title="Link to this section">¶</a></h3>
-<p>For comprehensive access to the entire historical world state of the BSC mainnet, consider deploying an Archive Node. Detailed instructions are available at <a href="https://github.com/node-real/bsc-erigon">BSC Erigon GitHub repository</a>.
-- <strong>Processor</strong>: Minimum 16-core CPU.
-- <strong>Memory</strong>: At least 128 GB RAM.
-- <strong>Storage</strong>: SSD with a minimum capacity of 10TB (NVME SSDs are recommended for optimal performance).
-- <strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</p>
+<p>For comprehensive access to the entire historical world state of the BSC mainnet, consider deploying an Archive Node. Detailed instructions are available at <a href="https://github.com/node-real/bsc-erigon">BSC Erigon GitHub repository</a>.</p>
+<ul>
+<li><strong>Processor</strong>: Minimum 16-core CPU.</li>
+<li><strong>Memory</strong>: At least 128 GB RAM.</li>
+<li><strong>Storage</strong>: SSD with a minimum capacity of 10TB (NVME SSDs are recommended for optimal performance).</li>
+<li><strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</li>
+</ul>
 <h3 id="full-node">Full Node<a class="headerlink" href="#full-node" title="Link to this section">¶</a></h3>
-<p>To obtain the latest world state and verify the validity of the state or to generate data proofs, a standard Full Node is suitable.
-- <strong>Processor</strong>: Minimum 16-core CPU.
-- <strong>Memory</strong>: At least 64 GB RAM.
-- <strong>Storage</strong>: Solid State Drive (SSD) with a minimum capacity of 3TB.
-- <strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</p>
+<p>To obtain the latest world state and verify the validity of the state or to generate data proofs, a standard Full Node is suitable.</p>
+<ul>
+<li><strong>Processor</strong>: Minimum 16-core CPU.</li>
+<li><strong>Memory</strong>: At least 64 GB RAM.</li>
+<li><strong>Storage</strong>: Solid State Drive (SSD) with a minimum capacity of 3TB.</li>
+<li><strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</li>
+</ul>
 <h2 id="peers-configuration">Peers Configuration<a class="headerlink" href="#peers-configuration" title="Link to this section">¶</a></h2>
 <h3 id="mainnet">Mainnet<a class="headerlink" href="#mainnet" title="Link to this section">¶</a></h3>
 <ul>
@@ -2687,7 +2693,6 @@ This will return true if successful, but that doesn’t mean the node was added 
 <li>Confirm the connection</li>
 </ol>
 <p>To confirm run <strong>admin.peers</strong> and you should see the details of the node you just added.</p>
-<p><img alt="img" src="https://lh3.googleusercontent.com/w6notWcdyEXayM592WuI5xcpysFqgkwwBSX3sBZFIc34SHrKewZYlNMBMyGBPs375ez78i4gZmbnMyMn3Ry5s6Z6qTejatPYdDXL67moRhGmAQsjNNVF0CRZz10yznx13U34fKSc"></p>
 <h3 id="firewall-configuration">Firewall Configuration<a class="headerlink" href="#firewall-configuration" title="Link to this section">¶</a></h3>
 <p><strong>geth</strong> uses several TCP ports for different purposes.</p>
 <p><strong>geth</strong> use a listener (TCP) port and a discovery (UDP) port, both on 30303 by default.</p>

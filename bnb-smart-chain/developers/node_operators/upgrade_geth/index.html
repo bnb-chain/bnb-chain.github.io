@@ -2130,11 +2130,11 @@ make<span class="w"> </span>geth
 $ kill  $pid
 </code></pre></div>
 <h3 id="step-3-restart">Step 3: Restart<a class="headerlink" href="#step-3-restart" title="Link to this section">¶</a></h3>
-<p>:::note
-Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our <a href="../full_node/">tutorial</a> 
-:::</p>
-<div class="highlight"><pre><span></span><code><span class="c1">##</span>
-./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>./node<span class="w"> </span>--cache<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our <a href="../full_node/">tutorial</a> </p>
+</div>
+<div class="highlight"><pre><span></span><code>./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>./node<span class="w"> </span>--cache<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span>
 </code></pre></div></div>
 
 

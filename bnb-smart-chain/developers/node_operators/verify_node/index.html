@@ -2095,8 +2095,8 @@
 </ul>
 <h2 id="steps-to-run-a-verify-node">Steps to Run a Verify Node<a class="headerlink" href="#steps-to-run-a-verify-node" title="Link to this section">¶</a></h2>
 <ol>
-<li>Download the pre-build binaries from <a href="https://github.com/bnb-chain/bsc/releases/latest">release page</a> or follow the instructions below:</li>
-</ol>
+<li>
+<p>Download the pre-build binaries from <a href="https://github.com/bnb-chain/bsc/releases/latest">release page</a> or follow the instructions below:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Linux</span>
 wget<span class="w">   </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/bnb-chain/bsc/releases/latest<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>browser_<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>geth_linux<span class="w"> </span><span class="p">|</span>cut<span class="w"> </span>-d<span class="se">\"</span><span class="w"> </span>-f4<span class="k">)</span>
 mv<span class="w"> </span>geth_linux<span class="w"> </span>geth
@@ -2107,28 +2107,32 @@ wget<span class="w">   </span><span class="k">$(</span>curl<span class="w"> </sp
 mv<span class="w"> </span>geth_mac<span class="w"> </span>geth
 chmod<span class="w"> </span>-v<span class="w"> </span>u+x<span class="w"> </span>geth
 </code></pre></div>
-<ol>
-<li>Download the config files</li>
-</ol>
+</li>
+<li>
+<p>Download the config files</p>
 <p>Download <strong>genesis.json</strong> and <strong>config.toml</strong> by:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w">   </span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/bnb-chain/bsc/releases/latest<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>browser_<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>mainnet<span class="w"> </span><span class="p">|</span>cut<span class="w"> </span>-d<span class="se">\"</span><span class="w"> </span>-f4<span class="k">)</span>
 unzip<span class="w"> </span>mainnet.zip
 </code></pre></div>
-<ol>
-<li>Download snapshot</li>
-</ol>
+</li>
+<li>
+<p>Download snapshot</p>
 <p>Download latest chaindata snapshot from <a href="https://github.com/bnb-chain/bsc-snapshots">here</a>. Follow the guide to structure your files.</p>
-<p>:::note
-Your –datadir flag should point to the extracted chaindata folder path
-:::</p>
-<ol>
-<li>Start verify node
-<div class="highlight"><pre><span></span><code>./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
-</code></pre></div></li>
-</ol>
-<p>:::note
-Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
-:::</p></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your –datadir flag should point to the extracted chaindata folder path</p>
+</div>
+</li>
+<li>
+<p>Start verify node
+    </p><div class="highlight"><pre><span></span><code>./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --enabletrustprotocol --disablesnapprotocol --disablediffprotocol
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.</p>
+</div>
+</li>
+</ol></div>
 
 
 

@@ -1214,9 +1214,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-to-prune" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Prune
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prune-ancient-data-in-real-time" class="md-nav__link">
     <span class="md-ellipsis">
       Prune Ancient Data in Real Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-the-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use the flag
     </span>
   </a>
   
@@ -2124,9 +2142,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-to-prune" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Prune
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prune-ancient-data-in-real-time" class="md-nav__link">
     <span class="md-ellipsis">
       Prune Ancient Data in Real Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-the-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use the flag
     </span>
   </a>
   
@@ -2193,7 +2229,7 @@
 <h3 id="storage">Storage<a class="headerlink" href="#storage" title="Link to this section">¶</a></h3>
 <h4 id="prune-state">Prune State<a class="headerlink" href="#prune-state" title="Link to this section">¶</a></h4>
 <p>According to the test, the performance of a full node will degrade when the storage size reaches a high volume(previously it was 1.5TB, which is an experimental value, the latest number needs to be updated). We suggest that the fullnode always keep light storage by pruning the storage.</p>
-<h5 id="how-to-prune">How to Prune<a class="headerlink" href="#how-to-prune" title="Link to this section">¶</a></h5>
+<h4 id="how-to-prune">How to Prune<a class="headerlink" href="#how-to-prune" title="Link to this section">¶</a></h4>
 <ol>
 <li>Stop the BSC node.</li>
 <li>Run <code>nohup geth snapshot prune-state --datadir {the data dir of your bsc node} &amp;</code>. It will take 3-5 hours to finish.</li>
@@ -2203,7 +2239,7 @@
 The hardware is also important, <strong>make sure the SSD meets: 3 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency &lt;1ms (if node is started with snap sync, it will need NVMe SSD)</strong>.</p>
 <h4 id="prune-ancient-data-in-real-time">Prune Ancient Data in Real Time<a class="headerlink" href="#prune-ancient-data-in-real-time" title="Link to this section">¶</a></h4>
 <p>Ancient data is block data that is already considered immutable. This is determined by a threshold which is currently set at 90000. This means that blocks older than 90000 are considered ancient data. We recommend the <code>--prunceancient</code> flag to users who don’t care about the ancient data. This is also advised for users who want to save disk space since this will only keep data for the latest 90000 blocks.  Note that once this flag is turned on, the ancient data will not be recovered again and you cannot go back running your node without this flag in the start-up command. </p>
-<h5 id="how-to-use-the-flag">How to use the flag<a class="headerlink" href="#how-to-use-the-flag" title="Link to this section">¶</a></h5>
+<h4 id="how-to-use-the-flag">How to use the flag<a class="headerlink" href="#how-to-use-the-flag" title="Link to this section">¶</a></h4>
 <div class="highlight"><pre><span></span><code>./geth --tries-verify-mode none --config /server/config.toml --datadir /server/node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --pruneancient=true --syncmode=full
 </code></pre></div>
 <h4 id="prune-block-tools">Prune Block Tools<a class="headerlink" href="#prune-block-tools" title="Link to this section">¶</a></h4>
@@ -2211,11 +2247,13 @@ The hardware is also important, <strong>make sure the SSD meets: 3 TB of free di
 <h5 id="how-to-prune_1">How to prune<a class="headerlink" href="#how-to-prune_1" title="Link to this section">¶</a></h5>
 <ol>
 <li>Stop the BSC Node.</li>
-<li>Run 
-<div class="highlight"><pre><span></span><code>./geth snapshot prune-block --datadir /server/node --datadir.ancient ./chaindata/ancient --block-amount-reserved 1024
-</code></pre></div></li>
-</ol>
+<li>
+<p>Run 
+    </p><div class="highlight"><pre><span></span><code>./geth snapshot prune-block --datadir /server/node --datadir.ancient ./chaindata/ancient --block-amount-reserved 1024
+</code></pre></div>
 <p><code>block-amount-reserved</code> is the number of ancient data blocks that you want to keep after pruning. </p>
+</li>
+</ol>
 <h3 id="light-storage">Light Storage<a class="headerlink" href="#light-storage" title="Link to this section">¶</a></h3>
 <p>When the node crashes or been force killed, the node will sync from a block that was a few minutes or a few hours ago. This is because the state in memory is not persisted into the database in real time, and the node needs to replay blocks from the last checkpoint once it start. The replaying time depends on the configuration <code>TrieTimeout</code> in the config.toml.  We suggest you raise it if you can tolerate with long replaying time, so the node can keep light storage.</p>
 <h2 id="upgrade-geth">Upgrade Geth<a class="headerlink" href="#upgrade-geth" title="Link to this section">¶</a></h2>
