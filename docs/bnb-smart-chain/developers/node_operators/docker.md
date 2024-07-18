@@ -34,7 +34,7 @@ usermod -aG docker ubuntu
 
 * Get latest version: https://github.com/bnb-chain/bsc/pkgs/container/bsc
 ```
-docker pull ghcr.io/bnb-chain/bsc:1.1.18_hf
+docker pull ghcr.io/bnb-chain/bsc:latest
 ```
 
 ### Download BSC Node Config Files
