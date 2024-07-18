@@ -66,4 +66,8 @@ Step 3: Click Confirm to save your delegation.
 
 ### Undelegate Voting Power
 
-Find the current delegatees in Top delegates and click the 'x' to undelegate of a delegatee, the wallet will ask user to sign and send transaction to bsc
+Step 1: Go to https://snapshot.org/#/delegate/bnbchain-dao.eth
+
+Step 2: Find the current delegatees in Top delegates.
+
+Step 3: Click the 'x' button along a delegatee to undelegate, the wallet will ask user to sign and send transaction to bsc
