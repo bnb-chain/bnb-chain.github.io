@@ -11,6 +11,7 @@ To ensure optimal performance and reliability, it is crucial to select the appro
 
 ### Fast Node (Recommended Configuration)
 For users requiring access to the latest world state in a lightweight mode, the fast node is the ideal choice. It demands less from your system’s CPU and disk space.
+
 - **Processor**: Minimum 16-core CPU.
 - **Memory**: At least 32 GB RAM.
 - **Storage**: Solid State Drive (SSD) with a minimum capacity of 2TB.
@@ -18,6 +19,7 @@ For users requiring access to the latest world state in a lightweight mode, the 
 
 ### Archive Node
 For comprehensive access to the entire historical world state of the BSC mainnet, consider deploying an Archive Node. Detailed instructions are available at [BSC Erigon GitHub repository](https://github.com/node-real/bsc-erigon).
+
 - **Processor**: Minimum 16-core CPU.
 - **Memory**: At least 128 GB RAM.
 - **Storage**: SSD with a minimum capacity of 10TB (NVME SSDs are recommended for optimal performance).
@@ -25,6 +27,7 @@ For comprehensive access to the entire historical world state of the BSC mainnet
 
 ### Full Node
 To obtain the latest world state and verify the validity of the state or to generate data proofs, a standard Full Node is suitable.
+
 - **Processor**: Minimum 16-core CPU.
 - **Memory**: At least 64 GB RAM.
 - **Storage**: Solid State Drive (SSD) with a minimum capacity of 3TB.
@@ -200,9 +203,6 @@ That way your validator node will try to peer with your provided sentry nodes on
 3. Confirm the connection
 
 To confirm run **admin.peers** and you should see the details of the node you just added.
-
-
-![img](https://lh3.googleusercontent.com/w6notWcdyEXayM592WuI5xcpysFqgkwwBSX3sBZFIc34SHrKewZYlNMBMyGBPs375ez78i4gZmbnMyMn3Ry5s6Z6qTejatPYdDXL67moRhGmAQsjNNVF0CRZz10yznx13U34fKSc)
 
 ### Firewall Configuration
 

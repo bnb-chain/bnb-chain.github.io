@@ -43,11 +43,10 @@ $ kill  $pid
 
 
 ### Step 3: Restart
-:::note
-Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our [tutorial](full_node.md) 
-:::
+!!! note
+    Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our [tutorial](full_node.md) 
+
 
 ```bash
-##
 ./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
