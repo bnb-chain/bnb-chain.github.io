@@ -25,7 +25,6 @@ The Block Archiver comprises two main components:
 — API Server: This component handles user requests for historical block data, providing seamless access to the stored blocks.
 
 ![Block Archiver](../../static/asset/block-archiver.png)
-Block Archiver Solution
 
 The indexing process ensures data integrity by running a post-verification process. This process scans all uploaded blocks,
 conducts validation checks against data already stored in Greenfield, and detects any missing data.
@@ -34,7 +33,11 @@ conducts validation checks against data already stored in Greenfield, and detect
 
 ## Node Operators
 
-Node operators requiring full sync from the genesis block need access to historical block data via the Block-Archiver. Leveraging Greenfield's robust infrastructure, they can trust the integrity and availability of the stored data.
+Node operators requiring full sync from the genesis block need access to historical block data via the Block-Archiver.
+Leveraging Greenfield's robust infrastructure, they can trust the integrity and availability of the stored data.
+
+Note: The Greenfield community is currently working on a solution, the Greenfield Peer, which aims to use the Block-Archiver as back-end,
+provides fullsync Nodes block data. More info will be available soon.
 
 ## Data Analysts and Researchers
 
