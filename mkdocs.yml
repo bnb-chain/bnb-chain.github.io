@@ -282,6 +282,10 @@ nav:
           - Overview: ./zkbnb/core-concept/overview.md
           - Architecture: ./zkbnb/core-concept/zkbnb-arch.md
       - Resources: ./zkbnb/resources.md
+  - Showcases:
+     - Decentralized Identity: ./showcase/identity/did.md
+     - Decentralized Name Srvice: ./showcase/identity/dns.md
+     - Attestation: ./showcase/identity/attestation.md
 
 markdown_extensions:
   - toc:
