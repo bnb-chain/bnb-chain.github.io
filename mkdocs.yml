@@ -162,6 +162,7 @@ nav:
         - Protocol Addresses: ./bnb-opbnb/core-concepts/opbnb-protocol-addresses.md
         - BNB Chain Rollup as Service: ./bnb-opbnb/core-concepts/raas.md
     - Developers:
+      - Quick Guide: ./bnb-opbnb/developers/quick-guide.md
       - Developer Tools: ./bnb-opbnb/developers/developer-tools.md
       - Network Faucet: ./bnb-opbnb/developers/network-faucet.md
       - Wallet Gas Price Setting: ./bnb-opbnb/developers/set-gas-price.md
