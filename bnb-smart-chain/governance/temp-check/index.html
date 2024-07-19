@@ -12,28 +12,28 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_best_practices/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/governance/temp-check/">
       
       
-        <link rel="prev" href="../../faucet/">
+        <link rel="prev" href="../user-guide/">
       
       
-        <link rel="next" href="../full_node/">
+        <link rel="next" href="../apis/">
       
       
-      <link rel="icon" href="../../../../assets/bnb.svg">
+      <link rel="icon" href="../../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
     
-        <title>Best Practices - BNB Smart Chain Node Configuration - BSC Develop</title>
+        <title>Temperature Check - BSC Governance</title>
     
 
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.76a95c52.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.76a95c52.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bnb-smart-chain-bsc-node-configuration-best-practices" class="md-skip">
+        <a href="#bsc-governance-temperature-check" class="md-skip">
           Skip to content
         </a>
       
@@ -160,7 +160,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../announce/" class="md-tabs__link">
+        <a href="../../../announce/" class="md-tabs__link">
           
   
     
@@ -335,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -357,7 +357,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -377,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -397,7 +397,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../../bnb-greenfield/" class="md-tabs__link">
           
   
     
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../zkbnb/" class="md-tabs__link">
+        <a href="../../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -460,7 +460,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -487,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +535,7 @@
         
   
   
-    <a href="../../../../announce/" class="md-nav__link">
+    <a href="../../../announce/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -597,7 +597,7 @@
         
   
   
-    <a href="../../../../bc-fusion/" class="md-nav__link">
+    <a href="../../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -665,7 +665,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -698,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -716,8 +716,6 @@
                 
   
   
-    
-  
   
   
     
@@ -748,11 +746,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
@@ -766,7 +764,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Developers
@@ -780,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../developers/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -843,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rpc/" class="md-nav__link">
+      <a href="../../developers/rpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -864,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faucet/" class="md-nav__link">
+      <a href="../../developers/faucet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -882,569 +880,63 @@
                 
   
   
-    
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
-    
-    
+  
+    <a href="../../developers/node_operators/node_best_practices/" class="md-nav__link">
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     Node Operators
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_3_6">
-            <span class="md-nav__icon md-icon"></span>
-            Node Operators
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Node Best Practices
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Node Best Practices
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hardware-specifications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hardware Specifications
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hardware Specifications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fast-node-recommended-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Node (Recommended Configuration)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#archive-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Archive Node
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#full-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full Node
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#peers-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Peers Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Peers Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mainnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mainnet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testnet
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clarification-of-the-snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clarification of the snapshots
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-for-no-peers-in-testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting for no peers in testnet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-metrics-and-alerts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Metrics and Alerts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Optimization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keep-track-of-syncing-speed" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keep Track of Syncing Speed
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-chaindata-snapshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Chaindata Snapshot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#store-your-bnb-with-a-hardware-wallet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Store Your BNB with a Hardware Wallet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-your-full-node-rpc-from-hackers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Securing Your Full Node RPC from Hackers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#account-private-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      Account Private keys
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-vulnerabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software Vulnerabilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-server-as-a-daemon" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Server as a Daemon
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-a-backup-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set up a Backup Node
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps-to-run-a-backup-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps to Run a Backup Node
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps to Run a Backup Node">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-node-will-be-offline-for-a-while-after-restart-or-what-will-happen-if-the-client-is-force-killed" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Node will be Offline for a While After Restart? or What will Happen If the Client is Force Killed?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-a-backup-node-to-become-a-validator-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Upgrade a Backup Node to Become a Validator Node?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-the-validators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Securing the Validators
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Securing the Validators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sentry-nodes-ddos-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sentry Nodes (DDOS Protection)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#firewall-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Firewall Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../full_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Full Node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../archive_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Archive Node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fast_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fast Node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../boot_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Boot Node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../separate_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Separate Node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker Image
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade_geth/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade Geth
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../verify_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Verify Node
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../node_maintenance/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Node Maintenance
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1519,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../staking/overview/" class="md-nav__link">
+      <a href="../../staking/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1540,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../staking/user-guide/" class="md-nav__link">
+      <a href="../../staking/user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1561,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../staking/developer-guide/" class="md-nav__link">
+      <a href="../../staking/developer-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,6 +1079,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1613,11 +1107,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
@@ -1631,7 +1125,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Governance
@@ -1645,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1666,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/user-guide/" class="md-nav__link">
+      <a href="../user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1684,10 +1178,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../governance/temp-check/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Temperature Check
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1696,6 +1210,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-a-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submit a Proposal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vote-on-a-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vote on a Proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delegate-voting-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delegate Voting Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undelegate-voting-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undelegate Voting Power
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1708,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/apis/" class="md-nav__link">
+      <a href="../apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1796,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validator/overview/" class="md-nav__link">
+      <a href="../../validator/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1817,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validator/run-val/" class="md-nav__link">
+      <a href="../../validator/run-val/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1838,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validator/create-val/" class="md-nav__link">
+      <a href="../../validator/create-val/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1859,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validator/security/" class="md-nav__link">
+      <a href="../../validator/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1880,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../validator/manage-keys/" class="md-nav__link">
+      <a href="../../validator/manage-keys/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1931,7 +1525,7 @@
         
   
   
-    <a href="../../../validator/mev/" class="md-nav__link">
+    <a href="../../validator/mev/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2019,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../slashing/overview/" class="md-nav__link">
+      <a href="../../slashing/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2040,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../slashing/slash-rules/" class="md-nav__link">
+      <a href="../../slashing/slash-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2061,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../slashing/monitor/" class="md-nav__link">
+      <a href="../../slashing/monitor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2133,7 +1727,7 @@
         
   
   
-    <a href="../../../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2197,7 +1791,7 @@
         
   
   
-    <a href="../../../../bnb-greenfield/" class="md-nav__link">
+    <a href="../../../bnb-greenfield/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2253,7 +1847,7 @@
         
   
   
-    <a href="../../../../zkbnb/" class="md-nav__link">
+    <a href="../../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2299,244 +1893,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware-specifications" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware Specifications
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Hardware Specifications">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-a-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submit a Proposal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fast-node-recommended-configuration" class="md-nav__link">
+  <a href="#vote-on-a-proposal" class="md-nav__link">
     <span class="md-ellipsis">
-      Fast Node (Recommended Configuration)
+      Vote on a Proposal
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#archive-node" class="md-nav__link">
+  <a href="#delegate-voting-power" class="md-nav__link">
     <span class="md-ellipsis">
-      Archive Node
+      Delegate Voting Power
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#full-node" class="md-nav__link">
+  <a href="#undelegate-voting-power" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Node
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#peers-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Peers Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Peers Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mainnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mainnet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testnet
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clarification-of-the-snapshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clarification of the snapshots
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-for-no-peers-in-testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting for no peers in testnet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-metrics-and-alerts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Metrics and Alerts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Optimization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keep-track-of-syncing-speed" class="md-nav__link">
-    <span class="md-ellipsis">
-      Keep Track of Syncing Speed
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-chaindata-snapshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Chaindata Snapshot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#store-your-bnb-with-a-hardware-wallet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Store Your BNB with a Hardware Wallet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-your-full-node-rpc-from-hackers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Securing Your Full Node RPC from Hackers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#account-private-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      Account Private keys
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#software-vulnerabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software Vulnerabilities
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-server-as-a-daemon" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Server as a Daemon
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-up-a-backup-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set up a Backup Node
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps-to-run-a-backup-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps to Run a Backup Node
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps to Run a Backup Node">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-node-will-be-offline-for-a-while-after-restart-or-what-will-happen-if-the-client-is-force-killed" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Node will be Offline for a While After Restart? or What will Happen If the Client is Force Killed?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade-a-backup-node-to-become-a-validator-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Upgrade a Backup Node to Become a Validator Node?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-the-validators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Securing the Validators
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Securing the Validators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sentry-nodes-ddos-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sentry Nodes (DDOS Protection)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#firewall-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Firewall Configuration
+      Undelegate Voting Power
     </span>
   </a>
   
@@ -2562,7 +1967,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/developers/node_operators/node_best_practices.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/governance/temp-check.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2570,156 +1975,47 @@
   
 
 
-<div><h1 id="bnb-smart-chain-bsc-node-configuration-best-practices">BNB Smart Chain (BSC) Node Configuration: Best Practices<a class="headerlink" href="#bnb-smart-chain-bsc-node-configuration-best-practices" title="Link to this section">¶</a></h1>
-<h2 id="hardware-specifications">Hardware Specifications<a class="headerlink" href="#hardware-specifications" title="Link to this section">¶</a></h2>
-<p>To ensure optimal performance and reliability, it is crucial to select the appropriate node type based on your specific requirements for transaction processing and state querying on the BNB Smart Chain.</p>
-<h3 id="fast-node-recommended-configuration">Fast Node (Recommended Configuration)<a class="headerlink" href="#fast-node-recommended-configuration" title="Link to this section">¶</a></h3>
-<p>For users requiring access to the latest world state in a lightweight mode, the fast node is the ideal choice. It demands less from your system’s CPU and disk space.</p>
-<ul>
-<li><strong>Processor</strong>: Minimum 16-core CPU.</li>
-<li><strong>Memory</strong>: At least 32 GB RAM.</li>
-<li><strong>Storage</strong>: Solid State Drive (SSD) with a minimum capacity of 2TB.</li>
-<li><strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</li>
-</ul>
-<h3 id="archive-node">Archive Node<a class="headerlink" href="#archive-node" title="Link to this section">¶</a></h3>
-<p>For comprehensive access to the entire historical world state of the BSC mainnet, consider deploying an Archive Node. Detailed instructions are available at <a href="https://github.com/node-real/bsc-erigon">BSC Erigon GitHub repository</a>.</p>
-<ul>
-<li><strong>Processor</strong>: Minimum 16-core CPU.</li>
-<li><strong>Memory</strong>: At least 128 GB RAM.</li>
-<li><strong>Storage</strong>: SSD with a minimum capacity of 10TB (NVME SSDs are recommended for optimal performance).</li>
-<li><strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</li>
-</ul>
-<h3 id="full-node">Full Node<a class="headerlink" href="#full-node" title="Link to this section">¶</a></h3>
-<p>To obtain the latest world state and verify the validity of the state or to generate data proofs, a standard Full Node is suitable.</p>
-<ul>
-<li><strong>Processor</strong>: Minimum 16-core CPU.</li>
-<li><strong>Memory</strong>: At least 64 GB RAM.</li>
-<li><strong>Storage</strong>: Solid State Drive (SSD) with a minimum capacity of 3TB.</li>
-<li><strong>Network</strong>: Stable and high-speed internet connection, minimum 5 MBps.</li>
-</ul>
-<h2 id="peers-configuration">Peers Configuration<a class="headerlink" href="#peers-configuration" title="Link to this section">¶</a></h2>
-<h3 id="mainnet">Mainnet<a class="headerlink" href="#mainnet" title="Link to this section">¶</a></h3>
-<ul>
-<li>There is no need to specify static nodes, only Bootnodes are required for mainnet which are already configured in the code. Also, Make sure to use the config.toml file from the latest release. For more details, Please refer this <a href="https://forum.bnbchain.org/t/try-bootnodes-after-bsc-release-v1-2-12/1998#h-32to-join-the-network-with-bootnodes-5">blog</a>.</li>
-</ul>
-<h3 id="testnet">Testnet<a class="headerlink" href="#testnet" title="Link to this section">¶</a></h3>
-<ul>
-<li>Testnet still need to configure the StaticNodes manually and hence, the StaticNodes list is contained in the latest release’s config.toml. For eg: For geth v1.3.7, the updated config.toml with static nodes can be looked over here: <a href="https://github.com/bnb-chain/bsc/releases/download/v1.3.7/testnet.zip">geth v1.3.7 testnet config</a></li>
-</ul>
-<h2 id="clarification-of-the-snapshots">Clarification of the snapshots<a class="headerlink" href="#clarification-of-the-snapshots" title="Link to this section">¶</a></h2>
-<p>As BSC will mainly support <a href="https://forum.bnbchain.org/t/faq-pbss-pebbledb/2260">PBSS &amp; PebbleDB</a>, we will only cover snapshots of PBSS&amp;PebbleDB and ignore snapshot of HashBased&amp;LevelDB here. Please refer to this <a href="https://github.com/bnb-chain/bsc-snapshots/issues/349">reference</a>.</p>
-<h2 id="troubleshooting-for-no-peers-in-testnet">Troubleshooting for no peers in testnet<a class="headerlink" href="#troubleshooting-for-no-peers-in-testnet" title="Link to this section">¶</a></h2>
-<ul>
-<li>Check for configuration issues like wrong chain id, wrong config file/dir.</li>
-<li>Make sure to update the config.toml file as per the latest release</li>
-<li>Don’t use bootnodes on testnet, it’s not required.</li>
-<li>Deleting the <code>geth/nodes</code> and <code>geth/nodekey</code> file/dir might help</li>
-<li>Re-download the snapshot and try again.  </li>
-</ul>
-<p>Reference over <a href="https://github.com/bnb-chain/bsc/issues/2164#issuecomment-1897980997">here</a></p>
-<h2 id="monitoring-metrics-and-alerts">Monitoring Metrics and Alerts<a class="headerlink" href="#monitoring-metrics-and-alerts" title="Link to this section">¶</a></h2>
-<p>To maintain node health and performance, monitor the following key metrics:</p>
-<ul>
-<li><strong>Transaction Pool Alert</strong>: Triggered when the transaction pool exceeds 5000 transactions.</li>
-<li><strong>Block Import Time Alert</strong>: Activated if block import time exceeds 3 seconds.</li>
-<li><strong>RPC Latency Alert</strong>: Initiated when RPC latency surpasses 100ms.</li>
-</ul>
-<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Link to this section">¶</a></h2>
-<p>BSC nodes offer configurable cache settings to enhance performance. It is advisable to allocate approximately one-third of the physical memory to the cache. For example, with 64GB of physical memory, the cache setting can be configured as:
-</p><div class="highlight"><pre><span></span><code>--cache 20000
-</code></pre></div>
-<h2 id="keep-track-of-syncing-speed">Keep Track of Syncing Speed<a class="headerlink" href="#keep-track-of-syncing-speed" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>t=2021-05-13T17:17:17+0800 lvl=info msg="Imported new chain segment"             blocks=11  txs=3701  mgas=482.461  elapsed=8.075s    mgasps=59.744  number=7,355,800 hash=0x84e085b1cd5b1ad4f9a954e2f660704c8375a80f04326395536eedf83363942f age=12h38m32s dirty="583.73 MiB"
-t=2021-05-13T17:17:20+0800 lvl=info msg="Deep froze chain segment"               blocks=117 elapsed=263.497ms number=7,265,806 hash=0x7602f6b960b4092d39ff49781c64404a047e2c78bc166f071ee8714020c39b2e
-t=2021-05-13T17:17:25+0800 lvl=info msg="Imported new chain segment"             blocks=17  txs=5025  mgas=740.885  elapsed=8.125s    mgasps=91.177  number=7,355,817 hash=0xde7a2a76ff7b38414acf3b360bb427d2d0b7dd1f8fe2afe2ffd59d64b237a81b age=12h37m49s dirty="594.65 MiB"
-t=2021-05-13T17:17:33+0800 lvl=info msg="Imported new chain segment"             blocks=18  txs=5108  mgas=748.016  elapsed=8.354s    mgasps=89.535  number=7,355,835 hash=0x757c476f9fe30fc6ef001fb4a03fa991843cf3ed271f21cfc01a9bba5e5eff98 age=12h37m3s  dirty="604.39 MiB"
-t=2021-05-13T17:17:42+0800 lvl=info msg="Imported new chain segment"             blocks=18  txs=5612  mgas=799.778  elapsed=8.260s    mgasps=96.815  number=7,355,853 hash=0x73e87742ef4405ffefec987fc4b8b19e69c54b8f914c27ea69a502fae4d735e0 age=12h36m18s dirty="613.03 MiB"
-</code></pre></div>
-<p>Your syncing speed is <strong>mgasps</strong>. The value should be around 100.
-If you are syncing slowly, please check the speed of your disk.</p>
-<h2 id="use-chaindata-snapshot">Use Chaindata Snapshot<a class="headerlink" href="#use-chaindata-snapshot" title="Link to this section">¶</a></h2>
-<p>Please download the chain data <a href="https://github.com/bnb-chain/bsc-snapshots">snapshot</a> and extract to your home folder to speed up</p>
-<h2 id="store-your-bnb-with-a-hardware-wallet">Store Your BNB with a Hardware Wallet<a class="headerlink" href="#store-your-bnb-with-a-hardware-wallet" title="Link to this section">¶</a></h2>
-<p>The most valuable assets of a validator are two keys: one for signing transactions and another for signing blocks</p>
-<h2 id="securing-your-full-node-rpc-from-hackers">Securing Your Full Node RPC from Hackers<a class="headerlink" href="#securing-your-full-node-rpc-from-hackers" title="Link to this section">¶</a></h2>
-<p>Please do not expose your RPC endpoints to public network.</p>
-<h2 id="account-private-keys">Account Private keys<a class="headerlink" href="#account-private-keys" title="Link to this section">¶</a></h2>
-<p>To protect your BNB, do not share your 24 words with anyone. The only person who should ever need to know them is you. In short, HSMs are affordable, performant and portable pieces of hardware that help to securely generate, store and manage your private keys. Malware attacks and remote extraction of private keys are much more difficult when an HSM is configured properly.</p>
-<h2 id="software-vulnerabilities">Software Vulnerabilities<a class="headerlink" href="#software-vulnerabilities" title="Link to this section">¶</a></h2>
-<p>To protect your BNB, you should only download software directly from official sources, and make sure that you’re always using the latest, most secure version</p>
-<h2 id="running-server-as-a-daemon">Running Server as a Daemon<a class="headerlink" href="#running-server-as-a-daemon" title="Link to this section">¶</a></h2>
-<p>It is important to keep <strong>geth</strong> running at all times. There are several ways to achieve this, and the simplest solution we recommend is to register <strong>geth</strong>  as a systemd service so that it will automatically get started upon system reboots and other events.</p>
-<h2 id="set-up-a-backup-node">Set up a Backup Node<a class="headerlink" href="#set-up-a-backup-node" title="Link to this section">¶</a></h2>
-<ul>
-<li>Run validator node in archive mode</li>
-<li>Shut down nodes gracefully</li>
-<li>Active monitoring with tools</li>
-</ul>
-<h2 id="steps-to-run-a-backup-node">Steps to Run a Backup Node<a class="headerlink" href="#steps-to-run-a-backup-node" title="Link to this section">¶</a></h2>
-<ol>
-<li>Install the latest version of geth</li>
-<li>Sync to the latest height using fast sync mode. You can either download the latest snapshot or start fast sync
-once your node is fully synced</li>
-<li>Shut down your node gracefully kill -HUP $(pgrep geth)</li>
-<li>Restart your node.</li>
-</ol>
-<h3 id="why-node-will-be-offline-for-a-while-after-restart-or-what-will-happen-if-the-client-is-force-killed">Why Node will be Offline for a While After Restart? or What will Happen If the Client is Force Killed?<a class="headerlink" href="#why-node-will-be-offline-for-a-while-after-restart-or-what-will-happen-if-the-client-is-force-killed" title="Link to this section">¶</a></h3>
-<p>After running (synchronized) for a long period of time and being abruptly terminated, only archived nodes are expected to quickly re-synchronize upon restart.</p>
-<p>Steps to reproduce:</p>
-<ul>
-<li>Run the node synchronized for a period of time.</li>
-<li>Abruptly kill the node (kill -9 or system crash).</li>
-<li>Restart the node, observe where it resynchronizes from block height 1 hour ago.</li>
-</ul>
-<p><strong>Reasons</strong></p>
-<p>If Geth crashes (or is not shut down gracefully), the recent state held in memory is lost and needs to be regenerated. It takes Geth a long time to restore the states.</p>
-<p>The root reason is that <strong>geth</strong> does flush the state trie periodically. The period is defined as <strong>trieTimeout</strong> in <strong>config.toml</strong>.</p>
-<h2 id="how-to-upgrade-a-backup-node-to-become-a-validator-node">How to Upgrade a Backup Node to Become a Validator Node?<a class="headerlink" href="#how-to-upgrade-a-backup-node-to-become-a-validator-node" title="Link to this section">¶</a></h2>
-<p>You can stop mining new blocks by sending commands in <strong>geth console</strong></p>
-<p>Connect to your validator node with <strong>geth attach ipc:path/to/geth.ipc</strong></p>
-<div class="highlight"><pre><span></span><code>miner.stop<span class="o">()</span>
-</code></pre></div>
-<p>Then, let backup node resume validating ,
-</p><div class="highlight"><pre><span></span><code>miner.start<span class="o">()</span>
-</code></pre></div>
-<h2 id="securing-the-validators">Securing the Validators<a class="headerlink" href="#securing-the-validators" title="Link to this section">¶</a></h2>
-<p>Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them against different DoS and DDoS attacks. In this section, we disscuss the security mechanism adopted by BSC for its validators.</p>
-<h3 id="sentry-nodes-ddos-protection">Sentry Nodes (DDOS Protection)<a class="headerlink" href="#sentry-nodes-ddos-protection" title="Link to this section">¶</a></h3>
-<p>Validators are responsible for ensuring that the network can sustain denial of service attacks. One recommended way to mitigate these risks is for validators to carefully structure their network topology in a so-called sentry node architecture.
-Sentry nodes can be quickly spun up or change their IP addresses. Because the links to the sentry nodes are in private IP space, an internet based attacked cannot disturb them directly. This will ensure validator block proposals and votes always make it to the rest of the network.</p>
-<p>To setup your sentry node architecture you can follow the instructions below:</p>
-<ol>
-<li>Build a private network and setup trusted private connections between the validator node and its sentry</li>
-</ol>
-<p>Please do not expose your validator fullnode RPC endpoints to the public network.</p>
-<p>Install your <a href="../full_node/">fullnode</a></p>
-<ol>
-<li>Set sentry as peers for the validator node</li>
-</ol>
-<p>In the console of the sentry node, run <strong>admin.nodeInfo.enode</strong> You should get something similar to this.</p>
-<div class="highlight"><pre><span></span><code>enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[::]:30306?discport=0
-</code></pre></div>
-<p>!!! Note:
-    [::] will be parsed as localhost (127.0.0.1). If your nodes are on a local network check each individual host machine and find your IP with ifconfig
-    If your peers are not on the local network, you need to know your external IP address (use a service) to construct the enode URL.
-    Copy this value and in the console of the first node run,</p>
-<p>Update <strong>config.toml</strong> file of validator node</p>
-<p></p><div class="highlight"><pre><span></span><code># make node invisible
-NoDiscovery = true
-# connect only to sentry
-StaticNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[10.1.1.1]:30306"]
-</code></pre></div>
-This will return true if successful, but that doesn’t mean the node was added successfully.
-<p>To confirm run <strong>admin.peers</strong> and you should see the details of the node you just added.</p>
-<p>That way your validator node will try to peer with your provided sentry nodes only.</p>
-<ol>
-<li>Confirm the connection</li>
-</ol>
-<p>To confirm run <strong>admin.peers</strong> and you should see the details of the node you just added.</p>
-<h3 id="firewall-configuration">Firewall Configuration<a class="headerlink" href="#firewall-configuration" title="Link to this section">¶</a></h3>
-<p><strong>geth</strong> uses several TCP ports for different purposes.</p>
-<p><strong>geth</strong> use a listener (TCP) port and a discovery (UDP) port, both on 30303 by default.</p>
-<p>If you need to run JSON-RPC, you’ll also need TCP port 8545. Note that JSON-RPC port should not be opened to the outside world, because from there you can do admin operations.</p></div>
+<div><h1 id="bsc-governance-temperature-check">BSC Governance Temperature Check<a class="headerlink" href="#bsc-governance-temperature-check" title="Link to this section">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this section">¶</a></h2>
+<p>BNB Chain governance involves a two-step process: temperature check and final decision voting. The temperature check, typically conducted through the Snapshot platform, allows any BNB holder to gauge community sentiment on a proposal. If the proposal receives enough support, it proceeds to the final decision voting phase. This phase often involves on-chain voting by validators or those with staked BNB, and the outcome determines whether the proposal is implemented or rejected.</p>
+<h2 id="submit-a-proposal">Submit a Proposal<a class="headerlink" href="#submit-a-proposal" title="Link to this section">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Anyone who staked more than 1BNB can create proposals.</p>
+</div>
+<p>Step 1: Head to the space which you wish to create your proposal for.</p>
+<p>Connect with the wallet provider - make sure the connected wallet is where you delegate BNB</p>
+<p><img alt="create-proposal" src="../../img/submit-proposal.png"></p>
+<p>Step 2: Click New proposal in space sidebar</p>
+<p>Fill in the following fields:
+- Title
+- Description
+- Discussion link</p>
+<p>Step 3: Select the desired voting system, specify the possible vote options, and define the duration of your proposal. Make sure you allow enough time for users to vote.</p>
+<p>Step 4: Click <code>Publish</code> - and you can see your proposal in the proposals list on the space page.</p>
+<h2 id="voting">Voting<a class="headerlink" href="#voting" title="Link to this section">¶</a></h2>
+<h3 id="vote-on-a-proposal">Vote on a Proposal<a class="headerlink" href="#vote-on-a-proposal" title="Link to this section">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>All BNBChain delegators can vote for proposals.</p>
+</div>
+<p>Step 1: Log in to voting space
+URL: <a href="https://snapshot.org/#/bnbchain-dao.eth">https://snapshot.org/#/bnbchain-dao.eth</a></p>
+<p>Step 2: Go to the snapshot link of the proposal. For example, in this case, a community member created a voting proposal for BEP-341.</p>
+<p><a href="https://snapshot.org/#/bnbchain-dao.eth/proposal/0xd2ad975fbe1abd4bf71a5032239650741a64af0133feec83f43b98bc42fa7efe">https://snapshot.org/#/bnbchain-dao.eth/proposal/0xd2ad975fbe1abd4bf71a5032239650741a64af0133feec83f43b98bc42fa7efe</a></p>
+<p><img alt="temp-proposal" src="../../img/snapshot.png"></p>
+<p>Step 3: Connect your wallet and vote</p>
+<p>After you connect your wallet, make sure to use the same address of your BNB Staking. And choose the voting option.</p>
+<p><img alt="vote-proposal" src="../../img/vote.png"></p>
+<h3 id="delegate-voting-power">Delegate Voting Power<a class="headerlink" href="#delegate-voting-power" title="Link to this section">¶</a></h3>
+<p><img alt="delegate-vote" src="../../img/delegate.png"></p>
+<p>Step 1: Go to <a href="https://snapshot.org/#/delegate/bnbchain-dao.eth">https://snapshot.org/#/delegate/bnbchain-dao.eth</a></p>
+<p>Step 2: Enter the address you want to delegate to.</p>
+<p>Step 3: Click Confirm to save your delegation.</p>
+<h3 id="undelegate-voting-power">Undelegate Voting Power<a class="headerlink" href="#undelegate-voting-power" title="Link to this section">¶</a></h3>
+<p>Step 1: Go to <a href="https://snapshot.org/#/delegate/bnbchain-dao.eth">https://snapshot.org/#/delegate/bnbchain-dao.eth</a></p>
+<p>Step 2: Find the current delegatees in Top delegates.</p>
+<p>Step 3: Click the ‘x’ button along a delegatee to undelegate, the wallet will ask user to sign and send transaction to bsc</p></div>
 
 
 
@@ -2758,7 +2054,7 @@ This will return true if successful, but that doesn’t mean the node was added 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../faucet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Faucet">
+          <a href="../user-guide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Guide">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2768,20 +2064,20 @@ This will return true if successful, but that doesn’t mean the node was added 
                 Previous
               </span>
               <div class="md-ellipsis">
-                Faucet
+                User Guide
               </div>
             </div>
           </a>
         
         
           
-          <a href="../full_node/" class="md-footer__link md-footer__link--next" aria-label="Next: Full Node">
+          <a href="../apis/" class="md-footer__link md-footer__link--next" aria-label="Next: Governance APIs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Full Node
+                Governance APIs
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2914,14 +2210,14 @@ This will return true if successful, but that doesn’t mean the node was added 
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../../assets/js/mathjax.js"></script>
+        <script src="../../../assets/js/mathjax.js"></script>
       
-        <script src="../../../../assets/js/custom.js"></script>
+        <script src="../../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
