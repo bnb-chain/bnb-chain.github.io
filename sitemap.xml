@@ -601,6 +601,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/bnb-opbnb/developers/quick-guide/</loc>
+         <lastmod>2024-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/bnb-opbnb/developers/set-gas-price/</loc>
          <lastmod>2024-07-19</lastmod>
          <changefreq>daily</changefreq>
