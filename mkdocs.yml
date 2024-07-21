@@ -285,7 +285,9 @@ nav:
   - Showcases:
      - Decentralized Identity: ./showcase/identity/did.md
      - Decentralized Name Srvice: ./showcase/identity/dns.md
+     - Telegram Mini Game on BNB Chain: ./showcase/identity/minigame.md
      - Attestation: ./showcase/identity/attestation.md
+     
 
 markdown_extensions:
   - toc:
