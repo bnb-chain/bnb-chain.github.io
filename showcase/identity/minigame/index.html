@@ -12,28 +12,28 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/">
+        <link rel="canonical" href="https://docs.bnbchain.org/showcase/identity/minigame/">
       
       
-        <link rel="prev" href="../bc-fusion/validators/gov/">
+        <link rel="prev" href="../dns/">
       
       
-        <link rel="next" href="overview/">
+        <link rel="next" href="../attestation/">
       
       
-      <link rel="icon" href="../assets/bnb.svg">
+      <link rel="icon" href="../../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
     
-        <title>BNB Smart Chain</title>
+        <title>Showcase - Creating Telegram BNB Mini Apps</title>
     
 
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.76a95c52.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.76a95c52.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../assets/style/index.css">
+      <link rel="stylesheet" href="../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -94,6 +94,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#creating-telegram-bnb-mini-apps-a-how-to-guide-for-developers" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -155,7 +160,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -291,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -310,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../announce/" class="md-tabs__link">
+        <a href="../../../announce/" class="md-tabs__link">
           
   
     
@@ -330,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../bc-fusion/" class="md-tabs__link">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -346,13 +351,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
           
   
     
@@ -372,7 +375,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -392,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../../bnb-greenfield/" class="md-tabs__link">
           
   
     
@@ -412,7 +415,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../zkbnb/" class="md-tabs__link">
+        <a href="../../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -428,11 +431,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../showcase/identity/did/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../did/" class="md-tabs__link">
           
   
     
@@ -462,8 +467,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -477,7 +480,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -504,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -552,7 +555,7 @@
         
   
   
-    <a href="../announce/" class="md-nav__link">
+    <a href="../../../announce/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -614,7 +617,7 @@
         
   
   
-    <a href="../bc-fusion/" class="md-nav__link">
+    <a href="../../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -637,8 +640,6 @@
       
   
   
-    
-  
   
   
     
@@ -663,291 +664,29 @@
     
     
       
-        
-        
-      
       
         
       
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
+  
+  
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     BNB Smart Chain
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            BNB Smart Chain
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Developers
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            Developers
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="developers/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://dappbay.bnbchain.org/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Ecosystem
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://www.bnbchain.org/en/dev-tools" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dev-Tools
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="developers/rpc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RPC
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="developers/faucet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Faucet
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="developers/node_operators/node_best_practices/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Node Operators
-  </span>
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
@@ -958,646 +697,6 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Staking
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Staking
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="staking/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="staking/user-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    User Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="staking/developer-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Build Staking dApps
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Governance
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Governance
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="governance/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="governance/user-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    User Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="governance/temp-check/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Temperature Check
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="governance/apis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Governance APIs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Validator
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            Validator
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="validator/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="validator/run-val/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Run Validator
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="validator/create-val/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Create Validator
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="validator/security/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Secure Validator
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="validator/manage-keys/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Management
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="validator/mev/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    MEV
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Slashing
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            Slashing
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="slashing/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="slashing/slash-rules/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slash Rules
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="slashing/monitor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slash Monitor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -1642,7 +741,7 @@
         
   
   
-    <a href="../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1706,7 +805,7 @@
         
   
   
-    <a href="../bnb-greenfield/" class="md-nav__link">
+    <a href="../../../bnb-greenfield/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1762,7 +861,7 @@
         
   
   
-    <a href="../zkbnb/" class="md-nav__link">
+    <a href="../../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1785,51 +884,155 @@
       
   
   
+    
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
-  
-    <a href="../showcase/identity/did/" class="md-nav__link">
+    
+    
       
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
   
   <span class="md-ellipsis">
     Showcases
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Showcases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../did/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decentralized Identity
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decentralized Name Srvice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Mini Game on BNB Chain
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attestation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attestation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1843,9 +1046,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1853,6 +1054,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
 </nav>
@@ -1868,7 +1071,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/showcase/identity/minigame.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1876,56 +1079,110 @@
   
 
 
-<html><head><style>
-   .md-source-file, .md-content__button.md-icon {
-      display: none;
-   }
-</style>
-
-</head><body><div class="section-head">
-    <div class="left">
-        <h1>BNB Smart Chain</h1>
-        <p>BNB Smart Chain is a high-performance blockchain platform designed to enable the development of scalable and user-friendly decentralized applications (DApps), particularly in the decentralized finance (DeFi) space.</p>
-    </div>
-    <div class="image">
-        <img src="img/bnb_smart_chain.png" alt="BNB Smart Chain" loading="lazy">
-    </div>
-</div>
-
-<div class="section-body">
-    <a href="./developers/overview" class="grid-item">
-        <div>Developers</div>
-        <p>User guide to get started on BNB Smart Chain</p>
-    </a>
-    <a href="./staking/overview" class="grid-item">
-        <div>Staking</div>
-        <p>BSC operates on a Proof-of-Staked-Authority (PoSA) blockchain</p>
-    </a>
-    <a href="./governance/overview" class="grid-item">
-        <div>Governance</div>
-        <p>BSC is a community-oriented ecosystem, meticulously built upon the foundation of decentralized governance.</p>
-    </a>
-    <a href="./validator/overview">
-        <div>Validator</div>
-        <p>Validators secure the network based on the POSA consensus algorithm.</p>
-    </a>
-    <a href="./slashing/overview">
-        <div>Slashing</div>
-        <p>Slashing is a component of on-chain governance that penalizes malicious or negative actions. </p>
-    </a>
-    <a href="https://www.bnbchain.org/en/dev-tools">
-        <div>BSC Ecosystem</div>
-        <p>BSC ecosystem and developer tools</p>
-    </a>
-    <a href="./developers/node_operators/full_node">
-        <div>Run a Node</div>
-        <p>Run a BSC node</p>
-    </a>
-    <a href="./validator/mev/">
-        <div>MEV Builder</div>
-        <p>Become a builder and creat blocks and offering them to the validator</p>
-    </a>
-</div></body></html>
+<div><h1 id="creating-telegram-bnb-mini-apps-a-how-to-guide-for-developers">Creating Telegram BNB Mini Apps: A How-to Guide for Developers<a class="headerlink" href="#creating-telegram-bnb-mini-apps-a-how-to-guide-for-developers" title="Link to this section">¶</a></h1>
+<p>Launching decentralized applications on Telegram has become increasingly popular due to it giving users access to mini apps and games without requiring them to install additional software, providing an easy way for users to interact with blockchain-based services. This lowers the barriers to entry for users and makes it simple for developers to distribute their apps to a large Telegram audience.</p>
+<p>This guide will walk you through the steps for building a basic Telegram mini app on BNB in just a few hours. By the end, you will have the skills to launch your own BNB project on Telegram’s open platform. Whether you are a blockchain expert or just starting out, this tutorial aims to demystify decentralized app creation. So let’s get started building on BSC! The possibilities are endless when you master Telegram mini apps.</p>
+<p><strong>Note: This guide only provides a high level overview of the steps that may be involved in creating telegram BNB miniapp. For a detailed guide, visit the <a href="https://www.youtube.com/watch?v=6dMDhPOpPjI">youtube demo</a> or the <a href="https://github.com/kang5647/bnb-telegram-demo">github repo</a>.</strong></p>
+<h1 id="introduction-to-telegram-bnb-mini-apps">Introduction to Telegram BNB Mini Apps<a class="headerlink" href="#introduction-to-telegram-bnb-mini-apps" title="Link to this section">¶</a></h1>
+<h2 id="what-are-telegram-mini-apps">What are Telegram Mini Apps?<a class="headerlink" href="#what-are-telegram-mini-apps" title="Link to this section">¶</a></h2>
+<p><strong>Telegram Mini Apps</strong> are lightweight web apps that run inside Telegram chats. They allow developers to create social experiences, games, marketplaces, and other services that tap into Telegram’s features and large audience.</p>
+<p><img alt="catzen" src="../../img/catizen.png"></p>
+<p>Catizen’s play-to-earn and Hamster Kombat’s tap-to-earn, what’s the next big thing for Telegram mini games? </p>
+<p>Mini Apps load instantly, work offline, and don’t need to be installed. They can use Telegram login, payments, storage and more. Developers can build Mini Apps using HTML, CSS and JavaScript.
+How to Create a Mini App
+To create a Mini App, you need:</p>
+<ul>
+<li>A Telegram bot - Create a bot using @BotFather and obtain an API token.</li>
+<li>A web app - Build an app using web technologies (HTML, CSS, JS) that communicates with your bot.</li>
+<li>Mini App manifest - Provide info about your app like name, description, icon, and your web app’s URL. Register the manifest using the @BotFather.</li>
+</ul>
+<p>Your web app will run in an iframe and communicate with the user’s Telegram app using the Telegram Bridge. The Bridge exposes the Telegram API and passes messages between your web app and the user’s Telegram app.</p>
+<h2 id="mini-app-types">Mini App Types<a class="headerlink" href="#mini-app-types" title="Link to this section">¶</a></h2>
+<p>There are two main types of Mini Apps:</p>
+<h3 id="inline-apps">Inline Apps<a class="headerlink" href="#inline-apps" title="Link to this section">¶</a></h3>
+<p>Inline Apps show up as results when a user types the bot’s username followed by a query. The user taps an app result to launch the Mini App.
+Inline Apps are great for:</p>
+<ul>
+<li>Search experiences</li>
+<li>Quick interactions</li>
+<li>Discovering new content</li>
+</ul>
+<h3 id="direct-link-apps">Direct Link Apps<a class="headerlink" href="#direct-link-apps" title="Link to this section">¶</a></h3>
+<p>Users can open a Direct Link App just by tapping a link. Direct Link Apps are aware of the current chat context and support shared, collaborative experiences.
+Direct Link Apps are ideal for:</p>
+<ul>
+<li>Social experiences</li>
+<li>Games</li>
+<li>Productivity tools</li>
+<li>And more</li>
+</ul>
+<p><img alt="example" src="https://core.telegram.org/file/464001388/10b1a/IYpn0wWfggw.1156850/fd9a32baa81dcecbe4"></p>
+<p>The mini app can also be launched from a keyboard button, from an inline button, and from the bot menu button. Refer to the <a href="https://core.telegram.org/bots/webapps#implementing-mini-apps">official Telegram mini app documentation</a>.</p>
+<h2 id="step-by-step-guide-to-creating-a-bnb-mini-app">Step-by-Step Guide to Creating a BNB Mini App<a class="headerlink" href="#step-by-step-guide-to-creating-a-bnb-mini-app" title="Link to this section">¶</a></h2>
+<p>With the power of Telegram behind them, Mini Apps open up countless new opportunities for creativity and building engaging experiences on the platform. The potential for Mini Apps is huge, and this is just the beginning.</p>
+<h3 id="create-a-telegram-bot">Create a Telegram Bot<a class="headerlink" href="#create-a-telegram-bot" title="Link to this section">¶</a></h3>
+<p>To get started, you will need to create a Telegram bot. Visit the <strong>@BotFather</strong> bot and enter <strong>/newbot</strong> to create a new bot. You will receive an API token for your bot. Keep this token private as it will allow you to control your bot.</p>
+<h3 id="connect-the-webapp-to-your-bot">Connect the Webapp to Your Bot<a class="headerlink" href="#connect-the-webapp-to-your-bot" title="Link to this section">¶</a></h3>
+<p>Next, you need to connect your webapp to the Telegram bot. Use the <strong>/newapp</strong> command in the <strong>@BotFather</strong> bot by selecting your bot. Provide details such as the app name, description, photo, etc. Finally, enter the URL of your webapp. Your mini app will now appear in the Telegram app and can be launched by users.</p>
+<h3 id="additional-capabilities">Additional Capabilities<a class="headerlink" href="#additional-capabilities" title="Link to this section">¶</a></h3>
+<p>Mini apps opened from a direct link have limited capabilities. They cannot read or send messages on behalf of the user. However, they support cooperative and multiplayer features within the current chat context. Users must redirect to inline mode to actively pick a result in order to send messages.</p>
+<p>Mini apps are powerful tools for creating fully-fledged web services, team collaborations, multiplayer games, and more. The possibilities are endless. </p>
+<h2 id="turning-your-mini-app-into-a-game">Turning Your Mini App Into a Game<a class="headerlink" href="#turning-your-mini-app-into-a-game" title="Link to this section">¶</a></h2>
+<p>To transform your Mini App into an engaging game on Telegram, you must first register a bot with <strong>@BotFather</strong> and create a Mini App as outlined in the previous section. Once you have a functioning Mini App, you can then convert it into a game by using Telegram’s Game API.</p>
+<h3 id="difference-between-mini-apps-and-mini-games">Difference Between Mini Apps and Mini Games<a class="headerlink" href="#difference-between-mini-apps-and-mini-games" title="Link to this section">¶</a></h3>
+<p>Mini games build upon mini apps by providing additional information like:</p>
+<ul>
+<li>leaderboards, </li>
+<li>game descriptions, </li>
+<li>and a button to launch the game. </li>
+<li>They help package your mini app to make sharing with friends and community easier. </li>
+</ul>
+<p>To create a mini game, use the /newgame command and configure callback functions to return your game’s URL.</p>
+<h3 id="register-a-game-with-gamebot">Register a Game with @GameBot<a class="headerlink" href="#register-a-game-with-gamebot" title="Link to this section">¶</a></h3>
+<p>The first step is to register your game with @BotFather. Send the /newgame command to @BotFather, and provide the required details including:</p>
+<ul>
+<li>The title and description of your game</li>
+<li>A cover photo</li>
+<li>The message text a user will see when starting a game</li>
+<li>The URL of your Mini App</li>
+</ul>
+<p>Implement Callbacks
+You must implement callback functions in your code to handle interactions with the Telegram Game API. Specifically, you need a callback_query() callback which will receive updates from Telegram when a user clicks an inline button in your game. Within this callback, you should check the callback ID to determine which button was clicked. You may implement multiple inline keyboard buttons for the game, but note that the first button must always launch the game.
+<img alt="codesnpit1" src="../../img/codesnipt1.png"></p>
+<h3 id="share-your-game">Share Your Game<a class="headerlink" href="#share-your-game" title="Link to this section">¶</a></h3>
+<p>Once registered, your game will receive a shareable game URL and a game code which players can enter to launch the game. You can share this URL and code on your website, social media, and within Telegram chats to spread your game to new players.</p>
+<p><img alt="bnbminigame" src="../../img/bnbminigame.png"></p>
+<h3 id="consider-a-leaderboard-optional">Consider a Leaderboard (Optional)<a class="headerlink" href="#consider-a-leaderboard-optional" title="Link to this section">¶</a></h3>
+<p>To increase engagement and competition, you can implement an in-game leaderboard where players can see the top scores. You will need to store player scores in a database, and return the leaderboard data within your callbacks. Leaderboards are an optional feature, but can greatly enhance the popularity and longevity of Telegram games.</p>
+<p>By following these steps, you can build fully-featured games within Telegram using JavaScript and the Telegram Game API. Games are an exciting way to engage users, and the possibilities for multiplayer, social, and interactive gaming experiences on Telegram are endless. Let your creativity run wild, and build the next hit game on Telegram!</p>
+<h2 id="faqs-about-telegram-bnb-mini-apps">FAQs About Telegram BNB Mini Apps<a class="headerlink" href="#faqs-about-telegram-bnb-mini-apps" title="Link to this section">¶</a></h2>
+<h3 id="what-are-the-main-features-of-telegram-bnb-mini-apps">What are the main features of Telegram BNB Mini Apps?<a class="headerlink" href="#what-are-the-main-features-of-telegram-bnb-mini-apps" title="Link to this section">¶</a></h3>
+<p>Telegram BNB Mini Apps allow developers to build decentralized applications on BSC or opBNB that can be accessed directly within Telegram. Some of the key features include:</p>
+<ul>
+<li>Access to Telegram username, chat ID and message ID to provide chat context</li>
+<li>Ability to send messages on behalf of users (with their permission)</li>
+<li>Option to accept payments via crypto wallet</li>
+<li>Access to BSC/opBNB for decentralized functionality</li>
+<li>Option to build multiplayer games and other interactive experiences</li>
+</ul>
+<h3 id="what-are-the-differences-between-mini-apps-and-bots">What are the differences between Mini Apps and Bots?<a class="headerlink" href="#what-are-the-differences-between-mini-apps-and-bots" title="Link to this section">¶</a></h3>
+<p>Telegram Mini Apps are web apps that run within the Telegram app, while Telegram Bots are automated accounts controlled via API. Some key differences include:</p>
+<ul>
+<li>Mini Apps have a visual interface, while Bots primarily communicate via text messages.</li>
+<li>Mini Apps can access features like payments, games and location sharing, while Bots have more limited functionality.</li>
+<li>Mini Apps require user consent to access data and send messages, while Bots have implicit access to user data and messaging abilities.</li>
+<li>Mini Apps provide a more robust experience for users while still protecting their data and privacy. Bots continue to be useful for simpler use cases like news updates, reminders and customer support.</li>
+</ul>
+<h3 id="what-languages-and-frameworks-can-i-use-to-build-a-mini-app">What languages and frameworks can I use to build a Mini App?<a class="headerlink" href="#what-languages-and-frameworks-can-i-use-to-build-a-mini-app" title="Link to this section">¶</a></h3>
+<p>You can build Telegram Mini Apps using:</p>
+<ul>
+<li>HTML, CSS and JavaScript - Mini Apps are web apps that run within the Telegram app.</li>
+<li>React, Vue.js or Angular - Popular JavaScript frameworks can be used to build the frontend.</li>
+<li>Solidity - To write smart contracts on BSC for decentralized functionality.</li>
+<li>Web3.js - To interact with BSC from your Mini App’s frontend.</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Link to this section">¶</a></h2>
+<p>Telegram mini apps and mini games provide developers with exciting new ways to engage users. By following the step-by-step guide outlined here, you can leverage Telegram’s massive user base to share your own interactive web apps and games. Consider the possibilities - multiplayer experiences, chatbots, productivity tools and more are now just a few lines of code away. As Telegram continues expanding its platform, developers have an opportunity to be on the cutting edge and reach an audience of millions. So don’t wait, get started building your own mini app today! With the right idea and a bit of effort, you could create the next viral sensation on Telegram.</p></div>
 
 
 
@@ -1938,8 +1195,6 @@
 
 
 
-
-  
 
 
 
@@ -1963,12 +1218,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../bc-fusion/validators/gov/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Governance">
+          <a href="../dns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Decentralized Name Srvice">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1978,20 +1231,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Governance
+                Decentralized Name Srvice
               </div>
             </div>
           </a>
         
         
           
-          <a href="overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="../attestation/" class="md-footer__link md-footer__link--next" aria-label="Next: Attestation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                Attestation
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2124,14 +1377,14 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../assets/js/mathjax.js"></script>
+        <script src="../../../assets/js/mathjax.js"></script>
       
-        <script src="../assets/js/custom.js"></script>
+        <script src="../../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
