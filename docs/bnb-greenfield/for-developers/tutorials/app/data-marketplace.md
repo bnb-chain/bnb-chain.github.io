@@ -19,9 +19,9 @@ As an image stock, sellers can upload and list photos for sale, while buyers can
 _Seller_
 
 
-
 * **Upload objects (e.g. images) to BNB Greenfield:** Sellers can upload multiple images to BNB Greenfield at once under the BSC network.
 * **List objects on the BNB Smart Chain:** Sellers can list their uploaded images for sale on the BSC network and begin selling download/view permissions to buyers to earn money.
+* **Delist objects**: Sellers can delist their images from the marketplace.
 
 _Buyer_
 
@@ -254,13 +254,6 @@ Users should go through the following 2 transactions to list an object:
 * **CrossChain Design:** Application data is stored on the BSC chain. Objects/buckets and their access rights are recorded on the Greenfield chain. Relayers automatically relay cross-chain packages and acknowledgments between BSC and Greenfield. MindPress contracts can update the application state through Greenfield contract callbacks.
 * **Stateless Design:** The MindPress Data Marketplace is engineered to be stateless. The data query and object permission control involved in the application can only be interacted with through the BSC chain.
 
-<h4>6.4 Upcoming Changes</h4>
-
-
-
-
-* Delist objects
-* List process optimization from 2 steps to 1 step
 
 <h3>7. Getting Started </h3>
 
