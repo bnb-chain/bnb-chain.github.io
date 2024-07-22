@@ -103,9 +103,9 @@ nav:
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
     - Overview: ./bnb-smart-chain/overview.md
+    - Introduction: ./bnb-smart-chain/introduction.md
+    - Ecosystem: https://dappbay.bnbchain.org/
     - Developers:
-        - Overview: ./bnb-smart-chain/developers/overview.md
-        - Ecosystem: https://dappbay.bnbchain.org/
         - Dev-Tools: https://www.bnbchain.org/en/dev-tools
         - RPC: ./bnb-smart-chain/developers/rpc.md
         - Faucet: ./bnb-smart-chain/developers/faucet.md
