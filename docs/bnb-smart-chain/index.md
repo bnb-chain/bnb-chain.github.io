@@ -54,6 +54,10 @@ title: BNB Smart Chain
     </a>
     <a href="./validator/mev/">
         <div>MEV Builder</div>
-        <p>Become a builder and creat blocks and offering them to the validator</p>
+        <p>Become a builder and create blocks and offering them to the validator</p>
+    </a>
+    <a href="https://geth.ethereum.org/docs/interacting-with-geth/rpc">
+        <div>JSON-RPC API</div>
+        <p>Interacting with BSC requires sending requests to specific JSON-RPC API methods.</p>
     </a>
 </div>
