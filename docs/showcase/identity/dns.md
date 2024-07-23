@@ -45,5 +45,3 @@ This vision is being realized by adding an all-in-one API over the SDK, allowing
 * **Decentralized Websites**: SpaceID names can point to Greenfield content, enabling decentralized websites.
 * **Identity Management**: SpaceID can be used as part of a decentralized identity system, linking a user’s SpaceID to their decentralized identifiers and attestations.
 * **DApps and Smart Contracts**: Developers can use SpaceID to provide human-readable names for their smart contracts and decentralized applications, improving user experience.
-
-

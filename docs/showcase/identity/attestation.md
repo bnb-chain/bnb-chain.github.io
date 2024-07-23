@@ -1,8 +1,8 @@
 ---
-title: Showcase - Attestation
+title: Showcase - BNB Attestation Service
 ---
 
-# Attestation
+# BNB Attestation Service
 
 ## What is attestation?
 Attestations are digital signatures on structured data used to build more trust on-chain.
