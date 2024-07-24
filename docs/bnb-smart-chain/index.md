@@ -24,7 +24,7 @@ title: BNB Smart Chain
 
 
 <div class="section-body">
-    <a href="./developers/overview" class="grid-item">
+    <a href="./developers/quick-guide" class="grid-item">
         <div>Developers</div>
         <p>User guide to get started on BNB Smart Chain</p>
     </a>
