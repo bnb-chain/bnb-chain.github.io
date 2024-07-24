@@ -40,7 +40,6 @@ Interacting with BSC requires sending requests to specific JSON-RPC API methods.
     - [Remix](https://remix.ethereum.org)
     - [Hardhat](https://hardhat.org)
     - [Foundry](https://book.getfoundry.sh/)
-- [BNB Chain Multi-Sig Wallet](./multisig-wallet.md)
 - Wallets
     - [Binance Web3 Wallet](https://www.binance.com/en/web3wallet)
     - [Metamask](https://metamask.io/)
