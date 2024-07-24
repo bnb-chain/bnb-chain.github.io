@@ -27,7 +27,6 @@ api-server handles historical blob query requests from users. The bundle-service
 their correctness, and upload them to Greenfield efficiently.
 
 ![Blob Hub Solution](../../static/asset/blob-hub-1.png)
-Blob Hub Solution
 
 The syncing process ensures that no blob is missing and each blob synced to Greenfield is consistent. This is achieved
 by running a post-verification process that scans all uploaded blobs again, conducts integrity checks against data

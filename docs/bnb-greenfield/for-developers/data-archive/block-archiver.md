@@ -25,7 +25,6 @@ The Block Archiver comprises two main components:
 — API Server: This component handles user requests for historical block data, providing seamless access to the stored blocks.
 
 ![Block Archiver](../../static/asset/block-archiver.png)
-Block Archiver Solution
 
 The indexing process ensures data integrity by running a post-verification process. This process scans all uploaded blocks,
 conducts validation checks against data already stored in Greenfield, and detects any missing data.
@@ -34,7 +33,10 @@ conducts validation checks against data already stored in Greenfield, and detect
 
 ## Node Operators
 
-Node operators requiring full sync from the genesis block need access to historical block data via the Block-Archiver. Leveraging Greenfield's robust infrastructure, they can trust the integrity and availability of the stored data.
+Node operators requiring full sync from the genesis block need access to historical block data via the Block-Archiver.
+Leveraging Greenfield's robust infrastructure, they can trust the integrity and availability of the stored data.
+
+The Greenfield community has launched the `Greenfield Peer`, a data-seed solution for those who need to run BSC nodes in fullsync mode. For more details, check out this [page](../greenfield-peer).
 
 ## Data Analysts and Researchers
 
@@ -44,7 +46,7 @@ data. By leveraging Block-Archiver, they can collect reliable data for analysis,
 # Accessing Block Data with Block-Archiver
 
 Block-Archiver supports BSC now and its API is fully compatible with Ethereum API specifications, ensuring ease of integration for
-developers. Detailed information about supported networks and endpoints can be found in the documentation. For more details
+developers. Detailed information about supported networks and endpoints can be found in [network and endpoints](../network-endpoint/endpoints.md#Block Archiver). For more details
 about the API spec, please refer to [Block-Archiver API](https://github.com/bnb-chain/greenfield-bsc-archiver/?tab=readme-ov-file#block-archiver-api)
 
 # Try It Out

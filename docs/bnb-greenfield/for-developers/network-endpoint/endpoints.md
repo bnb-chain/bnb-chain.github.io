@@ -91,3 +91,7 @@ order: 3
   - `https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5`
 
   For more details, you can refer to [here](network-info.md).
+
+### Block Archiver
+- **BSC:**
+- `https://gnfd-bsc-archiver-testnet.bnbchain.org`
