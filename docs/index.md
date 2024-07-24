@@ -7,11 +7,15 @@ title: BNB Chain
 ---
 
 <style>
-   .section-body {
+    .md-source-file, .md-content__button.md-icon {
+        display: none;
+    }
+
+    .section-body {
         padding: 0;
         border-top: none;
         margin: 0.64em auto;
-   }
+    }
 </style>
 
 # BNB Chain: Empowering the Future of Decentralized Applications
@@ -102,21 +106,19 @@ Within this ecosystem, the ownership, usage, and monetization of data are possib
 
     With the growing demand for Artificial Intelligence or AI, there is now more than ever a need to integrate AI with blockchain technology to reap its benefits. BNB Chain is making this integration a reality by providing a robust platform that easily integrates blockchain and AI.
 
-* **Quick Start**
+## **Quick Start**
 
-<a href="./bnb-smart-chain/developers/quick-guide.md">
-<h3>Getting Started with Development on BNB Smart Chain</h3>
-<p>If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.</p>
-</a>
-
-<a href="./bnb-opbnb/developers/quick-guide.md">
-<h3>Getting Started with Development on opBNB</h3>
-<p>If you're a developer seeking to build on opBNB, you've come to the right place. This document provides all the information you need to develop opBNB applications.</p>
-</a>
-</div>
-
-<a href="./bnb-greenfield/for-developers/get-started-dev.md">
-<h3>Getting Started with Development on BNB Greenfield</h3>
-<p>Here’s a quick guide to get you from zero to hero about Greenfield.</p>
-</a>
+<div class="section-body">
+    <a href="./bnb-smart-chain/developers/quick-guide" class="grid-item">
+        <div>BNB Smart Chain</div>
+        <p>Getting Started with high performance Layer1 particularly for decentralized finance (DeFi)</p>
+    </a>
+    <a href="./bnb-opbnb/developers/quick-guide" class="grid-item">
+        <div>opBNB</div>
+        <p>Getting Started with Layer2 scaling solution on BNB Chain ecosystem</p>
+    </a>
+    <a href="./bnb-greenfield/for-developers/get-started-dev" class="grid-item">
+        <div>BNB Greenfield</div>
+        <p>Getting Started with cutting-edge decentralized storage</p>
+    </a>
 </div>
