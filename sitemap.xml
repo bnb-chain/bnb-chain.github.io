@@ -841,6 +841,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/showcase/game/minigame/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/showcase/identity/attestation-dev/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/showcase/identity/attestation/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
@@ -851,12 +861,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.bnbchain.org/showcase/identity/dns/</loc>
+         <loc>https://docs.bnbchain.org/showcase/identity/dns-dev/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.bnbchain.org/showcase/identity/minigame/</loc>
+         <loc>https://docs.bnbchain.org/showcase/identity/dns/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
