@@ -135,7 +135,7 @@ nav:
         - Secure Validator: ./bnb-smart-chain/validator/security.md
         - Key Management: ./bnb-smart-chain/validator/manage-keys.md
         - MEV:
-            - Overview: ./bnb-smart-chain/validator/mev/index.md
+            - Overview: ./bnb-smart-chain/validator/mev/overview.md
             - Validator Guide: ./bnb-smart-chain/validator/mev/validator-integration.md
             - Builder Guide: ./bnb-smart-chain/validator/mev/builder-integration.md
             - FAQs: ./bnb-smart-chain/validator/mev/faqs.md
@@ -385,7 +385,7 @@ plugins:
         'docs/learn/cross-chain-bridges.md': 'bnb-smart-chain/overview.md'
         'docs/validator/create-val.md': 'bnb-smart-chain/validator/create-val.md'
         'docs/validator/run-val.md': 'bnb-smart-chain/validator/run-val.md'
-        'docs/mev/overview.md': 'bnb-smart-chain/validator/mev/index.md'
+        'docs/mev/overview.md': 'bnb-smart-chain/validator/mev/overview.md'
         'docs/mev/validator-integration.md': 'bnb-smart-chain/validator/mev/validator-integration.md'
         'docs/mev/builder-integration.md': 'bnb-smart-chain/validator/mev/builder-integration.md'
         'docs/mev/faqs.md': 'bnb-smart-chain/validator/mev/faqs.md'
