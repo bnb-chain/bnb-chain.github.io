@@ -219,6 +219,7 @@ nav:
               - Overview: ./bnb-greenfield/for-developers/data-archive/data-archive-layer.md
               - Blob Hub: ./bnb-greenfield/for-developers/data-archive/blob-hub.md
               - Block Archiver: ./bnb-greenfield/for-developers/data-archive/block-archiver.md
+              - Greenfield Peer: ./bnb-greenfield/for-developers/data-archive/greenfield-peer.md
           - Tutorials:
               - Overview: ./bnb-greenfield/for-developers/tutorials/overview.md
               - Basic File Management with CLI: ./bnb-greenfield/for-developers/tutorials/file-management-overview.md

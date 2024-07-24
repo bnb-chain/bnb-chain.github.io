@@ -139,6 +139,15 @@ The **full** sync mode can also be used to do initial sync, which will execute a
 
 If the flag **--syncmode** is not provided, the default sync mode will depend on the state of the data folder. It will be **snap** mode if you sync from genesis or **full** mode if you start from a snapshot.
 
+### Full Sync with Greenfield Peer (Optional)
+
+Opting for **full** sync mode means your node will only need block headers and bodies from other network peers. To expedite this process,
+consider utilizing the `Greenfield Peer`.
+
+This data seed, offered by Greenfield, allows for a more efficient synchronization.
+Configure your BSC node to connect with the Greenfield Peer by modifying your configuration file settings.
+For comprehensive instructions, see [Greenfield Peer](../../../bnb-greenfield/for-developers/data-archive/greenfield-peer.md).
+
 ## Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
 
