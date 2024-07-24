@@ -26,7 +26,7 @@ blob-syncer service continuously fetches blobs from Ethereum and other blockchai
 api-server handles historical blob query requests from users. The bundle-service can aggregate blobs together, validate
 their correctness, and upload them to Greenfield efficiently.
 
-![Blob Hub Solution](../../static/asset/blob-hub-1.png)
+![Blob Hub Solution](../../static/asset/blob-hub.png)
 
 The syncing process ensures that no blob is missing and each blob synced to Greenfield is consistent. This is achieved
 by running a post-verification process that scans all uploaded blobs again, conducts integrity checks against data
