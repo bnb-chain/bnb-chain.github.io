@@ -282,10 +282,17 @@ nav:
           - Architecture: ./zkbnb/core-concept/zkbnb-arch.md
       - Resources: ./zkbnb/resources.md
   - Showcases:
-     - Decentralized Identity: ./showcase/identity/did.md
-     - Decentralized Name Srvice: ./showcase/identity/dns.md
-     - Telegram Mini Game on BNB Chain: ./showcase/identity/minigame.md
-     - Attestation: ./showcase/identity/attestation.md
+     - Name Service and Attestation:
+       - Decentralized Identity: ./showcase/identity/did.md
+       - Decentralized Name Service:
+         - SpaceID: ./showcase/identity/dns.md
+         - Build with SpaceID: ./showcase/identity/dns-dev.md
+       - Attestation:
+         - BNB Attestation Service: ./showcase/identity/attestation.md
+         - Build your Attestation: ./showcase/identity/attestation-dev.md
+     - Games:
+       - Telegram Mini Game on BNB Chain: ./showcase/game/minigame.md
+
      
 
 markdown_extensions:
