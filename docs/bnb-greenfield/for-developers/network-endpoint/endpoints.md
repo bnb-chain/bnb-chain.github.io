@@ -95,3 +95,5 @@ order: 3
 ### Block Archiver
 - **BSC:**
 - `https://gnfd-bsc-archiver-testnet.bnbchain.org`
+
+By accessing the above endpoints, you can retrieve historical block data from the BSC network. For comprehensive information, please refer to the [Block-Archiver documentation](../data-archive/block-archiver.md).
