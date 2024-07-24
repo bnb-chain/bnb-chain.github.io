@@ -1502,6 +1502,8 @@
       
         
       
+        
+      
     
     
       
@@ -1601,6 +1603,27 @@
   
   <span class="md-ellipsis">
     Block Archiver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../greenfield-peer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greenfield Peer
   </span>
   
 
@@ -2367,8 +2390,7 @@ balance in the bucket payment account, users will be unable to query data until 
 blob-syncer service continuously fetches blobs from Ethereum and other blockchains and persists them in Greenfield. The
 api-server handles historical blob query requests from users. The bundle-service can aggregate blobs together, validate
 their correctness, and upload them to Greenfield efficiently.</p>
-<p><img alt="Blob Hub Solution" src="../../../static/asset/blob-hub-1.png">
-Blob Hub Solution</p>
+<p><img alt="Blob Hub Solution" src="../../../static/asset/blob-hub.png"></p>
 <p>The syncing process ensures that no blob is missing and each blob synced to Greenfield is consistent. This is achieved
 by running a post-verification process that scans all uploaded blobs again, conducts integrity checks against data
 already stored in Greenfield, and detects any missing data. Duplicate uploads are prevented by key naming constraints in

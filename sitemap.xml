@@ -281,6 +281,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/greenfield-peer/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/endpoints/</loc>
          <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>

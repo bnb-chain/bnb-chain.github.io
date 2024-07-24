@@ -1104,6 +1104,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sync Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-sync-with-greenfield-peer-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full Sync with Greenfield Peer (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2276,6 +2291,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sync Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-sync-with-greenfield-peer-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full Sync with Greenfield Peer (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2448,6 +2478,12 @@ INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=ligh
 <p>The <strong>snap</strong> sync mode is used for initial sync, which will download the latest states rather than execute the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.</p>
 <p>The <strong>full</strong> sync mode can also be used to do initial sync, which will execute all the blocks since genesis. But it is <strong>not recommended</strong>, since the amount of historical data is too large. Instead, you can download a snapshot from the <a href="https://github.com/bnb-chain/bsc-snapshots">official repo</a> and start full sync from the snapshot.</p>
 <p>If the flag <strong>–syncmode</strong> is not provided, the default sync mode will depend on the state of the data folder. It will be <strong>snap</strong> mode if you sync from genesis or <strong>full</strong> mode if you start from a snapshot.</p>
+<h3 id="full-sync-with-greenfield-peer-optional">Full Sync with Greenfield Peer (Optional)<a class="headerlink" href="#full-sync-with-greenfield-peer-optional" title="Link to this section">¶</a></h3>
+<p>Opting for <strong>full</strong> sync mode means your node will only need block headers and bodies from other network peers. To expedite this process,
+consider utilizing the <code>Greenfield Peer</code>.</p>
+<p>This data seed, offered by Greenfield, allows for a more efficient synchronization.
+Configure your BSC node to connect with the Greenfield Peer by modifying your configuration file settings.
+For comprehensive instructions, see <a href="../../../../bnb-greenfield/for-developers/data-archive/greenfield-peer/">Greenfield Peer</a>.</p>
 <h2 id="local-private-network">Local Private Network<a class="headerlink" href="#local-private-network" title="Link to this section">¶</a></h2>
 <p>Please refer to <a href="https://github.com/bnb-chain/node-deploy">BSC-Deploy Tools</a> to setup a local private network.</p>
 <h2 id="node-maintenance">Node Maintenance<a class="headerlink" href="#node-maintenance" title="Link to this section">¶</a></h2>
