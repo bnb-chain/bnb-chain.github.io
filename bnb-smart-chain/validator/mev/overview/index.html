@@ -12,17 +12,17 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/validator/mev/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/validator/mev/overview/">
       
       
-        <link rel="prev" href="../manage-keys/">
+        <link rel="prev" href="../../manage-keys/">
       
       
-        <link rel="next" href="validator-integration/">
+        <link rel="next" href="../validator-integration/">
       
       
-      <link rel="icon" href="../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
+      <link rel="icon" href="../../../../assets/bnb.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
     
     
     
@@ -30,10 +30,10 @@
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.76a95c52.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -160,7 +160,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -273,7 +273,7 @@
             <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     BNB Chain GitHub
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../announce/" class="md-tabs__link">
+        <a href="../../../../announce/" class="md-tabs__link">
           
   
     
@@ -335,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -357,7 +357,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -377,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -397,7 +397,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../../../bnb-greenfield/" class="md-tabs__link">
           
   
     
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../zkbnb/" class="md-tabs__link">
+        <a href="../../../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -437,7 +437,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../showcase/identity/did/" class="md-tabs__link">
+        <a href="../../../../showcase/identity/did/" class="md-tabs__link">
           
   
     
@@ -480,7 +480,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -490,7 +490,7 @@
       <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     BNB Chain GitHub
@@ -507,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +555,7 @@
         
   
   
-    <a href="../../../announce/" class="md-nav__link">
+    <a href="../../../../announce/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -617,7 +617,7 @@
         
   
   
-    <a href="../../../bc-fusion/" class="md-nav__link">
+    <a href="../../../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -689,7 +689,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -722,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -743,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
+      <a href="../../../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developers/rpc/" class="md-nav__link">
+      <a href="../../../developers/rpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -882,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developers/faucet/" class="md-nav__link">
+      <a href="../../../developers/faucet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +943,7 @@
         
   
   
-    <a href="../../developers/node_operators/node_best_practices/" class="md-nav__link">
+    <a href="../../../developers/node_operators/node_best_practices/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1031,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../staking/overview/" class="md-nav__link">
+      <a href="../../../staking/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1052,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../staking/user-guide/" class="md-nav__link">
+      <a href="../../../staking/user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1073,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../staking/developer-guide/" class="md-nav__link">
+      <a href="../../../staking/developer-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1157,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/overview/" class="md-nav__link">
+      <a href="../../../governance/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1178,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/user-guide/" class="md-nav__link">
+      <a href="../../../governance/user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1199,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/temp-check/" class="md-nav__link">
+      <a href="../../../governance/temp-check/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1220,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/apis/" class="md-nav__link">
+      <a href="../../../governance/apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1331,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-val/" class="md-nav__link">
+      <a href="../../run-val/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1352,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../create-val/" class="md-nav__link">
+      <a href="../../create-val/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1373,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+      <a href="../../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manage-keys/" class="md-nav__link">
+      <a href="../../manage-keys/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1420,8 +1420,6 @@
     
       
         
-          
-        
       
         
       
@@ -1446,24 +1444,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_6" checked>
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
+          <label class="md-nav__link" for="__nav_4_8_6" id="__nav_4_8_6_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     MEV
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_4_8_6" id="__nav_4_8_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8_6">
@@ -1473,6 +1463,92 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-mev-and-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is MEV and PBS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-on-bsc" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it Works on BSC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -1481,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="validator-integration/" class="md-nav__link">
+      <a href="../validator-integration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1502,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="builder-integration/" class="md-nav__link">
+      <a href="../builder-integration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1523,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faqs/" class="md-nav__link">
+      <a href="../faqs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/overview/" class="md-nav__link">
+      <a href="../../../slashing/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/slash-rules/" class="md-nav__link">
+      <a href="../../../slashing/slash-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/monitor/" class="md-nav__link">
+      <a href="../../../slashing/monitor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1727,7 +1803,7 @@
         
   
   
-    <a href="../../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1791,7 +1867,7 @@
         
   
   
-    <a href="../../../bnb-greenfield/" class="md-nav__link">
+    <a href="../../../../bnb-greenfield/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1847,7 +1923,7 @@
         
   
   
-    <a href="../../../zkbnb/" class="md-nav__link">
+    <a href="../../../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1901,7 +1977,7 @@
         
   
   
-    <a href="../../../showcase/identity/did/" class="md-nav__link">
+    <a href="../../../../showcase/identity/did/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1988,7 +2064,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/validator/mev/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/validator/mev/overview.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2034,7 +2110,7 @@ profitable one, paying a fee to the block builder. This means even if a
 small group of specialized block builders dominate MEV extraction, the
 reward still goes to any validator on the network.</p>
 <h2 id="how-it-works-on-bsc">How it Works on BSC<a class="headerlink" href="#how-it-works-on-bsc" title="Link to this section">¶</a></h2>
-<p><img alt="MEV on BSC" src="../../img/mev/mev-overview.png"></p>
+<p><img alt="MEV on BSC" src="../../../img/mev/mev-overview.png"></p>
 <p>The figure above illustrates the basic workflow of PBS operating on the
 BSC network.</p>
 <ul>
@@ -2130,7 +2206,7 @@ to <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md">BEP322
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../manage-keys/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Key Management">
+          <a href="../../manage-keys/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Key Management">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2147,7 +2223,7 @@ to <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md">BEP322
         
         
           
-          <a href="validator-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Validator Guide">
+          <a href="../validator-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Validator Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -2286,14 +2362,14 @@ to <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md">BEP322
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="../../../assets/js/mathjax.js"></script>
+        <script src="../../../../assets/js/mathjax.js"></script>
       
-        <script src="../../../assets/js/custom.js"></script>
+        <script src="../../../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
