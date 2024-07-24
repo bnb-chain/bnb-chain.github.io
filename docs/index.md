@@ -95,6 +95,20 @@ Within this ecosystem, the ownership, usage, and monetization of data are possib
     With the growing demand for Artificial Intelligence or AI, there is now more than ever a need to integrate AI with blockchain technology to reap its benefits. BNB Chain is making this integration a reality by providing a robust platform that easily integrates blockchain and AI.
 
 * **Quick Start**
-  - [Getting Started with Development on BNB Smart Chain](./bnb-smart-chain/developers/quick-guide.md)
-  - [Getting Started with Development on opBNB](./bnb-opbnb/developers/quick-guide.md)
-  - [Getting Started with Development on BNB Greenfield](./bnb-greenfield/for-developers/get-started-dev.md)
+
+<a href="./bnb-smart-chain/developers/quick-guide.md">
+<h3>Getting Started with Development on BNB Smart Chain</h3>
+<p>If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.</p>
+</a>
+
+<a href="./bnb-opbnb/developers/quick-guide.md">
+<h3>Getting Started with Development on opBNB</h3>
+<p>If you're a developer seeking to build on opBNB, you've come to the right place. This document provides all the information you need to develop opBNB applications.</p>
+</a>
+</div>
+
+<a href="./bnb-greenfield/for-developers/get-started-dev.md">
+<h3>Getting Started with Development on BNB Greenfield</h3>
+<p>Here’s a quick guide to get you from zero to hero about Greenfield.</p>
+</a>
+</div>
