@@ -1271,6 +1271,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../verify_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verify Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../docker/" class="md-nav__link">
         
   
@@ -1297,27 +1318,6 @@
   
   <span class="md-ellipsis">
     Upgrade Geth
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../verify_node/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Verify Node
   </span>
   
 
@@ -2437,8 +2437,7 @@ mv server/data-seed/geth/chaindata node/geth/triecache
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
-1. Since <code>v1.3.1</code>, the flags <code>--txlookuplimit</code> has been replaced by <code>--history.transactions</code>. Make sure you no longer use <code>--txlookuplimit</code>, otherwise, node may not start.
-2. For all geth nodes, DO NOT use <code>-pipecommit</code> flag</p>
+For all geth nodes, DO NOT use <code>-pipecommit</code> flag</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2469,33 +2468,11 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.
-If you can not download the chaindata snapshot and want to sync from genesis, then you have to generate the genesis block first, for which you have already downloaded the genesis.json in the Step - 2 above where you have downloaded config files.</p>
+<p>To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.</p>
 </div>
-<ol>
-<li>
-<p>Write genesis state locally</p>
-<div class="highlight"><pre><span></span><code>## It will init genesis with Hash-Base Storage Scheme by default.
-./geth --datadir ./node init ./genesis.json
-</code></pre></div>
-<p>You could see the following output:</p>
-<div class="highlight"><pre><span></span><code>INFO [05-19|14:53:17.468] Allocated cache and file handles         database=/Users/huangsuyu/Downloads/bsc/node/geth/chaindata cache=16.00MiB handles=16
-INFO [05-19|14:53:17.498] Writing custom genesis block
-INFO [05-19|14:53:17.501] Persisted trie from memory database      nodes=21 size=56.84KiB time=357.915µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-574.00B
-INFO [05-19|14:53:17.502] Successfully wrote genesis state         database=chaindata hash=7d79cc…fb0d1e
-INFO [05-19|14:53:17.503] Allocated cache and file handles         database=/Users/huangsuyu/Downloads/bsc/node/geth/lightchaindata cache=16.00MiB handles=16
-INFO [05-19|14:53:17.524] Writing custom genesis block
-INFO [05-19|14:53:17.525] Persisted trie from memory database      nodes=21 size=56.84KiB time=638.396µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-574.00B
-INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=lightchaindata hash=7d79cc…fb0d1e
-</code></pre></div>
-</li>
-<li>
-<p>Start fullnode</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## start a full node</span>
 ./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>./node<span class="w">  </span>--cache<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span>
 </code></pre></div>
-</li>
-</ol>
 <h2 id="sync-mode">Sync Mode<a class="headerlink" href="#sync-mode" title="Link to this section">¶</a></h2>
 <p>There are two sync modes for running a full node: <strong>snap</strong> and <strong>full</strong> which can be specified by flag <strong>–syncmode</strong>.</p>
 <p>The <strong>snap</strong> sync mode is used for initial sync, which will download the latest states rather than execute the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.</p>
