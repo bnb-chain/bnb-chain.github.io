@@ -39,7 +39,7 @@ The consensus protocol of BSC fulfills the following goals:
 1. Short Blocking time, 3 seconds on mainnet.
 2. It requires quite short time to confirm the finality of transactions, around 6s for mainnet after the coming Plato upgrade.
 3. There is no inflation of native token: BNB, the block reward is collected from transaction fees, and it will be paid in BNB.
-4. It is 100% compatible with Ethereum system .
+4. It is 100% compatible with Ethereum system.
 5. It allows modern proof-of-stake blockchain network governance.
 
 ## Security
@@ -74,7 +74,7 @@ Cross-chain communication is the key foundation to allow the community to take a
 ## Staking and Governance
 Proof of Staked Authority brings in decentralization and community involvement. Its core logic can be summarized as the below. You may see similar ideas from other networks, especially Cosmos and EOS.
 
-1. Token holders, including the validators, can put their tokens "bonded" into the stake. Token holders can delegate their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to re-delegate their tokens1.
+1. Token holders, including the validators, can put their tokens "bonded" into the stake. Token holders can delegate their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to re-delegate their tokens.
 2. All validator candidates will be ranked by the number of bonded tokens on them, and the top ones will become the real validators.
 3. Validators can share (part of) their blocking reward with their delegators.
 4. Validators can suffer from "Slashing", a punishment for their bad behaviors, such as double sign and/or instability.
