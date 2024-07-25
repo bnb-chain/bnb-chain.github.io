@@ -106,6 +106,7 @@ nav:
     - Introduction: ./bnb-smart-chain/introduction.md
     - Ecosystem: https://dappbay.bnbchain.org/
     - Developers:
+        - Quick Guide: ./bnb-smart-chain/developers/quick-guide.md
         - Dev-Tools: https://www.bnbchain.org/en/dev-tools
         - RPC: ./bnb-smart-chain/developers/rpc.md
         - Faucet: ./bnb-smart-chain/developers/faucet.md

@@ -6,6 +6,18 @@ hide:
 title: BNB Chain
 ---
 
+<style>
+    .md-source-file, .md-content__button.md-icon {
+        display: none;
+    }
+
+    .section-body {
+        padding: 0;
+        border-top: none;
+        margin: 0.64em auto;
+    }
+</style>
+
 # BNB Chain: Empowering the Future of Decentralized Applications
 
 ![BNB Chain](./assets/home-hero.png)
@@ -94,3 +106,19 @@ Within this ecosystem, the ownership, usage, and monetization of data are possib
 
     With the growing demand for Artificial Intelligence or AI, there is now more than ever a need to integrate AI with blockchain technology to reap its benefits. BNB Chain is making this integration a reality by providing a robust platform that easily integrates blockchain and AI.
 
+## **Quick Start**
+
+<div class="section-body">
+    <a href="./bnb-smart-chain/developers/quick-guide" class="grid-item">
+        <div>BNB Smart Chain</div>
+        <p>Getting Started with high performance Layer1 particularly for decentralized finance (DeFi)</p>
+    </a>
+    <a href="./bnb-opbnb/developers/quick-guide" class="grid-item">
+        <div>opBNB</div>
+        <p>Getting Started with Layer2 scaling solution on BNB Chain ecosystem</p>
+    </a>
+    <a href="./bnb-greenfield/for-developers/get-started-dev" class="grid-item">
+        <div>BNB Greenfield</div>
+        <p>Getting Started with cutting-edge decentralized storage</p>
+    </a>
+</div>
