@@ -6,6 +6,14 @@ hide:
 title: BNB Chain
 ---
 
+<style>
+   .section-body {
+        padding: 0;
+        border-top: none;
+        margin: 0.64em auto;
+   }
+</style>
+
 # BNB Chain: Empowering the Future of Decentralized Applications
 
 ![BNB Chain](./assets/home-hero.png)
