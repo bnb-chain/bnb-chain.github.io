@@ -64,8 +64,7 @@ We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
     !!! note
         Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
-        1. Since `v1.3.1`, the flags `--txlookuplimit` has been replaced by `--history.transactions`. Make sure you no longer use `--txlookuplimit`, otherwise, node may not start.
-        2. For all geth nodes, DO NOT use `-pipecommit` flag
+        For all geth nodes, DO NOT use `-pipecommit` flag
 
     !!! tip
         It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
@@ -100,34 +99,12 @@ We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
 !!! note
     To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.
-    If you can not download the chaindata snapshot and want to sync from genesis, then you have to generate the genesis block first, for which you have already downloaded the genesis.json in the Step - 2 above where you have downloaded config files.
 
-1. Write genesis state locally
 
-    ```
-    ## It will init genesis with Hash-Base Storage Scheme by default.
-    ./geth --datadir ./node init ./genesis.json
-    ```
-    
-    You could see the following output:
-    
-    ```
-    INFO [05-19|14:53:17.468] Allocated cache and file handles         database=/Users/huangsuyu/Downloads/bsc/node/geth/chaindata cache=16.00MiB handles=16
-    INFO [05-19|14:53:17.498] Writing custom genesis block
-    INFO [05-19|14:53:17.501] Persisted trie from memory database      nodes=21 size=56.84KiB time=357.915µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-574.00B
-    INFO [05-19|14:53:17.502] Successfully wrote genesis state         database=chaindata hash=7d79cc…fb0d1e
-    INFO [05-19|14:53:17.503] Allocated cache and file handles         database=/Users/huangsuyu/Downloads/bsc/node/geth/lightchaindata cache=16.00MiB handles=16
-    INFO [05-19|14:53:17.524] Writing custom genesis block
-    INFO [05-19|14:53:17.525] Persisted trie from memory database      nodes=21 size=56.84KiB time=638.396µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=-574.00B
-    INFO [05-19|14:53:17.528] Successfully wrote genesis state         database=lightchaindata hash=7d79cc…fb0d1e
-    ```
-
-2. Start fullnode
-
-    ```bash
-    ## start a full node
-    ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
-    ```
+```bash
+## start a full node
+./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+```
 
 ## Sync Mode
 

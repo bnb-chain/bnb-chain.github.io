@@ -64,13 +64,6 @@ BC and BSC share the same token universe for BNB and BEP2 tokens. This defines:
 2. The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the token’s total effective supply on both BSC and BC.
 3. The tokens can be initially created on BSC in a similar format as ERC20 token standard, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
 
-## Cross-Chain Transfer and Communication
-Cross-chain communication is the key foundation to allow the community to take advantage of the dual chain structure:
-
-1. users are free to create any tokenization, financial products, and digital assets on BSC or BC as they wish
-2. the items on BSC can be manually and programmingly traded and circulated in a stable, high throughput, lighting fast and friendly environment of BC
-3. users can operate these in one UI and tooling ecosystem.
-
 ## Staking and Governance
 Proof of Staked Authority brings in decentralization and community involvement. Its core logic can be summarized as the below. You may see similar ideas from other networks, especially Cosmos and EOS.
 

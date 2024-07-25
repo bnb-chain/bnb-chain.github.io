@@ -13,10 +13,11 @@ Simply speaking, an archive node is a full node running with an additional speci
 
 Developers are limited to querying the limited recent blocks to check the balance of an address and the state of a smart contract with a full node. It is hard to get all what they want as the blockchain is moving forward at the same time, while they can query any block at a specific point in time with an archive node.
 Archive nodes are used by various applications on the blockchain for challenging use cases, including but not limited to the followings:
-* Automatic trading system needs historical data to optimize trading model
-* Verification modules need state data to verify transactions in time
-* Analytical tools need full historical data to do data analysis
-* Exchange in some wallets depends on archive node for fast and efficient transfers
+
+- Automatic trading system needs historical data to optimize trading model
+- Verification modules need state data to verify transactions in time
+- Analytical tools need full historical data to do data analysis
+- Exchange in some wallets depends on archive node for fast and efficient transfers
 
 ## Suggested Requirements
 
