@@ -117,9 +117,9 @@ nav:
             - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
             - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
             - Separate Node: ./bnb-smart-chain/developers/node_operators/separate_node.md
+            - Verify Node: ./bnb-smart-chain/developers/node_operators/verify_node.md
             - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
             - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
-            - Verify Node: ./bnb-smart-chain/developers/node_operators/verify_node.md
             - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md

@@ -13,6 +13,7 @@ Since BSC is EVM-compatible, your existing Ethereum smart contract skills will s
 ## Connecting
 
 Here are some resources to help you get connected to the BSC network:
+
 - [Network Information and RPC Providers](./rpc.md)
 - [Wallet Configuration](./wallet-configuration.md)
 
