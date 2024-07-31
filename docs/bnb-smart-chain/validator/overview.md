@@ -27,6 +27,14 @@ This measure aims to encourage more validators to participate in the consensus, 
 
 Validators on the BSC are nodes responsible for producing blocks and securing the network through the [POSA consensus mechanism](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum).
 They participate in packaging transactions, creating and validating blocks to secure the BSC network, earning BNB tokens as rewards in exchange.
+## Validator's Network Topology
+![validator network topology](../img/validator-network-topology.png)
+BSC validators are connected to each other based on the P2P network, they can be connected directly or indirectly. As a validator node, it can be run with 2 modes:
+- Mode A(easy): Expose your validator's public IP directly, so it will join the P2P network directly. It can be connected to other validators or other full nodes. It is the simplest way and with high efficiency as it has less network hops, but it has some potential secure risk, as hacker could hack into your node if there is some security vulnerability.
+- Mode B(secure): Hide your validator node behind 1 or more SentryNodes, which is just a normal BSC full node. The SentryNode serves as a bridge between the hidden validator node and public P2P network,
+it mainly protects the validator from attacks like DDOS or some security flaws.
+
+Both mode A and mode B are ok, if you have confidence with your node’s security, then mode A would have lower network latency.
 
 ## Economics
 

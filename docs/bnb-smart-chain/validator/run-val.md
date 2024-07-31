@@ -127,3 +127,43 @@ To resume validating,
 ```bash
 miner.start()
 ```
+
+## Some Tips & Tools
+### 1.Run backup node
+Backup node could help in case your validator node run into trouble for various reasons.
+
+### 2.How to check your node’s stability
+There is javascript in the BSC repo to dump the slash information for each validator.
+```
+cd <bsc>/cmd/jsutils
+# 1.to dump the slashes of the lates block:
+node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce
+
+# 2.you may also specify the block number:
+node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce --Num 39938351
+```
+If your validator is stable, there should be very few or even zero slashes for each day. Basically, if your validator got slashed for more then 3 times for 1 day, it may worth a check.
+
+### 3.About maintenance mode
+If your validator has been slashed for 50 times, it will enter maintenance mode. You need to check and recover your node ASAP, otherwise it could be in jail.
+
+Once your node has been recovered, you need to exit the maintenance mode immediately, here is the manual : https://github.com/bnb-chain/bsc/blob/master/docs/parlia/README-BEP-127.md#exit-maintenance
+```
+// note: replace "0x75B851a27D7101438F45fce31816501193239A83" with your validator's consensus address.
+geth attach geth.ipc
+web3.eth.sendTransaction({   from:  0x75B851a27D7101438F45fce31816501193239A83",   to: "0x0000000000000000000000000000000000001000",   data: "0x04c4fec6"})
+```
+
+### 4.Filter peers by regex on name
+This feature was introduced by v1.4.6, it is mainly to filter out some peers that may have some issues and better not to connect with them.
+For detail, you may refer this PR: https://github.com/bnb-chain/bsc/pull/2404
+Basically, we don’t need this feature, but if some releases turn out to have some severe bugs, and we can not upgrade all nodes to the good release in a short time. Then we can use this feature to drop the peers of bad versions.
+
+For example, if v1.4.9 has known issues, we wanna disconnect nodes of this version, you may update your `config.toml` and restart:
+```
+[Node.P2P]
+PeerFilterPatterns = ["Geth/v1.4.9.*""]
+```
+
+### 5.About config.toml
+The Discovery Module can be disabled, so that no other peers will do heavy query on your validator: Change `NoDiscovery = false` to `NoDiscovery = true` ib `config.toml`
