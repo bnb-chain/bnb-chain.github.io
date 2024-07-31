@@ -27,14 +27,12 @@ This measure aims to encourage more validators to participate in the consensus, 
 
 Validators on the BSC are nodes responsible for producing blocks and securing the network through the [POSA consensus mechanism](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum).
 They participate in packaging transactions, creating and validating blocks to secure the BSC network, earning BNB tokens as rewards in exchange.
-## Validator's Network Topology
-![validator network topology](../img/validator-network-topology.png)
-BSC validators are connected to each other based on the P2P network, they can be connected directly or indirectly. As a validator node, it can be run with 2 modes:
-- Mode A(easy): Expose your validator's public IP directly, so it will join the P2P network directly. It can be connected to other validators or other full nodes. It is the simplest way and with high efficiency as it has less network hops, but it has some potential secure risk, as hacker could hack into your node if there is some security vulnerability.
-- Mode B(secure): Hide your validator node behind 1 or more SentryNodes, which is just a normal BSC full node. The SentryNode serves as a bridge between the hidden validator node and public P2P network,
-it mainly protects the validator from attacks like DDOS or some security flaws.
+## The Network Topology
+![validator network topology](../img/validator/validator-network-topology.png){:style="width:600px"}
 
-Both mode A and mode B are ok, if you have confidence with your node’s security, then mode A would have lower network latency.
+Validators on the BSC network are interconnected through a peer-to-peer (P2P) network, allowing for both direct and indirect connections. As a validator node operator, you have two operational modes to choose from:
+- **Mode A(Ease of Use)**: You can expose your validator's public IP address directly to the P2P network, which facilitates a direct connection. This mode is the most straightforward and offers high efficiency due to fewer network hops. However, it comes with potential security risks, as hackers could exploit vulnerabilities in your node to gain access.
+- **Mode B(Enhanced Security)**: This mode conceals your validator node behind one or more SentryNodes, which are essentially regular BSC full nodes. The SentryNode acts as a protective intermediary between your hidden validator node and the public P2P network. It primarily shields the validator from threats such as DDoS attacks and other security vulnerabilities.
 
 ## Economics
 

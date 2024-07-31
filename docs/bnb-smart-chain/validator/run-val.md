@@ -130,10 +130,10 @@ miner.start()
 
 ## Some Tips & Tools
 ### 1.Run backup node
-Backup node could help in case your validator node run into trouble for various reasons.
+Backup node could help when your primary validator node encounters issues due to a variety of potential reasons, ensuring the continuity and reliability of your participation in the network.
 
 ### 2.How to check your node’s stability
-There is javascript in the BSC repo to dump the slash information for each validator.
+There is a javascript in BSC repo to dump the slash status of each validator.
 ```
 cd <bsc>/cmd/jsutils
 # 1.to dump the slashes of the lates block:
@@ -142,12 +142,12 @@ node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b
 # 2.you may also specify the block number:
 node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce --Num 39938351
 ```
-If your validator is stable, there should be very few or even zero slashes for each day. Basically, if your validator got slashed for more then 3 times for 1 day, it may worth a check.
+If your validator operates smoothly, you should expect minimal or even no penalties, known as "slashes," on a daily basis. Generally speaking, if your validator incurs more than three slashes within a single day, it would be prudent to investigate the cause for this anomaly.
 
 ### 3.About maintenance mode
-If your validator has been slashed for 50 times, it will enter maintenance mode. You need to check and recover your node ASAP, otherwise it could be in jail.
+Should your validator incur 50 slashes, it will automatically transition into maintenance mode. It is imperative to promptly diagnose and rectify any issues with your node to prevent further penalties. Failure to do so may result in your node being placed in a more restrictive state, often referred to as "jail."
 
-Once your node has been recovered, you need to exit the maintenance mode immediately, here is the manual : https://github.com/bnb-chain/bsc/blob/master/docs/parlia/README-BEP-127.md#exit-maintenance
+Upon successfully restoring your node's functionality, it is crucial to promptly [exit maintenance mode](https://github.com/bnb-chain/bsc/blob/master/docs/parlia/README-BEP-127.md#exit-maintenance) to resume normal operations and avoid any unnecessary downtime or penalties.
 ```
 // note: replace "0x75B851a27D7101438F45fce31816501193239A83" with your validator's consensus address.
 geth attach geth.ipc
@@ -155,9 +155,9 @@ web3.eth.sendTransaction({   from:  0x75B851a27D7101438F45fce31816501193239A83",
 ```
 
 ### 4.Filter peers by regex on name
-This feature was introduced by v1.4.6, it is mainly to filter out some peers that may have some issues and better not to connect with them.
-For detail, you may refer this PR: https://github.com/bnb-chain/bsc/pull/2404
-Basically, we don’t need this feature, but if some releases turn out to have some severe bugs, and we can not upgrade all nodes to the good release in a short time. Then we can use this feature to drop the peers of bad versions.
+This functionality was introduced with version [1.4.6](https://github.com/bnb-chain/bsc/releases/tag/v1.4.6), primarily designed to identify and exclude peers that may present operational challenges, thereby preventing connections with them. For further details, please refer to this Pull Request: [PR #2404](https://github.com/bnb-chain/bsc/pull/2404).
+
+Generally, this feature is not necessary for regular operation. However, in the event that a release contains critical bugs and an immediate upgrade of all nodes to a stable version is not feasible, this feature can be employed to disconnect from peers running the problematic versions. This serves as a temporary solution to mitigate the impact of the bugs until a comprehensive upgrade can be performed.
 
 For example, if v1.4.9 has known issues, we wanna disconnect nodes of this version, you may update your `config.toml` and restart:
 ```
