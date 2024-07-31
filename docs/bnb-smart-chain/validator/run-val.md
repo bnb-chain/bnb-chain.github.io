@@ -136,10 +136,10 @@ Backup node could help when your primary validator node encounters issues due to
 There is a javascript in BSC repo to dump the slash status of each validator.
 ```
 cd <bsc>/cmd/jsutils
-# 1.to dump the slashes of the lates block:
+# 1.To dump the slashes of the lates block:
 node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce
 
-# 2.you may also specify the block number:
+# 2.You may also specify the block number:
 node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce --Num 39938351
 ```
 If your validator operates smoothly, you should expect minimal or even no penalties, known as "slashes," on a daily basis. Generally speaking, if your validator incurs more than three slashes within a single day, it would be prudent to investigate the cause for this anomaly.
@@ -151,7 +151,7 @@ Upon successfully restoring your node's functionality, it is crucial to promptly
 ```
 // note: replace "0x75B851a27D7101438F45fce31816501193239A83" with your validator's consensus address.
 geth attach geth.ipc
-web3.eth.sendTransaction({   from:  0x75B851a27D7101438F45fce31816501193239A83",   to: "0x0000000000000000000000000000000000001000",   data: "0x04c4fec6"})
+web3.eth.sendTransaction({   from: "0x75B851a27D7101438F45fce31816501193239A83",   to: "0x0000000000000000000000000000000000001000",   data: "0x04c4fec6"})
 ```
 
 ### 4.Filter out peers by regex pattern
@@ -162,5 +162,5 @@ Generally, this feature is not necessary for regular operation. However, in the 
 For example, if v1.4.9 has known issues, we wanna disconnect nodes of this version, you may update your `config.toml` and restart:
 ```
 [Node.P2P]
-PeerFilterPatterns = ["Geth/v1.4.9.*""]
+PeerFilterPatterns = ["Geth/v1.4.9.*"]
 ```

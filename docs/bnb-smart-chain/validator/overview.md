@@ -31,7 +31,7 @@ They participate in packaging transactions, creating and validating blocks to se
 ![validator network topology](../img/validator/validator-network-topology.png){:style="width:600px"}
 
 Validators on the BSC network are interconnected through a peer-to-peer (P2P) network, allowing for both direct and indirect connections. As a validator node operator, you have two operational modes to choose from:
-- **Mode A(Ease of Use)**: You can expose your validator's public IP address directly to the P2P network, which facilitates a direct connection. This mode is the most straightforward and offers high efficiency due to fewer network hops. However, it comes with potential security risks, as hackers could exploit vulnerabilities in your node to gain access.
+- **Mode A(Ease of Use)**: You can expose your validator's public IP address directly to the P2P network, which facilitates a direct connection. This mode is the most straightforward and offers high efficiency due to fewer network hops. To mitigate potential security risks, it is highly recommended to deactivate the HTTP module whenever possible and avoid exposing HTTP access to the public. Additionally, it's crucial to safeguard your validator node's information to prevent Distributed Denial of Service (DDoS) attacks that could target the P2P port.
 - **Mode B(Enhanced Security)**: This mode conceals your validator node behind one or more SentryNodes, which are essentially regular BSC full nodes. The SentryNode acts as a protective intermediary between your hidden validator node and the public P2P network. It primarily shields the validator from threats such as DDoS attacks and other security vulnerabilities.
 
 ## Economics
