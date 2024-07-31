@@ -132,7 +132,7 @@ miner.start()
 ### 1.Run backup node
 Backup node could help when your primary validator node encounters issues due to a variety of potential reasons, ensuring the continuity and reliability of your participation in the network.
 
-### 2.How to check your node’s stability
+### 2.Check your node’s stability
 There is a javascript in BSC repo to dump the slash status of each validator.
 ```
 cd <bsc>/cmd/jsutils
@@ -154,7 +154,7 @@ geth attach geth.ipc
 web3.eth.sendTransaction({   from:  0x75B851a27D7101438F45fce31816501193239A83",   to: "0x0000000000000000000000000000000000001000",   data: "0x04c4fec6"})
 ```
 
-### 4.Filter peers by regex on name
+### 4.Filter out peers by regex pattern
 This functionality was introduced with version [1.4.6](https://github.com/bnb-chain/bsc/releases/tag/v1.4.6), primarily designed to identify and exclude peers that may present operational challenges, thereby preventing connections with them. For further details, please refer to this Pull Request: [PR #2404](https://github.com/bnb-chain/bsc/pull/2404).
 
 Generally, this feature is not necessary for regular operation. However, in the event that a release contains critical bugs and an immediate upgrade of all nodes to a stable version is not feasible, this feature can be employed to disconnect from peers running the problematic versions. This serves as a temporary solution to mitigate the impact of the bugs until a comprehensive upgrade can be performed.
@@ -164,6 +164,3 @@ For example, if v1.4.9 has known issues, we wanna disconnect nodes of this versi
 [Node.P2P]
 PeerFilterPatterns = ["Geth/v1.4.9.*""]
 ```
-
-### 5.About config.toml
-The Discovery Module can be disabled, so that no other peers will do heavy query on your validator: Change `NoDiscovery = false` to `NoDiscovery = true` ib `config.toml`
