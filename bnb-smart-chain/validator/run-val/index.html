@@ -1558,6 +1558,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-tips-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Tips &amp; Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Some Tips & Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1run-backup-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Run backup node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2check-your-nodes-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Check your node’s stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3about-maintenance-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.About maintenance mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4filter-out-peers-by-regex-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Filter out peers by regex pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2237,6 +2288,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-tips-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some Tips &amp; Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Some Tips & Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1run-backup-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Run backup node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2check-your-nodes-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Check your node’s stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3about-maintenance-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.About maintenance mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4filter-out-peers-by-regex-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Filter out peers by regex pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2338,6 +2440,33 @@ Ensure these accounts match the corresponding ones when creating a new validator
 </code></pre></div>
 <p>To resume validating,
 </p><div class="highlight"><pre><span></span><code>miner.start<span class="o">()</span>
+</code></pre></div>
+<h2 id="some-tips-tools">Some Tips &amp; Tools<a class="headerlink" href="#some-tips-tools" title="Link to this section">¶</a></h2>
+<h3 id="1run-backup-node">1.Run backup node<a class="headerlink" href="#1run-backup-node" title="Link to this section">¶</a></h3>
+<p>Backup node could help when your primary validator node encounters issues due to a variety of potential reasons, ensuring the continuity and reliability of your participation in the network.</p>
+<h3 id="2check-your-nodes-stability">2.Check your node’s stability<a class="headerlink" href="#2check-your-nodes-stability" title="Link to this section">¶</a></h3>
+<p>There is a javascript in BSC repo to dump the slash status of each validator.
+</p><div class="highlight"><pre><span></span><code>cd &lt;bsc&gt;/cmd/jsutils
+# 1.To dump the slashes of the lates block:
+node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce
+
+# 2.You may also specify the block number:
+node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce --Num 39938351
+</code></pre></div>
+If your validator operates smoothly, you should expect minimal or even no penalties, known as “slashes,” on a daily basis. Generally speaking, if your validator incurs more than three slashes within a single day, it would be prudent to investigate the cause for this anomaly.
+<h3 id="3about-maintenance-mode">3.About maintenance mode<a class="headerlink" href="#3about-maintenance-mode" title="Link to this section">¶</a></h3>
+<p>Should your validator incur 50 slashes, it will automatically transition into maintenance mode. It is imperative to promptly diagnose and rectify any issues with your node to prevent further penalties. Failure to do so may result in your node being placed in a more restrictive state, often referred to as “jail.”</p>
+<p>Upon successfully restoring your node’s functionality, it is crucial to promptly <a href="https://github.com/bnb-chain/bsc/blob/master/docs/parlia/README-BEP-127.md#exit-maintenance">exit maintenance mode</a> to resume normal operations and avoid any unnecessary downtime or penalties.
+</p><div class="highlight"><pre><span></span><code>// note: replace "0x75B851a27D7101438F45fce31816501193239A83" with your validator's consensus address.
+geth attach geth.ipc
+web3.eth.sendTransaction({   from: "0x75B851a27D7101438F45fce31816501193239A83",   to: "0x0000000000000000000000000000000000001000",   data: "0x04c4fec6"})
+</code></pre></div>
+<h3 id="4filter-out-peers-by-regex-pattern">4.Filter out peers by regex pattern<a class="headerlink" href="#4filter-out-peers-by-regex-pattern" title="Link to this section">¶</a></h3>
+<p>This functionality was introduced with version <a href="https://github.com/bnb-chain/bsc/releases/tag/v1.4.6">1.4.6</a>, primarily designed to identify and exclude peers that may present operational challenges, thereby preventing connections with them. For further details, please refer to this Pull Request: <a href="https://github.com/bnb-chain/bsc/pull/2404">PR#2404</a>.</p>
+<p>Generally, this feature is not necessary for regular operation. However, in the event that a release contains critical bugs and an immediate upgrade of all nodes to a stable version is not feasible, this feature can be employed to disconnect from peers running the problematic versions. This serves as a temporary solution to mitigate the impact of the bugs until a comprehensive upgrade can be performed.</p>
+<p>For example, if v1.4.9 has known issues, we wanna disconnect nodes of this version, you may update your <code>config.toml</code> and restart:
+</p><div class="highlight"><pre><span></span><code>[Node.P2P]
+PeerFilterPatterns = ["Geth/v1.4.9.*"]
 </code></pre></div></div>
 
 
