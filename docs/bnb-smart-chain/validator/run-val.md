@@ -155,7 +155,7 @@ web3.eth.sendTransaction({   from: "0x75B851a27D7101438F45fce31816501193239A83",
 ```
 
 ### 4.Filter out peers by regex pattern
-This functionality was introduced with version [1.4.6](https://github.com/bnb-chain/bsc/releases/tag/v1.4.6), primarily designed to identify and exclude peers that may present operational challenges, thereby preventing connections with them. For further details, please refer to this Pull Request: [PR #2404](https://github.com/bnb-chain/bsc/pull/2404).
+This functionality was introduced with version [1.4.6](https://github.com/bnb-chain/bsc/releases/tag/v1.4.6), primarily designed to identify and exclude peers that may present operational challenges, thereby preventing connections with them. For further details, please refer to this Pull Request: [PR#2404](https://github.com/bnb-chain/bsc/pull/2404).
 
 Generally, this feature is not necessary for regular operation. However, in the event that a release contains critical bugs and an immediate upgrade of all nodes to a stable version is not feasible, this feature can be employed to disconnect from peers running the problematic versions. This serves as a temporary solution to mitigate the impact of the bugs until a comprehensive upgrade can be performed.
 
