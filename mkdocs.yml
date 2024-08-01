@@ -388,8 +388,6 @@ plugins:
         'docs/validator/best-practice.md': 'bnb-smart-chain/validator/security.md'
         'docs/BSC-fast-node.md': 'bnb-smart-chain/developers/node_operators/fast_node.md'
         'docs/archivenode.md': 'bnb-smart-chain/developers/node_operators/archive_node.md'
-        'docs/BSC-separate-node.md': 'bnb-smart-chain/developers/node_operators/separate_node.md'
-        'docs/BSC-verify-node.md': 'bnb-smart-chain/developers/node_operators/verify_node.md'
         'docs/learn/cross-chain-bridges.md': 'bnb-smart-chain/overview.md'
         'docs/validator/create-val.md': 'bnb-smart-chain/validator/create-val.md'
         'docs/validator/run-val.md': 'bnb-smart-chain/validator/run-val.md'
