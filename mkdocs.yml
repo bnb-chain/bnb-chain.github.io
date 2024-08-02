@@ -76,6 +76,9 @@ nav:
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc-fusion/index.md
     - Overview: ./bc-fusion/overview.md
+    - Post Fustion:
+      - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
+      - FAQ: ./bc-fusion/post-fusion/faq.md
     - For Users:
       - Manage Your Assets: ./bc-fusion/users/assets.md
       - Manage Your Atomic Swaps: ./bc-fusion/users/swaps.md
