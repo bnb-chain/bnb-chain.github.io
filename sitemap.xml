@@ -886,6 +886,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/showcase/wallet/in-app-wallet/</loc>
+         <lastmod>2024-08-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/zkbnb/</loc>
          <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
