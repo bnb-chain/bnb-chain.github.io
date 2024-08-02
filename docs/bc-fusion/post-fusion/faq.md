@@ -38,10 +38,10 @@ are the owner of the assets. Please take care of your key/mnemonic.
 
 * Several BC nodes (not validators) will be kept for users to query the blockchain data, including the user balances.
     - Testnet RPC Node: https://data-seed-pre-0-s1.bnbchain.org/
-    - Mainnet RPC Node: To be updated.
+    - Mainnet RPC Node: https://dataseed1.bnbchain.org/
 * An API endpoint will be kept for querying the snapshot balance.
-    - Testnet API Endpoint: https://testnet-dex.binance.org/api/v1/account/{tbnb_address}
-    - Mainnet API Endpoint: To be updated.
+    - Testnet API Endpoint: https://testnet-dex.bnbchain.org/api/v1/account/{tbnb_address}
+    - Mainnet API Endpoint: https://dex.bnbchain.org/api/v1/account/{bnb_address}
 * The snapshot file can be downloaded from Greenfield/IPFS/Arweave. The users can download the snapshot file and set up
   a local BC node for retrieving any data on the blockchain.
     - Testnet snpashot file: To be updated.    
@@ -55,8 +55,8 @@ Most of the BC related services and products will be shut down after the final s
     - Testnet staking service: https://testnet-staking.bnbchain.org/en/staking
     - Mainnet staking service: https://www.bnbchain.org/en/staking
 * Block service (including API)
-    - Testnet block service: https://testnet-api.binance.org/bc
-    - Mainnet block service: https://api.binance.org/bc/
+    - Testnet block service: https://testnet-api.bnbchain.org/bc
+    - Mainnet block service: https://api.bnbchain.org/bc/
 
 Be noted: No snapshot will be provided for any of the BC related services and products.
 
@@ -65,4 +65,4 @@ the explorer for BC testnet will be shut down if there is no query traffic for a
 
 * Explorer service (including UI)
     - Testnet explorer service: https://testnet-explorer.bnbchain.org/
-    - Mainnet explorer service: https://explorer.binance.org/
+    - Mainnet explorer service: https://explorer.bnbchain.org/
