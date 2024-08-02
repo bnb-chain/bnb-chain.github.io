@@ -58,10 +58,10 @@ Most of the BC related services and products will be shut down after the final s
     - Testnet block service: https://testnet-api.binance.org/bc
     - Mainnet block service: https://api.binance.org/bc/
 
-In case you need any data from the Beacon Chain, you can still access the data from the snapshot file.
+Be noted: No snapshot will be provided for any of the BC related services and products.
 
-The Beacon Chain Explorer will keep running for users to query the blockchain data, however we will consider to shutdown 
-the explorer for BC testnet if there is no query traffic for a long time.
+The Beacon Chain Explorer will keep running for users to query the blockchain data, however,   
+the explorer for BC testnet will be shut down if there is no query traffic for a long time.
 
 * Explorer service (including UI)
     - Testnet explorer service: https://testnet-explorer.bnbchain.org/
