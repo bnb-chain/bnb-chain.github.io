@@ -115,6 +115,7 @@ nav:
             - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
             - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
             - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
+            - Reth Node: ./bnb-smart-chain/developers/node_operators/reth_node.md
             - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
             - Separate Node: ./bnb-smart-chain/developers/node_operators/separate_node.md
             - Verify Node: ./bnb-smart-chain/developers/node_operators/verify_node.md

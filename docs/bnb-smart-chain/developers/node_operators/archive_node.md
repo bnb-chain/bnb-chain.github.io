@@ -45,3 +45,7 @@ tar --use-compress-program=unzstd -xvf erigon-latest.tar.zstd
 
 The known Issue with an Erigon client is that it does not really keep up with the latest blocks as mentioned in the Github. If you want to keep up with the latest blocks it is suggested to run a BSC archive node with high performance disk such as NVME, or run a BSC full node with a Geth client at the same time which  means you need one proxy that will ask Erigon if it has the block height and if not forward it to the Geth client.
 
+### Run with a Reth client
+
+[Reth](https://github.com/bnb-chain/reth) now supports the BSC network and demonstrates superior performance compared to Geth and Erigon in recent benchmark tests. You can utilize reth to operate an archive node; for more information, refer to [Reth Node](./reth_node.md).
+
