@@ -177,12 +177,12 @@ specific BNB amount.
 Please be noted that each validator will have its own APR/APY, and the staking system will auto compound the rewards.
 
 The reward is distributed to each validator's BNB pool at 00:00:00 UTC time every day. To calculate the APR/APY of a
-validator, the total pooled BNB amount and the crrospanding reward amount for the same day are needed.
+validator, the total pooled BNB amount and the corresponding reward amount for the same day are needed.
 
 The `StakeHub` contract provides the `getValidatorTotalPooledBNBRecord(address,uint256)(uint256)`
 and `getValidatorRewardRecord(address,uint256)(uint256)` for the purpose.
 
-The following code shows shows how to calculate the APY at a given day:
+The following codes show how to calculate the APY at a given day:
 
 ```go
 // example code, do not use it in production
@@ -199,7 +199,7 @@ header, _ := p.client.GetBlockHeader(blockHeight)
 // calculate the index paramter to call the following functions
 index := int64(header.Time) / interval.Int64()
 
-// get the total pooled BNB amount and the crrospanding reward amount for the given validator and index
+// get the total pooled BNB amount and the corresponding reward amount for the given validator and index
 totalPooledBNB, _ := stakeHub.GetValidatorTotalPooledBNBRecord(nil, validatorOperatorAddress, index)
 reward, _ := stakeHub.GetValidatorRewardRecord(nil, validatorOperatorAddress, index)
 
