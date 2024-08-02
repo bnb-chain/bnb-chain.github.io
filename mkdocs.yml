@@ -296,6 +296,8 @@ nav:
          - Build your Attestation: ./showcase/identity/attestation-dev.md
      - Games:
        - Telegram Mini Game on BNB Chain: ./showcase/game/minigame.md
+     - Wallet:
+       - In-app Wallet and Account Abstraction: ./showcase/wallet/in-app-wallet.md
 
      
 
