@@ -62,7 +62,6 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Final Sunset Hardfork(BC testnet): ./announce/final-sunset-bc-testnet.md
       - Mongolian Hardfork(Greenfield): ./announce/mongolian-greenfield.md
     - Passed:
       - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
@@ -72,6 +71,7 @@ nav:
       - Haber Hardfork(BSC): ./announce/haber-bsc.md
       - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
       - Second Sunset Hardfork(BC testnet): ./announce/second-sunset-bc-testnet.md
+      - Final Sunset Hardfork(BC testnet): ./announce/final-sunset-bc-testnet.md
 
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc-fusion/index.md
