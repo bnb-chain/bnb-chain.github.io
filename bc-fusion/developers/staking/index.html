@@ -2460,10 +2460,10 @@ specific BNB amount.</p>
 <h3 id="how-to-calculate-the-aprapy-of-a-validator">How to calculate the APR/APY of a validator?<a class="headerlink" href="#how-to-calculate-the-aprapy-of-a-validator" title="Link to this section">¶</a></h3>
 <p>Please be noted that each validator will have its own APR/APY, and the staking system will auto compound the rewards.</p>
 <p>The reward is distributed to each validator’s BNB pool at 00:00:00 UTC time every day. To calculate the APR/APY of a
-validator, the total pooled BNB amount and the crrospanding reward amount for the same day are needed.</p>
+validator, the total pooled BNB amount and the corresponding reward amount for the same day are needed.</p>
 <p>The <code>StakeHub</code> contract provides the <code>getValidatorTotalPooledBNBRecord(address,uint256)(uint256)</code>
 and <code>getValidatorRewardRecord(address,uint256)(uint256)</code> for the purpose.</p>
-<p>The following code shows shows how to calculate the APY at a given day:</p>
+<p>The following codes show how to calculate the APY at a given day:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// example code, do not use it in production</span>
 
 <span class="c1">// stakehub is the instance of StakeHub contract</span>
@@ -2478,7 +2478,7 @@ and <code>getValidatorRewardRecord(address,uint256)(uint256)</code> for the purp
 <span class="c1">// calculate the index paramter to call the following functions</span>
 <span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">interval</span><span class="p">.</span><span class="nx">Int64</span><span class="p">()</span>
 
-<span class="c1">// get the total pooled BNB amount and the crrospanding reward amount for the given validator and index</span>
+<span class="c1">// get the total pooled BNB amount and the corresponding reward amount for the given validator and index</span>
 <span class="nx">totalPooledBNB</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">stakeHub</span><span class="p">.</span><span class="nx">GetValidatorTotalPooledBNBRecord</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">validatorOperatorAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span>
 <span class="nx">reward</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">stakeHub</span><span class="p">.</span><span class="nx">GetValidatorRewardRecord</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">validatorOperatorAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span>
 
