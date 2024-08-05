@@ -126,7 +126,7 @@ nav:
         - EOA Paymaster:
             - Overview: ./bnb-smart-chain/developers/paymaster/overview.md
             - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
-            - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integrate.md
+            - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integration.md
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md
         - User Guide: ./bnb-smart-chain/staking/user-guide.md

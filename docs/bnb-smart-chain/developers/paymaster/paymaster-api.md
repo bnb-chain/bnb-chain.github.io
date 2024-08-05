@@ -36,7 +36,8 @@ Paymaster needs to implement a JSON-RPC API called `pm_isSponsorable`, so that 
       "to": "0x...", // an address
       "from": "0x...", // an address"value": "0xa1",
       "data": "0x",
-      "gas" : "0xa1"
+      "value": "0x1b4",
+      "gas" : "0x101b4"
     }
   ]
 }
