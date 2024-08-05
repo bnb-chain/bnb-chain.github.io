@@ -118,6 +118,7 @@ nav:
             - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
             - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
             - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
+            - Reth Node: ./bnb-smart-chain/developers/node_operators/reth_node.md
             - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
             - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
             - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
@@ -179,6 +180,7 @@ nav:
       - Node Best Practices: ./bnb-opbnb/advanced/node-best-practices.md
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
+      - Reth Node: ./bnb-opbnb/advanced/reth-node.md
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
       - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
