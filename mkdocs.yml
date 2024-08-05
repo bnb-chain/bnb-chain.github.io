@@ -123,6 +123,10 @@ nav:
             - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
             - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
             - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
+        - EOA Paymaster:
+            - Overview: ./bnb-smart-chain/developers/paymaster/overview.md
+            - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
+            - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integration.md
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md
         - User Guide: ./bnb-smart-chain/staking/user-guide.md

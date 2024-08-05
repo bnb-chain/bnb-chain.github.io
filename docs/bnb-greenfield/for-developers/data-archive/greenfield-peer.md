@@ -5,7 +5,7 @@ keywords: [ BNB Greenfield, NodeReal, Data Archive Layer, Greenfield Peer]
 
 # Greenfield Peer
 
-With the launch of the [block-archiver](../block-archiver), BSC historical block data is now accessible on Greenfield.
+With the launch of the [block-archiver](./block-archiver.md), BSC historical block data is now accessible on Greenfield.
 For those operating BSC nodes in fullsync mode, connecting to the Greenfield peer is a beneficial choice. The Greenfield peer
 fetches block data from Greenfield and supplies it to BSC nodes via the P2P network.
 
