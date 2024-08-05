@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
     
@@ -1457,6 +1457,8 @@
       
         
       
+        
+      
     
     
       
@@ -1778,6 +1780,27 @@
   
   <span class="md-ellipsis">
     Run with PebbleDB and PBSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reth-node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reth Node
   </span>
   
 
@@ -2430,26 +2453,7 @@ This mode is apt for scenarios necessitating access to the complete history trie
 <p>The current volume of history trie data approximates 3TB (as of the end of April, 2024).
 Significant performance issues may arise in the op-geth implementation when managing extensive history trie data.
 Therefore, it is recommended to operate the archive node in conjunction with op-reth.</p>
-<p>Below is an exemplary command for initiating the archive node with op-reth:</p>
-<div class="highlight"><pre><span></span><code>export L2_RPC=https://opbnb-mainnet-rpc.bnbchain.org
-
-op-reth node \
-    --datadir /server/datadir \
-    --chain opbnb-mainnet \
-    --rollup.sequencer-http ${L2_RPC} \
-    --authrpc.addr "0.0.0.0" \
-    --authrpc.port 8551 \
-    --authrpc.jwtsecret /server/datadir/jwt.txt \
-    --http \
-    --http.addr "0.0.0.0" \
-    --http.port 8545 \
-    --ws \
-    --ws.addr "0.0.0.0" \
-    --ws.port 8545 \
-    --builder.gaslimit 150000000 \
-    --nat any
-</code></pre></div>
-<p>For further particulars, visit the <a href="https://github.com/bnb-chain/reth">op-reth GitHub repository</a>.</p>
+<p>You can refer to <a href="../reth-node/">Reth Node for opBNB</a> for additional details.</p>
 <h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Link to this section">¶</a></h2>
 <p>The latest snapshot data is accessible via the <a href="https://github.com/bnb-chain/opbnb-snapshot">opbnb-snapshot</a> repository.</p>
 <p>Employing snapshot data can drastically curtail the time required for node synchronization.</p>
