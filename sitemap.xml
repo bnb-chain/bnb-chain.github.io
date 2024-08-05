@@ -751,6 +751,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/overview/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/paymaster-api/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/wallet-integration/</loc>
+         <lastmod>2024-08-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/bnb-smart-chain/governance/apis/</loc>
          <lastmod>2024-08-05</lastmod>
          <changefreq>daily</changefreq>
