@@ -28,3 +28,5 @@ You can also claim tBNB from the following third-party faucets
 1. https://faucet.quicknode.com/binance-smart-chain/bnb-testnet
 
 2. https://faucet.chainstack.com/bnb-testnet-faucet
+
+3. https://thirdweb.com/opbnb-testnet
