@@ -54,6 +54,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
 
 * **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
 
 ### Starting HTTP JSON-RPC
 
