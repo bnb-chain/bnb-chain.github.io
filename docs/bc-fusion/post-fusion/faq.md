@@ -28,7 +28,7 @@ Before the final sunset hardfork:
 
 After the final sunset hadfork (i.e., post fusion):
 
-* Users should wait for the release of token recovery dApp, and use the token recovery dApp to get the assets back on
+* Users should wait for the release of [the token recovery dApp](token-recovery.md), and use the token recovery dApp to get the assets back on
   the BSC network.
 
 Important: to use the token recovery dApp, the private key/mnemonic for your BC account will be used to prove that you
