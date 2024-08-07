@@ -1,7 +1,7 @@
 # Token Recovery dApp
 
 To facilitate the token migration after the Beacon Chain shutdown,
-the [BEP299](https://github.com/binance-chain/BEPs/blob/master/BEP299.md) is proposed
+the [BEP299](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-299.md) is proposed
 to recover the BEP2/BEP8 assets on the Beacon Chain to the BSC chain. This document will guide you through the process
 of token recovery.
 
