@@ -67,9 +67,10 @@ By confirming the token recovery request, you will be promoted to sign a message
 
 You will be asked to switch to the BSC network in your wallet.
 
+![](../../assets/bcfusion/token-recovery-mismatch-address.png){:style="width:800px"}
+
 The connected address should be the receiver address inputted in the previous step. If it is not, the token recovery
-dApp
-will detect it and ask you to switch to the correct account in your wallet.
+dApp will detect it and ask you to switch to the correct account in your wallet.
 
 ![](../../assets/bcfusion/token-recovery-9.png){:style="width:800px"}
 
