@@ -122,8 +122,8 @@ Opting for **full** sync mode means your node will only need block headers and b
 consider utilizing the `Greenfield Peer`.
 
 This data seed, offered by Greenfield, allows for a more efficient synchronization.
-Configure your BSC node to connect with the Greenfield Peer by modifying your configuration file settings.
-For comprehensive instructions, see [Greenfield Peer](../../../bnb-greenfield/for-developers/data-archive/greenfield-peer.md).
+Configure your BSC node to connect with the Greenfield Light Peer by modifying your configuration file settings.
+For comprehensive instructions, see [Light Peer](../../../bnb-greenfield/for-developers/data-archive/light-peer.md).
 
 ## Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
