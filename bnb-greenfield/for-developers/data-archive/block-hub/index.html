@@ -12,13 +12,13 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/block-archiver/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/block-hub/">
       
       
         <link rel="prev" href="../blob-hub/">
       
       
-        <link rel="next" href="../greenfield-peer/">
+        <link rel="next" href="../light-peer/">
       
       
       <link rel="icon" href="../../../../assets/bnb.svg">
@@ -26,7 +26,7 @@
     
     
     
-        <title>Block Archiver</title>
+        <title>BlockHub</title>
     
 
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#block-archiver" class="md-skip">
+        <a href="#blockhub" class="md-skip">
           Skip to content
         </a>
       
@@ -1603,7 +1603,7 @@
         
   
   <span class="md-ellipsis">
-    Block Archiver
+    Block HUb
   </span>
   
 
@@ -1621,11 +1621,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../greenfield-peer/" class="md-nav__link">
+      <a href="../light-peer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Greenfield Peer
+    Light Peer
   </span>
   
 
@@ -2370,7 +2370,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/for-developers/data-archive/block-archiver.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-greenfield/for-developers/data-archive/block-hub.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2378,34 +2378,38 @@
   
 
 
-<div><h1 id="block-archiver">Block Archiver<a class="headerlink" href="#block-archiver" title="Link to this section">¶</a></h1>
-<p>Block Archiver is another data archive solution that Greenfield community introduces. It is a specialized service designed to
-facilitate the efficient storage and retrieval of historical block data on the Ethereum compatible chains(BSC for now). This solution caters to
-various users who require comprehensive and reliable blockchain records for their operations.</p>
-<p>Much like Blobhub, which uses the Bundle Service to archive blobs into a single bundle, Block-Archiver leverages
+<div><h1 id="blockhub">BlockHub<a class="headerlink" href="#blockhub" title="Link to this section">¶</a></h1>
+<p>BlockHub offers a lightweight, trustless, and decentralized method for accessing blockchain data. It provides a user experience
+that is fully consistent with the original network’s RPC and P2P access, eliminating the need for users to run full nodes or
+rely on centralized data providers to fetch block data. Don’t want to trust a third party provider to provide the block data?
+Greenfield Blockhub is the answer. BlockHub is alive for BSC now.</p>
+<p>Much like Blob Hub, which uses the Bundle Service to archive blobs into a single bundle, BlockHub leverages
 the bundle service to combine a range of blocks into a single bundle. This approach optimizes storage usage, ensures cost-effectiveness,
 and maintains data integrity and accessibility.</p>
 <p>Note: Greenfield charges a fee for both storing and accessing objects. If the bucket owner’s payment account lacks sufficient balance,
 users will be unable to query data until the quota is refilled.</p>
-<h1 id="how-block-archiver-operates">How Block Archiver Operates<a class="headerlink" href="#how-block-archiver-operates" title="Link to this section">¶</a></h1>
-<p>The Block Archiver comprises two main components:</p>
-<p>— Block Indexer: This service continuously indexes blocks from the Blockchain and stores them in Greenfield. It ensures no block is missed and that each stored block is accurate.
-— API Server: This component handles user requests for historical block data, providing seamless access to the stored blocks.</p>
-<p><img alt="Block Archiver" src="../../../static/asset/block-archiver.png"></p>
+<h1 id="how-blockhub-operates">How BlockHub Operates<a class="headerlink" href="#how-blockhub-operates" title="Link to this section">¶</a></h1>
+<p>The BlockHub comprises three main components:</p>
+<ul>
+<li>Block Indexer: This service continuously indexes blocks from the Blockchain and stores them in Greenfield. It ensures no block is missed and that each stored block is accurate.</li>
+<li>API Server: This component handles user requests for historical block data, providing seamless access to the stored blocks.</li>
+<li>Light Peers: It is a blockchain client that is backed by Greenfield storage but can serve in the P2P network. Refer to the <a href="../light-peer/">Light Peer</a> documentation for more details.</li>
+</ul>
+<p><img alt="BlockHub" src="../../../static/asset/block-hub.png"></p>
 <p>The indexing process ensures data integrity by running a post-verification process. This process scans all uploaded blocks,
 conducts validation checks against data already stored in Greenfield, and detects any missing data.</p>
-<h1 id="who-needs-to-access-the-block-archiver">Who Needs to Access the Block Archiver?<a class="headerlink" href="#who-needs-to-access-the-block-archiver" title="Link to this section">¶</a></h1>
+<h1 id="who-needs-to-access-the-blockhub">Who Needs to Access the BlockHub?<a class="headerlink" href="#who-needs-to-access-the-blockhub" title="Link to this section">¶</a></h1>
 <h2 id="node-operators">Node Operators<a class="headerlink" href="#node-operators" title="Link to this section">¶</a></h2>
-<p>Node operators requiring full sync from the genesis block need access to historical block data via the Block-Archiver.
+<p>Node operators requiring full sync from the genesis block need access to historical block data via the BlockHub.
 Leveraging Greenfield’s robust infrastructure, they can trust the integrity and availability of the stored data.</p>
-<p>The Greenfield community has launched the <code>Greenfield Peer</code>, a data-seed solution for those who need to run BSC nodes in fullsync mode. For more details, check out this <a href="../greenfield-peer/">page</a>.</p>
+<p>The Greenfield community has launched the <code>Greenfield Peer</code>, a data-seed solution for those who need to run BSC nodes in fullsync mode. For more details, check out this <a href="../light-peer/">page</a>.</p>
 <h2 id="data-analysts-and-researchers">Data Analysts and Researchers<a class="headerlink" href="#data-analysts-and-researchers" title="Link to this section">¶</a></h2>
-<p>Block-Archiver offers a valuable resource for data analysts and researchers who need comprehensive access to historical block
-data. By leveraging Block-Archiver, they can collect reliable data for analysis, research, and development purposes.</p>
-<h1 id="accessing-block-data-with-block-archiver">Accessing Block Data with Block-Archiver<a class="headerlink" href="#accessing-block-data-with-block-archiver" title="Link to this section">¶</a></h1>
-<p>Block-Archiver supports BSC now and its API is fully compatible with Ethereum API specifications, ensuring ease of integration for
-developers. Detailed information about supported networks and endpoints can be found in <a href="../../network-endpoint/endpoints/#block-archiver">network and endpoints</a>. For more details
-about the API spec, please refer to <a href="https://github.com/bnb-chain/greenfield-bsc-archiver/?tab=readme-ov-file#block-archiver-api">Block-Archiver API</a></p>
+<p>BlockHub offers a valuable resource for data analysts and researchers who need comprehensive access to historical block
+data. By leveraging BlockHub, they can collect reliable data for analysis, research, and development purposes.</p>
+<h1 id="accessing-block-data-with-blockhub">Accessing Block Data with BlockHub<a class="headerlink" href="#accessing-block-data-with-blockhub" title="Link to this section">¶</a></h1>
+<p>BlockHub supports BSC now and its API is fully compatible with Ethereum API specifications, ensuring ease of integration for
+developers. Detailed information about supported networks and endpoints can be found in <a href="../../network-endpoint/endpoints/#BlockHub">network and endpoints</a>. For more details
+about the API spec, please refer to <a href="https://github.com/bnb-chain/greenfield-bsc-archiver/?tab=readme-ov-file#BlockHub-api">BlockHub API</a></p>
 <h1 id="try-it-out">Try It Out<a class="headerlink" href="#try-it-out" title="Link to this section">¶</a></h1>
 <p>Adopting this innovative solution ensures the integrity, accessibility, and longevity of blockchain data, supporting a more
 resilient and transparent digital ecosystem. Join the Greenfield community today and set a new standard for blockchain data
@@ -2465,13 +2469,13 @@ reliability and security.</p></div>
         
         
           
-          <a href="../greenfield-peer/" class="md-footer__link md-footer__link--next" aria-label="Next: Greenfield Peer">
+          <a href="../light-peer/" class="md-footer__link md-footer__link--next" aria-label="Next: Light Peer">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Greenfield Peer
+                Light Peer
               </div>
             </div>
             <div class="md-footer__button md-icon">
