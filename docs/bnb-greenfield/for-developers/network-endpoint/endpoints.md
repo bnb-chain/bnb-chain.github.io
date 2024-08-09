@@ -52,6 +52,11 @@ order: 3
 - **BSC:**
 - `https://gnfd-blobhub-bsc.bnbchain.org`
 
+### Block Hub
+- **BSC:** coming soon
+
+  Refer to the [Block-Hub documentation](../data-archive/block-hub.md) for more details.
+
 
 ## Testnet
 ### Greenfield Testnet (chain-id: greenfield_5600-1)
@@ -92,8 +97,6 @@ order: 3
 
   For more details, you can refer to [here](network-info.md).
 
-### Block Archiver
+### Block Hub
 - **BSC:**
-- `https://gnfd-bsc-archiver-testnet.bnbchain.org`
-
-By accessing the above endpoints, you can retrieve historical block data from the BSC network. For comprehensive information, please refer to the [Block-Archiver documentation](../data-archive/block-archiver.md).
+  - `https://gnfd-bsc-archiver-testnet.bnbchain.org`
