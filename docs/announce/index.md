@@ -2,18 +2,18 @@
 # Announcement
 
 <div class="doc-announce">
-    <a href="./mongolian-greenfield/">
+    <a href="./bohr-bsc/">
         <div>
-            <div class="announce-title">Greenfield Mongolian Hardfork (Testnet) </div>
-            <div class="announce-desc">Bugfixing on Greenfield Testnet</div>
+            <div class="announce-title">Bohr Upgrade of BSC (Testnet) </div>
+            <div class="announce-desc">Introduce 4 BEPs on BSC Testnet</div>
         </div>
-        <span class="announce-date">2024 July 31</span>
+        <span class="announce-date">2024 Aug 20</span>
     </a>
-    <a href="./mongolian-greenfield/">
+    <a href="./bohr-bsc/">
         <div>
-            <div class="announce-title">Greenfield Mongolian Hardfork (Mainnet) </div>
-            <div class="announce-desc">Bugfixing on Greenfield Mainnet</div>
+            <div class="announce-title">Bohr Upgrade of BSC (Mainnet) </div>
+            <div class="announce-desc">Introduce 4 BEPs on BSC Mainnet</div>
         </div>
-        <span class="announce-date">2024 August 8</span>
+        <span class="announce-date">To be determined, target Later Sep 2024</span>
     </a>
 </div>
