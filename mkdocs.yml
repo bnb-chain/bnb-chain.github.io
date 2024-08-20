@@ -63,6 +63,7 @@ nav:
     - Announcements: ./announce/index.md
     - Upcoming:
       - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
+      - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
     - Passed:
       - Mongolian Hardfork(Greenfield): ./announce/mongolian-greenfield.md
       - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
