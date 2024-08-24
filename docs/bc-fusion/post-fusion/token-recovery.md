@@ -12,7 +12,7 @@ Be noted:
 
 URL:
 
-- **Testnet**: [https://testnet-bnb-beacon-chain-token-recovery.bnbchain.org/en](https://testnet-bnb-beacon-chain-token-recovery.bnbchain.org/en)
+- **Testnet**: To be updated.
 
 - **Mainnet**: To be updated.
 
