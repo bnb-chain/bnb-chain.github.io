@@ -53,9 +53,10 @@ order: 3
 - `https://gnfd-blobhub-bsc.bnbchain.org`
 
 ### Block Hub
-- **BSC:** coming soon
+- **BSC:**
+- `https://gnfd-bsc-archiver-mainnet.bnbchain.org/`
 
-  Refer to the [Block-Hub documentation](../data-archive/block-hub.md) for more details.
+Refer to the [Block-Hub documentation](../data-archive/block-hub.md) for more details.
 
 
 ## Testnet
