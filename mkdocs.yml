@@ -149,6 +149,7 @@ nav:
             - Overview: ./bnb-smart-chain/validator/mev/overview.md
             - Validator Guide: ./bnb-smart-chain/validator/mev/validator-integration.md
             - Builder Guide: ./bnb-smart-chain/validator/mev/builder-integration.md
+            - User Guide: ./bnb-smart-chain/validator/mev/user-guide.md
             - FAQs: ./bnb-smart-chain/validator/mev/faqs.md
     - Slashing:
         - Overview: ./bnb-smart-chain/slashing/overview.md
