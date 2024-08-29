@@ -2,12 +2,19 @@
 # Announcement
 
 <div class="doc-announce">
-    <a href="./wright-opbnb/">
+    <a href="./fjord-opbnb/">
         <div>
-            <div class="announce-title">Wright Upgrade of opBNB (Mainnet)</div>
-            <div class="announce-desc">Introduce Gasless Feature on opBNB Mainnet</div>
+            <div class="announce-title">Fjord Upgrade of opBNB (Testnet)</div>
+            <div class="announce-desc">Introduce L1 Fee Calculation Changes on opBNB Testnet</div>
         </div>
-        <span class="announce-date">2024 Aug 27</span>
+        <span class="announce-date">2024 Sep 10</span>
+    </a>
+    <a href="./fjord-opbnb/">
+        <div>
+            <div class="announce-title">Fjord Upgrade of opBNB (Mainnet)</div>
+            <div class="announce-desc">Introduce L1 Fee Calculation Changes on opBNB Mainnet</div>
+        </div>
+        <span class="announce-date">2024 Sep 24</span>
     </a>
     <a href="./bohr-bsc/">
         <div>
