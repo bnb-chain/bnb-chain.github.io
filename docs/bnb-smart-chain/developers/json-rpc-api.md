@@ -2,7 +2,7 @@
 title: JSON-RPC API - BSC Develop
 ---
 
-BSC (Binance Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
 
 ## Geth(Go-Ethereum) API
 

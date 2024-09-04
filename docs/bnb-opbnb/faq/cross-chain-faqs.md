@@ -41,4 +41,4 @@ With that said, there is a way for developers to allow arbitrary message sending
 
 ### Can I directly transfer assets between opBNB and Greenfield?
 
-Currently, direct cross-chain transfers between opBNB and Greenfield are not supported. However, users can achieve cross-chain transfers between these two networks by conducting a two-step process through the Binance Smart Chain (BSC). This involves transferring assets from opBNB to BSC and then from BSC to Greenfield.
+Currently, direct cross-chain transfers between opBNB and Greenfield are not supported. However, users can achieve cross-chain transfers between these two networks by conducting a two-step process through the BNB Smart Chain (BSC). This involves transferring assets from opBNB to BSC and then from BSC to Greenfield.
