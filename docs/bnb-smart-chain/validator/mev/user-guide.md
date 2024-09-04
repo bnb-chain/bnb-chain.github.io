@@ -22,5 +22,5 @@ A curated list of MEV block builders is provided below for informational purpose
 - [Blocksmith](https://docs.blocksmith.org/)
 - [Nodereal](https://docs.nodereal.io/reference/bsc-bundle-service-api#overview)
 - [Blockrazor](https://blockrazor.gitbook.io/blockrazor/mev-service/bsc)
-- [Puissant](https://docs.48.club/buidl/infrastructure/puissant-builder/deprecated/puissant)
+- [Puissant](https://docs.48.club)
 
