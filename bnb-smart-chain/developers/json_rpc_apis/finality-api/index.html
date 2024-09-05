@@ -1085,22 +1085,29 @@
 <p>Economic Finality refers to the high cost associated with reverting a block. In proof-of-stake systems that use a slashing mechanism (such as Casper FFG, Tendermint, or BSC Fast Finality), if validators violate the voting rules, part or all of their stake can be forfeited. This economic penalty makes it extremely expensive to undermine finality. Generally, block n achieves economic finality by block n+2, meaning that BSC Fast Finality reduces the confirmation time to two blocks in most cases. This improves the user experience by making transaction confirmation faster and more reliable.</p>
 <h2 id="economic-finality-api">Economic Finality API<a class="headerlink" href="#economic-finality-api" title="Link to this section">¶</a></h2>
 <h3 id="eth_getheaderbynumber-as-in-the-ethereum-client"><a href="https://www.quicknode.com/docs/kaia/eth_getHeaderByNumber">eth_getHeaderByNumber</a> as in the Ethereum client.<a class="headerlink" href="#eth_getheaderbynumber-as-in-the-ethereum-client" title="Link to this section">¶</a></h3>
-<p><strong>Parameters</strong>
-1. QUANTITY|TAG
-* HEX String - an integer block number
-* String “earliest” for the earliest/genesis block
-* String “latest” - for the latest mined block
-* String “safe” - for the latest justified head block
-* String “<strong>finalized</strong>” - for the latest finalized block</p>
+<p><strong>Parameters</strong></p>
+<p>QUANTITY|TAG</p>
+<ul>
+<li>HEX String - an integer block number</li>
+<li>String “earliest” for the earliest/genesis block</li>
+<li>String “latest” - for the latest mined block</li>
+<li>String “safe” - for the latest justified head block</li>
+<li>String “<strong>finalized</strong>” - for the latest finalized block</li>
+</ul>
 <h3 id="eth_getblockbynumber-as-in-the-ethereum-client"><a href="https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbynumber">eth_getBlockByNumber</a> as in the Ethereum client.<a class="headerlink" href="#eth_getblockbynumber-as-in-the-ethereum-client" title="Link to this section">¶</a></h3>
-<p><strong>Parameters</strong>
-1. QUANTITY|TAG
-* HEX String - an integer block number
-* String “earliest” for the earliest/genesis block
-* String “latest” - for the latest mined block
-* String “safe” - for the latest justified head block
-* String “<strong>finalized</strong>” - for the latest finalized block
-2. Boolean - If true it returns the full transaction objects, if false only the hashes of the transactions.</p>
+<p><strong>Parameters</strong></p>
+<p>QUANTITY|TAG</p>
+<ul>
+<li>HEX String - an integer block number</li>
+<li>String “earliest” for the earliest/genesis block</li>
+<li>String “latest” - for the latest mined block</li>
+<li>String “safe” - for the latest justified head block</li>
+<li>String “<strong>finalized</strong>” - for the latest finalized block</li>
+</ul>
+<p>Boolean</p>
+<ul>
+<li>If true it returns the full transaction objects, if false only the hashes of the transactions.</li>
+</ul>
 <h3 id="eth_newfinalizedheaderfilter">eth_newFinalizedHeaderFilter<a class="headerlink" href="#eth_newfinalizedheaderfilter" title="Link to this section">¶</a></h3>
 <p>Here are two APIs that can help you trace the latest finalized blocks:
 1. Create a finalized header filter:
