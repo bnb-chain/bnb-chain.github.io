@@ -90,3 +90,15 @@ The gas sponsorship process involves several key components and steps:
 This solution leverages the BEP322 Proposer-Builder Separation architecture to enable seamless gas sponsorship without 
 requiring significant changes to existing wallet infrastructures. It provides a flexible system that can accommodate 
 various sponsorship models while maintaining the security and integrity of the blockchain network.
+
+## Paymaster Infra
+
+Ready to enable gasless experiences in your app or wallet? Here's some helpful information on paymaster infrastructure 
+that are available on BNB Chain:
+
+- [Nodereal](https://docs.nodereal.io/docs/megafuel-overview). The MegaFuel powered by Nodereal is a paymaster 
+implementation based on BNB Chain Paymaster for EOA Wallet. With minimal modifications, wallets can integrate MegaFuel 
+to support gas fee sponsorship, significantly enhancing user experience. At the same time, sponsors can customize 
+their sponsorship on MegaFuel, allowing sponsored users to send gasless transactions.
+- [Bitget Wallet](https://web3.bitget.com/en/). Bitget Wallet has integrated the paymaster on BSC, providing gasless functionality 
+for sponsored user transactions.
