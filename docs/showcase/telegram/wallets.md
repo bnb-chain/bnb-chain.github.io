@@ -10,8 +10,12 @@ Telegram isn't just for chatting anymore. It's evolving into a powerful hub for 
 
 Forget switching between apps. With Telegram bot wallets, you can seamlessly manage your BNB and interact with the BNB Chain ecosystem directly within your chats.
 
-* [UXUYBot Telegram Bot wallet](https://t.me/UXUYbot)
-* [CodexField](https://t.co/rDdG1fyJqq)
+| Name              | Telegram Link              | SDK Doc                                                      |
+| ----------------- | -------------------------- | ------------------------------------------------------------ |
+| CodexField Wallet | https://t.me/codexfieldbot | https://www.npmjs.com/package/codexfield-wallet-connector?activeTab=readme |
+| UXUY Wallet       | https://t.me/UXUYbot       | https://docs.uxuy.com/uxuy-connect/quickstart/               |
+
+
 
 ### **Telegram Authentication: A Developer's Dream**
 
