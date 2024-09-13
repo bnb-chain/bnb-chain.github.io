@@ -52,12 +52,12 @@ title: BNB Smart Chain
         <div>Run a Node</div>
         <p>Run a BSC node</p>
     </a>
-    <a href="./validator/mev/">
+    <a href="./validator/mev/overview">
         <div>MEV Builder</div>
         <p>Become a builder and create blocks and offering them to the validator</p>
     </a>
-    <a href="./developers/json-rpc-api">
-        <div>JSON-RPC API</div>
+    <a href="./developers/json_rpc/json-rpc">
+        <div>JSON-RPC</div>
         <p>Interacting with BSC requires sending requests to specific JSON-RPC API methods.</p>
     </a>
 </div>

@@ -1,9 +1,9 @@
 ---
-title: RPC - BSC Develop
+title: JSON-RPC - BSC Develop
 ---
 
 
-# JSON-RPC Endpoint
+# JSON-RPC
 
 JSON-RPC endpoints refers to the network location where a program could transfer its RPC requests to access server data. Once you connect a decentralized application to an RPC endpoint, you can access the functionalities of different operations, which could enable real-time usage of blockchain data. BNB Chain provides several RPC endpoints for connectinto both its Minent and Testnet. In this section, we list the JSON-RPC endpoints that can be used for connecting to BNB Smart Chain.
 
@@ -75,7 +75,26 @@ geth attach https://bsc-dataseed.bnbchain.org
 geth attach https://bsc-testnet-dataseed.bnbchain.org
 ```
 
-### JSON-RPC methods
+## JSON-RPC API List
 
-Please refer to this [wiki page](https://github.com/ethereum/wiki/wiki/JSON-RPC) or use Postman: <https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest>
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
 
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](finality-api.md).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](blob-api.md).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api.md). 

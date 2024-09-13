@@ -15,7 +15,7 @@ Economic Finality refers to the high cost associated with reverting a block. In 
 ### [eth_getHeaderByNumber](<https://www.quicknode.com/docs/kaia/eth_getHeaderByNumber>) as in the Ethereum client.
 **Parameters**
 
-QUANTITY|TAG
+**BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
 * String "earliest" for the earliest/genesis block
@@ -26,7 +26,7 @@ QUANTITY|TAG
 ### [eth_getBlockByNumber](<https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbynumber>) as in the Ethereum client.
 **Parameters**
 
-QUANTITY|TAG
+**BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
 * String "earliest" for the earliest/genesis block
@@ -34,7 +34,7 @@ QUANTITY|TAG
 * String "safe" - for the latest justified head block
 * String "**finalized**" - for the latest finalized block
   
-Boolean
+**Full_transaction_flag** Boolean
 
 - If true it returns the full transaction objects, if false only the hashes of the transactions.
 
