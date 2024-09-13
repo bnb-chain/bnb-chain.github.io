@@ -32,7 +32,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 * String "earliest" for the earliest/genesis block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
-* String "**finalized**" - for the latest finalized block
+* String "finalized" - for the latest finalized block
 
 **full_blob_flag** Boolean (OPTIONAL)
 

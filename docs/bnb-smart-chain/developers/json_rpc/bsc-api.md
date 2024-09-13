@@ -26,7 +26,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 * String "earliest" for the earliest/genesis block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
-* String "**finalized**" - for the latest finalized block
+* String "finalized" - for the latest finalized block
 
 ```
 curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getTransactionsByBlockNumber","params":["0x539492"],"id":1}'
