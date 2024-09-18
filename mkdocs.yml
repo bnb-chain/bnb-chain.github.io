@@ -118,10 +118,8 @@ nav:
         - Quick Guide: ./bnb-smart-chain/developers/quick-guide.md
         - Dev-Tools: https://www.bnbchain.org/en/dev-tools
         - JSON-RPC:
-            - Json Rpc: ./bnb-smart-chain/developers/json_rpc/json-rpc.md
-            - Finality Api: ./bnb-smart-chain/developers/json_rpc/finality-api.md
-            - Blob Api: ./bnb-smart-chain/developers/json_rpc/blob-api.md
-            - Bsc Api: ./bnb-smart-chain/developers/json_rpc/bsc-api.md
+            - Json Rpc Endpoint: ./bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md
+            - Bsc Api list: ./bnb-smart-chain/developers/json_rpc/bsc-api-list.md
         - Faucet: ./bnb-smart-chain/developers/faucet.md
         - Node Operators:
             - Node Best Practices: ./bnb-smart-chain/developers/node_operators/node_best_practices.md

@@ -1,9 +1,9 @@
 ---
-title: JSON-RPC - BSC Develop
+title: JSON-RPC-Endpoint - BSC Develop
 ---
 
 
-# JSON-RPC
+# JSON-RPC-Endpoint
 
 JSON-RPC endpoints refers to the network location where a program could transfer its RPC requests to access server data. Once you connect a decentralized application to an RPC endpoint, you can access the functionalities of different operations, which could enable real-time usage of blockchain data. BNB Chain provides several RPC endpoints for connectinto both its Minent and Testnet. In this section, we list the JSON-RPC endpoints that can be used for connecting to BNB Smart Chain.
 
@@ -89,12 +89,12 @@ BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibi
 
 Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
 
-[BSC Finality API](finality-api.md).
+[BSC Finality API](bsc-api-list.md#finality-api).
 
 ### Blob
 
-Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](blob-api.md).
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
 
 ### Other BSC API
 
-Bsc implement some others apis, as described in: [BSC API](bsc-api.md). 
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others). 

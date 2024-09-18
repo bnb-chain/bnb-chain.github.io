@@ -56,8 +56,8 @@ title: BNB Smart Chain
         <div>MEV Builder</div>
         <p>Become a builder and create blocks and offering them to the validator</p>
     </a>
-    <a href="./developers/json_rpc/json-rpc">
-        <div>JSON-RPC</div>
+    <a href="./developers/json_rpc/json-rpc-endpoint">
+        <div>JSON-RPC-Endpoint</div>
         <p>Interacting with BSC requires sending requests to specific JSON-RPC API methods.</p>
     </a>
 </div>
