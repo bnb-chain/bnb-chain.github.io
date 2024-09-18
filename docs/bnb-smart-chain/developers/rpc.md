@@ -62,6 +62,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
 
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
