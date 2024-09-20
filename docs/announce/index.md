@@ -2,19 +2,12 @@
 # Announcement
 
 <div class="doc-announce">
-    <a href="./fjord-opbnb/">
+    <a href="./altai-gnfd/">
         <div>
-            <div class="announce-title">Fjord Upgrade of opBNB (Testnet)</div>
-            <div class="announce-desc">Introduce L1 Fee Calculation Changes on opBNB Testnet</div>
+            <div class="announce-title">Altai Upgrade of Greenfield </div>
+            <div class="announce-desc">A hotfix release to address Metamask compatibility issue</div>
         </div>
-        <span class="announce-date">2024 Sep 10</span>
-    </a>
-    <a href="./fjord-opbnb/">
-        <div>
-            <div class="announce-title">Fjord Upgrade of opBNB (Mainnet)</div>
-            <div class="announce-desc">Introduce L1 Fee Calculation Changes on opBNB Mainnet</div>
-        </div>
-        <span class="announce-date">2024 Sep 24</span>
+        <span class="announce-date">2024 Sep 23</span>
     </a>
     <a href="./bohr-bsc/">
         <div>
