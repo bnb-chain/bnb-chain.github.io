@@ -242,7 +242,7 @@ to `0` to get all the locked BNBs.
 The contracts do not save the initial delegation amount of a delegator. To get the accumulated
 reward, the following steps can be taken: 1) track the initial delegation amount in your system, 2) call
 the `getPooledBNB` of the credit contract of a validator, 3) do the math. You can refer 
-to [this code repository](https://github.com/bnb-chain/staking-reward-example) for reference.
+to [this code repository](https://github.com/bnb-chain/staking-reward-example) for example.
 
 ### How to get the total staking address of a validator?
 
