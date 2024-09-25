@@ -12,28 +12,28 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/governance/temp-check/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/erigon_node/">
       
       
-        <link rel="prev" href="../user-guide/">
+        <link rel="prev" href="../fast_node/">
       
       
-        <link rel="next" href="../apis/">
+        <link rel="next" href="../reth_node/">
       
       
-      <link rel="icon" href="../../../assets/bnb.svg">
+      <link rel="icon" href="../../../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
     
     
     
-        <title>Temperature Check - BSC Governance</title>
+        <title>BSC Erigon Node Deployment Guide</title>
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.06209087.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bsc-governance-temperature-check" class="md-skip">
+        <a href="#bsc-erigon-node-deployment-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -160,7 +160,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../announce/" class="md-tabs__link">
+        <a href="../../../../announce/" class="md-tabs__link">
           
   
     
@@ -335,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -357,7 +357,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -377,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -397,7 +397,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../../../bnb-greenfield/" class="md-tabs__link">
           
   
     
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../zkbnb/" class="md-tabs__link">
+        <a href="../../../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -443,7 +443,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../showcase/identity/did/" class="md-tabs__link">
+        <a href="../../../../showcase/identity/did/" class="md-tabs__link">
           
   
     
@@ -489,7 +489,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -516,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +564,7 @@
         
   
   
-    <a href="../../../announce/" class="md-nav__link">
+    <a href="../../../../announce/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -628,7 +628,7 @@
         
   
   
-    <a href="../../../bc-fusion/" class="md-nav__link">
+    <a href="../../../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -700,7 +700,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -733,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
+      <a href="../../../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -793,6 +793,8 @@
                 
   
   
+    
+  
   
   
     
@@ -823,11 +825,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
@@ -841,7 +843,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Developers
@@ -855,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developers/quick-guide/" class="md-nav__link">
+      <a href="../../quick-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -921,7 +923,7 @@
         
   
   
-    <a href="../../developers/json_rpc/json-rpc-endpoint/" class="md-nav__link">
+    <a href="../../json_rpc/json-rpc-endpoint/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -948,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developers/faucet/" class="md-nav__link">
+      <a href="../../faucet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,63 +968,371 @@
                 
   
   
+    
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
   
-  
-    <a href="../../developers/node_operators/node_best_practices/" class="md-nav__link">
+    
+    
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_5" id="__nav_4_5_5_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Node Operators
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Node Operators
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_best_practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Best Practices
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Full Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fast_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fast Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Erigon Node
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Erigon Node
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bsc-erigon-node-deployment-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      BSC Erigon Node Deployment Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BSC Erigon Node Deployment Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-obtain-the-erigon-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Obtain the Erigon Binary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-launch-the-erigon-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Launch the Erigon Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-running-a-fast-node-non-archive-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Running a Fast Node (Non-Archive Mode)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reth_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reth Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boot_node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boot Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade_geth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade Geth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Maintenance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1062,7 +1372,7 @@
         
   
   
-    <a href="../../developers/paymaster/overview/" class="md-nav__link">
+    <a href="../../paymaster/overview/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1150,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../staking/overview/" class="md-nav__link">
+      <a href="../../../staking/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../staking/user-guide/" class="md-nav__link">
+      <a href="../../../staking/user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1192,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../staking/developer-guide/" class="md-nav__link">
+      <a href="../../../staking/developer-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1218,8 +1528,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1246,11 +1554,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
           <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
@@ -1264,7 +1572,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Governance
@@ -1278,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../../governance/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1299,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-guide/" class="md-nav__link">
+      <a href="../../../governance/user-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1317,30 +1625,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Temperature Check
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../governance/temp-check/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,86 +1637,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submit-a-proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Submit a Proposal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Voting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Voting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vote-on-a-proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vote on a Proposal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delegate-voting-power" class="md-nav__link">
-    <span class="md-ellipsis">
-      Delegate Voting Power
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#undelegate-voting-power" class="md-nav__link">
-    <span class="md-ellipsis">
-      Undelegate Voting Power
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1441,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../apis/" class="md-nav__link">
+      <a href="../../../governance/apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1529,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validator/overview/" class="md-nav__link">
+      <a href="../../../validator/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1550,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validator/run-val/" class="md-nav__link">
+      <a href="../../../validator/run-val/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1571,7 +1779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validator/create-val/" class="md-nav__link">
+      <a href="../../../validator/create-val/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1592,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validator/security/" class="md-nav__link">
+      <a href="../../../validator/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../validator/manage-keys/" class="md-nav__link">
+      <a href="../../../validator/manage-keys/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1664,7 +1872,7 @@
         
   
   
-    <a href="../../validator/mev/overview/" class="md-nav__link">
+    <a href="../../../validator/mev/overview/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1752,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/overview/" class="md-nav__link">
+      <a href="../../../slashing/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1773,7 +1981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/slash-rules/" class="md-nav__link">
+      <a href="../../../slashing/slash-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1794,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/monitor/" class="md-nav__link">
+      <a href="../../../slashing/monitor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1866,7 +2074,7 @@
         
   
   
-    <a href="../../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1930,7 +2138,7 @@
         
   
   
-    <a href="../../../bnb-greenfield/" class="md-nav__link">
+    <a href="../../../../bnb-greenfield/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1986,7 +2194,7 @@
         
   
   
-    <a href="../../../zkbnb/" class="md-nav__link">
+    <a href="../../../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2041,7 +2249,7 @@
     
   
   
-    <a href="../../../showcase/identity/did/" class="md-nav__link">
+    <a href="../../../../showcase/identity/did/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2089,55 +2297,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Hardware Requirements
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#submit-a-proposal" class="md-nav__link">
+  <a href="#bsc-erigon-node-deployment-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Submit a Proposal
+      BSC Erigon Node Deployment Steps
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Voting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Voting">
+    <nav class="md-nav" aria-label="BSC Erigon Node Deployment Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vote-on-a-proposal" class="md-nav__link">
+  <a href="#1-obtain-the-erigon-binary" class="md-nav__link">
     <span class="md-ellipsis">
-      Vote on a Proposal
+      1. Obtain the Erigon Binary
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#delegate-voting-power" class="md-nav__link">
+  <a href="#2-launch-the-erigon-node" class="md-nav__link">
     <span class="md-ellipsis">
-      Delegate Voting Power
+      2. Launch the Erigon Node
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#undelegate-voting-power" class="md-nav__link">
+  <a href="#3-running-a-fast-node-non-archive-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Undelegate Voting Power
+      3. Running a Fast Node (Non-Archive Mode)
     </span>
   </a>
   
@@ -2163,7 +2362,7 @@
                   
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/governance/temp-check.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/developers/node_operators/erigon_node.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2171,47 +2370,46 @@
   
 
 
-<div><h1 id="bsc-governance-temperature-check">BSC Governance Temperature Check<a class="headerlink" href="#bsc-governance-temperature-check" title="Link to this section">¶</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this section">¶</a></h2>
-<p>BNB Chain governance involves a two-step process: temperature check and final decision voting. The temperature check, typically conducted through the Snapshot platform, allows any BNB holder to gauge community sentiment on a proposal. If the proposal receives enough support, it proceeds to the final decision voting phase. This phase often involves on-chain voting by validators or those with staked BNB, and the outcome determines whether the proposal is implemented or rejected.</p>
-<h2 id="submit-a-proposal">Submit a Proposal<a class="headerlink" href="#submit-a-proposal" title="Link to this section">¶</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Anyone who staked more than 1BNB can create proposals.</p>
-</div>
-<p>Step 1: Head to the space which you wish to create your proposal for.</p>
-<p>Connect with the wallet provider - make sure the connected wallet is where you delegate BNB</p>
-<p><img alt="create-proposal" src="../../img/submit-proposal.png"></p>
-<p>Step 2: Click New proposal in space sidebar</p>
-<p>Fill in the following fields:
-- Title
-- Description
-- Discussion link</p>
-<p>Step 3: Select the desired voting system, specify the possible vote options, and define the duration of your proposal. Make sure you allow enough time for users to vote.</p>
-<p>Step 4: Click <code>Publish</code> - and you can see your proposal in the proposals list on the space page.</p>
-<h2 id="voting">Voting<a class="headerlink" href="#voting" title="Link to this section">¶</a></h2>
-<h3 id="vote-on-a-proposal">Vote on a Proposal<a class="headerlink" href="#vote-on-a-proposal" title="Link to this section">¶</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>All BNBChain delegators can vote for proposals.</p>
-</div>
-<p>Step 1: Log in to voting space
-URL: <a href="https://snapshot.org/#/bnbchain-dao.eth">https://snapshot.org/#/bnbchain-dao.eth</a></p>
-<p>Step 2: Go to the snapshot link of the proposal. For example, in this case, a community member created a voting proposal for BEP-341.</p>
-<p><a href="https://snapshot.org/#/bnbchain-dao.eth/proposal/0xd2ad975fbe1abd4bf71a5032239650741a64af0133feec83f43b98bc42fa7efe">https://snapshot.org/#/bnbchain-dao.eth/proposal/0xd2ad975fbe1abd4bf71a5032239650741a64af0133feec83f43b98bc42fa7efe</a></p>
-<p><img alt="temp-proposal" src="../../img/snapshot.png"></p>
-<p>Step 3: Connect your wallet and vote</p>
-<p>After you connect your wallet, make sure to use the same address of your BNB Staking. And choose the voting option.</p>
-<p><img alt="vote-proposal" src="../../img/vote.png"></p>
-<h3 id="delegate-voting-power">Delegate Voting Power<a class="headerlink" href="#delegate-voting-power" title="Link to this section">¶</a></h3>
-<p><img alt="delegate-vote" src="../../img/delegate.png"></p>
-<p>Step 1: Go to <a href="https://snapshot.org/#/delegate/bnbchain-dao.eth">https://snapshot.org/#/delegate/bnbchain-dao.eth</a></p>
-<p>Step 2: Enter the address you want to delegate to.</p>
-<p>Step 3: Click Confirm to save your delegation.</p>
-<h3 id="undelegate-voting-power">Undelegate Voting Power<a class="headerlink" href="#undelegate-voting-power" title="Link to this section">¶</a></h3>
-<p>Step 1: Go to <a href="https://snapshot.org/#/delegate/bnbchain-dao.eth">https://snapshot.org/#/delegate/bnbchain-dao.eth</a></p>
-<p>Step 2: Find the current delegatees in Top delegates.</p>
-<p>Step 3: Click the ‘x’ button along a delegatee to undelegate, the wallet will ask user to sign and send transaction to bsc</p></div>
+<div><h1 id="bsc-erigon-node-deployment-guide">BSC Erigon Node Deployment Guide<a class="headerlink" href="#bsc-erigon-node-deployment-guide" title="Link to this section">¶</a></h1>
+<p>BSC Erigon, maintained by the Node Real team, is a fork of Erigon aimed at becoming the premier archive node implementation for the BSC network.</p>
+<h2 id="hardware-requirements">Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this section">¶</a></h2>
+<p>To ensure optimal performance of your BSC Erigon node, we recommend the following hardware specifications:</p>
+<ul>
+<li>RAM: 64GB or more (higher RAM correlates with better performance)</li>
+<li>Storage: SSD or NVMe<ul>
+<li>Archive Node: Minimum 5TB</li>
+<li>Fast Node: Minimum 700GB</li>
+</ul>
+</li>
+</ul>
+<h2 id="bsc-erigon-node-deployment-steps">BSC Erigon Node Deployment Steps<a class="headerlink" href="#bsc-erigon-node-deployment-steps" title="Link to this section">¶</a></h2>
+<h3 id="1-obtain-the-erigon-binary">1. Obtain the Erigon Binary<a class="headerlink" href="#1-obtain-the-erigon-binary" title="Link to this section">¶</a></h3>
+<p>Option 1: Build from source
+</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/node-real/bsc-erigon.git
+<span class="nb">cd</span><span class="w"> </span>bsc-erigon
+make<span class="w"> </span>erigon
+</code></pre></div>
+Option 2: Use Docker image
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/node-real/bsc-erigon:<span class="si">${</span><span class="nv">latest_version</span><span class="si">}</span>
+</code></pre></div>
+<h3 id="2-launch-the-erigon-node">2. Launch the Erigon Node<a class="headerlink" href="#2-launch-the-erigon-node" title="Link to this section">¶</a></h3>
+<p>By default, the node will run in archive mode. Syncing from scratch typically takes about 3 days.
+</p><div class="highlight"><pre><span></span><code>./build/bin/erigon<span class="w"> </span><span class="se">\</span>
+--datadir<span class="o">=</span><span class="s2">"&lt;your_data_directory_path&gt;"</span><span class="w"> </span><span class="se">\</span>
+--chain<span class="o">=</span>bsc<span class="w"> </span><span class="se">\</span>
+--port<span class="o">=</span><span class="m">30303</span><span class="w"> </span><span class="se">\</span>
+--http.port<span class="o">=</span><span class="m">8545</span><span class="w"> </span><span class="se">\</span>
+--authrpc.port<span class="o">=</span><span class="m">8551</span><span class="w"> </span><span class="se">\</span>
+--torrent.port<span class="o">=</span><span class="m">42069</span><span class="w"> </span><span class="se">\</span>
+--private.api.addr<span class="o">=</span><span class="m">127</span>.0.0.1:9090<span class="w"> </span><span class="se">\</span>
+--http<span class="w"> </span>--ws<span class="w"> </span><span class="se">\</span>
+--http.api<span class="o">=</span>eth,debug,net,trace,web3,erigon,bsc
+</code></pre></div>
+<strong>Note</strong>: To avoid port conflicts, specify different ports for each chain if running multiple instances.
+<h3 id="3-running-a-fast-node-non-archive-mode">3. Running a Fast Node (Non-Archive Mode)<a class="headerlink" href="#3-running-a-fast-node-non-archive-mode" title="Link to this section">¶</a></h3>
+<p>Add the –prune.mode=minimal flag to start a fast node. This mode retains only the last 3 days of state and block data, supporting debug_trace* operations for the past 3 days.</p>
+<p>If you prefer not to spend days syncing, you can obtain fast node snapshots from <a href="https://github.com/48Club/bsc-snapshots">community-maintained repositories</a>.</p>
+<p>By following these steps, you can flexibly deploy either a full BSC Erigon node or a fast node based on your requirements. Whichever option you choose, BSC Erigon will provide you with an efficient and reliable node service.</p></div>
 
 
 
@@ -2250,7 +2448,7 @@ URL: <a href="https://snapshot.org/#/bnbchain-dao.eth">https://snapshot.org/#/bn
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../user-guide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Guide">
+          <a href="../fast_node/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fast Node">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2260,20 +2458,20 @@ URL: <a href="https://snapshot.org/#/bnbchain-dao.eth">https://snapshot.org/#/bn
                 Previous
               </span>
               <div class="md-ellipsis">
-                User Guide
+                Fast Node
               </div>
             </div>
           </a>
         
         
           
-          <a href="../apis/" class="md-footer__link md-footer__link--next" aria-label="Next: Governance APIs">
+          <a href="../reth_node/" class="md-footer__link md-footer__link--next" aria-label="Next: Reth Node">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Governance APIs
+                Reth Node
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2406,14 +2604,14 @@ URL: <a href="https://snapshot.org/#/bnbchain-dao.eth">https://snapshot.org/#/bn
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="../../../assets/js/mathjax.js"></script>
+        <script src="../../../../assets/js/mathjax.js"></script>
       
-        <script src="../../../assets/js/custom.js"></script>
+        <script src="../../../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
