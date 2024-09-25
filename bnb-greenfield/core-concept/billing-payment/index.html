@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
     
     
     
@@ -30,7 +30,7 @@
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.06209087.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1257,6 +1257,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#force-settlement-freeze-and-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force Settlement, Freeze and Resume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#downgraded-service" class="md-nav__link">
     <span class="md-ellipsis">
       Downgraded service
@@ -2457,6 +2466,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#force-settlement-freeze-and-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force Settlement, Freeze and Resume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#downgraded-service" class="md-nav__link">
     <span class="md-ellipsis">
       Downgraded service
@@ -2609,6 +2627,47 @@ the flow rate limit for the bucket before the bucket can be used.</p>
 and they don’t need to understand the charging mechanism of Greenfield which is quite complex.</p>
 <p>It will also provide a possibility for projects to sponsor the storage and bandwidth for their users.</p>
 <p>For more details, you can refer to the <a href="https://github.com/bnb-chain/BEPs/pull/362">BEP of the paymaster</a>.</p>
+<h3 id="force-settlement-freeze-and-resume">Force Settlement, Freeze and Resume<a class="headerlink" href="#force-settlement-freeze-and-resume" title="Link to this section">¶</a></h3>
+<p>If a user doesn’t deposit for a long time, his previous deposit may be
+all used up for the stored objects. Greenfield has a forced settlement
+mechanism to ensure enough funds are secured for further service fees.</p>
+<p>There are two configurations, <code>ReserveTime</code> and <code>ForcedSettleTime</code>.</p>
+<p>Let’s take an example where the <code>ReserveTime</code> is 7 days and the <code>ForcedSettleTime</code> is 1 day.
+If a user wants to store an object at the price of
+approximately <span class="arithmatex">\(0.1 per month(\)</span>0.00000004/second), he must reserve fees
+for 7 days in the buffer balance, which is <code>$0.00000004 * 7 * 86400 =
+$0.024192</code>. If the user deposits is $1 initially, the stream payment
+record will be as below:</p>
+<ul>
+<li>
+<p><strong>CRUD Timestamp</strong>: 100;</p>
+</li>
+<li>
+<p><strong>Static Balance</strong>: $0.975808;</p>
+</li>
+<li>
+<p><strong>Netflow Rate</strong>: -$0.00000004/sec;</p>
+</li>
+<li>
+<p><strong>Buffer Balance</strong>: $0.024192.</p>
+</li>
+</ul>
+<p>After 10000 seconds, the dynamic balance of the user will be <code>0.975808 - 10000 * 0.00000004 = 0.975408</code>.</p>
+<p>After 24395200 seconds(approximately 282 days), the dynamic balance of
+the user will become negative. Users should have some alarms for such
+events that remind them to supply more funds in time.</p>
+<p>If no more funds are supplied and the dynamic balance plus buffer
+balance is under the forced settlement threshold, the account will be
+forcibly settled. All payment streams of the account will be closed and
+the account will be marked as frozen. The download speed for all
+objects associated with the account or payment account will be
+downgraded. </p>
+<p>If someone deposits BNB tokens into a frozen payment account and the static balance is
+enough for reserved fees, the account will be resumed automatically 
+(be noted, the deposit is payment deposit, not the general transfer).
+Usually, the payment account will be “active” quickly. However, if there
+are many outflows associated to the payment account, the payment account will be
+queued for resume and handled in the following blocks. </p>
 <h3 id="downgraded-service">Downgraded service<a class="headerlink" href="#downgraded-service" title="Link to this section">¶</a></h3>
 <p>Once the payment accounts run out of BNB, the objects associated with these payment accounts will
 suffer from a downgraded service of downloading, i.e. the download speed and connection numbers will be limited.
