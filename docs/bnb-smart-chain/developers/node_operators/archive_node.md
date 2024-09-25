@@ -27,7 +27,7 @@ Running an archive node will take a high cost as it includes all the block and s
 
 ### Run with an Erigon client
 
-[Erigon](https://github.com/node-real/bsc-erigon) has supported BSC mainnet. The latest erigon support to sync a archive node in 3 days from scratch with 4.3 TB disk usage. You can utilize erigon to operate an archive node; for more information, refer to [Erigon Node](./erigon_node.md).
+[Erigon](https://github.com/node-real/bsc-erigon) now supports the BSC mainnet. The latest version allows you to sync an archive node from scratch in just 3 days, using 4.3 TB of disk space. You can use Erigon to operate an archive node; for more information, please refer to the [Erigon Node](./erigon_node.md).
 
 
 ### Run with a Reth client
