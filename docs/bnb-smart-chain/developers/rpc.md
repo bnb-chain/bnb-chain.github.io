@@ -38,6 +38,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 ### RPC Providers
 
+* **Tatum:** <https://tatum.io/chains/binance>
+
 * **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
 
 * **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
