@@ -61,3 +61,17 @@ To claim your stakes and rewards, you need to undelegate.
 After the unbonding period, you can claim your stakes by clicking the `Claim` button.
 
 ![](../img/staking/user-stake10.png){:style="width:400px"}
+
+## FAQs
+
+### Which wallet can be used to delegate to validators?
+
+Currently, `MetaMask` and `TrustWallet` are supported, along with any wallets compatible
+with `WalletConnect`.
+
+### Can I delegate/undelegate/redelegate/claim stakes on explorers?
+
+If you want to do the aforementioned delegate/undelegate/redelegate/claim operations on BscScan or BscTrace, 
+you should call the staking hub contract in the following URLs:
+* [BscScan Stake Hub](https://bscscan.com/address/0x0000000000000000000000000000000000002002#writeContract)
+* [BscTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
