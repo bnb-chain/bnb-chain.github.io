@@ -1,6 +1,8 @@
 ---
 hide:
 - toc
+
+title: opBNB - Layer2 Scaling Solution for BSC
 ---
 
 <style>

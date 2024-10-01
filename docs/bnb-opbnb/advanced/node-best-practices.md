@@ -1,3 +1,7 @@
+---
+title: Best Practices - opBNB Node Configuration
+---
+
 # Best Practices for opBNB Node Configuration
 ## Selecting the Appropriate Mode and Storage Scheme
 
@@ -86,29 +90,7 @@ The current volume of history trie data approximates 3TB (as of the end of April
 Significant performance issues may arise in the op-geth implementation when managing extensive history trie data.
 Therefore, it is recommended to operate the archive node in conjunction with op-reth.
 
-Below is an exemplary command for initiating the archive node with op-reth:
-
-```
-export L2_RPC=https://opbnb-mainnet-rpc.bnbchain.org
-
-op-reth node \
-    --datadir /server/datadir \
-    --chain opbnb-mainnet \
-    --rollup.sequencer-http ${L2_RPC} \
-    --authrpc.addr "0.0.0.0" \
-    --authrpc.port 8551 \
-    --authrpc.jwtsecret /server/datadir/jwt.txt \
-    --http \
-    --http.addr "0.0.0.0" \
-    --http.port 8545 \
-    --ws \
-    --ws.addr "0.0.0.0" \
-    --ws.port 8545 \
-    --builder.gaslimit 150000000 \
-    --nat any
-```
-
-For further particulars, visit the [op-reth GitHub repository](https://github.com/bnb-chain/reth).
+You can refer to [Reth Node for opBNB](./reth-node.md) for additional details.
 
 ## Snapshots
 

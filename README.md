@@ -1,6 +1,6 @@
-# Welcome to BNBChain Knowledge Base
+# Welcome to BNB Chain Knowledge Base
 
-This is the BNBChain Knowledge Base documentation for the BNBChain developers. It is based on the Mkdocs Material theme. 
+This is the BNB Chain Knowledge Base documentation for the BNB Chain developers. It is based on the Mkdocs Material theme. 
 
 ## Prerequisite  
 
@@ -24,5 +24,5 @@ This is the BNBChain Knowledge Base documentation for the BNBChain developers. I
 
 ## 📜 License
 
-Copyright (c) 2024 BNBChain 
+Copyright (c) 2024 BNB Chain 
 

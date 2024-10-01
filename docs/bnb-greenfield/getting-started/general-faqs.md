@@ -1,5 +1,5 @@
 ---
-title: General FAQ
+title: General FAQ - BNB Greenfield
 description: A list of BNB Greenfield frequently asks questions.  
 keywords: [BNB Greenfield token, BNB Greenfield usage]
 ---
@@ -30,7 +30,7 @@ for more details.
 
 ### Does Greenfield support smart contract?
 
-The Greenfield blockchain does not support smart contracts, but the native cross-chain between BSC and Greenfield brings programmability to the ecosystem. More tech details are explained [here](../core-concept/cross-chain/programmability.md),
+The Greenfield blockchain does not support smart contracts, but the native cross-chain between BSC and Greenfield brings programmability to the ecosystem. More tech details are explained [here](../core-concept/programmability.md),
 you can start integrating smart contracts with Greenfield following the [tutorial](../for-developers/tutorials/access-control/cross-chain-access-control-by-cmd.md).
 
 ### What consensus algorithm does Greenfield run on?

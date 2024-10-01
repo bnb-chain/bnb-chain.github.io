@@ -1,11 +1,11 @@
 ---
-title: opBNB Bridge FAQs
+title: opBNB Bridge - opBNB FAQs
 ---
 
 ### What is the status of the integration between opBNB and Optimism's Superchain?
 
 opBNB is a project that aims to bring the benefits of L2 scaling and user-friendly UX to the BNB ecosystem. It will enable fast and cheap transactions on BNB L2, as well as smooth interoperability with Greenfield, a decentralized platform for building and running applications. 
-Superchain is an innovative solution that leverages OP Stack to provide L2/L3 scaling and security for Ethereum. It allows users to access various L2 protocols with a single wallet and enjoy low fees and high throughput. opBNB is interested in collaborating with Superchain and integrating OP Stack into BNBChain. 
+Superchain is an innovative solution that leverages OP Stack to provide L2/L3 scaling and security for Ethereum. It allows users to access various L2 protocols with a single wallet and enjoy low fees and high throughput. opBNB is interested in collaborating with Superchain and integrating OP Stack into BNB Chain. 
 
 ### What is the reason for the discrepancy in the estimated cost of withdraw/deposit transactions between the opBNB bridge page and my wallet?
 

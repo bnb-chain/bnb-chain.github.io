@@ -1,3 +1,7 @@
+---
+title: Overview - BSC Staking
+---
+
 # BSC Staking Overview
 
 ![Staking](../img/Staking.png)

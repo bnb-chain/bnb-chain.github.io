@@ -1,5 +1,5 @@
 ---
-title: Wallet Configuration
+title: Wallet Configuration - BNB Greenfield
 description: In this guide, you will learn how to use the extension wallets to interact with Greenfield. 
 order: 3
 ---
@@ -17,7 +17,7 @@ We assume you have installed Trust Wallet or MetaMask and have an account, if no
 to install it.
 
 ## Add Greenfield Network
-1. Visit [BNBChain List](https://www.bnbchainlist.org/).
+1. Visit [BNB Chain List](https://www.bnbchainlist.org/).
 
 2. Click **Connect Wallet**.
 
@@ -26,8 +26,8 @@ to install it.
 
 3. Find **Greenfield Mainnet** or **Greenfield Testnet**, and click **Add To Wallet** to add new RPC in Trust Wallet or Metamask.
 
-<img width="346" alt="Greenfield-Mainnet-Chain-List" src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/202-Greenfield-Mainnet-Chain-List.png" style={{width:"40%"}}/>
+<img width="346" alt="Greenfield-Mainnet-Chain-List" src="../../static/asset/202-Greenfield-Mainnet-Chain-List.png" style={{width:"40%"}}/>
 
 4. When extension wallet prompts a window, click **Approve**.
 
-<img width="346" alt="Approve-Add-Greenfield-Mainnet" src="https://raw.githubusercontent.com/bnb-chain/greenfield-docs/main/static/asset/203-Approve-Add-Greenfield-Mainnet.png" style={{width:"40%"}}/>
+<img width="346" alt="Approve-Add-Greenfield-Mainnet" src="../../static/asset/203-Approve-Add-Greenfield-Mainnet.png" style={{width:"40%"}}/>

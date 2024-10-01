@@ -1,3 +1,7 @@
+---
+title: BSC Validator Overview - BNB Smart Chain
+---
+
 # BSC Validator Overview
 
 ![validator](../img/Validator.png)
@@ -23,6 +27,15 @@ This measure aims to encourage more validators to participate in the consensus, 
 
 Validators on the BSC are nodes responsible for producing blocks and securing the network through the [POSA consensus mechanism](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum).
 They participate in packaging transactions, creating and validating blocks to secure the BSC network, earning BNB tokens as rewards in exchange.
+## The Network Topology
+
+![validator network topology](../img/validator/validator-network-topology.png){:style="width:600px"}
+
+Validators on the BSC network are interconnected through a peer-to-peer (P2P) network, allowing for both direct and indirect connections. As a validator node operator, you have two operational modes to choose from:
+
+- **Mode A(Ease of Use)**: You can expose your validator's public IP address directly to the P2P network, which facilitates a direct connection. This mode is the most straightforward and offers high efficiency due to fewer network hops. To mitigate potential security risks, it is highly recommended to deactivate the HTTP module whenever possible and avoid exposing HTTP access to the public. Additionally, it's crucial to safeguard your validator node's information to prevent Distributed Denial of Service (DDoS) attacks that could target the P2P port.
+
+- **Mode B(Enhanced Security)**: This mode conceals your validator node behind one or more SentryNodes, which are essentially regular BSC full nodes. The SentryNode acts as a protective intermediary between your hidden validator node and the public P2P network. It primarily shields the validator from threats such as DDoS attacks and other security vulnerabilities.
 
 ## Economics
 

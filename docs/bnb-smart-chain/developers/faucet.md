@@ -1,3 +1,6 @@
+---
+title: Faucet - BSC Develop
+---
 # Claim test tBNB Tokens
 
 ## Claim tBNB from Online Faucet
@@ -13,9 +16,10 @@ To get some tBNB of BSC testnet for testing purposes, you can use the [online fa
 
 
 ## Claim tBNB from Discord
-1. Visit the BNB Chain Discord [faucet channel](https://discord.com/channels/789402563035660308/1099937267021250560)
-2. Type `/faucet {your receiver account}` and sent.
-3. You will receive **0.3 tBNB** in few seconds.
+1. Join the [BNB Chain Discord](https://discord.com/invite/bnbchain)
+2. Visit the BNB Chain Discord [faucet channel](https://discord.com/channels/789402563035660308/1099937267021250560)
+3. Type `/faucet {your receiver account}` and sent.
+4. You will receive **0.3 tBNB** in few seconds.
 
 *You can only claim once in 24 hours.*
 
@@ -25,3 +29,5 @@ You can also claim tBNB from the following third-party faucets
 1. https://faucet.quicknode.com/binance-smart-chain/bnb-testnet
 
 2. https://faucet.chainstack.com/bnb-testnet-faucet
+
+3. https://thirdweb.com/opbnb-testnet

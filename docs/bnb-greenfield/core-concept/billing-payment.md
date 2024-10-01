@@ -1,5 +1,5 @@
 ---
-title: Billing and Payment
+title: Billing and Payment - BNB Greenfield Core Concepts
 order: 4
 ---
 
@@ -73,6 +73,49 @@ and they don't need to understand the charging mechanism of Greenfield which is 
 It will also provide a possibility for projects to sponsor the storage and bandwidth for their users.
 
 For more details, you can refer to the [BEP of the paymaster](https://github.com/bnb-chain/BEPs/pull/362).
+
+### Force Settlement, Freeze and Resume
+
+If a user doesn't deposit for a long time, his previous deposit may be
+all used up for the stored objects. Greenfield has a forced settlement
+mechanism to ensure enough funds are secured for further service fees.
+
+There are two configurations, `ReserveTime` and `ForcedSettleTime`.
+
+Let's take an example where the `ReserveTime` is 7 days and the `ForcedSettleTime` is 1 day.
+If a user wants to store an object at the price of
+approximately $0.1 per month($0.00000004/second), he must reserve fees
+for 7 days in the buffer balance, which is `$0.00000004 * 7 * 86400 =
+$0.024192`. If the user deposits is $1 initially, the stream payment
+record will be as below:
+
+- **CRUD Timestamp**: 100;
+
+- **Static Balance**: $0.975808;
+
+- **Netflow Rate**: -$0.00000004/sec;
+
+- **Buffer Balance**: $0.024192.
+
+After 10000 seconds, the dynamic balance of the user will be `0.975808 - 10000 * 0.00000004 = 0.975408`.
+
+After 24395200 seconds(approximately 282 days), the dynamic balance of
+the user will become negative. Users should have some alarms for such
+events that remind them to supply more funds in time.
+
+If no more funds are supplied and the dynamic balance plus buffer
+balance is under the forced settlement threshold, the account will be
+forcibly settled. All payment streams of the account will be closed and
+the account will be marked as frozen. The download speed for all
+objects associated with the account or payment account will be
+downgraded. 
+
+If someone deposits BNB tokens into a frozen payment account and the static balance is
+enough for reserved fees, the account will be resumed automatically 
+(be noted, the deposit is payment deposit, not the general transfer).
+Usually, the payment account will be "active" quickly. However, if there
+are many outflows associated to the payment account, the payment account will be
+queued for resume and handled in the following blocks. 
 
 ### Downgraded service
 

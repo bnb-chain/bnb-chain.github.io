@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Overview - BNB Greenfield App
 order: 1
 ---
 
@@ -13,12 +13,16 @@ In the following sections, we will delve deeper into each native application, pr
 Data marketplace is a data exchange platform where users can freely create, list, trade, and sell data assets, including digital publications, scientific experimental data, and specific domain data.
 
 ### Demo Link
-* Mainnet: [https://marketplace.greenfield-sp.bnbchain.org/index.html](https://marketplace.greenfield-sp.bnbchain.org/index.html)
-* Testnet: [https://marketplace.greenfield-sp.bnbchain.org/bsc-testnet.html](https://marketplace.greenfield-sp.bnbchain.org/bsc-testnet.html)
+
+* Testnet: [https://testnet-marketplace.mindpress.io](https://testnet-marketplace.mindpress.io)
 
 ### Source Code
-* Frontend: [https://github.com/bnb-chain/greenfield-data-marketplace-frontend](https://github.com/bnb-chain/greenfield-data-marketplace-frontend)
-* Smart Contracts: [https://github.com/bnb-chain/greenfield-data-marketplace-contracts](https://github.com/bnb-chain/greenfield-data-marketplace-contracts)
+
+MindPress consists of three engineering projects:
+
+* Frontend: [https://github.com/bnb-chain/mindpress-data-marketplace](https://github.com/bnb-chain/mindpress-data-marketplace)
+* Backend: [https://github.com/bnb-chain/mindpress-data-marketplace-backend](https://github.com/bnb-chain/mindpress-data-marketplace-backend)
+* Smart Contracts: [https://github.com/bnb-chain/mindpress-data-marketplace-smart-contract](https://github.com/bnb-chain/mindpress-data-marketplace-smart-contract)
 
 ## Developing with smart contracts on BSC
 One of the primary methods for building dApps with BNB Greenfield is by deploying smart contracts to the BSC. Smart contracts are self-executing programs that facilitate and enforce the execution of agreements without the need for intermediaries.

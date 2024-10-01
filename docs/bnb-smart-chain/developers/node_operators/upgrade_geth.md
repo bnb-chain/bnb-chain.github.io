@@ -1,3 +1,7 @@
+---
+title: Upgrade Geth - BSC Develop
+---
+
 # How to Upgrade Geth
 
 Updating `geth` is as easy as it gets. You just need to download and install the newer version of `geth`, shutdown your node and restart with the new software. Geth will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
@@ -39,11 +43,10 @@ $ kill  $pid
 
 
 ### Step 3: Restart
-:::note
-Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our [tutorial](full_node.md) 
-:::
+!!! note
+    Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our [tutorial](full_node.md) 
+
 
 ```bash
-##
 ./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```

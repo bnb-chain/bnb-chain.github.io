@@ -46,13 +46,12 @@ him/her to vote/create proposals on your behalf.
 
 ![](../../assets/bcfusion/tally3.png){:style="width:800px"}
 
-If you delegate the voting power to yourself, you will see the current number of your voting power to participate in the
-governance.
+If you delegate the voting power to yourself, you will see the current number of your voting power to participate in the governance.
 
 ### Create Proposals
 
 If you have sufficient voting power (i.e., greater than the `proposalThreshold`), you can create proposals on the BSC
-network. Be noted that a user can only has one proposal in ative/pending state at a time to prevent spamming.
+network. Be noted that a user can only has one proposal in active/pending state at a time to prevent spamming.
 
 To create a proposal, click on the "Create new proposal" button on the top right corner of the screen.
 
@@ -74,7 +73,7 @@ To add an action, click on the "Add action" button, and fill in the details of t
 - `Conctract Method`: The method of the contract to be called.
 - `Calldata`: The input data for the contract method. Which is optional.
 
-After you intpur all the details, click on the "Publish" will publish your proposal.
+After you input all the details, click on the "Publish" will publish your proposal.
 
 ![](../../assets/bcfusion/tally6.png){:style="width:800px"}
 

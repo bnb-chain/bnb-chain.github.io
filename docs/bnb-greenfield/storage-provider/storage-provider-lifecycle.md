@@ -1,5 +1,5 @@
 ---
-title: Storage Provider Lifecycle
+title: Storage Provider Lifecycle - BNB Greenfield SP
 order: 8
 ---
 
@@ -78,7 +78,7 @@ There are two restrictions that apply when an SP requests to be in maintenance. 
 * The total maintenance duration for each SP, within the number of blocks defined by `num_of_historical_blocks_for_maintenance_records`, should not exceed the `maintenance_duration_quota`.
 * An SP is not allowed to make two consecutive requests to `STATUS_IN_MAINTENANCE` within `num_of_lockup_blocks_for_maintenance`, even if there are enough quotas for it.
 
-To ensure the quality of service provided, we strongly recommend that SPs conduct a self-test via the maintenance account before turning back to `STATUS_IN_SERVICE`. This includes creating buckets/objects to verify that all functionalities work as expected. For a detailed illustration on how to use SDK to create bucket/object, please refer to the [SDKs](../for-developers/sdks/index.md).
+To ensure the quality of service provided, we strongly recommend that SPs conduct a self-test via the maintenance account before turning back to `STATUS_IN_SERVICE`. This includes creating buckets/objects to verify that all functionalities work as expected. For a detailed illustration on how to use SDK to create bucket/object, please refer to the [APIs and SDKs](../for-developers/apis-and-sdks/index.md).
 
 ## Exit
 

@@ -1,5 +1,5 @@
 ---
-title: Cross Chain FAQs
+title: Cross Chain - opBNB FAQs
 ---
 
 ### How does opBNB ensure data availability and security for off-chain transactions?
@@ -38,3 +38,7 @@ Yes, this is achieved through a set of smart contracts that enable the execution
 Directly interacting with smart contract functions that exist on L2(opBNB) from L1(BSC), is not possible as all smart contracts on L2 are isolated from L1.
 
 With that said, there is a way for developers to allow arbitrary message sending by writing their own contracts to build their required business logic. More details [here](https://community.optimism.io/docs/developers/bridge/messaging/#communication-basics-between-layers).
+
+### Can I directly transfer assets between opBNB and Greenfield?
+
+Currently, direct cross-chain transfers between opBNB and Greenfield are not supported. However, users can achieve cross-chain transfers between these two networks by conducting a two-step process through the BNB Smart Chain (BSC). This involves transferring assets from opBNB to BSC and then from BSC to Greenfield.
