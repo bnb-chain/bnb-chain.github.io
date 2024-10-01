@@ -142,7 +142,7 @@ _Buyer_
 
 <h3>5. Environment Support</h3>
 
-* BNB Smart Chain Testnet: [https://testnet-marketplace.mindpress.io](https://testnet-marketplace.mindpress.io)   (VPN required in some areas)
+* BNB Smart Chain Testnet: [https://mindpress.io](https://mindpress.io)   (VPN required in some areas)
 
 <h3>6. Technical Design </h3>
 

@@ -7,11 +7,11 @@
 ## Upgrade Timeline
 The Bohr upgrade will happen at:
 
-- Testnet:  2024-08-20 01:23:16 AM UTC
-- Mainnet:  It is not determined yet, target Later Sep 2024
+- Testnet:  2024-08-20 01:23:16 AM UTC(passed)
+- Mainnet:  2024-09-26 02:20:00 AM UTC
 
-## Upgrade BSC Testnet Nodes to v1.4.13 Before Hardfork
-Release [v1.4.13](https://github.com/bnb-chain/bsc/releases/tag/v1.4.13) is a hard fork release for BSC Testnet, the HF name is: [Bohr](https://forum.bnbchain.org/t/bnb-chain-roadmap-mainnet/936#p-1418-h-6bohr-wip-27)
+## Upgrade BSC Mainnet Nodes to v1.4.14 Before Hardfork
+Release [v1.4.14](https://github.com/bnb-chain/bsc/releases/tag/v1.4.14) is a hard fork release for BSC Mainnet, the HF name is: [Bohr](https://forum.bnbchain.org/t/bnb-chain-roadmap-mainnet/936)
 
 There are 4 BEPs in Bohr:
 

@@ -9,7 +9,7 @@ This guide outlines the steps for wallet developers to integrate paymaster servi
 
 ![wallet-paymaster](../../img/paymaster-wallet.png)
 
-Integration involves modifying the transaction creation and sending process to interact with paymaster services. For detailed information about the paymaster API interface, please refer to this document.
+Integration involves modifying the transaction creation and sending process to interact with paymaster services. For detailed information about the paymaster API interface, please refer to this [document](./paymaster-api.md).
 
 The main steps are:
 

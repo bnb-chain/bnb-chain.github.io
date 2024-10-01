@@ -14,7 +14,7 @@ Since BSC is EVM-compatible, your existing Ethereum smart contract skills will s
 
 Here are some resources to help you get connected to the BSC network:
 
-- [Network Information and RPC Providers](./rpc.md)
+- [Network Information and RPC Providers](json_rpc/json-rpc-endpoint.md)
 - [Wallet Configuration](./wallet-configuration.md)
 
 ## Get Tokens
@@ -28,7 +28,7 @@ For the mainnet, you can withdraw tokens directly from a centralized exchange (C
 ## JSON-RPC API
 
 Interacting with BSC requires sending requests to specific JSON-RPC API methods. BSC's APIs are compatible with Geth.
-- [JSON-RPC API](https://geth.ethereum.org/docs/interacting-with-geth/rpc)
+- [JSON-RPC API](json_rpc/json-rpc-endpoint.md)
 
 ## Developer Tools
 - Explorer

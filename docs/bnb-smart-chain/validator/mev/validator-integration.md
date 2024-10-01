@@ -5,7 +5,7 @@ title: Integration Guide for Validator - BSC MEV
 
 # Integration Guide for Validator
 
-## Decison Make
+## Decision Make
 
 When activating MEV functionality, validators encounter a mix of
 opportunities and challenges. Before enabling this feature, validators
