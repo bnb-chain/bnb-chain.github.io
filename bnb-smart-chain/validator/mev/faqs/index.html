@@ -1782,6 +1782,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8-why-do-i-need-a-privacy-protecting-rpc-and-how-can-i-find-the-privacy-protecting-rpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Why do I need a privacy-protecting RPC and How can I find the privacy-protecting RPC?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-can-i-increase-the-speed-of-the-transaction-inclusion-if-my-transactions-are-very-speed-sensitive" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. How can I increase the speed of the transaction inclusion if my transactions are very speed-sensitive?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2266,6 +2284,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8-why-do-i-need-a-privacy-protecting-rpc-and-how-can-i-find-the-privacy-protecting-rpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Why do I need a privacy-protecting RPC and How can I find the privacy-protecting RPC?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-how-can-i-increase-the-speed-of-the-transaction-inclusion-if-my-transactions-are-very-speed-sensitive" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. How can I increase the speed of the transaction inclusion if my transactions are very speed-sensitive?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2324,7 +2360,55 @@
    <a href="https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/validators">validator info repo</a></p>
 <h3 id="7-where-can-i-find-the-bnb-chain-mev-statistic-dashboard">7. Where can I find the BNB Chain MEV statistic dashboard?<a class="headerlink" href="#7-where-can-i-find-the-bnb-chain-mev-statistic-dashboard" title="Link to this section">¶</a></h3>
 <p>You can view the MEV statistics 
-   from <a href="https://dune.com/bnbchain/bnb-smart-chain-mev-stats">MEV Stats Dashboard</a></p></div>
+   from <a href="https://dune.com/bnbchain/bnb-smart-chain-mev-stats">MEV Stats Dashboard</a></p>
+<h3 id="8-why-do-i-need-a-privacy-protecting-rpc-and-how-can-i-find-the-privacy-protecting-rpc">8. Why do I need a privacy-protecting RPC and How can I find the privacy-protecting RPC?<a class="headerlink" href="#8-why-do-i-need-a-privacy-protecting-rpc-and-how-can-i-find-the-privacy-protecting-rpc" title="Link to this section">¶</a></h3>
+<p>When you make transactions (like swap on DEX) through a private privacy-protecting RPC, your transactions will be sent to the builder`s private mempool. As attackers cannot see your transaction in a public mempool, the risk of being sandwiched will be mitigated. </p>
+<p>Usually, the DEX protocols or builder providers are keen to provide free MEV protection features, such as <a href="https://docs.pancakeswap.finance/products/pancakeswap-private-rpc">Pancake Swap</a> and <a href="https://docs.48.club/privacy-rpc">48 Club</a> You can find the details of the privacy-protecting RPCs through their <a href="https://docs.pancakeswap.finance/products/pancakeswap-private-rpc">documentation. </a></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Status and Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Free Privacy Protecting RPCs</td>
+<td><ul><li><a href="https://docs.pancakeswap.finance/products/pancakeswap-private-rpc">Pancake Swap Private RPC</a></li> <li><a href="https://docs.48.club/privacy-rpc">48 Club Private RPC</a></li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Besides free privacy-protecting RPC, you can also purchase the premium private privacy-protecting RPC from the service providers below. However, these premium service providers may require you to build your own RPC proxy, as they typically do not provide the RPC URL that can be directly configured in your wallet. </p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Status and Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 Builders (Private privacy protecting RPC service providers)</td>
+<td><ul><li><a href="https://bloxroute.com/products/protected-transactions/">BloxRoute</a></li><li><a href="https://docs.blocksmith.org/bsc-builder/private-rpc">Blocksmith</a></li><li><a href="https://docs.nodereal.io/reference/bsc-bundle-service-api#overview">Nodereal</a></li><li><a href="https://blockrazor.gitbook.io/blockrazor/mev-service/bsc">Blockrazor</a></li><li><a href="https://docs.48.club/">Puissant</a></li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>There are two aspects that may impact the transaction inclusion speed. </p>
+<ol>
+<li>Each builder has their own validator registered, <strong>the more validators registered, the faster the transaction inclusion i</strong>s. </li>
+<li>The more use from the builder, the faster the transaction is included on the chain. It is because of the increased usage, that the bundle built by the builder is more lucrative for validators and, therefore, faster to be picked up by the validators. </li>
+</ol>
+<p>You can view the latest MEV builder data (MEV_Blocks_by_Builders) from the <a href="https://dune.com/bnbchain/bnb-smart-chain-mev-stats">Dune dashboard</a>, and select the appropriate builders to broadcast transactions. The contacts of each builder are listed above in Table 1. </p>
+<p>You can check the number of validators integrated and the number of blocks of each builder, as mentioned above.</p>
+<ol>
+<li>The more validators are integrated, the faster the builder can be. </li>
+<li>The more blocks that are produced, the faster the builder can be. </li>
+</ol>
+<p><img alt="img" src="../../../img/mev/mev-blocks-by-builders.png"></p>
+<h3 id="9-how-can-i-increase-the-speed-of-the-transaction-inclusion-if-my-transactions-are-very-speed-sensitive">9. How can I increase the speed of the transaction inclusion if my transactions are very speed-sensitive?<a class="headerlink" href="#9-how-can-i-increase-the-speed-of-the-transaction-inclusion-if-my-transactions-are-very-speed-sensitive" title="Link to this section">¶</a></h3>
+<p>To maximize the transaction speed, it is recommended to build a proxy to broadcast the transaction to multiple builders to <strong>increase the transaction inclusion speed</strong>. You need to build your own RPC proxy with multiple builder service providers. </p>
+<p><img alt="img" src="../../../img/mev/proxy.png"></p>
+<p>A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here <a href="https://github.com/node-real/private-tx-sender">https://github.com/node-real/private-tx-sender</a> </p></div>
 
 
 
