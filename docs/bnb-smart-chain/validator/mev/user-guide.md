@@ -22,6 +22,21 @@ Some DEX protocols or builder providers are keen to provide free protection feat
 | ---------------------------- | ------------------------------------------------------------ |
 | Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li></ul> |
 
+Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users' transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.
+
+**Wallets with Manual MEV Protection:**
+
+- **Private Transaction Relays:** These relays hide transaction details from malicious actors, preventing them from front-running or sandwich attacking the user's trade.
+- **Specialized Builders:** Some wallets utilize builders that prioritize user protection and fair ordering of transactions, minimizing the potential for MEV exploitation.
+
+| Type   | Name         | Status    | How to enable                                                |
+| ------ | ------------ | --------- | ------------------------------------------------------------ |
+| Wallet | OKX Wallet   | Supported | [OKX Wallet Enable Swap MEV Protection](https://www.okx.com/ar/help/okx-wallet-supports-flashbot-to-prevent-mev-attack) |
+| Wallet | Trust Wallet | Supported | [TrustWallet Swap MEV Protection](https://trustwallet.com/blog/introducing-mev-protection-secure-your-swaps-with-trust-wallet) |
+
+
+
+
 ## For Professional Traders and Service Providers
 
 While free private RPCs offer a good level of protection, you can opt for even stronger safeguards with premium private RPC services. These services often provide advanced features and dedicated infrastructure for enhanced security and performance.
@@ -49,5 +64,4 @@ For those who are very sensitive to transaction confirmation time, to maximize t
 ![img](../../img/mev/proxy.png)
 
 A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here https://github.com/node-real/private-tx-sender 
-
 
