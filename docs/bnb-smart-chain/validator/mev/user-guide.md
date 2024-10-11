@@ -16,11 +16,11 @@ PBS(Proposer-Builder Separation) framework offers several advantages for BNB Cha
 
 When you trade on a decentralized exchange (DEX), you risk being targeted by bots that can front-run your trades, meaning they see your transaction in the public mempool and execute a similar trade first, profiting from the price change you were going to cause. This can result in you getting a worse price or even losing money. Private RPCs offer a solution to this problem. They route your transactions through a private mempool(Provided by builders), hiding them from bots. This means your trades are less likely to be front-run, and you're more likely to get the price you expect.
 
-Some DEX protocols or builder providers are keen to provide free protection features, such as [Pancake Swap](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc) and [48 Club](https://docs.48.club/privacy-rpc) You can find the details of the privacy-protecting RPCs through their [documentation.](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)
+Some DEX protocols or builder providers are keen to provide free protection features. 
 
 | Role                         | Status and Comments                                          |
 | ---------------------------- | ------------------------------------------------------------ |
-| Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li></ul> |
+| Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li><li>[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)</li></ul> |
 
 Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users' transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.
 
