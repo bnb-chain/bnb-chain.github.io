@@ -48,7 +48,7 @@ data. By leveraging BlockHub, they can collect reliable data for analysis, resea
 # Accessing Block Data with BlockHub
 
 BlockHub supports BSC now and its API is fully compatible with Ethereum API specifications, ensuring ease of integration for
-developers. Detailed information about supported networks and endpoints can be found in [network and endpoints](../network-endpoint/endpoints.md#BlockHub). For more details
+developers. Detailed information about supported networks and endpoints can be found in [network and endpoints](../network-endpoint/endpoints.md). For more details
 about the API spec, please refer to [BlockHub API](https://github.com/bnb-chain/greenfield-bsc-archiver/?tab=readme-ov-file#BlockHub-api)
 
 # Try It Out
