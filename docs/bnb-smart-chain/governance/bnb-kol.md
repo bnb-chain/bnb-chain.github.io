@@ -1,8 +1,8 @@
 ---
-title: BNB On-Chain Governance Voting: A BNB Advocate`s Guide
+title: A BNB Advocate`s Guide
 ---
 
-BNB On-Chain Governance Voting: A BNB Advocate`s Guide
+# BNB On-Chain Governance Voting: A BNB Advocate`s Guide
 
 # Introduction
 
