@@ -54,7 +54,7 @@ Key Opinion Leaders (BNB Advocates) hold significant influence within the BNB Ch
 
 - Factors Affecting Voting Power:
 
-- BNB Holding: The more BNB you hold, the greater your voting power.
+- BNB Staking: The more BNB you staked on validators, the greater your voting power.
 - Delegated BNB: The more people delegate their voting power to you, your voting power increases.
 
 # Disclaimer:
