@@ -143,6 +143,7 @@ nav:
     - Governance:
         - Overview: ./bnb-smart-chain/governance/overview.md
         - User Guide: ./bnb-smart-chain/governance/user-guide.md
+        - BNB Advocate`s Guide : ./bnb-smart-chain/governance/bnb-kol.md
         - Temperature Check: ./bnb-smart-chain/governance/temp-check.md
         - Governance APIs: ./bnb-smart-chain/governance/apis.md
     - Validator:
