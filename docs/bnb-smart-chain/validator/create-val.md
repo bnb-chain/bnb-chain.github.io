@@ -64,7 +64,7 @@ The following addresses are required:
 
 ##### Generate Consensus Address
 
-Download the BSC geth binary from [the official release page](https://github.com/bnb-chain/bsc/releases/tag/v1.3.10).
+Download the BSC geth binary from [the official release page](https://github.com/bnb-chain/bsc/releases/).
 
 Note: Make sure you are downloading the correct binary based on your machine's platform, e.g., if you are using MacOS,
 you should download the `geth_mac` file. In the following, we will refer the binary as `geth` for simplicity.
