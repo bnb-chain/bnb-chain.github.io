@@ -1,4 +1,6 @@
-# RWA Tokenization Tutorial
+---
+title: Showcase - RWA Tokenization Tutorial
+---
 
 Welcome to the BNB Chain Real World Asset Tokenization Tutorial.
 
@@ -25,8 +27,8 @@ It generally takes 4 steps to tokenize your real world asset:
 
 There are plenty of tools and service providers in the BNB Chain ecosystem that can help you with the tokenization journey, we carefully select some of the best in our tutorial to guide you through the Web3 way. You can create your token in a few minutes with no coding or any blockchain knowledge. 
 
-# 1 Asset Preparation
-## 1.1 Legal Structuring
+## 1 Asset Preparation
+### 1.1 Legal Structuring
 
 The asset tokenization journey begins with identifying an asset with strong tokenization potential, such as real estate, fine arts, commodities, and precious metals. Ensure that the asset is eligible for tokenization and complies with relevant regulations.
 
@@ -45,7 +47,7 @@ Each tokenization structure often comes with different licensing requirements.
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.001.jpeg)Suggested Service Provider: [InvestaX](https://www.investax.io/)
 
-## 1.2 Asset Custody 
+### 1.2 Asset Custody 
 Before digitalization, the underlying asset (RWA) will be custodized to ensure the asset is immobilized and safe kept before its digital representation is created on the blockchain. Most times if it's a tangible movable RWA like whiskey barrels the RWA is securely stored and managed by qualified custodians, trustees, or licensed managers. 
 
 On the other hand, the digital representation i.e. RWA tokens can be either held in i) Self Custodized or ii) 3rd Party licensed custodian. 
@@ -71,8 +73,8 @@ There are many different types of assets in the world and how the custodian is h
 Suggested Service Provider: [InvestaX](https://www.investax.io/)
 
 
-# 2 Account Preparation
-## 2.1 Set Up Wallet 
+## 2 Account Preparation
+### 2.1 Set Up Wallet 
 
 A Web3 wallet is essential to start your tokenization. You need to confirm the operations as well as pay service fees using the web3 wallet. Also, a web3 wallet account is your identity during the whole process. 
 
@@ -123,9 +125,7 @@ Once the extension is installed, you need to create a new MetaMask account:
 
 Once your wallet is set up, you can start using token-issuing tools to create tokens.
 
-
-
-## 2.2 Buy Crypto
+### 2.2 Buy Crypto
 
 Tokenization requires service fees, which need to be paid by crypto.You can discover numerous service providers within your wallet. We will instruct you on how to commence purchasing crypto from your Wallet.
 
@@ -226,7 +226,7 @@ Depending on MoonPay’s requirements, you may need to complete identity verific
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.022.png)
 
-# 3 Issue Token
+## 3 Issue Token
 
 After you have successfully completed the asset preparation and account preparation process, you can finally start creating your RWA token now. Here we recommend these two service providers as they possess a simplistic WebUI and explicit documentation, being friendly for beginners to get acquainted with.
 
@@ -235,7 +235,7 @@ Service providers you may choose:
 - BitBond (<https://www.bitbond.com/> ) 
 - Brikken (<https://www.brickken.com/>  )
 
-## 3.1 Brickken 
+### 3.1 Brickken 
 
 1) Go to the Token Suite sign up page <https://dapp.brickken.com/>  and sigh up using your email account. 
 
@@ -293,7 +293,7 @@ You can login to Briccken dashboard to manage your token after the creation.
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.009.png)
 
-## 3.2 BitBond
+### 3.2 BitBond
 
 1) Visit <https://tokentool.bitbond.com/> and connect your wallet to login
 
@@ -331,8 +331,7 @@ You might need the pay the gas fee and service fee for the creation. ![](./rwa-t
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.015.png)
 
-
-# 4 Launch Token
+## 4 Launch Token
 
 In order to distribute your token toward your investors, you need to launch your token towards open or private market. Here we will guide you how to launch your token. 
 
@@ -341,7 +340,7 @@ Service providers you may choose:
 - BitBond (<https://www.bitbond.com/> ) 
 - Brikken (<https://www.brickken.com/>  )
 
-## 4.1 Brickken 
+### 4.1 Brickken 
 
 1) Login to Brickken dashboard and click my digital asset offering on the left navigation bar 
 
@@ -378,7 +377,7 @@ Here are the parameters you need to input:
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.003.png)
 
 
-## 4.2 BitBond 
+### 4.2 BitBond 
 
 1) Login to bitbond Dashboard and click create token sale on the left navigation bar. Enter your token address. If you create your token using Bitbond, you can find it on Bitbond dashboard.
 

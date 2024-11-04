@@ -1,6 +1,8 @@
-# Company Tokenization Tutorial
+---
+title: Showcase - Company Tokenization Tutorial
+--- 
 
-# 0 Overview
+## 0 Overview
 
 Welcome to the BNB Chain Tokenization Tutorial.
 
@@ -26,9 +28,9 @@ It generally takes 4 steps to tokenize your company:
 
 There are plenty of tools and service providers in the BNB Chain ecosystem that can help you with the tokenization journey, we carefully select some of the best in our tutorial to guide you through the Web3 way. You can create your token in a few minutes with no coding or any blockchain knowledge. 
 
-# 1 Preparation
+## 1 Preparation
 
-## 1.1 Set Up Wallet 
+### 1.1 Set Up Wallet 
 
 A Web3 wallet is essential to start your tokenization. You need to confirm the operations as well as pay service fees using the web3 wallet. Also, a web3 wallet account is your identity during the whole process. 
 
@@ -37,9 +39,9 @@ In this guide, we suggest you use Trust Wallet or Metamask to create your first 
 - Trust Wallet (<https://trustwallet.com/>) 
 - MetaMask (<https://metamask.io/> )
 
-### 1.1.1 Trust Wallet
+#### 1.1.1 Trust Wallet
 
-#### Step 1: Install the Wallet Extension
+##### Step 1: Install the Wallet Extension
 
 We suggest you use the Chrome extension to create your wallet, since most of the tokenization tools provide only a desktop version, they cannot be used very well on your mobile phone. 
 
@@ -68,7 +70,7 @@ Here is the download link:
 
 * Click the “Add to Chrome” button and confirm the installation.
 
-#### Step 2: Create a New Wallet Account
+##### Step 2: Create a New Wallet Account
 
 Once the extension is installed, you need to create a new Trust Wallet account:
 
@@ -80,7 +82,7 @@ Once the extension is installed, you need to create a new Trust Wallet account:
 
 3) **Set Password**: Pick a password and confirm it to create your account.
 
-#### Step 3: Backup your Wallet Account
+##### Step 3: Backup your Wallet Account
 
 Backing up your wallet is vital to protect your assets. Click the action bar on the trust wallet interface.
 
@@ -96,9 +98,9 @@ Backing up your wallet is vital to protect your assets. Click the action bar on 
 
 Once your wallet is set up, you can start using token-issuing tools to create tokens.
 
-### 1.1.2 MetaMask
+#### 1.1.2 MetaMask
 
-#### Step 1: Install the Wallet Extension
+##### Step 1: Install the Wallet Extension
 
 1）**Download and install Chrome browser**
 
@@ -118,7 +120,7 @@ Visit the Chrome Web store <https://chromewebstore.google.com/detail/metamask/nk
 
 Click the “Add to Chrome” button and confirm the installation.
 
-#### Step 2: Create a New Wallet Account
+##### Step 2: Create a New Wallet Account
 
 Once the extension is installed, you need to create a new MetaMask account:
 
@@ -132,7 +134,7 @@ Once the extension is installed, you need to create a new MetaMask account:
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.008.png)
 
-#### Step 3: Backup your Wallet Account
+##### Step 3: Backup your Wallet Account
 
 Backing up your wallet is vital to protect your assets. Click on “Secure my wallet” to get your recovery phrase.
 
@@ -148,11 +150,11 @@ Backing up your wallet is vital to protect your assets. Click on “Secure my wa
 
 Once your wallet is set up, you can start using token-issuing tools to create tokens.
 
-# 2 Token Launch
+## 2 Token Launch
 
 After all the preparation work, you are now ready to create your token. 
 
-## 2.1 Create Token
+### 2.1 Create Token
 
 To create a token, you only need to configure a few basic parameters. 
 
@@ -161,11 +163,11 @@ We suggest these two service providers since they provide one-stop service with 
 - PinkSale (<https://www.pinksale.finance/>  )
 - TokenFi (<https://tokenfi.com/> )
 
-### 2.1.1 PinkSale
+#### 2.1.1 PinkSale
 
 PinkSale allows you to create a token and manage your token all in one platform, which provides convenience to token issuers.
 
-#### Step 1: Login with your wallet
+##### Step 1: Login with your wallet
 
 1) **Connect your Wallet** 
 
@@ -173,7 +175,7 @@ PinkSale allows you to create a token and manage your token all in one platform,
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.001.png)
 
-#### Step 2: Create Token
+##### Step 2: Create Token
 
 1) **Select Create Token**
 
@@ -205,21 +207,21 @@ Click the create token button then your wallet will be invoked. Confirm with you
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.003.png)
 
-#### Step 3: Check Your Token
+##### Step 3: Check Your Token
 
 You can see your token address and other basic information as follow 
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.004.png)
 
-### 2.1.2 TokenFi
+#### 2.1.2 TokenFi
 
-#### Step 1: Login with your wallet
+##### Step 1: Login with your wallet
 
 Enter <https://tl.tokenfi.com/create-token> , choose “MetaMask” or “Trust Wallet”
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.005.png)
 
-#### Step 2: Create Token
+##### Step 2: Create Token
 
 **1. Select Token Type**:
 
@@ -264,13 +266,13 @@ Click the create token button then your wallet will be invoked. Confirm with you
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.007.png)
 
-#### Step 3: Check Your Token
+##### Step 3: Check Your Token
 
 You can see your token address and other basic information as follow 
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.008.png)
 
-## 2.2 Presale
+### 2.2 Presale
 
 Now that your token has been created, you can invite your early investors to join your presale activities. Investors can buy your token through the presale link you created, you can quickly raise early-stage funding through pre-sales to develop your business.
 
@@ -279,15 +281,15 @@ It’s suggested that you use the same service providers to manage your presale.
 - PinkSale (<https://www.pinksale.finance/>  )
 - TokenFi (<https://tokenfi.com/> )
 
-### 2.2.1 PinkSale
+#### 2.2.1 PinkSale
 
-#### Step 1: Login with your wallet
+##### Step 1: Login with your wallet
 
 Visit <https://www.pinksale.finance/launchpad/create/presale> and choose “MetaMask” or “Trust Wallet” to login.
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 221.001.png)
 
-#### Step 2: Create Presale 
+##### Step 2: Create Presale 
 
 1) After login, choose launchpad>create presale in left navigation bar. 
 
@@ -309,7 +311,7 @@ Here are the parameters you need to input:
 
 2) Review again and click on “Next”.
 
-#### Step 3: Add Launchpad Info
+##### Step 3: Add Launchpad Info
 
 After verifying your token, you need to input the Presale information that you want to raise.
 
@@ -337,7 +339,7 @@ Here are some following important parameters:
 
 **Vesting Contributor**: Vesting For Contributors is a feature on PinkSale that helps projects to ensure long term price stability by locking away the tokens of presale investors for a period of time. It prevents presale investors from selling all their tokens at once at listing time, which causes too much sell pressure and crashes the price. To make it simple, we suggest you **disable** it. 
 
-#### Step 4: Add Additional Info
+##### Step 4: Add Additional Info
 
 Now that you have almost setup all the information you need for your presale, we suggest you add some additional info about your project so that your investors can know more about your company, your business, and be more willing to participate in your presale.
 
@@ -351,7 +353,7 @@ There are some notes for this step:
 
 For example:[ ](https://www.pinkswap.finance/pinkswap.png)<https://www.pinkswap.finance/pinkswap.png>
 
-#### Step 5: Confirm with your wallet
+##### Step 5: Confirm with your wallet
 
 This is the final step. You can review all the information one last time before submitting, after you have made sure that everything is perfect, or you can go back to the previous step to make any changes. Click “Approve Spending Token” and "Confirm" on Metamask. After that, click "Submit".
 
@@ -359,14 +361,14 @@ This is the final step. You can review all the information one last time before 
 
 After clicking on “Submit”, MetaMask/TrustWallet will now ask you to confirm the deal. It will also show you the fee that you are required to pay for the presale service.  If you agree, then click on the “Confirm” button to finish the process.
 
-#### Step 6: Check Your Presale Status
+##### Step 6: Check Your Presale Status
 
 You can view your presale status as follow:
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 221.006.png)
 
 
-#### Step 7: Invite your community to buy 
+##### Step 7: Invite your community to buy 
 
 Guide your community members to [https://www.pinksale.finance/launchpads](https://www.pinksale.finance/#/launchpads)
 
@@ -384,11 +386,11 @@ After you have finalized the presale pool, your community member can claim the t
 
 After claiming a token, your community member should be able to see the token they bought in their wallet. 
 
-### 2.2.2 TokenFi
+#### 2.2.2 TokenFi
 
 TokenFi also provides a launchpad for you to create a presale for your tokens. 
 
-#### Step 1: Login to TokenFi Launchpad with your wallet
+##### Step 1: Login to TokenFi Launchpad with your wallet
 
 Open <https://lp.tokenfi.com/>, Click Connect Wallet to Login
 
@@ -398,7 +400,7 @@ Sign the message
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 222.002.png)
 
-#### Step 2: Input token information
+##### Step 2: Input token information
 
 1) Select BNB network
 
@@ -410,7 +412,7 @@ Sign the message
 
 3) Input your token address, you can find it at previous steps. 
 
-#### Step 3: Input Presale Information
+##### Step 3: Input Presale Information
 
 1) Define your project’s funding targets by entering the details below:
 
@@ -454,7 +456,7 @@ Click the 'Next' button once all fields are filled to continue setting up your p
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 222.006.png)
 
-#### Step 4: Review and Confirm with your wallet
+##### Step 4: Review and Confirm with your wallet
 
 Review each section carefully before proceeding:
 
@@ -504,12 +506,11 @@ Details of token distribution, including percentages and specific dates for each
 
 Once you have confirmed that all details are correct and finalized, press 'Confirm' to launch your project.
 
-#### ![](./company-tokenization-tutorial/Company Tokenization Tutorial 222.007.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 222.007.png)
 
 This is the final step. You can review all the information one last time before submitting, after you have made sure that everything is perfect, or you can go back to the previous step to make any changes. Click “Approve” and "Confirm" on Metamask. After that, click "Submit".
 
-
-#### Step 5: Check Your Presale Status
+##### Step 5: Check Your Presale Status
 
 On the 'My Projects' screen, find your project and click “View Details” to update and refine your project details.
 
@@ -532,7 +533,7 @@ Click “Edit Details”: Begin by accessing the editing mode for your project.
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 222.009.png)
 
-#### Step 6: Invite your community to buy 
+##### Step 6: Invite your community to buy 
 
 Guide your community members to <https://lp.tokenfi.com/en-US> 
 
@@ -552,18 +553,18 @@ After you have finalized the presale pool, your community member can claim the t
 
 After claiming a token, your community member should be able to see the token they bought in their wallet.
 
-# 3 Withdrawal
+## 3 Withdrawal
 
 When enough investors purchase your token and your presale succeeded, you will receive an amount of BNB in return. You can exchange your BNB for Fiat, withdraw fiat to your bank account to expand your actual operation or production. 
 
-` `Service providers you may choose:
+Service providers you may choose:
 
 - TrustWallet (<https://trustwallet.com/>) 
 - MetaMask (<https://metamask.io/> )
 
-## 3.1 TrustWallet
+### 3.1 TrustWallet
 
-#### Step 1: Login
+##### Step 1: Login
 
 The Trust Wallet extension allows you to sell BNB to fiat. Follow these steps to get started:
 
@@ -580,7 +581,7 @@ If you did not login for a while, Trust Wallet might ask you to enter your passw
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.002.png)
 
-#### Step 2: Choose Vendor
+##### Step 2: Choose Vendor
 
 Trust Wallet provides different vendors for you to choose from, you can use them to sell crypto to fiat. 
 
@@ -598,7 +599,7 @@ Here we can see Trust Wallet provides several different vendors.we suggest you u
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.004.png)
 
-#### Step 3: Login to vender and add your bank account
+##### Step 3: Login to vender and add your bank account
 
 1) **Enter your email address**
 
@@ -625,7 +626,7 @@ Here we can see Trust Wallet provides several different vendors.we suggest you u
 * You can directly copy the deposit wallet address by selecting the "Copy" icon.
 ![Step 6 on how to sell cryptocurrency.](./company-tokenization-tutorial/Company Tokenization Tutorial 3.007.png)
 
-#### **Step 4: Send Your Crypto to Vendor**
+##### **Step 4: Send Your Crypto to Vendor**
 
 1) Open Trust Wallet Extension
 
@@ -639,7 +640,7 @@ Here we can see Trust Wallet provides several different vendors.we suggest you u
 
 5) Complete the transaction in your wallet.
 
-#### Step 5: Check your bank account
+##### Step 5: Check your bank account
 
 Mercuryo takes your cryptocurrency from there When you send it to the given address. You’ll receive a bank transfer shortly after your cryptocurrency is received. Read the [Processing Time](https://support.moonpay.com/customers/docs/when-will-i-receive-my-cryptocurrency) article to learn how long bank transfers take in different regions.
 
@@ -647,9 +648,9 @@ Once your transaction is complete, Mercuryo will send you a confirmation email. 
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.009.png)
 
-## 3.2 MetaMask
+### 3.2 MetaMask
 
-#### Step 1: Login
+##### Step 1: Login
 
 The MetaMask Wallet extension allows you to sell crypto to fiat. Follow these steps to get started:
 
@@ -666,7 +667,7 @@ If you did not login for a while, MetaMask might ask you to enter your password 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.011.png)
 
 
-#### Step 2: Choose network and crypto
+##### Step 2: Choose network and crypto
 
 Metamask provides different vendors for you to choose from, you can use them to sell crypto to fiat. 
 
@@ -682,19 +683,19 @@ Metamask provides different vendors for you to choose from, you can use them to 
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.014.png)
 
-#### Step 3: Choose your country and fiat 
+##### Step 3: Choose your country and fiat 
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.015.png)
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.016.png)
 
-#### Step 4: Choose Vender
+##### Step 4: Choose Vender
 
 Select your vendor. Here we can see MetaMask provides several different vendors, we suggest using MoonPay to continue 
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 3.017.png)
 
-#### Step 5: Log in to vender and add your bank account
+##### Step 5: Log in to vender and add your bank account
 
 1) **Enter your email address**
 
@@ -722,7 +723,7 @@ Select your vendor. Here we can see MetaMask provides several different vendors,
 
 ![Step 6 on how to sell cryptocurrency.](./company-tokenization-tutorial/Company Tokenization Tutorial 3.007.png)
 
-#### Step 6:Send Your Crypto to Vendor
+##### Step 6:Send Your Crypto to Vendor
 
 1) Open Trust Wallet Extension
 
@@ -736,7 +737,7 @@ Select your vendor. Here we can see MetaMask provides several different vendors,
 
 5)Complete the transaction in your wallet.
 
-#### Step 7: check your bank account
+##### Step 7: check your bank account
 
 1) MoonPay takes your cryptocurrency from there When you send it to the given address. You’ll receive a bank transfer shortly after your cryptocurrency is received. Read the [Processing Time](https://support.moonpay.com/customers/docs/when-will-i-receive-my-cryptocurrency) article to learn how long bank transfers take in different regions.
 
@@ -744,7 +745,7 @@ Select your vendor. Here we can see MetaMask provides several different vendors,
 
 ![A window that shows the transaction is completed.](./company-tokenization-tutorial/Company Tokenization Tutorial 3.019.png)
 
-# 4 Reward Distribution
+## 4 Reward Distribution
 
 When your business earns profits, it is crucial to reward your early investors. This creates a sustainable tokenization cycle, enabling you to utilize tokenization again in the future for the growth of your business.
 
@@ -754,17 +755,17 @@ Service providers you may choose:
 
 - Pink Sale (<https://www.pinksale.finance/>  )
 
-### 4.1 PinkSale
+#### 4.1 PinkSale
 
 PinkSale allows you to create airdrop, so that your investors can claim airdrop to get their reward 
 
-#### Step 1: Login with your wallet
+##### Step 1: Login with your wallet
 
 Choose “MetaMask” or “Trust Wallet”
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 4.001.png)
 
-#### Step 2: Create New Airdrop
+##### Step 2: Create New Airdrop
 
 1) Go to[ ](https://www.pinksale.finance/#/airdrop/create)[https://www.pinksale.finance/airdrop/create](https://www.pinksale.finance/#/airdrop/create)
 
@@ -794,7 +795,7 @@ After clicking on the “Create New Airdrop” button, MetaMask/TrustWallet will
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 4.004.png)
 
-#### Step 3: Set Allocation
+##### Step 3: Set Allocation
 
 Prepare a list of airdrop addresses then click on “Set Allocations”
 
@@ -808,7 +809,7 @@ Click on “Add Allocations” when you are done inputting the addresses. MetaMa
 
 After successfully adding airdrop allocations, those allocations will be shown on the airdrop page.
 
-#### Step 4. Set Vesting
+##### Step 4. Set Vesting
 
 After clicking on “Set Vesting”, you will see a pop-up box. Below are some important parameters:
 
@@ -822,7 +823,7 @@ After clicking on “Set Vesting”, you will see a pop-up box. Below are some i
 
 Click on “Set Vesting” when you are done inputting the numbers, then MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
 
-#### Step 5: Start Airdrop
+##### Step 5: Start Airdrop
 
 1) Before starting the airdrop, you must[ ](https://docs.pinksale.finance/exclude-fees-dividends-max-tx-on-bscscan)[exclude fees, dividends, max tx](https://docs.pinksale.finance/exclude-fees-dividends-max-tx-on-bscscan) for airdrop address. You can find your airdrop address on your airdrop page. Before you finalize your presale, you need to access your contract address from BSCScan or you can click on the token address on your launchpad page.
 
@@ -860,7 +861,7 @@ Or start with a specific time like this:
 
 10) Click on "Approve", MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
 
-#### Step 6: Guide your investors to claim airdrop 
+##### Step 6: Guide your investors to claim airdrop 
 
 You need to guide your community members to claim airdrop so that they can get their reward.
 
