@@ -318,7 +318,9 @@ nav:
        - Telegram Wallets: ./showcase/telegram/wallets.md
      - Wallet:
        - In-app Wallet and Account Abstraction: ./showcase/wallet/in-app-wallet.md
-
+     - Tokenization:
+         - Compamy Tokenization Tutorial: ./showcase/tokenization/compamy-tokenization.md
+         - RWA Tokenization Tutorial: ./showcase/tokenization/rwa-tokenization.md
      
 
 markdown_extensions:
