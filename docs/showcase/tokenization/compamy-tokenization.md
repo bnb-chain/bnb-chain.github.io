@@ -1,8 +1,6 @@
 ---
 title: Showcase - Company Tokenization Tutorial
---- 
-
-## 0 Overview
+---
 
 Welcome to the BNB Chain Tokenization Tutorial.
 
