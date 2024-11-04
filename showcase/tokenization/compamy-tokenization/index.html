@@ -1,0 +1,2635 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Get started with BNB Chain Docs. Explore the documentation for BNB Chain">
+      
+      
+        <meta name="author" content="BNB Chain">
+      
+      
+        <link rel="canonical" href="https://docs.bnbchain.org/showcase/tokenization/compamy-tokenization/">
+      
+      
+        <link rel="prev" href="../../wallet/in-app-wallet/">
+      
+      
+        <link rel="next" href="../rwa-tokenization/">
+      
+      
+      <link rel="icon" href="../../../assets/bnb.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+    
+        <title>Showcase - Company Tokenization Tutorial</title>
+    
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    
+      <link rel="stylesheet" href="../../../assets/style/index.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-preparation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div>
+    BNB Beacon Chain is sunsetting. <a href="https://www.bnbchain.org/en/bnb-chain-fusion" target="_blank">Check for
+    more details</a>
+</div>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+
+        <!-- Link to home -->
+        <a
+                href="https://www.bnbchain.org"
+                title="Documentation"
+                class="md-header__button md-logo"
+                aria-label="Documentation"
+                data-md-component="logo"
+        >
+            
+  <img src="../../../assets/logo.svg" alt="logo">
+
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__site_name">
+                  <span class="md-ellipsis">
+                    Documentation
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color palette toggle -->
+        
+            
+                <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14m0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11m-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0M3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06M12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0M4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12m8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20m12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12m-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061m2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96zl-.002-.005a9 9 0 0 0-.218-.779c-.13-.394.21-.8.602-.67q.435.144.855.328l.01.005A10.002 10.002 0 0 1 12 22a10 10 0 0 1-9.162-5.985l-.004-.01a10 10 0 0 1-.329-.855c-.13-.392.277-.732.67-.602q.386.126.78.218l.004.002A9 9 0 0 0 14.999 6a9 9 0 0 0-.231-2.04M16.5 6c0 5.799-4.701 10.5-10.5 10.5q-.64 0-1.26-.075A8.5 8.5 0 1 0 16.425 4.74q.075.62.075 1.259Z"/></svg>
+      </label>
+    
+  
+</form>
+            
+        
+
+        <!-- User preference: color palette -->
+        
+            <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+        
+
+        <!-- Site language selector -->
+        
+
+        <!-- Button to open search modal -->
+        
+            <label class="md-header__button md-icon" for="__search">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+            </label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.5 3.5 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.5 3.5 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5m-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001m0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5M5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+        <!-- Repository information -->
+        
+        <div class="md-header__source">
+            <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../announce/" class="md-tabs__link">
+          
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Chain Fusion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Smart Chain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+          
+  
+    
+  
+  opBNB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+          
+  
+    
+  
+  BNB Greenfield
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../zkbnb/" class="md-tabs__link">
+          
+  
+    
+  
+  zkBNB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../identity/did/" class="md-tabs__link">
+          
+  
+    
+  
+  Showcases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../announce/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Announcements
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bc-fusion/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Chain Fusion
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    opBNB
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../bnb-greenfield/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Greenfield
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../zkbnb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    zkBNB
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Showcases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Showcases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Name Service and Attestation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Name Service and Attestation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identity/did/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decentralized Identity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../identity/dns/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Decentralized Name Service
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../identity/attestation/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Attestation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Telegram Integration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Telegram Integration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telegram/minigame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Mini Game on BNB Chain
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../telegram/wallets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Telegram Wallets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Wallet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/in-app-wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    In-app Wallet and Account Abstraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tokenization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tokenization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Compamy Tokenization Tutorial
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Compamy Tokenization Tutorial
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Preparation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-set-up-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Set Up Wallet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Set Up Wallet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-trust-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 Trust Wallet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-metamask" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 MetaMask
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-token-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Token Launch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Token Launch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-create-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Create Token
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Create Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-pinksale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.1 PinkSale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-tokenfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.2 TokenFi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-presale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Presale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Presale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-pinksale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 PinkSale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-tokenfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 TokenFi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-withdrawal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Withdrawal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Withdrawal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-trustwallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 TrustWallet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-metamask" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 MetaMask
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reward-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Reward Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Reward Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-pinksale" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 PinkSale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rwa-tokenization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RWA Tokenization Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Preparation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-set-up-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Set Up Wallet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Set Up Wallet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-trust-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 Trust Wallet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-metamask" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 MetaMask
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-token-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Token Launch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Token Launch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-create-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Create Token
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Create Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-pinksale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.1 PinkSale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-tokenfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.2 TokenFi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-presale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Presale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Presale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-pinksale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 PinkSale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-tokenfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 TokenFi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-withdrawal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Withdrawal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Withdrawal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-trustwallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 TrustWallet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-metamask" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 MetaMask
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reward-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Reward Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Reward Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-pinksale" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 PinkSale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/showcase/tokenization/compamy-tokenization.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Compamy Tokenization Tutorial</h1>
+
+<div><p>Welcome to the BNB Chain Tokenization Tutorial.</p>
+<p>Tokenization is a process by which you create a digital token that can be traded on a blockchain. Tokenization has opened up a new way for businesses to create new revenue streams and help small and medium-sized businesses (SMEs) to access funding and grow their businesses.</p>
+<p>BNB Chain’s multi-chain framework, including BSC, opBNB, and Greenfield, offers scalability, low costs, and secure data storage, making it ideal for SMEs to start their tokenization journey. </p>
+<p>It generally takes 4 steps to tokenize your company: </p>
+<p>1) Preparation  </p>
+<ol>
+<li>Setup Wallet  </li>
+<li>Buy Crypto  </li>
+</ol>
+<p>2) Token Launch  </p>
+<ol>
+<li>Create Token  </li>
+<li>Presale  </li>
+</ol>
+<p>3) Withdrawal  </p>
+<p>4) Reward Distribution</p>
+<p>There are plenty of tools and service providers in the BNB Chain ecosystem that can help you with the tokenization journey, we carefully select some of the best in our tutorial to guide you through the Web3 way. You can create your token in a few minutes with no coding or any blockchain knowledge. </p>
+<h2 id="1-preparation">1 Preparation<a class="headerlink" href="#1-preparation" title="Link to this section">¶</a></h2>
+<h3 id="11-set-up-wallet">1.1 Set Up Wallet<a class="headerlink" href="#11-set-up-wallet" title="Link to this section">¶</a></h3>
+<p>A Web3 wallet is essential to start your tokenization. You need to confirm the operations as well as pay service fees using the web3 wallet. Also, a web3 wallet account is your identity during the whole process. </p>
+<p>In this guide, we suggest you use Trust Wallet or Metamask to create your first Web3 wallet account:</p>
+<ul>
+<li>Trust Wallet (<a href="https://trustwallet.com/">https://trustwallet.com/</a>) </li>
+<li>MetaMask (<a href="https://metamask.io/">https://metamask.io/</a> )</li>
+</ul>
+<h4 id="111-trust-wallet">1.1.1 Trust Wallet<a class="headerlink" href="#111-trust-wallet" title="Link to this section">¶</a></h4>
+<h5 id="step-1-install-the-wallet-extension">Step 1: Install the Wallet Extension<a class="headerlink" href="#step-1-install-the-wallet-extension" title="Link to this section">¶</a></h5>
+<p>We suggest you use the Chrome extension to create your wallet, since most of the tokenization tools provide only a desktop version, they cannot be used very well on your mobile phone. </p>
+<p>Follow these steps to get started:</p>
+<p>1) <strong>Download and install Chrome browser</strong></p>
+<p>Here is the download link:</p>
+<ul>
+<li>
+<p>Google Chorme windows 64：<a href="https://www.chromedownloads.net/chrome64win/">https://www.chromedownloads.net/chrome64win/</a> </p>
+</li>
+<li>
+<p>Google Chorme windows 32：<a href="https://www.chromedownloads.net/chrome32win/">https://www.chromedownloads.net/chrome32win/</a> </p>
+</li>
+<li>
+<p>Google Chorme mac：<a href="https://www.chromedownloads.net/chrome64osx/">https://www.chromedownloads.net/chrome64osx/</a></p>
+</li>
+</ul>
+<p>2) <strong>Visit the Trust Wallet Official Website</strong></p>
+<ul>
+<li>
+<p>Go to the <a href="https://trustwallet.com/">Trust Wallet</a> website.</p>
+</li>
+<li>
+<p>Click on the “Download” button and choose the extension compatible with Chrome.</p>
+</li>
+</ul>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.001.png"></p>
+<p>3) <strong>Add the Extension</strong>:</p>
+<ul>
+<li>Click the “Add to Chrome” button and confirm the installation.</li>
+</ul>
+<h5 id="step-2-create-a-new-wallet-account">Step 2: Create a New Wallet Account<a class="headerlink" href="#step-2-create-a-new-wallet-account" title="Link to this section">¶</a></h5>
+<p>Once the extension is installed, you need to create a new Trust Wallet account:</p>
+<p>1) <strong>Open the Extension</strong>: Click on the Trust Wallet icon in your browser’s toolbar to open the extension.</p>
+<p>2) <strong>Start Setup</strong>: Click the ‘Get Started’ button to begin, and click on “Create a New Wallet” to set up your wallet.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.002.png"></p>
+<p>3) <strong>Set Password</strong>: Pick a password and confirm it to create your account.</p>
+<h5 id="step-3-backup-your-wallet-account">Step 3: Backup your Wallet Account<a class="headerlink" href="#step-3-backup-your-wallet-account" title="Link to this section">¶</a></h5>
+<p>Backing up your wallet is vital to protect your assets. Click the action bar on the trust wallet interface.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.003.png"></p>
+<p>1）<strong>Show Seed Phrase</strong>: Trust Wallet will generate a seed phrase (12 or 24 words) for you. This phrase is crucial for wallet recovery, so click the “Show” button, write it down, and store it securely offline. Do not share this phrase with anyone.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.004.png"></p>
+<p>2）<strong>Confirm Seed Phrase</strong>: To ensure you have recorded the seed phrase correctly, Trust Wallet will ask you to confirm it by selecting the words in the correct order.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.005.png"></p>
+<p>Once your wallet is set up, you can start using token-issuing tools to create tokens.</p>
+<h4 id="112-metamask">1.1.2 MetaMask<a class="headerlink" href="#112-metamask" title="Link to this section">¶</a></h4>
+<h5 id="step-1-install-the-wallet-extension_1">Step 1: Install the Wallet Extension<a class="headerlink" href="#step-1-install-the-wallet-extension_1" title="Link to this section">¶</a></h5>
+<p>1）<strong>Download and install Chrome browser</strong></p>
+<p>Here is the download link:</p>
+<ul>
+<li>
+<p>Google Chorme windows 64：<a href="https://www.chromedownloads.net/chrome64win/">https://www.chromedownloads.net/chrome64win/</a> </p>
+</li>
+<li>
+<p>Google Chorme windows 32：<a href="https://www.chromedownloads.net/chrome32win/">https://www.chromedownloads.net/chrome32win/</a> </p>
+</li>
+<li>
+<p>Google Chorme mac：<a href="https://www.chromedownloads.net/chrome64osx/">https://www.chromedownloads.net/chrome64osx/</a></p>
+</li>
+</ul>
+<p>2）<strong>Add Metamask extension</strong>:</p>
+<p>Visit the Chrome Web store <a href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn</a>  </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.006.png"></p>
+<p>Click the “Add to Chrome” button and confirm the installation.</p>
+<h5 id="step-2-create-a-new-wallet-account_1">Step 2: Create a New Wallet Account<a class="headerlink" href="#step-2-create-a-new-wallet-account_1" title="Link to this section">¶</a></h5>
+<p>Once the extension is installed, you need to create a new MetaMask account:</p>
+<p>1) <strong>Open the Extension</strong>: Click on the MetaMask Wallet icon in your browser’s toolbar to open the extension.</p>
+<p>2) <strong>Start Setup</strong>: Agree on the terms of use, and click on “Create a New Wallet” to set up your wallet.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.007.png"></p>
+<p>3) <strong>Set Password</strong>: Pick a password and confirm it to create your account.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.008.png"></p>
+<h5 id="step-3-backup-your-wallet-account_1">Step 3: Backup your Wallet Account<a class="headerlink" href="#step-3-backup-your-wallet-account_1" title="Link to this section">¶</a></h5>
+<p>Backing up your wallet is vital to protect your assets. Click on “Secure my wallet” to get your recovery phrase.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.009.png"></p>
+<p>1) <strong>Show Seed Phrase</strong>: MetaMask Wallet will generate a seed phrase (12 or 24 words) for you. This phrase is crucial for wallet recovery, so click the “Reveal Secret Recovery Phase” button, write it down, and store it securely offline. Do not share this phrase with anyone.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.010.png"></p>
+<p>2) <strong>Confirm Seed Phrase</strong>: To ensure you have recorded the seed phrase correctly, MetaMask Wallet will ask you to confirm it by selecting the words in the correct order.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2011.011.png"></p>
+<p>Once your wallet is set up, you can start using token-issuing tools to create tokens.</p>
+<h2 id="2-token-launch">2 Token Launch<a class="headerlink" href="#2-token-launch" title="Link to this section">¶</a></h2>
+<p>After all the preparation work, you are now ready to create your token. </p>
+<h3 id="21-create-token">2.1 Create Token<a class="headerlink" href="#21-create-token" title="Link to this section">¶</a></h3>
+<p>To create a token, you only need to configure a few basic parameters. </p>
+<p>We suggest these two service providers since they provide one-stop service with rich features:</p>
+<ul>
+<li>PinkSale (<a href="https://www.pinksale.finance/">https://www.pinksale.finance/</a>  )</li>
+<li>TokenFi (<a href="https://tokenfi.com/">https://tokenfi.com/</a> )</li>
+</ul>
+<h4 id="211-pinksale">2.1.1 PinkSale<a class="headerlink" href="#211-pinksale" title="Link to this section">¶</a></h4>
+<p>PinkSale allows you to create a token and manage your token all in one platform, which provides convenience to token issuers.</p>
+<h5 id="step-1-login-with-your-wallet">Step 1: Login with your wallet<a class="headerlink" href="#step-1-login-with-your-wallet" title="Link to this section">¶</a></h5>
+<p>1) <strong>Connect your Wallet</strong> </p>
+<p>Enter <a href="https://www.pinksale.finance/token/create">https://www.pinksale.finance/token/create</a> , choose “MetaMask” or “Trust Wallet”, use the wallet you just created in chapter 1.1 setup wallet</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.001.png"></p>
+<h5 id="step-2-create-token">Step 2: Create Token<a class="headerlink" href="#step-2-create-token" title="Link to this section">¶</a></h5>
+<p>1) <strong>Select Create Token</strong></p>
+<p>Click Create token on the left navigation bar, you should be able to see the landing page as follow</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.002.png"></p>
+<p>2) <strong>Enter Token information</strong> </p>
+<p>Here is how to set each parameter: </p>
+<p><strong>Chain</strong>: It means the blockchain infrastructure where your token will be created and running all the time. Here we suggest you choose <strong>BNB Chain.</strong></p>
+<p><strong>Type</strong>: It means token design mechanism, which contains several parameters, are typically employed to establish the mechanism by which the investors of the token will obtain the financial reward.Here we suggest you choose <strong>Standard.</strong></p>
+<p><strong>Name:</strong> This is ideally a human readable name such as “ACE Coffee Coin”.</p>
+<p><strong>Symbol</strong>: The token symbol is comparable to its ticker symbol, typically four or more characters are used such as “ACE”.</p>
+<p><strong>Total supply</strong>: The amount of tokens that get minted at token creation. Usually you will not increase the supply after token creation, so it will be the total supply of your token at all times. The supply is usually determined by the desired token denomination (i.e. the nominal value per token). </p>
+<p>For example, for a bond offering with a nominal amount of USD 10 million and a denomination of USD 100,000 the supply would have to be 100 tokens.</p>
+<p><strong>Decimals</strong>: Values can be 0-18, when 0 is used, the token is not divisible. We suggest you set it as “<strong>18</strong>”.</p>
+<p>3) <strong>Confirm Transaction</strong> </p>
+<p>Click the create token button then your wallet will be invoked. Confirm with your wallet, please notice you need to pay service fee using BNB, you should follow chapter 1.2 buy crypto to charge your wallet account  in advance. </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.003.png"></p>
+<h5 id="step-3-check-your-token">Step 3: Check Your Token<a class="headerlink" href="#step-3-check-your-token" title="Link to this section">¶</a></h5>
+<p>You can see your token address and other basic information as follow </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.004.png"></p>
+<h4 id="212-tokenfi">2.1.2 TokenFi<a class="headerlink" href="#212-tokenfi" title="Link to this section">¶</a></h4>
+<h5 id="step-1-login-with-your-wallet_1">Step 1: Login with your wallet<a class="headerlink" href="#step-1-login-with-your-wallet_1" title="Link to this section">¶</a></h5>
+<p>Enter <a href="https://tl.tokenfi.com/create-token">https://tl.tokenfi.com/create-token</a> , choose “MetaMask” or “Trust Wallet”</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.005.png"></p>
+<h5 id="step-2-create-token_1">Step 2: Create Token<a class="headerlink" href="#step-2-create-token_1" title="Link to this section">¶</a></h5>
+<p><strong>1. Select Token Type</strong>:</p>
+<p>Click the ERC-20 token, you should be able to see the landing page as follow: </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.006.png"></p>
+<p><strong>2. Enter Token information</strong> </p>
+<p>Enter token information recording to your demand </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.007.png"></p>
+<p>Here is how to set each parameter: </p>
+<p><strong>Type</strong>: It means token standard, we suggest you choose <strong>ERC-20</strong>. ERC-20 is a token standard which is most commonly used in company tokenization scenario, you do not need to understand the standard to continue your process, nevertheless, if you want to know more about the token standard, you can visit <a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">https://ethereum.org/en/developers/docs/standards/tokens/erc-20/</a> for more information. </p>
+<p><strong>Logo</strong>: The image icon of your token, it will show up on all your token promotion pages, we suggest you use images that are highly related to your company’s business so that investors can get more information from your logo image. You should prepare the image beforehand, and make sure that you have the copyright of your image. </p>
+<p><strong>Name:</strong> This is ideally a human readable name such as “ACE Coffee Coin”.</p>
+<p><strong>Symbol</strong>: The token symbol is comparable to its ticker symbol, typically four or more characters are used such as “ACE”.</p>
+<p><strong>Initial supply</strong>: The amount of tokens that get minted at token creation. It should be no bigger than Max Supply. </p>
+<p><strong>Max Supply</strong>: The sum up amount of tokens that you will mint all time.  We suggest you do not increase the supply after token creation, so the max supply will be set as the same as the initial supply. </p>
+<p>The supply is usually determined by the desired token denomination (i.e. the nominal value per token). </p>
+<p>For example, for a bond offering with a nominal amount of USD 10 million and a denomination of USD 100,000 the supply would have to be 100 tokens.</p>
+<p><strong>Decimals</strong>: Values can be 0-18, when 0 is used, the token is not divisible.We suggest you set it as <strong>18</strong>. </p>
+<p><strong>Treasury Wallet:</strong> where the token will be sent to after the tokens are created. It is default set as the wallet address you used to login. Which means all the created tokens will be sent to your current wallet address. </p>
+<p><strong>Features and tokenomics:</strong> This part is optional advanced features<strong>,</strong> which contains several parameters, are typically employed to establish the mechanism by which the investors of the token will obtain the financial reward.Here we suggest you <strong>skip</strong> this part. If you want to know more about this part, you can visit <a href="https://docs.tokenfi.com/">https://docs.tokenfi.com/</a> for more guidance. </p>
+<p><strong>3. Confirm Transaction</strong> </p>
+<p>Click the create token button then your wallet will be invoked. Confirm with your wallet, please notice you need to pay service fee using BNB, you should follow chapter 1.2 buy crypto to charge your wallet account  in advance. </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.007.png"></p>
+<h5 id="step-3-check-your-token_1">Step 3: Check Your Token<a class="headerlink" href="#step-3-check-your-token_1" title="Link to this section">¶</a></h5>
+<p>You can see your token address and other basic information as follow </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%2021.008.png"></p>
+<h3 id="22-presale">2.2 Presale<a class="headerlink" href="#22-presale" title="Link to this section">¶</a></h3>
+<p>Now that your token has been created, you can invite your early investors to join your presale activities. Investors can buy your token through the presale link you created, you can quickly raise early-stage funding through pre-sales to develop your business.</p>
+<p>It’s suggested that you use the same service providers to manage your presale. Here we suggest two service providers:</p>
+<ul>
+<li>PinkSale (<a href="https://www.pinksale.finance/">https://www.pinksale.finance/</a>  )</li>
+<li>TokenFi (<a href="https://tokenfi.com/">https://tokenfi.com/</a> )</li>
+</ul>
+<h4 id="221-pinksale">2.2.1 PinkSale<a class="headerlink" href="#221-pinksale" title="Link to this section">¶</a></h4>
+<h5 id="step-1-login-with-your-wallet_2">Step 1: Login with your wallet<a class="headerlink" href="#step-1-login-with-your-wallet_2" title="Link to this section">¶</a></h5>
+<p>Visit <a href="https://www.pinksale.finance/launchpad/create/presale">https://www.pinksale.finance/launchpad/create/presale</a> and choose “MetaMask” or “Trust Wallet” to login.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.001.png"></p>
+<h5 id="step-2-create-presale">Step 2: Create Presale<a class="headerlink" href="#step-2-create-presale" title="Link to this section">¶</a></h5>
+<p>1) After login, choose launchpad&gt;create presale in left navigation bar. </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.002.png"></p>
+<p>Here are the parameters you need to input:</p>
+<p><strong>Address</strong>:  Input your token address,if you created your token using PinkSale, it should be filled in automatically. Or you can find it at your token creation page. </p>
+<p><strong>Currency</strong>:The token you will receive for your presale. Here we suggest you choose <strong>BNB</strong>.</p>
+<p><strong>Fee Option</strong>: Pinksale will charge your some fees for presale, Here we suggest you to choose <strong>5% BNB</strong>, which means PinkSale will charge 5% of all your BNB sold as Presale service fees </p>
+<p><strong>Listing Option</strong>:Usually, you need to create a secondary marketplace for your tokens, so that your investors who have bought your tokens during the presale phase can sell the token to others in the secondary market if they do not want to hold the tokens anymore. You will need to add liquidity to the secondary market so that your investors can trade. By adding liquidity, part of your token pair with BNB will be automatically locked so as to be used to add liquidity in the future. Auto listing means liquidity will be added automatically after Finalize, manual listing means you have to add liquidity manually. By selecting auto listing, your token will be listed at PinkSwap automatically.We suggest you choose <strong>Manual listing</strong> to keep it simple. If you want to choose auto listing, you can visit <a href="https://docs.pinksale.finance/launchpads/create-a-launchpad">https://docs.pinksale.finance/launchpads/create-a-launchpad</a> for more guidance.  </p>
+<p><strong>Pool Type:</strong> It means the type of this round of token sale. Here we suggest you to choose <strong>presale</strong></p>
+<p><strong>Affiliate</strong>: It indicates that you want to promote your project together with some KOLs Pinksale suggested. We suggest you <strong>disable the Affiliate</strong> program option.If you want to know more about affiliate, you can visit <a href="https://docs.pinksale.finance/important/affiliate-program">https://docs.pinksale.finance/important/affiliate-program</a> for more guidance.  </p>
+<p>2) Review again and click on “Next”.</p>
+<h5 id="step-3-add-launchpad-info">Step 3: Add Launchpad Info<a class="headerlink" href="#step-3-add-launchpad-info" title="Link to this section">¶</a></h5>
+<p>After verifying your token, you need to input the Presale information that you want to raise.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.003.png"> </p>
+<p>Here are some following important parameters:</p>
+<p><strong>Presale Rate</strong>: This is similar to token price, it means how many of your tokens an investor can receive if he gives 1 BNB. You must use positive numbers.</p>
+<p><strong>Whitelist:</strong> Choose “Enable” if you have a whitelist of presale contributors. You can enable/disable the whitelist anytime.We suggest you <strong>disable</strong> the whitelist to keep it simple. If you want to know more about affiliate, you can visit <a href="https://docs.pinksale.finance/launchpads/whitelist-tiers">https://docs.pinksale.finance/launchpads/whitelist-tiers</a> for more guidance. </p>
+<p><strong>Soft cap:</strong> Soft cap means the least amount of tokens you need to sell for this presale to launch successfully. SoftCap must be greater than or equal to 25% of the hard cap.</p>
+<p><strong>Hard cap</strong>: It means the amount of tokens for your presale. Once you sell the amount of tokens, your presale will automatically stop</p>
+<p><strong>Refund types:</strong> you can choose refund or burn from the dropdown list. Here we suggest you choose <strong>Refund</strong></p>
+<p><strong>Minimum buy BNB:</strong> how many bnb one investor need to pay at least in order to participate</p>
+<p><strong>Maximum buy BNB:</strong>how many bnb can one investor buy at most</p>
+<p><strong>Start Time</strong>: the start time of your presale, you can select now or later. </p>
+<p><strong>End Time</strong>: the end time of your presale. Please make sure the start time is before the end time.</p>
+<p><strong>Vesting Contributor</strong>: Vesting For Contributors is a feature on PinkSale that helps projects to ensure long term price stability by locking away the tokens of presale investors for a period of time. It prevents presale investors from selling all their tokens at once at listing time, which causes too much sell pressure and crashes the price. To make it simple, we suggest you <strong>disable</strong> it. </p>
+<h5 id="step-4-add-additional-info">Step 4: Add Additional Info<a class="headerlink" href="#step-4-add-additional-info" title="Link to this section">¶</a></h5>
+<p>Now that you have almost setup all the information you need for your presale, we suggest you add some additional info about your project so that your investors can know more about your company, your business, and be more willing to participate in your presale.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.004.png"></p>
+<p>There are some notes for this step:</p>
+<ul>
+<li>Logo URL and website are required fields, cannot be blank. You can’t complete this step without those.</li>
+<li>Logo URL must end with a supported image extension: png, jpg, jpeg or gif.</li>
+</ul>
+<p>For example:<a href="https://www.pinkswap.finance/pinkswap.png"> </a><a href="https://www.pinkswap.finance/pinkswap.png">https://www.pinkswap.finance/pinkswap.png</a></p>
+<h5 id="step-5-confirm-with-your-wallet">Step 5: Confirm with your wallet<a class="headerlink" href="#step-5-confirm-with-your-wallet" title="Link to this section">¶</a></h5>
+<p>This is the final step. You can review all the information one last time before submitting, after you have made sure that everything is perfect, or you can go back to the previous step to make any changes. Click “Approve Spending Token” and “Confirm” on Metamask. After that, click “Submit”.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.005.png"></p>
+<p>After clicking on “Submit”, MetaMask/TrustWallet will now ask you to confirm the deal. It will also show you the fee that you are required to pay for the presale service.  If you agree, then click on the “Confirm” button to finish the process.</p>
+<h5 id="step-6-check-your-presale-status">Step 6: Check Your Presale Status<a class="headerlink" href="#step-6-check-your-presale-status" title="Link to this section">¶</a></h5>
+<p>You can view your presale status as follow:</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.006.png"></p>
+<h5 id="step-7-invite-your-community-to-buy">Step 7: Invite your community to buy<a class="headerlink" href="#step-7-invite-your-community-to-buy" title="Link to this section">¶</a></h5>
+<p>Guide your community members to <a href="https://www.pinksale.finance/#/launchpads">https://www.pinksale.finance/launchpads</a></p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.007.png"></p>
+<p>Your community members can find your project through searching by token name, they can find the detail page of your presale as follows. Enter the amount of token they want to buy, and confirm with their wallets.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.008.png"></p>
+<p>Now that you need to wait for enough community members to buy your token until your soft cap has been reached. Then you can finalized the presale pool. If the hard cap has been reached, your presale will be finalized automatically.</p>
+<p>After you have finalized the presale pool, your community member can claim the token.  </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20221.009.png"></p>
+<p>After claiming a token, your community member should be able to see the token they bought in their wallet. </p>
+<h4 id="222-tokenfi">2.2.2 TokenFi<a class="headerlink" href="#222-tokenfi" title="Link to this section">¶</a></h4>
+<p>TokenFi also provides a launchpad for you to create a presale for your tokens. </p>
+<h5 id="step-1-login-to-tokenfi-launchpad-with-your-wallet">Step 1: Login to TokenFi Launchpad with your wallet<a class="headerlink" href="#step-1-login-to-tokenfi-launchpad-with-your-wallet" title="Link to this section">¶</a></h5>
+<p>Open <a href="https://lp.tokenfi.com/">https://lp.tokenfi.com/</a>, Click Connect Wallet to Login</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.001.png"></p>
+<p>Sign the message</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.002.png"></p>
+<h5 id="step-2-input-token-information">Step 2: Input token information<a class="headerlink" href="#step-2-input-token-information" title="Link to this section">¶</a></h5>
+<p>1) Select BNB network</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.003.png"></p>
+<p><strong>2)</strong> Choose “I will provide my own token” and click ‘Next’ to proceed with your launchpad setup.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.004.png"></p>
+<p>3) Input your token address, you can find it at previous steps. </p>
+<h5 id="step-3-input-presale-information">Step 3: Input Presale Information<a class="headerlink" href="#step-3-input-presale-information" title="Link to this section">¶</a></h5>
+<p>1) Define your project’s funding targets by entering the details below:</p>
+<p><strong>Token Price</strong>: Specify the price per token, e.g. 1 BNB per token.</p>
+<p><strong>Soft Cap</strong>: Enter the minimum token amount you aim to raise. This is the lowest funding goal required to consider the fundraising a success.</p>
+<p><strong>Hard Cap</strong>: Set the maximum token amount you wish to raise. This should not exceed the total available supply minus any tokens reserved for the treasury.</p>
+<p><strong>Available Supply</strong>: Note that the hard cap cannot surpass the available supply of 2500 tokens.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.005.png"></p>
+<p>Click the ‘Next’ button once all fields are filled to continue setting up your project.</p>
+<p>2) Configure your fundraising parameters by following these steps:</p>
+<p><strong>Maximum Tokens per Wallet</strong>: Input the maximum number of tokens that can be purchased by a single wallet. Ensure this aligns with your fundraising goals and token distribution strategy.</p>
+<p><strong>Fundraise Start Date</strong>: Choose the date and time when your fundraising will begin. This is the moment from which participants can start purchasing tokens.</p>
+<p><strong>Fundraise End Date</strong>: Set the date and time when your fundraising will conclude. After this time, no more tokens can be purchased.</p>
+<p>Then click “Next”.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.005.png"></p>
+<p>3) Set up your token release schedule efficiently:</p>
+<p><strong>TGE (Token Generation Event)</strong>: Set the percentage of tokens allocated and the specific date and time for release during the TGE. This initial allocation is crucial for the market introduction of your token.</p>
+<p><strong>Allocation Percentage</strong>: Input the percentage of total tokens you want to allocate during the TGE.</p>
+<p><strong>TGE Date</strong>: Select the date and time when these tokens will become available.</p>
+<p><strong>Allocation Tracker</strong>: Observe the progress bar to ensure your allocations do not exceed the total supply.</p>
+<p><strong>Add New Release Date</strong>: Click this button to schedule additional token releases, specifying new dates and allocation percentages.</p>
+<p>Click the ‘Next’ button once all fields are filled to continue setting up your project.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.006.png"></p>
+<h5 id="step-4-review-and-confirm-with-your-wallet">Step 4: Review and Confirm with your wallet<a class="headerlink" href="#step-4-review-and-confirm-with-your-wallet" title="Link to this section">¶</a></h5>
+<p>Review each section carefully before proceeding:</p>
+<p><strong>General Information</strong>:</p>
+<ul>
+<li><strong>Blockchain</strong>: The blockchain network selected for the project.</li>
+</ul>
+<p><strong>Token Information</strong>:</p>
+<ul>
+<li>
+<p><strong>Name</strong>: The official name of your token.</p>
+</li>
+<li>
+<p><strong>Symbol</strong>: The designated ticker symbol.</p>
+</li>
+<li>
+<p><strong>Decimals</strong>: The decimal precision for transactions.</p>
+</li>
+<li>
+<p><strong>Max Supply</strong>: Total number of tokens created.</p>
+</li>
+<li>
+<p><strong>Reserved for Treasury</strong>: Tokens allocated for future project needs.</p>
+</li>
+</ul>
+<p><strong>Goals</strong>:</p>
+<ul>
+<li>
+<p><strong>Price Currency</strong>: The currency used for pricing tokens.</p>
+</li>
+<li>
+<p><strong>Token Price</strong>: Price per token.</p>
+</li>
+<li>
+<p><strong>Soft Cap</strong>: Minimum funds targeted.</p>
+</li>
+<li>
+<p><strong>Hard Cap</strong>: Maximum funds targeted.</p>
+</li>
+</ul>
+<p><strong>Fundraising Setup</strong>:</p>
+<ul>
+<li>
+<p><strong>Max Vesting per Wallet</strong>: The maximum token amount a single wallet can hold.</p>
+</li>
+<li>
+<p><strong>Fundraise Period</strong>: The duration of the fundraising campaign.</p>
+</li>
+</ul>
+<p><strong>Release Schedule</strong>:</p>
+<p>Details of token distribution, including percentages and specific dates for each type of vesting.</p>
+<p><strong>Payment Setup</strong>:</p>
+<p><strong>Accepted Tokens</strong>: List of cryptocurrencies accepted for payment.</p>
+<p><strong>Additional Settings</strong>:</p>
+<p><strong>Blocked Countries</strong>: Countries restricted from participating in the project.</p>
+<p>Once you have confirmed that all details are correct and finalized, press ‘Confirm’ to launch your project.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.007.png"></p>
+<p>This is the final step. You can review all the information one last time before submitting, after you have made sure that everything is perfect, or you can go back to the previous step to make any changes. Click “Approve” and “Confirm” on Metamask. After that, click “Submit”.</p>
+<h5 id="step-5-check-your-presale-status">Step 5: Check Your Presale Status<a class="headerlink" href="#step-5-check-your-presale-status" title="Link to this section">¶</a></h5>
+<p>On the ‘My Projects’ screen, find your project and click “View Details” to update and refine your project details.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.008.png"></p>
+<p>On the ‘Edit Project’ screen, follow these steps to update and refine your project details:</p>
+<p>Click “Edit Details”: Begin by accessing the editing mode for your project.</p>
+<p><strong>Add Launchpad Summary</strong>: Summarize your project to provide a quick overview for potential investors.</p>
+<p><strong>Link Social Media</strong>: Connect your social media accounts to broaden your reach and engage more effectively with your audience.</p>
+<p><strong>Input Website and Whitepaper Links</strong>: Provide links to your project’s website and Whitepaper, offering deeper insight into your project’s objectives and developments.</p>
+<p><strong>Provide a Detailed Description</strong>: Expand on the details of your project, highlighting key information and unique selling points to attract interest.</p>
+<p><strong>Save Your Changes</strong>: After updating the information, click ‘Save’ to apply the changes. Your project is now optimized and ready to attract funding on the TokenFi Launchpad.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.009.png"></p>
+<h5 id="step-6-invite-your-community-to-buy">Step 6: Invite your community to buy<a class="headerlink" href="#step-6-invite-your-community-to-buy" title="Link to this section">¶</a></h5>
+<p>Guide your community members to <a href="https://lp.tokenfi.com/en-US">https://lp.tokenfi.com/en-US</a> </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.010.png"></p>
+<p>Your community members can find your project through searching by token name, they can find the detail page of your presale as follows. </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.011.png"></p>
+<p>Your community member can then click “Invest” to go to the Invest page,enter the amount they want to invest on the Invest page and review the transaction details.</p>
+<p>Now that you need to wait for enough community members to buy your token until your soft cap has been reached. Then you can finalized the presale pool. If the hard cap has been reached, your presale will be finalized automatically.</p>
+<p>After you have finalized the presale pool, your community member can claim the token.  </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%20222.012.png"></p>
+<p>After claiming a token, your community member should be able to see the token they bought in their wallet.</p>
+<h2 id="3-withdrawal">3 Withdrawal<a class="headerlink" href="#3-withdrawal" title="Link to this section">¶</a></h2>
+<p>When enough investors purchase your token and your presale succeeded, you will receive an amount of BNB in return. You can exchange your BNB for Fiat, withdraw fiat to your bank account to expand your actual operation or production. </p>
+<p>Service providers you may choose:</p>
+<ul>
+<li>TrustWallet (<a href="https://trustwallet.com/">https://trustwallet.com/</a>) </li>
+<li>MetaMask (<a href="https://metamask.io/">https://metamask.io/</a> )</li>
+</ul>
+<h3 id="31-trustwallet">3.1 TrustWallet<a class="headerlink" href="#31-trustwallet" title="Link to this section">¶</a></h3>
+<h5 id="step-1-login">Step 1: Login<a class="headerlink" href="#step-1-login" title="Link to this section">¶</a></h5>
+<p>The Trust Wallet extension allows you to sell BNB to fiat. Follow these steps to get started:</p>
+<p>1) <strong>Open Trust Wallet Extension</strong></p>
+<p>Click the Trust Wallet Icon in your chrome, and usually, it will open directly.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.001.png"></p>
+<p>2) <strong>Enter Password</strong></p>
+<p>If you did not login for a while, Trust Wallet might ask you to enter your password to login </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.002.png"></p>
+<h5 id="step-2-choose-vendor">Step 2: Choose Vendor<a class="headerlink" href="#step-2-choose-vendor" title="Link to this section">¶</a></h5>
+<p>Trust Wallet provides different vendors for you to choose from, you can use them to sell crypto to fiat. </p>
+<p>1) <strong>Click Buy &amp; Sell button</strong></p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.001.png"></p>
+<p>2) <strong>Choose network and crypto</strong></p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.003.png"></p>
+<p>3) <strong>Select your vendor</strong> </p>
+<p>Here we can see Trust Wallet provides several different vendors.we suggest you use moonpay to continue</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.004.png"></p>
+<h5 id="step-3-login-to-vender-and-add-your-bank-account">Step 3: Login to vender and add your bank account<a class="headerlink" href="#step-3-login-to-vender-and-add-your-bank-account" title="Link to this section">¶</a></h5>
+<p>1) <strong>Enter your email address</strong></p>
+<p>2) <strong>Add your bank details</strong></p>
+<p><img alt="Step 3 on how to sell cryptocurrency." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.005.png"></p>
+<p>3) <strong>Review your order</strong></p>
+<ul>
+<li>
+<p>MoonPay shows you the estimated price for your crypto and a summary of the fees.</p>
+</li>
+<li>
+<p>Accept <a href="https://www.moonpay.com/legal/terms_of_use">Terms of Use</a>.</p>
+</li>
+<li>
+<p>Click “Sell Now” to confirm your order.</p>
+</li>
+</ul>
+<p><img alt="Step 4 on how to sell cryptocurrency." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.006.png"></p>
+<p>4) <strong>Ready to Pay</strong></p>
+<ul>
+<li>
+<p>Next, MoonPay will generate a wallet for you to send your cryptocurrency to. MoonPay will also email you instructions on how to pay for your order.</p>
+</li>
+<li>
+<p>To see the wallet for your order, tap View deposit details.</p>
+</li>
+<li>
+<p>You can directly copy the deposit wallet address by selecting the “Copy” icon.
+<img alt="Step 6 on how to sell cryptocurrency." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.007.png"></p>
+</li>
+</ul>
+<h5 id="step-4-send-your-crypto-to-vendor"><strong>Step 4: Send Your Crypto to Vendor</strong><a class="headerlink" href="#step-4-send-your-crypto-to-vendor" title="Link to this section">¶</a></h5>
+<p>1) Open Trust Wallet Extension</p>
+<p>2) Click “Send”</p>
+<p>3) Choose the cryptocurrency (BNB)</p>
+<p>4) Enter the Mercuryo’s Address and the amount you want to sell</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.008.png"></p>
+<p>5) Complete the transaction in your wallet.</p>
+<h5 id="step-5-check-your-bank-account">Step 5: Check your bank account<a class="headerlink" href="#step-5-check-your-bank-account" title="Link to this section">¶</a></h5>
+<p>Mercuryo takes your cryptocurrency from there When you send it to the given address. You’ll receive a bank transfer shortly after your cryptocurrency is received. Read the <a href="https://support.moonpay.com/customers/docs/when-will-i-receive-my-cryptocurrency">Processing Time</a> article to learn how long bank transfers take in different regions.</p>
+<p>Once your transaction is complete, Mercuryo will send you a confirmation email. Click on See complete deposit instructions to access our tracker.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.009.png"></p>
+<h3 id="32-metamask">3.2 MetaMask<a class="headerlink" href="#32-metamask" title="Link to this section">¶</a></h3>
+<h5 id="step-1-login_1">Step 1: Login<a class="headerlink" href="#step-1-login_1" title="Link to this section">¶</a></h5>
+<p>The MetaMask Wallet extension allows you to sell crypto to fiat. Follow these steps to get started:</p>
+<p>1) <strong>Open Metamask Extension</strong></p>
+<p>Click the MetaMask Icon in your chrome, and usually, it will open directly.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.010.png"></p>
+<p>2) <strong>Enter Password</strong></p>
+<p>If you did not login for a while, MetaMask might ask you to enter your password to login </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.011.png"></p>
+<h5 id="step-2-choose-network-and-crypto">Step 2: Choose network and crypto<a class="headerlink" href="#step-2-choose-network-and-crypto" title="Link to this section">¶</a></h5>
+<p>Metamask provides different vendors for you to choose from, you can use them to sell crypto to fiat. </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.012.png"></p>
+<p>1) <strong>Click buy &amp; sell button,</strong> make sure you are under BNB chain network</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.010.png"></p>
+<p>2) <strong>Choose network and crypto</strong>, choose BNB chain first, and then select BNB token </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.013.png"></p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.014.png"></p>
+<h5 id="step-3-choose-your-country-and-fiat">Step 3: Choose your country and fiat<a class="headerlink" href="#step-3-choose-your-country-and-fiat" title="Link to this section">¶</a></h5>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.015.png"></p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.016.png"></p>
+<h5 id="step-4-choose-vender">Step 4: Choose Vender<a class="headerlink" href="#step-4-choose-vender" title="Link to this section">¶</a></h5>
+<p>Select your vendor. Here we can see MetaMask provides several different vendors, we suggest using MoonPay to continue </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.017.png"></p>
+<h5 id="step-5-log-in-to-vender-and-add-your-bank-account">Step 5: Log in to vender and add your bank account<a class="headerlink" href="#step-5-log-in-to-vender-and-add-your-bank-account" title="Link to this section">¶</a></h5>
+<p>1) <strong>Enter your email address</strong></p>
+<p>2) <strong>Add your bank details</strong></p>
+<p><img alt="Step 3 on how to sell cryptocurrency." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.005.png"></p>
+<p>3) <strong>Review your order</strong></p>
+<ul>
+<li>
+<p>MoonPay shows you the estimated price for your crypto and a summary of the fees.</p>
+</li>
+<li>
+<p>Accept <a href="https://www.moonpay.com/legal/terms_of_use">Terms of Use</a>.</p>
+</li>
+<li>
+<p>Click “Sell Now” to confirm your order.</p>
+</li>
+</ul>
+<p><img alt="Step 4 on how to sell cryptocurrency." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.006.png"></p>
+<p>4) <strong>Ready to Pay</strong></p>
+<ul>
+<li>
+<p>Next, MoonPay will generate a wallet for you to send your cryptocurrency to. MoonPay will also email you instructions on how to pay for your order.</p>
+</li>
+<li>
+<p>To see the wallet for your order, tap View deposit details.</p>
+</li>
+<li>
+<p>You can directly copy the deposit wallet address by selecting the “Copy” icon.</p>
+</li>
+</ul>
+<p><img alt="Step 6 on how to sell cryptocurrency." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.007.png"></p>
+<h5 id="step-6send-your-crypto-to-vendor">Step 6:Send Your Crypto to Vendor<a class="headerlink" href="#step-6send-your-crypto-to-vendor" title="Link to this section">¶</a></h5>
+<p>1) Open Trust Wallet Extension</p>
+<p>2) Click “Send”</p>
+<p>3) Choose the cryptocurrency (BNB)</p>
+<p>4) Enter the MoonPay’s Address and the amount you want to sell</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.018.png"></p>
+<p>5)Complete the transaction in your wallet.</p>
+<h5 id="step-7-check-your-bank-account">Step 7: check your bank account<a class="headerlink" href="#step-7-check-your-bank-account" title="Link to this section">¶</a></h5>
+<p>1) MoonPay takes your cryptocurrency from there When you send it to the given address. You’ll receive a bank transfer shortly after your cryptocurrency is received. Read the <a href="https://support.moonpay.com/customers/docs/when-will-i-receive-my-cryptocurrency">Processing Time</a> article to learn how long bank transfers take in different regions.</p>
+<p>2) Once your transaction is complete, MoonPay will send you a confirmation email. Click on See complete deposit instructions to access our tracker.</p>
+<p><img alt="A window that shows the transaction is completed." src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%203.019.png"></p>
+<h2 id="4-reward-distribution">4 Reward Distribution<a class="headerlink" href="#4-reward-distribution" title="Link to this section">¶</a></h2>
+<p>When your business earns profits, it is crucial to reward your early investors. This creates a sustainable tokenization cycle, enabling you to utilize tokenization again in the future for the growth of your business.</p>
+<p>You can give your investors dividends when your business gets profit through Airdrop tokens.</p>
+<p>Service providers you may choose:</p>
+<ul>
+<li>Pink Sale (<a href="https://www.pinksale.finance/">https://www.pinksale.finance/</a>  )</li>
+</ul>
+<h4 id="41-pinksale">4.1 PinkSale<a class="headerlink" href="#41-pinksale" title="Link to this section">¶</a></h4>
+<p>PinkSale allows you to create airdrop, so that your investors can claim airdrop to get their reward </p>
+<h5 id="step-1-login-with-your-wallet_3">Step 1: Login with your wallet<a class="headerlink" href="#step-1-login-with-your-wallet_3" title="Link to this section">¶</a></h5>
+<p>Choose “MetaMask” or “Trust Wallet”</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.001.png"></p>
+<h5 id="step-2-create-new-airdrop">Step 2: Create New Airdrop<a class="headerlink" href="#step-2-create-new-airdrop" title="Link to this section">¶</a></h5>
+<p>1) Go to<a href="https://www.pinksale.finance/#/airdrop/create"> </a><a href="https://www.pinksale.finance/#/airdrop/create">https://www.pinksale.finance/airdrop/create</a></p>
+<p>2) Paste your token address into the “Token address” section. After that, your token name, symbol and decimals will be shown. Make sure everything is correct and then click on “Next”.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.002.png"></p>
+<p>3) After selecting your token, you will need to input the Airdrop information. </p>
+<p>Here are some following important parameters: </p>
+<p><strong>Airdrop Title</strong>:Create a meaningful name for your reward distribution.</p>
+<p><strong>Logo URL</strong>:Logo URL must end with a supported image extension: png, jpg, jpeg or gif. You can upload your image using<a href="https://upload.pinksale.finance/"> </a><a href="https://upload.pinksale.finance/">https://upload.pinksale.finance/</a> to get the link to your logo. </p>
+<p><strong>Website:</strong> Paste your company’s website url here.</p>
+<p>These three parameters cannot be blank. While others like social links and descriptions can be empty. </p>
+<p>Finish all the information, and then click “Create New Airdrop”.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.003.png"></p>
+<p>After clicking on the “Create New Airdrop” button, MetaMask/TrustWallet will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.</p>
+<p>4) You will be redirected to this page:</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.004.png"></p>
+<h5 id="step-3-set-allocation">Step 3: Set Allocation<a class="headerlink" href="#step-3-set-allocation" title="Link to this section">¶</a></h5>
+<p>Prepare a list of airdrop addresses then click on “Set Allocations”</p>
+<p>After clicking on “Set Allocations”, you will see a pop-up box. Here, you can add addresses and amounts to your “Users allocation” list. Addresses are separated by a new line. The amount of each user is separated by comma (,)</p>
+<p>You should ask your community members to give you their wallet address beforehand. The below list can be used as an example:</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.005.png"></p>
+<p>Click on “Add Allocations” when you are done inputting the addresses. MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.</p>
+<p>After successfully adding airdrop allocations, those allocations will be shown on the airdrop page.</p>
+<h5 id="step-4-set-vesting">Step 4. Set Vesting<a class="headerlink" href="#step-4-set-vesting" title="Link to this section">¶</a></h5>
+<p>After clicking on “Set Vesting”, you will see a pop-up box. Below are some important parameters:</p>
+<p><strong>TGE release percent (%)</strong>: The percentage of the first batch of airdrop tokens to be released. Please note that this is expressed in percentage, not number of tokens.</p>
+<p><strong>Cycle release percent (%)</strong>: How many % of airdrop tokens will be released each cycle following the first TGE release percent batch. Please note this is expressed in percentage, not in number of tokens.</p>
+<p><strong>Cycle (days)</strong>: How long, in days, between each batch of vested tokens is released.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.006.png"></p>
+<p>Click on “Set Vesting” when you are done inputting the numbers, then MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.</p>
+<h5 id="step-5-start-airdrop">Step 5: Start Airdrop<a class="headerlink" href="#step-5-start-airdrop" title="Link to this section">¶</a></h5>
+<p>1) Before starting the airdrop, you must<a href="https://docs.pinksale.finance/exclude-fees-dividends-max-tx-on-bscscan"> </a><a href="https://docs.pinksale.finance/exclude-fees-dividends-max-tx-on-bscscan">exclude fees, dividends, max tx</a> for airdrop address. You can find your airdrop address on your airdrop page. Before you finalize your presale, you need to access your contract address from BSCScan or you can click on the token address on your launchpad page.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.007.png"></p>
+<p>2) Go to Contract -&gt; Write contract -&gt; Connect to Web3 to connect your wallet, you need to use owner address.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.008.png"></p>
+<p>3) Ctrl + F, Search “exclude”, then input your presale address, then click on “Write”, to exclude all fee/tax, max TX, rewards for presale address.</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.007.png"></p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.009.png"></p>
+<p>4) After clicking on the “Write” button, MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process. If you see exclude (bool), please input “true”</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.010.png"></p>
+<p>5) Sometimes contract doesn’t have “exclude” but “exempt” instead, Search “exempt”, then input your presale address, then click on “Write” to exclude all fee/tax, max TX, rewards for presale address.</p>
+<p>6) After you have successfully exclude fees for airdrop address, you can go back to your airdrop page by this link<a href="https://www.pinksale.finance/#/airdrops/own"> </a><a href="https://www.pinksale.finance/#/airdrops/own">https://www.pinksale.finance/#/airdrops/own</a> - Created By You - View Airdrop</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.011.png"></p>
+<p>7) Then click on “Start Airdrop”</p>
+<p>8) You will see how many tokens will be used for airdrop here (total airdrop tokens + 1% fee). Now you can choose to start now:</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.012.png"></p>
+<p>Or start with a specific time like this:</p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.013.png"></p>
+<p>10) Click on “Approve”, MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.</p>
+<h5 id="step-6-guide-your-investors-to-claim-airdrop">Step 6: Guide your investors to claim airdrop<a class="headerlink" href="#step-6-guide-your-investors-to-claim-airdrop" title="Link to this section">¶</a></h5>
+<p>You need to guide your community members to claim airdrop so that they can get their reward.</p>
+<p>1) guide your community members to this link<a href="https://www.pinksale.finance/#/airdrops/my"> </a><a href="https://www.pinksale.finance/#/airdrops/my">https://www.pinksale.finance/#/airdrops/my</a> - My Airdrops - View Airdrop. they can see airdrops which they joined here.Please remind them to login with the same wallet address they have shared to you previously. </p>
+<p><img alt="" src="../company-tokenization-tutorial/Company%20Tokenization%20Tutorial%204.014.png"></p>
+<p>2) Check claimable tokens then click on “Claim”</p>
+<p>3) MetaMask/Trust Wallet will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.</p></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../wallet/in-app-wallet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: In-app Wallet and Account Abstraction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                In-app Wallet and Account Abstraction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../rwa-tokenization/" class="md-footer__link md-footer__link--next" aria-label="Next: RWA Tokenization Tutorial">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                RWA Tokenization Tutorial
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+<div class="doc-footer">
+    <div class="doc-footer__inner md-grid">
+        <div>
+            <div>Explore</div>
+            <ul>
+                <li><a href="https://trustwallet.com/" target="_blank">Trust Wallet</a></li>
+                <li><a href="https://www.bnbchain.org/en/binance-wallet" target="_blank">BNB Chain Wallet</a></li>
+                <li><a href="https://dappbay.bnbchain.org/" target="_blank">DappBay</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Build</div>
+            <ul>
+                <li><a href="https://github.com/bnb-chain/whitepaper" target="_blank">Whitepaper</a></li>
+                <li><a href="https://forum.bnbchain.org/" target="_blank">Build N' Build Forum</a></li>
+                <li><a href="https://www.bnbchain.org/en/bnb-chain-bridges" target="_blank">Bridges</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>Participate</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/events" target="_blank">Events</a></li>
+                <li><a href="https://www.bnbchain.org/en/bsc-mvb-program" target="_blank">MVB Program</a></li>
+                <li><a href="https://www.bnbchain.org/en/hackathon" target="_blank">Hackathon</a></li>
+                <li><a href="https://www.bnbchain.org/en/developers/developer-programs" target="_blank">Developer
+                    Programs</a></li>
+                <li><a href="https://www.bnbchain.org/en/martians-program" target="_blank">Martians Program</a></li>
+                <li><a href="https://bugbounty.bnbchain.org" target="_blank">Bug Bounty</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>About</div>
+            <ul>
+                <li><a href="https://www.bnbchain.org/en/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><a href="https://www.bnbchain.org/en/terms" target="_blank">Terms of Use</a></li>
+                <li><a href="https://jobs.bnbchain.org/companies/bnb-chain#content" target="_blank">Careers</a></li>
+                <li><a href="https://www.bnbchain.org/en/official-verification" target="_blank">Verification</a></li>
+                <li><a href="https://www.bnbchain.org/en/contact" target="_blank">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="doc-copyright">
+    <div class="doc-copyright__inner md-grid">
+        © 2024 Bnbchain.org. All rights reserved.
+    </div>
+</div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../assets/js/mathjax.js"></script>
+      
+        <script src="../../../assets/js/custom.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.10/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
