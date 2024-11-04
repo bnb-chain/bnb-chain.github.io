@@ -51,11 +51,11 @@ Here is the download link:
 - Google Chorme mac：<https://www.chromedownloads.net/chrome64osx/>
 
 2. **Visit the Trust Wallet Official Website**
-	1)Go to the[ ](https://trustwallet.com/)[Trust Wallet](https://trustwallet.com/) website.
+	1)Go to the [Trust Wallet](https://trustwallet.com/) website.
 
 	2)Click on the “Download” button and choose the extension compatible with Chrome.
 
-![](./Company Tokenization Tutorial 11/Company Tokenization Tutorial 11.001.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.001.png)
 
 3. **Add the Extension**:
 
@@ -68,7 +68,7 @@ Once the extension is installed, you need to create a new Trust Wallet account:
 1. **Open the Extension**: Click on the Trust Wallet icon in your browser’s toolbar to open the extension.
 1. **Start Setup**: Click the ‘Get Started’ button to begin, and click on “Create a New Wallet” to set up your wallet.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.002.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.002.png)
 
 3. **Set Password**: Pick a password and confirm it to create your account.
 
@@ -76,15 +76,15 @@ Once the extension is installed, you need to create a new Trust Wallet account:
 
 Backing up your wallet is vital to protect your assets. Click the action bar on the trust wallet interface.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.003.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.003.png)
 
 1. **Show Seed Phrase**: Trust Wallet will generate a seed phrase (12 or 24 words) for you. This phrase is crucial for wallet recovery, so click the “Show” button, write it down, and store it securely offline. Do not share this phrase with anyone.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.004.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.004.png)
 
 2. **Confirm Seed Phrase**: To ensure you have recorded the seed phrase correctly, Trust Wallet will ask you to confirm it by selecting the words in the correct order.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.005.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.005.png)
 
 Once your wallet is set up, you can start using token-issuing tools to create tokens.
 
@@ -106,7 +106,7 @@ Here is the download link:
 
 Visit the Chrome Web store <https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn>  
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.006.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.006.png)
 
 Click the “Add to Chrome” button and confirm the installation.
 
@@ -117,25 +117,25 @@ Once the extension is installed, you need to create a new MetaMask account:
 1. **Open the Extension**: Click on the MetaMask Wallet icon in your browser’s toolbar to open the extension.
 1. **Start Setup**: Agree on the terms of use, and click on “Create a New Wallet” to set up your wallet.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.007.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.007.png)
 
 3. **Set Password**: Pick a password and confirm it to create your account.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.008.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.008.png)
 
 #### Step 3: Backup your Wallet Account
 
 Backing up your wallet is vital to protect your assets. Click on “Secure my wallet” to get your recovery phrase.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.009.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.009.png)
 
 1. **Show Seed Phrase**: MetaMask Wallet will generate a seed phrase (12 or 24 words) for you. This phrase is crucial for wallet recovery, so click the “Reveal Secret Recovery Phase” button, write it down, and store it securely offline. Do not share this phrase with anyone.
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 11.010.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.010.png)
 
 2. **Confirm Seed Phrase**: To ensure you have recorded the seed phrase correctly, MetaMask Wallet will ask you to confirm it by selecting the words in the correct order.
 
-![](Company Tokenization Tutorial 11.011.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 11.011.png)
 
 Once your wallet is set up, you can start using token-issuing tools to create tokens.
 
@@ -164,7 +164,7 @@ PinkSale allows you to create a token and manage your token all in one platform,
 
    Enter <https://www.pinksale.finance/token/create> , choose “MetaMask” or “Trust Wallet”, use the wallet you just created in chapter 1.1 setup wallet
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.001.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.001.png)
 
 #### Step 2: Create Token
 
@@ -172,7 +172,7 @@ PinkSale allows you to create a token and manage your token all in one platform,
 
    Click Create token on the left navigation bar, you should be able to see the landing page as follow
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.002.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.002.png)
 
 2. **Enter Token information** 
 
@@ -196,13 +196,13 @@ For example, for a bond offering with a nominal amount of USD 10 million and a d
 
 Click the create token button then your wallet will be invoked. Confirm with your wallet, please notice you need to pay service fee using BNB, you should follow chapter 1.2 buy crypto to charge your wallet account  in advance. 
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.003.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.003.png)
 
 #### Step 3: Check Your Token
 
 You can see your token address and other basic information as follow 
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.004.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.004.png)
 
 ### 2.1.2 TokenFi
 
@@ -210,7 +210,7 @@ You can see your token address and other basic information as follow
 
 Enter <https://tl.tokenfi.com/create-token> , choose “MetaMask” or “Trust Wallet”
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.005.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.005.png)
 
 #### Step 2: Create Token
 
@@ -218,13 +218,13 @@ Enter <https://tl.tokenfi.com/create-token> , choose “MetaMask” or “Trust 
 
 Click the ERC-20 token, you should be able to see the landing page as follow: 
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.006.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.006.png)
 
 **2. Enter Token information** 
 
 Enter token information recording to your demand 
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.007.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.007.png)
 
 Here is how to set each parameter: 
 
@@ -261,7 +261,7 @@ Click the create token button then your wallet will be invoked. Confirm with you
 
 You can see your token address and other basic information as follow 
 
-![](./company-tokenization-tutorial1/Company Tokenization Tutorial 21.008.png)
+![](./company-tokenization-tutorial/Company Tokenization Tutorial 21.008.png)
 
 ## #2.2 Presale
 
