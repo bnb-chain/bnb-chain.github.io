@@ -8,21 +8,26 @@ BNB Chain's multi-chain framework, including BSC, opBNB, and Greenfield, offers 
 
 It generally takes 4 steps to tokenize your real world asset: 
 
-1. Asset Preparation
+1) Asset Preparation
+
    1. Legal structuring
-   1. Asset custody 
-1. Account Preparation
+   2. Asset custody 
+   
+2) Account Preparation
+
    1. Setup Wallet
-   1. Buy Crypto
-1. Issue Token
-1. Launch Token
+   2. Buy Crypto
+   
+3) Issue Token
+
+4) Launch Token
 
 
 There are plenty of tools and service providers in the BNB Chain ecosystem that can help you with the tokenization journey, we carefully select some of the best in our tutorial to guide you through the Web3 way. You can create your token in a few minutes with no coding or any blockchain knowledge. 
-#
-# #1 Asset Preparation
-## #1.1 Legal Structuring
-####
+
+# 1 Asset Preparation
+## 1.1 Legal Structuring
+
 The asset tokenization journey begins with identifying an asset with strong tokenization potential, such as real estate, fine arts, commodities, and precious metals. Ensure that the asset is eligible for tokenization and complies with relevant regulations.
 
 The value of the asset is then carefully assessed and documented, following standard financial practices.
@@ -38,14 +43,14 @@ The two common tokenization structures include Tokenized Special Purpose Vehicle
 
 Each tokenization structure often comes with different licensing requirements. 
 
-![](rwa-tokenization-tutorial%201.001.jpeg)Suggested Service Provider: [InvestaX](https://www.investax.io/)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.001.jpeg)Suggested Service Provider: [InvestaX](https://www.investax.io/)
 
 ## 1.2 Asset Custody 
 Before digitalization, the underlying asset (RWA) will be custodized to ensure the asset is immobilized and safe kept before its digital representation is created on the blockchain. Most times if it's a tangible movable RWA like whiskey barrels the RWA is securely stored and managed by qualified custodians, trustees, or licensed managers. 
 
 On the other hand, the digital representation i.e. RWA tokens can be either held in i) Self Custodized or ii) 3rd Party licensed custodian. 
 
-![](rwa-tokenization-tutorial%201.001.jpeg)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.001.jpeg)
 
 **Self-custody** 
 
@@ -87,32 +92,34 @@ Here is the download link:
 
 Visit the Chrome Web store <https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn>  
 
-![](rwa-tokenization-tutorial%201.002.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.002.png)
 
 Click the “Add to Chrome” button and confirm the installation.
 #### Step 2: Create a New Wallet Account
 Once the extension is installed, you need to create a new MetaMask account:
 
-1. **Open the Extension**: Click on the MetaMask Wallet icon in your browser’s toolbar to open the extension.
-1. **Start Setup**: Agree on the terms of use, and click on “Create a New Wallet” to set up your wallet.
+1) **Open the Extension**: Click on the MetaMask Wallet icon in your browser’s toolbar to open the extension.
 
-![](rwa-tokenization-tutorial%201.003.png)
+2) **Start Setup**: Agree on the terms of use, and click on “Create a New Wallet” to set up your wallet.
 
-3. **Set Password**: Pick a password and confirm it to create your account.
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.003.png)
 
-![](rwa-tokenization-tutorial%201.004.png)
+3) **Set Password**: Pick a password and confirm it to create your account.
+
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.004.png)
+
 #### Step 3: Backup your Wallet Account
-1. **Secure your wallet**Backing up your wallet is vital to protect your assets. Click on “Secure my wallet” to get your recovery phrase.
+1) **Secure your wallet**Backing up your wallet is vital to protect your assets. Click on “Secure my wallet” to get your recovery phrase.
 
-![](rwa-tokenization-tutorial%201.005.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.005.png)
 
-2. **Show Seed Phrase**: MetaMask Wallet will generate a seed phrase (12 or 24 words) for you. This phrase is crucial for wallet recovery, so click the “Reveal Secret Recovery Phase” button, write it down, and store it securely offline. Do not share this phrase with anyone.
+2) **Show Seed Phrase**: MetaMask Wallet will generate a seed phrase (12 or 24 words) for you. This phrase is crucial for wallet recovery, so click the “Reveal Secret Recovery Phase” button, write it down, and store it securely offline. Do not share this phrase with anyone.
 
-![](rwa-tokenization-tutorial%201.006.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.006.png)
 
-3. **Confirm Seed Phrase**: To ensure you have recorded the seed phrase correctly, MetaMask Wallet will ask you to confirm it by selecting the words in the correct order.
+3) **Confirm Seed Phrase**: To ensure you have recorded the seed phrase correctly, MetaMask Wallet will ask you to confirm it by selecting the words in the correct order.
 
-![](rwa-tokenization-tutorial%201.007.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.007.png)
 
 Once your wallet is set up, you can start using token-issuing tools to create tokens.
 
@@ -121,98 +128,105 @@ Once your wallet is set up, you can start using token-issuing tools to create to
 ## 2.2 Buy Crypto
 
 Tokenization requires service fees, which need to be paid by crypto.You can discover numerous service providers within your wallet. We will instruct you on how to commence purchasing crypto from your Wallet.
+
 #### Step 1: Login to your wallet and Add BNB network
 The MetaMask Wallet did not set BNB Chain Network as default, so to start, you need to add BNB network.
 
-1. **Login to your  Metamask Wallet**
+1) **Login to your  Metamask Wallet**
 
 Click the MetaMask Icon in your chrome, and usually, it will open directly.
 
-![](rwa-tokenization-tutorial%201.008.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.008.png)
 
 If you did not login for a while, MetaMask might ask you to enter your password to login 
 
-![](rwa-tokenization-tutorial%201.009.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.009.png)
 
 Once Login, you need to add BNB Chain Network to your wallet
 
-2. **Click Add Network** 
+2) **Click Add Network** 
 
 Usually you will see you are under Etherum network, click on the Etherum icon and it will guide you to a select network page, if you did not see BNB Chain underneath, click Add network button. 
 
-![](rwa-tokenization-tutorial%201.010.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.010.png)
 
-3. **Add BNB Chain network** 
+3) **Add BNB Chain network** 
 
-![](rwa-tokenization-tutorial%201.011.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.011.png)
 
-4. **Approve to add BNB Chain to your wallet**
+4) **Approve to add BNB Chain to your wallet**
 
-![](rwa-tokenization-tutorial%201.012.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.012.png)
 
-5. **Switch to BNB chain network**
+5) **Switch to BNB chain network**
 
-![](rwa-tokenization-tutorial%201.013.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.013.png)
 
 #### Step 2: Choose network and crypto
 Metamask provides different vendors for you to choose from, you can use them to buy crypto with fiat. 
 
-![](rwa-tokenization-tutorial%201.014.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.014.png)
 
-1. **Click buy button**
+1) **Click buy button**
 
-![](rwa-tokenization-tutorial%201.008.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.008.png)
 
-2. **Choose network and crypto**, choose BNB chain first, and then select BNB token 
+2) **Choose network and crypto**, choose BNB chain first, and then select BNB token 
 
-![](rwa-tokenization-tutorial%201.015.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.015.png)
 
-![](rwa-tokenization-tutorial%201.016.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.016.png)
+
 #### Step 3: Choose country and fiat 
 
-![](rwa-tokenization-tutorial%201.017.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.017.png)
 
-![](rwa-tokenization-tutorial%201.018.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.018.png)
 
 #### Step 4: Choose vender
-1. Select your payment method
+1) Select your payment method
    - We suggest using “Debit or Credit” which has a relatively lower service fee. 
 
-![](rwa-tokenization-tutorial%201.019.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.019.png)
 
-2. Select your vendor. 
+2) Select your vendor. 
 
 - Here we can see MetaMask provides several different vendors, we suggest using MoonPay to continue 
 
-![](rwa-tokenization-tutorial%201.020.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.020.png)
+
 #### Step 5: Enter Credit Card Information
-1. **Select Payment Method**:
+1) **Select Payment Method**:
    
    Choose “Credit Card” as your payment method.
-1. **Enter Credit Card Details**:
+
+2) **Enter Credit Card Details**:
    
    Fill in your credit card details, including the credit card number, expiration date, CVV code, and billing address. Ensure all information is accurate to avoid payment issues.
 
-![Simplex - billing info.png](rwa-tokenization-tutorial%201.021.png)
+![Simplex - billing info.png](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.021.png)
 
-3. **Complete Identity Verification**:
+3) **Complete Identity Verification**:
 
 Depending on MoonPay’s requirements, you may need to complete identity verification, such as uploading identification documents or confirming your identity via SMS verification.
 
 #### Step 6: Confirm and Complete Purchase
-1. **Review Transaction Details**:
+
+1) **Review Transaction Details**:
    
    Carefully review the transaction details, including the purchase amount, wallet address, and payment method.
-1. **Confirm Transaction**:
+
+2) **Confirm Transaction**:
    
    Click the “Confirm” or “Complete Purchase” button to finalize the transaction.
-1. **Wait for Transaction Processing**:
+
+3) **Wait for Transaction Processing**:
    
    After completing the transaction, you will receive a confirmation email or notification. The purchased BNB will be sent to the wallet address you provided. Processing times may vary depending on network congestion.
 
-![](rwa-tokenization-tutorial%201.022.png)
+![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 1.022.png)
 
-# #3 Issue Token
+# 3 Issue Token
 
 After you have successfully completed the asset preparation and account preparation process, you can finally start creating your RWA token now. Here we recommend these two service providers as they possess a simplistic WebUI and explicit documentation, being friendly for beginners to get acquainted with.
 
@@ -221,29 +235,29 @@ Service providers you may choose:
 - BitBond (<https://www.bitbond.com/> ) 
 - Brikken (<https://www.brickken.com/>  )
 
-## #3.1 Brickken 
+## 3.1 Brickken 
 
-1. Go to the Token Suite sign up page <https://dapp.brickken.com/>  and sigh up using your email account. 
+1) Go to the Token Suite sign up page <https://dapp.brickken.com/>  and sigh up using your email account. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.001.png)
 
-2. Select the type of financial instrument that the digital asset will represent, Equity, Debt, Invoice Factoring or a Revenue Digitization. 
+2) Select the type of financial instrument that the digital asset will represent, Equity, Debt, Invoice Factoring or a Revenue Digitization. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.002.png)
 
-3. Select a Network, here we suggest you choose Binance Smart Chain(BSC). Once you have selected the BNB Chain, please click continue. 
+3) Select a Network, here we suggest you choose Binance Smart Chain(BSC). Once you have selected the BNB Chain, please click continue. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.003.png)
 
-4. Connect your wallet you have just created in Step 2: Account Preparation. 
+4) Connect your wallet you have just created in Step 2: Account Preparation. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.004.png)
 
-5. complete your KYC steps 
+5) Complete your KYC steps 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.005.png)
 
-6. Enter your digital asset information. 
+6) Enter your digital asset information. 
 
 Here are the parameters you need to input:
 
@@ -257,39 +271,39 @@ Here are the parameters you need to input:
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.006.png)
 
-7. Input your digital asset details 
+7) Input your digital asset details 
 
-1)If applicable, establish a maximum supply for your digital asset. This will ensure that no additional assets can be created in the future, so as to bring trust to your investors. 
+* If applicable, establish a maximum supply for your digital asset. This will ensure that no additional assets can be created in the future, so as to bring trust to your investors. 
 
-2)Upload your digital asset legal documents
+* Upload your digital asset legal documents
 
-3)If you have collected the wallet address of existing shareholders, you can allocate the digital assets to existing shareholders by filling in their wallet address in this step. 
+* If you have collected the wallet address of existing shareholders, you can allocate the digital assets to existing shareholders by filling in their wallet address in this step. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.007.png)
 
-8. Confirm the transaction with your wallet
+8) Confirm the transaction with your wallet
 
 Use your wallet to confirm the transaction, you will need to pay gas fee and service fee in this step. After your confirm the transaction, you can see the contract address on BNB Chain. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.008.png)
 
-9. Mange your token on dashboard 
+9) Mange your token on dashboard 
 
 You can login to Briccken dashboard to manage your token after the creation. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.009.png)
 
-## #3.2 BitBond
+## 3.2 BitBond
 
-1. Visit <https://tokentool.bitbond.com/> and connect your wallet to login
+1) Visit <https://tokentool.bitbond.com/> and connect your wallet to login
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.010.png)
 
-2. Select BNB Chain network 
+2) Select BNB Chain network 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.011.png)
 
-3. Choose Defi Token, enter basic setting information
+3) Choose Defi Token, enter basic setting information
 
 Here is how to set each parameter:
 
@@ -305,20 +319,20 @@ For example, for a bond offering with a nominal amount of USD 10 million and a d
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.012.png)
 
-4. Set advanced token setting
+4) Set advanced token setting
 
 To make it simply, here we suggest you use the default setting and do not make any changes. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.013.png)
 
-5. Confirm the transaction with your wallet
+5) Confirm the transaction with your wallet
 
 You might need the pay the gas fee and service fee for the creation. ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.014.png)
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.015.png)
 
 
-# #4 Launch Token
+# 4 Launch Token
 
 In order to distribute your token toward your investors, you need to launch your token towards open or private market. Here we will guide you how to launch your token. 
 
@@ -327,19 +341,19 @@ Service providers you may choose:
 - BitBond (<https://www.bitbond.com/> ) 
 - Brikken (<https://www.brickken.com/>  )
 
-## #4.1 Brickken 
+## 4.1 Brickken 
 
-1. Login to Brickken dashboard and click my digital asset offering on the left navigation bar 
+1) Login to Brickken dashboard and click my digital asset offering on the left navigation bar 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.001.png)
 
-2. Setup whitelist
+2) Setup whitelist
 
 Approve your preferred investor for your digital asset and whitelist your potential investors on BNB chain by 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.005.png)
 
-3. Setup token offering informations
+3) Setup token offering informations
 
 Here are the parameters you need to input:
 
@@ -359,18 +373,18 @@ Here are the parameters you need to input:
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.007.png)
 
-4. Confirm with your wallet 
+4) Confirm with your wallet 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.003.png)
 
 
-## #4.2 BitBond 
+## 4.2 BitBond 
 
-1. Login to bitbond Dashboard and click create token sale on the left navigation bar. Enter your token address. If you create your token using Bitbond, you can find it on Bitbond dashboard.
+1) Login to bitbond Dashboard and click create token sale on the left navigation bar. Enter your token address. If you create your token using Bitbond, you can find it on Bitbond dashboard.
 
-## ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.012.png)
+ ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.012.png)
 
-2. Setup token sale information
+2) Setup token sale information
 
 Here are the parameters you need to input:
 
@@ -392,11 +406,11 @@ Here are the parameters you need to input:
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.002.png)
 
-3. Confirm with your wallet
+3) Confirm with your wallet
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.011.png)
 
-4. Setup white list
+4) Setup white list
 
 After your token sale have been created, you can mange your whitelist of your investors in the dashboard
 

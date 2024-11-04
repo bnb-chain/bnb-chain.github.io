@@ -855,5 +855,4 @@ You need to guide your community members to claim airdrop so that they can get t
 2. Check claimable tokens then click on “Claim”
 
 3. MetaMask/Trust Wallet will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
-   ###
 
