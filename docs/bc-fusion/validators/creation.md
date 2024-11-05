@@ -239,3 +239,4 @@ The `Signature` is your `identity` for associating to the old validator created 
 
 Once you have filled out all the required information, click the `Submit` button to submit the transaction.
 
+Note: Upon completing these steps, your node is not guaranteed to become an active validator. Selection is based on a ranking that reflects the total BNB staked, with only the top N nodes being chosen as active validators. The number N is determined by the "maxElectedValidators" parameter within the StakeHubContract (0x0000000000000000000000000000000000002002). As of November 4th, 2024, this number stands at 8 for the testnet and 45 for the mainnet.
