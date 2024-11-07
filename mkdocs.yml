@@ -319,7 +319,7 @@ nav:
      - Wallet:
        - In-app Wallet and Account Abstraction: ./showcase/wallet/in-app-wallet.md
      - Tokenization:
-         - Compamy Tokenization Tutorial: ./showcase/tokenization/compamy-tokenization.md
+         - Company Tokenization Tutorial: ./showcase/tokenization/company-tokenization.md
          - RWA Tokenization Tutorial: ./showcase/tokenization/rwa-tokenization.md
      
 
