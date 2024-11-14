@@ -27,12 +27,12 @@ Running an archive node will take a high cost as it includes all the block and s
 
 ### Run with an Erigon client
 
-[Erigon](https://github.com/node-real/bsc-erigon) now supports the BSC mainnet. The latest version allows you to sync an archive node from scratch in just 3 days, using 4.3 TB of disk space. You can use Erigon to operate an archive node; for more information, please refer to the [Erigon Node](./erigon_node.md).
+[Erigon](https://github.com/node-real/bsc-erigon) now supports the BSC mainnet. The latest version allows you to sync an archive node from scratch in just 3 days, using 4.3 TB of disk space. You can use Erigon to operate an archive node as shown below.
 
 
 ### Run with a Reth client
 
-[Reth](https://github.com/bnb-chain/reth) now supports the BSC network and demonstrates superior performance compared to Geth and Erigon in recent benchmark tests. You can utilize reth to operate an archive node; for more information, refer to [Reth Node](./reth_node.md).
+[Reth](https://github.com/bnb-chain/reth) now supports the BSC network and demonstrates superior performance compared to Geth and Erigon in recent benchmark tests. You can utilize reth to operate an archive node (as well as full node); for more information, refer to [Full Node](./full_node.md).
 
 
 
