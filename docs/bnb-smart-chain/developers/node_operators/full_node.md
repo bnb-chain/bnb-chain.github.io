@@ -1,20 +1,16 @@
 ---
 title: Full Node - BSC Develop
 ---
+# 1.Background
 
-# How to Run A Fullnode on BNB Smart Chain
 
-## Fullnodes Functions
+# 2.Run BSC Full Node By: Geth
 
-* Stores the full blockchain history on disk and can answer the data request from the network.
-* Receives and validates the new blocks and transactions.
-* Verifies the states of every account.
-
-## Supported Platforms
+## 2.1.Supported Platforms
 
 We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
-## Steps to Run a Fullnode
+## 2.2.Steps to Run a Fullnode
 
 ### Sync From Snapshot (Recommended)
 
@@ -49,41 +45,21 @@ We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 3. Download snapshot
     Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
 
-    !!! tip
-        Your --datadir flag should point to the folder where the extracted snapshot data is. 
-        In our case, we created a new folder named `node`, and we moved the extracted snapshot data to this folder.
-        ```
-        mv server/data-seed/geth/chaindata node/geth/chaindata
-        mv server/data-seed/geth/chaindata node/geth/triecache
-        ```
-
 4. Start a full node
     ```
-    ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+    ./geth --config ./config.toml --datadir <datadir>  --cache 8000
     ```
 
-    !!! note
-        Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
-        For all geth nodes, DO NOT use `-pipecommit` flag
-
     !!! tip
-        It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
+        If you want high performance and care little about state consistency, you can run a fast node, which is a full node with the flag `--tries-verify-mode none` set.
         Check [here](fast_node.md) for full details on running a fast node.  
-        It will run with Hash-Base Storage Scheme by default
         ```
-        ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --tries-verify-mode none
+        ./geth --config ./config.toml --datadir <datadir>  --cache 8000 --tries-verify-mode none
         ```
-
-        It will run with Path-Base Storage Scheme.  
-        It will enable inline state prune, keeping the latest 90000 blocks' history state by default.
-        ```
-        ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --tries-verify-mode none --state.scheme path
-        ```
-
 
 5. Monitor node status
 
-    You can monitor the log from **./node/bsc.log** by default. When your node has started syncing, you should be able to see the following output:
+    You can monitor the log from **./<datadir>/bsc.log** by default. When your node has started syncing, you should be able to see the following output:
     
     ```
     t=2022-09-08T13:00:27+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=177   mgas=17.317   elapsed=31.131ms    mgasps=556.259  number=21,153,429 hash=0x42e6b54ba7106387f0650defc62c9ace3160b427702dab7bd1c5abb83a32d8db dirty="0.00 B"
@@ -93,20 +69,16 @@ We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
 ### Sync From Genesis Block (Not Recommended)
 
-!!! caution
-    It is recommended to use HBSS with level DB for archive node, PBSS for archive node is not supported yet.
-
-
 !!! note
     To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.
 
 
 ```bash
 ## start a full node
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+./geth --config ./config.toml --datadir <datadir>  --cache 8000
 ```
 
-## Sync Mode
+## 2.3.Sync Mode
 
 There are two sync modes for running a full node: **snap** and **full** which can be specified by flag **--syncmode**.
 
@@ -125,22 +97,16 @@ This data seed, offered by Greenfield, allows for a more efficient synchronizati
 Configure your BSC node to connect with the Greenfield Light Peer by modifying your configuration file settings.
 For comprehensive instructions, see [Light Peer](../../../bnb-greenfield/for-developers/data-archive/light-peer.md).
 
-## Local Private Network
+## 2.4.Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
 
-## Node Maintenance
+## 2.5.Node Maintenance
 Please read [this guide](node_maintenance.md)
 
-## Upgrade Geth
+## 2.6.Upgrade Geth
 Please read [this guide](upgrade_geth.md)
 
-
-
----
-title: Reth Node - BSC Develop
----
-
-# Reth Node for BSC
+# 3.Run BSC Full Node By: Reth
 
 BSC Reth is a cutting-edge Rust client developed in collaboration with Paradigm, designed to provide seamless support for BNB Smart Chain (BSC). It aims to enhance client diversity on the BNB Chain by offering a secure and efficient execution client.
 

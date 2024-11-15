@@ -84,7 +84,3 @@ EnableMsgEvents = false
 ## start a fast node
 ./geth --tries-verify-mode full --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
-
-
-### Additional Fast Node Option (Erigon)
-Refer to the Erigon documentation for running a fast node using Erigon.
