@@ -123,15 +123,16 @@ nav:
         - Faucet: ./bnb-smart-chain/developers/faucet.md
         - Node Operators:
             - Node Best Practices: ./bnb-smart-chain/developers/node_operators/node_best_practices.md
-            - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
-            - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
-            - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
-            - Erigon Node: ./bnb-smart-chain/developers/node_operators/erigon_node.md
-            - Reth Node: ./bnb-smart-chain/developers/node_operators/reth_node.md
-            - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
-            - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
-            - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
-            - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
+            - Node Types:
+              - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
+              - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
+              - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
+            - Insfrastructure & Setup:  
+              - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
+              - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
+            - Maintenance & Upgrades:  
+              - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
+              - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
         - EOA Paymaster:
             - Overview: ./bnb-smart-chain/developers/paymaster/overview.md
             - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
