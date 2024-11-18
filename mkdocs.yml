@@ -320,8 +320,11 @@ nav:
      - Wallet:
        - In-app Wallet and Account Abstraction: ./showcase/wallet/in-app-wallet.md
      - Tokenization:
+         - Introduction: ./showcase/tokenization/introduction.md
+         - Account Preparation: ./showcase/tokenization/account-preparation.md
          - Company Tokenization Tutorial: ./showcase/tokenization/company-tokenization.md
          - RWA Tokenization Tutorial: ./showcase/tokenization/rwa-tokenization.md
+         - NFT Loyalty Program Tutorial: ./showcase/tokenization/nft-loyalty-programs.md
      
 
 markdown_extensions:
