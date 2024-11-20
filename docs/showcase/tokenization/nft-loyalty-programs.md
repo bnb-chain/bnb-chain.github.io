@@ -35,6 +35,7 @@ We suggest these two service providers since they provide one-stop service with 
 - NFTs2Me (<https://nfts2me.com/>  )
 - Bitbond (<https://tokentool.Bitbond.com/> )
 
+
 ### 2.1 NFTs2Me
 
 
@@ -86,7 +87,9 @@ Once the process is complete, a modal window will display all the information ab
 ![](./nft-loyalty-programs-tutorial/nfts2me10.jpg)
 
 
+
 ### 2.2 Bitbond
+
 
 1) **Connect your Wallet** 
 
@@ -209,6 +212,7 @@ You can see the white list if success
 ![](./nft-loyalty-programs-tutorial/Whitelist Addresses 5.png)
 
 4) **Mint NFT for free**
+
 
 Copy the minting page link here and send it to your NFT buyers so they can mint it in their wallet
 
