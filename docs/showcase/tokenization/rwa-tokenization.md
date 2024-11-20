@@ -83,7 +83,7 @@ After you have successfully completed the asset preparation and account preparat
 
 Service providers you may choose:
 
-- BitBond (<https://www.bitbond.com/> ) 
+- Bitbond (<https://www.Bitbond.com/> ) 
 - Brikken (<https://www.brickken.com/>  )
 
 ### 3.1 Brickken 
@@ -144,9 +144,9 @@ You can login to Briccken dashboard to manage your token after the creation.
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.009.png)
 
-### 3.2 BitBond
+### 3.2 Bitbond
 
-1) Visit <https://tokentool.bitbond.com/> and connect your wallet to login
+1) Visit <https://tokentool.Bitbond.com/> and connect your wallet to login
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.010.png)
 
@@ -188,7 +188,7 @@ In order to distribute your token toward your investors, you need to launch your
 
 Service providers you may choose:
 
-- BitBond (<https://www.bitbond.com/> ) 
+- Bitbond (<https://www.Bitbond.com/> ) 
 - Brikken (<https://www.brickken.com/>  )
 
 ### 4.1 Brickken 
@@ -228,9 +228,9 @@ Here are the parameters you need to input:
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.003.png)
 
 
-### 4.2 BitBond 
+### 4.2 Bitbond 
 
-1) Login to bitbond Dashboard and click create token sale on the left navigation bar. Enter your token address. If you create your token using Bitbond, you can find it on Bitbond dashboard.
+1) Login to Bitbond Dashboard and click create token sale on the left navigation bar. Enter your token address. If you create your token using Bitbond, you can find it on Bitbond dashboard.
 
  ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 3.012.png)
 
