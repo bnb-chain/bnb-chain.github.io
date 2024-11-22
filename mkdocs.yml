@@ -62,7 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Final Sunset Hardfork(BC Mainnet): ./announce/final-sunset-bc-mainnet.md
+      - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
 
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
@@ -78,6 +78,7 @@ nav:
       - Final Sunset Hardfork(BC testnet): ./announce/final-sunset-bc-testnet.md
       - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
       - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
+      - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
   - BNB Chain Fusion:
     - BNB Chain Fusion: ./bc-fusion/index.md
     - Overview: ./bc-fusion/overview.md
