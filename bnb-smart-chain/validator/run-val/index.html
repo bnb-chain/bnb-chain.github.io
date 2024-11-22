@@ -2472,19 +2472,17 @@
 <h2 id="validator-hardware-requirements">Validator Hardware Requirements<a class="headerlink" href="#validator-hardware-requirements" title="Link to this section">¶</a></h2>
 <h3 id="mainnet">Mainnet<a class="headerlink" href="#mainnet" title="Link to this section">¶</a></h3>
 <ul>
-<li>VPS running recent versions of Mac OS X or Linux.</li>
-<li><strong>IMPORTANT</strong> 3T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency &lt;1ms (if start with snap sync, it will need NVMe SSD).</li>
-<li>16 cores of CPU and 64 gigabytes of memory (RAM).</li>
-<li>Suggest m5zn.3xlarge or r7iz.4xlarge instance type on AWS, or c2-standard-16 on Google cloud.</li>
-<li>A broadband Internet connection with upload/download speeds of 5 megabyte per second</li>
+<li>Instance Spec: Suggest r7a.4xlarge instance type on AWS, or c2-standard-16 on Google cloud.</li>
+<li>Memory: 64 GB</li>
+<li>Disk: <strong>IMPORTANT</strong> 4T GB, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency &lt;1ms (if start with snap sync, it will need NVMe SSD).</li>
+<li>Network Bandwidth: &gt; 10 Gbps</li>
 </ul>
 <h3 id="testnet">Testnet<a class="headerlink" href="#testnet" title="Link to this section">¶</a></h3>
 <ul>
-<li>CPU: 4core, Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz</li>
+<li>CPU: “AMD Gen 3 or newer” or “Intel Ice Lake or newer”</li>
 <li>Memory: 16 GB</li>
-<li>Disk: ~1.5 TB</li>
-<li>Network Bandwidth: Upto 25 Gbps</li>
-<li>EBS Bandwidth: Upto 9.5 Gbps</li>
+<li>Disk: 1.5 TB, solid-state drive(SSD), gp3, 8k IOPS, 250 MB/S throughput.</li>
+<li>Network Bandwidth: &gt; 2.5 Gbps</li>
 </ul>
 <h2 id="setup-validator-node">Setup Validator Node<a class="headerlink" href="#setup-validator-node" title="Link to this section">¶</a></h2>
 <h3 id="1-install-bsc-fullnode">1. Install BSC Fullnode<a class="headerlink" href="#1-install-bsc-fullnode" title="Link to this section">¶</a></h3>
