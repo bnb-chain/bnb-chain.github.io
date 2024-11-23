@@ -2,7 +2,7 @@
 
 This is the BNB Chain Knowledge Base documentation for the BNB Chain developers. It is based on the Mkdocs Material theme. 
  
-## Prerequisite  
+## Prerequisite 
 
 * `pip install mkdocs-material` - install mkdocs-material.
 * `pip install mkdocs-video` - install mkdocs-video.
