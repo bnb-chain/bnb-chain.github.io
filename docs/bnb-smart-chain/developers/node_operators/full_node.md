@@ -2,21 +2,46 @@
 title: Full Node - BSC Develop
 ---
 
-# How to Run A Fullnode on BNB Smart Chain
 
-## Fullnodes Functions
+## 1.About
 
-* Stores the full blockchain history on disk and can answer the data request from the network.
-* Receives and validates the new blocks and transactions.
-* Verifies the states of every account.
+Full node stores the full world state on disk and is capable of:
 
-## Supported Platforms
+* handle new transactions and produce new blocks, can be used as a validator node.
+* execute and validate newly received blocks.
+* verify the states of every account, as it has the full world state.
+
+Currently, there are 3 different clients to run a BSC full:
+
+* Geth: https://github.com/bnb-chain/bsc
+* Reth: https://github.com/bnb-chain/reth
+* Erigon: https://github.com/node-real/bsc-erigon
+
+Only Geth and Reth will be covered in this page, as Erigon is mainly to support archive mode, pls refer [archive_node.md](./archive_node.md) for its usage.
+
+!!! tip
+    If you want high performance and care little about state consistency, you can run a fast node, which is a full node with the flag `--tries-verify-mode none` set.
+    Check [here](fast_node.md) for full details on running a fast node.
+    ```
+    ./geth --config ./config.toml --datadir <datadir>  --cache 8000 --tries-verify-mode none
+    ```
+## 2.Run BSC Full Node: Geth
+
+### 2.1.Supported Platforms
 
 We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 
-## Steps to Run a Fullnode
+### 2.2.Steps
+There are 2 approaches to setup a BSC full node from scratch:
 
-### Sync From Snapshot (Recommended)
+- By Snapshot(Recommend): download the latest snapshot and sync based on it.
+
+- From Genesis(Not Recommend): sync the whole BSC chain from genesis block.
+
+!!! tip
+    As of Nov-2024, the latest block height of BSC mainnet is over 40M, it would need a more powerful hardware and take a great of time to sync from genesis, so it is suggested to setup a BSC full node based the snapshot.
+
+#### a.By Snapshot
 
 1. Download the pre-build binaries from the [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below
 
@@ -49,41 +74,15 @@ We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
 3. Download snapshot
     Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
 
-    !!! tip
-        Your --datadir flag should point to the folder where the extracted snapshot data is. 
-        In our case, we created a new folder named `node`, and we moved the extracted snapshot data to this folder.
-        ```
-        mv server/data-seed/geth/chaindata node/geth/chaindata
-        mv server/data-seed/geth/chaindata node/geth/triecache
-        ```
-
 4. Start a full node
     ```
-    ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+    ## pls replace <datadir> with your local path to datadir.
+    ./geth --config ./config.toml --datadir <datadir>  --cache 8000
     ```
-
-    !!! note
-        Make sure you use the version of geth you downloaded with wget above, and not your local installation of geth, which might be the wrong version.
-        For all geth nodes, DO NOT use `-pipecommit` flag
-
-    !!! tip
-        It is recommended to run a fast node, which is a full node with the flag `--tries-verify-mode none` set if you want high performance and care little about state consistency.
-        Check [here](fast_node.md) for full details on running a fast node.  
-        It will run with Hash-Base Storage Scheme by default
-        ```
-        ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --tries-verify-mode none
-        ```
-
-        It will run with Path-Base Storage Scheme.  
-        It will enable inline state prune, keeping the latest 90000 blocks' history state by default.
-        ```
-        ./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --tries-verify-mode none --state.scheme path
-        ```
-
 
 5. Monitor node status
 
-    You can monitor the log from **./node/bsc.log** by default. When your node has started syncing, you should be able to see the following output:
+    You can monitor the log from **./<datadir\>/bsc.log** by default. When your node has started syncing, you should be able to see the following output:
     
     ```
     t=2022-09-08T13:00:27+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=177   mgas=17.317   elapsed=31.131ms    mgasps=556.259  number=21,153,429 hash=0x42e6b54ba7106387f0650defc62c9ace3160b427702dab7bd1c5abb83a32d8db dirty="0.00 B"
@@ -91,22 +90,14 @@ We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
     t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=197   mgas=19.364   elapsed=34.663ms    mgasps=558.632  number=21,153,431 hash=0x0c7872b698f28cb5c36a8a3e1e315b1d31bda6109b15467a9735a12380e2ad14 dirty="0.00 B"
     ```
 
-### Sync From Genesis Block (Not Recommended)
-
-!!! caution
-    It is recommended to use HBSS with level DB for archive node, PBSS for archive node is not supported yet.
-
-
-!!! note
-    To sync from genesis block, you would need a more powerful hardware. Server should at least have 40k IOPS and be at least an i3/i3en series server.
-
-
+#### b.From Genesis
 ```bash
-## start a full node
-./geth --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+## start a full node from genesis with by one command
+## pls replace <datadir> with your local path to datadir.
+./geth --config ./config.toml --datadir <datadir>  --cache 8000
 ```
 
-## Sync Mode
+### 2.3.Sync Mode
 
 There are two sync modes for running a full node: **snap** and **full** which can be specified by flag **--syncmode**.
 
@@ -116,21 +107,92 @@ The **full** sync mode can also be used to do initial sync, which will execute a
 
 If the flag **--syncmode** is not provided, the default sync mode will depend on the state of the data folder. It will be **snap** mode if you sync from genesis or **full** mode if you start from a snapshot.
 
-### Full Sync with Greenfield Peer (Optional)
+### 2.4.Others
+#### a.Greenfield Peers
 
-Opting for **full** sync mode means your node will only need block headers and bodies from other network peers. To expedite this process,
-consider utilizing the `Greenfield Peer`.
+Opting for **full** sync mode means your node will only need block headers and bodies from other network peers. To expedite this process, consider utilizing the `Greenfield Peer`.
 
 This data seed, offered by Greenfield, allows for a more efficient synchronization.
 Configure your BSC node to connect with the Greenfield Light Peer by modifying your configuration file settings.
 For comprehensive instructions, see [Light Peer](../../../bnb-greenfield/for-developers/data-archive/light-peer.md).
 
-## Local Private Network
+
+#### b.Local Private Network
 Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
 
-## Node Maintenance
+#### c.Node Maintenance
 Please read [this guide](node_maintenance.md)
 
-## Upgrade Geth
+#### d.Upgrade Geth
 Please read [this guide](upgrade_geth.md)
 
+## 3.Run BSC Full Node: Reth
+
+BSC Reth is a cutting-edge Rust client developed in collaboration with Paradigm, designed to provide seamless support for BNB Smart Chain (BSC). It aims to enhance client diversity on the BNB Chain by offering a secure and efficient execution client.
+
+### 3.1.Hardware Specifications
+
+To run BSC Reth effectively, ensure your system meets the following hardware requirements:
+
+* CPU with 16+ cores
+* 128GB RAM
+* High-performance NVMe SSD with at least 4TB of free space for a full node and 8TB for an archive node
+* Broadband internet connection with upload/download speeds of 25 MB/s
+
+### 3.2.Running BSC Reth
+
+1. Download source code and build binary.
+```shell
+git clone https://github.com/bnb-chain/reth.git
+cd reth
+make build-bsc
+```
+
+2. Start the reth node, it will run in archive mode by default. You can add the `--full` flag to start a full node.
+```shell
+# for mainnet
+export network=bsc
+
+# for testnet
+# export network=bsc-testnet
+
+./target/release/bsc-reth node \
+    --datadir=./datadir \
+    --chain=${network} \
+    --http \
+    --http.api="eth, net, txpool, web3, rpc" \
+    --log.file.directory ./datadir/logs
+```
+
+3. Optionally, you can run the reth node with docker.
+```shell
+# for mainnet
+export network=bsc
+
+# for testnet
+# export network=bsc-testnet
+
+# check this for version of the docker image, https://github.com/bnb-chain/reth/pkgs/container/bsc-reth
+export version=latest
+
+# the directory where reth data will be stored
+export data_dir=/xxx/xxx
+
+docker run -d -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -v ${data_dir}:/data \
+    --name bsc-reth ghcr.io/bnb-chain/bsc-reth:${version} node \
+    --datadir=/data \
+    --chain=${network} \
+    --http \
+    --http.api="eth, net, txpool, web3, rpc" \
+    --log.file.directory /data/logs
+```
+
+### 3.3.Snapshot
+
+To synchronize a BSC reth node from scratch to the current block height can be a time-consuming process.
+As We benchmark [Reth(v1.0.0)](https://github.com/bnb-chain/reth/releases/tag/v1.0.0) on AWS [lm4gn.8xlarge](https://instances.vantage.sh/aws/ec2/im4gn.8xlarge)(32 core 128G) with 2 x 7500 NVMe SSD for BSC mainnet.
+It may take approximately 30 days to sync the latest block on BSC mainnet for an archive node and 24 days for a full node.
+
+Given the extended duration required for stage synchronization of the BSC network, the BNB Chain team is developing a segmented snapshot download solution, scheduled for release in the near future.
+Currently, developers seeking to expedite the process can obtain archive node snapshots from [community-maintained repositories](https://github.com/fuzzland/snapshots).
+These snapshots offer a faster alternative to syncing from genesis, allowing for quicker node setup and network participation.

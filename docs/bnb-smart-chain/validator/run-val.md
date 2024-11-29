@@ -8,19 +8,17 @@ title: Run BSC Validator - BNB Smart Chain
 
 ### Mainnet
 
-- VPS running recent versions of Mac OS X or Linux.
-- **IMPORTANT** 3T GB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms (if start with snap sync, it will need NVMe SSD).
-- 16 cores of CPU and 64 gigabytes of memory (RAM).
-- Suggest m5zn.3xlarge or r7iz.4xlarge instance type on AWS, or c2-standard-16 on Google cloud.
-- A broadband Internet connection with upload/download speeds of 5 megabyte per second
+- Instance Spec: Suggest r7a.4xlarge instance type on AWS.
+- Memory: 64 GB
+- Disk: **IMPORTANT** 4T GB, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms (if start with snap sync, it will need NVMe SSD).
+- Network Bandwidth: > 10 Gbps
 
 ### Testnet
 
-- CPU: 4core, Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
+- CPU: "AMD Gen 3 or newer" or "Intel Ice Lake or newer"
 - Memory: 16 GB
-- Disk: ~1.5 TB
-- Network Bandwidth: Upto 25 Gbps
-- EBS Bandwidth: Upto 9.5 Gbps
+- Disk: 1.5 TB, solid-state drive(SSD), gp3, 8k IOPS, 250 MB/S throughput.
+- Network Bandwidth: > 2.5 Gbps
 
 ## Setup Validator Node
 

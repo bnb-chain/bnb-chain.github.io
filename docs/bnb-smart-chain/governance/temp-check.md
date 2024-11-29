@@ -71,3 +71,9 @@ Step 1: Go to https://snapshot.org/#/delegate/bnbchain-dao.eth
 Step 2: Find the current delegatees in Top delegates.
 
 Step 3: Click the 'x' button along a delegatee to undelegate, the wallet will ask user to sign and send transaction to bsc
+
+### Factors Affecting Temperature Governance Power:
+- BNB Holding Balance: The more BNB you hold, the greater your voting power.
+- Staked BNB: Delegating your BNB to a validator also contributes to your governance power. This ensures those actively participating in the network's security have a say. https://www.bnbchain.org/en/bnb-staking
+- ListDAO Staked BNB: Your staked listDAO BNB(slisBNB) https://docs.bsc.lista.org/user-guide/liquid-staking-slisbnb
+
