@@ -7,7 +7,6 @@ of token recovery.
 
 Be noted:
 
-* Token recovery dApp will only be available post fusion (the Beacon Chain has been shutdown).
 * Only [the crosschain bound/mirrored assets](../users/assets.md) can be recovered.
 
 URL:
@@ -25,7 +24,8 @@ When opening the token recovery dApp, you will be prompted to connect to your wa
 ![](../../assets/bcfusion/token-recovery-2.png){:style="width:800px"}
 
 [BNB Chain Wallet](https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp)
-and [Trust Wallet](https://trustwallet.com/) will be supported (Trust wallet support will come soon).
+and [Trust Wallet Extension](https://trustwallet.com/) are supported. For Trust users, you can refer to 
+[this](https://trustwallet.com/blog/trust-wallet-to-deprecate-bnb-beacon-chain-bep2-bep8-support) for more information.
 
 ### Step 2: Select the BEP2/BEP8 assets to be recovered.
 
@@ -86,4 +86,5 @@ After the transaction is sent, the token recovery dApp will populate a window to
 the token recovery request is sent successfully.
 
 Finally, you need to wait for 7 days for the BEP2/BEP8 assets to be recovered on BSC and received in your wallet.
+
 
