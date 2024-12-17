@@ -5,6 +5,8 @@ title: Overview - BC Fusion
 
 # Overview
 
+**BNB Beacon Chain has been shut down at block height 385,251,927 since December 3, 2024.**
+
 BNB Beacon Chain is a blockchain developed by the BNB Chain community that implements a vision of a decentralized
 exchange (DEX) for digital assets. Besides this, Beacon Chain and BSC is a dual-chain structure: Beacon Chain helps to
 enhance the security of BSC as a staking and governance layer. With the rise of various other forms of Dex, order-book
@@ -28,8 +30,7 @@ There will be several pahses to retrie Beacon Chain:
 - **Second Sunset Fork** - More Beacon chain transactions will be disabled, for example,MsgSideChainSubmitProposal. All
   TimeLock and AtomicSwap will automatically be refunded to the user's
   wallet. All the BSC delegation will be undelegated automatically.
-- **Final Sunset Fork** - Cross-chain communication between the Beacon Chain and BSC will be completely stopped. (
-  Estimated time on mainnet: 2024 Sep)
+- **Final Sunset Fork** - Cross-chain communication between the Beacon Chain and BSC will be completely stopped.
 - **Post BC Fusion** - Beacon Chain will be dumped and and a merkle tree will be generated for recover the assets, which
   are binded to BSC however not transffered to BSC yet.
 

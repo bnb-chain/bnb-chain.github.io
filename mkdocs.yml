@@ -79,37 +79,6 @@ nav:
       - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
       - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
       - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
-  - BNB Chain Fusion:
-    - BNB Chain Fusion: ./bc-fusion/index.md
-    - Overview: ./bc-fusion/overview.md
-    - Post Fustion:
-      - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
-      - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
-      - FAQ: ./bc-fusion/post-fusion/faq.md
-    - For Users:
-      - Manage Your Assets: ./bc-fusion/users/assets.md
-      - Manage Your Atomic Swaps: ./bc-fusion/users/swaps.md
-      - Manage Your TimeLocks: ./bc-fusion/users/timelocks.md
-      - Manage Your Old Delegations: ./bc-fusion/users/stake-migration.md
-      - BEP153 and LSD Stake Migration: ./bc-fusion/users/bep153-stake-migration.md
-      - Manage Your New Delegations: ./bc-fusion/users/new-stake.md
-      - Participate in Governance: ./bc-fusion/users/gov.md
-    - For Token Issuers:
-      - Bind Your Tokens: ./bc-fusion/owners/bind.md
-      - Cross Chain Liquidity Check and Repair: ./bc-fusion/owners/liquidity-check.md
-    - For Validators:
-      - Create New Validators: ./bc-fusion/validators/creation.md
-      - Migrate Your Validators: ./bc-fusion/validators/migrations.md
-      - Key Management: ./bc-fusion/validators/key-management.md
-    - For Developers:
-      - New Staking: ./bc-fusion/developers/staking.md
-      - New Governance: ./bc-fusion/developers/gov.md
-      - Cross Chain Redelegation: ./bc-fusion/developers/crosschain-redelegation.md
-      - Build-in System Contracts: ./bc-fusion/developers/system-contracts.md
-    - Native Staking & Governance:
-      - Staking: ./bc-fusion/validators/staking.md
-      - Slash: ./bc-fusion/validators/slash.md
-      - Governance: ./bc-fusion/validators/gov.md
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
     - Overview: ./bnb-smart-chain/overview.md
@@ -326,7 +295,13 @@ nav:
          - Company Tokenization Tutorial: ./showcase/tokenization/company-tokenization.md
          - RWA Tokenization Tutorial: ./showcase/tokenization/rwa-tokenization.md
          - NFT Loyalty Program Tutorial: ./showcase/tokenization/nft-loyalty-programs.md
-     
+  - BNB Chain Fusion:
+      - BNB Chain Fusion: ./bc-fusion/index.md
+      - Overview: ./bc-fusion/overview.md
+      - Post Fustion:
+          - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
+          - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
+          - FAQ: ./bc-fusion/post-fusion/faq.md
 
 markdown_extensions:
   - toc:
