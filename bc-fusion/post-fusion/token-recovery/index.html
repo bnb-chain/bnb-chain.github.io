@@ -1364,6 +1364,9 @@ The token recovery dApp will try to get the BSC address from your wallet automat
 <p>The account will be used in the later steps for sending a transaction to BSC. So it should have some BNB on BSC for
   the gas fee.</p>
 </li>
+<li>
+<p>If this BSC address has already been used as the receiver for a token recovery from a BC address, and it is used again for the recovery of the same token from a different BC address, the unlock time will be recalculated, starting from the most recent recovery and extending 7 days forward.</p>
+</li>
 </ul>
 <h3 id="step-4-confirm-the-receiver-address-and-signing">Step 4: Confirm the receiver address and signing.<a class="headerlink" href="#step-4-confirm-the-receiver-address-and-signing" title="Link to this section">¶</a></h3>
 <p><img alt="" src="../../../assets/bcfusion/token-recovery-6.png" style="width:800px"></p>
