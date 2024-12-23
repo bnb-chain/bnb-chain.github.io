@@ -51,6 +51,8 @@ Be noted:
 * The account will be used in the later steps for sending a transaction to BSC. So it should have some BNB on BSC for
   the gas fee.
 
+* If this BSC address has already been used as the receiver for a token recovery from a BC address, and it is used again for the recovery of the same token from a different BC address, the unlock time will be recalculated, starting from the most recent recovery and extending 7 days forward.
+
 ### Step 4: Confirm the receiver address and signing.
 
 ![](../../assets/bcfusion/token-recovery-6.png){:style="width:800px"}
