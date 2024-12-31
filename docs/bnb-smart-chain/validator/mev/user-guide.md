@@ -32,9 +32,9 @@ Several wallets now offer built-in protection against malicious MEV (Miner Extra
 | Type   | Name           | Status    | How to enable                                                |
 | ------ | -------------- | --------- | ------------------------------------------------------------ |
 | Wallet | Trust Wallet   | Supported | [TrustWallet Swap MEV Protection](https://trustwallet.com/blog/introducing-mev-protection-secure-your-swaps-with-trust-wallet) |
-| Wallet | Binance Wallet | Supported | [Binance Alpha tokens MEV Protection](https://www.binance.com/en/support/announcement/introducing-binance-alpha-discover-emerging-crypto-projects-c6499e95c15e408ca44ca5f6db975d4d) |
+| Wallet | Binance Web3 Wallet | Supported | [Binance Alpha tokens MEV Protection](https://www.binance.com/en/support/announcement/introducing-binance-alpha-discover-emerging-crypto-projects-c6499e95c15e408ca44ca5f6db975d4d) |
 | Wallet | OKX Wallet     | Supported | [OKX Wallet Enable Swap MEV Protection](https://www.okx.com/help/okx-wallet-supports-flashbot-to-prevent-mev-attack) |
-| Wallet | Bitget Wallet  | Supported | [Bitget Swap MEV Protection](https://web3.bitget.com/en/blog/articles/mev-protection-flashbots-integration) |
+| Wallet | TokenPocket Wallet  | Supported | [TokenPocket Swap MEV Protection](https://help.tokenpocket.pro/en/security-knowledge/security-measure/mev-protection-tutorial) |
 
 
 ## For Professional Traders and Service Providers
