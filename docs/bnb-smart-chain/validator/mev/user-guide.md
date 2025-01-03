@@ -16,7 +16,7 @@ PBS(Proposer-Builder Separation) framework offers several advantages for BNB Cha
 
 When you trade on a decentralized exchange (DEX), you risk being targeted by bots that can front-run your trades, meaning they see your transaction in the public mempool and execute a similar trade first, profiting from the price change you were going to cause. This can result in you getting a worse price or even losing money. Private RPCs offer a solution to this problem. They route your transactions through a private mempool(Provided by builders), hiding them from bots. This means your trades are less likely to be front-run, and you're more likely to get the price you expect.
 
-Some DEX protocols or builder providers are keen to provide free protection features. 
+Some DEX protocols or builder providers are keen to provide free protection features, and the average transaction confirmation time is around 4-5 seconds, and it may fluctuate according to the network conditions. 
 
 | Role                         | Status and Comments                                          |
 | ---------------------------- | ------------------------------------------------------------ |
