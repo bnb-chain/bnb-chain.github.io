@@ -81,6 +81,17 @@ It is particularly advised to operate a full node with PBSS and pebble to minimi
 
 For comprehensive details, consult the [PBSS document](./run-with-pebbledb-and-pbss.md).
 
+### Archive Node(with op-reth)
+
+The Archive node mode archives the entirety of history trie data.
+This mode is apt for scenarios necessitating access to the complete history trie data, such as block explorers and analytics.
+
+The current volume of history trie data approximates 3TB (as of the end of April, 2024).
+Significant performance issues may arise in the op-geth implementation when managing extensive history trie data.
+Therefore, it is recommended to operate the archive node in conjunction with op-reth.
+
+You can refer to [Reth Node for opBNB](./reth-node.md) for additional details.
+
 ## Snapshots
 
 The latest snapshot data is accessible via the [opbnb-snapshot](https://github.com/bnb-chain/opbnb-snapshot) repository.
