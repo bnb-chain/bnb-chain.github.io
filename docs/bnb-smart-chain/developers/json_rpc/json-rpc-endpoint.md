@@ -64,6 +64,9 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
 
+* **Tatum:** <https://tatum.io/chains/binance>
+
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
