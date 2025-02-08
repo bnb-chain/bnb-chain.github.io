@@ -22,7 +22,8 @@ This is the BNB Chain Knowledge Base documentation for the BNB Chain developers.
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-## 📜 License
+## 📜
+ License
 
 Copyright (c) 2024 BNB Chain 
 
