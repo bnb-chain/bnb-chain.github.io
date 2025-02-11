@@ -20,7 +20,7 @@ Some DEX protocols or builder providers are keen to provide free protection feat
 
 | Role                         | Status and Comments                                          |
 | ---------------------------- | ------------------------------------------------------------ |
-| Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li><li>[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)</li></ul> |
+| Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li><li>[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)</li><li>[BlockRazor Private RPC with Refund](https://rpc.blockrazor.io/)</li></ul> |
 
 Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users' transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.
 
