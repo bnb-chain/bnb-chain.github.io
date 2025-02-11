@@ -35,6 +35,7 @@ Several wallets now offer built-in protection against malicious MEV (Miner Extra
 | Wallet | Binance Web3 Wallet | Supported | [Binance Alpha tokens MEV Protection](https://www.binance.com/en/support/announcement/introducing-binance-alpha-discover-emerging-crypto-projects-c6499e95c15e408ca44ca5f6db975d4d) |
 | Wallet | OKX Wallet     | Supported | [OKX Wallet Enable Swap MEV Protection](https://www.okx.com/help/okx-wallet-supports-flashbot-to-prevent-mev-attack) |
 | Wallet | TokenPocket Wallet  | Supported | [TokenPocket Swap MEV Protection](https://help.tokenpocket.pro/en/security-knowledge/security-measure/mev-protection-tutorial) |
+| Wallet | Safepal Wallet  | Supported | [Safepal Swap MEV Protection](https://safepalsupport.zendesk.com/hc/en-us/articles/33892098077851-Use-SafePal-to-Protect-Your-Swaps-from-MEV-Attacks) |
 
 
 ## For Professional Traders and Service Providers
