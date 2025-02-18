@@ -269,13 +269,6 @@ nav:
       - Roadmap:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
-  - zkBNB:
-      - zkBNB: ./zkbnb/index.md
-      - Overview: ./zkbnb/overview.md
-      - Core Concepts:
-          - Overview: ./zkbnb/core-concept/overview.md
-          - Architecture: ./zkbnb/core-concept/zkbnb-arch.md
-      - Resources: ./zkbnb/resources.md
   - Showcases:
      - Name Service and Attestation:
        - Decentralized Identity: ./showcase/identity/did.md
@@ -647,54 +640,7 @@ plugins:
         'opbnb-docs/docs/tutorials/run-nodes-best-practices.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-development-environment.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-node.md': 'bnb-opbnb/overview.md'
-        'zkBNB-docs/docs/faqs/asset-management.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/contract.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/gas-and-fees.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/minting-and-royalities.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/onboarding.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/platform.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/tokenomics.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/zkbnb-faqs.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/deposit-to-zkbnb.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/developer-tools.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/hardware-reqs.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/network-faucet.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/resources.md': 'zkbnb/resources.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/software-reqs.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/zkbnb-api-example.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/contact-us.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/core-concepts/overview.md': "zkbnb/core-concept/overview.md"
-        'zkBNB-docs/docs/guide/core-concepts/protocol.md': "zkbnb/core-concept/overview.md"
-        'zkBNB-docs/docs/guide/core-concepts/zkbnb-arch.md': 'zkbnb/core-concept/zkbnb-arch.md'
-        'zkBNB-docs/docs/guide/economics/gas-and-fees.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/economics/tokenomics.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/fee-structure.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/getting-started.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/overview.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/tech-zkBNB.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/usage-zkBNB.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/storage/storage-layout.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/troubleshooting/common-errors.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/tutorials/fund-zkbnb-wallet.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/tutorials/nft-minting.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/create-collections.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/create-nfts.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/deposit-bnb.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/overview.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-wallet/get-test-tokens.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-wallet/overview.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-wallet/wallet-configuration.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/tutorials/index.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/tutorials/reactjs-integration-example/index.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-go-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-go-sdk/quickstart.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-js-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-js-sdk/quickstart.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-sdks.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-ts-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-ts-sdk/quickstart.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-web-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-web-sdk/quickstart.md': 'zkbnb/overview.md'
+
 
 extra_css:
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
