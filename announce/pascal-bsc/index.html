@@ -12,28 +12,28 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/validator/create-val/">
+        <link rel="canonical" href="https://docs.bnbchain.org/announce/pascal-bsc/">
       
       
-        <link rel="prev" href="../run-val/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../security/">
+        <link rel="next" href="../fjord-opbnb/">
       
       
-      <link rel="icon" href="../../../assets/bnb.svg">
+      <link rel="icon" href="../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
     
-        <title>Create BSC Validator - BNB Smart Chain</title>
+        <title>Pascal Upgrade of BSC</title>
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,23 +54,23 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-bsc-validator" class="md-skip">
+        <a href="#pascal-upgrade-of-bsc" class="md-skip">
           Skip to content
         </a>
       
@@ -147,7 +147,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -283,7 +283,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -298,11 +298,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../announce/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -318,13 +320,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../bnb-smart-chain/" class="md-tabs__link">
           
   
     
@@ -344,7 +344,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../bnb-opbnb/" class="md-tabs__link">
           
   
     
@@ -364,7 +364,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../bnb-greenfield/" class="md-tabs__link">
           
   
     
@@ -384,7 +384,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../zkbnb/" class="md-tabs__link">
+        <a href="../../zkbnb/" class="md-tabs__link">
           
   
     
@@ -410,7 +410,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../showcase/identity/did/" class="md-tabs__link">
+        <a href="../../showcase/identity/did/" class="md-tabs__link">
           
   
     
@@ -433,7 +433,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../bc-fusion/" class="md-tabs__link">
           
   
     
@@ -476,7 +476,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -503,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,6 +521,8 @@
       
   
   
+    
+  
   
   
     
@@ -537,23 +539,27 @@
     
     
       
+        
+        
+      
       
         
       
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
-  
-  
-    <a href="../../../announce/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Announcements
@@ -561,92 +567,19 @@
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    BNB Smart Chain
-    
-  </span>
-  
-
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            BNB Smart Chain
+            Announcements
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -656,690 +589,12 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Introduction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://dappbay.bnbchain.org/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Ecosystem
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Developers
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            Developers
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/quick-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Quick Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://www.bnbchain.org/en/dev-tools" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dev-Tools
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../developers/json_rpc/json-rpc-endpoint/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    JSON-RPC
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/faucet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Faucet
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../developers/node_operators/node_best_practices/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Node Operators
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../developers/paymaster/overview/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    EOA Paymaster
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Staking
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
-            <span class="md-nav__icon md-icon"></span>
-            Staking
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../staking/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../staking/user-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    User Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../staking/developer-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Build Staking dApps
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Governance
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            Governance
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../governance/overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../governance/user-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    User Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../governance/bnb-kol/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    BNB Advocate`s Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../governance/temp-check/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Temperature Check
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../governance/apis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Governance APIs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1360,14 +615,14 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Validator
+    Upcoming
     
   </span>
   
@@ -1375,56 +630,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Validator
+            Upcoming
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../run-val/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Run Validator
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1446,7 +657,7 @@
           
   
   <span class="md-ellipsis">
-    Create Validator
+    Pascal Upgrade of BSC
     
   </span>
   
@@ -1458,7 +669,7 @@
         
   
   <span class="md-ellipsis">
-    Create Validator
+    Pascal Upgrade of BSC
     
   </span>
   
@@ -1481,203 +692,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terminology" class="md-nav__link">
+  <a href="#upgrade-timeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Terminology
+      Upgrade Timeline
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
+  <a href="#upgrade-bsc-testnet-nodes-to-v156-before-hardfork" class="md-nav__link">
     <span class="md-ellipsis">
-      Steps
+      Upgrade BSC Testnet Nodes to v1.5.6 Before Hardfork
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-connecting-to-the-dapp" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Connecting to the dApp
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-filling-out-the-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Filling out the form
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Filling out the form">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-basic-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Basic Information
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-addresses" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Addresses
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-commissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Commissions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-self-delegation" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 Self-delegation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-submitting-the-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Submitting the form
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Secure Validator
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../manage-keys/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Management
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../mev/overview/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    MEV
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -1700,6 +734,30 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1724,14 +782,14 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Slashing
+    Passed
     
   </span>
   
@@ -1739,10 +797,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
-            Slashing
+            Passed
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1753,11 +811,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/overview/" class="md-nav__link">
+      <a href="../fjord-opbnb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Overview
+    Fjord Hardfork(opBNB)
     
   </span>
   
@@ -1775,11 +833,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/slash-rules/" class="md-nav__link">
+      <a href="../wright-opbnb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slash Rules
+    Wright Hardfork(opBNB)
     
   </span>
   
@@ -1797,11 +855,275 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slashing/monitor/" class="md-nav__link">
+      <a href="../mongolian-greenfield/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slash Monitor
+    Mongolian Hardfork(Greenfield)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../veld-greenfield/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Veld Hardfork(Greenfield)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../second-sunset-bc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Second Sunset Hardfork(BC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feynman-bsc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feynman Hardfork(BSC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../veld-greenfield/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Veld Hardfork(Greenfield)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haber-bsc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Haber Hardfork(BSC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haber-opbnb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Haber Hardfork(opBNB)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../second-sunset-bc-testnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Second Sunset Hardfork(BC testnet)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-sunset-bc-testnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Final Sunset Hardfork(BC testnet)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bohr-bsc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bohr Hardfork(BSC)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../altai-gnfd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Altai Hardfork(Gnfd)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-sunset-bc-mainnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Final Sunset of BC (Mainnet)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savanna-greenfield/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greenfield Savanna Hardfork
     
   </span>
   
@@ -1822,6 +1144,73 @@
             
           </ul>
         </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../bnb-smart-chain/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -1870,7 +1259,7 @@
         
   
   
-    <a href="../../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../bnb-opbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1935,7 +1324,7 @@
         
   
   
-    <a href="../../../bnb-greenfield/" class="md-nav__link">
+    <a href="../../bnb-greenfield/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1992,7 +1381,7 @@
         
   
   
-    <a href="../../../zkbnb/" class="md-nav__link">
+    <a href="../../zkbnb/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2050,7 +1439,7 @@
     
   
   
-    <a href="../../../showcase/identity/did/" class="md-nav__link">
+    <a href="../../showcase/identity/did/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2107,7 +1496,7 @@
         
   
   
-    <a href="../../../bc-fusion/" class="md-nav__link">
+    <a href="../../bc-fusion/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -2154,95 +1543,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terminology" class="md-nav__link">
+  <a href="#upgrade-timeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Terminology
+      Upgrade Timeline
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
+  <a href="#upgrade-bsc-testnet-nodes-to-v156-before-hardfork" class="md-nav__link">
     <span class="md-ellipsis">
-      Steps
+      Upgrade BSC Testnet Nodes to v1.5.6 Before Hardfork
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-connecting-to-the-dapp" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Connecting to the dApp
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-filling-out-the-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Filling out the form
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Filling out the form">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-basic-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Basic Information
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-addresses" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Addresses
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-commissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Commissions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-self-delegation" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 Self-delegation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-submitting-the-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Submitting the form
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2262,7 +1576,7 @@
 
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/validator/create-val.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/announce/pascal-bsc.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2270,121 +1584,33 @@
   
 
 
-<div><h1 id="create-bsc-validator">Create BSC Validator<a class="headerlink" href="#create-bsc-validator" title="Link to this section">¶</a></h1>
-<p>This guide outlines the process for creating a new validator on the BNB Smart Chain (BSC).
-The BNB staking dApp is the official tool for creating and managing validators on the BSC.</p>
+<div><h1 id="pascal-upgrade-of-bsc">Pascal Upgrade of BSC<a class="headerlink" href="#pascal-upgrade-of-bsc" title="Link to this section">¶</a></h1>
+<div class="doc-announce-info">
+    <span class="version-tag">Hardfork</span>
+</div>
+
+<h2 id="upgrade-timeline">Upgrade Timeline<a class="headerlink" href="#upgrade-timeline" title="Link to this section">¶</a></h2>
+<p>The Pascal upgrade will happen at:</p>
 <ul>
-<li><strong>Testnet</strong>: <a href="https://testnet-staking.bnbchain.org/en/bnb-staking">https://testnet-staking.bnbchain.org/en/bnb-staking</a></li>
-<li><strong>Mainnet</strong>: <a href="https://www.bnbchain.org/en/bnb-staking">https://www.bnbchain.org/en/bnb-staking</a></li>
+<li>Testnet:  2025-02-25 03:18:00 AM UTC</li>
+<li>Mainnet:  TBD</li>
 </ul>
-<h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Link to this section">¶</a></h2>
+<h2 id="upgrade-bsc-testnet-nodes-to-v156-before-hardfork">Upgrade BSC Testnet Nodes to v1.5.6 Before Hardfork<a class="headerlink" href="#upgrade-bsc-testnet-nodes-to-v156-before-hardfork" title="Link to this section">¶</a></h2>
+<p><a href="https://github.com/bnb-chain/bsc/releases/tag/v1.5.6">v1.5.6</a> is a hard fork release for BSC Testnet, the HF name is: <a href="https://forum.bnbchain.org/t/bnb-chain-upgrades-testnet/934#p-1416-h-1pascal-2">Pascal</a></p>
+<p>There are 5 BEPs in Pascal:</p>
 <ul>
-<li><strong>Operator Address</strong>: The address for creating and modifying validator information on the BSC. You should use this
-  address when connecting to the staking dApp. The corresponding account should have more than 2001 BNB for creating
-  validtors and paying transaction fees.</li>
-<li><strong>Consensus Address</strong>: A unique address for your validator’s node. It is used for consensus engine when mining new
-  blocks. It should be different from the operator address.</li>
-<li><strong>BLS Vote Address</strong>: A BLS address used for fast finality voting.</li>
-<li><strong>BLS Proof</strong>: A BLS signature verifying ownership of the vote address.</li>
-<li><strong>Identity</strong>: For associating a new validator with an existing one. This is optional unless you’re migrating an old validator.</li>
-</ul>
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Link to this section">¶</a></h2>
-<h3 id="1-connecting-to-the-dapp">1. Connecting to the dApp<a class="headerlink" href="#1-connecting-to-the-dapp" title="Link to this section">¶</a></h3>
-<p>Please connect to the staking dApp using your <strong>Operator Address</strong>. <code>Trust Wallet</code>, <code>MetaMask</code>, and <code>WalletConnect</code>
-options are available for the step. Make sure that the account has more than 2001 BNB before moving on to the next step.</p>
-<p><img alt="" src="../../img/validator/create-validator0.png" style="width:400px"></p>
-<h3 id="2-filling-out-the-form">2. Filling out the form<a class="headerlink" href="#2-filling-out-the-form" title="Link to this section">¶</a></h3>
-<p>Navigate to the dApp and select the <code>Become a Validator</code> button in the right middle of the page
-to initiate the creation process.</p>
-<p>The following information is required to create a validator.</p>
-<h4 id="21-basic-information">2.1 Basic Information<a class="headerlink" href="#21-basic-information" title="Link to this section">¶</a></h4>
-<p><img alt="" src="../../img/validator/create-validator1.png" style="width:600px"></p>
-<p>You’ll need to provide the following details on the <code>Create Validator</code> page:</p>
-<ul>
-<li><strong>Validator Name</strong>: Choose a name consisting of 3-9 alphanumeric characters, excluding special characters.</li>
-<li><strong>Website</strong>: Provide a URL to a website with additional information about your validator.</li>
-<li><strong>Description</strong>: A brief description of your validator.</li>
-</ul>
-<p>To enhance your validator’s visibility, consider uploading additional information to
-the <a href="https://github.com/bnb-chain/bsc-validator-directory">BSC validator directory</a>. Your avatar, once uploaded, will be
-displayed in the staking dApp.</p>
-<h4 id="22-addresses">2.2 Addresses<a class="headerlink" href="#22-addresses" title="Link to this section">¶</a></h4>
-<p><img alt="" src="../../img/validator/create-validator2.png" style="width:600px"></p>
-<p>The following addresses are required:</p>
-<ul>
-<li><strong>Consensus Address</strong>: A unique address for your validator’s node.</li>
-<li><strong>Vote Address</strong>: An address used for fast finality voting.</li>
-<li><strong>BLS Proof</strong>: A BLS signature verifying ownership of the vote address.</li>
-<li><strong>Identity</strong>: For associating a new validator with an existing one. This is optional unless you’re migrating an old validator.</li>
-</ul>
-<h5 id="generate-consensus-address">Generate Consensus Address<a class="headerlink" href="#generate-consensus-address" title="Link to this section">¶</a></h5>
-<p>Download the BSC geth binary from <a href="https://github.com/bnb-chain/bsc/releases/">the official release page</a>.</p>
-<p>Note: Make sure you are downloading the correct binary based on your machine’s platform, e.g., if you are using MacOS,
-you should download the <code>geth_mac</code> file. In the following, we will refer the binary as <code>geth</code> for simplicity.</p>
-<p>To create a new account for mining, please use the following command and set a password for the account.</p>
-<div class="highlight"><pre><span></span><code>geth<span class="w"> </span>account<span class="w"> </span>new<span class="w"> </span>--datadir<span class="w"> </span><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
-</code></pre></div>
-<ul>
-<li><code>DATA_DIR</code>: The directory where you want to store your key store files.</li>
-</ul>
-<p>This command will provide the public address (consensus address) and the path to your private key. Remember to back up the key file safely!
-A sample consensus address is <code>0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5</code>.</p>
-<p>If you already have an account for mining, you can use the seed phrase to recover the account.</p>
-<div class="highlight"><pre><span></span><code>geth<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>--datadir<span class="w"> </span><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
-</code></pre></div>
-<h5 id="generate-bls-vote-address-and-proof">Generate BLS Vote Address and Proof<a class="headerlink" href="#generate-bls-vote-address-and-proof" title="Link to this section">¶</a></h5>
-<p>To create a new bls account please use the following command.</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span>geth<span class="w"> </span>bls<span class="w"> </span>account<span class="w"> </span>new<span class="w"> </span>--datadir<span class="w"> </span><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
-</code></pre></div>
-<ul>
-<li><code>DATA_DIR</code>: The directory where you want to store your key store files.</li>
-</ul>
-<p>If you already have a voting key, create a bls wallet and use the keyfile to recover it, using the following command.</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span>geth<span class="w"> </span>bls<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span><span class="si">${</span><span class="nv">KEY_FILE</span><span class="si">}</span><span class="w"> </span>--datadir<span class="w"> </span><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
-</code></pre></div>
-<ul>
-<li><code>DATA_DIR</code>: The backup file for restoring the BLS account.</li>
-</ul>
-<p>Then you can get your vote address by running the following command.</p>
-<div class="highlight"><pre><span></span><code>geth<span class="w"> </span>bls<span class="w"> </span>account<span class="w"> </span>list<span class="w"> </span>--datadir<span class="w"> </span><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
-</code></pre></div>
-<p>A sample bls address is <code>b5fe571aa1b39e33c2735a184885f737a59ba689177f297cba67da94bea5c23dc71fd4deefe2c0d2d21851eb11081f69</code>.</p>
-<p>Then you can get your bls proof by running the following command.</p>
-<div class="highlight"><pre><span></span><code>geth<span class="w"> </span>bls<span class="w"> </span>account<span class="w"> </span>generate-proof<span class="w"> </span>--chain-id<span class="w"> </span><span class="si">${</span><span class="nv">BSC_CHAIN_ID</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">OPEATOR_ADDRESS</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">VOTE_ADDRESS</span><span class="si">}</span>
-</code></pre></div>
-<ul>
-<li><code>BSC_CHAIN_ID</code>: <code>56</code> for BSC mainnet, and <code>97</code> for BSC testnet.</li>
-<li><code>OPEATOR_ADDRESS</code>: The address of your account, which will be recognized as the operator of the new validator.</li>
-<li><code>VOTE_ADDRESS</code>: The vote address created in the last step.</li>
-</ul>
-<p>A sample bls proof is <code>0xaf762123d031984f5a7ae5d46b98208ca31293919570f51ae2f0a03069c5e8d6d47b775faba94d88dbbe591c51c537d718a743b9069e63b698ba1ae15d9f6bf7018684b0a860a46c812716117a59c364e841596c3f0a484ae40a1178130b76a5</code>.</p>
-<h5 id="create-identity">Create Identity<a class="headerlink" href="#create-identity" title="Link to this section">¶</a></h5>
-<p>Identity is used to associate the new validator with the old validator created on the BNB Beacon Chain. It should be left empty after the Beacon Chain fusion.</p>
-<h4 id="23-commissions">2.3 Commissions<a class="headerlink" href="#23-commissions" title="Link to this section">¶</a></h4>
-<p><img alt="" src="../../img/validator/create-validator3.png" style="width:600px"></p>
-<ul>
-<li><strong>Rate</strong>: The commission rate of the validator.</li>
-<li><strong>Max Rate</strong>: The maximum commission rate that the validator can set.</li>
-<li><strong>Max Change Rate</strong>: The maximum rate change the validator can set to every epoch (1 day).</li>
-</ul>
-<h4 id="24-self-delegation">2.4 Self-delegation<a class="headerlink" href="#24-self-delegation" title="Link to this section">¶</a></h4>
-<p><img alt="" src="../../img/validator/create-validator4.png" style="width:600px"></p>
-<ul>
-<li><strong>Self Delegate Amount</strong>: The amnout to delegate when creating the validator. The minimal number to input is <code>2001</code> -
-  for the minimal self delegation amount is 2000 BNB and extra 1 BNB for locking to a dead address.</li>
-</ul>
-<h3 id="3-submitting-the-form">3. Submitting the form<a class="headerlink" href="#3-submitting-the-form" title="Link to this section">¶</a></h3>
-<p>Once you have filled out all the required information, click the <code>Submit</code> button to submit the transaction.</p>
-<p>Note: Upon completing these steps, your node is not guaranteed to become an active validator. Selection is based on a ranking that reflects the total BNB staked, with only the top N nodes being chosen as active validators. The number N is determined by the “maxElectedValidators” parameter within the StakeHubContract (0x0000000000000000000000000000000000002002). As of November 4<sup>th</sup>, 2024, this number stands at 8 for the testnet and 45 for the mainnet.</p></div>
+<li>BEP-439: Implement EIP-2537: Precompile for BLS12-381 curve operations</li>
+<li>BEP-440: Implement EIP-2935: Serve historical block hashes from state</li>
+<li>BEP-441: Implement EIP-7702: Set EOA account code</li>
+<li>BEP-466: Make the block format compatible with EIP-7685</li>
+<li>BEP-496: Implement EIP-7623: Increase calldata cost</li>
+</ul></div>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -2414,7 +1640,7 @@ A sample consensus address is <code>0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5</
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../run-val/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Run Validator">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Announcements">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2424,20 +1650,20 @@ A sample consensus address is <code>0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5</
                 Previous
               </span>
               <div class="md-ellipsis">
-                Run Validator
+                Announcements
               </div>
             </div>
           </a>
         
         
           
-          <a href="../security/" class="md-footer__link md-footer__link--next" aria-label="Next: Secure Validator">
+          <a href="../fjord-opbnb/" class="md-footer__link md-footer__link--next" aria-label="Next: Fjord Hardfork(opBNB)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Secure Validator
+                Fjord Hardfork(opBNB)
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2570,14 +1796,14 @@ A sample consensus address is <code>0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5</
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
-        <script src="../../../assets/js/mathjax.js"></script>
+        <script src="../../assets/js/mathjax.js"></script>
       
-        <script src="../../../assets/js/custom.js"></script>
+        <script src="../../assets/js/custom.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
