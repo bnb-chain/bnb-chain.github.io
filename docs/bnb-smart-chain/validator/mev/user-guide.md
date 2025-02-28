@@ -22,9 +22,24 @@ Some DEX protocols or builder providers are keen to provide free protection feat
 | ---------------------------- | ------------------------------------------------------------ |
 | Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li><li>[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)</li><li>[BlockRazor Private RPC with Refund](https://rpc.blockrazor.io/)</li></ul> |
 
-Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users' transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.
+### Builder Proxies 
+
+The builder proxies act as a transaction broadcaster for builders. Instead of users' transactions being limited to a smaller set of pre-registered validators or specific builders, the proxies take each submitted transaction and broadcasts it to all registered builders across the network. This broader dissemination benefits users by significantly increasing the chances of their transaction being picked up by a builder and included in the next block, leading to faster transaction confirmation times. Furthermore, the increased competition among builders, who now have access to a larger pool of transactions, can potentially result in more efficient block construction and, indirectly, potentially lower transaction fees and improved censorship resistance for users.
+
+![img](../../img/mev/proxy.png)
+
+A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here https://github.com/node-real/private-tx-sender 
+
+| Builder Proxy | Associated Builders | Link |
+|---|---|---|
+| Blockrazor | 48Club, BloXroute, NodeReal | https://rpc.blockrazor.builders 
+
+
 
 **Wallets with Manual MEV Protection:**
+
+Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users' transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.
+
 
 - **Private Transaction Relays:** These relays hide transaction details from malicious actors, preventing them from front-running or sandwich attacking the user's trade.
 - **Specialized Builders:** Some wallets utilize builders that prioritize user protection and fair ordering of transactions, minimizing the potential for MEV exploitation.
@@ -61,10 +76,4 @@ You can check the number of validators integrated and the number of blocks of ea
 2. The more blocks that are produced, the faster the builder can be. 
 
 ![img](../../img/mev/mev-blocks-by-builders.png)
-
-For those who are very sensitive to transaction confirmation time, to maximize the transaction speed, it is recommended to build a proxy to broadcast the transaction to multiple builders to **increase the transaction inclusion speed**. You need to build your own RPC proxy with multiple builder service providers. 
-
-![img](../../img/mev/proxy.png)
-
-A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here https://github.com/node-real/private-tx-sender 
 
