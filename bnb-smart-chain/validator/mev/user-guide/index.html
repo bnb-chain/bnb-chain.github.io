@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
     
     
@@ -1656,6 +1656,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="For Retail Traders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#builder-proxies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Builder Proxies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2125,6 +2140,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="For Retail Traders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#builder-proxies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Builder Proxies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2185,8 +2215,28 @@
 </tr>
 </tbody>
 </table>
-<p>Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users’ transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.</p>
+<h3 id="builder-proxies">Builder Proxies<a class="headerlink" href="#builder-proxies" title="Link to this section">¶</a></h3>
+<p>The builder proxies act as a transaction broadcaster for builders. Instead of users’ transactions being limited to a smaller set of pre-registered validators or specific builders, the proxies take each submitted transaction and broadcasts it to all registered builders across the network. This broader dissemination benefits users by significantly increasing the chances of their transaction being picked up by a builder and included in the next block, leading to faster transaction confirmation times. Furthermore, the increased competition among builders, who now have access to a larger pool of transactions, can potentially result in more efficient block construction and, indirectly, potentially lower transaction fees and improved censorship resistance for users.</p>
+<p><img alt="img" src="../../../img/mev/proxy.png"></p>
+<p>A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here <a href="https://github.com/node-real/private-tx-sender">https://github.com/node-real/private-tx-sender</a> </p>
+<table>
+<thead>
+<tr>
+<th>Builder Proxy</th>
+<th>Associated Builders</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blockrazor</td>
+<td>48Club, BloXroute, NodeReal</td>
+<td><a href="https://rpc.blockrazor.builders">https://rpc.blockrazor.builders</a></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Wallets with Manual MEV Protection:</strong></p>
+<p>Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users’ transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.</p>
 <ul>
 <li><strong>Private Transaction Relays:</strong> These relays hide transaction details from malicious actors, preventing them from front-running or sandwich attacking the user’s trade.</li>
 <li><strong>Specialized Builders:</strong> Some wallets utilize builders that prioritize user protection and fair ordering of transactions, minimizing the potential for MEV exploitation.</li>
@@ -2266,10 +2316,7 @@
 <li>The more validators are integrated, the faster the builder can be. </li>
 <li>The more blocks that are produced, the faster the builder can be. </li>
 </ol>
-<p><img alt="img" src="../../../img/mev/mev-blocks-by-builders.png"></p>
-<p>For those who are very sensitive to transaction confirmation time, to maximize the transaction speed, it is recommended to build a proxy to broadcast the transaction to multiple builders to <strong>increase the transaction inclusion speed</strong>. You need to build your own RPC proxy with multiple builder service providers. </p>
-<p><img alt="img" src="../../../img/mev/proxy.png"></p>
-<p>A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here <a href="https://github.com/node-real/private-tx-sender">https://github.com/node-real/private-tx-sender</a> </p></div>
+<p><img alt="img" src="../../../img/mev/mev-blocks-by-builders.png"></p></div>
 
 
 
