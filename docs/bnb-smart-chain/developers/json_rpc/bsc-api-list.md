@@ -63,10 +63,10 @@ This will return block hashes:
 These methods allow you to handle block finality using a straightforward API.
 
 ### eth_getFinalizedHeader
-* `verifiedValidatorNum` must be within the range [1, len(currentValidators)],with the exception that:
-    - -1 represents at least len(currentValidators) * 1/2
-    - -2 represents at least len(currentValidators) * 2/3
-    - -3 represents at least len(currentValidators)
+* `verifiedValidatorNum` must be within the range `[1, len(currentValidators)]`,with the exception that:
+    - `-1` represents at least `len(currentValidators) * 1/2`
+    - `-2` represents at least `len(currentValidators) * 2/3`
+    - `-3` represents at least `len(currentValidators)`
 * This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
 * The height of the returned block header is guaranteed to increase monotonically.
 For example:
@@ -75,10 +75,10 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 ```
 
 ### eth_getFinalizedBlock
-* `verifiedValidatorNum` must be within the range [1, len(currentValidators)],with the exception that:
-    - -1 represents at least len(currentValidators) * 1/2
-    - -2 represents at least len(currentValidators) * 2/3
-    - -3 represents at least len(currentValidators)
+* `verifiedValidatorNum` must be within the range `[1, len(currentValidators)]`,with the exception that:
+    - `-1` represents at least `len(currentValidators) * 1/2`
+    - `-2` represents at least `len(currentValidators) * 2/3`
+    - `-3` represents at least `len(currentValidators)`
 * This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
 * If `fullTx` is true, the block includes all transactions; otherwise, only transaction hashes are included.
 * The height of the returned block is guaranteed to be monotonically increasing.
