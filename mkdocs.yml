@@ -62,7 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+      - Pascal Upgrade of BSC: ./announce/pascal-bsc.md
 
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
@@ -79,6 +79,8 @@ nav:
       - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
       - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
       - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
+      - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
     - Overview: ./bnb-smart-chain/overview.md
