@@ -2,18 +2,11 @@
 # Announcement
 
 <div class="doc-announce">
-    <a href="./savanna-greenfield/">
+    <a href="./pascal-bsc/">
         <div>
-            <div class="announce-title">Greenfield Savanna Hardfork (Testnet) </div>
-            <div class="announce-desc">Bugfixing on Greenfield Testnet</div>
+            <div class="announce-title">Pascal Upgrade of BSC (Testnet) </div>
+            <div class="announce-desc">Introduce 5 BEPs on BSC Testnet</div>
         </div>
-        <span class="announce-date">2024 December 02</span>
-    </a>
-    <a href="./savanna-greenfield/">
-        <div>
-            <div class="announce-title">Greenfield Savanna Hardfork (Mainnet) </div>
-            <div class="announce-desc">Bugfixing on Greenfield Mainnet</div>
-        </div>
-        <span class="announce-date">2024 December 12</span>
+        <span class="announce-date">2025 Feb 25</span>
     </a>
 </div>
