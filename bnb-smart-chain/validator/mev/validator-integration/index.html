@@ -2331,6 +2331,7 @@ during setup.</p>
 sections in the config.toml. Example:</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">[Eth.Miner.Mev]</span>
 <span class="w">  </span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1"># open bid receiving</span>
+<span class="w">  </span><span class="n">GreedyMergeTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1"># merge local tx to the MEV bid block</span>
 <span class="w">  </span><span class="n">ValidatorCommission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="c1"># validator claim 1% from block reward</span>
 <span class="w">  </span><span class="n">BidSimulationLeftOver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50000000</span><span class="w"> </span><span class="c1"># 50ms, the time left for bid simulation</span>
 <span class="w">  </span><span class="n">SentryURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"http://bsc-mev-sentry.io"</span><span class="w"> </span><span class="c1"># it is used for the validator to access the sentry, it should be a private URL or IP:Port.</span>
