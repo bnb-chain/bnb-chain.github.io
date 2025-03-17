@@ -1,5 +1,5 @@
 ---
-title: Quick Guide - BNB Smart Chain (BSC)
+title: Quick Boapay Online - BNB Smart Chain (BSC)
 ---
 
 If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.
