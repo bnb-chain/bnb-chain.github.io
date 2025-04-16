@@ -665,6 +665,8 @@ extra_javascript:
 extra:
   generator: false
   homepage: https://www.bnbchain.org
+  analytics:
+    provider: custom
   consent:
     title: Cookie consent
     description: >-
