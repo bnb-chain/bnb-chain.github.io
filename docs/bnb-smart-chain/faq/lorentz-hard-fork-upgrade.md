@@ -68,13 +68,6 @@ This positions BNB Chain to be the infrastructure layer for next-gen decentraliz
 
 ---
 
-### What lessons from Lorentz are influencing the upcoming Maxwell upgrade?
-
-*N/A*  
-(Learnings from Lorentz will be integrated into Maxwell, but details are not yet disclosed.)
-
----
-
 ### Will BNB Chain open-source more infrastructure changes or benchmarks?
 
 Yes. All execution optimizations and consensus changes are:
