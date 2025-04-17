@@ -9,4 +9,11 @@
         </div>
         <span class="announce-date">2025 Apr 17</span>
     </a>
+    <a href="./volta-opbnb/">
+        <div>
+            <div class="announce-title">Volta Upgrade of opBNB (Mainnet) </div>
+            <div class="announce-desc">One BEP on opBNB Mainnet</div>
+        </div>
+        <span class="announce-date">2025 Apr 17</span>
+    </a>
 </div>

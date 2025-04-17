@@ -63,6 +63,7 @@ nav:
     - Announcements: ./announce/index.md
     - Upcoming:
       - Lorentz Upgrade of BSC: ./announce/lorentz-bsc.md
+      - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
 
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
