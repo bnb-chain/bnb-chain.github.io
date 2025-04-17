@@ -43,3 +43,4 @@ This process aims to gradually remove poorly-operating validators from the set, 
 If the metrics stay above a higher threshold, the validator will be removed from rotation, and a set amount of BNB will be deducted from their self-delegated BNB.
 This action results in both validators and delegators not receiving their staking rewards.
 
+.
