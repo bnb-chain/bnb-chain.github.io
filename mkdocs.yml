@@ -62,7 +62,8 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Pascal Upgrade of BSC: ./announce/pascal-bsc.md
+      - Lorentz Upgrade of BSC: ./announce/lorentz-bsc.md
+      - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
 
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
@@ -80,6 +81,8 @@ nav:
       - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
       - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
       - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+      - Pascal Hardfork(BSC): ./announce/pascal-bsc.md
+
 
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
@@ -170,6 +173,8 @@ nav:
       - Node Best Practices: ./bnb-opbnb/advanced/node-best-practices.md
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
+      - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
+      
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
       - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
@@ -663,6 +668,8 @@ extra_javascript:
 extra:
   generator: false
   homepage: https://www.bnbchain.org
+  analytics:
+    provider: custom
   consent:
     title: Cookie consent
     description: >-
