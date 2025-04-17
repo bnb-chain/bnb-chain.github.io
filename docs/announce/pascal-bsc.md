@@ -8,10 +8,7 @@
 The Pascal upgrade will happen at:
 
 - Testnet:  2025-02-25 03:18:00 AM UTC
-- Mainnet:  TBD
-
-## Upgrade BSC Testnet Nodes to v1.5.6 Before Hardfork
-[v1.5.6](https://github.com/bnb-chain/bsc/releases/tag/v1.5.6) is a hard fork release for BSC Testnet, the HF name is: [Pascal](https://forum.bnbchain.org/t/bnb-chain-upgrades-testnet/934#p-1416-h-1pascal-2)
+- Mainnet:  2025-03-20 02:10:00 AM UTC
 
 There are 5 BEPs in Pascal:
 
