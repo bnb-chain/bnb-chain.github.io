@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const inkeepWidget = Inkeep.ChatButton({
             baseSettings: {
                 env: "production",
-                apiKey: "42cc173a38f1d1d4f1236441bf7bd3241c75ed3c0ecefe27", // required - replace with your own API key
+                apiKey: "40582708b8a0305555fa91c049bb0dfa4e192337819bd03c", // required - replace with your own API key
                 primaryBrandColor: "#fbc828", // your brand color, widget color scheme is derived from this
                 organizationDisplayName: "BNBChain",
                 // ...optional settings
