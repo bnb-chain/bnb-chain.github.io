@@ -294,7 +294,7 @@ nav:
   - BNB Chain Fusion:
       - BNB Chain Fusion: ./bc-fusion/index.md
       - Overview: ./bc-fusion/overview.md
-      - Post Fustion:
+      - Post Fusion:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
