@@ -27,7 +27,7 @@ You can try:
 - Continuing to check with **SafePal support** for any recovery options.
 - Monitoring for future updates to the **token recovery dApp** that might include SafePal support.
 
-### Can Binance or BNB Chain team recover my tokens?
+### Can BNB Chain team recover my tokens?
 
 No. Token recovery is **only possible through self-custody**, meaning **you must control and access your wallet**. If you cannot provide the full credentials (seed + passphrase), no team or admin can assist with recovery due to decentralization and security policies.
 

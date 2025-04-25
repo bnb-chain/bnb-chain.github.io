@@ -298,7 +298,6 @@ nav:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
-      - FAQ:  ./bc-fusion/faq/index.md
 
 markdown_extensions:
   - toc:
