@@ -114,8 +114,6 @@ nav:
             - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
             - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integration.md
             - Try Gasless Transaction: ./bnb-smart-chain/developers/paymaster/wallet-demo.md
-        - FAQ:  ./bnb-smart-chain/faq/index.md
-
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md
         - User Guide: ./bnb-smart-chain/staking/user-guide.md
@@ -142,6 +140,7 @@ nav:
         - Overview: ./bnb-smart-chain/slashing/overview.md
         - Slash Rules: ./bnb-smart-chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb-smart-chain/slashing/monitor.md
+    - FAQ:  ./bnb-smart-chain/faq/index.md
   - opBNB:
     - opBNB: ./bnb-opbnb/index.md
     - Overview: ./bnb-opbnb/overview.md
@@ -299,7 +298,7 @@ nav:
   - BNB Chain Fusion:
       - BNB Chain Fusion: ./bc-fusion/index.md
       - Overview: ./bc-fusion/overview.md
-      - Post Fustion:
+      - Post Fusion:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
