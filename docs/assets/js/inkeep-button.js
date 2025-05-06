@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(inkeepScript);
 
     // Configure and initialize the widget
-    const addInkeepWidget = ({ openChange }) => {
-        return Inkeep.ChatButton({
+    const addInkeepWidget = () => {
+        const inkeepWidget = Inkeep.ChatButton({
             baseSettings: {
                 env: "production",
                 apiKey: "40582708b8a0305555fa91c049bb0dfa4e192337819bd03c", // required - replace with your own API key
@@ -44,6 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                     ],
                 },
+                onEvent: (event) => {
+                    // analytics.track(event.eventName, event.properties);
+                    if (
+                        event.eventName === "modal_opened" &&
+                        event.properties?.componentType === "ChatButton"
+                    ) {
+                        window.dataLayer?.push({ event: "click_AiBot_floatBtn" });
+                    }
+                },
             },
             aiChatSettings: {
                 aiAssistantName: "BNB Chain AI",
@@ -62,27 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Where can I find funding or grants?",
                 ],
             },
-            modalSettings: {
-                onOpenChange: openChange
-            }
         });
     };
 
     inkeepScript.addEventListener("load", () => {
-        const widget = addInkeepWidget({
-            openChange(isOpen) {
-                widget.update?.({ modalSettings: { isOpen } });
-            }
-        });
-
-        const aiBotWrapper = document.querySelector('.ai-bot-wrapper');
-        if (aiBotWrapper) {
-            aiBotWrapper.addEventListener('click', () => {
-                widget.update?.({ modalSettings: { isOpen: true } });
-                window.dataLayer?.push({ event: "click_AiBot_floatBtn" });
-            });
-        } else {
-            console.warn('.ai-bot-wrapper element not found. Ensure it is rendered correctly.');
-        }
+        addInkeepWidget(); // initialize the widget
     });
 });
