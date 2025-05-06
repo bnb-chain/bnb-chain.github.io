@@ -22,7 +22,7 @@ To configure your wallet to work with opBNB, you will need to add both the BNB s
    *Mainnet*
 
    - Network Name: BSC Mainnet
-   - RPC URL: [https://bsc.nodereal.io](https://bsc.nodereal.io)
+   - RPC URL: [https://bsc-dataseed.bnbchain.org](https://bsc-dataseed.bnbchain.org)
    - ChainID: 56
    - Symbol: BNB
    - Explorer: [https://bscscan.com/](https://bscscan.com/)

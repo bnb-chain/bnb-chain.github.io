@@ -135,10 +135,10 @@ There is a javascript in BSC repo to dump the slash status of each validator.
 ```
 cd <bsc>/cmd/jsutils
 # 1.To dump the slashes of the lates block:
-node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce
+node getslashcount.js --Rpc https://bsc-dataseed.bnbchain.org
 
 # 2.You may also specify the block number:
-node getslashcount.js --Rpc https://bsc-mainnet.nodereal.io/v1/454e504917db4f82b756bd0cf6317dce --Num 39938351
+node getslashcount.js --Rpc https://bsc-dataseed.bnbchain.org --Num 39938351
 ```
 If your validator operates smoothly, you should expect minimal or even no penalties, known as "slashes," on a daily basis. Generally speaking, if your validator incurs more than three slashes within a single day, it would be prudent to investigate the cause for this anomaly.
 

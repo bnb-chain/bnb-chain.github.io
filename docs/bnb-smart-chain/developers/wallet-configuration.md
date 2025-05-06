@@ -18,7 +18,7 @@ You can use any Ethereum wallet with BSC. For instance, I will show you how to s
    *Mainnet*
 
    - Network Name: BSC Mainnet
-   - RPC URL: [https://bsc.nodereal.io](https://bsc.nodereal.io)
+   - RPC URL: [https://bsc-dataseed.bnbchain.org](https://bsc-dataseed.bnbchain.org)
    - ChainID: 56
    - Symbol: BNB
    - Explorer: [https://bscscan.com/](https://bscscan.com/)
