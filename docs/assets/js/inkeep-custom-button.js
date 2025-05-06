@@ -1,20 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Load the Inkeep script
     const inkeepScript = document.createElement("script");
     inkeepScript.src = "https://unpkg.com/@inkeep/cxkit-js@0.5.67/dist/embed.js";
     inkeepScript.type = "module";
     inkeepScript.defer = true;
     document.head.appendChild(inkeepScript);
 
-    // Configure and initialize the widget
-    const addInkeepWidget = () => {
-        const inkeepWidget = Inkeep.ChatButton({
+    const addInkeepWidget = ({ openChange }) => {
+        return Inkeep.ChatButton({
             baseSettings: {
                 env: "production",
                 apiKey: "40582708b8a0305555fa91c049bb0dfa4e192337819bd03c", // required - replace with your own API key
                 primaryBrandColor: "#fbc828", // your brand color, widget color scheme is derived from this
                 organizationDisplayName: "BNBChain",
-                // ...optional settings
                 colorMode: {
                     forcedColorMode: "dark",
                 },
@@ -40,18 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                     width: 24px;
                                     height: 24px;
                                 }
-                                  `,
+                            `,
                         },
                     ],
-                },
-                onEvent: (event) => {
-                    // analytics.track(event.eventName, event.properties);
-                    if (
-                        event.eventName === "modal_opened" &&
-                        event.properties?.componentType === "ChatButton"
-                    ) {
-                        window.dataLayer?.push({ event: "click_AiBot_floatBtn" });
-                    }
                 },
             },
             aiChatSettings: {
@@ -71,10 +59,46 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Where can I find funding or grants?",
                 ],
             },
+            modalSettings: {
+                onOpenChange: openChange
+            }
         });
     };
 
+    // Function to bind the click event to .ai-bot-wrapper
+    const bindAiBotWrapperEvent = (widget) => {
+        const aiBotWrapper = document.querySelector('.ai-bot-wrapper');
+        if (aiBotWrapper) {
+            aiBotWrapper.replaceWith(aiBotWrapper.cloneNode(true));
+            const newAiBotWrapper = document.querySelector('.ai-bot-wrapper');
+            newAiBotWrapper.addEventListener('click', () => {
+                widget.update?.({ modalSettings: { isOpen: true } });
+                window.dataLayer?.push({ event: "click_AiBot_floatBtn" });
+            });
+        } else {
+            console.warn('.ai-bot-wrapper element not found. Ensure it is rendered correctly.');
+        }
+    };
+
     inkeepScript.addEventListener("load", () => {
-        addInkeepWidget(); // initialize the widget
+        const widget = addInkeepWidget({
+            openChange(isOpen) {
+                widget.update?.({ modalSettings: { isOpen } });
+            }
+        });
+
+        bindAiBotWrapperEvent(widget);
+
+        const originalPushState = history.pushState;
+        history.pushState = function (...args) {
+            originalPushState.apply(this, args);
+            setTimeout(() => bindAiBotWrapperEvent(widget), 300);
+            setTimeout(() => bindAiBotWrapperEvent(widget), 1000);
+        };
+
+        window.addEventListener('popstate', () => {
+            setTimeout(() => bindAiBotWrapperEvent(widget), 300);
+            setTimeout(() => bindAiBotWrapperEvent(widget), 1000);
+        });
     });
 });
