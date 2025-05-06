@@ -14,10 +14,6 @@ With the [API key](https://nodereal.io/meganode) and smart contract address, you
 If the deployed contract is a proxy contract, then the info. will not be displayed as opBNBscan uses enhanced API to fetch the token details like name, symbol etc. In this case, enhanced API needs to call the implementation contract to fetch the token details.
 Currently, this feature is under development where enhanced API will make call to implementation contract when token info. returned from proxy contract is empty.
 
-### What are the third-party provider services where we can purchase private RPC access?
-
-You can purchase private RPC access from [Nodereal](https://nodereal.io/meganode).
-
 ### Are there any grants or financial support for projects on opBNB?
 
 Yes, we provide the same support for opBNB as for BNB Smart Chain when it comes to grants or financing projects. Check [here](https://www.bnbchain.org/en/developers/developer-programs) for the complete details.
