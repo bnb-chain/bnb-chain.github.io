@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
     
@@ -30,7 +30,7 @@
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -2391,8 +2391,8 @@
 <p>opBNB is essentially an optimized layer-2 solution that delivers lower fees and higher throughput to unlock the full potential of the BNB Chain.</p>
 <p>For this tutorial, we will deploy a simple <code>HelloWorld</code> smart contract on the opBNB network and build a frontend using Reactjs to interact with the deployed smart contract for reading and writing data onto the opBNB blockchain.
 The <code>HelloWorld</code> smart contract is a simple string variable message that will be used for storing the user-defined messages, e.g., <code>Hello, opBNB User</code>. The <code>updateMessage</code> function will be used for updating the message variable to any user-defined string value.</p>
-<p>This smart contract will then be deployed on the opBNB network using <a href="https://trufflesuite.com/">Truffle IDE</a>. We will then use the <a href="https://create-react-app.dev/">Reactjs boilerplate</a> to build a front end to communicate with the smart contract. <a href="https://web3js.readthedocs.io/en/v1.10.0/#">Web3.js library</a> is used for interacting with the smart contract and reading and writing data to the opBNB blockchain. We further use <a href="https://metamask.io/">Metamask</a> for signing transactions and paying any gas costs.</p>
-<p><em>This is a basic example for educational purposes, and it assumes familiarity with <a href="https://trufflesuite.com/">Truffle</a>, <a href="https://react.dev/">React</a>, and <a href="https://metamask.io/">MetaMask</a>.</em></p>
+<p>This smart contract will then be deployed on the opBNB network using <a href="https://trufflesuite.com/">Truffle IDE</a>. We will then use the <a href="https://create-react-app.dev/">Reactjs boilerplate</a> to build a front end to communicate with the smart contract. <a href="https://web3js.readthedocs.io/en/v1.10.0/#">Web3.js library</a> is used for interacting with the smart contract and reading and writing data to the opBNB blockchain. We further use <a href="https://trustwallet.com/">TrustWallet</a> or <a href="https://metamask.io/">Metamask</a> for signing transactions and paying any gas costs.</p>
+<p><em>This is a basic example for educational purposes, and it assumes familiarity with <a href="https://trufflesuite.com/">Truffle</a>, <a href="https://react.dev/">React</a>, <a href="https://trustwallet.com/">TrustWallet</a>, and <a href="https://metamask.io/">MetaMask</a>.</em></p>
 <h2 id="learning-takeaways">Learning Takeaways<a class="headerlink" href="#learning-takeaways" title="Link to this section">¶</a></h2>
 <p>By the end of this tutorial, you will be able to achieve the following</p>
 <ul>
@@ -2403,10 +2403,11 @@ The <code>HelloWorld</code> smart contract is a simple string variable message t
 <h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Link to this section">¶</a></h2>
 <ul>
 <li><a href="https://nodejs.org/en/download/">Node.js (Node v18.14.2)</a></li>
+<li><a href="https://trustwallet.com/">TrustWallet</a></li>
 <li><a href="https://metamask.io/">Metamask Web Wallet</a></li>
 <li><a href="https://trufflesuite.com/docs/truffle/how-to/install/">Truffle v5.10.0</a></li>
-<li>Get tBNB in your Metamask wallet configured with opBNB Testnet</li>
-<li><a href="../../get-started/wallet-configuration/">Metamask Wallet Configuration for opBNB.</a></li>
+<li>Get tBNB in your wallet configured with opBNB Testnet</li>
+<li><a href="../../get-started/wallet-configuration/">Wallet Configuration for opBNB.</a></li>
 <li><a href="../../get-started/deposit-to-opbnb/">Deposit tBNB to your opBNB account</a></li>
 </ul>
 <h2 id="demo-step-by-step-guide">Demo Step-by-Step Guide<a class="headerlink" href="#demo-step-by-step-guide" title="Link to this section">¶</a></h2>
@@ -2970,10 +2971,10 @@ Truffle creates the following directory structure for your project:
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../assets/js/mathjax.js"></script>
       
