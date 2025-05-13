@@ -2224,8 +2224,8 @@ git clone https://github.com/bnb-chain/opbnb.git
 <div class="highlight"><pre><span></span><code>cd opbnb
 </code></pre></div>
 <h3 id="check-out-the-correct-branch">Check out the correct branch<a class="headerlink" href="#check-out-the-correct-branch" title="Link to this section">¶</a></h3>
-<p>You can choose the appropriate version according to your needs. The develop branch has the latest features.</p>
-<div class="highlight"><pre><span></span><code>git checkout -b v0.5.3 v0.5.3-hotfix
+<p>You can choose the appropriate version according to your needs. The develop branch has the latest features.
+</p><div class="highlight"><pre><span></span><code>git checkout -b develop origin/develop
 </code></pre></div>
 <h3 id="install-dependencies">Install dependencies<a class="headerlink" href="#install-dependencies" title="Link to this section">¶</a></h3>
 <div class="highlight"><pre><span></span><code>pnpm install
@@ -2239,8 +2239,8 @@ git clone https://github.com/bnb-chain/opbnb.git
 git clone https://github.com/bnb-chain/op-geth.git
 </code></pre></div>
 <h3 id="check-out-the-correct-branch_1">Check out the correct branch<a class="headerlink" href="#check-out-the-correct-branch_1" title="Link to this section">¶</a></h3>
-<p>You can choose the appropriate version according to your needs. The develop branch has the latest features.</p>
-<div class="highlight"><pre><span></span><code>git checkout -b v0.5.7 
+<p>You can choose the appropriate version according to your needs. The develop branch has the latest features.
+</p><div class="highlight"><pre><span></span><code>git checkout -b v0.5.7 
 </code></pre></div>
 <h3 id="enter-op-geth">Enter op-geth<a class="headerlink" href="#enter-op-geth" title="Link to this section">¶</a></h3>
 <div class="highlight"><pre><span></span><code>cd op-geth
@@ -2307,8 +2307,8 @@ git clone https://github.com/bnb-chain/op-geth.git
 <div class="highlight"><pre><span></span><code>./packages/contracts-bedrock/scripts/getting-started/wallets.sh
 </code></pre></div>
 <h2 id="check-the-output">Check the output<a class="headerlink" href="#check-the-output" title="Link to this section">¶</a></h2>
-<p>Make sure that you see output that looks something like the following:</p>
-<div class="highlight"><pre><span></span><code>Copy the following into your .envrc file:
+<p>Make sure that you see output that looks something like the following:
+</p><div class="highlight"><pre><span></span><code>Copy the following into your .envrc file:
 
 # Admin account
 export GS_ADMIN_ADDRESS=0xC18e23D98F121c48a56E19302D1B7FB9b82A0F2E
@@ -2336,12 +2336,18 @@ export GS_SEQUENCER_PRIVATE_KEY=0xbb019ddc5f081b2be0c1c9406f89887ba90f4c8efbe5c4
 <p>Admin — 1 BNB</p>
 </li>
 <li>
-<p>Proposer — 0.5 BNB</p>
+<p>Proposer — 2 BNB</p>
 </li>
 <li>
-<p>Batcher — 2 BNB</p>
+<p>Batcher — 15 BNB</p>
 </li>
 </ul>
+<p>Estimated monthly consumption:</p>
+<div class="codehilite"><pre><span></span><code> \- **Batcher**: ~30 tBNB (testnet) / ~2 BNB (mainnet)
+
+ \- **Proposer**: ~5 tBNB (testnet) / ~0.1 BNB (mainnet)
+</code></pre></div>
+
 <h1 id="load-environment-variables">Load Environment variables<a class="headerlink" href="#load-environment-variables" title="Link to this section">¶</a></h1>
 <p>Now that you’ve filled out the environment variable file, you need to load those variables into your terminal.</p>
 <h2 id="enter-the-opbnb_3">Enter the opbnb<a class="headerlink" href="#enter-the-opbnb_3" title="Link to this section">¶</a></h2>
@@ -2349,16 +2355,16 @@ export GS_SEQUENCER_PRIVATE_KEY=0xbb019ddc5f081b2be0c1c9406f89887ba90f4c8efbe5c4
 </code></pre></div>
 <h2 id="load-the-variables-with-direnv">Load the variables with direnv<a class="headerlink" href="#load-the-variables-with-direnv" title="Link to this section">¶</a></h2>
 <p>You’re about to use <code>direnv</code> to load environment variables from the <code>.envrc</code> file into your terminal. Make sure that you’ve <a href="https://direnv.net/docs/installation.html">installed <code>direnv</code></a> and that you’ve properly hooked <code>direnv</code> into your shell.
-Next you’ll need to allow <code>direnv</code> to read this file and load the variables into your terminal using the following command.</p>
-<div class="highlight"><pre><span></span><code>direnv allow
+Next you’ll need to allow <code>direnv</code> to read this file and load the variables into your terminal using the following command.
+</p><div class="highlight"><pre><span></span><code>direnv allow
 </code></pre></div>
-<p><code>direnv</code> will unload itself whenever your <code>.envrc</code> file changes. You must rerun the following command every time you change the <code>.envrc</code> file.</p>
+<code>direnv</code> will unload itself whenever your <code>.envrc</code> file changes. You must rerun the following command every time you change the <code>.envrc</code> file.
 <h2 id="confirm-that-the-variables-were-loaded">Confirm that the variables were loaded<a class="headerlink" href="#confirm-that-the-variables-were-loaded" title="Link to this section">¶</a></h2>
-<p>After running <code>direnv allow</code> you should see output that looks something like the following (the exact output will vary depending on the variables you’ve set, don’t worry if it doesn’t look exactly like this):</p>
-<div class="highlight"><pre><span></span><code>direnv: loading ~/optimism/.envrc                                                            
+<p>After running <code>direnv allow</code> you should see output that looks something like the following (the exact output will vary depending on the variables you’ve set, don’t worry if it doesn’t look exactly like this):
+</p><div class="highlight"><pre><span></span><code>direnv: loading ~/optimism/.envrc                                                            
 direnv: export +DEPLOYMENT_CONTEXT +ETHERSCAN_API_KEY +GS_ADMIN_ADDRESS +GS_ADMIN_PRIVATE_KEY +GS_BATCHER_ADDRESS +GS_BATCHER_PRIVATE_KEY +GS_PROPOSER_ADDRESS +GS_PROPOSER_PRIVATE_KEY +GS_SEQUENCER_ADDRESS +GS_SEQUENCER_PRIVATE_KEY +IMPL_SALT +L1_RPC_KIND +L1_RPC_URL +PRIVATE_KEY +TENDERLY_PROJECT +TENDERLY_USERNAME
 </code></pre></div>
-<p>If you don’t see this output, you likely haven’t properly configured <code>direnv</code>. Make sure you’ve configured <code>direnv</code> properly and run <code>direnv allow</code> again so that you see the desired output.</p>
+If you don’t see this output, you likely haven’t properly configured <code>direnv</code>. Make sure you’ve configured <code>direnv</code> properly and run <code>direnv allow</code> again so that you see the desired output.
 <p>If you don’t want to use <code>direnv</code>, you can also set variables manually.</p>
 <h1 id="configure-your-network">Configure your network<a class="headerlink" href="#configure-your-network" title="Link to this section">¶</a></h1>
 <p>Once you’ve built both repositories, you’ll need to head back to the opbnb to set up the configuration file for your chain. Currently, chain configuration lives inside of the <a href="https://github.com/bnb-chain/opbnb/tree/develop/packages/contracts-bedrock">contracts-bedrock package</a> in the form of a JSON file.</p>
@@ -2369,104 +2375,141 @@ direnv: export +DEPLOYMENT_CONTEXT +ETHERSCAN_API_KEY +GS_ADMIN_ADDRESS +GS_ADMI
 <div class="highlight"><pre><span></span><code>cd packages/contracts-bedrock
 </code></pre></div>
 <h2 id="generate-the-configuration-file">Generate the configuration file<a class="headerlink" href="#generate-the-configuration-file" title="Link to this section">¶</a></h2>
-<p>Run the following script to generate the <code>getting-started.json</code> configuration file inside of the <code>deploy-config</code> directory.</p>
-<div class="highlight"><pre><span></span><code>./scripts/getting-started/config.sh
+<p>Run the following script to generate the <code>getting-started.json</code> configuration file inside of the <code>deploy-config</code> directory.
+</p><div class="highlight"><pre><span></span><code>./scripts/getting-started/config.sh
 </code></pre></div>
-<p>The script-based approach shown above is the one officially recommended by OP, and the generated configuration is the official version. However, we strongly recommend using the template method instead. A template is provided at the end of this document. You can use the information from getting-started.json together with the template to generate an OPBNB-style configuration</p>
-<p>In the template, in addition to replacing the Chain Info and all address fields generated earlier, you must also specify the following three parameters:</p>
-<p>1)l1BlockTag</p>
-<p>2)l2OutputOracleStartingTimestamp</p>
-<p>3)l2GenesisBlockTimestamp</p>
-<p>The example script below demonstrates how to populate the configuration using our template.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepareConfig</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span><span class="n">paths</span><span class="p">,</span><span class="n">env</span><span class="p">):</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'prepare qanet config starting'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">qanet_config_path</span><span class="p">):</span>
-        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'qanet config already exists,skip'</span><span class="p">)</span>
-        <span class="n">deploy_config</span> <span class="o">=</span> <span class="n">read_json</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">qanet_config_path</span><span class="p">)</span>
-        <span class="n">env</span><span class="p">[</span><span class="s1">'L2_CHAIN_ID'</span><span class="p">]</span><span class="o">=</span><span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2ChainID'</span><span class="p">]</span>
-        <span class="n">env</span><span class="p">[</span><span class="s1">'BATCH_INBOX_ADDRESS'</span><span class="p">]</span><span class="o">=</span><span class="n">deploy_config</span><span class="p">[</span><span class="s1">'batchInboxAddress'</span><span class="p">]</span>
-        <span class="k">return</span>
-
-    <span class="n">deploy_config</span> <span class="o">=</span> <span class="n">read_json</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">devnet_config_template_path</span><span class="p">)</span>
-    <span class="n">l1_rpc</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'L1_RPC_URL'</span><span class="p">]</span>
-    <span class="n">l1BlockTag</span> <span class="o">=</span> <span class="n">blockTagGet</span><span class="p">(</span><span class="n">l1_rpc</span><span class="p">)[</span><span class="s2">"result"</span><span class="p">]</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">l1BlockTag</span><span class="p">)</span>
-    <span class="n">l1BlockTimestamp</span> <span class="o">=</span> <span class="n">blockTimestampGet</span><span class="p">(</span><span class="n">l1_rpc</span><span class="p">,</span><span class="n">l1BlockTag</span><span class="p">)[</span><span class="s2">"result"</span><span class="p">][</span><span class="s2">"timestamp"</span><span class="p">]</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">l1BlockTimestamp</span><span class="p">)</span>
-    <span class="n">l1ChainId</span> <span class="o">=</span> <span class="n">chainId</span><span class="p">(</span><span class="n">l1_rpc</span><span class="p">)[</span><span class="s2">"result"</span><span class="p">]</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">l1ChainId</span><span class="p">)</span>
-    <span class="n">l2ChainId</span> <span class="o">=</span> <span class="n">decide_l2_chain_id</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span><span class="n">env</span><span class="p">)</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'decide l2 chain id is:</span><span class="si">{</span><span class="n">l2ChainId</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="n">env</span><span class="p">[</span><span class="s1">'L2_CHAIN_ID'</span><span class="p">]</span><span class="o">=</span><span class="n">l2ChainId</span>
-    <span class="n">env</span><span class="p">[</span><span class="s1">'BATCH_INBOX_ADDRESS'</span><span class="p">]</span><span class="o">=</span><span class="s1">'0xff0000000000000000000000000000000000'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">l2ChainId</span><span class="p">)</span>
-
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l1GenesisBlockTimestamp'</span><span class="p">]</span> <span class="o">=</span> <span class="n">l1BlockTimestamp</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l1StartingBlockTag'</span><span class="p">]</span> <span class="o">=</span> <span class="n">l1BlockTag</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l1ChainID'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l1ChainId</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2ChainID'</span><span class="p">]</span> <span class="o">=</span> <span class="n">l2ChainId</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2BlockTime'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'maxSequencerDrift'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">600</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'sequencerWindowSize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">57600</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'channelTimeout'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1200</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'p2pSequencerAddress'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_p2p_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'batchInboxAddress'</span><span class="p">]</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'BATCH_INBOX_ADDRESS'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'batchSenderAddress'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_batcher_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2OutputOracleSubmissionInterval'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">240</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2OutputOracleStartingTimestamp'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l1BlockTimestamp</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l1UseClique'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2OutputOracleProposer'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_proposer_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2OutputOracleChallenger'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2GenesisBlockGasLimit'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0x5f5e100'</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'baseFeeVaultRecipient'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l1FeeVaultRecipient'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'sequencerFeeVaultRecipient'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'proxyAdminOwner'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'finalSystemOwner'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'finalizationPeriodSeconds'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2GenesisBlockBaseFeePerGas'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0x5F5E100'</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'enableGovernance'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'governanceTokenSymbol'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'OPBNB'</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'governanceTokenName'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'OPBNB'</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'governanceTokenOwner'</span><span class="p">]</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="s1">'op_admin_address'</span><span class="p">]</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'eip1559Denominator'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'eip1559DenominatorCanyon'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'eip1559Elasticity'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'fermat'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2GenesisDeltaTimeOffset'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0x0"</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'L2GenesisEcotoneTimeOffset'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0x0"</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'l2GenesisFjordTimeOffset'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0x0"</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'snowTimeOffset'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0x0"</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'haberTimeOffset'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0x0"</span>
-    <span class="n">deploy_config</span><span class="p">[</span><span class="s1">'wrightTimeOffset'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0x0"</span>
-    <span class="n">write_json</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">qanet_config_path</span><span class="p">,</span><span class="n">deploy_config</span><span class="p">)</span>
-    <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">qanet_config_path</span><span class="p">,</span> <span class="n">paths</span><span class="o">.</span><span class="n">qanet_config_output_path</span><span class="p">)</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'prepared qanet config,path:</span><span class="si">{</span><span class="n">paths</span><span class="o">.</span><span class="n">qanet_config_path</span><span class="si">}</span><span class="s1">,content:</span><span class="si">{</span><span class="n">deploy_config</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-
-
- <span class="k">def</span><span class="w"> </span><span class="nf">blockTagGet</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">jsonRpcGet1</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="s1">'{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":74}'</span><span class="p">)</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">blockTimestampGet</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">block_tag</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">jsonRpcGet</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">{{</span><span class="s1">"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["</span><span class="si">{</span><span class="n">block_tag</span><span class="si">}</span><span class="s1">", false],"id":74</span><span class="se">}}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">write_json</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'w+'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s1">'  '</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">read_json</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<p>The script-based approach shown above is the one officially recommended by OP, and the generated configuration is the official version. However, we strongly recommend using the template method instead. A template is provided at the end of this document. You can use the information from getting-started.json together with the template to generate an OPBNB-style configuration.</p>
+<p>The following is an example our config template. In the template,  You need to replace the following variables with the ones from your environment.：<span class="arithmatex">\(l2ChainId，\)</span>l1ChainId，<span class="arithmatex">\(GS_SEQUENCER_ADDRESS，\)</span>GS_BATCHER_ADDRESS，<span class="arithmatex">\(GS_PROPOSER_ADDRESS，\)</span>GS_ADMIN_ADDRESS， $GS_ADMIN_ADDRESS .  It is recommended to set <code>l2OutputOracleSubmissionInterval</code> to <strong>3600</strong> (default is <strong>240</strong>) to provide a greater buffer for module startup delays.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">"l1ChainID"</span><span class="p">:</span>  <span class="err">$</span><span class="n">l1ChainId</span><span class="p">,</span>
+    <span class="s2">"l2ChainID"</span><span class="p">:</span>  <span class="err">$</span><span class="n">l2ChainId</span><span class="err">，</span>
+    <span class="s2">"l2BlockTime"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"maxSequencerDrift"</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="s2">"sequencerWindowSize"</span><span class="p">:</span> <span class="mi">57600</span><span class="p">,</span>
+    <span class="s2">"channelTimeout"</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+    <span class="s2">"p2pSequencerAddress"</span><span class="p">:</span> <span class="err">$</span><span class="n">GS_SEQUENCER_ADDRESS</span><span class="p">,</span>
+    <span class="s2">"batchInboxAddress"</span><span class="p">:</span>   <span class="s1">'0xff0000000000000000000000000000000000'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="err">$</span><span class="n">l2ChainId</span><span class="p">),</span>
+    <span class="s2">"batchSenderAddress"</span><span class="p">:</span>  <span class="err">$</span><span class="n">GS_BATCHER_ADDRESS</span><span class="p">,</span>
+    <span class="s2">"cliqueSignerAddress"</span><span class="p">:</span> <span class="s2">"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"</span><span class="p">,</span>
+    <span class="s2">"l1UseClique"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"l1StartingBlockTag"</span><span class="p">:</span> <span class="err">$</span><span class="n">l1BlockTag</span><span class="p">,</span>
+    <span class="s2">"l2OutputOracleSubmissionInterval"</span><span class="p">:</span> <span class="mi">3600</span><span class="p">,</span> 
+    <span class="s2">"l2OutputOracleStartingBlockNumber"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"l2OutputOracleStartingTimestamp"</span> <span class="err">$</span><span class="n">l2OutputOracleStartingTimestamp</span><span class="p">,</span>
+    <span class="s2">"l2OutputOracleProposer"</span><span class="p">:</span> <span class="err">$</span><span class="n">GS_PROPOSER_ADDRESS</span><span class="p">,</span>
+    <span class="s2">"l2OutputOracleChallenger"</span><span class="p">:</span> <span class="err">$</span><span class="n">GS_ADMIN_ADDRESS</span><span class="p">,</span>
+    <span class="s2">"l2GenesisBlockGasLimit"</span><span class="p">:</span> <span class="s2">"0x5f5e100"</span><span class="p">,</span>
+    <span class="s2">"l1BlockTime"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"baseFeeVaultMinimumWithdrawalAmount"</span><span class="p">:</span> <span class="s2">"0x8ac7230489e80000"</span><span class="p">,</span>
+    <span class="s2">"l1FeeVaultMinimumWithdrawalAmount"</span><span class="p">:</span> <span class="s2">"0x8ac7230489e80000"</span><span class="p">,</span>
+    <span class="s2">"sequencerFeeVaultMinimumWithdrawalAmount"</span><span class="p">:</span> <span class="s2">"0x8ac7230489e80000"</span><span class="p">,</span>
+    <span class="s2">"baseFeeVaultWithdrawalNetwork"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"l1FeeVaultWithdrawalNetwork"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"sequencerFeeVaultWithdrawalNetwork"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"proxyAdminOwner"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span>
+    <span class="s2">"baseFeeVaultRecipient"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span>
+    <span class="s2">"l1FeeVaultRecipient"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span>
+    <span class="s2">"sequencerFeeVaultRecipient"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span>
+    <span class="s2">"finalSystemOwner"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span>
+    <span class="s2">"superchainConfigGuardian"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span> 
+    <span class="s2">"finalizationPeriodSeconds"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"fundDevAccounts"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">"l2GenesisBlockBaseFeePerGas"</span><span class="p">:</span> <span class="s2">"0x5F5E100"</span><span class="p">,</span>
+    <span class="s2">"gasPriceOracleOverhead"</span><span class="p">:</span> <span class="mi">2100</span><span class="p">,</span>
+    <span class="s2">"gasPriceOracleScalar"</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+    <span class="s2">"gasPriceOracleBaseFeeScalar"</span><span class="p">:</span> <span class="mi">1368</span><span class="p">,</span>
+    <span class="s2">"gasPriceOracleBlobBaseFeeScalar"</span><span class="p">:</span> <span class="mi">810949</span><span class="p">,</span>
+    <span class="s2">"enableGovernance"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"governanceTokenSymbol"</span><span class="p">:</span> <span class="s2">"OPBNB"</span><span class="p">,</span>
+    <span class="s2">"governanceTokenName"</span><span class="p">:</span> <span class="s2">"OPBNB"</span><span class="p">,</span>
+    <span class="s2">"governanceTokenOwner"</span><span class="p">:</span> <span class="s2">"$GS_ADMIN_ADDRESS"</span><span class="p">,</span>
+    <span class="s2">"eip1559Denominator"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"eip1559DenominatorCanyon"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+     <span class="s2">"eip1559Elasticity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"l1GenesisBlockTimestamp"</span><span class="p">:</span> <span class="err">$</span><span class="n">l2GenesisBlockTimestamp</span><span class="p">,</span>
+    <span class="s2">"l2GenesisRegolithTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"l2GenesisDeltaTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"l2GenesisCanyonTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"systemConfigStartBlock"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"requiredProtocolVersion"</span><span class="p">:</span> <span class="s2">"0x0000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
+    <span class="s2">"recommendedProtocolVersion"</span><span class="p">:</span> <span class="s2">"0x0000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
+    <span class="s2">"faultGameAbsolutePrestate"</span><span class="p">:</span> <span class="s2">"0x03c7ae758795765c6664a5d39bf63841c71ff191e9189522bad8ebff5d4eca98"</span><span class="p">,</span>
+    <span class="s2">"faultGameMaxDepth"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">"faultGameClockExtension"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"faultGameMaxClockDuration"</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+    <span class="s2">"faultGameGenesisBlock"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"faultGameGenesisOutputRoot"</span><span class="p">:</span> <span class="s2">"0xDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF"</span><span class="p">,</span>
+    <span class="s2">"faultGameSplitDepth"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s2">"faultGameWithdrawalDelay"</span><span class="p">:</span> <span class="mi">604800</span><span class="p">,</span>
+    <span class="s2">"preimageOracleMinProposalSize"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+    <span class="s2">"preimageOracleChallengePeriod"</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s2">"proofMaturityDelaySeconds"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">"disputeGameFinalityDelaySeconds"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s2">"respectedGameType"</span><span class="p">:</span> <span class="mi">254</span><span class="p">,</span>
+    <span class="s2">"useFaultProofs"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"usePlasma"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">"daCommitmentType"</span><span class="p">:</span> <span class="s2">"KeccakCommitment"</span><span class="p">,</span>
+    <span class="s2">"daChallengeWindow"</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="s2">"daResolveWindow"</span><span class="p">:</span> <span class="mi">160</span><span class="p">,</span>
+    <span class="s2">"daBondSize"</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+    <span class="s2">"daResolverRefundPercentage"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"fermat"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"L2GenesisEcotoneTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"l2GenesisFjordTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"snowTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"haberTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span><span class="p">,</span>
+    <span class="s2">"wrightTimeOffset"</span><span class="p">:</span> <span class="s2">"0x0"</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>You can also fetch the three values—l1BlockTag, l2OutputOracleStartingTimestamp, and l2GenesisBlockTimestamp—via curl (here shown against BSC Testnet):</p>
-<div class="highlight"><pre><span></span><code>//<span class="w"> </span>get<span class="w"> </span>tag<span class="w"> </span>info
-curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://data-seed-prebsc-2-s2.bnbchain.org:8545<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w">   </span>-d<span class="w"> </span><span class="s1">'{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":74}'</span>
+<p>in addition to replacing the Chain Info , you must also specify the following three parameters:</p>
+<ol>
+<li>l1StartingBlockTag</li>
+</ol>
+<p>2) l2OutputOracleStartingTimestamp</p>
+<ol>
+<li>l2GenesisBlockTimestamp</li>
+</ol>
+<p>You can also fetch the three values via the following script (here shown against BSC Testnet), </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
+<span class="c1"># RPC endpoint of bsc testnet</span>
+<span class="nv">RPC_URL</span><span class="o">=</span><span class="s2">"https://data-seed-prebsc-2-s2.bnbchain.org:8545"</span>
 
-curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://data-seed-prebsc-1-s1.bnbchain.org:8545<span class="w">   </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w">   </span>-d<span class="w"> </span><span class="s1">'{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x2e10b2c", false],"id":74}'</span>
+<span class="c1"># Function to convert hex string to decimal</span>
+hex_to_dec<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span><span class="s2">"%d\n"</span><span class="w"> </span><span class="s2">"</span><span class="k">$((</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="k">))</span><span class="s2">"</span>
+<span class="o">}</span>
 
-//<span class="w"> </span>In<span class="w"> </span>the<span class="w"> </span>returned<span class="w"> </span>result,<span class="w"> </span>the<span class="w"> </span>timestamp<span class="w"> </span>field<span class="w"> </span>is<span class="w"> </span>your<span class="w"> </span>l2GenesisBlockTimestamp.<span class="w"> </span>And<span class="w"> </span>converting<span class="w"> </span>that<span class="w"> </span>value<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>Unix‐style<span class="w"> </span><span class="o">(</span>seconds<span class="o">)</span><span class="w"> </span>timestamp<span class="w"> </span>gives<span class="w"> </span>you<span class="w"> </span>the<span class="w"> </span>l2OutputOracleStartingTimestamp.
+<span class="c1"># Loop until a valid milliTimestamp is found</span>
+<span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="c1"># Get latest block number</span>
+<span class="w">  </span><span class="nv">block_tag_hex</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"</span><span class="nv">$RPC_URL</span><span class="s2">"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">'{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":74}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.result<span class="k">)</span>
+
+<span class="w">  </span><span class="c1"># Get block info</span>
+<span class="w">  </span><span class="nv">block_info</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"</span><span class="nv">$RPC_URL</span><span class="s2">"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s2">"{\"jsonrpc\":\"2.0\",\"method\":\"eth_getBlockByNumber\",\"params\":[\"</span><span class="nv">$block_tag_hex</span><span class="s2">\", false],\"id\":74}"</span><span class="k">)</span>
+
+<span class="w">  </span><span class="nv">timestamp_hex</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$block_info</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.result.timestamp<span class="k">)</span>
+<span class="w">  </span><span class="nv">milli_timestamp_hex</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$block_info</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.result.milliTimestamp<span class="k">)</span>
+
+<span class="w">  </span><span class="nv">timestamp_dec</span><span class="o">=</span><span class="k">$(</span>hex_to_dec<span class="w"> </span><span class="s2">"</span><span class="nv">$timestamp_hex</span><span class="s2">"</span><span class="k">)</span>
+<span class="w">  </span><span class="nv">milli_timestamp_dec</span><span class="o">=</span><span class="k">$(</span>hex_to_dec<span class="w"> </span><span class="s2">"</span><span class="nv">$milli_timestamp_hex</span><span class="s2">"</span><span class="k">)</span>
+
+<span class="w">  </span><span class="c1"># Check if milliTimestamp is divisible by 1000 ，If we need to set a 500ms block time ( op 500ms need to be enabled in bsc testnet and mainnet ), it's important to note that the selected `milliTimestamp` must be divisible by 1000.</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>milli_timestamp_dec<span class="w"> </span>%<span class="w"> </span><span class="nv">1000</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">break</span>
+<span class="w">  </span><span class="k">fi</span>
+
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">1</span>
+<span class="k">done</span>
+
+<span class="c1"># Print final result</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"l1StartingBlockTag=</span><span class="nv">$block_tag_hex</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"l2GenesisBlockTimestamp=</span><span class="nv">$timestamp_hex</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"l2OutputOracleStartingTimestamp=</span><span class="nv">$timestamp_dec</span><span class="s2">"</span>
 </code></pre></div>
+<p>Once you have retrieved the values of the three variables, insert them into the configuration template. After updating the configuration file, assign its path to the <code>DEPLOY_CONFIG_PATH</code> environment variable.</p>
 <h2 id="review-and-change-the-configuration-file-optional">Review and change the configuration file (Optional)<a class="headerlink" href="#review-and-change-the-configuration-file-optional" title="Link to this section">¶</a></h2>
 <p>If you’d like, you can review the configuration file that was just generated by opening up <code>deploy-config/getting-started.json</code> in your favorite text editor. 
 You can change configuration values to fit your specific needs. Please refer the <a href="./Chain-Configuration.md">Chain Configuration</a>.
@@ -2474,21 +2517,21 @@ It’s recommended to keep this file as-is for now so you don’t run into any u
 <h1 id="deploy-the-create2-factory-optional">Deploy the Create2 Factory (Optional)<a class="headerlink" href="#deploy-the-create2-factory-optional" title="Link to this section">¶</a></h1>
 <p>If you’re deploying opBNB to a network other than BSC testnet, you may need to deploy a Create2 factory contract to the L1 chain. This factory contract is used to deploy opBNB smart contracts in a deterministic fashion.</p>
 <h2 id="check-if-the-factory-exists">Check if the factory exists<a class="headerlink" href="#check-if-the-factory-exists" title="Link to this section">¶</a></h2>
-<p>The Create2 factory contract will be deployed at the address <code>0x4e59b44847b379578588920cA78FbF26c0B4956C</code>. You can check if this contract has already been deployed to your L1 network with a block explorer or by running the following command:</p>
-<div class="highlight"><pre><span></span><code>cast codesize 0x4e59b44847b379578588920cA78FbF26c0B4956C --rpc-url $L1_RPC_URL
+<p>The Create2 factory contract will be deployed at the address <code>0x4e59b44847b379578588920cA78FbF26c0B4956C</code>. You can check if this contract has already been deployed to your L1 network with a block explorer or by running the following command:
+</p><div class="highlight"><pre><span></span><code>cast codesize 0x4e59b44847b379578588920cA78FbF26c0B4956C --rpc-url $L1_RPC_URL
 </code></pre></div>
-<p>If the command returns 0 then the contract has not been deployed yet. If the command returns 69 then the contract has been deployed and you can safely skip this section.</p>
+If the command returns 0 then the contract has not been deployed yet. If the command returns 69 then the contract has been deployed and you can safely skip this section.
 <h2 id="fund-the-factory-deployer">Fund the factory deployer<a class="headerlink" href="#fund-the-factory-deployer" title="Link to this section">¶</a></h2>
 <p>You will need to send some BNB to the address that will be used to deploy the factory contract, <code>0x3fAB184622Dc19b6109349B94811493BF2a45362</code>. This address can only be used to deploy the factory contract and will not be used for anything else. Send at least 1 BNB to this address on your L1 chain.</p>
 <h2 id="deploy-the-factory">Deploy the factory<a class="headerlink" href="#deploy-the-factory" title="Link to this section">¶</a></h2>
-<p>Using <code>cast</code>, deploy the factory contract to your L1 chain:</p>
-<div class="highlight"><pre><span></span><code>cast publish --rpc-url $L1_RPC_URL 0xf8a58085174876e800830186a08080b853604580600e600039806000f350fe7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe03601600081602082378035828234f58015156039578182fd5b8082525050506014600cf31ba02222222222222222222222222222222222222222222222222222222222222222a02222222222222222222222222222222222222222222222222222222222222222 
+<p>Using <code>cast</code>, deploy the factory contract to your L1 chain:
+</p><div class="highlight"><pre><span></span><code>cast publish --rpc-url $L1_RPC_URL 0xf8a58085174876e800830186a08080b853604580600e600039806000f350fe7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe03601600081602082378035828234f58015156039578182fd5b8082525050506014600cf31ba02222222222222222222222222222222222222222222222222222222222222222a02222222222222222222222222222222222222222222222222222222222222222 
 </code></pre></div>
 <h2 id="wait-for-the-transaction-to-be-mined">Wait for the transaction to be mined<a class="headerlink" href="#wait-for-the-transaction-to-be-mined" title="Link to this section">¶</a></h2>
 <p>Make sure that the transaction is included in a block on your L1 chain before continuing.</p>
 <h2 id="verify-that-the-factory-was-deployed">Verify that the factory was deployed<a class="headerlink" href="#verify-that-the-factory-was-deployed" title="Link to this section">¶</a></h2>
-<p>Run the code size check again to make sure that the factory was properly deployed:</p>
-<div class="highlight"><pre><span></span><code>cast codesize 0x4e59b44847b379578588920cA78FbF26c0B4956C --rpc-url $L1_RPC_URL
+<p>Run the code size check again to make sure that the factory was properly deployed:
+</p><div class="highlight"><pre><span></span><code>cast codesize 0x4e59b44847b379578588920cA78FbF26c0B4956C --rpc-url $L1_RPC_URL
 </code></pre></div>
 <h1 id="deploy-the-l1-contracts">Deploy the L1 contracts<a class="headerlink" href="#deploy-the-l1-contracts" title="Link to this section">¶</a></h1>
 <p>Once you’ve configured your network, it’s time to deploy the L1 contracts necessary for the functionality of the chain.</p>
@@ -2498,12 +2541,11 @@ It’s recommended to keep this file as-is for now so you don’t run into any u
 <span class="sb">```</span>
 <span class="nv">DEPLOYMENT_OUTFILE</span><span class="o">=</span><span class="s2">"./deployments/L1/.deploy"</span><span class="w">    </span>//<span class="w"> </span>The<span class="w"> </span>contract<span class="w"> </span>address<span class="w"> </span>information<span class="w"> </span>entered<span class="w"> </span>after<span class="w"> </span>deployment.
 <span class="nv">DEPLOY_CONFIG_PATH</span><span class="o">=</span><span class="s2">"./deploy-config/devnet.json"</span><span class="w">  </span>//<span class="w"> </span>config<span class="w"> </span>file
-<span class="nv">DEPLOYMENT_CONTEXT</span><span class="o">=</span><span class="s2">"devnetL1"</span>
-<span class="nv">IMPL_SALT</span><span class="o">=</span><span class="s2">"ethers phoenixtestnetnewimpl"</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY --broadcast --rpc-url $L1_RPC_URL --slow
+<p></p><div class="highlight"><pre><span></span><code>forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY  --with-gas-price 1000000000 --broadcast --rpc-url $L1_RPC_URL --slow
 </code></pre></div>
-<p>If you see a nondescript error that includes <code>EvmError: Revert</code> and <code>Script failed</code> then you likely need to change the <code>IMPL_SALT</code> environment variable. This variable determines the addresses of various smart contracts that are deployed via <a href="https://eips.ethereum.org/EIPS/eip-1014">CREATE2</a>. If the same <code>IMPL_SALT</code> is used to deploy the same contracts twice, the second deployment will fail. You can generate a new <code>IMPL_SALT</code> by running <code>direnv</code> allow anywhere in the opbnb.</p>
+If you see a nondescript error that includes <code>EvmError: Revert</code> and <code>Script failed</code> then you likely need to change the <code>IMPL_SALT</code> environment variable. This variable determines the addresses of various smart contracts that are deployed via <a href="https://eips.ethereum.org/EIPS/eip-1014">CREATE2</a>. If the same <code>IMPL_SALT</code> is used to deploy the same contracts twice, the second deployment will fail. You can generate a new <code>IMPL_SALT</code> by running <code>direnv</code> allow anywhere in the opbnb.
+<p>You can check the  DEPLOYMENT_OUTFILE after deployed successfully. The contract address will be printed when the script running and the address can searched in <a href="https://testnet.bscscan.com/">https://testnet.bscscan.com/</a> .</p>
 <h3 id="l1-contracts">L1 Contracts<a class="headerlink" href="#l1-contracts" title="Link to this section">¶</a></h3>
 <table>
 <thead>
@@ -2546,7 +2588,20 @@ It’s recommended to keep this file as-is for now so you don’t run into any u
 </tr>
 </tbody>
 </table>
-<p><img alt="image-20250411151438331" src="../../img/image-20250411151438331.png"></p>
+<p><img alt="image-20250411151438331" src="./image-20250411151438331.png"></p>
+<h2 id="generate-l2-genesis-allocs">Generate L2 Genesis Allocs<a class="headerlink" href="#generate-l2-genesis-allocs" title="Link to this section">¶</a></h2>
+<p>A foundry script is used to generate the L2 genesis allocs. This is a JSON file that represents the L2 genesis state. The <code>CONTRACT_ADDRESSES_PATH</code> env var represents the deployment artifact that was generated during a contract deployment. The value should be same with DEPLOYMENT_OUTFILE.  The <code>STATE_DUMP_PATH</code> env var represents the filepath at which the allocs will be written to on disk. You can set the value in .env or envrc.</p>
+<div class="highlight"><pre><span></span><code>DEPLOY_CONFIG_PATH="./deploy-config/devnetL1-v2.json"
+CONTRACT_ADDRESSES_PATH="./deployments/L1/.deploy"  // same with DEPLOYMENT_OUTFILE
+STATE_DUMP_PATH="./deploy-config/state.json"
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>CONTRACT_ADDRESSES_PATH=&lt;DEPLOYMENT_OUTFILE&gt; \
+DEPLOY_CONFIG_PATH=&lt;PATH_TO_MY_DEPLOY_CONFIG&gt; \
+STATE_DUMP_PATH=&lt;PATH_TO_WRITE_L2_ALLOCS&gt; \
+  forge script scripts/L2Genesis.s.sol:L2Genesis \
+  --sig 'runWithStateDump()'
+</code></pre></div>
+<p>The L2 genesis allocs file will generated in the path of  DEPLOY_CONFIG_PATH after the script beed deployed successfully.</p>
 <h2 id="generate-the-l2-config-files">Generate the L2 config files<a class="headerlink" href="#generate-the-l2-config-files" title="Link to this section">¶</a></h2>
 <p>Now that you’ve set up the L1 smart contracts you can automatically generate several configuration files that are used within the Consensus Client and the Execution Client.</p>
 <p>You need to generate three important files:</p>
@@ -2560,28 +2615,30 @@ It’s recommended to keep this file as-is for now so you don’t run into any u
 </code></pre></div>
 <h2 id="create-genesis-files">Create genesis files<a class="headerlink" href="#create-genesis-files" title="Link to this section">¶</a></h2>
 <p>Now you’ll generate the <code>genesis.json</code> and <code>rollup.json</code> files within the op-node folder:</p>
-<p>–deploy-config  和   –l1-deployments  flag info needs to be replaced by th  DEPLOY_CONFIG_PATH and DEPLOYMENT_OUTFILE   of .env or .envrc</p>
+<p>–deploy-config and   –l1-deployments  flag info needs to be replaced by th  DEPLOY_CONFIG_PATH and DEPLOYMENT_OUTFILE   of .env or .envrc</p>
 <div class="highlight"><pre><span></span><code>go run cmd/main.go genesis l2 \
-  --deploy-config ../packages/contracts-bedrock/deploy-config/getting-started.json \
-  --l1-deployments ../packages/contracts-bedrock/deployments/getting-started/.deploy \
+  --deploy-config $DEPLOY_CONFIG_PATH \
+  --l1-deployments $DEPLOYMENT_OUTFILE \
   --outfile.l2 genesis.json \
   --outfile.rollup rollup.json \
-  --l1-rpc $L1_RPC_URL
+  --l1-rpc $L1_RPC_URL \
+  --l2-allocs $STATE_DUMP_PATH
 </code></pre></div>
-<p>Following is a example of rollup.json</p>
+<p>Note that  since op-geth does not support bsc 7702 yet, if the deployed l1 genesis height is after the bsc 7702 feature, the l1 hash in rollup.json is wrong and you need to manually execute rpc to get the correct value to replace it.</p>
+<p>Following is a example of rollup.json. </p>
 <div class="highlight"><pre><span></span><code><span class="o">{</span>
 <span class="w">  </span><span class="s2">"genesis"</span>:<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="s2">"l1"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">"hash"</span>:<span class="w"> </span><span class="s2">"0xf48f87b325e9e8e73bf6964346588b5f56156128278e18d74aa7ee0ceba6a714"</span>,
-<span class="w">      </span><span class="s2">"number"</span>:<span class="w"> </span><span class="m">5792</span>
+<span class="w">      </span><span class="s2">"hash"</span>:<span class="w"> </span><span class="s2">"0x79060df30c6c3377962184f28f88340616b8bc737e6af79bc17da55ac78e41bd"</span>,
+<span class="w">      </span><span class="s2">"number"</span>:<span class="w"> </span><span class="m">49953684</span>
 <span class="w">    </span><span class="o">}</span>,
 <span class="w">    </span><span class="s2">"l2"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">"hash"</span>:<span class="w"> </span><span class="s2">"0x0369f047f1e2d5975a4d088825b55d97bf1a0fc5c3df6e3aebd8f6e2f1e086f2"</span>,
+<span class="w">      </span><span class="s2">"hash"</span>:<span class="w"> </span><span class="s2">"0xb9d33b0e69bb67c857d59568f38011f4104e2747b6fcf8aff84fb4e419f73f4d"</span>,
 <span class="w">      </span><span class="s2">"number"</span>:<span class="w"> </span><span class="m">0</span>
 <span class="w">    </span><span class="o">}</span>,
-<span class="w">    </span><span class="s2">"l2_time"</span>:<span class="w"> </span><span class="m">1743059438</span>,
+<span class="w">    </span><span class="s2">"l2_time"</span>:<span class="w"> </span><span class="m">1744341397</span>,
 <span class="w">    </span><span class="s2">"system_config"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">"batcherAddr"</span>:<span class="w"> </span><span class="s2">"0x29cb7f616ab5c10bc59a7ed59e95ae6a2f8f0949"</span>,
+<span class="w">      </span><span class="s2">"batcherAddr"</span>:<span class="w"> </span><span class="s2">"0xb6e487a3cecde5e0e1793c98c2de1999a1319a2b"</span>,
 <span class="w">      </span><span class="s2">"overhead"</span>:<span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000000000000000000000000834"</span>,
 <span class="w">      </span><span class="s2">"scalar"</span>:<span class="w"> </span><span class="s2">"0x00000000000000000000000000000000000000000000000000000000000f4240"</span>,
 <span class="w">      </span><span class="s2">"gasLimit"</span>:<span class="w"> </span><span class="m">100000000</span>
@@ -2591,35 +2648,31 @@ It’s recommended to keep this file as-is for now so you don’t run into any u
 <span class="w">  </span><span class="s2">"max_sequencer_drift"</span>:<span class="w"> </span><span class="m">600</span>,
 <span class="w">  </span><span class="s2">"seq_window_size"</span>:<span class="w"> </span><span class="m">57600</span>,
 <span class="w">  </span><span class="s2">"channel_timeout"</span>:<span class="w"> </span><span class="m">1200</span>,
-<span class="w">  </span><span class="s2">"l1_chain_id"</span>:<span class="w"> </span><span class="m">714</span>,
-<span class="w">  </span><span class="s2">"l2_chain_id"</span>:<span class="w"> </span><span class="m">3717</span>,
+<span class="w">  </span><span class="s2">"l1_chain_id"</span>:<span class="w"> </span><span class="m">97</span>,
+<span class="w">  </span><span class="s2">"l2_chain_id"</span>:<span class="w"> </span><span class="m">4255</span>,
 <span class="w">  </span><span class="s2">"regolith_time"</span>:<span class="w"> </span><span class="m">0</span>,
 <span class="w">  </span><span class="s2">"canyon_time"</span>:<span class="w"> </span><span class="m">0</span>,
 <span class="w">  </span><span class="s2">"delta_time"</span>:<span class="w"> </span><span class="m">0</span>,
 <span class="w">  </span><span class="s2">"ecotone_time"</span>:<span class="w"> </span><span class="m">0</span>,
 <span class="w">  </span><span class="s2">"fjord_time"</span>:<span class="w"> </span><span class="m">0</span>,
-<span class="w">  </span><span class="s2">"volta_time"</span>:<span class="w"> </span><span class="m">1743094185</span>,
+<span class="w">  </span><span class="s2">"volta_time"</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="o">(</span>advised<span class="o">)</span>
 <span class="w">  </span><span class="s2">"fermat"</span>:<span class="w"> </span><span class="m">0</span>,
 <span class="w">  </span><span class="s2">"snow_time"</span>:<span class="w"> </span><span class="m">0</span>,
-<span class="w">  </span><span class="s2">"batch_inbox_address"</span>:<span class="w"> </span><span class="s2">"0xff00000000000000000000000000000000003717"</span>,
-<span class="w">  </span><span class="s2">"deposit_contract_address"</span>:<span class="w"> </span><span class="s2">"0x0da507e81c31bcfb7088524c31b9d99bd020a315"</span>,
-<span class="w">  </span><span class="s2">"l1_system_config_address"</span>:<span class="w"> </span><span class="s2">"0x89a9dcfc964e4b9b818be2552735ca17ce13e574"</span>,
+<span class="w">  </span><span class="s2">"batch_inbox_address"</span>:<span class="w"> </span><span class="s2">"0xff00000000000000000000000000000000000901"</span>,
+<span class="w">  </span><span class="s2">"deposit_contract_address"</span>:<span class="w"> </span><span class="s2">"0xf098dadd3f3cfabd9e773c7639dbef5e57308683"</span>,
+<span class="w">  </span><span class="s2">"l1_system_config_address"</span>:<span class="w"> </span><span class="s2">"0x644b2da606901ba67ff797168194708c0c3f7221"</span>,
 <span class="w">  </span><span class="s2">"protocol_versions_address"</span>:<span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span>,
 <span class="w">  </span><span class="s2">"da_challenge_contract_address"</span>:<span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span>
 <span class="o">}</span>
 </code></pre></div>
-<p>The latest op code supports the <code>volta_time</code> configuration to support Volta fork which makes the block time as 500ms. If you need to set the Layer 2 block time to less than 1 second—i.e., support millisecond-level block intervals—there are two ways to achieve this:</p>
-<ol>
-<li>Manually add <code>volta_time</code> to the configuration file and set it to <code>0</code>. This will enable 500ms block time immediately.</li>
-<li>If you plan to perform a hard fork upgrade at a future time, set <code>volta_time</code> to a future timestamp. We will provide a separate document to explain the hard fork upgrade process.</li>
-</ol>
+<p>You need to manually add <code>"volta_time": 0</code> to the configuration file to ensure the block time is set to 500ms.  The latest op code supports the <code>volta_time</code>  configuration to 0 support Volta fork which makes the block time as 500ms. Since the BSC L1 block time will be reduced to under 1 second, the 500ms configuration is required.</p>
 <h2 id="create-an-authentication-key">Create an authentication key<a class="headerlink" href="#create-an-authentication-key" title="Link to this section">¶</a></h2>
-<p>Next you’ll create a <a href="https://jwt.io/introduction">JSON Web Token</a> that will be used to authenticate the Consensus Client and the Execution Client. This token is used to ensure that only the Consensus Client and the Execution Client can communicate with each other. You can generate a JWT with the following command:</p>
-<div class="highlight"><pre><span></span><code>openssl rand -hex 32 &gt; jwt.txt
+<p>Next you’ll create a <a href="https://jwt.io/introduction">JSON Web Token</a> that will be used to authenticate the Consensus Client and the Execution Client. This token is used to ensure that only the Consensus Client and the Execution Client can communicate with each other. You can generate a JWT with the following command:
+</p><div class="highlight"><pre><span></span><code>openssl rand -hex 32 &gt; jwt.txt
 </code></pre></div>
 <h2 id="copy-genesis-files-into-the-op-geth-directory">Copy genesis files into the op-geth directory<a class="headerlink" href="#copy-genesis-files-into-the-op-geth-directory" title="Link to this section">¶</a></h2>
-<p>Finally, you’ll need to copy the <code>genesis.json</code> file and <code>jwt.txt</code> file into <code>op-geth</code> so you can use it to initialize and run <code>op-geth</code>:</p>
-<div class="highlight"><pre><span></span><code>cp genesis.json ~/op-geth
+<p>Finally, you’ll need to copy the <code>genesis.json</code> file and <code>jwt.txt</code> file into <code>op-geth</code> so you can use it to initialize and run <code>op-geth</code>:
+</p><div class="highlight"><pre><span></span><code>cp genesis.json ~/op-geth
 cp jwt.txt ~/op-geth
 </code></pre></div>
 <h1 id="initialize-op-geth">Initialize <code>op-geth</code><a class="headerlink" href="#initialize-op-geth" title="Link to this section">¶</a></h1>
@@ -2631,19 +2684,20 @@ cp jwt.txt ~/op-geth
 <div class="highlight"><pre><span></span><code>mkdir datadir
 </code></pre></div>
 <h2 id="initialize-op-geth_1">Initialize op-geth<a class="headerlink" href="#initialize-op-geth_1" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>build/bin/geth init --datadir=datadir  --state.scheme path --db.engine genesis.json
+<div class="highlight"><pre><span></span><code>build/bin/geth init --datadir=datadir  --state.scheme path --db.engine pebble genesis.json
 </code></pre></div>
-<h1 id="start-op-geth">Start <code>op-geth</code><a class="headerlink" href="#start-op-geth" title="Link to this section">¶</a></h1>
+<p>you can also init with hash scheme by  “–state.schme hash” , we recommend pathdb for better performance</p>
+<h1 id="start-sequencer">Start <code>Sequencer</code><a class="headerlink" href="#start-sequencer" title="Link to this section">¶</a></h1>
 <p>Now you’ll start <code>op-geth</code>, your Execution Client. Note that you won’t start seeing any transactions until you start the Consensus Client in the next step.</p>
 <h2 id="open-up-a-new-terminal">Open up a new terminal<a class="headerlink" href="#open-up-a-new-terminal" title="Link to this section">¶</a></h2>
-<p>You’ll need a terminal window to run <code>op-geth</code> in.</p>
+<p>You’ll need a terminal window to run <code>op-geth</code> in or you can run it in nohup m.</p>
 <h2 id="navigate-to-the-op-geth-directory_1">Navigate to the op-geth directory<a class="headerlink" href="#navigate-to-the-op-geth-directory_1" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>cd ~/op-geth
 </code></pre></div>
 <h2 id="run-op-geth">Run op-geth<a class="headerlink" href="#run-op-geth" title="Link to this section">¶</a></h2>
 <p>You’re using <code>--gcmode=archive</code> to run <code>op-geth</code> here because this node will act as your Sequencer. It’s useful to run the Sequencer in archive mode because the <code>op-proposer</code> requires access to the full state. Feel free to run other (non-Sequencer) nodes in full mode if you’d like to save disk space.
-It’s important that you’ve already initialized the geth node at this point as per the previous section. Failure to do this will cause startup issues between <code>op-geth</code> and <code>op-node</code>.</p>
-<div class="highlight"><pre><span></span><code> ./build/bin/geth \
+It’s important that you’ve already initialized the geth node at this point as per the previous section. Failure to do this will cause startup issues between <code>op-geth</code> and <code>op-node</code>. The parameters related to metrics, logging levels, and txpool performance in the following startup configuration are optional. You may adjust them based on the specific requirements of your blockchain.</p>
+<div class="highlight"><pre><span></span><code> ./build/bin/op-geth \
   --datadir ./datadir \
   --http \
   --http.corsdomain="*" \
@@ -2657,37 +2711,53 @@ It’s important that you’ve already initialized the geth node at this point a
   --ws.api=debug,eth,txpool,net,engine \
   --syncmode=full \
   --gcmode=archive \
+  --mine \
+  --miner.newpayload-timeout=650ms \
+  --miner.gaslimit=150000000 \
+  --miner.gasprice=1 \
+  --miner.etherbase=$GS_SEQUENCER_ADDRESS \
   --nodiscover \
-  --maxpeers=0 \
-  --networkid=5611 （replace with your rollup chaind id ） \
-  --authrpc.vhosts="*" \
+  --maxpeers=10 \
+  --networkid=$L2_CHAIN_ID \   
+  --authrpc.vhosts='*' \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port=8551 \
-  --txpool.globalslots=40000 \
+  --txpool.globalslots=20000 \
   --txpool.globalqueue=10000 \
-  --txpool.accountqueue=16 \
-  --txpool.accountslots=16 \
+  --txpool.accountqueue=500 \
+  --txpool.accountslots=500 \
   --txpool.pricelimit=1 \
   --txpool.nolocals=true \
   --txpool.reannouncetime=3m \
   --txpool.reannounceremotes=true \
-  --cache=2000 \
+  --cache=20000 \
+  --cache.preimages \ 
   --authrpc.jwtsecret=./jwt.txt \
-  --rollup.disabletxpoolgossip=true
+  --rollup.disabletxpoolgossip=false \
+  --journalfile \ 
+  --pathdb.nodebuffer=list \
+  --pathdb.proposeblock=3600 \
+  --pathdb.enableproofkeeper \ 
+  --metrics \
+  --metrics.port=6060 \
+  --metrics.addr=0.0.0.0 \
+  --verbosity=3 
+
+  // replace with $L2_CHAIN_ID with your real chainid
 </code></pre></div>
-<h1 id="start-op-node">Start <code>op-node</code><a class="headerlink" href="#start-op-node" title="Link to this section">¶</a></h1>
+<p>Please note that if you set <code>--pathdb.proposeblock=3600</code>, the proposer processor must start within 3600 seconds after op-geth of sequencer is launched. The value of pathdb.proposeblock need to be same with l2OutputOracleSubmissionInterval of  DEPLOY_CONFIG_PATH . If you are using hash db instead of pathdb , you can ignore the config begin with –pathdb. </p>
 <p>Once you’ve got <code>op-geth</code> running you’ll need to run <code>op-node</code>. Like Ethereum, the opBNB has a Consensus Client (<code>op-node</code>) and an Execution Client (<code>op-geth</code>). The Consensus Client “drives” the Execution Client over the Engine API.   Each of the Sequencer, Bridge, P2P, and RPC nodes runs both an op-node and an op-geth process—the only distinction is the set of startup parameters supplied to the op-node.</p>
-<h2 id="open-up-a-new-terminal_1">Open up a new terminal<a class="headerlink" href="#open-up-a-new-terminal_1" title="Link to this section">¶</a></h2>
-<p>You’ll need a terminal window to run <code>op-node</code> in.</p>
 <h2 id="navigate-to-the-op-node-directory">Navigate to the op-node directory<a class="headerlink" href="#navigate-to-the-op-node-directory" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>cd ~/opbnb/op-node
 </code></pre></div>
-<h2 id="run-op-node-as-miner-sequencer">Run op-node as miner (sequencer)<a class="headerlink" href="#run-op-node-as-miner-sequencer" title="Link to this section">¶</a></h2>
+<h2 id="run-op-node-in-miner-mode">Run op-node in miner mode<a class="headerlink" href="#run-op-node-in-miner-mode" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>./bin/op-node \
+  --l1.trustrpc \
   --l2=http://localhost:8551 \
   --l2.jwt-secret=./jwt.txt \
-  --sequencer.enabled \
+  --sequencer.enabled=true \
   --sequencer.l1-confs=15 \
+  --sequencer.combined-engine \
   --verifier.l1-confs=15 \
   --l1.http-poll-interval=3s \
   --l1.epoch-poll-interval=3s \
@@ -2695,53 +2765,131 @@ It’s important that you’ve already initialized the geth node at this point a
   --rollup.config=./rollup.json \
   --rpc.addr=0.0.0.0 \
   --rpc.port=8547 \
-  --p2p.disable \
   --rpc.enable-admin \
+  --sequencer.priority \
+  --l1.max-concurrency=20 \
   --p2p.sequencer.key=$GS_SEQUENCER_PRIVATE_KEY \
   --l1=$L1_RPC_URL \
-  --l1.rpckind=$L1_RPC_KIND
+  --l1.rpckind=$L1_RPC_KIND(optional) \
+  --metrics.enabled \
+  --metrics.port=7070 \
+  --metrics.addr=0.0.0.0 
 </code></pre></div>
-<p>Once you run this command, you should start seeing the <code>op-node</code> begin to sync L2 blocks from the L1 chain. Once the <code>op-node</code> has caught up to the tip of the L1 chain, it’ll begin to send blocks to <code>op-geth</code> for execution. At that point, you’ll start to see blocks being created inside of <code>op-geth</code>.
-By default, your <code>op-node</code> will try to use a peer-to-peer to speed up the synchronization process. If you’re using a chain ID that is also being used by others, like the default chain ID for this tutorial (42069), your <code>op-node</code> will receive blocks signed by other sequencers. These requests will fail and waste time and network resources. To avoid this, this tutorial starts with peer-to-peer synchronization disabled (<code>--p2p.disable</code>).</p>
-<p>Once you have multiple nodes, you may want to enable peer-to-peer synchronization. You can add the following options to the <code>op-node</code> command to enable peer-to-peer synchronization with specific nodes:</p>
-<div class="highlight"><pre><span></span><code>--p2p.static=&lt;nodes&gt; \
+<p>Once you run this command, you should start seeing the <code>op-node</code> begin to sync L2 blocks from the L1 chain. Once the <code>op-node</code> has caught up to the tip of the L1 chain, it’ll begin to send blocks to <code>op-geth</code> for execution. At that point, you’ll start to see blocks being created inside of <code>op-geth</code>.</p>
+<h1 id="start-bridge-node">Start <code>Bridge node</code><a class="headerlink" href="#start-bridge-node" title="Link to this section">¶</a></h1>
+<p>It is recommended to run the bridge node and the sequencer node on different machines or Kubernetes pods. Therefore, you need to copy the sequencer’s <code>genesis.json</code> and <code>rollup.json</code> files to the corresponding runtime environment.</p>
+<h2 id="run-op-geth-as-bridge-node">Run op-geth as bridge node<a class="headerlink" href="#run-op-geth-as-bridge-node" title="Link to this section">¶</a></h2>
+<p>You need to init op-geth datadir first the same way as the op-geth of sequencer and than start op-geth with full node mode.  You can adjust the flags by your environment.</p>
+<div class="highlight"><pre><span></span><code> ./op-geth \
+  --datadir ./datadir \
+  --http \
+  --http.corsdomain="*" \
+  --http.vhosts="*" \
+  --http.addr=0.0.0.0 \
+  --http.api=web3,debug,eth,txpool,net,engine \
+  --ws \
+  --ws.addr=0.0.0.0 \
+  --ws.port=8546 \
+  --ws.origins="*" \
+  --ws.api=debug,eth,txpool,net,engine \
+  --syncmode=full \
+  --gcmode=full \
+  --nodiscover \
+  --maxpeers=10 \
+  --networkid=$L2_CHAIN_ID \
+  --authrpc.vhosts="*" \
+  --authrpc.addr=0.0.0.0 \
+  --authrpc.port=8551 \
+  --txpool.globalslots=10000 \
+  --txpool.globalqueue=5000 \
+  --txpool.accountqueue=500 \
+  --txpool.accountslots=500 \
+  --txpool.reannouncetime=3m \
+  --txpool.reannounceremotes=true \
+  --txpool.pricelimit=1 \
+  --txpool.nolocals=true \
+  --cache=10000 \
+  --cache.preimages \ 
+  --authrpc.jwtsecret=./jwt.txt \
+  --rollup.disabletxpoolgossip=false \
+  --history.transactions=0 \
+  --journalfile \ 
+  --metrics \
+  --metrics.port=6060 \
+  --metrics.addr=0.0.0.0 \
+  --verbosity 4
+</code></pre></div>
+<h2 id="run-op-node">Run op-node<a class="headerlink" href="#run-op-node" title="Link to this section">¶</a></h2>
+<p>To run a Bridge node , you can refer to this command, you need to adjust the flags by your environment..</p>
+<div class="highlight"><pre><span></span><code>./bin/op-node<span class="w">  </span><span class="se">\</span>
+<span class="w">  </span>--l1.trustrpc<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l2<span class="o">=</span>http://localhost:8551<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l2.jwt-secret<span class="o">=</span>./jwt.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--verifier.l1-confs<span class="o">=</span><span class="m">15</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.http-poll-interval<span class="o">=</span>3s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.epoch-poll-interval<span class="o">=</span>3s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.rpc-max-batch-size<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rollup.config<span class="o">=</span>./rollup.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rpc.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rpc.port<span class="o">=</span><span class="m">8547</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rpc.enable-admin<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.max-concurrency<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1<span class="o">=</span><span class="nv">$L1_RPC_URL</span><span class="w">  </span><span class="se">\</span>
+<span class="w">  </span>--metrics.enabled<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.port<span class="o">=</span><span class="m">7070</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--metrics.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--log.level<span class="o">=</span>debug<span class="w"> </span>
+</code></pre></div>
+<h2 id="config-p2p-peer-for-op-node-and-op-geth">Config p2p peer for op-node and op-geth<a class="headerlink" href="#config-p2p-peer-for-op-node-and-op-geth" title="Link to this section">¶</a></h2>
+<p>By default, your <code>op-node</code> will try to use a peer-to-peer to speed up the synchronization process. Once you have multiple nodes, you may want to enable peer-to-peer synchronization. You can add the following options to the <code>op-node</code> command to enable peer-to-peer synchronization with specific nodes:</p>
+<div class="highlight"><pre><span></span><code>--p2p.no-discovery \
+--p2p.static=&lt;nodes&gt; \
 --p2p.listen.ip=0.0.0.0 \
 --p2p.listen.tcp=9003 \
 --p2p.listen.udp=9003 \
 </code></pre></div>
-<p>You can alternatively also remove the <code>--p2p.static</code> option, but you may see failed requests from other chains using the same chain ID.</p>
-<h2 id="run-as-bridage-node-or-rpc-node">Run as Bridage node or RPC node<a class="headerlink" href="#run-as-bridage-node-or-rpc-node" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>./bin/op-node<span class="w"> </span>
-<span class="w">     </span>--l2<span class="o">=</span>http://localhost:8551<span class="w"> </span>
-<span class="w">   </span>--l1.trustrpc
-<span class="w">   </span>--l2.jwt-secret<span class="o">=</span>./jwt.txt<span class="w"> </span>
-<span class="w">   </span>--sequencer.l1-confs<span class="o">=</span><span class="m">15</span>
-<span class="w">   </span>--verifier.l1-confs<span class="o">=</span><span class="m">15</span>
-<span class="w">   </span>--l1.http-poll-interval<span class="o">=</span>3s
-<span class="w">   </span>--l1.epoch-poll-interval<span class="o">=</span>3s
-<span class="w">   </span>--l1.rpc-max-batch-size<span class="o">=</span><span class="m">20</span>
-<span class="w">   </span>--rollup.config<span class="o">=</span>/server/rollup.json
-<span class="w">   </span>--rpc.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--rpc.port<span class="o">=</span><span class="m">8547</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--p2p.disable<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--rpc.enable-admin<span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--l1<span class="o">=</span><span class="nv">$L1_RPC_URL</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--l1.rpckind<span class="o">=</span><span class="nv">$L1_RPC_KIND</span>
-<span class="w">    </span>--l1.max-concurrency<span class="o">=</span><span class="m">20</span><span class="w">   </span>--log.level<span class="o">=</span>debug
-<span class="w">   </span>--syncmode<span class="o">=</span>execution-layer
-<span class="w">   </span>--l1.max-concurrency<span class="o">=</span><span class="m">20</span>
+<p>You can alternatively also remove the <code>--p2p.static</code> option. Through configuring <code>p2p static</code>, you can ensure:</p>
+<ol>
+<li>Transactions sent to bridge nodes or RPC nodes can be relayed to the sequencer via P2P, without needing to send them directly to the sequencer ( need also ensure that  rollup.disabletxpoolgossip=false). This reduces traffic pressure on the sequencer.</li>
+<li>The sync progress between the bridge node and the sequencer node will not lag</li>
+</ol>
+<p>below is an example of starting a node with <code>p2p</code> parameters：</p>
+<div class="highlight"><pre><span></span><code>./op-node --l1.trustrpc --l2=http://localhost:8551 --l2.jwt-secret=./jwt.txt --sequencer.enabled=true --sequencer.l1-confs=15 --verifier.l1-confs=15 --l1.http-poll-interval=3s --l1.epoch-poll-interval=3s --l1.rpc-max-batch-size=20 --rollup.config=./rollup.json --rpc.addr=0.0.0.0 --rpc.port=8547 --rpc.enable-admin --sequencer.priority --l1.max-concurrency=20 --p2p.sequencer.key=0x... --l1=https:/.. --metrics.enabled --metrics.port=7070 --metrics.addr=0.0.0.0 --log.level=debug --p2p.no-discovery --p2p.listen.ip=0.0.0.0 --p2p.listen.tcp=9003 --p2p.listen.udp=9003 --p2p.static=/ip4/10.180.41.12/tcp/9003/p2p/16Uiu2HAm1LN4CHrSj27HT64qeg4dQ7ZdS9WmPk6uTV7jVcpFU4e3,/ip4/10.180.41.97/tcp/9003/p2p/16Uiu2HAkw3os1Ynusda8TpEVNGHuzGj85gEiwwnHyEeY2Y6Df1HH
 </code></pre></div>
-<p>To run a Bridge node , you can refer to this command, you need to adjust the flags by your environment..</p>
+<p>Before starting the node, we don’t yet know the <code>p2p static</code> addresses. You can first start all the nodes, then run the following <code>opp2p_self</code> command on each machine where the nodes are deployed to get each op-node’s corresponding P2P address:</p>
+<div class="highlight"><pre><span></span><code>curl localhost:8547 -X POST --data '{"jsonrpc":"2.0","method":"opp2p_self","params":[],"id":74}' -H 'Content-Type: application/json'
+
+{"jsonrpc":"2.0","id":74,"result":{"peerID":"..,"addresses":["/ip4/10.180.41.12/tcp/9003/p2p/16Uiu2HAm1LN4CHrSj27HT64qeg4dQ7ZdS9WmPk6uTV7jVcpFU4e3","/ip4/127.0.0.1/tcp/9003/p2p/16Uiu2HAm1LN4CHrSj27HT64qeg4dQ7ZdS9WmPk6uTV7jVcpFU4e3"],":0,"rejectedPayloads":0}}}}
+</code></pre></div>
+<p>Extract the first address under <code>addresses</code> in the JSON string, which is the corresponding P2P address of the node. Once we obtain the P2P addresses of all nodes deployed in the OP Stack, we can concatenate them together and use the result as the value of the <code>--p2p.static</code> parameter. After that, restart all <code>op-node</code> processes one by one with <code>--p2p.static</code>.</p>
+<p><code>op-geth</code> also needs to be configured with <code>p2p</code> settings to ensure the whole system functions correctly. Below is an example <code>config.toml</code>. You need to restart <code>op-geth</code> with the <code>--config=config.toml</code> parameter to load the <code>Node.p2p</code> settings.</p>
+<div class="highlight"><pre><span></span><code># cat config.toml 
+[Node.P2P]
+  StaticNodes = [
+        "enode://23394b676e64450ed7c6f845c57adec339d62ac34d0116e73a847e8c694c1888e40f83dcadbc2f6a45e4f542564c560b00773a6f3aa2ae5d28e0504bc2e68ca0@127.0.0.1:30303",
+        "enode://1c69ec667509e84107c3758ff58a4618dd40b7912d019051265f10938b92228cad54906185ab1e4ffc00f3a025dd55580ff7e115c7b78aca264c4e99b940d331@127.0.0.1:30303",
+  ]
+</code></pre></div>
+<p>You can obtain the node’s <code>enode</code> ID by running the following command in the <code>op-geth</code> working directory. Then gather all nodes’ <code>enode</code> IDs and write them into <code>config.toml</code>:</p>
+<div class="highlight"><pre><span></span><code> ./op-geth attach -exec "admin.nodeInfo"  &lt;geth-datadir&gt;/geth.ipc
+{
+  enode: "enode://23394b676e64450ed7c6f845c57adec339d62ac34d0116e73a847e8c694c1888e40f83dcadbc2f6a45e4f542564c560b00773a6f3aa2ae5d28e0504bc2e68ca0@127.0.0.1:30303?discport=0"      //remove ?discport0
+
+// we got the encode ID as "enode://23394b676e64450ed7c6f845c57adec339d62ac34d0116e73a847e8c694c1888e40f83dcadbc2f6a45e4f542564c560b00773a6f3aa2ae5d28e0504bc2e68ca0@127.0.0.1:30303"  // You need to replace 127.0.0.1 with your real IP or domain name
+</code></pre></div>
+<p>After completing the configuration and restarting the op-geth and op-node of both sequencer and bridge node, you can execute the following command in the same directory as the <code>op-geth</code> data directory to retrieve peer information.</p>
+<div class="highlight"><pre><span></span><code> ./op-geth attach -exec "admin.peers"  &lt;datadir&gt;/geth.ipc
+</code></pre></div>
 <h1 id="start-op-batcher">Start <code>op-batcher</code><a class="headerlink" href="#start-op-batcher" title="Link to this section">¶</a></h1>
 <p>The <code>op-batcher</code> takes transactions from the Sequencer and publishes those transactions to L1. Once these Sequencer transactions are included in a finalized L1 block, they’re officially part of the canonical chain. The <code>op-batcher</code> is critical!</p>
 <p>It’s best to give the <code>Batcher</code> address at least 2 BNB to ensure that it can continue operating without running out of BNB for gas. Keep an eye on the balance of the <code>Batcher</code> address because it can expend BNB quickly if there are a lot of transactions to publish.</p>
-<h2 id="open-up-a-new-terminal_2">Open up a new terminal<a class="headerlink" href="#open-up-a-new-terminal_2" title="Link to this section">¶</a></h2>
+<h2 id="open-up-a-new-terminal_1">Open up a new terminal<a class="headerlink" href="#open-up-a-new-terminal_1" title="Link to this section">¶</a></h2>
 <p>You’ll need a terminal window to run <code>op-batcher</code> in.</p>
 <h2 id="navigate-to-the-op-batcher-directory">Navigate to the op-batcher directory<a class="headerlink" href="#navigate-to-the-op-batcher-directory" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>cd ~/opbnb/op-batcher
 </code></pre></div>
 <h2 id="run-op-batcher">Run op-batcher<a class="headerlink" href="#run-op-batcher" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>./bin/op-batcher \
+<p></p><div class="highlight"><pre><span></span><code>./bin/op-batcher \
   --l2-eth-rpc=http://localhost:8545 \
   --rollup-rpc=http://localhost:8547 \
   --poll-interval=5s \
@@ -2751,19 +2899,23 @@ By default, your <code>op-node</code> will try to use a peer-to-peer to speed up
   --resubmission-timeout=30s \
   --rpc.addr=0.0.0.0 \
   --rpc.port=8548 \
+  --batch-type=1 \
+  --data-availability-type=auto \
+  --target-num-frames=2 \
   --rpc.enable-admin \
   --max-channel-duration=20 \
   --l1-eth-rpc=$L1_RPC_URL \
   --private-key=$GS_BATCHER_PRIVATE_KEY
 </code></pre></div>
-<p>The <code>--max-channel-duration=n</code> setting tells the <code>batcher</code> to write all the data to L1 every n L1 blocks. When it is low, transactions are written to L1 frequently and other nodes can synchronize from L1 quickly. When it is high, transactions are written to L1 less frequently and the <code>batcher</code> spends less BNB. If you want to reduce costs, either set this value to 0 to disable it or increase it to a higher value.</p>
+The <code>--max-channel-duration=n</code> setting tells the <code>batcher</code> to write all the data to L1 every n L1 blocks. When it is low, transactions are written to L1 frequently and other nodes can synchronize from L1 quickly. When it is high, transactions are written to L1 less frequently and the <code>batcher</code> spends less BNB. If you want to reduce costs, either set this value to 0 to disable it or increase it to a higher value.
 <h1 id="start-op-proposer">Start <code>op-proposer</code><a class="headerlink" href="#start-op-proposer" title="Link to this section">¶</a></h1>
-<h2 id="open-up-a-new-terminal_3">Open up a new terminal<a class="headerlink" href="#open-up-a-new-terminal_3" title="Link to this section">¶</a></h2>
+<h2 id="open-up-a-new-terminal_2">Open up a new terminal<a class="headerlink" href="#open-up-a-new-terminal_2" title="Link to this section">¶</a></h2>
 <p>You’ll need a terminal window to run <code>op-proposer</code> in.</p>
 <h2 id="navigate-to-the-op-proposer-directory">Navigate to the op-proposer directory<a class="headerlink" href="#navigate-to-the-op-proposer-directory" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>cd ~/opbnb/op-proposer
 </code></pre></div>
 <h2 id="run-op-proposer">Run op-proposer<a class="headerlink" href="#run-op-proposer" title="Link to this section">¶</a></h2>
+<p>Please note that if you set <code>--pathdb.proposeblock=3600</code>, the proposer must start within 3600 seconds after op-geth is launched.</p>
 <div class="highlight"><pre><span></span><code>./bin/op-proposer \
   --poll-interval=1s \
   --rpc.port=8560 \
@@ -2771,6 +2923,34 @@ By default, your <code>op-node</code> will try to use a peer-to-peer to speed up
   --l2oo-address=$(cat ../packages/contracts-bedrock/deployments/getting-started/.deploy | jq -r .L2OutputOracleProxy) \
   --private-key=$GS_PROPOSER_PRIVATE_KEY \
   --l1-eth-rpc=$L1_RPC_URL
+</code></pre></div>
+<h1 id="check-the-status-of-blockchain">Check the status of blockchain<a class="headerlink" href="#check-the-status-of-blockchain" title="Link to this section">¶</a></h1>
+<p>You can use the following method to check the block height of a node. In OP Stack, there are different types of block heights: <strong>safe</strong>, <strong>unsafe</strong>, and <strong>finalized</strong>.</p>
+<blockquote>
+<p><strong>The Safe Head</strong> represents the most recent L2 block that has been confirmed on L1, while
+ <strong>The Unsafe Head</strong> represents the highest unconfirmed L2 block that the rollup node is aware of.
+ The <code>derivation</code> process gradually turns <code>unsafe</code> blocks into <code>safe</code> ones, and then promotes <code>safe</code> blocks to the <code>finalized</code> state.</p>
+</blockquote>
+<p>If all three heights are continuously increasing, and the lag between <code>safe</code> and <code>unsafe</code> is minimal, it indicates that your system is producing blocks normally.</p>
+<p>Run the following command on a <strong>sequencer</strong> or <strong>bridge node</strong>:</p>
+<div class="highlight"><pre><span></span><code> wget http://localhost:7070/debug/metrics
+
+ cat metrics | grep op_node_default_refs_number
+ # TYPE op_node_default_refs_number gauge
+op_node_default_refs_number{layer="l1",type="l1_derived"} 5.0707611e+07
+op_node_default_refs_number{layer="l1",type="l1_finalized"} 5.0707625e+07
+op_node_default_refs_number{layer="l1",type="l1_head"} 5.0707627e+07
+op_node_default_refs_number{layer="l1",type="l1_safe"} 5.0707626e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_backup_unsafe"} 0
+op_node_default_refs_number{layer="l1_origin",type="l2_finalized"} 5.0707576e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_pending_safe"} 5.0707583e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_safe"} 5.0707583e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_unsafe"} 5.070761e+07
+op_node_default_refs_number{layer="l2",type="l2_backup_unsafe"} 0
+op_node_default_refs_number{layer="l2",type="l2_finalized"} 170436   // finalized block height
+op_node_default_refs_number{layer="l2",type="l2_pending_safe"} 170460
+op_node_default_refs_number{layer="l2",type="l2_safe"} 170460        // safe block height
+op_node_default_refs_number{layer="l2",type="l2_unsafe"} 170543      // unsafe block height
 </code></pre></div>
 <h1 id="connect-your-wallet-to-your-chain">Connect Your Wallet to Your Chain<a class="headerlink" href="#connect-your-wallet-to-your-chain" title="Link to this section">¶</a></h1>
 <p>You now have a fully functioning l2 rollup chain with a Sequencer node running on <a href="http://localhost:8545">http://localhost:8545</a>. You can connect your wallet to this chain the same way you’d connect your wallet to any other EVM chain.</p>
@@ -2789,20 +2969,20 @@ By default, your <code>op-node</code> will try to use a peer-to-peer to speed up
 <h1 id="deploy-config-example">Deploy config example<a class="headerlink" href="#deploy-config-example" title="Link to this section">¶</a></h1>
 <div class="highlight"><pre><span></span><code><span class="o">{</span>
 <span class="w">    </span><span class="s2">"l1ChainID"</span>:<span class="w"> </span><span class="m">97</span>,
-<span class="w">    </span><span class="s2">"l2ChainID"</span>:<span class="w"> </span><span class="m">4255</span>,
+<span class="w">    </span><span class="s2">"l2ChainID"</span>:<span class="w"> </span><span class="m">4274</span>,
 <span class="w">    </span><span class="s2">"l2BlockTime"</span>:<span class="w"> </span><span class="m">1</span>,
 <span class="w">    </span><span class="s2">"maxSequencerDrift"</span>:<span class="w"> </span><span class="m">600</span>,
 <span class="w">    </span><span class="s2">"sequencerWindowSize"</span>:<span class="w"> </span><span class="m">57600</span>,
 <span class="w">    </span><span class="s2">"channelTimeout"</span>:<span class="w"> </span><span class="m">1200</span>,
 <span class="w">    </span><span class="s2">"p2pSequencerAddress"</span>:<span class="w"> </span><span class="s2">"0x3224F068Fd97D2d4a91800D450EE19bfBCD6B6Ee"</span>,
-<span class="w">    </span><span class="s2">"batchInboxAddress"</span>:<span class="w"> </span><span class="s2">"0xff00000000000000000000000000000000000901"</span>,
+<span class="w">    </span><span class="s2">"batchInboxAddress"</span>:<span class="w"> </span><span class="s2">"0xff00000000000000000000000000000000004274"</span>,
 <span class="w">    </span><span class="s2">"batchSenderAddress"</span>:<span class="w"> </span><span class="s2">"0xB6e487a3cEcDe5e0E1793C98c2de1999a1319A2b"</span>,
 <span class="w">    </span><span class="s2">"cliqueSignerAddress"</span>:<span class="w"> </span><span class="s2">"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"</span>,
 <span class="w">    </span><span class="s2">"l1UseClique"</span>:<span class="w"> </span>false,
-<span class="w">    </span><span class="s2">"l1StartingBlockTag"</span>:<span class="w"> </span><span class="s2">"0x2fa3b94"</span>,
-<span class="w">    </span><span class="s2">"l2OutputOracleSubmissionInterval"</span>:<span class="w"> </span><span class="m">240</span>,
+<span class="w">    </span><span class="s2">"l1StartingBlockTag"</span>:<span class="w"> </span><span class="s2">"0x304dee2"</span>,
+<span class="w">    </span><span class="s2">"l2OutputOracleSubmissionInterval"</span>:<span class="w"> </span><span class="m">3600</span>,
 <span class="w">    </span><span class="s2">"l2OutputOracleStartingBlockNumber"</span>:<span class="w"> </span><span class="m">0</span>,
-<span class="w">    </span><span class="s2">"l2OutputOracleStartingTimestamp"</span>:<span class="w"> </span><span class="m">1744595989</span>,
+<span class="w">    </span><span class="s2">"l2OutputOracleStartingTimestamp"</span>:<span class="w"> </span><span class="m">1745389366</span>,
 <span class="w">    </span><span class="s2">"l2OutputOracleProposer"</span>:<span class="w"> </span><span class="s2">"0x254811af494550Ee5e0945C23EC5E4E17c9dF1bC"</span>,
 <span class="w">    </span><span class="s2">"l2OutputOracleChallenger"</span>:<span class="w"> </span><span class="s2">"0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5"</span>,
 <span class="w">    </span><span class="s2">"l2GenesisBlockGasLimit"</span>:<span class="w"> </span><span class="s2">"0x5f5e100"</span>,
@@ -2832,8 +3012,8 @@ By default, your <code>op-node</code> will try to use a peer-to-peer to speed up
 <span class="w">    </span><span class="s2">"governanceTokenOwner"</span>:<span class="w"> </span><span class="s2">"0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5"</span>,
 <span class="w">    </span><span class="s2">"eip1559Denominator"</span>:<span class="w"> </span><span class="m">8</span>,
 <span class="w">    </span><span class="s2">"eip1559DenominatorCanyon"</span>:<span class="w"> </span><span class="m">8</span>,
-<span class="w">        </span><span class="s2">"eip1559Elasticity"</span>:<span class="w"> </span><span class="m">2</span>,
-<span class="w">    </span><span class="s2">"l1GenesisBlockTimestamp"</span>:<span class="w"> </span><span class="s2">"0x67f88995"</span>,
+<span class="w">     </span><span class="s2">"eip1559Elasticity"</span>:<span class="w"> </span><span class="m">2</span>,
+<span class="w">    </span><span class="s2">"l1GenesisBlockTimestamp"</span>:<span class="w"> </span><span class="s2">"0x68088736"</span>,
 <span class="w">    </span><span class="s2">"l2GenesisRegolithTimeOffset"</span>:<span class="w"> </span><span class="s2">"0x0"</span>,
 <span class="w">    </span><span class="s2">"l2GenesisDeltaTimeOffset"</span>:<span class="w"> </span><span class="s2">"0x0"</span>,
 <span class="w">    </span><span class="s2">"l2GenesisCanyonTimeOffset"</span>:<span class="w"> </span><span class="s2">"0x0"</span>,
@@ -3052,8 +3232,8 @@ By default, your <code>op-node</code> will try to use a peer-to-peer to speed up
 </tbody>
 </table>
 <h2 id="address-configuration">Address Configuration<a class="headerlink" href="#address-configuration" title="Link to this section">¶</a></h2>
-<p>1） System Admin L1 Address 需要生成多签地址</p>
-<p>2) Proposer Challenger L1 Address  可以复用 System Admin L1 Address </p>
+<p>1） System Admin L1 Address multisig wallet address is needed</p>
+<p>2) Proposer Challenger L1 Address  Reuse System Admin L1 Address </p>
 <table>
 <thead>
 <tr>
