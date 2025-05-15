@@ -103,10 +103,10 @@ nav:
               - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
               - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
               - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
-            - Insfrastructure & Setup:  
+            - Insfrastructure & Setup:
               - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
               - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
-            - Maintenance & Upgrades:  
+            - Maintenance & Upgrades:
               - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
               - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
         - EOA Paymaster:
@@ -175,7 +175,7 @@ nav:
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
       - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
-      
+
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
       - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
