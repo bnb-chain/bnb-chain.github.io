@@ -136,3 +136,21 @@ If a single transaction only store a small size file to the Greenfield Network, 
 
 * Be Mindful to Delete
   Currently, the reserve time to be charged on Greenfield is 6 months. It means a six-month storage fee will charged even for deleted items.
+
+### What shall I do if my account is frozen?
+The reason for a frozen account and the way to resolve it are explained in detail in the [Force Settlement, Freeze and Resume](https://docs.bnbchain.org/bnb-greenfield/core-concept/billing-payment/#force-settlement-freeze-and-resume) section.
+
+To deposit funds into your frozen account and unfreeze it, you can follow these methods:
+
+#### Using the Greenfield Command
+
+   * Refer to the [Account Operations](https://docs.bnbchain.org/bnb-greenfield/getting-started/greenfield-command/#account-operations) section to set up the environment locally.
+   * Once set up, execute the following two commands to deposit to your account:
+     ```shell
+     gnfd-cmd payment-account create
+     gnfd-cmd payment-account deposit --toAddress [your_fronzen_account_address] --amount [amount_of_bnb_in_wei]
+     ```
+#### Using the Greenfield Go SDK
+
+   * Refer to the [Go SDK Example](https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-go) section to set up the environment locally.
+   * Once set up, use [deposit](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk@v1.7.4/client#Client.Deposit) method to deposit to your account.
