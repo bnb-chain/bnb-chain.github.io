@@ -1255,6 +1255,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-shall-i-do-if-my-account-is-frozen" class="md-nav__link">
+    <span class="md-ellipsis">
+      What shall I do if my account is frozen?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What shall I do if my account is frozen?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-greenfield-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Greenfield Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-greenfield-go-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Greenfield Go SDK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2744,6 +2777,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-shall-i-do-if-my-account-is-frozen" class="md-nav__link">
+    <span class="md-ellipsis">
+      What shall I do if my account is frozen?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What shall I do if my account is frozen?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-greenfield-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Greenfield Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-greenfield-go-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Greenfield Go SDK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2850,6 +2916,22 @@ you can start integrating smart contracts with Greenfield following the <a href=
 <ul>
 <li>Be Mindful to Delete
   Currently, the reserve time to be charged on Greenfield is 6 months. It means a six-month storage fee will charged even for deleted items.</li>
+</ul>
+<h3 id="what-shall-i-do-if-my-account-is-frozen">What shall I do if my account is frozen?<a class="headerlink" href="#what-shall-i-do-if-my-account-is-frozen" title="Link to this section">¶</a></h3>
+<p>The reason for a frozen account and the way to resolve it are explained in detail in the <a href="https://docs.bnbchain.org/bnb-greenfield/core-concept/billing-payment/#force-settlement-freeze-and-resume">Force Settlement, Freeze and Resume</a> section.</p>
+<p>To deposit funds into your frozen account and unfreeze it, you can follow these methods:</p>
+<h4 id="using-the-greenfield-command">Using the Greenfield Command<a class="headerlink" href="#using-the-greenfield-command" title="Link to this section">¶</a></h4>
+<ul>
+<li>Refer to the <a href="https://docs.bnbchain.org/bnb-greenfield/getting-started/greenfield-command/#account-operations">Account Operations</a> section to set up the environment locally.</li>
+<li>Once set up, execute the following two commands to deposit to your account:
+     <div class="highlight"><pre><span></span><code>gnfd-cmd<span class="w"> </span>payment-account<span class="w"> </span>create
+gnfd-cmd<span class="w"> </span>payment-account<span class="w"> </span>deposit<span class="w"> </span>--toAddress<span class="w"> </span><span class="o">[</span>your_fronzen_account_address<span class="o">]</span><span class="w"> </span>--amount<span class="w"> </span><span class="o">[</span>amount_of_bnb_in_wei<span class="o">]</span>
+</code></pre></div></li>
+</ul>
+<h4 id="using-the-greenfield-go-sdk">Using the Greenfield Go SDK<a class="headerlink" href="#using-the-greenfield-go-sdk" title="Link to this section">¶</a></h4>
+<ul>
+<li>Refer to the <a href="https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-go">Go SDK Example</a> section to set up the environment locally.</li>
+<li>Once set up, use <a href="https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk@v1.7.4/client#Client.Deposit">deposit</a> method to deposit to your account.</li>
 </ul></div>
 
 
