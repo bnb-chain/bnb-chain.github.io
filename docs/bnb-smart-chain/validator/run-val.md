@@ -8,7 +8,7 @@ title: Run BSC Validator - BNB Smart Chain
 
 ### Mainnet
 
-- Instance Spec: Suggest i7i.8xlarge or i7ie.6xlarge instance type on AWS. (or other spec to meet >=300 mgasps)
+- Instance Spec: Suggest i7i.8xlarge or i7ie.6xlarge instance type on AWS. (or other spec to meet >=400 mgasps)
 - Memory: 128 GB
 - Disk: **IMPORTANT** 7TB, NVMe SSD, 40k IOPS, 500 MB/S throughput, read latency <1ms.
 - Network Bandwidth: >= 512 Mbps
