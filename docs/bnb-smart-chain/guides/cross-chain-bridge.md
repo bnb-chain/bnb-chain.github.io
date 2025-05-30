@@ -2,123 +2,93 @@
 title: BNB Chain Bridge – Cross‑Chain Guide
 ---
 
-# BNB Chain Bridge (Wormhole) – Cross-Chain Guide
+# BNB Chain Cross-Chain Bridge Guide
 
 > **Status:** Draft · Last updated: 28 May 2025
 >
-> **Purpose** – Provide a single, end-to-end reference for bridging fungible tokens and NFTs **to** and **from** BNB Smart Chain (BSC), opBNB and BNB Greenfield using the **BNB Chain Bridge powered by Wormhole**. The guide fills gaps left by individual L2/L3 docs and adds concrete examples of cross-chain token migration.
+> **Purpose** – Help users and developers understand and make use of the **BNB Chain Bridge** at [bnbchain.org/en/bnb-chain-bridge](https://www.bnbchain.org/en/bnb-chain-bridge). This guide introduces users to cross-chain transfers and shows developers how to integrate the Canonical Bridge widget.
 
-> **Official Resource:** Learn more at the [BNB Chain Bridge Portal](https://www.bnbchain.org/en/bnb-chain-bridge)
+> **Official Resource:** [BNB Chain Bridge](https://www.bnbchain.org/en/bnb-chain-bridge)
 
 ---
 
-## 1  Audience
+## 1  Who Is This Guide For?
 
-* **Web3 users** who need a practical walkthrough.
-* **dApp developers** integrating Wormhole SDK.
-* **Support teams** resolving bridge issues.
+* 🧑‍💻 **Users** who want to transfer tokens in and out of BNB Chain from other chains like **Ethereum** or **Solana**.
+* 🛠️ **Developers** who want to integrate a cross-chain bridge widget on their website using BNB Chain's **Canonical Bridge**.
 
-## 2  Key Features & Improvements
+## 2  Why This Guide Matters
 
-| Feature                                      | Benefit                        |
-| -------------------------------------------- | ------------------------------ |
-| \~30 chains supported via Wormhole Guardians | Large surface for liquidity    |
-| Automatic route discovery & fee quote        | UX parity with CEX withdrawals |
-| On-chain proof of lock/mint                  | Verifiable token accounting    |
-| Message batching on opBNB                    | Up to 40% cheaper gas          |
+Many users don’t realize that cross-chain transfers are possible or easy. BNB Chain offers a bridge aggregator that shows the **best route** for moving assets between chains using one of our **six route providers**:
 
-## 3  Supported Routes (May 2025)
+**Supported Route Providers**:
 
-* **EVM chains**: Ethereum, Arbitrum, Optimism, Polygon PoS, Polygon zkEVM, Avalanche C-Chain, Base, Mantle, Linea, opBNB, BSC.
-* **Non-EVM**: Solana, Sui, Aptos, Cosmos SDK chains via Gateway.
-* **Storage targets**: BNB Greenfield buckets (for bridged NFT metadata).
+* Stargate
+* Celer
+* deBridge
+* Meson
+* LayerZero
+* Mayan (Wormhole)
 
-> **Tip —** Check the live list at [wormhole.com/platform/blockchains](https://wormhole.com/platform/blockchains) before initiating a transfer.
+> ✅ We help users **see available routes** for transferring assets **into or out of BNB Chain**, but we **do not operate the routes or control token availability**.
 
-## 4  Prerequisites
+## 3  How to Use the BNB Chain Bridge (User Guide)
 
-1. **Wallets**
+### Step-by-Step
 
-   * MetaMask ≥ v11 for EVM chains.
-   * Phantom or Solflare for Solana.
-2. **Native gas tokens** on **both** source & destination chains (e.g. ETH + BNB, or MATIC + BNB).
-3. **RPC endpoints** that accept large calldata (Gateway RPC recommended for opBNB).
+1. Visit [bnbchain.org/en/bnb-chain-bridge](https://www.bnbchain.org/en/bnb-chain-bridge) and click **Launch App**.
+2. Choose your **source chain** (e.g. Ethereum) and **destination chain** (e.g. BNB Chain).
+3. Connect your wallet for each chain.
+4. Choose a token to bridge and enter the amount.
+5. The bridge tool will display **available routes** based on your token and chains.
+6. Approve and confirm the transfer following the provider’s UI.
+7. Wait for the transaction to complete. You’ll receive your tokens on the destination chain.
 
-## 5  Quick-Start (BNB Chain Bridge UI)
+## 4  Understanding Bridge Aggregation
 
-1. Navigate to [BNB Chain Bridge](https://www.bnbchain.org/en/bnb-chain-bridge) and click **Launch App**.
-2. In the **From** panel, select your **source chain**. In the **To** panel, select **BNB Smart Chain**, **opBNB**, or **BNB Greenfield** as the destination.
-3. Connect your wallet on both chains as prompted.
-4. Choose the token you wish to bridge and enter the amount.
-5. Approve the token for spending if required.
-6. Confirm the **Lock** transaction on the source chain.
-7. Wait for the transfer to finalize via Wormhole’s Guardian network (usually \~20 seconds).
-8. Switch to the destination chain and confirm the **Redeem** transaction to receive the bridged asset.
+BNB Chain’s bridge tool is an **aggregator**. It finds available routes from partner bridge providers but:
 
-## 6  Example Walkthrough – Migrate 100 USDC from Any Chain → BNB Chain
+* ❌ We do not custody tokens.
+* ❌ We cannot add tokens ourselves.
+* ✅ We simplify access and offer visibility into supported routes.
 
-```text
-Step 1  (Source Chain)
-• Approve 100 USDC spending by Wormhole TokenBridge.
-• Gas: ≈ native token of source chain
+You can use the bridge for **all directions** – not just from BNB Chain to others, but also from Ethereum, Solana, and other supported chains **to BNB Chain**.
 
-Step 2  (Source Chain)
-• Submit Lock tx. Tx hash: 0xabc…def.
-• Wait for a few block confirmations.
+## 5  Developer Guide: Integrate the Canonical Bridge Widget
 
-Step 3  (Guardian network)
-• 19/19 Guardians sign VAA #0x1234.
+To integrate the same aggregator bridge experience in your own dApp or website:
 
-Step 4  (BNB Chain)
-• Call `completeTransferWithRelay()` using VAA.
-• Mint 100 pUSDC (Portal-wrapped) to your BNB Chain address.
-```
+### 📦 Canonical Bridge Repository
 
-Screenshot placeholders:
+GitHub: [github.com/bnb-chain/canonical-bridge](https://github.com/bnb-chain/canonical-bridge)
 
-* `source-lock.png` – UI after approving.
-* `vaa-signed.png` – Explorer view.
-* `bnb-redeem.png` – Final receipt.
+### Features
 
-## 7  Programmatic Integration (TypeScript)
+* Embed cross-chain bridging into any website.
+* Supports the same 6 route providers.
+* React component + config options.
 
-```ts
-import { getSignedVAA, transferFromEth } from "@wormhole-foundation/sdk";
+### Use Cases
 
-// Lock 100 USDC on a source EVM chain
-const tx = await transferFromEth({
-  signer: sourceSigner,
-  token: usdcAddress,
-  amount: "100",
-  destinationChain: "bsc",
-  destinationAddress: userAddress,
-});
+* DeFi dApps
+* Wallet UIs
+* NFT platforms offering cross-chain support
 
-// Fetch VAA & redeem on BSC
-const { vaaBytes } = await getSignedVAA("sourceChain", tx.sequence);
-await redeemOnBsc({ signer: bscSigner, vaa: vaaBytes });
-```
+## 6  FAQs
 
-## 8  Troubleshooting & FAQs
+| Question                                | Answer                                                                                  |
+| --------------------------------------- | --------------------------------------------------------------------------------------- |
+| I don’t see my token listed?            | Route providers decide which tokens they support. You can contact them directly.        |
+| Is this a bridge just for BNB Chain?    | No — it supports **all chains** connected via our 6 providers.                          |
+| Can I use this from Solana to Ethereum? | Yes, as long as a route provider supports it.                                           |
+| Can I embed this bridge in my dApp?     | Yes — use the [Canonical Bridge widget](https://github.com/bnb-chain/canonical-bridge). |
 
-| Symptom                          | Resolution                                                                                                                       |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **VAA pending > 5 min**          | Check [https://wormhole.com/explorer](https://wormhole.com/explorer); if Guardians show 18/19 signatures wait, else open ticket. |
-| **“Transfer Limit Exceeded”**    | Split into smaller chunks; current Portal cap is \~\$2 M per tx.                                                                 |
-| **pUSDC not recognised by dApp** | Add token address `0xb12b...` manually or swap to native USDC on PancakeSwap.                                                    |
+## 7  Final Notes
 
-## 9  Security & Risk Notes
+* Users should always verify token addresses and routes.
+* For token support, contact the respective bridge provider.
+* BNB Chain simplifies access to existing infrastructure — we aggregate, not operate.
 
-* Wormhole contracts on BSC upgraded to **v3.6** after full audit by **Trail of Bits** (Feb 2025).
-* Guardian set multi-sig threshold is 2⁄3 + 1 (currently 15/19).
-* Always verify token addresses at [https://portalbridge.com/#/token-list](https://portalbridge.com/#/token-list).
+## 8  Changelog
 
-## 10  Fees & Limits
-
-* **Bridge fee:** 0.000012 BNB flat (covers Guardian + relayer).
-* **Gas:** Variable; < 0.0005 BNB for redemption on BSC.
-* **Daily notional cap:** US\$200 M per user.
-
-## 11  Changelog
-
-* **2025-05-28** – Initial draft with generic cross-chain migration example.
+* **2025-05-28** – Initial draft of user + developer combined guide.
