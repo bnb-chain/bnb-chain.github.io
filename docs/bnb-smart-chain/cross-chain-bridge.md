@@ -5,11 +5,6 @@ title: BNB Chain Bridge – Cross‑Chain Guide
 # BNB Chain Cross-Chain Bridge Guide
 
 > **Status:** Draft · Last updated: 28 May 2025
->
-> **Purpose** – Help users and developers understand and make use of the **BNB Chain Bridge** at [bnbchain.org/en/bnb-chain-bridge](https://www.bnbchain.org/en/bnb-chain-bridge). This guide introduces users to cross-chain transfers and shows developers how to integrate the Canonical Bridge widget.
-
-> **Official Resource:** [BNB Chain Bridge](https://www.bnbchain.org/en/bnb-chain-bridge)
-
 ---
 
 ## 1  Who Is This Guide For?
