@@ -11,12 +11,12 @@ BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining **Eco
 
 #### Economic Finality (Fast Finality)
 
-The **Fast Finality** feature, introduced through **BEP-520**, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:
+The **Fast Finality** feature, introduced through **BEP-126**, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:
 
 - **Block n achieves economic finality by block n+2**
 - Transaction finality time: **~3.75 seconds** (reduced from 7.5 seconds)
 - Economic penalties make block reversal extremely expensive
-- Validators violating voting rules forfeit part or all of their staked assets
+- Validators violating voting rules forfeit part of their staked assets
 
 This significantly improves user experience through faster and more reliable transaction confirmations.
 
