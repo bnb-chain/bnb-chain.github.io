@@ -84,3 +84,5 @@ EnableMsgEvents = false
 ## start a fast node
 ./geth --tries-verify-mode full --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
+
+./geth --config ./config.toml --datadir ./node --cache 4096 --syncmode snap --http --http.addr "0.0.0.0" --http.api "eth,net,web3,personal" --http.corsdomain "*" --http.port 8545 --port 30311 --ws --ws.port 8546 --ws.addr "0.0.0.0" --ws.api "eth,net,web3" --ws.origins "*" --allow-insecure-unlock --verbosity 3
