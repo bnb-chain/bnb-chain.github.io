@@ -23,7 +23,7 @@ Many users don’t realize that cross-chain transfers are possible or easy. BNB 
 * deBridge
 * Meson
 * LayerZero
-* Mayan (Wormhole)
+* Mayan
 
 > ✅ We help users **see available routes** for transferring assets **into or out of BNB Chain**, but we **do not operate the routes or control token availability**.
 
@@ -31,12 +31,12 @@ Many users don’t realize that cross-chain transfers are possible or easy. BNB 
 
 ### Step-by-Step
 
-1. Visit [bnbchain.org/en/bnb-chain-bridge](https://www.bnbchain.org/en/bnb-chain-bridge) and click **Launch App**.
+1. Visit [bnbchain.org/en/bnb-chain-bridge](https://www.bnbchain.org/en/bnb-chain-bridge).
 2. Choose your **source chain** (e.g. Ethereum) and **destination chain** (e.g. BNB Chain).
-3. Connect your wallet for each chain.
+3. Connect your wallet to source chain.
 4. Choose a token to bridge and enter the amount.
 5. The bridge tool will display **available routes** based on your token and chains.
-6. Approve and confirm the transfer following the provider’s UI.
+6. Click **Send** (or **Approve** if required).
 7. Wait for the transaction to complete. You’ll receive your tokens on the destination chain.
 
 ## 4  Understanding Bridge Aggregation
@@ -62,6 +62,8 @@ GitHub: [github.com/bnb-chain/canonical-bridge](https://github.com/bnb-chain/can
 * Embed cross-chain bridging into any website.
 * Supports the same 6 route providers.
 * React component + config options.
+* Supports custom networks, tokens, style.
+* Supports other chain to other chain transfer (e.g. Ethereum to Base)
 
 ### Use Cases
 
@@ -74,8 +76,8 @@ GitHub: [github.com/bnb-chain/canonical-bridge](https://github.com/bnb-chain/can
 | Question                                | Answer                                                                                  |
 | --------------------------------------- | --------------------------------------------------------------------------------------- |
 | I don’t see my token listed?            | Route providers decide which tokens they support. You can contact them directly.        |
-| Is this a bridge just for BNB Chain?    | No — it supports **all chains** connected via our 6 providers.                          |
-| Can I use this from Solana to Ethereum? | Yes, as long as a route provider supports it.                                           |
+| Is this a bridge just for BNB Chain?    | No — it supports **all chains** connected via our 6 providers.                      |
+| Can I use this from Solana to Ethereum? | Yes, as long as a route provider supports it. (Only available in Canonical Bridge Widget)                                           |
 | Can I embed this bridge in my dApp?     | Yes — use the [Canonical Bridge widget](https://github.com/bnb-chain/canonical-bridge). |
 
 ## 7  Final Notes
