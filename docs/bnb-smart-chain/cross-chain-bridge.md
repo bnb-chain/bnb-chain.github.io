@@ -4,7 +4,7 @@ title: BNB Chain Bridge – Cross‑Chain Guide
 
 # BNB Chain Cross-Chain Bridge Guide
 
-> **Status:** Draft · Last updated: 28 May 2025
+> **Status:** Draft · Last updated: 4 Jun 2025
 ---
 
 ## 1  Who Is This Guide For?
