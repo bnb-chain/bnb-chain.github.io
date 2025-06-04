@@ -24,12 +24,14 @@ This significantly improves user experience through faster and more reliable tra
 
 When Fast Finality is unavailable, BSC falls back to Probabilistic Finality. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.
 
-##### Network Parameters
+Network Parameters:
+
 - TurnLength: 8 (consecutive blocks per validator)
 - ValidatorSize: 21 (total active validators)
 - Block Time: ~1.5 seconds
 
-##### Finality Requirements
+Finality Requirements:
+
 - Majority (>1/2) validator confirmations: 88 blocks (11 × 8) ≈ 132 seconds
 - Supermajority (>2/3) validator confirmations: 120 blocks (15 × 8) ≈ 180 seconds
 
