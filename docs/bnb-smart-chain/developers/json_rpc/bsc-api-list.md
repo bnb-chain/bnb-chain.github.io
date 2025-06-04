@@ -7,13 +7,13 @@ Finality is a crucial aspect of blockchain security, ensuring that once a block 
 
 ### Probabilistic Finality and Economic Finality
 
-BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining **Economic Finality** and **Probabilistic Finality** to ensure transaction security and network efficiency.
+BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining Economic Finality and Probabilistic Finality to ensure transaction security and network efficiency.
 
 #### Economic Finality (Fast Finality)
 
-The **Fast Finality** feature, introduced through **[BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)**, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:
+The Fast Finality feature, introduced through **[BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)**, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:
 
-- **Block n achieves economic finality by block n+2**
+- Block n achieves economic finality by block n+2
 - Transaction finality time: **~3.75 seconds** (with 1.5 seconds block time)
 - Economic penalties make block reversal extremely expensive
 - Validators violating voting rules forfeit part of their staked assets
@@ -22,19 +22,18 @@ This significantly improves user experience through faster and more reliable tra
 
 #### Probabilistic Finality (Fallback Mechanism)
 
-When Fast Finality is unavailable, BSC falls back to **Probabilistic Finality**. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.
+When Fast Finality is unavailable, BSC falls back to Probabilistic Finality. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.
 
-**Network Parameters:**
-- **TurnLength**: 8 (consecutive blocks per validator)
-- **ValidatorSize**: 21 (total active validators)
-- **Block Time**: ~1.5 seconds
+Network Parameters:
 
-**Finality Requirements:**
-- **Majority (>1/2) validator confirmations**: 88 blocks (11 × 8) ≈ **132 seconds**
-- **Supermajority (>2/3) validator confirmations**: 120 blocks (15 × 8) ≈ **180 seconds**
+- TurnLength: 8 (consecutive blocks per validator)
+- ValidatorSize: 21 (total active validators)
+- Block Time: ~1.5 seconds
 
-**Formula**: `Required Blocks = n × TurnLength`
-- Where **n** = 11 (majority) or 15 (supermajority consensus)
+Finality Requirements:
+
+- Majority (>1/2) validator confirmations: 88 blocks (11 × 8) ≈ 132 seconds
+- Supermajority (>2/3) validator confirmations: 120 blocks (15 × 8) ≈ 180 seconds
 
 This dual-layer approach ensures network security and finality guarantees even when Fast Finality encounters issues.
 
