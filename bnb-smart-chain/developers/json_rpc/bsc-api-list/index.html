@@ -2548,27 +2548,29 @@
 <div><h2 id="finality-api">Finality API<a class="headerlink" href="#finality-api" title="Link to this section">¶</a></h2>
 <p>Finality is a crucial aspect of blockchain security, ensuring that once a block is confirmed, it cannot be reversed or altered. This provides users with the confidence to act on the information in the block without delay.</p>
 <h3 id="probabilistic-finality-and-economic-finality">Probabilistic Finality and Economic Finality<a class="headerlink" href="#probabilistic-finality-and-economic-finality" title="Link to this section">¶</a></h3>
-<p>BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining <strong>Economic Finality</strong> and <strong>Probabilistic Finality</strong> to ensure transaction security and network efficiency.</p>
+<p>BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining Economic Finality and Probabilistic Finality to ensure transaction security and network efficiency.</p>
 <h4 id="economic-finality-fast-finality">Economic Finality (Fast Finality)<a class="headerlink" href="#economic-finality-fast-finality" title="Link to this section">¶</a></h4>
-<p>The <strong>Fast Finality</strong> feature, introduced through <strong><a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md">BEP-126</a></strong>, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:</p>
+<p>The Fast Finality feature, introduced through <strong><a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md">BEP-126</a></strong>, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:</p>
 <ul>
-<li><strong>Block n achieves economic finality by block n+2</strong></li>
+<li>Block n achieves economic finality by block n+2</li>
 <li>Transaction finality time: <strong>~3.75 seconds</strong> (with 1.5 seconds block time)</li>
 <li>Economic penalties make block reversal extremely expensive</li>
 <li>Validators violating voting rules forfeit part of their staked assets</li>
 </ul>
 <p>This significantly improves user experience through faster and more reliable transaction confirmations.</p>
 <h4 id="probabilistic-finality-fallback-mechanism">Probabilistic Finality (Fallback Mechanism)<a class="headerlink" href="#probabilistic-finality-fallback-mechanism" title="Link to this section">¶</a></h4>
-<p>When Fast Finality is unavailable, BSC falls back to <strong>Probabilistic Finality</strong>. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.</p>
-<p><strong>Network Parameters:</strong>
-- <strong>TurnLength</strong>: 8 (consecutive blocks per validator)
-- <strong>ValidatorSize</strong>: 21 (total active validators)
-- <strong>Block Time</strong>: ~1.5 seconds</p>
-<p><strong>Finality Requirements:</strong>
-- <strong>Majority (&gt;½) validator confirmations</strong>: 88 blocks (11 × 8) ≈ <strong>132 seconds</strong>
-- <strong>Supermajority (&gt;⅔) validator confirmations</strong>: 120 blocks (15 × 8) ≈ <strong>180 seconds</strong></p>
-<p><strong>Formula</strong>: <code>Required Blocks = n × TurnLength</code>
-- Where <strong>n</strong> = 11 (majority) or 15 (supermajority consensus)</p>
+<p>When Fast Finality is unavailable, BSC falls back to Probabilistic Finality. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.</p>
+<p>Network Parameters:</p>
+<ul>
+<li>TurnLength: 8 (consecutive blocks per validator)</li>
+<li>ValidatorSize: 21 (total active validators)</li>
+<li>Block Time: ~1.5 seconds</li>
+</ul>
+<p>Finality Requirements:</p>
+<ul>
+<li>Majority (&gt;½) validator confirmations: 88 blocks (11 × 8) ≈ 132 seconds</li>
+<li>Supermajority (&gt;⅔) validator confirmations: 120 blocks (15 × 8) ≈ 180 seconds</li>
+</ul>
 <p>This dual-layer approach ensures network security and finality guarantees even when Fast Finality encounters issues.</p>
 <h3 id="economic-finality-api">Economic Finality API<a class="headerlink" href="#economic-finality-api" title="Link to this section">¶</a></h3>
 <h3 id="eth_getheaderbynumber-as-in-the-ethereum-client"><a href="https://www.quicknode.com/docs/kaia/eth_getHeaderByNumber">eth_getHeaderByNumber</a> as in the Ethereum client.<a class="headerlink" href="#eth_getheaderbynumber-as-in-the-ethereum-client" title="Link to this section">¶</a></h3>
