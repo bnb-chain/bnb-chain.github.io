@@ -35,10 +35,6 @@ Finality Requirements:
 - Majority (>1/2) validator confirmations: 88 blocks (11 × 8) ≈ 132 seconds
 - Supermajority (>2/3) validator confirmations: 120 blocks (15 × 8) ≈ 180 seconds
 
-##### Formula
-`Required Blocks = n × TurnLength`
-- Where n = 11 (majority) or 15 (supermajority)
-
 This dual-layer approach ensures network security and finality guarantees even when Fast Finality encounters issues.
 
 ### Economic Finality API
