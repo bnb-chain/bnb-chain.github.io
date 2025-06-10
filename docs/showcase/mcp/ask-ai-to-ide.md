@@ -103,15 +103,4 @@ Explain the purpose of Greenfield buckets.
 
 Need more help? Ping us in **#ai‑tooling** on the BNB Chain Discord.
 
----
-
-## 6 IDE‑specific guides
-
-| IDE           | Status       | Guide (coming soon)               |
-| ------------- | ------------ | --------------------------------- |
-| Cursor        | Ready        | `ai/askai-cursor.md`              |
-| VS Code       | Early access | `ai/askai-vscode.md`              |
-| JetBrains     | Planned      | `ai/askai-jetbrains.md` (Q3 2025) |
-| Other editors | MCP generic  | Use the JSON snippet above        |
-
 Open an issue in the [docs repo](https://github.com/bnb-chain/docs-site/issues) if your favourite editor is missing.
