@@ -1,6 +1,6 @@
 ---
 title: MCP - Model Context Protocol
----
+------
 
 # Model Context Protocol (MCP)
 
@@ -19,10 +19,10 @@ The **Model Context Protocol** is an open interface that lets AI agents and deve
 
 ## 1 Available MCP servers
 
-| Name             | Endpoint / Install                                      | Scope                                                             | Typical usage                                                       |
-| ---------------- | ------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **bnbchain‑mcp** | `npx @bnb-chain/mcp@latest`<br/>or self‑host via Docker | Full toolkit: blocks, txs, wallets, Greenfield ops & more         | Build, test, or automate on‑chain actions from your IDE or scripts. |
-| **ask‑ai‑mcp**   | `https://mcp.inkeep.com/bnbchainorg/mcp`                | Read‑only semantic search over BNB Chain docs, BEPs, blogs & FAQs | Quick answers in chat panes or command palettes.                    |
+| Name                                                          | Endpoint / Install                                      | Scope                                                             | Typical usage                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [**bnbchain‑mcp**](https://github.com/bnb-chain/bnbchain-mcp) | `npx @bnb-chain/mcp@latest`<br/>or self-host via Docker | Full toolkit: blocks, txs, wallets, Greenfield ops & more         | Build, test, or automate on-chain actions from your IDE or scripts. |
+| [**ask‑ai‑mcp**](ai/askai-tutorial.md)                        | `https://mcp.inkeep.com/bnbchainorg/mcp`                | Read-only semantic search over BNB Chain docs, BEPs, blogs & FAQs | Quick answers in chat panes or command palettes.                    |
 
 Both servers speak the *same* MCP schema, so you can swap them in your settings with a single JSON change.
 
