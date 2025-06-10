@@ -96,7 +96,6 @@ Explain the purpose of Greenfield buckets.
 
 | Symptom                    | Fix                                                              |
 | -------------------------- | ---------------------------------------------------------------- |
-| **“Cannot reach server”**  | Check proxy/VPN; whitelist `https://mcp.inkeep.com`.             |
 | **400/401 response codes** | Verify the JSON snippet (no trailing commas).                    |
 | **Long latency (> 10 s)**  | Disable any *Throttle Streaming* or similar setting in your IDE. |
 | **No answer returned**     | Make sure you chose **bnbchain‑askai‑mcp** and asked a question. |
