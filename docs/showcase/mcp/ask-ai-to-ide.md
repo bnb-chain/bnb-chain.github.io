@@ -9,7 +9,6 @@ Follow these steps to wire any IDE that supports the **Model Context Protocol (M
 > **Time required:** ≈ 2 minutes
 > **Prerequisites:**
 > • IDE with MCP client (e.g. Cursor ≥ 0.23.0, VS Code extension, JetBrains plugin)
-> • Internet access to `https://mcp.inkeep.com`
 > • Optional: GitHub sign‑in for IDE cloud sync
 
 ## 1 Add the Ask AI MCP server
