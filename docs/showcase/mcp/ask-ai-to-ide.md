@@ -53,6 +53,8 @@ Below are three common ways to interact with the Ask AI MCP once it is connecte
 3. Choose **bnbchain‑askai‑mcp**.
 4. Ask questions in plain English – e.g. *“Summarise BEP‑20.”*
 
+> **Want a detailed step-by-step walkthrough for VS Code?** Check out the companion guide: [Ask AI in VS Code](ask-ai-vs-code-guide.md) – complete with annotated screenshots.
+> 
 > **Tip:** Answers include inline citations; click a link to jump to the original doc.
 
 ### 3.2 Command Palette / Command Menu
