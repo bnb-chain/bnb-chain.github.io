@@ -46,15 +46,7 @@ It is *read‑only* – no blockchain transactions are executed.
 
 Below are three common ways to interact with the Ask AI MCP once it is connected.
 
-### 3.1 Command Palette / Command Menu
-
-| IDE           | How to open                                                 | Steps                                                                          |
-| ------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **VS Code**   | <kbd>Ctrl/Cmd + Shift + P</kbd>                             | Type **“MCP: Run Query”** → pick **bnbchain‑askai‑mcp** → enter your question. |
-| **Cursor**    | <kbd>Cmd + K</kbd> (mac) or <kbd>Ctrl + K</kbd> (win/linux) | Select **Ask MCP…** → choose **bnbchain‑askai‑mcp** → ask away.                |
-| **JetBrains** | <kbd>Shift + Shift</kbd> then “MCP Query”                   | Pick **bnbchain‑askai‑mcp** and type a question.                               |
-
-### 3.2 Chat Panels (Copilot, Cursor Chat, etc.)
+### 3.1 Chat Panels (Copilot, Cursor Chat, etc.)
 
 1. Open your IDE’s AI/Chat pane (Copilot Chat, Cursor side‑chat, JetBrains AI Assistant…).
 2. Locate the **agent / provider selector** at the top of the chat window.
@@ -62,6 +54,14 @@ Below are three common ways to interact with the Ask AI MCP once it is connecte
 4. Ask questions in plain English – e.g. *“Summarise BEP‑20.”*
 
 > **Tip:** Answers include inline citations; click a link to jump to the original doc.
+
+### 3.2 Command Palette / Command Menu
+
+| IDE           | How to open                                                 | Steps                                                                          |
+| ------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **VS Code**   | <kbd>Ctrl/Cmd + Shift + P</kbd>                             | Type **“MCP: Run Query”** → pick **bnbchain‑askai‑mcp** → enter your question. |
+| **Cursor**    | <kbd>Cmd + K</kbd> (mac) or <kbd>Ctrl + K</kbd> (win/linux) | Select **Ask MCP…** → choose **bnbchain‑askai‑mcp** → ask away.                |
+| **JetBrains** | <kbd>Shift + Shift</kbd> then “MCP Query”                   | Pick **bnbchain‑askai‑mcp** and type a question.                               |
 
 ### 3.3 Terminal / cURL (optional)
 
