@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Get started with BNB Chain Docs. Explore the documentation for BNB Chain">
+      
+      
+        <meta name="author" content="BNB Chain">
+      
+      
+        <link rel="canonical" href="https://docs.bnbchain.org/showcase/mcp/ask-ai-vs-code-guide/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/bnb.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+    
+        <title>Ask AI in Visual Studio Code</title>
+    
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
+    
+      <link rel="stylesheet" href="../../../assets/style/index.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/style/components/ai-bot-button.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9BVQXM');</script>
+<!-- End Google Tag Manager -->
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-install-the-mcp-client-extension" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
+
+
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+
+        <!-- Link to home -->
+        <a
+                href="https://www.bnbchain.org"
+                title="Documentation"
+                class="md-header__button md-logo"
+                aria-label="Documentation"
+                data-md-component="logo"
+        >
+            
+  <img src="../../../assets/logo.svg" alt="logo">
+
+        </a>
+
+        <!-- Button to open drawer -->
+        <label class="md-header__button md-icon" for="__drawer">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        </label>
+
+        <!-- Header title -->
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__site_name">
+                  <span class="md-ellipsis">
+                    Documentation
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color palette toggle -->
+        
+            
+                <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14m0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11m-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0M3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06M12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0M4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12m8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20m12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12m-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061m2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96zl-.002-.005a9 9 0 0 0-.218-.779c-.13-.394.21-.8.602-.67q.435.144.855.328l.01.005A10.002 10.002 0 0 1 12 22a10 10 0 0 1-9.162-5.985l-.004-.01a10 10 0 0 1-.329-.855c-.13-.392.277-.732.67-.602q.386.126.78.218l.004.002A9 9 0 0 0 14.999 6a9 9 0 0 0-.231-2.04M16.5 6c0 5.799-4.701 10.5-10.5 10.5q-.64 0-1.26-.075A8.5 8.5 0 1 0 16.425 4.74q.075.62.075 1.259Z"/></svg>
+      </label>
+    
+  
+</form>
+            
+        
+
+        <!-- User preference: color palette -->
+        
+            <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+        
+
+        <!-- Site language selector -->
+        
+
+        <!-- Button to open search modal -->
+        
+            <label class="md-header__button md-icon" for="__search">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+            </label>
+
+            <!-- Search interface -->
+            <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5.5a3.498 3.498 0 0 1-6.062 2.385l-5.112 3.021a3.5 3.5 0 0 1 0 2.188l5.112 3.021a3.5 3.5 0 1 1-.764 1.29l-5.112-3.02a3.499 3.499 0 1 1-3.843-5.642 3.5 3.5 0 0 1 3.843.872l5.112-3.021A3.5 3.5 0 1 1 20 5.5m-1.5 13a2 2 0 1 0-3.999-.001 2 2 0 0 0 3.999.001m0-13a2 2 0 1 0-3.999-.001A2 2 0 0 0 18.5 5.5M5.5 14a2 2 0 1 0 .001-3.999A2 2 0 0 0 5.5 14"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+        <!-- Repository information -->
+        
+        <div class="md-header__source">
+            <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+
+    <!-- Navigation tabs (sticky) -->
+    
+        
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../announce/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Announcements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  BNB Smart Chain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  opBNB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  BNB Greenfield
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Showcases
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  BNB Chain Fusion
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bnb-chain/bnb-chain.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BNB Chain GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../announce/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Announcements
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    opBNB
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../bnb-greenfield/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    BNB Greenfield
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Showcases
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../bc-fusion/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    BNB Chain Fusion
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-the-mcp-client-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Install the MCP Client extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-add-the-ask-ai-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Add the Ask AI server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-start-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Start the MCP server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-open-the-chat-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Open the Chat panel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pick-the-bnbchainaskaimcp-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Pick the bnbchain‑askai‑mcp agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ask-your-first-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Ask your first question
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bonus-command-palette-quickqueries" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 Bonus: Command Palette quick‑queries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Bonus: Command Palette quick‑queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Need help?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/showcase/mcp/ask-ai-vs-code-guide.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Ask AI in Visual Studio Code</h1>
+
+<div><p>Step‑by‑step walkthrough to query BNB Chain documentation from within VS Code using the Model Context Protocol (MCP).</p>
+<h2 id="1-install-the-mcp-client-extension">1 Install the MCP Client extension<a class="headerlink" href="#1-install-the-mcp-client-extension" title="Link to this section">¶</a></h2>
+<ol>
+<li>Open the <strong>Extensions</strong> view.</li>
+<li>Search for <strong>“MCP Client”</strong> and hit <strong>Install</strong>.</li>
+</ol>
+<p><img alt="VS Code Extensions view with MCP Client selected" src="/docs/showcase/img/1-open-settings-json.png"></p>
+<p>The extension adds MCP support to VS Code, letting you connect to external knowledge bases such as <strong>BNB Chain Ask AI</strong>.</p>
+<hr>
+<h2 id="2-add-the-ask-ai-server">2 Add the Ask AI server<a class="headerlink" href="#2-add-the-ask-ai-server" title="Link to this section">¶</a></h2>
+<ol>
+<li>Open <strong>Settings</strong> → <strong>Preferences</strong> → <strong>Settings (JSON)</strong>.
+   <em>Tip ▶</em> press <kbd>Ctrl/⌘ +,</kbd> then click the <strong><code>{}</code></strong> icon in the upper‑right corner.</li>
+<li>Inside the JSON, locate (or create) the <strong><code>"mcpServers"</code></strong> section and paste the snippet below as a sibling property.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>"mcpServers": {
+  "bnbchain-askai-mcp": {
+    "url": "https://mcp.inkeep.com/bnbchainorg/mcp",
+    "id": "cm9qsf01p00bss6016ry68oil"
+  }
+}
+</code></pre></div>
+<p><img alt="Settings JSON with the Ask AI block added" src="/docs/showcase/img/2-add-mcp-config.png"></p>
+<ol>
+<li>Save the file. The MCP client should automatically reload; if not, restart the VS Code window.</li>
+</ol>
+<hr>
+<h2 id="3-start-the-mcp-server">3 Start the MCP server<a class="headerlink" href="#3-start-the-mcp-server" title="Link to this section">¶</a></h2>
+<p>Hover the new server block and click <strong>▶ Start</strong>.</p>
+<p><img alt="Start badge before connection" src="/docs/showcase/img/3-start-mcp.png"></p>
+<p>When the badge flips to <strong>✓ Running</strong>, VS Code is now connected to <strong>BNB Chain Ask AI</strong>.</p>
+<p><img alt="Server block indicating ✓ Running" src="/docs/showcase/img/4-started-mcp.png"></p>
+<hr>
+<h2 id="4-open-the-chat-panel">4 Open the Chat panel<a class="headerlink" href="#4-open-the-chat-panel" title="Link to this section">¶</a></h2>
+<p>From the menu bar choose <strong>View → Chat</strong> or press <kbd>Ctrl + Alt + I</kbd>. A chat window docks to the side of the editor.</p>
+<p><img alt="Opening the Chat view from the View menu" src="/docs/showcase/img/5-launch-chat.png"></p>
+<hr>
+<h2 id="5-pick-the-bnbchainaskaimcp-agent">5 Pick the <strong>bnbchain‑askai‑mcp</strong> agent<a class="headerlink" href="#5-pick-the-bnbchainaskaimcp-agent" title="Link to this section">¶</a></h2>
+<p>At the bottom of the chat input you’ll find two dropdowns:</p>
+<ul>
+<li><strong>Mode</strong> (Ask / Edit / Agent)</li>
+<li><strong>Provider</strong> (list of LLMs &amp; MCP servers)</li>
+</ul>
+<p>Set <strong>Mode</strong> to <strong>Agent</strong>, then pick <strong>bnbchain‑askai‑mcp</strong> from the Provider list.</p>
+<p><img alt="Dropdown showing Agent selected and bnbchain-askai-mcp highlighted" src="/docs/showcase/img/6-select-agent.png"></p>
+<hr>
+<h2 id="6-ask-your-first-question">6 Ask your first question<a class="headerlink" href="#6-ask-your-first-question" title="Link to this section">¶</a></h2>
+<ol>
+<li>Type a natural‑language query such as:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>What is BNB Greenfield?
+</code></pre></div>
+<p><img alt="Chat input with sample question typed" src="/docs/showcase/img/7-query-chat.png"></p>
+<ol>
+<li>Press <kbd>Enter</kbd>. VS Code presents a confirmation card recommending the <strong>bnbchain‑askai‑mcp</strong> tool.</li>
+</ol>
+<p><img alt="Confirmation card asking to continue with the recommended MCP" src="/docs/showcase/img/8-prompt-for-mcp.png"></p>
+<ol>
+<li>Click <strong>Continue</strong> (or just press <kbd>Enter</kbd> again). Ask AI streams back a concise answer plus source links you can click to jump to the original docs.</li>
+</ol>
+<p><img alt="Answer streamed in the chat panel" src="/docs/showcase/img/9-mcp-response.png"></p>
+<hr>
+<h2 id="7-bonus-command-palette-quickqueries">7 Bonus: Command Palette quick‑queries<a class="headerlink" href="#7-bonus-command-palette-quickqueries" title="Link to this section">¶</a></h2>
+<p>Prefer keyboard? Hit <kbd>Ctrl/⌘ + Shift + P</kbd>, run <strong>“MCP: Run Query”</strong>, choose <strong>bnbchain‑askai‑mcp</strong>, and enter your question.</p>
+<p>This opens a transient results panel without leaving your current editor tab.</p>
+<hr>
+<h3 id="need-help">Need help?<a class="headerlink" href="#need-help" title="Link to this section">¶</a></h3>
+<ul>
+<li>Reach out on the BNB Chain Discord.</li>
+<li>File an issue in the <a href="https://github.com/bnb-chain/bnb-chain.github.io/issues">docs repo</a>.</li>
+</ul>
+<p>Happy building! 🎉</p></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer>
+  <div class="doc-footer">
+      <div class="doc-footer__inner md-grid">
+          <!-- Footer menu content will be dynamically inserted here -->
+      </div>
+  </div>
+  <div class="doc-copyright">
+      <div class="doc-copyright__inner md-grid">
+        <!-- Copyright content will be dynamically inserted here -->
+      </div>
+  </div>
+</footer><script src="../../../assets/js/footer-menu.js"></script>
+<div class="ai-bot-wrapper">
+    <button type="button" class="ask-ai-button" aria-label="Toggle AI Chat">
+        Ask AI
+        <span>
+            <svg data-theme="dark" viewBox="0 0 24 25" focusable="false" aria-hidden="true"><path d="M10.5 6.58644L10.9459 7.82537C11.1908 8.5045 11.5824 9.12128 12.0929 9.63177C12.6034 10.1423 13.2202 10.5339 13.8993 10.7788L15.1383 11.2247C15.2501 11.2648 15.2501 11.4232 15.1383 11.4634L13.8992 11.9093C13.2201 12.1542 12.6033 12.5459 12.0929 13.0563C11.5824 13.5668 11.1908 14.1836 10.9459 14.8627L10.5 16.1016C10.4597 16.2135 10.3015 16.2135 10.2611 16.1016L9.81524 14.8627C9.57032 14.1836 9.17867 13.5669 8.66818 13.0564C8.1577 12.546 7.54093 12.1543 6.86182 11.9095L5.62306 11.4636C5.51106 11.4234 5.51106 11.265 5.62306 11.2248L6.86182 10.779C7.54095 10.5341 8.15773 10.1424 8.66821 9.63195C9.1787 9.12146 9.57034 8.50468 9.81524 7.82555L10.2611 6.58662C10.2699 6.56193 10.286 6.54056 10.3074 6.52545C10.3288 6.51034 10.3544 6.50222 10.3806 6.50222C10.4068 6.50222 10.4323 6.51034 10.4537 6.52545C10.4751 6.54056 10.4913 6.56193 10.5 6.58662V6.58644ZM16.0771 3.60937L16.3034 4.23657C16.5548 4.93239 17.1027 5.48102 17.7992 5.73239L18.4264 5.9587C18.439 5.96307 18.4499 5.97124 18.4576 5.98207C18.4653 5.9929 18.4694 6.00586 18.4694 6.01915C18.4694 6.03244 18.4653 6.0454 18.4576 6.05623C18.4499 6.06706 18.439 6.07523 18.4264 6.07959L17.7991 6.3059C17.4552 6.43009 17.1429 6.6285 16.8844 6.88703C16.6258 7.14555 16.4274 7.45785 16.3032 7.80173L16.0769 8.42875C16.0726 8.4413 16.0644 8.45218 16.0536 8.45988C16.0427 8.46758 16.0298 8.47171 16.0165 8.47171C16.0032 8.47171 15.9902 8.46758 15.9794 8.45988C15.9686 8.45218 15.9604 8.4413 15.956 8.42875L15.7297 7.80173C15.6055 7.45785 15.4071 7.14555 15.1486 6.88703C14.8901 6.6285 14.5778 6.43009 14.2339 6.3059L13.6069 6.07959C13.5943 6.07523 13.5835 6.06706 13.5758 6.05623C13.5681 6.0454 13.5639 6.03244 13.5639 6.01915C13.5639 6.00586 13.5681 5.9929 13.5758 5.98207C13.5835 5.97124 13.5943 5.96307 13.6069 5.9587L14.2339 5.73239C14.9297 5.48084 15.4784 4.93293 15.7297 4.23639L15.956 3.60937C15.9604 3.59682 15.9686 3.58594 15.9794 3.57824C15.9902 3.57054 16.0032 3.56641 16.0165 3.56641C16.0298 3.56641 16.0427 3.57054 16.0536 3.57824C16.0644 3.58594 16.0726 3.59682 16.0769 3.60937H16.0771ZM16.0771 14.2607L16.3034 14.8878C16.5548 15.5836 17.1027 16.1322 17.7992 16.3836L18.4264 16.6101C18.439 16.6144 18.4499 16.6226 18.4576 16.6334C18.4653 16.6443 18.4694 16.6572 18.4694 16.6705C18.4694 16.6838 18.4653 16.6968 18.4576 16.7076C18.4499 16.7184 18.439 16.7266 18.4264 16.731L17.7991 16.9571C17.4552 17.0813 17.1429 17.2797 16.8844 17.5382C16.6258 17.7968 16.4274 18.1091 16.3032 18.4529L16.0769 19.0799C16.0726 19.0925 16.0644 19.1034 16.0536 19.1111C16.0427 19.1188 16.0298 19.1229 16.0165 19.1229C16.0032 19.1229 15.9902 19.1188 15.9794 19.1111C15.9686 19.1034 15.9604 19.0925 15.956 19.0799L15.7297 18.4529C15.6055 18.1091 15.4071 17.7968 15.1486 17.5382C14.8901 17.2797 14.5778 17.0813 14.2339 16.9571L13.6071 16.7308C13.5945 16.7264 13.5836 16.7183 13.5759 16.7074C13.5682 16.6966 13.5641 16.6836 13.5641 16.6703C13.5641 16.6571 13.5682 16.6441 13.5759 16.6333C13.5836 16.6224 13.5945 16.6143 13.6071 16.6099L14.2341 16.3836C14.9299 16.1322 15.4785 15.5843 15.7299 14.8878L15.9562 14.2607C15.9606 14.2482 15.9688 14.2373 15.9796 14.2296C15.9904 14.2219 16.0034 14.2178 16.0167 14.2178C16.03 14.2178 16.0429 14.2219 16.0537 14.2296C16.0646 14.2373 16.0727 14.2482 16.0771 14.2607Z" fill="currentColor"></path></svg>
+        </span>
+    </button>
+</div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../assets/js/mathjax.js"></script>
+      
+        <script src="../../../assets/js/custom.js"></script>
+      
+        <script src="../../../assets/js/inkeep-custom-button.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.10/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
