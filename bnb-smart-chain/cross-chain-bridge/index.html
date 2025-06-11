@@ -12,28 +12,28 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-opbnb/advanced/node-best-practices/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/cross-chain-bridge/">
       
       
-        <link rel="prev" href="../verify-on-opbnbscan/">
+        <link rel="prev" href="../slashing/monitor/">
       
       
-        <link rel="next" href="../local-node/">
+        <link rel="next" href="../faq/">
       
       
-      <link rel="icon" href="../../../assets/bnb.svg">
+      <link rel="icon" href="../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
     
-        <title>Best Practices - opBNB Node Configuration</title>
+        <title>BNB Chain Bridge – Cross‑Chain Guide</title>
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -54,25 +54,25 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../../assets/style/index.css">
+      <link rel="stylesheet" href="../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../assets/style/components/footer.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/ai-bot-button.css">
+      <link rel="stylesheet" href="../../assets/style/components/ai-bot-button.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -111,7 +111,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#best-practices-for-opbnb-node-configuration" class="md-skip">
+        <a href="#bnb-chain-cross-chain-bridge-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -162,7 +162,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -299,7 +299,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -320,7 +320,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../announce/" class="md-tabs__link">
+        <a href="../../announce/" class="md-tabs__link">
           
   
   
@@ -338,11 +338,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -360,13 +362,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../bnb-opbnb/" class="md-tabs__link">
           
   
   
@@ -388,7 +388,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../bnb-greenfield/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../showcase/identity/did/" class="md-tabs__link">
+        <a href="../../showcase/identity/did/" class="md-tabs__link">
           
   
   
@@ -442,7 +442,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../bc-fusion/" class="md-tabs__link">
+        <a href="../../bc-fusion/" class="md-tabs__link">
           
   
   
@@ -486,7 +486,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -513,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -565,7 +565,7 @@
   
   
   
-    <a href="../../../announce/" class="md-nav__link">
+    <a href="../../announce/" class="md-nav__link">
       
   
   
@@ -590,6 +590,8 @@
       
   
   
+    
+  
   
   
     
@@ -608,6 +610,949 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    BNB Smart Chain
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            BNB Smart Chain
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dappbay.bnbchain.org/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ecosystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Developers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/quick-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.bnbchain.org/en/dev-tools" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dev-Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../developers/json_rpc/json-rpc-endpoint/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    JSON-RPC
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/faucet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Faucet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../developers/node_operators/node_best_practices/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Node Operators
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../developers/paymaster/overview/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    EOA Paymaster
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Staking
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Staking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../staking/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../staking/user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../staking/developer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build Staking dApps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/bnb-kol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BNB Advocate`s Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/temp-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Temperature Check
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Validator
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Validator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validator/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validator/run-val/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run Validator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validator/create-val/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Validator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validator/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secure Validator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validator/manage-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Key Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
       
         
       
@@ -639,12 +1584,12 @@
   
   
   
-    <a href="../../../bnb-smart-chain/" class="md-nav__link">
+    <a href="../validator/mev/overview/" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
-    BNB Smart Chain
+    MEV
     
   </span>
   
@@ -659,82 +1604,14 @@
     </li>
   
 
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
               
-  
-  
-  <span class="md-ellipsis">
-    opBNB
-    
-  </span>
+            
+          </ul>
+        </nav>
+      
+    </li>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            opBNB
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
             
               
@@ -743,8 +1620,64 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Slashing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Slashing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../slashing/overview/" class="md-nav__link">
         
   
   
@@ -766,71 +1699,13 @@
   
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Get Started
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            Get Started
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../get-started/network-info/" class="md-nav__link">
+      <a href="../slashing/slash-rules/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Network Information
+    Slash Rules
     
   </span>
   
@@ -848,58 +1723,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/wallet-configuration/" class="md-nav__link">
+      <a href="../slashing/monitor/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Wallet Configuration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../get-started/deposit-to-opbnb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deposit to opBNB
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../get-started/withdraw-from-opbnb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Withdraw from opBNB
+    Slash Monitor
     
   </span>
   
@@ -913,657 +1742,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Core Concepts
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Core Concepts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/why-bsc-requires-opbnb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Why BSC Requires opBNB
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/why-opstack/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Why OP Stack
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/optimisations-on-opstack/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Optimizations on OP Stack
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/opbnb-metrics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Metrics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/gas-and-fees/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Gas and Fees
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/account-abstraction-on-opbnb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Account Abstraction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/opbnb-protocol-addresses/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Protocol Addresses
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-concepts/raas/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    BNB Chain Rollup as Service
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Developers
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Developers
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/quick-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Quick Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/developer-tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Developer Tools
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/network-faucet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Network Faucet
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/set-gas-price/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Wallet Gas Price Setting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/multisig-wallet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Multi-sig Wallet
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/bep20-crosschain/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    BEP20 CrossChain Introduction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/geth-sync/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Geth P2P Sync Feature
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developers/cheat-sheet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Developers Cheat Sheet
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Advanced Topics
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            Advanced Topics
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../local-dev-env/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Local Development
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../full-stack-dapp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Build a Full Stack dApp on opBNB
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../verify-on-opbnbscan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Verify Smart Contract on opBNBScan explorer
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1590,7 +1768,7 @@
   
   
   <span class="md-ellipsis">
-    Node Best Practices
+    Cross Chain Bridge
     
   </span>
   
@@ -1603,7 +1781,7 @@
   
   
   <span class="md-ellipsis">
-    Node Best Practices
+    Cross Chain Bridge
     
   </span>
   
@@ -1626,28 +1804,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#selecting-the-appropriate-mode-and-storage-scheme" class="md-nav__link">
+  <a href="#status-draft-last-updated-4-jun-2025" class="md-nav__link">
     <span class="md-ellipsis">
-      Selecting the Appropriate Mode and Storage Scheme
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Selecting the Appropriate Mode and Storage Scheme">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fast-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Node
+      &gt; Status: Draft · Last updated: 4 Jun 2025
     </span>
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#1-who-is-this-guide-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Who Is This Guide For?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-this-guide-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Why This Guide Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-to-use-the-bnb-chain-bridge-user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 How to Use the BNB Chain Bridge (User Guide)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 How to Use the BNB Chain Bridge (User Guide)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#full-node" class="md-nav__link">
+  <a href="#step-by-step" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Node
+      Step-by-Step
     </span>
   </a>
   
@@ -1659,55 +1855,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshots" class="md-nav__link">
+  <a href="#4-understanding-bridge-aggregation" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshots
+      4 Understanding Bridge Aggregation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-optimization" class="md-nav__link">
+  <a href="#5-developer-guide-integrate-the-canonical-bridge-widget" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Optimization
+      5 Developer Guide: Integrate the Canonical Bridge Widget
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-server-as-a-daemon" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Server as a Daemon
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Security">
+    <nav class="md-nav" aria-label="5 Developer Guide: Integrate the Canonical Bridge Widget">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#securing-your-full-node-rpc-from-hackers" class="md-nav__link">
+  <a href="#canonical-bridge-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Securing Your Full Node RPC from Hackers
+      📦 Canonical Bridge Repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#software-vulnerabilities" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Software Vulnerabilities
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
     </span>
   </a>
   
@@ -1719,26 +1906,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
+  <a href="#6-faqs" class="md-nav__link">
     <span class="md-ellipsis">
-      FAQ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-does-my-node-experience-offline-status-or-block-height-lag-after-an-abrupt-termination" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why does my node experience offline status or block height lag after an abrupt termination?
+      6 FAQs
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#7-final-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 Final Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 Changelog
+    </span>
+  </a>
   
 </li>
       
@@ -1758,58 +1948,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../local-node/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Local Node
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../run-with-pebbledb-and-pbss/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Run with PebbleDB and PBSS
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../run-your-own-l2-with-opbnb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Run your own opBNB on BSC
+    FAQ
     
   </span>
   
@@ -1826,193 +1970,68 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
       
         
           
-          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
         
       
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    FAQs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            FAQs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
   
   
   
-  
-    <li class="md-nav__item">
-      <a href="../../faq/protocol-faqs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Protocol FAQs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/gas-and-fees-faqs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Gas and Fees FAQs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/opbnb-bridge-faqs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    opBNB Bridge FAQs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/cross-chain-faqs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Cross Chain FAQs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/build-on-opbnb-faqs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Build on opBNB FAQs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+    <a href="../../bnb-opbnb/" class="md-nav__link">
       
-    </li>
+  
+  
+  <span class="md-ellipsis">
+    opBNB
+    
+  </span>
   
 
-              
-            
-          </ul>
-        </nav>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -2065,7 +2084,7 @@
   
   
   
-    <a href="../../../bnb-greenfield/" class="md-nav__link">
+    <a href="../../bnb-greenfield/" class="md-nav__link">
       
   
   
@@ -2127,7 +2146,7 @@
   
   
   
-    <a href="../../../showcase/identity/did/" class="md-nav__link">
+    <a href="../../showcase/identity/did/" class="md-nav__link">
       
   
   
@@ -2187,7 +2206,7 @@
   
   
   
-    <a href="../../../bc-fusion/" class="md-nav__link">
+    <a href="../../bc-fusion/" class="md-nav__link">
       
   
   
@@ -2235,28 +2254,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#selecting-the-appropriate-mode-and-storage-scheme" class="md-nav__link">
+  <a href="#status-draft-last-updated-4-jun-2025" class="md-nav__link">
     <span class="md-ellipsis">
-      Selecting the Appropriate Mode and Storage Scheme
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Selecting the Appropriate Mode and Storage Scheme">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fast-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Node
+      &gt; Status: Draft · Last updated: 4 Jun 2025
     </span>
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#1-who-is-this-guide-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Who Is This Guide For?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-this-guide-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Why This Guide Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-to-use-the-bnb-chain-bridge-user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 How to Use the BNB Chain Bridge (User Guide)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 How to Use the BNB Chain Bridge (User Guide)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#full-node" class="md-nav__link">
+  <a href="#step-by-step" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Node
+      Step-by-Step
     </span>
   </a>
   
@@ -2268,55 +2305,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshots" class="md-nav__link">
+  <a href="#4-understanding-bridge-aggregation" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshots
+      4 Understanding Bridge Aggregation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-optimization" class="md-nav__link">
+  <a href="#5-developer-guide-integrate-the-canonical-bridge-widget" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Optimization
+      5 Developer Guide: Integrate the Canonical Bridge Widget
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-server-as-a-daemon" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Server as a Daemon
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Security">
+    <nav class="md-nav" aria-label="5 Developer Guide: Integrate the Canonical Bridge Widget">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#securing-your-full-node-rpc-from-hackers" class="md-nav__link">
+  <a href="#canonical-bridge-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Securing Your Full Node RPC from Hackers
+      📦 Canonical Bridge Repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#software-vulnerabilities" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Software Vulnerabilities
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
     </span>
   </a>
   
@@ -2328,26 +2356,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
+  <a href="#6-faqs" class="md-nav__link">
     <span class="md-ellipsis">
-      FAQ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-does-my-node-experience-offline-status-or-block-height-lag-after-an-abrupt-termination" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why does my node experience offline status or block height lag after an abrupt termination?
+      6 FAQs
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#7-final-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 Final Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      8 Changelog
+    </span>
+  </a>
   
 </li>
       
@@ -2367,7 +2398,7 @@
 
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-opbnb/advanced/node-best-practices.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/cross-chain-bridge.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2375,126 +2406,101 @@
   
 
 
-<div><h1 id="best-practices-for-opbnb-node-configuration">Best Practices for opBNB Node Configuration<a class="headerlink" href="#best-practices-for-opbnb-node-configuration" title="Link to this section">¶</a></h1>
-<h2 id="selecting-the-appropriate-mode-and-storage-scheme">Selecting the Appropriate Mode and Storage Scheme<a class="headerlink" href="#selecting-the-appropriate-mode-and-storage-scheme" title="Link to this section">¶</a></h2>
-<p>opBNB accommodates various node modes: Full, Fast, and Archive.
-Two storage schemes are available: HBSS (Hash-Based Scheme Storage) and PBSS (Path-Based Scheme Storage).</p>
-<p>The principal distinctions between them lie in their methods of preserving history trie data.</p>
-<p>The Merkle Patricia Trie (MPT), an advanced data structure, is adept at storing and retrieving key-value pairs with efficiency. It amalgamates the principles of a Patricia trie and a Merkle tree to forge a secure and immutable representation of data within the Ethereum Virtual Machine (EVM).</p>
-<p>The MPT endows the following capabilities:</p>
+<div><h1 id="bnb-chain-cross-chain-bridge-guide">BNB Chain Cross-Chain Bridge Guide<a class="headerlink" href="#bnb-chain-cross-chain-bridge-guide" title="Link to this section">¶</a></h1>
+<h2 id="status-draft-last-updated-4-jun-2025">&gt; <strong>Status:</strong> Draft · Last updated: 4 Jun 2025<a class="headerlink" href="#status-draft-last-updated-4-jun-2025" title="Link to this section">¶</a></h2>
+<h2 id="1-who-is-this-guide-for">1  Who Is This Guide For?<a class="headerlink" href="#1-who-is-this-guide-for" title="Link to this section">¶</a></h2>
 <ul>
-<li>Access to historical data: Enables retrieval of an account’s balance at a specified block height, simulation of calls, and debugging of traces at particular block heights, among others.</li>
-<li>Verification of Inclusion and Exclusion:
-The MPT facilitates proofs of both inclusion and exclusion of key-value pairs, a pivotal feature for transaction verification and blockchain integrity maintenance.</li>
+<li>🧑‍💻 <strong>Users</strong> who want to transfer tokens in and out of BNB Chain from other chains like <strong>Ethereum</strong> or <strong>Solana</strong>.</li>
+<li>🛠️ <strong>Developers</strong> who want to integrate a cross-chain bridge widget on their website using BNB Chain’s <strong>Canonical Bridge</strong>.</li>
 </ul>
-<p>Nevertheless, the preservation of entire history trie data on disk can demand substantial resources and may be superfluous for certain applications. opBNB introduces diverse node modes and storage schemes to accommodate a range of requirements.</p>
-<p>The variances between the modes and storage schemes are encapsulated as follows:</p>
+<h2 id="2-why-this-guide-matters">2  Why This Guide Matters<a class="headerlink" href="#2-why-this-guide-matters" title="Link to this section">¶</a></h2>
+<p>Many users don’t realize that cross-chain transfers are possible or easy. BNB Chain offers a bridge aggregator that shows the <strong>best route</strong> for moving assets between chains using one of our <strong>six route providers</strong>:</p>
+<p><strong>Supported Route Providers</strong>:</p>
 <ul>
-<li>Archive node mode conserves the complete history trie data. Full node mode archives recent trie data (128 blocks), whereas the fast node mode retains only the current state, excluding trie data.<ul>
-<li>Functions such as block, transaction, receipt, and log retrieval are supported across all node modes. Since block data is preserved in the block database, it remains unaffected by the trie data storage scheme.</li>
-<li>The capability to access historical state data varies by node mode. Archive nodes support comprehensive historical state data retrieval, whereas full and fast nodes facilitate access to recent 128 blocks’ state data.</li>
-<li>Trie data-dependent functions like <code>eth_getProof</code>, <code>eth_getStorageAt</code>, etc., are fully supported by Archive nodes. Full nodes offer queries for recent 128 blocks, whereas fast nodes lack this support.</li>
-<li>Specifically, given that the transfer from Layer 2 to Layer 1 necessitates <code>eth_getProof</code> data corresponding to the most recent root hash height, we have implemented certain enhancements within the full node configuration to facilitate <code>eth_getProof</code> for the latest root hash height, irrespective of it surpassing the 128-block threshold. Should you require the utilization of your personal node for the assembly of withdrawal proof, the full node mode is at your disposal.</li>
+<li>Stargate</li>
+<li>Celer</li>
+<li>deBridge</li>
+<li>Meson</li>
+<li>LayerZero</li>
+<li>Mayan</li>
 </ul>
-</li>
-<li>PBSS archives trie nodes on disk utilizing encoded paths and specific key prefixes as keys. This method permits PBSS’s Merkle Patricia Trie (MPT) to supersede older data due to the shared key between the account trie and storage trie, enabling <strong>online pruning</strong> and significantly <strong>diminishing data redundancy</strong>.<ul>
-<li>Archive node mode is only compatible with HBSS, whereas Full and Fast node modes support both HBSS and PBSS.</li>
-<li>For further details, please consult the <a href="../run-with-pebbledb-and-pbss/">PBSS document</a>.</li>
+<blockquote>
+<p>✅ We help users <strong>see available routes</strong> for transferring assets <strong>into or out of BNB Chain</strong>, but we <strong>do not operate the routes or control token availability</strong>.</p>
+</blockquote>
+<h2 id="3-how-to-use-the-bnb-chain-bridge-user-guide">3  How to Use the BNB Chain Bridge (User Guide)<a class="headerlink" href="#3-how-to-use-the-bnb-chain-bridge-user-guide" title="Link to this section">¶</a></h2>
+<h3 id="step-by-step">Step-by-Step<a class="headerlink" href="#step-by-step" title="Link to this section">¶</a></h3>
+<ol>
+<li>Visit <a href="https://www.bnbchain.org/en/bnb-chain-bridge">bnbchain.org/en/bnb-chain-bridge</a>.</li>
+<li>Choose your <strong>source chain</strong> (e.g. Ethereum) and <strong>destination chain</strong> (e.g. BNB Chain).</li>
+<li>Connect your wallet to source chain.</li>
+<li>Choose a token to bridge and enter the amount.</li>
+<li>The bridge tool will display <strong>available routes</strong> based on your token and chains.</li>
+<li>Click <strong>Send</strong> (or <strong>Approve</strong> if required).</li>
+<li>Wait for the transaction to complete. You’ll receive your tokens on the destination chain.</li>
+</ol>
+<h2 id="4-understanding-bridge-aggregation">4  Understanding Bridge Aggregation<a class="headerlink" href="#4-understanding-bridge-aggregation" title="Link to this section">¶</a></h2>
+<p>BNB Chain’s bridge tool is an <strong>aggregator</strong>. It finds available routes from partner bridge providers but:</p>
+<ul>
+<li>❌ We do not custody tokens.</li>
+<li>❌ We cannot add tokens ourselves.</li>
+<li>✅ We simplify access and offer visibility into supported routes.</li>
 </ul>
-</li>
+<p>You can use the bridge for <strong>all directions</strong> – not just from BNB Chain to others, but also from Ethereum, Solana, and other supported chains <strong>to BNB Chain</strong>.</p>
+<h2 id="5-developer-guide-integrate-the-canonical-bridge-widget">5  Developer Guide: Integrate the Canonical Bridge Widget<a class="headerlink" href="#5-developer-guide-integrate-the-canonical-bridge-widget" title="Link to this section">¶</a></h2>
+<p>To integrate the same aggregator bridge experience in your own dApp or website:</p>
+<h3 id="canonical-bridge-repository">📦 Canonical Bridge Repository<a class="headerlink" href="#canonical-bridge-repository" title="Link to this section">¶</a></h3>
+<p>GitHub: <a href="https://github.com/bnb-chain/canonical-bridge">github.com/bnb-chain/canonical-bridge</a></p>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Link to this section">¶</a></h3>
+<ul>
+<li>Embed cross-chain bridging into any website.</li>
+<li>Supports the same 6 route providers.</li>
+<li>React component + config options.</li>
+<li>Supports custom networks, tokens, style.</li>
+<li>Supports other chain to other chain transfer (e.g. Ethereum to Base)</li>
 </ul>
-<p>Comparative Analysis of Node Modes and Storage Schemes:</p>
+<h3 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Link to this section">¶</a></h3>
+<ul>
+<li>DeFi dApps</li>
+<li>Wallet UIs</li>
+<li>NFT platforms offering cross-chain support</li>
+</ul>
+<h2 id="6-faqs">6  FAQs<a class="headerlink" href="#6-faqs" title="Link to this section">¶</a></h2>
 <table>
 <thead>
 <tr>
-<th><strong>Mode</strong></th>
-<th><strong>Full Node (PBSS)</strong></th>
-<th><strong>Full Node (HBSS)</strong></th>
-<th><strong>Fast Node</strong></th>
-<th><strong>Archive Node</strong></th>
+<th>Question</th>
+<th>Answer</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Preserve Trie Nodes</strong></td>
-<td>Latest 128 blocks</td>
-<td>Latest 128 blocks</td>
-<td>None</td>
-<td>All</td>
+<td>I don’t see my token listed?</td>
+<td>Route providers decide which tokens they support. You can contact them directly.</td>
 </tr>
 <tr>
-<td><strong>Disk Consumption</strong></td>
-<td>Moderate-Low</td>
-<td>Moderate-High</td>
-<td>Lowest</td>
-<td>Highest</td>
+<td>Is this a bridge just for BNB Chain?</td>
+<td>No — it supports <strong>all chains</strong> connected via our 6 providers.</td>
 </tr>
 <tr>
-<td><strong>Auto Prune History Trie Data</strong></td>
-<td>Yes</td>
-<td>No</td>
-<td>Not Applicable</td>
-<td>Not Applicable</td>
+<td>Can I use this from Solana to Ethereum?</td>
+<td>Yes, as long as a route provider supports it. (Only available in Canonical Bridge Widget)</td>
 </tr>
 <tr>
-<td><strong>Performance</strong></td>
-<td>Moderate-High</td>
-<td>Moderate-Low</td>
-<td>Highest</td>
-<td>Lowest</td>
-</tr>
-<tr>
-<td><strong>Security</strong></td>
-<td>High</td>
-<td>High</td>
-<td>Lower than others since it doesn’t verify the state root</td>
-<td>High</td>
+<td>Can I embed this bridge in my dApp?</td>
+<td>Yes — use the <a href="https://github.com/bnb-chain/canonical-bridge">Canonical Bridge widget</a>.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="fast-node">Fast Node<a class="headerlink" href="#fast-node" title="Link to this section">¶</a></h3>
-<p>For most applications, operating a fast node is advisable. This mode maintains only the current state, sans trie data, making it suitable for tasks such as querying the current state and processing transactions.</p>
-<p>To activate the fast node, include <code>--allow-insecure-no-tries</code> in the <code>op-geth</code> startup command.</p>
-<div class="highlight"><pre><span></span><code> ./geth --config ./config.toml --datadir ./node --syncmode full  --allow-insecure-no-tries
-</code></pre></div>
-<p>To prune the MPT state (e.g., when transitioning from a full to a fast node), prune the node as follows:</p>
-<div class="highlight"><pre><span></span><code>./geth snapshot insecure-prune-all --datadir ./datadir ./genesis.json
-</code></pre></div>
-<p><em>Fast Node does not generate Trie Data when syncing.
-Once the Fast Node is running, there is no way to switch back to Full Node.
-Need to re-download snapshot data to restore it to Full Node.</em></p>
-<p>For implementation details and further information, refer to <a href="https://github.com/bnb-chain/op-geth/pull/75">the PR</a>.</p>
-<h3 id="full-node">Full Node<a class="headerlink" href="#full-node" title="Link to this section">¶</a></h3>
-<p>Operating a full node is recommended if you require:</p>
+<h2 id="7-final-notes">7  Final Notes<a class="headerlink" href="#7-final-notes" title="Link to this section">¶</a></h2>
 <ul>
-<li>Enhanced security and reliability assurances. The full node meticulously executes and locally verifies all blocks.</li>
-<li>The facility to query trie data of the most recent 128 blocks, such as retrieving an account’s balance at a specific block height, simulating calls, and debugging traces.</li>
+<li>Users should always verify token addresses and routes.</li>
+<li>For token support, contact the respective bridge provider.</li>
+<li>BNB Chain simplifies access to existing infrastructure — we aggregate, not operate.</li>
 </ul>
-<p>To enable the full node, set the <code>--syncmode full</code> flag in the <code>geth</code> command.</p>
-<p>It is particularly advised to operate a full node with PBSS and pebble to minimize data redundancy and enhance performance.</p>
-<div class="highlight"><pre><span></span><code>--state.scheme path --db.engine pebble
-</code></pre></div>
-<p>For comprehensive details, consult the <a href="../run-with-pebbledb-and-pbss/">PBSS document</a>.</p>
-<h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Link to this section">¶</a></h2>
-<p>The latest snapshot data is accessible via the <a href="https://github.com/bnb-chain/opbnb-snapshot">opbnb-snapshot</a> repository.</p>
-<p>Employing snapshot data can drastically curtail the time required for node synchronization.</p>
-<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Link to this section">¶</a></h2>
-<p>In order to enhance the performance of <code>op-geth</code>, it is crucial to configure the cache settings appropriately. Allocating approximately one-third of the physical memory to the cache is advisable. For instance, if the system has 64GB of physical memory, the cache setting can be configured as:</p>
-<div class="highlight"><pre><span></span><code>--cache 20000
-</code></pre></div>
-<p>This allocation ensures that the cache is optimized for efficient use of system resources, ultimately leading to improved performance of <code>op-geth</code>.</p>
-<h2 id="running-server-as-a-daemon">Running Server as a Daemon<a class="headerlink" href="#running-server-as-a-daemon" title="Link to this section">¶</a></h2>
-<p>To ensure continuous operation, it is important to keep <code>op-node</code> and <code>op-geth</code> running at all times. One of the simplest and recommended solutions is to register them as systemd service. By doing so, they will automatically start upon system reboots and other relevant events, ensuring seamless operation without manual intervention.</p>
-<h2 id="security">Security<a class="headerlink" href="#security" title="Link to this section">¶</a></h2>
-<h3 id="securing-your-full-node-rpc-from-hackers">Securing Your Full Node RPC from Hackers<a class="headerlink" href="#securing-your-full-node-rpc-from-hackers" title="Link to this section">¶</a></h3>
-<p>It is imperative to safeguard your Full Node RPC endpoints from unauthorized access. Exposing RPC endpoints to the public network can pose security risks, making it essential to restrict access and implement appropriate security measures to prevent unauthorized intrusion.</p>
-<h3 id="software-vulnerabilities">Software Vulnerabilities<a class="headerlink" href="#software-vulnerabilities" title="Link to this section">¶</a></h3>
-<p>To ensure the security of your node and assets, it is crucial to download software only from official sources. Additionally, it is important to consistently update the software to the latest, most secure version available. By adhering to these practices, you can mitigate the risk of potential vulnerabilities and safeguard your node and assets from security threats.</p>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Link to this section">¶</a></h2>
-<h3 id="why-does-my-node-experience-offline-status-or-block-height-lag-after-an-abrupt-termination">Why does my node experience offline status or block height lag after an abrupt termination?<a class="headerlink" href="#why-does-my-node-experience-offline-status-or-block-height-lag-after-an-abrupt-termination" title="Link to this section">¶</a></h3>
-<p>After running a synchronized node for an extended period of time, abruptly terminating the node(op-geth process) can result in a period of offline status upon restart. Specifically, only archived nodes are expected to quickly re-synchronize after such an event.</p>
-<p>The reason for this behavior lies in the nature of Geth’s functionality. When Geth experiences a crash or is not shut down gracefully, the recent state that was held in memory is lost and must be regenerated. As a result, it can take Geth a considerable amount of time to restore these states.</p>
-<p>The root cause of this prolonged restoration process can be attributed to the fact that Geth does flush the state trie periodically. The frequency of this flushing is defined by the trieTimeout parameter in the configuration file (config.toml). This periodic flushing is intended to maintain consistency and integrity within the node’s state, but it also contributes to the time required for state regeneration in the event of an abrupt shutdown.</p></div>
+<h2 id="8-changelog">8  Changelog<a class="headerlink" href="#8-changelog" title="Link to this section">¶</a></h2>
+<ul>
+<li><strong>2025-05-28</strong> – Initial draft of user + developer combined guide.</li>
+</ul></div>
 
 
 
@@ -2539,7 +2545,7 @@ Need to re-download snapshot data to restore it to Full Node.</em></p>
         <!-- Copyright content will be dynamically inserted here -->
       </div>
   </div>
-</footer><script src="../../../assets/js/footer-menu.js"></script>
+</footer><script src="../../assets/js/footer-menu.js"></script>
 <div class="ai-bot-wrapper">
     <button type="button" class="ask-ai-button" aria-label="Toggle AI Chat">
         Ask AI
@@ -2632,16 +2638,16 @@ Need to re-download snapshot data to restore it to Full Node.</em></p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../assets/js/mathjax.js"></script>
+        <script src="../../assets/js/mathjax.js"></script>
       
-        <script src="../../../assets/js/custom.js"></script>
+        <script src="../../assets/js/custom.js"></script>
       
-        <script src="../../../assets/js/inkeep-custom-button.js"></script>
+        <script src="../../assets/js/inkeep-custom-button.js"></script>
       
         <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
       
