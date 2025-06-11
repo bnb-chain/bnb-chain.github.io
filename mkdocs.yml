@@ -139,6 +139,7 @@ nav:
         - Overview: ./bnb-smart-chain/slashing/overview.md
         - Slash Rules: ./bnb-smart-chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb-smart-chain/slashing/monitor.md
+    - Cross Chain Bridge: ./bnb-smart-chain/cross-chain-bridge.md
     - FAQ:  ./bnb-smart-chain/faq/index.md
   - opBNB:
     - opBNB: ./bnb-opbnb/index.md
