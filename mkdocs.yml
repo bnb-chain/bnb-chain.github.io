@@ -276,6 +276,8 @@ nav:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
   - Showcases:
+     - AI: ./showcase/mcp/index.md
+       - Integrating AskAI: ./showcase/mcp/ask-ai-to-ide.md
      - Name Service and Attestation:
        - Decentralized Identity: ./showcase/identity/did.md
        - Decentralized Name Service:
