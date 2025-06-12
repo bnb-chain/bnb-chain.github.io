@@ -1,28 +1,73 @@
-# Welcome to BNB Chain Knowledge Base
+  log_level: "debug"
 
-This is the BNB Chain Knowledge Base documentation for the BNB Chain developers. It is based on the Mkdocs Material theme. 
+client_urls:
+  binance:
+    dex: "https://dex.binance.org"
+    explorer: "https://explorer.binance.org"
+  assets_manager_api: "https://assets.trustwallet.com/api"
 
-## Prerequisite  
+urls:
+  assets_app: "https://assets-cdn.trustwallet.com"
+  logo: "https://trustwallet.com/assets/images/favicon.png"
 
-* `pip install mkdocs-material` - install mkdocs-material.
-* `pip install mkdocs-video` - install mkdocs-video.
-* `pip install mkdocs-redirects` - install mkdocs-redirects plugin.
+time_format: "2006-01-02T15:04:05.000000"
 
-## Commands
+validators_settings:
+  root_folder:
+    allowed_files:
+      - ".github"
+      - "blockchains"
+      - "dapps"
+      - "media"
+      - "node_modules"
+      - "script-old"
+      - "script"
+      - "test"
+      - ".gitignore"
+      - "azure-pipelines.yml"
+      - "jest.config.js"
+      - "LICENSE"
+      - "package-lock.json"
+      - "package.json"
+      - "README.md"
+      - ".git"
+      - ".eslintignore"
+      - ".eslintrc.js"
+      - "cmd"
+      - "internal"
+      - "go.mod"
+      - "go.sum"
+      - ".golangci.yml"
+      - "Makefile"
+      - "bin"
+    skip_files:
+      - "node_modules"
+    skip_dirs:
+      - ".git"
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+  chain_folder:
+    allowed_files:
+      - "assets"
+      - "tokenlist.json"
+      - "chainlist.json"
+      - "tokenlist-extended.json"
+      - "validators"
+      - "info"
 
-## Project layout
+  asset_folder:
+    allowed_files:
+      - "logo.png"
+      - "info.json"
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+  chain_info_folder:
+    has_files:
+      - "logo.png"
+      - "info.json"
 
-## 📜 License
+  chain_validators_asset_folder:
+    has_files:
+      - "logo.png"
 
-Copyright (c) 2024 BNB Chain 
+  dapps_folder:
+    ext: ".png"
 
