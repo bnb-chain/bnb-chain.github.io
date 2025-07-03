@@ -62,7 +62,7 @@ EnableQuickBlockFetching = true
 [Node.P2P]
 EVNNodeIdsWhitelist = ["<whitelist nodeids>"]
 ProxyedValidatorAddresses = ["<ValidatorAdresses>"]
-TrustedNodes = [
+StaticNodes = [
     "enode://3dd9e7e22180cda7c2a7015d3582811327abb3bc5f330879be7bc3217be4ed7c4ec0d5117ab0fae6542d3e5d199f3d935b7bca108b565f07806ed7687af8d1b5@52.198.165.142:30311",
     "enode://70aeb4f0cc52df44f4ef0c72ca0eca8a210b9916ad02bcd147cc58bbfee9259ee46dfa23e13512f98bdb3937d62d2d0a521a90c76161ccffd24bb10829d8d542@13.112.162.162:30311",
     "enode://4af65e07b676e3634e4e2e6df01b23e32eb73fdc200b7f98a4807b16e8faefae4d3875bea4d88e203e319f6a61859b66c0b8254191a2058629a00fe6e42e7b18@54.155.24.228:30311",
@@ -77,7 +77,7 @@ TrustedNodes = [
 
 `ProxyedValidatorAddresses`: it is optional and is only for sentry to identify which blocks should be broadcast to all EVN Peers, it is configured as the protected validator address.
 
-`TrustedNodes`: it includes a list of well maintained EVN nodes for validators to connect to, the list could be changed in the future.
+`StaticNodes`: it includes a list of well maintained EVN nodes for validators to connect to, the list could be changed in the future.
 
 ### Mode-2: Simple Mode
 
@@ -99,7 +99,7 @@ EnableQuickBlockFetching = true
 
 [Node.P2P]
 EVNNodeIdsWhitelist = ["<whitelist nodeids>"]
-TrustedNodes = [
+StaticNodes = [
     "enode://3dd9e7e22180cda7c2a7015d3582811327abb3bc5f330879be7bc3217be4ed7c4ec0d5117ab0fae6542d3e5d199f3d935b7bca108b565f07806ed7687af8d1b5@52.198.165.142:30311",
     "enode://70aeb4f0cc52df44f4ef0c72ca0eca8a210b9916ad02bcd147cc58bbfee9259ee46dfa23e13512f98bdb3937d62d2d0a521a90c76161ccffd24bb10829d8d542@13.112.162.162:30311",
     "enode://4af65e07b676e3634e4e2e6df01b23e32eb73fdc200b7f98a4807b16e8faefae4d3875bea4d88e203e319f6a61859b66c0b8254191a2058629a00fe6e42e7b18@54.155.24.228:30311",
