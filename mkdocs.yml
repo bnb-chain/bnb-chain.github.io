@@ -138,7 +138,7 @@ nav:
         - EVN:
             - Overview: ./bnb-smart-chain/validator/evn/overview.md
             - Best Practice: ./bnb-smart-chain/validator/evn/best-practice.md
-            - Latency Monitor: ./bnb-smart-chain/validator/evn/latency-monitor.md
+            - Network Monitor: ./bnb-smart-chain/validator/evn/network-monitor.md
             - FAQs: ./bnb-smart-chain/validator/evn/faqs.md
     - Slashing:
         - Overview: ./bnb-smart-chain/slashing/overview.md
