@@ -39,8 +39,8 @@ EnableQuickBlockFetching = true
 StaticNodes = [
     "<OtherValidatorEnodes>",
     "<FullnodeEnodes>",
-    "<SentryEnodes>"
-    ...
+    "<SentryEnodes>",
+    "..."
 ]
 ```
 
@@ -107,4 +107,5 @@ TrustedNodes = [
     "enode://cc6d828a735db591cb2a0454a94b9602be6c0aca6c73f771efaabc7f68c46085b953c97f880efb17597578320444acc9e207042297689515c18e659d138bb393@23.23.111.240:30311",
     "enode://5035ae74e04b4290885c3cea546ca179cb80c1461141b8c3124bb6707993c1e68dafd2f5fd9b13a8d076225412bf5bbefe81c16aa812a35e7c19bb1020b8c124@34.205.243.82:30311",
     "<other trusted nodeids>"
-]```
+]
+```
