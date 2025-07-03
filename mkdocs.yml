@@ -135,6 +135,11 @@ nav:
             - Builder Guide: ./bnb-smart-chain/validator/mev/builder-integration.md
             - User Guide: ./bnb-smart-chain/validator/mev/user-guide.md
             - FAQs: ./bnb-smart-chain/validator/mev/faqs.md
+        - EVN:
+            - Overview: ./bnb-smart-chain/validator/evn/overview.md
+            - Best Practice: ./bnb-smart-chain/validator/evn/best-practice.md
+            - Network Monitor: ./bnb-smart-chain/validator/evn/network-monitor.md
+            - FAQs: ./bnb-smart-chain/validator/evn/faqs.md
     - Slashing:
         - Overview: ./bnb-smart-chain/slashing/overview.md
         - Slash Rules: ./bnb-smart-chain/slashing/slash-rules.md

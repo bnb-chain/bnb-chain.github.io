@@ -1,52 +1,8 @@
 ---
 title: EVN Best Practices - BSC EVN
 ---
-
-# EVN Best Practices
-
-## Background
-
-After [Maxwell Hardfork](https://www.bnbchain.org/en/blog/bnb-chain-announces-maxwell-hardfork-bsc-moves-to-0-75-second-block-times), the block interval will be reduced to 0.75s, which is a huge improvement in user experience for BSC, and at the same time has greater requirements for the client's network, execution and other components. 
-
-BSC introduced a new network layer optimization, Enhanced Validator Network, aka EVN. It is not a new P2P network, but based on the current P2P network to optimize the validator network and reduce the latency of core consensus messages as much as possible.
-
-![evn topology](../../img/evn/evn-topology.png)
-
-EVN only affects the networking and configuration of the validator, and does not affect other roles. At the same time, the existing network topology is similar to EVN.
-
-## How EVN Works
-
-The essence of EVN is to allow validators to identify each other, optimize the broadcast algorithm, and reduce the broadcast latency of core consensus messages. 
-
-EVN is a network layer optimized based on the current existing network topology and broadcast algorithm. It is still not perfect and will continue to be optimized and improved.
-
-You can also check [BEP-563](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-563.md) and [BEP-564](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-564.md) for more details.
-
-### NodeID Registration
-
-The operator adds the validator’s NodeID of the P2P network on the chain through the configuration file, then the node will auto sign a registration tx.
-
-It establishes the identity mapping from the consensus layer to the network layer.
-
-### EVN Peer Identification
-
-All validators/sentry will pull the on-chain registration information, identify whether the connected P2P Peer belongs to the NodeID of a validator, and mark it as an EVN Peer.
-
-### Broadcast Optimization
-
-Transaction broadcast is disabled between all EVN Peers, and mined blocks are broadcast to all connected EVN Peers. Non-mined blocks still use the old gossip broadcast mechanism.
-
-### EVN Whitelist
-
-This is an EVN whitelist that takes effect on this node. It will consider the whitelisted Peers to be EVN Peers as well and apply the EVN broadcast algorithm.
-
-### EVN Peer Connection
-
-Currently, EVN Peers are mainly connected directly through static nodes, allowing most EVN Peers to connect directly to each other.
-
 ## Network Requirements
-
-At the network layer, BSC hopes to have a low enough latency so that most of the time can be used for core processes such as block packaging and block verification. The entire BSC network is relatively decentralized and is distributed in different geographic locations.
+At the network layer, BSC requires minimal latency to maximize time available for critical operations like block packaging and verification. The BSC network maintains decentralization through validators distributed across diverse geographic locations worldwide.
 
 Taking AWS's network service as an example, the measured latency of some regions are:
 - AP<->EU, latency ~100ms
@@ -56,12 +12,12 @@ Taking AWS's network service as an example, the measured latency of some regions
 This data will be the theoretical best value of network message latency, and it is also the reference value for network environment testing between validators.
 
 ## Configuration
+There are two different modes to configure your node, depends on how your validator is connected to the network.
+### Mode-1: Sentry Mode
 
-### Sentry Mode
+![evn sentry mode](../../img/evn/evn-sentry-mode.png){:style="width:500px; height:auto;"}
 
-![evn sentry mode](../../img/evn/evn-sentry-mode.png)
-
-In this mode, the operator needs to create multiple nodes, including multiple validator nodes, multiple sentry nodes, and fullnode nodes.
+In this mode, the operator could create multiple nodes, including multiple validator nodes, multiple sentry nodes, and fullnode nodes.
 
 The validator always remains in a secure intranet environment. Sentry is responsible for quickly exchanging messages with EVN Peer and forwarding them to the validator. Fullnode is a redundant path for additional transactions and other messages.
 
@@ -80,7 +36,12 @@ EnableEVNFeatures = true
 EnableQuickBlockFetching = true
 
 [Node.P2P]
-StaticNodes = ["ValidatorEnodes", "FullnodeEnodes", "SentryEnodes"]
+StaticNodes = [
+    "<OtherValidatorEnodes>",
+    "<FullnodeEnodes>",
+    "<SentryEnodes>",
+    "..."
+]
 ```
 
 `EVNNodeIDsToAdd` fills in the sentry nodeID here. Because the validator is protected in the external network, sentry will act as an EVN Peer to help forward public EVN Peer messages.
@@ -99,20 +60,30 @@ EnableEVNFeatures = true
 EnableQuickBlockFetching = true
 
 [Node.P2P]
-EVNNodeIdsWhitelist = ["ValidatorNodeIDs", "PublicEVNPeerNodeIDs", "BuilderNodeIDs"]
-ProxyedValidatorAddresses = ["ValidatorAdresses"]
-StaticNodes = ["ValidatorEnodes", "FullnodeEnodes", "SentryEnodes", "PublicEVNPeerEnodes", "PublicFullnodeEnodes"]
+EVNNodeIdsWhitelist = ["<whitelist nodeids>"]
+ProxyedValidatorAddresses = ["<ValidatorAdresses>"]
+StaticNodes = [
+    "enode://3dd9e7e22180cda7c2a7015d3582811327abb3bc5f330879be7bc3217be4ed7c4ec0d5117ab0fae6542d3e5d199f3d935b7bca108b565f07806ed7687af8d1b5@52.198.165.142:30311",
+    "enode://70aeb4f0cc52df44f4ef0c72ca0eca8a210b9916ad02bcd147cc58bbfee9259ee46dfa23e13512f98bdb3937d62d2d0a521a90c76161ccffd24bb10829d8d542@13.112.162.162:30311",
+    "enode://4af65e07b676e3634e4e2e6df01b23e32eb73fdc200b7f98a4807b16e8faefae4d3875bea4d88e203e319f6a61859b66c0b8254191a2058629a00fe6e42e7b18@54.155.24.228:30311",
+    "enode://2a6cfdbfc8f401d09a766efa53411bb5457fd5903331afee5363017f65623f0c0c43873c14bfb4001cf02811b1196f710bb3911a36e683cb557b11244cffe212@54.77.55.214:30311",
+    "enode://cc6d828a735db591cb2a0454a94b9602be6c0aca6c73f771efaabc7f68c46085b953c97f880efb17597578320444acc9e207042297689515c18e659d138bb393@23.23.111.240:30311",
+    "enode://5035ae74e04b4290885c3cea546ca179cb80c1461141b8c3124bb6707993c1e68dafd2f5fd9b13a8d076225412bf5bbefe81c16aa812a35e7c19bb1020b8c124@34.205.243.82:30311",
+    "<other trusted nodeids>"
+]
 ```
 
-`EVNNodeIdsWhitelist` is an EVN Peer whitelist that is only valid for the current node. In the transition period before enabling maxwell, the whitelist can be used to apply EVN in advance. At the same time, the operator can put the cooperating builder into the local whitelist.
+`EVNNodeIdsWhitelist`: it is optional and is an EVN Peer whitelist that is only valid for the current node. In the transition period before enabling maxwell, the whitelist can be used to apply EVN in advance. At the same time, the operator can put the cooperating builder into the local whitelist.
 
-`ProxyedValidatorAddresses` This configuration is only for sentry. In order to let sentry identify which blocks should be broadcast to all EVN Peers, it is configured as the protected validator address.
+`ProxyedValidatorAddresses`: it is optional and is only for sentry to identify which blocks should be broadcast to all EVN Peers, it is configured as the protected validator address.
 
-### Simple Mode
+`StaticNodes`: it includes a list of well maintained EVN nodes for validators to connect to, the list could be changed in the future.
 
-![evn simple mode](../../img/evn/evn-simple-mode.png)
+### Mode-2: Simple Mode
 
-In the current mode, the operator needs to build multiple validator nodes and expose them directly to the public network environment, so that they can directly connect to other nodes.
+![evn simple mode](../../img/evn/evn-simple-mode.png){:style="width:500px; height:auto;"}
+
+With simple mode, the operator could run a validator node by exposing it directly to the public network environment, so that they can directly connect to other nodes.
 
 #### Validator Configuration
 
@@ -120,13 +91,21 @@ The example of `Config.toml`.
 
 ```toml
 [Eth]
-EVNNodeIDsToAdd = ["validatorNodeID1", "validatorNodeID2"]
+EVNNodeIDsToAdd = ["validator NodeID", "other nodeids"]
 
 [Node]
 EnableEVNFeatures = true
 EnableQuickBlockFetching = true
 
 [Node.P2P]
-EVNNodeIdsWhitelist = ["ValidatorNodeIDs", "PublicEVNPeerNodeIDs", "BuilderNodeIDs"]
-StaticNodes = ["ValidatorEnodes", "FullnodeEnodes", "PublicEVNPeerEnodes", "PublicFullnodeEnodes"]
+EVNNodeIdsWhitelist = ["<whitelist nodeids>"]
+StaticNodes = [
+    "enode://3dd9e7e22180cda7c2a7015d3582811327abb3bc5f330879be7bc3217be4ed7c4ec0d5117ab0fae6542d3e5d199f3d935b7bca108b565f07806ed7687af8d1b5@52.198.165.142:30311",
+    "enode://70aeb4f0cc52df44f4ef0c72ca0eca8a210b9916ad02bcd147cc58bbfee9259ee46dfa23e13512f98bdb3937d62d2d0a521a90c76161ccffd24bb10829d8d542@13.112.162.162:30311",
+    "enode://4af65e07b676e3634e4e2e6df01b23e32eb73fdc200b7f98a4807b16e8faefae4d3875bea4d88e203e319f6a61859b66c0b8254191a2058629a00fe6e42e7b18@54.155.24.228:30311",
+    "enode://2a6cfdbfc8f401d09a766efa53411bb5457fd5903331afee5363017f65623f0c0c43873c14bfb4001cf02811b1196f710bb3911a36e683cb557b11244cffe212@54.77.55.214:30311",
+    "enode://cc6d828a735db591cb2a0454a94b9602be6c0aca6c73f771efaabc7f68c46085b953c97f880efb17597578320444acc9e207042297689515c18e659d138bb393@23.23.111.240:30311",
+    "enode://5035ae74e04b4290885c3cea546ca179cb80c1461141b8c3124bb6707993c1e68dafd2f5fd9b13a8d076225412bf5bbefe81c16aa812a35e7c19bb1020b8c124@34.205.243.82:30311",
+    "<other trusted nodeids>"
+]
 ```
