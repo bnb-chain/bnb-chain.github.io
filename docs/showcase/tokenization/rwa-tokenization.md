@@ -84,11 +84,11 @@ After you have successfully completed the asset preparation and account preparat
 Service providers you may choose:
 
 - Bitbond (<https://www.Bitbond.com/> ) 
-- Brikken (<https://www.brickken.com/>  )
+- Brickken (<https://www.brickken.com/>  )
 
 ### 3.1 Brickken 
 
-1) Go to the Token Suite sign up page <https://dapp.brickken.com/>  and sigh up using your email account. 
+1) Go to the Token Suite sign up page <https://brickken.com/bnb>  and sigh up using your email account. 
 
 ![](./rwa-tokenization-tutorial/RWA Tokenization Tutorial 2.001.png)
 
@@ -189,7 +189,7 @@ In order to distribute your token toward your investors, you need to launch your
 Service providers you may choose:
 
 - Bitbond (<https://www.Bitbond.com/> ) 
-- Brikken (<https://www.brickken.com/>  )
+- Brickken (<https://www.brickken.com/>  )
 
 ### 4.1 Brickken 
 

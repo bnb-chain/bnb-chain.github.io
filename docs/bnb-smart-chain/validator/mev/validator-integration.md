@@ -110,6 +110,7 @@ sections in the config.toml. Example:
 ```toml
   [Eth.Miner.Mev]
   Enabled = true # open bid receiving
+  GreedyMergeTx = true # merge local tx to the MEV bid block
   ValidatorCommission = 100 # validator claim 1% from block reward
   BidSimulationLeftOver = 50000000 # 50ms, the time left for bid simulation
   SentryURL = "http://bsc-mev-sentry.io" # it is used for the validator to access the sentry, it should be a private URL or IP:Port.

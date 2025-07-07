@@ -42,7 +42,7 @@ We suggest these two service providers since they provide one-stop service with 
 1) **Connect your Wallet** 
 
 Open NFTs2Me and select the “Connect Wallet” option.
-Choose your wallet (e.g., MetaMask). The system will ask you to sign a message to verify account ownership.
+Choose your wallet (e.g.,Turstwallet/MetaMask). The system will ask you to sign a message to verify account ownership.
 
 ![](./nft-loyalty-programs-tutorial/nfts2me09.jpg)
 
@@ -94,7 +94,7 @@ Once the process is complete, a modal window will display all the information ab
 1) **Connect your Wallet** 
 
 Open Bitbond Token Tool and select the “Connect Wallet” option.
-Choose your wallet (e.g., MetaMask). The system will ask you to sign a message to verify account ownership.
+Choose your wallet (e.g., TrustWallet/MetaMask). The system will ask you to sign a message to verify account ownership.
 
 ![](./nft-loyalty-programs-tutorial/Create NFT 2.png)
 

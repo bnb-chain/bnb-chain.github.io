@@ -62,7 +62,8 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Pascal Upgrade of BSC: ./announce/pascal-bsc.md
+      - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
+      - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
 
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
@@ -80,6 +81,8 @@ nav:
       - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
       - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
       - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+      - Pascal Hardfork(BSC): ./announce/pascal-bsc.md
+      - Lorentz Hardfork(BSC): ./announce/lorentz-bsc.md
 
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
@@ -99,10 +102,10 @@ nav:
               - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
               - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
               - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
-            - Insfrastructure & Setup:  
+            - Insfrastructure & Setup:
               - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
               - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
-            - Maintenance & Upgrades:  
+            - Maintenance & Upgrades:
               - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
               - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
         - EOA Paymaster:
@@ -110,7 +113,6 @@ nav:
             - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
             - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integration.md
             - Try Gasless Transaction: ./bnb-smart-chain/developers/paymaster/wallet-demo.md
-
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md
         - User Guide: ./bnb-smart-chain/staking/user-guide.md
@@ -133,10 +135,17 @@ nav:
             - Builder Guide: ./bnb-smart-chain/validator/mev/builder-integration.md
             - User Guide: ./bnb-smart-chain/validator/mev/user-guide.md
             - FAQs: ./bnb-smart-chain/validator/mev/faqs.md
+        - EVN:
+            - Overview: ./bnb-smart-chain/validator/evn/overview.md
+            - Best Practice: ./bnb-smart-chain/validator/evn/best-practice.md
+            - Network Monitor: ./bnb-smart-chain/validator/evn/network-monitor.md
+            - FAQs: ./bnb-smart-chain/validator/evn/faqs.md
     - Slashing:
         - Overview: ./bnb-smart-chain/slashing/overview.md
         - Slash Rules: ./bnb-smart-chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb-smart-chain/slashing/monitor.md
+    - Cross Chain Bridge: ./bnb-smart-chain/cross-chain-bridge.md
+    - FAQ:  ./bnb-smart-chain/faq/index.md
   - opBNB:
     - opBNB: ./bnb-opbnb/index.md
     - Overview: ./bnb-opbnb/overview.md
@@ -170,6 +179,8 @@ nav:
       - Node Best Practices: ./bnb-opbnb/advanced/node-best-practices.md
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
+      - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
+
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
       - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
@@ -270,6 +281,9 @@ nav:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
   - Showcases:
+     - AI:
+        - Overview: ./showcase/mcp/index.md
+        - Integrating AskAI: ./showcase/mcp/ask-ai-to-ide.md
      - Name Service and Attestation:
        - Decentralized Identity: ./showcase/identity/did.md
        - Decentralized Name Service:
@@ -292,7 +306,7 @@ nav:
   - BNB Chain Fusion:
       - BNB Chain Fusion: ./bc-fusion/index.md
       - Overview: ./bc-fusion/overview.md
-      - Post Fustion:
+      - Post Fusion:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
@@ -652,10 +666,12 @@ extra_css:
   - assets/style/components/footer-nav.css
   - assets/style/components/footer.css
   - https://unpkg.com/katex@0.16.10/dist/katex.min.css
+  - assets/style/components/ai-bot-button.css
 
 extra_javascript:
   - assets/js/mathjax.js
   - assets/js/custom.js
+  - assets/js/inkeep-custom-button.js
   - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
   - https://unpkg.com/katex@0.16.10/dist/katex.min.js
   - https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js
@@ -663,6 +679,8 @@ extra_javascript:
 extra:
   generator: false
   homepage: https://www.bnbchain.org
+  analytics:
+    provider: custom
   consent:
     title: Cookie consent
     description: >-

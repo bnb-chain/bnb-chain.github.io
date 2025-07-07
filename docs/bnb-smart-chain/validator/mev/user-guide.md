@@ -32,7 +32,8 @@ A transaction proxy sample code is built by NodeReal, You can find it in the ope
 
 | Builder Proxy | Associated Builders | Link |
 |---|---|---|
-| Blockrazor | 48Club, BloXroute, NodeReal | https://rpc.blockrazor.builders 
+| Blockrazor | 48Club, BloXroute, NodeReal | https://blockrazor.gitbook.io/blockrazor/builder/bsc 
+| Merkle | 48Club, BlockRazor |  https://www.merkle.io/bsc-rpc 
 
 
 
