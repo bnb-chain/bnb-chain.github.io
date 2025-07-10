@@ -2479,7 +2479,7 @@ A sample consensus address is <code>0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5</
 </code></pre></div>
 <p>A sample bls address is <code>b5fe571aa1b39e33c2735a184885f737a59ba689177f297cba67da94bea5c23dc71fd4deefe2c0d2d21851eb11081f69</code>.</p>
 <p>Then you can get your bls proof by running the following command.</p>
-<div class="highlight"><pre><span></span><code>geth<span class="w"> </span>bls<span class="w"> </span>account<span class="w"> </span>generate-proof<span class="w"> </span>--chain-id<span class="w"> </span><span class="si">${</span><span class="nv">BSC_CHAIN_ID</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">OPEATOR_ADDRESS</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">VOTE_ADDRESS</span><span class="si">}</span>
+<div class="highlight"><pre><span></span><code>geth<span class="w"> </span>bls<span class="w"> </span>account<span class="w"> </span>generate-proof<span class="w"> </span>--datadir<span class="w"> </span><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span><span class="w"> </span>--chain-id<span class="w"> </span><span class="si">${</span><span class="nv">BSC_CHAIN_ID</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">OPEATOR_ADDRESS</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">VOTE_ADDRESS</span><span class="si">}</span>
 </code></pre></div>
 <ul>
 <li><code>BSC_CHAIN_ID</code>: <code>56</code> for BSC mainnet, and <code>97</code> for BSC testnet.</li>
