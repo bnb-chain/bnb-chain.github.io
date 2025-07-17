@@ -2401,9 +2401,11 @@ They participate in packaging transactions, creating and validating blocks to se
 <h2 id="economics">Economics<a class="headerlink" href="#economics" title="Link to this section">¶</a></h2>
 <p>Validator’s rewards come from transaction fees and commission fees from delegators.</p>
 <p>Let us also assume that the reward for a block is 100 BNB and that a certain validator has <strong>20%</strong> of self-bonded BNB and sets its commission rate to <strong>20%</strong>. These tokens do not go directly to the proposer. Instead, they are shared among validators and delegators.  These <strong>100 BNB</strong> will be distributed according to each participant’s stake:</p>
-<div class="highlight"><pre><span></span><code>Commission: 80*20%= 16 BNB
-Validator gets: 100\*20% + Commission = 36 BNB
-All delegators get: 100\*80% - Commission = 64 BNB
+<div class="highlight"><pre><span></span><code>Commission: 100 BNB × 20% = 20 BNB (goes directly to validator)
+Remaining for All Delegators: 100 BNB - 20 BNB = 80 BNB (distributed proportionally)
+Validator's Share of Remaining: 80 BNB × 20% = 16 BNB
+Other Delegators' Share: 80 BNB × 80% = 64 BNB
+Total Validator Reward: 20 BNB (commission) + 16 BNB (self-delegation share) = 36 BNB
 </code></pre></div>
 <p>The rewards for motivating validators to vote for Fast Finality also comes from transaction fees. The specific rules can refer to <a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md#43-reward">BEP126</a></p>
 <p>If validators double sign, malicious vote or frequently offline, their staked BNB (not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.</p>
