@@ -672,9 +672,7 @@ extra_javascript:
   - assets/js/mathjax.js
   - assets/js/custom.js
   - assets/js/inkeep-custom-button.js
-  - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
-  - https://unpkg.com/katex@0.16.10/dist/katex.min.js
-  - https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js
+  - assets/js/footer-menu.js
 
 extra:
   generator: false
