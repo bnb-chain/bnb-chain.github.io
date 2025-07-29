@@ -12,13 +12,13 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/slashing/overview/">
+        <link rel="canonical" href="https://docs.bnbchain.org/bnb-smart-chain/benchmark/design-reference/">
       
       
-        <link rel="prev" href="../../validator/evn/faqs/">
+        <link rel="prev" href="../../cross-chain-bridge/">
       
       
-        <link rel="next" href="../slash-rules/">
+        <link rel="next" href="../../faq/">
       
       
       <link rel="icon" href="../../../assets/bnb.svg">
@@ -26,7 +26,7 @@
     
     
     
-        <title>Overview - BSC Slashing</title>
+        <title>Benchmark - Design</title>
     
 
     
@@ -111,7 +111,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bsc-slashing-overview" class="md-skip">
+        <a href="#benchmark-design" class="md-skip">
           Skip to content
         </a>
       
@@ -1681,8 +1681,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1708,11 +1706,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
           <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
@@ -1728,7 +1726,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             Slashing
@@ -1739,32 +1737,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../slashing/overview/" class="md-nav__link">
         
   
   
@@ -1775,53 +1751,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#double-sign" class="md-nav__link">
-    <span class="md-ellipsis">
-      Double Sign
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#malicious-fast-finality-vote" class="md-nav__link">
-    <span class="md-ellipsis">
-      Malicious Fast Finality Vote
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unavailability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unavailability
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1834,7 +1763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slash-rules/" class="md-nav__link">
+      <a href="../../slashing/slash-rules/" class="md-nav__link">
         
   
   
@@ -1857,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitor/" class="md-nav__link">
+      <a href="../../slashing/monitor/" class="md-nav__link">
         
   
   
@@ -1908,10 +1837,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../benchmark/design-reference/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1922,6 +1860,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2235,41 +2174,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#double-sign" class="md-nav__link">
-    <span class="md-ellipsis">
-      Double Sign
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#malicious-fast-finality-vote" class="md-nav__link">
-    <span class="md-ellipsis">
-      Malicious Fast Finality Vote
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unavailability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unavailability
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2284,7 +2188,7 @@
 
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/slashing/overview.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/bnb-smart-chain/benchmark/design-reference.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2292,37 +2196,111 @@
   
 
 
-<div><h1 id="bsc-slashing-overview">BSC Slashing Overview<a class="headerlink" href="#bsc-slashing-overview" title="Link to this section">¶</a></h1>
-<p>Slashing is a component of on-chain governance that penalizes malicious or negative actions. Anyone can submit a slash transaction on BSC, which involves providing evidence and paying fees. Successful submissions yield significant rewards.
-Currently, there are three types of slashable cases.</p>
-<h2 id="double-sign">Double Sign<a class="headerlink" href="#double-sign" title="Link to this section">¶</a></h2>
-<p>It is quite a serious error and very likely a deliberate offense when a validator signs more than one block with the same height and parent block. The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. When Double Sign happens, the validator should be removed from the Validator Set right away.</p>
-<p>Anyone can submit a slash transaction with the evidence of Double Sign to the BSC Slash Contract, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator.
-Upon receiving the evidence, the contract will verify its validity.</p>
-<p>The validator will be removed from validator set, a predefined amount of BNB would be slashed from the self-delegated BNB of the validator.
-Both validator and its delegators will not receive the staking rewards.
-Part of the slashed BNB will be allocated to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction.
-The rest of the slashed BNB will be allocated to the other validators’ credit addresses, and distributed to all delegators in the same way as blocking reward.</p>
-<h2 id="malicious-fast-finality-vote">Malicious Fast Finality Vote<a class="headerlink" href="#malicious-fast-finality-vote" title="Link to this section">¶</a></h2>
-<p>It is quite a serious error and very likely a deliberate offense when a validator signs two fast finality votes with the same target height or the span of one vote including the span of another vote.
-The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. 
-When Malicious Vote happens, the validator should be removed from the Validator Set right away.</p>
-<p>Anyone can submit slash transaction with the evidence of Malicious Vote to the BSC Slash Contract.
-Evidence of malicious voting needs to be provided, which includes two conflicting votes and the voting key used for the signature.
-Upon receiving the evidence, the contract will verify its validity.</p>
-<p>The validator will be removed from the current set of validators, and the submitter will receive the reward from the system contract.
-A predefined amount of BNB would be slashed from the self-delegated BNB of the validator.
-Both validator and its delegators will not receive the staking rewards.
-The slashed BNB will be allocated to the other validators’ credit addresses, and distributed to all delegators in the same way as blocking reward.</p>
-<h2 id="unavailability">Unavailability<a class="headerlink" href="#unavailability" title="Link to this section">¶</a></h2>
-<p>The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn.
-Validators can miss their turn due to any reason, especially problems in their hardware, software, configuration or network.
-This instability of the operation will hurt the performance and introduce more indeterministic into the system.</p>
-<p>There is an internal smart contract that records the missed blocking metrics of each validator.
-If the metrics exceed the set threshold, the blocking reward for the validator will not be given to them but shared with other validators performing better.
-This process aims to gradually remove poorly-operating validators from the set, reducing rewards for their delegators.</p>
-<p>If the metrics stay above a higher threshold, the validator will be removed from rotation, and a set amount of BNB will be deducted from their self-delegated BNB.
-This action results in both validators and delegators not receiving their staking rewards.</p></div>
+<div><h1 id="benchmark-design">Benchmark - Design<a class="headerlink" href="#benchmark-design" title="Link to this section">¶</a></h1>
+<p>The purpose of this document is to share the design adopted by BSC for characterizing its performance using close-to-real test scenarios.</p>
+<p><strong>Nodes Design</strong></p>
+<ul>
+<li>A: Client(s) → Validator(s)</li>
+<li>B: Client(s) → FullNode(s) → Validator(s)</li>
+</ul>
+<p>Both are acceptable; but <strong><em>B is recommended</em></strong>.</p>
+<p><strong>Scenarios Design</strong></p>
+<p>The <strong><em>default</em></strong> design mimics typical transactions in a DeFi application, and the weight parameters enhance the flexibility of adding/removing scenarios with minimal implementation effort.</p>
+<table>
+<thead>
+<tr>
+<th>Scenarios</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native token (BNB) transfer</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Contract token (BEP20) transfer</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Wrapped Native token (WBNB) deposit</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Wrapped Native token (WBNB) withdraw</td>
+<td>5</td>
+</tr>
+<tr>
+<td>UniswapV2 - AddLiquidity</td>
+<td>5</td>
+</tr>
+<tr>
+<td>UniswapV2 - RemoveLiquidity</td>
+<td>5</td>
+</tr>
+<tr>
+<td>UniswapV2 - SwapExactTokensForTokens</td>
+<td>30</td>
+</tr>
+<tr>
+<td>UniswapV2 - SwapBNBForExactTokens</td>
+<td>30</td>
+</tr>
+<tr>
+<td>[<strong><em>Optional</em></strong>] ERC721 mint/transfer</td>
+<td>5</td>
+</tr>
+<tr>
+<td>[<strong><em>Optional</em></strong>] ERC1155 mint/Transfer</td>
+<td>5</td>
+</tr>
+<tr>
+<td>[<strong><em>Optional</em></strong>] Blob transaction</td>
+<td>1</td>
+</tr>
+<tr>
+<td>[<strong><em>Optional</em></strong>] EIP7702 transaction</td>
+<td>1</td>
+</tr>
+<tr>
+<td>[<strong><em>Optional</em></strong>] user-defined contract for the evaluation of <em>CPU intensive operations</em></td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data Design</strong></p>
+<ul>
+<li>16 BEP20 tokens are created.</li>
+<li>24 trading pairs are created:<ul>
+<li>8 of them are among BEP20 tokens, e.g. T0←→T8, T1←→T9, etc;</li>
+<li>16 of them are among native token and ERC20 tokens, e.g. BNB←→T0, BNB←→T1, etc;</li>
+</ul>
+</li>
+<li>Each active user is allocated native tokens, wrapped native tokens, and two BEP20 tokens forming a trading pair. All tokens are distributed equally across active users based on modulo operation results.</li>
+<li>After token allocation, each active user can run any scenario listed above using their allocated tokens.</li>
+<li>A group of distinct test users is pre-selected from active users to serve as load generators.</li>
+<li><strong><em>For transfer scenarios, we use either distinct “to” addresses to maximize the transaction parallelism or a limited set of “to” addresses to minimize it</em></strong>.</li>
+</ul>
+<p><strong>Data Volume</strong></p>
+<ul>
+<li>A: Generate 1M active users and set up the test scenarios with 100k+ blocks</li>
+<li>B: Generate 25M active users and set up the test scenarios with 1.0M-2.5M blocks</li>
+</ul>
+<p>Both are acceptable, but <strong><em>B is recommended as it includes more blocks, accounts and states changes, which provides insights into how storage growth impacts performance over time</em></strong>.</p>
+<p><strong>Evaluation Criteria</strong></p>
+<ul>
+<li>No node failures should occur during execution.</li>
+<li>The number of transactions per block should be consistent with the transaction propagation rate to validators’ mempools and the sending rate from the test client. And there should be no backlog in validators’ mempools after the test client stops.</li>
+<li>The empty block rate must be below 0.1%.</li>
+<li>The failed transaction rate, including send-errors and zero-receipt-status transactions, must be less than 0.1%;</li>
+<li>A block finality metric must be defined. For example, in BSC, the p90 block finality time must be less than 2 seconds;</li>
+</ul>
+<p><strong>Contract Code Reference</strong></p>
+<ul>
+<li>BEP20: <a href="https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955#code">https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955#code</a></li>
+<li>WBNB: <a href="https://bscscan.com/address/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c#code">https://bscscan.com/address/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c#code</a></li>
+<li>UniswapV2: <a href="https://github.com/Uniswap/v2-core">https://github.com/Uniswap/v2-core</a></li>
+</ul></div>
 
 
 
