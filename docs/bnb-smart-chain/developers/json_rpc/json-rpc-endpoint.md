@@ -38,6 +38,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 ### RPC Providers
 
+* **Validation Cloud:** <https://www.validationcloud.io/node>
+
 * **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
 
 * **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
