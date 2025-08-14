@@ -60,6 +60,13 @@ Prominent Layer 2 mainnet gas fees resource.
 
 To also check BNB Chain’s Layer 1, BSC visit [here](https://bscscan.com/tx/0x1515e830b352a76bab8468d39c4924e1d220578ab0bf69eb09914e877c0713e5).
 
+### Developer Tooling to Estimate Gas Fees
+
+Blocknative has enabled support for opBNB in its [Gas API](https://docs.blocknative.com/gas-prediction/gas-platform) and [Gas Extension](https://www.blocknative.com/gas-extension). The estimates are based on real-time opBNB data and ML modeling to accurately and consistently estimate opBNB transaction fees.
+
+To leverage Blocknative's Gas API, you will need an API Key. Once you have an API key, you can request fee estimation for opBNB:
+curl -H "Authorization: your-apikey-here" https://api.blocknative.com/gasprices/blockprices?chainid=204
+
 ### Why is my opbnb transaction rejected or pending?
 There are several possible reasons why your transaction of opBNB may be rejected or pending. Here are some of the most common ones:
 
