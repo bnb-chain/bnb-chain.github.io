@@ -64,3 +64,68 @@ jobs:
     with:
       base64-subjects: "${{ needs.build.outputs.digests }}"
       upload-assets: true # Optional: Upload to a new release
+
+      # This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# This workflow generates a SLSA3 provenance file for your project.
+# The generation satisfies level 3 for the provenance requirements:
+# https://slsa.dev/spec/v0.1/requirements
+# The project is an initiative of the OpenSSF: https://openssf.org
+# Provenance can be verified using: https://github.com/slsa-framework/slsa-verifier
+
+name: SLSA3 Generic Generator
+
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      digests: ${{ steps.hash.outputs.digests }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ========================================================
+      # Step 1: Build your artifacts
+      # ========================================================
+      - name: Build artifacts
+        run: |
+          # Replace these with your real build commands
+          echo "artifact1" > artifact1
+          echo "artifact2" > artifact2
+
+      # ========================================================
+      # Step 2: Generate SHA256 hashes for provenance
+      # ========================================================
+      - name: Generate subject for provenance
+        id: hash
+        run: |
+          set -euo pipefail
+          files=$(ls artifact*)
+          hashes=""
+          for f in $files; do
+            digest=$(sha256sum "$f" | awk '{print $1}')
+            hashes="${hashes}${f}:${digest},"
+          done
+          # Remove trailing comma and encode as base64
+          hashes_base64=$(echo -n "${hashes%,}" | base64 -w0)
+          echo "digests=${hashes_base64}" >> "${GITHUB_OUTPUT}"
+
+  provenance:
+    needs: [build]
+    permissions:
+      actions: read   # To read workflow path
+      id-token: write # To sign provenance
+      contents: write # To add assets to release
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.4.0
+    with:
+      base64-subjects: "${{ needs.build.outputs.digests }}"
+      upload-assets: true
+
