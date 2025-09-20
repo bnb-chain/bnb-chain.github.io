@@ -2,11 +2,18 @@
 # Announcement
 
 <div class="doc-announce">
-    <a href="./pascal-bsc/">
+    <a href="./volta-opbnb/">
         <div>
-            <div class="announce-title">Pascal Upgrade of BSC (Testnet) </div>
-            <div class="announce-desc">Introduce 5 BEPs on BSC Testnet</div>
+            <div class="announce-title">Volta Upgrade of opBNB (Mainnet) </div>
+            <div class="announce-desc">One BEP on opBNB Mainnet</div>
         </div>
-        <span class="announce-date">2025 Feb 25</span>
+        <span class="announce-date">2025 Apr 17</span>
+    </a>
+    <a href="./maxwell-bsc/">
+        <div>
+            <div class="announce-title">Maxwell Upgrade of BSC </div>
+            <div class="announce-desc">Three BEPs on BSC Testnet/Mainnet</div>
+        </div>
+        <span class="announce-date">2025 Apr 24</span>
     </a>
 </div>

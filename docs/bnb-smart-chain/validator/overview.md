@@ -44,9 +44,11 @@ Validator's rewards come from transaction fees and commission fees from delegato
 Let us also assume that the reward for a block is 100 BNB and that a certain validator has **20%** of self-bonded BNB and sets its commission rate to **20%**. These tokens do not go directly to the proposer. Instead, they are shared among validators and delegators.  These **100 BNB** will be distributed according to each participant's stake:
 
 ```
-Commission: 80*20%= 16 BNB
-Validator gets: 100\*20% + Commission = 36 BNB
-All delegators get: 100\*80% - Commission = 64 BNB
+Commission: 100 BNB × 20% = 20 BNB (goes directly to validator)
+Remaining for All Delegators: 100 BNB - 20 BNB = 80 BNB (distributed proportionally)
+Validator's Share of Remaining: 80 BNB × 20% = 16 BNB
+Other Delegators' Share: 80 BNB × 80% = 64 BNB
+Total Validator Reward: 20 BNB (commission) + 16 BNB (self-delegation share) = 36 BNB
 ```
 
 The rewards for motivating validators to vote for Fast Finality also comes from transaction fees. The specific rules can refer to [BEP126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md#43-reward)

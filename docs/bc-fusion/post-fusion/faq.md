@@ -65,3 +65,9 @@ the explorer for BC testnet will be shut down if there is no query traffic for a
 * Explorer service (including UI)
     - Testnet explorer service: https://testnet-explorer.bnbchain.org/
     - Mainnet explorer service: https://explorer.bnbchain.org/
+
+# Other Commonly Asked Questions
+
+- [Recovering EOS Tokens from SafePal Wallet After BEP2 Shutdown](../faq/recovering-eos-token-from-safepal.md)
+
+If your issue is not listed here, please explore our other documentation or open an issue.

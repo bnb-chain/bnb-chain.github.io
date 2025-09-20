@@ -20,51 +20,19 @@
 
 {% block footer %}
 {% include "partials/footer.html" %}
-<div class="doc-footer">
-    <div class="doc-footer__inner md-grid">
-        <div>
-            <div>Explore</div>
-            <ul>
-                <li><a href="https://trustwallet.com/" target="_blank">Trust Wallet</a></li>
-                <li><a href="https://www.bnbchain.org/en/binance-wallet" target="_blank">BNB Chain Wallet</a></li>
-                <li><a href="https://dappbay.bnbchain.org/" target="_blank">DappBay</a></li>
-            </ul>
-        </div>
-        <div>
-            <div>Build</div>
-            <ul>
-                <li><a href="https://github.com/bnb-chain/whitepaper" target="_blank">Whitepaper</a></li>
-                <li><a href="https://forum.bnbchain.org/" target="_blank">Build N' Build Forum</a></li>
-                <li><a href="https://www.bnbchain.org/en/bnb-chain-bridges" target="_blank">Bridges</a></li>
-            </ul>
-        </div>
-        <div>
-            <div>Participate</div>
-            <ul>
-                <li><a href="https://www.bnbchain.org/en/events" target="_blank">Events</a></li>
-                <li><a href="https://www.bnbchain.org/en/bsc-mvb-program" target="_blank">MVB Program</a></li>
-                <li><a href="https://www.bnbchain.org/en/hackathon" target="_blank">Hackathon</a></li>
-                <li><a href="https://www.bnbchain.org/en/developers/developer-programs" target="_blank">Developer
-                    Programs</a></li>
-                <li><a href="https://www.bnbchain.org/en/martians-program" target="_blank">Martians Program</a></li>
-                <li><a href="https://bugbounty.bnbchain.org" target="_blank">Bug Bounty</a></li>
-            </ul>
-        </div>
-        <div>
-            <div>About</div>
-            <ul>
-                <li><a href="https://www.bnbchain.org/en/privacy-policy" target="_blank">Privacy Policy</a></li>
-                <li><a href="https://www.bnbchain.org/en/terms" target="_blank">Terms of Use</a></li>
-                <li><a href="https://jobs.bnbchain.org/companies/bnb-chain#content" target="_blank">Careers</a></li>
-                <li><a href="https://www.bnbchain.org/en/official-verification" target="_blank">Verification</a></li>
-                <li><a href="https://www.bnbchain.org/en/contact" target="_blank">Contact Us</a></li>
-            </ul>
-        </div>
-    </div>
+<div class="ai-bot-wrapper">
+    <button type="button" class="ask-ai-button" aria-label="Toggle AI Chat">
+        Ask AI
+        <span>
+            <svg data-theme="dark" viewBox="0 0 24 25" focusable="false" aria-hidden="true"><path d="M10.5 6.58644L10.9459 7.82537C11.1908 8.5045 11.5824 9.12128 12.0929 9.63177C12.6034 10.1423 13.2202 10.5339 13.8993 10.7788L15.1383 11.2247C15.2501 11.2648 15.2501 11.4232 15.1383 11.4634L13.8992 11.9093C13.2201 12.1542 12.6033 12.5459 12.0929 13.0563C11.5824 13.5668 11.1908 14.1836 10.9459 14.8627L10.5 16.1016C10.4597 16.2135 10.3015 16.2135 10.2611 16.1016L9.81524 14.8627C9.57032 14.1836 9.17867 13.5669 8.66818 13.0564C8.1577 12.546 7.54093 12.1543 6.86182 11.9095L5.62306 11.4636C5.51106 11.4234 5.51106 11.265 5.62306 11.2248L6.86182 10.779C7.54095 10.5341 8.15773 10.1424 8.66821 9.63195C9.1787 9.12146 9.57034 8.50468 9.81524 7.82555L10.2611 6.58662C10.2699 6.56193 10.286 6.54056 10.3074 6.52545C10.3288 6.51034 10.3544 6.50222 10.3806 6.50222C10.4068 6.50222 10.4323 6.51034 10.4537 6.52545C10.4751 6.54056 10.4913 6.56193 10.5 6.58662V6.58644ZM16.0771 3.60937L16.3034 4.23657C16.5548 4.93239 17.1027 5.48102 17.7992 5.73239L18.4264 5.9587C18.439 5.96307 18.4499 5.97124 18.4576 5.98207C18.4653 5.9929 18.4694 6.00586 18.4694 6.01915C18.4694 6.03244 18.4653 6.0454 18.4576 6.05623C18.4499 6.06706 18.439 6.07523 18.4264 6.07959L17.7991 6.3059C17.4552 6.43009 17.1429 6.6285 16.8844 6.88703C16.6258 7.14555 16.4274 7.45785 16.3032 7.80173L16.0769 8.42875C16.0726 8.4413 16.0644 8.45218 16.0536 8.45988C16.0427 8.46758 16.0298 8.47171 16.0165 8.47171C16.0032 8.47171 15.9902 8.46758 15.9794 8.45988C15.9686 8.45218 15.9604 8.4413 15.956 8.42875L15.7297 7.80173C15.6055 7.45785 15.4071 7.14555 15.1486 6.88703C14.8901 6.6285 14.5778 6.43009 14.2339 6.3059L13.6069 6.07959C13.5943 6.07523 13.5835 6.06706 13.5758 6.05623C13.5681 6.0454 13.5639 6.03244 13.5639 6.01915C13.5639 6.00586 13.5681 5.9929 13.5758 5.98207C13.5835 5.97124 13.5943 5.96307 13.6069 5.9587L14.2339 5.73239C14.9297 5.48084 15.4784 4.93293 15.7297 4.23639L15.956 3.60937C15.9604 3.59682 15.9686 3.58594 15.9794 3.57824C15.9902 3.57054 16.0032 3.56641 16.0165 3.56641C16.0298 3.56641 16.0427 3.57054 16.0536 3.57824C16.0644 3.58594 16.0726 3.59682 16.0769 3.60937H16.0771ZM16.0771 14.2607L16.3034 14.8878C16.5548 15.5836 17.1027 16.1322 17.7992 16.3836L18.4264 16.6101C18.439 16.6144 18.4499 16.6226 18.4576 16.6334C18.4653 16.6443 18.4694 16.6572 18.4694 16.6705C18.4694 16.6838 18.4653 16.6968 18.4576 16.7076C18.4499 16.7184 18.439 16.7266 18.4264 16.731L17.7991 16.9571C17.4552 17.0813 17.1429 17.2797 16.8844 17.5382C16.6258 17.7968 16.4274 18.1091 16.3032 18.4529L16.0769 19.0799C16.0726 19.0925 16.0644 19.1034 16.0536 19.1111C16.0427 19.1188 16.0298 19.1229 16.0165 19.1229C16.0032 19.1229 15.9902 19.1188 15.9794 19.1111C15.9686 19.1034 15.9604 19.0925 15.956 19.0799L15.7297 18.4529C15.6055 18.1091 15.4071 17.7968 15.1486 17.5382C14.8901 17.2797 14.5778 17.0813 14.2339 16.9571L13.6071 16.7308C13.5945 16.7264 13.5836 16.7183 13.5759 16.7074C13.5682 16.6966 13.5641 16.6836 13.5641 16.6703C13.5641 16.6571 13.5682 16.6441 13.5759 16.6333C13.5836 16.6224 13.5945 16.6143 13.6071 16.6099L14.2341 16.3836C14.9299 16.1322 15.4785 15.5843 15.7299 14.8878L15.9562 14.2607C15.9606 14.2482 15.9688 14.2373 15.9796 14.2296C15.9904 14.2219 16.0034 14.2178 16.0167 14.2178C16.03 14.2178 16.0429 14.2219 16.0537 14.2296C16.0646 14.2373 16.0727 14.2482 16.0771 14.2607Z" fill="currentColor"></path></svg>
+        </span>
+    </button>
 </div>
-<div class="doc-copyright">
-    <div class="doc-copyright__inner md-grid">
-        © 2024 Bnbchain.org. All rights reserved.
-    </div>
-</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
 {% endblock %}

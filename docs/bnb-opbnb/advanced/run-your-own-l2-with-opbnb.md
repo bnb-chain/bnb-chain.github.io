@@ -1,7 +1,6 @@
 ---
 sidebar_label: Creating Your Own L2 Rollup Testnet
 description: Guide to creating your own l2 rollup Testnet
-
 ---
 
 # Creating Your Own L2 Rollup Testnet
@@ -67,17 +66,17 @@ The Proposer is a service responsible for publishing transactions results (in th
 # Software Dependencies
 
 | Dependency | Version | Version Check Command |
-| :--------: | :-----: | :-------------------: |
+|:----------:|:-------:|:---------------------:|
 |    git     |   ^2    |     git --version     |
 |     go     |  ^1.21  |      go version       |
-|    node    |   ^20   |    node --version     |
-|    pnpm    |   ^8    |    pnpm --version     |
-|  foundry   | ^0.2.0  |    forge --version    |
-|    make    |   ^3    |    make --version     |
-|     jq     |  ^1.6   |     jq --version      |
-|   direnv   |   ^2    |   direnv --version    |
+|    node     |   ^20   |    node --version     |
+|    pnpm     |   ^8    |    pnpm --version     |
+|    foundry     | ^0.2.0  |    forge --version    |
+|    make     |   ^3    |    make --version     |
+|    jq     |  ^1.6   |     jq --version      |
+|    direnv     |   ^2    |   direnv --version    |
 |    gcc     |   ^13   |     gcc --version     |
-|  libc-dev  |  ^2.35  |     ldd --version     |
+|    libc-dev     |    ^2.35    |         ldd --version         |
 
 
 
@@ -127,14 +126,12 @@ You're going to be creating your own l2 rollup directly from source code instead
 ## Build the opbnb
 
 ### Clone the opbnb
-
 ```
 cd ~
 git clone https://github.com/bnb-chain/opbnb.git
 ```
 
 ### Enter the opbnb
-
 ```
 cd opbnb
 ```
@@ -142,9 +139,8 @@ cd opbnb
 ### Check out the correct branch
 
 You can choose the appropriate version according to your needs. The develop branch has the latest features.
-
 ```
-git checkout -b v0.5.3 v0.5.3-hotfix
+git checkout -b develop origin/develop
 ```
 
 ### Install dependencies
@@ -154,7 +150,6 @@ pnpm install
 ```
 
 ### Build the various packages inside of the opbnb
-
 ```
 make op-node op-batcher op-proposer
 ```
@@ -162,7 +157,6 @@ make op-node op-batcher op-proposer
 ## Build `op-geth`
 
 ### Clone op-geth
-
 ```
 cd ~
 git clone https://github.com/bnb-chain/op-geth.git
@@ -171,19 +165,16 @@ git clone https://github.com/bnb-chain/op-geth.git
 ### Check out the correct branch
 
 You can choose the appropriate version according to your needs. The develop branch has the latest features.
-
 ```
 git checkout -b v0.5.7 
 ```
 
 ### Enter op-geth
-
 ```
 cd op-geth
 ```
 
 ### Build op-geth
-
 ```
 make geth
 ```
@@ -193,32 +184,28 @@ make geth
 You'll need to fill out a few environment variables before you can start deploying your chain.
 
 ### Enter the opbnb
-
 ```
 cd ~/opbnb
 ```
 
 ### Duplicate the sample environment variable file
-
 ```
 cp .envrc.example .envrc
 ```
 
 ### Fill out the environment variable file
-
 Open up the environment variable file and fill out the following variables:
 
-| Variable Name |                         Description                          |
-| :-----------: | :----------------------------------------------------------: |
-|  L1_RPC_URL   |                     URL for your L1 node                     |
-|  L1_RPC_KIND  | Kind of L1 RPC you're connecting to, used to inform optimal transactions receipts fetching(Optional). |
-|  L1_CHAIN_ID  |        The Chain id of L1 chain ( bsc testnet is 97)         |
-| L1_BLOCK_TIME |             The block interval value of L1 CHAIN             |
-|  L2_CHAIN_ID  |                The Chain id of Layer 2 chain                 |
-| L2_BLOCK_TIME |             The block interval value of L2 CHAIN             |
+| Variable Name |                                              Description                                              |
+|:----------:|:-----------------------------------------------------------------------------------------------------:|
+|    L1_RPC_URL    |                                         URL for your L1 node                                          |
+|     L1_RPC_KIND     | Kind of L1 RPC you're connecting to, used to inform optimal transactions receipts fetching(Optional). |
+| L1_CHAIN_ID | The Chain id of L1 chain ( bsc testnet is 97) |
+| L1_BLOCK_TIME | The block interval value of L1 CHAIN |
+| L2_CHAIN_ID | The Chain id of Layer 2 chain |
+| L2_BLOCK_TIME | The block interval value of L2 CHAIN |
 
 # Generate Addresses
-
 You'll need four addresses and their private keys when setting up the chain:
 
 * The Admin address has the ability to upgrade contracts.
@@ -227,21 +214,17 @@ You'll need four addresses and their private keys when setting up the chain:
 * The Sequencer address signs blocks on the p2p network.
 
 ## Enter the opbnb
-
 ```
 cd ~/opbnb
 ```
 
 ## Generate new addresses
-
 ```
 ./packages/contracts-bedrock/scripts/getting-started/wallets.sh
 ```
 
 ## Check the output
-
 Make sure that you see output that looks something like the following:
-
 ```
 Copy the following into your .envrc file:
 
@@ -263,22 +246,25 @@ export GS_SEQUENCER_PRIVATE_KEY=0xbb019ddc5f081b2be0c1c9406f89887ba90f4c8efbe5c4
 ```
 
 ## Save the addresses
-
 Copy the output from the previous step and paste it into your `.envrc` file as directed.
 
 ## Fund the addresses
-
 You will need to send BNB to the Admin, Proposer, and Batcher addresses. The exact amount of BNB required depends on the L1 network being used. You do not need to send any BNB to the Sequencer address as it does not send transactions.
 
 It's recommended to fund the addresses with the following amounts when using BSC testnet:
 
 * Admin — 1 BNB
 
-* Proposer — 0.5 BNB
+* Proposer — 2 BNB
 
-* Batcher — 2 BNB
+* Batcher — 15 BNB
 
-  
+  Estimated monthly consumption:
+
+     \- **Batcher**: ~30 tBNB (testnet) / ~2 BNB (mainnet)
+
+     \- **Proposer**: ~5 tBNB (testnet) / ~0.1 BNB (mainnet)
+
 
 
 
@@ -287,31 +273,24 @@ It's recommended to fund the addresses with the following amounts when using BSC
 Now that you've filled out the environment variable file, you need to load those variables into your terminal.
 
 ## Enter the opbnb
-
 ```
 cd ~/opbnb
 ```
 
 ## Load the variables with direnv
-
 You're about to use `direnv` to load environment variables from the `.envrc` file into your terminal. Make sure that you've [installed `direnv`](https://direnv.net/docs/installation.html) and that you've properly hooked `direnv` into your shell.
 Next you'll need to allow `direnv` to read this file and load the variables into your terminal using the following command.
-
 ```
 direnv allow
 ```
-
 `direnv` will unload itself whenever your `.envrc` file changes. You must rerun the following command every time you change the `.envrc` file.
 
 ## Confirm that the variables were loaded
-
 After running `direnv allow` you should see output that looks something like the following (the exact output will vary depending on the variables you've set, don't worry if it doesn't look exactly like this):
-
 ```
 direnv: loading ~/optimism/.envrc                                                            
 direnv: export +DEPLOYMENT_CONTEXT +ETHERSCAN_API_KEY +GS_ADMIN_ADDRESS +GS_ADMIN_PRIVATE_KEY +GS_BATCHER_ADDRESS +GS_BATCHER_PRIVATE_KEY +GS_PROPOSER_ADDRESS +GS_PROPOSER_PRIVATE_KEY +GS_SEQUENCER_ADDRESS +GS_SEQUENCER_PRIVATE_KEY +IMPL_SALT +L1_RPC_KIND +L1_RPC_URL +PRIVATE_KEY +TENDERLY_PROJECT +TENDERLY_USERNAME
 ```
-
 If you don't see this output, you likely haven't properly configured `direnv`. Make sure you've configured `direnv` properly and run `direnv allow` again so that you see the desired output.
 
 If you don't want to use `direnv`, you can also set variables manually.
@@ -321,134 +300,161 @@ If you don't want to use `direnv`, you can also set variables manually.
 Once you've built both repositories, you'll need to head back to the opbnb to set up the configuration file for your chain. Currently, chain configuration lives inside of the [contracts-bedrock package](https://github.com/bnb-chain/opbnb/tree/develop/packages/contracts-bedrock) in the form of a JSON file.
 
 ## Enter the opbnb
-
 ```
 cd ~/opbnb
 ```
 
 ## Move into the contracts-bedrock package
-
 ```
 cd packages/contracts-bedrock
 ```
 
 ## Generate the configuration file
-
 Run the following script to generate the `getting-started.json` configuration file inside of the `deploy-config` directory.
-
 ```
 ./scripts/getting-started/config.sh
 ```
 
-The script-based approach shown above is the one officially recommended by OP, and the generated configuration is the official version. However, we strongly recommend using the template method instead. A template is provided at the end of this document. You can use the information from getting-started.json together with the template to generate an OPBNB-style configuration
+The script-based approach shown above is the one officially recommended by OP, and the generated configuration is the official version. However, we strongly recommend using the template method instead. A template is provided at the end of this document. You can use the information from getting-started.json together with the template to generate an OPBNB-style configuration.
 
-In the template, in addition to replacing the Chain Info and all address fields generated earlier, you must also specify the following three parameters:
-
-1)l1BlockTag
-
-2)l2OutputOracleStartingTimestamp
-
-3)l2GenesisBlockTimestamp
-
-The example script below demonstrates how to populate the configuration using our template.
+The following is an example our config template. In the template,  You need to replace the following variables with the ones from your environment.：$l2ChainId，$l1ChainId，$GS_SEQUENCER_ADDRESS，$GS_BATCHER_ADDRESS，$GS_PROPOSER_ADDRESS，$GS_ADMIN_ADDRESS， $GS_ADMIN_ADDRESS .  It is recommended to set `l2OutputOracleSubmissionInterval` to **3600** (default is **240**) to provide a greater buffer for module startup delays.
 
 
 ```python
-def prepareConfig(keys,paths,env):
-    log.info('prepare qanet config starting')
-    if os.path.exists(paths.qanet_config_path):
-        log.info('qanet config already exists,skip')
-        deploy_config = read_json(paths.qanet_config_path)
-        env['L2_CHAIN_ID']=deploy_config['l2ChainID']
-        env['BATCH_INBOX_ADDRESS']=deploy_config['batchInboxAddress']
-        return
-
-    deploy_config = read_json(paths.devnet_config_template_path)
-    l1_rpc = env['L1_RPC_URL']
-    l1BlockTag = blockTagGet(l1_rpc)["result"]
-    log.info(l1BlockTag)
-    l1BlockTimestamp = blockTimestampGet(l1_rpc,l1BlockTag)["result"]["timestamp"]
-    log.info(l1BlockTimestamp)
-    l1ChainId = chainId(l1_rpc)["result"]
-    log.info(l1ChainId)
-    l2ChainId = decide_l2_chain_id(paths,env)
-    log.info(f'decide l2 chain id is:{l2ChainId}')
-    env['L2_CHAIN_ID']=l2ChainId
-    env['BATCH_INBOX_ADDRESS']='0xff0000000000000000000000000000000000'+str(l2ChainId)
-
-    deploy_config['l1GenesisBlockTimestamp'] = l1BlockTimestamp
-    deploy_config['l1StartingBlockTag'] = l1BlockTag
-    deploy_config['l1ChainID'] = int(l1ChainId,16)
-    deploy_config['l2ChainID'] = l2ChainId
-    deploy_config['l2BlockTime'] = 1
-    deploy_config['maxSequencerDrift'] = 600
-    deploy_config['sequencerWindowSize'] = 57600
-    deploy_config['channelTimeout'] = 1200
-    deploy_config['p2pSequencerAddress'] = keys['op_p2p_address']
-    deploy_config['batchInboxAddress'] = env['BATCH_INBOX_ADDRESS']
-    deploy_config['batchSenderAddress'] = keys['op_batcher_address']
-    deploy_config['l2OutputOracleSubmissionInterval'] = 240
-    deploy_config['l2OutputOracleStartingTimestamp'] = int(l1BlockTimestamp,16)
-    deploy_config['l1UseClique'] = False
-    deploy_config['l2OutputOracleProposer'] = keys['op_proposer_address']
-    deploy_config['l2OutputOracleChallenger'] = keys['op_admin_address']
-    deploy_config['l2GenesisBlockGasLimit'] = '0x5f5e100'
-    deploy_config['baseFeeVaultRecipient'] = keys['op_admin_address']
-    deploy_config['l1FeeVaultRecipient'] = keys['op_admin_address']
-    deploy_config['sequencerFeeVaultRecipient'] = keys['op_admin_address']
-    deploy_config['proxyAdminOwner'] = keys['op_admin_address']
-    deploy_config['finalSystemOwner'] = keys['op_admin_address']
-    deploy_config['finalizationPeriodSeconds'] = 3
-    deploy_config['l2GenesisBlockBaseFeePerGas'] = '0x5F5E100'
-    deploy_config['enableGovernance'] = False
-    deploy_config['governanceTokenSymbol'] = 'OPBNB'
-    deploy_config['governanceTokenName'] = 'OPBNB'
-    deploy_config['governanceTokenOwner'] = keys['op_admin_address']
-    deploy_config['eip1559Denominator'] = 8
-    deploy_config['eip1559DenominatorCanyon'] = 8
-    deploy_config['eip1559Elasticity'] = 2
-    deploy_config['fermat'] = 0
-    deploy_config['l2GenesisDeltaTimeOffset'] = "0x0"
-    deploy_config['L2GenesisEcotoneTimeOffset'] = "0x0"
-    deploy_config['l2GenesisFjordTimeOffset'] = "0x0"
-    deploy_config['snowTimeOffset'] = "0x0"
-    deploy_config['haberTimeOffset'] = "0x0"
-    deploy_config['wrightTimeOffset'] = "0x0"
-    write_json(paths.qanet_config_path,deploy_config)
-    shutil.copy(paths.qanet_config_path, paths.qanet_config_output_path)
-    log.info(f'prepared qanet config,path:{paths.qanet_config_path},content:{deploy_config}')
-    
-    
-    
- def blockTagGet(url):
-    	return jsonRpcGet1(url,'{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":74}')
-    
-    
-def blockTimestampGet(url,block_tag):
-    return jsonRpcGet(url,f'{{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["{block_tag}", false],"id":74}}')
-
-def write_json(path, data):
-    with open(path, 'w+') as f:
-        json.dump(data, f, indent='  ')
-def read_json(path):
-    with open(path, 'r') as f:
-        return json.load(f)
+{
+    "l1ChainID":  $l1ChainId,
+    "l2ChainID":  $l2ChainId，
+    "l2BlockTime": 1,
+    "maxSequencerDrift": 600,
+    "sequencerWindowSize": 57600,
+    "channelTimeout": 1200,
+    "p2pSequencerAddress": $GS_SEQUENCER_ADDRESS,
+    "batchInboxAddress":   '0xff0000000000000000000000000000000000'+str($l2ChainId),
+    "batchSenderAddress":  $GS_BATCHER_ADDRESS,
+    "cliqueSignerAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "l1UseClique": false,
+    "l1StartingBlockTag": $l1BlockTag,
+    "l2OutputOracleSubmissionInterval": 3600, 
+    "l2OutputOracleStartingBlockNumber": 0,
+    "l2OutputOracleStartingTimestamp" $l2OutputOracleStartingTimestamp,
+    "l2OutputOracleProposer": $GS_PROPOSER_ADDRESS,
+    "l2OutputOracleChallenger": $GS_ADMIN_ADDRESS,
+    "l2GenesisBlockGasLimit": "0x5f5e100",
+    "l1BlockTime": 3,
+    "baseFeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
+    "l1FeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
+    "sequencerFeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
+    "baseFeeVaultWithdrawalNetwork": 0,
+    "l1FeeVaultWithdrawalNetwork": 0,
+    "sequencerFeeVaultWithdrawalNetwork": 0,
+    "proxyAdminOwner": "$GS_ADMIN_ADDRESS",
+    "baseFeeVaultRecipient": "$GS_ADMIN_ADDRESS",
+    "l1FeeVaultRecipient": "$GS_ADMIN_ADDRESS",
+    "sequencerFeeVaultRecipient": "$GS_ADMIN_ADDRESS",
+    "finalSystemOwner": "$GS_ADMIN_ADDRESS",
+    "superchainConfigGuardian": "$GS_ADMIN_ADDRESS", 
+    "finalizationPeriodSeconds": 3,
+    "fundDevAccounts": true,
+    "l2GenesisBlockBaseFeePerGas": "0x5F5E100",
+    "gasPriceOracleOverhead": 2100,
+    "gasPriceOracleScalar": 1000000,
+    "gasPriceOracleBaseFeeScalar": 1368,
+    "gasPriceOracleBlobBaseFeeScalar": 810949,
+    "enableGovernance": false,
+    "governanceTokenSymbol": "OPBNB",
+    "governanceTokenName": "OPBNB",
+    "governanceTokenOwner": "$GS_ADMIN_ADDRESS",
+    "eip1559Denominator": 8,
+    "eip1559DenominatorCanyon": 8,
+     "eip1559Elasticity": 2,
+    "l1GenesisBlockTimestamp": $l2GenesisBlockTimestamp,
+    "l2GenesisRegolithTimeOffset": "0x0",
+    "l2GenesisDeltaTimeOffset": "0x0",
+    "l2GenesisCanyonTimeOffset": "0x0",
+    "systemConfigStartBlock": 0,
+    "requiredProtocolVersion": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "recommendedProtocolVersion": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "faultGameAbsolutePrestate": "0x03c7ae758795765c6664a5d39bf63841c71ff191e9189522bad8ebff5d4eca98",
+    "faultGameMaxDepth": 50,
+    "faultGameClockExtension": 0,
+    "faultGameMaxClockDuration": 1200,
+    "faultGameGenesisBlock": 0,
+    "faultGameGenesisOutputRoot": "0xDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF",
+    "faultGameSplitDepth": 14,
+    "faultGameWithdrawalDelay": 604800,
+    "preimageOracleMinProposalSize": 10000,
+    "preimageOracleChallengePeriod": 120,
+    "proofMaturityDelaySeconds": 12,
+    "disputeGameFinalityDelaySeconds": 6,
+    "respectedGameType": 254,
+    "useFaultProofs": false,
+    "usePlasma": false,
+    "daCommitmentType": "KeccakCommitment",
+    "daChallengeWindow": 160,
+    "daResolveWindow": 160,
+    "daBondSize": 1000000,
+    "daResolverRefundPercentage": 0,
+    "fermat": 0,
+    "L2GenesisEcotoneTimeOffset": "0x0",
+    "l2GenesisFjordTimeOffset": "0x0",
+    "snowTimeOffset": "0x0",
+    "haberTimeOffset": "0x0",
+    "wrightTimeOffset": "0x0"
+}
 ```
 
-You can also fetch the three values—l1BlockTag, l2OutputOracleStartingTimestamp, and l2GenesisBlockTimestamp—via curl (here shown against BSC Testnet):
+in addition to replacing the Chain Info , you must also specify the following three parameters:
+
+1. l1StartingBlockTag
+
+2) l2OutputOracleStartingTimestamp
+
+3. l2GenesisBlockTimestamp
+
+You can also fetch the three values via the following script (here shown against BSC Testnet), 
 
 ```bash
-// get tag info
-curl -s -X POST https://data-seed-prebsc-2-s2.bnbchain.org:8545  -H "Content-Type: application/json"   -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":74}'
+#!/bin/bash
 
+# RPC endpoint of bsc testnet
+RPC_URL="https://data-seed-prebsc-2-s2.bnbchain.org:8545"
 
-curl -s -X POST https://data-seed-prebsc-1-s1.bnbchain.org:8545   -H "Content-Type: application/json"   -d '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x2e10b2c", false],"id":74}'
+# Function to convert hex string to decimal
+hex_to_dec() {
+  printf "%d\n" "$(( $1 ))"
+}
 
-// In the returned result, the timestamp field is your l2GenesisBlockTimestamp. And converting that value to a Unix‐style (seconds) timestamp gives you the l2OutputOracleStartingTimestamp.
+# Loop until a valid milliTimestamp is found
+while true; do
+  # Get latest block number
+  block_tag_hex=$(curl -s -X POST "$RPC_URL" -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":74}' | jq -r .result)
 
+  # Get block info
+  block_info=$(curl -s -X POST "$RPC_URL" -H "Content-Type: application/json" \
+    -d "{\"jsonrpc\":\"2.0\",\"method\":\"eth_getBlockByNumber\",\"params\":[\"$block_tag_hex\", false],\"id\":74}")
+
+  timestamp_hex=$(echo "$block_info" | jq -r .result.timestamp)
+  milli_timestamp_hex=$(echo "$block_info" | jq -r .result.milliTimestamp)
+
+  timestamp_dec=$(hex_to_dec "$timestamp_hex")
+  milli_timestamp_dec=$(hex_to_dec "$milli_timestamp_hex")
+
+  # Check if milliTimestamp is divisible by 1000 ，If we need to set a 500ms block time ( op 500ms need to be enabled in bsc testnet and mainnet ), it's important to note that the selected `milliTimestamp` must be divisible by 1000.
+  if (( milli_timestamp_dec % 1000 == 0 )); then
+    break
+  fi
+
+  sleep 1
+done
+
+# Print final result
+echo "l1StartingBlockTag=$block_tag_hex"
+echo "l2GenesisBlockTimestamp=$timestamp_hex"
+echo "l2OutputOracleStartingTimestamp=$timestamp_dec"
 ```
 
-
+Once you have retrieved the values of the three variables, insert them into the configuration template. After updating the configuration file, assign its path to the `DEPLOY_CONFIG_PATH` environment variable.
 
 
 ## Review and change the configuration file (Optional)
@@ -459,17 +465,14 @@ It's recommended to keep this file as-is for now so you don't run into any unexp
 
 
 # Deploy the Create2 Factory (Optional)
-
 If you're deploying opBNB to a network other than BSC testnet, you may need to deploy a Create2 factory contract to the L1 chain. This factory contract is used to deploy opBNB smart contracts in a deterministic fashion.
 
 ## Check if the factory exists
 
 The Create2 factory contract will be deployed at the address `0x4e59b44847b379578588920cA78FbF26c0B4956C`. You can check if this contract has already been deployed to your L1 network with a block explorer or by running the following command:
-
 ```
 cast codesize 0x4e59b44847b379578588920cA78FbF26c0B4956C --rpc-url $L1_RPC_URL
 ```
-
 If the command returns 0 then the contract has not been deployed yet. If the command returns 69 then the contract has been deployed and you can safely skip this section.
 
 ## Fund the factory deployer
@@ -477,28 +480,22 @@ If the command returns 0 then the contract has not been deployed yet. If the com
 You will need to send some BNB to the address that will be used to deploy the factory contract, `0x3fAB184622Dc19b6109349B94811493BF2a45362`. This address can only be used to deploy the factory contract and will not be used for anything else. Send at least 1 BNB to this address on your L1 chain.
 
 ## Deploy the factory
-
 Using `cast`, deploy the factory contract to your L1 chain:
-
 ```
 cast publish --rpc-url $L1_RPC_URL 0xf8a58085174876e800830186a08080b853604580600e600039806000f350fe7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe03601600081602082378035828234f58015156039578182fd5b8082525050506014600cf31ba02222222222222222222222222222222222222222222222222222222222222222a02222222222222222222222222222222222222222222222222222222222222222 
 ```
 
 ## Wait for the transaction to be mined
-
 Make sure that the transaction is included in a block on your L1 chain before continuing.
 
 
 ## Verify that the factory was deployed
-
 Run the code size check again to make sure that the factory was properly deployed:
-
 ```
 cast codesize 0x4e59b44847b379578588920cA78FbF26c0B4956C --rpc-url $L1_RPC_URL
 ```
 
 # Deploy the L1 contracts
-
 Once you've configured your network, it's time to deploy the L1 contracts necessary for the functionality of the chain.
 
 ## Deploy the L1 contracts
@@ -510,15 +507,14 @@ cat .env
 ```
 DEPLOYMENT_OUTFILE="./deployments/L1/.deploy"    // The contract address information entered after deployment.
 DEPLOY_CONFIG_PATH="./deploy-config/devnet.json"  // config file
-DEPLOYMENT_CONTEXT="devnetL1"
-IMPL_SALT="ethers phoenixtestnetnewimpl"
 ~~~
 
 ```
-forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY --broadcast --rpc-url $L1_RPC_URL --slow
+forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY  --with-gas-price 1000000000 --broadcast --rpc-url $L1_RPC_URL --slow
 ```
-
 If you see a nondescript error that includes `EvmError: Revert` and `Script failed` then you likely need to change the `IMPL_SALT` environment variable. This variable determines the addresses of various smart contracts that are deployed via [CREATE2](https://eips.ethereum.org/EIPS/eip-1014). If the same `IMPL_SALT` is used to deploy the same contracts twice, the second deployment will fail. You can generate a new `IMPL_SALT` by running `direnv` allow anywhere in the opbnb.
+
+You can check the  DEPLOYMENT_OUTFILE after deployed successfully. The contract address will be printed when the script running and the address can searched in https://testnet.bscscan.com/ .
 
 ### L1 Contracts
 
@@ -531,7 +527,27 @@ If you see a nondescript error that includes `EvmError: Revert` and `Script fail
 | OptimismPortal         | Responsible for passing messages between L1 and L2, which is equivalent to the portal of the optimistic network. Validate output root to execute L2 to L1 message call. |              |
 | L2OutputOracle         | Responsible for storing the output root of each block of the L2 network. Other contracts or users can verify the validity of L2 data according to the output root. |              |
 
-![image-20250411151438331](../img/image-20250411151438331.png)
+![image-20250411151438331](./image-20250411151438331.png)
+
+## Generate L2 Genesis Allocs
+
+A foundry script is used to generate the L2 genesis allocs. This is a JSON file that represents the L2 genesis state. The `CONTRACT_ADDRESSES_PATH` env var represents the deployment artifact that was generated during a contract deployment. The value should be same with DEPLOYMENT_OUTFILE.  The `STATE_DUMP_PATH` env var represents the filepath at which the allocs will be written to on disk. You can set the value in .env or envrc.
+
+```
+DEPLOY_CONFIG_PATH="./deploy-config/devnetL1-v2.json"
+CONTRACT_ADDRESSES_PATH="./deployments/L1/.deploy"  // same with DEPLOYMENT_OUTFILE
+STATE_DUMP_PATH="./deploy-config/state.json"
+```
+
+```bsch
+CONTRACT_ADDRESSES_PATH=<DEPLOYMENT_OUTFILE> \
+DEPLOY_CONFIG_PATH=<PATH_TO_MY_DEPLOY_CONFIG> \
+STATE_DUMP_PATH=<PATH_TO_WRITE_L2_ALLOCS> \
+  forge script scripts/L2Genesis.s.sol:L2Genesis \
+  --sig 'runWithStateDump()'
+```
+
+The L2 genesis allocs file will generated in the path of  DEPLOY_CONFIG_PATH after the script beed deployed successfully.
 
 ## Generate the L2 config files
 
@@ -544,42 +560,43 @@ You need to generate three important files:
 3. `jwt.txt` is a [JSON Web Token](https://jwt.io/introduction) that allows the Consensus Client and the Execution Client to communicate securely (the same mechanism is used in Ethereum clients).
 
 ## Navigate to the op-node package
-
 ```
 cd ~/opbnb/op-node
 ```
 
 ## Create genesis files
-
 Now you'll generate the `genesis.json` and `rollup.json` files within the op-node folder:
 
---deploy-config  和   --l1-deployments  flag info needs to be replaced by th  DEPLOY_CONFIG_PATH and DEPLOYMENT_OUTFILE   of .env or .envrc
+--deploy-config and   --l1-deployments  flag info needs to be replaced by th  DEPLOY_CONFIG_PATH and DEPLOYMENT_OUTFILE   of .env or .envrc
 
 ```
 go run cmd/main.go genesis l2 \
-  --deploy-config ../packages/contracts-bedrock/deploy-config/getting-started.json \
-  --l1-deployments ../packages/contracts-bedrock/deployments/getting-started/.deploy \
+  --deploy-config $DEPLOY_CONFIG_PATH \
+  --l1-deployments $DEPLOYMENT_OUTFILE \
   --outfile.l2 genesis.json \
   --outfile.rollup rollup.json \
-  --l1-rpc $L1_RPC_URL
+  --l1-rpc $L1_RPC_URL \
+  --l2-allocs $STATE_DUMP_PATH
 ```
 
-Following is a example of rollup.json
+Note that  since op-geth does not support bsc 7702 yet, if the deployed l1 genesis height is after the bsc 7702 feature, the l1 hash in rollup.json is wrong and you need to manually execute rpc to get the correct value to replace it.
+
+Following is a example of rollup.json. 
 
 ```bash
 {
   "genesis": {
     "l1": {
-      "hash": "0xf48f87b325e9e8e73bf6964346588b5f56156128278e18d74aa7ee0ceba6a714",
-      "number": 5792
+      "hash": "0x79060df30c6c3377962184f28f88340616b8bc737e6af79bc17da55ac78e41bd",
+      "number": 49953684
     },
     "l2": {
-      "hash": "0x0369f047f1e2d5975a4d088825b55d97bf1a0fc5c3df6e3aebd8f6e2f1e086f2",
+      "hash": "0xb9d33b0e69bb67c857d59568f38011f4104e2747b6fcf8aff84fb4e419f73f4d",
       "number": 0
     },
-    "l2_time": 1743059438,
+    "l2_time": 1744341397,
     "system_config": {
-      "batcherAddr": "0x29cb7f616ab5c10bc59a7ed59e95ae6a2f8f0949",
+      "batcherAddr": "0xb6e487a3cecde5e0e1793c98c2de1999a1319a2b",
       "overhead": "0x0000000000000000000000000000000000000000000000000000000000000834",
       "scalar": "0x00000000000000000000000000000000000000000000000000000000000f4240",
       "gasLimit": 100000000
@@ -589,89 +606,80 @@ Following is a example of rollup.json
   "max_sequencer_drift": 600,
   "seq_window_size": 57600,
   "channel_timeout": 1200,
-  "l1_chain_id": 714,
-  "l2_chain_id": 3717,
+  "l1_chain_id": 97,
+  "l2_chain_id": 4255,
   "regolith_time": 0,
   "canyon_time": 0,
   "delta_time": 0,
   "ecotone_time": 0,
   "fjord_time": 0,
-  "volta_time": 1743094185,
+  "volta_time": 0, (advised)
   "fermat": 0,
   "snow_time": 0,
-  "batch_inbox_address": "0xff00000000000000000000000000000000003717",
-  "deposit_contract_address": "0x0da507e81c31bcfb7088524c31b9d99bd020a315",
-  "l1_system_config_address": "0x89a9dcfc964e4b9b818be2552735ca17ce13e574",
+  "batch_inbox_address": "0xff00000000000000000000000000000000000901",
+  "deposit_contract_address": "0xf098dadd3f3cfabd9e773c7639dbef5e57308683",
+  "l1_system_config_address": "0x644b2da606901ba67ff797168194708c0c3f7221",
   "protocol_versions_address": "0x0000000000000000000000000000000000000000",
   "da_challenge_contract_address": "0x0000000000000000000000000000000000000000"
 }
+
+
 ```
 
-The latest op code supports the `volta_time` configuration to support Volta fork which makes the block time as 500ms. If you need to set the Layer 2 block time to less than 1 second—i.e., support millisecond-level block intervals—there are two ways to achieve this:
-
-1. Manually add `volta_time` to the configuration file and set it to `0`. This will enable 500ms block time immediately.
-2. If you plan to perform a hard fork upgrade at a future time, set `volta_time` to a future timestamp. We will provide a separate document to explain the hard fork upgrade process.
+You need to manually add `"volta_time": 0` to the configuration file to ensure the block time is set to 500ms.  The latest op code supports the `volta_time`  configuration to 0 support Volta fork which makes the block time as 500ms. Since the BSC L1 block time will be reduced to under 1 second, the 500ms configuration is required.
 
 ## Create an authentication key
 
 Next you'll create a [JSON Web Token](https://jwt.io/introduction) that will be used to authenticate the Consensus Client and the Execution Client. This token is used to ensure that only the Consensus Client and the Execution Client can communicate with each other. You can generate a JWT with the following command:
-
 ```
 openssl rand -hex 32 > jwt.txt
 ```
 
 ## Copy genesis files into the op-geth directory
-
 Finally, you'll need to copy the `genesis.json` file and `jwt.txt` file into `op-geth` so you can use it to initialize and run `op-geth`:
-
 ```
 cp genesis.json ~/op-geth
 cp jwt.txt ~/op-geth
 ```
 
 # Initialize `op-geth`
-
 You're almost ready to run your chain! Now you just need to run a few commands to initialize `op-geth`. You're going to be running a Sequencer node, so you'll need to import the `Sequencer` private key that you generated earlier. This private key is what your Sequencer will use to sign new blocks.
 
 ## Navigate to the op-geth directory
-
 ```
 cd ~/op-geth
 ```
 
 ## Create a data directory folder
-
 ```
 mkdir datadir
 ```
 
 ## Initialize op-geth
-
 ```
-build/bin/geth init --datadir=datadir  --state.scheme path --db.engine genesis.json
+build/bin/geth init --datadir=datadir  --state.scheme path --db.engine pebble genesis.json
 ```
 
-# Start `op-geth`
+you can also init with hash scheme by  "--state.schme hash" , we recommend pathdb for better performance
+
+# Start `Sequencer`
 
 Now you'll start `op-geth`, your Execution Client. Note that you won't start seeing any transactions until you start the Consensus Client in the next step.
 
 ## Open up a new terminal
-
-You'll need a terminal window to run `op-geth` in.
+You'll need a terminal window to run `op-geth` in or you can run it in nohup m.
 
 ## Navigate to the op-geth directory
-
 ```
 cd ~/op-geth
 ```
 
 ## Run op-geth
-
 You're using `--gcmode=archive` to run `op-geth` here because this node will act as your Sequencer. It's useful to run the Sequencer in archive mode because the `op-proposer` requires access to the full state. Feel free to run other (non-Sequencer) nodes in full mode if you'd like to save disk space.
-It's important that you've already initialized the geth node at this point as per the previous section. Failure to do this will cause startup issues between `op-geth` and `op-node`.
+It's important that you've already initialized the geth node at this point as per the previous section. Failure to do this will cause startup issues between `op-geth` and `op-node`. The parameters related to metrics, logging levels, and txpool performance in the following startup configuration are optional. You may adjust them based on the specific requirements of your blockchain.
 
-```
- ./build/bin/geth \
+```000
+ ./build/bin/op-geth \
   --datadir ./datadir \
   --http \
   --http.corsdomain="*" \
@@ -685,32 +693,44 @@ It's important that you've already initialized the geth node at this point as pe
   --ws.api=debug,eth,txpool,net,engine \
   --syncmode=full \
   --gcmode=archive \
+  --mine \
+  --miner.newpayload-timeout=650ms \
+  --miner.gaslimit=150000000 \
+  --miner.gasprice=1 \
+  --miner.etherbase=$GS_SEQUENCER_ADDRESS \
   --nodiscover \
-  --maxpeers=0 \
-  --networkid=5611 （replace with your rollup chaind id ） \
-  --authrpc.vhosts="*" \
+  --maxpeers=10 \
+  --networkid=$L2_CHAIN_ID \   
+  --authrpc.vhosts='*' \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port=8551 \
-  --txpool.globalslots=40000 \
+  --txpool.globalslots=20000 \
   --txpool.globalqueue=10000 \
-  --txpool.accountqueue=16 \
-  --txpool.accountslots=16 \
+  --txpool.accountqueue=500 \
+  --txpool.accountslots=500 \
   --txpool.pricelimit=1 \
   --txpool.nolocals=true \
   --txpool.reannouncetime=3m \
   --txpool.reannounceremotes=true \
-  --cache=2000 \
+  --cache=20000 \
+  --cache.preimages \ 
   --authrpc.jwtsecret=./jwt.txt \
-  --rollup.disabletxpoolgossip=true
+  --rollup.disabletxpoolgossip=false \
+  --journalfile \ 
+  --pathdb.nodebuffer=list \
+  --pathdb.proposeblock=3600 \
+  --pathdb.enableproofkeeper \ 
+  --metrics \
+  --metrics.port=6060 \
+  --metrics.addr=0.0.0.0 \
+  --verbosity=3 
+  
+  // replace with $L2_CHAIN_ID with your real chainid
 ```
 
-# Start `op-node`
+Please note that if you set `--pathdb.proposeblock=3600`, the proposer processor must start within 3600 seconds after op-geth of sequencer is launched. The value of pathdb.proposeblock need to be same with l2OutputOracleSubmissionInterval of  DEPLOY_CONFIG_PATH . If you are using hash db instead of pathdb , you can ignore the config begin with --pathdb. 
 
 Once you've got `op-geth` running you'll need to run `op-node`. Like Ethereum, the opBNB has a Consensus Client (`op-node`) and an Execution Client (`op-geth`). The Consensus Client "drives" the Execution Client over the Engine API.   Each of the Sequencer, Bridge, P2P, and RPC nodes runs both an op-node and an op-geth process—the only distinction is the set of startup parameters supplied to the op-node.
-
-## Open up a new terminal
-
-You'll need a terminal window to run `op-node` in.
 
 ## Navigate to the op-node directory
 
@@ -718,14 +738,16 @@ You'll need a terminal window to run `op-node` in.
 cd ~/opbnb/op-node
 ```
 
-## Run op-node as miner (sequencer)
+## Run op-node in miner mode
 
 ```
 ./bin/op-node \
+  --l1.trustrpc \
   --l2=http://localhost:8551 \
   --l2.jwt-secret=./jwt.txt \
-  --sequencer.enabled \
+  --sequencer.enabled=true \
   --sequencer.l1-confs=15 \
+  --sequencer.combined-engine \
   --verifier.l1-confs=15 \
   --l1.http-poll-interval=3s \
   --l1.epoch-poll-interval=3s \
@@ -733,53 +755,154 @@ cd ~/opbnb/op-node
   --rollup.config=./rollup.json \
   --rpc.addr=0.0.0.0 \
   --rpc.port=8547 \
-  --p2p.disable \
   --rpc.enable-admin \
+  --sequencer.priority \
+  --l1.max-concurrency=20 \
   --p2p.sequencer.key=$GS_SEQUENCER_PRIVATE_KEY \
   --l1=$L1_RPC_URL \
-  --l1.rpckind=$L1_RPC_KIND
+  --l1.rpckind=$L1_RPC_KIND(optional) \
+  --metrics.enabled \
+  --metrics.port=7070 \
+  --metrics.addr=0.0.0.0 
 ```
 
 Once you run this command, you should start seeing the `op-node` begin to sync L2 blocks from the L1 chain. Once the `op-node` has caught up to the tip of the L1 chain, it'll begin to send blocks to `op-geth` for execution. At that point, you'll start to see blocks being created inside of `op-geth`.
-By default, your `op-node` will try to use a peer-to-peer to speed up the synchronization process. If you're using a chain ID that is also being used by others, like the default chain ID for this tutorial (42069), your `op-node` will receive blocks signed by other sequencers. These requests will fail and waste time and network resources. To avoid this, this tutorial starts with peer-to-peer synchronization disabled (`--p2p.disable`).
 
-Once you have multiple nodes, you may want to enable peer-to-peer synchronization. You can add the following options to the `op-node` command to enable peer-to-peer synchronization with specific nodes:
+# Start `Bridge node`
+
+It is recommended to run the bridge node and the sequencer node on different machines or Kubernetes pods. Therefore, you need to copy the sequencer's `genesis.json` and `rollup.json` files to the corresponding runtime environment.
+
+## Run op-geth as bridge node
+
+You need to init op-geth datadir first the same way as the op-geth of sequencer and than start op-geth with full node mode.  You can adjust the flags by your environment.
 
 ```
+ ./op-geth \
+  --datadir ./datadir \
+  --http \
+  --http.corsdomain="*" \
+  --http.vhosts="*" \
+  --http.addr=0.0.0.0 \
+  --http.api=web3,debug,eth,txpool,net,engine \
+  --ws \
+  --ws.addr=0.0.0.0 \
+  --ws.port=8546 \
+  --ws.origins="*" \
+  --ws.api=debug,eth,txpool,net,engine \
+  --syncmode=full \
+  --gcmode=full \
+  --nodiscover \
+  --maxpeers=10 \
+  --networkid=$L2_CHAIN_ID \
+  --authrpc.vhosts="*" \
+  --authrpc.addr=0.0.0.0 \
+  --authrpc.port=8551 \
+  --txpool.globalslots=10000 \
+  --txpool.globalqueue=5000 \
+  --txpool.accountqueue=500 \
+  --txpool.accountslots=500 \
+  --txpool.reannouncetime=3m \
+  --txpool.reannounceremotes=true \
+  --txpool.pricelimit=1 \
+  --txpool.nolocals=true \
+  --cache=10000 \
+  --cache.preimages \ 
+  --authrpc.jwtsecret=./jwt.txt \
+  --rollup.disabletxpoolgossip=false \
+  --history.transactions=0 \
+  --journalfile \ 
+  --metrics \
+  --metrics.port=6060 \
+  --metrics.addr=0.0.0.0 \
+  --verbosity 4
+
+```
+
+## Run op-node 
+
+To run a Bridge node , you can refer to this command, you need to adjust the flags by your environment..
+
+```bash
+./bin/op-node  \
+  --l1.trustrpc \
+  --l2=http://localhost:8551 \
+  --l2.jwt-secret=./jwt.txt \
+  --verifier.l1-confs=15 \
+  --l1.http-poll-interval=3s \
+  --l1.epoch-poll-interval=3s \
+  --l1.rpc-max-batch-size=20 \
+  --rollup.config=./rollup.json \
+  --rpc.addr=0.0.0.0 \
+  --rpc.port=8547 \
+  --rpc.enable-admin \
+  --l1.max-concurrency=20 \
+  --l1=$L1_RPC_URL  \
+  --metrics.enabled \
+  --metrics.port=7070 \
+  --metrics.addr=0.0.0.0 \
+  --log.level=debug 
+ 
+```
+
+## Config p2p peer for op-node and op-geth
+
+By default, your `op-node` will try to use a peer-to-peer to speed up the synchronization process. Once you have multiple nodes, you may want to enable peer-to-peer synchronization. You can add the following options to the `op-node` command to enable peer-to-peer synchronization with specific nodes:
+
+```
+--p2p.no-discovery \
 --p2p.static=<nodes> \
 --p2p.listen.ip=0.0.0.0 \
 --p2p.listen.tcp=9003 \
 --p2p.listen.udp=9003 \
 ```
 
-You can alternatively also remove the `--p2p.static` option, but you may see failed requests from other chains using the same chain ID.
+You can alternatively also remove the `--p2p.static` option. Through configuring `p2p static`, you can ensure:
 
-## Run as Bridage node or RPC node
+1. Transactions sent to bridge nodes or RPC nodes can be relayed to the sequencer via P2P, without needing to send them directly to the sequencer ( need also ensure that  rollup.disabletxpoolgossip=false). This reduces traffic pressure on the sequencer.
+2. The sync progress between the bridge node and the sequencer node will not lag
 
-```bash
-./bin/op-node 
- 	 --l2=http://localhost:8551 
-   --l1.trustrpc
-   --l2.jwt-secret=./jwt.txt 
-   --sequencer.l1-confs=15
-   --verifier.l1-confs=15
-   --l1.http-poll-interval=3s
-   --l1.epoch-poll-interval=3s
-   --l1.rpc-max-batch-size=20
-   --rollup.config=/server/rollup.json
-   --rpc.addr=0.0.0.0 \
-   --rpc.port=8547 \
-   --p2p.disable \
-   --rpc.enable-admin \
-   --l1=$L1_RPC_URL \
-   --l1.rpckind=$L1_RPC_KIND
-    --l1.max-concurrency=20   --log.level=debug
-   --syncmode=execution-layer
-   --l1.max-concurrency=20
+below is an example of starting a node with `p2p` parameters：
 
 ```
+./op-node --l1.trustrpc --l2=http://localhost:8551 --l2.jwt-secret=./jwt.txt --sequencer.enabled=true --sequencer.l1-confs=15 --verifier.l1-confs=15 --l1.http-poll-interval=3s --l1.epoch-poll-interval=3s --l1.rpc-max-batch-size=20 --rollup.config=./rollup.json --rpc.addr=0.0.0.0 --rpc.port=8547 --rpc.enable-admin --sequencer.priority --l1.max-concurrency=20 --p2p.sequencer.key=0x... --l1=https:/.. --metrics.enabled --metrics.port=7070 --metrics.addr=0.0.0.0 --log.level=debug --p2p.no-discovery --p2p.listen.ip=0.0.0.0 --p2p.listen.tcp=9003 --p2p.listen.udp=9003 --p2p.static=/ip4/10.180.41.12/tcp/9003/p2p/16Uiu2HAm1LN4CHrSj27HT64qeg4dQ7ZdS9WmPk6uTV7jVcpFU4e3,/ip4/10.180.41.97/tcp/9003/p2p/16Uiu2HAkw3os1Ynusda8TpEVNGHuzGj85gEiwwnHyEeY2Y6Df1HH
+```
 
-To run a Bridge node , you can refer to this command, you need to adjust the flags by your environment..
+Before starting the node, we don’t yet know the `p2p static` addresses. You can first start all the nodes, then run the following `opp2p_self` command on each machine where the nodes are deployed to get each op-node’s corresponding P2P address:
+
+```
+curl localhost:8547 -X POST --data '{"jsonrpc":"2.0","method":"opp2p_self","params":[],"id":74}' -H 'Content-Type: application/json'
+
+{"jsonrpc":"2.0","id":74,"result":{"peerID":"..,"addresses":["/ip4/10.180.41.12/tcp/9003/p2p/16Uiu2HAm1LN4CHrSj27HT64qeg4dQ7ZdS9WmPk6uTV7jVcpFU4e3","/ip4/127.0.0.1/tcp/9003/p2p/16Uiu2HAm1LN4CHrSj27HT64qeg4dQ7ZdS9WmPk6uTV7jVcpFU4e3"],":0,"rejectedPayloads":0}}}}
+```
+
+Extract the first address under `addresses` in the JSON string, which is the corresponding P2P address of the node. Once we obtain the P2P addresses of all nodes deployed in the OP Stack, we can concatenate them together and use the result as the value of the `--p2p.static` parameter. After that, restart all `op-node` processes one by one with `--p2p.static`.
+
+`op-geth` also needs to be configured with `p2p` settings to ensure the whole system functions correctly. Below is an example `config.toml`. You need to restart `op-geth` with the `--config=config.toml` parameter to load the `Node.p2p` settings.
+
+```
+# cat config.toml 
+[Node.P2P]
+  StaticNodes = [
+        "enode://23394b676e64450ed7c6f845c57adec339d62ac34d0116e73a847e8c694c1888e40f83dcadbc2f6a45e4f542564c560b00773a6f3aa2ae5d28e0504bc2e68ca0@127.0.0.1:30303",
+        "enode://1c69ec667509e84107c3758ff58a4618dd40b7912d019051265f10938b92228cad54906185ab1e4ffc00f3a025dd55580ff7e115c7b78aca264c4e99b940d331@127.0.0.1:30303",
+  ]
+```
+
+You can obtain the node’s `enode` ID by running the following command in the `op-geth` working directory. Then gather all nodes’ `enode` IDs and write them into `config.toml`:
+
+```
+ ./op-geth attach -exec "admin.nodeInfo"  <geth-datadir>/geth.ipc
+{
+  enode: "enode://23394b676e64450ed7c6f845c57adec339d62ac34d0116e73a847e8c694c1888e40f83dcadbc2f6a45e4f542564c560b00773a6f3aa2ae5d28e0504bc2e68ca0@127.0.0.1:30303?discport=0"      //remove ?discport0
+
+// we got the encode ID as "enode://23394b676e64450ed7c6f845c57adec339d62ac34d0116e73a847e8c694c1888e40f83dcadbc2f6a45e4f542564c560b00773a6f3aa2ae5d28e0504bc2e68ca0@127.0.0.1:30303"  // You need to replace 127.0.0.1 with your real IP or domain name
+```
+
+  After completing the configuration and restarting the op-geth and op-node of both sequencer and bridge node, you can execute the following command in the same directory as the `op-geth` data directory to retrieve peer information.
+
+```
+ ./op-geth attach -exec "admin.peers"  <datadir>/geth.ipc
+```
 
 
 
@@ -790,11 +913,9 @@ The `op-batcher` takes transactions from the Sequencer and publishes those trans
 It's best to give the `Batcher` address at least 2 BNB to ensure that it can continue operating without running out of BNB for gas. Keep an eye on the balance of the `Batcher` address because it can expend BNB quickly if there are a lot of transactions to publish.
 
 ## Open up a new terminal
-
 You'll need a terminal window to run `op-batcher` in.
 
 ## Navigate to the op-batcher directory
-
 ```
 cd ~/opbnb/op-batcher
 ```
@@ -812,27 +933,29 @@ cd ~/opbnb/op-batcher
   --resubmission-timeout=30s \
   --rpc.addr=0.0.0.0 \
   --rpc.port=8548 \
+  --batch-type=1 \
+  --data-availability-type=auto \
+  --target-num-frames=2 \
   --rpc.enable-admin \
   --max-channel-duration=20 \
   --l1-eth-rpc=$L1_RPC_URL \
   --private-key=$GS_BATCHER_PRIVATE_KEY
 ```
-
 The `--max-channel-duration=n` setting tells the `batcher` to write all the data to L1 every n L1 blocks. When it is low, transactions are written to L1 frequently and other nodes can synchronize from L1 quickly. When it is high, transactions are written to L1 less frequently and the `batcher` spends less BNB. If you want to reduce costs, either set this value to 0 to disable it or increase it to a higher value.
 
 # Start `op-proposer`
 
 ## Open up a new terminal
-
 You'll need a terminal window to run `op-proposer` in.
 
 ## Navigate to the op-proposer directory
-
 ```
 cd ~/opbnb/op-proposer
 ```
 
 ## Run op-proposer
+
+Please note that if you set `--pathdb.proposeblock=3600`, the proposer must start within 3600 seconds after op-geth is launched.
 
 ```
 ./bin/op-proposer \
@@ -844,6 +967,43 @@ cd ~/opbnb/op-proposer
   --l1-eth-rpc=$L1_RPC_URL
 ```
 
+
+
+# Check the status of blockchain
+
+You can use the following method to check the block height of a node. In OP Stack, there are different types of block heights: **safe**, **unsafe**, and **finalized**.
+
+> **The Safe Head** represents the most recent L2 block that has been confirmed on L1, while
+>  **The Unsafe Head** represents the highest unconfirmed L2 block that the rollup node is aware of.
+>  The `derivation` process gradually turns `unsafe` blocks into `safe` ones, and then promotes `safe` blocks to the `finalized` state.
+
+If all three heights are continuously increasing, and the lag between `safe` and `unsafe` is minimal, it indicates that your system is producing blocks normally.
+
+Run the following command on a **sequencer** or **bridge node**:
+
+```
+ wget http://localhost:7070/debug/metrics
+ 
+ cat metrics | grep op_node_default_refs_number
+ # TYPE op_node_default_refs_number gauge
+op_node_default_refs_number{layer="l1",type="l1_derived"} 5.0707611e+07
+op_node_default_refs_number{layer="l1",type="l1_finalized"} 5.0707625e+07
+op_node_default_refs_number{layer="l1",type="l1_head"} 5.0707627e+07
+op_node_default_refs_number{layer="l1",type="l1_safe"} 5.0707626e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_backup_unsafe"} 0
+op_node_default_refs_number{layer="l1_origin",type="l2_finalized"} 5.0707576e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_pending_safe"} 5.0707583e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_safe"} 5.0707583e+07
+op_node_default_refs_number{layer="l1_origin",type="l2_unsafe"} 5.070761e+07
+op_node_default_refs_number{layer="l2",type="l2_backup_unsafe"} 0
+op_node_default_refs_number{layer="l2",type="l2_finalized"} 170436   // finalized block height
+op_node_default_refs_number{layer="l2",type="l2_pending_safe"} 170460
+op_node_default_refs_number{layer="l2",type="l2_safe"} 170460        // safe block height
+op_node_default_refs_number{layer="l2",type="l2_unsafe"} 170543      // unsafe block height
+```
+
+
+
 # Connect Your Wallet to Your Chain
 
 You now have a fully functioning l2 rollup chain with a Sequencer node running on http://localhost:8545. You can connect your wallet to this chain the same way you'd connect your wallet to any other EVM chain.
@@ -853,23 +1013,19 @@ You now have a fully functioning l2 rollup chain with a Sequencer node running o
 Once you've connected your wallet, you'll probably notice that you don't have any BNB to pay for gas on your chain. The easiest way to deposit BNB into your chain is to send BNB directly to the `L1StandardBridge` contract.
 
 ## Navigate to the contracts-bedrock directory
-
 ```
 cd ~/opbnb/packages/contracts-bedrock
 ```
 
 ## Get the address of the L1StandardBridgeProxy contract
-
 ```
 cat deployments/getting-started/.deploy | jq -r .L1StandardBridgeProxy
 ```
 
 ## Send some BNB to the L1StandardBridgeProxy contract
-
 Grab the L1 bridge proxy contract address and, using the wallet that you want to have BNB on your l2 rollup chain, send that address a small amount of BNB on L1. This will trigger a deposit that will mint BNB into your wallet on L2. It may take up to some minutes for that BNB to appear in your wallet on L2.
 
 # See Your opBNB in Action
-
 You can interact with your l2 the same way you'd interact with any other EVM chain. Send some transactions, deploy some contracts, and see what happens!
 
 
@@ -877,22 +1033,23 @@ You can interact with your l2 the same way you'd interact with any other EVM cha
 # Deploy config example
 
 ```bash
+
 {
     "l1ChainID": 97,
-    "l2ChainID": 4255,
+    "l2ChainID": 4274,
     "l2BlockTime": 1,
     "maxSequencerDrift": 600,
     "sequencerWindowSize": 57600,
     "channelTimeout": 1200,
     "p2pSequencerAddress": "0x3224F068Fd97D2d4a91800D450EE19bfBCD6B6Ee",
-    "batchInboxAddress": "0xff00000000000000000000000000000000000901",
+    "batchInboxAddress": "0xff00000000000000000000000000000000004274",
     "batchSenderAddress": "0xB6e487a3cEcDe5e0E1793C98c2de1999a1319A2b",
     "cliqueSignerAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
     "l1UseClique": false,
-    "l1StartingBlockTag": "0x2fa3b94",
-    "l2OutputOracleSubmissionInterval": 240,
+    "l1StartingBlockTag": "0x304dee2",
+    "l2OutputOracleSubmissionInterval": 3600,
     "l2OutputOracleStartingBlockNumber": 0,
-    "l2OutputOracleStartingTimestamp": 1744595989,
+    "l2OutputOracleStartingTimestamp": 1745389366,
     "l2OutputOracleProposer": "0x254811af494550Ee5e0945C23EC5E4E17c9dF1bC",
     "l2OutputOracleChallenger": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
     "l2GenesisBlockGasLimit": "0x5f5e100",
@@ -922,8 +1079,8 @@ You can interact with your l2 the same way you'd interact with any other EVM cha
     "governanceTokenOwner": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
     "eip1559Denominator": 8,
     "eip1559DenominatorCanyon": 8,
-        "eip1559Elasticity": 2,
-    "l1GenesisBlockTimestamp": "0x67f88995",
+     "eip1559Elasticity": 2,
+    "l1GenesisBlockTimestamp": "0x68088736",
     "l2GenesisRegolithTimeOffset": "0x0",
     "l2GenesisDeltaTimeOffset": "0x0",
     "l2GenesisCanyonTimeOffset": "0x0",
@@ -1004,9 +1161,9 @@ You can interact with your l2 the same way you'd interact with any other EVM cha
 
 ## Address Configuration
 
-1） System Admin L1 Address 需要生成多签地址
+1） System Admin L1 Address multisig wallet address is needed
 
-2) Proposer Challenger L1 Address  可以复用 System Admin L1 Address 
+2) Proposer Challenger L1 Address  Reuse System Admin L1 Address 
 
 | Item                  | Type       | Description                                                  | 中文补充描述                                                 | Value        |
 | --------------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
