@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         'My answers might not always be 100% accurate. Double-check when in doubt. <a target="_blank" href="/en/ai-bot-disclaimer">Learn More<a>',
                 },
                 exampleQuestions: [
-                    "How to deploy a BEP-20 token on BSC?",
-                    "How to write a contract on opBNB?",
-                    "How to use Greenfield for file storage?",
+                    "How do I get BNB?",
+                    "How do I get started with RWA?",
+                    "How do I start building or deploying a dApp?",
                     "Where can I find funding or grants?",
                 ],
             },
