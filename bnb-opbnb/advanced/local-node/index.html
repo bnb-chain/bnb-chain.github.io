@@ -2511,14 +2511,19 @@ mkdir<span class="w"> </span>datadir
 <span class="w">  </span>--syncmode<span class="o">=</span>full<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--maxpeers<span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--networkid<span class="o">=</span><span class="nv">$CHAIN_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--miner.gaslimit<span class="o">=</span><span class="m">150000000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--triesInMemory<span class="o">=</span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--txpool.globalslots<span class="o">=</span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.globalslots<span class="o">=</span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--txpool.globalqueue<span class="o">=</span><span class="m">5000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--txpool.accountqueue<span class="o">=</span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--txpool.accountslots<span class="o">=</span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--cache<span class="w"> </span><span class="m">32000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.accountqueue<span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.accountslots<span class="o">=</span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.pricelimit<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--txpool.nolocals<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pathdb.nodebuffer<span class="o">=</span>list<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pathdb.proposeblock<span class="o">=</span><span class="m">3600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cache<span class="w"> </span><span class="m">6000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--cache.preimages<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--journalfile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--history.transactions<span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--allow-insecure-unlock<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--authrpc.addr<span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--authrpc.port<span class="o">=</span><span class="s2">"8551"</span><span class="w"> </span><span class="se">\</span>
@@ -2560,7 +2565,7 @@ mkdir<span class="w"> </span>datadir
 <span class="w">  </span>--sequencer.l1-confs<span class="o">=</span><span class="m">15</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--verifier.l1-confs<span class="o">=</span><span class="m">15</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--l1.http-poll-interval<span class="w"> </span>3s<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--l1.epoch-poll-interval<span class="w"> </span>45s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.epoch-poll-interval<span class="w"> </span>3s<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--l1.rpc-max-batch-size<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--rollup.config<span class="o">=</span>./rollup.json<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--rpc.addr<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="se">\</span>
@@ -2579,8 +2584,8 @@ mkdir<span class="w"> </span>datadir
 <span class="w">  </span>--l1<span class="o">=</span><span class="si">${</span><span class="nv">L1_RPC</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--l2<span class="o">=</span><span class="si">${</span><span class="nv">L2_RPC</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--l2.jwt-secret<span class="o">=</span>./jwt.txt<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--l2.engine-sync<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--l2.skip-sync-start-check<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\ </span><span class="w"> </span>
+<span class="w">  </span>--syncmode<span class="o">=</span>execution-layer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--l1.max-concurrency<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--log.level<span class="o">=</span>debug
 </code></pre></div>
 <h2 id="run-with-snapshots">Run with Snapshots<a class="headerlink" href="#run-with-snapshots" title="Link to this section">¶</a></h2>
