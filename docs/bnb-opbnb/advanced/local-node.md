@@ -201,8 +201,8 @@ export P2P_BOOTNODES="enr:-J24QGQBeMsXOaCCaLWtNFSfb2Gv50DjGOKToH2HUTAIn9yXImowlR
   --l1=${L1_RPC} \
   --l2=${L2_RPC} \
   --l2.jwt-secret=./jwt.txt \
-  --l2.engine-sync=true \
-  --l2.skip-sync-start-check=true \  
+  --syncmode=execution-layer \
+  --l1.max-concurrency=20 \
   --log.level=debug
 ```
 
