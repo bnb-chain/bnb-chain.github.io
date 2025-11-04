@@ -62,7 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
+      - Fermi Hardfork(BSC): ./announce/fermi-bsc.md
       - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
 
     - Passed:
@@ -83,6 +83,7 @@ nav:
       - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
       - Pascal Hardfork(BSC): ./announce/pascal-bsc.md
       - Lorentz Hardfork(BSC): ./announce/lorentz-bsc.md
+      - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
 
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md

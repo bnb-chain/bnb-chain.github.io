@@ -8,7 +8,7 @@
 The Maxwell upgrade will happen at:
 
 - Testnet:  2025-05-26 07:05:00 AM UTC
-- Mainnet:  TBD, target later Jun 2025
+- Mainnet:  2025-06-30 02:30:00 AM UTC
 
 There are three BEP in Maxwell:
 
