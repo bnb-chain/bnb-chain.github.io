@@ -48,5 +48,5 @@ $ kill  $pid
 
 
 ```bash
-./geth --config ./config.toml --datadir ./node --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --syncmode full --state.scheme path --db.engine pebble
+./geth --config ./config.toml --datadir ./node --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
