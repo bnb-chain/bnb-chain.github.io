@@ -59,5 +59,5 @@ Fast node does not need trie data anymore, prune the trie data by the following 
 
 ```bash
 ## start a fast node
-./geth --tries-verify-mode none --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+./geth --tries-verify-mode none --rpc.allow-unprotected-txs --cache 10000 --history.transactions 360000  --datadir <datadir> --http.corsdomain * --config ./config.toml
 ```

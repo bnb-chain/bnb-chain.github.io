@@ -48,5 +48,5 @@ $ kill  $pid
 
 
 ```bash
-./geth --config ./config.toml --datadir ./node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
+./geth --config ./config.toml --datadir ./node --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0
 ```

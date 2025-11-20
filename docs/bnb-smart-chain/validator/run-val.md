@@ -83,8 +83,10 @@ echo {your-password for the BLS wallet} > blspassword.txt
 Start your validator using the command line below:
 
 ```bash
-geth --config ./config.toml --datadir ./node --syncmode snap -unlock {accounts to sign txs, including your mining account at least} --miner.etherbase {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000
+geth --config ./config.toml --datadir ./node -unlock {accounts to sign txs, including your mining account at least} --miner.etherbase {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000 --history.transactions 0
 ```
+
+> **Note**: Consider adding `--history.logs.disable` for performance if RPC service is not needed.
 
 ## Post Running
 

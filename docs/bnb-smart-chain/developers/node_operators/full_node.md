@@ -22,7 +22,7 @@ Only Geth will be covered in this page, as Erigon is mainly to support archive m
     If you want high performance and care little about state consistency, you can run a fast node, which is a full node with the flag `--tries-verify-mode none` set.
     Check [here](fast_node.md) for full details on running a fast node.
     ```
-    ./geth --config ./config.toml --datadir <datadir>  --cache 8000 --tries-verify-mode none
+    ./geth --config ./config.toml --datadir <datadir>  --cache 10000 --tries-verify-mode none
     ```
 ## 2.Run BSC Full Node: Geth
 
@@ -76,7 +76,7 @@ There are 2 approaches to setup a BSC full node from scratch:
 4. Start a full node
     ```
     ## pls replace <datadir> with your local path to datadir.
-    ./geth --config ./config.toml --datadir <datadir>  --cache 8000
+    ./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0
     ```
 
 5. Monitor node status
@@ -93,7 +93,7 @@ There are 2 approaches to setup a BSC full node from scratch:
 ```bash
 ## start a full node from genesis with by one command
 ## pls replace <datadir> with your local path to datadir.
-./geth --config ./config.toml --datadir <datadir>  --cache 8000
+./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0
 ```
 
 ### 2.3.Sync Mode
