@@ -23,8 +23,8 @@ Docker Images
 
 - ghcr.io/bnb-chain/op-node:v0.5.5
 - ghcr.io/bnb-chain/op-geth:v0.5.9
-- ghcr.io/bnb-chain/op-batcher:v0.5.9
-- ghcr.io/bnb-chain/op-proposer:v0.5.9
+- ghcr.io/bnb-chain/op-batcher:v0.5.5
+- ghcr.io/bnb-chain/op-proposer:v0.5.5
 
 ## Key Highlight: Shorten Block Interval
 
