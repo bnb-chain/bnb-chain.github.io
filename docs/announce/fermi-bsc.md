@@ -8,7 +8,7 @@
 The Fermi upgrade will happen at:
 
 - Testnet:  2025-11-10 02:25:00 AM UTC
-- Mainnet:  TBD
+- Mainnet:  2026-01-14 02:30:00 AM UTC
 
 There are five BEPs in Fermi:
 
