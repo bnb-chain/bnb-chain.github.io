@@ -38,7 +38,7 @@ cover this lock amount plus any self-delegation, in total 2001BNB.
 
 ### Edit Consensus Address
 
-To change the consensus address of a validator, use the `editConsensusAddress` function with the following paramters:
+To change the consensus address of a validator, use the `editConsensusAddress` function with the following parameters:
 
 ```solidity
 function editConsensusAddress(address newConsensusAddress) external
@@ -48,7 +48,7 @@ function editConsensusAddress(address newConsensusAddress) external
 
 ### Edit Commission Rate
 
-To update the commission rate of a validator, use the `editCommissionRate` function with the following paramters:
+To update the commission rate of a validator, use the `editCommissionRate` function with the following parameters:
 
 ```solidity
 function editCommissionRate(uint64 newCommissionRate) external
@@ -169,7 +169,7 @@ muticall contract to improve the efficiency.
 The credit contract provides the `getPooledBNBByShares` function to calculate the BNB amount for some specific amount of
 shares.
 
-To do the vice visa, please use the `getSharesByPooledBNB` function to calculate the shares for some
+To do the vice versa, please use the `getSharesByPooledBNB` function to calculate the shares for some
 specific BNB amount.
 
 ### How to calculate the APR/APY of a validator?
