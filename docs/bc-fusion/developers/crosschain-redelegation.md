@@ -1,12 +1,12 @@
-# Crosschain Redelgation
+# Crosschain Redelegation
 
-To migrate the exisiting delegation from BNB Beacon chain (the old BSC staking) to the new BNB smart chain native
+To migrate the existing delegation from BNB Beacon chain (the old BSC staking) to the new BNB smart chain native
 staking, crosschain redelegation can be used.
 A user can submit a message called `MsgSideChainStakeMigration` to the Beacon chain. Underlying, it will unbound
-the delegation immediately on BC (without wating unbond period), sends a cross-chain transaction to BSC to delegate
+the delegation immediately on BC (without waiting unbond period), sends a cross-chain transaction to BSC to delegate
 to a native BSC validator.
 
-The definition of `MsgSideChainStakeMigration` is as the blow.
+The definition of `MsgSideChainStakeMigration` is as below.
 
 ```go
 type MsgSideChainStakeMigration struct {
