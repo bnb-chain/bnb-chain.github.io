@@ -50,9 +50,9 @@ Your --datadir flag should point to the extracted chaindata folder path
 
 ### Prune all trie data
 
-Fast node does not need trie data anymore, prune the trie data by the following command.
+Fast node does not need trie data anymore. Delete the trie state by the following command.
 ```
-./geth snapshot insecure-prune-all --datadir ./node  ./genesis.json
+./geth db delete-trie-state --datadir ./node
 ```
 
 ### Start Fast Node Without Snapshot Verification

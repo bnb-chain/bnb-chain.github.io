@@ -54,7 +54,7 @@ To activate the fast node, include `--allow-insecure-no-tries` in the `op-geth` 
 To prune the MPT state (e.g., when transitioning from a full to a fast node), prune the node as follows:
 
 ```
-./geth snapshot insecure-prune-all --datadir ./datadir ./genesis.json
+./geth db delete-trie-state --datadir ./datadir
 ```
 
 
