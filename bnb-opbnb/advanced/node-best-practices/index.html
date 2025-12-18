@@ -2829,7 +2829,7 @@ The MPT facilitates proofs of both inclusion and exclusion of key-value pairs, a
 <div class="highlight"><pre><span></span><code> ./geth --config ./config.toml --datadir ./node --syncmode full  --allow-insecure-no-tries
 </code></pre></div>
 <p>To prune the MPT state (e.g., when transitioning from a full to a fast node), prune the node as follows:</p>
-<div class="highlight"><pre><span></span><code>./geth snapshot insecure-prune-all --datadir ./datadir ./genesis.json
+<div class="highlight"><pre><span></span><code>./geth db delete-trie-state --datadir ./datadir
 </code></pre></div>
 <p><em>Fast Node does not generate Trie Data when syncing.
 Once the Fast Node is running, there is no way to switch back to Full Node.
