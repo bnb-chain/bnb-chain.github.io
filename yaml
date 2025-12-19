@@ -1,0 +1,1084 @@
+- name: Reference Implementation Features
+  maintainer: Dev Container Spec Maintainers
+  contact: https://github.com/devcontainers/features/issues
+  repository: https://github.com/devcontainers/features
+  ociReference: ghcr.io/devcontainers/features
+- name: Reference Implementation Templates
+  maintainer: Dev Container Spec Maintainers
+  contact: https://github.com/devcontainers/templates/issues
+  repository: https://github.com/devcontainers/templates
+  ociReference: ghcr.io/devcontainers/templates
+- name: Azure SQL Database Dev Container Templates
+  maintainer: Azure SQL Developer Experiences Team
+  contact: https://github.com/microsoft/azuresql-devcontainers/issues
+  repository: https://github.com/microsoft/azuresql-devcontainers
+  ociReference: ghcr.io/microsoft/azuresql-devcontainers
+- name: Iterative Tools for Machine Learning Features
+  maintainer: Iterative, Inc
+  contact: https://github.com/iterative/features/issues
+  repository: https://github.com/iterative/features
+  ociReference: ghcr.io/iterative/features
+- name: Features for R
+  maintainer: Rocker Project
+  contact: https://github.com/rocker-org/devcontainer-features/issues
+  repository: https://github.com/rocker-org/devcontainer-features
+  ociReference: ghcr.io/rocker-org/devcontainer-features
+- name: Templates for R
+  maintainer: Rocker Project
+  contact: https://github.com/rocker-org/devcontainer-templates/issues
+  repository: https://github.com/rocker-org/devcontainer-templates
+  ociReference: ghcr.io/rocker-org/devcontainer-templates
+- name: Public Meaningful Features
+  maintainer: Meaningful
+  contact: https://github.com/meaningful-ooo/devcontainer-features/issues
+  repository: https://github.com/meaningful-ooo/devcontainer-features
+  ociReference: ghcr.io/meaningful-ooo/devcontainer-features
+- name: Assorted Features
+  maintainer: Mike Priscella
+  contact: https://github.com/mpriscella/features/issues
+  repository: https://github.com/mpriscella/features
+  ociReference: ghcr.io/mpriscella/features
+- name: Assorted Features
+  maintainer: eitsupi
+  contact: https://github.com/eitsupi/devcontainer-features/issues
+  repository: https://github.com/eitsupi/devcontainer-features
+  ociReference: ghcr.io/eitsupi/devcontainer-features
+- name: Assorted Features
+  maintainer: Eric Ho
+  contact: https://github.com/dhoeric/features/issues
+  repository: https://github.com/dhoeric/features
+  ociReference: ghcr.io/dhoeric/features
+- name: Assorted Features
+  maintainer: Ravikanth Chaganti
+  contact: https://github.com/rchaganti/vsc-devcontainer-features/issues
+  repository: https://github.com/rchaganti/vsc-devcontainer-features
+  ociReference: ghcr.io/rchaganti/vsc-devcontainer-features
+- name: Amazon Linux 2 Features
+  maintainer: Ken Collins
+  contact: https://github.com/metaskills
+  repository: https://github.com/customink/codespaces-features
+  ociReference: ghcr.io/customink/codespaces-features
+- name: Assorted Features
+  maintainer: Stuart Leeks
+  contact: https://github.com/stuartleeks/dev-container-features/issues
+  repository: https://github.com/stuartleeks/dev-container-features
+  ociReference: ghcr.io/stuartleeks/dev-container-features
+- name: Assorted Features
+  maintainer: guiyomh
+  contact: https://github.com/guiyomh/features/issues
+  repository: https://github.com/guiyomh/features
+  ociReference: ghcr.io/guiyomh/features
+- name: Development Container Custom Features
+  maintainer: Nate Scherer
+  contact: https://github.com/natescherer/devcontainers-custom-features/issues
+  repository: https://github.com/natescherer/devcontainers-custom-features
+  ociReference: ghcr.io/natescherer/devcontainers-custom-features
+- name: Features by @joshspicer
+  maintainer: Josh Spicer
+  contact: https://github.com/joshspicer/features/issues
+  repository: https://github.com/joshspicer/features
+  ociReference: ghcr.io/joshspicer/features
+- name: PHP Features
+  maintainer: Shyim
+  contact: https://github.com/shyim/devcontainers-features/issues
+  repository: https://github.com/shyim/devcontainers-features
+  ociReference: ghcr.io/shyim/devcontainers-features
+- name: Fun Features
+  maintainer: jungaretti
+  contact: https://github.com/jungaretti/features/issues
+  repository: https://github.com/jungaretti/features
+  ociReference: ghcr.io/jungaretti/features
+- name: libmsquic feature for HTTP/3 support
+  maintainer: tlc-sundown
+  contact: https://github.com/tlc-sundown/devcontainers-features/issues
+  repository: https://github.com/tlc-sundown/devcontainers-features
+  ociReference: ghcr.io/tlc-sundown/devcontainers-features
+- name: Assorted Features
+  maintainer: Enrico Secondulfo
+  contact: https://github.com/enricosecondulfo/devcontainer-features/issues
+  repository: https://github.com/enricosecondulfo/devcontainer-features
+  ociReference: ghcr.io/enricosecondulfo/devcontainer-features
+- name: SAML.to Development Container Features
+  maintainer: saml-to
+  contact: https://github.com/saml-to/devcontainer-features/issues
+  repository: https://github.com/saml-to/devcontainer-features
+  ociReference: ghcr.io/saml-to/devcontainer-features
+- name: Cloud Native development environment tools
+  maintainer: rjfmachado
+  contact: https://github.com/rjfmachado/devcontainer-features/issues
+  repository: https://github.com/rjfmachado/devcontainer-features
+  ociReference: ghcr.io/rjfmachado/devcontainer-features
+- name: Wiwa's features
+  maintainer: lukewiwa
+  contact: https://github.com/lukewiwa/features/issues
+  repository: https://github.com/lukewiwa/features
+  ociReference: ghcr.io/lukewiwa/features
+- name: Container and Kubernetes Development Features
+  maintainer: rio
+  contact: https://github.com/rio/features/issues
+  repository: https://github.com/rio/features
+  ociReference: ghcr.io/rio/features
+- name: Kusion Features
+  maintainer: KusionStack
+  contact: https://github.com/KusionStack/devcontainer-features/issues
+  repository: https://github.com/KusionStack/devcontainer-features
+  ociReference: ghcr.io/KusionStack/devcontainer-features
+- name: Édouard-lopez' Features
+  maintainer: edouard-lopez
+  contact: https://github.com/edouard-lopez/devcontainer-features/issues
+  repository: https://github.com/edouard-lopez/devcontainer-features
+  ociReference: ghcr.io/edouard-lopez/devcontainer-features
+- name: jlaundry Features
+  maintainer: jlaundry
+  contact: https://github.com/jlaundry/devcontainer-features/issues
+  repository: https://github.com/jlaundry/devcontainer-features
+  ociReference: ghcr.io/jlaundry/devcontainer-features
+- name: Assorted Features
+  maintainer: mikaello
+  contact: https://github.com/mikaello/devcontainer-features/issues
+  repository: https://github.com/mikaello/devcontainer-features
+  ociReference: ghcr.io/mikaello/devcontainer-features
+- name: Devcontainer Features
+  maintainer: jsburckhardt
+  contact: https://github.com/jsburckhardt/devcontainer-features/issues
+  repository: https://github.com/jsburckhardt/devcontainer-features
+  ociReference: ghcr.io/jsburckhardt/devcontainer-features
+- name: Oleksis' Dev Container Features
+  maintainer: oleksis
+  contact: https://github.com/oleksis/devcontainer-features/issues
+  repository: https://github.com/oleksis/devcontainer-features
+  ociReference: ghcr.io/oleksis/devcontainer-features
+- name: Psibase templates
+  maintainer: James-Mart
+  contact: https://github.com/gofractally/psibase-devcontainer-template/issues
+  repository: https://github.com/gofractally/psibase-devcontainer-template/issues
+  ociReference: ghcr.io/gofractally/psibase-devcontainer-template
+- name: Baskoro OSI devcontainer features
+  maintainer: Eki Baskoro
+  contact: https://github.com/ebaskoro/devcontainer-features/issues
+  repository: https://github.com/ebaskoro/devcontainer-features
+  ociReference: ghcr.io/ebaskoro/devcontainer-features
+- name: A collection of useful GitHub CodeSpace features
+  maintainer: Warren Buckley
+  contact: https://github.com/warrenbuckley/codespace-features/issues
+  repository: https://github.com/warrenbuckley/codespace-features
+  ociReference: ghcr.io/warrenbuckley/codespace-features
+- name: Roost Cluster
+  maintainer: Roost.ai (Harish Agrawal)
+  contact: https://github.com/roost-io/features/issues
+  repository: https://github.com/roost-io/features
+  ociReference: ghcr.io/roost-io/features
+- name: lentzi90 devcontainer features
+  maintainer: Lennart Jern
+  contact: https://github.com/lentzi90/features/issues
+  repository: https://github.com/lentzi90/features
+  ociReference: ghcr.io/lentzi90/features
+- name: Nextflow devcontainer features
+  maintainer: Rob Syme
+  contact: https://github.com/robsyme/features/issues
+  repository: https://github.com/robsyme/features
+  ociReference: ghcr.io/robsyme/features
+- name: Wasmtime + WASI Web Assembly features
+  contact: https://github.com/dev-wasm/dev-wasm-feature/issues
+  repository: https://github.com/dev-wasm/dev-wasm-feature
+  maintainer: Brendan Burns
+  ociReference: devwasm.azurecr.io/dev-wasm/dev-wasm-feature
+- name: shinepukur devcontainer features
+  maintainer: Shine Pukur
+  contact: https://github.com/shinepukur/devcontainer-features/issues
+  repository: https://github.com/shinepukur/devcontainer-features
+  ociReference: ghcr.io/shinepukur/devcontainer-features
+- name: msclock devcontainer features
+  maintainer: msclock
+  contact: https://github.com/msclock/features/issues
+  repository: https://github.com/msclock/features
+  ociReference: ghcr.io/msclock/features
+- name: Fig Dev Container Features
+  maintainer: grant0417
+  contact: https://github.com/withfig/features/issues
+  repository: https://github.com/withfig/features
+  ociReference: ghcr.io/withfig/features
+- name: Mamba Features
+  maintainer: mamba-org
+  contact: https://github.com/mamba-org/devcontainer-features/issues
+  repository: https://github.com/mamba-org/devcontainer-features
+  ociReference: ghcr.io/mamba-org/devcontainer-features
+- name: Astronomer Features
+  maintainer: fhoda
+  contact: https://github.com/astronomer/devcontainer-features/issues
+  repository: https://github.com/astronomer/devcontainer-features
+  ociReference: ghcr.io/astronomer/devcontainer-features
+- name: Devcontainer features by @EliiseS
+  maintainer: EliiseS
+  contact: https://github.com/EliiseS/devcontainer-features/issues
+  repository: https://github.com/EliiseS/devcontainer-features
+  ociReference: ghcr.io/eliises/devcontainer-features
+- name: Testing Automation Features & more
+  maintainer: Matthieu Fronton
+  contact: https://github.com/frntn/devcontainers-features/issues
+  repository: https://github.com/frntn/devcontainers-features
+  ociReference: ghcr.io/frntn/devcontainers-features
+- name: csutter's devcontainer templates
+  maintainer: csutter
+  contact: https://github.com/csutter/devcontainer-templates/issues
+  repository: https://github.com/csutter/devcontainer-templates
+  ociReference: ghcr.io/csutter/devcontainer-templates
+- name: Convenient features
+  maintainer: ChristopherMacGown
+  contact: https://github.com/ChristopherMacGown/devcontainer-features/issues
+  repository: https://github.com/ChristopherMacGown/devcontainer-features
+  ociReference: ghcr.io/christophermacgown/devcontainer-features
+- name: Devcontainer features by @Balazs
+  maintainer: Balazs23
+  contact: https://github.com/Balazs23/devcontainers-features/issues
+  repository: https://github.com/Balazs23/devcontainers-features
+  ociReference: ghcr.io/balazs23/devcontainers-features
+- name: Pwd9000-ML devcontainer templates
+  maintainer: Marcel Lupo @Pwd9000-ML
+  contact: https://github.com/Pwd9000-ML/devcontainer-templates/issues
+  repository: https://github.com/Pwd9000-ML/devcontainer-templates
+  ociReference: ghcr.io/pwd9000-ml/devcontainer-templates
+- name: mickeahlinder devcontainer features
+  maintainer: Mikael Ahlinder
+  contact: https://github.com/mickeahlinder/devcontainer-features/issues
+  repository: https://github.com/mickeahlinder/devcontainer-features
+  ociReference: ghcr.io/mickeahlinder/devcontainer-features
+- name: jckimble Dev Container / Codespaces Features
+  maintainer: James C Kimble Jr
+  contact: https://github.com/jckimble/devcontainer-features/issues
+  repository: https://github.com/jckimble/devcontainer-features
+  ociReference: ghcr.io/jckimble/devcontainer-features
+- name: IU LaTeX Container Templates
+  maintainer: Torben Wetter
+  contact: https://github.com/TorbenWetter/iu-latex-container-templates/issues
+  repository: https://github.com/TorbenWetter/iu-latex-container-templates
+  ociReference: ghcr.io/torbenwetter/iu-latex-container-templates
+- name: Python3 with Pyenv and Poetry
+  maintainer: Israel Rescalvo
+  contact: https://github.com/Standard-IO/devcontainers-templates/issues
+  repository: https://github.com/Standard-IO/devcontainers-templates
+  ociReference: ghcr.io/standard-io/devcontainers-templates
+- name: ROS Templates
+  maintainer: Kenji Brameld
+  contact: https://github.com/ijnek/ros-devcontainer-template/issues
+  repository: https://github.com/ijnek/ros-devcontainer-template
+  ociReference: ghcr.io/ijnek/ros-devcontainer-template
+- name: ROS 2 Workspace Templates
+  maintainer: Bruno-Pier Busque
+  contact: https://github.com/BrunoB81HK/ros2-workspace-devcontainer-template/issues
+  repository: https://github.com/BrunoB81HK/ros2-workspace-devcontainer-template
+  ociReference: ghcr.io/brunob81hk/ros2-workspace-devcontainer-template
+- name: Assorted Features
+  maintainer: r3dpoint
+  contact: https://github.com/r3dpoint/devcontainer-features/issues
+  repository: https://github.com/r3dpoint/devcontainer-features
+  ociReference: ghcr.io/r3dpoint/devcontainer-features
+- name: Swift Container Templates
+  maintainer: Swift Server Workgroup
+  contact: https://github.com/swift-server/swift-devcontainer-template/issues
+  repository: https://github.com/swift-server/swift-devcontainer-template
+  ociReference: ghcr.io/swift-server/swift-devcontainer-template
+- name: UNSW cs3231 OS Development
+  maintainer: Hamish Cox
+  contact: https://github.com/HamishWHC/cs3231-devcontainer/issues
+  repository: https://github.com/HamishWHC/cs3231-devcontainer
+  ociReference: ghcr.io/hamishwhc/cs3231-devcontainer
+- name: TRunk CLI Features (trunk.io)
+  maintainer: trunk-io
+  contact: https://github.com/trunk-io/devcontainer-feature/issues
+  repository: https://github.com/trunk-io/devcontainer-feature
+  ociReference: ghcr.io/trunk-io/devcontainer-feature
+- name: MultiversX Dev Container Templates
+  maintainer: MultiversX
+  contact: https://github.com/multiversx/mx-template-devcontainers/issues
+  repository: https://github.com/multiversx/mx-template-devcontainers
+  ociReference: ghcr.io/multiversx/mx-template-devcontainers
+- name: Swift Dev Container Features
+  maintainer: Joseph Heck/Adam Fowler
+  contact: https://github.com/swift-server-community/swift-devcontainer-features/issues
+  repository: https://github.com/swift-server-community/swift-devcontainer-features
+  ociReference: ghcr.io/swift-server-community/swift-devcontainer-features
+- name: Kvokka Dev Container Features
+  maintainer: kvokka
+  contact: https://github.com/kvokka/features/issues
+  repository: https://github.com/kvokka/features
+  ociReference: ghcr.io/kvokka/features
+- name: gickis Dev Container Features
+  maintainer: Andrii Tararaka
+  contact: https://github.com/gickis/devcontainer-features/issues
+  repository: https://github.com/gickis/devcontainer-features
+  ociReference: ghcr.io/gickis/devcontainer-features
+- name: sonikro Dev Container Features
+  maintainer: Jonathan Nagayoshi
+  contact: https://github.com/sonikro/devcontainer-features/issues
+  repository: https://github.com/sonikro/devcontainer-features
+  ociReference: ghcr.io/sonikro/devcontainer-features
+- name: Features by JasonTheDeveloper
+  maintainer: JasonTheDeveloper
+  contact: https://github.com/JasonTheDeveloper/features/issues
+  repository: https://github.com/JasonTheDeveloper/features
+  ociReference: ghcr.io/jasonthedeveloper/features
+- name: Templates by John Muchovej
+  maintainer: John Muchovej
+  contact: https://github.com/jmuchovej/devcontainers/issues
+  repository: https://github.com/jmuchovej/devcontainers
+  ociReference: ghcr.io/jmuchovej/templates
+- name: Features by dasiths
+  maintainer: Dasith Wijes
+  contact: https://dasith.me
+  repository: https://github.com/dasiths/devcontainer-features
+  ociReference: ghcr.io/dasiths/devcontainer-features
+- name: flexwie devcontainer features
+  maintainer: Felix Wieland
+  contact: https://github.com/flexwie/devcontainer-features/issues
+  repository: https://github.com/flexwie/devcontainer-features
+  ociReference: ghcr.io/flexwie/devcontainer-features
+- name: Rust on Nails
+  maintainer: Ian Purton
+  contact: https://github.com/purton-tech/rust-on-nails/issues
+  repository: https://github.com/purton-tech/rust-on-nails
+  ociReference: ghcr.io/purton-tech/rust-on-nails
+- name: ksh5022 devcontainer features
+  maintainer: Kevin Harrigan
+  contact: https://github.com/ksh5022/devcontainer-features/issues
+  repository: https://github.com/ksh5022/devcontainer-features
+  ociReference: ghcr.io/ksh5022/devcontainer-features
+- name: Dapr devcontainer features
+  maintainer: Dapr maintainers
+  contact: https://github.com/dapr/cli/issues
+  repository: https://github.com/dapr/cli
+  ociReference: ghcr.io/dapr/cli
+- name: Azutake Dev Container features
+  maintainer: Azutake
+  contact: https://github.com/azutake/devcontainer-features/issues
+  repository: https://github.com/azutake/devcontainer-features
+  ociReference: ghcr.io/azutake/devcontainer-features
+- name: Features by michidk
+  maintainer: Michael Lohr
+  contact: https://github.com/michidk/
+  repository: https://github.com/michidk/devcontainers-features
+  ociReference: ghcr.io/michidk/devcontainers-features
+- name: Integrated Circuit Design Environment Templates
+  maintainer: Curtis Mayberry
+  contact: https://github.com/curtisma/
+  repository: https://github.com/cascode-labs/viper-ic-devcontainers
+  ociReference: ghcr.io/cascode-labs/viper-ic-devcontainers
+- name: A powerful and handy feature that runs remote shell scripts
+  maintainer: Xiaowei Wang
+  contact: https://github.com/wxw-matt/devcontainer-features/issues
+  repository: https://github.com/wxw-matt/devcontainer-features
+  ociReference: ghcr.io/wxw-matt/devcontainer-features
+- name: Salesforce CLI Features
+  maintainer: Jason Vercellone
+  contact: https://github.com/vercellone/devcontainer-features/issues
+  repository: https://github.com/vercellone/devcontainer-features
+  ociReference: ghcr.io/vercellone/devcontainer-features
+- name: Features by joedmck
+  maintainer: Joe McKinnon
+  contact: https://github.com/joedmck/devcontainer-features/issues
+  repository: https://github.com/joedmck/devcontainer-features
+  ociReference: ghcr.io/joedmck/devcontainer-features
+- name: Features by CodeMan99
+  maintainer: Cody Taylor
+  contact: https://github.com/CodeMan99/features/issues
+  repository: https://github.com/CodeMan99/features
+  ociReference: ghcr.io/codeman99/features
+- name: Features by Favalos
+  maintainer: Fernando Avalos
+  contact: https://github.com/favalos/devcontainer-features/issues
+  repository: https://github.com/favalos/devcontainer-features
+  ociReference: ghcr.io/favalos/devcontainer-features
+- name: Community Templates
+  maintainer: devcontainers-community
+  contact: https://github.com/orgs/devcontainers-community/discussions
+  repository: https://github.com/devcontainers-community
+  ociReference: ghcr.io/devcontainers-community/templates
+- name: Community Features
+  maintainer: devcontainers-community
+  contact: https://github.com/orgs/devcontainers-community/discussions
+  repository: https://github.com/devcontainers-community
+  ociReference: ghcr.io/devcontainers-community/features
+- name: Community npm Features
+  maintainer: devcontainers-community
+  contact: https://github.com/devcontainers-community/npm-features/issues
+  repository: https://github.com/devcontainers-community/npm-features
+  ociReference: ghcr.io/devcontainers-community/npm-features
+- name: Rusty Features
+  maintainer: Lee-Orr
+  contact: https://github.com/lee-orr/rusty-dev-containers/issues
+  repository: https://github.com/lee-orr/rusty-dev-containers
+  ociReference: ghcr.io/lee-orr/rusty-dev-containers
+- name: Assorted Features
+  maintainer: Ivan Stasiuk
+  contact: https://github.com/brokeyourbike/devcontainer-features/issues
+  repository: https://github.com/brokeyourbike/devcontainer-features
+  ociReference: ghcr.io/brokeyourbike/devcontainer-features
+- name: Internet Computer Templates
+  maintainer: VVV Interactive | Internet Base
+  contact: https://github.com/vvv-interactive/ibdev/issues
+  repository: https://github.com/vvv-interactive/ibdev
+  ociReference: ghcr.io/vvv-interactive/ibdev
+- name: Features by Nikita Kurpas
+  maintainer: Nikita Kurpas
+  contact: https://github.com/NikitaKurpas/features/issues
+  repository: https://github.com/NikitaKurpas/features
+  ociReference: ghcr.io/nikitakurpas/features
+- name: Features by joshuanianji
+  maintainer: Joshua Ji
+  contact: https://github.com/joshuanianji/devcontainer-features/issues
+  repository: https://github.com/joshuanianji/devcontainer-features
+  ociReference: ghcr.io/joshuanianji/devcontainer-features
+- name: Features by nullcoder
+  maintainer: Thanan Traiongthawon
+  contact: https://github.com/nullcoder/devcontainer-features/issues
+  repository: https://github.com/nullcoder/devcontainer-features
+  ociReference: ghcr.io/nullcoder/devcontainer-features
+- name: Features by shepherdjerred
+  maintainer: Jerred Shepherd
+  contact: https://github.com/shepherdjerred/devcontainers-features/issues
+  repository: https://github.com/shepherdjerred/devcontainers-features
+  ociReference: ghcr.io/shepherdjerred/devcontainers-features
+- name: Features by jayree
+  maintainer: jayree
+  contact: https://github.com/jayree/devcontainer-features/issues
+  repository: https://github.com/jayree/devcontainer-features
+  ociReference: ghcr.io/jayree/devcontainer-features
+- name: Templates by jayree
+  maintainer: jayree
+  contact: https://github.com/jayree/devcontainer-templates/issues
+  repository: https://github.com/jayree/devcontainer-templates
+  ociReference: ghcr.io/jayree/devcontainer-templates
+- name: Features by bdsoha
+  maintainer: bdsoha
+  contact: https://github.com/bdsoha/devcontainers/issues
+  repository: https://github.com/bdsoha/devcontainers
+  ociReference: ghcr.io/bdsoha/devcontainers
+- name: Python3 with Pyenv and PDM
+  maintainer: Nafnix
+  contact: https://github.com/nafnix/devcontainers-templates/issues
+  repository: https://github.com/nafnix/devcontainers-templates
+  ociReference: ghcr.io/nafnix/devcontainers-templates
+- name: Data science with Python and R
+  maintainer: VS Code Data Science
+  contact: https://github.com/microsoft/datascience-py-r/issues
+  repository: https://github.com/microsoft/datascience-py-r
+  ociReference: ghcr.io/microsoft/datascience-py-r
+- name: Features by tomharvey
+  maintainer: Tom Harvey
+  contact: https://github.com/tomharvey/devcontainer-features/issues
+  repository: https://github.com/tomharvey/devcontainer-features
+  ociReference: ghcr.io/tomharvey/devcontainer-features
+- name: Azure Developer CLI Dev Container Feature
+  maintainer: Azure Developer CLI Team
+  contact: https://github.com/Azure/azure-dev/issues
+  repository: https://github.com/Azure/azure-dev
+  ociReference: ghcr.io/azure/azure-dev
+- name: Skyramp Dev Container Feature
+  maintainer: Skyramp, Inc.
+  contact: https://github.com/letsramp/devcontainer-features/issues
+  repository: https://github.com/letsramp/devcontainer-features
+  ociReference: ghcr.io/letsramp/devcontainer-features
+- name: Earthly Dev Container Features
+  maintainer: Earthly Technologies
+  contact: https://github.com/earthly/devcontainer-features/issues
+  repository: https://github.com/earthly/devcontainer-features
+  ociReference: ghcr.io/earthly/devcontainer-features
+- name: Runme Container Features
+  maintainer: Stateful, Inc.
+  contact: https://github.com/stateful/devcontainer-features/issues
+  repository: https://github.com/stateful/devcontainer-features
+  ociReference: ghcr.io/stateful/devcontainer-features
+- name: Wpdevenv Templates
+  maintainer: Wpdevenv
+  contact: https://github.com/wpdevenv/dev_container_templates/issues
+  repository: https://github.com/wpdevenv/dev_container_templates
+  ociReference: ghcr.io/wpdevenv/dev_container_templates
+- name: Native Dev Container Features
+  maintainer: John Chlark Sumatra
+  contact: https://github.com/itsmechlark/features/issues
+  repository: https://github.com/itsmechlark/features
+  ociReference: ghcr.io/itsmechlark/features
+- name: Assorted Features
+  maintainer: Marco Zaccaro
+  contact: https://github.com/marcozac/devcontainer-features/issues
+  repository: https://github.com/marcozac/devcontainer-features
+  ociReference: ghcr.io/marcozac/devcontainer-features
+- name: Features by Elan Hasson
+  maintainer: ElanHasson
+  contact: https://github.com/ElanHasson/devcontainer-features/issues
+  repository: https://github.com/ElanHasson/devcontainer-features
+  ociReference: ghcr.io/elanhasson/devcontainer-features
+- name: Python+MSSQL+Azure SQL Templates
+  maintainer: Azure Developer CLI Team
+  contact: https://github.com/Azure-Samples/python-ms-sql-devcontainer/issues
+  repository: https://github.com/Azure-Samples/python-ms-sql-devcontainer
+  ociReference: ghcr.io/azure-samples/python-ms-sql-devcontainer
+- name: Features by Tiwaloluwa Ojo
+  maintainer: Tiwaloluwa Ojo
+  contact: https://github.com/tiwaojo/features/issues
+  repository: https://github.com/tiwaojo/features
+  ociReference: ghcr.io/tiwaojo/features
+- name: Julia Language Features
+  maintainer: Julia Language Community
+  contact: https://github.com/JuliaLang/devcontainer-features/issues
+  repository: https://github.com/JuliaLang/devcontainer-features
+  ociReference: ghcr.io/julialang/devcontainer-features
+- name: Julia Language Templates
+  maintainer: Julia Language Community
+  contact: https://github.com/JuliaLang/devcontainer-templates/issues
+  repository: https://github.com/JuliaLang/devcontainer-templates
+  ociReference: ghcr.io/julialang/devcontainer-templates
+- name: Features by John Rowley
+  maintainer: John Rowley
+  contact: https://github.com/robbert229/devcontainer-features/issues
+  repository: https://github.com/robbert229/devcontainer-features
+  ociReference: ghcr.io/robbert229/devcontainer-features
+- name: AliuQ Templates
+  maintainer: AliuQ
+  contact: https://github.com/aliuq/devcontainers/issues
+  repository: https://github.com/aliuq/devcontainers
+  ociReference: ghcr.io/aliuq/devcontainers
+- name: Nordcom Group Inc.'s Dev Container Features
+  maintainer: Filiph Siitam Sandström
+  contact: https://github.com/NordcomInc/devcontainer-features/issues
+  repository: https://github.com/NordcomInc/devcontainer-features
+  ociReference: ghcr.io/nordcominc/devcontainer-features
+- name: Features by Maxim Slipenko
+  maintainer: Maxim Slipenko
+  contact: https://github.com/Maks1mS/devcontainers-features/issues
+  repository: https://github.com/Maks1mS/devcontainers-features
+  ociReference: ghcr.io/maks1ms/devcontainers-features
+- name: Container Structure Tests
+  maintainer: Ty Schlichenmeyer
+  contact: https://github.com/schlich/cst-devcontainer-feature/issues
+  repository: https://github.com/schlich/cst-devcontainer-feature
+  ociReference: ghcr.io/schlich/cst-devcontainer-feature
+- name: Rye
+  maintainer: Ty Schlichenmeyer
+  contact: https://github.com/schlich/devcontainer-features/issues
+  repository: https://github.com/schlich/devcontainer-features
+  ociReference: ghcr.io/schlich/devcontainer-features
+- name: Features by raucha
+  maintainer: raucha
+  contact: https://github.com/raucha/devcontainer-features/issues
+  repository: https://github.com/raucha/devcontainer-features
+  ociReference: ghcr.io/raucha/devcontainer-features
+- name: LINO PIMO SIGO Toolbox
+  maintainer: CGI France
+  contact: https://github.com/CGI-FR/lino-devcontainer/issues
+  repository: https://github.com/CGI-FR/lino-devcontainer/
+  ociReference: ghcr.io/cgi-fr/lino-devcontainer
+- name: Alpine DevContainer Features
+  maintainer: cirolosapio
+  contact: https://github.com/cirolosapio/devcontainers-features/issues
+  repository: https://github.com/cirolosapio/devcontainers-features
+  ociReference: ghcr.io/cirolosapio/devcontainers-features
+- name: Features by AudaciousTux
+  maintainer: audacioustux
+  contact: https://github.com/audacioustux/devcontainers/issues
+  repository: https://github.com/audacioustux/devcontainers
+  ociReference: ghcr.io/audacioustux/devcontainers
+- name: PlantUml DevContainer
+  maintainer: lnyousif
+  contact: https://github.com/lnyousif/plantuml-devcontainer/issues
+  repository: https://github.com/lnyousif/plantuml-devcontainer
+  ociReference: ghcr.io/lnyousif/plantuml-devcontainer
+- name: Features by xfrancois
+  maintainer: xfrancois
+  contact: https://github.com/xfrancois/devcontainers-features/issues
+  repository: https://github.com/xfrancois/devcontainers-features
+  ociReference: ghcr.io/xfrancois/devcontainers-features
+- name: Features by nucleuscloud
+  maintainer: nucleuscloud
+  contact: https://github.com/nucleuscloud/devcontainer-features/issues
+  repository: https://github.com/nucleuscloud/devcontainer-features
+  ociReference: ghcr.io/nucleuscloud/devcontainer-features
+- name: Awesome Features
+  maintainer: joshspicer
+  contact: https://github.com/joshspicer/more-features/issues
+  repository: https://github.com/joshspicer/more-features
+  ociReference: ghcr.io/joshspicer/more-features
+- name: Features by MarlonPassos-git
+  maintainer: MarlonPassos-git
+  contact: https://github.com/MarlonPassos-git/dev-container-features/issues
+  repository: https://github.com/MarlonPassos-git/dev-container-features
+  ociReference: ghcr.io/marlonpassos-git/dev-container-features
+- name: DevContainer Features by Paul Gilber
+  maintainer: Paul Gilber
+  contact: https://github.com/paul-gilber/devcontainer-features/issues
+  repository: https://github.com/paul-gilber/devcontainer-features
+  ociReference: ghcr.io/paul-gilber/devcontainer-features
+- name: Bats Features by Luigi Operoso
+  maintainer: brokenpip3
+  contact: https://github.com/brokenpip3/devcontainers-bats/issues
+  repository: https://github.com/brokenpip3/devcontainers-bats
+  ociReference: ghcr.io/brokenpip3/devcontainers-bats
+- name: Logic App Standard Template
+  maintainer: mcollier
+  contact: https://github.com/mcollier/logic-app-dev-container-template/issues
+  repository: https://github.com/mcollier/logic-app-dev-container-template
+  ociReference: ghcr.io/mcollier/logic-app-dev-container-template
+- name: Additional Dev Container Features by prulloac
+  maintainer: Pablo Ulloa
+  contact: https://github.com/prulloac/devcontainer-features/issues
+  repository: https://github.com/prulloac/devcontainer-features
+  ociReference: ghcr.io/prulloac/devcontainer-features
+- name: Additional Dev Container Templates by prulloac
+  maintainer: Pablo Ulloa
+  contact: https://github.com/prulloac/devcontainer-templates/issues
+  repository: https://github.com/prulloac/devcontainer-templates
+  ociReference: ghcr.io/prulloac/devcontainer-templates
+- name: Additional Dev Container Features by LumenPink
+  maintainer: lumenpink
+  contact: https://github.com/lumenpink/devcontainer-features/issues
+  repository: https://github.com/lumenpink/devcontainer-features
+  ociReference: ghcr.io/lumenpink/devcontainer-features
+- name: Templates by Mohd Shukri Hasan
+  maintainer: Mohd Shukri Hasan
+  contact: https://github.com/hsm207/devcontainer-templates/issues
+  repository: https://github.com/hsm207/devcontainer-templates
+  ociReference: ghcr.io/hsm207/devcontainer-templates
+- name: Dev Container Features by CASL0
+  maintainer: CASL0
+  contact: https://github.com/CASL0/devcontainer-features/issues
+  repository: https://github.com/CASL0/devcontainer-features
+  ociReference: ghcr.io/casl0/devcontainer-features
+- name: Development Container Features by goldsam
+  maintainer: goldsam
+  contact: https://github.com/goldsam/dev-container-features/issues
+  repository: https://github.com/goldsam/dev-container-features
+  ociReference: ghcr.io/goldsam/dev-container-features
+- name: Azure Functions Dev Container Templates
+  maintainer: Tatsuro Shibamura
+  contact: https://github.com/shibayan/devcontainers/issues
+  repository: https://github.com/shibayan/devcontainers
+  ociReference: ghcr.io/shibayan/devcontainers
+- name: Dev Container Templates by RSM HCD Engineering
+  maintainer: RSM HCD Engineering
+  contact: https://github.com/rsm-hcd
+  repository: https://github.com/rsm-hcd/devcontainer-templates
+  ociReference: ghcr.io/rsm-hcd/devcontainer-templates
+- name: Additional Dev Container Features by Georg Ofenbeck
+  maintainer: Georg Ofenbeck
+  contact: https://github.com/GeorgOfenbeck/features/issues
+  repository: https://github.com/GeorgOfenbeck/features
+  ociReference: ghcr.io/georgofenbeck/features
+- name: Dev Container Features by Niko Böckerman
+  maintainer: Niko Böckerman
+  contact: https://github.com/nikobockerman
+  repository: https://github.com/nikobockerman/devcontainer-features
+  ociReference: ghcr.io/nikobockerman/devcontainer-features
+- name: Bun.sh Runtime Dev Container Templates
+  maintainer: Marcos Gomes Neto
+  contact: https://github.com/marcosgomesneto/bun-devcontainers/issues
+  repository: https://github.com/marcosgomesneto/bun-devcontainers
+  ociReference: ghcr.io/marcosgomesneto/bun-devcontainers
+- name: Weik.io Dev Container Templates
+  maintainer: Mikael Koskinen
+  contact: https://github.com/weikio/devcontainer-templates/issues
+  repository: https://github.com/weikio/devcontainer-templates
+  ociReference: ghcr.io/weikio/devcontainer-templates
+- name: Dev Container Features by Hans Spaans
+  maintainer: Hans Spaans
+  contact: https://github.com/hspaans/devcontainer-features/issues
+  repository: https://github.com/hspaans/devcontainer-features
+  ociReference: ghcr.io/hspaans/devcontainer-features
+- name: Dev Container Templates by johnluicn
+  maintainer: johnluicn
+  contact: https://github.com/johnluicn/devcontainer-templates/issues
+  repository: https://github.com/johnluicn/devcontainer-templates
+  ociReference: ghcr.io/johnluicn/devcontainer-templates
+- name: Bob buildsystem and DevBox features
+  maintainer: Dirk Louwers
+  contact: https://github.com/dlouwers/devcontainer-features/issues
+  repository: https://github.com/dlouwers/devcontainer-features
+  ociReference: ghcr.io/dlouwers/devcontainer-features
+- name: Dev Container Features by kreemer
+  maintainer: kreemer
+  contact: https://github.com/kreemer/features/issues
+  repository: https://github.com/kreemer/features
+  ociReference: ghcr.io/kreemer/features
+- name: Dev Container Features by Vero
+  maintainer: Vero
+  contact: https://github.com/veronoicc/devcontainer-features/issues
+  repository: https://github.com/veronoicc/devcontainer-features
+  ociReference: ghcr.io/veronoicc/devcontainer-features
+- name: Dev Container Templates by joshuanianji
+  maintainer: joshuanianji
+  contact: https://github.com/joshuanianji/devcontainer-templates/issues
+  repository: https://github.com/joshuanianji/devcontainer-templates
+  ociReference: ghcr.io/joshuanianji/devcontainer-templates
+- name: OpenCodeCo Dev Containers goodies
+  maintainer: leocavalcante
+  contact: https://github.com/orgs/opencodeco/discussions
+  repository: https://github.com/opencodeco/devcontainers
+  ociReference: ghcr.io/opencodeco/devcontainers
+- name: Dev Container Features by Valentin
+  maintainer: Valentin Heiligers
+  contact: https://github.com/va-h/devcontainers-features/issues
+  repository: https://github.com/va-h/devcontainers-features
+  ociReference: ghcr.io/va-h/devcontainers-features
+- name: Alloy Dev Container Template
+  maintainer: heathprovost
+  contact: https://github.com/heathprovost/alloy-devcontainer-template/issues
+  repository: https://github.com/heathprovost/alloy-devcontainer-template
+  ociReference: ghcr.io/heathprovost/alloy-devcontainer-template
+- name: Arch Linux Dev Container Features
+  maintainer: Bart Venter
+  contact: https://github.com/bartventer/arch-devcontainer-features/issues
+  repository: https://github.com/bartventer/arch-devcontainer-features
+  ociReference: ghcr.io/bartventer/arch-devcontainer-features
+- name: BPMN and DMN linters
+  maintainer: Waqqas Jabbar
+  contact: https://github.com/waqqas/feature/issues
+  repository: https://github.com/waqqas/feature/
+  ociReference: ghcr.io/waqqas/feature
+- name: Veryl
+  maintainer: dalance
+  contact: https://github.com/veryl-lang/devcontainer-features/issues
+  repository: https://github.com/veryl-lang/devcontainer-features/
+  ociReference: ghcr.io/veryl-lang/devcontainer-features
+- name: Dev Container Features by dusansimic
+  maintainer: dusansimic
+  contact: https://github.com/dusansimic/devcontainer-features/issues
+  repository: https://github.com/dusansimic/devcontainer-features/
+  ociReference: ghcr.io/dusansimic/devcontainer-features
+- name: Dev Container Features (Cadu Ribeiro)
+  maintainer: Cadu Ribeiro
+  contact: https://github.com/duduribeiro/devcontainer-features/issues
+  repository: https://github.com/duduribeiro/devcontainer-features/
+  ociReference: ghcr.io/duduribeiro/devcontainer-features
+- name: Dev Container Features by skriptfabrik
+  maintainer: skriptfabrik
+  contact: https://github.com/skriptfabrik/devcontainer-features/issues
+  repository: https://github.com/skriptfabrik/devcontainer-features/
+  ociReference: ghcr.io/skriptfabrik/devcontainer-features
+- name: Dev Container Features by m4tchl0ck
+  maintainer: Adrian Rusznica
+  contact: https://github.com/m4tchl0ck/devcontainer-features/issues
+  repository: https://github.com/m4tchl0ck/devcontainer-features/
+  ociReference: ghcr.io/m4tchl0ck/devcontainer-features
+- name: Dev Container Features by nils-geistmann
+  maintainer: Nils Geistmann
+  contact: https://github.com/nils-geistmann/devcontainers-features/issues
+  repository: https://github.com/nils-geistmann/devcontainers-features/
+  ociReference: ghcr.io/nils-geistmann/devcontainers-features
+- name: OpenFGA CLI
+  maintainer: Andrew Porter
+  contact: https://github.com/partydrone/devcontainer/issues
+  repository: https://github.com/partydrone/devcontainer
+  ociReference: ghcr.io/partydrone/devcontainer/features
+- name: Dev Container Features by rafaph
+  maintainer: Raphael Castro
+  contact: https://github.com/rafaph/devcontainer-features/issues
+  repository: https://github.com/rafaph/devcontainer-features
+  ociReference: ghcr.io/rafaph/devcontainer-features
+- name: SPFx Dev Container
+  maintainer: Troy
+  contact: https://github.com/tpalacino/SPFx-dev-container/issues
+  repository: https://github.com/tpalacino/SPFx-dev-container
+  ociReference: ghcr.io/tpalacino/spfx-dev-container
+- name: GMkonan devcontainer features
+  maintainer: GMkonan
+  contact: https://github.com/GMkonan/fly-cli-feature/issues
+  repository: https://github.com/GMkonan/fly-cli-feature
+  ociReference: ghcr.io/gmkonan/fly-cli-feature
+- name: Dev Container Features by E-gineering
+  maintainer: E-gineering
+  contact: https://github.com/e-gineering/devcontainer-features/issues
+  repository: https://github.com/e-gineering/devcontainer-features
+  ociReference: ghcr.io/e-gineering/devcontainer-features
+- name: Dev Container Templates by E-gineering
+  maintainer: E-gineering
+  contact: https://github.com/e-gineering/devcontainer-templates/issues
+  repository: https://github.com/e-gineering/devcontainer-templates
+  ociReference: ghcr.io/e-gineering/devcontainer-templates
+- name: ROS2 devcontainer Template
+  maintainer: Tony Najjar
+  contact: https://github.com/tonynajjar/ros2_devcontainer_template/issues
+  repository: https://github.com/tonynajjar/ros2_devcontainer_template/
+  ociReference: ghcr.io/tonynajjar/ros2_devcontainer_template
+- name: Clojure devcontainer templates
+  maintainer: Carsten Behring
+  contact: https://github.com/scicloj/devcontainer-templates/issues
+  repository: https://github.com/scicloj/devcontainer-templates/
+  ociReference: ghcr.io/scicloj/devcontainer-templates
+- name: Synology devcontainer Templates
+  maintainer: ChaosWars
+  contact: https://github.com/ChaosWars/synology-features/issues
+  repository: https://github.com/ChaosWars/synology-features/
+  ociReference: ghcr.io/chaoswars/synology-features
+- name: Assorted Features
+  maintainer: tcaky
+  contact: https://github.com/tcaky/devcontainer-features/issues
+  repository: https://github.com/tcaky/devcontainer-features
+  ociReference: ghcr.io/tcaky/devcontainer-features
+- name: Dev & Container features
+  maintainer: LarsNieuwenhuizen
+  contact: https://github.com/LarsNieuwenhuizen/features/issues
+  repository: https://github.com/LarsNieuwenhuizen/features
+  ociReference: ghcr.io/larsnieuwenhuizen/features
+- name: Dev Container Features by enrico9034
+  maintainer: enrico9034
+  contact: https://github.com/enrico9034/devcontainer-features/issues
+  repository: https://github.com/enrico9034/devcontainer-features
+  ociReference: ghcr.io/enrico9034/devcontainer-features
+- name: Dev Container Templates by ThePhaseless
+  maintainer: ThePhaseless
+  contact: https://github.com/ThePhaseless/devcontainer-templates/issues
+  repository: https://github.com/ThePhaseless/devcontainer-templates
+  ociReference: ghcr.io/thephaseless/devcontainer-templates
+- name: Devcontainer Features by nikiforovall
+  maintainer: nikiforovall
+  contact: https://github.com/nikiforovall/devcontainer-features/issues
+  repository: https://github.com/nikiforovall/devcontainer-features
+  ociReference: ghcr.io/nikiforovall/devcontainer-features
+- name: Dev Container Templates by matheusfvesco
+  maintainer: matheusfvesco
+  contact: https://github.com/matheusfvesco/devcontainer-templates/issues
+  repository: https://github.com/matheusfvesco/devcontainer-templates
+  ociReference: ghcr.io/matheusfvesco/devcontainer-templates
+- name: Dennis Irsigler Dev Container Features
+  maintainer: dirsigler
+  contact: https://github.com/dirsigler/devcontainer-features/issues
+  repository: https://github.com/dirsigler/devcontainer-features
+  ociReference: ghcr.io/dirsigler/devcontainer-features
+- name: Dev Container Templates by sleter
+  maintainer: sleter
+  contact: https://github.com/sleter/mojo-devcontainer/issues
+  repository: https://github.com/sleter/mojo-devcontainer
+  ociReference: ghcr.io/sleter/mojo-devcontainer
+- name: Devcontainer features by sidecus
+  maintainer: sidecus
+  contact: https://github.com/sidecus/devcontainer-features/issues
+  repository: https://github.com/sidecus/devcontainer-features
+  ociReference: ghcr.io/sidecus/devcontainer-features
+- name: MATLAB Feature for DevContainers
+  maintainer: The MathWorks Inc.
+  contact: https://github.com/mathworks/devcontainer-features/issues
+  repository: https://github.com/mathworks/devcontainer-features
+  ociReference: ghcr.io/mathworks/devcontainer-features
+- name: Julian Pawlowski Dev Container Features
+  maintainer: Julian Pawlowski
+  contact: https://github.com/jpawlowski/devcontainer-features/issues
+  repository: https://github.com/jpawlowski/devcontainer-features
+  ociReference: ghcr.io/jpawlowski/devcontainer-features
+- name: pre-commit hooks(via pip) & sonarlint
+  maintainer: gvatsal60 (Vatsal Gupta)
+  contact: https://github.com/gvatsal60/dev-container-features/issues
+  repository: https://github.com/gvatsal60/dev-container-features
+  ociReference: ghcr.io/gvatsal60/dev-container-features
+- name: Devcontainer features by git-saj
+  maintainer: git-saj
+  contact: https://github.com/git-saj/devcontainer-features/issues
+  repository: https://github.com/git-saj/devcontainer-features
+  ociReference: ghcr.io/git-saj/devcontainer-features
+- name: Devcontainer features by Codefabrik
+  maintainer: Codefabrik GmbH
+  contact: https://github.com/code-fabrik/features/issues
+  repository: https://github.com/code-fabrik/features
+  ociReference: ghcr.io/code-fabrik/features
+- name: Devcontainer features by Juan Ayala
+  maintainer: Juan Ayala
+  contact: https://github.com/juan-ayala/devcontainer-features/issues
+  repository: https://github.com/juan-ayala/devcontainer-features
+  ociReference: ghcr.io/juan-ayala/devcontainer-features
+- name: Devcontainer templates by Juan Ayala
+  maintainer: Juan Ayala
+  contact: https://github.com/juan-ayala/devcontainer-templates/issues
+  repository: https://github.com/juan-ayala/devcontainer-templates
+  ociReference: ghcr.io/juan-ayala/devcontainer-templates
+- name: LocalStack DevContainer Feature
+  maintainer: LocalStack GmbH
+  contact: https://github.com/localstack/devcontainer-feature/issues
+  repository: https://github.com/localstack/devcontainer-feature
+  ociReference: ghcr.io/localstack/devcontainer-feature
+- name: LocalStack DevContainer Template
+  maintainer: LocalStack GmbH
+  contact: https://github.com/localstack/devcontainer-template/issues
+  repository: https://github.com/localstack/devcontainer-template
+  ociReference: ghcr.io/localstack/devcontainer-template
+- name: Dev Container features by Adaptavist
+  maintainer: Mark Gibson
+  contact: https://github.com/adaptavist/devcontainer-features/issues
+  repository: https://github.com/adaptavist/devcontainer-features
+  ociReference: ghcr.io/adaptavist/devcontainer-features
+- name: Dev Container features by phil-bell
+  maintainer: Phil Bell
+  contact: https://github.com/phil-bell/devcontainer-features/issues
+  repository: https://github.com/phil-bell/devcontainer-features
+  ociReference: ghcr.io/phil-bell/devcontainer-features
+- name: Dev Container Templates by Alex Wegener
+  maintainer: Alex Wegener
+  contact: https://github.com/lx-0/devcontainer-templates/issues
+  repository: https://github.com/lx-0/devcontainer-templates
+  ociReference: ghcr.io/lx-0/devcontainer-templates
+- name: Hauke's Features for Development Containers
+  maintainer: Hauke D
+  contact: https://github.com/haukex/devcontainer-features/issues
+  repository: https://github.com/haukex/devcontainer-features
+  ociReference: ghcr.io/haukex/devcontainer-features
+- name: Devcontainer features by vmvarela
+  maintainer: Victor M. Varela
+  contact: https://github.com/vmvarela/devcontainer-features/issues
+  repository: https://github.com/vmvarela/devcontainer-features
+- name: Crystal features
+  maintainer: Caesarovich
+  contact: https://github.com/Caesarovich/devcontainer-feature-crystal/issues
+  repository: https://github.com/Caesarovich/devcontainer-feature-crystal
+  ociReference: ghcr.io/caesarovich/devcontainer-feature-crystal
+- name: Dev Container Features by devcontainers-extra
+  maintainer: devcontainers-extra
+  contact: https://github.com/devcontainers-extra/features/issues
+  repository: https://github.com/devcontainers-extra/features
+  ociReference: ghcr.io/devcontainers-extra/features
+- name: devcontainer features by Bas Steins
+  maintainer: Bas Steins
+  contact: https://bas.codes
+  repository: https://github.com/bascodes/devcontainer-features
+  ociReference: ghcr.io/bascodes/devcontainer-features
+- name: devcontainer features by rhiroe
+  maintainer: rhiroe
+  contact: https://github.com/rhiroe/features/issues
+  repository: https://github.com/rhiroe/features
+  ociReference: ghcr.io/rhiroe/features
+- name: devcontainer features by martinaskestad
+  maintainer: martinaskestad
+  contact: https://github.com/martinaskestad/features/issues
+  repository: https://github.com/martinaskestad/features
+  ociReference: ghcr.io/martinaskestad/features
+- name: devcontainer features for wolfi base docker image
+  maintainer: David Zucker
+  contact: https://github.com/davzucky/devcontainers-features-wolfi/issues
+  repository: https://github.com/davzucky/devcontainers-features-wolfi
+  ociReference: ghcr.io/davzucky/devcontainers-features-wolfi
+- name: Dev Container Features by ForWarD Software
+  maintainer: ForWarD Software
+  contact: https://github.com/forwardsoftware/devcontainer-features/issues
+  repository: https://github.com/forwardsoftware/devcontainer-features
+  ociReference: ghcr.io/forwardsoftware/devcontainer-features
+- name: devcontainer feature to install apt dependencies defined in an `Aptfile.dev` file.
+  maintainer: Viktor Schmidt
+  contact: https://github.com/viktorianer/devcontainer-features/issues
+  repository: https://github.com/viktorianer/devcontainer-features/tree/main/src/apt
+  ociReference: ghcr.io/viktorianer/devcontainer-features/apt
+- name: devcontainer features by ChaosWars
+  maintainer: ChaosWars
+  contact: https://github.com/ChaosWars/vscode-features/issues
+  repository: https://github.com/ChaosWars/vscode-features
+  ociReference: ghcr.io/chaoswars/vscode-features
+- name: Community features by devcontainer.community
+  maintainer: devcontainer.community
+  contact: https://devcontainer.community
+  repository: https://github.com/devcontainer-community/devcontainer-features
+  ociReference: ghcr.io/devcontainer-community/devcontainer-features
+- name: Additional Dev Container Features by braun-daniel
+  maintainer: Daniel Braun
+  contact: https://github.com/braun-daniel/devcontainer-features/issues
+  repository: https://github.com/braun-daniel/devcontainer-features
+  ociReference: ghcr.io/braun-daniel/devcontainer-features
+- name: Dev Container Features by Ivan Szkiba
+  maintainer: Ivan Szkiba
+  contact: https://github.com/szkiba/devcontainer-features/issues
+  repository: https://github.com/szkiba/devcontainer-features
+  ociReference: ghcr.io/szkiba/devcontainer-features
+- name: devcontainer features by TheDiveO
+  maintainer: TheDiveO
+  contact: https://github.com/thediveo/devcontainer-features/issues
+  repository: https://github.com/thediveo/devcontainer-features
+  ociReference: ghcr.io/thediveo/devcontainer-features
+- name: devcontainer features by .NET Aspire
+  maintainer: danmoseley
+  contact: https://github.com/dotnet/aspire-devcontainer-feature/issues
+  repository: https://github.com/dotnet/aspire-devcontainer-feature
+  ociReference: ghcr.io/dotnet/aspire-devcontainer-feature
+- name: devcontainer features by RouL
+  maintainer: Markus Zhang
+  contact: https://github.com/RouL/devcontainer-features/issues
+  repository: https://github.com/RouL/devcontainer-features
+  ociReference: ghcr.io/roul/devcontainer-features
+- name: devcontainer templates by techiro
+  maintainer: techiro
+  contact: https://github.com/techiro/devcontainer-template/issues
+  repository: https://github.com/techiro/devcontainer-template
+  ociReference: ghcr.io/techiro/devcontainer-template
+- name: Claude Code Feature
+  maintainer: Anthropic
+  contact: https://github.com/anthropics/devcontainer-features/issues
+  repository: https://github.com/anthropics/devcontainer-features
+  ociReference: ghcr.io/anthropics/devcontainer-features/claude-code
+- name: devcontainer templates by blooop
+  maintainer: Austin Gregg-Smith
+  contact: https://github.com/blooop/devcontainer-templates/issues
+  repository: https://github.com/blooop/devcontainer-templates
+  ociReference: ghcr.io/blooop/devcontainer-templates
+- name: devcontainer features by prplecake
+  maintainer: Matthew Jorgensen (prplecake)
+  contact: https://github.com/prplecake/devcontainer-features/issues
+  repository: https://github.com/prplecake/devcontainer-features
+  ociReference: ghcr.io/prplecake/devcontainer-features
+- name: Ziglang devcontainer Template
+  maintainer: fardragon
+  contact: https://github.com/fardragon/devcontainers-zig-template/issues
+  repository: https://github.com/fardragon/devcontainers-zig-template
+  ociReference: ghcr.io/fardragon/devcontainers-zig-template
+- name: TTCN-3-Devcontainer
+  maintainer: Muhammad Umair Khan
+  contact: https://github.com/m-umair-khan-dev/devcontainers/issues
+  repository: https://github.com/m-umair-khan-dev/devcontainers
+  ociReference: ghcr.io/m-umair-khan-dev/devcontainers/ttcn-3-devcontainer
+- name: Dev Container Features by Grafana Labs
+  maintainer: Grafana Labs
+  contact: https://github.com/grafana/devcontainer-features/issues
+  repository: https://github.com/grafana/devcontainer-features
+  ociReference: ghcr.io/grafana/devcontainer-features
+- name: Dev Container Features by httpdss
+  maintainer: httpdss
+  contact: https://github.com/httpdss/devcontainers-features/issues
+  repository: https://github.com/httpdss/devcontainers-features
+  ociReference: ghcr.io/httpdss/devcontainers-features
+- name: Axon Ivy devcontainer template
+  maintainer: axonivy
+  contact: https://github.com/axonivy/devcontainer-templates/issues
+  repository: https://github.com/axonivy/devcontainer-templates
+  ociReference: ghcr.io/axonivy/devcontainer-templates
+- name: Dev Container Features by Coder
+  maintainer: Coder
+  contact: https://github.com/coder/devcontainer-features/issues
+  repository: https://github.com/coder/devcontainer-features
+  ociReference: ghcr.io/coder/devcontainer-features
+- name: Dev Container Features by atty303
+  maintainer: atty303
+  contact: https://github.com/atty303/devcontainer-features/issues
+  repository: https://github.com/atty303/devcontainer-features
+  ociReference: ghcr.io/atty303/devcontainer-features
+- name: devcontainer features by MuhmdRaouf
+  maintainer: Mohammed Abdel Raouf (MuhmdRaouf)
+  contact: https://github.com/muhmdraouf/devcontainers-features/issues
+  repository: https://github.com/muhmdraouf/devcontainers-features
+  ociReference: ghcr.io/muhmdraouf/devcontainers-features
+- name: Dev Container Features by John Ajera
+  maintainer: John Ajera
+  contact: https://github.com/jajera/features/issues
+  repository: https://github.com/jajera/features
+  ociReference: ghcr.io/jajera/features
+- name: MrSimonEmms Dev Container Features
+  maintainer: MrSimonEmms
+  contact: https://github.com/mrsimonemms/devcontainers/issues
+  repository: https://github.com/mrsimonemms/devcontainers
+  ociReference: ghcr.io/mrsimonemms/devcontainers
+- name: HTTPie Feature
+  maintainer: Ferdinand Keller
+  contact: https://github.com/ferdinandkeller/features/issues
+  repository: https://github.com/ferdinandkeller/features
+  ociReference: ghcr.io/ferdinandkeller/features/httpie
+- name: Rojo Feature
+  maintainer: Ryan Luu
+  contact: https://github.com/RyanLua/features/issues
+  repository: https://github.com/RyanLua/features
+  ociReference: ghcr.io/ryanlua/features
+- name: Roblox Template
+  maintainer: Ryan Luu
+  contact: https://github.com/RyanLua/templates/issues
+  repository: https://github.com/RyanLua/templates
+  ociReference: ghcr.io/ryanlua/templates
