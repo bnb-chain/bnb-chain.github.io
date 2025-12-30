@@ -62,6 +62,7 @@ You can refer to the [sending data between L1 and L2](https://docs.optimism.io/b
     - [Metamask](https://metamask.io/)
     - [TrustWallet](https://trustwallet.com/)
     - [Particle Network](https://wallet.particle.network/)
+    - [Openfort] (https://openfort.io)
     - [Gem Wallet](https://gemwallet.com/)
     - [OKX Wallet](https://www.okx.com/nl/web3)
     - [MathWallet](https://mathwallet.org/en-us/)
