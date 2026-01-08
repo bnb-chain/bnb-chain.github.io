@@ -2117,8 +2117,7 @@
 <div class="highlight"><pre><span></span><code>{
   "mcpServers": {
     "bnbchain-askai-mcp": {
-      "url": "https://mcp.inkeep.com/bnbchainorg/mcp",
-      "id": "cm9qsf01p00bss6016ry68oil"
+      "url": "https://api.superintern.ai/agent/async/mcp/mcp"
     }
   }
 }
@@ -2176,7 +2175,7 @@ It is <em>read‑only</em> – no blockchain transactions are executed.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"query":"What is BEP‑20?"}'</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>https://mcp.inkeep.com/bnbchainorg/mcp
+<span class="w">  </span>https://api.superintern.ai/agent/async/mcp/mcp
 </code></pre></div>
 <p>You’ll receive a JSON response containing an <code>answer</code> field and <code>sources</code> array.</p>
 <hr>
