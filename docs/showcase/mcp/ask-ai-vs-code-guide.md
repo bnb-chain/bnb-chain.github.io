@@ -22,10 +22,11 @@ The extension adds MCP support to VS Code, letting you connect to external know
 2. Inside the JSON, locate (or create) the **`"mcpServers"`** section and paste the snippet below as a sibling property.
 
 ```jsonc
-"mcpServers": {
-  "bnbchain-askai-mcp": {
-    "url": "https://mcp.inkeep.com/bnbchainorg/mcp",
-    "id": "cm9qsf01p00bss6016ry68oil"
+{
+  "mcpServers": {
+    "bnbchain-askai-mcp": {
+      "url": "https://api.superintern.ai/agent/async/mcp/mcp"
+    }
   }
 }
 ```

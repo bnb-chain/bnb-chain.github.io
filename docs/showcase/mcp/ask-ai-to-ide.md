@@ -22,8 +22,7 @@ Follow these steps to wire any IDE that supports the **Model Context Protocol (M
 {
   "mcpServers": {
     "bnbchain-askai-mcp": {
-      "url": "https://mcp.inkeep.com/bnbchainorg/mcp",
-      "id": "cm9qsf01p00bss6016ry68oil"
+      "url": "https://api.superintern.ai/agent/async/mcp/mcp"
     }
   }
 }
@@ -71,7 +70,7 @@ For quick tests outside the IDE you can hit the endpoint directly:
 curl -s -X POST \
   -H "Content-Type: application/json" \
   -d '{"query":"What is BEP‑20?"}' \
-  https://mcp.inkeep.com/bnbchainorg/mcp
+  https://api.superintern.ai/agent/async/mcp/mcp
 ```
 
 You’ll receive a JSON response containing an `answer` field and `sources` array.
