@@ -51,7 +51,7 @@ The l2 rollup has a consensus client. The consensus client is responsible for de
 
 The l2 rollup has an execution client. The execution client is responsible for executing transactions and storing/updating the state of the blockchain. In this tutorial you'll be using the [op-geth](https://github.com/bnb-chain/op-geth) found within the [op-geth](https://github.com/bnb-chain/op-geth) repository.
 
-Each of the Sequencer, Bridge, and RPC nodes runs both an op-node and an op-geth process—the sequencer start op-node process with a miner flag and the others run with fullnode flag  . The key difference between an RPC node and a bridge node is that an RPC node exposes a public endpoint for external users to access, while a bridge node is not externally reachable. The bridge node functions like a cache for sequencer node : it forwards incoming transactions to the sequencer, helping prevent the sequencer’s transaction pool from being overloaded.
+Each of the Sequencer, Bridge, and RPC nodes runs both an op-node and an op-geth process—the sequencer start op-node process with a miner flag and the others run with fullnode flag. The key difference between an RPC node and a bridge node is that an RPC node exposes a public endpoint for external users to access, while a bridge node is not externally reachable. The bridge node functions like a cache for sequencer node : it forwards incoming transactions to the sequencer, helping prevent the sequencer’s transaction pool from being overloaded.
 
 ## Batcher
 
