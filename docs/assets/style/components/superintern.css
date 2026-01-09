@@ -1,0 +1,48 @@
+.ai-bot-wrapper {
+    position: fixed;
+    z-index: 10;
+    right: 24px;
+    bottom: 80px;
+    height: 40px;
+    border-radius: 40px;
+    background: linear-gradient(180deg, #FFE900 0%, #18DC7E 100%);
+    padding: 1px;
+    overflow: hidden;
+}
+
+.ai-bot-wrapper .ask-ai-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 72px;
+    padding: 0 7px 0 15px;
+    border: none;
+    border-radius: 38px;
+    background: #181A1E;
+    color: #FFE900;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.ai-bot-wrapper .ask-ai-button:hover {
+    background: transparent;
+    color: #181A1E;
+}
+
+.ai-bot-wrapper .ask-ai-button:focus {
+    outline: 2px solid #FFE900;
+    outline-offset: 2px;
+}
+
+.ai-bot-wrapper .ask-ai-button svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+    flex-shrink: 0;
+}
