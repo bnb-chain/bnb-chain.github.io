@@ -62,9 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Fermi Hardfork(BSC): ./announce/fermi-bsc.md
-      - Fourier Upgrade of opBNB: ./announce/fourier-opbnb.md
-
+      - NA: ./announce/na.md
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
       - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
@@ -85,6 +83,8 @@ nav:
       - Lorentz Hardfork(BSC): ./announce/lorentz-bsc.md
       - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
       - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
+      - Fermi Hardfork(BSC): ./announce/fermi-bsc.md
+      - Fourier Upgrade of opBNB: ./announce/fourier-opbnb.md
 
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
