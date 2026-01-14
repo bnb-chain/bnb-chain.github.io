@@ -18,5 +18,8 @@ There are five BEPs in Fermi:
 - [BEP-593: Incremental Snapshot](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-593.md)
 - [BEP-610: Implement EVM Super Instruction](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-610.md)
 
-## Upgrade BSC Testnet Nodes to v1.6.2 Before Hardfork
+## Upgrade BSC Testnet Nodes to v1.6.2+ Before Hardfork
 [v1.6.2](https://github.com/bnb-chain/bsc/releases/tag/v1.6.2) is a hard fork release for BSC Testnet, the HF name is: [Fermi](https://forum.bnbchain.org/t/bnb-chain-upgrades-testnet/934#p-1416-h-4-fermi-wip-5)
+
+## Upgrade BSC Mainnet Nodes to v1.6.4+ Before Hardfork
+[v1.6.4](https://github.com/bnb-chain/bsc/releases/tag/v1.6.4) is a hard fork release for BSC Testnet, the HF name is: [Fermi](https://forum.bnbchain.org/t/bnb-chain-roadmap-mainnet/936#p-1418-h-1-fermi-passed-8)
