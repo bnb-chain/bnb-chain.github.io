@@ -62,8 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - NA
-
+      - NA: ./announce/na.md
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
       - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
