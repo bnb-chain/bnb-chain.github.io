@@ -62,7 +62,8 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+      - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
+      - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
 
     - Passed:
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
@@ -79,6 +80,10 @@ nav:
       - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
       - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
       - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
+      - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+      - Pascal Hardfork(BSC): ./announce/pascal-bsc.md
+      - Lorentz Hardfork(BSC): ./announce/lorentz-bsc.md
+
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
     - Overview: ./bnb-smart-chain/overview.md
@@ -97,10 +102,10 @@ nav:
               - Full Node: ./bnb-smart-chain/developers/node_operators/full_node.md
               - Archive Node: ./bnb-smart-chain/developers/node_operators/archive_node.md
               - Fast Node: ./bnb-smart-chain/developers/node_operators/fast_node.md
-            - Insfrastructure & Setup:  
+            - Insfrastructure & Setup:
               - Boot Node: ./bnb-smart-chain/developers/node_operators/boot_node.md
               - Docker Image: ./bnb-smart-chain/developers/node_operators/docker.md
-            - Maintenance & Upgrades:  
+            - Maintenance & Upgrades:
               - Upgrade Geth: ./bnb-smart-chain/developers/node_operators/upgrade_geth.md
               - Node Maintenance: ./bnb-smart-chain/developers/node_operators/node_maintenance.md
         - EOA Paymaster:
@@ -108,7 +113,6 @@ nav:
             - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
             - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integration.md
             - Try Gasless Transaction: ./bnb-smart-chain/developers/paymaster/wallet-demo.md
-
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md
         - User Guide: ./bnb-smart-chain/staking/user-guide.md
@@ -131,10 +135,18 @@ nav:
             - Builder Guide: ./bnb-smart-chain/validator/mev/builder-integration.md
             - User Guide: ./bnb-smart-chain/validator/mev/user-guide.md
             - FAQs: ./bnb-smart-chain/validator/mev/faqs.md
+        - EVN:
+            - Overview: ./bnb-smart-chain/validator/evn/overview.md
+            - Best Practice: ./bnb-smart-chain/validator/evn/best-practice.md
+            - Network Monitor: ./bnb-smart-chain/validator/evn/network-monitor.md
+            - FAQs: ./bnb-smart-chain/validator/evn/faqs.md
     - Slashing:
         - Overview: ./bnb-smart-chain/slashing/overview.md
         - Slash Rules: ./bnb-smart-chain/slashing/slash-rules.md
         - Slash Monitor: ./bnb-smart-chain/slashing/monitor.md
+    - Cross Chain Bridge: ./bnb-smart-chain/cross-chain-bridge.md
+    - Benchmark: ./bnb-smart-chain/benchmark/design-reference.md
+    - FAQ:  ./bnb-smart-chain/faq/index.md
   - opBNB:
     - opBNB: ./bnb-opbnb/index.md
     - Overview: ./bnb-opbnb/overview.md
@@ -168,7 +180,8 @@ nav:
       - Node Best Practices: ./bnb-opbnb/advanced/node-best-practices.md
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
-      - Reth Node: ./bnb-opbnb/advanced/reth-node.md
+      - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
+
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
       - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
@@ -268,14 +281,10 @@ nav:
       - Roadmap:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
-  - zkBNB:
-      - zkBNB: ./zkbnb/index.md
-      - Overview: ./zkbnb/overview.md
-      - Core Concepts:
-          - Overview: ./zkbnb/core-concept/overview.md
-          - Architecture: ./zkbnb/core-concept/zkbnb-arch.md
-      - Resources: ./zkbnb/resources.md
   - Showcases:
+     - AI:
+        - Overview: ./showcase/mcp/index.md
+        - Integrating AskAI: ./showcase/mcp/ask-ai-to-ide.md
      - Name Service and Attestation:
        - Decentralized Identity: ./showcase/identity/did.md
        - Decentralized Name Service:
@@ -298,7 +307,7 @@ nav:
   - BNB Chain Fusion:
       - BNB Chain Fusion: ./bc-fusion/index.md
       - Overview: ./bc-fusion/overview.md
-      - Post Fustion:
+      - Post Fusion:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
@@ -646,54 +655,7 @@ plugins:
         'opbnb-docs/docs/tutorials/run-nodes-best-practices.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-development-environment.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-node.md': 'bnb-opbnb/overview.md'
-        'zkBNB-docs/docs/faqs/asset-management.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/contract.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/gas-and-fees.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/minting-and-royalities.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/onboarding.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/platform.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/tokenomics.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/faqs/zkbnb-faqs.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/deposit-to-zkbnb.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/developer-tools.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/hardware-reqs.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/network-faucet.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/resources.md': 'zkbnb/resources.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/software-reqs.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/build-on-zkbnb/zkbnb-api-example.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/contact-us.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/core-concepts/overview.md': "zkbnb/core-concept/overview.md"
-        'zkBNB-docs/docs/guide/core-concepts/protocol.md': "zkbnb/core-concept/overview.md"
-        'zkBNB-docs/docs/guide/core-concepts/zkbnb-arch.md': 'zkbnb/core-concept/zkbnb-arch.md'
-        'zkBNB-docs/docs/guide/economics/gas-and-fees.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/economics/tokenomics.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/fee-structure.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/getting-started.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/overview.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/tech-zkBNB.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/introduction/usage-zkBNB.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/storage/storage-layout.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/troubleshooting/common-errors.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/tutorials/fund-zkbnb-wallet.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/tutorials/nft-minting.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/create-collections.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/create-nfts.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/deposit-bnb.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-marketplace/overview.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-wallet/get-test-tokens.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-wallet/overview.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/guide/zkbnb-wallet/wallet-configuration.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/tutorials/index.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/tutorials/reactjs-integration-example/index.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-go-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-go-sdk/quickstart.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-js-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-js-sdk/quickstart.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-sdks.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-ts-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-ts-sdk/quickstart.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-web-sdk/changelog.md': 'zkbnb/overview.md'
-        'zkBNB-docs/docs/sdks/zkbnb-web-sdk/quickstart.md': 'zkbnb/overview.md'
+
 
 extra_css:
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap
@@ -705,17 +667,19 @@ extra_css:
   - assets/style/components/footer-nav.css
   - assets/style/components/footer.css
   - https://unpkg.com/katex@0.16.10/dist/katex.min.css
+  - assets/style/components/ai-bot-button.css
 
 extra_javascript:
   - assets/js/mathjax.js
   - assets/js/custom.js
-  - https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js
-  - https://unpkg.com/katex@0.16.10/dist/katex.min.js
-  - https://unpkg.com/katex@0.16.10/dist/contrib/auto-render.min.js
+  - assets/js/inkeep-custom-button.js
+  - assets/js/footer-menu.js
 
 extra:
   generator: false
   homepage: https://www.bnbchain.org
+  analytics:
+    provider: custom
   consent:
     title: Cookie consent
     description: >-

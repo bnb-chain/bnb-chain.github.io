@@ -62,7 +62,7 @@ Configure multiple L1 RPC endpoints for op-node setups on L2 solutions like opBN
 For example:
 ```bash
   export L1_RPC1=https://bsc-dataseed.bnbchain.org
-  export L1_RPC2=https://bsc.nodereal.io
+  export L1_RPC2=https://bsc-dataseed2.bnbchain.org
   --l1=rpc1,rpc2…
 ```
 Optimize L1 receipt retrieval performance
