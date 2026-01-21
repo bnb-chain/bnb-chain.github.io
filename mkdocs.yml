@@ -115,6 +115,7 @@ nav:
             - Paymaster API Spec: ./bnb-smart-chain/developers/paymaster/paymaster-api.md
             - Wallet Integration: ./bnb-smart-chain/developers/paymaster/wallet-integration.md
             - Try Gasless Transaction: ./bnb-smart-chain/developers/paymaster/wallet-demo.md
+        - Multi-sig Wallet: ./bnb-smart-chain/developers/multisig-wallet.md
     - Staking:
         - Overview: ./bnb-smart-chain/staking/overview.md
         - User Guide: ./bnb-smart-chain/staking/user-guide.md
@@ -171,7 +172,6 @@ nav:
       - Developer Tools: ./bnb-opbnb/developers/developer-tools.md
       - Network Faucet: ./bnb-opbnb/developers/network-faucet.md
       - Wallet Gas Price Setting: ./bnb-opbnb/developers/set-gas-price.md
-      - Multi-sig Wallet: ./bnb-opbnb/developers/multisig-wallet.md
       - BEP20 CrossChain Introduction: ./bnb-opbnb/developers/bep20-crosschain.md
       - Geth P2P Sync Feature: ./bnb-opbnb/developers/geth-sync.md
       - Developers Cheat Sheet: ./bnb-opbnb/developers/cheat-sheet.md
