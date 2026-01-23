@@ -64,19 +64,19 @@ After the unbonding period, you can claim your stakes by clicking the `Claim` bu
 
 ## FAQs
 
-### Which wallet can be used to delegate to validators?
+### Q1: Which wallet can be used to delegate to validators?
 
 Currently, `MetaMask` and `TrustWallet` are supported, along with any wallets compatible
 with `WalletConnect`.
 
-### Can I delegate/undelegate/redelegate/claim stakes on explorers?
+### Q2: Can I delegate/undelegate/redelegate/claim stakes on explorers?
 
 If you want to do the aforementioned delegate/undelegate/redelegate/claim operations on BscScan or BscTrace, 
 you should call the staking hub contract in the following URLs:
 * [BscScan Stake Hub](https://bscscan.com/address/0x0000000000000000000000000000000000002002#writeContract)
 * [BscTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
 
-### What is staking credit (stBNB)?
+### Q3: What is staking credit (stBNB)?
 
 When you delegate BNB to a validator, you receive **staking credit tokens** as proof of your stake. Each validator issues its own unique credit token:
 
@@ -90,10 +90,9 @@ When you delegate BNB to a validator, you receive **staking credit tokens** as p
 - ✅ Represents your staked BNB + accumulated rewards
 - ✅ Auto-compounding: value increases as validators earn rewards
 - ✅ Rewards automatically distributed when you undelegate
-- ❌ Non-transferable between addresses
-- ❌ Each validator's credit is unique and non-fungible
+- ❌ Non-transferable between addresses and each validator's credit is unique
 
-### How to calculate my staking balance?
+### Q4: How to calculate my staking balance?
 
 Your staking credit value in BNB can be calculated using:
 
@@ -116,7 +115,7 @@ Your BNB Value = (stCreditAmount × totalPooledBNB) ÷ totalSupply()
 
 Your staking credit automatically appreciates as the validator earns block rewards!
 
-### How to query total pooled BNB programmatically?
+### Q5: How to query total pooled BNB programmatically?
 
 Use this JavaScript example to query a validator's total pooled BNB:
 
