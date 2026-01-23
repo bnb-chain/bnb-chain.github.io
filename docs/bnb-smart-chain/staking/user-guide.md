@@ -76,53 +76,62 @@ you should call the staking hub contract in the following URLs:
 * [BscScan Stake Hub](https://bscscan.com/address/0x0000000000000000000000000000000000002002#writeContract)
 * [BscTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
 
-### What is stBNB and how to calculate my staking balance in BNB?
+### What is staking credit (stBNB)?
 
-**What is stBNB?**
+When you delegate BNB to a validator, you receive **staking credit tokens** as proof of your stake. Each validator issues its own unique credit token:
 
-stBNB is a **staking credit token** that you receive as proof when you delegate BNB to a specific validator. Each validator issues its own staking credit with a unique name:
+**Token Naming:**
+- Name: `Stake{{validator moniker}}Credit`
+- Symbol: `st{{validator moniker}}`
+- Example: Staking with "BNB48Club" → receive "stBNB48Club"
 
-- **Token name format**: `Stake{{validator moniker}}Credit`
-- **Token symbol format**: `st{{validator moniker}}`
+**Key Properties:**
 
-For example, if the validator's moniker is "BNB48Club", you would receive "stBNB48Club" tokens.
+- ✅ Represents your staked BNB + accumulated rewards
+- ✅ Auto-compounding: value increases as validators earn rewards
+- ✅ Rewards automatically distributed when you undelegate
+- ❌ Non-transferable between addresses
+- ❌ Each validator's credit is unique and non-fungible
 
-Staking credit represents your staked BNB combined with accumulated staking rewards. It is minted when you delegate and burned when you undelegate.
+### How to calculate my staking balance?
 
-**Important characteristics:**
-
-- Staking credit is **non-transferable**
-- Different validators issue different staking credits
-- The value of staking credit increases over time as validators earn block rewards
-- Rewards are distributed automatically when you undelegate (unlike the previous BC staking where rewards were distributed periodically)
-
-**Calculating Your Staking Balance:**
-
-To calculate the BNB value of your staking credit, use this formula:
+Your staking credit value in BNB can be calculated using:
 
 ```
 Your BNB Value = (stCreditAmount × totalPooledBNB) ÷ totalSupply()
 ```
 
-Where:
-
-- **stCreditAmount**: The amount of staking credit you hold
-- **totalPooledBNB**: Total BNB in the validator's contract (all user stakes + block rewards earned)
-- **totalSupply()**: Total supply of that validator's staking credit
+**Where:**
+- `stCreditAmount`: Your staking credit balance
+- `totalPooledBNB`: Total BNB in validator's pool (stakes + rewards)
+- `totalSupply()`: Total supply of the validator's staking credit
 
 **Example:**
 
-Day 1 - Initial delegation:
+| Time | totalPooledBNB | totalSupply | Your stCredit | Your Value | Profit |
+|------|----------------|-------------|---------------|------------|--------|
+| Day 1 | 10,000 BNB | 10,000 | 100 | 100 BNB | - |
+| Day 30 | 11,000 BNB | 10,000 | 100 | **110 BNB** | +10 BNB (10%) |
 
-- You stake 100 BNB and receive 100 stBNB
-- At this moment: totalPooledBNB = 10,000 BNB, totalSupply = 10,000 stBNB
-- Your position value: 100 BNB
+Your staking credit automatically appreciates as the validator earns block rewards!
 
-Day 30 - After earning rewards:
+### How to query total pooled BNB programmatically?
 
-- The validator has earned 1,000 BNB in block rewards
-- Now: totalPooledBNB = 11,000 BNB, totalSupply ≈ 10,000 stBNB
-- Your 100 stBNB value: (100 × 11,000) ÷ 10,000 = **110 BNB**
-- Your profit: **10 BNB** (10% return)
+Use this JavaScript example to query a validator's total pooled BNB:
 
-Your staking credit value grows automatically as the validator earns rewards, without requiring you to claim rewards manually. The rewards will be included when you undelegate your BNB.
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://bsc-dataseed.binance.org');
+const OPERATOR = '0x...'; // validator operator address
+
+const hub = new ethers.Contract('0x0000000000000000000000000000000000002002',
+  ['function getValidatorCreditContract(address) view returns (address)'], provider);
+
+const creditAddr = await hub.getValidatorCreditContract(OPERATOR);
+const credit = new ethers.Contract(creditAddr,
+  ['function getPooledBNB(address) view returns (uint256)'], provider);
+
+const bnb = await credit.getPooledBNB(OPERATOR);
+console.log('Pooled BNB:', ethers.formatEther(bnb));
+```
