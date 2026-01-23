@@ -102,6 +102,7 @@ Your BNB Value = (stCreditAmount × totalPooledBNB) ÷ totalSupply()
 ```
 
 **Where:**
+
 - `stCreditAmount`: Your staking credit balance
 - `totalPooledBNB`: Total BNB in validator's pool (stakes + rewards)
 - `totalSupply()`: Total supply of the validator's staking credit
