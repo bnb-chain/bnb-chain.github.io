@@ -75,3 +75,54 @@ If you want to do the aforementioned delegate/undelegate/redelegate/claim operat
 you should call the staking hub contract in the following URLs:
 * [BscScan Stake Hub](https://bscscan.com/address/0x0000000000000000000000000000000000002002#writeContract)
 * [BscTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
+
+### What is stBNB and how to calculate my staking balance in BNB?
+
+**What is stBNB?**
+
+stBNB is a **staking credit token** that you receive as proof when you delegate BNB to a specific validator. Each validator issues its own staking credit with a unique name:
+
+- **Token name format**: `Stake{{validator moniker}}Credit`
+- **Token symbol format**: `st{{validator moniker}}`
+
+For example, if the validator's moniker is "BNB48Club", you would receive "stBNB48Club" tokens.
+
+Staking credit represents your staked BNB combined with accumulated staking rewards. It is minted when you delegate and burned when you undelegate.
+
+**Important characteristics:**
+
+- Staking credit is **non-transferable**
+- Different validators issue different staking credits
+- The value of staking credit increases over time as validators earn block rewards
+- Rewards are distributed automatically when you undelegate (unlike the previous BC staking where rewards were distributed periodically)
+
+**Calculating Your Staking Balance:**
+
+To calculate the BNB value of your staking credit, use this formula:
+
+```
+Your BNB Value = (stCreditAmount × totalPooledBNB) ÷ totalSupply()
+```
+
+Where:
+
+- **stCreditAmount**: The amount of staking credit you hold
+- **totalPooledBNB**: Total BNB in the validator's contract (all user stakes + block rewards earned)
+- **totalSupply()**: Total supply of that validator's staking credit
+
+**Example:**
+
+Day 1 - Initial delegation:
+
+- You stake 100 BNB and receive 100 stBNB
+- At this moment: totalPooledBNB = 10,000 BNB, totalSupply = 10,000 stBNB
+- Your position value: 100 BNB
+
+Day 30 - After earning rewards:
+
+- The validator has earned 1,000 BNB in block rewards
+- Now: totalPooledBNB = 11,000 BNB, totalSupply ≈ 10,000 stBNB
+- Your 100 stBNB value: (100 × 11,000) ÷ 10,000 = **110 BNB**
+- Your profit: **10 BNB** (10% return)
+
+Your staking credit value grows automatically as the validator earns rewards, without requiring you to claim rewards manually. The rewards will be included when you undelegate your BNB.
