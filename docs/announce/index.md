@@ -1,4 +1,3 @@
-
 # Announcement
 
 <div class="doc-announce">
