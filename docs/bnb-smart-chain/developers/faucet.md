@@ -28,3 +28,5 @@ You can also claim tBNB from the following third-party faucets
 2. https://faucet.chainstack.com/bnb-testnet-faucet
 
 3. https://thirdweb.com/opbnb-testnet
+
+4. [ethfaucet.com](https://ethfaucet.com?utm_source=bnb_docs&utm_medium=docs)
