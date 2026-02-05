@@ -48,5 +48,7 @@ $ kill  $pid
 
 
 ```bash
-./geth --config ./config.toml --datadir ./node --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs.disable
+./geth --config ./config.toml --datadir ./node --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 57600
 ```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.

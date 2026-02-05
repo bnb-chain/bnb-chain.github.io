@@ -22,7 +22,7 @@ Only Geth will be covered in this page, as Erigon is mainly to support archive m
     If you want high performance and care little about state consistency, you can run a fast node, which is a full node with the flag `--tries-verify-mode none` set.
     Check [here](fast_node.md) for full details on running a fast node.
     ```
-    ./geth --config ./config.toml --datadir <datadir>  --cache 10000 --tries-verify-mode none --history.logs.disable
+    ./geth --config ./config.toml --datadir <datadir>  --cache 10000 --tries-verify-mode none --history.logs 57600
     ```
 ## 2.Run BSC Full Node: Geth
 
