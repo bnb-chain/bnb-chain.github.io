@@ -76,8 +76,9 @@ There are 2 approaches to setup a BSC full node from scratch:
 4. Start a full node
     ```
     ## pls replace <datadir> with your local path to datadir.
-    ./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs.disable
+    ./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 60000
     ```
+    > **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
 
 5. Monitor node status
 
@@ -93,8 +94,9 @@ There are 2 approaches to setup a BSC full node from scratch:
 ```bash
 ## start a full node from genesis with by one command
 ## pls replace <datadir> with your local path to datadir.
-./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs.disable
+./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 60000
 ```
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
 
 ### 2.3.Sync Mode
 
