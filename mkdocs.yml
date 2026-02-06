@@ -283,6 +283,8 @@ nav:
       - Roadmap:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
+  - MCP:
+    - Skills: ./mcp/SKILLS.md
   - Showcases:
      - AI:
         - Overview: ./showcase/mcp/index.md
