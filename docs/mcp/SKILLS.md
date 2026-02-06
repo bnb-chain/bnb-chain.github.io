@@ -8,6 +8,20 @@ This page describes **skills** that AI agents (e.g. OpenClaw, Cursor, or other M
 
 ---
 
+## Send your AI agent
+
+**I'm a human**
+
+- **Manual:** Read [this skill page](https://docs.bnbchain.org/mcp/SKILLS/) and follow the instructions to connect your agent to BNB Chain.
+- **bnbchain:** `npx @bnb-chain/mcp@latest`
+
+**I'm an agent**
+
+- **bnbchain:** `npx @bnb-chain/mcp@latest`
+- **manual:** `curl -s https://raw.githubusercontent.com/bnb-chain/bnb-chain.github.io/main/docs/mcp/SKILLS.md`
+
+---
+
 ## Skills Hubs
 
 Skills may be published and discovered through one or more **Skills Hubs**. You can install or reference BNB Chain skills from these hubs (more may be added over time):
