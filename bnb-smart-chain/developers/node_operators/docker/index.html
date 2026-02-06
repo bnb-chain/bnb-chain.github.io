@@ -3256,10 +3256,15 @@ Download latest chaindata snapshot from <a href="https://github.com/bnb-chain/bs
 </li>
 </ol>
 <p>You can also use <em>ETHEREUM OPTIONS</em> to overwrite settings in the configuration file:
-</p><div class="highlight"><pre><span></span><code>docker run -v $(pwd)/config:/bsc/config -v $(pwd)/data/node:/bsc/node -p 8575:8575 --rm --name bsc -it ghcr.io/bnb-chain/bsc:1.1.18_hr --http.addr 0.0.0.0 --http.port 8575 --http.vhosts '*' --verbosity 5
+</p><div class="highlight"><pre><span></span><code>docker run -v $(pwd)/config:/bsc/config -v $(pwd)/data/node:/bsc/node -p 8575:8575 --rm --name bsc -it ghcr.io/bnb-chain/bsc:1.1.18_hr --http.addr 0.0.0.0 --http.port 8575 --http.vhosts '*' --verbosity 5 --history.logs 576000
 </code></pre></div>
-* <em>-p 8575:8575</em>: This will map port 8575 from host to container, so it exposes 8575 on host node.
-* <em>–http –http.addr 0.0.0.0</em>: Extra Geth flags to enable RPC and listen on all network interfaces of the container.
+<blockquote>
+<p><strong>Note</strong>: Consider adding <code>--history.logs.disable</code> for better performance, but <code>eth_getLogs</code> will be slower.</p>
+</blockquote>
+<ul>
+<li><em>-p 8575:8575</em>: This will map port 8575 from host to container, so it exposes 8575 on host node.</li>
+<li><em>–http –http.addr 0.0.0.0</em>: Extra Geth flags to enable RPC and listen on all network interfaces of the container.</li>
+</ul>
 <p><strong>NOTE</strong>: port <strong>8575</strong> is the default port for the RPC service on TESTNET. If you are using mainnet the default port is <strong>8545</strong>.</p>
 <ol>
 <li>Start Geth console

@@ -2965,8 +2965,11 @@ $ kill  $pid
 <p class="admonition-title">Note</p>
 <p>Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our <a href="../full_node/">tutorial</a> </p>
 </div>
-<div class="highlight"><pre><span></span><code>./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>./node<span class="w"> </span>--cache<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span>
-</code></pre></div></div>
+<div class="highlight"><pre><span></span><code>./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>./node<span class="w"> </span>--cache<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span><span class="w"> </span>--history.logs<span class="w"> </span><span class="m">576000</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note</strong>: Consider adding <code>--history.logs.disable</code> for better performance, but <code>eth_getLogs</code> will be slower.</p>
+</blockquote></div>
 
 
 

@@ -3209,7 +3209,7 @@
 <p class="admonition-title">Tip</p>
 <p>If you want high performance and care little about state consistency, you can run a fast node, which is a full node with the flag <code>--tries-verify-mode none</code> set.
 Check <a href="../fast_node/">here</a> for full details on running a fast node.
-</p><div class="highlight"><pre><span></span><code>./geth --config ./config.toml --datadir &lt;datadir&gt;  --cache 10000 --tries-verify-mode none
+</p><div class="highlight"><pre><span></span><code>./geth --config ./config.toml --datadir &lt;datadir&gt;  --cache 10000 --tries-verify-mode none --history.logs 576000
 </code></pre></div>
 </div>
 <h2 id="2run-bsc-full-node-geth">2.Run BSC Full Node: Geth<a class="headerlink" href="#2run-bsc-full-node-geth" title="Link to this section">¶</a></h2>
@@ -3263,8 +3263,9 @@ unzip<span class="w"> </span>testnet.zip
 <li>
 <p>Start a full node
     </p><div class="highlight"><pre><span></span><code>## pls replace &lt;datadir&gt; with your local path to datadir.
-./geth --config ./config.toml --datadir &lt;datadir&gt; --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0
+./geth --config ./config.toml --datadir &lt;datadir&gt; --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 576000
 </code></pre></div>
+    &gt; <strong>Note</strong>: Consider adding <code>--history.logs.disable</code> for better performance, but <code>eth_getLogs</code> will be slower.
 </li>
 <li>
 <p>Monitor node status</p>
@@ -3278,8 +3279,11 @@ t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"            
 <h4 id="bfrom-genesis">b.From Genesis<a class="headerlink" href="#bfrom-genesis" title="Link to this section">¶</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1">## start a full node from genesis with by one command</span>
 <span class="c1">## pls replace &lt;datadir&gt; with your local path to datadir.</span>
-./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>&lt;datadir&gt;<span class="w"> </span>--cache<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span>
+./geth<span class="w"> </span>--config<span class="w"> </span>./config.toml<span class="w"> </span>--datadir<span class="w"> </span>&lt;datadir&gt;<span class="w"> </span>--cache<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--rpc.allow-unprotected-txs<span class="w"> </span>--history.transactions<span class="w"> </span><span class="m">0</span><span class="w"> </span>--history.logs<span class="w"> </span><span class="m">576000</span>
 </code></pre></div>
+<blockquote>
+<p><strong>Note</strong>: Consider adding <code>--history.logs.disable</code> for better performance, but <code>eth_getLogs</code> will be slower.</p>
+</blockquote>
 <h3 id="23sync-mode">2.3.Sync Mode<a class="headerlink" href="#23sync-mode" title="Link to this section">¶</a></h3>
 <p>There are two sync modes for running a full node: <strong>snap</strong> and <strong>full</strong> which can be specified by flag <strong>–syncmode</strong>.</p>
 <p>The <strong>snap</strong> sync mode is used for initial sync, which will download the latest states rather than execute the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.</p>
