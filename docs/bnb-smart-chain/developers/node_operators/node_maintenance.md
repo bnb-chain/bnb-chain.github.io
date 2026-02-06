@@ -29,7 +29,7 @@ Ancient data is block data that is already considered immutable. This is determi
 #### How to use the flag
 
 ```
-./geth --tries-verify-mode none --config /server/config.toml --datadir /server/node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --pruneancient=true --syncmode=full --history.logs 57600
+./geth --tries-verify-mode none --config /server/config.toml --datadir /server/node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --pruneancient=true --syncmode=full --history.logs 576000
 ```
 
 > **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
