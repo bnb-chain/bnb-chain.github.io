@@ -2,18 +2,11 @@
 # Announcement
 
 <div class="doc-announce">
-    <a href="./fourier-opbnb/">
+    <a href="./mendel-bsc/">
         <div>
-            <div class="announce-title">Fourier Upgrade of opBNB </div>
-            <div class="announce-desc">One BEP on opBNB Testnet/Mainnet</div>
+            <div class="announce-title">Mendel Upgrade of BSC </div>
+            <div class="announce-desc">Nine BEPs on BSC Testnet/Mainnet</div>
         </div>
-        <span class="announce-date">2025 Nov 4th</span>
-    </a>
-    <a href="./fermi-bsc/">
-        <div>
-            <div class="announce-title">Fermi Upgrade of BSC </div>
-            <div class="announce-desc">Five BEPs on BSC Testnet/Mainnet</div>
-        </div>
-        <span class="announce-date">2025 Nov 4th</span>
+        <span class="announce-date">2026 Feb 6th</span>
     </a>
 </div>
