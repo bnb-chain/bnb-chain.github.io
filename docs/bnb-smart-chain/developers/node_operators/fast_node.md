@@ -59,5 +59,7 @@ Fast node does not need trie data anymore. Delete the trie state by the followin
 
 ```bash
 ## start a fast node
-./geth --tries-verify-mode none --rpc.allow-unprotected-txs --cache 10000 --history.transactions 360000  --datadir <datadir> --http.corsdomain * --config ./config.toml
+./geth --tries-verify-mode none --rpc.allow-unprotected-txs --cache 10000 --history.transactions 360000  --datadir <datadir> --http.corsdomain * --config ./config.toml --history.logs 576000
 ```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
