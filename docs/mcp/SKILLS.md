@@ -4,7 +4,7 @@ title: Skills for AI Agents
 
 # Skills for AI Agents
 
-This page describes **skills** that AI agents (e.g. OpenClaw, Cursor, or other MCP-capable agents) can use to interact with BNB Chain. Skills are platform-agnostic: you can consume them from any compatible agent or Skills Hub.
+This page is the **official** BNB Chain skills instruction for AI agents (e.g. OpenClaw, Cursor, or other MCP-capable agents). Skills are platform-agnostic: you can consume them from any compatible agent or Skills Hub.
 
 ---
 
@@ -12,7 +12,7 @@ This page describes **skills** that AI agents (e.g. OpenClaw, Cursor, or other M
 
 **I'm a human**
 
-- **Manual:** Read [this skill page](https://docs.bnbchain.org/mcp/SKILLS/) and follow the instructions to connect your agent to BNB Chain.
+- **Manual:** Read [this skill page](https://docs.bnbchain.org/mcp/skills/) and follow the instructions to connect your agent to BNB Chain.
 - **bnbchain:** `npx @bnb-chain/mcp@latest`
 
 **I'm an agent**
@@ -22,21 +22,36 @@ This page describes **skills** that AI agents (e.g. OpenClaw, Cursor, or other M
 
 ---
 
-## Skills Hubs
+## Official BNB Chain skill
 
-Skills may be published and discovered through one or more **Skills Hubs**. You can install or reference BNB Chain skills from these hubs (more may be added over time):
+Our **official** way to run BNB Chain MCP is:
 
-| Hub | Description | BNB Chain skills |
-|-----|-------------|------------------|
-| [ClawHub – bnbchain-mcp](https://clawhub.ai/0xlucasliao/bnbchain-mcp) | Official BNB Chain MCP skill on ClawHub | BNB Chain MCP |
+| Type | Command / Link |
+|------|----------------|
+| **Install & run** | `npx @bnb-chain/mcp@latest` |
+| **Documentation** | [BNB Chain MCP (GitHub)](https://github.com/bnb-chain/bnbchain-mcp) |
+
+Use the above for the canonical, BNB Chain–maintained tool. Self-host via Docker is also supported; see the GitHub repo.
 
 ---
 
-## BNB Chain MCP Skill
+## Community contributions (Skills Hubs)
+
+The following are **community-contributed** ways to discover or install BNB Chain–related skills via third-party Skills Hubs. They are **not** official BNB Chain tools; we list them for convenience and will add more as more hubs and skills become available.
+
+| Hub | Description | BNB Chain skills |
+|-----|-------------|------------------|
+| [ClawHub – bnbchain-mcp](https://clawhub.ai/0xlucasliao/bnbchain-mcp) | BNB Chain MCP skill on ClawHub (OpenClaw) | BNB Chain MCP |
+
+*More community hubs and skills may be added here over time.*
+
+---
+
+## BNB Chain MCP Skill (official)
 
 This skill allows agents to interact with the **BNB Chain MCP server** to retrieve data about BNB Chain.
 
-**Source:** [**bnbchain-mcp**](https://github.com/bnb-chain/bnbchain-mcp) — run with `npx @bnb-chain/mcp@latest` or self-host via Docker. Full toolkit: blocks, txs, wallets, Greenfield ops & more; use it to build, test, or automate on-chain actions from your IDE or scripts.
+**Official source:** [**bnbchain-mcp**](https://github.com/bnb-chain/bnbchain-mcp) — run with `npx @bnb-chain/mcp@latest` or self-host via Docker. Full toolkit: blocks, txs, wallets, Greenfield ops & more; use it to build, test, or automate on-chain actions from your IDE or scripts.
 
 ### How to use
 
@@ -90,4 +105,4 @@ python3 skills/bnbchain-mcp/scripts/mcp-client.py search_documentation --args '{
 
 ## Using this page as a prompt
 
-You can use this page (or the skill description above) as a **prompt or reference** for OpenClaw agents or any agent that supports learning skills: it describes what the BNB Chain MCP skill does, which tools it exposes, and how to run them. Skills Hubs (such as ClawHub) may provide installable packages and platform-specific instructions; this document stays platform-agnostic so it remains valid across different agents and hubs.
+You can use this page (or the skill description above) as a **prompt or reference** for OpenClaw agents or any agent that supports learning skills: it describes what the BNB Chain MCP skill does, which tools it exposes, and how to run them. **Official** usage is `npx @bnb-chain/mcp@latest`; community Skills Hubs (e.g. ClawHub) may offer additional install paths—this document stays platform-agnostic so it remains valid across different agents and hubs.

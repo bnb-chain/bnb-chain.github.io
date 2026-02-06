@@ -56,6 +56,7 @@ Returns structured JSON for the requested block. Supply a `PRIVATE_KEY` to unloc
 
 ## 3 Quick links & next steps
 
+* **Official Skills (AI agents)** – [Skills for AI Agents](../mcp/SKILLS.md): official instructions and agent commands (`npx @bnb-chain/mcp@latest`). Use this page so your agent can connect to BNB Chain.
 * **GitHub – bnbchain‑mcp** – source, issues, self‑hosting guide: [https://github.com/bnb-chain/bnbchain-mcp](https://github.com/bnb-chain/bnbchain-mcp)
 * **Ask AI Tutorial** – connect your IDE to the read‑only doc search endpoint: `ai/askai-tutorial.md`
 * **AI Agent solution page** – see how MCP fits into BNB Chain’s broader AI strategy: [https://www.bnbchain.org/en/solutions/ai-agent](https://www.bnbchain.org/en/solutions/ai-agent)
