@@ -11,7 +11,9 @@ Be noted:
 
 URL:
 
-- **Mainnet**: [https://www.bnbchain.org/en/token-recovery](https://www.bnbchain.org/en/token-recovery)
+- **Testnet**: [https://testnet-bnb-beacon-chain-token-recovery.bnbchain.org/en](https://testnet-bnb-beacon-chain-token-recovery.bnbchain.org/en)
+
+- **Mainnet**: To be updated.
 
 ## Steps
 
