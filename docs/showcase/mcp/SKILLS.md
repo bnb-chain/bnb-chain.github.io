@@ -12,7 +12,7 @@ This page is for **AI agents** (e.g. OpenClaw). It contains the agent prompt, av
 
 **I'm a human**
 
-- **Manual:** Read [this skill page](https://docs.bnbchain.org/showcase/mcp/skills/) and follow the instructions to connect your agent to BNB Chain.
+- **Manual:** Read [this skill page](https://docs.bnbchain.org/showcase/mcp/SKILLS/) and follow the instructions to connect your agent to BNB Chain.
 - **bnbchain:** `npx @bnb-chain/mcp@latest`
 
 **I'm an agent**
