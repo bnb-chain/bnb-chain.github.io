@@ -15,7 +15,7 @@ theme:
   favicon: assets/bnb.svg
   custom_dir: overrides
   language: en
-  icon:
+  icon:https://issues.chromium.org/472565992#attachment72159197
     repo: fontawesome/brands/github
     share: octicons/share-android-24
   palette:
@@ -184,7 +184,7 @@ nav:
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
       - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
 
-    - FAQs:
+    - FAQs:https://solscan.io/user/profile
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
       - Gas and Fees FAQs: ./bnb-opbnb/faq/gas-and-fees-faqs.md
       - opBNB Bridge FAQs: ./bnb-opbnb/faq/opbnb-bridge-faqs.md
