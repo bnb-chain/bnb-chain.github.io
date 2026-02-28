@@ -13,9 +13,9 @@
 
 ## Validators and SPs should complete upgrading to the latest version before hardfork: 
 
-For Validators: greenfield [v1.9.0](https://github.com/bnb-chain/greenfield/releases/tag/v1.9.0?ref=bnbchain.ghost.io)
+For Validators: greenfield [v1.9.0](https://github.com/bnb-chain/greenfield/الإصدارات/tag/v1.9.0?ref=bnbchain.ghost.io)
 
-For SPs: greenfield-storage-provider [v1.9.0](https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.9.0?ref=bnbchain.ghost.io)
+For SPs: greenfield-storage-provider [v1.9.0](https://github.com/bnb-chain/greenfield-storage-provider/الإصدارات/tag/v1.9.0?ref=bnbchain.ghost.io)
 
 ## New features introduced:
 
