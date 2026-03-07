@@ -32,12 +32,12 @@ BSC here proposes to combine DPoS and PoA for consensus, so that:
 2. Validators take turns to produce blocks in a PoA manner, similar to [Ethereum's Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
 3. Validator set are elected in and out based on a staking based governance
 
-Fast finalization can greatly improve user experience. The `Fast Finality` feature will be enabled upon the coming Plato upgrade. This will be a major advantage of BSC, and many dapps will benefit from it.
+Fast finalization can greatly improve user experience. The `Fast Finality` feature was enabled with the Plato upgrade. This is a major advantage of BSC, and many dapps will benefit from it.
 
 The consensus protocol of BSC fulfills the following goals:
 
 1. Short Blocking time, 3 seconds on mainnet.
-2. It requires quite short time to confirm the finality of transactions, around 6s for mainnet after the coming Plato upgrade.
+2. It requires quite short time to confirm the finality of transactions, around 6s for mainnet since the Plato upgrade.
 3. There is no inflation of native token: BNB, the block reward is collected from transaction fees, and it will be paid in BNB.
 4. It is 100% compatible with Ethereum system.
 5. It allows modern proof-of-stake blockchain network governance.
@@ -48,12 +48,12 @@ Given there are more than ½\*N+1 validators are honest, PoA based networks usua
 ## Fast Finality
 Finality is critical for blockchain security, once the block is finalized, it wouldn’t be reverted anymore. The fast finality feature is very useful, the users can make sure they get the accurate information from the latest finalized block, then they can decide what to do next instantly. More details of design, please to refer [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)
 
-Before the coming Plato upgrade,to secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. With above enhancement by slashing mechanism, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
+Before the Plato upgrade, to secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than ⅔*N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than ⅓\*N Byzantine validators.With 21 validators, if the block time is 3 seconds, the ⅔\*N+1 different validator seals will need a time period of (⅔\*21+1)\*3 = 45 seconds. Any critical applications for BSC may have to wait for ⅔\*N+1 to ensure a relatively secure finality. With above enhancement by slashing mechanism, ½\*N+1 or even fewer blocks are enough as confirmation for most transactions.
 
-After the coming Plato upgrade, the feature `Fast Finality` will be enabled. The chain will be finalized within two blocks if ⅔*N or more validators vote normally, otherwise the chain has a fixed number of blocks to reach probabilistic finality as before.
+After the Plato upgrade, the feature `Fast Finality` is enabled. The chain will be finalized within two blocks if ⅔*N or more validators vote normally, otherwise the chain has a fixed number of blocks to reach probabilistic finality as before.
 
 ## Reward
-All the BSC validators in the current validator set will be rewarded with transaction fees in BNB. As BNB is not an inflationary token, there will be no mining rewards as what Bitcoin and Ethereum network generate, and the gas fee is the major reward for validators. After the coming Plato upgrade, part of the fees collected will be used as reward for finality voting. As BNB is also utility tokens with other use cases, delegators and validators will still enjoy other benefits of holding BNB.
+All the BSC validators in the current validator set will be rewarded with transaction fees in BNB. As BNB is not an inflationary token, there will be no mining rewards as what Bitcoin and Ethereum network generate, and the gas fee is the major reward for validators. Since the Plato upgrade, part of the fees collected is used as reward for finality voting. As BNB is also utility tokens with other use cases, delegators and validators will still enjoy other benefits of holding BNB.
 
 The reward for validators is the fees collected from transactions in each block. Validators can decide how much to give back to the delegators who stake their BNB to them, in order to attract more staking. Every validator will take turns to produce the blocks in the same probability (if they stick to 100% liveness), thus, in the long run, all the stable validators may get a similar size of the reward. Meanwhile, the stakes on each validator may be different, so this brings a counter-intuitive situation that more users trust and delegate to one validator, they potentially get less reward. So rational delegators will tend to delegate to the one with fewer stakes as long as the validator is still trustful (insecure validator may bring slashable risk). In the end, the stakes on all the validators will have less variation. This will actually prevent the stake concentration and "winner wins forever" problem seen on some other networks.
 
