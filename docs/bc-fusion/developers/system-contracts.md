@@ -16,7 +16,7 @@ GitHub Implementation link: https://github.com/bnb-chain/bsc-genesis-contract
 ### Secp256k1 Signature Recover
 
 The precompiled contract is used to verify the signature of a message signed using the secp256k1 elliptic curve
-cryptography algorithm. It will also retrun the Tendermint address of the signer.
+cryptography algorithm. It will also return the Tendermint address of the signer.
 
 ### Verify Double Sign Evidence
 
@@ -53,7 +53,7 @@ After the timelock period, the locked tokens can be claimed or released.
 ### Token Recover Portal Contract
 
 The Token Recover Portal contract is a contract that allows users to recover their BEP2/BEP8 tokens,
-which must have been bound to BEP20 tokens, after the shutdown of the cross-chaind transfer between
+which must have been bound to BEP20 tokens, after the shutdown of the cross-chain transfer between
 BNB Smart Chain and BNB Beacon Chain. 
 
 

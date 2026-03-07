@@ -38,7 +38,7 @@ There are 2 approaches to setup a BSC full node from scratch:
 - From Genesis(Not Recommend): sync the whole BSC chain from genesis block.
 
 !!! tip
-    As of Nov-2024, the latest block height of BSC mainnet is over 40M, it would need a more powerful hardware and take a great of time to sync from genesis, so it is suggested to setup a BSC full node based the snapshot.
+    The latest block height of BSC mainnet is very large. It would need powerful hardware and take a great deal of time to sync from genesis, so it is suggested to setup a BSC full node based on a snapshot.
 
 #### a.By Snapshot
 
