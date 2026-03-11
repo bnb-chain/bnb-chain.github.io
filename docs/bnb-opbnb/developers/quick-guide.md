@@ -47,7 +47,7 @@ You can refer to the [sending data between L1 and L2](https://docs.optimism.io/b
 
 - Explorer
     - [NodeReal opBNB Scan](https://mainnet.opbnbscan.com)
-    - [BSCScan](https://opbnb.bscscan.com/)
+    - [opBNBScan](https://opbnbscan.com/)
 - SDK. If you are only using the SDK for Ethereum-compatible functions, then all Ethereum SDKs should work with opBNB. If you want to use opBNB-specific functions, it's recommended to use [op-viem with OP Stack Extensions](https://viem.sh/op-stack).
     - [ethers.js](https://docs.ethers.io)
     - [web3.js](https://web3js.readthedocs.io)
