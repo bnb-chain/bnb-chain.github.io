@@ -39,7 +39,7 @@ Our goal is to provide a scaling solution for network congestion problems for hi
 | **VM**               | EVM        | EVM                                                 | EVM          |
 | **Gas Price Model**  | EIP-1559   | [Gas Price Auction](https://bscscan.com/gastracker) | EIP-1559     |
 | **Block Gas Limit**  | **100M**   | [140M](https://www.bscscan.com/chart/gaslimit)      | 30M          |
-| **Block time**       | **0.25s**     | 0.75s                                                  | 12s          |
+| **Block time**       | **0.25s**     | 0.45s                                                  | 12s          |
 | **Transaction Cost** | **$0.001** | $0.03                                               | $1           |
 
 
