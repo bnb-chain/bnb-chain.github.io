@@ -25,7 +25,7 @@ Compared with other L2 solutions on the Ethereum, like **OP Mainnet** and **Arbi
 | **VM**                 | EVM                   | EVM          | EVM          |
 | **Gas Fee**            | **$0.001**            | $0.05        | $0.1         |
 | **Block Gas Limit**    | **100M(150M 2024Q1)** | 30M          | 32M          |
-| **Block time**         | **1s**                | 2s           | 0.25s(Min)   |
+| **Block time**         | **0.25s**                | 2s           | 0.25s(Min)   |
 | **Withdraw/ Finality** | 7 days                | 7 days       | 7 days       |
 | **TPS (Transfer)**     | **4500+**             | 700+         | 4000+        |
 
