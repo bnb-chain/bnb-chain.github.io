@@ -122,7 +122,7 @@ Use this JavaScript example to query a validator's total pooled BNB:
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://bsc-dataseed.binance.org');
+const provider = new ethers.JsonRpcProvider('https://bsc-dataseed.bnbchain.org');
 const OPERATOR = '0x...'; // validator operator address
 
 const hub = new ethers.Contract('0x0000000000000000000000000000000000002002',
