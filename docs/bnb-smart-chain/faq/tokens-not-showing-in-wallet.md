@@ -35,7 +35,7 @@ In your wallet (MetaMask, Trust Wallet, etc.):
 
 If needed, add the network manually:
 - For BSC:  
-  RPC URL: `https://bsc-dataseed.binance.org/`  
+  RPC URL: `https://bsc-dataseed.bnbchain.org`  
   Chain ID: `56`  
 - For opBNB:  
   RPC URL: `https://opbnb-mainnet-rpc.bnbchain.org/`  
