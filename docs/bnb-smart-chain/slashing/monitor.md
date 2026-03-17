@@ -14,7 +14,9 @@ Validators should consistently monitor for potential slashes due to node unavail
 As best practice, it is advisable to  keep monitoring the event log of the slash contract on the BSC scanner at 
 <https://bscscan.com/address/0x0000000000000000000000000000000000001001#events>.
 
-You can check your validator's slash indicator in the above contract. Pay attention to values above 30. If it goes over 50, the validator will be slashed. If it goes over 150, the validator will be jailed.
+You can check your validator's slash indicator in the above contract. Pay attention to values above 50. If it goes over 200, the validator will be slashed. If it goes over 600, the validator will be jailed.
+
+Pls refer https://docs.bnbchain.org/bnb-smart-chain/slashing/slash-rules/ for more details.
 
 ## Unjail Validator
 

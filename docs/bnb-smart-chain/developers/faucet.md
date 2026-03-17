@@ -15,13 +15,10 @@ To get some tBNB of BSC testnet for testing purposes, you can use the [online fa
 * Please note if your wallet balance is larger than **1 tBNB**, you can not get new tBNB from the Discord bot faucet.*
 
 
-## Claim tBNB from Discord
-1. Join the [BNB Chain Discord](https://discord.com/invite/bnbchain)
-2. Visit the BNB Chain Discord [faucet channel](https://discord.com/channels/789402563035660308/1099937267021250560)
-3. Type `/faucet {your receiver account}` and sent.
-4. You will receive **0.3 tBNB** in few seconds.
+## Discord Faucet is no longer available
 
-*You can only claim once in 24 hours.*
+Discord Faucet is no longer available as of September 2025.
+
 
 ## Claim tBNB from Third-party Faucets
 You can also claim tBNB from the following third-party faucets

@@ -386,7 +386,7 @@ Once you have confirmed that all details are correct and finalized, press 'Confi
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 222.007.png)
 
-This is the final step. You can review all the information one last time before submitting, after you have made sure that everything is perfect, or you can go back to the previous step to make any changes. Click “Approve” and "Confirm" on Metamask. After that, click "Submit".
+This is the final step. You can review all the information one last time before submitting, after you have made sure that everything is perfect, or you can go back to the previous step to make any changes. Click “Approve” and "Confirm". After that, click "Submit".
 
 ##### Step 5: Check Your Presale Status
 
@@ -683,7 +683,7 @@ You should ask your community members to give you their wallet address beforehan
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 4.005.png)
 
-Click on “Add Allocations” when you are done inputting the addresses. MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
+Click on “Add Allocations” when you are done inputting the addresses. The wallet will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
 
 After successfully adding airdrop allocations, those allocations will be shown on the airdrop page.
 
@@ -699,7 +699,7 @@ After clicking on “Set Vesting”, you will see a pop-up box. Below are some i
 
 ![](./company-tokenization-tutorial/Company Tokenization Tutorial 4.006.png)
 
-Click on “Set Vesting” when you are done inputting the numbers, then MetaMask will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
+Click on “Set Vesting” when you are done inputting the numbers, then wallet will now ask you to confirm the transaction. It will also show you the fee that you are required to pay for that transaction. If you agree, then click on the “Confirm” button to finish the process.
 
 ##### Step 5: Start Airdrop
 

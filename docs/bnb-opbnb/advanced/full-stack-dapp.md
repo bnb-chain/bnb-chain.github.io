@@ -13,9 +13,9 @@ opBNB is essentially an optimized layer-2 solution that delivers lower fees and 
 For this tutorial, we will deploy a simple `HelloWorld` smart contract on the opBNB network and build a frontend using Reactjs to interact with the deployed smart contract for reading and writing data onto the opBNB blockchain.
 The `HelloWorld` smart contract is a simple string variable message that will be used for storing the user-defined messages, e.g., `Hello, opBNB User`. The `updateMessage` function will be used for updating the message variable to any user-defined string value.
 
-This smart contract will then be deployed on the opBNB network using [Truffle IDE](https://trufflesuite.com/). We will then use the [Reactjs boilerplate](https://create-react-app.dev/) to build a front end to communicate with the smart contract. [Web3.js library](https://web3js.readthedocs.io/en/v1.10.0/#) is used for interacting with the smart contract and reading and writing data to the opBNB blockchain. We further use [Metamask](https://metamask.io/) for signing transactions and paying any gas costs.
+This smart contract will then be deployed on the opBNB network using [Truffle IDE](https://trufflesuite.com/). We will then use the [Reactjs boilerplate](https://create-react-app.dev/) to build a front end to communicate with the smart contract. [Web3.js library](https://web3js.readthedocs.io/en/v1.10.0/#) is used for interacting with the smart contract and reading and writing data to the opBNB blockchain. We further use [TrustWallet](https://trustwallet.com/) or [Metamask](https://metamask.io/) for signing transactions and paying any gas costs.
 
-*This is a basic example for educational purposes, and it assumes familiarity with [Truffle](https://trufflesuite.com/), [React](https://react.dev/), and [MetaMask](https://metamask.io/).*
+*This is a basic example for educational purposes, and it assumes familiarity with [Truffle](https://trufflesuite.com/), [React](https://react.dev/), [TrustWallet](https://trustwallet.com/), and [MetaMask](https://metamask.io/).*
 
 ## Learning Takeaways
 
@@ -28,10 +28,11 @@ By the end of this tutorial, you will be able to achieve the following
 ## Pre-requisites
 
 - [Node.js (Node v18.14.2)](https://nodejs.org/en/download/)
+- [TrustWallet](https://trustwallet.com/)
 - [Metamask Web Wallet](https://metamask.io/)
 - [Truffle v5.10.0](https://trufflesuite.com/docs/truffle/how-to/install/)
-- Get tBNB in your Metamask wallet configured with opBNB Testnet
-  - [Metamask Wallet Configuration for opBNB.](../get-started/wallet-configuration.md)
+- Get tBNB in your wallet configured with opBNB Testnet
+  - [Wallet Configuration for opBNB.](../get-started/wallet-configuration.md)
   - [Deposit tBNB to your opBNB account](../get-started/deposit-to-opbnb.md)
 
 ## Demo Step-by-Step Guide

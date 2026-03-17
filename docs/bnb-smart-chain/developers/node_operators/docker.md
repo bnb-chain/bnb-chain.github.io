@@ -81,8 +81,11 @@ Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-
 
 You can also use *ETHEREUM OPTIONS* to overwrite settings in the configuration file:
 ```
-docker run -v $(pwd)/config:/bsc/config -v $(pwd)/data/node:/bsc/node -p 8575:8575 --rm --name bsc -it ghcr.io/bnb-chain/bsc:1.1.18_hr --http.addr 0.0.0.0 --http.port 8575 --http.vhosts '*' --verbosity 5
+docker run -v $(pwd)/config:/bsc/config -v $(pwd)/data/node:/bsc/node -p 8575:8575 --rm --name bsc -it ghcr.io/bnb-chain/bsc:1.1.18_hr --http.addr 0.0.0.0 --http.port 8575 --http.vhosts '*' --verbosity 5 --history.logs 576000
 ```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
 * *-p 8575:8575*: This will map port 8575 from host to container, so it exposes 8575 on host node.
 * *--http --http.addr 0.0.0.0*: Extra Geth flags to enable RPC and listen on all network interfaces of the container.
 

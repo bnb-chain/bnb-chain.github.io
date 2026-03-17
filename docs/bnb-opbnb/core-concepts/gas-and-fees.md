@@ -16,8 +16,8 @@ OpBNB is a Layer 2 scaling solution that aims to achieve higher throughput and l
 | ------------- | ---------------- | ---------------------------- |
 | opBNB Testnet | 8 wei (dynamic)  | 1001 wei                         |
 | opBNB Mainnet | 8 wei (dynamic)  | 1001 wei                         |
-| BSC Testnet   | 0                | 3                            |
-| BSC Mainnet   | 0                | 3                            |
+| BSC Testnet   | 0                | 0.1 Gwei (standard)         |
+| BSC Mainnet   | 0                | 0.05 Gwei (standard)         |
 
 ## What does this means
 
