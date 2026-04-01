@@ -527,7 +527,7 @@ You can check the  DEPLOYMENT_OUTFILE after deployed successfully. The contract 
 | OptimismPortal         | Responsible for passing messages between L1 and L2, which is equivalent to the portal of the optimistic network. Validate output root to execute L2 to L1 message call. |              |
 | L2OutputOracle         | Responsible for storing the output root of each block of the L2 network. Other contracts or users can verify the validity of L2 data according to the output root. |              |
 
-![image-20250411151438331](./image-20250411151438331.png)
+![image-20250411151438331](../img/image-20250411151438331.png)
 
 ## Generate L2 Genesis Allocs
 

@@ -26,7 +26,7 @@ Checkout the smart contracts [here](https://github.com/bnb-attestation-service/b
 ## Types of attestations
 Attestations can be made either onchain or offchain. While onchain attestations are stored directly on the BNBChain, offchain attestations reside outside of it, often in decentralized storage solutions like Greenfield. Both methods have their unique advantages, and the choice largely depends on the specific requirements of the use case.
 
-Learn about the idfference between on-chain and off-chain difference [here](https://doc.bascan.io/core_concept/onchain_vs_offchain).
+Learn about the difference between on-chain and off-chain [here](https://doc.bascan.io/core_concept/onchain_vs_offchain).
 
 ### On-Chain Attestation Record
 

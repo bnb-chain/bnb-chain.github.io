@@ -22,22 +22,28 @@ Paymaster needs to implement a JSON-RPC API called `pm_isSponsorable`, so that 
     *   `from`: The sender address of the transaction.
     *   `value`: The value of the transaction in hexadecimal.
     *   `data`: Additional data for the transaction in hexadecimal.
-    *   `gas`: The gas limit of the transaction in hexadecimal.
+    *   `nonce`: The transaction nonce in hexadecimal.
+    *   `gasPrice`: The gas price in hexadecimal (wei).
+    *   `gasLimit`: The gas limit of the transaction in hexadecimal.
+    *   `chainId`: The chain ID of the network (56 for BSC Mainnet, 97 for BSC Testnet).
 
 **Example:**
 
-```plain
+```json
 {
   "jsonrpc": "2.0",
   "id": 1,
   "method": "pm_isSponsorable",
   "params": [
     {
-      "to": "0x...", // an address
-      "from": "0x...", // an address"value": "0xa1",
+      "to": "0x...",
+      "from": "0x...",
+      "value": "0x0",
       "data": "0x",
-      "value": "0x1b4",
-      "gas" : "0x101b4"
+      "nonce": "0x0",
+      "gasPrice": "0xb2d05e00",
+      "gasLimit": "0x5208",
+      "chainId": 56
     }
   ]
 }

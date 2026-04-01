@@ -108,3 +108,26 @@ Validators can update their information using transactions like `EditConsensusAd
 Delegators are BNB holders who stake their BNB with a validator, sharing rewards.
 They can select any active or standby validator, switch between them, undelegate their BNB, and claim rewards anytime.
 Users can refer to the [user guide](./user-guide.md) for instructions on these actions.
+
+## Address Types and Consensus Roles
+
+BSC uses **Proof-of-Staked-Authority (PoSA)**, which replaces traditional Proof-of-Work (PoW) mining with stake-weighted
+block production. The following address types are involved in consensus:
+
+| Address Type | Consensus Role | Description |
+|---|---|---|
+| **Operator Address** | PoS (Proof of Stake) | Used to create and manage validator metadata on-chain. Holds the self-delegated BNB stake. Identified by a standard EVM address (`0x…`). |
+| **Consensus Address** | Block Production | Used by the validator node's consensus engine to sign and propose blocks. Generated via `geth account new`. |
+| **BLS Vote Address** | Fast Finality (PoS) | A BLS12-381 key used for fast-finality voting. Ownership is proven with a **BLS Proof** (PoS ownership attestation). |
+| **Delegator Address** | PoS (Proof of Stake) | Any EVM address that delegates BNB to a validator. Receives staking credit tokens in return. |
+
+### Proof of Work vs. Proof of Stake on BSC
+
+- **Proof-of-Work (PoW)**: BSC does **not** use PoW for block production. Unlike Bitcoin or pre-Merge Ethereum, there is no
+  computational puzzle. The consensus address signs blocks using an authority-based (PoA) mechanism within the PoSA model.
+- **Proof-of-Stake (PoS)**: Stake weight determines validator election. The more BNB delegated to a validator
+  (via its operator address), the higher the probability of being elected to the active validator set (Cabinet or Candidate).
+  BLS vote addresses provide an additional layer of PoS accountability through fast-finality attestations.
+
+To generate and verify address proofs for all related address types, see [Create BSC Validator](../validator/create-val.md).
+

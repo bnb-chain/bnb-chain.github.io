@@ -64,13 +64,13 @@ nav:
     - Upcoming:
       - NA: ./announce/na.md
     - Passed:
+      - Mendel Hardfork(BSC): ./announce/mendel-bsc.md
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
       - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
       - Mongolian Hardfork(Greenfield): ./announce/mongolian-greenfield.md
       - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
       - Second Sunset Hardfork(BC): ./announce/second-sunset-bc.md
       - Feynman Hardfork(BSC): ./announce/feynman-bsc.md
-      - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
       - Haber Hardfork(BSC): ./announce/haber-bsc.md
       - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
       - Second Sunset Hardfork(BC testnet): ./announce/second-sunset-bc-testnet.md
@@ -183,6 +183,7 @@ nav:
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
       - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
+      - Chain Configuration: ./bnb-opbnb/advanced/Chain-Configuration.md
 
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
@@ -288,6 +289,7 @@ nav:
         - Overview: ./showcase/mcp/index.md
         - Skills: ./showcase/mcp/skills.md
         - Integrating AskAI: ./showcase/mcp/ask-ai-to-ide.md
+        - Ask AI in VS Code: ./showcase/mcp/ask-ai-vs-code-guide.md
      - Name Service and Attestation:
        - Decentralized Identity: ./showcase/identity/did.md
        - Decentralized Name Service:
@@ -296,6 +298,7 @@ nav:
        - Attestation:
          - BNB Attestation Service: ./showcase/identity/attestation.md
          - Build your Attestation: ./showcase/identity/attestation-dev.md
+         - ZK-PDF Document Verification: ./showcase/identity/zkpdf-verification.md
      - Telegram Integration:
        - Telegram Mini Game on BNB Chain: ./showcase/telegram/minigame.md
        - Telegram Wallets: ./showcase/telegram/wallets.md
@@ -314,6 +317,12 @@ nav:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
+  - Join Ecosystem:
+      - Join Ecosystem: ./join-ecosystem/index.md
+      - Platforms:
+          - DappBay: ./join-ecosystem/platforms/dappbay.md
+          - Dev Tools: ./join-ecosystem/platforms/dev-tool.md
+          - Electrical Capital: ./join-ecosystem/platforms/electrical-capital.md
 
 markdown_extensions:
   - toc:

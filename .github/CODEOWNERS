@@ -1,0 +1,26 @@
+# CODEOWNERS for bnb-chain.github.io documentation repository
+#
+# Each line is a file pattern followed by one or more owners.
+# Order matters: the last matching pattern takes precedence.
+
+# Default owners for the entire repository
+* @bnb-chain/docs-maintainers
+
+# Workflow files require core team review
+.github/workflows/ @bnb-chain/devops
+
+# BNB Smart Chain documentation
+docs/bnb-smart-chain/ @bnb-chain/bsc-team
+
+# BNB Greenfield documentation
+docs/bnb-greenfield/ @bnb-chain/greenfield-team
+
+# opBNB documentation
+docs/bnb-opbnb/ @bnb-chain/opbnb-team
+
+# BC Fusion documentation
+docs/bc-fusion/ @bnb-chain/bsc-team
+
+# MkDocs configuration
+mkdocs.yml @bnb-chain/docs-maintainers
+requirements.txt @bnb-chain/docs-maintainers

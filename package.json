@@ -1,0 +1,13 @@
+{
+  "name": "bnb-chain-docs",
+  "version": "1.0.0",
+  "description": "BNB Chain Knowledge Base documentation",
+  "private": true,
+  "scripts": {
+    "lint": "eslint docs/assets/js/ --ext .js"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1"
+  },
+  "license": "Apache-2.0"
+}

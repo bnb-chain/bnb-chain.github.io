@@ -14,7 +14,7 @@ The BNB staking dApp is the official tool for creating and managing validators o
 
 - **Operator Address**: The address for creating and modifying validator information on the BSC. You should use this
   address when connecting to the staking dApp. The corresponding account should have more than 2001 BNB for creating
-  validtors and paying transaction fees.
+  validators and paying transaction fees.
 - **Consensus Address**: A unique address for your validator's node. It is used for consensus engine when mining new
   blocks. It should be different from the operator address.
 - **BLS Vote Address**: A BLS address used for fast finality voting.

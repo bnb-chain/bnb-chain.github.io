@@ -446,7 +446,7 @@ function setupObserver() {
   const targetNode = document.body;
   const config = { childList: true, subtree: true };
 
-  const callback = (mutationsList, observer) => {
+  const callback = (mutationsList, _observer) => {
     // Prevent recursive calls
     if (isUpdating) {
       return;
