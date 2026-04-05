@@ -52,7 +52,7 @@
 - **Governance**
   - [Overview](https://docs.bnbchain.org/bnb-smart-chain/governance/overview/): On-chain governance on BSC via BEP-297 native governance module.
   - [User Guide](https://docs.bnbchain.org/bnb-smart-chain/governance/user-guide/): This document provides a guide on how to participate in governance on the BNB Smart Chain (BSC)…
-  - [BNB Advocate`s Guide](https://docs.bnbchain.org/bnb-smart-chain/governance/bnb-kol/): Key Opinion Leaders (BNB Advocates) hold significant influence within the BNB Chain community.
+  - [BNB Advocate's Guide](https://docs.bnbchain.org/bnb-smart-chain/governance/bnb-kol/): Key Opinion Leaders (BNB Advocates) hold significant influence within the BNB Chain community.
   - [Temperature Check](https://docs.bnbchain.org/bnb-smart-chain/governance/temp-check/): BNB Chain governance involves a two-step process: temperature check and final decision voting.
   - [Governance APIs](https://docs.bnbchain.org/bnb-smart-chain/governance/apis/): Governance API reference for proposals, votes, and execution.
 - **Validator**
