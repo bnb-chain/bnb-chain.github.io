@@ -34,7 +34,7 @@
       - [Full Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/full_node/): Run a BSC full node that stores the complete world state.
       - [Archive Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/archive_node/): Run a BSC archive node with full historical state access.
       - [Fast Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/fast_node/): Run a lightweight BSC fast node (no trie data).
-    - **Insfrastructure & Setup**
+    - **Infrastructure & Setup**
       - [Boot Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/boot_node/): Through the maintenance release v1.2.12 4, Boot Nodes were introduced on the BSC mainnet.
       - [Docker Image](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/docker/): Run BSC nodes using the official Docker image.
     - **Maintenance & Upgrades**
