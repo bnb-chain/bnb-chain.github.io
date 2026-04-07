@@ -8,6 +8,41 @@
 {% endblock %}
 #}
 
+{% block extrahead %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BNB Chain",
+  "url": "https://www.bnbchain.org",
+  "logo": "https://docs.bnbchain.org/assets/logo.svg",
+  "description": "BNB Chain is a community-driven and decentralized blockchain ecosystem for Web3 dApps",
+  "sameAs": [
+    "https://twitter.com/BNBChain",
+    "https://github.com/bnb-chain",
+    "https://discord.gg/bnbchain",
+    "https://t.me/bnbchain"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BNB Chain Documentation",
+  "url": "https://docs.bnbchain.org",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://docs.bnbchain.org/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endblock %}
+
 {% block htmltitle %}
     {% if page.meta and page.meta.title %}
         <title>{{ page.meta.title }}</title>

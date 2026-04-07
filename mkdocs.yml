@@ -353,6 +353,9 @@ markdown_extensions:
 plugins:
   - search
   - mkdocs-video
+  - git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
   - redirects:
       redirect_maps:
         'docs.md': 'bnb-smart-chain/index.md'

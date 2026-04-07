@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow:
+
+Sitemap: https://docs.bnbchain.org/sitemap.xml
