@@ -12,9 +12,6 @@ To get some tBNB of BSC testnet for testing purposes, you can use the [online fa
 2. Select the tokens you need to claim. Major pegged tokens like BUSD, USDT, and others are supported. 
 
 
-* Please note if your wallet balance is larger than **1 tBNB**, you can not get new tBNB from the Discord bot faucet.*
-
-
 ## Discord Faucet is no longer available
 
 Discord Faucet is no longer available as of September 2025.
