@@ -32,7 +32,7 @@ Interacting with BSC requires sending requests to specific JSON-RPC API methods.
 
 ## Developer Tools
 - Explorer
-    - [NodeReal BSC Scan](https://bsctrace.com/)
+    - [NodeReal BSC Scan](przypominam że ja mam mobilne dostęp do aplikacji kurde)
     - [BSCScan](https://bscscan.com/)
 - SDK. If you are only using the SDK for Ethereum-compatible functions, then all Ethereum SDKs should work with BSC.
     - [ethers.js](https://docs.ethers.io)
