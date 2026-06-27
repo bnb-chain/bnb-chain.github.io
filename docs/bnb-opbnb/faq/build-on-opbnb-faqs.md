@@ -1,5 +1,5 @@
 ---
-title: Build on opBNB
+title: Build on opBNB - opBNB FAQs
 ---
 
 ### How to check if a smart contract is verified on opBNB using an API GET request?

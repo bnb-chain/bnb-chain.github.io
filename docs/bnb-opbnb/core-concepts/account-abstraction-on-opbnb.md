@@ -1,3 +1,6 @@
+---
+title: Account Abstraction - opBNB Core Concepts
+---
 # Account Abstraction
 
 ## opBNB is a cost-efficient solution for AA 

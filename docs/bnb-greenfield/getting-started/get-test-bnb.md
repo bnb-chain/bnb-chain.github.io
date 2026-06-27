@@ -1,5 +1,5 @@
 ---
-title: Faucet
+title: Faucet - BNB Greenfield
 description: How to get tBNB for Greenfield Testnet
 order: 6
 ---

@@ -1,3 +1,6 @@
+---
+title: Secure BSC Validator - BNB Smart Chain
+---
 
 # Secure BSC Validator
 

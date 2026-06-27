@@ -1,5 +1,5 @@
 ---
-title: zkBNB Overview
+title: Overview - zkBNB Core Concepts
 ---
 
 ## Key Features

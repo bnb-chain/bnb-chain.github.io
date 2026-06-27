@@ -1,5 +1,5 @@
 ---
-title: Cross Chain Access Control by CMD
+title: Cross Chain Access Control by CMD - BNB Greenfield Access Control
 description: How to use BSC smart contract as a simple howcase of cross chain program-ability of Greenfield..
 keywords: [BNB Greenfield, Access control, Permission]
 order: 1

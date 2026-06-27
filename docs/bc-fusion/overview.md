@@ -1,3 +1,8 @@
+---
+title: Overview - BC Fusion
+---
+
+
 # Overview
 
 BNB Beacon Chain is a blockchain developed by the BNB Chain community that implements a vision of a decentralized

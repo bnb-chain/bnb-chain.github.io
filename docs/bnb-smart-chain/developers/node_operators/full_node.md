@@ -1,3 +1,7 @@
+---
+title: Full Node - BSC Develop
+---
+
 # How to Run A Fullnode on BNB Smart Chain
 
 ## Fullnodes Functions

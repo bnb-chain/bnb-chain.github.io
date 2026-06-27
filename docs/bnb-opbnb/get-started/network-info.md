@@ -1,3 +1,6 @@
+---
+title: Network Information - opBNB
+---
 ## Network Information
 
 | Name            | Value                                                                            |

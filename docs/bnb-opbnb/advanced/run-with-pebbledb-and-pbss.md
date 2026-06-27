@@ -1,3 +1,6 @@
+---
+title: Run op-geth with PBSS and PebbleDB - opBNB
+---
 # How to Run op-geth with PBSS and PebbleDB
 
 To start op-geth with PBSS and PebbleDB, include the following flags:

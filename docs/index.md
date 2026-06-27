@@ -2,6 +2,8 @@
 hide:
 - navigation
 - toc
+
+title: BNB Chain
 ---
 
 # BNB Chain: Empowering the Future of Decentralized Applications
@@ -58,6 +60,11 @@ Within this ecosystem, the ownership, usage, and monetization of data are possib
 <a href="./bnb-greenfield">
 <h3>BNB Greenfield</h3>
 <p>A decentralized storage infrastructure designed to provide a secure and scalable platform for storing and managing data on the blockchain. It enables users to store files, NFTs, and other digital assets in a decentralized manner, promoting data ownership and control.</p>
+</a>
+
+<a href="./join-ecosystem">
+<h3>Join BNB Ecosystem</h3>
+<p>Share your project with BNB Chain Ecosystem or seeking for cooperations. We want to make it as easy as possible for prjects to get more exposure in BNB Chain Ecosystem or ask for support from the team.</p>
 </a>
 </div>
 

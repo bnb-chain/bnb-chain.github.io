@@ -1,3 +1,7 @@
+---
+title: Fast Node - BSC Develop
+---
+
 # Fast Node on BNB Smart Chain
 
 ## Note

@@ -1,5 +1,5 @@
 ---
-title: Quick Guide
+title: Quick Guide - BNB Greenfield Develop
 description: Quick guide for BNB Greenfield developers. You will understand what you need to build your project.
 keywords: [BNB Greenfield development, data storage development]
 order: 8
@@ -57,23 +57,28 @@ Create a private bucket and share it with specific individuals.
 	* [GO-SDK Example](https://github.com/bnb-chain/greenfield-go-sdk/blob/v1.1.1/examples/group.go)
 	* [JS-SDK Group API](https://docs.bnbchain.org/greenfield-js-sdk/api/group)
 
-- Resource management with smart contracts: Understand the concepts of [resource mirroring](../core-concept/cross-chain/mirror.md)
+- Resource management with smart contracts: Understand the concepts of [resource mirroring](../for-developers/cross-chain-integration/mirror-concept.md)
 
-### A Quick Start about Data Access Control Through Smart Contract
+### Cross-chain Programmability
 
-- Understand the [programmability concepts](../core-concept/cross-chain/programmability.md)
+- Understand the [programmability concepts](../core-concept/programmability.md)
+- Understand [mirror resource from Greenfield to EVM chains](./cross-chain-integration/mirror-concept.md)
+- Understand [program resource through Smart Contract](./cross-chain-integration/interface.md)
 - Follow Smart Contract SDK [tutorial](tutorials/access-control/cross-chain-access-control-by-cmd.md)
+- Showcase: [Data Marketplace](tutorials/app/data-marketplace.md)
 
-### Show Case: Data Marketplace
-
-[Data Marketplace Overview](tutorials/app/data-marketplace.md)
 
 ## Developer Starter Kit
 
+### API
+
+- [Greenfield Chain API Docs](https://greenfield.bnbchain.org/openapi)
+- [Greenfield SP API Docs](https://github.com/bnb-chain/greenfield-storage-provider/tree/master/docs/storage-provider-rest-api)
+
 ### SDK
 
-- [Greenfield Go SDK](sdks/sdk-go.md), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
-- [Greenfield Javascript SDK](sdks/sdk-js.md), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
+- [Greenfield Go SDK](apis-and-sdks/sdk-go.md), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
+- [Greenfield Javascript SDK](apis-and-sdks/sdk-js.md), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
 
 ## Setup
 

@@ -1,3 +1,7 @@
+---
+title: Full Stack DApp - opBNB
+---
+
 # Create a Full Stack dapp using Truffle and React on opBNB
 
 In this tutorial, we'll deploy a simple HelloWorld smart contract on opBNB and build a Web3 frontend using React to interact with the deployed smart contract, i.e., read from and write to the opBNB blockchain.

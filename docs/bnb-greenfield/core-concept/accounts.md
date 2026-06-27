@@ -1,5 +1,5 @@
 ---
-title: Accounts
+title: Accounts - BNB Greenfield Core Concepts
 description: Greenfield defines its account in the same format as BSC and Ethereum.
 keywords: [BNB Greenfield address, BNB Greenfield signature]
 order: 1

@@ -1,3 +1,6 @@
+---
+title: Why BSC Requires opBNB - opBNB Core Concepts
+---
 # Why BSC Requires opBNB
 
 Layer 1 networks are the base networks that provide the infrastructure for data transmission and validation, such as BSC and Ethereum. These networks face the challenge of network congestion during peak periods, which usually happens when any popular application runs a promotion campaign or experiences a spike in traffic. Network congestion can lead to high transaction fees, slow transactions, and poor user experience.

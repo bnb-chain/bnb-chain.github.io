@@ -1,5 +1,5 @@
 ---
-title: RPC Endpoints
+title: RPC Endpoints - BNB Greenfield
 #icon: http
 order: 3
 ---
@@ -45,6 +45,13 @@ order: 3
   - `https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5`
 
   For more details, you can refer to [here](network-info.md).
+
+### Blob hub
+- **Ethereum:**
+- `https://gnfd-blobhub.bnbchain.org`
+- **BSC:**
+- `https://gnfd-blobhub-bsc.bnbchain.org`
+
 
 ## Testnet
 ### Greenfield Testnet (chain-id: greenfield_5600-1)

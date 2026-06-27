@@ -1,5 +1,5 @@
 ---
-title: Simple Tool for File Management (JS)
+title: Simple Tool for File Management (JS) - BNB Greenfield File Management
 order: 3
 ---
 

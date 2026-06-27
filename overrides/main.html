@@ -9,11 +9,11 @@
 
 {% block htmltitle %}
     {% if page.meta and page.meta.title %}
-        <title>{{ page.meta.title }} - BNB Chain Documentation</title>
+        <title>{{ page.meta.title }}</title>
     {% elif page.title and not page.is_homepage %}
-        <title>{{ page.title | striptags }} - BNB Chain Documentation</title>
+        <title>{{ page.title | striptags }}</title>
     {% else %}
-        <title>BNB Chain: An Ecosystem of Blockchains | BNB Chain Documentation</title>
+        <title> BNB Chain Documentation</title>
     {% endif %}
 {% endblock %}
 

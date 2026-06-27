@@ -2,15 +2,14 @@
 
 <div class="doc-announce-info">
     <span class="version-tag">Hardfork</span>
-    <span class="announce-date">2024 May 24</span>
 </div>
 
 
 ## Upgrade Timeline
 The Haber upgrade will happen at:
 
-- Testnet: May 30, 2024, at 6:00 AM UTC
-- Mainnet: June 20th, 2024 08:00:00 AM UTC
+- Testnet: May 30 2024, 06:00:00 AM UTC
+- Mainnet: June 20 2024 08:00:00 AM UTC
 
 ## Upgrade to opBNB Node v0.4.2 Before Hardfork
 

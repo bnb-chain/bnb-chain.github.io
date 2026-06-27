@@ -1,5 +1,5 @@
 ---
-title: Bundle Service
+title: Bundle Service - BNB Greenfield Develop
 description: How to use bundle service to combine small objects.
 keywords: [BNB Greenfield, NodeReal, Bundle, Bundle Service]
 ---
@@ -12,7 +12,7 @@ it costs more for both the users and Greenfield. For instance, imagine a user's 
 Greenfield. If the files of the website are tiny but there are a lot of them, it leads to the same problem: too much
 metadata and higher costs.
 
-BNBChain has proposed the core protocol for the Greenfield bundle to solve this problem. You can find more details about [BEP-323](https://github.com/bnb-chain/BEPs/pull/323).
+BNB Chain has proposed the core protocol for the Greenfield bundle to solve this problem. You can find more details about [BEP-323](https://github.com/bnb-chain/BEPs/pull/323).
 NodeReal is the first infrastructure provider to implement the bundling service. Bundling service provides a solution to
 combine small files together into one big file before sending it to Greenfield. Thus, developers can can cut down unnecessary
 costs while still get to each file in the big file as if they were separate.

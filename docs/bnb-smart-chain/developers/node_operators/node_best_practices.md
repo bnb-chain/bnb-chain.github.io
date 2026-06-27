@@ -1,3 +1,8 @@
+---
+title: Best Practices - BNB Smart Chain Node Configuration - BSC Develop
+---
+
+
 # BNB Smart Chain (BSC) Node Configuration: Best Practices
 
 ## Hardware Specifications

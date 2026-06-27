@@ -1,3 +1,6 @@
+---
+title: Boot Node - BSC Develop
+---
 
 Through the maintenance release [v1.2.12 4](https://github.com/bnb-chain/bsc/releases/tag/v1.2.12), Boot Nodes were introduced on the BSC mainnet. BSC Boot Nodes are similar to Ethereum Boot Nodes, refer [here](https://ethereum.org/en/developers/docs/nodes-and-clients/bootnodes/) for more details. The main benefit of Boot Nodes is that it would be easier for user to connect to the BSC network. Users would no longer need to setup the `StaticNodes` in `config.toml`, just leave it empty and make sure delete the `BootstrapNodes` field in `config.toml`. 
 

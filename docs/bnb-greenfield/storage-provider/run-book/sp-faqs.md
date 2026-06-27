@@ -1,5 +1,5 @@
 ---
-title: SP FAQ
+title: SP FAQ - BNB Greenfield SP
 description: A list of BNB Greenfield frequently asks questions about Storage Provider.  
 keywords: [BNB Greenfield Storage Provider, BNB Greenfield Storage Provider Requirements]
 ---

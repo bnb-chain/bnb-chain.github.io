@@ -1,3 +1,8 @@
+---
+title: Overview - BSC Governance
+---
+
+
 # BSC Governance Overview
 ![governance](../img/Governance.png)
 

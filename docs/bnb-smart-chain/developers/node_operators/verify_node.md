@@ -1,3 +1,7 @@
+---
+title: Verify Node - BSC Develop
+---
+
 # Verify Node on BNB Smart Chain
 
 ## Verify Node Functions

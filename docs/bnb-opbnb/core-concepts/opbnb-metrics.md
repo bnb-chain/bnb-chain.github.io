@@ -1,3 +1,7 @@
+---
+title: opBNB Metrics - opBNB Core Concepts
+---
+
 # opBNB Metrics
 
 Compared with other L2 solutions on the Ethereum, like **OP Mainnet** and **Arbitrum**, **opBNB** has lower gas fee, and higher block gas limit, which means the gas fee will be more stable when traffic of Layer 2 increases. I listed the Ethereum EIP-1559 parameters as a reference. Arbitrum gas mechanism is based on the ArbOS, it is not applicable here.
