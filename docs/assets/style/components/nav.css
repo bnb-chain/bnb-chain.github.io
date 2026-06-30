@@ -75,16 +75,16 @@
 }
 
 .md-header-action--primary {
-    background: var(--doc-support-brand-2);
-    border-color: var(--doc-support-brand-2);
-    color: var(--doc-text-on-color);
+    background: var(--doc-dark-bg-1);
+    border-color: var(--doc-dark-border-4);
+    color: #fff;
 }
 
 .md-header-action--primary:hover,
 .md-header-action--primary:focus {
-    background: var(--doc-text-brand);
-    border-color: var(--doc-text-brand);
-    color: var(--doc-text-on-color);
+    background: var(--doc-dark-bg-2);
+    border-color: var(--doc-dark-text-tertiary);
+    color: #fff;
 }
 
 @media (max-width: 1219px) {

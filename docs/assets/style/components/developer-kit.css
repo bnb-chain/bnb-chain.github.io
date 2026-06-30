@@ -112,6 +112,7 @@
     color: var(--doc-text-brand);
 }
 
+.md-typeset .install-cmd code,
 .install-cmd code {
     flex: 1 1 auto;
     font-family: var(--md-code-font-family, monospace);
