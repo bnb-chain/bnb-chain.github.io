@@ -1,0 +1,230 @@
+.dk-page {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 8px 0 16px;
+}
+
+/* Hero */
+.dk-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 760px;
+}
+
+.md-typeset .dk-hero__title {
+    font-size: 2.2em;
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--doc-text-primary);
+    margin: 0;
+}
+
+.dk-hero__subtitle {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--doc-text-secondary);
+    margin: 0;
+}
+
+.dk-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.md-typeset .dk-block__title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--doc-text-primary);
+    margin: 0;
+}
+
+/* Featured tools */
+.dk-featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.dk-featured-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--doc-border-2);
+    background: var(--doc-layer-2);
+    transition: border-color .15s, background .15s, transform .15s;
+}
+
+.dk-featured-card:hover,
+.dk-featured-card:focus {
+    border-color: var(--doc-border-4);
+    background: var(--doc-layer-3);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.md-typeset .dk-featured-card__name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--doc-text-primary);
+}
+
+.dk-featured-card__desc {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--doc-text-secondary);
+    flex: 1 0 auto;
+}
+
+/* Install command pill */
+.install-cmd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 8px 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--doc-border-3);
+    background: var(--doc-bg-1);
+}
+
+.install-cmd code {
+    font-family: var(--md-code-font-family, monospace);
+    font-size: 13px;
+    color: var(--doc-text-primary);
+    background: none;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--doc-text-tertiary);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+}
+
+.copy-btn:hover {
+    background: var(--doc-layer-4);
+    color: var(--doc-text-primary);
+}
+
+.copy-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.copy-btn.is-copied {
+    color: #00d957;
+}
+
+/* All developer tools table */
+.dk-table-wrap {
+    border: 1px solid var(--doc-border-2);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.md-typeset .dk-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 14px;
+    border: none;
+    display: table;
+}
+
+.md-typeset .dk-table th,
+.md-typeset .dk-table td {
+    text-align: left;
+    padding: 14px 18px;
+    border: none;
+    border-bottom: 1px solid var(--doc-border-2);
+    vertical-align: middle;
+}
+
+.md-typeset .dk-table thead th {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--doc-text-tertiary);
+    background: var(--doc-layer-2);
+}
+
+.md-typeset .dk-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.md-typeset .dk-table tbody tr:hover {
+    background: var(--doc-layer-2);
+}
+
+.md-typeset .dk-table td a {
+    color: var(--doc-text-primary);
+    font-weight: 600;
+}
+
+.md-typeset .dk-table td a:hover {
+    color: var(--doc-text-brand);
+}
+
+.dk-chip {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--doc-border-3);
+    font-size: 12px;
+    color: var(--doc-text-secondary);
+    white-space: nowrap;
+}
+
+.dk-table__action-col {
+    width: 48px;
+}
+
+.md-typeset .dk-table__action {
+    text-align: right;
+}
+
+.md-typeset .dk-table__action a {
+    color: var(--doc-text-tertiary);
+    font-size: 18px;
+}
+
+.md-typeset .dk-table__action a:hover {
+    color: var(--doc-text-brand);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dk-featured {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dk-table-wrap {
+        overflow-x: auto;
+    }
+
+    .md-typeset .dk-table {
+        min-width: 560px;
+    }
+}

@@ -1,124 +1,143 @@
 ---
 hide:
-- navigation
-- toc
-
+  - navigation
+  - toc
 title: BNB Chain
 ---
 
-<style>
-    .md-source-file, .md-content__button.md-icon {
-        display: none;
-    }
+<div class="home-page">
 
-    .section-body {
-        padding: 0;
-        border-top: none;
-        margin: 0.64em auto;
-    }
-</style>
+<section class="home-hero">
+  <h1 class="home-hero__title">Build on BNB Chain</h1>
+  <p class="home-hero__subtitle">The blockchain with superior scalability and deep liquidity, built for global instant and low-cost transactions for the next billion users.</p>
+</section>
 
-# BNB Chain: Empowering the Future of Decentralized Applications
-
-![BNB Chain](./assets/home-hero.png)
-
-BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3). Offering a unique combination of speed, scalability, and affordability, BNB Chain has become a popular choice for developers building decentralized applications (DApps) and for users seeking to participate in the world of decentralized finance (DeFi).
-
-## **Key Features and Benefits**
-
-* **Compatibility with the Ethereum Ecosystem**
-
-    Developers can easily port their existing Ethereum-based projects to BNB Chain, benefiting from its enhanced performance.
-
-* **Massive User Base**
-
-    BNB Chain Handle the largest daily active users and the highest peak EVM transactions with economical fees.
-
-* **Strongest Ecosystem**
-
-    It is Supported by a robust ecosystem of top-tier RPC plants, wallets, blockchain explorers, data indices, and substantial grants.
-
-* **Thriving DeFi Ecosystem**
-
-    BNB Chain boasts a vast array of DeFi applications, including decentralized exchanges (DEXs), lending protocols, yield farming platforms, and more.
-
-* **Community-Driven Growth**
-
-    BNB Chain is supported by a vibrant community of developers, validators, and users who contribute to its ongoing development and expansion.
-
-* **Most Diversified Assets APIs**
-
-    Full support on all popular tokens. The greatest opportunity for composability.
-
-## **Chains**
-
-![image](assets/chains.png)
-
-BNB Chain is composed of three blockchains - BNB Smart Chain (BSC), opBNB and BNB Greenfield.
-Powering and coordinating the ecosystem is the BNB token. Along with fueling transactions on BNB Chain, the BNB token also acts as a governance token.
-Within this ecosystem, the ownership, usage, and monetization of data are possible for all users and participants in the BNB Chain ecosystem.
-
-<div class="doc-cards">
-<a href="./bnb-smart-chain">
-<h3>BNB Smart Chain (BSC)</h3>
-<p>BNB Smart Chain (BSC) is a high-performance blockchain platform designed to enable the development of scalable and user-friendly decentralized applications (DApps). As a core component of the BNB Chain ecosystem, BSC offers a robust infrastructure for building a wide range of applications, particularly in the decentralized finance (DeFi) space.</p>
-</a>
-
-<a href="./bnb-opbnb">
-<h3>opBNB</h3>
-<p>A layer-2 scaling solution for BNB Smart Chain that significantly increases transaction speed and reduces fees. It achieves this by leveraging Optimistic Rollups technology, making BNB Chain even more suitable for high-throughput applications.</p>
-</a>
-
-<a href="./bnb-greenfield">
-<h3>BNB Greenfield</h3>
-<p>A decentralized storage infrastructure designed to provide a secure and scalable platform for storing and managing data on the blockchain. It enables users to store files, NFTs, and other digital assets in a decentralized manner, promoting data ownership and control.</p>
-</a>
-
-<a href="./join-ecosystem">
-<h3>Join BNB Ecosystem</h3>
-<p>Share your project with BNB Chain Ecosystem or seeking for cooperations. We want to make it as easy as possible for prjects to get more exposure in BNB Chain Ecosystem or ask for support from the team.</p>
-</a>
-</div>
-
-## **Use Cases**
-
-* **Decentralized Finance (DeFi)**
-
-    BNB Chain is a hub for DeFi activities, providing users with access to a wide range of financial products and services, all powered by blockchain technology.
-
-* **LSD and Restaking**
-
-    BNB Chain is secured by more than 20M BNB staking and 20K delegators. The development for LSD and Restaking has been bolstered by a substantial amount of assets and a solid user base.
-
-* **Gaming and Non-Fungible Tokens (NFTs)**
-
-    The platform's fast transaction speeds and low fees make it ideal for gaming and NFT applications. opBNB further enhances this capability.
-
-* **Decentralized Applications (DApps)**
-
-    Developers can build and deploy a variety of DApps on BNB Chain, leveraging its robust infrastructure and growing user base.
-
-* **Data Storage and Management**
-
-    BNB Greenfield opens up new possibilities for decentralized data storage and management, catering to a wide range of use cases.
-
-* **AI with blockchain technology**
-
-    With the growing demand for Artificial Intelligence or AI, there is now more than ever a need to integrate AI with blockchain technology to reap its benefits. BNB Chain is making this integration a reality by providing a robust platform that easily integrates blockchain and AI.
-
-## **Quick Start**
-
-<div class="section-body">
-    <a href="./bnb-smart-chain/developers/quick-guide" class="grid-item">
-        <div>BNB Smart Chain</div>
-        <p>Getting Started with high performance Layer1 particularly for decentralized finance (DeFi)</p>
+<section class="home-block">
+  <h2 class="home-block__title">Start building</h2>
+  <div class="build-grid">
+    <a class="build-card" href="./developer-kit/bnbagent-sdk/">
+      <span class="build-card__icon" data-variant="brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2v1h3a3 3 0 0 1 3 3v3h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-3H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1V8a3 3 0 0 1 3-3h3V4a2 2 0 0 1 2-2Zm-3 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg>
+      </span>
+      <span class="build-card__title">BNB AI Agent</span>
+      <span class="build-card__desc">On-chain identity, automated payments, and persistent memory for autonomous AI agents.</span>
     </a>
-    <a href="./bnb-opbnb/developers/quick-guide" class="grid-item">
-        <div>opBNB</div>
-        <p>Getting Started with Layer2 scaling solution on BNB Chain ecosystem</p>
+    <a class="build-card" href="./bnb-smart-chain/developers/paymaster/overview/">
+      <span class="build-card__icon" data-variant="green">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 4v8h16v-8H4Zm2 4h6v2H6v-2Z"/></svg>
+      </span>
+      <span class="build-card__title">Accept onchain payments</span>
+      <span class="build-card__desc">Let users pay from any wallet with gasless transactions powered by the EOA Paymaster.</span>
     </a>
-    <a href="./bnb-greenfield/for-developers/get-started-dev" class="grid-item">
-        <div>BNB Greenfield</div>
-        <p>Getting Started with cutting-edge decentralized storage</p>
+    <a class="build-card" href="./bnb-greenfield/">
+      <span class="build-card__icon" data-variant="blue">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4.97 0 9 1.34 9 3v12c0 1.66-4.03 3-9 3s-9-1.34-9-3V6c0-1.66 4.03-3 9-3Zm7 7.12C17.27 10.97 14.8 11.5 12 11.5s-5.27-.53-7-1.38V12c0 .54 2.69 1.5 7 1.5s7-.96 7-1.5v-1.88ZM12 5C7.69 5 5 5.96 5 6.5S7.69 8 12 8s7-.96 7-1.5S16.31 5 12 5Z"/></svg>
+      </span>
+      <span class="build-card__title">Store and manage data</span>
+      <span class="build-card__desc">Decentralized storage in S3-style buckets with on-chain access control via smart contracts.</span>
     </a>
+    <a class="build-card" href="./developer-kit/bnbchain-studio/">
+      <span class="build-card__icon" data-variant="brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.39 5.26L20 8.27l-4 4.02L17.05 18 12 15.27 6.95 18 8 12.29l-4-4.02 5.61-1.01L12 2Z"/></svg>
+      </span>
+      <span class="build-card__title">Build faster with AI</span>
+      <span class="build-card__desc">AI-assisted contract authoring, deployment, and debugging with BNB Agent Studio.</span>
+    </a>
+    <a class="build-card" href="./developer-kit/mcp/">
+      <span class="build-card__icon" data-variant="green">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4Zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4Z"/></svg>
+      </span>
+      <span class="build-card__title">Use Cursor / Claude Code on-chain</span>
+      <span class="build-card__desc">Bring BNB Chain, opBNB, and Greenfield context into your IDE through the BNB Chain MCP.</span>
+    </a>
+    <a class="build-card" href="./developer-kit/ask-ai/">
+      <span class="build-card__icon" data-variant="blue">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Zm3 5v2h10V9H7Zm0 4v2h6v-2H7Z"/></svg>
+      </span>
+      <span class="build-card__title">Ask AI about BNB Chain</span>
+      <span class="build-card__desc">Instant answers across docs, SDKs, and FAQs from any chat pane, without leaving the page.</span>
+    </a>
+  </div>
+</section>
+
+<section class="home-block">
+  <h2 class="home-block__title">Choose the right chain</h2>
+  <div class="chain-grid">
+
+    <div class="chain-card">
+      <div class="chain-card__head">
+        <span class="chain-card__icon" data-variant="brand">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 6.91-1.01L12 2Z"/></svg>
+        </span>
+        <div class="chain-card__titles">
+          <p class="chain-card__name">BNB Smart Chain</p>
+          <p class="chain-card__tag">EVM-compatible Layer 1</p>
+        </div>
+      </div>
+      <div class="chain-card__divider"></div>
+      <div class="chain-card__body">
+        <p class="chain-card__label">Best for</p>
+        <p class="chain-card__desc">DeFi, stablecoins, high-throughput dApps, and teams porting EVM projects with the deepest liquidity on-chain.</p>
+      </div>
+      <div class="chain-card__divider"></div>
+      <div class="chain-card__stats">
+        <div class="chain-card__stat"><span class="chain-card__stat-value">0.75s</span><span class="chain-card__stat-label">Block time</span></div>
+        <div class="chain-card__stat is-middle"><span class="chain-card__stat-value">$0.01</span><span class="chain-card__stat-label">Avg fee</span></div>
+        <div class="chain-card__stat"><span class="chain-card__stat-value">EVM</span><span class="chain-card__stat-label">Compatible</span></div>
+      </div>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-card__head">
+        <span class="chain-card__icon" data-variant="blue">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+        </span>
+        <div class="chain-card__titles">
+          <p class="chain-card__name">opBNB</p>
+          <p class="chain-card__tag">High-performance Layer 2</p>
+        </div>
+      </div>
+      <div class="chain-card__divider"></div>
+      <div class="chain-card__body">
+        <p class="chain-card__label">Best for</p>
+        <p class="chain-card__desc">Gaming, high-frequency trading, and apps that need the lowest cost and highest throughput at scale.</p>
+      </div>
+      <div class="chain-card__divider"></div>
+      <div class="chain-card__stats">
+        <div class="chain-card__stat"><span class="chain-card__stat-value">1s</span><span class="chain-card__stat-label">Block time</span></div>
+        <div class="chain-card__stat is-middle"><span class="chain-card__stat-value">Sub-cent</span><span class="chain-card__stat-label">Fees</span></div>
+        <div class="chain-card__stat"><span class="chain-card__stat-value">L2</span><span class="chain-card__stat-label">OP Stack</span></div>
+      </div>
+    </div>
+
+    <div class="chain-card">
+      <div class="chain-card__head">
+        <span class="chain-card__icon" data-variant="green">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4.97 0 9 1.34 9 3v12c0 1.66-4.03 3-9 3s-9-1.34-9-3V6c0-1.66 4.03-3 9-3Zm7 7.12C17.27 10.97 14.8 11.5 12 11.5s-5.27-.53-7-1.38V12c0 .54 2.69 1.5 7 1.5s7-.96 7-1.5v-1.88ZM12 5C7.69 5 5 5.96 5 6.5S7.69 8 12 8s7-.96 7-1.5S16.31 5 12 5Z"/></svg>
+        </span>
+        <div class="chain-card__titles">
+          <p class="chain-card__name">BNB Greenfield</p>
+          <p class="chain-card__tag">Decentralized storage</p>
+        </div>
+      </div>
+      <div class="chain-card__divider"></div>
+      <div class="chain-card__body">
+        <p class="chain-card__label">Best for</p>
+        <p class="chain-card__desc">NFT metadata, RWA data layers, AI training sets, and apps needing programmable, cross-chain storage.</p>
+      </div>
+      <div class="chain-card__divider"></div>
+      <div class="chain-card__stats">
+        <div class="chain-card__stat"><span class="chain-card__stat-value">S3</span><span class="chain-card__stat-label">Compatible</span></div>
+        <div class="chain-card__stat is-middle"><span class="chain-card__stat-value">On-chain</span><span class="chain-card__stat-label">Access control</span></div>
+        <div class="chain-card__stat"><span class="chain-card__stat-value">Cross</span><span class="chain-card__stat-label">Chain</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="home-block home-block--cta">
+  <a class="home-announce" href="./announce/">Announcement <span aria-hidden="true">&rarr;</span></a>
+</section>
+
 </div>

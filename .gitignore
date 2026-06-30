@@ -9,3 +9,5 @@ site/
 build
 
 .docusaurus
+
+.venv/

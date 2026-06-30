@@ -31,6 +31,76 @@
 .md-header__title .md-header__site_name {
     font-weight: 500;
     color: var(--doc-dark-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Header actions: Settings + Get help */
+.md-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.md-header-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 8px;
+    border: 1px solid var(--doc-border-3);
+    background: var(--doc-layer-3);
+    color: var(--doc-text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .15s, border-color .15s, color .15s;
+}
+
+.md-header-action:hover,
+.md-header-action:focus {
+    background: var(--doc-layer-4);
+    color: var(--doc-text-primary);
+}
+
+.md-header-action svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.md-header-action--primary {
+    background: var(--doc-support-brand-2);
+    border-color: var(--doc-support-brand-2);
+    color: var(--doc-text-on-color);
+}
+
+.md-header-action--primary:hover,
+.md-header-action--primary:focus {
+    background: var(--doc-text-brand);
+    border-color: var(--doc-text-brand);
+    color: var(--doc-text-on-color);
+}
+
+@media (max-width: 1219px) {
+    .md-header-action__label {
+        display: none;
+    }
+
+    .md-header-action {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .md-header__actions {
+        display: none;
+    }
 }
 
 .md-search__icon[for=__search] {

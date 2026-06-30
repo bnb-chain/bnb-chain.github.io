@@ -54,7 +54,7 @@
             <div class="md-header__ellipsis">
                 <div class="md-header__site_name">
                   <span class="md-ellipsis">
-                    {{ config.site_name }}
+                    Docs
                   </span>
                 </div>
             </div>
@@ -87,6 +87,30 @@
             <!-- Search interface -->
             {% include "partials/search.html" %}
         {% endif %}
+
+        <!-- Header actions: Settings + Get help -->
+        <div class="md-header__actions">
+            <button
+                type="button"
+                class="md-header-action"
+                data-doc-settings
+                title="Settings"
+                aria-label="Settings"
+            >
+                {% include ".icons/material/cog-outline.svg" %}
+                <span class="md-header-action__label">Settings</span>
+            </button>
+            <a
+                class="md-header-action md-header-action--primary"
+                href="https://discord.com/invite/bnbchain"
+                target="_blank"
+                rel="noopener"
+                title="Get help"
+            >
+                {% include ".icons/octicons/comment-discussion-24.svg" %}
+                <span class="md-header-action__label">Get help</span>
+            </a>
+        </div>
 
         <!-- Repository information -->
         {% if config.repo_url %}
