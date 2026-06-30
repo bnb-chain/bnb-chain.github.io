@@ -34,11 +34,23 @@
     gap: 20px;
 }
 
+.dk-block__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+}
+
 .md-typeset .dk-block__title {
     font-size: 1.4em;
     font-weight: 700;
     color: var(--doc-text-primary);
     margin: 0;
+}
+
+.dk-block__count {
+    font-size: 13px;
+    color: var(--doc-text-tertiary);
 }
 
 /* Featured tools */
@@ -84,7 +96,6 @@
 .install-cmd {
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
     gap: 8px;
     width: 100%;
     padding: 8px 8px 8px 12px;
@@ -93,7 +104,16 @@
     background: var(--doc-bg-1);
 }
 
+.install-cmd__prompt {
+    flex-shrink: 0;
+    font-family: var(--md-code-font-family, monospace);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--doc-text-brand);
+}
+
 .install-cmd code {
+    flex: 1 1 auto;
     font-family: var(--md-code-font-family, monospace);
     font-size: 13px;
     color: var(--doc-text-primary);
@@ -186,13 +206,36 @@
 }
 
 .dk-chip {
-    display: inline-block;
-    padding: 2px 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 10px;
     border-radius: 999px;
     border: 1px solid var(--doc-border-3);
     font-size: 12px;
     color: var(--doc-text-secondary);
     white-space: nowrap;
+}
+
+.dk-chip::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--doc-text-tertiary);
+    flex-shrink: 0;
+}
+
+.dk-chip[data-chain="bsc"]::before {
+    background: #f0b90b;
+}
+
+.dk-chip[data-chain="opbnb"]::before {
+    background: #ff8a38;
+}
+
+.dk-chip[data-chain="greenfield"]::before {
+    background: #00d957;
 }
 
 .dk-table__action-col {

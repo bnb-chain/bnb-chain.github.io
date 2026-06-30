@@ -43,7 +43,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
-    - navigation.sections
+#    - navigation.sections
 #    - navigation.expand
     - navigation.prune
     - navigation.path
@@ -59,7 +59,7 @@ theme:
 # Page tree
 nav:
   - Home:
-    - Home: index.md
+    - Overview: index.md
     - Announcements:
       - Announcements: ./announce/index.md
       - Upcoming:
@@ -95,6 +95,11 @@ nav:
         - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
         - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
         - FAQ: ./bc-fusion/post-fusion/faq.md
+    - Resource:
+      - RPC endpoints: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/
+      - Faucet (testnet): https://www.bnbchain.org/en/testnet-faucet
+      - Bridge: https://www.bnbchain.org/en/bnb-chain-bridge
+      - Blog: https://www.bnbchain.org/en/blog
 
   - Developer Kit:
       - Overview: ./developer-kit/index.md

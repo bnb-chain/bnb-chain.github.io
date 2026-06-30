@@ -379,3 +379,47 @@
         color: var(--doc-text-brand);
     }
 }
+
+/* Centered, stretched search bar (matches Figma) */
+@media screen and (min-width: 60em) {
+    .md-header__title {
+        flex-grow: 0;
+        margin-right: 8px;
+    }
+
+    .md-search {
+        flex: 1 1 auto;
+        padding: 0 24px;
+    }
+
+    .md-search__inner {
+        float: none;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .md-search__form {
+        width: 100%;
+    }
+
+    .md-search__inner .md-search__input {
+        width: 100%;
+    }
+}
+
+/* Tab bar divider between "Developer Kit" and "BNB Smart Chain" */
+.md-tabs__list > .md-tabs__item:nth-child(3) {
+    position: relative;
+}
+
+.md-tabs__list > .md-tabs__item:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 18px;
+    background: var(--doc-border-4);
+}

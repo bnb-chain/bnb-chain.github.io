@@ -77,11 +77,14 @@
     height: 36px;
     border-radius: 8px;
     margin-bottom: 4px;
+    background: var(--doc-layer-3);
+    color: var(--doc-text-secondary);
 }
 
 .build-card__icon svg {
     width: 22px;
     height: 22px;
+    fill: currentColor;
 }
 
 .md-typeset .build-card__title {
@@ -94,6 +97,22 @@
     font-size: 14px;
     line-height: 1.45;
     color: var(--doc-text-secondary);
+}
+
+.build-card__link {
+    margin-top: auto;
+    padding-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--doc-text-brand);
+}
+
+.build-card:hover .build-card__link,
+.build-card:focus .build-card__link {
+    text-decoration: underline;
 }
 
 /* Icon tile variants */

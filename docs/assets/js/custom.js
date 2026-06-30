@@ -7,20 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Settings header action toggles the color palette (light/dark).
-    document.addEventListener("click", function(event) {
-        var trigger = event.target.closest("[data-doc-settings]");
-        if (!trigger) return;
-        event.preventDefault();
-        var palette = document.querySelector("[data-md-component=palette]");
-        if (!palette) return;
-        var visibleLabel = Array.prototype.find.call(
-            palette.querySelectorAll("label.md-header__button"),
-            function(label) { return label.offsetParent !== null; }
-        );
-        if (visibleLabel) visibleLabel.click();
-    });
-
     // Copy-to-clipboard for install command pills.
     document.addEventListener("click", function(event) {
         var btn = event.target.closest(".copy-btn[data-copy]");
