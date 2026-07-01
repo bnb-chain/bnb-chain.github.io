@@ -116,22 +116,14 @@
 }
 
 /* Icon tile variants */
-.build-card__icon[data-variant="brand"],
 .chain-card__icon[data-variant="brand"] {
     background: color-mix(in srgb, var(--doc-text-brand) 12%, transparent);
     color: var(--doc-text-brand);
 }
 
-.build-card__icon[data-variant="green"],
 .chain-card__icon[data-variant="green"] {
     background: rgba(0, 255, 103, 0.08);
     color: #00d957;
-}
-
-.build-card__icon[data-variant="blue"],
-.chain-card__icon[data-variant="blue"] {
-    background: rgba(56, 139, 253, 0.10);
-    color: #4d93ff;
 }
 
 .chain-card__icon[data-variant="opbnb"] {

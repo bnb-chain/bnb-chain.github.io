@@ -262,10 +262,6 @@
     color: var(--doc-text-primary);
 }
 
-.md-header__button {
-    margin: 0 0.8rem;
-}
-
 .md-option[data-md-color-media] ~ .md-icon svg {
     width: 24px;
     height: 24px;
