@@ -134,6 +134,11 @@
     color: #4d93ff;
 }
 
+.chain-card__icon[data-variant="opbnb"] {
+    background: rgba(255, 138, 56, 0.06);
+    color: #FF8A38;
+}
+
 .build-card__icon svg,
 .chain-card__icon svg {
     fill: currentColor;
