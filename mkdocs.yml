@@ -58,7 +58,7 @@ theme:
 
 # Page tree
 nav:
-  - Home:
+  - Overview:
     - Overview: index.md
     - Announcements:
       - Announcements: ./announce/index.md
