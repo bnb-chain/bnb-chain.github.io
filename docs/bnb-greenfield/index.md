@@ -44,9 +44,9 @@ title: BNB Greenfield
         <div>Storage Provider</div>
         <p>Explore the Storage Provider.</p>
     </a>
-    <a href="./for-developers/apis-and-sdks">
-        <div>APIs and SDKs</div>
-        <p>Utilize the APIs and SDKs to build the app</p>
+    <a href="../developer-kit/">
+        <div>Developer Kit</div>
+        <p>Official tool index — SDK guides, MCP, and demo cards for Greenfield, BSC, and opBNB</p>
     </a>
 </div>
 

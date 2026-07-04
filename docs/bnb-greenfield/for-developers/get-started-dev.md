@@ -77,8 +77,9 @@ Create a private bucket and share it with specific individuals.
 
 ### SDK
 
-- [Greenfield Go SDK](apis-and-sdks/sdk-go.md), more details refer to [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk).
-- [Greenfield Javascript SDK](apis-and-sdks/sdk-js.md), more details refer to [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
+- [Greenfield SDK](../../developer-kit/greenfield-sdk/) — Go and JavaScript guides (language tabs); [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk) · [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
+
+Official tools index: [BNB Chain Developer Kit](../../developer-kit/).
 
 ## Setup
 

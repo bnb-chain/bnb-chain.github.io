@@ -62,8 +62,10 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - NA: ./announce/na.md
+      - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
     - Passed:
+      - Token Recovery Tool Sunset — Phase 2: ./announce/token-recovery-sunset-phase2.md
+      - Token Recovery Tool Sunset Plan: ./announce/token-recovery-sunset-plan.md
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
       - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
       - Mongolian Hardfork(Greenfield): ./announce/mongolian-greenfield.md
@@ -93,6 +95,7 @@ nav:
     - Ecosystem: https://dappbay.bnbchain.org/
     - Developers:
         - Quick Guide: ./bnb-smart-chain/developers/quick-guide.md
+        - Official Developer Kit: ./developer-kit/index.md
         - Dev-Tools: https://www.bnbchain.org/en/dev-tools
         - JSON-RPC:
             - Json Rpc Endpoint: ./bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md
@@ -168,6 +171,7 @@ nav:
         - BNB Chain Rollup as Service: ./bnb-opbnb/core-concepts/raas.md
     - Developers:
       - Quick Guide: ./bnb-opbnb/developers/quick-guide.md
+      - Official Developer Kit: ./developer-kit/index.md
       - Developer Tools: ./bnb-opbnb/developers/developer-tools.md
       - Network Faucet: ./bnb-opbnb/developers/network-faucet.md
       - Wallet Gas Price Setting: ./bnb-opbnb/developers/set-gas-price.md
@@ -249,12 +253,7 @@ nav:
 
           - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
 
-          - APIs and SDKs:
-              - Overview: ./bnb-greenfield/for-developers/apis-and-sdks/index.md
-              - Go SDK Example: ./bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md
-              - Javascript SDK Example: ./bnb-greenfield/for-developers/apis-and-sdks/sdk-js.md
-              - Go SDK Official Doc: https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk
-              - JS SDK Official Doc: https://docs.bnbchain.org/greenfield-js-sdk/
+          - Official Developer Kit: ./developer-kit/index.md
 
       - For Chain Validator:
           - Overview: ./bnb-greenfield/for-validator/overview.md
@@ -283,30 +282,41 @@ nav:
       - Roadmap:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
-  - Showcases:
-     - AI:
-        - Overview: ./showcase/mcp/index.md
-        - Skills: ./showcase/mcp/skills.md
-        - Integrating AskAI: ./showcase/mcp/ask-ai-to-ide.md
-     - Name Service and Attestation:
-       - Decentralized Identity: ./showcase/identity/did.md
-       - Decentralized Name Service:
-         - SpaceID: ./showcase/identity/dns.md
-         - Build with SpaceID: ./showcase/identity/dns-dev.md
-       - Attestation:
-         - BNB Attestation Service: ./showcase/identity/attestation.md
-         - Build your Attestation: ./showcase/identity/attestation-dev.md
-     - Telegram Integration:
-       - Telegram Mini Game on BNB Chain: ./showcase/telegram/minigame.md
-       - Telegram Wallets: ./showcase/telegram/wallets.md
-     - Wallet:
-       - In-app Wallet and Account Abstraction: ./showcase/wallet/in-app-wallet.md
-     - Tokenization:
-         - Introduction: ./showcase/tokenization/introduction.md
-         - Account Preparation: ./showcase/tokenization/account-preparation.md
-         - Company Tokenization Tutorial: ./showcase/tokenization/company-tokenization.md
-         - RWA Tokenization Tutorial: ./showcase/tokenization/rwa-tokenization.md
-         - NFT Loyalty Program Tutorial: ./showcase/tokenization/nft-loyalty-programs.md
+  - Developer Kit:
+      - Overview: ./developer-kit/index.md
+      - BNB Agent SDK:
+          - Overview: ./developer-kit/bnbagent-sdk/index.md
+          - Quickstart: ./developer-kit/bnbagent-sdk/quickstart.md
+          - Configuration: ./developer-kit/bnbagent-sdk/configuration.md
+          - Architecture: ./developer-kit/bnbagent-sdk/architecture.md
+          - Networks & Contracts: ./developer-kit/bnbagent-sdk/networks.md
+          - Examples: ./developer-kit/bnbagent-sdk/examples.md
+          - Security: ./developer-kit/bnbagent-sdk/security.md
+          - Troubleshooting: ./developer-kit/bnbagent-sdk/troubleshooting.md
+      - BNB Agent Studio:
+          - Overview: ./developer-kit/bnbchain-studio/index.md
+          - Quickstart: ./developer-kit/bnbchain-studio/quickstart.md
+          - Demo: ./developer-kit/bnbchain-studio/demo.md
+          - Architecture: ./developer-kit/bnbchain-studio/architecture.md
+          - Configuration: ./developer-kit/bnbchain-studio/configuration.md
+          - CLI Reference: ./developer-kit/bnbchain-studio/cli-reference.md
+          - Deployment: ./developer-kit/bnbchain-studio/deployment.md
+          - Security: ./developer-kit/bnbchain-studio/security.md
+          - Troubleshooting: ./developer-kit/bnbchain-studio/troubleshooting.md
+      - Greenfield SDK:
+          - Overview: ./developer-kit/greenfield-sdk/index.md
+      - MCP & Ask AI:
+          - Overview: ./developer-kit/mcp/index.md
+          - Ask AI: ./developer-kit/ask-ai/index.md
+          - VS Code guide: ./developer-kit/ask-ai/vs-code-guide.md
+      - MPP SDK:
+          - Overview: ./developer-kit/mpp-sdk/index.md
+          - Quickstart: ./developer-kit/mpp-sdk/quickstart.md
+          - Architecture: ./developer-kit/mpp-sdk/architecture.md
+          - Replay Store: ./developer-kit/mpp-sdk/replay-store.md
+          - Examples: ./developer-kit/mpp-sdk/examples.md
+      - Privacy at Scale:
+          - Overview: ./developer-kit/privacy-at-scale/index.md
   - BNB Chain Fusion:
       - BNB Chain Fusion: ./bc-fusion/index.md
       - Overview: ./bc-fusion/overview.md
@@ -354,6 +364,9 @@ markdown_extensions:
 plugins:
   - search
   - mkdocs-video
+  - git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
   - redirects:
       redirect_maps:
         'docs.md': 'bnb-smart-chain/index.md'
@@ -591,8 +604,23 @@ plugins:
         'greenfield-docs/docs/intro.md': 'bnb-greenfield/introduction.md'
         'greenfield-docs/docs/release-notes/features.md': 'bnb-greenfield/roadmap/features.md'
         'greenfield-docs/docs/release-notes/roadmap.md': 'bnb-greenfield/roadmap/roadmap.md'
-        'greenfield-docs/docs/sdks/sdk-go.md': 'bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md'
-        'greenfield-docs/docs/sdks/sdks.md': 'bnb-greenfield/for-developers/apis-and-sdks/index.md'
+        'greenfield-docs/docs/sdks/sdk-go.md': 'developer-kit/greenfield-sdk/index.md'
+        'greenfield-docs/docs/sdks/sdks.md': 'developer-kit/index.md'
+        'bnb-greenfield/for-developers/apis-and-sdks/index.md': 'developer-kit/index.md'
+        'bnb-greenfield/for-developers/apis-and-sdks/sdk-go.md': 'developer-kit/greenfield-sdk/index.md'
+        'bnb-greenfield/for-developers/apis-and-sdks/sdk-js.md': 'developer-kit/greenfield-sdk/index.md'
+        'developer-kit/greenfield-sdk/go.md': 'developer-kit/greenfield-sdk/index.md'
+        'developer-kit/greenfield-sdk/js.md': 'developer-kit/greenfield-sdk/index.md'
+        'developer-kit/greenfield-go-sdk/index.md': 'developer-kit/greenfield-sdk/index.md'
+        'developer-kit/greenfield-js-sdk/index.md': 'developer-kit/greenfield-sdk/index.md'
+        'showcase/mcp/index.md': 'developer-kit/mcp/index.md'
+        'showcase/mcp/skills.md': 'developer-kit/mcp/skills.md'
+        'showcase/mcp/ask-ai-to-ide.md': 'developer-kit/ask-ai/index.md'
+        'showcase/mcp/ask-ai-vs-code-guide.md': 'developer-kit/ask-ai/vs-code-guide.md'
+        'build-guides/ai-agent/mcp/index.md': 'developer-kit/mcp/index.md'
+        'build-guides/ai-agent/mcp/skills.md': 'developer-kit/mcp/skills.md'
+        'build-guides/ai-agent/ask-ai-to-ide.md': 'developer-kit/ask-ai/index.md'
+        'build-guides/ai-agent/ask-ai-vs-code-guide.md': 'developer-kit/ask-ai/vs-code-guide.md'
         'greenfield-docs/docs/tutorials/app/ai/hugging-face-intro.md': 'bnb-greenfield/for-developers/tutorials/app/overview.md'
         'greenfield-docs/docs/tutorials/app/data-marketplace/contract-list.md': 'bnb-greenfield/for-developers/cross-chain-integration/contract-list.md'
         'greenfield-docs/docs/tutorials/app/data-marketplace/overview.md': 'bnb-greenfield/for-developers/tutorials/app/overview.md'

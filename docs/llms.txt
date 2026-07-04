@@ -1,0 +1,263 @@
+# BNB Chain Documentation
+
+> BNB Chain is a high-performance, community-driven blockchain ecosystem. It includes
+> BNB Smart Chain (BSC), an EVM-compatible L1 with sub-second block times and
+> Proof-of-Staked-Authority consensus; opBNB, an OP-Stack-based L2 supporting up to
+> 5,000 TPS; and BNB Greenfield, a decentralized object-storage network with cross-chain
+> programmability to BSC.
+
+- BSC produces blocks every 0.45s (post-Fermi hardfork), processes up to 5 trillion gas/day, and has achieved zero downtime throughout 2025
+- All Solidity/EVM contracts deploy on BSC without modification; average gas fees are ~$0.01
+- opBNB settles on BSC and targets sub-cent transaction fees for gaming, DeFi, and high-frequency use cases
+- BNB Greenfield provides S3-compatible decentralized storage with on-chain access control and cross-chain mirroring to BSC
+- 700M+ unique addresses, 4M+ daily active users, $14B+ stablecoin market cap on-chain
+- For AI agent integration (MCP, ERC-8004), see the Showcases > AI section
+- Source repo: https://github.com/bnb-chain/bnb-chain.github.io
+
+
+## BNB Smart Chain
+
+- [BNB Smart Chain Overview](https://docs.bnbchain.org/bnb-smart-chain/): Landing page for BNB Smart Chain developer documentation.
+- [Overview](https://docs.bnbchain.org/bnb-smart-chain/overview/): Architecture overview of BSC: PoSA consensus, 0.45s blocks, EVM compatibility.
+- [Introduction](https://docs.bnbchain.org/bnb-smart-chain/introduction/): What is BSC and how it fits in the BNB Chain ecosystem.
+- [Ecosystem](https://dappbay.bnbchain.org/)
+- **Developers**
+  - [Quick Guide](https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/): Everything a developer needs to start building on BSC.
+  - [Official Developer Kit](https://docs.bnbchain.org/developer-kit/): Official SDK guides and middleware for BSC, opBNB, and Greenfield.
+  - [Dev-Tools](https://www.bnbchain.org/en/dev-tools)
+  - **JSON-RPC**
+    - [Json Rpc Endpoint](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/): BSC JSON-RPC endpoint URLs for mainnet and testnet.
+    - [Bsc Api list](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/): Complete list of BSC JSON-RPC API methods and finality APIs.
+  - [Faucet](https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/): Get testnet tBNB tokens for BSC development.
+  - **Node Operators**
+    - [Node Best Practices](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_best_practices/): Choosing and tuning the right BSC node type for your workload.
+    - **Node Types**
+      - [Full Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/full_node/): Run a BSC full node that stores the complete world state.
+      - [Archive Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/archive_node/): Run a BSC archive node with full historical state access.
+      - [Fast Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/fast_node/): Run a lightweight BSC fast node (no trie data).
+    - **Infrastructure & Setup**
+      - [Boot Node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/boot_node/): Through the maintenance release v1.2.12 4, Boot Nodes were introduced on the BSC mainnet.
+      - [Docker Image](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/docker/): Run BSC nodes using the official Docker image.
+    - **Maintenance & Upgrades**
+      - [Upgrade Geth](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/upgrade_geth/): Updating geth is as easy as it gets.
+      - [Node Maintenance](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_maintenance/): All the clients are suggested to upgrade to the latest release.
+  - **EOA Paymaster**
+    - [Overview](https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/overview/): Gasless transactions for EOA wallets via the BNB Chain Paymaster.
+    - [Paymaster API Spec](https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/paymaster-api/): Standardized API spec for paymaster service integration.
+    - [Wallet Integration](https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/wallet-integration/): How wallet developers integrate paymaster gas sponsorship.
+    - [Try Gasless Transaction](https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/wallet-demo/): Several mainstream cryptocurrency wallets have already implemented Paymaster integration.
+- **Staking**
+  - [Overview](https://docs.bnbchain.org/bnb-smart-chain/staking/overview/): BNB staking via Proof-of-Staked-Authority (PoSA) and BEP-294.
+  - [User Guide](https://docs.bnbchain.org/bnb-smart-chain/staking/user-guide/): Leverage the BNB staking dApp for streamlined management of your stakes.
+  - [Build Staking dApps](https://docs.bnbchain.org/bnb-smart-chain/staking/developer-guide/): Build staking dApps: create validators, delegate, and manage stakes.
+- **Governance**
+  - [Overview](https://docs.bnbchain.org/bnb-smart-chain/governance/overview/): On-chain governance on BSC via BEP-297 native governance module.
+  - [User Guide](https://docs.bnbchain.org/bnb-smart-chain/governance/user-guide/): This document provides a guide on how to participate in governance on the BNB Smart Chain (BSC)…
+  - [BNB Advocate's Guide](https://docs.bnbchain.org/bnb-smart-chain/governance/bnb-kol/): Key Opinion Leaders (BNB Advocates) hold significant influence within the BNB Chain community.
+  - [Temperature Check](https://docs.bnbchain.org/bnb-smart-chain/governance/temp-check/): BNB Chain governance involves a two-step process: temperature check and final decision voting.
+  - [Governance APIs](https://docs.bnbchain.org/bnb-smart-chain/governance/apis/): Governance API reference for proposals, votes, and execution.
+- **Validator**
+  - [Overview](https://docs.bnbchain.org/bnb-smart-chain/validator/overview/): BSC validator system: requirements, economics, and architecture.
+  - [Run Validator](https://docs.bnbchain.org/bnb-smart-chain/validator/run-val/): Suggest i7i.8xlarge or i7ie.6xlarge instance type on AWS (better to disable HyperThread, which…
+  - [Create Validator](https://docs.bnbchain.org/bnb-smart-chain/validator/create-val/): Step-by-step guide to create a new BSC validator.
+  - [Secure Validator](https://docs.bnbchain.org/bnb-smart-chain/validator/security/): Each BSC validator is encouraged to run its operations independently, as diverse setups increase…
+  - [Key Management](https://docs.bnbchain.org/bnb-smart-chain/validator/manage-keys/): introduce the native staking and governance features for BNB Smart Chain (BSC).
+  - **MEV**
+    - [Overview](https://docs.bnbchain.org/bnb-smart-chain/validator/mev/overview/): MEV on BSC: Proposer-Builder Separation architecture.
+    - [Validator Guide](https://docs.bnbchain.org/bnb-smart-chain/validator/mev/validator-integration/): When activating MEV functionality, validators encounter a mix of
+    - [Builder Guide](https://docs.bnbchain.org/bnb-smart-chain/validator/mev/builder-integration/): The Builder API Specification
+    - [User Guide](https://docs.bnbchain.org/bnb-smart-chain/validator/mev/user-guide/): PBS(Proposer-Builder Separation) framework offers several advantages for BNB Chain users:
+    - [FAQs](https://docs.bnbchain.org/bnb-smart-chain/validator/mev/faqs/): BNB Chain's MEV solution leverages Proposer Builder Separation (PBS)
+  - **EVN**
+    - [Overview](https://docs.bnbchain.org/bnb-smart-chain/validator/evn/overview/): Enhanced Validator Network for sub-second block coordination.
+    - [Best Practice](https://docs.bnbchain.org/bnb-smart-chain/validator/evn/best-practice/): At the network layer, BSC requires minimal latency to maximize time available for critical…
+    - [Network Monitor](https://docs.bnbchain.org/bnb-smart-chain/validator/evn/network-monitor/): In EVN, special metrics are provided to observe the message delay indicators of the EVN network and…
+    - [FAQs](https://docs.bnbchain.org/bnb-smart-chain/validator/evn/faqs/): you can use the following command to query your enode information.
+- **Slashing**
+  - [Overview](https://docs.bnbchain.org/bnb-smart-chain/slashing/overview/): Slashing penalties for validator misbehavior on BSC.
+  - [Slash Rules](https://docs.bnbchain.org/bnb-smart-chain/slashing/slash-rules/): Three types of malicious behaviors can lead to slashing on the BSC network.
+  - [Slash Monitor](https://docs.bnbchain.org/bnb-smart-chain/slashing/monitor/): Generally, without maliciously altering BSC node code or mistakenly running the validator,…
+- [Cross Chain Bridge](https://docs.bnbchain.org/bnb-smart-chain/cross-chain-bridge/): Native cross-chain bridge between BSC and other networks.
+- [Benchmark](https://docs.bnbchain.org/bnb-smart-chain/benchmark/design-reference/): BSC performance benchmarking methodology and results.
+- [FAQ](https://docs.bnbchain.org/bnb-smart-chain/faq/): Frequently asked questions about BNB Smart Chain.
+
+## opBNB
+
+- [opBNB Overview](https://docs.bnbchain.org/bnb-opbnb/): Landing page for opBNB Layer 2 documentation.
+- [Overview](https://docs.bnbchain.org/bnb-opbnb/overview/): opBNB architecture: OP-Stack L2 on BSC, up to 5,000 TPS, sub-cent fees.
+- **Get Started**
+  - [Network Information](https://docs.bnbchain.org/bnb-opbnb/get-started/network-info/): opBNB RPC endpoints, chain IDs, and network configuration.
+  - [Wallet Configuration](https://docs.bnbchain.org/bnb-opbnb/get-started/wallet-configuration/): Configure MetaMask and other wallets for opBNB.
+  - [Deposit to opBNB](https://docs.bnbchain.org/bnb-opbnb/get-started/deposit-to-opbnb/): Before building or deploying any applications on the opBNB network, you must first deposit…
+  - [Withdraw from opBNB](https://docs.bnbchain.org/bnb-opbnb/get-started/withdraw-from-opbnb/): To transfer your tokens from opBNB to BSC, you can use the opBNB bridge dApp(Testnet) or opBNB…
+- **Core Concepts**
+  - [Why BSC Requires opBNB](https://docs.bnbchain.org/bnb-opbnb/core-concepts/why-bsc-requires-opbnb/): Why BSC needs a Layer 2 and how opBNB solves scaling.
+  - [Why OP Stack](https://docs.bnbchain.org/bnb-opbnb/core-concepts/why-opstack/): Our team had extensive discussions and research before we embarked on the mission of creating a…
+  - [Optimizations on OP Stack](https://docs.bnbchain.org/bnb-opbnb/core-concepts/optimisations-on-opstack/): This document discusses the various optimizations made to OP Stack that enhances its performance…
+  - [Metrics](https://docs.bnbchain.org/bnb-opbnb/core-concepts/opbnb-metrics/): Gas limits, block times, and throughput metrics for opBNB.
+  - [Gas and Fees](https://docs.bnbchain.org/bnb-opbnb/core-concepts/gas-and-fees/): How gas pricing and fees work on opBNB.
+  - [Account Abstraction](https://docs.bnbchain.org/bnb-opbnb/core-concepts/account-abstraction-on-opbnb/): The primary allure of opBNB lies in its ability to significantly reduce the gas costs associated…
+  - [Protocol Addresses](https://docs.bnbchain.org/bnb-opbnb/core-concepts/opbnb-protocol-addresses/): The opBNB protocol contracts are smart contracts that enable the execution of transactions on the…
+  - [BNB Chain Rollup as Service](https://docs.bnbchain.org/bnb-opbnb/core-concepts/raas/): Rollup-as-a-Service: deploy custom OP-Stack L2s on BSC.
+- **Developers**
+  - [Quick Guide](https://docs.bnbchain.org/bnb-opbnb/developers/quick-guide/): Quick start for deploying contracts on opBNB.
+  - [Official Developer Kit](https://docs.bnbchain.org/developer-kit/): Official SDK guides and middleware for BSC, opBNB, and Greenfield.
+  - [Developer Tools](https://docs.bnbchain.org/bnb-opbnb/developers/developer-tools/): Developer tools and SDKs available for opBNB.
+  - [Network Faucet](https://docs.bnbchain.org/bnb-opbnb/developers/network-faucet/): If you want to test the functionality of the BNB Smart Chain, you will need some testing tokens,…
+  - [Wallet Gas Price Setting](https://docs.bnbchain.org/bnb-opbnb/developers/set-gas-price/): This document shows you how to set the priority price and base price for opBNB transactions in…
+  - [Multi-sig Wallet](https://docs.bnbchain.org/bnb-opbnb/developers/multisig-wallet/): BNB Chain deployed a multi-sig wallet service based on the Gnosis Safe protocol on opBNB mainnet,…
+  - [BEP20 CrossChain Introduction](https://docs.bnbchain.org/bnb-opbnb/developers/bep20-crosschain/): You can use the opBNB bridge or third-party bridges like zkBridge and rhino.fi to easily deposit…
+  - [Geth P2P Sync Feature](https://docs.bnbchain.org/bnb-opbnb/developers/geth-sync/): We're excited to introduce a new feature in this release: The Geth P2P Sync Feature.
+  - [Developers Cheat Sheet](https://docs.bnbchain.org/bnb-opbnb/developers/cheat-sheet/): Setting up a node in the BNB Chain ecosystem requires understanding hardware requirements.
+- **Advanced Topics**
+  - [Local Development](https://docs.bnbchain.org/bnb-opbnb/advanced/local-dev-env/): Set up a local opBNB development environment.
+  - [Build a Full Stack dApp on opBNB](https://docs.bnbchain.org/bnb-opbnb/advanced/full-stack-dapp/): Build and deploy a full-stack dApp on opBNB.
+  - [Verify Smart Contract on opBNBScan explorer](https://docs.bnbchain.org/bnb-opbnb/advanced/verify-on-opbnbscan/): opBNBScan provides a convenient and user-friendly platform for developers to verify their smart…
+  - [Node Best Practices](https://docs.bnbchain.org/bnb-opbnb/advanced/node-best-practices/): opBNB accommodates various node modes: Full, Fast, and Archive.
+  - [Local Node](https://docs.bnbchain.org/bnb-opbnb/advanced/local-node/): If you're looking to build an app on opBNB you'll need access to an opBNB node.
+  - [Run with PebbleDB and PBSS](https://docs.bnbchain.org/bnb-opbnb/advanced/run-with-pebbledb-and-pbss/): To start op-geth with PBSS and PebbleDB, include the following flags:
+  - [Run your own opBNB on BSC](https://docs.bnbchain.org/bnb-opbnb/advanced/run-your-own-l2-with-opbnb/): This tutorial is designed for developers who want to create l2 rollup testnet chain.
+- **FAQs**
+  - [Protocol FAQs](https://docs.bnbchain.org/bnb-opbnb/faq/protocol-faqs/): opBNB testnet enhances the performance of the "Execution Layer" and the "Derivation Layer" of the…
+  - [Gas and Fees FAQs](https://docs.bnbchain.org/bnb-opbnb/faq/gas-and-fees-faqs/): opBNB can make small daily transactions possible because the transaction fees are very low, around…
+  - [opBNB Bridge FAQs](https://docs.bnbchain.org/bnb-opbnb/faq/opbnb-bridge-faqs/): opBNB is a project that aims to bring the benefits of L2 scaling and user-friendly UX to the BNB…
+  - [Cross Chain FAQs](https://docs.bnbchain.org/bnb-opbnb/faq/cross-chain-faqs/): opBNB relies on a mechanism called "fraud proofs" to ensure data availability and security.
+  - [Build on opBNB FAQs](https://docs.bnbchain.org/bnb-opbnb/faq/build-on-opbnb-faqs/): With the API key and smart contract address, you can retrieve the contract's verification status,…
+
+## BNB Greenfield
+
+- [BNB Greenfield Overview](https://docs.bnbchain.org/bnb-greenfield/): Landing page for BNB Greenfield decentralized storage documentation.
+- [Overview](https://docs.bnbchain.org/bnb-greenfield/introduction/): What is BNB Greenfield: S3-compatible decentralized object storage.
+- **Get Started**
+  - [Wallet Configuration](https://docs.bnbchain.org/bnb-greenfield/getting-started/wallet-configuration/): Configure wallets for BNB Greenfield.
+  - [Bridge and Transfer BNB](https://docs.bnbchain.org/bnb-greenfield/getting-started/token-transfer/): Bridge and transfer BNB between BSC and Greenfield.
+  - [Use Greenfield in Dcellar](https://docs.bnbchain.org/bnb-greenfield/getting-started/dcellar/): DCellar is a powerful tool that allows users to initiate their decentralized data management…
+  - [Greenfield Command](https://docs.bnbchain.org/bnb-greenfield/getting-started/greenfield-command/): Greenfield Command is a powerful command line for you to manage your resources on Greenfield and…
+  - [Faucet](https://docs.bnbchain.org/bnb-greenfield/getting-started/get-test-bnb/): You can claim the test tBNB tokens on BSC Testnet by the faucet, and bridge it to Greenfield…
+  - [General FAQ](https://docs.bnbchain.org/bnb-greenfield/getting-started/general-faqs/): Wallet does not support transfers on BNB Greenfield because BNB Greenfield uses a different…
+- **Core Concepts**
+  - [Accounts and Keys](https://docs.bnbchain.org/bnb-greenfield/core-concept/accounts/): Greenfield account model, keys, and authentication.
+  - [BNB Token Model](https://docs.bnbchain.org/bnb-greenfield/core-concept/bnb-token-model/): BNB remains the main utility token on Greenfield.
+  - [Billing and Payment](https://docs.bnbchain.org/bnb-greenfield/core-concept/billing-payment/): How storage billing and payment streams work on Greenfield.
+  - **Data Storage**
+    - [Simple Storage Service](https://docs.bnbchain.org/bnb-greenfield/core-concept/data-storage/simple-storage-service/): Greenfield Simple Storage Service offers developers comparable API primitives and storage models to…
+    - [Underlying Storage Model](https://docs.bnbchain.org/bnb-greenfield/core-concept/data-storage/data-storage/): An object on the Greenfield is stored among multi-SPs like below, for example, 50MB:
+    - [Data Integrity and Availability](https://docs.bnbchain.org/bnb-greenfield/core-concept/data-storage/data-availability/): There are three crucial aspects of data management: integrity, availability, and redundancy.
+  - [Cross-Chain Programmability](https://docs.bnbchain.org/bnb-greenfield/core-concept/programmability/): Cross-chain programmability between Greenfield and BSC.
+- **For Developers**
+  - [Quick Guide](https://docs.bnbchain.org/bnb-greenfield/for-developers/get-started-dev/): Quick start guide for Greenfield developers.
+  - **Network & Endpoint**
+    - [Network Info](https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/network-info/): The RPC Endpoints you may need to know to connect to Greenfield.
+    - [RPC Endpoints](https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/endpoints/): https://greenfield-chain-ap.bnbchain.org
+  - [Interact with the Chain](https://docs.bnbchain.org/bnb-greenfield/for-developers/interact-node/): There are multiple ways to interact with a node: using the CLI, using gRPC or using the REST…
+  - **Cross Chain Programmability**
+    - [EVM Programmability](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/interface/): This document give a detailed introduction of cross-chain primitives that have been defined on…
+    - [Resource Mirror](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror-concept/): Greenfield Blockchain offers resources like buckets, objects, and groups for mirroring on…
+    - [Resources Mirroring with CLI](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirror/): During the mirroring process from BNB Greenfield to BSC, the content of the file itself is not…
+    - [Integrating BSC Smart Contracts with Greenfield Projects](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/dapp-integration/): The Smart Contract SDK,
+    - [Contract as Bucket Owner](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/demo-contract-as-bucket-owner/): BNB Greenfield provides the ability for a contract to manage buckets through greenfield cross-chain…
+    - [Contract Entrypoint](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/contract-list/): Greenfield is based on a cross-chain programming model.
+    - [Cross Chain FAQ](https://docs.bnbchain.org/bnb-greenfield/for-developers/cross-chain-integration/mirroring-faqs/): By transferring control over objects to the smart contract on BSC and allowing on-chain management,…
+  - **Data Archive Layer**
+    - [Overview](https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/data-archive-layer/): Modular blockchains divide the core functions of a classic blockchain into distinct specialized…
+    - [Blob Hub](https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/blob-hub/): The Greenfield community has recently launched "BlobHub," a data archive layer designed for all…
+    - [Block Hub](https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/block-hub/): BlockHub offers a lightweight, trustless, and decentralized method for accessing blockchain data.
+    - [Light Peer](https://docs.bnbchain.org/bnb-greenfield/for-developers/data-archive/light-peer/): With the launch of the block-hub, BSC historical block data is now accessible on Greenfield.
+  - **Tutorials**
+    - [Overview](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/overview/): In this section, we will introduce the two main methods for developing dApps on BNB Greenfield:…
+    - [Basic File Management with CLI](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/file-management-overview/): Backing up files is an essential practice for any development process.
+    - [How to transition from S3 to Greenfield](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/transitioning-from-s3-to-greenfield/): Greenfield is a blockchain-based decentralized storage solution designed to enhance the…
+    - [Hosting a Website on Greenfield](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/hosting-websites-overview/): In today's era, having a website has become essential for individuals and businesses alike.
+    - **Access Control**
+      - [Access Control Management with CLI](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/cmd-access-control/): In our last tutorial, we have guided you through the process of setting up your environment,…
+      - [Cross Chain Access Control by CMD](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-cmd/): In this guide, we will walk you through the process of data permission management using the BSC…
+      - [Native Access Control](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/access-control/): In this tutorial we’ll use the go-SDK library to manage your buckets and objects.
+      - [Cross Chain Access Control by SDK](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/access-control/cross-chain-access-control-by-sdk/): In this tutorial we’ll use the go-SDK library to transfer control over objects to the smart…
+    - **Sample Apps on Greenfield**
+      - [Overview](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/overview/): Native apps are applications developed only using the Greenfield SDK, without involving the…
+      - [Data Marketplace](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/data-marketplace/): MindPress Data Marketplace is a demo built on the BNB Smart Chain and BNB Greenfield storage chains.
+      - **File Management**
+        - [Simple Tool for File Management](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/basic-file-management/): Several Chain API libraries are available.
+        - [Simple Tool for File Management (JS)](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/js-file-managemet/): Several Chain API libraries are available.
+        - [Dataset Batch operations](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/batch-upload/): In Greenfield, uploading an object to a bucket is a two-stage process.
+        - [Resumable Upload/Download Demo](https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/file-management/resumable-upload/overview/): Resumable Upload is a feature that allows files to be uploaded in multiple parts, enabling the…
+  - [Bundle Service](https://docs.bnbchain.org/bnb-greenfield/for-developers/bundle-service/): With more and more developers joining BNB Greenfield ecosystem, many good practices utilizing…
+  - [Official Developer Kit](https://docs.bnbchain.org/developer-kit/): Official SDK guides and middleware for Greenfield, BSC, and opBNB.
+- **For Chain Validator**
+  - [Overview](https://docs.bnbchain.org/bnb-greenfield/for-validator/overview/): The Greenfield blockchain plays a pivotal role in the Greenfield ecosystem.
+  - **Run Greenfield Blockchain**
+    - [Run Node](https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/run-node/): The hardware must meet certain requirements to run a Full Node.
+    - [Run Relayer](https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/run-relayer/): This tutorial is for running relayers for Greenfield to BSC and opBNB.
+    - [Run Challenger](https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/run-challenger/): The following lists the recommended hardware requirements:
+    - [Become Validator](https://docs.bnbchain.org/bnb-greenfield/for-validator/run-node/become-validator/): Hardware Requirements: Desktop or laptop hardware running recent versions of Mac OS X, or Linux.
+- **For Storage Provider**
+  - [Overview](https://docs.bnbchain.org/bnb-greenfield/storage-provider/overview/): Architecture and role of Greenfield Storage Providers.
+  - [Storage Provider Lifecycle](https://docs.bnbchain.org/bnb-greenfield/storage-provider/storage-provider-lifecycle/): This document describes the entire lifecycle of a storage provider from joining the Greenfield…
+  - [Data Service Quality Standard](https://docs.bnbchain.org/bnb-greenfield/storage-provider/standard/): BNB Greenfield is a decentralized storage network comprising two layers: blockchain and storage…
+  - **Run Storage Provider**
+    - [SP Compiling and Dependencies](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/compile-dependences/): Compilation dependencies:
+    - [Run Local SP Network](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/run-local-SP-network/): This guide helps you to set up a local Greenfield Storage Provider network for testing
+    - [Run SP Node](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/run-SP-node/): This guide helps you set up an SP Node.
+    - [Join SP Network](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/join-SP-network/): This guide will help you join SP Network: Mainnet and Testnet.
+    - [Exit SP Network](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/exit-SP-network/): This guide provides step-by-step instructions for SPs to exit the Greenfield NextWork on the…
+    - [Deploy Piece Store](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/piece-store/): Greenfield SP is a storage infrastructure for Greenfield decentralized storgage platform.
+    - [SP Config](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/config/): This section gives you a complete config of SP.
+    - [SP Common Issues](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/common-issues/): This is a list of solutions to common SP deployment issues
+    - [SP FAQ](https://docs.bnbchain.org/bnb-greenfield/storage-provider/run-book/sp-faqs/): Storage Providers(SP) should meet the following requirements:
+- **Roadmap**
+  - [Roadmap Overview](https://docs.bnbchain.org/bnb-greenfield/roadmap/roadmap/): Support Ethereum compatible address and EIP-712 transactions
+  - [Feature Lists](https://docs.bnbchain.org/bnb-greenfield/roadmap/features/): As a decentralized storage network, Greenfield provides a rich set of features and playability.
+
+## Developer Kit
+
+- [Overview](https://docs.bnbchain.org/developer-kit/): Lightweight index of official BNB Chain developer tools.
+- [Greenfield SDK](https://docs.bnbchain.org/developer-kit/greenfield-sdk/): Go and JavaScript client libraries for Greenfield (language tabs).
+- [BNB Agent SDK](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/): Python SDK for on-chain AI agents (ERC-8004, ERC-8183) on BSC.
+  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/): Register agents, run server, use client.
+  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/): Module system and data flows.
+  - [Configuration](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/configuration/): Environment variables.
+  - [Networks & contracts](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/networks/): Supported networks and upstream deployment references.
+  - [Examples](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/examples/): Client, voter, and agent-server flows.
+  - [Security](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/security/): Wallet handling and signing policy.
+  - [Troubleshooting](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/troubleshooting/): Common errors and fixes.
+- [BNB Agent Studio](https://docs.bnbchain.org/developer-kit/bnbchain-studio/): Scaffold and deploy two-layer blockchain seller agents (CLI `bag`, ERC-8004/8183, x402) on BSC.
+  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/): Install, scaffold, run locally, deploy.
+  - [Demo](https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/): End-to-end weather-forecast seller walkthrough.
+  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbchain-studio/architecture/): Six-layer stack and two-layer deploy model.
+  - [Configuration](https://docs.bnbchain.org/developer-kit/bnbchain-studio/configuration/): studio.toml, .env.local, cross-layer sync.
+  - [CLI reference](https://docs.bnbchain.org/developer-kit/bnbchain-studio/cli-reference/): bag command groups and MCP tools.
+  - [Deployment](https://docs.bnbchain.org/developer-kit/bnbchain-studio/deployment/): AgentCore + EC2 two-artifact deploy path.
+  - [Security](https://docs.bnbchain.org/developer-kit/bnbchain-studio/security/): Keystore posture, signing policy, MCP read-only.
+  - [Troubleshooting](https://docs.bnbchain.org/developer-kit/bnbchain-studio/troubleshooting/): bag doctor and common errors.
+- [MPP SDK](https://docs.bnbchain.org/developer-kit/mpp-sdk/): EVM Charge implementation of Machine Payments Protocol on BSC and opBNB.
+  - [Quickstart](https://docs.bnbchain.org/developer-kit/mpp-sdk/quickstart/): Server + client payment flow.
+  - [Architecture](https://docs.bnbchain.org/developer-kit/mpp-sdk/architecture/): Wire schema and verifiers.
+  - [Replay store](https://docs.bnbchain.org/developer-kit/mpp-sdk/replay-store/): Durable atomic replay protection.
+  - [Examples](https://docs.bnbchain.org/developer-kit/mpp-sdk/examples/): charge-server, charge-demo, bnb-wire-demo.
+- [Privacy at Scale](https://docs.bnbchain.org/developer-kit/privacy-at-scale/): ZKP and FHE institutional privacy stack — Intelligent Privacy Pool, ZKredit, and Zama FHE.
+  - [Overview](https://docs.bnbchain.org/developer-kit/mcp/): bnbchain-mcp server for on-chain tools and IDE integration.
+  - [Ask AI](https://docs.bnbchain.org/developer-kit/ask-ai/): Read-only MCP doc search for BNB Chain.
+  - [VS Code guide](https://docs.bnbchain.org/developer-kit/ask-ai/vs-code-guide/): Step-by-step Ask AI setup in Visual Studio Code.
+
+## BNB Chain Fusion
+
+- [BNB Chain Fusion Overview](https://docs.bnbchain.org/bc-fusion/): BNB Chain Fusion: Beacon Chain sunset and migration to BSC.
+- [Overview](https://docs.bnbchain.org/bc-fusion/overview/): Beacon Chain shut down Dec 2024; all functions migrated to BSC.
+- **Post Fusion**
+  - [Merkle Proof Verification](https://docs.bnbchain.org/bc-fusion/post-fusion/merkle-tree-verify/): Verify Beacon Chain balance snapshots via Merkle proofs post-fusion.
+  - [Token Recovery](https://docs.bnbchain.org/bc-fusion/post-fusion/token-recovery/): Recover BEP2/BEP8 tokens after Beacon Chain shutdown.
+  - [FAQ](https://docs.bnbchain.org/bc-fusion/post-fusion/faq/): Common questions about the Beacon Chain shutdown and asset migration.
+
+## Optional
+
+- **Upcoming**
+  - [NA](https://docs.bnbchain.org/announce/na/): No upcoming hardforks currently scheduled.
+- **Passed**
+  - [Final Sunset of BC (Mainnet)](https://docs.bnbchain.org/announce/final-sunset-bc-mainnet/): Beacon Chain final sunset — mainnet shut down Dec 2024.
+  - [Greenfield Savanna Hardfork](https://docs.bnbchain.org/announce/savanna-greenfield/): Greenfield Savanna hardfork — storage provider and performance upgrades.
+  - [Pascal Hardfork(BSC)](https://docs.bnbchain.org/announce/pascal-bsc/): Pascal hardfork — EIP-7702 support and gas optimizations on BSC.
+  - [Lorentz Hardfork(BSC)](https://docs.bnbchain.org/announce/lorentz-bsc/): Lorentz hardfork — block time reduced from 3s to 1.5s on BSC.
+  - [Maxwell Hardfork(BSC)](https://docs.bnbchain.org/announce/maxwell-bsc/): Maxwell hardfork — block time reduced to 0.75s, throughput scaled.
+  - [Volta Upgrade of opBNB](https://docs.bnbchain.org/announce/volta-opbnb/): Volta upgrade — performance and fee improvements on opBNB.
+  - [Fermi Hardfork(BSC)](https://docs.bnbchain.org/announce/fermi-bsc/): Fermi hardfork — block time reduced to 0.45s on BSC (Jan 2026).
+  - [Fourier Upgrade of opBNB](https://docs.bnbchain.org/announce/fourier-opbnb/): Fourier upgrade — latest opBNB network improvements.

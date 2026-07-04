@@ -1,0 +1,4075 @@
+# BNB Chain Documentation — BNB Smart Chain
+
+> Complete developer documentation for BNB Chain (https://docs.bnbchain.org).
+> Covers BNB Smart Chain (EVM-compatible L1, 0.45s blocks), opBNB (OP-Stack L2,
+> up to 5,000 TPS), and BNB Greenfield (decentralized storage). Each page is
+> delimited by an H2 header with its title and source URL.
+>
+> Source repo: https://github.com/bnb-chain/bnb-chain.github.io
+
+---
+## BNB Smart Chain
+> Source: https://docs.bnbchain.org/bnb-smart-chain/
+
+User guide to get started on BNB Smart Chain
+
+BSC operates on a Proof-of-Staked-Authority (PoSA) blockchain
+
+BSC is a community-oriented ecosystem, meticulously built upon the foundation of decentralized governance.
+
+Validators secure the network based on the POSA consensus algorithm.
+
+Slashing is a component of on-chain governance that penalizes malicious or negative actions. 
+
+BSC ecosystem and developer tools
+
+Run a BSC node
+
+Become a builder and create blocks and offering them to the validator
+
+Interacting with BSC requires sending requests to specific JSON-RPC API methods.
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/overview/
+
+# BNB Smart Chain - High Performance DeFi Hub
+
+BNB Smart Chain (BSC) is a high-performance blockchain network. Officially launched on September 1, 2020, BSC is designed to enhance the functionality of the BNB Chain and facilitate the development and interaction of decentralized applications (DApps), decentralized finance (DeFi) platforms, and other blockchain-based innovations.
+
+### Key Features and Advantages
+
+1. **Ethereum Virtual Machine (EVM) Compatibility:**
+   BSC is fully compatible with the Ethereum Virtual Machine (EVM), enabling developers to port their Ethereum-based DApps and DeFi projects to BSC with minimal modifications. This compatibility extends to the use of popular Ethereum tools and applications, such as TrustWallet, MetaMask, Truffle, and Remix.
+
+2. **Low Transaction Fees and Fast Block Times:**
+   One of BSC's primary advantages is its low transaction fees. With the network-wide adoption of a **0.05 Gwei** standard gas price, typical transaction fees on BSC are around **$0.005** or less, significantly lower compared to Ethereum. BSC's block time is approximately **0.45 seconds** (reduced from 3s through the Lorentz, Maxwell, and Fermi hardforks), ensuring near-instant transaction confirmations and an overall smoother user experience.
+
+3. **Robust Ecosystem and Growing Adoption:**
+   Since its inception, BSC has seen rapid growth in its ecosystem. By May 2024, BSC supports over 1,500 DApps, with popular platforms such as PancakeSwap, Venus, and BakerySwap leading the charge. The total value locked (TVL) in BSC-based DeFi protocols exceeds $20 billion, reflecting its substantial market adoption and user trust.
+
+### Role of BNB
+
+BNB is the native utility token of both BNB Chain and BNB Smart Chain. Within the BSC ecosystem, BNB is used for various purposes:
+
+- **Transaction Fees:** BNB is used to pay for transaction fees on BSC, offering users a cost-effective way to interact with the network.
+- **Staking:** Users can stake BNB to become validators or delegate their BNB to validators to earn rewards, contributing to the network's security and decentralization. As of May 2024, BNB staking rewards range from 5% to 15% annually, depending on the amount staked and the validator's performance.
+- **Governance:** BNB holders can participate in on-chain governance, voting on proposals that influence the future development and upgrades of the network.
+
+### Future Prospects
+
+BNB Smart Chain is positioned as a significant player in the blockchain space, particularly in the realm of DeFi and DApps. With its emphasis on high performance, affordability, and interoperability, BSC aims to address some of the most pressing challenges facing blockchain technology today. As the blockchain landscape continues to evolve, BSC's strategic innovations and growing community are likely to drive further advancements and widespread adoption.
+
+---
+
+---
+
+## Introduction
+> Source: https://docs.bnbchain.org/bnb-smart-chain/introduction/
+
+# Introduction
+
+BNB Smart Chain is an innovative solution to bring programmability and interoperability to BNB Beacon Chain. BNB Smart Chain relies on a system of 45 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection, malicious vote detection and other slashing logic guarantee security, stability, and chain finality. 
+The active validator set consists of 45 validators: 21 Cabinet and 24 Candidates. BSC may also introduce additional validators into the validator set as backups.
+
+Candidates will produce blocks and charge gas fees in BSC mainnet, but in a much less chance than the official validator set of 45 (21 Cabinet + 24 Candidates). The unavailable candidates will be slashed as well though in a smaller size. A decent motivation is expected to be maintained so that the candidate validators are willing to ensure the quality and help secure BSC.
+
+In an extreme case, if a majority of the active 45 validators get attacked and offline, Candidate Validators can report to BNB Beacon Chain about the stale blocking, resume it and eventually propose a re-election of the active validator set.
+
+The BNB Smart Chain also supports EVM-compatible smart contracts and protocols. Cross-chain transfer and other communication are possible due to native support of interoperability. The BNB Smart Chain will be:
+
+* **A self-sovereign blockchain**: Provides security and safety with elected validators.
+* **EVM-compatible**: Supports all the existing Ethereum tooling along with faster finality and cheaper transaction fees.
+* **Fast Finality**: Finalizes the chain within two blocks in most cases.
+* **Interoperable**: Comes with efficient native dual chain communication; Optimized for scaling high-performance dApps that require a fast and smooth user experience.
+* **Distributed with on-chain governance**: Proof of Staked Authority (PoSA) brings in decentralization and community participants. As the native token, BNB will serve as both the gas of smart contract execution and tokens for staking.
+
+## Proof of Staked Authority
+Although Proof-of-Work (PoW) has been recognized as a practical mechanism to implement a decentralized network, it is not friendly to the environment and also requires a large size of participants to maintain the security.
+
+Ethereum and some other blockchain networks, such as [MATIC Bor](https://github.com/maticnetwork/bor), [TOMOChain](https://tomochain.com/), [GoChain](https://gochain.io/), [xDAI](https://xdai.io/), do use [Proof-of-Authority(PoA)](https://en.wikipedia.org/wiki/Proof_of_authority) or its variants in different scenarios, including both testnet and mainnet. PoA provides some defense to 51% attack, with improved efficiency and tolerance to certain levels of Byzantine players (malicious or hacked). It serves as an easy choice to pick as the fundamentals.
+
+Meanwhile, the PoA protocol is most criticized for being not as decentralized as PoW, as the validators, i.e. the nodes that take turns to produce blocks, have all the authorities and are prone to corruption and security attacks. Other blockchains, such as EOS and Lisk both, introduce different types of [Delegated Proof of Stake (DPoS)](https://en.bitcoinwiki.org/wiki/DPoS) to allow the token holders to vote and elect the validator set. It increases the decentralization and favors community governance.
+
+BSC here proposes to combine DPoS and PoA for consensus, so that:
+
+1. Blocks are produced by a limited set of validators
+2. Validators take turns to produce blocks in a PoA manner, similar to [Ethereum's Clique](https://eips.ethereum.org/EIPS/eip-225) consensus design
+3. Validator set are elected in and out based on a staking based governance
+
+Fast finalization can greatly improve user experience. The `Fast Finality` feature will be enabled upon the coming Plato upgrade. This will be a major advantage of BSC, and many dapps will benefit from it.
+
+The consensus protocol of BSC fulfills the following goals:
+
+1. Short block time, **0.45 seconds** on mainnet (reduced from 3s through the Lorentz, Maxwell, and Fermi hardforks).
+2. It requires very short time to confirm the finality of transactions, approximately **1 second** on mainnet with Fast Finality enabled.
+3. There is no inflation of native token: BNB, the block reward is collected from transaction fees, and it will be paid in BNB.
+4. It is 100% compatible with Ethereum system.
+5. It allows modern proof-of-stake blockchain network governance.
+
+## Security
+Given there are more than ½\*N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the [Clone Attack](https://arxiv.org/pdf/1902.10244.pdf). BSC does introduce Slashing logic to penalize Byzantine validators for double signing or inavailability. This Slashing logic will expose the malicious validators in a very short time and make the "Clone Attack" very hard or extremely non-beneficial to execute.
+
+## Fast Finality
+Finality is critical for blockchain security, once the block is finalized, it wouldn’t be reverted anymore. The fast finality feature is very useful, the users can make sure they get the accurate information from the latest finalized block, then they can decide what to do next instantly. More details of design, please refer to [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)
+
+With Fast Finality enabled (since the Plato upgrade), the chain is finalized within two blocks if ⅔*N or more validators vote normally. At the current block time of **0.45 seconds**, this means finality is achieved in approximately **1.125 seconds**. If Fast Finality votes are insufficient, the chain falls back to probabilistic finality where more confirmations increase safety.
+
+For applications that need guaranteed finality, the `finalized` block tag in JSON-RPC calls (e.g., `eth_getBlockByNumber`) can be used to query only finalized blocks.
+
+## Reward
+All the BSC validators in the current validator set will be rewarded with transaction fees in BNB. As BNB is not an inflationary token, there will be no mining rewards as what Bitcoin and Ethereum network generate, and the gas fee is the major reward for validators. Part of the fees collected is used as reward for finality voting. As BNB is also utility tokens with other use cases, delegators and validators will still enjoy other benefits of holding BNB.
+
+The reward for validators is the fees collected from transactions in each block. Validators can decide how much to give back to the delegators who stake their BNB to them, in order to attract more staking. Every validator will take turns to produce the blocks in the same probability (if they stick to 100% liveness), thus, in the long run, all the stable validators may get a similar size of the reward. Meanwhile, the stakes on each validator may be different, so this brings a counter-intuitive situation that more users trust and delegate to one validator, they potentially get less reward. So rational delegators will tend to delegate to the one with fewer stakes as long as the validator is still trustful (insecure validator may bring slashable risk). In the end, the stakes on all the validators will have less variation. This will actually prevent the stake concentration and "winner wins forever" problem seen on some other networks.
+
+## Token Economy
+BC and BSC share the same token universe for BNB and BEP2 tokens. This defines:
+
+1. The same token can circulate on both networks, and flow between them bi-directionally via a cross-chain communication mechanism.
+2. The total circulation of the same token should be managed across the two networks, i.e. the total effective supply of a token should be the sum of the token’s total effective supply on both BSC and BC.
+3. The tokens can be initially created on BSC in a similar format as ERC20 token standard, or on BC as a BEP2, then created on the other. There are native ways on both networks to link the two and secure the total supply of the token.
+
+## Staking and Governance
+Proof of Staked Authority brings in decentralization and community involvement. Its core logic can be summarized as the below. You may see similar ideas from other networks, especially Cosmos and EOS.
+
+1. Token holders, including the validators, can put their tokens "bonded" into the stake. Token holders can delegate their tokens onto any validator or validator candidate, to expect it can become an actual validator, and later they can choose a different validator or candidate to re-delegate their tokens.
+2. All validator candidates will be ranked by the number of bonded tokens on them, and the top ones will become the real validators.
+3. Validators can share (part of) their blocking reward with their delegators.
+4. Validators can suffer from "Slashing", a punishment for their bad behaviors, such as double sign and/or instability.
+5. There is an "unbonding period" for validators and delegators so that the system makes sure the tokens remain bonded when bad behaviors are caught, the responsible will get slashed during this period.
+
+---
+
+---
+
+## Quick Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/
+
+If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.
+
+## Getting Started
+
+BNB Smart Chain (BSC) is a high-performance blockchain network.
+
+Since BSC is EVM-compatible, your existing Ethereum smart contract skills will seamlessly transfer to BSC.
+
+## Connecting
+
+Here are some resources to help you get connected to the BSC network:
+
+- [Network Information and RPC Providers](json_rpc/json-rpc-endpoint.md)
+- [Wallet Configuration](./wallet-configuration.md)
+
+## Get Tokens
+
+BNB is the native utility token of BNB Smart Chain and is used to pay transaction fees. For the testnet, you can use the faucet to obtain test tokens on BSC.
+
+- [BSC Testnet Faucet](./faucet.md)
+
+For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) which supports BSC network(e.g. Binance).
+
+## JSON-RPC API
+
+Interacting with BSC requires sending requests to specific JSON-RPC API methods. BSC's APIs are compatible with Geth.
+- [JSON-RPC API](json_rpc/json-rpc-endpoint.md)
+
+## Developer Tools
+- Explorer
+    - [NodeReal BSC Scan](https://bsctrace.com/)
+    - [BSCScan](https://bscscan.com/)
+- SDK. If you are only using the SDK for Ethereum-compatible functions, then all Ethereum SDKs should work with BSC.
+    - [ethers.js](https://docs.ethers.io)
+    - [web3.js](https://web3js.readthedocs.io)
+- Tools
+    - [Remix](https://remix.ethereum.org)
+    - [Hardhat](https://hardhat.org)
+    - [Foundry](https://book.getfoundry.sh/)
+- Indexing
+    - [TheGraph](https://thegraph.com/)
+    - [Covalent](https://www.covalenthq.com)
+    - [Others](https://www.alchemy.com/dapps/list-of/indexing-tools-on-ethereum)
+- Wallets
+    - [Binance Web3 Wallet](https://www.binance.com/en/web3wallet)
+    - [Metamask](https://metamask.io/)
+    - [TrustWallet](https://trustwallet.com/)
+    - [Particle Network](https://wallet.particle.network/)
+    - [Gem Wallet](https://gemwallet.com/)
+    - [OKX Wallet](https://www.okx.com/nl/web3)
+    - [MathWallet](https://mathwallet.org/en-us/)
+    - [Sequence.build](https://sequence.build/landing)
+    - [Avatar](https://avatarwallet.io/)
+- Oracle
+    - [Binance Oracle](https://oracle.binance.com/docs/)
+- Account Abstraction
+    - [Particle Network](https://wallet.particle.network/)
+    - [Biconomy](https://docs.biconomy.io/supportedchains/)
+    - [CyberConnect](https://cyberconnect.me/)
+- Storage
+    - [BNB Greenfield](https://greenfield.bnbchain.org/en)
+- Data Analytics
+    - [DefiLlama](https://defillama.com/chain/BSC)
+    - [CoinGecko](https://www.coingecko.com/en/chains/binance-smart-chain)
+    - [DappBay](https://dappbay.bnbchain.org/ranking/chain/bnb-smart-chain)
+
+For more tools and details, you can refer to [BSC Dev Tools](https://www.bnbchain.org/en/dev-tools).
+
+---
+
+---
+
+## Json Rpc Endpoint
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/
+
+# JSON-RPC-Endpoint
+
+JSON-RPC endpoints refers to the network location where a program could transfer its RPC requests to access server data. Once you connect a decentralized application to an RPC endpoint, you can access the functionalities of different operations, which could enable real-time usage of blockchain data. BNB Chain provides several RPC endpoints for connectinto both its Minent and Testnet. In this section, we list the JSON-RPC endpoints that can be used for connecting to BNB Smart Chain.
+
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+* https://bnb.rpc.subquery.network/public
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
+
+* **SubQuery:** <https://rpc.subquery.network/56>
+
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+
+---
+
+---
+
+## Bsc Api list
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/
+
+## Finality API
+Finality is a crucial aspect of blockchain security, ensuring that once a block is confirmed, it cannot be reversed or altered. This provides users with the confidence to act on the information in the block without delay.
+
+### Probabilistic Finality and Economic Finality
+
+BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining Economic Finality and Probabilistic Finality to ensure transaction security and network efficiency.
+
+#### Economic Finality (Fast Finality)
+
+The Fast Finality feature, introduced through **[BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)**, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:
+
+- Block n achieves economic finality by block n+2
+- Transaction finality time: **~3.75 seconds** (with 1.5 seconds block time)
+- Economic penalties make block reversal extremely expensive
+- Validators violating voting rules forfeit part of their staked assets
+
+This significantly improves user experience through faster and more reliable transaction confirmations.
+
+#### Probabilistic Finality (Fallback Mechanism)
+
+When Fast Finality is unavailable, BSC falls back to Probabilistic Finality. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.
+
+Network Parameters:
+
+- TurnLength: 8 (consecutive blocks per validator)
+- ValidatorSize: 21 (total active validators)
+- Block Time: ~1.5 seconds
+
+Finality Requirements:
+
+- Majority (>1/2) validator confirmations: 88 blocks (11 × 8) ≈ 132 seconds
+- Supermajority (>2/3) validator confirmations: 120 blocks (15 × 8) ≈ 180 seconds
+
+This dual-layer approach ensures network security and finality guarantees even when Fast Finality encounters issues.
+
+### Economic Finality API
+
+### [eth_getHeaderByNumber](<https://www.quicknode.com/docs/kaia/eth_getHeaderByNumber>) as in the Ethereum client.
+**Parameters**
+
+**BlockNumber** QUANTITY|TAG
+
+* HEX String - an integer block number
+* String "earliest" for the earliest/genesis block
+* String "latest" - for the latest mined block
+* String "safe" - for the latest justified head block
+* String "**finalized**" - for the latest finalized block
+
+### [eth_getBlockByNumber](<https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbynumber>) as in the Ethereum client.
+**Parameters**
+
+**BlockNumber** QUANTITY|TAG
+
+* HEX String - an integer block number
+* String "earliest" for the earliest/genesis block
+* String "latest" - for the latest mined block
+* String "safe" - for the latest justified head block
+* String "**finalized**" - for the latest finalized block
+  
+**Full_transaction_flag** Boolean
+
+- If true it returns the full transaction objects, if false only the hashes of the transactions.
+
+### eth_newFinalizedHeaderFilter
+Here are two APIs that can help you trace the latest finalized blocks:
+1. Create a finalized header filter:
+```
+curl -X POST "http://localhost:8545" -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newFinalizedHeaderFilter","params":[],"id":1}'
+```
+This will return an rpc.ID which will expire in 5 minutes, then you can get another:
+```
+{"jsonrpc":"2.0","id":1,"result":"0xcbdc7c21459e2cfbf72e2028f15a98c"}
+```
+2. Get latest finalized blocks using above rpc.ID. You can call it many times until rpc.ID expires:
+```
+curl -X POST "http://localhost:8545" -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0xcbdc7c21459e2cfbf72e2028f15a98c"],"id":1}'
+```
+This will return block hashes:
+```
+{"jsonrpc":"2.0","id":1,"result":["0x4b52061726b9f15905217699fd5dab8ff9bb704b3b16d27c34541cb15752a91f","0x2b984b80b25f0dddc92ba11290a3d250fc8a3ec6a09bd485c21dbbb8155d2f90"]}
+```
+
+### Combined Probabilistic Finality and Economic Finality API
+
+These methods allow you to handle block finality using a straightforward API.
+
+### eth_getFinalizedHeader
+* `verifiedValidatorNum` must be within the range `[1, len(currentValidators)]`,with the exception that:
+    - `-1` represents at least `len(currentValidators) * 1/2`
+    - `-2` represents at least `len(currentValidators) * 2/3`
+    - `-3` represents at least `len(currentValidators)`
+* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedHeader` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
+* If the highest security level is required, you can choose `-3`.
+* This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
+* The height of the returned block header is guaranteed to increase monotonically.
+For example:
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getFinalizedHeader","params":[15],"id":1}'
+```
+
+### eth_getFinalizedBlock
+* `verifiedValidatorNum` must be within the range `[1, len(currentValidators)]`,with the exception that:
+    - `-1` represents at least `len(currentValidators) * 1/2`
+    - `-2` represents at least `len(currentValidators) * 2/3`
+    - `-3` represents at least `len(currentValidators)`
+* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedHeader` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
+* If the highest security level is required, you can choose `-3`.
+* This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
+* If `fullTx` is true, the block includes all transactions; otherwise, only transaction hashes are included.
+* The height of the returned block is guaranteed to be monotonically increasing.
+For example:
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getFinalizedBlock","params":[11, false],"id":1}'
+
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getFinalizedBlock","params":[15, true],"id":1}'
+```
+
+## Blob API
+
+### eth_getBlobSidecarByTxHash
+**Parameters**
+
+**Hash** String (REQUIRED)
+
+* HEX String - the hash of the transaction
+
+**full_blob_flag** Boolean (OPTIONAL)
+
+* Default is true. If ture it returns the full blob info, if false only return first 32 bytes of blobs.
+
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getBlobSidecarByTxHash","params":["0x377d3615d2e76f4dcc0c9a1674d2f5487cba7644192e7a4a5af9fe5f08b60a63"],"id":1}'
+
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getBlobSidecarByTxHash","params":["0x377d3615d2e76f4dcc0c9a1674d2f5487cba7644192e7a4a5af9fe5f08b60a63", false],"id":1}'
+```
+
+### eth_getBlobSidecars
+**Parameters**
+
+**BlockNumber** QUANTITY|TAG
+
+* HEX String - an integer block number
+* HEX String - the hash of the block
+* String "earliest" for the earliest/genesis block
+* String "latest" - for the latest mined block
+* String "safe" - for the latest justified head block
+* String "finalized" - for the latest finalized block
+
+**full_blob_flag** Boolean (OPTIONAL)
+
+* Default is true. If ture it returns the full blob info, if false only return first 32 bytes of blobs.
+
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getBlobSidecars","params":["latest"],"id":1}'
+
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getBlobSidecarByTxHash","params":["0xc5043f", false],"id":1}'
+```
+
+## Others
+
+### eth_health
+
+* a health check endpoint to detect whether the RPC func of a node is ok. Return true is ok, false is no health.
+
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_health","params":[],"id":1}'
+```
+
+### eth_getTransactionsByBlockNumber
+
+* get all the transactions for the given block number.
+
+**Parameters**
+
+**BlockNumber** QUANTITY|TAG
+
+* HEX String - an integer block number
+* String "earliest" for the earliest/genesis block
+* String "latest" - for the latest mined block
+* String "safe" - for the latest justified head block
+* String "finalized" - for the latest finalized block
+
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getTransactionsByBlockNumber","params":["0x539492"],"id":1}'
+```
+
+### eth_getTransactionDataAndReceipt
+
+* get the original transaction data and transaction receipt for the given transaction hash.
+
+**Parameters**
+
+**Hash** String (REQUIRED)
+
+* HEX String - the hash of the transaction
+
+```
+curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --data '{"jsonrpc":"2.0","method":"eth_getTransactionDataAndReceipt","params":["0x516a2ab1506b020e7f49d0d0ddbc471065624d1a603087262cebf4ca114ff588"],"id":1}'
+```
+
+---
+
+---
+
+## Faucet
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/
+
+# Claim test tBNB Tokens
+
+## Claim tBNB from Online Faucet
+
+To get some tBNB of BSC testnet for testing purposes, you can use the [online faucet](https://www.bnbchain.org/en/testnet-faucet) to claim your tokens.
+
+1. Copy your wallet address and paste the address into the textbox
+
+2. Select the tokens you need to claim. Major pegged tokens like BUSD, USDT, and others are supported. 
+
+* Please note if your wallet balance is larger than **1 tBNB**, you can not get new tBNB from the Discord bot faucet.*
+
+## Discord Faucet is no longer available
+
+Discord Faucet is no longer available as of September 2025.
+
+## Claim tBNB from Third-party Faucets
+You can also claim tBNB from the following third-party faucets
+
+1. https://faucet.quicknode.com/binance-smart-chain/bnb-testnet
+
+2. https://faucet.chainstack.com/bnb-testnet-faucet
+
+3. https://thirdweb.com/opbnb-testnet
+
+---
+
+---
+
+## Node Best Practices
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_best_practices/
+
+# BNB Smart Chain (BSC) Node Configuration: Best Practices
+
+## Hardware Specifications
+
+To ensure optimal performance and reliability, it is crucial to select the appropriate node type based on your specific requirements for transaction processing and state querying on the BNB Smart Chain.
+
+### Fast Node (Recommended Configuration)
+For users requiring access to the latest world state in a lightweight mode, the fast node is the ideal choice. It demands less from your system’s CPU and disk space.
+
+- **Processor**: Minimum 16-core CPU.
+- **Memory**: At least 32 GB RAM.
+- **Storage**: Solid State Drive (SSD) with a minimum capacity of 2TB.
+- **Network**: Stable and high-speed internet connection, minimum 5 MBps.
+
+### Archive Node
+For comprehensive access to the entire historical world state of the BSC mainnet, consider deploying an Archive Node. Detailed instructions are available at [BSC Erigon GitHub repository](https://github.com/node-real/bsc-erigon).
+
+- **Processor**: Minimum 16-core CPU.
+- **Memory**: At least 128 GB RAM.
+- **Storage**: SSD with a minimum capacity of 10TB (NVME SSDs are recommended for optimal performance).
+- **Network**: Stable and high-speed internet connection, minimum 5 MBps.
+
+### Full Node
+To obtain the latest world state and verify the validity of the state or to generate data proofs, a standard Full Node is suitable.
+
+- **Processor**: Minimum 16-core CPU.
+- **Memory**: At least 64 GB RAM.
+- **Storage**: Solid State Drive (SSD) with a minimum capacity of 3TB.
+- **Network**: Stable and high-speed internet connection, minimum 5 MBps.
+
+## Peers Configuration
+
+### Mainnet
+- There is no need to specify static nodes, only Bootnodes are required for mainnet which are already configured in the code. Also, Make sure to use the config.toml file from the latest release. For more details, Please refer this [blog](https://forum.bnbchain.org/t/try-bootnodes-after-bsc-release-v1-2-12/1998#h-32to-join-the-network-with-bootnodes-5).
+
+### Testnet
+- Testnet still need to configure the StaticNodes manually and hence, the StaticNodes list is contained in the latest release's config.toml. For eg: For geth v1.3.7, the updated config.toml with static nodes can be looked over here: [geth v1.3.7 testnet config](https://github.com/bnb-chain/bsc/releases/download/v1.3.7/testnet.zip)
+
+## Clarification of the snapshots
+As BSC will mainly support [PBSS & PebbleDB](https://forum.bnbchain.org/t/faq-pbss-pebbledb/2260), we will only cover snapshots of PBSS&PebbleDB and ignore snapshot of HashBased&LevelDB here. Please refer to this [reference](https://github.com/bnb-chain/bsc-snapshots/issues/349).
+
+## Troubleshooting for no peers in testnet 
+
+- Check for configuration issues like wrong chain id, wrong config file/dir.
+- Make sure to update the config.toml file as per the latest release
+- Don't use bootnodes on testnet, it's not required.
+- Deleting the `geth/nodes` and `geth/nodekey` file/dir might help
+- Re-download the snapshot and try again.  
+
+Reference over [here](https://github.com/bnb-chain/bsc/issues/2164#issuecomment-1897980997)
+
+## Monitoring Metrics and Alerts
+
+To maintain node health and performance, monitor the following key metrics:
+
+- **Transaction Pool Alert**: Triggered when the transaction pool exceeds 5000 transactions.
+- **Block Import Time Alert**: Activated if block import time exceeds 3 seconds.
+- **RPC Latency Alert**: Initiated when RPC latency surpasses 100ms.
+
+## Performance Optimization
+
+BSC nodes offer configurable cache settings to enhance performance. It is advisable to allocate approximately one-third of the physical memory to the cache. For example, with 64GB of physical memory, the cache setting can be configured as:
+```
+--cache 20000
+```
+
+## Keep Track of Syncing Speed
+
+```
+t=2021-05-13T17:17:17+0800 lvl=info msg="Imported new chain segment"             blocks=11  txs=3701  mgas=482.461  elapsed=8.075s    mgasps=59.744  number=7,355,800 hash=0x84e085b1cd5b1ad4f9a954e2f660704c8375a80f04326395536eedf83363942f age=12h38m32s dirty="583.73 MiB"
+t=2021-05-13T17:17:20+0800 lvl=info msg="Deep froze chain segment"               blocks=117 elapsed=263.497ms number=7,265,806 hash=0x7602f6b960b4092d39ff49781c64404a047e2c78bc166f071ee8714020c39b2e
+t=2021-05-13T17:17:25+0800 lvl=info msg="Imported new chain segment"             blocks=17  txs=5025  mgas=740.885  elapsed=8.125s    mgasps=91.177  number=7,355,817 hash=0xde7a2a76ff7b38414acf3b360bb427d2d0b7dd1f8fe2afe2ffd59d64b237a81b age=12h37m49s dirty="594.65 MiB"
+t=2021-05-13T17:17:33+0800 lvl=info msg="Imported new chain segment"             blocks=18  txs=5108  mgas=748.016  elapsed=8.354s    mgasps=89.535  number=7,355,835 hash=0x757c476f9fe30fc6ef001fb4a03fa991843cf3ed271f21cfc01a9bba5e5eff98 age=12h37m3s  dirty="604.39 MiB"
+t=2021-05-13T17:17:42+0800 lvl=info msg="Imported new chain segment"             blocks=18  txs=5612  mgas=799.778  elapsed=8.260s    mgasps=96.815  number=7,355,853 hash=0x73e87742ef4405ffefec987fc4b8b19e69c54b8f914c27ea69a502fae4d735e0 age=12h36m18s dirty="613.03 MiB"
+```
+
+Your syncing speed is **mgasps**. The value should be around 100.
+If you are syncing slowly, please check the speed of your disk.
+
+## Use Chaindata Snapshot
+
+Please download the chain data [snapshot](https://github.com/bnb-chain/bsc-snapshots) and extract to your home folder to speed up
+
+## Store Your BNB with a Hardware Wallet
+
+The most valuable assets of a validator are two keys: one for signing transactions and another for signing blocks
+
+## Securing Your Full Node RPC from Hackers
+
+Please do not expose your RPC endpoints to public network.
+
+## Account Private keys
+
+To protect your BNB, do not share your 24 words with anyone. The only person who should ever need to know them is you. In short, HSMs are affordable, performant and portable pieces of hardware that help to securely generate, store and manage your private keys. Malware attacks and remote extraction of private keys are much more difficult when an HSM is configured properly.
+
+## Software Vulnerabilities
+
+To protect your BNB, you should only download software directly from official sources, and make sure that you're always using the latest, most secure version
+
+## Running Server as a Daemon
+It is important to keep **geth** running at all times. There are several ways to achieve this, and the simplest solution we recommend is to register **geth**  as a systemd service so that it will automatically get started upon system reboots and other events.
+
+## Set up a Backup Node
+* Run validator node in archive mode
+* Shut down nodes gracefully
+* Active monitoring with tools
+
+## Steps to Run a Backup Node
+1. Install the latest version of geth
+2. Sync to the latest height using fast sync mode. You can either download the latest snapshot or start fast sync
+once your node is fully synced
+3. Shut down your node gracefully kill -HUP $(pgrep geth)
+4. Restart your node.
+
+### Why Node will be Offline for a While After Restart? or What will Happen If the Client is Force Killed?
+
+After running (synchronized) for a long period of time and being abruptly terminated, only archived nodes are expected to quickly re-synchronize upon restart.
+
+Steps to reproduce:
+
+* Run the node synchronized for a period of time.
+* Abruptly kill the node (kill -9 or system crash).
+* Restart the node, observe where it resynchronizes from block height 1 hour ago.
+
+**Reasons**
+
+If Geth crashes (or is not shut down gracefully), the recent state held in memory is lost and needs to be regenerated. It takes Geth a long time to restore the states.
+
+The root reason is that **geth** does flush the state trie periodically. The period is defined as **trieTimeout** in **config.toml**.
+
+## How to Upgrade a Backup Node to Become a Validator Node?
+
+You can stop mining new blocks by sending commands in **geth console**
+
+Connect to your validator node with **geth attach ipc:path/to/geth.ipc**
+
+```bash
+miner.stop()
+```
+
+Then, let backup node resume validating ,
+```bash
+miner.start()
+```
+## Securing the Validators
+
+Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Due to the high amount invested by validators it is highly essential to protect them against different DoS and DDoS attacks. In this section, we disscuss the security mechanism adopted by BSC for its validators.
+
+### Sentry Nodes (DDOS Protection)
+
+Validators are responsible for ensuring that the network can sustain denial of service attacks. One recommended way to mitigate these risks is for validators to carefully structure their network topology in a so-called sentry node architecture.
+Sentry nodes can be quickly spun up or change their IP addresses. Because the links to the sentry nodes are in private IP space, an internet based attacked cannot disturb them directly. This will ensure validator block proposals and votes always make it to the rest of the network.
+
+To setup your sentry node architecture you can follow the instructions below:
+
+1. Build a private network and setup trusted private connections between the validator node and its sentry
+
+Please do not expose your validator fullnode RPC endpoints to the public network.
+
+Install your [fullnode](full_node.md)
+
+2. Set sentry as peers for the validator node
+
+In the console of the sentry node, run **admin.nodeInfo.enode** You should get something similar to this.
+
+```
+enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[::]:30306?discport=0
+```
+
+!!! Note:
+	[::] will be parsed as localhost (127.0.0.1). If your nodes are on a local network check each individual host machine and find your IP with ifconfig
+	If your peers are not on the local network, you need to know your external IP address (use a service) to construct the enode URL.
+	Copy this value and in the console of the first node run,
+
+Update **config.toml** file of validator node
+
+```
+# make node invisible
+NoDiscovery = true
+# connect only to sentry
+StaticNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[10.1.1.1]:30306"]
+```
+This will return true if successful, but that doesn’t mean the node was added successfully.
+
+To confirm run **admin.peers** and you should see the details of the node you just added.
+
+That way your validator node will try to peer with your provided sentry nodes only.
+
+3. Confirm the connection
+
+To confirm run **admin.peers** and you should see the details of the node you just added.
+
+### Firewall Configuration
+
+**geth** uses several TCP ports for different purposes.
+
+**geth** use a listener (TCP) port and a discovery (UDP) port, both on 30303 by default.
+
+If you need to run JSON-RPC, you'll also need TCP port 8545. Note that JSON-RPC port should not be opened to the outside world, because from there you can do admin operations.
+
+---
+
+---
+
+## Full Node
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/full_node/
+
+## 1.About
+
+Full node stores the full world state on disk and is capable of:
+
+* handle new transactions and produce new blocks, can be used as a validator node.
+* execute and validate newly received blocks.
+* verify the states of every account, as it has the full world state.
+
+Currently, there are 3 different clients to run a BSC full:
+
+* Geth: https://github.com/bnb-chain/bsc
+* Erigon: https://github.com/node-real/bsc-erigon
+
+Only Geth will be covered in this page, as Erigon is mainly to support archive mode, pls refer [archive_node.md](./archive_node.md) for its usage.
+
+!!! tip
+    If you want high performance and care little about state consistency, you can run a fast node, which is a full node with the flag `--tries-verify-mode none` set.
+    Check [here](fast_node.md) for full details on running a fast node.
+    ```
+    ./geth --config ./config.toml --datadir <datadir>  --cache 10000 --tries-verify-mode none --history.logs 576000
+    ```
+## 2.Run BSC Full Node: Geth
+
+### 2.1.Supported Platforms
+
+We support running a full node on **Mac OS X**, **Linux**, and **Windows**.
+
+### 2.2.Steps
+There are 2 approaches to setup a BSC full node from scratch:
+
+- By Snapshot(Recommend): download the latest snapshot and sync based on it.
+
+- From Genesis(Not Recommend): sync the whole BSC chain from genesis block.
+
+!!! tip
+    As of Nov-2024, the latest block height of BSC mainnet is over 40M, it would need a more powerful hardware and take a great of time to sync from genesis, so it is suggested to setup a BSC full node based the snapshot.
+
+#### a.By Snapshot
+
+1. Download the pre-build binaries from the [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below
+
+    ```bash
+    # Linux
+    wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+    mv geth_linux geth
+    chmod -v u+x geth
+    
+    # MacOS
+    wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+    mv geth_mac geth
+    chmod -v u+x geth
+    ```
+
+2. Download the config files
+
+    Download **genesis.json** and **config.toml** by:
+    
+    ```bash
+    # mainnet
+    wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+    unzip mainnet.zip
+    
+    # testnet
+    wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+    unzip testnet.zip
+    ```
+
+3. Download snapshot
+    Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
+
+4. Start a full node
+    ```
+    ## pls replace <datadir> with your local path to datadir.
+    ./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 576000
+    ```
+    > **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
+5. Monitor node status
+
+    You can monitor the log from **./<datadir\>/bsc.log** by default. When your node has started syncing, you should be able to see the following output:
+    
+    ```
+    t=2022-09-08T13:00:27+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=177   mgas=17.317   elapsed=31.131ms    mgasps=556.259  number=21,153,429 hash=0x42e6b54ba7106387f0650defc62c9ace3160b427702dab7bd1c5abb83a32d8db dirty="0.00 B"
+    t=2022-09-08T13:00:29+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=251   mgas=39.638   elapsed=68.827ms    mgasps=575.900  number=21,153,430 hash=0xa3397b273b31b013e43487689782f20c03f47525b4cd4107c1715af45a88796e dirty="0.00 B"
+    t=2022-09-08T13:00:33+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=197   mgas=19.364   elapsed=34.663ms    mgasps=558.632  number=21,153,431 hash=0x0c7872b698f28cb5c36a8a3e1e315b1d31bda6109b15467a9735a12380e2ad14 dirty="0.00 B"
+    ```
+
+#### b.From Genesis
+```bash
+## start a full node from genesis with by one command
+## pls replace <datadir> with your local path to datadir.
+./geth --config ./config.toml --datadir <datadir> --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 576000
+```
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
+### 2.3.Sync Mode
+
+There are two sync modes for running a full node: **snap** and **full** which can be specified by flag **--syncmode**.
+
+The **snap** sync mode is used for initial sync, which will download the latest states rather than execute the blocks from the genesis. When the initial sync is done, it will switch to full sync automatically.
+
+The **full** sync mode can also be used to do initial sync, which will execute all the blocks since genesis. But it is **not recommended**, since the amount of historical data is too large. Instead, you can download a snapshot from the [official repo](https://github.com/bnb-chain/bsc-snapshots) and start full sync from the snapshot.
+
+If the flag **--syncmode** is not provided, the default sync mode will depend on the state of the data folder. It will be **snap** mode if you sync from genesis or **full** mode if you start from a snapshot.
+
+### 2.4.Others
+#### a.Greenfield Peers
+
+Opting for **full** sync mode means your node will only need block headers and bodies from other network peers. To expedite this process, consider utilizing the `Greenfield Peer`.
+
+This data seed, offered by Greenfield, allows for a more efficient synchronization.
+Configure your BSC node to connect with the Greenfield Light Peer by modifying your configuration file settings.
+For comprehensive instructions, see [Light Peer](../../../bnb-greenfield/for-developers/data-archive/light-peer.md).
+
+#### b.Local Private Network
+Please refer to [BSC-Deploy Tools](https://github.com/bnb-chain/node-deploy) to setup a local private network.
+
+#### c.Node Maintenance
+Please read [this guide](node_maintenance.md)
+
+#### d.Upgrade Geth
+Please read [this guide](upgrade_geth.md)
+
+---
+
+---
+
+## Archive Node
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/archive_node/
+
+# How to Run an Archive Node on BNB Smart Chain
+
+## What is an archive node?
+
+Simply speaking, an archive node is a full node running with an additional special option, `--gcmode archive`. It stores all the historical data of the blockchain starting from the genesis block. As compared to a typical full node that just holds all the state change data for some latest blocks, an archive node always stores them for each block.
+
+## Why is an archive node important?
+
+Developers are limited to querying the limited recent blocks to check the balance of an address and the state of a smart contract with a full node. It is hard to get all what they want as the blockchain is moving forward at the same time, while they can query any block at a specific point in time with an archive node.
+Archive nodes are used by various applications on the blockchain for challenging use cases, including but not limited to the followings:
+
+- Automatic trading system needs historical data to optimize trading model
+- Verification modules need state data to verify transactions in time
+- Analytical tools need full historical data to do data analysis
+- Exchange in some wallets depends on archive node for fast and efficient transfers
+
+## Suggested Requirements
+
+Running an archive node will take a high cost as it includes all the block and state change data. First of all it needs the disk with sufficient capacity; besides this, the CPU and disk performance should be good enough to catch up with the latest block height. You can refer to the [suggested hardware requirements](https://github.com/node-real/bsc-erigon?tab=readme-ov-file#system-requirements).
+
+## How to run an archive node for BSC mainnet?
+
+### Run with an Erigon client
+
+[Erigon](https://github.com/node-real/bsc-erigon) now supports the BSC mainnet. The latest version allows you to sync an archive node from scratch in just 3 days, using 4.3 TB of disk space. You can use Erigon to operate an archive node as shown below.
+
+---
+title: BSC Erigon Node Deployment Guide
+---
+
+### BSC Erigon Node Deployment
+
+BSC Erigon, maintained by the Node Real team, is a fork of Erigon aimed at becoming the premier archive node implementation for the BSC network.
+
+## Hardware Requirements
+
+To ensure optimal performance of your BSC Erigon node, we recommend the following hardware specifications:
+
+* RAM: 64GB or more (higher RAM correlates with better performance)
+* Storage: SSD or NVMe
+    - Archive Node: Minimum 5TB
+    - Fast Node: Minimum 700GB
+
+## BSC Erigon Node Deployment Steps
+
+### 1. Obtain the Erigon Binary
+
+Option 1: Build from source
+```shell
+git clone https://github.com/node-real/bsc-erigon.git
+cd bsc-erigon
+make erigon
+```
+Option 2: Use Docker image
+```shell
+docker pull ghcr.io/node-real/bsc-erigon:${latest_version}
+```
+### 2. Launch the Erigon Node
+By default, the node will run in archive mode. Syncing from scratch typically takes about 3 days.
+```shell
+./build/bin/erigon \
+--datadir="<your_data_directory_path>" \
+--chain=bsc \
+--port=30303 \
+--http.port=8545 \
+--authrpc.port=8551 \
+--torrent.port=42069 \
+--private.api.addr=127.0.0.1:9090 \
+--http --ws \
+--http.api=eth,debug,net,trace,web3,erigon,bsc
+```
+**Note**: To avoid port conflicts, specify different ports for each chain if running multiple instances.
+
+### 3. Running a Fast Node (Non-Archive Mode)
+   Add the --prune.mode=minimal flag to start a fast node. This mode retains only the last 3 days of state and block data, supporting debug_trace* operations for the past 3 days.
+
+If you prefer not to spend days syncing, you can obtain fast node snapshots from [community-maintained repositories](https://github.com/48Club/bsc-snapshots).
+
+By following these steps, you can flexibly deploy either a full BSC Erigon node or a fast node based on your requirements. Whichever option you choose, BSC Erigon will provide you with an efficient and reliable node service.
+
+---
+
+---
+
+## Fast Node
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/fast_node/
+
+# Fast Node on BNB Smart Chain
+
+## Note
+**Fast Node does not generate Trie Data when syncing.  
+Once the Fast Node is running, there is no way to switch back to Full Node.  
+Need to re-download snapshot data to restore it to Full Node.**
+
+## Fast Node Functions
+
+* Stores the full blockchain history on disk and can answer the data request from the network.
+* Receives and validates the new blocks and transactions.
+* Verifies the states of every account.
+
+## Steps to Run a Fast Node
+
+### Download the pre-build binaries from [release page](https://github.com/bnb-chain/bsc/releases/latest) or follow the instructions below:
+
+```bash
+# Linux
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
+# MacOS
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
+```
+
+### Download the config files
+
+Download **genesis.json** and **config.toml** by:
+
+```bash
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+unzip mainnet.zip
+```
+
+### Download snapshot
+
+Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
+
+:::note
+Your --datadir flag should point to the extracted chaindata folder path
+:::
+
+### Prune all trie data
+
+Fast node does not need trie data anymore. Delete the trie state by the following command.
+```
+./geth db delete-trie-state --datadir ./node
+```
+
+### Start Fast Node Without Snapshot Verification
+
+```bash
+## start a fast node
+./geth --tries-verify-mode none --rpc.allow-unprotected-txs --cache 10000 --history.transactions 360000  --datadir <datadir> --http.corsdomain * --config ./config.toml --history.logs 576000
+```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
+---
+
+---
+
+## Boot Node
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/boot_node/
+
+Through the maintenance release [v1.2.12 4](https://github.com/bnb-chain/bsc/releases/tag/v1.2.12), Boot Nodes were introduced on the BSC mainnet. BSC Boot Nodes are similar to Ethereum Boot Nodes, refer [here](https://ethereum.org/en/developers/docs/nodes-and-clients/bootnodes/) for more details. The main benefit of Boot Nodes is that it would be easier for user to connect to the BSC network. Users would no longer need to setup the `StaticNodes` in `config.toml`, just leave it empty and make sure delete the `BootstrapNodes` field in `config.toml`. 
+
+## Impact To Users
+
+### Static Nodes Could Be Stopped
+
+Previously, BSC provides a list of `StaticNodes` for users to connect to the network, they are working as a full node and also serving the P2P discovery protocol. New BSC nodes connect to the BSC network through these `StaticNodes`. It works, but is not quite stable, since they could have very heavy workload.
+
+These static nodes could be stopped and replaced by Boot Nodes in the future. And the `StaticNodes` list provided before could no longer be available. Like the list provided in [v1.2.11 5](https://github.com/bnb-chain/bsc/releases/tag/v1.2.11):
+
+```
+StaticNodes = [
+"enode://bac6a548c7884270d53c3694c93ea43fa87ac1c7219f9f25c9d57f6a2fec9d75441bc4bad1e81d78c049a1c4daf3b1404e2bbb5cd9bf60c0f3a723bbaea110bc@3.255.117.110:30311",
+"enode://94e56c84a5a32e2ef744af500d0ddd769c317d3c3dd42d50f5ea95f5f3718a5f81bc5ce32a7a3ea127bc0f10d3f88f4526a67f5b06c1d85f9cdfc6eb46b2b375@3.255.231.219:30311",
+"enode://5d54b9a5af87c3963cc619fe4ddd2ed7687e98363bfd1854f243b71a2225d33b9c9290e047d738e0c7795b4bc78073f0eb4d9f80f572764e970e23d02b3c2b1f@34.245.16.210:30311",
+"enode://41d57b0f00d83016e1bb4eccff0f3034aa49345301b7be96c6bb23a0a852b9b87b9ed11827c188ad409019fb0e578917d722f318665f198340b8a15ae8beff36@34.245.72.231:30311",
+"enode://1bb269476f62e99d17da561b1a6b0d0269b10afee029e1e9fdee9ac6a0e342ae562dfa8578d783109b80c0f100a19e03b057f37b2aff22d8a0aceb62020018fe@3.254.51.234:30311",
+"enode://16c7e98f78017dafeaa4129647d1ec66b32ee9be5ec753708820b7363091ceb310f575e7abd9603005e0e34d7b3316c1a4b6c8c42d7f074ed2eb4d073f800a03@54.89.153.195:30311",
+"enode://ba88d1a8a5e849bec0eb7df9eabf059f8edeae9a9eb1dcf51b7768276d78b10d4ceecf0cde2ef191ced02f66346d96a36ca9da7d73542757d9677af8da3bad3f@35.153.161.166:30311",
+"enode://accbc0a5af0af03e1ec3b5e80544bdceea48011a6928cd82d2c1a9c38b65fd48ec970ba17bd8c0b0ec21a28faec9efe1d1ce55134784b9207146e2f62d8932ba@35.173.132.72:30311"
+]
+```
+
+### To Join The Network With BootNodes
+
+* If you are using BSC release before `v1.2.12`, you can also try BootNodes without upgrading to `v1.2.12`, you can just set up the `BootstrapNodes` field in your `config.toml` and restart. The six `BootstrapNodes` items listed below can be used directly, they are the current default `BootstrapNodes` in `v1.2.12`:
+
+```
+...
+[Node.P2P]
+MaxPeers = 200
+NoDiscovery = false
+BootstrapNodes = [
+"enode://433c8bfdf53a3e2268ccb1b829e47f629793291cbddf0c76ae626da802f90532251fc558e2e0d10d6725e759088439bf1cd4714716b03a259a35d4b2e4acfa7f@52.69.102.73:30311",
+"enode://571bee8fb902a625942f10a770ccf727ae2ba1bab2a2b64e121594a99c9437317f6166a395670a00b7d93647eacafe598b6bbcef15b40b6d1a10243865a3e80f@35.73.84.120:30311",
+"enode://fac42fb0ba082b7d1eebded216db42161163d42e4f52c9e47716946d64468a62da4ba0b1cac0df5e8bf1e5284861d757339751c33d51dfef318be5168803d0b5@18.203.152.54:30311",
+"enode://3063d1c9e1b824cfbb7c7b6abafa34faec6bb4e7e06941d218d760acdd7963b274278c5c3e63914bd6d1b58504c59ec5522c56f883baceb8538674b92da48a96@34.250.32.100:30311",
+"enode://ad78c64a4ade83692488aa42e4c94084516e555d3f340d9802c2bf106a3df8868bc46eae083d2de4018f40e8d9a9952c32a0943cd68855a9bc9fd07aac982a6d@34.204.214.24:30311",
+"enode://5db798deb67df75d073f8e2953dad283148133acb520625ea804c9c4ad09a35f13592a762d8f89056248f3889f6dcc33490c145774ea4ff2966982294909b37a@107.20.191.97:30311"
+]
+StaticNodes = []
+ListenAddr = ":30311"
+...
+
+```
+
+* If you are using BSC release `v1.2.12` or later, you no longer need to setup the `BootstrapNodes ` field, but you can not just leave it empty, make sure you delete it from `config.toml`. It would be preferred to delete it and use the default value in case there could be any update to the boot node list in the future. The `config.toml` would look like as follow:
+
+```
+...
+[Node.P2P]
+MaxPeers = 200
+NoDiscovery = false
+StaticNodes = []
+ListenAddr = ":30311"
+..
+```
+
+### To Run A Boot Node
+
+Boot nodes are super-lightweight nodes, they can be ran by a very cheap device, like: `2 cores, 2GB memory, 20GB disk`. \
+If you want to support the BSC ecosystem by providing new boot nodes, you can follow [this](https://github.com/bnb-chain/bsc#running-a-bootnode) guide to do it.
+
+## Help
+
+Since boot nodes have been introduced recently, if you get any problem in using it, please let us know. You may just create new issue in [BSC GitHub repo](https://github.com/bnb-chain/bsc/issues).
+
+---
+
+---
+
+## Docker Image
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/docker/
+
+# How to Run A Fullnode Using BSC Docker Image
+
+## Resources
+* Docker image: https://github.com/bnb-chain/bsc/pkgs/container/bsc
+* Dockerfile: https://github.com/bnb-chain/bsc/blob/master/Dockerfile
+
+## Supported Platforms
+
+We support running a BSC docker image on **Mac OS X**, **Linux**, and **Windows**.
+
+## Steps to Run a Fullnode in Docker
+
+### Install Docker
+* Desktop Users: https://docs.docker.com/get-docker/
+* Ubuntu Linux: https://docs.docker.com/engine/install/ubuntu/
+
+#### Post install:
+
+Start docker during boot up:
+```
+systemctl enable docker.service
+systemctl enable containerd.service
+```
+Add user "ubuntu" to group docker so the user has privileges to run docker commands:
+```
+usermod -aG docker ubuntu
+```
+
+### Pull BSC Node Image
+
+* Get latest version: https://github.com/bnb-chain/bsc/pkgs/container/bsc
+```
+docker pull ghcr.io/bnb-chain/bsc:latest
+```
+
+### Download BSC Node Config Files
+
+Download **genesis.json** and **config.toml** by:
+
+Mainnet
+```bash
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
+unzip mainnet.zip
+```
+Testnet
+```bash
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
+unzip testnet.zip
+```
+
+### Running Docker Container
+1. Dockers Variables and Config file Location
+
+Important **Environment Variables** to note: 
+```
+$BSC_HOME = /bsc
+$DATA_DIR = /data
+```
+File location:
+
+* BSC_CONFIG=${BSC_HOME}/config/config.toml
+* BSC_GENESIS=${BSC_HOME}/config/genesis.json
+
+2. Docker Volumes to Mount
+
+Essentially we need to bind mount two directories: 
+
+|    Mount        | Local  | Docker                     |
+| ----------------- | ------------- | -------------------------------------- |
+| Blockchain data | data/node | /bsc/node    |
+| Config files | config  | /bsc/config  |
+
+3. Download data on local host
+Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
+
+4. Start container
+
+You can also use *ETHEREUM OPTIONS* to overwrite settings in the configuration file:
+```
+docker run -v $(pwd)/config:/bsc/config -v $(pwd)/data/node:/bsc/node -p 8575:8575 --rm --name bsc -it ghcr.io/bnb-chain/bsc:1.1.18_hr --http.addr 0.0.0.0 --http.port 8575 --http.vhosts '*' --verbosity 5 --history.logs 576000
+```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
+* *-p 8575:8575*: This will map port 8575 from host to container, so it exposes 8575 on host node.
+* *--http --http.addr 0.0.0.0*: Extra Geth flags to enable RPC and listen on all network interfaces of the container.
+
+**NOTE**: port **8575** is the default port for the RPC service on TESTNET. If you are using mainnet the default port is **8545**.
+
+5. Start Geth console
+```
+geth attach http://localhost:8575
+```
+### How to access the container
+
+Execute bash (shell/terminal) on the container named bsc:
+
+```
+docker exec -it bsc bash
+```
+Once logged in you can perform regular tasks you would do on a node without docker.
+
+### How to Check Node Running Status
+
+#### Check Synchronization
+
+Start Geth Console:
+```
+geth attach ipc:node/geth.ipc
+```
+Once started, run:
+```
+>eth.syncing
+```
+#### Check Geth Logs
+```
+tail -f node/bsc.log
+```
+
+---
+
+---
+
+## Upgrade Geth
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/upgrade_geth/
+
+# How to Upgrade Geth
+
+Updating `geth` is as easy as it gets. You just need to download and install the newer version of `geth`, shutdown your node and restart with the new software. Geth will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
+
+### Step 1: Compile the New Version or download new pre-build binaries from release
+
+```bash
+git clone https://github.com/bnb-chain/bsc
+# Enter the folder bsc was cloned into
+cd bsc
+# Compile and install bsc
+make geth
+```
+
+```bash
+# Download pre-build binaries
+
+# Linux
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
+mv geth_linux geth
+chmod -v u+x geth
+
+# MacOS
+wget   $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
+mv geth_mac geth
+chmod -v u+x geth
+make geth
+```
+
+### Step 2: Stop Geth
+
+```
+
+$ pid=`ps -ef | grep geth | grep -v grep | awk '{print $2}'`
+$ kill  $pid
+
+```
+
+### Step 3: Restart
+!!! note
+    Make sure to use the same start-up command you used before the upgrade. So in this case we use the same command as in our [tutorial](full_node.md) 
+
+```bash
+./geth --config ./config.toml --datadir ./node --cache 10000 --rpc.allow-unprotected-txs --history.transactions 0 --history.logs 576000
+```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
+---
+
+---
+
+## Node Maintenance
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_maintenance/
+
+# Node Maintenance
+### Binary
+All the clients are suggested to upgrade to the latest release. The [latest version](https://github.com/bnb-chain/bsc/releases/latest) is supposed to be more stable and has better performance.
+
+### Storage
+
+#### Prune State
+
+According to the test, the performance of a full node will degrade when the storage size reaches a high volume(previously it was 1.5TB, which is an experimental value, the latest number needs to be updated). We suggest that the fullnode always keep light storage by pruning the storage.
+
+#### How to Prune 
+
+1. Stop the BSC node.
+2. Run `nohup geth snapshot prune-state --datadir {the data dir of your bsc node} &`. It will take 3-5 hours to finish.
+3. Start the node once it is done.
+
+The maintainers should always have a few backup nodes in case one of the nodes is getting pruned.
+The hardware is also important, **make sure the SSD meets: 3 TB of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms (if node is started with snap sync, it will need NVMe SSD)**.
+
+#### Prune Ancient Data in Real Time
+
+Ancient data is block data that is already considered immutable. This is determined by a threshold which is currently set at 90000. This means that blocks older than 90000 are considered ancient data. We recommend the `--prunceancient` flag to users who don't care about the ancient data. This is also advised for users who want to save disk space since this will only keep data for the latest 90000 blocks.  Note that once this flag is turned on, the ancient data will not be recovered again and you cannot go back running your node without this flag in the start-up command. 
+
+#### How to use the flag
+
+```
+./geth --tries-verify-mode none --config /server/config.toml --datadir /server/node --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0 --pruneancient=true --syncmode=full --history.logs 576000
+```
+
+> **Note**: Consider adding `--history.logs.disable` for better performance, but `eth_getLogs` will be slower.
+
+#### Prune Block Tools
+
+A new offline feature introduced in [v1.1.8](https://github.com/bnb-chain/bsc/releases/tag/v1.1.8) to prune undesired ancient block data. It will discard block, receipt, and header in the ancient database to save space.
+
+##### How to prune
+
+1. Stop the BSC Node.
+2. Run 
+    ```
+    ./geth snapshot prune-block --datadir /server/node --datadir.ancient ./chaindata/ancient --block-amount-reserved 1024
+    ```
+    
+    `block-amount-reserved` is the number of ancient data blocks that you want to keep after pruning. 
+
+### Light Storage
+When the node crashes or been force killed, the node will sync from a block that was a few minutes or a few hours ago. This is because the state in memory is not persisted into the database in real time, and the node needs to replay blocks from the last checkpoint once it start. The replaying time depends on the configuration `TrieTimeout` in the config.toml.  We suggest you raise it if you can tolerate with long replaying time, so the node can keep light storage.
+
+## Upgrade Geth
+
+Please read [this guide](upgrade_geth.md)
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/overview/
+
+# EOA Based Paymaster
+This document introduces a paymaster solution specifically designed for Externally Owned Account (EOA) wallets, 
+differing from the paymaster defined in EIP-4337. With minimal modifications, wallets can integrate this solution to 
+support gas fee sponsorship, significantly enhancing user experience.
+
+## What is EOA based Paymaster
+
+The paymaster in [EIP-4337](https://github.com/ethereum/ercs/blob/master/ERCS/erc-4337.md) (Account Abstraction via 
+Entry Point Contract Specification) is a crucial component designed to enhance the flexibility and user experience of 
+Ethereum transactions. It allows a third party to pay for a user's transaction fees, removing the need for users to 
+hold ETH to pay for gas.
+
+While EIP-4337 introduced the revolutionary concept of paymasters for smart contract wallets, a significant portion of 
+the Ethereum ecosystem still relies on EOAs. Recognizing this, this present a groundbreaking paymaster solution 
+specifically designed for EOA wallets. This innovation brings the benefits of transaction sponsorship and enhanced 
+user experience to the broader BNB Chain user base, without requiring a shift to smart contract wallets. The EOA 
+paymaster solution aims to democratize access to sponsored transactions, making blockchain interactions more 
+user-friendly and cost-effective for millions of existing EOA wallet users.
+
+## How does it Work
+
+Under [BEP322](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md)'s Proposer-Builder Separation (PBS) 
+architecture, a significant shift occurs in transaction processing:
+
+1. Validator Role: Validators no longer verify individual transaction gas prices within a block.
+2. Transaction Bundling: Private transactions are grouped into bundles and submitted to builders.
+3. Prioritization: Builders prioritize based on the aggregate gas price of each bundle.
+4. Intra-Bundle Flexibility: Within a single bundle, gas prices can vary, allowing for zero-fee and higher-fee transactions to coexist.
+
+This flexibility enables innovative features such as sponsored gas fees and gasless transactions.
+
+### Definitions
+
+**Bundle**: An ordered array of transactions that execute atomically, ensuring all transactions in the bundle are 
+processed together or not at all.
+
+**Builder**: A new stakeholder in the MEV supply chain responsible for constructing blocks. Builders package transaction bundles, 
+individual transactions from the public txpool, and private transaction order flow into proposed blocks.
+
+**Proposer**: A validator who selects the most profitable block from multiple builders' proposals for inclusion in the blockchain.
+
+**Paymaster**: An infrastructure component that enables transaction sponsorship, allowing self or third parties to cover gas fees.
+
+**Sponsor Policy**: A set of rules defined by the gas sponsor to determine which transactions qualify for sponsorship. 
+This may include criteria such as whitelisted transaction senders or specific transaction types.
+
+### Overall Workflow
+
+The gas sponsorship process involves several key components and steps:
+
+1. User Initiation:
+    - A user prepares a transaction using any compatible wallet.
+    - The wallet sets the gas price to zero for potentially sponsored transactions.
+
+2. Paymaster Submission:
+    - The wallet submits the zero-gas-price transaction to the Paymaster.
+
+3. Sponsor Policy Verification:
+    - The Paymaster checks the transaction against existing sponsor policies.
+    - Policies may include criteria such as sender/recipient addresses, token types, or transaction limits.
+
+4. Sponsorship Processing:
+    - If the transaction is eligible for sponsorship:
+      a. The Paymaster creates a sponsor transaction with a higher gas price.
+      b. The original user transaction and the sponsor transaction are combined into a bundle.
+    - If not eligible, the transaction is rejected or returned to the user for normal processing.
+
+5. Bundle Creation and Submission:
+    - This bundle is submitted to multiple MEV builders.
+
+6. Builder Selection and Block Proposal:
+    - MEV builders incorporate the bundle into their block proposals.
+
+7. Blockchain Inclusion:
+    - Proposers (validators) select the most profitable block from the builders' proposals.
+    - The selected block, containing both the user's original transaction and the sponsor's transaction, is added to the blockchain.
+    - This ensures atomic execution of both transactions.
+
+8. Post-Transaction Processing:
+    - The Paymaster Manager updates the sponsor's account, deducting the appropriate amount for the sponsored gas.
+
+This solution leverages the BEP322 Proposer-Builder Separation architecture to enable seamless gas sponsorship without 
+requiring significant changes to existing wallet infrastructures. It provides a flexible system that can accommodate 
+various sponsorship models while maintaining the security and integrity of the blockchain network.
+
+## Paymaster Infra
+
+Ready to enable gasless experiences in your app or wallet? Here's some helpful information on paymaster infrastructure 
+that are available on BNB Chain:
+
+- [Nodereal](https://docs.nodereal.io/docs/megafuel-overview). The MegaFuel powered by Nodereal is a paymaster 
+implementation based on BNB Chain Paymaster for EOA Wallet. With minimal modifications, wallets can integrate MegaFuel 
+to support gas fee sponsorship, significantly enhancing user experience. At the same time, sponsors can customize 
+their sponsorship on MegaFuel, allowing sponsored users to send gasless transactions.
+- [Bitget Wallet](https://web3.bitget.com/en/). Bitget Wallet has integrated the paymaster on BSC, providing gasless functionality 
+for sponsored user transactions.
+
+---
+
+---
+
+## Paymaster API Spec
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/paymaster-api/
+
+# Paymaster API Spec
+
+To facilitate widespread adoption and ensure interoperability across diverse wallet implementations, it is crucial to establish a standardized set of interface specifications for paymasters. This standardization will enable wallet developers to integrate gas sponsorship features efficiently and consistently, regardless of the specific paymaster service they choose to utilize.
+
+## API Spec
+
+Paymaster needs to implement a JSON-RPC API called `pm_isSponsorable`, so that it can return sponsor and policy information to wallets. Paymaster also needs to implement `eth_sendRawTransaction` JSON-RPC API. The detailed API Specs are defined as below:
+
+### pm\_isSponsorable
+
+**Request Parameters**
+
+*   `jsonrpc`: The JSON-RPC protocol version ("2.0").
+*   `id`: A unique identifier for the request (1 in this example).
+*   `method`: The method name to be invoked ("pm\_isSponsorable").
+*   `params`: An array containing a single object with the following fields:
+    *   `to`: The recipient address of the transaction.
+    *   `from`: The sender address of the transaction.
+    *   `value`: The value of the transaction in hexadecimal.
+    *   `data`: Additional data for the transaction in hexadecimal.
+    *   `gas`: The gas limit of the transaction in hexadecimal.
+
+**Example:**
+
+```plain
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "pm_isSponsorable",
+  "params": [
+    {
+      "to": "0x...", // an address
+      "from": "0x...", // an address"value": "0xa1",
+      "data": "0x",
+      "value": "0x1b4",
+      "gas" : "0x101b4"
+    }
+  ]
+}
+```
+
+**Response Fields**
+
+*   `jsonrpc`: The JSON-RPC protocol version ("2.0").
+*   `id`: The unique identifier for the request (1 in this example).
+*   `result`: An object containing the sponsorship policy details:
+    *   (Required) `Sponsorable`: A boolean indicating whether the transaction is sponsorable (true or false).
+    *   (Required) `SponsorPolicy`:. The name of the sponsor policy.
+
+**Example:**
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "Sponsorable": true,
+    "SponsorPolicy": "a sample policy name"
+  }
+}
+```
+
+###   
+
+### eth\_sendrawtransaction
+
+The `eth_sendrawtransaction` API implemented by the Paymaster should follow this [Ethereum API Spec](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendrawtransaction). The client can create a new message call transaction or a contract creation for signed transactions via `eth_sendrawtransaction` API.
+
+**Request Parameters**
+
+The `params` should contain the signed transaction data.
+
+**Example:**
+
+```plain
+{
+   "jsonrpc": "2.0",
+   "id": 1,
+   "method": "eth_sendRawTransaction",
+   "params": [
+ "0x02f86a6102850df8475800850df84758000a94cd9c02358c223a3e788c0b9d94b98d434c7aa0f18080c080a0bcb0e8ffa344e4b855c6e13ee9e4e5d22cff6ad8bd1145a93b93c5d332100c2ca03765236eba5fbb357e35014fd19ba4b3c6b87f3793bd14dddf7913fc8dcc88bf"
+   ]
+}
+```
+
+**Response Fields**
+
+DATA, 32 Bytes - the transaction hash.
+
+**Example:**
+
+```json
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
+}
+```
+
+---
+
+---
+
+## Wallet Integration
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/wallet-integration/
+
+# Wallet Integration
+
+This guide outlines the steps for wallet developers to integrate paymaster services, enabling gas fee sponsorship for their users. By following these standards, wallets can offer seamless, gasless transactions across multiple paymaster providers.
+
+## Interaction Workflow
+
+Integration involves modifying the transaction creation and sending process to interact with paymaster services. For detailed information about the paymaster API interface, please refer to this [document](./paymaster-api.md).
+
+The main steps are:
+
+1. **Transaction Preparation**:
+    *   When a user initiates a transaction, first call `gm_sponsorable` to check if it's eligible for sponsorship.
+    *   If sponsorable, set the transaction's gas price to zero.
+2. **User Notification**:
+    *   Inform the user that the transaction will be gas-free and sponsored by the "policy name" returned by the API.
+3. **Transaction Signing**:
+    *   Have the user sign the zero-gas-price transaction.
+4. **Submission to Paymaster**:
+    *   Send the signed transaction to the paymaster using `eth_sendRawTransaction`.
+5. **Response Handling**:
+    *   Process the paymaster's response:
+        *   If successful, inform the user that the transaction is submitted.
+        *   If failed, consider falling back to normal transaction processing or inform the user of the failure.
+6. **Transaction Monitoring**:
+    *   Monitor the transaction status as usual.
+
+## Best Practice
+
+1. Always check sponsorability before modifying gas price.
+2. Provide clear user feedback about sponsorship status.
+3. Implement proper error handling for cases where sponsorship fails.
+4. Consider fallback mechanisms for non-sponsored transactions.
+
+---
+
+---
+
+## Try Gasless Transaction
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/paymaster/wallet-demo/
+
+# Experience Paymaster in mainstream Wallets
+
+Several mainstream cryptocurrency wallets have already implemented Paymaster integration.
+This tutorial will guide you through the experience of sending gasless transactions in paymaster integrated wallets.
+
+## Paymaster Integrated Wallets
+
+Wallets with integrated Paymaster functionality offer a seamless experience for users. 
+These wallets automatically detect whether a transaction is eligible for sponsorship. 
+When a transaction qualifies, the wallet sets the gas price to zero without any user intervention. 
+
+To illustrate this, we'll walk through the process by transferring stable coin on BSC.
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/staking/overview/
+
+# BSC Staking Overview
+
+BNB Smart Chain (BSC) operates on a Proof-of-Staked-Authority (PoSA) blockchain, with the staking mechanism proposed in [BEP-294](https://github.com/bnb-chain/BEPs/pull/294).
+This enables BNB holders to stake their tokens with specified validators to secure the network and earn staking rewards.
+Here's an overview covering the core staking concepts and operations on BSC.
+
+## Basic Concepts
+
+### Consensus Engine
+
+BSC uses a consensus mechanism which combines DPoS and PoA for consensus, in this system:
+
+* Blocks are produced by a limited set of validators.
+* Validators take turns to produce blocks in a PoA manner.
+* Validator set are elected in and out based on a staking based governance.
+
+The staking mechanism is essential for determining the eligibility of validators to produce blocks.
+
+### Validator Set
+
+The validator set is the group of nodes that are responsible for validating transactions and producing blocks on the
+BSC. The validator set is determined by the amount of staking each validator has, which reflects the amount of
+BNB staked by the validator and its delegators. The top validators with the most staking are selected as the
+active validator set, and they take turns to propose and vote on blocks. The rest of the validators are in the standby
+validator set, and they can join the active validator set if their staking increases or if some active validators
+drop out.
+
+Any organization or individual can become part of the validator set by creating their validator on-chain and securing sufficient delegations.
+Similarly, they can opt-out by simply withdrawing all their BNB delegations.
+
+Validators can also be removed from the validator set by slashing, which is a penalty for misbehaving or being offline.
+
+### Validator Election
+
+There are different roles for validators:
+
+* Cabinet: the top K (which is 21 currently) validators who get the most chance of producing blocks.
+* Candidate: the top (K, K+NumOfCandidates] (which is (21,45] currently) validators who get a small chance of producing blocks.
+* Inactive: the reset validators who get no chance of producing blocks.
+
+The validator set roles are determined every 24 hours based on the latest staking information.
+
+After UTC 00:00, the consensus engine sorts validators and updates the BSC validator set with the ranking information.
+
+### System Contracts
+
+There are several built-in contracts (i.e., system contracts) to facilitate the BSC staking.
+
+* Validator Set Contract. The contract periodically elects a validator set.
+  The contract also serves as a vault for temporarily storing validator rewards.
+
+* System Reward Contract. This contract acts as a vault to collect part of transaction fees. The funds are used for
+  various public purposes, like distributing fast finality rewards.
+
+* Slash Contract. This contract is used to keep track of the number of times a validator becomes unavailable and
+  triggers penalties once a certain threshold is reached. Additionally, this contract also handles other types of slash
+  events, such as double signing and malicious voting in fast finality.
+
+* Stake Hub Contract. This contract serves as the entrypoint for managing validators and delegations,
+  while also implementing the logic for slashing specific validators. For delegation/undelegation/redelegation
+  operations, it will call different validators' implementation contracts to manage a user's stake.
+
+### Credit Contract
+
+Each validator has its own validator contract that manages staking credit and facilitates the exchange
+between credit and BNB. The token name of a staking credit is "stake {{validator moniker}} credit",
+and the symbol is "st{{validator moniker}}". The contract will be created by the Stake Hub Contract when a validator
+is created.
+
+Whenever a user delegates BNB, an equivalent quantity of credit tokens are created. On the other hand,
+when a user withdraws their delegation, a corresponding amount of credit tokens are destroyed, thereby releasing the BNB.
+
+### Reward Distribution
+
+The staking reward comes from transaction fee - when a block is produced, the majority of the block fee will be
+collected as reward for the validator who proposed the block.
+
+Every day, a portion of the rewards collected will be directly sent to the operator account of the validator as
+commission, while the remaining portion will be sent to the corresponding validator credit contract. And when a user
+undelegates and claims his/her stakes, the accumulated reward and the original stake will be sent back to him/her.
+
+## Validator Operations
+
+Validators are nodes running BNB Smart Chain software, participating in the consensus process.
+They require a minimum BNB stake at their validator address and can receive delegations from other BNB holders.
+Validators earn rewards from transaction fees and share most of these rewards with their delegators.
+
+### Create Validator
+
+To ensure the security of the network, becoming a validator on the BSC requires a minimum self-delegation of 2000 BNB.
+BNB holders can initiate a `CreateValidator` transaction with the `StakeHub` contract to become a validator.
+For more information, refer to [Create BSC Validator](../validator/create-val.md).
+
+### Edit Validator
+
+Validators can update their information using transactions like `EditConsensusAddress`, `EditCommissionRate`, `EditDescription`, and `EditVoteAddress`.
+
+## Delegator Operations
+
+Delegators are BNB holders who stake their BNB with a validator, sharing rewards.
+They can select any active or standby validator, switch between them, undelegate their BNB, and claim rewards anytime.
+Users can refer to the [user guide](./user-guide.md) for instructions on these actions.
+
+---
+
+---
+
+## User Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/staking/user-guide/
+
+# Manage Stakes with BNB Staking dApp
+
+Leverage the BNB staking dApp for streamlined management of your stakes. This guide provides a step-by-step walkthrough for using the dApp on both BSC testnet and mainnet.
+
+- **Testnet**: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
+- **Mainnet**: [https://www.bnbchain.org/en/bnb-staking](https://www.bnbchain.org/en/bnb-staking)
+
+## Connect Wallet
+
+To interact with the dApp, first connect your web3 wallet. Currently, `TrustWallet` (mainnet only) and `MetaMask` are supported, along with any wallets compatible with `WalletConnect`.
+
+## Delegate Stakes
+
+1. Select a validator to delegate your stakes to. Detailed information about each validator is available on their respective pages.
+2. Click the `Delegate` button to initiate a new delegation. 
+
+    
+
+3. Enter the amount of BNB you wish to delegate.
+
+    
+
+4. After confirming the delegation, your connected wallet will prompt you to sign the transaction. Successful transactions will be visible in the `My Staking` page, complete with transaction hash.
+
+    
+
+## Redelegate Stakes
+
+On the `My Staking` page, you can manage your existing delegations.
+
+>Note: A redelegation fee of 0.002% applies to discourage frequent switching between validators.
+
+1. Click `Redelegate` to shift your stake to a different validator.
+
+    
+
+2. In the ensuing popup, select your new validator and specify the amount to redelegate. You can opt to move the entire amount or just a portion.
+
+    
+
+## Undelegate Stakes
+
+To claim your stakes and rewards, you need to undelegate.
+
+1. Click the `Undelegate` button next to the relevant delegation.
+
+    
+
+2. You can choose to undelegate the entire amount or a portion. Note that undelegated stakes are subject to a 7-day unbonding period before they are returned to your account.
+
+    
+
+## Claim Stakes
+
+After the unbonding period, you can claim your stakes by clicking the `Claim` button.
+
+## FAQs
+
+### Q1: Which wallet can be used to delegate to validators?
+
+Currently, `MetaMask` and `TrustWallet` are supported, along with any wallets compatible
+with `WalletConnect`.
+
+### Q2: Can I delegate/undelegate/redelegate/claim stakes on explorers?
+
+If you want to do the aforementioned delegate/undelegate/redelegate/claim operations on BscScan or BscTrace, 
+you should call the staking hub contract in the following URLs:
+* [BscScan Stake Hub](https://bscscan.com/address/0x0000000000000000000000000000000000002002#writeContract)
+* [BscTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
+
+### Q3: What is staking credit (stBNB)?
+
+When you delegate BNB to a validator, you receive **staking credit tokens** as proof of your stake. Each validator issues its own unique credit token:
+
+**Token Naming:**
+- Name: `Stake{{validator moniker}}Credit`
+- Symbol: `st{{validator moniker}}`
+- Example: Staking with "BNB48Club" → receive "stBNB48Club"
+
+**Key Properties:**
+
+- ✅ Represents your staked BNB + accumulated rewards
+- ✅ Auto-compounding: value increases as validators earn rewards
+- ✅ Rewards automatically distributed when you undelegate
+- ❌ Non-transferable between addresses and each validator's credit is unique
+
+### Q4: How to calculate my staking balance?
+
+Your staking credit value in BNB can be calculated using:
+
+```
+Your BNB Value = (stCreditAmount × totalPooledBNB) ÷ totalSupply()
+```
+
+**Where:**
+
+- `stCreditAmount`: Your staking credit balance
+- `totalPooledBNB`: Total BNB in validator's pool (stakes + rewards)
+- `totalSupply()`: Total supply of the validator's staking credit
+
+**Example:**
+
+| Time | totalPooledBNB | totalSupply | Your stCredit | Your Value | Profit |
+|------|----------------|-------------|---------------|------------|--------|
+| Day 1 | 10,000 BNB | 10,000 | 100 | 100 BNB | - |
+| Day 30 | 11,000 BNB | 10,000 | 100 | **110 BNB** | +10 BNB (10%) |
+
+Your staking credit automatically appreciates as the validator earns block rewards!
+
+### Q5: How to query total pooled BNB programmatically?
+
+Use this JavaScript example to query a validator's total pooled BNB:
+
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://bsc-dataseed.bnbchain.org');
+const OPERATOR = '0x...'; // validator operator address
+
+const hub = new ethers.Contract('0x0000000000000000000000000000000000002002',
+  ['function getValidatorCreditContract(address) view returns (address)'], provider);
+
+const creditAddr = await hub.getValidatorCreditContract(OPERATOR);
+const credit = new ethers.Contract(creditAddr,
+  ['function getPooledBNB(address) view returns (uint256)'], provider);
+
+const bnb = await credit.getPooledBNB(OPERATOR);
+console.log('Pooled BNB:', ethers.formatEther(bnb));
+```
+
+---
+
+---
+
+## Build Staking dApps
+> Source: https://docs.bnbchain.org/bnb-smart-chain/staking/developer-guide/
+
+# Build BSC Staking dApps Guide
+
+This guide covers essential staking operations like creating validators, editing their information, and delegating.
+Developers can use these interfaces to build stake-related dApps.
+
+## StakeHub Contract
+
+The BSC staking mainly uses the smart contracts `StakeHub` for validator and delegation management.
+
+- `StakeHub`: Manages validator creations, user delegations, and executes penalty for validator slash.
+   For the full interfaces of `StakeHub`, please refer to [the ABI file](https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi/stakehub.abi).
+  (Address `0x0000000000000000000000000000000000002002`)
+
+## Creating Validator
+
+To create a validator, use the `createValidator` function with the following parameters:
+
+```solidity
+  function createValidator(
+    address consensusAddress,
+    bytes calldata voteAddress,
+    bytes calldata blsProof,
+    Commission calldata commission,
+    Description calldata description
+) external payable
+```
+
+- `consensusAddress`: The consensus address of the validator.
+- `voteAddress`: The vote address of the validator.
+- `blsProof`: The BLS signature as proof of the vote address.
+- `commission`: The commission structure, including rate, maxRate, and maxChangeRate.
+- `description`: The description of the validator, including moniker, identity, website, and details.
+
+> **Note**: Creating a validator requires locking 1 BNB, and the transaction must be sent with a sufficient BNB amount to
+cover this lock amount plus any self-delegation, in total 2001BNB.
+
+## Edit Validator
+
+### Edit Consensus Address
+
+To change the consensus address of a validator, use the `editConsensusAddress` function with the following parameters:
+
+```solidity
+function editConsensusAddress(address newConsensusAddress) external
+```
+
+- `newConsensusAddress`: The new consensus address of the validator.
+
+### Edit Commission Rate
+
+To update the commission rate of a validator, use the `editCommissionRate` function with the following parameters:
+
+```solidity
+function editCommissionRate(uint64 newCommissionRate) external
+```
+
+- `newCommissionRate`: The new commission structure, including rate, maxRate, and maxChangeRate.
+
+### Edit Description
+
+To update the description of a validator, use the `editDescription` function with the following parameters:
+
+```solidity
+function editDescription(Description memory newDescription) external
+```
+
+- `newDescription`: The new description of the validator, including moniker, identity, website, and details.
+
+### Edit Vote Address
+
+To change the vote address of a validator, use the `editVoteAddress` function with the following parameters:
+
+```solidity
+function editVoteAddress(bytes calldata newVoteAddress, bytes calldata blsProof) external
+```
+
+- `newVoteAddress`: The new vote address of the validator.
+- `blsProof`: The BLS signature as proof of the vote address.
+
+## Delegation Operations
+
+### Delegate
+
+To delegate BNB to a validator, call the `delegate` function with the following parameters:
+
+```solidity
+function delegate(address operatorAddress, bool delegateVotePower) external payable
+```
+
+- `operatorAddress`: The operator address of the validator.
+- `delegateVotePower`: The flag to indicate whether the delegator would like to delegate his/her voting power
+  to the validator for governance.
+
+### Undelegate
+
+To undelegate BNB from a validator, use the `undelegate` function with the following parameters:
+
+```solidity
+function undelegate(address operatorAddress, uint256 shares) external
+```
+
+- `operatorAddress`: The operator address of the validator.
+- `shares`: The amount of shares to undelegate from the validator.
+
+### Redelegate
+
+To redelegate BNB from one validator to another, use the `redelegate` function with the following parameters:
+
+```solidity
+function redelegate(address srcValidator, address dstValidator, uint256 shares, bool delegateVotePower) external
+```
+
+- `srcValidator`: The operator address of the source validator to redelegate from.
+- `dstValidator`: The operator address of the destination validator to redelegate to.
+- `delegateVotePower`: The flag to indicate whether the delegator would like to delegate his/her voting power
+  to the destination validator for governance.
+
+## Claim
+
+To claim undelegated BNB after the unbonding period, use the `claim` function for a single request or `claimBatch` for
+multiple requests:
+
+```solidity
+function claim(address operatorAddress, uint256 requestNumber) external
+```
+
+- `operatorAddress`: The operator address of the validator.
+- `requestNumber`: The number of unbonding requests to claim from. `0` means claiming from all unbonding requests.
+
+```solidity
+function claimBatch(address[] calldata operatorAddresses, uint256[] calldata requestNumbers) external
+```
+
+- `operatorAddress`: The operator addresses of the validators.
+- `requestNumber`: The numbers of unbonding requests to claim from the validators.
+
+## Precision Loss
+During the conversion process between credit tokens and BNB, it is inevitably encounter the usage of integer division, 
+which may results in a precision loss. It can lead to tangible issues. For example, a user who delegates 1 BNB and then 
+decides to undelegate immediately. Due to the aforementioned precision loss, they will only be able to claim back 0.99..99 BNB, 
+which is essentially 1 minus a tiny fraction (1e-18) of BNB. 
+
+In staking pools like Lido and Rocket Pool, users might encounter similar issues. 
+However, these issues can be effectively addressed through thoughtful product design. 
+For instance, when displaying information to users, rounding up to only preserve eight decimal places could be one solution. 
+Or instead of undelegating, users can exchange their credit tokens for BNB, with the exact conversion results prominently displayed.
+
+## FAQs
+
+### What is validator's credit contract?
+
+For each validator, there is a credit contract which will be automatically deployed when it is created.
+Meanwhile, the contract cannot be upgraded or changed by any validator operator.
+
+The credit contract is a BEP20 contract, and the ABI is the same
+as [Stake Credit contract](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/abi/stakecredit.abi).
+
+It provides functions for querying delegations, including:
+
+* `balanceOf(address)`: Get the credit balance of a delegator.
+* `getPooledBNB(address)`: Get the pooled BNB amount of a delegator.
+* `getPooledBNBByShares(uint256)`: Get the pooled BNB amount for a specific amount of shares.
+* `getSharesByPooledBNB(uint256)`: Get the shares for a specific amount of pooled BNB.
+* `pendingUnbondingRequests(address)`: Get the count of unbonding requests for a delegator.
+* `unbondRequest(address, uint256)`: Get the details of a unbond request for a delegator.
+* `claimableUnbondRequest(address)`: Get the count of claimable unbonding requests for a delegator.
+* `lockedBNBs(address, uint256)`: Get the locked BNBs for a delegator's unbond queue.
+
+### How to get the shares/BNB for a delegator?
+
+For any specific validator, please call the `balanceOf` function of the validator's creat contract to get the
+delegator's shares. To get the BNB amount instead of shares, the function `getPooledBNB` can be used.
+
+To get the shares of all validators, please call the `balanceOf` function for each validator and sum up
+the results. Please refer to the following to see how to get the information of all validators, and use a
+muticall contract to improve the efficiency.
+
+### How to calculate the BNB amount for a specific amount of shares?
+
+The credit contract provides the `getPooledBNBByShares` function to calculate the BNB amount for some specific amount of
+shares.
+
+To do the vice visa, please use the `getSharesByPooledBNB` function to calculate the shares for some
+specific BNB amount.
+
+### How to calculate the APR/APY of a validator?
+
+Please be noted that each validator will have its own APR/APY, and the staking system will auto compound the rewards.
+
+The reward is distributed to each validator's BNB pool at 00:00:00 UTC time every day. To calculate the APR/APY of a
+validator, the total pooled BNB amount and the propagandising reward amount for the same day are needed.
+
+The `StakeHub` contract provides the `getValidatorTotalPooledBNBRecord(address,uint256)(uint256)`
+and `getValidatorRewardRecord(address,uint256)(uint256)` for the purpose.
+
+The following code shows how to calculate the APY at a given day:
+
+```go
+// example code, do not use it in production
+
+// stakehub is the instance of StakeHub contract
+stakeHub, _ := contracts.NewStakeHub(ethcommon.HexToAddress("0x0000000000000000000000000000000000002002"), client.GetEthClient())
+
+// get how many blocks are in a day
+interval, _ := stakeHub.BREATHEBLOCKINTERVAL(nil)
+
+// get the block time of a given block
+header, _ := p.client.GetBlockHeader(blockHeight)
+
+// calculate the index paramter to call the following functions
+index := int64(header.Time) / interval.Int64()
+
+// get the total pooled BNB amount and the crrospanding reward amount for the given validator and index
+totalPooledBNB, _ := stakeHub.GetValidatorTotalPooledBNBRecord(nil, validatorOperatorAddress, index)
+reward, _ := stakeHub.GetValidatorRewardRecord(nil, validatorOperatorAddress, index)
+
+// calculate the APY
+rate, _ := big.NewFloat(0).Quo(big.NewFloat(0).SetInt(reward), big.NewFloat(0).SetInt(totalPooledBNB)).Float64()
+apy := math.Pow(1+rate, 365) - 1.0
+```
+
+### How to get the unbonding delegations of a delegator, and the unbonded requests which can be claimed?
+
+The credit contract provides the `pendingUnbondRequest` function to get the unbonding delegation count for a
+delegator.
+To review the details of an unbond request, please call the `unbondRequest` function with a `index` parameter to
+define which unbond request will be returned.
+
+To get the claimable unbonded requests, please call the `claimableUnbondRequest` function to get the count of
+claimable ones.
+
+To get the locked BNBs for unbonding requests, please use the `lockedBNBs` function. It has the parameter `number` to
+define the sum of first `number` unbonding requests' BNB locked in the delegator's unbond queue. Set the `number`
+to `0` to get all the locked BNBs.
+
+### How to get the reward of a delegator?
+
+The contracts do not save the initial delegation amount of a delegator. To get the accumulated
+reward, the following steps can be taken: 1) track the initial delegation amount in your system, 2) call
+the `getPooledBNB` of the credit contract of a validator, 3) do the math. You can refer 
+to [this code repository](https://github.com/bnb-chain/staking-reward-example) for example.
+
+### How to get the total staking address of a validator?
+
+The contract does not provide a function to get the total staking address of a validator.
+It needs an offchain service to index `Delegated`, `Redelegated`, `Undelegated` events for the purpose.
+
+### How to get all validators' information?
+
+The `StakeHub` contract provides the `getValidators` function to get all validators' information, including the
+`operator` addresses and `credit contract` addresses.
+
+To get more information of a specific validator, please refer to the following functions:
+
+* `getValidatorConsensusAddress`
+* `getValidatorCreditContract`
+* `getValidatorVoteAddress`
+* `getValidatorBasicInfo`
+* `getValidatorDescription`
+* `getValidatorCommission`
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/governance/overview/
+
+# BSC Governance Overview
+
+[BEP-297](https://github.com/bnb-chain/BEPs/pull/297) introduces the native governance module for BSC, drawing inspiration from the [OpenZeppelin Governor](https://docs.openzeppelin.com/contracts/4.x/governance).
+Here are the key features of BSC Governance:
+
+-  **Proposal and Voting Rights**: Staking credit holders can propose and vote on governance matters.
+-  **Continuous Rewards**: Voters can keep earning staking rewards during the voting period.
+-  **Flexible Delegation**: Users can delegate their voting rights, enabling others to participate in governance.
+-  **Secure Execution**: Proposals undergo a time lock period before execution once passed.
+
+## Workflow Overview
+
+### Submit Proposal
+
+-  **Initiation**: Any staking credit holder can submit a proposal following the [user guide](./user-guide.md).
+-  **Details Required**: Proposer address, target addresses, values, function signatures, calldatas, and a comprehensive description.
+-  **Requirements**: A minimum stake of 200 BNB and no pending proposals from the same delegator.
+
+### Cast Vote
+
+-  **Engagement**: Voters cast their votes through the `castVote` transaction on the `Governor` contract.
+-  **Information Needed**: Voter address, proposal ID, and support value (True or False).
+-  **Flexibility**: Voters can adjust their support value throughout the voting period, current set at **7 days**.
+-  **Voting Power**: Voting power is the staking credit amount a voter holds when a proposal is submitted.
+
+### Execute Proposal
+
+-  **Execution Quorum**: The percentage of voted staking credit to total staking credit should be no less than the governance quorum, currently set at **10%**.
+-  **Tally Threshold**: The voting power percentage for `Yes` should be no less than that for `No` and should meet the tally threshold, currently set at **50%**.
+-  **Execution Timelock**: When a proposal meets the execution conditions, there is still a necessary delay before it can be triggered, currently set at **1 day**.
+
+## Delegation of Voting Power 
+
+Staking credit holders can delegate their voting power to participate in governance if they lack time or expertise.
+Delegating to a trusted party like a validator or a professional service allows them to benefit from expertise and avoid losing rewards by not voting.
+
+---
+
+---
+
+## User Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/governance/user-guide/
+
+# Manage Governance with Tally dApp
+
+This document provides a guide on how to participate in governance on the BNB Smart Chain (BSC) using Tally. It
+covers the process of delegating voting power, creating proposals, voting on proposals, and executing proposals.
+
+BNB Chain DAOs are created on Tally both for the mainnet and testnet.
+
+* Testnet: [https://www.tally.xyz/gov/bnb-chain-testnet](https://www.tally.xyz/gov/bnb-chain-testnet)
+* Mainnet: [https://www.tally.xyz/gov/bnb-chain](https://www.tally.xyz/gov/bnb-chain)
+
+## Parameters
+
+There are several parameters which will affect the governance process on the BSC.
+
+| Parameter               | Description                                                                      | Mainnet Value | Testnet Value |
+|-------------------------|----------------------------------------------------------------------------------|---------------|---------------|
+| votingDelay             | a fixed duration  after which users can vote to a proposal                       | 0 hour        | 0 hour        |
+| votingPeriod            | the voting period before tally                                                   | 7 days        | 1 day         |
+| proposalThreshold       | a fixed amount of gov BNB needed for a proposal                                  | 200 govBNB    | 100 govBNB    |
+| quorumNumberRator       | the percentage of the total voting power required to produce a final vote result | 10%           | 10%           |
+| startGovThreshold       | the total supply of gov token to enable the gov function                         | 10M BNB       | 10M BNB       |
+| minPeriodAfterTheQuorum | the time to add for voting when a proposal reaches quorum                        | 1 day         | 1 hour        |
+| timerlockDelay          | the timer locker duration to execute a proposal                                  | 1 day         | 6 hours       |
+
+## Governance Process Guide
+
+You need to connect to your Web3 wallet (e.g., TrustWallet, BEW, Metamask) for the following operations.
+
+### Delegate Voting Power
+
+After you have delegated your BNB to a BSC validator, you can start participating in the BSC governance.
+To participate in BSC governance, you first need to delegate your voting power to a validator or yourself if you wish to
+vote directly.
+
+You can click the `My voting power` button in the top right corner of the screen to delegate your voting power.
+
+You can delegate your voting power to yourself if you want to vote/create proposals directly, or to others if you want
+him/her to vote/create proposals on your behalf.
+
+If you delegate the voting power to yourself, you will see the current number of your voting power to participate in the governance.
+
+### Create Proposals
+
+If you have sufficient voting power (i.e., greater than the `proposalThreshold`), you can create proposals on the BSC
+network. Be noted that a user can only has one proposal in active/pending state at a time to prevent spamming.
+
+To create a proposal, click on the "Create new proposal" button on the top right corner of the screen.
+
+After you have created a proposal, you can add a title, description, and a list of actions for the proposal.
+
+A text proposal only requires a title and a description, and it will not be executed by the network for there is no action.
+
+To add an action, click on the "Add action" button, and fill in the details of the action.
+
+- `Target Contract Address`: The contract address to be called by the proposal.
+- `ABI File`: The ABI file of the contract. You can upload the ABI file manually if the ABI file is not correctly
+  detected.
+- `Conctract Method`: The method of the contract to be called.
+- `Calldata`: The input data for the contract method. Which is optional.
+
+After you input all the details, click on the "Publish" will publish your proposal.
+
+You can also cancel a proposal by clicking on the "Cancel proposal" button.
+
+### Vote on Proposals
+
+Once a proposal is live (i.e., after the `votingDelay` and before the `votingPeriod`), you can cast your vote to
+support or oppose the proposal. To vote on a proposal, click on the "Vote on chain" button.
+
+You can cast `For`, or `Against`, or `Abstain` votes to the proposal.
+
+### Execute Proposals
+
+If a proposal reaches the quorum (i.e., reaches the `quorumNumberRator` of the total voting power) and it passes
+(i.e., more than 50% of the voted voting power supports the proposal), it can be executed by the network.
+
+To execute a proposal, firstly the proposal needs to be queued by clicking the `Queue` button.
+
+After the proposal is queued and exceeds the timelock duration (i.e, the `timerlockDelay` duration),
+it can be executed by anyone by clicking the `Execute` button.
+
+### More References
+
+- [Delegations on Tally](https://docs.tally.xyz/knowledge-base/delegations-on-tally)
+- [Proposals on Tally](https://docs.tally.xyz/knowledge-base/proposals)
+
+---
+
+---
+
+## BNB Advocate`s Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/governance/bnb-kol/
+
+# BNB On-Chain Governance Voting: A BNB Advocate`s Guide
+
+# Introduction
+
+Key Opinion Leaders (BNB Advocates) hold significant influence within the BNB Chain community. Your participation in on-chain governance is vital to ensure the network evolves in a truly decentralized manner. By maximizing your voting power, you can amplify your community's voice and drive positive change.
+
+# How to Increase Voting Power
+
+**As a tech leader, there are two primary ways to enhance your governance power:**
+
+1. Increase your BNB holdings: The more BNB you hold in your wallet, the more voting power you possess. Consider acquiring additional BNB to boost your influence in governance decisions.
+2. Receive delegated BNB: Encourage your community members to delegate their voting power to you. This empowers you to vote on their behalf, increasing your overall influence in the governance process.
+
+**Steps to Gain More Voting Power from Your Community**
+
+1. Educate and Advocate: Explain the importance of on-chain governance and how it empowers the community to shape the future of BNB Chain. Clearly articulate the benefits of delegating voting power to you as a trusted tech leader.
+2. Share Proposals and Insights: Regularly share your thoughts on upcoming proposals and explain how they might impact the community. Provide insightful analysis and encourage your followers to engage in the discussion.
+3. Simplify Delegation: Make the delegation process as easy as possible for your community. Provide clear instructions and guidance on how to delegate their voting power to you.
+4. Transparent Communication: Maintain open and transparent communication with your community. Keep them informed about how you plan to utilize their delegated voting power and the rationale behind your voting decisions.
+5. Build Trust: Continuously build trust with your community by demonstrating your commitment to their interests and the overall well-being of the BNB Chain ecosystem.
+
+## Steps of governance power delegation(To be shared to your followers)
+
+1. Access the BNB Chain Governance page:
+
+1. Go to the Tally website (https://www.tally.xyz/gov/bnb-chain).
+
+1. Connect Your Wallet:
+   1. Click on "Connect Wallet" and select your preferred wallet provider.
+   2. Follow the prompts to connect and authorize access to your wallet.
+2. Navigate to Delegation:
+
+1. Locate and click on the "Delegate" button or tab. 
+
+1. Choose Your Delegate:
+
+1. You have two main options:
+   1. Delegate to Self: This means you will directly control your voting power and vote on proposals yourself.
+   2. Delegate to Another Address: Enter the wallet address of the person or entity you want to delegate your voting power to.
+
+1. Confirm and Sign
+   1. Once you've made your selection, review the details and click on the "Delegate" or "Delegate Votes" button.
+   2. Your wallet will prompt you to confirm and sign the transaction.
+2. Verify Delegation:
+   1. After the transaction is confirmed on the blockchain, you can go to the "Votes" or "My Delegates" section on Tally to verify that your delegation was successful.
+
+# Important Considerations:
+
+- Factors Affecting Voting Power:
+
+- BNB Staking: The more BNB you staked on validators, the greater your voting power.
+- Delegated BNB: The more people delegate their voting power to you, your voting power increases.
+
+# Disclaimer:
+
+- The specific process and rules for BNB on-chain governance voting might evolve. Always refer to official BNB Chain documentation and announcements for the latest information.
+- Remember: On-chain governance is a powerful tool that enables the BNB Chain community to make collective decisions about the network's future. By participating, you contribute to the growth and development of the BNB Chain ecosystem.
+
+---
+
+---
+
+## Temperature Check
+> Source: https://docs.bnbchain.org/bnb-smart-chain/governance/temp-check/
+
+# BSC Governance Temperature Check
+
+## Overview
+
+BNB Chain governance involves a two-step process: temperature check and final decision voting. The temperature check, typically conducted through the Snapshot platform, allows any BNB holder to gauge community sentiment on a proposal. If the proposal receives enough support, it proceeds to the final decision voting phase. This phase often involves on-chain voting by validators or those with staked BNB, and the outcome determines whether the proposal is implemented or rejected.
+
+## Submit a Proposal
+
+!!! info
+	Anyone who staked more than 1BNB can create proposals.
+
+Step 1: Head to the space which you wish to create your proposal for.
+
+Connect with the wallet provider - make sure the connected wallet is where you delegate BNB
+
+Step 2: Click New proposal in space sidebar
+
+Fill in the following fields:
+- Title
+- Description
+- Discussion link
+
+Step 3: Select the desired voting system, specify the possible vote options, and define the duration of your proposal. Make sure you allow enough time for users to vote.
+
+Step 4: Click `Publish` - and you can see your proposal in the proposals list on the space page.
+
+## Voting
+
+### Vote on a Proposal
+
+!!! info
+	All BNBChain delegators can vote for proposals.
+
+Step 1: Log in to voting space
+URL: https://snapshot.org/#/bnbchain-dao.eth
+
+Step 2: Go to the snapshot link of the proposal. For example, in this case, a community member created a voting proposal for BEP-341.
+
+https://snapshot.org/#/bnbchain-dao.eth/proposal/0xd2ad975fbe1abd4bf71a5032239650741a64af0133feec83f43b98bc42fa7efe
+
+Step 3: Connect your wallet and vote
+
+After you connect your wallet, make sure to use the same address of your BNB Staking. And choose the voting option.
+
+### Delegate Voting Power
+
+Step 1: Go to https://snapshot.org/#/delegate/bnbchain-dao.eth
+
+Step 2: Enter the address you want to delegate to.
+
+Step 3: Click Confirm to save your delegation.
+
+### Undelegate Voting Power
+
+Step 1: Go to https://snapshot.org/#/delegate/bnbchain-dao.eth
+
+Step 2: Find the current delegatees in Top delegates.
+
+Step 3: Click the 'x' button along a delegatee to undelegate, the wallet will ask user to sign and send transaction to bsc
+
+### Factors Affecting Temperature Governance Power:
+- BNB Holding Balance: The more BNB you hold, the greater your voting power.
+- Staked BNB: Delegating your BNB to a validator also contributes to your governance power. This ensures those actively participating in the network's security have a say. https://www.bnbchain.org/en/bnb-staking
+- ListDAO Staked BNB: Your staked listDAO BNB(slisBNB) https://docs.bsc.lista.org/user-guide/liquid-staking-slisbnb
+
+---
+
+---
+
+## Governance APIs
+> Source: https://docs.bnbchain.org/bnb-smart-chain/governance/apis/
+
+# BSC Governance APIs
+
+This guide gives an overview of governance operations for BSC, such as creating proposals, casting votes, and executing them.
+
+## Governance Contracts
+
+The BSC governance facilitates decentralized decision-making within the BSC ecosystem, utilizing two primary
+smart contracts: `GovToken` for governance token management and `Governor` for proposal management and voting.
+
+- `GovToken`: Manages governance tokens, enabling holders to participate in governance decisions. It supports syncing
+  token balances with staked assets and delegating voting rights. (Address: `0x0000000000000000000000000000000000002005`)
+
+- `Governor`: Manages the creation, voting, and execution of governance proposals. It also ensures only eligible
+  participants can propose changes and vote. (Address: `0x0000000000000000000000000000000000002004`)
+
+## Create Proposal
+
+To create a proposal, you need to call the `propose` function of `Governor` with the following parameters:
+
+```solidity
+function propose(address[] memory targets, uint256[] memory values, bytes[] memory calldatas, string memory
+    description) public returns (uint256 proposalId)
+```
+
+- `targets`: Contract addresses the proposal will interact with.
+- `values`: BNB values (in wei) for each call.
+- `calldatas`: Encoded function calls.
+- `description`: Description of the proposal.
+
+## Cast Vote
+
+To cast a vote, you need to call the `castVote` function of `Governor` with the following parameters:
+
+```solidity
+function castVote(uint256 proposalId, uint8 support, string memory reason) public returns (uint256)
+```
+
+- `proposalId`: ID of the proposal.
+- `support`: Vote choice (e.g., for, against, abstain).
+- `reason`: (Optional) Reason for your vote.
+
+## Check Proposal State
+
+To get the state of a proposal, you need to call the `state` function of `Governor` with the following parameters:
+
+```solidity
+function state(uint256 proposalId) public view returns (ProposalState)
+```
+
+- `proposalId`: ID of the proposal.
+
+## Queue Proposal
+
+To schedules the proposal for execution, you need to call the `queue` function of `Governor` with the following
+parameters:
+
+```solidity
+function queue(address[] memory targets, uint256[] memory values, bytes[] memory calldatas, bytes32 descriptionHash)
+public returns (uint256 proposalId)
+```
+
+- `targets`: Contract addresses the proposal will interact with.
+- `values`: Ether values (in wei) for each call.
+- `calldatas`: Encoded function calls.
+- `descriptionHash`: Hash of the description of the proposal.
+
+## Execute Proposal
+
+To apply the changes after the timelock delay, you need to call the `execute` function of `Governor` with the following
+parameters:
+
+```solidity
+function execute(address[] memory targets, uint256[] memory values, bytes[] memory calldatas, bytes32 descriptionHash)
+public payable returns (uint256)
+```
+
+- `targets`: Contract addresses the proposal will interact with.
+- `values`: Ether values (in wei) for each call.
+- `calldatas`: Encoded function calls.
+- `descriptionHash`: Hash of the description of the proposal.
+
+## Delegate Vote
+
+To delegate voting power to someoneles, you need to call the `delegateVote` function of `GovToken` with the following
+parameters:
+
+- **Delegator address**: The address of the delegator, who delegates their voting power to another address.
+- **Delegatee address**: The address of the delegatee, who receives the voting power from the delegator and
+  participates in governance on their behalf.
+
+```solidity
+function delegateVote(address delegator, address delegatee) external
+```
+
+- `delegator`: The address of the delegator, who delegates their voting power to another address.
+- `delegatee`: The address of the delegatee, who receives the voting power from the delegator.
+
+## Contract ABI
+
+For the full interfaces of `Governor`, please refer
+to [the ABI file](https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi/Governor.abi).
+
+For the full interfaces of `GovToken`, please refer
+to [the ABI file](https://github.com/bnb-chain/bsc-genesis-contract/blob/bc-fusion/abi/govtoken.abi).
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/overview/
+
+# BSC Validator Overview
+
+BNB Smart Chain(BSC) relies on a system of multiple validators with [Proof of Staked Authority (PoSA) consensus](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum)
+that can support short block time and lower fees. The most bonded validators in staking will have the opportunity to produce blocks.
+The double-sign detection and other slashing logics ensure security, stability, and chain finality.
+
+BSC conducts a daily election process post **00:00 UTC** to select the top **45** active validators based on their staking rankings for block production.
+Among these, the **21** validators with the highest staked amounts are referred to as **Cabinets**, while the remaining **24** validators are known as **Candidates**.
+The remaining inactive validators must wait for the next round of elections to become active validators before they can participate in block production.
+
+In the set of **45** active validators, each epoch selects **18** validators from the **Cabinets** and **3** validators
+from the **Candidates**, forming a group of **21** validators as the consensus validators set for the current epoch to
+produce blocks. If a validator is elected as the consensus validator but fails to participate in produce blocks, it will
+face slashing consequences.
+
+**Cabinets** are more likely to be elected as consensus validators for block generation than **Candidates**, who have a slightly lower probability of being chosen for the same role.
+However, whether it's **Cabinets** or **Candidates**, if they are not online when it's their turn to produce a block, they will be slashed.
+This measure aims to encourage more validators to participate in the consensus, enhancing the decentralization and security of BSC.
+
+## What is Validator?
+
+Validators on the BSC are nodes responsible for producing blocks and securing the network through the [POSA consensus mechanism](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md#consensus-and-validator-quorum).
+They participate in packaging transactions, creating and validating blocks to secure the BSC network, earning BNB tokens as rewards in exchange.
+## The Network Topology
+
+Validators on the BSC network are interconnected through a peer-to-peer (P2P) network, allowing for both direct and indirect connections. As a validator node operator, you have two operational modes to choose from:
+
+- **Mode A(Ease of Use)**: You can expose your validator's public IP address directly to the P2P network, which facilitates a direct connection. This mode is the most straightforward and offers high efficiency due to fewer network hops. To mitigate potential security risks, it is highly recommended to deactivate the HTTP module whenever possible and avoid exposing HTTP access to the public. Additionally, it's crucial to safeguard your validator node's information to prevent Distributed Denial of Service (DDoS) attacks that could target the P2P port.
+
+- **Mode B(Enhanced Security)**: This mode conceals your validator node behind one or more SentryNodes, which are essentially regular BSC full nodes. The SentryNode acts as a protective intermediary between your hidden validator node and the public P2P network. It primarily shields the validator from threats such as DDoS attacks and other security vulnerabilities.
+
+## Economics
+
+Validator's rewards come from transaction fees and commission fees from delegators.
+
+Let us also assume that the reward for a block is 100 BNB and that a certain validator has **20%** of self-bonded BNB and sets its commission rate to **20%**. These tokens do not go directly to the proposer. Instead, they are shared among validators and delegators.  These **100 BNB** will be distributed according to each participant's stake:
+
+```
+Commission: 100 BNB × 20% = 20 BNB (goes directly to validator)
+Remaining for All Delegators: 100 BNB - 20 BNB = 80 BNB (distributed proportionally)
+Validator's Share of Remaining: 80 BNB × 20% = 16 BNB
+Other Delegators' Share: 80 BNB × 80% = 64 BNB
+Total Validator Reward: 20 BNB (commission) + 16 BNB (self-delegation share) = 36 BNB
+```
+
+The rewards for motivating validators to vote for Fast Finality also comes from transaction fees. The specific rules can refer to [BEP126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md#43-reward)
+
+If validators double sign, malicious vote or frequently offline, their staked BNB (not including BNB of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.
+
+You can learn to see the revenue history from BitQuery's [chart](https://explorer.bitquery.io/bsc/miners) or a table of [BscScan](https://bscscan.com/validatorset)
+
+## Risks for Validators
+
+If validators attempt to cheat the system or violate the specifications, they may incur a penalty known as **[slashing](../slashing/overview.md)**.
+
+### Double Sign Slash
+
+Running your validator keys simultaneously on two or more machines will result in Double-Sign slashing.
+The penalty for double-sign slash:
+
+1. **200 staked BNB** will be slashed for the validator.
+2. The double sign jail time is **30 days**, preventing the malicious validator from participating in consensus until manual intervention is taken.
+
+> Note:
+> **Rewards for submitting double-sign evidence:** **5BNB**. 
+> Anyone can submit a slashing request with the evidence of double sign, which should contain the **2 block headers** with the same height and parent block, sealed by the offending validator.
+
+### Malicious Fast Finality Vote Slash
+
+Running your validators with the same consensus keys and bls voting keys concurrently on two or more machines will result in malicious vote slash.
+The penalty for malicious vote slash:
+
+1. **200 staked BNB** will be slashed for the validator.
+2. The malicious vote jail time is **30 days**, you can send an `unjail` transaction after the jail time to reactivate your validator.
+
+> Note: **Rewards for submitting Malicious Vote evidence:** **5BNB**. Anyone can submit a slash request with the evidence of malicious vote on BSC, which should contain the **2 votes**, signed by the offending validator.
+
+### Downtime Slash
+
+If your validator misses over **50 blocks** in **24 hours**, the blocking reward won't be given to you but will be shared among other validators.
+If your validator continues to miss more than **150 blocks** within **24 hours**, it will trigger the following penalty for being offline.
+
+1. **10 staked BNB** will be slashed for the validator.
+2. The offline jail time is **2 days**. This allows the validator to send an `unjail` transaction and resume as an active validator after 2 days.
+
+### Low Self-Delegation Slash
+
+Validators must stake a minimum of 2000 BNB for self-delegation. If the self-delegated amount is less, the penalty is 2 days of jail time.
+
+---
+
+---
+
+## Run Validator
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/run-val/
+
+# Run BSC Validator
+
+## Validator Hardware Requirements
+
+### Mainnet
+
+- Instance Spec:
+  - Suggest i7i.8xlarge or i7ie.6xlarge instance type on AWS (better to disable HyperThread, which could have 10%+ performance gain).
+  - or other instance spec to meet >=400 mgasps
+- Memory: 128 GB
+- Disk: **IMPORTANT** 7TB, NVMe SSD, 40k IOPS, 500 MB/S throughput, read latency <1ms.
+- Network Bandwidth: >= 512 Mbps
+
+### Testnet
+
+- CPU: "AMD Gen 3 or newer" or "Intel Ice Lake or newer"
+- Memory: 16 GB
+- Disk: 1.5 TB, solid-state drive(SSD), gp3, 8k IOPS, 250 MB/S throughput.
+- Network Bandwidth: >= 128 Mbps
+
+## Setup Validator Node
+
+### 1. Install BSC Fullnode
+
+Follow the instructions [here to set up a full node](../developers/node_operators/full_node.md).
+
+### 2. Prepare Accounts
+
+Two accounts require preparation before running a validator: the Consensus account and the BLS Vote account.
+Ensure these accounts match the corresponding ones when creating a new validator.
+
+#### Generate Consensus Address
+To create a new mining consensus account, run this command and set a password for the account:
+
+```shell
+geth account new --datadir ${DATA_DIR}
+```
+
+-  `DATA_DIR`: Where your key store files are saved.
+
+If you already have a consensus account, skip this step. Save the password in a file named password.txt:
+
+```shell
+echo {your-password for the consensus account} > password.txt
+```
+
+#### Generate BLS Vote Address
+
+To set up a new BLS account, use this command:
+
+```shell
+geth bls account new --datadir ${DATA_DIR}
+```
+
+-  `DATA_DIR`: The directory to store your key store files.
+
+If you already have a BLS vote key, you can create a BLS wallet and recover it with the keyfile using:
+
+```shell
+geth bls account import ${KEY_FILE} --datadir ${DATA_DIR}
+```
+
+To retrieve your bls address, run:
+
+```shell
+geth bls account list --datadir ${DATA_DIR}
+```
+
+Save the password in a file named blspassword.txt:
+
+```shell
+echo {your-password for the BLS wallet} > blspassword.txt
+```
+
+### 3. Start Validator Node
+
+> Warning: Please do not expose your RPC endpoints to public network!
+
+Start your validator using the command line below:
+
+```bash
+geth --config ./config.toml --datadir ./node -unlock {accounts to sign txs, including your mining account at least} --miner.etherbase {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000 --history.transactions 0 --history.logs.disable
+```
+
+## Post Running
+
+### 1. Monitor node status
+
+To get started quickly, run GethExporter in a Docker container.
+
+```
+docker run -it -d -p 9090:9090 \
+  -e "GETH=http://mygethserverhere.com:8545" \
+  hunterlong/gethexporter
+```
+
+### 2. Update validator profile
+
+You can submit a PullRequest to this repository to update your information: <https://github.com/bnb-chain/validator-directory>
+
+Reference: <https://grafana.com/grafana/dashboards/6976>
+
+### 3. Publish Validator Information
+
+Please submit a Pull Request to this repo <https://github.com/bnb-chain/bsc-validator-directory>
+
+This repository is a place for validator candidates to give potential delegators a brief introduction about your team and infrastructure, and present your ecosystem contributions.
+
+### 4. Stop Validating
+
+You can stop mining new blocks by sending commands in **geth console**
+
+Connect to your validator node with **geth attach ipc:path/to/geth.ipc**
+
+```bash
+miner.stop()
+```
+
+To resume validating,
+```bash
+miner.start()
+```
+
+## Some Tips & Tools
+### 1.Run backup node
+Backup node could help when your primary validator node encounters issues due to a variety of potential reasons, ensuring the continuity and reliability of your participation in the network.
+
+### 2.Check your node’s stability
+There is a javascript in BSC repo to dump the slash status of each validator.
+```
+cd /cmd/jsutils
+# 1.To dump the slashes of the lates block:
+node getslashcount.js --Rpc https://bsc-dataseed.bnbchain.org
+
+# 2.You may also specify the block number:
+node getslashcount.js --Rpc https://bsc-dataseed.bnbchain.org --Num 39938351
+```
+If your validator operates smoothly, you should expect minimal or even no penalties, known as "slashes," on a daily basis. Generally speaking, if your validator incurs more than three slashes within a single day, it would be prudent to investigate the cause for this anomaly.
+
+### 3.About maintenance mode
+Should your validator incur 50 slashes, it will automatically transition into maintenance mode. It is imperative to promptly diagnose and rectify any issues with your node to prevent further penalties. Failure to do so may result in your node being placed in a more restrictive state, often referred to as "jail."
+
+Upon successfully restoring your node's functionality, it is crucial to promptly [exit maintenance mode](https://github.com/bnb-chain/bsc/blob/master/docs/parlia/README-BEP-127.md#exit-maintenance) to resume normal operations and avoid any unnecessary downtime or penalties.
+```
+// note: replace "0x75B851a27D7101438F45fce31816501193239A83" with your validator's consensus address.
+geth attach geth.ipc
+web3.eth.sendTransaction({   from: "0x75B851a27D7101438F45fce31816501193239A83",   to: "0x0000000000000000000000000000000000001000",   data: "0x04c4fec6"})
+```
+
+### 4.Filter out peers by regex pattern
+This functionality was introduced with version [1.4.6](https://github.com/bnb-chain/bsc/releases/tag/v1.4.6), primarily designed to identify and exclude peers that may present operational challenges, thereby preventing connections with them. For further details, please refer to this Pull Request: [PR#2404](https://github.com/bnb-chain/bsc/pull/2404).
+
+Generally, this feature is not necessary for regular operation. However, in the event that a release contains critical bugs and an immediate upgrade of all nodes to a stable version is not feasible, this feature can be employed to disconnect from peers running the problematic versions. This serves as a temporary solution to mitigate the impact of the bugs until a comprehensive upgrade can be performed.
+
+For example, if v1.4.9 has known issues, we wanna disconnect nodes of this version, you may update your `config.toml` and restart:
+```
+[Node.P2P]
+PeerFilterPatterns = ["Geth/v1.4.9.*"]
+```
+
+---
+
+---
+
+## Create Validator
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/create-val/
+
+# Create BSC Validator
+
+This guide outlines the process for creating a new validator on the BNB Smart Chain (BSC).
+The BNB staking dApp is the official tool for creating and managing validators on the BSC.
+
+- **Testnet**: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
+- **Mainnet**: [https://www.bnbchain.org/en/bnb-staking](https://www.bnbchain.org/en/bnb-staking)
+
+## Terminology
+
+- **Operator Address**: The address for creating and modifying validator information on the BSC. You should use this
+  address when connecting to the staking dApp. The corresponding account should have more than 2001 BNB for creating
+  validtors and paying transaction fees.
+- **Consensus Address**: A unique address for your validator's node. It is used for consensus engine when mining new
+  blocks. It should be different from the operator address.
+- **BLS Vote Address**: A BLS address used for fast finality voting.
+- **BLS Proof**: A BLS signature verifying ownership of the vote address.
+- **Identity**: For associating a new validator with an existing one. This is optional unless you're migrating an old validator.
+
+## Steps
+
+### 1. Connecting to the dApp
+
+Please connect to the staking dApp using your **Operator Address**. `Trust Wallet`, `MetaMask`, and `WalletConnect`
+options are available for the step. Make sure that the account has more than 2001 BNB before moving on to the next step.
+
+### 2. Filling out the form
+
+Navigate to the dApp and select the `Become a Validator` button in the right middle of the page
+to initiate the creation process.
+
+The following information is required to create a validator.
+
+#### 2.1 Basic Information
+
+You'll need to provide the following details on the `Create Validator` page:
+
+- **Validator Name**: Choose a name consisting of 3-9 alphanumeric characters, excluding special characters.
+- **Website**: Provide a URL to a website with additional information about your validator.
+- **Description**: A brief description of your validator.
+
+To enhance your validator's visibility, consider uploading additional information to
+the [BSC validator directory](https://github.com/bnb-chain/bsc-validator-directory). Your avatar, once uploaded, will be
+displayed in the staking dApp.
+
+#### 2.2 Addresses
+
+The following addresses are required:
+
+- **Consensus Address**: A unique address for your validator's node.
+- **Vote Address**: An address used for fast finality voting.
+- **BLS Proof**: A BLS signature verifying ownership of the vote address.
+- **Identity**: For associating a new validator with an existing one. This is optional unless you're migrating an old validator.
+
+##### Generate Consensus Address
+
+Download the BSC geth binary from [the official release page](https://github.com/bnb-chain/bsc/releases/).
+
+Note: Make sure you are downloading the correct binary based on your machine's platform, e.g., if you are using MacOS,
+you should download the `geth_mac` file. In the following, we will refer the binary as `geth` for simplicity.
+
+To create a new account for mining, please use the following command and set a password for the account.
+
+```shell
+geth account new --datadir ${DATA_DIR}
+```
+
+- `DATA_DIR`: The directory where you want to store your key store files.
+
+This command will provide the public address (consensus address) and the path to your private key. Remember to back up the key file safely!
+A sample consensus address is `0x4b3FFeDb3470D441448BF18310cAd868Cf0F44B5`.
+
+If you already have an account for mining, you can use the seed phrase to recover the account.
+
+```shell
+geth account import --datadir ${DATA_DIR}
+```
+
+##### Generate BLS Vote Address and Proof
+
+To create a new bls account please use the following command.
+
+```shell
+ geth bls account new --datadir ${DATA_DIR}
+```
+
+- `DATA_DIR`: The directory where you want to store your key store files.
+
+If you already have a voting key, create a bls wallet and use the keyfile to recover it, using the following command.
+
+```shell
+ geth bls account import ${KEY_FILE} --datadir ${DATA_DIR}
+```
+
+- `DATA_DIR`: The backup file for restoring the BLS account.
+
+Then you can get your vote address by running the following command.
+
+```shell
+geth bls account list --datadir ${DATA_DIR}
+```
+
+A sample bls address is `b5fe571aa1b39e33c2735a184885f737a59ba689177f297cba67da94bea5c23dc71fd4deefe2c0d2d21851eb11081f69`.
+
+Then you can get your bls proof by running the following command.
+
+```shell
+geth bls account generate-proof --datadir ${DATA_DIR} --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRESS} ${VOTE_ADDRESS}
+```
+
+- `BSC_CHAIN_ID`: `56` for BSC mainnet, and `97` for BSC testnet.
+- `OPEATOR_ADDRESS`: The address of your account, which will be recognized as the operator of the new validator.
+- `VOTE_ADDRESS`: The vote address created in the last step.
+
+A sample bls proof is `0xaf762123d031984f5a7ae5d46b98208ca31293919570f51ae2f0a03069c5e8d6d47b775faba94d88dbbe591c51c537d718a743b9069e63b698ba1ae15d9f6bf7018684b0a860a46c812716117a59c364e841596c3f0a484ae40a1178130b76a5`.
+
+##### Create Identity
+
+Identity is used to associate the new validator with the old validator created on the BNB Beacon Chain. It should be left empty after the Beacon Chain fusion.
+
+#### 2.3 Commissions
+
+- **Rate**: The commission rate of the validator.
+- **Max Rate**: The maximum commission rate that the validator can set.
+- **Max Change Rate**: The maximum rate change the validator can set to every epoch (1 day).
+
+#### 2.4 Self-delegation
+
+- **Self Delegate Amount**: The amnout to delegate when creating the validator. The minimal number to input is `2001` -
+  for the minimal self delegation amount is 2000 BNB and extra 1 BNB for locking to a dead address.
+
+### 3. Submitting the form
+
+Once you have filled out all the required information, click the `Submit` button to submit the transaction.
+
+Note: Upon completing these steps, your node is not guaranteed to become an active validator. Selection is based on a ranking that reflects the total BNB staked, with only the top N nodes being chosen as active validators. The number N is determined by the "maxElectedValidators" parameter within the StakeHubContract (0x0000000000000000000000000000000000002002). As of November 4th, 2024, this number stands at 8 for the testnet and 45 for the mainnet.
+
+---
+
+---
+
+## Secure Validator
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/security/
+
+# Secure BSC Validator
+
+Each BSC validator is encouraged to run its operations independently, as diverse setups increase the resilience of the network.
+Due to the high amount invested by validators it is highly essential to protect them against different DoS and DDoS attacks.
+In this section, we discuss the security mechanism adopted by BSC for its validators.
+
+## Sentry Nodes (DDOS Protection)
+
+Validators should ensure network resilience against denial of service attacks. One effective approach to reduce these risks
+is by organizing their network in a sentry node architecture. Sentry nodes, easily deployed and capable of IP address
+changes, operate in private IP space, shielding them from direct internet attacks. This setup guarantees that validator
+block proposals and votes reliably reach the network.
+
+To setup your sentry node architecture you can follow the instructions below:
+
+### 1. Setup Nodes
+Construct a private network and establish trusted connections between the validator node and its sentry nodes.
+Refer to the [fullnode guide](../developers/node_operators/full_node.md) for setting up your validator and sentry nodes.
+Avoid exposing your validator's RPC endpoints to the public network.
+
+### 2. Add Peers
+Connect individual sentry nodes' console, execute `admin.nodeInfo.enode` command. This will provide you with the enode information for each node, as illustrated below.
+
+```
+enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[::]:30306?discport=0
+```
+
+>!!! Note:
+**[::]** will be interpreted as the localhost (127.0.0.1) address. If your nodes are within a local network, ensure to inspect each host machine to determine its IP using the ifconfig command. However, if your peers are outside the local network, you must be aware of your external IP address to form the enode URL correctly.
+
+Replace **[::]** with the correct node URL, copy the enode details, and add them to the `config.toml` file of the validator node like this:
+```
+# make node hidden
+NoDiscovery = true
+# connect exclusively to sentry
+StaticNodes = ["enode://f2da64f49c30a0038bba3391f40805d531510c473ec2bcc7c201631ba003c6f16fa09e03308e48f87d21c0fed1e4e0bc53428047f6dcf34da344d3f5bb69373b@[10.1.1.1]:30306"]
+```
+
+### 3. Confirm Connections
+
+Connect to the validator's console, run `admin.peers`, and you will see the details of the sentry nodes you added.
+
+## Firewall Configuration
+
+`Geth` utilizes different ports for various functions.
+
+It utilizes a listener (TCP) port and a discovery (UDP) port for P2P connections, typically configured to 30303. Ensure this port is open.
+
+The default JSON-RPC service port is TCP port 8545. To prevent unauthorized admin operations, refrain from exposing the JSON-RPC port externally.
+
+---
+
+---
+
+## Key Management
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/manage-keys/
+
+# Key Management for BSC Validator
+
+[BEP-294](https://github.com/bnb-chain/BEPs/pull/294) and [BEP-297](https://github.com/bnb-chain/BEPs/pull/297)
+introduce the native staking and governance features for BNB Smart Chain (BSC). For a validator, when participating in
+staking (e.g., creating a validator, self-delegating) and governance, there are several wallet keys that will be
+involved. To help validators manage their keys and funds effectively and safely, the following practices are
+recommended.
+
+## Operator Key
+
+The operator key is used for operating a validator, including creating a validator, editing the information of a
+validator, and undelegating. When creating a validator, the operator key is also used for self-delegating with more than
+2001 BNB. When interacting with the new BSC staking dApp, the operator key is mostly involved.
+
+Be noted that the operator address can not be changed for a validator.
+
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet. There should be more
+than 2001 BNB in the operator account when creating a new validator.**
+
+## Staking Key
+
+For a validator, it can also use another key, different from the operator key, to manage his/her delegation if needed.
+Then, such a staking key will be used to delegate/undelegate/redelegate to different validators and claim rewards.
+This key could be used frequently, depending on how a validator manages its delegations and rewards.
+
+Be noted that this key is optional, depending on the needs of a validator.
+
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet.**
+
+## Consensus Key
+
+The consensus key is used for signing proposed blocks when mining blocks. No fund is needed for this account.
+
+**Recommendation: Use a hot wallet so that it can be easily accessed by a validator node.**
+
+## Fast Finality Vote Key
+
+The fast finality vote key (BLS vote key) is used in
+the [fast finality feature](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md) for signing votes of recently
+mined blocks. No fund is needed for this account.
+
+**Recommendation: Use a hot wallet so that it can be easily accessed by a validator node.**
+
+## Governance Vote Key
+
+The [BEP-297](https://github.com/bnb-chain/BEPs/pull/297) introduces the native BSC staking feature.
+A delegator (including validators for self-delegation) can delegate someone else to participate in governance on his/her
+behalf. When there is governance delegation, the governance vote key will be used for casting votes to BSC proposals.
+The related wallet should store some BNB for gas fees of the voting transaction.
+
+Be noted that this key is optional, depending on the needs of a validator.
+
+**Recommendation: Use a hardware wallet, a Safe wallet or an MPC wallet.**
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/mev/overview/
+
+# BSC MEV Overview
+
+The BSC network has introduced the [Builder API
+Specification](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md)
+to establish a fair and unified MEV market. Previously, BSC clients
+lacked native support for validators to integrate with multiple MEV
+providers at once. The network became unstable because of the many
+different versions of the client software being used. The latest BSC
+client adopts the [Proposer-Builder Separation](https://ethereum.org/en/roadmap/pbs/) model.
+Within this unified framework, several aspects of the BSC network have
+been improved:
+
+- **Stability**: Validators only need to use the official client to seamlessly integrate with various Builders.
+
+- **Economy**: Builders that can enter without permission promote healthy market competition. Validators can extract
+  more value by integrating with more builders, which benefits delegators as well.
+
+- **Transparency**: This specification aims to bring transparency to the BSC MEV market, exposing profit distribution
+  among stakeholders to the public.
+
+## What is MEV and PBS
+
+MEV, also known as Maximum (or Miner) Extractable Value, can be
+described as the measure of total value that may be extracted from
+transaction ordering. Common examples include arbitraging swaps on
+decentralized exchanges or identifying opportunities to liquidate DeFi
+positions. Maximizing MEV requires advanced technical expertise and
+custom software integrated into regular validators. The returns are
+likely higher with centralized operators.
+
+Proposer-builder separation(PBS) solves this problem by reconfiguring
+the economics of MEV. Block builders create blocks and submit them to
+the block proposer, and the block proposer simply chooses the most
+profitable one, paying a fee to the block builder. This means even if a
+small group of specialized block builders dominate MEV extraction, the
+reward still goes to any validator on the network.
+
+## How it Works on BSC
+
+The figure above illustrates the basic workflow of PBS operating on the
+BSC network.
+
+- MEV Searchers are independent network participants who detect
+  profitable MEV opportunities and submit their transactions to
+  builders. Transactions from searchers are usually bundled together
+  and included in a block, or none of them will be included.
+
+- The builder collects transactions from various sources to create an
+  unsealed block and offer it to the block proposer. The builder
+  will specify in the request the amount of fees the proposer needs
+  to pay to the builder if this block is adopted. The unsealed block
+  from the builder is also called a **block bid** as it may request
+  tips.
+
+- The proposer chooses the most profitable block from multiple
+  builders, and pays the fee to the builder by appending a payment
+  transaction at the end of the block.
+
+A new component called **Sentry** has been introduced to enhance
+network security and account isolation. It assists proposers in
+communicating with builders and enables payment processing.
+
+## What is More
+
+The PBS model on BSC differs in several aspects from its implementation
+on Ethereum. This is primarily due to：
+
+1. **Different Trust Model**. Validators in the BNB Smart Chain are
+   considered more trustworthy, as it requires substantial BNB
+   delegation and must maintain a high reputation. This stands in
+   contrast to Ethereum, where becoming an Ethereum validator is much
+   easier, the barrier to becoming a validator is very low (i.e., 32
+   ETH).
+
+2. **Different Consensus Algorithms.** In Ethereum, a block header is
+   transferred from a builder to a validator for signing, allowing
+   the block to be broadcasted to the network without disclosing the
+   transactions to the validator. In contrast, in BSC, creating a
+   valid block header requires executing transactions and system
+   contract calls (such as transferring reward and depositing to the
+   validator set contract), making it impossible for builders to
+   propose the whole block.
+
+3. **Different Blocking Time.** With a shorter block time of 3 seconds
+   in BSC compared to Ethereum's 12 seconds, designing for time
+   efficiency becomes crucial.
+
+These differences have led to different designs on BSC's PBS regarding
+payment, interaction, and APIs. For more design philosophy, please refer
+to [BEP322:Builder API Specification for BNB Smart Chain](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md).
+
+---
+
+---
+
+## Validator Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/mev/validator-integration/
+
+# Integration Guide for Validator
+
+## Decision Make
+
+When activating MEV functionality, validators encounter a mix of
+opportunities and challenges. Before enabling this feature, validators
+need to carefully evaluate these risk accordingly:
+
+1. More maintenance work. Apart from the validator, additional
+   maintenance of the Sentry service and its related network
+   components is required.
+
+2. Network risk. Due to Sentry service being exposed to the public
+   network, it is inevitably susceptible to possible network attacks.
+
+3. Financial risk. Validators need to pay fees to builders, securely
+   managing accounts is a crucial topic.
+
+After identifying these risks, let's begin the journey.
+
+## Validator Topology
+
+It is suggested that to split the internal network into two part:
+
+1. Private network. The private network is isolated from the public
+   network. All access to components within this network is strictly
+   restricted. The Validator and Payment wallet are expected to be
+   deployed within a private network environment.
+
+2. Nat network. The components in this network can communicate with the
+   public internet under certain constraints, and the communication
+   can be established through load balancers provided by various
+   cloud platforms. Sentry service should be deployed within a NAT
+   network environment. It is essential to configure appropriate
+   safeguards on the network gateway to prevent DoS attacks and other
+   potential threats.
+
+The validator should open its RPC access to the mev-sentry. The mev-sentry should open its RPC to the public network with a domain host. The information of validator should be registered in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info).
+
+### Hardware Spec
+
+Mev-Sentry: The recommended specifications for the mev-sentry machine are 2 CPUs and 4 GB of RAM.
+
+## Preparation
+
+The BNB Chain community has maintained an open-source version of the
+Sentry service. You can clone the code repository from
+[here](https://github.com/bnb-chain/bsc-mev-sentry).
+
+Before actually deploying the Sentry service, it is crucial to carefully
+consider and determine several key parameters:
+
+1. **BidFeeCeil.** This represents the maximum fee that a validator is
+   willing to pay for a block proposed by a builder. When this value
+   is 0, it signifies that the validator does not accept any charges
+   from the builder.
+
+2. **BidSimulationLeftOver.** This parameter indicates how long before
+   the block time the validator should cease simulating the blocks
+   from the builder. It is generally advisable to set it to a few
+   tens of milliseconds. Setting it too small may result in blocks
+   being broadcast too late and subsequently discarded during network
+   congestion.
+
+It is suggested to purchase a domain that is related to the moniker
+name of the validator. The builders will send requests through this
+domain. A BSC account should be created in advance as the payment
+account. No BNB is required in that account if **BidFeeCeil** is zero,
+otherwise, it needs to be ensured that there is enough balance in the
+account.
+
+Go to the [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info)
+repo to find more information about running builders which will be used
+during setup.
+
+## Quick Setup
+
+**Step 1**: **Setup Sentry.**
+
+Deploy the sentry service according to the readme of [sentry repo](https://github.com/bnb-chain/bsc-mev-sentry).
+
+Here are a few key points to highlight.
+
+- ❗❗❗This is an important security notice: Please do not configure any validator's private key in the config file of the sentry. Please create entirely new accounts as pay bid accounts.
+  
+- One sentry service can manage multiple validators.
+
+- The **PrivateURL** of validator is used by the sentry to access the
+  validator, it can be IP:Port or internal domain URL.
+
+- The **PublicHostName** of validator is used by the builder to access
+  the validator, the sentry will forward to different validators
+  according to different hostname of the request.
+
+- For each Builder, define its Address and public URL. The address
+  will be used to authorize the identity of builders.
+
+**Step 2: Change the Config of Validator.**
+
+Upgrade the validators to version v1.4.x or later, add a few new
+sections in the config.toml. Example:
+
+```toml
+  [Eth.Miner.Mev]
+  Enabled = true # open bid receiving
+  GreedyMergeTx = true # merge local tx to the MEV bid block
+  ValidatorCommission = 100 # validator claim 1% from block reward
+  BidSimulationLeftOver = 50000000 # 50ms, the time left for bid simulation
+  SentryURL = "http://bsc-mev-sentry.io" # it is used for the validator to access the sentry, it should be a private URL or IP:Port.
+
+  # Find builders in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info)
+
+  [[Eth.Miner.Mev.Builders]]
+  Address = "0x45EbEBe8...664D59c12" # builder address which validator is willing to receive bid from
+
+  [[Eth.Miner.Mev.Builders]]
+  Address = "0x980A75eC...fc9b863D5" # builder address which validator is willing to receive bid from
+```
+
+**Step 3: Publish information**
+
+It is highly recommended to publish information in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info)
+so other builders can find it.
+
+---
+
+---
+
+## Builder Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/mev/builder-integration/
+
+# Integration Guide for Builder
+
+The [Builder API Specification](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP322.md)
+defines the standard interface that builders should implement, while the
+specific implementation is left open to MEV API providers. The BNB Chain
+community offers a simple [implementation example](https://github.com/bnb-chain/bsc-builder) for
+reference.
+
+## Customize Builder
+
+Although the builder offers great flexibility, there are still some
+essential standards that must be followed:
+
+1.  The builder needs to set up a **builder account**, which is used to
+     sign the block bid and receive fees. The builder can ask for a tip
+     (builder fee) on the block that it sends to the sentry. If the
+     block is finally selected, the **builder account** will receive
+     the tip.
+
+2.  The builder needs to implement the **mev_reportIssue** API to
+     receive the errors report from validators.
+
+3.  In order to prevent transaction leakage, the builder can only send
+     block bids to the in-turn validator.
+
+4.  At most 3 block bids are allowed to be sent at the same height from
+     the same builder.
+
+Here are some sentry APIs that may interest a builder:
+
+1.  **mev_bestBidGasFee**. It will return the current most profitable
+     reward that the validator received among all the blocks received
+     from all builders. The reward is calculated as: **gasFee\*(1 -
+     commissionRate) - tipToBuilder**. A builder may compare the
+     **bestBidGasFee** with a local one and then decide to send the
+     block bid or not.
+
+2.  **mev_params.** It will return the
+     **BidSimulationLeftOver**,**ValidatorCommission**, **GasCeil** and
+     **BidFeeCeil** settings on the validator. If the current time is
+     after **(except block time - BidSimulationLeftOver)**, then there
+     is no need to send block bids any more; **ValidatorCommission**
+     and **BidFeeCeil** helps the builder to build its fee charge
+     strategy. The **GasCeil** helps a builder know when to stop adding
+     more transactions.
+
+Builders have the freedom to define various aspects like pricing models
+for users, creating intuitive APIs, and define the bundle verification
+rules.
+
+## Setup with Example Builder
+
+**Step 1: Find Validator Information**
+
+For validators that open MEV integration, the public information is
+shown at [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info).
+Builders can also provide information here to the validator.
+
+**Step 2: Set up Builder.**
+
+The builder must sign the bid using an account, such as the etherbase
+account specified in the config.toml file.
+
+```toml
+[Eth.Miner.Mev]
+BuilderEnabled = true # open bid sending
+BuilderAccount = "0x..." # builder address which signs bid, usually it is the same as etherbase address
+```
+
+Configure the validator node list, including the address of the
+validator and the public URL. The public URL refers to the sentry
+service.
+
+```toml
+[[Eth.Miner.Mev.Validators]]
+Address = "0x23707D3D...6455B52B3"
+URL = "https://bsc-fuji.io"
+
+[[Eth.Miner.Mev.Validators]]
+Address = "0x52825922...3A1A7A422"
+URL = "http://bsc-mathwallet.io"
+```
+
+**Step 3: Publish information**
+
+It is highly recommended to publish information in [bsc-mev-info](https://github.com/bnb-chain/bsc-mev-info).
+
+---
+
+---
+
+## User Guide
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/mev/user-guide/
+
+# User Guide
+
+PBS(Proposer-Builder Separation) framework offers several advantages for BNB Chain users:
+
+- Users are less likely to have their transactions front-run or sandwiched. 
+- Increased competition among block builders can lead to more efficient markets and potentially lower gas prices. 
+- Enhanced transaction privacy: Users' transactions are exposed to fewer parties before being included in a block. 
+- Faster transaction processing: More efficient block construction can lead to quicker transaction confirmations.
+
+## For Retail Traders 
+
+When you trade on a decentralized exchange (DEX), you risk being targeted by bots that can front-run your trades, meaning they see your transaction in the public mempool and execute a similar trade first, profiting from the price change you were going to cause. This can result in you getting a worse price or even losing money. Private RPCs offer a solution to this problem. They route your transactions through a private mempool(Provided by builders), hiding them from bots. This means your trades are less likely to be front-run, and you're more likely to get the price you expect.
+
+Some DEX protocols or builder providers are keen to provide free protection features, and the average transaction confirmation time is around 4-5 seconds, and it may fluctuate according to the network conditions. 
+
+| Role                         | Status and Comments                                          |
+| ---------------------------- | ------------------------------------------------------------ |
+| Free Privacy Protecting RPCs | [Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc) [48 Club Private RPC](https://docs.48.club/privacy-rpc)[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)[BlockRazor Private RPC with Refund](https://rpc.blockrazor.io/) |
+
+### Builder Proxies 
+
+The builder proxies act as a transaction broadcaster for builders. Instead of users' transactions being limited to a smaller set of pre-registered validators or specific builders, the proxies take each submitted transaction and broadcasts it to all registered builders across the network. This broader dissemination benefits users by significantly increasing the chances of their transaction being picked up by a builder and included in the next block, leading to faster transaction confirmation times. Furthermore, the increased competition among builders, who now have access to a larger pool of transactions, can potentially result in more efficient block construction and, indirectly, potentially lower transaction fees and improved censorship resistance for users.
+
+A transaction proxy sample code is built by NodeReal, You can find it in the open-source git repo here https://github.com/node-real/private-tx-sender 
+
+| Builder Proxy | Associated Builders | Link |
+|---|---|---|
+| Blockrazor | 48Club, BloXroute, NodeReal | https://blockrazor.gitbook.io/blockrazor/builder/bsc 
+| Merkle | 48Club, BlockRazor |  https://www.merkle.io/bsc-rpc 
+
+**Wallets with Manual MEV Protection:**
+
+Several wallets now offer built-in protection against malicious MEV (Miner Extractable Value) attacks, enhancing the security and fairness of users' transactions. This protection is often available as a feature that users can manually enable during their swap or trading activities.
+
+- **Private Transaction Relays:** These relays hide transaction details from malicious actors, preventing them from front-running or sandwich attacking the user's trade.
+- **Specialized Builders:** Some wallets utilize builders that prioritize user protection and fair ordering of transactions, minimizing the potential for MEV exploitation.
+
+| Type   | Name           | Status    | How to enable                                                |
+| ------ | -------------- | --------- | ------------------------------------------------------------ |
+| Wallet | Trust Wallet   | Supported | [TrustWallet Swap MEV Protection](https://trustwallet.com/blog/introducing-mev-protection-secure-your-swaps-with-trust-wallet) |
+| Wallet | Binance Web3 Wallet | Supported | [Binance Alpha tokens MEV Protection](https://www.binance.com/en/support/announcement/introducing-binance-alpha-discover-emerging-crypto-projects-c6499e95c15e408ca44ca5f6db975d4d) |
+| Wallet | OKX Wallet     | Supported | [OKX Wallet Enable Swap MEV Protection](https://www.okx.com/help/okx-wallet-supports-flashbot-to-prevent-mev-attack) |
+| Wallet | TokenPocket Wallet  | Supported | [TokenPocket Swap MEV Protection](https://help.tokenpocket.pro/en/security-knowledge/security-measure/mev-protection-tutorial) |
+| Wallet | Safepal Wallet  | Supported | [Safepal Swap MEV Protection](https://safepalsupport.zendesk.com/hc/en-us/articles/33892098077851-Use-SafePal-to-Protect-Your-Swaps-from-MEV-Attacks) |
+| Wallet | Math Wallet  | Supported | [Mathwallet Swap MEV Protection](https://blog.mathwallet.org/?p=4799) |
+
+## For Professional Traders and Service Providers
+
+While free private RPCs offer a good level of protection, you can opt for even stronger safeguards with premium private RPC services. These services often provide advanced features and dedicated infrastructure for enhanced security and performance.
+
+| Role                                                         | Status and Comments                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 5 Builders (Private privacy protecting RPC service providers) | [BloxRoute](https://bloxroute.com/products/protected-transactions/)[Blocksmith](https://docs.blocksmith.org/bsc-builder/private-rpc)[Nodereal](https://docs.nodereal.io/reference/bsc-bundle-service-api#overview)[Blockrazor](https://blockrazor.gitbook.io/blockrazor/mev-service/bsc)[Puissant](https://docs.48.club/) |
+
+There are two aspects that may impact the transaction inclusion speed. 
+
+1. Validator Network: Providers with a larger network of integrated validators can often offer faster inclusion speeds. More validators mean more opportunities for your transaction to be picked up and added to a block.
+2. Builder Usage: Higher usage of a builder's service generally leads to faster inclusion. Increased usage makes the builder's block proposals more valuable to validators, incentivizing them to prioritize those blocks.
+
+You can view the latest MEV builder data (MEV_Blocks_by_Builders) from the [Dune dashboard](https://dune.com/bnbchain/bnb-smart-chain-mev-stats), and select the appropriate builders to broadcast transactions. The contacts of each builder are listed above in Table 1. 
+
+You can check the number of validators integrated and the number of blocks of each builder, as mentioned above.
+
+1. The more validators are integrated, the faster the builder can be. 
+2. The more blocks that are produced, the faster the builder can be. 
+
+---
+
+---
+
+## FAQs
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/mev/faqs/
+
+# FAQs
+
+### 1. Why is the MEV solution important for the BNB Chain ecosystem?
+
+   BNB Chain's MEV solution leverages Proposer Builder Separation (PBS) 
+   architecture to foster a more transparent and fair block space market. 
+   Through PBS, users gain the power to select their preferred builder for transaction 
+   submission, while MEV rewards are equitably distributed among searchers, validators, builders, and BNB stakers. 
+   This approach promotes transparency, fairness, user choice, and network security. 
+   By distributing rewards across various roles, BNB Chain encourages wider 
+   participation and reduces the risk of centralization, to build a decentralized and inclusive blockchain ecosystem.
+
+### 2. Do builders fetch the in-turn proposer's GasCeil to build block？
+
+   Yes, you could using RPC mev_params to query validator's MEV information
+   before building block, it can help to 1) calculate a valid header with gas no
+   more than GasCeil; 2) calculate the left bidding time by
+   BidSimulationLeftOver; 3) calculate suitable builderFee by
+   validatorCommission.
+
+### 3. How does the validator choose the best bid?
+
+   The block reward is calculated as **gasFee**, the validator reward is
+   calculated as **gasFee*commissionRate - builderFee**. Every
+   time the validator receives a new bid, it will compare its reward with
+   the existing best bid. If it has better block reward and validator
+   reward, the new bid will go into simulation. If simulation succeeds
+   before block sealing, it will be compared with local mined block reward.
+   If the bid's block reward and validator reward are both superior to the
+   local block, it will be sealed by the validator.
+
+### 4. Who can become the builder?
+
+   BNB Chain is a permission-less ecosystem, anyone who implements the standard 
+   builder API could be the BNB Chain builder.
+
+### 5. Where can I find the BNB Chain builders information? 
+   You can find the BNB Chain builders through a public 
+   [builder info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/builders) 
+
+### 6. How many validators have been integrated with the builders?
+   You can find the validators that has implemented the PBS solution from 
+   [validator info repo](https://github.com/bnb-chain/bsc-mev-info/tree/main/mainnet/validators)
+
+### 7. Where can I find the BNB Chain MEV statistic dashboard? 
+   You can view the MEV statistics 
+   from [MEV Stats Dashboard](https://dune.com/bnbchain/bnb-smart-chain-mev-stats)
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/evn/overview/
+
+## Background
+
+After [Maxwell Hardfork](https://www.bnbchain.org/en/blog/bnb-chain-announces-maxwell-hardfork-bsc-moves-to-0-75-second-block-times), the block interval has be reduced to 0.75s, which is a huge improvement in user experience for BSC, and at the same time has greater performance requirements for the client's network, execution and other components. 
+
+BSC introduced a new network layer optimization, Enhanced Validator Network, aka EVN. It is not a new P2P network, but based on the current P2P network to optimize the validator network and reduce the latency of core consensus messages as much as possible. You can also check [BEP-563](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-563.md) and [BEP-564](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-564.md) for more details.
+
+## How EVN Works
+
+### NodeID Registration
+
+Node operator could add the validator’s EVN NodeIDs through the configuration file(config.toml), then the node will automatically sign a registration tx to register the node id on chain.
+
+It establishes the identity mapping from the consensus layer to the network layer.
+
+### EVN Peer Identification
+
+All validators/sentry will pull the on-chain registration information, identify whether the connected P2P Peer belongs to the NodeID of a validator, and mark it as an EVN Peer.
+
+### Broadcast Optimization
+
+Transaction broadcast is disabled between all EVN Peers, and mined blocks are broadcast to all connected EVN Peers. Non-mined blocks still use the old gossip broadcast mechanism.
+
+### EVN Whitelist
+
+This is an EVN whitelist that takes effect on this node. It will consider the whitelisted Peers to be EVN Peers as well and apply the EVN broadcast algorithm.
+
+### EVN Peer Connection
+
+Currently, EVN Peers are mainly connected directly through static nodes, allowing most EVN Peers to connect directly to each other.
+
+---
+
+---
+
+## Best Practice
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/evn/best-practice/
+
+## Network Requirements
+At the network layer, BSC requires minimal latency to maximize time available for critical operations like block packaging and verification. The BSC network maintains decentralization through validators distributed across diverse geographic locations worldwide.
+
+Taking AWS's network service as an example, the measured latency of some regions are:
+- AP<->EU, latency ~100ms
+- AP<->US, latency ~80ms
+- US<->EU, latency ~35ms
+
+This data will be the theoretical best value of network message latency, and it is also the reference value for network environment testing between validators.
+
+## Configuration
+There are two different modes to configure your node, depends on how your validator is connected to the network.
+### Mode-1: Sentry Mode
+
+In this mode, the operator could create multiple nodes, including multiple validator nodes, multiple sentry nodes, and fullnode nodes.
+
+The validator always remains in a secure intranet environment. Sentry is responsible for quickly exchanging messages with EVN Peer and forwarding them to the validator. Fullnode is a redundant path for additional transactions and other messages.
+
+Mainly introduces the configuration changes of validator and sentry, and the fullnode configuration remains unchanged.
+
+#### Validator Configuration
+
+The example of `Config.toml`.
+
+```toml
+[Eth]
+EVNNodeIDsToAdd = ["sentryNodeID1", "sentryNodeID2"]
+
+[Node]
+EnableEVNFeatures = true
+EnableQuickBlockFetching = true
+
+[Node.P2P]
+StaticNodes = [
+    "<OtherValidatorEnodes>",
+    "<FullnodeEnodes>",
+    "<SentryEnodes>",
+    "..."
+]
+```
+
+`EVNNodeIDsToAdd` fills in the sentry nodeID here. Because the validator is protected in the external network, sentry will act as an EVN Peer to help forward public EVN Peer messages.
+
+`EnableEVNFeatures` enables the EVN network.
+
+`EnableQuickBlockFetching` enables BEP-564, which will speed up block retrieval.
+
+#### Sentry Configuration
+
+The example of `Config.toml`.
+
+```toml
+[Node]
+EnableEVNFeatures = true
+EnableQuickBlockFetching = true
+
+[Node.P2P]
+EVNNodeIdsWhitelist = ["<whitelist nodeids>"]
+ProxyedValidatorAddresses = ["<ValidatorAdresses>"]
+StaticNodes = [
+    "enode://3dd9e7e22180cda7c2a7015d3582811327abb3bc5f330879be7bc3217be4ed7c4ec0d5117ab0fae6542d3e5d199f3d935b7bca108b565f07806ed7687af8d1b5@52.198.165.142:30311",
+    "enode://70aeb4f0cc52df44f4ef0c72ca0eca8a210b9916ad02bcd147cc58bbfee9259ee46dfa23e13512f98bdb3937d62d2d0a521a90c76161ccffd24bb10829d8d542@13.112.162.162:30311",
+    "enode://4af65e07b676e3634e4e2e6df01b23e32eb73fdc200b7f98a4807b16e8faefae4d3875bea4d88e203e319f6a61859b66c0b8254191a2058629a00fe6e42e7b18@54.155.24.228:30311",
+    "enode://2a6cfdbfc8f401d09a766efa53411bb5457fd5903331afee5363017f65623f0c0c43873c14bfb4001cf02811b1196f710bb3911a36e683cb557b11244cffe212@54.77.55.214:30311",
+    "enode://cc6d828a735db591cb2a0454a94b9602be6c0aca6c73f771efaabc7f68c46085b953c97f880efb17597578320444acc9e207042297689515c18e659d138bb393@23.23.111.240:30311",
+    "enode://5035ae74e04b4290885c3cea546ca179cb80c1461141b8c3124bb6707993c1e68dafd2f5fd9b13a8d076225412bf5bbefe81c16aa812a35e7c19bb1020b8c124@34.205.243.82:30311",
+    "<other trusted nodeids>"
+]
+```
+
+`EVNNodeIdsWhitelist`: it is optional and is an EVN Peer whitelist that is only valid for the current node. In the transition period before enabling maxwell, the whitelist can be used to apply EVN in advance. At the same time, the operator can put the cooperating builder into the local whitelist.
+
+`ProxyedValidatorAddresses`: it is optional and is only for sentry to identify which blocks should be broadcast to all EVN Peers, it is configured as the protected validator address.
+
+`StaticNodes`: it includes a list of well maintained EVN nodes for validators to connect to, the list could be changed in the future.
+
+### Mode-2: Simple Mode
+
+With simple mode, the operator could run a validator node by exposing it directly to the public network environment, so that they can directly connect to other nodes.
+
+#### Validator Configuration
+
+The example of `Config.toml`.
+
+```toml
+[Eth]
+EVNNodeIDsToAdd = ["validator NodeID", "other nodeids"]
+
+[Node]
+EnableEVNFeatures = true
+EnableQuickBlockFetching = true
+
+[Node.P2P]
+EVNNodeIdsWhitelist = ["<whitelist nodeids>"]
+StaticNodes = [
+    "enode://3dd9e7e22180cda7c2a7015d3582811327abb3bc5f330879be7bc3217be4ed7c4ec0d5117ab0fae6542d3e5d199f3d935b7bca108b565f07806ed7687af8d1b5@52.198.165.142:30311",
+    "enode://70aeb4f0cc52df44f4ef0c72ca0eca8a210b9916ad02bcd147cc58bbfee9259ee46dfa23e13512f98bdb3937d62d2d0a521a90c76161ccffd24bb10829d8d542@13.112.162.162:30311",
+    "enode://4af65e07b676e3634e4e2e6df01b23e32eb73fdc200b7f98a4807b16e8faefae4d3875bea4d88e203e319f6a61859b66c0b8254191a2058629a00fe6e42e7b18@54.155.24.228:30311",
+    "enode://2a6cfdbfc8f401d09a766efa53411bb5457fd5903331afee5363017f65623f0c0c43873c14bfb4001cf02811b1196f710bb3911a36e683cb557b11244cffe212@54.77.55.214:30311",
+    "enode://cc6d828a735db591cb2a0454a94b9602be6c0aca6c73f771efaabc7f68c46085b953c97f880efb17597578320444acc9e207042297689515c18e659d138bb393@23.23.111.240:30311",
+    "enode://5035ae74e04b4290885c3cea546ca179cb80c1461141b8c3124bb6707993c1e68dafd2f5fd9b13a8d076225412bf5bbefe81c16aa812a35e7c19bb1020b8c124@34.205.243.82:30311",
+    "<other trusted nodeids>"
+]
+```
+
+---
+
+---
+
+## Network Monitor
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/evn/network-monitor/
+
+# Network Monitoring
+
+In EVN, special metrics are provided to observe the message delay indicators of the EVN network and help analyze the causes of delay.
+
+## Peer Latency
+
+Peer Latency, it observes the message latency with remote peers, calculated by `RoundTripTime/2`.
+
+```bash
+# Grafana query statement
+p2p_peers_latency{quantile="$quantile", job=~"$jobs"}
+```
+
+Suggesting to monitor message delay under quantile=0.95.
+
+If the latency is too high under quantile=0.95, you need to optimize the network provider or connect to better static nodes to improve it.
+
+### The latency of each peer
+
+You can also query Peer Latency with this command:
+
+```bash
+./bsc attach --exec "admin.peers" ./geth.ipc | grep -E "enode|latency"
+```
+
+The command will output the transient latency value, you can observe the latency of each node and analyze the slow nodes.
+
+## Core Message Latency
+
+These metrics represent the delay of the consensus core process, suggesting to monitor message delay under quantile=0.95.
+
+```bash
+# Grafana query statement
+# Delay relative to Header.MilliTimestamp when sending blocks
+chain_delay_block_send{quantile="$quantile", job=~"$jobs"}
+
+# Delay relative to Header.MilliTimestamp when starting to import blocks
+chain_delay_block_insert{quantile="$quantile", job=~"$jobs"}
+
+# Delay relative to Header.MilliTimestamp when receiving majority votes
+chain_delay_vote_majority{quantile="$quantile", job=~"$jobs"}
+
+# Time relative to Header.MilliTimestamp when starting mining
+chain_delay_block_mining{quantile="$quantile", job=~"$jobs"}
+```
+
+`chain_delay_block_insert` and `chain_delay_vote_majority` can help you troubleshoot the latency of receiving blocks or voting, and optimize in combination with Peer Latency.
+
+`chain_delay_block_send` and `chain_delay_block_mining` are related to validator mining and determine whether blocks are generated normally.
+
+## Recent Blocks
+
+Query the core process timestamp of the recent blocks. These are millisecond timestamps. 
+
+```bash
+# Grafana query statement
+report_blocks{job=~"$jobs"}
+```
+
+This list can be used to troubleshoot problems and conduct detailed analysis of the performance of a certain validator.
+
+---
+
+---
+
+## FAQs
+> Source: https://docs.bnbchain.org/bnb-smart-chain/validator/evn/faqs/
+
+# FAQs
+
+### Q1: How to get node’s NodeID?
+
+you can use the following command to query your enode information.
+```bash
+./bsc --exec "admin.nodeInfo.id" attach ./geth.ipc
+```
+
+### Q2: Can multiple validators share sentry nodes?
+
+Yes, for service providers who act as agents for multiple validators, they can use fewer sentries to achieve the same function. It is worth noting that the combination of validators and sentry is best to be in the same region machine. 
+
+### Q3: Can a validator use multiple sentry nodes?
+
+Of course, multiple sentries improve redundancy and reduce message delays caused by single sentry failures. It is also recommended that validators connect to multiple fullnodes and other P2P nodes to receive more transactions and improve message redundancy.
+
+### Q4: How to register other key ecosystem player into EVN network
+As only validator can register evn nodeid, so they can ask validator's help to register for them. It could be useful for some key users like mev-builders, infra providers... But there is a limitation on the number of evn nodeids that each validator can register, by default it is 5, but it can be changed by governance.
+
+---
+
+---
+
+## Overview
+> Source: https://docs.bnbchain.org/bnb-smart-chain/slashing/overview/
+
+# BSC Slashing Overview
+Slashing is a component of on-chain governance that penalizes malicious or negative actions. Anyone can submit a slash transaction on BSC, which involves providing evidence and paying fees. Successful submissions yield significant rewards.
+Currently, there are three types of slashable cases.
+
+## Double Sign
+It is quite a serious error and very likely a deliberate offense when a validator signs more than one block with the same height and parent block. The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. When Double Sign happens, the validator should be removed from the Validator Set right away.
+
+Anyone can submit a slash transaction with the evidence of Double Sign to the BSC Slash Contract, which should contain the 2 block headers with the same height and parent block, sealed by the offending validator.
+Upon receiving the evidence, the contract will verify its validity.
+
+The validator will be removed from validator set, a predefined amount of BNB would be slashed from the self-delegated BNB of the validator.
+Both validator and its delegators will not receive the staking rewards.
+Part of the slashed BNB will be allocated to the submitter’s address, which is a reward and larger than the cost of submitting slash request transaction.
+The rest of the slashed BNB will be allocated to the other validators’ credit addresses, and distributed to all delegators in the same way as blocking reward.
+
+## Malicious Fast Finality Vote
+It is quite a serious error and very likely a deliberate offense when a validator signs two fast finality votes with the same target height or the span of one vote including the span of another vote.
+The reference protocol implementation should already have logic to prevent this, so only the malicious code can trigger this. 
+When Malicious Vote happens, the validator should be removed from the Validator Set right away.
+
+Anyone can submit slash transaction with the evidence of Malicious Vote to the BSC Slash Contract.
+Evidence of malicious voting needs to be provided, which includes two conflicting votes and the voting key used for the signature.
+Upon receiving the evidence, the contract will verify its validity.
+
+The validator will be removed from the current set of validators, and the submitter will receive the reward from the system contract.
+A predefined amount of BNB would be slashed from the self-delegated BNB of the validator.
+Both validator and its delegators will not receive the staking rewards.
+The slashed BNB will be allocated to the other validators’ credit addresses, and distributed to all delegators in the same way as blocking reward.
+
+## Unavailability
+The liveness of BSC relies on everyone in the Proof of Staked Authority validator set can produce blocks timely when it is their turn.
+Validators can miss their turn due to any reason, especially problems in their hardware, software, configuration or network.
+This instability of the operation will hurt the performance and introduce more indeterministic into the system.
+
+There is an internal smart contract that records the missed blocking metrics of each validator.
+If the metrics exceed the set threshold, the blocking reward for the validator will not be given to them but shared with other validators performing better.
+This process aims to gradually remove poorly-operating validators from the set, reducing rewards for their delegators.
+
+If the metrics stay above a higher threshold, the validator will be removed from rotation, and a set amount of BNB will be deducted from their self-delegated BNB.
+This action results in both validators and delegators not receiving their staking rewards.
+
+---
+
+---
+
+## Slash Rules
+> Source: https://docs.bnbchain.org/bnb-smart-chain/slashing/slash-rules/
+
+# BSC Slash Rules
+
+Three types of malicious behaviors can lead to slashing on the BSC network.
+
+## Double Sign
+
+Anyone can submit a slash request with evidence of Double Sign. The evidence must adhere to the following rules:
+
+* Two block headers have the same height and the same parent block hash
+* Two block headers are sealed by the same validator
+* Two signatures of these two blocks must not be the same
+* The time of these two blocks must be within the validity of the evidence, which is 24 hours
+
+If the evidence is valid:
+
+1. **200BNB** would be slashed from the **self-delegated** BNB of the validator
+2. The remaining slashed BNB will be allocated to the credit addresses of validators participating in the next distribution 
+3. Set the validator `jailed` with a duration of **30 days**, and remove it from the active validator set
+
+## Malicious Vote
+Anyone can submit a slash request on BSC with the evidence of Malicious Vote. The evidence must adhere to the following rules:
+
+* The target number voted by two votes lags behind the block header of the canonical chain by no more than 256
+* The source numbers of the two votes are both smaller than their respective target numbers
+* The source hash and target hash of the two votes are both not equal
+* The target number of the two votes is the same or the span of one vote includes the span of the other vote
+* The two votes are signed by the same voting key, and the verification of signatures are both passed
+* The voting key used for signing is in the list sent by the last two breathe blocks
+
+If the evidence is valid:
+
+1. **200BNB** would be slashed from the **self-delegated** BNB of the validator
+2. **5BNB** would allocate to the submitter from the system reward contract as a reward if the validator is active when the evidence submitted
+3. The remaining slashed BNB will be allocated to the credit addresses of validators participating in the next distribution
+4. Set the validator `jailed` with a duration of **30 days**, and remove it from the active validator set
+
+## Unavailability
+
+There is an internal smart contract that records the missed blocking metrics of each validator.
+
+If a validator misses over 333 blocks(governable) in 24 hours, they will not receive the block reward; instead, it will be shared among other validators.
+
+If a validator misses more than 1000 blocks(governable) in 24 hours:
+
+1. **10BNB**(governable) would be slashed from the  **self-delegated** BNB of the validator
+2. The slashed BNB will be allocated to the credit addresses of validators participating in the next distribution
+3. Set the validator `jailed` with a duration of **2 days**, and remove it from the active validator set
+
+---
+
+---
+
+## Slash Monitor
+> Source: https://docs.bnbchain.org/bnb-smart-chain/slashing/monitor/
+
+# BSC Slash Monitor
+
+## Monitor Slash
+
+Generally, without maliciously altering BSC node code or mistakenly running the validator, validators would not typically incur double sign slashes or malicious vote slashes.
+
+Validators should consistently monitor for potential slashes due to node unavailability, as it can lead to slash events.
+
+As best practice, it is advisable to  keep monitoring the event log of the slash contract on the BSC scanner at 
+<https://bscscan.com/address/0x0000000000000000000000000000000000001001#events>.
+
+You can check your validator's slash indicator in the above contract. Pay attention to values above 50. If it goes over 200, the validator will be slashed. If it goes over 600, the validator will be jailed.
+
+Pls refer https://docs.bnbchain.org/bnb-smart-chain/slashing/slash-rules/ for more details.
+
+## Unjail Validator
+
+Once a Validator is slashed into a jailed state, the Validator must wait for a specific period before being able to unjail.
+Once the waiting period elapses, the Validator can access the BNB Staking dApp and proceed to click on the `unjail` button to initiate the unjail transaction.
+
+**BNB Staking dApp:**
+
+- **Testnet**: [https://testnet-staking.bnbchain.org/en/bnb-staking](https://testnet-staking.bnbchain.org/en/bnb-staking)
+- **Mainnet**: [https://www.bnbchain.org/en/bnb-staking](https://www.bnbchain.org/en/bnb-staking)
+
+---
+
+---
+
+## Cross Chain Bridge
+> Source: https://docs.bnbchain.org/bnb-smart-chain/cross-chain-bridge/
+
+# BNB Chain Cross-Chain Bridge Guide
+
+> **Status:** Draft · Last updated: 4 Jun 2025
+---
+
+## 1  Who Is This Guide For?
+
+* 🧑‍💻 **Users** who want to transfer tokens in and out of BNB Chain from other chains like **Ethereum** or **Solana**.
+* 🛠️ **Developers** who want to integrate a cross-chain bridge widget on their website using BNB Chain's **Canonical Bridge**.
+
+## 2  Why This Guide Matters
+
+Many users don’t realize that cross-chain transfers are possible or easy. BNB Chain offers a bridge aggregator that shows the **best route** for moving assets between chains using one of our **six route providers**:
+
+**Supported Route Providers**:
+
+* Stargate
+* Celer
+* deBridge
+* Meson
+* LayerZero
+* Mayan
+
+> ✅ We help users **see available routes** for transferring assets **into or out of BNB Chain**, but we **do not operate the routes or control token availability**.
+
+## 3  How to Use the BNB Chain Bridge (User Guide)
+
+### Step-by-Step
+
+1. Visit [bnbchain.org/en/bnb-chain-bridge](https://www.bnbchain.org/en/bnb-chain-bridge).
+2. Choose your **source chain** (e.g. Ethereum) and **destination chain** (e.g. BNB Chain).
+3. Connect your wallet to source chain.
+4. Choose a token to bridge and enter the amount.
+5. The bridge tool will display **available routes** based on your token and chains.
+6. Click **Send** (or **Approve** if required).
+7. Wait for the transaction to complete. You’ll receive your tokens on the destination chain.
+
+## 4  Understanding Bridge Aggregation
+
+BNB Chain’s bridge tool is an **aggregator**. It finds available routes from partner bridge providers but:
+
+* ❌ We do not custody tokens.
+* ❌ We cannot add tokens ourselves.
+* ✅ We simplify access and offer visibility into supported routes.
+
+You can use the bridge for **all directions** – not just from BNB Chain to others, but also from Ethereum, Solana, and other supported chains **to BNB Chain**.
+
+## 5  Developer Guide: Integrate the Canonical Bridge Widget
+
+To integrate the same aggregator bridge experience in your own dApp or website:
+
+### 📦 Canonical Bridge Repository
+
+GitHub: [github.com/bnb-chain/canonical-bridge](https://github.com/bnb-chain/canonical-bridge)
+
+### Features
+
+* Embed cross-chain bridging into any website.
+* Supports the same 6 route providers.
+* React component + config options.
+* Supports custom networks, tokens, style.
+* Supports other chain to other chain transfer (e.g. Ethereum to Base)
+
+### Use Cases
+
+* DeFi dApps
+* Wallet UIs
+* NFT platforms offering cross-chain support
+
+## 6  FAQs
+
+| Question                                | Answer                                                                                  |
+| --------------------------------------- | --------------------------------------------------------------------------------------- |
+| I don’t see my token listed?            | Route providers decide which tokens they support. You can contact them directly.        |
+| Is this a bridge just for BNB Chain?    | No — it supports **all chains** connected via our 6 providers.                      |
+| Can I use this from Solana to Ethereum? | Yes, as long as a route provider supports it. (Only available in Canonical Bridge Widget)                                           |
+| Can I embed this bridge in my dApp?     | Yes — use the [Canonical Bridge widget](https://github.com/bnb-chain/canonical-bridge). |
+
+## 7  Final Notes
+
+* Users should always verify token addresses and routes.
+* For token support, contact the respective bridge provider.
+* BNB Chain simplifies access to existing infrastructure — we aggregate, not operate.
+
+## 8  Changelog
+
+* **2025-05-28** – Initial draft of user + developer combined guide.
+
+---
+
+---
+
+## Benchmark
+> Source: https://docs.bnbchain.org/bnb-smart-chain/benchmark/design-reference/
+
+# Benchmark - Design
+
+The purpose of this document is to share the design adopted by BSC for characterizing its performance using close-to-real test scenarios.
+
+**Nodes Design**
+
+*   A: Client(s) → Validator(s)
+*   B: Client(s) → FullNode(s) → Validator(s)
+
+Both are acceptable; but ***B is recommended***.
+
+**Scenarios Design**
+
+The ***default*** design mimics typical transactions in a DeFi application, and the weight parameters enhance the flexibility of adding/removing scenarios with minimal implementation effort.
+
+| Scenarios | Weight |
+| ---| --- |
+| Native token (BNB) transfer | 10 |
+| Contract token (BEP20) transfer | 10 |
+| Wrapped Native token (WBNB) deposit | 5 |
+| Wrapped Native token (WBNB) withdraw | 5 |
+| UniswapV2 - AddLiquidity | 5 |
+| UniswapV2 - RemoveLiquidity | 5 |
+| UniswapV2 - SwapExactTokensForTokens | 30 |
+| UniswapV2 - SwapBNBForExactTokens | 30 |
+| \[***Optional***\] ERC721 mint/transfer | 5 |
+| \[***Optional***\] ERC1155 mint/Transfer | 5 |
+| \[***Optional***\] Blob transaction | 1 |
+| \[***Optional***\] EIP7702 transaction | 1 |
+| \[***Optional***\] user-defined contract for the evaluation of _CPU intensive operations_ | 100 |
+
+**Data Design**
+
+*   16 BEP20 tokens are created.
+*   24 trading pairs are created:
+    *   8 of them are among BEP20 tokens, e.g. T0←→T8, T1←→T9, etc;
+    *   16 of them are among native token and ERC20 tokens, e.g. BNB←→T0, BNB←→T1, etc;
+*   Each active user is allocated native tokens, wrapped native tokens, and two BEP20 tokens forming a trading pair. All tokens are distributed equally across active users based on modulo operation results.
+*   After token allocation, each active user can run any scenario listed above using their allocated tokens.
+*   A group of distinct test users is pre-selected from active users to serve as load generators.
+*   ***For transfer scenarios, we use either distinct "to" addresses to maximize the transaction parallelism or a limited set of "to" addresses to minimize it***.
+
+**Data Volume**
+
+*   A: Generate 1M active users and set up the test scenarios with 100k+ blocks
+*   B: Generate 25M active users and set up the test scenarios with 1.0M-2.5M blocks
+
+Both are acceptable, but ***B is recommended as it includes more blocks, accounts and states changes, which provides insights into how storage growth impacts performance over time***.
+
+**Evaluation Criteria**
+
+*   No node failures should occur during execution.
+*   The number of transactions per block should be consistent with the transaction propagation rate to validators' mempools and the sending rate from the test client. And there should be no backlog in validators' mempools after the test client stops.
+*   The empty block rate must be below 0.1%.
+*   The failed transaction rate, including send-errors and zero-receipt-status transactions, must be less than 0.1%;
+*   A block finality metric must be defined. For example, in BSC, the p90 block finality time must be less than 2 seconds;
+
+**Contract Code Reference**
+
+*   BEP20: [https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955#code](https://bscscan.com/token/0x55d398326f99059ff775485246999027b3197955#code)
+*   WBNB: [https://bscscan.com/address/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c#code](https://bscscan.com/address/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c#code)
+*   UniswapV2: [https://github.com/Uniswap/v2-core](https://github.com/Uniswap/v2-core)
+
+---
+
+---
+
+## FAQ
+> Source: https://docs.bnbchain.org/bnb-smart-chain/faq/
+
+# Frequently Asked Questions (FAQ)
+
+Welcome to the FAQ section for BNB Smart Chain. Below are some common questions and helpful articles to guide you:
+
+- [Recovering Tokens Sent to Wrong Chain or Address](./recovering-tokens-sent-to-wrong-chain-or-address.md)
+- [Tokens Not Showing in Wallet](./tokens-not-showing-in-wallet.md)
+- [Transfer NEXO from Tangem into BSC](./transfer-nexo-from-tangem-into-bsc.md)
+- [Lorentz Hard Fork Upgrade](./plorentz-hard-fork-upgrade.md)
+
+If your issue is not listed here, please explore our other documentation or open an issue.
+
+---
+
+---

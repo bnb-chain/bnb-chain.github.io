@@ -12,12 +12,17 @@ To get some tBNB of BSC testnet for testing purposes, you can use the [online fa
 2. Select the tokens you need to claim. Major pegged tokens like BUSD, USDT, and others are supported. 
 
 
-* Please note if your wallet balance is larger than **1 tBNB**, you can not get new tBNB from the Discord bot faucet.*
+## Request tBNB via Discord or Telegram
 
+You can now receive tBNB by requesting through our official Discord Server or via our Telegram Support Bot [@bnbchain_official_bot](https://t.me/bnbchain_official_bot).
 
-## Discord Faucet is no longer available
+To claim, simply open a support ticket in our Discord server or message our Telegram bot with a prompt like:
+```
+I would like to get tBNB to my wallet 0x123abc...
+```
+You will receive a response with the transaction hash if your request is successful.
 
-Discord Faucet is no longer available as of September 2025.
+**Limits:** Each user can receive up to **0.3 tBNB per day**.
 
 
 ## Claim tBNB from Third-party Faucets
