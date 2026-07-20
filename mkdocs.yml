@@ -62,6 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
+      - Pasteur Hardfork(BSC): ./announce/pasteur-bsc.md
       - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
     - Passed:
       - Token Recovery Tool Sunset — Phase 2: ./announce/token-recovery-sunset-phase2.md
