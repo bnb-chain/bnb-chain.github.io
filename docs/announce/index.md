@@ -2,6 +2,16 @@
 # Announcement
 
 <div class="doc-announce">
+    <a href="./pasteur-bsc/">
+        <div>
+            <div class="announce-title">Pasteur Upgrade of BSC Chapel Testnet</div>
+            <div class="announce-desc">3 BEPs on BSC Chapel Testnet</div>
+        </div>
+        <span class="announce-date">2026 Jul 21st</span>
+    </a>
+</div>
+
+<div class="doc-announce">
     <a href="./token-recovery-sunset-phase3/">
         <div>
             <div class="announce-title">Token Recovery Tool: Phase 3 — Self-Service Recovery</div>
