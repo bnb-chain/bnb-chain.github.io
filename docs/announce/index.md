@@ -4,8 +4,8 @@
 <div class="doc-announce">
     <a href="./pasteur-bsc/">
         <div>
-            <div class="announce-title">Pasteur Upgrade of BSC Chapel Testnet</div>
-            <div class="announce-desc">3 BEPs on BSC Chapel Testnet</div>
+            <div class="announce-title">Pasteur Upgrade of BSC</div>
+            <div class="announce-desc">3 BEPs on BSC</div>
         </div>
         <span class="announce-date">2026 Jul 21st</span>
     </a>
