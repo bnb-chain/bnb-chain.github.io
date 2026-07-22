@@ -27,6 +27,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 * https://bsc.nodereal.io
 * https://bsc-dataseed-public.bnbchain.org
 * https://bnb.rpc.subquery.network/public
+* https://public-bsc-mainnet.fastnode.io
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
@@ -45,6 +46,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **Ankr:** <https://app.ankr.com/api>
 
 * **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **Fastnode.io:** <https://fastnode.io/nodes/>
 
 * **GetBlock:** <https://getblock.io/nodes/bsc>
 
