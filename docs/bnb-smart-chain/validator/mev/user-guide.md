@@ -62,7 +62,7 @@ While free private RPCs offer a good level of protection, you can opt for even s
 
 | Role                                                         | Status and Comments                                          |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 5 Builders (Private privacy protecting RPC service providers) | <ul><li>[BloxRoute](https://bloxroute.com/products/protected-transactions/)</li><li>[Blocksmith](https://docs.blocksmith.org/bsc-builder/private-rpc)</li><li>[Nodereal](https://docs.nodereal.io/reference/bsc-bundle-service-api#overview)</li><li>[Blockrazor](https://blockrazor.gitbook.io/blockrazor/mev-service/bsc)</li><li>[Puissant](https://docs.48.club/)</li></ul> |
+| 5 Builders (Private privacy protecting RPC service providers) | <ul><li>[BloxRoute](https://bloxroute.com/products/protected-transactions/)</li><li>[JetBuilder](https://jetbldr.xyz/api_bsc/)</li><li>[Nodereal](https://docs.nodereal.io/reference/bsc-bundle-service-api#overview)</li><li>[Blockrazor](https://blockrazor.gitbook.io/blockrazor/mev-service/bsc)</li><li>[Puissant](https://docs.48.club/)</li></ul> |
 
 There are two aspects that may impact the transaction inclusion speed. 
 

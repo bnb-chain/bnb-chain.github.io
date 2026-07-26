@@ -7,9 +7,35 @@ Finality is a crucial aspect of blockchain security, ensuring that once a block 
 
 ### Probabilistic Finality and Economic Finality
 
-In probabilistic finality, the deeper a block is buried in the chain, the lower the likelihood of it being reverted. The more blocks follow a particular block, the more likely the chain containing that block will be the longest. **Typically, BSC users should wait for at least 11 or 15 different validators to seal a block. If validators are allowed to produce multiple consecutive blocks, the number of blocks required to achieve probabilistic finality is approximately 11\*n or 15\*n, where "n" is the number of consecutive blocks produced.**
+BNB Smart Chain (BSC) implements a dual-layer finality mechanism combining Economic Finality and Probabilistic Finality to ensure transaction security and network efficiency.
 
-Economic Finality refers to the high cost associated with reverting a block. In proof-of-stake systems that use a slashing mechanism (such as Casper FFG, Tendermint, or BSC Fast Finality), if validators violate the voting rules, part or all of their stake can be forfeited. This economic penalty makes it extremely expensive to undermine finality. Generally, block n achieves economic finality by block n+2, meaning that BSC Fast Finality reduces the confirmation time to two blocks in most cases. This improves the user experience by making transaction confirmation faster and more reliable.
+#### Economic Finality (Fast Finality)
+
+The Fast Finality feature, introduced through **[BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md)**, enables Economic Finality using a slashing mechanism similar to Casper FFG and Tendermint. Key characteristics:
+
+- Block n achieves economic finality by block n+2
+- Transaction finality time: **~3.75 seconds** (with 1.5 seconds block time)
+- Economic penalties make block reversal extremely expensive
+- Validators violating voting rules forfeit part of their staked assets
+
+This significantly improves user experience through faster and more reliable transaction confirmations.
+
+#### Probabilistic Finality (Fallback Mechanism)
+
+When Fast Finality is unavailable, BSC falls back to Probabilistic Finality. Security increases as more blocks are added - the deeper a block is buried, the lower the probability of reversal.
+
+Network Parameters:
+
+- TurnLength: 8 (consecutive blocks per validator)
+- ValidatorSize: 21 (total active validators)
+- Block Time: ~1.5 seconds
+
+Finality Requirements:
+
+- Majority (>1/2) validator confirmations: 88 blocks (11 × 8) ≈ 132 seconds
+- Supermajority (>2/3) validator confirmations: 120 blocks (15 × 8) ≈ 180 seconds
+
+This dual-layer approach ensures network security and finality guarantees even when Fast Finality encounters issues.
 
 ### Economic Finality API
 
@@ -67,6 +93,8 @@ These methods allow you to handle block finality using a straightforward API.
     - `-1` represents at least `len(currentValidators) * 1/2`
     - `-2` represents at least `len(currentValidators) * 2/3`
     - `-3` represents at least `len(currentValidators)`
+* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedHeader` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
+* If the highest security level is required, you can choose `-3`.
 * This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
 * The height of the returned block header is guaranteed to increase monotonically.
 For example:
@@ -79,6 +107,8 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
     - `-1` represents at least `len(currentValidators) * 1/2`
     - `-2` represents at least `len(currentValidators) * 2/3`
     - `-3` represents at least `len(currentValidators)`
+* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedHeader` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
+* If the highest security level is required, you can choose `-3`.
 * This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
 * If `fullTx` is true, the block includes all transactions; otherwise, only transaction hashes are included.
 * The height of the returned block is guaranteed to be monotonically increasing.

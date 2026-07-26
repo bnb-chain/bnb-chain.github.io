@@ -8,17 +8,19 @@ title: Run BSC Validator - BNB Smart Chain
 
 ### Mainnet
 
-- Instance Spec: Suggest r7a.4xlarge instance type on AWS.
-- Memory: 64 GB
-- Disk: **IMPORTANT** 4T GB, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms (if start with snap sync, it will need NVMe SSD).
-- Network Bandwidth: > 10 Gbps
+- Instance Spec:
+  - Suggest i7i.8xlarge or i7ie.6xlarge instance type on AWS (better to disable HyperThread, which could have 10%+ performance gain).
+  - or other instance spec to meet >=400 mgasps
+- Memory: 128 GB
+- Disk: **IMPORTANT** 7TB, NVMe SSD, 40k IOPS, 500 MB/S throughput, read latency <1ms.
+- Network Bandwidth: >= 512 Mbps
 
 ### Testnet
 
 - CPU: "AMD Gen 3 or newer" or "Intel Ice Lake or newer"
 - Memory: 16 GB
 - Disk: 1.5 TB, solid-state drive(SSD), gp3, 8k IOPS, 250 MB/S throughput.
-- Network Bandwidth: > 2.5 Gbps
+- Network Bandwidth: >= 128 Mbps
 
 ## Setup Validator Node
 
@@ -81,7 +83,7 @@ echo {your-password for the BLS wallet} > blspassword.txt
 Start your validator using the command line below:
 
 ```bash
-geth --config ./config.toml --datadir ./node --syncmode snap -unlock {accounts to sign txs, including your mining account at least} --miner.etherbase {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000
+geth --config ./config.toml --datadir ./node -unlock {accounts to sign txs, including your mining account at least} --miner.etherbase {the address of your mining account} --password password.txt --blspassword blspassword.txt --mine --vote --allow-insecure-unlock --cache 18000 --history.transactions 0 --history.logs.disable
 ```
 
 ## Post Running

@@ -25,7 +25,7 @@ Compared with other L2 solutions on the Ethereum, like **OP Mainnet** and **Arbi
 | **VM**                 | EVM                   | EVM          | EVM          |
 | **Gas Fee**            | **$0.001**            | $0.05        | $0.1         |
 | **Block Gas Limit**    | **100M(150M 2024Q1)** | 30M          | 32M          |
-| **Block time**         | **1s**                | 2s           | 0.25s(Min)   |
+| **Block time**         | **0.25s**                | 2s           | 0.25s(Min)   |
 | **Withdraw/ Finality** | 7 days                | 7 days       | 7 days       |
 | **TPS (Transfer)**     | **4500+**             | 700+         | 4000+        |
 
@@ -38,9 +38,9 @@ Our goal is to provide a scaling solution for network congestion problems for hi
 | **Gas Token**        | BNB        | BNB                                                 | ETH          |
 | **VM**               | EVM        | EVM                                                 | EVM          |
 | **Gas Price Model**  | EIP-1559   | [Gas Price Auction](https://bscscan.com/gastracker) | EIP-1559     |
-| **Block Gas Limit**  | **100M**   | [140M](https://www.bscscan.com/chart/gaslimit)      | 30M          |
-| **Block time**       | **1s**     | 3s                                                  | 12s          |
-| **Transaction Cost** | **$0.001** | $0.03                                               | $1           |
+| **Block Gas Limit**  | **50M**   | [55M](https://www.bscscan.com/chart/gaslimit)      | 30M          |
+| **Block time**       | **0.25s**     | 0.45s                                                  | 12s          |
+| **Transaction Cost** | **$0.001** | ~$0.005                                             | $1           |
 
 
 

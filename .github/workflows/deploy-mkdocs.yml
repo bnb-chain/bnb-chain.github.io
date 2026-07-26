@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -26,6 +28,7 @@ jobs:
           pip install mkdocs mkdocs-material
           pip install mkdocs-video
           pip install mkdocs-redirects
+          pip install mkdocs-git-revision-date-localized-plugin
 
       - name: Build MkDocs site
         run: mkdocs build

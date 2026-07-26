@@ -12,7 +12,7 @@ BNB Smart Chain (BSC) is a high-performance blockchain network. Officially launc
    BSC is fully compatible with the Ethereum Virtual Machine (EVM), enabling developers to port their Ethereum-based DApps and DeFi projects to BSC with minimal modifications. This compatibility extends to the use of popular Ethereum tools and applications, such as TrustWallet, MetaMask, Truffle, and Remix.
 
 2. **Low Transaction Fees and Fast Block Times:**
-   One of BSC's primary advantages is its low transaction fees. As of early 2024, the average transaction fee on BSC is around $0.10, significantly lower compared to Ethereum's average fee of $10-$20 during periods of high network congestion. Additionally, BSC block time of approximately is 3 seconds, ensuring rapid transaction confirmations and an overall smoother user experience.
+   One of BSC's primary advantages is its low transaction fees. With the network-wide adoption of a **0.05 Gwei** standard gas price, typical transaction fees on BSC are around **$0.005** or less, significantly lower compared to Ethereum. BSC's block time is approximately **0.45 seconds** (reduced from 3s through the Lorentz, Maxwell, and Fermi hardforks), ensuring near-instant transaction confirmations and an overall smoother user experience.
 
 3. **Robust Ecosystem and Growing Adoption:**
    Since its inception, BSC has seen rapid growth in its ecosystem. By May 2024, BSC supports over 1,500 DApps, with popular platforms such as PancakeSwap, Venus, and BakerySwap leading the charge. The total value locked (TVL) in BSC-based DeFi protocols exceeds $20 billion, reflecting its substantial market adoption and user trust.

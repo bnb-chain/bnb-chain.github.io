@@ -24,7 +24,7 @@ When opening the token recovery dApp, you will be prompted to connect to your wa
 ![](../../assets/bcfusion/token-recovery-2.png){:style="width:800px"}
 
 [BNB Chain Wallet](https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp)
-and [Trust Wallet Extension](https://trustwallet.com/) are supported. For Trust users, you can refer to 
+and [Trust Wallet Extension](https://trustwallet.com/) are supported. For Trust users, you can refer to
 [this](https://trustwallet.com/blog/trust-wallet-to-deprecate-bnb-beacon-chain-bep2-bep8-support) for more information.
 
 ### Step 2: Select the BEP2/BEP8 assets to be recovered.
@@ -88,5 +88,20 @@ After the transaction is sent, the token recovery dApp will populate a window to
 the token recovery request is sent successfully.
 
 Finally, you need to wait for 7 days for the BEP2/BEP8 assets to be recovered on BSC and received in your wallet.
+
+!!! info "Having Trouble with Token Recovery?"
+    If you encounter any issues during the recovery process, please first double-check that you have followed all the steps correctly. If the problem persists, you can submit a support ticket through our official channels:
+
+    - **Discord**: [https://discord.gg/bnbchain](https://discord.gg/bnbchain)
+    - **Telegram**: [@bnbchain_official_bot](https://t.me/bnbchain_official_bot)
+
+    Please describe your issue in detail and provide the following information:
+
+    - Your wallet address
+    - Wallet name (e.g., Trust Wallet)
+    - Wallet version
+    - If using a hardware wallet, please provide the brand and model (e.g., Ledger Nano X, Trezor Model T)
+    - Screenshots of the error
+    - Steps you followed before the error occurred
 
 
