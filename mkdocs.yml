@@ -62,6 +62,7 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
+      - Pasteur Hardfork(BSC): ./announce/pasteur-bsc.md
       - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
     - Passed:
       - Token Recovery Tool Sunset — Phase 2: ./announce/token-recovery-sunset-phase2.md
@@ -315,6 +316,9 @@ nav:
           - Architecture: ./developer-kit/mpp-sdk/architecture.md
           - Replay Store: ./developer-kit/mpp-sdk/replay-store.md
           - Examples: ./developer-kit/mpp-sdk/examples.md
+      - Scaled UI Amount (ERC-8056):
+          - Overview: ./developer-kit/scaled-ui-amount/index.md
+          - Demo: ./developer-kit/scaled-ui-amount/demo.md
       - Privacy at Scale:
           - Overview: ./developer-kit/privacy-at-scale/index.md
   - BNB Chain Fusion:
