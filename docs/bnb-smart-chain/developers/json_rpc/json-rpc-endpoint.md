@@ -58,11 +58,13 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
   
 * **dRPC:** <https://drpc.org/chainlist/bsc>
 
-* **SubQuery:** <https://rpc.subquery.network/56)>
+* **SubQuery:** <https://rpc.subquery.network/56>
 
 * **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
 
 * **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+  
+* **OnFinality:** <https://onfinality.io/networks/bnb>
 
 ### Starting HTTP JSON-RPC
 
