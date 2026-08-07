@@ -24,7 +24,7 @@ advised to transfer their assets to the BSC network to ensure a seamless
 and lossless transition, maintaining a 1:1 ratio. Of course, there are
 alternative channels available for asset transfers, such as utilizing
 centralized exchanges or decentralized cross-chain exchanges like
-Binance.com and [Thorswap](https://thorswap.finance/).
+Binance.com, [Nativeswap](https://nativeswap.io/) and [Thorswap](https://thorswap.finance/).
 However, these options are beyond the scope of this tutorial.
 
 **Step1: Confirm if the Assets Support Cross-chain Transfers**
