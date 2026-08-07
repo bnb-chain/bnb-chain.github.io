@@ -63,6 +63,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
 
 * **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+  
+* **OrbitFlare:** <https://orbitflare.com/products/bnb-nodes>
 
 ### Starting HTTP JSON-RPC
 
