@@ -16,7 +16,7 @@ A seller agent earns on-chain by offering services over **ERC-8004** (identity) 
 
 | Artifact | Package | Purpose |
 |----------|---------|---------|
-| **`bag` CLI** | `bnbagent-studio` | Scaffold projects, manage wallets, run locally, deploy |
+| **`bag` CLI** | `@bnbagent/studio-cli` | Scaffold projects, manage wallets, run locally, deploy |
 | **Runtime library** | `bnbagent-studio-core` | Wallet, ERC-8004/8183, x402, signing policy — imported by emitted agent code |
 | **MCP server** | `bnbagent-studio` | 15 read-only chain tools for your IDE |
 | **Skills** | bundled in CLI | 10 procedure playbooks for Claude Code / Cursor |
@@ -24,10 +24,8 @@ A seller agent earns on-chain by offering services over **ERC-8004** (identity) 
 Install one command:
 
 ```bash
-pip install bnbagent-studio
+npm install -g @bnbagent/studio-cli
 ```
-
-`pip` auto-pulls `bnbagent-studio-core`. The CLI is also available via `uv tool install bnbagent-studio`.
 
 ## Two-layer deploy model
 
@@ -92,9 +90,9 @@ Optional: testnet funds (only for paid LLM models or on-chain settle — default
 ## Package
 
 ```bash
-pip install bnbagent-studio
+npm install -g @bnbagent/studio-cli
 ```
 
-[PyPI — bnbagent-studio](https://pypi.org/project/bnbagent-studio/) · [PyPI — bnbagent-studio-core](https://pypi.org/project/bnbagent-studio-core/)
+[npm — @bnbagent/studio-cli](https://www.npmjs.com/package/@bnbagent/studio-cli) · [PyPI — bnbagent-studio-core](https://pypi.org/project/bnbagent-studio-core/)
 
 [← Developer Kit overview](../index.md)
