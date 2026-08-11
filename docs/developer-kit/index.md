@@ -57,7 +57,7 @@ hide:
 <section class="dk-block">
   <div class="dk-block__header">
     <h2 class="dk-block__title">All developer tools</h2>
-    <span class="dk-block__count">6 tools</span>
+    <span class="dk-block__count">7 tools</span>
   </div>
   <div class="dk-table-wrap">
     <table class="dk-table">
@@ -129,6 +129,17 @@ hide:
             </span>
           </td>
           <td class="dk-table__action"><a href="mpp-sdk/" aria-label="Open MPP SDK">&rarr;</a></td>
+        </tr>
+        <tr>
+          <td><a href="scaled-ui-amount/">Scaled UI Amount (ERC-8056)</a></td>
+          <td><span class="dk-chip" data-chain="bsc">BSC</span></td>
+          <td>
+            <span class="install-cmd">
+              <span class="install-cmd__prompt">$</span>
+              <code>ERC-8056 interface</code>
+            </span>
+          </td>
+          <td class="dk-table__action"><a href="scaled-ui-amount/" aria-label="Open Scaled UI Amount">&rarr;</a></td>
         </tr>
         <tr>
           <td><a href="privacy-at-scale/">Privacy at Scale</a></td>

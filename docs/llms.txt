@@ -234,6 +234,8 @@
   - [Architecture](https://docs.bnbchain.org/developer-kit/mpp-sdk/architecture/): Wire schema and verifiers.
   - [Replay store](https://docs.bnbchain.org/developer-kit/mpp-sdk/replay-store/): Durable atomic replay protection.
   - [Examples](https://docs.bnbchain.org/developer-kit/mpp-sdk/examples/): charge-server, charge-demo, bnb-wire-demo.
+- [Scaled UI Amount (ERC-8056)](https://docs.bnbchain.org/developer-kit/scaled-ui-amount/): UI multiplier for ERC-8056 tokens — balances, transfers, and prices without mint/burn.
+  - [Demo](https://docs.bnbchain.org/developer-kit/scaled-ui-amount/demo/): Detect ERC-8056, display balances, convert send amounts, handle multiplier changes.
 - [Privacy at Scale](https://docs.bnbchain.org/developer-kit/privacy-at-scale/): ZKP and FHE institutional privacy stack — Intelligent Privacy Pool, ZKredit, and Zama FHE.
   - [Overview](https://docs.bnbchain.org/developer-kit/mcp/): bnbchain-mcp server for on-chain tools and IDE integration.
   - [Ask AI](https://docs.bnbchain.org/developer-kit/ask-ai/): Read-only MCP doc search for BNB Chain.
