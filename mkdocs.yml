@@ -1,5 +1,5 @@
 # Project information
-site_name: Documentation
+site_name: Docs
 site_url: https://docs.bnbchain.org
 site_author: BNB Chain
 site_description: >-
@@ -43,7 +43,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
-    - navigation.sections
+#    - navigation.sections
 #    - navigation.expand
     - navigation.prune
     - navigation.path
@@ -58,36 +58,89 @@ theme:
 
 # Page tree
 nav:
-  - Home: index.md
-  - Announcements:
-    - Announcements: ./announce/index.md
-    - Upcoming:
-      - Pasteur Hardfork(BSC): ./announce/pasteur-bsc.md
-      - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
-    - Passed:
-      - Token Recovery Tool Sunset — Phase 2: ./announce/token-recovery-sunset-phase2.md
-      - Token Recovery Tool Sunset Plan: ./announce/token-recovery-sunset-plan.md
-      - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
-      - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
-      - Mongolian Hardfork(Greenfield): ./announce/mongolian-greenfield.md
-      - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
-      - Second Sunset Hardfork(BC): ./announce/second-sunset-bc.md
-      - Feynman Hardfork(BSC): ./announce/feynman-bsc.md
-      - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
-      - Haber Hardfork(BSC): ./announce/haber-bsc.md
-      - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
-      - Second Sunset Hardfork(BC testnet): ./announce/second-sunset-bc-testnet.md
-      - Final Sunset Hardfork(BC testnet): ./announce/final-sunset-bc-testnet.md
-      - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
-      - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
-      - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
-      - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
-      - Pascal Hardfork(BSC): ./announce/pascal-bsc.md
-      - Lorentz Hardfork(BSC): ./announce/lorentz-bsc.md
-      - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
-      - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
-      - Fermi Hardfork(BSC): ./announce/fermi-bsc.md
-      - Fourier Upgrade of opBNB: ./announce/fourier-opbnb.md
+  - Overview:
+    - Overview: index.md
+    - Announcements:
+      - Announcements: ./announce/index.md
+      - Upcoming:
+        - Pasteur Hardfork(BSC): ./announce/pasteur-bsc.md
+        - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
+      - Passed:
+        - Token Recovery Tool Sunset — Phase 2: ./announce/token-recovery-sunset-phase2.md
+        - Token Recovery Tool Sunset Plan: ./announce/token-recovery-sunset-plan.md
+        - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
+        - Wright Hardfork(opBNB): ./announce/wright-opbnb.md
+        - Mongolian Hardfork(Greenfield): ./announce/mongolian-greenfield.md
+        - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
+        - Second Sunset Hardfork(BC): ./announce/second-sunset-bc.md
+        - Feynman Hardfork(BSC): ./announce/feynman-bsc.md
+        - Veld Hardfork(Greenfield): ./announce/veld-greenfield.md
+        - Haber Hardfork(BSC): ./announce/haber-bsc.md
+        - Haber Hardfork(opBNB): ./announce/haber-opbnb.md
+        - Second Sunset Hardfork(BC testnet): ./announce/second-sunset-bc-testnet.md
+        - Final Sunset Hardfork(BC testnet): ./announce/final-sunset-bc-testnet.md
+        - Bohr Hardfork(BSC): ./announce/bohr-bsc.md
+        - Altai Hardfork(Gnfd): ./announce/altai-gnfd.md
+        - Final Sunset of BC (Mainnet): ./announce/final-sunset-bc-mainnet.md
+        - Greenfield Savanna Hardfork: ./announce/savanna-greenfield.md
+        - Pascal Hardfork(BSC): ./announce/pascal-bsc.md
+        - Lorentz Hardfork(BSC): ./announce/lorentz-bsc.md
+        - Maxwell Hardfork(BSC): ./announce/maxwell-bsc.md
+        - Volta Upgrade of opBNB: ./announce/volta-opbnb.md
+        - Fermi Hardfork(BSC): ./announce/fermi-bsc.md
+        - Fourier Upgrade of opBNB: ./announce/fourier-opbnb.md
+    - BNB Chain Fusion:
+      - BNB Chain Fusion: ./bc-fusion/index.md
+      - Overview: ./bc-fusion/overview.md
+      - Post Fusion:
+        - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
+        - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
+        - FAQ: ./bc-fusion/post-fusion/faq.md
+    - Resource:
+      - RPC endpoints: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/
+      - Faucet (testnet): https://www.bnbchain.org/en/testnet-faucet
+      - Bridge: https://www.bnbchain.org/en/bnb-chain-bridge
+      - Blog: https://www.bnbchain.org/en/blog
+
+  - Developer Kit:
+      - Overview: ./developer-kit/index.md
+      - BNB Agent SDK:
+          - Overview: ./developer-kit/bnbagent-sdk/index.md
+          - Quickstart: ./developer-kit/bnbagent-sdk/quickstart.md
+          - Configuration: ./developer-kit/bnbagent-sdk/configuration.md
+          - Architecture: ./developer-kit/bnbagent-sdk/architecture.md
+          - Networks & Contracts: ./developer-kit/bnbagent-sdk/networks.md
+          - Examples: ./developer-kit/bnbagent-sdk/examples.md
+          - Security: ./developer-kit/bnbagent-sdk/security.md
+          - Troubleshooting: ./developer-kit/bnbagent-sdk/troubleshooting.md
+      - BNB Agent Studio:
+          - Overview: ./developer-kit/bnbchain-studio/index.md
+          - Quickstart: ./developer-kit/bnbchain-studio/quickstart.md
+          - Demo: ./developer-kit/bnbchain-studio/demo.md
+          - Architecture: ./developer-kit/bnbchain-studio/architecture.md
+          - Configuration: ./developer-kit/bnbchain-studio/configuration.md
+          - CLI Reference: ./developer-kit/bnbchain-studio/cli-reference.md
+          - Deployment: ./developer-kit/bnbchain-studio/deployment.md
+          - Security: ./developer-kit/bnbchain-studio/security.md
+          - Troubleshooting: ./developer-kit/bnbchain-studio/troubleshooting.md
+      - Greenfield SDK:
+          - Overview: ./developer-kit/greenfield-sdk/index.md
+      - MCP & Ask AI:
+          - Overview: ./developer-kit/mcp/index.md
+          - Ask AI: ./developer-kit/ask-ai/index.md
+          - VS Code guide: ./developer-kit/ask-ai/vs-code-guide.md
+      - MPP SDK:
+          - Overview: ./developer-kit/mpp-sdk/index.md
+          - Quickstart: ./developer-kit/mpp-sdk/quickstart.md
+          - Architecture: ./developer-kit/mpp-sdk/architecture.md
+          - Replay Store: ./developer-kit/mpp-sdk/replay-store.md
+          - Examples: ./developer-kit/mpp-sdk/examples.md
+      - Scaled UI Amount (ERC-8056):
+          - Overview: ./developer-kit/scaled-ui-amount/index.md
+          - Demo: ./developer-kit/scaled-ui-amount/demo.md
+      - Privacy at Scale:
+          - Overview: ./developer-kit/privacy-at-scale/index.md
+
 
   - BNB Smart Chain:
     - BNB Smart Chain: ./bnb-smart-chain/index.md
@@ -96,7 +149,6 @@ nav:
     - Ecosystem: https://dappbay.bnbchain.org/
     - Developers:
         - Quick Guide: ./bnb-smart-chain/developers/quick-guide.md
-        - Official Developer Kit: ./developer-kit/index.md
         - Dev-Tools: https://www.bnbchain.org/en/dev-tools
         - JSON-RPC:
             - Json Rpc Endpoint: ./bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md
@@ -172,7 +224,6 @@ nav:
         - BNB Chain Rollup as Service: ./bnb-opbnb/core-concepts/raas.md
     - Developers:
       - Quick Guide: ./bnb-opbnb/developers/quick-guide.md
-      - Official Developer Kit: ./developer-kit/index.md
       - Developer Tools: ./bnb-opbnb/developers/developer-tools.md
       - Network Faucet: ./bnb-opbnb/developers/network-faucet.md
       - Wallet Gas Price Setting: ./bnb-opbnb/developers/set-gas-price.md
@@ -254,8 +305,6 @@ nav:
 
           - Bundle Service: ./bnb-greenfield/for-developers/bundle-service.md
 
-          - Official Developer Kit: ./developer-kit/index.md
-
       - For Chain Validator:
           - Overview: ./bnb-greenfield/for-validator/overview.md
           - Run Greenfield Blockchain:
@@ -283,52 +332,6 @@ nav:
       - Roadmap:
           - Roadmap: ./bnb-greenfield/roadmap/roadmap.md
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
-  - Developer Kit:
-      - Overview: ./developer-kit/index.md
-      - BNB Agent SDK:
-          - Overview: ./developer-kit/bnbagent-sdk/index.md
-          - Quickstart: ./developer-kit/bnbagent-sdk/quickstart.md
-          - Configuration: ./developer-kit/bnbagent-sdk/configuration.md
-          - Architecture: ./developer-kit/bnbagent-sdk/architecture.md
-          - Networks & Contracts: ./developer-kit/bnbagent-sdk/networks.md
-          - Examples: ./developer-kit/bnbagent-sdk/examples.md
-          - Security: ./developer-kit/bnbagent-sdk/security.md
-          - Troubleshooting: ./developer-kit/bnbagent-sdk/troubleshooting.md
-      - BNB Agent Studio:
-          - Overview: ./developer-kit/bnbchain-studio/index.md
-          - Quickstart: ./developer-kit/bnbchain-studio/quickstart.md
-          - Demo: ./developer-kit/bnbchain-studio/demo.md
-          - Architecture: ./developer-kit/bnbchain-studio/architecture.md
-          - Configuration: ./developer-kit/bnbchain-studio/configuration.md
-          - CLI Reference: ./developer-kit/bnbchain-studio/cli-reference.md
-          - Deployment: ./developer-kit/bnbchain-studio/deployment.md
-          - Security: ./developer-kit/bnbchain-studio/security.md
-          - Troubleshooting: ./developer-kit/bnbchain-studio/troubleshooting.md
-      - Greenfield SDK:
-          - Overview: ./developer-kit/greenfield-sdk/index.md
-      - MCP & Ask AI:
-          - Overview: ./developer-kit/mcp/index.md
-          - Ask AI: ./developer-kit/ask-ai/index.md
-          - VS Code guide: ./developer-kit/ask-ai/vs-code-guide.md
-      - MPP SDK:
-          - Overview: ./developer-kit/mpp-sdk/index.md
-          - Quickstart: ./developer-kit/mpp-sdk/quickstart.md
-          - Architecture: ./developer-kit/mpp-sdk/architecture.md
-          - Replay Store: ./developer-kit/mpp-sdk/replay-store.md
-          - Examples: ./developer-kit/mpp-sdk/examples.md
-      - Scaled UI Amount (ERC-8056):
-          - Overview: ./developer-kit/scaled-ui-amount/index.md
-          - Demo: ./developer-kit/scaled-ui-amount/demo.md
-      - Privacy at Scale:
-          - Overview: ./developer-kit/privacy-at-scale/index.md
-  - BNB Chain Fusion:
-      - BNB Chain Fusion: ./bc-fusion/index.md
-      - Overview: ./bc-fusion/overview.md
-      - Post Fusion:
-          - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
-          - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
-          - FAQ: ./bc-fusion/post-fusion/faq.md
-
 markdown_extensions:
   - toc:
       permalink: true
@@ -701,6 +704,8 @@ extra_css:
   - assets/style/components/content.css
   - assets/style/components/footer-nav.css
   - assets/style/components/footer.css
+  - assets/style/components/home.css
+  - assets/style/components/developer-kit.css
   - https://unpkg.com/katex@0.16.10/dist/katex.min.css
   - assets/style/components/superintern.css
 

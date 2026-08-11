@@ -60,6 +60,22 @@
             </div>
         </div>
 
+        <!-- Site language selector -->
+        {% if config.extra.alternate %}
+            {% include "partials/alternate.html" %}
+        {% endif %}
+
+        <!-- Search (centered, stretched) -->
+        {% if "material/search" in config.plugins %}
+            <label class="md-header__button md-icon" for="__search">
+                {% set icon = config.theme.icon.search or "material/magnify" %}
+                {% include ".icons/" ~ icon ~ ".svg" %}
+            </label>
+
+            <!-- Search interface -->
+            {% include "partials/search.html" %}
+        {% endif %}
+
         <!-- Color palette toggle -->
         {% if config.theme.palette %}
             {% if not config.theme.palette is mapping %}
@@ -72,28 +88,26 @@
             {% include "partials/javascripts/palette.html" %}
         {% endif %}
 
-        <!-- Site language selector -->
-        {% if config.extra.alternate %}
-            {% include "partials/alternate.html" %}
-        {% endif %}
-
-        <!-- Button to open search modal -->
-        {% if "material/search" in config.plugins %}
-            <label class="md-header__button md-icon" for="__search">
-                {% set icon = config.theme.icon.search or "material/magnify" %}
-                {% include ".icons/" ~ icon ~ ".svg" %}
-            </label>
-
-            <!-- Search interface -->
-            {% include "partials/search.html" %}
-        {% endif %}
-
-        <!-- Repository information -->
+        <!-- Repository information (GitHub) -->
         {% if config.repo_url %}
         <div class="md-header__source">
             {% include "partials/source.html" %}
         </div>
         {% endif %}
+
+        <!-- Header action: Get Help -->
+        <div class="md-header__actions">
+            <a
+                class="md-header-action md-header-action--primary"
+                href="https://discord.com/invite/bnbchain"
+                target="_blank"
+                rel="noopener"
+                title="Get Help"
+            >
+                {% include ".icons/fontawesome/brands/discord.svg" %}
+                <span class="md-header-action__label">Get Help</span>
+            </a>
+        </div>
     </nav>
 
     <!-- Navigation tabs (sticky) -->

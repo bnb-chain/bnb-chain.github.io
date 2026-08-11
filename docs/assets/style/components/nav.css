@@ -31,6 +31,76 @@
 .md-header__title .md-header__site_name {
     font-weight: 500;
     color: var(--doc-dark-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Header actions: Settings + Get help */
+.md-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.md-header-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 8px;
+    border: 1px solid var(--doc-border-3);
+    background: var(--doc-layer-3);
+    color: var(--doc-text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .15s, border-color .15s, color .15s;
+}
+
+.md-header-action:hover,
+.md-header-action:focus {
+    background: var(--doc-layer-4);
+    color: var(--doc-text-primary);
+}
+
+.md-header-action svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.md-header-action--primary {
+    background: var(--doc-dark-bg-1);
+    border-color: var(--doc-dark-border-4);
+    color: #fff;
+}
+
+.md-header-action--primary:hover,
+.md-header-action--primary:focus {
+    background: var(--doc-dark-bg-2);
+    border-color: var(--doc-dark-text-tertiary);
+    color: #fff;
+}
+
+@media (max-width: 1219px) {
+    .md-header-action__label {
+        display: none;
+    }
+
+    .md-header-action {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .md-header__actions {
+        display: none;
+    }
 }
 
 .md-search__icon[for=__search] {
@@ -192,10 +262,6 @@
     color: var(--doc-text-primary);
 }
 
-.md-header__button {
-    margin: 0 0.8rem;
-}
-
 .md-option[data-md-color-media] ~ .md-icon svg {
     width: 24px;
     height: 24px;
@@ -308,4 +374,95 @@
     .md-nav--primary .md-nav__item--active>.md-nav__link {
         color: var(--doc-text-brand);
     }
+}
+
+/* Centered, stretched search bar (matches Figma) */
+@media screen and (min-width: 60em) {
+    .md-header__title {
+        flex-grow: 0;
+        margin-right: 8px;
+    }
+
+    .md-search {
+        flex: 1 1 auto;
+        padding: 0 24px;
+    }
+
+    .md-search__inner {
+        float: none;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .md-search__form {
+        width: 100%;
+    }
+
+    .md-search__inner .md-search__input {
+        width: 100%;
+    }
+}
+
+/* RESOURCE: flat, always-visible section with external arrow links */
+.md-nav__item--resource > label.md-nav__link {
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--doc-text-tertiary);
+    pointer-events: none;
+    cursor: default;
+    margin-top: 20px;
+}
+
+.md-nav__item--resource > label.md-nav__link .md-nav__icon {
+    display: none;
+}
+
+.md-nav__item--resource > .md-nav {
+    display: block;
+}
+
+.md-nav__item--resource > .md-nav > .md-nav__list {
+    display: block;
+}
+
+.md-nav__item--resource .md-nav__list .md-nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--doc-text-secondary);
+}
+
+.md-nav__item--resource .md-nav__list .md-nav__link:hover {
+    color: var(--doc-text-brand);
+}
+
+.md-nav__item--resource .md-nav__list .md-nav__link::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    background-color: var(--doc-text-tertiary);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M9%205v2h6.59L4%2018.59%205.41%2020%2017%208.41V15h2V5z'/%3E%3C/svg%3E") center / 14px 14px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M9%205v2h6.59L4%2018.59%205.41%2020%2017%208.41V15h2V5z'/%3E%3C/svg%3E") center / 14px 14px no-repeat;
+}
+
+/* Tab bar divider between "Developer Kit" and "BNB Smart Chain" */
+.md-tabs__list > .md-tabs__item:nth-child(3) {
+    position: relative;
+}
+
+.md-tabs__list > .md-tabs__item:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 18px;
+    background: var(--doc-border-4);
 }
