@@ -700,7 +700,7 @@ extra_css:
   - assets/style/components/sidebar.css
   - assets/style/components/content.css
   - assets/style/components/footer-nav.css
-  - assets/style/components/footer.css
+  - assets/style/components/footer-v2.css
   - https://unpkg.com/katex@0.16.10/dist/katex.min.css
   - assets/style/components/superintern.css
 
@@ -708,7 +708,7 @@ extra_javascript:
   - assets/js/mathjax.js
   - assets/js/custom.js
   - assets/js/superintern.js
-  - assets/js/footer-menu.js
+  - assets/js/footer-menu-v2.js
 
 extra:
   generator: false
