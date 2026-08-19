@@ -26,7 +26,7 @@
   - [Official Developer Kit](https://docs.bnbchain.org/developer-kit/): Official SDK guides and middleware for BSC, opBNB, and Greenfield.
   - [Dev-Tools](https://www.bnbchain.org/en/dev-tools)
   - **JSON-RPC**
-    - [JSON-RPC-Endpoint](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/): ---
+    - [JSON-RPC-Endpoint](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/): BSC JSON-RPC endpoint URLs for mainnet and testnet, including provider links.
     - [Bsc Api list](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/): Complete list of BSC JSON-RPC API methods and finality APIs.
   - [Faucet](https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/): Get testnet tBNB tokens for BSC development.
   - **Node Operators**
