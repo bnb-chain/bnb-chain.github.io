@@ -26,6 +26,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 * https://bsc-dataseed.ninicoin.io
 * https://bsc.nodereal.io
 * https://bsc-dataseed-public.bnbchain.org
+* https://rpc-bnb.blockmachine.io
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
@@ -60,6 +61,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
 
 * **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
 
 ### Starting HTTP JSON-RPC
 
