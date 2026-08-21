@@ -391,6 +391,21 @@ const DEFAULT_FOOTER_MENUS = [
   }
 ]
 
+const FOOTER_CERTIFICATIONS = [
+  {
+    name: 'BSI ISO/IEC 27001 certification',
+    image: 'https://cms-static.bnbchain.org/dcms/static/7455034c-6916-4699-b4a2-e336c4de1f81.png',
+    href: 'https://www.bsigroup.com/en-US/products-and-services/assessment-and-certification/validation-and-verification/client-directory-certificate/IS%20843143/',
+    analyticsId: 'click_footer_certification_iso27001'
+  },
+  {
+    name: 'BSI ISO/IEC 27701 certification',
+    image: 'https://cms-static.bnbchain.org/dcms/static/5e4aa39c-43dd-4445-bca7-0989a4f73227.png',
+    href: 'https://www.bsigroup.com/en-US/products-and-services/assessment-and-certification/validation-and-verification/client-directory-certificate/PM%20843144/',
+    analyticsId: 'click_footer_certification_iso27701'
+  }
+]
+
 let cachedFooterMenus = null;
 
 async function fetchFooterMenus() {
@@ -413,11 +428,30 @@ async function fetchFooterMenus() {
   }
 }
 
-function createMenuHTML(menu) {
+function createCertificationsHTML(modifier) {
+  return `
+    <div class="doc-footer__certifications doc-footer__certifications--${modifier}">
+      ${FOOTER_CERTIFICATIONS.map(item => `
+        <a
+          class="doc-footer__certification"
+          href="${item.href}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="${item.name}"
+          data-analytics-id="${item.analyticsId}"
+        >
+          <img src="${item.image}" alt="${item.name}" width="71" height="36">
+        </a>
+      `).join('')}
+    </div>
+  `;
+}
+
+function createMenuHTML(menu, index) {
   const title = menu.menu;
   return `
-    <div>
-      <div>${title}</div>
+    <div class="doc-footer__menu">
+      <div class="doc-footer__menu-title">${title}</div>
       <ul>
         ${menu.items.map(item => `
           <li>
@@ -431,6 +465,7 @@ function createMenuHTML(menu) {
           </li>
         `).join('')}
       </ul>
+      ${index === 0 ? createCertificationsHTML('desktop') : ''}
     </div>
   `;
 }
@@ -510,7 +545,8 @@ function updateFooterContent(footerMenus) {
   const copyrightElement = document.querySelector('.doc-copyright__inner');
 
   if (footerInner && (!footerInner.children.length)) {
-    footerInner.innerHTML = footerMenus.map(menu => createMenuHTML(menu)).join('');
+    const menusHTML = footerMenus.map((menu, index) => createMenuHTML(menu, index)).join('');
+    footerInner.innerHTML = `${menusHTML}${createCertificationsHTML('responsive')}`;
   }
 
   if (copyrightElement && (!copyrightElement.children.length)) {
