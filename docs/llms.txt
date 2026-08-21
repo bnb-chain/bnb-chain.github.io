@@ -220,8 +220,8 @@
   - [Examples](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/examples/): Client, voter, and agent-server flows.
   - [Security](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/security/): Wallet handling and signing policy.
   - [Troubleshooting](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/troubleshooting/): Common errors and fixes.
-- [BNB Agent Studio](https://docs.bnbchain.org/developer-kit/bnbchain-studio/): Scaffold and deploy two-layer blockchain seller agents (CLI `bag`, ERC-8004/8183, x402) on BSC.
-  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/): Install, scaffold, run locally, deploy.
+- [BNB Agent Studio](https://docs.bnbchain.org/developer-kit/bnbchain-studio/): Scaffold, run, and deploy two-layer blockchain seller agents (CLI `bag`, ERC-8004/8183, x402) on BNB Chain.
+  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/): End-to-end path from zero to a running two-layer seller on BSC testnet.
   - [Demo](https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/): End-to-end weather-forecast seller walkthrough.
   - [Architecture](https://docs.bnbchain.org/developer-kit/bnbchain-studio/architecture/): Six-layer stack and two-layer deploy model.
   - [Configuration](https://docs.bnbchain.org/developer-kit/bnbchain-studio/configuration/): studio.toml, .env.local, cross-layer sync.
