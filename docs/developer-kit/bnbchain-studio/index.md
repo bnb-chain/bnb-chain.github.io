@@ -1,7 +1,3 @@
----
-title: BNB Agent Studio
----
-
 # BNB Agent Studio
 
 Scaffold, run, and deploy a **two-layer blockchain seller** on BNB Chain. BNB Agent Studio (`bnbagent-studio`) lets you describe what you want in Claude Code or Cursor; the studio emits a working agent project that **you own**, then helps you develop, debug, and deploy it.
