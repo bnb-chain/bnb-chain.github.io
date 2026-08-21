@@ -557,3 +557,18 @@ Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  
 ### Other BSC API
 
 Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+
+## BNB Agent Studio
+> Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/
+
+Scaffold, run, and deploy a **two-layer blockchain seller** on BNB Chain. BNB Agent Studio (`bnbagent-studio`) lets you describe what you want in Claude Code or Cursor; the studio emits a working agent project that **you own**, then helps you develop, debug, and deploy it.
+
+## Quickstart
+> Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/
+
+End-to-end path from zero to a running two-layer seller on BSC testnet. Steps 1–2 are one-time machine setup; step 3 is where you spend most of your time — talking to your AI tool, which drives `bag` for you.
+
+## Demo
+> Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/
+
+This walkthrough follows the full BNB Agent Studio path for a single example: a **weather-forecast seller** on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
