@@ -1,7 +1,3 @@
----
-title: BNB Agent Studio Quickstart
----
-
 # Quickstart
 
 End-to-end path from zero to a running two-layer seller on BSC testnet. Steps 1–2 are one-time machine setup; step 3 is where you spend most of your time — talking to your AI tool, which drives `bag` for you.
