@@ -1,7 +1,3 @@
----
-title: BNB Agent Studio Demo
----
-
 # Demo — weather-forecast seller (end to end)
 
 This walkthrough follows the full BNB Agent Studio path for a single example: a **weather-forecast seller** on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
