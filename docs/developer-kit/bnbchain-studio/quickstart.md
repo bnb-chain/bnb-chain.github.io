@@ -9,11 +9,9 @@ End-to-end path from zero to a running two-layer seller on BSC testnet. Steps 1�
 ## 1. Install the CLI
 
 ```bash
-pip install bnbagent-studio
-bag --version        # → bag 0.0.1
+npm install -g @bnbagent/studio-cli
+bag --version
 ```
-
-Alternative: `uv tool install bnbagent-studio` for an isolated machine-wide CLI.
 
 **Prerequisite — AgentCore CLI:**
 

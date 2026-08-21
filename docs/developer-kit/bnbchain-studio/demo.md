@@ -19,7 +19,7 @@ Commands and behavior match the [bnbagent-studio](https://github.com/bnb-chain/b
 
 ## 1. Installation
 
-Open the [bnbagent-studio](https://github.com/bnb-chain/bnbagent-studio) repo in your AI IDE and ask it to install the workspace packages. For a one-line production install instead, use `pip install bnbagent-studio` — see [Quickstart](quickstart.md).
+Open the [bnbagent-studio](https://github.com/bnb-chain/bnbagent-studio) repo in your AI IDE and ask it to install the workspace packages. For a one-line production install instead, use `npm install -g @bnbagent/studio-cli` — see [Quickstart](quickstart.md).
 
 ```text
 Now working from /Users/username/Desktop/project-directory. What would you like to do?
