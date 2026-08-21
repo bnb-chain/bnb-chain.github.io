@@ -562,12 +562,10 @@ Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#other
 > Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/
 
 Scaffold, run, and deploy a **two-layer blockchain seller** on BNB Chain. BNB Agent Studio (`bnbagent-studio`) lets you describe what you want in Claude Code or Cursor; the studio emits a working agent project that **you own**, then helps you develop, debug, and deploy it.
-
 ## Quickstart
 > Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/
 
 End-to-end path from zero to a running two-layer seller on BSC testnet. Steps 1–2 are one-time machine setup; step 3 is where you spend most of your time — talking to your AI tool, which drives `bag` for you.
-
 ## Demo
 > Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/
 
