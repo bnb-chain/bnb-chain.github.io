@@ -69,7 +69,7 @@
     
       <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer-v2.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
@@ -3264,7 +3264,7 @@ and <code>getValidatorRewardRecord(address,uint256)(uint256)</code> for the purp
 <span class="nx">header</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">GetBlockHeader</span><span class="p">(</span><span class="nx">blockHeight</span><span class="p">)</span>
 
 <span class="c1">// calculate the index paramter to call the following functions</span>
-<span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">interval</span><span class="p">.</span><span class="nx">Int64</span><span class="p">()</span>
+<span class="nx">index</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kt">int64</span><span class="p">(</span><span class="nx">header</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">interval</span><span class="p">.</span><span class="nx">Int64</span><span class="p">()</span>
 
 <span class="c1">// get the total pooled BNB amount and the crrospanding reward amount for the given validator and index</span>
 <span class="nx">totalPooledBNB</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">stakeHub</span><span class="p">.</span><span class="nx">GetValidatorTotalPooledBNBRecord</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">validatorOperatorAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span>
@@ -3472,7 +3472,7 @@ It needs an offchain service to index <code>Delegated</code>, <code>Redelegated<
       
         <script src="../../../assets/js/superintern.js"></script>
       
-        <script src="../../../assets/js/footer-menu.js"></script>
+        <script src="../../../assets/js/footer-menu-v2.js"></script>
       
     
 <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>

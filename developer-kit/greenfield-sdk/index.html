@@ -69,7 +69,7 @@
     
       <link rel="stylesheet" href="../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../assets/style/components/footer-v2.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
@@ -2391,11 +2391,11 @@
 <span class="p">)</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">privateKey</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">""</span>
+<span class="w">    </span><span class="nx">privateKey</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">""</span>
 
 <span class="w">    </span><span class="c1">// Mainnet Info</span>
-<span class="w">    </span><span class="nx">rpcAddr</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">"https://greenfield-chain.bnbchain.org:443"</span>
-<span class="w">    </span><span class="nx">chainId</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">"greenfield_1017-1"</span>
+<span class="w">    </span><span class="nx">rpcAddr</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">"https://greenfield-chain.bnbchain.org:443"</span>
+<span class="w">    </span><span class="nx">chainId</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">"greenfield_1017-1"</span>
 
 <span class="w">    </span><span class="c1">// Testnet Info</span>
 <span class="w">    </span><span class="c1">// rpcAddr     = "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span>
@@ -2540,7 +2540,7 @@
 <span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Wait for tx: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">waitForTx</span><span class="p">.</span><span class="nx">String</span><span class="p">())</span>
 
 <span class="w">    </span><span class="c1">//verify account2's balance</span>
-<span class="w">    </span><span class="nx">balance</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">GetAccountBalance</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">account2</span><span class="p">.</span><span class="nx">GetAddress</span><span class="p">().</span><span class="nx">String</span><span class="p">())</span>
+<span class="w">    </span><span class="nx">balance</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">GetAccountBalance</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">account2</span><span class="p">.</span><span class="nx">GetAddress</span><span class="p">().</span><span class="nx">String</span><span class="p">())</span>
 </code></pre></div>
 <p>Run the code to test the transfer of tBNB:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="nx">account</span><span class="p">.</span><span class="k">go</span>
@@ -2627,7 +2627,7 @@ txhash:<span class="w"> </span>DFC2CE0514FE334B5BCB6BC3EBCCCD7A6E16B4CAEDC4FFDBE
 <li>VISIBILITY_TYPE_PUBLIC_READ</li>
 <li>VISIBILITY_TYPE_PRIVATE</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nx">chargedQuota</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">uint64</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nx">chargedQuota</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kt">uint64</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">visibility</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">storageTypes</span><span class="p">.</span><span class="nx">VISIBILITY_TYPE_PUBLIC_READ</span>
 <span class="w">    </span><span class="nx">opts</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateBucketOptions</span><span class="p">{</span><span class="nx">Visibility</span><span class="p">:</span><span class="w"> </span><span class="nx">visibility</span><span class="p">,</span><span class="w"> </span><span class="nx">ChargedQuota</span><span class="p">:</span><span class="w"> </span><span class="nx">chargedQuota</span><span class="p">}</span>
 </code></pre></div>
@@ -2645,7 +2645,7 @@ txhash:<span class="w"> </span>DFC2CE0514FE334B5BCB6BC3EBCCCD7A6E16B4CAEDC4FFDBE
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateObject"</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">// Put your object</span>
-<span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">objectName</span><span class="p">,</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Len</span><span class="p">()),</span>
+<span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">objectName</span><span class="p">,</span><span class="w"> </span><span class="kt">int64</span><span class="p">(</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Len</span><span class="p">()),</span>
 <span class="w">        </span><span class="nx">bytes</span><span class="p">.</span><span class="nx">NewReader</span><span class="p">(</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">()),</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">PutObjectOptions</span><span class="p">{</span><span class="nx">TxnHash</span><span class="p">:</span><span class="w"> </span><span class="nx">txnHash</span><span class="p">})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"PutObject"</span><span class="p">)</span>
 
@@ -2664,7 +2664,7 @@ txhash:<span class="w"> </span>DFC2CE0514FE334B5BCB6BC3EBCCCD7A6E16B4CAEDC4FFDBE
 <span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"get object %s successfully, size %d \n"</span><span class="p">,</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">ObjectName</span><span class="p">,</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">Size</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"GetObject"</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">objectBytes</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">reader</span><span class="p">)</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">!</span><span class="nx">bytes</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">objectBytes</span><span class="p">,</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="nx">bytes</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">objectBytes</span><span class="p">,</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">"download content not same"</span><span class="p">),</span><span class="w"> </span><span class="s">"GetObject"</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
@@ -2679,7 +2679,7 @@ txhash:<span class="w"> </span>DFC2CE0514FE334B5BCB6BC3EBCCCD7A6E16B4CAEDC4FFDBE
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// delete object</span>
 <span class="w">    </span><span class="nx">delTx</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">objectName</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">DeleteObjectOption</span><span class="p">{})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"DeleteObject"</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">WaitForTx</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">delTx</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">WaitForTx</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">delTx</span><span class="p">)</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatalln</span><span class="p">(</span><span class="s">"txn fail"</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
@@ -3504,7 +3504,7 @@ permission APIs, etc. For more details, you can refer to <a href="https://pkg.go
       
         <script src="../../assets/js/superintern.js"></script>
       
-        <script src="../../assets/js/footer-menu.js"></script>
+        <script src="../../assets/js/footer-menu-v2.js"></script>
       
     
 <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>

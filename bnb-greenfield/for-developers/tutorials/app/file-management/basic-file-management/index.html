@@ -69,7 +69,7 @@
     
       <link rel="stylesheet" href="../../../../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../../../../assets/style/components/footer-v2.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
@@ -3715,13 +3715,13 @@ $<span class="w"> </span>go<span class="w"> </span>mod<span class="w"> </span>in
 <span class="p">)</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="nx">rpcAddr</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">"https://greenfield-chain.bnbchain.org:443"</span>
-<span class="w">  </span><span class="nx">chainId</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">"greenfield_1017-1"</span>
+<span class="w">  </span><span class="nx">rpcAddr</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">"https://greenfield-chain.bnbchain.org:443"</span>
+<span class="w">  </span><span class="nx">chainId</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">"greenfield_1017-1"</span>
 <span class="w">  </span><span class="cm">/*testnet</span>
 <span class="cm">  rpcAddr    = "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span>
 <span class="cm">  chainId    = "greenfield_5600-1"</span>
 <span class="cm">  */</span>
-<span class="w">  </span><span class="nx">privateKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">""</span>
+<span class="w">  </span><span class="nx">privateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span>
 <span class="p">)</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -3750,7 +3750,7 @@ $<span class="w"> </span>go<span class="w"> </span>mod<span class="w"> </span>in
 
 <span class="w">  </span><span class="nx">heightBefore</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">latestBlock</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Height</span>
 <span class="w">  </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Wait for block height: %d"</span><span class="p">,</span><span class="w"> </span><span class="nx">heightBefore</span><span class="p">)</span>
-<span class="w">  </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">WaitForBlockHeight</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">heightBefore</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">WaitForBlockHeight</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">heightBefore</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatalf</span><span class="p">(</span><span class="s">"unable to wait for block height, %v"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
 <span class="w">  </span><span class="p">}</span>
@@ -3843,7 +3843,7 @@ We can add the following code in main.go to query current head of the chain.</p>
 
 <span class="w">   </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Wair for tx: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">waitForTx</span><span class="p">.</span><span class="nx">TxResult</span><span class="p">.</span><span class="nx">String</span><span class="p">())</span>
 
-<span class="w">   </span><span class="nx">balance</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">GetAccountBalance</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">account2</span><span class="p">.</span><span class="nx">GetAddress</span><span class="p">().</span><span class="nx">String</span><span class="p">())</span>
+<span class="w">   </span><span class="nx">balance</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">GetAccountBalance</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">account2</span><span class="p">.</span><span class="nx">GetAddress</span><span class="p">().</span><span class="nx">String</span><span class="p">())</span>
 <span class="w"> </span><span class="s">```</span>
 
 <span class="s">Run the code to test the transfer of tBNB:</span>
@@ -3893,7 +3893,7 @@ We can add the following code in main.go to query current head of the chain.</p>
 <p>Bucket can be private or public. You can customize it with options.
 * VISIBILITY_TYPE_PUBLIC_READ
 * VISIBILITY_TYPE_PRIVATE
-</p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">chargedQuota</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">uint64</span><span class="p">(</span><span class="mi">10000000</span><span class="p">)</span>
+</p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">chargedQuota</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kt">uint64</span><span class="p">(</span><span class="mi">10000000</span><span class="p">)</span>
 <span class="w">  </span><span class="nx">visibility</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">storageTypes</span><span class="p">.</span><span class="nx">VISIBILITY_TYPE_PUBLIC_READ</span>
 <span class="w">  </span><span class="nx">opts</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateBucketOptions</span><span class="p">{</span><span class="nx">Visibility</span><span class="p">:</span><span class="w"> </span><span class="nx">visibility</span><span class="p">,</span><span class="w"> </span><span class="nx">ChargedQuota</span><span class="p">:</span><span class="w"> </span><span class="nx">chargedQuota</span><span class="p">}</span>
 
@@ -3912,7 +3912,7 @@ Uploading objects is composed of two parts: create and put.
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1">// create and put object</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">buffer</span><span class="w"> </span><span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span>
 <span class="w">  </span><span class="nx">line</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">`0123456789`</span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">objectSize</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">objectSize</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">WriteString</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span><span class="w"> </span><span class="nx">line</span><span class="p">))</span>
 <span class="w">  </span><span class="p">}</span>
 
@@ -3920,7 +3920,7 @@ Uploading objects is composed of two parts: create and put.
 
 <span class="w">  </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateObject"</span><span class="p">)</span>
 
-<span class="w">  </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">objectName</span><span class="p">,</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Len</span><span class="p">()),</span>
+<span class="w">  </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">objectName</span><span class="p">,</span><span class="w"> </span><span class="kt">int64</span><span class="p">(</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Len</span><span class="p">()),</span>
 <span class="w">    </span><span class="nx">bytes</span><span class="p">.</span><span class="nx">NewReader</span><span class="p">(</span><span class="nx">buffer</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">()),</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">PutObjectOptions</span><span class="p">{</span><span class="nx">TxnHash</span><span class="p">:</span><span class="w"> </span><span class="nx">txnHash</span><span class="p">})</span>
 <span class="w">  </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"PutObject"</span><span class="p">)</span>
 
@@ -3961,7 +3961,7 @@ Uploading objects is composed of two parts: create and put.
 <span class="w">  </span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"get object %s successfully, size %d \n"</span><span class="p">,</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">ObjectName</span><span class="p">,</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">Size</span><span class="p">)</span>
 <span class="w">  </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"GetObject"</span><span class="p">)</span>
 <span class="w">  </span><span class="nx">objectBytes</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">reader</span><span class="p">)</span>
-<span class="w">  </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Read data: %s\n"</span><span class="p">,</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">objectBytes</span><span class="p">))</span>
+<span class="w">  </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Read data: %s\n"</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">(</span><span class="nx">objectBytes</span><span class="p">))</span>
 </code></pre></div>
 <h4 id="52-update-object-visibility">5.2 Update object visibility<a class="headerlink" href="#52-update-object-visibility" title="Link to this section">¶</a></h4>
 <ul>
@@ -3991,7 +3991,7 @@ Uploading objects is composed of two parts: create and put.
 <span class="w">  </span><span class="c1">// delete object</span>
 <span class="w">  </span><span class="nx">delTx</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">bucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">objectName</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">DeleteObjectOption</span><span class="p">{})</span>
 <span class="w">  </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"DeleteObject"</span><span class="p">)</span>
-<span class="w">  </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">WaitForTx</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">delTx</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">WaitForTx</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">delTx</span><span class="p">)</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatalln</span><span class="p">(</span><span class="s">"txn fail"</span><span class="p">)</span>
 <span class="w">  </span><span class="p">}</span>
@@ -4172,7 +4172,7 @@ Uploading objects is composed of two parts: create and put.
       
         <script src="../../../../../../assets/js/superintern.js"></script>
       
-        <script src="../../../../../../assets/js/footer-menu.js"></script>
+        <script src="../../../../../../assets/js/footer-menu-v2.js"></script>
       
     
 <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>

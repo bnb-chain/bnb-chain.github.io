@@ -69,7 +69,7 @@
     
       <link rel="stylesheet" href="../../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../../../assets/style/components/footer.css">
+      <link rel="stylesheet" href="../../../../assets/style/components/footer-v2.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
@@ -3233,9 +3233,9 @@
 <h2 id="init-sdk-client">Init SDK client<a class="headerlink" href="#init-sdk-client" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">AWSKey</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-aws-key"</span>
-<span class="w">    </span><span class="nx">AWSSecret</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-aws-secret"</span>
-<span class="w">    </span><span class="nx">Region</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">"us-east-1"</span>
+<span class="w">    </span><span class="nx">AWSKey</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-aws-key"</span>
+<span class="w">    </span><span class="nx">AWSSecret</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-aws-secret"</span>
+<span class="w">    </span><span class="nx">Region</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">"us-east-1"</span>
 <span class="p">)</span>
 
 <span class="nx">cfg</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">LoadDefaultConfig</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span>
@@ -3248,9 +3248,9 @@
 <p>For AWS S3, the initialization uses the AWS Key and AWS Secret to create an AWS S3 client to allow user interaction. The <code>Region</code> specifies the region where the user’s bucket is located.</p>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">RpcAddr</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span><span class="w"> </span><span class="c1">// Greenfield Testnet RPC Address</span>
-<span class="w">    </span><span class="nx">ChainId</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">"greenfield_5600-1"</span><span class="w"> </span><span class="c1">// Greenfield Testnet Chain ID</span>
-<span class="w">    </span><span class="nx">PrivateKey</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-private-key"</span>
+<span class="w">    </span><span class="nx">RpcAddr</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span><span class="w"> </span><span class="c1">// Greenfield Testnet RPC Address</span>
+<span class="w">    </span><span class="nx">ChainId</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">"greenfield_5600-1"</span><span class="w"> </span><span class="c1">// Greenfield Testnet Chain ID</span>
+<span class="w">    </span><span class="nx">PrivateKey</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-private-key"</span>
 <span class="p">)</span>
 <span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">primarySP</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">NewFromConfig</span><span class="p">(</span><span class="nx">ChainId</span><span class="p">,</span><span class="w"> </span><span class="nx">RpcAddr</span><span class="p">,</span><span class="w"> </span><span class="nx">PrivateKey</span><span class="p">)</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"NewFromConfig"</span><span class="p">)</span>
@@ -3267,10 +3267,10 @@
 <h2 id="create-bucket">Create bucket<a class="headerlink" href="#create-bucket" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">CreateBucketInput</span><span class="p">{</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">CreateBucketInput</span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="p">})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateBucket"</span><span class="p">)</span>
@@ -3278,17 +3278,17 @@
 <p>In AWS S3, the <code>CreateBucket</code> method is called with a configuration object specifying the bucket name. The operation is straightforward, reflecting S3’s cloud storage focus, where the primary concern is the creation and management of storage containers in the cloud.</p>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">primarySP</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateBucketOptions</span><span class="p">{})</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">primarySP</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateBucketOptions</span><span class="p">{})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateBucket"</span><span class="p">)</span>
 </code></pre></div>
 <p>For Greenfield, the <code>CreateBucket</code> method also requires a bucket name but includes additional parameters like <code>primarySP</code>, which is obtained during client initialization. The <code>primarySP</code> plays a crucial role in executing and storing corresponding bucket data, indicating a more complex interaction pattern likely due to the blockchain-based nature of Greenfield.</p>
 <h2 id="list-buckets">List buckets<a class="headerlink" href="#list-buckets" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
 <span class="nx">bucketsList</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">ListBuckets</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">ListBucketsInput</span><span class="p">{})</span>
@@ -3299,7 +3299,7 @@
 </code></pre></div>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
 <span class="nx">bucketsList</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">ListBuckets</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">ListBucketsOptions</span><span class="p">{})</span>
@@ -3312,31 +3312,31 @@
 <h2 id="delete-bucket">Delete bucket<a class="headerlink" href="#delete-bucket" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteBucketInput</span><span class="p">{</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteBucketInput</span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="p">})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"Delete Bucket"</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">DeleteBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">DeleteBucketOption</span><span class="p">{})</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">DeleteBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">DeleteBucketOption</span><span class="p">{})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"Delete Bucket"</span><span class="p">)</span>
 </code></pre></div>
 <p>The process of deleting a bucket in both AWS S3 and Greenfield is essentially identical, allowing users to easily delete a bucket by simply using its name.</p>
 <h2 id="create-object">Create object<a class="headerlink" href="#create-object" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">PutObjectInput</span><span class="p">{</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">PutObjectInput</span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">Key</span><span class="p">:</span><span class="w">    </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">ObjectKey</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">Body</span><span class="p">:</span><span class="w">   </span><span class="nx">file</span><span class="p">,</span>
@@ -3345,14 +3345,14 @@
 </code></pre></div>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
 <span class="p">)</span>
 
 <span class="nx">txnHash</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">CreateObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">ObjectKey</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateObjectOptions</span><span class="p">{})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateObject"</span><span class="p">)</span>
 
-<span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">ObjectKey</span><span class="p">,</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">fileInfo</span><span class="p">.</span><span class="nx">Size</span><span class="p">()),</span>
+<span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">ObjectKey</span><span class="p">,</span><span class="w"> </span><span class="kt">int64</span><span class="p">(</span><span class="nx">fileInfo</span><span class="p">.</span><span class="nx">Size</span><span class="p">()),</span>
 <span class="nx">file</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">PutObjectOptions</span><span class="p">{</span><span class="nx">TxnHash</span><span class="p">:</span><span class="w"> </span><span class="nx">txnHash</span><span class="p">})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"PutObject"</span><span class="p">)</span>
 </code></pre></div>
@@ -3360,7 +3360,7 @@
 <h2 id="list-objects">List objects<a class="headerlink" href="#list-objects" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
 <span class="nx">objects</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">ListObjectsV2</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">ListObjectsV2Input</span><span class="p">{</span>
@@ -3373,7 +3373,7 @@
 </code></pre></div>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
 <span class="p">)</span>
 
 <span class="nx">objects</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">ListObjects</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">ListObjectsOptions</span><span class="p">{</span>
@@ -3387,11 +3387,11 @@
 <h2 id="delete-object">Delete object<a class="headerlink" href="#delete-object" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteObjectInput</span><span class="p">{</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteObjectInput</span><span class="p">{</span>
 <span class="w">    </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">Key</span><span class="p">:</span><span class="w">    </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">ObjectKey</span><span class="p">),</span>
 <span class="p">})</span>
@@ -3399,19 +3399,19 @@
 </code></pre></div>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
 <span class="p">)</span>
 
-<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">ObjectKey</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">DeleteObjectOption</span><span class="p">{})</span>
+<span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">ObjectKey</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">DeleteObjectOption</span><span class="p">{})</span>
 <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"Delete Object"</span><span class="p">)</span>
 </code></pre></div>
 <p>Deleting an object in both AWS S3 and Greenfield is fundamentally similar, enabling users to effortlessly remove an object by specifying both the bucket name and the object name.</p>
 <h2 id="get-object">Get Object<a class="headerlink" href="#get-object" title="Link to this section">¶</a></h2>
 <p><strong>S3</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
 <span class="p">)</span>
 
 <span class="nx">resp</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">GetObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">GetObjectInput</span><span class="p">{</span>
@@ -3422,8 +3422,8 @@
 </code></pre></div>
 <p><strong>Greenfield</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
 <span class="p">)</span>
 
 <span class="nx">resp</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">GetObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">ObjectKey</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">GetObjectOptions</span><span class="p">{})</span>
@@ -3453,14 +3453,14 @@
 <span class="c1">// The config information is consistent with the testnet of greenfield</span>
 <span class="c1">// You need to set the privateKey, bucketName, objectName and groupName to make the basic examples work well</span>
 <span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">RpcAddr</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span>
-<span class="w">    </span><span class="nx">ChainId</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">"greenfield_5600-1"</span>
-<span class="w">    </span><span class="nx">PrivateKey</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-private-key"</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"api.js"</span>
-<span class="w">    </span><span class="nx">UploadObjectKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
-<span class="w">    </span><span class="nx">DownloadPath</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
-<span class="w">    </span><span class="nx">UploadPath</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
+<span class="w">    </span><span class="nx">RpcAddr</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">"https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org:443"</span>
+<span class="w">    </span><span class="nx">ChainId</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">"greenfield_5600-1"</span>
+<span class="w">    </span><span class="nx">PrivateKey</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-private-key"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"api.js"</span>
+<span class="w">    </span><span class="nx">UploadObjectKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">DownloadPath</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
+<span class="w">    </span><span class="nx">UploadPath</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
 <span class="p">)</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -3468,7 +3468,7 @@
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"NewFromConfig"</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">// create bucket</span>
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">primarySP</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateBucketOptions</span><span class="p">{})</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">primarySP</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">CreateBucketOptions</span><span class="p">{})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateBucket"</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">// list buckets</span>
@@ -3493,10 +3493,10 @@
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateObject"</span><span class="p">)</span>
 
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">buf</span><span class="w"> </span><span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span>
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">// put object</span>
-<span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">UploadObjectKey</span><span class="p">,</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">fileInfo</span><span class="p">.</span><span class="nx">Size</span><span class="p">()),</span>
+<span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="nx">BucketName</span><span class="p">,</span><span class="w"> </span><span class="nx">UploadObjectKey</span><span class="p">,</span><span class="w"> </span><span class="kt">int64</span><span class="p">(</span><span class="nx">fileInfo</span><span class="p">.</span><span class="nx">Size</span><span class="p">()),</span>
 <span class="w">    </span><span class="nx">file</span><span class="p">,</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">PutObjectOptions</span><span class="p">{</span><span class="nx">TxnHash</span><span class="p">:</span><span class="w"> </span><span class="nx">txnHash</span><span class="p">})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"PutObject"</span><span class="p">)</span>
 
@@ -3520,7 +3520,7 @@
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"DownloadObject"</span><span class="p">)</span>
 <span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">outFile</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="nx">outFile</span><span class="p">,</span><span class="w"> </span><span class="nx">reader</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="nx">outFile</span><span class="p">,</span><span class="w"> </span><span class="nx">reader</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"DownloadObject"</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -3573,14 +3573,14 @@
 <span class="p">)</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">AWSKey</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-aws-key"</span>
-<span class="w">    </span><span class="nx">AWSSecret</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-aws-secret"</span>
-<span class="w">    </span><span class="nx">Region</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">"us-east-1"</span>
-<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
-<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">"mock-object-name"</span>
-<span class="w">    </span><span class="nx">UploadObjectKey</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
-<span class="w">    </span><span class="nx">DownloadPath</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
-<span class="w">    </span><span class="nx">UploadPath</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
+<span class="w">    </span><span class="nx">AWSKey</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-aws-key"</span>
+<span class="w">    </span><span class="nx">AWSSecret</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-aws-secret"</span>
+<span class="w">    </span><span class="nx">Region</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">"us-east-1"</span>
+<span class="w">    </span><span class="nx">BucketName</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-bucket-name"</span>
+<span class="w">    </span><span class="nx">ObjectKey</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">"mock-object-name"</span>
+<span class="w">    </span><span class="nx">UploadObjectKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"test-api.js"</span>
+<span class="w">    </span><span class="nx">DownloadPath</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
+<span class="w">    </span><span class="nx">UploadPath</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">"/Users/Desktop/s3test/"</span>
 <span class="p">)</span>
 
 <span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -3593,7 +3593,7 @@
 <span class="w">    </span><span class="nx">client</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">s3</span><span class="p">.</span><span class="nx">NewFromConfig</span><span class="p">(</span><span class="nx">cfg</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">// create bucket</span>
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">CreateBucketInput</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">CreateBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">CreateBucketInput</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="w">    </span><span class="p">})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"CreateBucket"</span><span class="p">)</span>
@@ -3610,7 +3610,7 @@
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"PutObject"</span><span class="p">)</span>
 <span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">file</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">PutObjectInput</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">PutObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">PutObjectInput</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="w">        </span><span class="nx">Key</span><span class="p">:</span><span class="w">    </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">UploadObjectKey</span><span class="p">),</span>
 <span class="w">        </span><span class="nx">Body</span><span class="p">:</span><span class="w">   </span><span class="nx">file</span><span class="p">,</span>
@@ -3641,16 +3641,16 @@
 
 <span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">outFile</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="nx">outFile</span><span class="p">,</span><span class="w"> </span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="nx">outFile</span><span class="p">,</span><span class="w"> </span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"DownloadObject"</span><span class="p">)</span>
 
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteObjectInput</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteObject</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteObjectInput</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="w">        </span><span class="nx">Key</span><span class="p">:</span><span class="w">    </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">ObjectKey</span><span class="p">),</span>
 <span class="w">    </span><span class="p">})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"Delete Object"</span><span class="p">)</span>
 
-<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteBucketInput</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">DeleteBucket</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">TODO</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">s3</span><span class="p">.</span><span class="nx">DeleteBucketInput</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">Bucket</span><span class="p">:</span><span class="w"> </span><span class="nx">aws</span><span class="p">.</span><span class="nx">String</span><span class="p">(</span><span class="nx">BucketName</span><span class="p">),</span>
 <span class="w">    </span><span class="p">})</span>
 <span class="w">    </span><span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="s">"Delete Bucket"</span><span class="p">)</span>
@@ -3830,7 +3830,7 @@
       
         <script src="../../../../assets/js/superintern.js"></script>
       
-        <script src="../../../../assets/js/footer-menu.js"></script>
+        <script src="../../../../assets/js/footer-menu-v2.js"></script>
       
     
 <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
