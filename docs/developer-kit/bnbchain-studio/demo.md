@@ -98,7 +98,7 @@ What bag init gives you out of the box
 | Protocol                     | Included       | Notes                                                                                          |
 |------------------------------|----------------|------------------------------------------------------------------------------------------------|
 | ERC-8183 (earn from jobs)    | ✅ auto        | Full buy/quote/fulfill/settle flow in studio.toml                                              |
-| x402 (pay for APIs)          | ✅ auto        | Only when --llm-provider pieverse-llm                                                          |
+| x402 (pay for APIs)          | ✅ auto        | Only when --llm-provider pieverse-llm and auto-topup is enabled                                |
 | ERC-8004 (on-chain identity) | ⚡ post-init   | Config is in chain_tools; register with bag erc8004 register after deploy                      |
 | Chain read tools             | ✅ auto        | 15 read-only tools: agent_info, job_status, token_balance, etc. all in chain_tools.py          |
 
@@ -114,7 +114,7 @@ $ cd ~/Desktop && uv run bag init weather-seller \
     --storage-provider local \
     --no-auto-topup
 
-- pieverse-llm — gets you x402 buyer + [payments.x402] section automatically
+- pieverse-llm — gets you x402 buyer + [payments.x402] section (only when auto-topup is enabled)
 - bsc-testnet — safe defaults for the weather-seller walkthrough
 - local storage — skip Pinata for now; upgrade to pinata before public launch
 - --no-auto-topup — you control when wallet is funded
