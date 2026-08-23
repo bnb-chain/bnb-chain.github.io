@@ -111,7 +111,7 @@ erc8183_app = create_erc8183_app(on_job=execute_job, prefix="")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await erc8183_app.state.startup()
+    erc8183_app.state.startup()  # returns the poll-loop Task — do not await it
     yield
 
 app = FastAPI(lifespan=lifespan)

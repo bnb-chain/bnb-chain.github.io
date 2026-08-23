@@ -155,7 +155,7 @@ Buyer                    Layer B (Service)              Layer A (Agent)         
 
 ## Further reading
 
-- [BNB Agent SDK architecture](../bnbagent-sdk/architecture.md) — protocol module system
+- [BNB Agent SDK architecture](../bnbagent-sdk/architecture.md) — protocol subpackage layout
 - [GitHub — architecture.md](https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/design/architecture.md) — full design document
 - [GitHub — decisions.md](https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/design/decisions.md) — decision records
 

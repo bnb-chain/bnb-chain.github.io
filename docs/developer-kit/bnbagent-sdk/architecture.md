@@ -11,8 +11,8 @@ to start.
 ## Bird's Eye View
 
 BNB Agent SDK is a Python toolkit for building **on-chain AI agents** on
-BNB Chain. It provides wallet management, a plugin module system, off-chain
-storage abstraction, and built-in support for the following protocols:
+BNB Chain. It provides wallet management, independent protocol subpackages,
+off-chain storage abstraction, and built-in support for the following protocols:
 
 - **ERC-8004** — On-chain identity registry for AI agents (register, discover,
   resolve endpoints).
@@ -26,36 +26,29 @@ storage abstraction, and built-in support for the following protocols:
     dispute window is implicit approval; a client can raise a dispute
     that the whitelisted voters resolve by `voteReject` reaching quorum.
 
-The SDK is organized as a **plugin system**: each protocol is a self-contained
-module that can be used independently or composed via the `BNBAgent` facade.
-New protocols can be added as modules without modifying the SDK core.
+The SDK is organized as **independent subpackages**: each protocol is
+self-contained and imported directly. There is no central facade or registry —
+callers compose the pieces they need.
 Wallet signing and off-chain storage are abstracted behind provider interfaces,
 making the SDK backend-agnostic.
 
 ```
-                    ┌─────────────┐
-                    │  BNBAgent   │  optional facade (main.py)
-                    │  from_env() │
-                    └──────┬──────┘
-                           │ discovers & initializes
-              ┌────────────┼────────────┐
-              │            │            │
-        ┌─────▼─────┐ ┌───▼────┐ ┌────▼─────┐
-        │  erc8004  │ │  erc8183  │ │ wallets  │
-        │  Identity │ │  v1    │ │ Signing  │
-        └─────┬─────┘ └───┬────┘ └────┬─────┘
-              │           │           │
-              └────┬──────┘           │
-                   │                  │
-            ┌──────▼──────┐    ┌──────▼──────┐
-            │    core     │    │ storage_    │
-            │ (infra)     │    │ providers   │
-            └─────────────┘    └─────────────┘
+        ┌───────────┐ ┌───────────┐ ┌───────────┐
+        │  erc8004  │ │  erc8183  │ │  wallets  │
+        │ Identity  │ │    v1     │ │  Signing  │
+        └─────┬─────┘ └─────┬─────┘ └─────┬─────┘
+              │             │             │
+              └──────┬──────┘             │
+                     │                    │
+              ┌──────▼──────┐      ┌──────▼──────┐
+              │    core     │      │   storage   │
+              │  (infra)    │      │  providers  │
+              └─────────────┘      └─────────────┘
 ```
 
 Arrows point **downward** — upper layers depend on lower layers, never the
 reverse. `erc8183` depends on `erc8004` (for agent discovery). Both protocol
-modules depend on `core` for transaction management.
+subpackages depend on `core` for transaction management.
 
 ## Code Map
 
@@ -64,19 +57,16 @@ modules depend on `core` for transaction management.
 | File | Purpose |
 |------|---------|
 | `__init__.py` | Tier 1 public API (re-exports from subpackages) |
-| `main.py` | `BNBAgent` — optional high-level facade over the module system |
-| `config.py` | `BNBAgentConfig`, `NetworkConfig`, `NETWORKS` registry, `resolve_network()` |
+| `config.py` | `NetworkConfig`, `NETWORKS` registry, `resolve_network()` |
 | `constants.py` | Global constants (`SCAN_API_URL`) |
 | `exceptions.py` | `BNBAgentError` hierarchy |
 
 ### `bnbagent/core/` — Internal Infrastructure
 
-Not part of the public API. Provides shared plumbing for protocol modules.
+Not part of the public API. Provides shared plumbing for the protocol subpackages.
 
 | File | Purpose |
 |------|---------|
-| `module.py` | `BNBAgentModule` ABC and `ModuleInfo` dataclass |
-| `registry.py` | `ModuleRegistry` — discovery (built-in + entry points), dependency validation, topological initialization |
 | `contract_mixin.py` | `ContractClientMixin` — shared base for `CommerceClient`, `RouterClient`, `PolicyClient`, `MinimalERC20Client` (tx signing, nonce management, retry with backoff) |
 | `nonce_manager.py` | `NonceManager` — per-account thread-safe nonce tracking with chain re-sync |
 | `multicall.py` | `multicall_read()` — Multicall3 batch view helper |
@@ -91,7 +81,6 @@ Not part of the public API. Provides shared plumbing for protocol modules.
 | `contract.py` | `ContractInterface` — low-level web3 contract calls |
 | `models.py` | `AgentEndpoint` dataclass |
 | `constants.py` | `get_erc8004_config()` — per-network contract addresses |
-| `module.py` | `ERC8004Module` plugin |
 
 ### `bnbagent/erc8183/` — ERC-8183 Protocol
 
@@ -157,7 +146,7 @@ services; no live chain calls in CI.
 
 ```python
 from bnbagent import (
-    BNBAgent, BNBAgentConfig, NetworkConfig, BNBAgentError,
+    NetworkConfig, BNBAgentError,
     ERC8004Agent, AgentEndpoint,
     WalletProvider, EVMWalletProvider,
     ERC8183Client, JobStatus, Verdict,
@@ -176,28 +165,6 @@ from bnbagent.erc8183.config import ERC8183Config
 from bnbagent.storage import LocalStorageProvider, IPFSStorageProvider
 ```
 
-## Module System
-
-The SDK uses a plugin architecture. Every protocol is a `BNBAgentModule`
-subclass discovered and managed by `ModuleRegistry`.
-
-**Lifecycle:**
-
-1. `discover()` — imports built-in modules (`erc8004`, `erc8183`) + scans
-   `bnbagent.modules` entry-point group for third-party plugins
-2. `validate_dependencies()` — ensures all declared dependencies are present
-3. `_topological_sort()` — orders modules so dependencies initialize first
-4. `initialize_all(config)` — calls `module.initialize()` in order
-5. `shutdown_all()` — cleanup in reverse order
-
-**Extending:** implement `BNBAgentModule`, expose a `create_module()` factory,
-and register via `pyproject.toml` entry points:
-
-```toml
-[project.entry-points."bnbagent.modules"]
-my_module = "my_package:create_module"
-```
-
 ## Configuration
 
 ```
@@ -207,10 +174,8 @@ NetworkConfig (NETWORKS dict in config.py)
 
 resolve_network(name) + env var overrides
   ↓ (clients assert w3.eth.chain_id == nc.chain_id at init — wrong RPC → ValueError)
-BNBAgentConfig
-  ├── wallet_provider  (explicit or auto-wrapped from private_key)
-  ├── settings         (general key-value)
-  └── modules          (namespaced: {"erc8183": {"commerce_address": "<override>"}})
+ERC8183Config
+  └── wallet_provider  (explicit or auto-wrapped from private_key)
 ```
 
 **Environment variable overrides** (module-scoped):
@@ -233,7 +198,7 @@ name), env overrides are **not** applied — the object is used as-is.
 Commerce settlement assets are resolved at runtime from the deployed kernel
 via `ERC8183Client` — not duplicated in this documentation.
 
-Both `BNBAgentConfig` and `ERC8183Config` support the convenience pattern:
+`ERC8183Config` supports the convenience pattern:
 pass `private_key` + `wallet_password` and the config auto-wraps them into
 an `EVMWalletProvider`, then **clears both the plaintext key and password**
 from the config object (the provider keeps its own password copy).
@@ -245,9 +210,6 @@ These properties hold across the codebase and should be preserved:
 - **No plaintext secrets in config after construction.** `__post_init__()` wraps
   `private_key` into a `WalletProvider` and zeros both the `private_key` and
   `wallet_password` string fields (the provider retains its own password copy).
-- **Modules never import each other directly.** Inter-module communication
-  goes through the registry or shared config. Module dependencies are declared
-  in `ModuleInfo.dependencies` and enforced at initialization.
 - **`ContractClientMixin` prefers `wallet_provider` over raw `private_key`.**
 - **Storage providers are async.** Synchronous callers use `upload_sync()`
   to avoid blocking the event loop.
@@ -335,14 +297,14 @@ BNBAgentError
   multisig, or MPC signers.
 - **Custom StorageProvider** — implement the `StorageProvider` ABC for
   alternative backends (S3, Arweave, etc.).
-- **Custom Module** — extend `BNBAgentModule` and register via entry points
-  to add new protocol support without modifying the SDK.
 
 ## Dependencies
 
 | Category | Packages |
 |----------|----------|
 | Core | `web3 ≥ 6.15`, `eth-account ≥ 0.10`, `python-dotenv ≥ 1.0`, `requests ≥ 2.31` |
-| Server (optional) | `fastapi ≥ 0.104`, `uvicorn ≥ 0.24` |
-| IPFS (optional) | `httpx ≥ 0.25` |
-| Dev | `pytest`, `pytest-mock`, `pytest-asyncio`, `ruff` |
+| `examples` (extra) | `fastapi ≥ 0.104`, `uvicorn ≥ 0.24`, `python-dotenv ≥ 1.0`, `aiosqlite ≥ 0.19`, `ddgs ≥ 6.0` |
+| `ipfs` (extra) | `httpx ≥ 0.25` |
+| `dev` (extra) | `pytest ≥ 7.4`, `pytest-mock ≥ 3.11`, `pytest-asyncio ≥ 0.23`, `ruff ≥ 0.4`, `httpx ≥ 0.25` |
+
+The extras are exactly `examples`, `ipfs`, and `dev` — there is no `server` extra.

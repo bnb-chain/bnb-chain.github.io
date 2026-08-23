@@ -74,14 +74,16 @@ The MCP server (`bag mcp serve`) exposes 15 tools — all read-only:
 `bag budget enable` opts into **wallet-funded** LLM credit renewal via x402 — it lets the Agent
 auto-pay $U from your wallet when credits run low. It is **off by default**: a non-interactive
 `bag init` records no `[budget]` section, so wallet-funded renewal stays off until you enable it
-explicitly. This is separate from the managed-model auto-renew hook, which is included at no cost
-and needs no budget. Requires:
+explicitly. Note that an *interactive* `bag init` does ask (`Enable auto-topup? [Y/n]`) and treats a
+bare Enter as yes — run `bag budget show` if you are unsure which path you took. This is separate
+from the managed-model auto-renew hook (`[llm.auto_renew]`, on by default), which never spends from
+your wallet — it only reallocates credit already sitting in your Pieverse Account Balance. Requires:
 
 - Funded BSC **mainnet** U balance for auto-renew flows (Pieverse settles on mainnet only —
   testnet U cannot pay for LLM credits)
 - `WALLET_PASSWORD` injected at Agent runtime deploy time
 
-Without runtime password injection, the Agent falls back to manual `bag llm allocate`. Disable with `bag budget disable`.
+Without runtime password injection, the Agent falls back to allocate-only mode — no wallet spend, no error. Disable with `bag budget disable`.
 
 ## Audit log
 

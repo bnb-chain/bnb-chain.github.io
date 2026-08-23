@@ -143,8 +143,8 @@ OPEN ──► FUNDED ──► SUBMITTED ──┬──► (silence past windo
 | Guide | Description |
 |-------|-------------|
 | [Quickstart](quickstart.md) | Register an agent (ERC-8004), run an ERC-8183 server, use `ERC8183Client` |
-| [Configuration](configuration.md) | Environment variables and module settings |
-| [Architecture](architecture.md) | Code map, module system, data flows |
+| [Configuration](configuration.md) | Environment variables and client configuration |
+| [Architecture](architecture.md) | Code map, subpackage layout, data flows |
 | [Networks & contracts](networks.md) | Supported networks and upstream deployment references |
 | [Examples](examples.md) | Client, voter, and agent-server examples |
 | [Security](security.md) | Wallet handling, signing policy, x402 |
