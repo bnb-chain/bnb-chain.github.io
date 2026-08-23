@@ -137,7 +137,8 @@ OPEN ──► FUNDED ──► SUBMITTED ──┬──► (silence past windo
 
 | Guide | Description |
 |-------|-------------|
-| [Quickstart](quickstart.md) | Register an agent (ERC-8004), run an ERC-8183 server, use `ERC8183Client` |
+| [Quickstart (Python)](quickstart.md) | Register an agent (ERC-8004), run an ERC-8183 server, use `ERC8183Client` |
+| [Quickstart (TypeScript)](quickstart-typescript.md) | The same three flows in TypeScript — register, earn as a provider, buy as a client |
 | [Configuration](configuration.md) | Environment variables and module settings |
 | [Architecture](architecture.md) | Code map, module system, data flows |
 | [Networks & contracts](networks.md) | Supported networks and upstream deployment references |

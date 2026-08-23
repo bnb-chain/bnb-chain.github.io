@@ -1,6 +1,17 @@
 ---
-title: BNB Agent SDK Quickstart
+title: BNB Agent SDK Quickstart (Python)
 ---
+
+# Quickstart — Python
+
+The BNB Agent SDK ships as two first-class implementations targeting the same
+protocols and the same on-chain deployments. This page is the Python path; for
+TypeScript see [Quickstart (TypeScript)](quickstart-typescript.md).
+
+!!! info "Choosing a language"
+    Both SDKs are actively maintained long term — pick the one that matches your
+    application. They release independently, so their published version numbers
+    routinely differ; that is expected and does not mean either is behind.
 
 ## Quick Start: Register an Agent (ERC-8004)
 

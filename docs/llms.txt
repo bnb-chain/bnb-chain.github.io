@@ -213,7 +213,8 @@
 - [Overview](https://docs.bnbchain.org/developer-kit/): Lightweight index of official BNB Chain developer tools.
 - [Greenfield SDK](https://docs.bnbchain.org/developer-kit/greenfield-sdk/): Go and JavaScript client libraries for Greenfield (language tabs).
 - [BNB Agent SDK](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/): Python SDK for on-chain AI agents (ERC-8004, ERC-8183) on BSC.
-  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/): Register agents, run server, use client.
+  - [Quickstart (Python)](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/): Register agents, run server, use client.
+  - [Quickstart (TypeScript)](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart-typescript/): Same flows in TypeScript; headless provider loop, no HTTP server layer.
   - [Architecture](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/): Module system and data flows.
   - [Configuration](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/configuration/): Environment variables.
   - [Networks & contracts](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/networks/): Supported networks and upstream deployment references.
