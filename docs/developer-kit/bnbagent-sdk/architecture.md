@@ -109,14 +109,17 @@ High-level facade over three contracts. Most callers only touch `ERC8183Client`.
 | `negotiation.py` | `NegotiationHandler`, structured description schema, quote expiry |
 | `schema.py` | `DeliverableManifest`, `JobDescription`, `SCHEMA_VERSION` — on-chain description and off-chain deliverable JSON |
 | `constants.py` | `get_erc8183_config()` — per-network defaults |
-| `module.py` | `ERC8183Module` plugin |
+| `job_ops.py` | `ERC8183JobOps` — async wrapper over `ERC8183Client`; incremental scan for newly funded jobs; `submit_result` for deliverable submission. Also exports `funded_job_watcher` |
 
-### `bnbagent/erc8183/server/` — FastAPI Integration
+### HTTP serving — reference example, not SDK API
 
-| File | Purpose |
-|------|---------|
-| `routes.py` | `create_erc8183_app()` FastAPI factory; `ERC8183State`; `/erc8183/job/{id}`, `/erc8183/negotiate`, `/erc8183/status`, `/erc8183/health`; funded-job background poll loop when `on_job` is provided |
-| `job_ops.py` | `ERC8183JobOps` — async wrapper over `ERC8183Client`; incremental scan for newly funded jobs; `submit_result` for deliverable submission |
+The SDK is transport-agnostic and ships **no** FastAPI layer. The `create_erc8183_app()`
+factory, its routes, and the funded-job poll wiring live in the reference example at
+[`python/examples/agent-server/src/erc8183_server.py`](https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/agent-server) —
+copy that directory and own it.
+
+The SDK underneath provides only the headless primitives the example is built on:
+`ERC8183JobOps`, `funded_job_watcher`, `NegotiationHandler`, and `SlidingWindowLimiter`.
 
 ### `bnbagent/wallets/` — Wallet Providers
 
@@ -168,7 +171,7 @@ from bnbagent.erc8183 import (
     ERC8183Client, CommerceClient, RouterClient, PolicyClient,
     JobStatus, Verdict, Job,
 )
-from bnbagent.erc8183.server import create_erc8183_app, ERC8183JobOps
+from bnbagent.erc8183 import ERC8183JobOps, funded_job_watcher
 from bnbagent.erc8183.config import ERC8183Config
 from bnbagent.storage import LocalStorageProvider, IPFSStorageProvider
 ```
