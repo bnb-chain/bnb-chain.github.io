@@ -43,7 +43,7 @@ bag llm status --full
 ### Register on-chain identity
 
 ```bash
-bag erc8004 register --endpoint https://my-service.example.com/apex/
+bag erc8004 register --endpoint https://my-agent.example.com
 bag erc8004 show
 ```
 
@@ -66,9 +66,8 @@ bag doctor
 
 ```bash
 bag deploy prepare
-bag deploy prepare --include-service-preflight   # opt-in EC2 IAM simulation
 bag deploy agent
-bag deploy package                               # Layer B zip → dist/
+bag deploy package                               # build the deploy artifact → dist/
 bag deploy verify --endpoint https://my-service.example.com
 bag deploy status
 ```
@@ -99,17 +98,9 @@ Cross-layer commands (`doctor`, `scan`, `erc8004 register`) operate on whichever
 
 AgentCore runtime names must match `^[A-Za-z][A-Za-z0-9]{0,22}$` (no `-`, `_`, `.`). `bag doctor` validates `agentcore/agentcore.json` names and fails on violations.
 
-## Flat imports in emitted code
-
-Emitted `app/agent/` and `app/service/` use **flat** (top-level) imports because AgentCore runs `main.py` as a top-level module:
-
-```python
-from managed_model import X      # correct
-from .managed_model import X     # wrong — bag doctor warns
-```
-
 ## Further reference
 
-Full capability reference: [GitHub — reference.md](https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/reference.md)
+`bag --help` and `bag <group> --help` are the authoritative surface for the installed
+version.
 
 [← BNB Agent Studio overview](index.md)
