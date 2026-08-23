@@ -96,9 +96,9 @@ weatheragent/
         ├── sellerCore.ts        the work your agent sells  ← you edit this
         ├── signing.ts           fixed quote / verify / submit path
         ├── tools.ts             read-only chain tools for the LLM
-        ├── main.ts              A2A/X402 entrypoint
-        ├── mcpMain.ts           MCP-only entrypoint
-        └── dualMain.ts          combined A2A + MCP entrypoint
+        ├── unifiedMain.ts       A2A + X402 entrypoint (:9000)
+        ├── mcpMain.ts           MCP-only entrypoint (:8000/mcp)
+        └── dualMain.ts          A2A-native + tunneled /mcp (AgentCore only)
 ```
 
 Ordinary TypeScript that you own — edit, fork, or move it whenever you want.
