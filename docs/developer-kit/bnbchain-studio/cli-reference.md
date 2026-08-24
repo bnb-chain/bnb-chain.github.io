@@ -10,7 +10,7 @@ The `bag` CLI exposes 19 command groups. Run `bag --help` or `bag <group> --help
 
 | Group | Purpose | Key subcommands |
 |-------|---------|-----------------|
-| `init` | Scaffold a two-layer workspace | `bag init <name> [--framework adk] [--runtime agentcore] [--llm-provider pieverse-llm] [--network bsc-testnet] [--no-onboard] [--ide claude-code\|cursor\|both]` |
+| `init` | Scaffold a seller agent workspace | `bag init <name> [--runtime agentcore\|azure-foundry] [--llm-provider pieverse-llm] [--network bsc-testnet] [--wallet-kind evm-local\|twak\|altana] [--protocols A2A,MCP,X402] [--storage-provider local\|ipfs] [--no-onboard] [--ide claude-code\|cursor\|both]` |
 | `scan` | Detect project type + manifest | `bag scan` |
 | `recipe` | Print recipe code/files | `list` / `show` / `code` |
 | `skills` | Install IDE skills | `list` / `install --target {claude-code,cursor,both}` / `uninstall` |
