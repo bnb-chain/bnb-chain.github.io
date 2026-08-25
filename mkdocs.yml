@@ -369,9 +369,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.extra
 
-hooks:
-  - overrides/hooks/gen_llms_txt.py
-
 plugins:
   - search
   - mkdocs-video
