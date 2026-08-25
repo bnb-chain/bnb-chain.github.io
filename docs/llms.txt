@@ -1,0 +1,1 @@
+- [BNB Chain Documentation](https://docs.bnbchain.org/.llms-header/): BNB Chain is a high-performance, community-driven blockchain ecosystem.
