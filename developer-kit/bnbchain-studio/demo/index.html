@@ -2645,8 +2645,21 @@
 
 
 <div><h1 id="demo-weather-forecast-seller-end-to-end">Demo — weather-forecast seller (end to end)<a class="headerlink" href="#demo-weather-forecast-seller-end-to-end" title="Link to this section">¶</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">This walkthrough is out of date — use the Quickstart instead</p>
+<p>This page still documents the earlier <strong>Python, two-layer</strong> Studio (Layer A Agent +
+Layer B keyless Service, <code>main.py</code> / <code>service.py</code>, <code>npm i -g @aws/agentcore</code>). The
+shipped product is a <strong>TypeScript, single-runtime</strong> tool: see
+<strong><a href="../quickstart/">Quickstart</a></strong> and <a href="../architecture/">Architecture</a> for the current
+flow.</p>
+<p>It has not been rewritten because a faithful end-to-end walkthrough has to be
+<em>executed</em> to be trustworthy — every command output, wallet prompt, and deploy
+result verified against a real run — rather than adapted on paper. Rewriting it from
+inference would produce a confident-looking guide that does not work, which is worse
+than an openly flagged stale one.</p>
+<p>Kept for now only as a record of the earlier flow’s shape.</p>
+</div>
 <p>This walkthrough follows the full BNB Agent Studio path for a single example: a <strong>weather-forecast seller</strong> on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.</p>
-<p>Commands and behavior match the <a href="https://github.com/bnb-chain/bnbagent-studio">bnbagent-studio</a> repository — see the <a href="https://github.com/bnb-chain/bnbagent-studio#-example-a-weather-forecast-seller-end-to-end">weather seller example</a> in the README for the canonical reference.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this section">¶</a></h2>
 <table>
 <thead>
@@ -3044,7 +3057,7 @@ $ cd ~/Desktop/weather-seller/app/agent &amp;&amp; uv run bag erc8004 register -
   | description | Weather forecasts on demand — paid via ERC-8183                                |
   | protocol    | ERC8183                                                                        |
   | endpoint    | http://localhost:8003/apex/ (update after deploy)                              |
-  | registry    | See [Networks &amp; contracts](../../bnbagent-sdk/networks.md) for deployment refs |
+  | registry    | See [Networks &amp; contracts](../bnbagent-sdk/networks.md) for deployment refs |
 
   Remaining items
 
@@ -3223,7 +3236,7 @@ Pending (blocked on AWS):
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 21, 2026 09:53:49 UTC">August 21, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 18:17:43 UTC">August 23, 2026</span>
   </span>
 
     

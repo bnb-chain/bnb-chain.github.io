@@ -1611,10 +1611,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#package-relative-imports" class="md-nav__link">
+  <a href="#generated-code-will-not-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Package-relative imports
+        Generated code will not build
       
     </span>
   </a>
@@ -1633,10 +1633,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#agentcore-not-found-or-wrong-binary" class="md-nav__link">
+  <a href="#wrong-node-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        agentcore not found or wrong binary
+        Wrong Node version
       
     </span>
   </a>
@@ -1644,10 +1644,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#service-not-picking-up-funded-jobs" class="md-nav__link">
+  <a href="#funded-jobs-are-not-being-picked-up" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Service not picking up funded jobs
+        Funded jobs are not being picked up
       
     </span>
   </a>
@@ -2484,10 +2484,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#package-relative-imports" class="md-nav__link">
+  <a href="#generated-code-will-not-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Package-relative imports
+        Generated code will not build
       
     </span>
   </a>
@@ -2506,10 +2506,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#agentcore-not-found-or-wrong-binary" class="md-nav__link">
+  <a href="#wrong-node-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        agentcore not found or wrong binary
+        Wrong Node version
       
     </span>
   </a>
@@ -2517,10 +2517,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#service-not-picking-up-funded-jobs" class="md-nav__link">
+  <a href="#funded-jobs-are-not-being-picked-up" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Service not picking up funded jobs
+        Funded jobs are not being picked up
       
     </span>
   </a>
@@ -2706,35 +2706,31 @@
 </code></pre></div>
 <h2 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Link to this section">¶</a></h2>
 <h3 id="bag-doctor-reports-network-drift"><code>bag doctor</code> reports network drift<a class="headerlink" href="#bag-doctor-reports-network-drift" title="Link to this section">¶</a></h3>
-<p><code>[network].default</code> must agree between <code>app/agent/studio.toml</code> and <code>app/service/studio.toml</code>.</p>
+<p><code>[network].default</code> in <code>app/agent/studio.toml</code> must match the network your wallet and
+deploy target expect.</p>
 <div class="highlight"><pre><span></span><code>bag<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>network.default<span class="w"> </span>bsc-testnet<span class="w"> </span>--project-root<span class="w"> </span>app/agent
-<span class="c1"># mirrors to service automatically</span>
 </code></pre></div>
 <h3 id="provider-address-mismatch">Provider address mismatch<a class="headerlink" href="#provider-address-mismatch" title="Link to this section">¶</a></h3>
 <p><code>[wallet].address</code> (agent) and <code>[provider].address</code> (service) must match.</p>
 <div class="highlight"><pre><span></span><code>bag<span class="w"> </span>wallet<span class="w"> </span>show
 bag<span class="w"> </span>doctor<span class="w">   </span><span class="c1"># re-check sync</span>
 </code></pre></div>
-<h3 id="package-relative-imports">Package-relative imports<a class="headerlink" href="#package-relative-imports" title="Link to this section">¶</a></h3>
-<p>AgentCore runs <code>main.py</code> as a top-level module. Use flat imports:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">signing</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote</span>    <span class="c1"># correct</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.signing</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote</span>   <span class="c1"># wrong</span>
-</code></pre></div>
-<p><code>bag doctor</code> warns on remaining package-relative imports.</p>
+<h3 id="generated-code-will-not-build">Generated code will not build<a class="headerlink" href="#generated-code-will-not-build" title="Link to this section">¶</a></h3>
+<p>The generated project is a pnpm workspace. Make sure Corepack and pnpm 10 are active,
+then reinstall from the workspace root before re-running <code>bag dev</code>.</p>
 <h3 id="agentcore-runtime-name-invalid">AgentCore runtime name invalid<a class="headerlink" href="#agentcore-runtime-name-invalid" title="Link to this section">¶</a></h3>
 <p>Runtime names must match <code>^[A-Za-z][A-Za-z0-9]{0,22}$</code>. No hyphens, underscores, or dots. Re-run <code>agentcore configure</code> with a valid name if <code>bag doctor</code> fails.</p>
-<h3 id="agentcore-not-found-or-wrong-binary"><code>agentcore</code> not found or wrong binary<a class="headerlink" href="#agentcore-not-found-or-wrong-binary" title="Link to this section">¶</a></h3>
-<div class="highlight"><pre><span></span><code>which<span class="w"> </span>-a<span class="w"> </span>agentcore
-node<span class="w"> </span>--version<span class="w">    </span><span class="c1"># must be ≥ 20</span>
-npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@aws/agentcore
+<h3 id="wrong-node-version">Wrong Node version<a class="headerlink" href="#wrong-node-version" title="Link to this section">¶</a></h3>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>--version<span class="w">    </span><span class="c1"># must be &gt;= 22</span>
 </code></pre></div>
-<p>Ensure the npm CLI wins on PATH over any Python shim.</p>
-<h3 id="service-not-picking-up-funded-jobs">Service not picking up funded jobs<a class="headerlink" href="#service-not-picking-up-funded-jobs" title="Link to this section">¶</a></h3>
+<p>The AWS CLI is <strong>not</strong> required to deploy — it is used only by the fail-open, read-only
+AgentCore quota check in <code>bag deploy prepare</code>.</p>
+<h3 id="funded-jobs-are-not-being-picked-up">Funded jobs are not being picked up<a class="headerlink" href="#funded-jobs-are-not-being-picked-up" title="Link to this section">¶</a></h3>
 <ol>
-<li>Confirm both layers are running: <code>bag dev</code> or deployed equivalents</li>
-<li>Check <code>app/service/studio.toml</code> <code>[agent].runtime_arn</code> is set after Layer A deploy</li>
-<li>Verify <code>[payments.erc8183].poll_interval_seconds</code> and <code>auto_settle</code></li>
-<li>Probe health: <code>curl &lt;service-url&gt;/apex/health</code></li>
+<li>Confirm the runtime is up: <code>bag dev</code>, or <code>bag deploy status --provider &lt;target&gt;</code></li>
+<li>Verify <code>[payments.erc8183]</code> in <code>app/agent/studio.toml</code></li>
+<li>Probe the runtime: <code>curl &lt;endpoint&gt;/readiness</code></li>
+<li>Remember <code>settle</code> is manual — <code>bag erc8183 settle &lt;jobId&gt;</code></li>
 </ol>
 <h3 id="policyviolation-x402policyerror-at-runtime"><code>PolicyViolation</code> / <code>X402PolicyError</code> at runtime<a class="headerlink" href="#policyviolation-x402policyerror-at-runtime" title="Link to this section">¶</a></h3>
 <p>The wallet refused an EIP-712 signature. Check:</p>
@@ -2795,7 +2791,7 @@ bag<span class="w"> </span>llm<span class="w"> </span>activate<span class="w">  
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 19, 2026 05:02:39 UTC">June 19, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 18:17:43 UTC">August 23, 2026</span>
   </span>
 
     

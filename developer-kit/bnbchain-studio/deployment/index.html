@@ -1521,6 +1521,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-three-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three targets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1543,71 +1554,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#layer-a-agent-agentcore" class="md-nav__link">
+  <a href="#operating-a-deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer A — Agent (AgentCore)
+        Operating a deployment
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Layer A — Agent (AgentCore)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keystore-posture" class="md-nav__link">
     <span class="md-ellipsis">
       
         Keystore posture
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layer-b-service-ec2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layer B — Service (EC2)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#readiness-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Readiness checks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-deploy-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Post-deploy verification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operations
       
     </span>
   </a>
@@ -1630,6 +1591,17 @@
     <span class="md-ellipsis">
       
         Local mirror
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earning-after-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Earning after deploy
       
     </span>
   </a>
@@ -2406,6 +2378,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-three-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three targets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2428,71 +2411,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#layer-a-agent-agentcore" class="md-nav__link">
+  <a href="#operating-a-deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer A — Agent (AgentCore)
+        Operating a deployment
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Layer A — Agent (AgentCore)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keystore-posture" class="md-nav__link">
     <span class="md-ellipsis">
       
         Keystore posture
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layer-b-service-ec2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layer B — Service (EC2)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#readiness-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Readiness checks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-deploy-verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Post-deploy verification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operations
       
     </span>
   </a>
@@ -2515,6 +2448,17 @@
     <span class="md-ellipsis">
       
         Local mirror
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earning-after-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Earning after deploy
       
     </span>
   </a>
@@ -2613,106 +2557,136 @@
 
 
 <div><h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Link to this section">¶</a></h1>
-<p>A v1 seller deploys as <strong>two artifacts</strong> — Layer A (Agent) to AWS Bedrock AgentCore, Layer B (Service) to EC2/Fargate. Use the bundled IDE skills (<code>bnbagent-studio-use-aws-agentcore</code>, <code>bnbagent-studio-deploying-service-to-ec2</code>) for guided deploys, or run the commands below directly.</p>
-<p>On-chain deployments: <a href="https://github.com/bnb-chain/apex-contracts#deployments">apex-contracts#deployments</a>.</p>
+<p>A Studio project deploys as <strong>one runtime</strong> — the same process that holds the key and
+serves your selected faces. There is no second keyless artifact to ship.</p>
+<p>Every deploy <strong>explicitly selects a target</strong>. A recorded deployment is only ever offered
+as an explicit update; it is never used as a silent default.</p>
+<p>All cloud lifecycle mutations are delegated to the pinned
+<a href="https://www.npmjs.com/package/@bnbagent/deploy-cli"><code>@bnbagent/deploy-cli</code></a>. Studio does
+not shell out to <code>azd</code> or the Azure CLI, and the scaffold contains no <code>azure.yaml</code> or
+<code>infra/</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">You are provisioning real resources</p>
+<p>AWS and Azure deploys create resources in <strong>your own</strong> account, under permissions you
+review. Published IAM reference policies are provided as-is — scoping, costs, and
+security remain yours. Start on BSC testnet.</p>
+</div>
+<h2 id="the-three-targets">The three targets<a class="headerlink" href="#the-three-targets" title="Link to this section">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>What it is</th>
+<th>Key constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bnb</code></td>
+<td>Managed <strong>48-hour testnet</strong> trial</td>
+<td>Runs in the <strong>operator’s</strong> cloud, so signing material leaves your control. Use a throwaway wallet (<code>bag wallet new</code>) and never reuse it on mainnet. Disabled after expiry.</td>
+</tr>
+<tr>
+<td><code>aws</code></td>
+<td>AWS Bedrock AgentCore in your account</td>
+<td>Keystore injected via <strong>AWS Secrets Manager</strong> as <code>WALLET_KEYSTORE_JSON</code> — never in the code zip.</td>
+</tr>
+<tr>
+<td><code>azure</code></td>
+<td>Azure AI Foundry hosted agents</td>
+<td><strong>Container-only</strong>, and <strong>A2A scaffolds only</strong> — <code>bag init</code> and provider selection reject an MCP entrypoint for Foundry. Secrets injected through a Foundry <strong>CustomKeys</strong> connection.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this section">¶</a></h2>
 <table>
 <thead>
 <tr>
 <th>Requirement</th>
-<th>Notes</th>
+<th>Needed for</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AgentCore CLI</td>
-<td><code>npm i -g @aws/agentcore</code> (Node ≥ 20)</td>
+<td>Node.js ≥ 22</td>
+<td>everything</td>
 </tr>
 <tr>
-<td>AWS account</td>
-<td>You provision resources in your own account under IAM policies you review</td>
+<td>Bun 1.3+</td>
+<td>any deploy</td>
 </tr>
 <tr>
-<td><code>agentcore configure</code></td>
-<td>One-time setup — writes <code>agentcore/agentcore.json</code></td>
+<td>Corepack + pnpm 10</td>
+<td>the generated workspace</td>
 </tr>
 <tr>
-<td>IAM policies</td>
-<td>Reference configs: <a href="https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/guides/least-privilege-iam.md">least-privilege guide</a>, <a href="https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/guides/iam-policies.md">policy JSON</a></td>
+<td>Docker</td>
+<td>container paths only — for example a <code>twak</code> deployment, and Azure (container-only)</td>
+</tr>
+<tr>
+<td>AWS CLI</td>
+<td><strong>optional</strong>; used only by the fail-open, read-only AgentCore quota check in <code>bag deploy prepare</code></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Deploying provisions AWS resources in your account. Review <a href="https://github.com/bnb-chain/bnbagent-studio/blob/main/DISCLAIMER.md">DISCLAIMER.md</a> before first deploy.</p>
-</blockquote>
 <h2 id="deploy-flow">Deploy flow<a class="headerlink" href="#deploy-flow" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>prepare<span class="w">                       </span><span class="c1"># readiness sweep (BLOCKED/CRITICAL/WARNING)</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>agent<span class="w">                         </span><span class="c1"># Layer A → AgentCore</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>package<span class="w">                       </span><span class="c1"># Layer B zip → dist/&lt;name&gt;-service-&lt;sha&gt;.zip</span>
-<span class="c1"># upload + systemd on EC2 (see deploying-service-to-ec2 skill)</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>verify<span class="w"> </span>--endpoint<span class="w"> </span>&lt;public-url&gt;<span class="w">   </span><span class="c1"># probe layers + register ERC-8004 endpoint</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>status<span class="w">                        </span><span class="c1"># dashboard: liveness, inventory, cost estimate</span>
+<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>prepare<span class="w">                    </span><span class="c1"># readiness gates: storage, provider, tooling</span>
+bag<span class="w"> </span>deploy<span class="w"> </span>--provider<span class="w"> </span>bnb<span class="w">             </span><span class="c1"># or: aws | azure</span>
+bag<span class="w"> </span>deploy<span class="w"> </span>verify<span class="w"> </span>--provider<span class="w"> </span>bnb<span class="w">      </span><span class="c1"># reconcile ERC-8004 identity with the live endpoint</span>
+bag<span class="w"> </span>deploy<span class="w"> </span>status<span class="w"> </span>--provider<span class="w"> </span>bnb<span class="w">      </span><span class="c1"># liveness and inventory</span>
 </code></pre></div>
-<h2 id="layer-a-agent-agentcore">Layer A — Agent (AgentCore)<a class="headerlink" href="#layer-a-agent-agentcore" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>agent
+<p><code>bag deploy prepare</code> gates on storage, provider, and deploy-tooling readiness. <strong>Local
+deliverable storage fails readiness by design</strong> — switch to IPFS before deploying, since
+a local path is unreachable from a deployed runtime.</p>
+<p>For AWS, an inbound-auth step may be required before the first deploy:</p>
+<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>provision-cognito
 </code></pre></div>
-<ul>
-<li>Thin-wraps <code>agentcore deploy</code> (run <code>agentcore configure</code> first)</li>
-<li>Default <code>--secrets-mode secretsmanager</code> pushes keystore to AWS Secrets Manager as <code>WALLET_KEYSTORE_JSON</code> — <strong>never</strong> in the CodeZip</li>
-<li>Testnet-only <code>--secrets-mode envvars</code> inlines secrets in <code>agentcore.json</code> — refused on mainnet</li>
-<li>First deploy gates on explicit IAM risk acceptance (interactive or <code>--accept-risk</code>)</li>
-<li>Records <code>runtime_arn</code> in <code>app/service/studio.toml</code> <code>[agent]</code> section</li>
-</ul>
-<p><strong>Multi-environment:</strong> pass agentcore’s <code>--target</code> through: <code>bag deploy agent -- --target prod</code>. Studio records one target per workspace — deploying multiple targets overwrites recorded state.</p>
-<p><strong>Redeploy:</strong> every <code>bag deploy agent</code> re-runs <code>agentcore deploy</code> (CDK). First run is slow (~4–6 min); subsequent runs use cache.</p>
-<h3 id="keystore-posture">Keystore posture<a class="headerlink" href="#keystore-posture" title="Link to this section">¶</a></h3>
-<p>The encrypted keystore lives at workspace root <code>.studio/wallets/</code>, <strong>outside</strong> <code>app/agent/</code> (the AgentCore codeLocation). No packaging path — including a raw <code>agentcore deploy</code> — can bundle it. At deploy, it is injected via Secrets Manager.</p>
-<h2 id="layer-b-service-ec2">Layer B — Service (EC2)<a class="headerlink" href="#layer-b-service-ec2" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>package
+<h2 id="operating-a-deployment">Operating a deployment<a class="headerlink" href="#operating-a-deployment" title="Link to this section">¶</a></h2>
+<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>status<span class="w">  </span>--provider<span class="w"> </span>aws<span class="w">     </span><span class="c1"># liveness + resource inventory</span>
+bag<span class="w"> </span>deploy<span class="w"> </span>logs<span class="w">    </span>--provider<span class="w"> </span>aws<span class="w">     </span><span class="c1"># tail runtime logs</span>
+bag<span class="w"> </span>deploy<span class="w"> </span>info<span class="w">    </span>--provider<span class="w"> </span>azure<span class="w">   </span><span class="c1"># resolved deployment details</span>
+bag<span class="w"> </span>deploy<span class="w"> </span>destroy<span class="w"> </span>--provider<span class="w"> </span>aws<span class="w">     </span><span class="c1"># teardown</span>
 </code></pre></div>
-<p>Produces a zip rooted at <code>app/service/</code> (so <code>service.py</code> is at zip top level) plus a <code>.sha256</code> sidecar. Excludes:</p>
-<ul>
-<li><code>.venv/</code>, <code>__pycache__/</code>, <code>.git/</code>, <code>.studio/</code>, <code>dist/</code></li>
-<li><strong>All <code>.env*</code></strong> — the keyless host must not receive Agent secrets</li>
-</ul>
-<p>Hand the zip to the EC2 deploy skill. The Service reads the Agent runtime ARN from <code>app/service/studio.toml</code> <code>[agent].runtime_arn</code> and calls <code>InvokeAgentRuntime</code> for every signing operation.</p>
-<p><strong>Fast redeploy:</strong> Layer B supports code-only updates — <code>scp</code> + <code>systemctl restart</code> without full reprovision.</p>
-<h2 id="readiness-checks">Readiness checks<a class="headerlink" href="#readiness-checks" title="Link to this section">¶</a></h2>
-<p><code>bag deploy prepare</code> runs checks including:</p>
-<ul>
-<li><code>studio.toml</code> parseable on both layers</li>
-<li>AgentCore runtime name valid</li>
-<li>Flat imports (no package-relative imports in emitted code)</li>
-<li>Network and provider address sync between layers</li>
-<li>Legacy keystore inside <code>app/agent/</code> (warn only)</li>
-</ul>
-<p>Opt-in cross-layer check:</p>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>prepare<span class="w"> </span>--include-service-preflight
-</code></pre></div>
-<p>Simulates Layer B EC2 provisioning IAM actions via <code>iam:SimulatePrincipalPolicy</code> — surfaces permission issues before Agent deploy completes.</p>
-<h2 id="post-deploy-verification">Post-deploy verification<a class="headerlink" href="#post-deploy-verification" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>verify<span class="w"> </span>--endpoint<span class="w"> </span>https://my-service.example.com
-</code></pre></div>
-<ul>
-<li>Probes Layer A liveness via AgentCore</li>
-<li>Probes Layer B <code>/apex/health</code></li>
-<li>Registers the Service public URL as the ERC-8004 endpoint</li>
-</ul>
-<h2 id="operations">Operations<a class="headerlink" href="#operations" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>deploy<span class="w"> </span>status<span class="w">              </span><span class="c1"># liveness + resource inventory + cost estimate</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>status<span class="w"> </span>--no-probe<span class="w">   </span><span class="c1"># skip HTTP probes</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>logs<span class="w"> </span>--layer<span class="w"> </span>agent<span class="w">  </span><span class="c1"># CloudWatch tail</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>logs<span class="w"> </span>--layer<span class="w"> </span>service<span class="w">  </span><span class="c1"># SSH + journalctl</span>
-bag<span class="w"> </span>deploy<span class="w"> </span>destroy<span class="w">             </span><span class="c1"># dry-run teardown plan; --execute for Layer A only</span>
-</code></pre></div>
-<p><code>bag deploy destroy</code> prints Layer B teardown as <code>aws</code> CLI commands but <strong>never</strong> executes them — you run those manually.</p>
+<p><code>bag deploy --help</code> lists the full surface. <code>bag deploy agent</code> remains available as the
+agent-scoped form.</p>
+<h2 id="keystore-posture">Keystore posture<a class="headerlink" href="#keystore-posture" title="Link to this section">¶</a></h2>
+<p>The encrypted keystore lives at the workspace root in <code>.studio/wallets/</code>, <strong>outside</strong>
+<code>app/agent/</code> — the deploy <code>codeLocation</code>. No packaging path can bundle it into an
+artifact. It reaches a deployed runtime only through the selected provider’s delegated
+secret channel:</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Channel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aws</code></td>
+<td>AWS Secrets Manager (<code>WALLET_KEYSTORE_JSON</code>)</td>
+</tr>
+<tr>
+<td><code>azure</code></td>
+<td>Foundry CustomKeys connection</td>
+</tr>
+<tr>
+<td><code>bnb</code></td>
+<td>the operator’s managed secret store — material leaves your control</td>
+</tr>
+</tbody>
+</table>
+<p>An <strong>Altana</strong> deployment is different in kind: it sends only a budget- and time-bounded
+runtime session rather than a keystore. Keep the budget and expiry tight, and renew or
+revoke explicitly.</p>
 <h2 id="erc-8004-registration">ERC-8004 registration<a class="headerlink" href="#erc-8004-registration" title="Link to this section">¶</a></h2>
-<p>After deploy, buyers discover your agent via ERC-8004. <code>bag deploy verify</code> registers the endpoint, or run manually:</p>
-<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>erc8004<span class="w"> </span>register<span class="w"> </span>--endpoint<span class="w"> </span>https://my-service.example.com/apex/
-bag<span class="w"> </span>erc8004<span class="w"> </span>show
+<p>Buyers discover your agent on-chain. <code>bag deploy verify --provider &lt;target&gt;</code> reconciles
+the deployed endpoint with its ERC-8004 identity. The registry commands are also
+available directly:</p>
+<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>erc8004<span class="w"> </span>show
 </code></pre></div>
 <h2 id="local-mirror">Local mirror<a class="headerlink" href="#local-mirror" title="Link to this section">¶</a></h2>
-<p><code>bag dev</code> is the local mirror of the two-artifact deploy:</p>
+<p><code>bag dev</code> runs the same single runtime locally:</p>
 <table>
 <thead>
 <tr>
@@ -2722,20 +2696,33 @@ bag<span class="w"> </span>erc8004<span class="w"> </span>show
 </thead>
 <tbody>
 <tr>
-<td>Agent <code>:8080</code></td>
-<td>AgentCore runtime</td>
+<td>A2A on <code>:9000</code></td>
+<td>the runtime’s A2A face</td>
 </tr>
 <tr>
-<td>Service <code>:8003</code></td>
-<td>EC2 <code>/apex/*</code></td>
+<td>MCP on <code>:8000/mcp</code></td>
+<td>the runtime’s MCP face (not available on Azure)</td>
 </tr>
 <tr>
-<td><code>STORAGE_LOCAL_PATH</code></td>
-<td>S3 / IPFS</td>
+<td><code>/x402</code> on the same process</td>
+<td>the runtime’s x402 face</td>
+</tr>
+<tr>
+<td>local storage path</td>
+<td>IPFS</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../">← BNB Agent Studio overview</a></p></div>
+<h2 id="earning-after-deploy">Earning after deploy<a class="headerlink" href="#earning-after-deploy" title="Link to this section">¶</a></h2>
+<p>Buyers fund ERC-8183 jobs or pay an x402 request. The runtime verifies payment on-chain
+<em>before</em> doing paid work, submits the deliverable, and records an audit trail
+(<code>bag audit ls</code>).</p>
+<p>Settlement stays with the buyer, who chooses approve, reject, or dispute. Operator-side
+settle is manual:</p>
+<div class="highlight"><pre><span></span><code>bag<span class="w"> </span>erc8183<span class="w"> </span>settle<span class="w"> </span>&lt;jobId&gt;
+</code></pre></div>
+<hr>
+<p><a href="../">← BNB Agent Studio overview</a> · <a href="../architecture/">Architecture</a> · <a href="../security/">Security</a></p></div>
 
 
 
@@ -2756,7 +2743,7 @@ bag<span class="w"> </span>erc8004<span class="w"> </span>show
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 19, 2026 05:02:39 UTC">June 19, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 18:17:43 UTC">August 23, 2026</span>
   </span>
 
     
