@@ -27,6 +27,11 @@ title: BNB Agent SDK Configuration
 | `STORAGE_API_KEY` | If IPFSStorageProvider | — | JWT / API key for the pinning service. |
 | `STORAGE_GATEWAY_URL` | No | Pinata default | Custom IPFS gateway. |
 | `STORAGE_LOCAL_PATH` | No | `.agent-data` | Directory for local storage. |
+| `TURNKEY_API_PUBLIC_KEY` | If `WALLET_KIND=turnkey` | — | Turnkey P-256 API public key (dashboard → API keys). |
+| `TURNKEY_API_PRIVATE_KEY` | If `WALLET_KIND=turnkey` | — | Turnkey P-256 API private key. A client credential — never leaves this process. |
+| `TURNKEY_ORG_ID` | If `WALLET_KIND=turnkey` | — | Turnkey organization id (dashboard → settings). |
+| `TURNKEY_SIGN_WITH` | If `WALLET_KIND=turnkey` | — | The wallet account's Ethereum address (`0x` + 40 hex chars), not a Turnkey wallet id or private-key id. |
+| `TURNKEY_API_BASE_URL` | No | `https://api.turnkey.com` | Turnkey API host override. |
 
 Commerce settlement assets are resolved at runtime from the deployed kernel — not configured via env vars in these docs. See [Networks & contracts](networks.md) for where deployments are maintained upstream.
 

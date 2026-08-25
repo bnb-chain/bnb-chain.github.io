@@ -4,9 +4,22 @@ title: BNB Agent Studio Demo
 
 # Demo — weather-forecast seller (end to end)
 
-This walkthrough follows the full BNB Agent Studio path for a single example: a **weather-forecast seller** on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
+!!! danger "This walkthrough is out of date — use the Quickstart instead"
+    This page still documents the earlier **Python, two-layer** Studio (Layer A Agent +
+    Layer B keyless Service, `main.py` / `service.py`, `npm i -g @aws/agentcore`). The
+    shipped product is a **TypeScript, single-runtime** tool: see
+    **[Quickstart](quickstart.md)** and [Architecture](architecture.md) for the current
+    flow.
 
-Commands and behavior match the [bnbagent-studio](https://github.com/bnb-chain/bnbagent-studio) repository — see the [weather seller example](https://github.com/bnb-chain/bnbagent-studio#-example-a-weather-forecast-seller-end-to-end) in the README for the canonical reference.
+    It has not been rewritten because a faithful end-to-end walkthrough has to be
+    *executed* to be trustworthy — every command output, wallet prompt, and deploy
+    result verified against a real run — rather than adapted on paper. Rewriting it from
+    inference would produce a confident-looking guide that does not work, which is worse
+    than an openly flagged stale one.
+
+    Kept for now only as a record of the earlier flow's shape.
+
+This walkthrough follows the full BNB Agent Studio path for a single example: a **weather-forecast seller** on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
 
 ## Prerequisites
 
@@ -98,7 +111,7 @@ What bag init gives you out of the box
 | Protocol                     | Included       | Notes                                                                                          |
 |------------------------------|----------------|------------------------------------------------------------------------------------------------|
 | ERC-8183 (earn from jobs)    | ✅ auto        | Full buy/quote/fulfill/settle flow in studio.toml                                              |
-| x402 (pay for APIs)          | ✅ auto        | Only when --llm-provider pieverse-llm                                                          |
+| x402 (pay for APIs)          | ✅ auto        | Only when --llm-provider pieverse-llm and auto-topup is enabled                                |
 | ERC-8004 (on-chain identity) | ⚡ post-init   | Config is in chain_tools; register with bag erc8004 register after deploy                      |
 | Chain read tools             | ✅ auto        | 15 read-only tools: agent_info, job_status, token_balance, etc. all in chain_tools.py          |
 
@@ -114,7 +127,7 @@ $ cd ~/Desktop && uv run bag init weather-seller \
     --storage-provider local \
     --no-auto-topup
 
-- pieverse-llm — gets you x402 buyer + [payments.x402] section automatically
+- pieverse-llm — gets you x402 buyer + [payments.x402] section (only when auto-topup is enabled)
 - bsc-testnet — safe defaults for the weather-seller walkthrough
 - local storage — skip Pinata for now; upgrade to pinata before public launch
 - --no-auto-topup — you control when wallet is funded
@@ -431,7 +444,7 @@ $ cd ~/Desktop/weather-seller/app/agent && set -a && . ./.env.local && set +a &&
   | description | Weather forecasts on demand — paid via ERC-8183                                |
   | protocol    | ERC8183                                                                        |
   | endpoint    | http://localhost:8003/apex/ (update after deploy)                              |
-  | registry    | See [Networks & contracts](../../bnbagent-sdk/networks.md) for deployment refs |
+  | registry    | See [Networks & contracts](../bnbagent-sdk/networks.md) for deployment refs |
 
   Remaining items
 
