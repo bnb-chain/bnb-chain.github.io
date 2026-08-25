@@ -1383,3 +1383,196 @@ wallet = TurnkeyWalletProvider.from_env(expected_chain_id=97)
 
 # Use it anywhere a WalletProvider is accepted:
 from bnbag
+
+## BNB Chain
+> Source: https://docs.bnbchain.org/
+
+BNB Chain is a leading blockchain ecosystem designed to support the growing demands of the decentralized web (Web3). It offers speed, scalability, and affordability for developers and users. BNB Chain is composed of three blockchains: BNB Smart Chain (BSC), opBNB, and BNB Greenfield. Key features include Ethereum compatibility, a massive user base, the strongest ecosystem, a thriving DeFi ecosystem, community-driven growth, and diversified asset APIs. Use cases include DeFi, LSD and restaking, gaming and NFTs, DApps, data storage, and AI with blockchain technology. Quick start guides are available for BNB Smart Chain, opBNB, and BNB Greenfield.
+
+## Announcement
+> Source: https://docs.bnbchain.org/announce/
+
+Announcements for BNB Chain upgrades and network changes.
+
+- Pasteur Upgrade of BSC — 3 BEPs on BSC — 2026 Jul 21st
+- Token Recovery Tool: Phase 3 — Self-Service Recovery — 1 July 2026
+- BNB Beacon Chain Token Recovery Tool: Sunset Plan — 2026 Mar 4th
+- Mendel Upgrade of BSC — Nine BEPs on BSC Testnet/Mainnet — 2026 Feb 6th
+
+## Altai Upgrade of Greenfield
+> Source: https://docs.bnbchain.org/announce/altai-gnfd/
+
+Hardfork upgrade. Testnet on Sep 21, 2024 at block 12,513,708; Mainnet on Sep 23, 2024 at block 11,917,971. Validators should upgrade to greenfield v1.9.1. Storage providers need no action. A hotfix release addresses MetaMask extension compatibility issues with EIP712 signatures; Go-SDK v1.7.3 and Js-SDK v2.2.0-alpha are recommended.
+
+## Bohr Upgrade of BSC
+> Source: https://docs.bnbchain.org/announce/bohr-bsc/
+
+Hardfork. Testnet on 2024-08-20; Mainnet on 2024-09-26. Requires BSC node v1.4.14. Includes BEP-341 (validators can produce consecutive blocks), BEP-402 (complete missing fields in block header to generate signature), BEP-404 (clear miner history when switching validator sets), and BEP-410 (add agent for validators). BEP-341 takes effect after a governance vote.
+
+## Feynman Upgrade of BSC
+> Source: https://docs.bnbchain.org/announce/feynman-bsc/
+
+Hardfork. Testnet March 11 2024; Mainnet April 18 2024. Requires BSC node v1.3.13. Advances BNB Chain Fusion (BEP-333). Deploys BEP-294 (triple voting power for BSC validators), BEP-297 (governance functionality, activated after 10M BNB migrated), and BEP-299 (token migration after Beacon Chain halts). Cross-chain re-delegation will be enabled after governance opening.
+
+## Final Sunset Hardfork of BC Testnet
+> Source: https://docs.bnbchain.org/announce/final-sunset-bc-testnet/
+
+Hardfork on August 1 2024 6:00:00 AM UTC. BC node must be upgraded to v0.10.23 and app.toml should include FinalSunsetHeight = 56218686. After Final Sunset, cross-chain communication between Beacon Chain and BSC completely stops; validators will shut down and the chain will no longer accept transactions or propose blocks.
+
+## Fjord Upgrade of opBNB
+> Source: https://docs.bnbchain.org/announce/fjord-opbnb/
+
+Hardfork. Testnet Sep 10 2024; Mainnet Sep 24 2024. Requires op-node and op-geth v0.5.0. Changes L1 fee calculation to use a FastLZ-based compression estimator. Adds operator flags such as --wait-node-sync and --compression-algo.
+
+## Haber Upgrade of BSC
+> Source: https://docs.bnbchain.org/announce/haber-bsc/
+
+Hardfork. Testnet May 29 2024; Mainnet June 20 2024. Requires BSC node v1.4.8. Adds BEP-381 precompile for secp256r1 curve at address 0x100 and BEP-336 enabling blob-carrying transactions.
+
+## Haber Upgrade of opBNB
+> Source: https://docs.bnbchain.org/announce/haber-opbnb/
+
+Hardfork. Testnet May 30 2024; Mainnet June 20 2024. Requires opBNB node v0.4.2. Adds EIP-7212 secp256r1 curve precompile and switches DA data submission from calldata to BSC blobs. Node operators need L1 endpoints that persist blob data for more than 18 days when syncing from genesis or far behind.
+
+## Mongolian Upgrade of Greenfield
+> Source: https://docs.bnbchain.org/announce/mongolian-greenfield/
+
+Hardfork. Testnet July 31 2024 block 10,780,238; Mainnet August 8 2024 block 10,314,605. Validators upgrade to greenfield v1.9.0; SPs upgrade to greenfield-storage-provider v1.9.0. Adds support for creating policies by cross-chain.
+
+## Pasteur Upgrade of BSC
+> Source: https://docs.bnbchain.org/announce/pasteur-bsc/
+
+Hardfork. Testnet 2026-07-21 02:30:00 AM UTC; Mainnet 2026-08-25 02:30:00 AM UTC. Requires BSC node v1.7.7. Includes BEP-682 (reject duplicate validators in CometBFT light block validation), BEP-695 (staking and governance security hardening), and BEP-675 (builder-proposed block with validator blind signing, enabled after activation via RPC). Deprecated flags and config fields must be reviewed before upgrade.
+
+## Second Sunset Hardfork of BC Testnet
+> Source: https://docs.bnbchain.org/announce/second-sunset-bc-testnet/
+
+Hardfork on June 21 2024 6:00:00 AM UTC. Requires BC node v0.10.21 with SecondSunsetHeight = 54554742. All TimeLocks and AtomicSwaps on BC testnet will be automatically refunded; BSC delegations will be automatically undelegated and refunded after the unbonding period.
+
+## Second Sunset Hardfork of BC
+> Source: https://docs.bnbchain.org/announce/second-sunset-bc/
+
+Hardfork on July 14 2024 6:00:00 AM UTC. Requires BC node v0.10.22 with SecondSunsetHeight = 378062790. All TimeLocks and AtomicSwaps on BC will be automatically refunded; BSC delegations will be automatically undelegated and refunded after the unbonding period.
+
+## BNB Beacon Chain Token Recovery Tool: Phase 2
+> Source: https://docs.bnbchain.org/announce/token-recovery-sunset-phase2/
+
+Effective 1 May 2026, the token recovery tool enters Phase 2 of its sunset plan. Requests are batch-processed with recovery times up to one month. Users should submit recovery requests before 1 July 2026, when the hosted tool is discontinued. Only BEP2 tokens mirrored to BEP20 tokens on BSC are eligible.
+
+## BNB Beacon Chain Token Recovery Tool: Phase 3 — Self-Service Recovery
+> Source: https://docs.bnbchain.org/announce/token-recovery-sunset-phase3/
+
+Effective 1 July 2026, the hosted token recovery tool is discontinued. Users must use the open-source Token Recover Self-Service Tool. The local web app allows recovery of BEP2 and BEP8 tokens from BNB Beacon Chain to BSC without third-party custody. Requires Node.js 24+, a Beacon Chain address and wallet, a BSC wallet with a small amount of BNB for gas. The guided flow includes generating a signed message, obtaining a Merkle proof approval, and submitting the recovery transaction to contract 0x0000000000000000000000000000000000003000.
+
+## BNB Beacon Chain Token Recovery Tool: Sunset Plan
+> Source: https://docs.bnbchain.org/announce/token-recovery-sunset-plan/
+
+# BNB Beacon Chain Token Recovery Tool: Sunset Plan
+
+<div class="doc-announce-info">
+    <span class="version-tag">Notice</span>
+</div>
+
+The official [BNB Beacon Chain Token Recovery Tool](https://www.bnbchain.org/en/token-recovery), which allows asset migration from BNB Beacon Chain to BNB Smart Chain, is entering its sunset phase.
+
+As the tool phases out, BNB Beacon Chain asset holders are urged to act promptly for faster processing times.
+
+For the full announcement, see the [BNB Chain blog post](https://www.bnbchain.org/en/blog/bnb-beacon-chain-token-recovery-tool-sunset-plan).
+
+## Actions for BNB Beacon Chain Asset Holders
+
+BNB Beacon Chain asset holders should migrate their tokens to BNB Smart Chain using the [Token Recovery Tool](https://www.bnbchain.org/en/token-recovery) as soon as possible for faster processing times.
+
+### What Can Be Recovered?
+
+Only BEP2 tokens (on BNB Beacon Chain) that are mirrored to BEP20 tokens (on BNB Smart Chain) are eligible for recovery.
+
+Tokens that were never mirrored are ineligible for recovery. Permissionless mirroring (BEP84) is permanently disabled and will not be re-enabled.
+
+### How to Recover
+
+Visit the [Token Recovery Tool](https://www.bnbchain.org/en/token-recovery) to recover your assets. For step-by-step instructions, refer to the [Token Recovery dApp guide](../bc-fusion/post-fusion/token-recovery.md).
+
+## Sunset Timeline
+
+The sunset will occur in three phases, with recovery times increasing with each phase:
+
+| Phase | Period | Processing |
+| ----- | ------ | ---------- |
+| **Phase 1** | Now till 30 April 2026 | The tool operates normally with recovery requests processed within a **7-day SLA**. |
+| **Phase 2** | 1 May – 30 June 2026 | Recovery requests will be batch-processed with recovery times extended to a **1-month SLA**. |
+| **Phase 3** | 1 July 2026 onwards | Recovery process will be manual and require user transaction signing. The hosted tool will be discontinued. See the [Phase 3 self-service announcement](./token-recovery-sunset-phase3.md). |
+
+## Act Now
+
+To avoid delays and complications, BNB Beacon Chain asset holders are encouraged to take action as soon as possible before the recovery tool phases out.
+
+Start migrating using the [Token Recovery Tool](https://www.bnbchain.org/en/token-recovery).
+
+## Veld Upgrade of Greenfield
+> Source: https://docs.bnbchain.org/announce/veld-greenfield/
+
+# Veld Upgrade of Greenfield
+
+<div class="doc-announce-info">
+    <span class="version-tag">Hardfork</span>
+</div>
+
+
+## Upgrade Timeline
+
+- Testnet: June 25 2024 07:00:00 AM UTC Blockheight: 9,581,218
+
+- Mainnet: July 8 2024 07:00:00 AM UTC Blockheight: 9,269,910
+
+## Validators and SPs should complete upgrading to the latest version before hardfork:
+
+For Validators: greenfield [v1.8.0](https://github.com/bnb-chain/greenfield/releases/tag/v1.8.0)
+
+For SPs: greenfield-storage-provider [v1.8.0](https://github.com/bnb-chain/greenfield-storage-provider/releases/tag/v1.8.0)
+
+## New features introduced:
+
+No new feature is introduced.
+
+## Bug fixing
+* [#621](https://github.com/bnb-chain/greenfield/pull/621) fix: add bucket status to bucket migration related events
+* [#625](https://github.com/bnb-chain/greenfield/pull/625) fix: discontinued bucket can't be migrated
+* [#626](https://github.com/bnb-chain/greenfield/pull/626) fix: principal value supports group name
+* [#632](https://github.com/bnb-chain/greenfield/pull/632) fix: ignore register channel error
+
+## Wright Upgrade of opBNB
+> Source: https://docs.bnbchain.org/announce/wright-opbnb/
+
+# Wright Upgrade of opBNB
+
+<div class="doc-announce-info">
+    <span class="version-tag">Hardfork</span>
+</div>
+
+
+## Upgrade Timeline
+The Wright upgrade will happen at:
+
+- Testnet: August 15 2024, 06:00:00 AM UTC
+- Mainnet: August 27 2024 06:00:00 AM UTC
+
+## Upgrade opBNB op-geth to v0.4.5 Before Hardfork
+
+op-geth need to be upgraded before the hardfork time.
+
+- https://github.com/bnb-chain/op-geth/releases/tag/v0.4.5
+
+op-node upgrade is optional but recommended.
+
+- https://github.com/bnb-chain/opbnb/releases/tag/v0.4.4
+
+## Key Highlight: [gasless feature support](https://github.com/bnb-chain/op-geth/pull/130)
+
+To support gasless transactions on opBNB, the following features have been introduced:
+
+- The base fee is set to 0.
+- The bundle feature is supported.
+- When the gas price is set to 0, the L1 fee will also be set to 0.
+
+Combined with these features and a sponsor (paymaster), users can send transactions without holding BNB to pay gas fees.
