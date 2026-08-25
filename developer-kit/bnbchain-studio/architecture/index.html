@@ -1437,10 +1437,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#six-layer-stack" class="md-nav__link">
+  <a href="#one-runtime-one-signer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Six-layer stack
+        One runtime, one signer
       
     </span>
   </a>
@@ -1448,30 +1448,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-layer-deploy-model" class="md-nav__link">
+  <a href="#the-bounded-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two-layer deploy model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Two-layer deploy model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action-envelopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Action envelopes
+        The bounded operations
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#signing-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing boundary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer stack
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1504,10 +1509,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workspace-isolation" class="md-nav__link">
+  <a href="#workspace-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workspace isolation
+        Workspace layout
       
     </span>
   </a>
@@ -2401,10 +2406,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#six-layer-stack" class="md-nav__link">
+  <a href="#one-runtime-one-signer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Six-layer stack
+        One runtime, one signer
       
     </span>
   </a>
@@ -2412,30 +2417,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-layer-deploy-model" class="md-nav__link">
+  <a href="#the-bounded-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two-layer deploy model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Two-layer deploy model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action-envelopes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Action envelopes
+        The bounded operations
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#signing-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing boundary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer stack
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2468,10 +2478,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workspace-isolation" class="md-nav__link">
+  <a href="#workspace-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workspace isolation
+        Workspace layout
       
     </span>
   </a>
@@ -2603,8 +2613,86 @@
 
 
 <div><h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Link to this section">¶</a></h1>
-<p>BNB Agent Studio wraps the <a href="../../bnbagent-sdk/">BNB Agent SDK</a> with scaffolding, safety controls, and IDE integration. A v1 seller project is <strong>two deployable artifacts</strong> on top of a <strong>six-layer stack</strong>.</p>
-<h2 id="six-layer-stack">Six-layer stack<a class="headerlink" href="#six-layer-stack" title="Link to this section">¶</a></h2>
+<p>BNB Agent Studio wraps the <a href="../../bnbagent-sdk/">BNB Agent SDK</a> with scaffolding,
+safety boundaries, and IDE integration. A project is <strong>one deployable runtime</strong> composed
+from orthogonal recipes.</p>
+<h2 id="one-runtime-one-signer">One runtime, one signer<a class="headerlink" href="#one-runtime-one-signer" title="Link to this section">¶</a></h2>
+<p>A single deployed process serves every public face you selected and holds the only key.
+There is no separate keyless service tier and no cross-service invoke hop.</p>
+<table>
+<thead>
+<tr>
+<th>Entrypoint</th>
+<th>Face</th>
+<th>Local surface</th>
+<th>Runtimes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/unifiedMain.ts</code></td>
+<td>A2A (+ X402)</td>
+<td>agent card and JSON-RPC on <code>:9000</code></td>
+<td>AgentCore, Azure Foundry</td>
+</tr>
+<tr>
+<td><code>src/mcpMain.ts</code></td>
+<td>MCP</td>
+<td>Streamable HTTP at <code>:8000/mcp</code></td>
+<td>AgentCore, Azure Foundry (local only)</td>
+</tr>
+<tr>
+<td><code>src/dualMain.ts</code></td>
+<td>A2A-native with tunneled <code>/mcp</code></td>
+<td><code>:9000</code></td>
+<td>AgentCore only</td>
+</tr>
+</tbody>
+</table>
+<p>Faces are composable (<code>--protocols</code>); one seller core and one wallet serve all of them.</p>
+<div class="highlight"><pre><span></span><code>graph TB
+    Buyer["Buyer"]
+    subgraph RT["One deployed runtime · sole key-holder"]
+        Face["unifiedMain.ts / mcpMain.ts / dualMain.ts"]
+        Seller["sellerCore.ts · runWork()"]
+        Sign["signing.ts · fixed code"]
+        LLM["LLM + read-only chain tools"]
+    end
+    SDKL["@bnbagent/studio-runtime"]
+    SDK["@bnbagent/sdk"]
+    Chain["BSC · ERC-8004 · ERC-8183 · B402"]
+
+    Buyer --&gt;|"negotiate / notify_funded / x402"| Face
+    Face --&gt; Seller
+    Seller --&gt; LLM
+    Face --&gt; Sign
+    Sign --&gt; SDKL
+    Seller --&gt; SDKL
+    SDKL --&gt; SDK
+    SDK --&gt; Chain
+</code></pre></div>
+<h2 id="the-bounded-operations">The bounded operations<a class="headerlink" href="#the-bounded-operations" title="Link to this section">¶</a></h2>
+<p>The ERC-8183 rail exposes exactly two operations — deliberately narrow, so neither the
+LLM nor a buyer can widen them.</p>
+<p><strong><code>negotiate</code></strong> — a rule-based price clamp against <code>studio.toml</code>, then an EIP-191
+signature. <strong>No LLM touches money</strong>: pricing is deterministic code.</p>
+<p><strong><code>notify_funded</code></strong> — verify the funded job on-chain (signed terms, assigned provider,
+status, budget, funded state) <strong>before</strong> doing paid work, produce the deliverable, then
+submit its reference on-chain. A2A acknowledges first and delivers in the background;
+MCP delivers synchronously inside the tool call.</p>
+<p>The optional x402 rail adds an anonymous HTTP request at <code>/x402</code>. A positive price
+settles through B402 before work starts; an explicit zero is FREE passthrough and
+bypasses the facilitator entirely.</p>
+<p><code>settle</code> is <strong>manual</strong> — <code>bag erc8183 settle &lt;jobId&gt;</code>. Studio never silently
+auto-settles a buyer’s job.</p>
+<h2 id="signing-boundary">Signing boundary<a class="headerlink" href="#signing-boundary" title="Link to this section">¶</a></h2>
+<p>All signing is fixed entrypoint code in <code>app/agent/src/signing.ts</code>, or the runtime’s
+bounded x402 payment handler. It is <strong>never</strong> an LLM-callable tool, and no general
+signing tool is exposed. The LLM’s chain tools are read-only.</p>
+<p>The encrypted keystore lives at the workspace root in <code>.studio/wallets/</code> — outside the
+deploy <code>codeLocation</code>, so no packaging path can bundle it into an artifact. It reaches a
+deployed runtime only through the selected provider’s delegated secret channel.</p>
+<h2 id="layer-stack">Layer stack<a class="headerlink" href="#layer-stack" title="Link to this section">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2614,217 +2702,164 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>L1 — user code</strong></td>
-<td><code>app/agent/*</code>, <code>app/service/*</code> — emitted by recipes, you own and edit</td>
+<td><strong>L1 — your code</strong></td>
+<td><code>app/agent/src/*</code> — emitted by recipes, you own and edit</td>
 </tr>
 <tr>
 <td><strong>L2 — IDE</strong></td>
-<td>Claude Code / Cursor — reads skills, calls CLI/MCP, edits your files</td>
+<td>Claude Code / Cursor — reads the skill, drives the CLI, edits your files</td>
 </tr>
 <tr>
-<td><strong>L3 — surfaces</strong></td>
-<td><code>bag</code> CLI, MCP server, recipes, skills</td>
+<td><strong>L3 — Studio surfaces</strong></td>
+<td><code>bag</code> CLI, <code>bag mcp serve</code> (15 read-only tools), skills, recipes</td>
 </tr>
 <tr>
-<td><strong>L4 — <code>bnbagent_studio_core</code></strong></td>
-<td>Wallet factory, <code>Policy</code>, ERC-8004/8183 workflows, x402, audit log</td>
+<td><strong>L4 — <code>@bnbagent/studio-runtime</code></strong></td>
+<td>Seller runtime, wallet loader, signing policy, x402 payment handler, audit log</td>
 </tr>
 <tr>
-<td><strong>L5 — <code>bnbagent-sdk</code></strong></td>
-<td>Protocol clients (<code>ERC8004Agent</code>, <code>ERC8183Client</code>, <code>EVMWalletProvider</code>)</td>
+<td><strong>L5 — <code>@bnbagent/sdk</code></strong></td>
+<td>Protocol clients — <code>ERC8004Agent</code>, <code>ERC8183Client</code>, <code>EVMWalletProvider</code></td>
 </tr>
 <tr>
 <td><strong>L6 — chain</strong></td>
-<td>BSC testnet/mainnet — ERC-8004 registry, <a href="https://github.com/bnb-chain/apex-contracts#deployments">APEX / ERC-8183</a>, x402</td>
+<td>BSC testnet/mainnet — ERC-8004 registry, ERC-8183, B402</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code>graph TB
-    subgraph L1["L1 · User code"]
-        Agent["app/agent/"]
-        Service["app/service/"]
-    end
-
-    subgraph L2["L2 · IDE"]
-        IDE["Claude Code / Cursor"]
-    end
-
-    subgraph L3["L3 · Studio surfaces"]
-        CLI["bag CLI"]
-        MCP["MCP server"]
-        Skills["Skills"]
-        Recipes["Recipes"]
-    end
-
-    subgraph L4["L4 · bnbagent_studio_core"]
-        Core["config · policy · workflows"]
-    end
-
-    subgraph L5["L5 · bnbagent-sdk"]
-        SDK["ERC8004 · ERC8183 · wallet"]
-    end
-
-    subgraph L6["L6 · BSC"]
-        Chain["8004 + 8183 + x402"]
-    end
-
-    IDE --&gt; Skills
-    IDE --&gt; CLI
-    IDE --&gt; MCP
-    IDE --&gt; Agent
-    CLI --&gt; Recipes
-    CLI --&gt; Core
-    MCP --&gt; Core
-    Agent --&gt; Core
-    Service --&gt; SDK
-    Core --&gt; SDK
-    SDK --&gt; Chain
-</code></pre></div>
-<h2 id="two-layer-deploy-model">Two-layer deploy model<a class="headerlink" href="#two-layer-deploy-model" title="Link to this section">¶</a></h2>
-<p>The split exists because AgentCore is invoke-only — no public HTTP routes, no background poll loop.</p>
-<table>
-<thead>
-<tr>
-<th>Layer</th>
-<th>Path</th>
-<th>Deploy target</th>
-<th>Holds key?</th>
-<th>Runs LLM?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>A — Agent</strong></td>
-<td><code>app/agent/</code></td>
-<td>AWS Bedrock AgentCore</td>
-<td>Yes (sole signer)</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><strong>B — Service</strong></td>
-<td><code>app/service/</code></td>
-<td>EC2 / Fargate</td>
-<td>No (keyless)</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Dependency is one-way:</strong> Service → Agent. The public Service can only <em>ask</em> the Agent to sign; the Agent re-validates on chain before signing.</p>
-<h3 id="action-envelopes">Action envelopes<a class="headerlink" href="#action-envelopes" title="Link to this section">¶</a></h3>
-<p>The Agent is invoked on fixed action envelopes — never via LLM tools:</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>quote</code></td>
-<td>Sign a price offer for a negotiate request</td>
-</tr>
-<tr>
-<td><code>fulfill</code></td>
-<td>Execute work and submit deliverable</td>
-</tr>
-<tr>
-<td><code>settle</code></td>
-<td>Apply policy verdict after dispute window</td>
-</tr>
-</tbody>
-</table>
-<p>All signing lives in <code>app/agent/signing.py</code> — fixed entrypoint code, never an LLM-callable tool.</p>
+<p>Cloud lifecycle mutations are delegated to the pinned
+<a href="https://www.npmjs.com/package/@bnbagent/deploy-cli"><code>@bnbagent/deploy-cli</code></a>; the
+generated project depends on <code>@bnbagent/studio-runtime</code>, <strong>not</strong> on the CLI.</p>
 <h2 id="recipe-composition">Recipe composition<a class="headerlink" href="#recipe-composition" title="Link to this section">¶</a></h2>
-<p><code>bag init</code> composes your project from orthogonal recipe axes:</p>
-<div class="highlight"><pre><span></span><code>bag/recipes/
-├── frameworks/&lt;X&gt;/           e.g. frameworks/adk/
-├── runtimes/&lt;Y&gt;/             e.g. runtimes/agentcore/
-└── providers/&lt;Z&gt;/code/&lt;framework&gt;/
-                              e.g. providers/pieverse-llm/code/adk/
+<p><code>bag init</code> composes the project from orthogonal recipe axes:</p>
+<div class="highlight"><pre><span></span><code>recipes/
+├── agent/                    signing.ts
+├── wallet/                   wallet selection (evm-local · twak · altana)
+├── runtimes/agentcore/       AWS Bedrock AgentCore entrypoints + Dockerfile
+├── runtimes/azure-foundry/   Azure AI Foundry entrypoints + Dockerfile
+├── providers/pieverse-llm/   Pieverse LLM wiring + funding playbook
+├── tools-chain/              chainTools.ts — read-only chain tools
+└── x402-buyer/               x402Buyer.ts — optional buyer rail
 </code></pre></div>
 <table>
 <thead>
 <tr>
 <th>Axis</th>
-<th>v1 default</th>
-<th>Emitted into</th>
+<th>Default</th>
+<th>Emits</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Framework</td>
-<td>Google ADK</td>
-<td><code>app/agent/main.py</code>, <code>tools.py</code>, <code>managed_model.py</code></td>
+<td>Agent</td>
+<td>always</td>
+<td><code>signing.ts</code></td>
 </tr>
 <tr>
 <td>Runtime</td>
-<td>AgentCore</td>
-<td><code>app/agent/main.py</code>, <code>agentcore/agentcore.json</code></td>
+<td><code>agentcore</code></td>
+<td><code>unifiedMain.ts</code>, <code>mcpMain.ts</code>, <code>dualMain.ts</code>*, <code>executor.ts</code>, <code>sellerCore.ts</code>, <code>tools.ts</code>, <code>model.ts</code>, <code>agentCard.ts</code>, <code>Dockerfile</code></td>
 </tr>
 <tr>
 <td>LLM provider</td>
-<td>Pieverse</td>
-<td><code>app/agent/managed_model.py</code></td>
+<td><code>pieverse-llm</code></td>
+<td>provider wiring in <code>model.ts</code></td>
 </tr>
 <tr>
-<td>Service</td>
-<td><code>8183-service</code></td>
-<td><code>app/service/service.py</code> (framework-neutral, keyless)</td>
+<td>Wallet</td>
+<td><code>evm-local</code></td>
+<td>keystore selection and config</td>
+</tr>
+<tr>
+<td>Chain tools</td>
+<td>always</td>
+<td><code>chainTools.ts</code></td>
+</tr>
+<tr>
+<td>x402 buyer</td>
+<td>opt-in</td>
+<td><code>x402Buyer.ts</code></td>
 </tr>
 </tbody>
 </table>
+<p>* <code>dualMain.ts</code> is AgentCore-only. Azure Foundry ships no <code>dualMain</code> template, which is
+why Foundry deploys <strong>A2A scaffolds only</strong> — an MCP entrypoint is rejected before deploy.</p>
+<p>The A2A entrypoint is byte-identical across both runtimes (pinned by a parity test), so
+the same image deploys to either cloud.</p>
 <h3 id="emitted-vs-library">Emitted vs library<a class="headerlink" href="#emitted-vs-library" title="Link to this section">¶</a></h3>
-<p><strong>Emitted (user-owned — edit freely):</strong></p>
+<p><strong>Emitted — you own it, edit freely:</strong></p>
 <ul>
-<li><code>app/agent/main.py</code> — runtime entrypoint</li>
-<li><code>app/agent/managed_model.py</code> — provider × framework glue</li>
-<li><code>app/agent/tools.py</code> — read-only chain tools for the LLM</li>
-<li><code>app/agent/signing.py</code> — protocol-neutral signing entrypoints</li>
-<li><code>app/service/service.py</code> — keyless Layer B</li>
+<li><code>sellerCore.ts</code> — the work your agent sells (<code>runWork</code>); the file you normally edit</li>
+<li><code>signing.ts</code> — fixed quote / verify / submit path</li>
+<li><code>tools.ts</code>, <code>chainTools.ts</code> — read-only chain tools for the LLM</li>
+<li><code>model.ts</code> — LLM provider glue</li>
+<li><code>unifiedMain.ts</code>, <code>mcpMain.ts</code>, <code>dualMain.ts</code> — face entrypoints</li>
+<li><code>executor.ts</code>, <code>agentCard.ts</code> — shared seller executor and A2A card</li>
+<li><code>x402Buyer.ts</code> — optional buyer rail</li>
 </ul>
-<p><strong>Library (<code>bnbagent_studio_core</code> — shipped with <code>bnbagent-studio</code>):</strong></p>
+<p><strong>Library — shipped in <code>@bnbagent/studio-runtime</code>:</strong></p>
 <ul>
-<li><code>studio.toml</code> schema, audit log protocol</li>
-<li><code>SigningPolicy</code>, <code>BudgetGate</code>, <code>expected_recipient</code></li>
-<li>Wallet loader, ERC-8183 workflows, x402 buyer, <code>chain_readonly</code> tools</li>
-<li>Pieverse credit ensurer, SIWE retry</li>
+<li><code>studio.toml</code> schema and the audit-log protocol</li>
+<li>signing policy and budget gating</li>
+<li>wallet loader, ERC-8183 workflows, the bounded x402 payment handler</li>
 </ul>
-<h2 id="workspace-isolation">Workspace isolation<a class="headerlink" href="#workspace-isolation" title="Link to this section">¶</a></h2>
-<p><code>bag init</code> emits two <strong>independent sub-projects</strong>, each with its own <code>pyproject.toml</code>, <code>studio.toml</code>, and <code>.env.local</code>:</p>
+<h2 id="workspace-layout">Workspace layout<a class="headerlink" href="#workspace-layout" title="Link to this section">¶</a></h2>
+<div class="highlight"><pre><span></span><code>weatheragent/
+├── package.json · pnpm-workspace.yaml    workspace markers
+├── AGENTS.md                             safety rules for coding agents
+├── agentcore/                            deployment descriptor + AWS targets
+├── .studio/
+│   ├── .env.local                        gitignored secrets, mode 0600
+│   └── wallets/                          encrypted keystore, outside deployable code
+└── app/agent/
+    ├── studio.toml                       network · wallet · LLM · policy · rails · faces
+    └── src/                              the emitted TypeScript above
+</code></pre></div>
+<p>Two boundaries do the security work:</p>
 <ol>
-<li><strong>Keystore outside deploy codeLocation</strong> — <code>.studio/wallets/</code> at workspace root, outside <code>app/agent/</code>, so no packaging path bundles it.</li>
-<li><strong>Keyless Service boundary</strong> — Service sub-project has no <code>bnbagent-studio</code> dependency and no <code>[wallet]</code> config.</li>
-<li><strong>Lean Service image</strong> — ~200 MB smaller without studio CLI deps.</li>
-<li><strong>No shared mutable config</strong> — only <code>[network].default</code> and provider address sync across layers.</li>
+<li><strong>Keystore outside the deploy <code>codeLocation</code></strong> — <code>.studio/wallets/</code> sits at the
+   workspace root, so no packaging path bundles it.</li>
+<li><strong>Signing outside the LLM’s reach</strong> — fixed code only; the model gets read-only tools.</li>
 </ol>
 <h2 id="commerce-flow-seller">Commerce flow (seller)<a class="headerlink" href="#commerce-flow-seller" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>Buyer                    Layer B (Service)              Layer A (Agent)           BNB Chain
-  │  POST /apex/negotiate        │                            │                        │
-  │ ────────────────────────────►│ InvokeAgentRuntime(quote)  │                        │
-  │                              │ ──────────────────────────►│ sign offer             │
-  │ ◄────────────────────────────│ ◄──────────────────────────│                        │
-  │  (funded job on-chain)       │                            │                        │
-  │                              │ poll funded jobs           │                        │
-  │                              │ InvokeAgentRuntime(fulfill)  │                        │
-  │                              │ ──────────────────────────►│ execute + submit       │
-  │                              │                            │ ──────────────────────►│
-  │                              │ InvokeAgentRuntime(settle)   │                        │
-  │                              │ ──────────────────────────►│ settle                 │
-  │                              │                            │ ──────────────────────►│
+<div class="highlight"><pre><span></span><code>Buyer                          Runtime (sole signer)              BNB Chain
+  │  negotiate                        │                               │
+  │ ─────────────────────────────────►│ clamp price, EIP-191 sign      │
+  │ ◄─────────────────────────────────│ signed quote                   │
+  │                                   │                               │
+  │  createJob · setBudget · fund ────────────────────────────────────►│
+  │                                   │                               │
+  │  notify_funded                    │                               │
+  │ ─────────────────────────────────►│ verify funded job on-chain     │
+  │                                   │ ──────────────────────────────►│
+  │                                   │ run work, store deliverable    │
+  │                                   │ submit reference ─────────────►│
+  │ ◄─────────────────────────────────│ deliverable                    │
+  │                                   │                               │
+  │  approve / reject / dispute ──────────────────────────────────────►│
 </code></pre></div>
+<p>Settlement stays with the buyer. Operator-side settle is a manual
+<code>bag erc8183 settle &lt;jobId&gt;</code>.</p>
 <h2 id="core-design-principles">Core design principles<a class="headerlink" href="#core-design-principles" title="Link to this section">¶</a></h2>
 <ol>
-<li><strong>Studio is not intelligent</strong> — Claude Code / Cursor is the intelligence layer; studio provides recipes, CLI, MCP, and skills.</li>
-<li><strong>Zero wallet abstraction</strong> — studio uses <code>bnbagent-sdk</code>’s <code>WalletProvider</code> ABC via <code>get_wallet()</code>; no custom wrappers.</li>
-<li><strong>Parallel payment protocols</strong> — ERC-8183 and x402 each get independent CLI groups, recipes, and config sections.</li>
-<li><strong>Payments are runtime services</strong> — <code>@tool</code> functions in emitted code are the main battleground; CLI payment commands are operator diagnostics.</li>
+<li><strong>Studio is not the intelligence</strong> — Claude Code / Cursor is; Studio provides
+   recipes, the CLI, read-only MCP, and skills.</li>
+<li><strong>No wallet abstraction of its own</strong> — Studio selects a <code>WalletProvider</code> from the
+   SDK; it wraps nothing.</li>
+<li><strong>Money is deterministic</strong> — pricing clamps and signing are fixed code, never LLM
+   tool calls.</li>
+<li><strong>Rails and faces are independent choices</strong> — ERC-8183 and B402 are rails; A2A, MCP
+   and X402 are faces. One runtime serves any combination.</li>
+<li><strong>The generated project is yours</strong> — ordinary TypeScript, no closed-source runtime
+   and no lock-in.</li>
 </ol>
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Link to this section">¶</a></h2>
 <ul>
-<li><a href="../../bnbagent-sdk/architecture/">BNB Agent SDK architecture</a> — protocol module system</li>
-<li><a href="https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/design/architecture.md">GitHub — architecture.md</a> — full design document</li>
-<li><a href="https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/design/decisions.md">GitHub — decisions.md</a> — decision records</li>
+<li><a href="../quickstart/">Quickstart</a> — install, scaffold, run, deploy</li>
+<li><a href="../configuration/">Configuration</a> — <code>studio.toml</code> and <code>.env.local</code></li>
+<li><a href="../deployment/">Deployment</a> — the three deploy targets</li>
+<li><a href="../security/">Security</a> — keystore posture, signing policy, MCP read-only guarantee</li>
+<li><a href="../../bnbagent-sdk/architecture/">BNB Agent SDK architecture</a> — the protocol layer underneath</li>
 </ul>
 <p><a href="../">← BNB Agent Studio overview</a></p></div>
 
@@ -2847,7 +2882,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 19, 2026 05:02:39 UTC">June 19, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 18:09:17 UTC">August 23, 2026</span>
   </span>
 
     
