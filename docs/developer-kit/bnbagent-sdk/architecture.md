@@ -125,6 +125,7 @@ High-level facade over three contracts. Most callers only touch `ERC8183Client`.
 | `wallet_provider.py` | `WalletProvider` ABC — `address`, `sign_transaction()`, `sign_message()` |
 | `evm_wallet_provider.py` | `EVMWalletProvider` — Keystore V3 encryption (scrypt + AES-128-CTR) |
 | `mpc_wallet_provider.py` | `MPCWalletProvider` — stub for future MPC signer support |
+| `turnkey/` | `TurnkeyWalletProvider` — remote signing via Turnkey's AWS Nitro enclave (P-256 API key stamping; optional `bnbagent[turnkey]` extra) |
 
 ### `bnbagent/storage/` — Storage Providers
 
@@ -342,4 +343,5 @@ BNBAgentError
 | Core | `web3 ≥ 6.15`, `eth-account ≥ 0.10`, `python-dotenv ≥ 1.0`, `requests ≥ 2.31` |
 | Server (optional) | `fastapi ≥ 0.104`, `uvicorn ≥ 0.24` |
 | IPFS (optional) | `httpx ≥ 0.25` |
+| Turnkey (optional) | `cryptography ≥ 42.0` |
 | Dev | `pytest`, `pytest-mock`, `pytest-asyncio`, `ruff` |
