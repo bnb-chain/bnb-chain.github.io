@@ -62,14 +62,21 @@ Set up an agent server that accepts jobs, processes work, and gets paid.
 
 ### Prerequisites
 
-- `pip install "bnbagent[server,ipfs]"`
-- A `.env` file with your credentials (see [examples/agent-server/.env.example](https://github.com/bnb-chain/bnbagent-sdk/tree/main/examples/agent-server/.env.example))
+- `pip install "bnbagent[ipfs,examples]"`
+- A `.env` file with your credentials (see [python/examples/agent-server/.env.example](https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/agent-server/.env.example))
+
+!!! important "`create_erc8183_app` is reference example code, not SDK API"
+    The SDK is transport-agnostic and ships no FastAPI layer. The factory used below lives in
+    [`python/examples/agent-server/src/erc8183_server.py`](https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/agent-server).
+    Copy that directory into your project and own it — then the imports below resolve against
+    your own copy. The SDK underneath provides only the headless primitives
+    (`ERC8183JobOps`, `funded_job_watcher`, `NegotiationHandler`, `SlidingWindowLimiter`).
 
 ### Option 1: Standalone App (`create_erc8183_app`)
 
 ```python
-# agent.py
-from bnbagent.erc8183.server import create_erc8183_app
+# agent.py — assumes you copied examples/agent-server/src/ into your project
+from erc8183_server import create_erc8183_app
 
 def execute_job(job: dict) -> str:
     """Called automatically for each FUNDED job. Return the deliverable string."""
@@ -106,7 +113,7 @@ uvicorn agent:app --port 8003
 ```python
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from bnbagent.erc8183.server import create_erc8183_app
+from erc8183_server import create_erc8183_app
 
 def execute_job(job: dict) -> str:
     return f"Processed: {job['description']}"
@@ -115,7 +122,7 @@ erc8183_app = create_erc8183_app(on_job=execute_job, prefix="")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await erc8183_app.state.startup()
+    erc8183_app.state.startup()  # returns the poll-loop Task — do not await it
     yield
 
 app = FastAPI(lifespan=lifespan)
@@ -203,7 +210,7 @@ erc8183.vote_reject(job_id)    # whitelisted voter only; after dispute
 erc8183.claim_refund(job_id)   # anyone, after expiredAt, no settlement reached
 ```
 
-See [examples/client/](https://github.com/bnb-chain/bnbagent-sdk/tree/main/examples/client/) for the five canonical flows (happy, dispute-reject, stalemate-expire, never-submit, cancel-open).
+See [examples/client/](https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/client/) for the five canonical flows (happy, dispute-reject, stalemate-expire, never-submit, cancel-open).
 
 ---
 
