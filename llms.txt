@@ -254,7 +254,6 @@
 ## Optional
 
 - **Upcoming**
-  - [NA](https://docs.bnbchain.org/announce/na/): No upcoming hardforks currently scheduled.
 - **Passed**
   - [Final Sunset of BC (Mainnet)](https://docs.bnbchain.org/announce/final-sunset-bc-mainnet/): Beacon Chain final sunset — mainnet shut down Dec 2024.
   - [Greenfield Savanna Hardfork](https://docs.bnbchain.org/announce/savanna-greenfield/): Greenfield Savanna hardfork — storage provider and performance upgrades.
@@ -264,3 +263,21 @@
   - [Volta Upgrade of opBNB](https://docs.bnbchain.org/announce/volta-opbnb/): Volta upgrade — performance and fee improvements on opBNB.
   - [Fermi Hardfork(BSC)](https://docs.bnbchain.org/announce/fermi-bsc/): Fermi hardfork — block time reduced to 0.45s on BSC (Jan 2026).
   - [Fourier Upgrade of opBNB](https://docs.bnbchain.org/announce/fourier-opbnb/): Fourier upgrade — latest opBNB network improvements.
+- [BNB Chain](https://docs.bnbchain.org/): BNB Chain documentation hub covering BNB Smart Chain, opBNB, and BNB Greenfield.
+- [Announcement](https://docs.bnbchain.org/announce/): Announcements for BNB Chain hardfork upgrades and network changes.
+- [Altai Upgrade of Greenfield](https://docs.bnbchain.org/announce/altai-gnfd/): Altai hardfork upgrade of BNB Greenfield with timelines and MetaMask compatibility hotfix.
+- [Bohr Upgrade of BSC](https://docs.bnbchain.org/announce/bohr-bsc/): Bohr hardfork upgrade of BSC with BEP-341, BEP-402, BEP-404, and BEP-410.
+- [Feynman Upgrade of BSC](https://docs.bnbchain.org/announce/feynman-bsc/): Feynman hardfork upgrade of BSC advancing BNB Chain Fusion with BEP-294, BEP-297, and BEP-299.
+- [Final Sunset Hardfork of BC Testnet](https://docs.bnbchain.org/announce/final-sunset-bc-testnet/): Final Sunset hardfork of BC Testnet ending Beacon Chain cross-chain communication.
+- [Fjord Upgrade of opBNB](https://docs.bnbchain.org/announce/fjord-opbnb/): Fjord upgrade of opBNB changing L1 fee calculation and adding new operator flags.
+- [Haber Upgrade of BSC](https://docs.bnbchain.org/announce/haber-bsc/): Haber hardfork upgrade of BSC adding secp256r1 precompile and blob-carrying transactions.
+- [Haber Upgrade of opBNB](https://docs.bnbchain.org/announce/haber-opbnb/): Haber upgrade of opBNB adding EIP-7212 secp256r1 precompile and switching DA to BSC blobs.
+- [Mongolian Upgrade of Greenfield](https://docs.bnbchain.org/announce/mongolian-greenfield/): Mongolian hardfork upgrade of BNB Greenfield adding cross-chain policy creation.
+- [Pasteur Upgrade of BSC](https://docs.bnbchain.org/announce/pasteur-bsc/): Pasteur hardfork upgrade of BSC with BEP-682, BEP-695, and BEP-675.
+- [Second Sunset Hardfork of BC Testnet](https://docs.bnbchain.org/announce/second-sunset-bc-testnet/): Second Sunset hardfork of BC Testnet refunding TimeLocks and AtomicSwaps.
+- [Second Sunset Hardfork of BC](https://docs.bnbchain.org/announce/second-sunset-bc/): Second Sunset hardfork of BC refunding TimeLocks and AtomicSwaps.
+- [BNB Beacon Chain Token Recovery Tool: Phase 2](https://docs.bnbchain.org/announce/token-recovery-sunset-phase2/): Phase 2 of the BNB Beacon Chain Token Recovery Tool sunset, with batch processing from 1 May 2026.
+- [BNB Beacon Chain Token Recovery Tool: Phase 3 — Self-Service Recovery](https://docs.bnbchain.org/announce/token-recovery-sunset-phase3/): Phase 3 of the token recovery tool sunset, with self-service recovery from 1 July 2026.
+- [BNB Beacon Chain Token Recovery Tool: Sunset Plan](https://docs.bnbchain.org/announce/token-recovery-sunset-plan/): Announcement of the token recovery tool sunset, with phased timelines and migration guidance.
+- [Veld Upgrade of Greenfield](https://docs.bnbchain.org/announce/veld-greenfield/): Hardfork announcement for Greenfield Veld, including upgrade timeline and required validator and storage provider versions.
+- [Wright Upgrade of opBNB](https://docs.bnbchain.org/announce/wright-opbnb/): Hardfork announcement for opBNB Wright, including upgrade timeline and gasless transaction support.
