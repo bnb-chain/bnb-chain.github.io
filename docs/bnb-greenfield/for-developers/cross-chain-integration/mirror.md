@@ -24,7 +24,7 @@ mirror object succ, txHash: 0774F400EBD42FAB009A6B3C303EF8625B57AB551E0F065C546B
 ```
 You can go to [GreenfieldScan](https://testnet.greenfieldscan.com) to view the details of mirror operation.
 
-Then, go to [BscScan](https://testnet.bscscan.com) and you can find out that there is a NFT transferred to you.
+Then, go to [BSCTrace](https://testnet.bsctrace.com) and you can find out that there is a NFT transferred to you.
 
 ![Transaction Details](../../static/asset/mirror-object.png)
 
@@ -44,7 +44,7 @@ mirror bucket succ, txHash: 0xba1ca47a2271864b2010158b13535331301ba3289aab8e3735
 ```
 You can go to [GreenfieldScan](https://testnet.greenfieldscan.com) to view the details of mirror operation.
 
-Then, go to [BscScan](https://testnet.bscscan.com) and you can find out that there is a NFT transferred to you.
+Then, go to [BSCTrace](https://testnet.bsctrace.com) and you can find out that there is a NFT transferred to you.
 
 
 ## Mirror Group
@@ -68,5 +68,5 @@ transaction hash: 99A749ECC3CEB8B7CF4B8132A19D1A04EF7247F8549477B6AD28CA69BD11E6
 ```
 You can go to [GreenfieldScan](https://testnet.greenfieldscan.com) to view the details of mirror operation.
 
-Then, go to [BscScan](https://testnet.bscscan.com) and you can find out that there is a NFT transferred to you.
+Then, go to [BSCTrace](https://testnet.bsctrace.com) and you can find out that there is a NFT transferred to you.
 

@@ -17,19 +17,19 @@ Staking Derivatives (LSD) protocol's users.
 
 ## For Individual Delegators
 
-1. Open the [Staking contract](https://bscscan.com/address/0x0000000000000000000000000000000000002001) on BSCScan
+1. Open the [Staking contract](https://bsctrace.com/address/0x0000000000000000000000000000000000002001) on BSCTrace
 
 2. You can find your delegation information on the "Transactions" tab, or you can query the contract as the following:
-    * Go to the [Staking contract tab](https://bscscan.com/address/0x0000000000000000000000000000000000002001#readContract)
+    * Go to the [Staking contract tab](https://bsctrace.com/address/0x0000000000000000000000000000000000002001?tab=Contract&p=1&view=contract_read)
     * Query the `getDelegated` function with your address as the parameter
    ![img](../../assets/bcfusion/bep153-migration1.png)
 
 3. Undelegate your delegations by calling
-   the `undelegate` [function](https://bscscan.com/address/0x0000000000000000000000000000000000002001#writeContract)
+   the `undelegate` [function](https://bsctrace.com/address/0x0000000000000000000000000000000000002001?tab=Contract&p=1&view=contract_write)
    ![img](../../assets/bcfusion/bep153-migration2.png)
 
 4. Afther the unbounding period (7 days), call
-   the `claimUndelegated` [function](https://bscscan.com/address/0x0000000000000000000000000000000000002001#writeContract)
+   the `claimUndelegated` [function](https://bsctrace.com/address/0x0000000000000000000000000000000000002001?tab=Contract&p=1&view=contract_write)
    to get your BNB back
    ![img](../../assets/bcfusion/bep153-migration3.png)
 

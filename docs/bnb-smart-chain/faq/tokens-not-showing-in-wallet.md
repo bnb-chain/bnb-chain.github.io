@@ -11,13 +11,13 @@ This is a common situation and it can happen for various reasons — wrong netwo
 ### Common Real User Queries This FAQ Addresses
 
 - **"I transferred USDT from Binance to my Phantom wallet, Binance says it’s done but I didn’t receive anything on Phantom."**
-- **"My NFTs are displayed on BscScan as BEP-20 instead of BEP-721, so they don’t show up in Trust Wallet."**
+- **"My NFTs are displayed on BSCTrace as BEP-20 instead of BEP-721, so they don’t show up in Trust Wallet."**
 - **"After bridging Aqualis Token from Ethereum to BSC via deBridge, it hasn’t appeared on the BNB Chain Bridge UI."**
 ---
 
 ### Step 1: Check the Transaction
 
-1. Go to [BscScan](https://bscscan.com).
+1. Go to [BSCTrace](https://bsctrace.com).
 2. Enter your wallet address or transaction hash.
 3. Confirm the following:
    - The transaction was **successful**
@@ -47,7 +47,7 @@ If needed, add the network manually:
 
 Sometimes tokens won’t show until you manually import them.
 
-1. Go to [BscScan](https://bscscan.com).
+1. Go to [BSCTrace](https://bsctrace.com).
 2. Search for your token (e.g., USDT, KILO).
 3. Copy the **token contract address**.
 4. In your wallet:
@@ -69,7 +69,7 @@ Some airdrops or reward tokens may show as “pending” — especially in early
 
 ### Step 5: NFT Not Displaying?
 
-- If your NFT shows on BscScan but not in your wallet:
+- If your NFT shows on BSCTrace but not in your wallet:
   - Make sure your wallet supports the token **standard** (e.g., BEP-721, not BEP-20).
   - Try viewing your NFT on an NFT-specific platform or switch to a wallet with NFT support.
 
@@ -90,11 +90,11 @@ Tokens bridged using services like deBridge or LayerZero might not display until
 **Q: What if I used the wrong wallet type or chain?**  
 A: The token is likely still there — just on a different chain or wallet interface. Try switching networks or importing the token.
 
-**Q: I see my tokens on BscScan, why don’t they show in my wallet?**  
+**Q: I see my tokens on BSCTrace, why don’t they show in my wallet?**  
 A: You likely need to **manually add the token contract** in your wallet.
 
 **Q: Is it dangerous to add a token manually?**  
-A: No — as long as you use the official contract address from a trusted source like BscScan or the project team.
+A: No — as long as you use the official contract address from a trusted source like BSCTrace or the project team.
 
 ---
 
