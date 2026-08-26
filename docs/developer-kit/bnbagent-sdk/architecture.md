@@ -124,7 +124,7 @@ High-level facade over three contracts. Most callers only touch `ERC8183Client`.
 |------|---------|
 | `wallet_provider.py` | `WalletProvider` ABC — `address`, `sign_transaction()`, `sign_message()` |
 | `evm_wallet_provider.py` | `EVMWalletProvider` — Keystore V3 encryption (scrypt + AES-128-CTR) |
-| `mpc_wallet_provider.py` | `MPCWalletProvider` — stub for future MPC signer support |
+| `mpc_wallet_provider.py` | `MPCWalletProvider` — stub for future MPC signer support; exported for `isinstance` checks and subclassing reference, but `__init__` raises unconditionally |
 | `turnkey/` | `TurnkeyWalletProvider` — remote signing via Turnkey's AWS Nitro enclave (P-256 API key stamping; optional `bnbagent[turnkey]` extra) |
 
 ### `bnbagent/storage/` — Storage Providers
