@@ -285,15 +285,6 @@ nav:
           - Feature Lists: ./bnb-greenfield/roadmap/features.md
   - Developer Kit:
       - Overview: ./developer-kit/index.md
-      - BNB Agent SDK:
-          - Overview: ./developer-kit/bnbagent-sdk/index.md
-          - Quickstart: ./developer-kit/bnbagent-sdk/quickstart.md
-          - Configuration: ./developer-kit/bnbagent-sdk/configuration.md
-          - Architecture: ./developer-kit/bnbagent-sdk/architecture.md
-          - Networks & Contracts: ./developer-kit/bnbagent-sdk/networks.md
-          - Examples: ./developer-kit/bnbagent-sdk/examples.md
-          - Security: ./developer-kit/bnbagent-sdk/security.md
-          - Troubleshooting: ./developer-kit/bnbagent-sdk/troubleshooting.md
       - BNB Agent Studio:
           - Overview: ./developer-kit/bnbchain-studio/index.md
           - Quickstart: ./developer-kit/bnbchain-studio/quickstart.md
@@ -304,6 +295,16 @@ nav:
           - Deployment: ./developer-kit/bnbchain-studio/deployment.md
           - Security: ./developer-kit/bnbchain-studio/security.md
           - Troubleshooting: ./developer-kit/bnbchain-studio/troubleshooting.md
+      - BNB Agent SDK:
+          - Overview: ./developer-kit/bnbagent-sdk/index.md
+          - Quickstart (TypeScript): ./developer-kit/bnbagent-sdk/quickstart-typescript.md
+          - Quickstart (Python): ./developer-kit/bnbagent-sdk/quickstart.md
+          - Configuration: ./developer-kit/bnbagent-sdk/configuration.md
+          - Architecture: ./developer-kit/bnbagent-sdk/architecture.md
+          - Networks & Contracts: ./developer-kit/bnbagent-sdk/networks.md
+          - Examples: ./developer-kit/bnbagent-sdk/examples.md
+          - Security: ./developer-kit/bnbagent-sdk/security.md
+          - Troubleshooting: ./developer-kit/bnbagent-sdk/troubleshooting.md
       - Greenfield SDK:
           - Overview: ./developer-kit/greenfield-sdk/index.md
       - MCP & Ask AI:

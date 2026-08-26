@@ -116,7 +116,8 @@ The SDK underneath provides only the headless primitives the example is built on
 |------|---------|
 | `wallet_provider.py` | `WalletProvider` ABC — `address`, `sign_transaction()`, `sign_message()` |
 | `evm_wallet_provider.py` | `EVMWalletProvider` — Keystore V3 encryption (scrypt + AES-128-CTR) |
-| `mpc_wallet_provider.py` | `MPCWalletProvider` — stub for future MPC signer support |
+| `mpc_wallet_provider.py` | `MPCWalletProvider` — stub for future MPC signer support; exported for `isinstance` checks and subclassing reference, but `__init__` raises unconditionally |
+| `turnkey/` | `TurnkeyWalletProvider` — remote signing via Turnkey's AWS Nitro enclave (P-256 API key stamping; optional `bnbagent[turnkey]` extra) |
 
 ### `bnbagent/storage/` — Storage Providers
 
@@ -305,6 +306,7 @@ BNBAgentError
 | Core | `web3 ≥ 6.15`, `eth-account ≥ 0.10`, `python-dotenv ≥ 1.0`, `requests ≥ 2.31` |
 | `examples` (extra) | `fastapi ≥ 0.104`, `uvicorn ≥ 0.24`, `python-dotenv ≥ 1.0`, `aiosqlite ≥ 0.19`, `ddgs ≥ 6.0` |
 | `ipfs` (extra) | `httpx ≥ 0.25` |
-| `dev` (extra) | `pytest ≥ 7.4`, `pytest-mock ≥ 3.11`, `pytest-asyncio ≥ 0.23`, `ruff ≥ 0.4`, `httpx ≥ 0.25` |
+| `turnkey` (extra) | `cryptography ≥ 42.0` |
+| `dev` (extra) | `pytest ≥ 7.4`, `pytest-mock ≥ 3.11`, `pytest-asyncio ≥ 0.23`, `ruff ≥ 0.4`, `httpx ≥ 0.25`, `cryptography ≥ 42.0` |
 
-The extras are exactly `examples`, `ipfs`, and `dev` — there is no `server` extra.
+The extras are exactly `examples`, `ipfs`, `turnkey`, and `dev` — there is no `server` extra.
