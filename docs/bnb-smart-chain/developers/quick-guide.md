@@ -25,6 +25,9 @@ BNB is the native utility token of BNB Smart Chain and is used to pay transactio
 
 For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) which supports BSC network(e.g. Binance).
 
+!!! warning
+    BSCScan APIs are deprecated. Consider [BSCTrace](https://bsctrace.com) as an alternative. See the [migration guide](https://www.bnbchain.org/en/blog/migration-guide-bscscan-api-to-bsctrace-api-via-meganode).
+
 ## JSON-RPC API
 
 Interacting with BSC requires sending requests to specific JSON-RPC API methods. BSC's APIs are compatible with Geth.
