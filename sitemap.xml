@@ -830,7 +830,7 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/developer-kit/bnbagent-sdk/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-08-23</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/</loc>
@@ -847,6 +847,10 @@
     <url>
          <loc>https://docs.bnbchain.org/developer-kit/bnbagent-sdk/networks/</loc>
          <lastmod>2026-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart-typescript/</loc>
+         <lastmod>2026-08-23</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/</loc>

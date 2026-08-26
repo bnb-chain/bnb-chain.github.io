@@ -213,8 +213,9 @@
 - [Overview](https://docs.bnbchain.org/developer-kit/): Lightweight index of official BNB Chain developer tools.
 - [Greenfield SDK](https://docs.bnbchain.org/developer-kit/greenfield-sdk/): Go and JavaScript client libraries for Greenfield (language tabs).
 - [BNB Agent SDK](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/): Python SDK for on-chain AI agents (ERC-8004, ERC-8183) on BSC.
-  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/): Register ERC-8004 agents, run ERC-8183 agent servers, use ERC8183Client, Turnkey wallets.
-  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/): Python toolkit for on-chain AI agents; ERC-8004 identity, ERC-8183 commerce, module system.
+  - [Quickstart (Python)](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/): Register ERC-8004 agents, run ERC-8183 agent servers, use ERC8183Client, Turnkey wallets.
+  - [Quickstart (TypeScript)](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart-typescript/): Same flows in TypeScript; headless provider loop, no HTTP server layer.
+  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/): ERC-8004 identity, ERC-8183 commerce, module system and data flows.
   - [Configuration](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/configuration/): Environment variables for wallet, network, ERC-8183/ERC-8004 contracts, storage, Turnkey.
   - [Networks & contracts](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/networks/): Supported networks and upstream deployment references.
   - [Examples](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/examples/): Client, voter, and agent-server flows.

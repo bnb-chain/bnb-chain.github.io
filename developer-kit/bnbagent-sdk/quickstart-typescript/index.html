@@ -12,31 +12,31 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/developer-kit/bnbchain-studio/">
+        <link rel="canonical" href="https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart-typescript/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="quickstart/">
+        <link rel="next" href="../quickstart/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/bnb.svg">
+      <link rel="icon" href="../../../assets/bnb.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
     
-        <title>BNB Agent Studio</title>
+        <title>BNB Agent SDK Quickstart (TypeScript)</title>
     
 
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,25 +57,25 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap">
     
-      <link rel="stylesheet" href="../../assets/style/index.css">
+      <link rel="stylesheet" href="../../../assets/style/index.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/banner.css">
+      <link rel="stylesheet" href="../../../assets/style/components/banner.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/nav.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/sidebar.css">
+      <link rel="stylesheet" href="../../../assets/style/components/sidebar.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/content.css">
+      <link rel="stylesheet" href="../../../assets/style/components/content.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/footer-nav.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer-nav.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/footer-v2.css">
+      <link rel="stylesheet" href="../../../assets/style/components/footer-v2.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.10/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../assets/style/components/superintern.css">
+      <link rel="stylesheet" href="../../../assets/style/components/superintern.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -146,7 +146,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bnb-agent-studio" class="md-skip">
+        <a href="#quickstart-typescript" class="md-skip">
           Skip to content
         </a>
       
@@ -197,7 +197,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
         </a>
 
@@ -334,7 +334,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -355,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../announce/" class="md-tabs__link">
+        <a href="../../../announce/" class="md-tabs__link">
           
   
   
@@ -377,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bnb-smart-chain/" class="md-tabs__link">
+        <a href="../../../bnb-smart-chain/" class="md-tabs__link">
           
   
   
@@ -399,7 +399,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bnb-opbnb/" class="md-tabs__link">
+        <a href="../../../bnb-opbnb/" class="md-tabs__link">
           
   
   
@@ -421,7 +421,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bnb-greenfield/" class="md-tabs__link">
+        <a href="../../../bnb-greenfield/" class="md-tabs__link">
           
   
   
@@ -445,7 +445,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -467,7 +467,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../bc-fusion/" class="md-tabs__link">
+        <a href="../../../bc-fusion/" class="md-tabs__link">
           
   
   
@@ -511,7 +511,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.bnbchain.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Documentation
@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -595,7 +595,7 @@
   
   
   
-    <a href="../../announce/" class="md-nav__link">
+    <a href="../../../announce/" class="md-nav__link">
       
   
   
@@ -676,7 +676,7 @@
   
   
   
-    <a href="../../bnb-smart-chain/" class="md-nav__link">
+    <a href="../../../bnb-smart-chain/" class="md-nav__link">
       
   
   
@@ -747,7 +747,7 @@
   
   
   
-    <a href="../../bnb-opbnb/" class="md-nav__link">
+    <a href="../../../bnb-opbnb/" class="md-nav__link">
       
   
   
@@ -820,7 +820,7 @@
   
   
   
-    <a href="../../bnb-greenfield/" class="md-nav__link">
+    <a href="../../../bnb-greenfield/" class="md-nav__link">
       
   
   
@@ -897,7 +897,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -932,6 +932,326 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bnbchain-studio/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BNB Agent Studio
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BNB Agent Studio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/cli-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bnbchain-studio/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
             
               
@@ -983,331 +1303,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    BNB Agent Studio
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    BNB Agent Studio
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="quickstart/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quickstart
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="demo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Demo
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cli-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI Reference
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="deployment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deployment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="security/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Security
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../bnbagent-sdk/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1331,7 +1331,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1348,10 +1348,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../bnbagent-sdk/quickstart-typescript/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart (TypeScript)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1367,6 +1394,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-an-agent-erc-8004" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register an agent (ERC-8004)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earn-as-a-provider-erc-8183" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Earn as a provider (ERC-8183)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buy-as-a-client-erc-8183" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buy as a client (ERC-8183)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wallets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wallets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1379,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/quickstart/" class="md-nav__link">
+      <a href="../quickstart/" class="md-nav__link">
         
   
   
@@ -1407,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -1435,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/architecture/" class="md-nav__link">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -1463,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/networks/" class="md-nav__link">
+      <a href="../networks/" class="md-nav__link">
         
   
   
@@ -1491,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -1519,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   
@@ -1547,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bnbagent-sdk/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   
@@ -1611,7 +1730,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../greenfield-sdk/" class="md-nav__link ">
+            <a href="../../greenfield-sdk/" class="md-nav__link ">
               
   
   
@@ -1690,7 +1809,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../mcp/" class="md-nav__link ">
+            <a href="../../mcp/" class="md-nav__link ">
               
   
   
@@ -1734,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ask-ai/" class="md-nav__link">
+      <a href="../../ask-ai/" class="md-nav__link">
         
   
   
@@ -1762,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ask-ai/vs-code-guide/" class="md-nav__link">
+      <a href="../../ask-ai/vs-code-guide/" class="md-nav__link">
         
   
   
@@ -1834,7 +1953,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../mpp-sdk/" class="md-nav__link ">
+            <a href="../../mpp-sdk/" class="md-nav__link ">
               
   
   
@@ -1878,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mpp-sdk/quickstart/" class="md-nav__link">
+      <a href="../../mpp-sdk/quickstart/" class="md-nav__link">
         
   
   
@@ -1906,7 +2025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mpp-sdk/architecture/" class="md-nav__link">
+      <a href="../../mpp-sdk/architecture/" class="md-nav__link">
         
   
   
@@ -1934,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mpp-sdk/replay-store/" class="md-nav__link">
+      <a href="../../mpp-sdk/replay-store/" class="md-nav__link">
         
   
   
@@ -1962,7 +2081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mpp-sdk/examples/" class="md-nav__link">
+      <a href="../../mpp-sdk/examples/" class="md-nav__link">
         
   
   
@@ -2028,7 +2147,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../scaled-ui-amount/" class="md-nav__link ">
+            <a href="../../scaled-ui-amount/" class="md-nav__link ">
               
   
   
@@ -2072,7 +2191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scaled-ui-amount/demo/" class="md-nav__link">
+      <a href="../../scaled-ui-amount/demo/" class="md-nav__link">
         
   
   
@@ -2136,7 +2255,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../privacy-at-scale/" class="md-nav__link ">
+            <a href="../../privacy-at-scale/" class="md-nav__link ">
               
   
   
@@ -2220,7 +2339,7 @@
   
   
   
-    <a href="../../bc-fusion/" class="md-nav__link">
+    <a href="../../../bc-fusion/" class="md-nav__link">
       
   
   
@@ -2273,10 +2392,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#studio-vs-the-sdk" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Studio vs the SDK
+        Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-an-agent-erc-8004" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register an agent (ERC-8004)
       
     </span>
   </a>
@@ -2284,10 +2431,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-install" class="md-nav__link">
+  <a href="#earn-as-a-provider-erc-8183" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you install
+        Earn as a provider (ERC-8183)
       
     </span>
   </a>
@@ -2295,10 +2442,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-runtime-one-signer" class="md-nav__link">
+  <a href="#buy-as-a-client-erc-8183" class="md-nav__link">
     <span class="md-ellipsis">
       
-        One runtime, one signer
+        Buy as a client (ERC-8183)
       
     </span>
   </a>
@@ -2306,43 +2453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-choices-you-make" class="md-nav__link">
+  <a href="#wallets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The choices you make
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-gets-generated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What gets generated
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-a-seller-gets-paid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How a seller gets paid
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next
+        Wallets
       
     </span>
   </a>
@@ -2374,7 +2488,7 @@
   
   
     <li class="md-path__item">
-      <a href="../.." class="md-path__link">
+      <a href="../../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -2392,7 +2506,7 @@
     
     
       <li class="md-path__item">
-        <a href="../" class="md-path__link">
+        <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
     Developer Kit
@@ -2410,10 +2524,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    BNB Agent Studio
+    BNB Agent SDK
   </span>
 
         </a>
@@ -2432,7 +2546,7 @@
 
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/developer-kit/bnbchain-studio/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/developer-kit/bnbagent-sdk/quickstart-typescript.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2440,191 +2554,228 @@
   
 
 
-<div><h1 id="bnb-agent-studio">BNB Agent Studio<a class="headerlink" href="#bnb-agent-studio" title="Link to this section">¶</a></h1>
-<p>Describe the agent you want in Claude Code or Cursor; Studio scaffolds a working
-<strong>TypeScript</strong> project that you own, then helps you run, diagnose, and deploy it.</p>
-<p>A seller agent earns on-chain by offering services over <strong>ERC-8004</strong> (identity),
-<strong>ERC-8183</strong> (escrowed commerce), and <strong>x402/B402</strong> (per-request payments), built on
-the <a href="../bnbagent-sdk/">BNB Agent SDK</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Under active development</p>
-<p>Studio manages wallet keys and on-chain funds, and may introduce breaking
-changes. Start on <strong>BSC testnet</strong> with a wallet funded only for the task.</p>
+<div><h1 id="quickstart-typescript">Quickstart — TypeScript<a class="headerlink" href="#quickstart-typescript" title="Link to this section">¶</a></h1>
+<p>The BNB Agent SDK ships as two first-class implementations that target the same
+protocols and the same on-chain deployments. This page is the TypeScript path; for
+Python see <a href="../quickstart/">Quickstart (Python)</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Choosing a language</p>
+<p>Both SDKs are actively maintained long term — pick the one that matches your
+application. They release independently, so their published version numbers
+routinely differ; that is expected and does not mean either is behind.
+Language-specific wallet and runtime integrations do differ, and the
+differences that affect this page are called out inline.</p>
 </div>
-<h2 id="studio-vs-the-sdk">Studio vs the SDK<a class="headerlink" href="#studio-vs-the-sdk" title="Link to this section">¶</a></h2>
-<p>Two layers, and it is worth being clear which one you want:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>What it is</th>
-<th>Reach for it when</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong><a href="../bnbagent-sdk/">BNB Agent SDK</a></strong></td>
-<td>A <strong>library you import</strong> — ERC-8004, ERC-8183, x402, wallets. Python and TypeScript.</td>
-<td>You want full control and will wire the agent yourself.</td>
-</tr>
-<tr>
-<td><strong>BNB Agent Studio</strong></td>
-<td>A <strong>tool that builds and deploys an app for you</strong>, which then imports the SDK.</td>
-<td>You want scaffolding, IDE-driven workflow, and a guided path to production.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="what-you-install">What you install<a class="headerlink" href="#what-you-install" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>@bnbagent/studio-cli
-bag<span class="w"> </span>skills<span class="w"> </span>install
+<h2 id="install">Install<a class="headerlink" href="#install" title="Link to this section">¶</a></h2>
+<div class="highlight"><pre><span></span><code>pnpm<span class="w"> </span>add<span class="w"> </span>@bnbagent/sdk
+<span class="c1"># or</span>
+npm<span class="w"> </span>install<span class="w"> </span>@bnbagent/sdk
 </code></pre></div>
+<p>Requires <strong>Node.js ≥ 20</strong>. The package ships both ESM (<code>import</code>) and CommonJS
+(<code>require</code>) builds plus TypeScript types.</p>
+<p>Available subpath exports: <code>./erc8004</code>, <code>./erc8183</code>, <code>./x402</code>, <code>./storage</code>,
+<code>./wallets</code>, <code>./signing</code>, <code>./networks</code>, <code>./utils</code>.</p>
+<h3 id="environment">Environment<a class="headerlink" href="#environment" title="Link to this section">¶</a></h3>
+<p>Nothing is read automatically. Call <code>loadEnv()</code> once at your entrypoint to load
+<code>.env.local</code> then <code>.env</code>, or inject variables however your deployment normally
+does. The snippets below use:</p>
 <table>
 <thead>
 <tr>
-<th>Artifact</th>
-<th>Package</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong><code>bag</code> CLI</strong></td>
-<td><a href="https://www.npmjs.com/package/@bnbagent/studio-cli"><code>@bnbagent/studio-cli</code></a></td>
-<td>Scaffold projects, manage wallets, run locally, deploy</td>
-</tr>
-<tr>
-<td><strong>Agent runtime</strong></td>
-<td><a href="https://www.npmjs.com/package/@bnbagent/studio-runtime"><code>@bnbagent/studio-runtime</code></a></td>
-<td>Imported by the generated agent code. The generated project depends on this, <strong>not</strong> on the CLI — removing the global CLI does not disable an already-generated agent.</td>
-</tr>
-<tr>
-<td><strong>Deploy engine</strong></td>
-<td><a href="https://www.npmjs.com/package/@bnbagent/deploy-cli"><code>@bnbagent/deploy-cli</code></a></td>
-<td>Pinned; all cloud lifecycle mutations are delegated to it</td>
-</tr>
-<tr>
-<td><strong>IDE skill</strong></td>
-<td>bundled in the CLI</td>
-<td>The <code>/bnbagent-studio</code> router plus its on-demand playbooks, installed by <code>bag skills install</code></td>
-</tr>
-<tr>
-<td><strong>MCP server</strong></td>
-<td><code>bag mcp serve</code></td>
-<td>15 read-only chain tools for your IDE — it never signs</td>
-</tr>
-</tbody>
-</table>
-<p>The bundled skill is the primary interface: it turns your intent into a reviewable
-workflow and drives <code>bag</code> for you. <code>bag</code> remains available for automation and for
-anyone who prefers direct control.</p>
-<h2 id="one-runtime-one-signer">One runtime, one signer<a class="headerlink" href="#one-runtime-one-signer" title="Link to this section">¶</a></h2>
-<p>A single deployed process serves every selected public face and holds the only key.
-There is no separate keyless service tier.</p>
-<ul>
-<li><strong>Faces are composable</strong> (<code>--protocols</code>): <strong>A2A</strong> (agent card + JSON-RPC on <code>:9000</code>),
-  <strong>MCP</strong> (Streamable HTTP at <code>:8000/mcp</code>), and <strong>X402</strong> (<code>/x402</code>). One seller core and
-  one wallet serve all of them.</li>
-<li><strong>Signing is fixed code</strong>, never an LLM-callable tool. It lives in
-  <code>app/agent/src/signing.ts</code>. The LLM’s chain tools are read-only, and no LLM
-  participates in pricing.</li>
-<li><strong>The keystore lives at the workspace root</strong> in <code>.studio/wallets/</code> — outside
-  <code>app/agent/</code>, so no packaging path can bundle it into a deploy artifact.</li>
-</ul>
-<p>The ERC-8183 rail exposes exactly two bounded operations: <code>negotiate</code> (a rule-based
-price clamp plus a signed quote) and <code>notify_funded</code> (verify the funded job on-chain,
-produce the deliverable, submit it).</p>
-<h2 id="the-choices-you-make">The choices you make<a class="headerlink" href="#the-choices-you-make" title="Link to this section">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Choices</th>
+<th>Variable</th>
+<th>Used by</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Network</td>
-<td><code>bsc-testnet</code>, <code>bsc-mainnet</code></td>
-<td>Start on testnet. The managed BNB trial is always testnet.</td>
+<td><code>NETWORK</code></td>
+<td>network resolution</td>
+<td><code>bsc-testnet</code> (default) or <code>bsc-mainnet</code></td>
 </tr>
 <tr>
-<td>Wallet</td>
-<td><code>evm-local</code> (default), <code>twak</code>, <code>altana</code></td>
-<td>Local encrypted keystore; Trust Wallet Agent Kit custody; or a budget- and time-bounded Altana session.</td>
+<td><code>WALLET_PASSWORD</code></td>
+<td><code>EVMWalletProvider</code></td>
+<td>required; encrypts/decrypts the local Keystore V3 file</td>
 </tr>
 <tr>
-<td>LLM</td>
-<td>Pieverse (default), OpenRouter, OpenAI, Anthropic, Bedrock</td>
-<td>Pieverse <code>auto/free</code> starts at $0/token. Others use your own credentials.</td>
+<td><code>PRIVATE_KEY</code></td>
+<td><code>EVMWalletProvider</code></td>
+<td>first run only — imported, then encrypted to disk; remove afterward</td>
 </tr>
 <tr>
-<td>Commerce rails</td>
-<td>ERC-8183, B402, or both</td>
-<td>ERC-8183 is job escrow; B402 settles x402 requests. Rails and faces are separate choices.</td>
+<td><code>ERC8183_AGENT_URL</code></td>
+<td><code>ERC8183JobOps</code></td>
+<td>public base URL; deliverable-URL fallback host</td>
 </tr>
 <tr>
-<td>Public faces</td>
-<td>A2A, MCP, X402, or a combination</td>
-<td>One runtime serves every selected face.</td>
-</tr>
-<tr>
-<td>Deployment</td>
-<td>BNB managed trial, AWS AgentCore, Azure Foundry</td>
-<td>Every deploy explicitly selects a target; a previous deployment is never a silent default.</td>
-</tr>
-<tr>
-<td>Deliverable storage</td>
-<td>local or IPFS</td>
-<td>Local is for offline development and <strong>fails deployment readiness</strong>. IPFS is durable and deploy-ready.</td>
+<td><code>PROVIDER_ADDRESS</code></td>
+<td>client flow</td>
+<td>address of the agent you are buying from</td>
 </tr>
 </tbody>
 </table>
-<p>Some combinations are rejected before the project changes — Altana does not support
-paid B402 selling, and Azure Foundry currently deploys <strong>A2A scaffolds only</strong>
-(the MCP entrypoint is rejected before a Foundry deploy).</p>
-<h2 id="what-gets-generated">What gets generated<a class="headerlink" href="#what-gets-generated" title="Link to this section">¶</a></h2>
-<div class="highlight"><pre><span></span><code>weatheragent/
-├── package.json                 workspace marker
-├── pnpm-workspace.yaml
-├── AGENTS.md                    generated safety rules for coding agents
-├── agentcore/
-│   ├── agentcore.json           deployment descriptor
-│   └── aws-targets.json         AWS account and region for self-deploy
-├── .studio/
-│   ├── .env.local               gitignored secrets, mode 0600
-│   └── wallets/                 encrypted keystore, outside deployable code
-└── app/agent/
-    ├── studio.toml              network, wallet, LLM, policy, rails, faces
-    └── src/
-        ├── sellerCore.ts        the work your agent sells  ← you edit this
-        ├── signing.ts           fixed quote / verify / submit path
-        ├── tools.ts             read-only chain tools for the LLM
-        ├── unifiedMain.ts       A2A + X402 entrypoint (:9000)
-        ├── mcpMain.ts           MCP-only entrypoint (:8000/mcp)
-        └── dualMain.ts          A2A-native + tunneled /mcp (AgentCore only)
+<p>The full table lives in the <a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/typescript#environment-variables">SDK README</a>.</p>
+<p>Both protocol snippets assume a funded wallet on <code>bsc-testnet</code> — get test BNB from
+the <a href="https://www.bnbchain.org/en/testnet-faucet">BNB Chain faucet</a>.</p>
+<hr>
+<h2 id="register-an-agent-erc-8004">Register an agent (ERC-8004)<a class="headerlink" href="#register-an-agent-erc-8004" title="Link to this section">¶</a></h2>
+<p>A one-time on-chain operation so clients can discover your agent.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">EVMWalletProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">loadEnv</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@bnbagent/sdk"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AgentEndpoint</span><span class="p">,</span><span class="w"> </span><span class="nx">ERC8004Agent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@bnbagent/sdk/erc8004"</span><span class="p">;</span>
+
+<span class="nx">loadEnv</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EVMWalletProvider</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.WALLET_PASSWORD</span><span class="o">!</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">// First run only — encrypted to ~/.bnbagent/wallets/&lt;address&gt;.json;</span>
+<span class="w">  </span><span class="c1">// later runs need only the password.</span>
+<span class="w">  </span><span class="nx">privateKey</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.PRIVATE_KEY</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ERC8004Agent</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">walletProvider</span><span class="o">:</span><span class="w"> </span><span class="kt">wallet</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">network</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.NETWORK</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">"bsc-testnet"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">agentUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">generateAgentUri</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"my-ai-agent"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">"AI agent for document processing"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">endpoints</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">AgentEndpoint</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">endpoint</span><span class="o">:</span><span class="w"> </span><span class="s2">"https://my-agent.example.com/status"</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">registerAgent</span><span class="p">(</span><span class="nx">agentUri</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`agent_id: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">agentId</span><span class="si">}</span><span class="sb">  tx: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">transactionHash</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </code></pre></div>
-<p>Ordinary TypeScript that you own — edit, fork, or move it whenever you want.</p>
-<h2 id="how-a-seller-gets-paid">How a seller gets paid<a class="headerlink" href="#how-a-seller-gets-paid" title="Link to this section">¶</a></h2>
-<p><strong>ERC-8183 — negotiated work with escrow.</strong> A buyer calls <code>negotiate</code>; fixed code
-clamps the configured list price and signs a quote. The buyer creates the job, sets a
-budget, and funds escrow, then sends <code>notify_funded</code>. The seller verifies the signed
-terms, assigned provider, status, budget, and funded state <strong>on-chain before doing paid
-work</strong>, stores the deliverable, and submits its reference. The buyer then manually
-chooses approve, reject, or dispute — Studio never silently auto-settles a buyer’s job.</p>
-<p><code>price = "0"</code> is an explicit <strong>FREE</strong> ERC-8183 job: it skips token escrow, though
-state-changing calls still need gas or a sponsored path.</p>
-<p><strong>x402 — pay per HTTP request.</strong> The X402 face exposes <code>/x402</code>. A positive
-<code>price_usd</code> returns a payment challenge and settles through B402 <em>before</em> work starts;
-<code>price_usd = "0"</code> is anonymous FREE passthrough that bypasses B402 entirely. Paid mode
-needs a complete per-agent B402 merchant setup and an <code>evm-local</code> or <code>twak</code> payout
-wallet. Payment settles before work, so a later work failure has no automatic refund.</p>
-<h2 id="next">Next<a class="headerlink" href="#next" title="Link to this section">¶</a></h2>
-<ul>
-<li><strong><a href="quickstart/">Quickstart</a></strong> — install, scaffold, run, and deploy your first agent</li>
-<li><a href="configuration/">Configuration</a> · <a href="cli-reference/">CLI reference</a> · <a href="deployment/">Deployment</a></li>
-<li><a href="security/">Security</a> · <a href="troubleshooting/">Troubleshooting</a></li>
-</ul></div>
+<p>The endpoint <code>name</code> is an open string — <code>"A2A"</code> and <code>"MCP"</code> are the spec-named
+protocol types, and <code>"web"</code> is the conventional choice for a plain HTTP surface.
+Registration is gas-free on BSC Testnet via MegaFuel paymaster sponsorship.</p>
+<p>Working script: <a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/typescript/examples/agent-server/scripts/register.ts"><code>typescript/examples/agent-server/scripts/register.ts</code></a>.</p>
+<hr>
+<h2 id="earn-as-a-provider-erc-8183">Earn as a provider (ERC-8183)<a class="headerlink" href="#earn-as-a-provider-erc-8183" title="Link to this section">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">The TypeScript SDK ships no HTTP server layer</p>
+<p>The Python SDK’s provider examples wrap the protocol in FastAPI. The
+TypeScript SDK is transport-agnostic: the provider path is a <strong>headless
+polling loop</strong>, not a web app. <code>fundedJobWatcher</code> only <em>detects</em> funded jobs
+— your callback decides what to do with each one, so you can bring whatever
+HTTP framework you like, or none at all.</p>
+</div>
+<p><code>ERC8183JobOps</code> handles verification (status, assignment, expiry, budget floor)
+and deliverable upload.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">EVMWalletProvider</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@bnbagent/sdk"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ERC8183JobOps</span><span class="p">,</span><span class="w"> </span><span class="nx">fundedJobWatcher</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@bnbagent/sdk/erc8183"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LocalStorageProvider</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@bnbagent/sdk/storage"</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EVMWalletProvider</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.WALLET_PASSWORD</span><span class="o">!</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">jobOps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ERC8183JobOps</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">walletProvider</span><span class="o">:</span><span class="w"> </span><span class="kt">wallet</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">network</span><span class="o">:</span><span class="w"> </span><span class="s2">"bsc-testnet"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">storageProvider</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">LocalStorageProvider</span><span class="p">(</span><span class="s2">".agent-data"</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">servicePrice</span><span class="o">:</span><span class="w"> </span><span class="kt">1n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10n</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">18n</span><span class="p">,</span><span class="w"> </span><span class="c1">// reject jobs budgeted below 1 token (18 decimals)</span>
+<span class="w">  </span><span class="nx">agentUrl</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.ERC8183_AGENT_URL</span><span class="p">,</span><span class="w"> </span><span class="c1">// public base URL; deliverable-URL fallback</span>
+<span class="p">});</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">fundedJobWatcher</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">jobOps</span><span class="p">,</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">job</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">jobId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">job</span><span class="p">.</span><span class="nx">jobId</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`[earn-loop] job </span><span class="si">${</span><span class="nx">jobId</span><span class="si">}</span><span class="sb"> funded, budget=</span><span class="si">${</span><span class="nx">job</span><span class="p">.</span><span class="nx">budget</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">jobOps</span><span class="p">.</span><span class="nx">submitResult</span><span class="p">(</span>
+<span class="w">      </span><span class="nx">jobId</span><span class="p">,</span>
+<span class="w">      </span><span class="sb">`computed result for job </span><span class="si">${</span><span class="nx">jobId</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">"my-model-v1"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">result</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`[earn-loop] submit(</span><span class="si">${</span><span class="nx">jobId</span><span class="si">}</span><span class="sb">) failed: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">      </span><span class="c1">// { retry: true } asks the watcher to re-validate and re-fire this job</span>
+<span class="w">      </span><span class="c1">// on the next tick — only for transient failures.</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">retry</span><span class="o">:</span><span class="w"> </span><span class="kt">result.retryable</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`[earn-loop] submitted </span><span class="si">${</span><span class="nx">jobId</span><span class="si">}</span><span class="sb">, tx=</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">txHash</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">interval</span><span class="o">:</span><span class="w"> </span><span class="kt">30</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// seconds between polls</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Settle is permissionless and is <strong>not</strong> run for you: any party can finalise a
+submitted job once its dispute window elapses. Operators typically run a separate
+script that polls verdicts and calls <code>settle()</code>.</p>
+<hr>
+<h2 id="buy-as-a-client-erc-8183">Buy as a client (ERC-8183)<a class="headerlink" href="#buy-as-a-client-erc-8183" title="Link to this section">¶</a></h2>
+<p>The client creates a job, binds the on-chain dispute policy, funds escrow, and —
+once the provider submits — settles it.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">loadEnv</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">EVMWalletProvider</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">ERC8183Client</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">JobStatus</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@bnbagent/sdk"</span><span class="p">;</span>
+
+<span class="nx">loadEnv</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EVMWalletProvider</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.WALLET_PASSWORD</span><span class="o">!</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">privateKey</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.PRIVATE_KEY</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ERC8183Client</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">walletProvider</span><span class="o">:</span><span class="w"> </span><span class="kt">wallet</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">network</span><span class="o">:</span><span class="w"> </span><span class="s2">"bsc-testnet"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">decimals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">tokenDecimals</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">budget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10n</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="nb">BigInt</span><span class="p">(</span><span class="nx">decimals</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1 token</span>
+
+<span class="c1">// expiredAt must clear (disputeWindow + a safety buffer) or createJob() throws —</span>
+<span class="c1">// a job whose deadline is too close can never be submitted.</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">disputeWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">policy</span><span class="p">.</span><span class="nx">disputeWindow</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">expiredAt</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="nb">BigInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">disputeWindow</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">600n</span><span class="p">;</span><span class="w"> </span><span class="c1">// +10 min slack</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">jobId</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createJob</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.PROVIDER_ADDRESS</span><span class="o">!</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">expiredAt</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">"ERC-8183 demo: summarize this week's BSC ecosystem news"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// Bind the OptimisticPolicy so settle() has a verdict source.</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">registerJob</span><span class="p">(</span><span class="nx">jobId</span><span class="o">!</span><span class="p">);</span>
+
+<span class="c1">// Escrow the budget — auto-approves the payment token if the allowance is short.</span>
+<span class="c1">// For a free job, setBudget(jobId, 0n) then fund(jobId, 0n) moves no tokens and</span>
+<span class="c1">// skips the ERC-20 approve entirely.</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">fund</span><span class="p">(</span><span class="nx">jobId</span><span class="o">!</span><span class="p">,</span><span class="w"> </span><span class="nx">budget</span><span class="p">);</span>
+
+<span class="c1">// ... the provider submits its deliverable here ...</span>
+
+<span class="c1">// After the dispute window elapses with no rejection, settle() finalizes the job</span>
+<span class="c1">// as COMPLETED (or REJECTED if the policy recorded a reject vote).</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">settle</span><span class="p">(</span><span class="nx">jobId</span><span class="o">!</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getJob</span><span class="p">(</span><span class="nx">jobId</span><span class="o">!</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`settled -&gt; </span><span class="si">${</span><span class="nx">JobStatus</span><span class="p">[</span><span class="nx">job</span><span class="p">.</span><span class="nx">status</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</code></pre></div>
+<p>Five canonical client flows (happy, dispute-reject, stalemate-expire,
+never-submit, cancel-open) live in
+<a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/typescript/examples/client"><code>typescript/examples/client/</code></a>.</p>
+<hr>
+<h2 id="wallets">Wallets<a class="headerlink" href="#wallets" title="Link to this section">¶</a></h2>
+<p><code>EVMWalletProvider</code> (local Keystore V3) is used above. The TypeScript SDK also
+ships <code>TWAKProvider</code> (Trust Wallet Agent Kit CLI) and <code>AltanaWalletProvider</code>
+(EIP-7702 session keys) — select the backend at construction time, or set
+<code>WALLET_KIND=evm|twak</code>. See the
+<a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/typescript#wallet-providers">wallet providers section</a>
+of the SDK README.</p>
+<hr>
+<p><a href="../">← BNB Agent SDK overview</a> · <a href="../quickstart/">Quickstart (Python)</a></p></div>
 
 
 
@@ -2645,7 +2796,7 @@ wallet. Payment settles before work, so a later work failure has no automatic re
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 18:07:12 UTC">August 23, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2026 17:45:26 UTC">August 23, 2026</span>
   </span>
 
     
@@ -2781,19 +2932,19 @@ wallet. Payment settles before work, so a later work failure has no automatic re
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.integration", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.prune", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
 
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../assets/js/mathjax.js"></script>
+        <script src="../../../assets/js/mathjax.js"></script>
       
-        <script src="../../assets/js/custom.js"></script>
+        <script src="../../../assets/js/custom.js"></script>
       
-        <script src="../../assets/js/superintern.js"></script>
+        <script src="../../../assets/js/superintern.js"></script>
       
-        <script src="../../assets/js/footer-menu-v2.js"></script>
+        <script src="../../../assets/js/footer-menu-v2.js"></script>
       
     
 <script src="https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
