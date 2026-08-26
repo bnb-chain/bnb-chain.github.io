@@ -297,7 +297,8 @@ nav:
           - Troubleshooting: ./developer-kit/bnbchain-studio/troubleshooting.md
       - BNB Agent SDK:
           - Overview: ./developer-kit/bnbagent-sdk/index.md
-          - Quickstart: ./developer-kit/bnbagent-sdk/quickstart.md
+          - Quickstart (TypeScript): ./developer-kit/bnbagent-sdk/quickstart-typescript.md
+          - Quickstart (Python): ./developer-kit/bnbagent-sdk/quickstart.md
           - Configuration: ./developer-kit/bnbagent-sdk/configuration.md
           - Architecture: ./developer-kit/bnbagent-sdk/architecture.md
           - Networks & Contracts: ./developer-kit/bnbagent-sdk/networks.md
