@@ -64,6 +64,10 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
 
+### Benchmark
+
+See the [OpenChainBench BNB RPC benchmark](https://openchainbench.com/benchmarks/bnb-rpc) for independent p50/p90/p99 latency and success rate across community providers.
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
