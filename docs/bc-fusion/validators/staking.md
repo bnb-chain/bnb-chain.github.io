@@ -131,7 +131,7 @@ accordingly:
 - **New vote address**: The new vote address for participating fast finality.
 
 These transactions will update the validator information on the BNB smart chain, and the changes will take
-effect at the next validator set update, i.e., the first block after 00:00 UTC. However, the new commission rate will only apply to the rewards earned after the transaction, and
+effect at the next validator set update, i.e., the first epoch after 00:00 UTC. However, the new commission rate will only apply to the rewards earned after the transaction, and
 the previous rewards will be distributed according to the previous commission rate.
 
 ## Delegator Operations
