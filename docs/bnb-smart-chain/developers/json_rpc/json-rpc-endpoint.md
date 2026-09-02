@@ -27,6 +27,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 * https://bsc.nodereal.io
 * https://bsc-dataseed-public.bnbchain.org
 * https://rpc-bnb.blockmachine.io
+* https://rpc.solidrpc.io/public/evm/56
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
@@ -64,6 +65,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
 
+* **SolidRPC:** <https://solidrpc.io/docs>
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
@@ -97,4 +100,4 @@ Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  
 
 ### Other BSC API
 
-Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others). 
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
