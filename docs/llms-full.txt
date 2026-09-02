@@ -1589,3 +1589,223 @@ To support gasless transactions on opBNB, the following features have been intro
 - When the gas price is set to 0, the L1 fee will also be set to 0.
 
 Combined with these features and a sponsor (paymaster), users can send transactions without holding BNB to pay gas fees.
+
+## Architecture
+> Source: https://docs.bnbchain.org/design/architecture/
+
+# Architecture
+
+## Signing policy
+
+Signing policy is additive and explicit. A project may extend allowed EIP-712 domains...
+
+- `erc8004` registers, resolves, and updates agent identity metadata.
+- `erc8183` exposes job listing, buy, status, submit, fetch, settle, quote negotiation, funded-job verification, and revert decoding.
+- `x402` has two halves. The buyer client validates and signs EIP-3009 payments behind host, recipient, asset, amount, and budget policy (`bag x402 trust` / `quote` / `buy`). The seller rail (`X402Seller`, `bag x402 sell init` / `sell status`) serves `/x402` with four visible states - disabled, dormant (positive price but B402 credentials absent), paid active, and FREE active. Paid requests settle through B402 before work; FREE bypasses B402 entirely. Studio records only redaction-safe identifiers and a request digest for transport and asynchronous settlement failures; it never prints or persists the signed settlement payload. `@bnb-chain/b402@0.2.1` guards replay slots with a bounded process-local atomic store by default and accepts an injected shared `B402ReplayStore` for multi-instance hosts; it does not yet implement B402's required idempotent pending poll.
+
+## Platform gateway
+
+The platform gateway publishes each agent at `{base}/v1/rt/{agentId}/…`. Buyers authenticate with OAuth2 client_credentials minted by `bag platform invoke-client new` (scope `invoke:<agentId>`); the `/x402` path is the exception - published anonymously and rate-limited per IP. Gateway traffic uses AgentCore's native path for A2A or MCP-only. Dual MCP and x402 reach the container as envelope-v1 JSON over `InvokeAgentRuntime`, and the deploy descriptor advertises the x402 need with `doc.x402 = { publicPaths: ["/x402"], tunnel: "http-envelope-v1" }`. The managed platform is the only target that ships a public anonymous URL for the rail; a self-hosted AgentCore deploy activates the rail behind the operator's own front instead. Dual A2A+MCP descriptors independently add `doc.mcp = { publicPaths: ["/mcp"], tunnel: "http-envelope-v1" }`; X402-only descriptors add `suppressProtocolFace = true`. MCP gateway support is rolling out, while A2A is the stable dual-face path.
+
+## Readiness model
+
+Findings use four levels:
+...
+## Signing policy
+
+Signing policy is additive and explicit. A project may extend allowed EIP-712 domains...
+
+- `erc8004` registers, resolves, and updates agent identity metadata.
+- `erc8183` exposes job listing, buy, status, submit, fetch, settle, quote negotiation, funded-job verification, and revert decoding.
+- `x402` has two halves. The buyer client validates and signs EIP-3009 payments behind host, recipient, asset, amount, and budget policy (`bag x402 trust` / `quote` / `buy`). The seller rail (`X402Seller`, `bag x402 sell init` / `sell status`) serves `/x402` with four visible states - disabled, dormant (positive price but B402 credentials absent), paid active, and FREE active. Paid requests settle through B402 before work; FREE bypasses B402 entirely. Studio records only redaction-safe identifiers and a request digest for transport failures and asynchronous pending settlements; it never prints or persists the signed settlement payload. `@bnb-chain/b402@0.2.1` guards replay slots with a bounded process-local atomic store by default and accepts an injected shared `B402ReplayStore` for multi-instance hosts; it does not yet implement B402's required idempotent pending poll.
+
+## Platform gateway
+
+The platform gateway publishes each agent at `{base}/v1/rt/{agentId}/…`. Buyers authenticate with OAuth2 client_credentials minted by `bag platform invoke-client new` (scope `invoke:<agentId>`); the `/x402` path is the exception - published anonymously and rate-limited per IP. Gateway traffic uses AgentCore's native path for A2A or MCP-only. Dual MCP and x402 reach the container as envelope-v1 JSON over `InvokeAgentRuntime`, and the deploy descriptor advertises the x402 need with `doc.x402 = { publicPaths: ["/x402"], tunnel: "http-envelope-v1" }`. The managed platform is the only target that ships a public anonymous URL for the rail; a self-hosted AgentCore deploy activates the rail behind the operator's own front instead. Dual A2A+MCP descriptors independently add `doc.mcp = { publicPaths: ["/mcp"], tunnel: "http-envelope-v1" }`; X402-only descriptors add `suppressProtocolFace = true`. MCP gateway support is rolling out, while A2A is the stable dual-face path.
+
+Generated seller operations always have bounded process-local global and trusted-caller counters. That default is a one-replica boundary, not a claim of distributed enforcement: `setCommerceRateLimiters()` accepts application-owned async shared implementations, and a trusted edge may enforce the equivalent limits. Hosted or unspecified environments warn when the process-local default is used (`bag dev` identifies itself as development). Shared checks receive an abort signal and fail closed after five seconds; shared infrastructure remains optional rather than a scaffold prerequisite.
+
+## Readiness model
+
+Findings use four levels:...
+
+## B402 Seller (the x402 rail): why the design is shaped this way
+> Source: https://docs.bnbchain.org/design/b402-seller/
+
+# B402 seller (the x402 rail): why the design is shaped this way
+
+> Status: the managed Gateway, Relay, and v0.0.6 seller flow were implemented and validated end to end on BSC Testnet (2026-07-31). Binance changed `/settle` to an asynchronous protocol on 2026-07-14; the current `@bnb-chain/b402@0.2.1` runtime does not yet poll pending responses. See "Asynchronous settlement compatibility" before production use. Companion to `decisions.md` §25 to §28 (the decisions) and `docs/guides/x402-selling.md` (operation). This doc records the rationale and wire contracts that the code cannot express: why the paid/FREE public face sits on the platform gateway, how the envelope tunnel restores HTTP semantics, how the B402 Relay supplies fixed facilitator egress, and the B402 facts pinned in `packages/studio-runtime/src/x402/`.
+
+Fact-source policy: the managed Gateway and Relay sections adapt the current production documents [`x402-b402-managed-flow.md`](https://github.com/bnb-chain/bnbaget-api/blob/main/docs/x402-b402-managed-flow.md), [`x402-gateway.md`](https://github.com/bnb-chain/bnbaget-api/blob/main/docs/x402-gateway.md), and [`b402-whitelist-api.md`](https://github.com/bnb-chain/bnbaget-api/blob/main/docs/b402-whitelist-api.md) into Studio operator guidance. They are not copied verbatim because this document also separates managed versus self-hosted responsibilities and incorporates current AWS and Binance protocol changes. The matching production code remains authoritative for managed behavior; official AWS and Binance documentation remains authoritative for their external contracts.
+
+[Binance's 2026-07-14 B402 change](https://developers.binance.com/en/docs/products/onchainpay-x402/change-log) made `/settle` asynchronous. `success: false` with a non-empty transaction is pending, not terminal. A conforming client polls `/settle` with the same settlement payload until success or a terminal result, for at least `maxTimeoutSeconds`.
+
+As of 2026-08-26, Studio uses `@bnb-chain/b402@0.2.1`. It makes one settle call and converts a pending response into the existing outcome-unknown/manual-reconciliation path. Its H02 replay guard blocks duplicate credentials before settlement when backed by the configured atomic store, but it does not implement the required pending poll. The managed Gateway and B402 Relay are already compatible byte transports; the missing behavior is inside the seller's B402 client flow.
+
+Until that runtime behavior is updated, the implemented path is a validated BSC Testnet baseline, not a complete mainnet acceptance result for slow settlements.
+
+## Design Decisions
+> Source: https://docs.bnbchain.org/design/decisions/
+
+# Design Decisions
+
+... (existing content) ...
+
+## 26. x402 settlement is asynchronous; pending is not terminal
+
+x402 request payment and ERC-8183 escrow are composable rails, not two names for the same thing.
+
+The seller settles the buyer's authorization before starting paid work. A later work timeout or failure retains the payment and returns an error with the receipt where available. An uncertain settlement is recorded out of band as `x402_sell_unknown`; operators must reconcile `(nonce, network, payer)` and must never retry settlement blindly.
+
+Binance made `/settle` asynchronous on 2026-07-14. A parseable `success: false` response with transaction evidence is pending and requires an idempotent poll with the same settlement payload; that is distinct from a blind transport retry. Studio with `@bnb-chain/b402@0.2.1` still classifies pending as unknown and does not perform the required poll. Treat this as a known production-readiness gap, not as the intended final protocol behavior.
+
+## 27. The x402 public face needs a front; the rail runs on any AgentCore target
+
+... (existing content) ...
+## 26. x402 settlement is asynchronous; pending is not terminal
+
+x402 request payment and ERC-8183 escrow are composable rails, not two names for the same thing.
+
+The seller settles the buyer's authorization before starting paid work. A later work timeout or failure retains the payment and returns an error with the receipt where available. An uncertain settlement is recorded out of band as `x402_sell_unknown`; operators must reconcile `(nonce, network, payer)` and must never retry settlement blindly.
+
+Binance made `/settle` asynchronous on 2026-07-14. A parseable `success: false` response with transaction evidence is pending and requires an idempotent poll with the same settlement payload; that is distinct from a blind transport retry. Studio with `@bnb-chain/b402@0.2.1` still classifies pending as unknown and does not perform the required poll. Treat this as a known production-readiness gap, not as the intended final protocol behavior.
+
+## 27. The x402 public face needs a front; the rail runs on any AgentCore target
+
+... (existing content) ...
+
+## Altana Wallet
+> Source: https://docs.bnbchain.org/guides/altana-wallet/
+
+# Altana wallet
+
+Altana is an opt-in custody mode. The trusted operator keeps an encrypted admin keystore under the workspace `.studio/wallets/` directory; the running Agent receives one bounded, expiring session instead. Generic message signing is not exposed. ERC-8183 quotes use the session's quote-only signer and require the configured on-chain quote checker approval.
+
+Generated projects pin the reviewed integration target `@altananetwork/sdk@0.7.1`. Doctor, deploy readiness, and runtime loading reject a different installed version. Treat a pin change as a security change and repeat source review, SDK type-compatibility tests, and Altana testnet E2E before updating it.
+
+Projects created with `@bnbagent/sdk` older than 0.5.4 must upgrade that dependency before upgrading Studio Runtime. SDK 0.5.4 replaces target-wide Altana calls with selector-bound permissions, removes session-key ERC-20 `approve`, and requires the administrator to provision a bounded Commerce allowance. Deploy readiness rejects the older permission shape. Run `pnpm add @bnbagent/sdk@0.5.4`, then `bag wallet session grant --force` and redeploy.
+
+Altana currently supports only the canonical ERC-8183 Commerce/Router/Policy stack. `bag doctor` and deploy readiness reject an Altana project with an active ERC-8183 rail when custom `ERC8183_*_ADDRESS` overrides are selected, because its session permissions and quote-checker approval remain bound to the canonical contracts.
+
+Deployment ships ONLY the serialized session, injected as the `ALTANA_SESSION` runtime secret — the same channel `bag dev` uses. The admin keystore and `WALLET_PASSWORD` never leave the operator machine. Deploy readiness fails on a missing, expired, or address-mismatched session, on a group/world-readable session file, on a session file inside the packaged artifact root, or when the project-local `@altananetwork/sdk` cannot be resolved; it warns when the session expires within 7 days.
+
+... (existing content) ...
+
+```bash
+bag wallet session grant \
+  --yes
+```
+
+Use `--no-register` only when registry visibility is not wanted. The command writes `.studio/wallets/altana-session.json` with owner-only permissions, provisions a Commerce allowance no higher than the session's U-token cap, then approves the ERC-8183 quote checker. Every relay-backed management write must return `CONFIRMED`; `PENDING` and other statuses fail closed and preserve the session file. If either setup step fails, repair both without paying for another grant:
+
+```bash
+bag wallet session grant --approve-only
+```
+
+Only one local session is supported. `--approve-only`, runtime loading, and deploy readiness reject a pre-0.5.4 target-wide session; use `--force` to replace it. Replacement is fail-closed: `--force` first zeros the old Commerce allowance, then must receive confirmed revocation before a new one is granted.
+
+## Inspect, run, and revoke
+
+... (existing content) ...
+
+```bash
+bag dev
+bag wallet session revoke --yes
+```
+
+`status` reads only public envelope metadata; it does not deserialize or print the session signer. Revocation zeros the Commerce allowance before revoking on-chain and removes the local file only after both operations succeed. `bag dev --container` injects the serialized session as `ALTANA_SESSION`; it never injects the admin keystore or password.
+
+## Deploy and renew
+
+... (existing content) ...
+## Inspect, run, and revoke
+
+... (existing content) ...
+
+```bash
+bag dev
+bag wallet session revoke --yes
+```
+
+`status` reads only public envelope metadata; it does not deserialize or print the session signer. Revocation zeros the Commerce allowance before revoking on-chain and removes the local file only after both operations succeed. `bag dev --container` injects the serialized session as `ALTANA_SESSION`; it never injects the admin keystore or password.
+
+## Deploy and renew
+
+... (existing content) ...
+
+## Self-Hosted x402 Gateway on Azure
+> Source: https://docs.bnbchain.org/guides/self-hosted-x402-gateway-azure/
+
+# Self-Hosted x402 Gateway on Azure
+
+... (existing content) ...
+
+## Asynchronous-settlement compatibility limit
+
+Identical to the AWS guide: `@bnb-chain/b402@0.2.1` makes one settle call and classifies an asynchronous pending response as outcome unknown. Reconcile it; do not replay the paid request; do not advertise mainnet readiness on this path.
+
+## Production checklist deltas
+
+... (existing content) ...
+## Asynchronous-settlement compatibility limit
+
+Identical to the AWS guide: `@bnb-chain/b402@0.2.1` makes one settle call and classifies an asynchronous pending response as outcome unknown. Reconcile it; do not replay the paid request; do not advertise mainnet readiness on this path.
+
+## Production checklist deltas
+
+... (existing content) ...
+
+## Self-Hosted x402 Gateway
+> Source: https://docs.bnbchain.org/guides/self-hosted-x402-gateway/
+
+# Self-Hosted x402 Gateway
+
+... (existing content) ...
+
+Binance changed `/settle` on 2026-07-14. A response with `success: false` and a non-empty `transaction` is pending, not a terminal failure. A conforming B402 client polls `/settle` with the same settlement payload until success or a terminal result, for at least the payment's `maxTimeoutSeconds`.
+
+Studio uses `@bnb-chain/b402` `0.2.1`, including replay-slot protection, performs one settle call, and classifies a pending response as outcome unknown for manual reconciliation. The Relay is a byte forwarder and does not correct that client behavior. Do not describe the current Studio runtime as fully compatible with slow asynchronous settlements, and do not use the current path for mainnet acceptance until the runtime adds the required idempotent pending poll.
+
+This does not authorize blind retry after a timeout or broken connection. Pending polling starts only after B402 returned a parseable pending response with transaction evidence, and it reuses the same settlement payload.
+
+... (existing content) ...
+
+## x402 Selling
+> Source: https://docs.bnbchain.org/guides/x402-selling/
+
+# x402 Selling
+
+... (existing content) ...
+
+Binance changed `/settle` to an asynchronous protocol on 2026-07-14. A parseable response with `success: false` and a non-empty `transaction` is pending, not terminal. A conforming B402 client must poll `/settle` idempotently with the same settlement payload until success or a terminal result, for at least the payment's `maxTimeoutSeconds`.
+
+Studio uses `@bnb-chain/b402@0.2.1`. Its H02 replay guard reserves an atomic `(transfer method, network, asset, payer, nonce)` slot before `/settle`; Studio supplies a bounded process-local atomic store by default, and a store failure rejects the request before any settlement call. The default fails closed at its capacity instead of evicting replay state. Multi-instance production hosts must pass a durable shared `B402ReplayStore` as `X402Seller.create({ replayStore })`; the default only coordinates one process. Backend failures are redacted before B402 can log them.
+
+Version 0.2.1 still performs one settle call and classifies a pending response as outcome unknown instead of polling. A timeout or broken connection is also unknown because B402 may finish later. The runtime returns a reconciliation-required error and emits a redaction-safe `X402_SETTLE_UNKNOWN` stdout marker containing only the nonce, network, payer, and a SHA-256 request digest. The matching `x402_sell_unknown` audit event contains the same identifiers. Studio does not print or persist the signed settlement payload.
+
+Reconciliation procedure:
+
+1. Do not replay the paid request blindly.
+2. Locate the stdout marker and the matching `x402_sell_unknown` event by `request_sha256`.
+3. Use the idempotency tuple `(nonce, network, payer)` and request digest to ask B402's merchant reconciliation/status channel for the outcome. Do not reconstruct or replay the signed request from logs.
+4. If B402 reports a late successful settlement, record it as paid and decide operationally whether to deliver the work out of band.
+5. If B402 confirms failure, mark the attempt failed. A buyer may create a new authorization with a new nonce; do not reuse the uncertain one.
+
+... (existing content) ...
+
+## Roadmap
+> Source: https://docs.bnbchain.org/roadmap/
+
+# Roadmap
+
+... (existing content) ...
+
+- Altana bounded-session custody with session-only deploys on every provider: `bag deploy` ships only the serialized `ALTANA_SESSION` secret, readiness validates the session (expiry CRITICAL plus a 7-day warning), and renewal is re-grant plus redeploy; the admin keystore never leaves the operator machine.
+- Azure AI Foundry deploy adapter (container-only, delegated to the pinned `@bnbagent/deploy-cli`) with readiness, smoke, logs, status, and teardown.
+- npm release/build-smoke workflow, distribution leak checks, and package lockstep enforcement.
+- stable `@bnbagent/sdk@0.5.4` integration with canonical ERC-8183 zero-price funding.
+- migration behavior-equivalence audit, followed by retirement of the temporary ledger once its cases moved into the package Vitest suites.
+
+## External verification
+
+... (existing content) ...
