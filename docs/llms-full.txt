@@ -914,3 +914,103 @@ For **parameter names, examples, and detailed usage**, see the [bnbchain-skills]
 - **BNB Chain skills (installable skill + references):** [github.com/bnb-chain/bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills)
 - **npm:** `npx @bnb-chain/mcp@latest`
 - **ERC-8004** (Identity Registry); **Agent Metadata Profile** for agentURI format.
+## 1. Connection and credentials
+
+- **Run the server:** `npx @bnb-chain/mcp@latest` (fetches from npm at runtime). Source: [github.com/bnb-chain/bnbchain-mcp](https://github.com/bnb-chain/bnbchain-mcp).
+- **RPC:** Default chains use built-in RPC; no config unless self-hosting or custom RPC.
+- **PRIVATE_KEY:** Omit or leave empty for read-only (blocks, balances, contract reads). Set in the MCP server `env` for state-changing tools (transfers, `write_contract`, `approve_token_spending`, ERC-8004 register/set_uri, Greenfield writes). Never log or expose private keys.
+- **Read-only vs state-changing:** Block/balance/contract-read tools work without a key; transfers and writes require `PRIVATE_KEY` in the server environment.
+
+---
+
+## 2. MCP server config
+
+Add the `bnbchain-mcp` server to the MCP client config (e.g. Cursor MCP settings, Claude Desktop `claude_desktop_config.json`).
+
+**Default (stdio):**
+
+```json
+{
+  "mcpServers": {
+    "bnbchain-mcp": {
+      "command": "npx",
+      "args": ["-y", "@bnb-chain/mcp@latest"],
+      "env": {
+        "PRIVATE_KEY": ""
+      }
+    }
+  }
+}
+```
+
+**SSE mode:** `"args": ["-y", "@bnb-chain/mcp@latest", "--sse"]` (and client SSE URL if required). **Local dev server** (e.g. `bun dev:sse` in bnbchain-mcp): `"url": "http://localhost:3001/sse"` with the same `env`.
+
+Restart or reload the MCP client after changing config so the server starts.
+
+---
+
+## 3. Agent registration (ERC-8004)
+
+1. Register the agent on-chain with the MCP tool **`register_erc8004_agent`** (see [bnbchain-skills skill references](https://github.com/bnb-chain/bnbchain-skills/tree/main/skills/bnbchain-mcp-skill/references)).
+2. **Mainnet:** Check agent registration and status at **[https://www.8004scan.io/](https://www.8004scan.io/)**
+3. **Testnet:** Check registration at **[https://testnet.8004scan.io/](https://testnet.8004scan.io/)**
+
+---
+
+## 4. Tool categories (quick reference)
+
+Most EVM tools accept **`network`** (optional): chain name or ID, e.g. `bsc`, `opbnb`, `ethereum`, `base`. Default is `bsc`. Use **`get_supported_networks`** to list supported networks.
+
+| Category | Examples | Needs PRIVATE_KEY? |
+|----------|----------|--------------------|
+| Blocks | `get_latest_block`, `get_block_by_number`, `get_block_by_hash` | No |
+| Transactions | `get_transaction`, `get_transaction_receipt`, `estimate_gas` | No (estimate only) |
+| Network | `get_chain_info`, `get_supported_networks` | No |
+| Wallet / balance | `get_native_balance`, `get_erc20_balance`, `get_address_from_private_key` | Balance: optional address or privateKey |
+| Transfers / writes | `transfer_native_token`, `transfer_erc20`, `transfer_nft`, `transfer_erc1155`, `approve_token_spending`, `write_contract` | Yes |
+| Contracts | `read_contract`, `is_contract` | No for read |
+| Tokens / NFT | `get_erc20_token_info`, `get_nft_info`, `get_erc1155_token_metadata`, `check_nft_ownership`, `get_nft_balance`, `get_erc1155_balance` | No for read |
+| ERC-8004 | `register_erc8004_agent`, `set_erc8004_agent_uri`, `get_erc8004_agent`, `get_erc8004_agent_wallet` | Register/set_uri: Yes |
+| Greenfield | `gnfd_*` bucket/object/payment tools | Writes: Yes |
+
+### MCP prompts
+
+- **analyze_block** — Analyze a block and its contents  
+- **analyze_transaction** — Analyze a specific transaction  
+- **analyze_address** — Analyze an EVM address  
+- **interact_with_contract** — Guidance on interacting with a smart contract  
+- **explain_evm_concept** — Explain an EVM concept  
+- **compare_networks** — Compare EVM-compatible networks  
+- **analyze_token** — Analyze an ERC20 or NFT token  
+- **how_to_register_mcp_as_erc8004_agent** — Guidance on registering MCP as ERC-8004 agent  
+
+---
+
+## 5. Reference docs (per-tool usage)
+
+For **parameter names, examples, and detailed usage**, see the [bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills) repo:
+
+| Reference | Content |
+|-----------|---------|
+| [evm-tools-reference.md](https://github.com/bnb-chain/bnbchain-skills/blob/main/skills/bnbchain-mcp-skill/references/evm-tools-reference.md) | Blocks, transactions, network, wallet, contracts, tokens, NFT — all EVM tools |
+| [erc8004-tools-reference.md](https://github.com/bnb-chain/bnbchain-skills/blob/main/skills/bnbchain-mcp-skill/references/erc8004-tools-reference.md) | register_erc8004_agent, set_erc8004_agent_uri, get_erc8004_agent, get_erc8004_agent_wallet |
+| [greenfield-tools-reference.md](https://github.com/bnb-chain/bnbchain-skills/blob/main/skills/bnbchain-mcp-skill/references/greenfield-tools-reference.md) | Buckets, objects, folders, payment accounts — all Greenfield tools |
+| [prompts-reference.md](https://github.com/bnb-chain/bnbchain-skills/blob/main/skills/bnbchain-mcp-skill/references/prompts-reference.md) | All MCP prompts and when to use them |
+
+---
+
+## 6. Safety and best practices
+
+1. **Confirm before sending transactions:** For `transfer_*`, `write_contract`, or `approve_token_spending`, confirm recipient, amount, and network before calling the tool.
+2. **Prefer testnet** when the network is unspecified for writes or agent registration.
+3. **Private keys:** Only in MCP server `env`; never in chat or logs.
+4. **ERC-8004 agentURI:** JSON metadata per the Agent Metadata Profile (name, description, image, services e.g. MCP endpoint).
+
+---
+
+## Documentation links
+
+- **BNB Chain MCP repo:** [github.com/bnb-chain/bnbchain-mcp](https://github.com/bnb-chain/bnbchain-mcp)
+- **BNB Chain skills (installable skill + references):** [github.com/bnb-chain/bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills)
+- **npm:** `npx @bnb-chain/mcp@latest`
+- **ERC-8004** (Identity Registry); **Agent Metadata Profile** for agentURI format.
