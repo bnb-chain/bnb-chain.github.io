@@ -1,1 +1,1 @@
-- [BNB Chain Skills](https://docs.bnbchain.org/showcase/mcp/SKILLS/): BNB Chain MCP skill overview covering connection, credentials, tools, ERC-8004 agent registration, and reference docs.
+- [BNB Chain Skills](https://docs.bnbchain.org/showcase/mcp/SKILLS/): BNB Chain MCP skill overview covering connection, credentials, tool categories, ERC-8004 agent registration, prompts, and reference docs.
