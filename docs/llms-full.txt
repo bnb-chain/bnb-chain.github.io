@@ -1589,3 +1589,42 @@ To support gasless transactions on opBNB, the following features have been intro
 - When the gas price is set to 0, the L1 fee will also be set to 0.
 
 Combined with these features and a sponsor (paymaster), users can send transactions without holding BNB to pay gas fees.
+
+## BSC
+> Source: https://docs.bnbchain.org/faq/bsc/
+
+# BNB Smart Chain FAQs
+
+FAQs for BNB Smart Chain. New questions are added here by the FAQ pipeline.
+
+Existing articles:
+
+- [Recovering Tokens Sent to Wrong Chain or Address](../../bnb-smart-chain/faq/recovering-tokens-sent-to-wrong-chain-or-address.md)
+- [Tokens Not Showing in Wallet](../../bnb-smart-chain/faq/tokens-not-showing-in-wallet.md)
+- [Transfer NEXO from Tangem into BSC](../../bnb-smart-chain/faq/transfer-nexo-from-tangem-into-bsc.md)
+- [Lorentz Hard Fork Upgrade](../../bnb-smart-chain/faq/lorentz-hard-fork-upgrade.md)
+
+## FAQ
+> Source: https://docs.bnbchain.org/faq/
+
+# FAQ
+
+Support FAQs for BNB Chain, grouped by network.
+
+- [BNB Smart Chain](./bsc/index.md)
+- [opBNB](./opbnb/index.md)
+
+## opBNB
+> Source: https://docs.bnbchain.org/faq/opbnb/
+
+# opBNB FAQs
+
+FAQs for opBNB. New questions are added here by the FAQ pipeline.
+
+Existing articles:
+
+- [Protocol FAQs](../../bnb-opbnb/faq/protocol-faqs.md)
+- [Gas and Fees FAQs](../../bnb-opbnb/faq/gas-and-fees-faqs.md)
+- [opBNB Bridge FAQs](../../bnb-opbnb/faq/opbnb-bridge-faqs.md)
+- [Cross Chain FAQs](../../bnb-opbnb/faq/cross-chain-faqs.md)
+- [Build on opBNB FAQs](../../bnb-opbnb/faq/build-on-opbnb-faqs.md)
