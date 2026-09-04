@@ -281,3 +281,6 @@
 - [BNB Beacon Chain Token Recovery Tool: Sunset Plan](https://docs.bnbchain.org/announce/token-recovery-sunset-plan/): Announcement of the token recovery tool sunset, with phased timelines and migration guidance.
 - [Veld Upgrade of Greenfield](https://docs.bnbchain.org/announce/veld-greenfield/): Hardfork announcement for Greenfield Veld, including upgrade timeline and required validator and storage provider versions.
 - [Wright Upgrade of opBNB](https://docs.bnbchain.org/announce/wright-opbnb/): Hardfork announcement for opBNB Wright, including upgrade timeline and gasless transaction support.
+- [BSC](https://docs.bnbchain.org/faq/bsc/): BNB Smart Chain FAQs
+- [FAQ](https://docs.bnbchain.org/faq/): Support FAQs for BNB Chain
+- [opBNB](https://docs.bnbchain.org/faq/opbnb/): opBNB FAQs
