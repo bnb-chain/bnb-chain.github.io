@@ -281,3 +281,11 @@
 - [BNB Beacon Chain Token Recovery Tool: Sunset Plan](https://docs.bnbchain.org/announce/token-recovery-sunset-plan/): Announcement of the token recovery tool sunset, with phased timelines and migration guidance.
 - [Veld Upgrade of Greenfield](https://docs.bnbchain.org/announce/veld-greenfield/): Hardfork announcement for Greenfield Veld, including upgrade timeline and required validator and storage provider versions.
 - [Wright Upgrade of opBNB](https://docs.bnbchain.org/announce/wright-opbnb/): Hardfork announcement for opBNB Wright, including upgrade timeline and gasless transaction support.
+- [Architecture](https://docs.bnbchain.org/design/architecture/): Signing policy, ERC-8183 agent identity, x402 payment rail, and platform gateway design.
+- [B402 Seller](https://docs.bnbchain.org/design/b402-seller/): Design rationale for the x402 seller rail, Gateway, Relay, and settlement flow.
+- [Design Decisions](https://docs.bnbchain.org/design/decisions/): ADRs covering x402 asynchronous settlement and Altana wallet custody.
+- [Altana Wallet](https://docs.bnbchain.org/guides/altana-wallet/): Bounded-session custody, session grant/revoke, deploy and renewal workflow.
+- [Self-Hosted x402 Gateway on Azure](https://docs.bnbchain.org/guides/self-hosted-x402-gateway-azure/): Azure AI Foundry deployment with asynchronous-settlement compatibility limits.
+- [Self-Hosted x402 Gateway](https://docs.bnbchain.org/guides/self-hosted-x402-gateway/): Gateway deployment guide covering the 2026-07-14 /settle protocol change.
+- [x402 Selling](https://docs.bnbchain.org/guides/x402-selling/): Selling guide with replay protection, pending-settlement reconciliation, and audit events.
+- [Roadmap](https://docs.bnbchain.org/roadmap/): Altana bounded-session custody, Azure deploy adapter, npm workflow, and SDK integration milestones.
