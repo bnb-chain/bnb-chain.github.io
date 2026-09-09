@@ -8,12 +8,54 @@ title: BNB Chain Skills
 
 # BNB Chain Skills
 
-This page is for **AI agents** that integrate with BNB Chain. It summarizes the BNB Chain MCP skill: how to connect, configure credentials, use tools, and where to check agent registration.
+This page is for **AI agents** that integrate with BNB Chain. It summarizes the BNB Chain MCP skill: how to connect, configure credentials, use tools, and check agent registration.
 
 **Skill repository:** [github.com/bnb-chain/bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills) — installable skills and reference docs for BNB Chain MCP.
 
----
+## 1. Connection and credentials
 
+- **Run the server:** `npx @bnb-chain/mcp@latest` (source: [bnbchain-mcp](https://github.com/bnb-chain/bnbchain-mcp)).
+- **RPC:** Default chains use built-in RPC; no config needed unless self-hosting or using a custom RPC.
+- **PRIVATE_KEY:** Leave empty for read-only (blocks, balances, contract reads). Set in the MCP server `env` for state-changing tools (transfers, `write_contract`, `approve_token_spending`, ERC-8004 register/set_uri, Greenfield writes). Never log or expose private keys.
+
+## 2. MCP server config
+
+Add the `bnbchain-mcp` server to your MCP client config.
+
+**Default (stdio):**
+
+```json
+{
+  "mcpServers": {
+    "bnbchain-mcp": {
+      "command": "npx",
+      "args": ["-y", "@bnb-chain/mcp@latest"],
+      "env": {
+        "PRIVATE_KEY": ""
+      }
+    }
+  }
+}
+```
+
+**SSE mode:** Use `--sse` flag. **Local dev server:** `"url": "http://localhost:3001/sse"` with the same `env`.
+
+## 3. Agent registration (ERC-8004)
+
+1. Register the agent on-chain with `register_erc8004_agent`.
+2. Check registration: Mainnet [8008scan.io](https://www.8004scan.io/), Testnet [testnet.8004scan.io](https://testnet.8004scan.io/).
+
+## 4. Tools overview
+
+- **Read-only:** blocks, transactions, network info, balances, token/NFT metadata, `read_contract`.
+- **State-changing:** `transfer_*`, `approve_token_spending`, `write_contract`, Greenfield writes — require `PRIVATE_KEY`.
+- **ERC-8004:** `register_erc8004_agent`, `set_agent_uri`, getters.
+- **Prompts:** analyze_block, analyze_transaction, analyze_address, analyze_token, compare_networks, how_to_register_mcp_as_erc8004_agent.
+
+## 5. Reference docs
+
+- [bnbchain-mcp](https://github.com/bnb-chain/bnbchain-mcp)
+- [bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills)
 ## 1. Connection and credentials
 
 - **Run the server:** `npx @bnb-chain/mcp@latest` (fetches from npm at runtime). Source: [github.com/bnb-chain/bnbchain-mcp](https://github.com/bnb-chain/bnbchain-mcp).
