@@ -1,1 +1,1 @@
-- [BNB Chain Skills](https://docs.bnbchain.org/showcase/mcp/SKILLS/): BNB Chain MCP skill overview for AI agents covering connection, credentials, MCP server config, ERC-8004 agent registration, tool categories, prompts, reference docs, and safety best practices.
+- [BNB Chain Skills](https://docs.bnbchain.org/showcase/mcp/SKILLS/): BNB Chain MCP skill overview for AI agents — connection, credentials, server config, ERC-8004 agent registration, tool categories, reference docs, and safety best practices.
