@@ -58,7 +58,7 @@ Prominent Layer 2 mainnet gas fees resource.
 * [Polygon zkEVM](https://l2fees.info/) 
 * [zkSync](https://l2fees.info/) 
 
-To also check BNB Chain’s Layer 1, BSC visit [here](https://bscscan.com/tx/0x1515e830b352a76bab8468d39c4924e1d220578ab0bf69eb09914e877c0713e5).
+To also check BNB Chain’s Layer 1, BSC visit [here](https://bsctrace.com/tx/0x1515e830b352a76bab8468d39c4924e1d220578ab0bf69eb09914e877c0713e5).
 
 ### Why is my opbnb transaction rejected or pending?
 There are several possible reasons why your transaction of opBNB may be rejected or pending. Here are some of the most common ones:
