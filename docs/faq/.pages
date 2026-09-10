@@ -1,0 +1,6 @@
+title: FAQ
+collapse_single_pages: true
+nav:
+  - index.md
+  - BSC: bsc
+  - opBNB: opbnb

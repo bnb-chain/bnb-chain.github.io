@@ -329,6 +329,7 @@ nav:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
+  - '... | faq/**'
 
 markdown_extensions:
   - toc:
@@ -368,6 +369,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - awesome-pages
   - mkdocs-video
   - git-revision-date-localized:
       enable_creation_date: false
