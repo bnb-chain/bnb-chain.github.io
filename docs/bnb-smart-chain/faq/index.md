@@ -10,5 +10,6 @@ Welcome to the FAQ section for BNB Smart Chain. Below are some common questions 
 - [Tokens Not Showing in Wallet](./tokens-not-showing-in-wallet.md)
 - [Transfer NEXO from Tangem into BSC](./transfer-nexo-from-tangem-into-bsc.md)
 - [Lorentz Hard Fork Upgrade](./plorentz-hard-fork-upgrade.md)
+- [Nano Hard Fork](./what-is-the-nano-fork.md)
 
 If your issue is not listed here, please explore our other documentation or open an issue.
