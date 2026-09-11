@@ -38,3 +38,6 @@ NodeReal supports the opBNB network, you can create your free opBNB RPC endpoint
 *To use the above private RPC endpoint, make sure to login to [MegaNode service](https://nodereal.io/meganode) and create your private endpoints.*
 
 
+## Benchmark
+
+See the [OpenChainBench opBNB RPC benchmark](https://openchainbench.com/benchmarks/opbnb-rpc) for independent p50/p90/p99 latency and success rate across community providers.
