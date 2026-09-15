@@ -2611,9 +2611,9 @@
 <li>A: Client(s) → Validator(s)</li>
 <li>B: Client(s) → FullNode(s) → Validator(s)</li>
 </ul>
-<p>Both are acceptable; but <strong><em>B is recommended</em></strong>.</p>
+<p>Both are acceptable; but <em><strong>B is recommended</strong></em>.</p>
 <p><strong>Scenarios Design</strong></p>
-<p>The <strong><em>default</em></strong> design mimics typical transactions in a DeFi application, and the weight parameters enhance the flexibility of adding/removing scenarios with minimal implementation effort.</p>
+<p>The <em><strong>default</strong></em> design mimics typical transactions in a DeFi application, and the weight parameters enhance the flexibility of adding/removing scenarios with minimal implementation effort.</p>
 <table>
 <thead>
 <tr>
@@ -2655,23 +2655,23 @@
 <td>30</td>
 </tr>
 <tr>
-<td>[<strong><em>Optional</em></strong>] ERC721 mint/transfer</td>
+<td>[<em><strong>Optional</strong></em>] ERC721 mint/transfer</td>
 <td>5</td>
 </tr>
 <tr>
-<td>[<strong><em>Optional</em></strong>] ERC1155 mint/Transfer</td>
+<td>[<em><strong>Optional</strong></em>] ERC1155 mint/Transfer</td>
 <td>5</td>
 </tr>
 <tr>
-<td>[<strong><em>Optional</em></strong>] Blob transaction</td>
+<td>[<em><strong>Optional</strong></em>] Blob transaction</td>
 <td>1</td>
 </tr>
 <tr>
-<td>[<strong><em>Optional</em></strong>] EIP7702 transaction</td>
+<td>[<em><strong>Optional</strong></em>] EIP7702 transaction</td>
 <td>1</td>
 </tr>
 <tr>
-<td>[<strong><em>Optional</em></strong>] user-defined contract for the evaluation of <em>CPU intensive operations</em></td>
+<td>[<em><strong>Optional</strong></em>] user-defined contract for the evaluation of <em>CPU intensive operations</em></td>
 <td>100</td>
 </tr>
 </tbody>
@@ -2687,14 +2687,14 @@
 <li>Each active user is allocated native tokens, wrapped native tokens, and two BEP20 tokens forming a trading pair. All tokens are distributed equally across active users based on modulo operation results.</li>
 <li>After token allocation, each active user can run any scenario listed above using their allocated tokens.</li>
 <li>A group of distinct test users is pre-selected from active users to serve as load generators.</li>
-<li><strong><em>For transfer scenarios, we use either distinct “to” addresses to maximize the transaction parallelism or a limited set of “to” addresses to minimize it</em></strong>.</li>
+<li><em><strong>For transfer scenarios, we use either distinct “to” addresses to maximize the transaction parallelism or a limited set of “to” addresses to minimize it</strong></em>.</li>
 </ul>
 <p><strong>Data Volume</strong></p>
 <ul>
 <li>A: Generate 1M active users and set up the test scenarios with 100k+ blocks</li>
 <li>B: Generate 25M active users and set up the test scenarios with 1.0M-2.5M blocks</li>
 </ul>
-<p>Both are acceptable, but <strong><em>B is recommended as it includes more blocks, accounts and states changes, which provides insights into how storage growth impacts performance over time</em></strong>.</p>
+<p>Both are acceptable, but <em><strong>B is recommended as it includes more blocks, accounts and states changes, which provides insights into how storage growth impacts performance over time</strong></em>.</p>
 <p><strong>Evaluation Criteria</strong></p>
 <ul>
 <li>No node failures should occur during execution.</li>

@@ -75,6 +75,21 @@
     --md-primary-fg-color--dark: var(--doc-dark-layer-2);
     --md-accent-fg-color: var(--doc-text-brand);
     --md-text-font: 'Space Grotesk';
+
+    /* Header only; tabs join the header from 76.25em */
+    --doc-header-offset: 60px;
+}
+
+@media screen and (min-width: 76.25em) {
+    :root {
+        --doc-header-offset: 108px;
+    }
+}
+
+@media screen and (min-width: 1820px) {
+    :root {
+        --doc-header-offset: 120px;
+    }
 }
 
 body {

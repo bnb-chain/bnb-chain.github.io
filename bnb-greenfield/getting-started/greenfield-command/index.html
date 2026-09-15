@@ -3052,9 +3052,9 @@ gnfd-cmd<span class="w"> </span>group<span class="w"> </span>update<span class="
 <p>Users can use the “policy put [RESOURCE-URL]” command to assign resource permissions to other accounts or groups (called principal), such as the permission to delete objects. 
 After the command executes successfully, the object policy information of the principal will be returned. The principal is set by –groupId which indicates the group or –grantee which indicates the account.</p>
 <p>The resource url can be the follow types:</p>
-<p>1) “<strong>grn:</strong>b::bucket-name”, it indicates the bucket policy</p>
-<p>2) “<strong>grn:</strong>o::bucket-name/object-name”, it indicates the object policy</p>
-<p>3) “<strong>grn:</strong>g:owner-address:group-name”, it indicates the group policy</p>
+<p>1) “**grn:**b::bucket-name”, it indicates the bucket policy</p>
+<p>2) “**grn:**o::bucket-name/object-name”, it indicates the object policy</p>
+<p>3) “**grn:**g:owner-address:group-name”, it indicates the group policy</p>
 <div class="highlight"><pre><span></span><code>//<span class="w"> </span>put<span class="w"> </span>object<span class="w"> </span>policy<span class="w"> </span>
 gnfd-cmd<span class="w"> </span>policy<span class="w"> </span>put<span class="w"> </span>--groupId<span class="w"> </span><span class="m">11</span><span class="w"> </span>--actions<span class="w"> </span>get,delete<span class="w"> </span>grn:o::gnfd-bucket/gnfd-object
 

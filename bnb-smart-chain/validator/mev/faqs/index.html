@@ -3008,7 +3008,7 @@
    validatorCommission.</p>
 <h3 id="3-how-does-the-validator-choose-the-best-bid">3. How does the validator choose the best bid?<a class="headerlink" href="#3-how-does-the-validator-choose-the-best-bid" title="Link to this section">¶</a></h3>
 <p>The block reward is calculated as <strong>gasFee</strong>, the validator reward is
-   calculated as <strong>gasFee*commissionRate - builderFee</strong>. Every
+   calculated as *<em>gasFee<em>commissionRate - builderFee</em></em>. Every
    time the validator receives a new bid, it will compare its reward with
    the existing best bid. If it has better block reward and validator
    reward, the new bid will go into simulation. If simulation succeeds
