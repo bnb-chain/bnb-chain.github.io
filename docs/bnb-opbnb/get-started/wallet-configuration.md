@@ -17,7 +17,7 @@ To configure your wallet to work with opBNB, you will need to add both the BNB s
    - RPC URL: [https://data-seed-prebsc-1-s1.bnbchain.org:8545](https://data-seed-prebsc-1-s3.bnbchain.org:8545/)
    - ChainID: 97
    - Symbol: tBNB
-   - Explorer: [https://testnet.bscscan.com/](https://testnet.bscscan.com/)
+   - Explorer: [https://testnet.bsctrace.com/](https://testnet.bsctrace.com/)
 
    *Mainnet*
 
@@ -25,7 +25,7 @@ To configure your wallet to work with opBNB, you will need to add both the BNB s
    - RPC URL: [https://bsc-dataseed.bnbchain.org](https://bsc-dataseed.bnbchain.org)
    - ChainID: 56
    - Symbol: BNB
-   - Explorer: [https://bscscan.com/](https://bscscan.com/)
+   - Explorer: [https://bsctrace.com/](https://bsctrace.com/)
 
 2. Add the opBNB network to your wallet.
 

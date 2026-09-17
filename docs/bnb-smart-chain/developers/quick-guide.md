@@ -37,7 +37,7 @@ Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../d
 ## Developer Tools
 - Explorer
     - [NodeReal BSC Scan](https://bsctrace.com/)
-    - [BSCScan](https://bscscan.com/)
+    - [BSCTrace](https://bsctrace.com/)
 - SDK. If you are only using the SDK for Ethereum-compatible functions, then all Ethereum SDKs should work with BSC.
     - [ethers.js](https://docs.ethers.io)
     - [web3.js](https://web3js.readthedocs.io)
