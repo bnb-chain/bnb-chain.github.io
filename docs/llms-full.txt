@@ -1632,6 +1632,32 @@ Existing articles:
 ## BNB Agent SDK Security
 > Source: https://docs.bnbchain.org/developer-kit/bnbagent-sdk/security/
 
+### Wallet & key handling
+
+- **Encrypted keys** — `EVMWalletProvider` uses Keystore V3; plaintext keys are cleared from memory after import.
+- **Submit-time verification** — `submit_result()` re-verifies `FUNDED`, assignment, expiry, and `budget >= service_price` before every on-chain submission.
+- **Budget protection** — Underpriced jobs are rejected with HTTP 402 at `/status`, `/job/{id}/verify`, and at submit time.
+- **Permissionless settle** — `router.settle` is callable by anyone.
+- **Non-pausable refund** — `claimRefund` is intentionally not pausable and not hookable.
+- **Storage permissions** — `LocalStorageProvider` uses `0600`/`0700`.
+
+### EIP-712 typed-data signing (`SigningPolicy`)
+
+`EVMWalletProvider.sign_typed_data` is policy-gated by default. Without explicit configuration, the wallet only accepts EIP-3009 `TransferWithAuthorization` / `ReceiveWithAuthorization` against network-default EIP-3009 domains on BSC mainnet and testnet. All Permit variants (ERC-2612 `Permit`, Permit2 `PermitSingle`/`PermitBatch`) are denylisted.
+
+`X402Signer` enforces byte-equal `expected_to == message['to']`, `message['from'] == wallet.address`, per-call `max_value`, and cumulative session budget. `SigningPolicy` enforces chain_id/verifyingContract allowlist, primary-type allowlist/denylist, and validity-window bounds (default ≤ 600s window / ≤ 900s future).
+
+### Decision tree — "do I need to configure anything?"
+
+- EIP-3009 TWA on network-default domains → zero config.
+- Different chain / verifying contract → extend `domain_allowlist`.
+- Custom primary type → extend `primary_type_allowlist` + `domain_allowlist`.
+- EIP-2612 Permit / Permit2 PermitSingle/PermitBatch → refused unconditionally.
+- Permit2 PermitTransferFrom / PermitBatchTransferFrom → opt in via `primary_type_allowlist`.
+- Permit2 PermitWitnessTransferFrom → opt in; nested EIP-712 structs validated before signing.
+- Longer validity window → extend `max_validity_window_seconds`.
+
+The TypeScript SDK's signing checker supports nested EIP-712 structs with schema validation (Solidity identifiers, atomic types, bounds: 256 structs, 4096 fields, depth 64, 256-char identifiers). Violations raise `PolicyViolation` before signing.
 ## Security
 
 ### Wallet & key handling
