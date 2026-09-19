@@ -14,11 +14,11 @@ bag doctor
 
 ### `bag doctor` reports network drift
 
-`[network].default` must agree between `app/agent/studio.toml` and `app/service/studio.toml`.
+`[network].default` in `app/agent/studio.toml` must match the network your wallet and
+deploy target expect.
 
 ```bash
 bag config set network.default bsc-testnet --project-root app/agent
-# mirrors to service automatically
 ```
 
 ### Provider address mismatch
@@ -30,37 +30,30 @@ bag wallet show
 bag doctor   # re-check sync
 ```
 
-### Package-relative imports
+### Generated code will not build
 
-AgentCore runs `main.py` as a top-level module. Use flat imports:
-
-```python
-from signing import quote    # correct
-from .signing import quote   # wrong
-```
-
-`bag doctor` warns on remaining package-relative imports.
+The generated project is a pnpm workspace. Make sure Corepack and pnpm 10 are active,
+then reinstall from the workspace root before re-running `bag dev`.
 
 ### AgentCore runtime name invalid
 
 Runtime names must match `^[A-Za-z][A-Za-z0-9]{0,22}$`. No hyphens, underscores, or dots. Re-run `agentcore configure` with a valid name if `bag doctor` fails.
 
-### `agentcore` not found or wrong binary
+### Wrong Node version
 
 ```bash
-which -a agentcore
-node --version    # must be ≥ 20
-npm install -g @aws/agentcore
+node --version    # must be >= 22
 ```
 
-Ensure the npm CLI wins on PATH over any Python shim.
+The AWS CLI is **not** required to deploy — it is used only by the fail-open, read-only
+AgentCore quota check in `bag deploy prepare`.
 
-### Service not picking up funded jobs
+### Funded jobs are not being picked up
 
-1. Confirm both layers are running: `bag dev` or deployed equivalents
-2. Check `app/service/studio.toml` `[agent].runtime_arn` is set after Layer A deploy
-3. Verify `[payments.erc8183].poll_interval_seconds` and `auto_settle`
-4. Probe health: `curl <service-url>/apex/health`
+1. Confirm the runtime is up: `bag dev`, or `bag deploy status --provider <target>`
+2. Verify `[payments.erc8183]` in `app/agent/studio.toml`
+3. Probe the runtime: `curl <endpoint>/readiness`
+4. Remember `settle` is manual — `bag erc8183 settle <jobId>`
 
 ### `PolicyViolation` / `X402PolicyError` at runtime
 

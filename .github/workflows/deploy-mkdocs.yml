@@ -29,6 +29,7 @@ jobs:
           pip install mkdocs-video
           pip install mkdocs-redirects
           pip install mkdocs-git-revision-date-localized-plugin
+          pip install mkdocs-awesome-pages-plugin==2.10.1
 
       - name: Build MkDocs site
         run: mkdocs build

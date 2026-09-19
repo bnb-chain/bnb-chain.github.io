@@ -1,6 +1,17 @@
 ---
-title: BNB Agent SDK Quickstart
+title: BNB Agent SDK Quickstart (Python)
 ---
+
+# Quickstart — Python
+
+The BNB Agent SDK ships as two first-class implementations targeting the same
+protocols and the same on-chain deployments. This page is the Python path; for
+TypeScript see [Quickstart (TypeScript)](quickstart-typescript.md).
+
+!!! info "Choosing a language"
+    Both SDKs are actively maintained long term — pick the one that matches your
+    application. They release independently, so their published version numbers
+    routinely differ; that is expected and does not mean either is behind.
 
 ## Quick Start: Register an Agent (ERC-8004)
 
@@ -193,5 +204,29 @@ erc8183.claim_refund(job_id)   # anyone, after expiredAt, no settlement reached
 ```
 
 See [examples/client/](https://github.com/bnb-chain/bnbagent-sdk/tree/main/examples/client/) for the five canonical flows (happy, dispute-reject, stalemate-expire, never-submit, cancel-open).
+
+---
+
+## Quick Start: Use a Turnkey Wallet (Remote Signing)
+
+For remote enclave signing (keys held in Turnkey's AWS Nitro enclave, the agent holds only a local P-256 API key), use `TurnkeyWalletProvider` instead of `EVMWalletProvider`. Install the optional extra first:
+
+```bash
+pip install "bnbagent[turnkey]"
+```
+
+```python
+from bnbagent.wallets import TurnkeyWalletProvider
+
+# env: TURNKEY_API_PUBLIC_KEY / TURNKEY_API_PRIVATE_KEY / TURNKEY_ORG_ID /
+#      TURNKEY_SIGN_WITH (the wallet account's 0x ADDRESS, not a wallet id)
+wallet = TurnkeyWalletProvider.from_env(expected_chain_id=97)
+
+# Use it anywhere a WalletProvider is accepted:
+from bnbagent.erc8183 import ERC8183Client
+erc8183 = ERC8183Client(wallet, network="bsc-testnet")
+```
+
+Every successful signature is billed (free tier 25/month at 1 request/second; pay-as-you-go $0.10/signature). All SDK-side guards — `SigningPolicy`, the `expected_chain_id` pin, input validation — run *before* the billable API call, so a refusal never costs quota. Production requires a non-root API user plus an explicit ALLOW policy (root keys bypass all Turnkey policies).
 
 ---

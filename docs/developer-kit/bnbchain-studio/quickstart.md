@@ -4,148 +4,135 @@ title: BNB Agent Studio Quickstart
 
 # Quickstart
 
-End-to-end path from zero to a running two-layer seller on BSC testnet. Steps 1–2 are one-time machine setup; step 3 is where you spend most of your time — talking to your AI tool, which drives `bag` for you.
+Build a TypeScript seller agent on BNB Chain, run it locally, and deploy it.
 
-## 1. Install the CLI
+## Requirements
 
-```bash
-pip install bnbagent-studio
-bag --version        # → bag 0.0.1
-```
+- **Node.js 22 or newer**
+- **Claude Code or Cursor** — the bundled skill is the primary interface
+- **Corepack and pnpm 10** for the generated workspace
+- **Bun 1.3+** when you deploy
+- **Docker** only for container paths, such as a `twak` deployment
+- The AWS CLI is optional, and used only by a read-only AgentCore quota check
 
-Alternative: `uv tool install bnbagent-studio` for an isolated machine-wide CLI.
-
-**Prerequisite — AgentCore CLI:**
-
-```bash
-npm install -g @aws/agentcore   # Node ≥ 20
-which -a agentcore              # ensure the npm CLI wins on PATH
-```
-
-## 2. Install skills into your AI tool
-
-Skills are the playbooks your AI tool reads to know *how* to drive `bag`. Without this step, Claude Code or Cursor does not know the studio exists.
+## 1. Install Studio and its IDE skill
 
 ```bash
-bag skills install                            # interactive: detect IDE + pick scope
-bag skills install --target both --scope user  # non-interactive: both IDEs, machine-wide
+npm install --global @bnbagent/studio-cli
+bag skills install
 ```
 
-Reload your IDE window after installing. You get 10 skills (scaffolding, selling via 8183, operating, deploying to AgentCore/EC2, and more).
-
-## 3. Scaffold a seller agent
-
-Open your AI tool and describe what you want:
-
-> *"Create a new BNB agent named weather-seller on testnet that sells weather forecasts."*
-
-Under the hood, the scaffolding skill runs `bag init`:
+The npm install puts the `bag` CLI on your machine once; each agent you build later
+gets its own project directory. `bag skills install` detects Claude Code and Cursor,
+lets you choose user or project scope, and installs the `/bnbagent-studio` router plus
+its on-demand playbooks. For a scripted install:
 
 ```bash
-bag init weather-seller
-cd weather-seller
+bag skills install --target both --scope user
 ```
 
-Defaults (override with flags):
+Reload your IDE afterwards so it discovers the skill.
 
-| Setting | Default | Flag |
-|---------|---------|------|
-| Framework | Google ADK | `--framework adk` |
-| Runtime | AWS Bedrock AgentCore | `--runtime agentcore` |
-| LLM provider | Pieverse (`auto/free`, $0 deposit) | `--llm-provider pieverse-llm` |
-| Network | BSC testnet | `--network bsc-testnet` |
-| Storage | IPFS | `--storage-provider ipfs` |
+## 2. Tell the skill what you want to sell
 
-On an interactive terminal, `bag init` also:
+Open Claude Code or Cursor in the directory where the project should be created:
 
-1. Prompts once for a wallet password and creates `.studio/wallets/<address>.json` at the **workspace root** (outside `app/agent/`, so no deploy artifact can bundle it).
-2. Activates the Pieverse LLM with a **$0 deposit** (default provider).
-3. Prints testnet faucet URLs — funding is optional.
-4. Provisions per-layer virtualenvs (`app/agent/.venv`, `app/service/.venv`).
-
-Use `--no-onboard` in CI to skip prompts.
-
-### Emitted workspace layout
-
-```
-weather-seller/                    workspace root
-├── .studio/wallets/               encrypted keystore (gitignored)
-├── app/
-│   ├── agent/                     Layer A — sole signer + LLM
-│   │   ├── studio.toml
-│   │   ├── main.py
-│   │   ├── signing.py
-│   │   └── managed_model.py
-│   └── service/                   Layer B — keyless public ingress
-│       ├── studio.toml
-│       └── service.py
-└── agentcore/agentcore.json       AgentCore deploy descriptor
+```text
+/bnbagent-studio Create a BNB Chain seller agent named weatheragent.
+Start on BSC testnet, explain the available choices, then build and run it.
 ```
 
-## 4. Wire the MCP server (optional but recommended)
+You can be more specific:
 
-The read-only MCP server lets your AI tool query wallet balance, job status, and more:
+```text
+/bnbagent-studio Create an agent named researchagent that sells cited research
+reports. Use ERC-8183, expose A2A and MCP, use the default wallet and LLM, store
+deliverables on IPFS, and prepare it for the 48-hour BNB testnet trial.
+```
+
+The skill asks for the decisions it needs in one round, shows its work as a todo
+list, and routes each stage to the relevant playbook. You do not need to memorise
+the CLI.
+
+!!! important "Keep control of the consequential steps"
+    The skill prepares and runs the workflow, but leaves the decisions with you:
+
+    - approve each shell command in your IDE — **do not** grant a blanket `bag:*`
+      permission, because the CLI includes deploy and payment commands
+    - enter wallet passwords through hidden prompts or `.studio/.env.local`, never
+      in chat or as command-line arguments
+    - obtain testnet funds and decide how much value a wallet may hold
+    - review cloud permissions, runtime-secret exposure, and costs before deploying
+    - confirm on-chain transactions and buyer settlement actions
+
+## 3. Implement the work
+
+Everything the skill generates is ordinary TypeScript under `app/agent/src/`. The
+only file you normally need to edit is the `runWork` hook:
+
+```text
+app/agent/src/sellerCore.ts     ← the work your agent sells
+```
+
+Pricing and signing deliberately stay out of your way, in fixed deterministic code
+(`app/agent/src/signing.ts`). The LLM never participates in pricing and never gets a
+signing tool — its chain tools are read-only.
+
+## 4. Run and diagnose locally
 
 ```bash
-bag mcp serve --transport stdio   # 15 read-only tools; no signing
+bag doctor      # project, wallet, balances, LLM, network, local runtime
+bag dev         # start the selected faces
 ```
 
-In Claude Code or Cursor, add an MCP entry per project:
+Depending on the faces you chose, `bag dev` serves:
 
-| Field | Value |
-|-------|-------|
-| Command | `bag` |
-| Args | `mcp serve --transport stdio` |
-| CWD | absolute path to your workspace root |
-| Env | `WALLET_PASSWORD=<your password>` |
+| Face | Local surface |
+| --- | --- |
+| A2A | agent card + JSON-RPC on port `9000` |
+| MCP | Streamable HTTP at `http://localhost:8000/mcp` |
+| X402 | `/x402` on the same runtime |
 
-## 5. Run both layers locally
+## 5. Deploy
 
 ```bash
-bag dev
-# Agent on :8080 (sole signer, runs the LLM)
-# Service on :8003 (public ingress + job poller)
+bag deploy prepare                  # storage, provider and tooling readiness gates
+bag deploy --provider bnb           # or: aws | azure
+bag deploy verify --provider bnb    # reconcile ERC-8004 identity with the live endpoint
 ```
 
-Health check:
+Every deploy explicitly selects a target — a recorded deployment is only ever offered
+as an explicit update, never used as a silent default.
+
+| Target | What it is | Notes |
+| --- | --- | --- |
+| `bnb` | Managed 48-hour **testnet** trial | Runs in the operator's cloud, so signing material leaves your control. Use a throwaway wallet (`bag wallet new`) and never reuse it on mainnet. Disabled after expiry. |
+| `aws` | AWS Bedrock AgentCore in **your** account | Runtime material is injected into your own infrastructure. |
+| `azure` | Azure AI Foundry hosted agents | Container-only, delegated to the pinned deploy engine. **A2A scaffolds only** — an MCP entrypoint is rejected before deploy. |
+
+Local deliverable storage **fails deployment readiness** by design; switch to IPFS
+before deploying.
+
+## 6. Earn and settle
+
+Buyers fund ERC-8183 jobs or pay an x402 request. The agent verifies payment on-chain
+*before* doing paid work, submits the result, and records an audit trail
+(`bag audit ls`).
+
+Settlement stays with the buyer: after fetching the deliverable they choose approve,
+reject, or dispute. Studio never silently auto-settles a buyer's job. Operator-side
+settle is manual:
 
 ```bash
-curl localhost:8003/apex/health     # → {"status":"ok","keyless":true}
+bag erc8183 settle <jobId>
 ```
 
-Flags: `--agent-only`, `--service-only`, `--port`, `--service-port`.
+## Notes on the CLI
 
-## 6. Implement your service logic
+`bag --help` lists the full surface. The commands above are the ones the guided path
+uses; `bag deploy --help` covers the deploy subcommands (`prepare`, `verify`,
+`status`, `logs`, `info`, `destroy`).
 
-Edit the emitted handler in `app/agent/` — the one file you typically customize. Set your price in `app/agent/studio.toml` under `[payments.erc8183]`; the Agent clamps the LLM's proposed price to `[min, max]` before signing.
+---
 
-## 7. Deploy (when ready)
-
-```bash
-bag deploy prepare                       # readiness sweep
-bag deploy agent                         # Layer A → AgentCore
-# Layer B → EC2 via the deploying-service-to-ec2 skill
-bag deploy verify --endpoint <service-url>   # probe + register ERC-8004 endpoint
-```
-
-See [Deployment](deployment.md) for the full two-artifact path.
-
-## Natural-language workflow
-
-After setup, drive everything from your AI tool:
-
-> *"Start my agent and verify it works."*
-> *"Why isn't my Service picking up funded jobs?"*
-> *"Settle job 23."*
-> *"Deploy my agent."*
-
-The skills run the right `bag` commands and edit your files. The commands above are shown for transparency.
-
-## Next steps
-
-- [Demo](demo.md) — full end-to-end weather-forecast seller walkthrough
-- [Architecture](architecture.md) — how the six layers fit together
-- [Configuration](configuration.md) — `studio.toml` sections and env vars
-- [BNB Agent SDK quickstart](../bnbagent-sdk/quickstart.md) — protocol-level integration
-
-[← BNB Agent Studio overview](index.md)
+[← BNB Agent Studio overview](index.md) · [Configuration](configuration.md) · [Deployment](deployment.md)

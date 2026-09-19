@@ -8,7 +8,7 @@
 The Pasteur upgrade will happen at:
 
 - Testnet:  2026-07-21 02:30:00 AM UTC
-- Mainneg:  2026-08-25 02:30:00 AM UTC
+- Mainnet:  2026-08-25 02:30:00 AM UTC
 
 ## Upgrade to BSC Node v1.7.7 Before Hardfork
 [v1.7.7](https://github.com/bnb-chain/bsc/releases/tag/v1.7.7) is a hard fork release for BSC Mainnet; the HF name is Pasteur. All BSC Mainnet nodes **must upgrade to v1.7.7 before the hard fork time**.

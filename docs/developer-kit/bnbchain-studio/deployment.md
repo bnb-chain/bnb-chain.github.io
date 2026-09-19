@@ -4,124 +4,122 @@ title: BNB Agent Studio Deployment
 
 # Deployment
 
-A v1 seller deploys as **two artifacts** — Layer A (Agent) to AWS Bedrock AgentCore, Layer B (Service) to EC2/Fargate. Use the bundled IDE skills (`bnbagent-studio-use-aws-agentcore`, `bnbagent-studio-deploying-service-to-ec2`) for guided deploys, or run the commands below directly.
+A Studio project deploys as **one runtime** — the same process that holds the key and
+serves your selected faces. There is no second keyless artifact to ship.
 
-On-chain deployments: [apex-contracts#deployments](https://github.com/bnb-chain/apex-contracts#deployments).
+Every deploy **explicitly selects a target**. A recorded deployment is only ever offered
+as an explicit update; it is never used as a silent default.
+
+All cloud lifecycle mutations are delegated to the pinned
+[`@bnbagent/deploy-cli`](https://www.npmjs.com/package/@bnbagent/deploy-cli). Studio does
+not shell out to `azd` or the Azure CLI, and the scaffold contains no `azure.yaml` or
+`infra/`.
+
+!!! warning "You are provisioning real resources"
+    AWS and Azure deploys create resources in **your own** account, under permissions you
+    review. Published IAM reference policies are provided as-is — scoping, costs, and
+    security remain yours. Start on BSC testnet.
+
+## The three targets
+
+| Target | What it is | Key constraint |
+| --- | --- | --- |
+| `bnb` | Managed **48-hour testnet** trial | Runs in the **operator's** cloud, so signing material leaves your control. Use a throwaway wallet (`bag wallet new`) and never reuse it on mainnet. Disabled after expiry. |
+| `aws` | AWS Bedrock AgentCore in your account | Keystore injected via **AWS Secrets Manager** as `WALLET_KEYSTORE_JSON` — never in the code zip. |
+| `azure` | Azure AI Foundry hosted agents | **Container-only**, and **A2A scaffolds only** — `bag init` and provider selection reject an MCP entrypoint for Foundry. Secrets injected through a Foundry **CustomKeys** connection. |
 
 ## Prerequisites
 
-| Requirement | Notes |
-|-------------|-------|
-| AgentCore CLI | `npm i -g @aws/agentcore` (Node ≥ 20) |
-| AWS account | You provision resources in your own account under IAM policies you review |
-| `agentcore configure` | One-time setup — writes `agentcore/agentcore.json` |
-| IAM policies | Reference configs: [least-privilege guide](https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/guides/least-privilege-iam.md), [policy JSON](https://github.com/bnb-chain/bnbagent-studio/blob/main/docs/guides/iam-policies.md) |
-
-> Deploying provisions AWS resources in your account. Review [DISCLAIMER.md](https://github.com/bnb-chain/bnbagent-studio/blob/main/DISCLAIMER.md) before first deploy.
+| Requirement | Needed for |
+| --- | --- |
+| Node.js ≥ 22 | everything |
+| Bun 1.3+ | any deploy |
+| Corepack + pnpm 10 | the generated workspace |
+| Docker | container paths only — for example a `twak` deployment, and Azure (container-only) |
+| AWS CLI | **optional**; used only by the fail-open, read-only AgentCore quota check in `bag deploy prepare` |
 
 ## Deploy flow
 
 ```bash
-bag deploy prepare                       # readiness sweep (BLOCKED/CRITICAL/WARNING)
-bag deploy agent                         # Layer A → AgentCore
-bag deploy package                       # Layer B zip → dist/<name>-service-<sha>.zip
-# upload + systemd on EC2 (see deploying-service-to-ec2 skill)
-bag deploy verify --endpoint <public-url>   # probe layers + register ERC-8004 endpoint
-bag deploy status                        # dashboard: liveness, inventory, cost estimate
+bag deploy prepare                    # readiness gates: storage, provider, tooling
+bag deploy --provider bnb             # or: aws | azure
+bag deploy verify --provider bnb      # reconcile ERC-8004 identity with the live endpoint
+bag deploy status --provider bnb      # liveness and inventory
 ```
 
-## Layer A — Agent (AgentCore)
+`bag deploy prepare` gates on storage, provider, and deploy-tooling readiness. **Local
+deliverable storage fails readiness by design** — switch to IPFS before deploying, since
+a local path is unreachable from a deployed runtime.
+
+For AWS, an inbound-auth step may be required before the first deploy:
 
 ```bash
-bag deploy agent
+bag deploy provision-cognito
 ```
 
-- Thin-wraps `agentcore deploy` (run `agentcore configure` first)
-- Default `--secrets-mode secretsmanager` pushes keystore to AWS Secrets Manager as `WALLET_KEYSTORE_JSON` — **never** in the CodeZip
-- Testnet-only `--secrets-mode envvars` inlines secrets in `agentcore.json` — refused on mainnet
-- First deploy gates on explicit IAM risk acceptance (interactive or `--accept-risk`)
-- Records `runtime_arn` in `app/service/studio.toml` `[agent]` section
-
-**Multi-environment:** pass agentcore's `--target` through: `bag deploy agent -- --target prod`. Studio records one target per workspace — deploying multiple targets overwrites recorded state.
-
-**Redeploy:** every `bag deploy agent` re-runs `agentcore deploy` (CDK). First run is slow (~4–6 min); subsequent runs use cache.
-
-### Keystore posture
-
-The encrypted keystore lives at workspace root `.studio/wallets/`, **outside** `app/agent/` (the AgentCore codeLocation). No packaging path — including a raw `agentcore deploy` — can bundle it. At deploy, it is injected via Secrets Manager.
-
-## Layer B — Service (EC2)
+## Operating a deployment
 
 ```bash
-bag deploy package
+bag deploy status  --provider aws     # liveness + resource inventory
+bag deploy logs    --provider aws     # tail runtime logs
+bag deploy info    --provider azure   # resolved deployment details
+bag deploy destroy --provider aws     # teardown
 ```
 
-Produces a zip rooted at `app/service/` (so `service.py` is at zip top level) plus a `.sha256` sidecar. Excludes:
+`bag deploy --help` lists the full surface. `bag deploy agent` remains available as the
+agent-scoped form.
 
-- `.venv/`, `__pycache__/`, `.git/`, `.studio/`, `dist/`
-- **All `.env*`** — the keyless host must not receive Agent secrets
+## Keystore posture
 
-Hand the zip to the EC2 deploy skill. The Service reads the Agent runtime ARN from `app/service/studio.toml` `[agent].runtime_arn` and calls `InvokeAgentRuntime` for every signing operation.
+The encrypted keystore lives at the workspace root in `.studio/wallets/`, **outside**
+`app/agent/` — the deploy `codeLocation`. No packaging path can bundle it into an
+artifact. It reaches a deployed runtime only through the selected provider's delegated
+secret channel:
 
-**Fast redeploy:** Layer B supports code-only updates — `scp` + `systemctl restart` without full reprovision.
+| Target | Channel |
+| --- | --- |
+| `aws` | AWS Secrets Manager (`WALLET_KEYSTORE_JSON`) |
+| `azure` | Foundry CustomKeys connection |
+| `bnb` | the operator's managed secret store — material leaves your control |
 
-## Readiness checks
-
-`bag deploy prepare` runs checks including:
-
-- `studio.toml` parseable on both layers
-- AgentCore runtime name valid
-- Flat imports (no package-relative imports in emitted code)
-- Network and provider address sync between layers
-- Legacy keystore inside `app/agent/` (warn only)
-
-Opt-in cross-layer check:
-
-```bash
-bag deploy prepare --include-service-preflight
-```
-
-Simulates Layer B EC2 provisioning IAM actions via `iam:SimulatePrincipalPolicy` — surfaces permission issues before Agent deploy completes.
-
-## Post-deploy verification
-
-```bash
-bag deploy verify --endpoint https://my-service.example.com
-```
-
-- Probes Layer A liveness via AgentCore
-- Probes Layer B `/apex/health`
-- Registers the Service public URL as the ERC-8004 endpoint
-
-## Operations
-
-```bash
-bag deploy status              # liveness + resource inventory + cost estimate
-bag deploy status --no-probe   # skip HTTP probes
-bag deploy logs --layer agent  # CloudWatch tail
-bag deploy logs --layer service  # SSH + journalctl
-bag deploy destroy             # dry-run teardown plan; --execute for Layer A only
-```
-
-`bag deploy destroy` prints Layer B teardown as `aws` CLI commands but **never** executes them — you run those manually.
+An **Altana** deployment is different in kind: it sends only a budget- and time-bounded
+runtime session rather than a keystore. Keep the budget and expiry tight, and renew or
+revoke explicitly.
 
 ## ERC-8004 registration
 
-After deploy, buyers discover your agent via ERC-8004. `bag deploy verify` registers the endpoint, or run manually:
+Buyers discover your agent on-chain. `bag deploy verify --provider <target>` reconciles
+the deployed endpoint with its ERC-8004 identity. The registry commands are also
+available directly:
 
 ```bash
-bag erc8004 register --endpoint https://my-service.example.com/apex/
 bag erc8004 show
 ```
 
 ## Local mirror
 
-`bag dev` is the local mirror of the two-artifact deploy:
+`bag dev` runs the same single runtime locally:
 
 | Local | Deployed |
-|-------|----------|
-| Agent `:8080` | AgentCore runtime |
-| Service `:8003` | EC2 `/apex/*` |
-| `STORAGE_LOCAL_PATH` | S3 / IPFS |
+| --- | --- |
+| A2A on `:9000` | the runtime's A2A face |
+| MCP on `:8000/mcp` | the runtime's MCP face (not available on Azure) |
+| `/x402` on the same process | the runtime's x402 face |
+| local storage path | IPFS |
 
-[← BNB Agent Studio overview](index.md)
+## Earning after deploy
+
+Buyers fund ERC-8183 jobs or pay an x402 request. The runtime verifies payment on-chain
+*before* doing paid work, submits the deliverable, and records an audit trail
+(`bag audit ls`).
+
+Settlement stays with the buyer, who chooses approve, reject, or dispute. Operator-side
+settle is manual:
+
+```bash
+bag erc8183 settle <jobId>
+```
+
+---
+
+[← BNB Agent Studio overview](index.md) · [Architecture](architecture.md) · [Security](security.md)

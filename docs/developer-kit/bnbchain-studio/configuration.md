@@ -13,11 +13,11 @@ BNB Agent Studio projects use two config files per layer plus environment variab
 | File | Sections |
 |------|----------|
 | `app/agent/studio.toml` | `[stack]`, `[wallet]`, `[llm.*]`, `[budget]`, `[payments.erc8183]`, `[payments.x402]`, `[network]`, `[storage]`, `[identity]`, `[deploy]` |
-| `app/service/studio.toml` | `[network]`, `[agent]`, `[deploy]`, `[storage]`, `[provider]`, `[payments.erc8183]` |
 
-### Cross-layer sync
+One runtime means one `studio.toml`. Earlier versions emitted a second config for a
+separate keyless service; that tier no longer exists.
 
-Only two values legitimately live in **both** files:
+### Shared values
 
 | Field | Agent | Service | Sync mechanism |
 |-------|-------|---------|----------------|
@@ -47,11 +47,11 @@ max_price = "1000000000000000000"
 default = "bsc-testnet"
 ```
 
-### Key service sections
+### Deploy and rail sections
 
 ```toml
 [agent]
-runtime_arn = ""   # filled after Layer A deploy
+runtime_arn = ""   # filled after deploy
 
 [payments.erc8183]
 poll_interval_seconds = 30
@@ -61,7 +61,7 @@ auto_settle = true
 # address synced from wallet via bag wallet new
 ```
 
-Use `bag config show`, `bag config get <key>`, and `bag config set <key> <value>` for CRUD. From workspace root, pass `--project-root app/agent` or `--project-root app/service`.
+Use `bag config show`, `bag config get <key>`, and `bag config set <key> <value>` for CRUD. From workspace root, pass `--project-root app/agent`.
 
 ## Environment variables
 
@@ -79,11 +79,9 @@ Use `bag config show`, `bag config get <key>`, and `bag config set <key> <value>
 | `STORAGE_IPFS_GATEWAY` | Deploy | IPFS gateway for deliverables |
 | `STUDIO_AGENT_LOCAL_URL` | Service-only dev | Agent URL when running `bag dev --service-only` |
 
-### Service (`app/service/.env.local`)
+### Deploy-time secrets
 
-The Service is keyless — **no wallet secrets**. It may read runtime connection vars injected at deploy time. `bag deploy package` **never** includes any `.env*` in the Service zip.
-
-### Deploy-time secrets (Layer A)
+`bag deploy package` **never** includes any `.env*` file in a deploy artifact.
 
 | Mode | Keystore delivery |
 |------|-------------------|
