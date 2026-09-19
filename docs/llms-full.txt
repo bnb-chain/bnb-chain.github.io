@@ -1782,6 +1782,8 @@ What are you signing?
 | Widen validity to 30 min | `extend(max_validity_window_seconds=1800)` |
 
 The TypeScript SDK's signing checker supports nested EIP-712 structs (e.g. Permit2 `PermitWitnessTransferFrom`) when the schema has one unambiguous root. Every schema is validated before signing: struct and field names must be Solidity identifiers, field types must be EIP-712 atomic types (no `uint`/`int` aliases) or declared structs (optionally as arrays), and schemas are bounded to 256 structs, 4096 total fields, depth 64, and 256-character identifiers. Violations raise `PolicyViolation` before signing. The Python port still requires a single non-domain struct. Explicitly allowing a Permit2 domain and primary type is not a payment budget — the generic SDK policy does not pin Permit2 witness schemas, spenders, token amounts, recipients, or `deadline` bounds. The trusted payment integration must validate those values before calling the wallet; never forward untrusted raw typed data after merely adding Permit2 to the allowlist.
+
+Examples: see [examples/security_e2e.py](https://github.com/bnb-chain/bnbagent-sdk/blob
 ## Security
 
 ### Wallet & key handling
