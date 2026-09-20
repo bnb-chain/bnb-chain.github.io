@@ -11,15 +11,22 @@ Same gas asset, same Parlia consensus family, same staking and governance contra
 
 ## You Pay for Your Declared Gas Limit
 
-**A transaction pays its full declared `gas_limit`, regardless of gas used.** No unused-gas refund, and EIP-3529 refunds are void. Blocks are packed by *declared* gas before execution, so declared gas is the block space actually sold.
+**NewL1 charges the `gas_limit` you declare, not the gas the EVM actually spends.** If a call needs 70,000 gas and you submit `gas_limit = 500,000`, you pay for 500,000.
 
-- **Padding costs money.** `gasLimit = estimate * 1.5`, ethers' default padding, and hardcoded `500000` are all pure waste here.
-- **`eth_estimateGas` still measures real usage.** Simulation runs with charge-by-limit disabled. Declare its result plus only the headroom your call path genuinely needs.
-- **`gasUsed` in receipts equals the declared limit, and so does `header.gasUsed`.** You were charged `effectiveGasPrice × gasUsed`; actual consumption needs a trace.
-- **The limit is capped at 16,777,216 (2²⁴, BEP-652 / EIP-7825).**
-- **The same model applies to [`0x76` AA transactions](../developers/transaction-types.md).** That includes sponsor charges and session-key spend limits.
+NewL1 orders blocks before execution, so declared gas is the block space reserved at ordering time. The node tracks each account's in-flight fee/value exposure and caps cumulative declared gas and calldata. There is no fixed user reserve floor.
 
-System transactions and read-only simulation keep stock refund behavior.
+- Do not pad blindly. `estimate * 1.5`, ethers' default padding, and hardcoded `500000` waste money.
+- `eth_estimateGas` still returns simulated EVM usage. Add only the margin your call path needs.
+- Receipts report charged gas: user-transaction `gasUsed` normally equals the declared limit. Use traces for actual EVM consumption.
+- Max per transaction: 16,777,216 gas (2²⁴, BEP-652).
+- The same rule applies to [`0x76` AA transactions](../developers/transaction-types.md), including sponsors and session-key spend limits.
+
+```ts
+const estimated = await provider.estimateGas(tx);
+tx.gasLimit = estimated + estimated / 10n; // example: 10% headroom
+```
+
+For one transaction, `gasUsed` should not exceed its declared limit. If it looks larger, you are probably reading `header.gasUsed`, `cumulativeGasUsed`, or an inner `0x76` call instead of the outer transaction. If execution needs more than the limit, it runs out of gas and fails.
 
 ## Carries Over Unchanged
 
