@@ -48,6 +48,7 @@ Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../d
 - Indexing
     - [TheGraph](https://thegraph.com/)
     - [Covalent](https://www.covalenthq.com)
+    - [Codex](https://www.codex.io)
     - [Others](https://www.alchemy.com/dapps/list-of/indexing-tools-on-ethereum)
 - Wallets
     - [Binance Web3 Wallet](https://www.binance.com/en/web3wallet)
