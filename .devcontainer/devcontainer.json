@@ -1,0 +1,34 @@
+name	string	A name for the dev container displayed in the UI.
+forwardPorts 🏷️	array	An array of port numbers or "host:port" values (e.g. [3000, "db:5432"]) that should always be forwarded from inside the primary container to the local machine (including on the web). The property is most useful for forwarding ports that cannot be auto-forwarded because the related process that starts before the devcontainer.json supporting service / tool connects or for forwarding a service not in the primary container in Docker Compose scenarios (e.g. "db:5432"). Defaults to [].
+portsAttributes 🏷️	object	Object that maps a port number, "host:port" value, range, or regular expression to a set of default options. See port attributes for available options. For example:
+"portsAttributes": {"3000": {"label": "Application port"}}
+otherPortsAttributes 🏷️	object	Default options for ports, port ranges, and hosts that aren’t configured using portsAttributes. See port attributes for available options. For example:
+"otherPortsAttributes": {"onAutoForward": "silent"}
+containerEnv 🏷️	object	A set of name-value pairs that sets or overrides environment variables for the container. Environment and pre-defined variables may be referenced in the values. For example:
+"containerEnv": { "MY_VARIABLE": "${localEnv:MY_VARIABLE}" }
+If you want to reference an existing container variable while setting this one (like updating the PATH), use remoteEnv instead.
+containerEnv will set the variable on the Docker container itself, so all processes spawned in the container will have access to it. But it will also be static for the life of the container - you must rebuild the container to update the value.
+We recommend using containerEnv (over remoteEnv) as much as possible since it allows all processes to see the variable and isn’t client-specific.
+remoteEnv 🏷️	object	A set of name-value pairs that sets or overrides environment variables for the devcontainer.json supporting service / tool (or sub-processes like terminals) but not the container as a whole. Environment and pre-defined variables may be referenced in the values.
+You may want to use remoteEnv (over containerEnv) if the value isn’t static since you can update its value without having to rebuild the full container.
+remoteUser 🏷️	string	Overrides the user that devcontainer.json supporting services tools / runs as in the container (along with sub-processes like terminals, tasks, or debugging). Does not change the user the container as a whole runs as which can be set using containerUser. Defaults to the user the container as a whole is running as (often root).
+You may learn more in the remoteUser section below.
+containerUser 🏷️	string	Overrides the user for all operations run as inside the container. Defaults to either root or the last USER instruction in the related Dockerfile used to create the image. If you want any connected tools or related processes to use a different user than the one for the container, see remoteUser.
+updateRemoteUserUID 🏷️	boolean	On Linux, if containerUser or remoteUser is specified, the user’s UID/GID will be updated to match the local user’s UID/GID to avoid permission problems with bind mounts. Defaults to true.
+userEnvProbe 🏷️	enum	Indicates the type of shell to use to “probe” for user environment variables to include in devcontainer.json supporting services’ / tools’ processes: none, interactiveShell, loginShell, or loginInteractiveShell (default). The specific shell used is based on the default shell for the user (typically bash). For example, bash interactive shells will typically include variables set in /etc/bash.bashrc and ~/.bashrc while login shells usually include variables from /etc/profile and ~/.profile. Setting this property to loginInteractiveShell will get variables from all four files.
+overrideCommand 🏷️	boolean	Tells devcontainer.json supporting services / tools whether they should run /bin/sh -c "while sleep 1000; do :; done" when starting the container instead of the container’s default command (since the container can shut down if the default command fails). Set to false if the default command must run for the container to function properly. Defaults to true for when using an image Dockerfile and false when referencing a Docker Compose file.
+shutdownAction 🏷️	enum	Indicates whether devcontainer.json supporting tools should stop the containers when the related tool window is closed / shut down.
+Values are none, stopContainer (default for image or Dockerfile), and stopCompose (default for Docker Compose).
+init 🏷️	boolean	Defaults to false. Cross-orchestrator way to indicate whether the tini init process should be used to help deal with zombie processes.
+privileged 🏷️	boolean	Defaults to false. Cross-orchestrator way to cause the container to run in privileged mode (--privileged). Required for things like Docker-in-Docker, but has security implications particularly when running directly on Linux.
+capAdd 🏷️	array	Defaults to []. Cross-orchestrator way to add capabilities typically disabled for a container. Most often used to add the ptrace capability required to debug languages like C++, Go, and Rust. For example:
+"capAdd": ["SYS_PTRACE"]
+securityOpt 🏷️	array	Defaults to []. Cross-orchestrator way to set container security options. For example:
+"securityOpt": [ "seccomp=unconfined" ]
+mounts 🏷️	string or object	Defaults to unset. Cross-orchestrator way to add additional mounts to a container. Each value is a string that accepts the same values as the Docker CLI --mount flag. Environment and pre-defined variables may be referenced in the value. For example:
+"mounts": [{ "source": "dind-var-lib-docker", "target": "/var/lib/docker", "type": "volume" }]
+features	object	An object of Dev Container Feature IDs and related options to be added into your primary container. The specific options that are available varies by feature, so see its documentation for additional details. For example:
+"features": { "ghcr.io/devcontainers/features/github-cli": {} }
+overrideFeatureInstallOrder	array	By default, Features will attempt to automatically set the order they are installed based on a installsAfter property within each of them. This property allows you to override the Feature install order when needed. For example:
+"overrideFeatureInstallОrder": [ "ghcr.io/devcontainers/features/common-utils", "ghcr.io/devcontainers/features/github-cli" ]
+customizations 🏷️	object	Product specific properties, defined in supporting tools
