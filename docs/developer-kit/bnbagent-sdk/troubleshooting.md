@@ -14,6 +14,6 @@ title: BNB Agent SDK Troubleshooting
 | `408 Job expired` | Past `expiredAt` | Create a new job; client can `claimRefund` the old one. |
 | `402 Budget below service price` | `budget < ERC8183_SERVICE_PRICE` | Client must create a job with a higher budget (visible at `GET /erc8183/status`). |
 | `router.settle` reverts with `policy pending` | Dispute window hasn't elapsed and no dispute was raised | Wait until `policy.check(jobId)` returns a non-PENDING verdict, then retry. |
-| `voteReject` reverts with `not voter` / `not disputed` | Caller not whitelisted, or no dispute exists | Use [examples/voter/vote_reject.py](https://github.com/bnb-chain/bnbagent-sdk/tree/main/examples/voter/vote_reject.py) — it validates before sending. |
+| `voteReject` reverts with `not voter` / `not disputed` | Caller not whitelisted, or no dispute exists | Use [examples/voter/vote_reject.py](https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/voter/vote_reject.py) — it validates before sending. |
 
 ---

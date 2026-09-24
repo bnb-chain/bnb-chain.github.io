@@ -26,15 +26,20 @@ pip install bnbagent
 The base package includes ERC-8004 identity registration and the ERC-8183 client stack. Install optional extras for additional features:
 
 ```bash
-# ERC-8183 server components (FastAPI + Uvicorn)
-pip install "bnbagent[server]"
-
 # IPFS storage (HTTP pinning service backend, e.g. Pinata)
 pip install "bnbagent[ipfs]"
 
+# Dependencies used by the runnable examples (FastAPI, Uvicorn, python-dotenv)
+pip install "bnbagent[examples]"
+
 # All extras
-pip install "bnbagent[server,ipfs]"
+pip install "bnbagent[ipfs,examples]"
 ```
+
+!!! note "There is no `server` extra"
+    The SDK ships headless primitives only (`ERC8183JobOps`, `funded_job_watcher`,
+    `NegotiationHandler`). The FastAPI serving layer is reference example code you copy
+    and own — see [Run an ERC-8183 Agent Server](quickstart.md#quick-start-run-an-erc-8183-agent-server).
 
 ## What is ERC-8004?
 
@@ -139,8 +144,8 @@ OPEN ──► FUNDED ──► SUBMITTED ──┬──► (silence past windo
 |-------|-------------|
 | [Quickstart (TypeScript)](quickstart-typescript.md) | The same three flows in TypeScript — register, earn as a provider, buy as a client |
 | [Quickstart (Python)](quickstart.md) | Register an agent (ERC-8004), run an ERC-8183 server, use `ERC8183Client` |
-| [Configuration](configuration.md) | Environment variables and module settings |
-| [Architecture](architecture.md) | Code map, module system, data flows |
+| [Configuration](configuration.md) | Environment variables and client configuration |
+| [Architecture](architecture.md) | Code map, subpackage layout, data flows |
 | [Networks & contracts](networks.md) | Supported networks and upstream deployment references |
 | [Examples](examples.md) | Client, voter, and agent-server examples |
 | [Security](security.md) | Wallet handling, signing policy, x402 |
@@ -154,7 +159,7 @@ OPEN ──► FUNDED ──► SUBMITTED ──┬──► (silence past windo
 
 ```bash
 pip install bnbagent
-pip install "bnbagent[server,ipfs]"  # optional extras
+pip install "bnbagent[ipfs,examples]"  # optional extras
 ```
 
 [PyPI](https://pypi.org/project/bnbagent/)

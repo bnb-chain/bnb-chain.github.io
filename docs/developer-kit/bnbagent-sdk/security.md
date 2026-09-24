@@ -144,8 +144,8 @@ What are you signing?
 | Opt into Permit2 SignatureTransfer | `extend(primary_type_allowlist={"PermitTransferFrom"})` |
 | Widen validity to 30 min | `extend(max_validity_window_seconds=1800)` |
 
-Examples: see [examples/security_e2e.py](https://github.com/bnb-chain/bnbagent-sdk/blob/main/examples/security_e2e.py) (signing + recovery loop, 6 assertions)
-and [examples/x402_buyer_demo.py](https://github.com/bnb-chain/bnbagent-sdk/blob/main/examples/x402_buyer_demo.py) (complete buyer flow with mock 402 server).
+Examples: see [python/examples/security/e2e.py](https://github.com/bnb-chain/bnbagent-sdk/blob/main/python/examples/security/e2e.py) (signing + recovery loop, 6 assertions)
+and [python/examples/x402/buyer_demo.py](https://github.com/bnb-chain/bnbagent-sdk/blob/main/python/examples/x402/buyer_demo.py) (complete buyer flow with mock 402 server).
 
 Full design rationale and threat model: see ADR #30 in the
 [bnbchain-studio](https://github.com/bnb-chain/bnbchain-studio) repo
