@@ -132,6 +132,14 @@ What are you signing?
 │      witness validation stays caller-side unless / until the x402
 │      ecosystem standardises around Permit2
 │
+├── Permit2 PermitWitnessTransferFrom
+│   (nested witness structs — single-use signature transfer)
+│   → 🟡 opt in by extending primary_type_allowlist;
+│      nested EIP-712 structs are validated before signing (unique root,
+│      atomic types, size/depth bounds) but witness values (spender,
+│      amounts, recipient, deadline) must be validated by the trusted
+│      integration before calling the wallet
+│
 └── A longer validity window (e.g. 30-minute authorizations)
     → 🟡 extend max_validity_window_seconds=1800
 ```
@@ -142,7 +150,10 @@ What are you signing?
 | Add a custom primary type "MyOrder" on chain 56 | `extend(domain_allowlist={(56, "<verifying-contract>")}, primary_type_allowlist={"MyOrder"})` |
 | Allow a verifying contract on another chain | `extend(domain_allowlist={(chain_id, "<verifying-contract>")})` |
 | Opt into Permit2 SignatureTransfer | `extend(primary_type_allowlist={"PermitTransferFrom"})` |
+| Opt into Permit2 PermitWitnessTransferFrom | `extend(primary_type_allowlist={"PermitWitnessTransferFrom"})` |
 | Widen validity to 30 min | `extend(max_validity_window_seconds=1800)` |
+
+The TypeScript SDK's signing checker supports nested EIP-712 structs (e.g. Permit2 `PermitWitnessTransferFrom`) when the schema has one unambiguous root. Every schema is validated before signing: struct and field names must be Solidity identifiers, field types must be EIP-712 atomic types (no `uint`/`int` aliases) or declared structs (optionally as arrays), and schemas are bounded to 256 structs, 4096 total fields, depth 64, and 256-character identifiers. Violations raise `PolicyViolation` before signing. The Python port still requires a single non-domain struct. Explicitly allowing a Permit2 domain and primary type is not a payment budget — the generic SDK policy does not pin Permit2 witness schemas, spenders, token amounts, recipients, or `deadline` bounds. The trusted payment integration must validate those values before calling the wallet; never forward untrusted raw typed data after merely adding Permit2 to the allowlist.
 
 Examples: see [examples/security_e2e.py](https://github.com/bnb-chain/bnbagent-sdk/blob/main/examples/security_e2e.py) (signing + recovery loop, 6 assertions)
 and [examples/x402_buyer_demo.py](https://github.com/bnb-chain/bnbagent-sdk/blob/main/examples/x402_buyer_demo.py) (complete buyer flow with mock 402 server).
