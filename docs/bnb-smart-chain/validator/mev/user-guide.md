@@ -20,7 +20,7 @@ Some DEX protocols or builder providers are keen to provide free protection feat
 
 | Role                         | Status and Comments                                          |
 | ---------------------------- | ------------------------------------------------------------ |
-| Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li><li>[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)</li><li>[BlockRazor Private RPC with Refund](https://rpc.blockrazor.io/)</li></ul> |
+| Free Privacy Protecting RPCs | <ul><li>[Pancake Swap Private RPC](https://docs.pancakeswap.finance/products/pancakeswap-private-rpc)</li> <li>[48 Club Private RPC](https://docs.48.club/privacy-rpc)</li><li>[Merkle Free BSC Private RPC](https://merkle.io/free-bsc-rpc)</li><li>[BlockRazor Private RPC with Refund](https://rpc.blockrazor.io/)</li><li>[Backrun Shield Private RPC](https://backrunshield.com)</li></ul> |
 
 ### Builder Proxies 
 
