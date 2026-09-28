@@ -4,7 +4,7 @@ title: Examples - BNB NewL1
 
 # Examples
 
-Plain JSON-RPC demonstrations of what this chain does differently. Fill in an endpoint and a funded key, and every snippet below runs as written:
+The examples illustrate the proposed NewL1 RPC workflow. To run them, use the matching client release and devnet configuration supplied by the protocol team. Set the required endpoint variables and test with a development account before using a funded account:
 
 ```bash
 RPC=      # node HTTP endpoint

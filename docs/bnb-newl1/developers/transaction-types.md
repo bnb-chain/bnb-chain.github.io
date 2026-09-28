@@ -14,7 +14,7 @@ Standard Ethereum transactions (legacy, EIP-2930, EIP-1559) work exactly as you'
 Both are submitted through plain `eth_sendRawTransaction` and produce ordinary receipts (with `type` `0x76` / `0x77`). EIP-4844 (`0x03`) and EIP-7702 (`0x04`) are rejected. The two types above sit in a high, self-assigned range so a future upstream type can't collide with them.
 
 !!! note "No SDK yet"
-    Neither type is supported by ethers.js/viem today. You build and sign the RLP payload yourself; the client's own codec is the reference implementation.
+    This repository does not include a supported NewL1 SDK or a versioned client codec for these transaction types. Use the codec and test vectors for the matching client release, and confirm that your SDK can submit the encoded raw transaction.
 
 ## `0x76` Account Abstraction
 
