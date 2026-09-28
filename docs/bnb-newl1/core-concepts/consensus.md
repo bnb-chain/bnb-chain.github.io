@@ -44,7 +44,7 @@ Double-sign evidence is detected automatically and submitted on-chain for slashi
 
 - Validator admission and rotation are on-chain and queryable (see [`newl1_getValidatorSchedule`](../developers/json_rpc/newl1-api-list.md#newl1_getvalidatorschedule)).
 - Block interval, turn length, and epoch length are chain parameters, not assumptions to hardcode into client code.
-- Applications that need a hard guarantee before acting irreversibly (e.g. a bridge release, a large settlement) should wait for finality rather than for ordering or import alone. See [Transaction Pre-confirmation](./tx-preconfirmation.md) for the faster, best-effort signal available before finality.
+- For a bridge release or another action that depends on successful execution, wait until a later block records the result and finalizes, then verify the transaction receipt. Finality of transaction order alone does not confirm that execution succeeded. See [Transaction Pre-confirmation](./tx-preconfirmation.md) for the faster, best-effort signal available before finality.
 
 ## What's Next
 

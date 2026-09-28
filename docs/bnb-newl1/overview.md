@@ -4,7 +4,7 @@ title: BNB NewL1 Overview - BNB NewL1
 
 # BNB NewL1 - High-Performance EVM L1
 
-BNB NewL1 is an EVM-compatible Layer 1 and the next generation chain in the BNB Chain family. It targets workloads that need sub-second finality and predictable inclusion, include but not limited to: high-frequency trading, real-time payments, confidential finance, and agent-driven activity. Blocks land every 200 ms and become irreversible in roughly one block interval through BLS fast finality, while sub-blocks give a client a pre-confirmation about 20 ms after submission.
+BNB NewL1 is an EVM-compatible Layer 1 and the next generation chain in the BNB Chain family. It targets workloads that need sub-second finality and predictable inclusion, include but not limited to: high-frequency trading, real-time payments, confidential finance, and agent-driven activity. Under the proposed Parlia design, cross-block BLS votes target transaction-order finality in under one second at the 200 ms block interval. SubBlocks provide an earlier preconfirmation at approximately 20 ms. Execution finality occurs only after a subsequent block records the `ExecutionCommitment` and that block itself finalizes.
 
 ## Key Features and Advantages
 
@@ -31,7 +31,7 @@ BSC remains the broad-base chain for the existing ecosystem. BNB NewL1 is a clea
 | Application | DeFi, payments, confidential finance, AI agents. An opt-in native shielded pool hides sender, recipient, and amount, and transparent transactions are unaffected | [Privacy](./core-concepts/privacy.md) |
 | Account & UX | Gas sponsorship, passkey (WebAuthn/P256) signing, batched calls, and scoped access keys, all as a native transaction type (`0x76`). No bundler, no entry-point contract, and the sender need not hold BNB | [Account Abstraction](./core-concepts/account-abstraction.md) |
 | Execution | Parallel EVM, with ordering decoupled from execution: consensus liveness does not depend on execution throughput. Multi-Lane reserves gas capacity per transaction class, so latency-sensitive traffic can't be crowded out | [Async Execution](./core-concepts/async-execution.md) · [Multi-Lane](./core-concepts/multi-lane.md) |
-| Consensus | Enhanced Parlia: 200 ms blocks and BLS fast finality, so blocks become irreversible in roughly one block interval. Sub-blocks stream ordering commitments every 20 ms, and a client sees that pre-confirmation well before the block lands | [Consensus](./core-concepts/consensus.md) · [Pre-confirmation](./core-concepts/tx-preconfirmation.md) |
+| Consensus | Enhanced Parlia uses cross-block BLS votes to target transaction-order finality in under one second, at the target 200 ms block interval. SubBlocks can provide a preconfirmation in approximately 20 ms. Execution finality follows only after a later block records the result and itself finalizes. | [Consensus](./core-concepts/consensus.md) · [Pre-confirmation](./core-concepts/tx-preconfirmation.md) |
 | Network | P2P block and sub-block gossip. Transactions are routed straight to the current and next proposer instead of a global mempool | [JSON-RPC Endpoint](./developers/json_rpc/json-rpc-endpoint.md) |
 | Storage | Flat key-value store under a cumulative lattice-hash (LtHash) commitment instead of a Merkle-Patricia trie | [State DB](./core-concepts/state-db.md) |
 | Governance | Token-weighted (govBNB) proposal / vote / timelock control over protocol parameters, including the Multi-Lane quotas | [Governance](./governance/overview.md) |

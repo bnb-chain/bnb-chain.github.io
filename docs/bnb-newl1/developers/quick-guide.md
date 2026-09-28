@@ -37,7 +37,7 @@ None of these are required to run a standard EVM app. They are additive, and the
 | [Native account abstraction](../core-concepts/account-abstraction.md) | The `0x76` transaction envelope: atomic call batches, session and admin keys, passkey (WebAuthn/P256) signing, and gas sponsorship, with no bundler and no EntryPoint contract. |
 | [Multi-Lane](../core-concepts/multi-lane.md) | Governance-configured reserved gas quota per traffic class, so latency-sensitive flows aren't crowded out by unrelated load. |
 | [Shielded pool](../core-concepts/privacy.md) | An opt-in native system contract for private transfers, alongside ordinary transparent ones. |
-| [BLS fast finality](../core-concepts/consensus.md) | Irreversibility in roughly one block interval, instead of waiting on confirmation depth. |
+| [BLS fast finality](../core-concepts/consensus.md) | Fast finality for transaction ordering. The execution result becomes final only after a later block records it and that block also finalizes. |
 
 ## Reference
 
