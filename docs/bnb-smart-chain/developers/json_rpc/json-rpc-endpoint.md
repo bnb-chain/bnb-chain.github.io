@@ -64,6 +64,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
 
+* **BoltRPC:** <https://boltrpc.io/networks/bnb>
+
 ### Starting HTTP JSON-RPC
 
 You can start the HTTP JSON-RPC with the --http flag
