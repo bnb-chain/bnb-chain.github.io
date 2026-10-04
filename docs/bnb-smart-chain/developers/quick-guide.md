@@ -1,6 +1,6 @@
----
+## Getting Started 
 title: Quick Guide - BNB Smart Chain (BSC)
----
+### Prerrequisitos
 
 If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.
 
