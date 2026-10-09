@@ -1632,6 +1632,15 @@ Existing articles:
 ## BNB Agent SDK Security
 > Source: https://docs.bnbchain.org/developer-kit/bnbagent-sdk/security/
 
+Security model of the BNB Agent SDK:
+
+- **Wallet & key handling** — Keystore V3 encrypted keys, submit-time verification, budget protection, permissionless settle, non-pausable refunds, 0600/0700 storage permissions.
+- **EIP-712 typed-data signing** — policy-gated by default; only EIP-3009 TransferWithAuthorization/ReceiveWithAuthorization on BSC mainnet/testnet default domains are allowed; Permit variants are denylisted.
+- **X402Signer** — enforces expected_to, from, per-call max_value, and session budget.
+- **Extending the policy** — via domain_allowlist, primary_type_allowlist, primary_type_denylist, and max_validity_window_seconds.
+- **Tests-only escapes** — SigningPolicy.permissive() and _DANGEROUS_sign_typed_data_no_policy() are audit-friendly but not for production/agent-reachable code.
+
+Includes a decision tree and extension snippet table for common signing configurations.
 ## Security
 
 ### Wallet & key handling
