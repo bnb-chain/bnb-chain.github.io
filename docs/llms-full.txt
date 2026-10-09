@@ -1634,10 +1634,12 @@ Existing articles:
 
 Security model of the BNB Agent SDK:
 
-- **Wallet & key handling** — Keystore V3 encrypted keys, submit-time verification, budget protection, permissionless settle, non-pausable refunds, 0600/0700 storage permissions.
+- **Wallet & key handling** — Keystore V3 encrypted keys, submit-time verification, budget protection, permissionless settle, non-pausable refunds, and 0600/0700 storage permissions.
 - **EIP-712 typed-data signing** — policy-gated by default; only EIP-3009 TransferWithAuthorization/ReceiveWithAuthorization on BSC mainnet/testnet default domains are allowed; Permit variants are denylisted.
 - **X402Signer** — enforces expected_to, from, per-call max_value, and session budget.
-- **Extending the policy** — via domain_allowlist, primary_type_allowlist, primary_type_denylist, and max_validity_window_seconds.
+- **SigningPolicy** — strict_default() can be extended via domain_allowlist, primary_type_allowlist, primary_type_denylist, and max_validity_window_seconds; supports Permit2 single-use signature transfers (PermitTransferFrom / PermitBatchTransferFrom / PermitWitnessTransferFrom) when explicitly allowlisted.
+- **Nested EIP-712 structs** — validated before signing (unique root, atomic types, size/depth bounds); the Python port still requires a single non-domain struct.
+- **Policy serialization** — SigningPolicy.to_dict()/from_dict() round-trip policies through plain dicts for CLI/manifest tooling.
 - **Tests-only escapes** — SigningPolicy.permissive() and _DANGEROUS_sign_typed_data_no_policy() are audit-friendly but not for production/agent-reachable code.
 
 Includes a decision tree and extension snippet table for common signing configurations.
