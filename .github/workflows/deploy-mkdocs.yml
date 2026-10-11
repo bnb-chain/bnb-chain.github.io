@@ -38,6 +38,9 @@ jobs:
       - name: Build MkDocs site
         run: mkdocs build
 
+      - name: Check agent resource coverage
+        run: python scripts/check_agent_docs.py site
+
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v4

@@ -44,3 +44,9 @@ to check the export behavior.
 
 GitHub Pages serves these static files but cannot negotiate Markdown responses using
 the `Accept` header. That requires a separate HTTP routing layer.
+
+The same build generates `llms.txt`, `llms-full.txt`, and the BSC-only
+`llms-full-bnb-smart-chain.txt` from every published page, including pages outside
+the navigation. Do not edit generated snapshots. The index uses Markdown links
+and stays below 50,000 characters. Full snapshots use absolute links and omit
+front matter, navigation, and theme scripts.

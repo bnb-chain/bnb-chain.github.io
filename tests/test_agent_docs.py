@@ -37,5 +37,47 @@ class MarkdownExports(unittest.TestCase):
             agent_docs.on_pre_build(config)
             self.assertEqual(agent_docs._pages, {})
 
+    def test_corpus_preserves_code_headings(self):
+        content = '# Page\n\n## Section\n\n```python\n# code comment\n```\n'
+        result = agent_docs.corpus_section('Page', 'https://docs.example/page.md', content)
+        self.assertIn('## [Page](https://docs.example/page.md)', result)
+        self.assertIn('### Section', result)
+        self.assertIn('\n# code comment\n', result)
+
+    def test_index_covers_pages_outside_navigation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = SimpleNamespace(site_url='https://docs.example/', site_dir=tmp)
+            pages = []
+            for src, url in [('index.md', ''), ('bnb-smart-chain/guide.md', 'bnb-smart-chain/guide/'), ('faq/new.md', 'faq/new/')]:
+                page = SimpleNamespace(title=src, url=url, file=SimpleNamespace(src_uri=src))
+                pages.append((page, '# Page\n\nContent'))
+            agent_docs.write_indexes(config, pages)
+            index = (Path(tmp) / 'llms.txt').read_text()
+            for target in ('index.md', 'bnb-smart-chain/guide.md', 'faq/new.md'):
+                self.assertIn('https://docs.example/' + target, index)
+            full = (Path(tmp) / 'llms-full.txt').read_text()
+            self.assertTrue(full.startswith('# BNB Chain'))
+            self.assertEqual(full.count('## ['), 3)
+            self.assertIn('> Complete Markdown snapshot', full)
+            self.assertEqual((Path(tmp) / 'llms-full-bnb-smart-chain.txt').read_text().count('## ['), 1)
+
+    def test_literal_markdown_inside_code_uses_a_longer_fence(self):
+        page = SimpleNamespace(title='Guide', canonical_url='https://docs.example/guide/')
+        config = SimpleNamespace(site_url='https://docs.example/')
+        html = '<h1>Guide</h1><pre><code>```bash\necho hello\n```\n# literal heading</code></pre>'
+        content = agent_docs.export_markdown(page, html, config, {})
+        self.assertIn('````\n```bash', content)
+        corpus = agent_docs.corpus_section('Guide', page.canonical_url, content)
+        self.assertIn('\n# literal heading\n', corpus)
+        self.assertNotIn('\n## literal heading\n', corpus)
+
+    def test_title_and_directive_precede_leading_images(self):
+        page = SimpleNamespace(title='Guide', canonical_url='https://docs.example/guide/')
+        config = SimpleNamespace(site_url='https://docs.example/')
+        content = agent_docs.export_markdown(page, '<img src="hero.png"><h1>Guide</h1><p>Body</p>', config, {})
+        self.assertTrue(content.startswith('# Guide\n\n> For the complete documentation index'))
+        self.assertEqual(content.count('# Guide'), 1)
+        self.assertIn('https://docs.example/guide/hero.png', content)
+
 
 if __name__ == '__main__': unittest.main()
