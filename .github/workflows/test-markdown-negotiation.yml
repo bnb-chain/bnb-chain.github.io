@@ -1,0 +1,20 @@
+name: Test Markdown content negotiation
+on:
+  pull_request:
+    paths:
+      - infrastructure/markdown-negotiation/**
+      - .github/workflows/test-markdown-negotiation.yml
+  push:
+    branches: [main]
+    paths:
+      - infrastructure/markdown-negotiation/**
+      - .github/workflows/test-markdown-negotiation.yml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test infrastructure/markdown-negotiation/worker.test.mjs

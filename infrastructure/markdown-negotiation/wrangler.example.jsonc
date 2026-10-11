@@ -1,0 +1,9 @@
+{
+  "name": "bnb-docs-markdown-negotiation",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  // Add the zone/account identifiers for the existing Cloudflare deployment.
+  // Keep GitHub Pages as the origin: use a Worker route, not a Worker custom domain.
+  "routes": [{ "pattern": "docs.bnbchain.org/*", "zone_name": "bnbchain.org" }]
+}
