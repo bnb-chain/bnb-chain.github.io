@@ -32,7 +32,7 @@ title: BNB Greenfield
         <div>Build on Greenfield</div>
         <p>Start building dapps to create value based on the data assets and its related economy.</p>
     </a>
-    <a href="./core-concept/cross-chain/programmability/">
+    <a href="./core-concept/programmability/">
         <div>EVM Programmability</div>
         <p>The real power of the Greenfield lies in its programmability to support the creation of value based on the data assets and its related economy.</p>
     </a>

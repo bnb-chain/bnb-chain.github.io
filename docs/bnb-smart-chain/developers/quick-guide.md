@@ -32,7 +32,7 @@ Interacting with BSC requires sending requests to specific JSON-RPC API methods.
 
 ## Official Developer Kit
 
-Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/).
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/index.md).
 
 ## Developer Tools
 - Explorer

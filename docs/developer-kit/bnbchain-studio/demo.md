@@ -214,8 +214,6 @@ $ uv run bag doctor
 Run bag llm activate first — want me to walk through the output once you do?
 ```
 
-![](../../assets/developer-kit/bnbchain-studio/demo/fund-2.png){:style="width:800px"}
-
 ## 5. Activate the LLM provider
 
 Run `bag llm activate` after the wallet is funded. For other providers, pass `--llm-provider` at `bag init` and set the API key in `app/agent/.env.local` after scaffolding.

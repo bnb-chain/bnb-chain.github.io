@@ -152,7 +152,7 @@ _Buyer_
 
 The BNB Greenfield offers resources such as buckets, objects, and groups that can be mirrored on the BNB Smart Chain (BSC) as non-fungible tokens (NFTs) following the ERC-721 standard. Buckets store objects, the basic units with data and metadata. Groups consist of accounts with similar permissions. These resources, including group members' permissions as ERC-1155 tokens, can be mirrored on the BSC.
 
-Smart contracts on BSC can directly control mirrored resources, affecting storage formats, access permissions, and other data aspects on Greenfield. This integration boosts flexibility and accessibility, streamlining data management on both platforms. For more on mirroring implementation, refer to [this document](https://docs.bnbchain.org/bnb-greenfield/core-concept/cross-chain/mirror/).
+Smart contracts on BSC can directly control mirrored resources, affecting storage formats, access permissions, and other data aspects on Greenfield. This integration boosts flexibility and accessibility, streamlining data management on both platforms. For more on mirroring implementation, refer to [this document](../../cross-chain-integration/mirror-concept.md).
 
 In the context of the MindPress Data Marketplace, users have the ability to store images on the Greenfield network and sell them on the BSC. Let's take the example of Alice selling a picture of a carrot on MindPress. To sell carrot images, Alice needs to follow these steps:
 

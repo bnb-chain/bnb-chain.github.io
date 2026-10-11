@@ -41,6 +41,9 @@ jobs:
       - name: Check agent resource coverage
         run: python scripts/check_agent_docs.py site
 
+      - name: Check documentation links
+        run: python scripts/check_doc_links.py site
+
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v4

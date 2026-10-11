@@ -10,7 +10,7 @@ This document provides all the information you need to develop opBNB application
 
 ## Official Developer Kit
 
-Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/).
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/index.md).
 
 ## Getting Started 
 

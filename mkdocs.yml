@@ -189,6 +189,7 @@ nav:
       - Local Node: ./bnb-opbnb/advanced/local-node.md
       - Run with PebbleDB and PBSS: ./bnb-opbnb/advanced/run-with-pebbledb-and-pbss.md
       - Run your own opBNB on BSC: ./bnb-opbnb/advanced/run-your-own-l2-with-opbnb.md
+      - Deployment Configuration Reference: ./bnb-opbnb/advanced/opbnb-deployment-configuration.md
 
     - FAQs:
       - Protocol FAQs: ./bnb-opbnb/faq/protocol-faqs.md
@@ -392,7 +393,7 @@ plugins:
         'docs/bcfusion/owners/bind.md': 'bc-fusion/owners/bind.md'
         'docs/bsc-faucet.md': 'bnb-smart-chain/developers/faucet.md'
         'docs/validator/fullnode.md': 'bnb-smart-chain/developers/node_operators/full_node.md'
-        'docs/rpc.md': 'bnb-smart-chain/developers/rpc.md'
+        'docs/rpc.md': 'bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md'
         'docs/learn.md': 'bnb-smart-chain/overview.md'
         'docs/learn/intro.md': 'index.md'
         'docs/learn/beaconIntro.md': 'bc-fusion/index.md'
@@ -405,12 +406,12 @@ plugins:
         'docs/learn/oracle-module.md': 'bc-fusion/index.md'
         'docs/learn/oracle-relayer.md': 'bc-fusion/index.md'
         'docs/learn/cross-chain-api.md': 'bc-fusion/index.md'
-        'docs/learn/bsc-gov.md': 'bnb-smart-chain/developers/rpc.md'
+        'docs/learn/bsc-gov.md': 'bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md'
         'docs/validator/overview.md': 'bnb-smart-chain/validator/overview.md'
         'docs/chainide.md': 'bnb-smart-chain/overview.md'
         'docs/create-wallet.md': 'bnb-smart-chain/overview.md'
         'docs/more-help.md': 'bnb-smart-chain/overview.md'
-        'docs/api-reference/node-rpc.md': 'bnb-smart-chain/developers/rpc.md'
+        'docs/api-reference/node-rpc.md': 'bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md'
         'docs/dapp-dev/web3js-tutorial.md': 'bnb-smart-chain/overview.md'
         'docs/wallet_api.md': 'bc-fusion/index.md'
         'bc-start.md': 'bc-fusion/index.md'
@@ -425,8 +426,8 @@ plugins:
         'docs/add-account.md': 'bc-fusion/index.md'
         'docs/staking-with-ext-wallet.md': 'bnb-smart-chain/staking/user-guide.md'
         'docs/learn/ecosystem.md': 'bnb-smart-chain/overview.md'
-        'docs/BSCmainnet.md': 'bnb-smart-chain/developers/rpc.md'
-        'docs/BSCtestnet.md': 'bnb-smart-chain/developers/rpc.md'
+        'docs/BSCmainnet.md': 'bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md'
+        'docs/BSCtestnet.md': 'bnb-smart-chain/developers/json_rpc/json-rpc-endpoint.md'
         'docs/BSCexplorers.md': 'bnb-smart-chain/overview.md'
         'docs/validator/best-practice.md': 'bnb-smart-chain/validator/security.md'
         'docs/BSC-fast-node.md': 'bnb-smart-chain/developers/node_operators/fast_node.md'
