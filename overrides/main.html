@@ -9,6 +9,12 @@
 #}
 
 {% block extrahead %}
+{{ super() }}
+<link rel="describedby" type="text/plain" href="{{ config.site_url }}llms.txt">
+<link rel="mcp" type="application/json" href="{{ config.site_url }}.well-known/mcp.json">
+{% if page %}
+<link rel="alternate" type="text/markdown" href="{{ config.site_url }}{{ page.file.src_uri }}" title="Markdown source">
+{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,6 +47,17 @@
   }
 }
 </script>
+{% endblock %}
+
+{% block header %}
+<div class="agent-docs-hint">
+    For AI agents: the complete documentation index is available at
+    <a href="{{ config.site_url }}llms.txt" tabindex="-1">llms.txt</a>.
+    {% if page %}Read this page as <a href="{{ config.site_url }}{{ page.file.src_uri }}" tabindex="-1">Markdown</a>.{% endif %}
+    See the <a href="{{ config.site_url }}skill.md" tabindex="-1">BNB Chain skill</a>
+    and <a href="{{ config.site_url }}.well-known/mcp.json" tabindex="-1">MCP discovery document</a>.
+</div>
+{{ super() }}
 {% endblock %}
 
 {% block htmltitle %}

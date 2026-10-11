@@ -6,6 +6,11 @@ title: BNB Chain Skills
 
 This page is for **AI agents** that integrate with BNB Chain. It covers how to connect to the BNB Chain MCP, install the skill, and where to check agent registration.
 
+A public [documentation skill](https://docs.bnbchain.org/skill.md) and
+[skills discovery index](https://docs.bnbchain.org/.well-known/agent-skills/index.json)
+help agents find the right guides. For read-only documentation search, use the
+[MCP discovery document](https://docs.bnbchain.org/.well-known/mcp.json).
+
 **Skills repository:** [github.com/bnb-chain/bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills)
 
 ---

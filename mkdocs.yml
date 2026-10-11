@@ -371,6 +371,7 @@ markdown_extensions:
 
 hooks:
   - hooks/agent_docs.py
+  - hooks/agent_discovery.py
 
 plugins:
   - search

@@ -50,3 +50,13 @@ The same build generates `llms.txt`, `llms-full.txt`, and the BSC-only
 the navigation. Do not edit generated snapshots. The index uses Markdown links
 and stays below 50,000 characters. Full snapshots use absolute links and omit
 front matter, navigation, and theme scripts.
+
+## Agent discovery
+
+The build publishes `agent-resources/SKILL.md` at `/skill.md`, `/SKILL.md`,
+and the conventional skills discovery paths under `/.well-known/`. Edit the source
+file to update these copies; the discovery index includes its SHA-256 digest.
+`/.well-known/mcp` and `/.well-known/mcp.json` point to the existing public, read-only
+Ask AI MCP endpoint. The local blockchain MCP is described separately in the skill.
+HTML pages advertise the index and Markdown alternate before the site navigation.
+Merge the Markdown-export PR before deploying these alternate links.
