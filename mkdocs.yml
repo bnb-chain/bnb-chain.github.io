@@ -196,6 +196,8 @@ nav:
       - opBNB Bridge FAQs: ./bnb-opbnb/faq/opbnb-bridge-faqs.md
       - Cross Chain FAQs: ./bnb-opbnb/faq/cross-chain-faqs.md
       - Build on opBNB FAQs: ./bnb-opbnb/faq/build-on-opbnb-faqs.md
+  - PropAMMs:
+    - Overview: ./propamms/index.md
   - BNB Greenfield:
       - BNB Greenfield : ./bnb-greenfield/index.md
       - Overview: ./bnb-greenfield/introduction.md
