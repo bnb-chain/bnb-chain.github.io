@@ -330,7 +330,6 @@ nav:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
-  - '... | faq/**'
 
 markdown_extensions:
   - toc:
@@ -694,6 +693,9 @@ plugins:
         'opbnb-docs/docs/tutorials/run-nodes-best-practices.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-development-environment.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-node.md': 'bnb-opbnb/overview.md'
+        'faq/index.md': 'bnb-smart-chain/faq/index.md'
+        'faq/bsc/index.md': 'bnb-smart-chain/faq/index.md'
+        'faq/opbnb/index.md': 'bnb-opbnb/faq/protocol-faqs.md'
 
 
 extra_css:
