@@ -1,0 +1,26 @@
+
+## Quick Guide - BNB Smart Chain (BSC)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/
+
+# Quick Guide - BNB Smart Chain (BSC)
+
+Quick guide for BSC developers. BSC is EVM-compatible, so existing Ethereum smart contract skills transfer.
+
+- Connecting: network information, RPC providers, wallet configuration.
+- Tokens: BSC testnet faucet; mainnet CEX withdrawal.
+- JSON-RPC API: Geth-compatible JSON-RPC methods.
+- Official Developer Kit: SDK cards, MCP, Ask AI.
+- Developer tools: explorers, SDKs, wallets, oracles, account abstraction, storage, and data analytics.
+
+## Frequently Asked Questions (FAQ)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/faq/
+
+# Frequently Asked Questions (FAQ)
+
+FAQ for BNB Smart Chain with links to helpful articles:
+- Recovering Tokens Sent to Wrong Chain or Address
+- Tokens Not Showing in Wallet
+- Transfer NEXO from Tangem into BSC
+- Lorentz Hard Fork Upgrade
+
+If your issue is not listed, explore other documentation or open an issue.
