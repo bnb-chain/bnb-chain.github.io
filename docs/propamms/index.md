@@ -19,6 +19,17 @@ This approach reduces the need to publish continuous quote updates on-chain and 
 
 The **PropAMM Oracle** stores maker-published pricing state in a shared registry. The **PropAMM Pool Interface**, `IPropAMM`, exposes `isActive`, `getPairs`, `quote`, and `swap`, giving wallets, aggregators, and solvers a consistent integration surface. Makers retain control over their pricing strategies and pool logic.
 
+## Deployment
+
+The `PropAMM Console` is available at `https://propamm-console.bnbchain.org/`.
+
+The `Relayer` is built on a BNB Chain full node and exposes HTTPS and WebSocket endpoints:
+
+- **HTTPS:** `https://propamm.bnbchain.org`
+- **WebSocket:** `wss://propamm.bnbchain.org`
+
+The service is currently deployed only in the Asia Pacific (AP) region. Deployment will expand to Europe (EU) and the United States (US) soon.
+
 ## Learn more
 
 - [BAP-710: Unified PropAMM Relayer](https://github.com/bnb-chain/BEPs/blob/master/BAPs/BAP-710.md) — motivation, architecture, and specification.
