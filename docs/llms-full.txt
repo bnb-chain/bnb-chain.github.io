@@ -1,0 +1,497 @@
+
+## BNB Greenfield
+> Source: https://docs.bnbchain.org/bnb-greenfield/
+
+BNB Greenfield is a cutting-edge decentralized storage and blockchain storage solution, designed to harness the power of decentralized technology in the field of data ownership and the data economy. The platform focuses on providing decentralized data management and access and EVM programmability, to revolutionize the data economy by simplifying the process of storing and managing data, while connecting data ownership with the DeFi context of BNB Chain.
+
+Key sections: Get Started, Build on Greenfield, EVM Programmability, Greenfield Blockchain, Storage Provider, and Developer Kit.
+
+## Quick Guide - BNB Greenfield Develop
+> Source: https://docs.bnbchain.org/bnb-greenfield/for-developers/get-started-dev/
+
+Here’s a quick guide to get you from zero to hero. This doc provides a guide to the following ideas:
+
+* Greenfield & Programmability concepts
+* Understand what you need to build your project
+* Access resources to get you started
+
+## Greenfield & Programmability Concepts
+
+### Greenfield 101
+
+Read Greenfield Overview [here](../introduction.md)
+
+### Uniform Address Format
+
+Greenfield defines its [account](../core-concept/accounts.md) in the same format as BSC and Ethereum. It starts with ECDSA secp256k1 curve for keys and is compliant with [EIP84](https://github.com/ethereum/EIPs/issues/84) for full [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) paths.
+
+### Account Operation
+
+Create a greenfield account, deposit BNB, and program [token transfers](../getting-started/token-transfer.md).
+
+* [GO-SDK Example](https://github.com/bnb-chain/greenfield-go-sdk/blob/master/examples/basic.go)
+* [JS-SDK Example](https://docs.bnbchain.org/greenfield-js-sdk/api/account)
+
+### Data storage
+
+Create a public bucket to upload and share objects.
+
+* [Greenfield CLI Example](./tutorials/file-management-overview.md)
+* [GO-SDK Example 1](tutorials/app/file-management/basic-file-management.md) and [GO-SDK Example 2](https://github.com/bnb-chain/greenfield-go-sdk/blob/v1.1.1/examples/storage.go)
+* [JS-SDK Bucket API](https://docs.bnbchain.org/greenfield-js-sdk/api/bucket) and [JS-SDK Object API](https://docs.bnbchain.org/greenfield-js-sdk/api/object)
+
+### Permission control
+
+Create a private bucket and share it with specific individuals.
+
+* [Greenfield CLI Example](./tutorials/access-control/cmd-access-control.md)
+* [GO-SDK Example](https://github.com/bnb-chain/greenfield-go-sdk/blob/v1.1.1/examples/permission.go)
+* [JS-SDK Example](https://docs.bnbchain.org/greenfield-js-sdk/api/bucket#putbucketpolicy-) and [JS-SDK API](https://docs.bnbchain.org/greenfield-js-sdk/api/object#putobjectpolicy-)
+
+### Enhanced permission control
+
+- Create a group, add members, and share the private bucket.
+  * [GO-SDK Example](https://github.com/bnb-chain/greenfield-go-sdk/blob/v1.1.1/examples/group.go)
+  * [JS-SDK Group API](https://docs.bnbchain.org/greenfield-js-sdk/api/group)
+- Resource management with smart contracts: Understand the concepts of [resource mirroring](../for-developers/cross-chain-integration/mirror-concept.md)
+
+### Cross-chain Programmability
+
+- Understand the [programmability concepts](../core-concept/programmability.md)
+- Understand [mirror resource from Greenfield to EVM chains](./cross-chain-integration/mirror-concept.md)
+- Understand [program resource through Smart Contract](./cross-chain-integration/interface.md)
+- Follow Smart Contract SDK [tutorial](tutorials/access-control/cross-chain-access-control-by-cmd.md)
+- Showcase: [Data Marketplace](tutorials/app/data-marketplace.md)
+
+## Developer Starter Kit
+
+### API
+
+- [Greenfield Chain API Docs](https://greenfield.bnbchain.org/openapi)
+- [Greenfield SP API Docs](https://github.com/bnb-chain/greenfield-storage-provider/tree/master/docs/storage-provider-rest-api)
+
+### SDK
+
+- [Greenfield SDK](../../developer-kit/greenfield-sdk/index.md) — Go and JavaScript guides (language tabs); [Go SDK Docs](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk) · [JS SDK Docs](https://docs.bnbchain.org/greenfield-js-sdk/).
+
+Official tools index: [BNB Chain Developer Kit](../../developer-kit/index.md).
+
+## Setup
+
+- [Key management](../core-concept/accounts.md#key-management)
+- [Transfer](../getting-started/token-transfer.md) between greenfield address
+- [Token bridge](https://dcellar.io/wallet)
+
+### Developer Resource
+
+- [Developer Tooling](https://www.bnbchain.org/en/dev-tools?chain=greenfield)
+- Explore datasets with [explorer](https://greenfieldscan.com/) or [dcellar.io ](https://dcellar.io/)
+- [RPC list](network-endpoint/endpoints.md)
+- [Bundle service](https://docs.nodereal.io/docs/greenfield-bundle-service)
+- [Web hosting](https://docs.4everland.org/hositng/what-is-hosting/greenfield-hosting#id-4everland-greenfield-hosting)
+- Data Marketplace boilerplate
+  - [Frontend](https://github.com/bnb-chain/greenfield-data-marketplace-frontend)
+  - [Smart Contracts](https://github.com/bnb-chain/greenfield-data-marketplace-contracts)
+
+### Storage onramp
+
+[https://dcellar.io/](https://dcellar.io/)
+
+## MindPress Data Marketplace Introduction - BNB Greenfield
+> Source: https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/data-marketplace/
+
+# MindPress Data Marketplace Introduction
+
+## 1. Overview
+
+[MindPress Data Marketplace](https://testnet-marketplace.mindpress.io) is a demo built on the BNB Smart Chain and BNB Greenfield storage chains. It uses the image trading scenario as an example to demonstrate the use of BNB Greenfield's latest release (V1.6&V1.7), such as cross-chain programmability, delegate upload, and sponsor-paid storage fees. With these features, developers can easily create a web3 decentralized trading platform based on the BNB Chain ecosystem with a great user experience and comprehensive functions such as storage, trading, and content permission management, thereby accelerating project development and marketing.
+
+## 2. Features
+
+As an image stock, sellers can upload and list photos for sale, while buyers can search for images they like, buy, and download the original files.
+
+### Seller
+
+* **Upload objects (e.g. images) to BNB Greenfield:** Sellers can upload multiple images to BNB Greenfield at once under the BSC network.
+* **List objects on the BNB Smart Chain:** Sellers can list their uploaded images for sale on the BSC network and begin selling download/view permissions to buyers to earn money.
+* **Delist objects**: Sellers can delist their images from the marketplace.
+
+### Buyer
+
+* **Search objects:** Buyers can search for objects by name and category ID to find what they want.
+* **Buy objects:** Buyers can purchase objects and obtain download/view permission.
+* **Download objects:** Buyers can download/view their purchased objects.
+
+## 3. Benefits after Greenfield V1.6&1.7 updates
+
+The marketplace demonstrates improvements from BEP-361, BEP-362, BEP-363, and BEP-364, including no network switch, flexible payment methods, easy uploads, and easier listing workflows.
+
+## 4. Demo Video
+
+Includes buyer workflow and seller workflow demonstrations.
+
+## 5. Environment Support
+
+* BNB Smart Chain Testnet: [https://mindpress.io](https://mindpress.io) (VPN required in some areas)
+
+## 6. Technical Design
+
+The BNB Greenfield offers resources such as buckets, objects, and groups that can be mirrored on the BNB Smart Chain (BSC) as non-fungible tokens (NFTs) following the ERC-721 standard. Buckets store objects, the basic units with data and metadata. Groups consist of accounts with similar permissions. These resources, including group members' permissions as ERC-1155 tokens, can be mirrored on the BSC.
+
+Smart contracts on BSC can directly control mirrored resources, affecting storage formats, access permissions, and other data aspects on Greenfield. This integration boosts flexibility and accessibility, streamlining data management on both platforms. For more on mirroring implementation, refer to [this document](../../cross-chain-integration/mirror-concept.md).
+
+In the context of the MindPress Data Marketplace, users have the ability to store images on the Greenfield network and sell them on the BSC. Let's take the example of Alice selling a picture of a carrot on MindPress. To sell carrot images, Alice needs to follow these steps:
+
+1. Create a bucket, and upload the carrot image to this bucket on BNB Greenfield.
+2. Create a group and grant this group permission to view the carrot image.
+3. List the group on the MindPress Data Marketplace smart contract to sell access permissions on the BSC network.
+
+Since the carrot image is private, Bob will be denied access to it by default. Bob needs to buy permission to join the group. After becoming a member, he can view/download the carrot image.
+
+### 6.2 Architecture
+
+The true strength of the Greenfield ecosystem resides in its cutting-edge platform engineered not just for data storage, but also for fostering value creation from data assets and its associated economy. To empower data on Greenfield more effectively, a robust cross-chain mechanism has been introduced, enabling versatile cross-chain programming capabilities.
+
+## Storage Provider Lifecycle - BNB Greenfield SP
+> Source: https://docs.bnbchain.org/bnb-greenfield/storage-provider/storage-provider-lifecycle/
+
+# Storage Provider Lifecycle
+
+This document describes the entire lifecycle of a storage provider from joining the Greenfield Storage Network to exiting.
+
+## Preparation
+
+First, the storage provider needs to learn how to run and create a storage provider node, which requires several different user accounts and a unified external EndPoint.
+
+- Follow Recommended Prerequisites to get ready
+- Create the required accounts, E.g operator/fundig/seal/approval/gv/bls
+- Run all services of Storage Provider
+
+For more information, see [Run Storage Provider](./run-book/run-SP-node.md).
+
+## Proposal
+
+The Storage Provider (SP) must initiate an on-chain proposal that outlines the Msg information to be automatically executed after receiving approval through the voting process. Specifically, the Msg in this case is `MsgCreateStorageProvider`. It's essential to ensure that the deposit tokens exceed the minimum deposit tokens specified on the chain.
+
+Required fields include addresses, endpoint, quota and price, deposit for SP staking, and deposit for proposal. The SP must stake at least 1000 BNB in the testnet and the proposal must have a deposit of at least 1 BNB.
+
+For more information, see [Add Storage Provider to Greenfield Network](./run-book/join-SP-network.md).
+
+## In Service
+
+During the in-service status, Storage Providers (SPs) actively engage in the network's daily operations. They handle a variety of user requests, including data storage, retrieval, and other storage-related operations.
+
+SPs must create virtual groups within the Greenfield network to efficiently serve buckets and objects. They are also required to provide corresponding stakes for the amount of data they store.
+
+## In Maintenance
+
+The maintenance mode for service providers (SPs) is a status in which SPs do not serve any create/upload requests from users. There are two circumstances in which an SP can be in maintenance mode:
+
+1. When an SP joins the network after a proposal has passed, it will stay in `STATUS_IN_MAINTENANCE` until it sends a transaction including msg `MsgUpdateStorageProviderStatus` to Greenfield to change its status to `STATUS_IN_SERVICE`.
+2. If an SP is already in service, it can send a transaction with msg `MsgUpdateStorageProviderStatus` to Greenfield and request a maintenance duration, if there are no restrictions violated, the SP is allowed to enter maintenance mode immediately.
+
+There are two restrictions that apply when an SP requests to be in maintenance. These restrictions work with the parameters `num_of_historical_blocks_for_maintenance_records`, `maintenance_duration_quota` and `num_of_lockup_blocks_for_maintenance`.
+
+To ensure the quality of service provided, we strongly recommend that SPs conduct a self-test via the maintenance account before turning back to `STATUS_IN_SERVICE`.
+
+## Exit
+
+There are two types of exit based on the behavior and choices of the SP: Graceful Exit and Forced Exit.
+
+### Graceful Exit
+
+At some point, the SP may choose to voluntarily exit the Greenfield storage network for various reasons. Ensuring a graceful exit process is crucial to ensure a seamless transition of responsibilities and data to other SPs. During the exit process, the SP must continue to fulfill user serve user querying requests. Once the exit process is successfully completed, the SP can retrieve all the staked BNB.
+
+To execute a graceful exit, all its stored data need to be migrated to other successor SPs that are willing to take over. This data migration process involves recovering data from the exiting SP by successor SPs in a secure and efficient manner. After the exit SP sending a `StorageProviderExit` transaction to the Greenfield Blockchain, its status will turn to `STATUS_GRACEFUL_EXITING`. A successor SP can initiate the recovery process by first sending a `ReserveSwapIn` transaction to the Greenfield Blockchain.
+
+## opBNB Deployment Configuration Reference
+> Source: https://docs.bnbchain.org/bnb-opbnb/advanced/opbnb-deployment-configuration/
+
+# opBNB Deployment Configuration Reference
+
+Use this example and field reference when [creating your own opBNB rollup testnet](run-your-own-l2-with-opbnb.md). Complete the build, account setup, and network configuration steps in that tutorial before deploying contracts. Replace example addresses and values with your deployment settings.
+
+## Deploy config example
+
+```bash
+{
+    "l1ChainID": 97,
+    "l2ChainID": 4274,
+    "l2BlockTime": 1,
+    "maxSequencerDrift": 600,
+    "sequencerWindowSize": 57600,
+    "channelTimeout": 1200,
+    "p2pSequencerAddress": "0x3224F068Fd97D2d4a91800D450EE19bfBCD6B6Ee",
+    "batchInboxAddress": "0xff00000000000000000000000000000000004274",
+    "batchSenderAddress": "0xB6e487a3cEcDe5e0E1793C98c2de1999a1319A2b",
+    "cliqueSignerAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "l1UseClique": false,
+    "l1StartingBlockTag": "0x304dee2",
+    "l2OutputOracleSubmissionInterval": 3600,
+    "l2OutputOracleStartingBlockNumber": 0,
+    "l2OutputOracleStartingTimestamp": 1745389366,
+    "l2OutputOracleProposer": "0x254811af494550Ee5e0945C23EC5E4E17c9dF1bC",
+    "l2OutputOracleChallenger": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "l2GenesisBlockGasLimit": "0x5f5e100",
+    "l1BlockTime": 3,
+    "baseFeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
+    "l1FeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
+    "sequencerFeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
+    "baseFeeVaultWithdrawalNetwork": 0,
+    "l1FeeVaultWithdrawalNetwork": 0,
+    "sequencerFeeVaultWithdrawalNetwork": 0,
+    "proxyAdminOwner": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "baseFeeVaultRecipient": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "l1FeeVaultRecipient": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "sequencerFeeVaultRecipient": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "finalSystemOwner": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "superchainConfigGuardian": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "finalizationPeriodSeconds": 3,
+    "fundDevAccounts": true,
+    "l2GenesisBlockBaseFeePerGas": "0x5F5E100",
+    "gasPriceOracleOverhead": 2100,
+    "gasPriceOracleScalar": 1000000,
+    "gasPriceOracleBaseFeeScalar": 1368,
+    "gasPriceOracleBlobBaseFeeScalar": 810949,
+    "enableGovernance": false,
+    "governanceTokenSymbol": "OPBNB",
+    "governanceTokenName": "OPBNB",
+    "governanceTokenOwner": "0x5E8fe030B465b448a78bA5Ef3c674Da25fDf67f5",
+    "eip1559Denominator": 8,
+    "eip1559DenominatorCanyon": 8,
+    "eip1559Elasticity": 2,
+    "l1GenesisBlockTimestamp": "0x68088736",
+    "l2GenesisRegolithTimeOffset": "0x0",
+    "l2GenesisDeltaTimeOffset": "0x0",
+    "l2GenesisCanyonTimeOffset": "0x0",
+    "systemConfigStartBlock": 0,
+    "requiredProtocolVersion": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "recommendedProtocolVersion": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "faultGameAbsolutePrestate": "0x03c7ae758795765c6664a5d39bf63841c71ff191e9189522bad8ebff5d4eca98",
+    "faultGameMaxDepth": 50,
+    "faultGameClockExtension": 0,
+    "faultGameMaxClockDuration": 1200,
+    "faultGameGenesisBlock": 0,
+    "faultGameGenesisOutputRoot": "0xDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF",
+    "faultGameSplitDepth": 14,
+    "faultGameWithdrawalDelay": 604800,
+    "preimageOracleMinProposalSize": 10000,
+    "preimageOracleChallengePeriod": 120,
+    "proofMaturityDelaySeconds": 12,
+    "disputeGameFinalityDelaySeconds": 6,
+    "respectedGameType": 254,
+    "useFaultProofs": false,
+    "usePlasma": false,
+    "daCommitmentType": "KeccakCommitment",
+    "daChallengeWindow": 160,
+    "daResolveWindow": 160,
+    "daBondSize": 1000000,
+    "daResolverRefundPercentage": 0,
+    "fermat": 0,
+    "L2GenesisEcotoneTimeOffset": "0x0",
+    "l2GenesisFjordTimeOffset": "0x0",
+    "snowTimeOffset": "0x0",
+    "haberTimeOffset": "0x0",
+    "wrightTimeOffset": "0x0"
+}
+```
+
+## Configuration fields
+
+### Chain Configuration
+
+Includes Chain ID, Gas limit, Public RPC, Internal RPC, l2BlockTime, Withdraw time, Batcher Commit interval, and ProposerCommit interval.
+
+### Gas fee Configuration
+
+Includes l1FeeScalar, which can be configured by Layer 2 operators to decide whether Layer 2 is profitable.
+
+### Governance Configuration
+
+Includes whether to support a Governance Token, Governance Token Symbol, Governance Token Name, and Governance Token Owner.
+
+### Custom Gas Token Configuration
+
+Includes Token Name, Symbol, Decimal, and Total Supply.
+
+## Creating Your Own L2 Rollup Testnet
+> Source: https://docs.bnbchain.org/bnb-opbnb/advanced/run-your-own-l2-with-opbnb/
+
+# Creating Your Own L2 Rollup Testnet
+
+This tutorial is designed for developers who want to create l2 rollup testnet chain. You'll walk through the full deployment process and teach you all of the components that make up the l2 rollup, and you'll end up with your own l2 rollup testnet.
+
+You can use this testnet to experiment and perform tests, or you can choose to modify the chain to adapt it to your own needs.
+
+## Introduction
+
+The opBNB stack is the Layer 2 scaling framework for the BNB Smart Chain powered by the bedrock version of Optimism OP Stack. It works by offloading transaction processing and resource usage from the BNB Smart Chain, while still posting data to the underlying mainnet. Users can build their own L2 network with the framework. Sequencers aggregate transactions, compute state transitions and submit them to the rollup contract on BSC. Provers generate cryptographic proofs that prove the validity of these state transitions, and Verifiers check the proofs to verify the L2 network’s state is correct.
+
+## What You're Going to Deploy
+
+### Deployment Architecture
+
+When deploying a l2 rollup chain, you'll be setting up four different components: Sequencer, Proposer, Batcher, Bridge node, and RPC node.
+
+### Smart Contracts
+
+The l2 rollup uses several smart contracts on the L1 blockchain to manage aspects of the Rollup. You'll be using the L1 smart contracts found in the [contracts-bedrock package](https://github.com/bnb-chain/opbnb/tree/develop/packages/contracts-bedrock) within the [opbnb](https://github.com/bnb-chain/opbnb).
+
+### Sequencer Node
+
+The l2 rollup uses Sequencer node to gather proposed transactions from users and publish them to the L1 blockchain. It runs both an op-node and an op-geth process.
+
+### Batcher
+
+The Batcher is a service that publishes transactions from the Sequencer to the L1 blockchain. You'll be using the [op-batcher](https://github.com/bnb-chain/opbnb/tree/develop/op-batcher) component found within the [opbnb](https://github.com/bnb-chain/opbnb).
+
+### Proposer
+
+The Proposer is a service responsible for publishing transaction results (in the form of L2 state roots) to the L1 blockchain. You'll be using the [op-proposer](https://github.com/bnb-chain/opbnb/tree/develop/op-proposer) component found within the [opbnb](https://github.com/bnb-chain/opbnb).
+
+## Software Dependencies
+
+| Dependency | Version | Version Check Command |
+|:----------:|:-------:|:---------------------:|
+| git | ^2 | git --version |
+| go | ^1.21 | go version |
+| node | ^20 | node --version |
+| pnpm | ^8 | pnpm --version |
+| foundry | ^0.2.0 | forge --version |
+| make | ^3 | make --version |
+| jq | ^1.6 | jq --version |
+| direnv | ^2 | direnv --version |
+| gcc | ^13 | gcc --version |
+| libc-dev | ^2.35 | ldd --version |
+
+## Hardware requirements
+
+CPU: 4 × 2 GHz (or faster) 64-bit processor cores. Memory: 16 GB DDR4 RAM. For op-geth, high-performance SSD with sustained IOPS ≥ 20,000 or enterprise-grade NVMe SSD, ≥ 3 TB capacity. For op-node, standard SSD is sufficient, ≥ 500 GB.
+
+## Notes on Specific Dependencies
+
+Includes notes on node, foundry, and direnv.
+
+## Get Access to a BSC testnet Node
+
+You'll be deploying a BSC l2 rollup that uses a Layer 1 blockchain to host and order transaction data. This guide uses the BSC testnet as an L1 chain.
+
+## Build the Source Code
+
+You're going to be creating your own l2 rollup directly from source code instead of using a container.
+
+## Quick Guide - opBNB
+> Source: https://docs.bnbchain.org/bnb-opbnb/developers/quick-guide/
+
+If you're a developer seeking to build on opBNB, you've come to the right place. This document provides all the information you need to develop opBNB applications.
+
+## Official Developer Kit
+
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/index.md).
+
+## Getting Started
+
+The opBNB network is the Layer 2 scaling solution for the BNB Smart Chain(BSC) powered by [OP Stack](https://docs.optimism.io/). If you are brand new to opBNB, you can try start with the guide on [creating a fullstack dapp](../advanced/full-stack-dapp.md) on opBNB.
+
+opBNB is EVM equivalent, so existing Ethereum smart contract skills transfer seamlessly to opBNB.
+
+## Connecting
+
+- [Network Information and RPC Providers](../get-started/network-info.md)
+- [Wallet Configuration](../get-started/wallet-configuration.md)
+
+## Get Tokens
+
+opBNB is a Layer 2 on BSC, so tokens can be moved between the two chains using bridges. For the testnet, you can use the faucet to obtain some test tokens on BSC and then bridge them to opBNB using the official bridge. For the mainnet, you can bridge tokens from BSC to opBNB using various bridges, or you can withdraw tokens directly from a centralized exchange (CEX) which supports opBNB network.
+
+- [opBNB Testnet Faucet](./network-faucet.md)
+- bridges: [opBNB Official bridge](https://opbnb-bridge.bnbchain.org), [zkBridge](https://www.zkbridge.com/opbnb/token), [rhino.fi](https://app.rhino.fi/bridge?token=BNB&chainOut=OPBNB&chain=BINANCE)
+- If you need to bridge tokens that are not supported by the bridges and CEXs yet, you can deploy your own L2 mirror token contract on opBNB and bridge them according to [this guide](../developers/bep20-crosschain.md).
+
+## Cross-Chain Interoperability
+
+To build cross-chain applications between BSC and opBNB, you should understand how cross-chain message passing works. You can refer to the [sending data between L1 and L2](https://docs.optimism.io/builders/app-developers/bridging/messaging) guide for more information.
+
+## Developer Tools
+
+Includes explorers, SDKs, tools, wallets, oracles, account abstraction, storage, and data analytics resources.
+
+## Quick Guide - BNB Smart Chain (BSC)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/
+
+If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.
+
+## Getting Started
+
+BNB Smart Chain (BSC) is a high-performance blockchain network. Since BSC is EVM-compatible, your existing Ethereum smart contract skills will seamlessly transfer to BSC.
+
+## Connecting
+
+- [Network Information and RPC Providers](json_rpc/json-rpc-endpoint.md)
+- [Wallet Configuration](./wallet-configuration.md)
+
+## Get Tokens
+
+BNB is the native utility token of BNB Smart Chain and is used to pay transaction fees. For the testnet, you can use the faucet to obtain test tokens on BSC.
+
+- [BSC Testnet Faucet](./faucet.md)
+
+For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) which supports BSC network.
+
+## JSON-RPC API
+
+Interacting with BSC requires sending requests to specific JSON-RPC API methods. BSC's APIs are compatible with Geth.
+
+- [JSON-RPC API](json_rpc/json-rpc-endpoint.md)
+
+## Official Developer Kit
+
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/index.md).
+
+## Developer Tools
+
+Includes explorers, SDKs, tools, indexing, wallets, oracles, account abstraction, storage, and data analytics resources.
+
+## Frequently Asked Questions (FAQ)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/faq/
+
+# Frequently Asked Questions (FAQ)
+
+Welcome to the FAQ section for BNB Smart Chain. Below are some common questions and helpful articles to guide you:
+
+- [Recovering Tokens Sent to Wrong Chain or Address](./recovering-tokens-sent-to-wrong-chain-or-address.md)
+- [Tokens Not Showing in Wallet](./tokens-not-showing-in-wallet.md)
+- [Transfer NEXO from Tangem into BSC](./transfer-nexo-from-tangem-into-bsc.md)
+- [Lorentz Hard Fork Upgrade](./lorentz-hard-fork-upgrade.md)
+
+If your issue is not listed here, please explore our other documentation or open an issue.
+
+## BNB Agent Studio Demo
+> Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/
+
+# Demo — weather-forecast seller (end to end)
+
+> This walkthrough is out of date — use the Quickstart instead. This page still documents the earlier Python, two-layer Studio (Layer A Agent + Layer B keyless Service, `main.py` / `service.py`, `npm i -g @aws/agentcore`). The shipped product is a TypeScript, single-runtime tool: see [Quickstart](quickstart.md) and [Architecture](architecture.md) for the current flow.
+
+This walkthrough follows the full BNB Agent Studio path for a single example: a weather-forecast seller on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
+
+## Prerequisites
+
+| Requirement | Notes |
+|-------------|-------|
+| Python ≥ 3.10 | CLI and runtime library |
+| Claude Code, Cursor, or another AI IDE | Studio is driven via skills + natural language |
+| Node ≥ 20 + AgentCore CLI | Required for `bag init`, `bag dev`, `bag deploy agent` |
+| A wallet password you choose | Never committed to git; kept in `WALLET_PASSWORD` env only |
+
+## 1. Installation
+
+Open the [bnbagent-studio](https://github.com/bnb-chain/bnbagent-studio) repo in your AI IDE and ask it to install the workspace packages. For a one-line production install instead, use `npm install -g @bnbagent/studio-cli` — see [Quickstart](quickstart.md).
+
+## 2. Start vibe coding
+
+Open your AI tool in an empty workspace folder and describe the agent you want — for example, a default BNB Chain seller with ERC-8183, ERC-8004, and x402 wired in.
+
+## 3. Agent wallet setup
+
+`bag init` creates an encrypted keystore at `.studio/wallets/` (workspace root, outside `app/agent/`). Set `WALLET_PASSWORD` in a separate terminal session from your AI tool so the password never appears in chat context.
