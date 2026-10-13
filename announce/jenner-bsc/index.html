@@ -2187,12 +2187,11 @@
 </ul>
 <h2 id="upgrade-bsc-node-before-hardfork">Upgrade BSC Node Before Hardfork<a class="headerlink" href="#upgrade-bsc-node-before-hardfork" title="Link to this section">¶</a></h2>
 <p>The hard fork release for the Jenner upgrade has not been published yet; the release version and the exact fork times are still to be announced. All BSC nodes (both Testnet and Mainnet) <strong>must upgrade to the hard fork release before the hard fork time</strong>. Please follow the release notes for the specific version and timing once available.</p>
-<p>There are 4 BEPs in Jenner:</p>
+<p>There are 3 BEPs in Jenner:</p>
 <ul>
 <li><a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-702.md">BEP-702</a>: Compliant Asset Standard on BNB Smart Chain</li>
 <li><a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-703.md">BEP-703</a>: Payment Lane on BNB Smart Chain</li>
 <li><a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-706.md">BEP-706</a>: Millisecond-Precision Block Timestamp Precompile</li>
-<li><a href="https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-714.md">BEP-714</a>: Reduce Initial Backoff Time to 1 Second</li>
 </ul>
 <h2 id="key-highlight">Key Highlight<a class="headerlink" href="#key-highlight" title="Link to this section">¶</a></h2>
 <ul>
@@ -2204,9 +2203,6 @@
 </li>
 <li>
 <p>BEP-706 adds a precompile that exposes the block timestamp at millisecond precision to smart contracts, enabling on-chain applications that need sub-second timing on BSC’s fast blocks.</p>
-</li>
-<li>
-<p>BEP-714 reduces the initial backup-validator waiting time from 2 seconds to 1 second, shortening the outage window when an in-turn validator misses its slot and improving overall network availability.</p>
 </li>
 <li>
 <p>BEP-675 Enhancements (no hard fork required): the same release ships several robustness improvements to builder-proposed blocks introduced in Pasteur: revoking a builder upon cross-validator bad block evidence, a gRPC <code>SendBidBlock</code> API, rejecting BidBlocks with a zero state root, and persisting BidBlock revocations across restarts, etc.</p>
@@ -2238,7 +2234,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 11:07:47 UTC">September 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2026 09:15:30 UTC">October 13, 2026</span>
   </span>
 
     
