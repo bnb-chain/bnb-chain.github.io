@@ -1,0 +1,151 @@
+
+## Quick Guide - BNB Greenfield Develop
+> Source: https://docs.bnbchain.org/bnb-greenfield/for-developers/get-started-dev/
+
+# Quick Guide - BNB Greenfield Develop
+
+Quick guide for BNB Greenfield developers. Covers Greenfield and programmability concepts, uniform address format, account operation, data storage, permission control, enhanced permission control, and cross-chain programmability.
+
+- Greenfield Overview: read the Greenfield introduction.
+- Account operation: create an account, deposit BNB, and program token transfers with GO-SDK or JS-SDK examples.
+- Data storage: create a public bucket to upload and share objects using CLI, GO-SDK, or JS-SDK.
+- Permission control: create private buckets and share with specific individuals via groups.
+- Enhanced permission control: create groups, add members, share private buckets, and manage resources with smart contracts.
+- Cross-chain programmability: mirror resources from Greenfield to EVM chains and program resources through smart contracts.
+
+Developer starter kit includes Greenfield Chain API, SP API, Go SDK, and JS SDK.
+
+## MindPress Data Marketplace Introduction - BNB Greenfield
+> Source: https://docs.bnbchain.org/bnb-greenfield/for-developers/tutorials/app/data-marketplace/
+
+# MindPress Data Marketplace Introduction - BNB Greenfield
+
+MindPress Data Marketplace is a demo built on BNB Smart Chain and BNB Greenfield for image trading. It demonstrates BNB Greenfield V1.6 and V1.7 features such as cross-chain programmability, delegate upload, and sponsor-paid storage fees.
+
+Sellers can upload images, list them for sale, and delist them. Buyers can search, buy, and download original images.
+
+Key improvements:
+- No network switching: all operations finish on BSC.
+- Flexible payment: projects can pay storage and download quota fees.
+- Easy upload: upload multiple large objects without signatures or fees via delegate upload.
+- Easy listing: fewer transactions to list objects.
+
+Technical design: buckets, objects, and groups can be mirrored on BSC as ERC-721/ERC-1155 tokens; smart contracts on BSC can control mirrored resources.
+
+## BNB Greenfield
+> Source: https://docs.bnbchain.org/bnb-greenfield/
+
+# BNB Greenfield
+
+BNB Greenfield is a decentralized storage and blockchain storage solution for data ownership and data economy. It provides decentralized data management, access, and EVM programmability.
+
+Main sections:
+- Get Started: start the Greenfield journey.
+- Build on Greenfield: start building dapps on data assets.
+- EVM Programmability: create value from data assets.
+- Greenfield Blockchain: explore main modules.
+- Storage Provider: explore the Storage Provider.
+- Developer Kit: official tool index for Greenfield, BSC, and opBNB.
+
+## Storage Provider Lifecycle - BNB Greenfield SP
+> Source: https://docs.bnbchain.org/bnb-greenfield/storage-provider/storage-provider-lifecycle/
+
+# Storage Provider Lifecycle - BNB Greenfield SP
+
+Describes the lifecycle of a storage provider (SP) from joining the Greenfield Storage Network to exiting.
+
+- Preparation: learn how to run and create an SP node, create required accounts, and run all SP services.
+- Proposal: initiate an on-chain MsgCreateStorageProvider proposal with addresses, endpoint, quota/price, SP stake (1000 BNB testnet), and proposal deposit (1 BNB testnet).
+- In Service: handle storage/retrieval, create virtual groups, and provide stakes for stored data.
+- In Maintenance: do not serve create/upload requests. Status is changed with MsgUpdateStorageProviderStatus; restrictions apply based on maintenance duration and lockup blocks.
+- Exit: graceful exit migrates data to successor SPs and returns staked BNB; forced exit is also possible.
+
+## opBNB Deployment Configuration Reference
+> Source: https://docs.bnbchain.org/bnb-opbnb/advanced/opbnb-deployment-configuration/
+
+# opBNB Deployment Configuration Reference
+
+Example and field reference for creating your own opBNB rollup testnet. Use after completing build, account setup, and network configuration.
+
+Includes a deploy config JSON example with L1/L2 chain IDs, sequencer and batch sender addresses, output oracle settings, gas limit, fee vaults, governance, fault proof settings, and DA settings.
+
+Configuration tables cover:
+- Chain configuration: chain ID, gas limit, RPCs, block time, withdraw time, batcher/proposer commit intervals.
+- Gas fee configuration: L1 fee scalar.
+- Governance configuration: governance token support, symbol, name, owner.
+- Custom gas token configuration: token name, symbol, decimal, total supply.
+
+## Creating Your Own L2 Rollup Testnet
+> Source: https://docs.bnbchain.org/bnb-opbnb/advanced/run-your-own-l2-with-opbnb/
+
+# Creating Your Own L2 Rollup Testnet
+
+Guide to creating your own L2 rollup testnet with the opBNB stack, powered by the bedrock version of the Optimism OP Stack.
+
+Deployment architecture includes Sequencer, Proposer, Batcher, Bridge node, and RPC node. Uses L1 smart contracts from contracts-bedrock, op-node consensus client, and op-geth execution client.
+
+Software dependencies: git, go, node, pnpm, foundry, make, jq, direnv, gcc, libc-dev.
+
+Hardware requirements: 4x2 GHz CPU, 16 GB RAM, high-performance SSD for op-geth and 500 GB SSD for op-node.
+
+Guide also covers BSC testnet node access and building the source code.
+
+## Quick Guide - opBNB
+> Source: https://docs.bnbchain.org/bnb-opbnb/developers/quick-guide/
+
+# Quick Guide - opBNB
+
+Quick guide for opBNB developers. opBNB is a Layer 2 scaling solution for BSC powered by OP Stack and is EVM equivalent.
+
+- Getting started: create a fullstack dapp on opBNB.
+- Connecting: network information, RPC providers, wallet configuration.
+- Tokens: testnet faucet and bridges; mainnet CEX withdrawal or bridges.
+- Cross-chain interoperability: sending data between L1 and L2.
+- Developer tools: explorers, SDKs, wallets, oracles, account abstraction, storage, and data analytics.
+
+## Quick Guide - BNB Smart Chain (BSC)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/
+
+# Quick Guide - BNB Smart Chain (BSC)
+
+Quick guide for BSC developers. BSC is EVM-compatible, so existing Ethereum smart contract skills transfer.
+
+- Connecting: network information, RPC providers, wallet configuration.
+- Tokens: BSC testnet faucet; mainnet CEX withdrawal.
+- JSON-RPC API: Geth-compatible JSON-RPC methods.
+- Official Developer Kit: SDK cards, MCP, Ask AI.
+- Developer tools: explorers, SDKs, wallets, oracles, account abstraction, storage, and data analytics.
+
+## Frequently Asked Questions (FAQ)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/faq/
+
+# Frequently Asked Questions (FAQ)
+
+FAQ for BNB Smart Chain with links to helpful articles:
+- Recovering Tokens Sent to Wrong Chain or Address
+- Tokens Not Showing in Wallet
+- Transfer NEXO from Tangem into BSC
+- Lorentz Hard Fork Upgrade
+
+If your issue is not listed, explore other documentation or open an issue.
+
+## BNB Agent Studio Demo
+> Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/
+
+# BNB Agent Studio Demo
+
+Out-of-date end-to-end walkthrough for the earlier Python, two-layer BNB Agent Studio. The shipped product is a TypeScript, single-runtime tool; use the Quickstart instead.
+
+This walkthrough follows a weather-forecast seller on BSC testnet: install the CLI, scaffold the agent, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
+
+## BNB Chain Skills
+> Source: https://docs.bnbchain.org/developer-kit/mcp/skills/
+
+# BNB Chain Skills
+
+For AI agents integrating with BNB Chain. Covers how to connect to the BNB Chain MCP, install the BNB Chain skill, and check agent registration.
+
+- Connect: run `npx @bnb-chain/mcp@latest`.
+- Agent registration: mainnet at 8004scan.io, testnet at testnet.8004scan.io.
+- Learn the skill: `npx skills add bnb-chain/bnbchain-skills`.
+- Repository: github.com/bnb-chain/bnbchain-skills.
