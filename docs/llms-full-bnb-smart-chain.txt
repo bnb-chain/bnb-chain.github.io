@@ -1,0 +1,50 @@
+
+## Quick Guide - BNB Smart Chain (BSC)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/
+
+If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.
+
+## Getting Started
+
+BNB Smart Chain (BSC) is a high-performance blockchain network. Since BSC is EVM-compatible, your existing Ethereum smart contract skills will seamlessly transfer to BSC.
+
+## Connecting
+
+- [Network Information and RPC Providers](json_rpc/json-rpc-endpoint.md)
+- [Wallet Configuration](./wallet-configuration.md)
+
+## Get Tokens
+
+BNB is the native utility token of BNB Smart Chain and is used to pay transaction fees. For the testnet, you can use the faucet to obtain test tokens on BSC.
+
+- [BSC Testnet Faucet](./faucet.md)
+
+For the mainnet, you can withdraw tokens directly from a centralized exchange (CEX) which supports BSC network.
+
+## JSON-RPC API
+
+Interacting with BSC requires sending requests to specific JSON-RPC API methods. BSC's APIs are compatible with Geth.
+
+- [JSON-RPC API](json_rpc/json-rpc-endpoint.md)
+
+## Official Developer Kit
+
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/index.md).
+
+## Developer Tools
+
+Includes explorers, SDKs, tools, indexing, wallets, oracles, account abstraction, storage, and data analytics resources.
+
+## Frequently Asked Questions (FAQ)
+> Source: https://docs.bnbchain.org/bnb-smart-chain/faq/
+
+# Frequently Asked Questions (FAQ)
+
+Welcome to the FAQ section for BNB Smart Chain. Below are some common questions and helpful articles to guide you:
+
+- [Recovering Tokens Sent to Wrong Chain or Address](./recovering-tokens-sent-to-wrong-chain-or-address.md)
+- [Tokens Not Showing in Wallet](./tokens-not-showing-in-wallet.md)
+- [Transfer NEXO from Tangem into BSC](./transfer-nexo-from-tangem-into-bsc.md)
+- [Lorentz Hard Fork Upgrade](./lorentz-hard-fork-upgrade.md)
+
+If your issue is not listed here, please explore our other documentation or open an issue.
