@@ -514,7 +514,7 @@ forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY  --
 ```
 If you see a nondescript error that includes `EvmError: Revert` and `Script failed` then you likely need to change the `IMPL_SALT` environment variable. This variable determines the addresses of various smart contracts that are deployed via [CREATE2](https://eips.ethereum.org/EIPS/eip-1014). If the same `IMPL_SALT` is used to deploy the same contracts twice, the second deployment will fail. You can generate a new `IMPL_SALT` by running `direnv` allow anywhere in the opbnb.
 
-You can check the  DEPLOYMENT_OUTFILE after deployed successfully. The contract address will be printed when the script running and the address can searched in https://testnet.bscscan.com/ .
+You can check the  DEPLOYMENT_OUTFILE after deployed successfully. The contract address will be printed when the script running and the address can searched in https://testnet.bsctrace.com/ .
 
 ### L1 Contracts
 

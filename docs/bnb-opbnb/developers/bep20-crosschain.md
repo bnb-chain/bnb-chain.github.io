@@ -95,7 +95,7 @@ const BridgeConfigTestnet = {
     L2OutputOracle: "0xFf2394Bb843012562f4349C6632a0EcB92fC8810",
   },
   l1GasPrice: 5n * gwei,
-  l1Explorer: "https://testnet.bscscan.com",
+  l1Explorer: "https://testnet.bsctrace.com",
   l2Explorer: "https://testnet.opbnbscan.com",
 };
 
@@ -115,7 +115,7 @@ const BridgeConfigMainnet = {
     L2OutputOracle: "0x0d61A015BAeF63f6740afF8294dAc278A494f6fA",
   },
   l1GasPrice: 3n * gwei,
-  l1Explorer: "https://bscscan.com",
+  l1Explorer: "https://bsctrace.com",
   l2Explorer: "https://opbnbscan.com",
 };
 
