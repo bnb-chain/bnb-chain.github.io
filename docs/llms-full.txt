@@ -12,7 +12,6 @@ BNB Greenfield is a cutting-edge decentralized storage and blockchain storage so
 - [Greenfield Blockchain](./for-validator/overview)
 - [Storage Provider](./storage-provider/overview)
 - [Developer Kit](../developer-kit/)
-
 ## Quick Guide - BNB Greenfield Develop
 > Source: https://docs.bnbchain.org/bnb-greenfield/for-developers/get-started-dev/
 
@@ -25,7 +24,6 @@ Here’s a quick guide to get you from zero to hero. This doc provides a guide t
 * Understand what you need to build your project
 
 * Access resources to get you started
-
 ## Greenfield & Programmability Concepts
 
 ### Greenfield 101
@@ -444,7 +442,6 @@ The true strength of the Greenfield ecosystem resides in its cutting-edge platfo
 # Storage Provider Lifecycle
 
 This document describes the entire lifecycle of a storage provider from joining the Greenfield Storage Network to exiting.
-
 ## Preparation
 
 First, the storage provider needs to learn how to run and create a storage provider node, which requires several different user accounts and a unified external EndPoint.
@@ -622,7 +619,6 @@ To execute a graceful exit, all its stored data need to be migrated to other suc
 Use this example and field reference when [creating your own opBNB rollup testnet](run-your-own-l2-with-opbnb.md).
 Complete the build, account setup, and network configuration steps in that tutorial
 before deploying contracts. Replace example addresses and values with your deployment settings.
-
 ## Deploy config example
 
 ```bash
@@ -886,7 +882,6 @@ The opBNB stack is the Layer 2 scaling framework for the BNB Smart Chain powered
 ![image-20250411135104222](../img/image-20250411135104222.png)
 
 # What You're Going to Deploy
-
 ## Deployment  Architecture
 
 ![image-20250411135320376](../img/image-20250411135320376.png)
@@ -1081,7 +1076,6 @@ You're going to be creating your own l2 rollup directly from source code instead
 
 If you're a developer seeking to build on opBNB, you've come to the right place.
 This document provides all the information you need to develop opBNB applications.
-
 ## Official Developer Kit
 
 Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/index.md).
@@ -1238,7 +1232,6 @@ For more tools and details, you can refer to [this doc](./developer-tools.md).
 # Quick Guide - BNB Smart Chain (BSC)
 
 If you are a developer looking to build applications on the BNB Smart Chain (BSC), this document provides all the essential information you need.
-
 ## Getting Started
 
 BNB Smart Chain (BSC) is a high-performance blockchain network.
@@ -1393,7 +1386,6 @@ Welcome to the FAQ section for BNB Smart Chain. Below are some common questions 
 - [Lorentz Hard Fork Upgrade](./lorentz-hard-fork-upgrade.md)
 
 If your issue is not listed here, please explore our other documentation or open an issue.
-
 ## BNB Agent Studio Demo
 > Source: https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/
 
@@ -1415,7 +1407,6 @@ If your issue is not listed here, please explore our other documentation or open
     Kept for now only as a record of the earlier flow's shape.
 
 This walkthrough follows the full BNB Agent Studio path for a single example: a **weather-forecast seller** on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
-
 ## Prerequisites
 
 | Requirement | Notes |
@@ -1608,9 +1599,6 @@ help agents find the right guides. For read-only documentation search, use the
 [MCP discovery document](https://docs.bnbchain.org/.well-known/mcp.json).
 
 **Skills repository:** [github.com/bnb-chain/bnbchain-skills](https://github.com/bnb-chain/bnbchain-skills)
-
----
-
 ## 1. Connect to BNB Chain MCP
 
 - **Run the MCP server:** `npx @bnb-chain/mcp@latest`
