@@ -7,5 +7,5 @@
 - [Quick Guide - opBNB](https://docs.bnbchain.org/bnb-opbnb/developers/quick-guide/): Quick guide for opBNB developers covering network info, wallets, bridges, developer tools, and cross-chain interoperability.
 - [Quick Guide - BNB Smart Chain (BSC)](https://docs.bnbchain.org/bnb-smart-chain/developers/quick-guide/): Quick guide for BNB Smart Chain developers covering network info, wallets, JSON-RPC API, and developer tools.
 - [Frequently Asked Questions (FAQ)](https://docs.bnbchain.org/bnb-smart-chain/faq/): Frequently asked questions for BNB Smart Chain, including token recovery, wallet display issues, and hard fork upgrades.
-- [BNB Agent Studio Demo](https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/): End-to-end demo of BNB Agent Studio building a weather-forecast seller agent on BSC testnet.
+- [BNB Agent Studio Demo](https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/): Outdated end-to-end demo of BNB Agent Studio building a weather-forecast seller agent on BSC testnet; use the Quickstart instead.
 - [BNB Chain Skills](https://docs.bnbchain.org/developer-kit/mcp/skills/): Guide for AI agents to connect to BNB Chain MCP, install BNB Chain skills, and check agent registration.
