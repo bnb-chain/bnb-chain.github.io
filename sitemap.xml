@@ -949,6 +949,34 @@
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/faq/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/bep-675-mev-bundle-transaction-delay-concern/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/bsc-validator-node-fails-to-start-with-missing-ancient-data-file-when-using-prun/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/nodereal-base-rpc-returns-404-client-error/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/prop-amm-and-relayer-benefits-for-trading/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/refreshing-token-metadata-on-bscscan-after-proxy-upgrade/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/bsc/</loc>
+         <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/join-ecosystem/</loc>
          <lastmod>2024-07-11</lastmod>
     </url>
