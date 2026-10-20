@@ -35,6 +35,7 @@ order: 3
   - `https://bsc-dataseed.ninicoin.io`
   - `https://bsc.nodereal.io`
   - `https://bsc-dataseed-public.bnbchain.org`
+  - `https://bsc.rpc.grove.city/v1/01fdb492`
 
   You could find more endpoints from [here](https://chainlist.org/chain/56).
 
@@ -43,6 +44,7 @@ order: 3
   - `https://opbnb-mainnet-rpc.bnbchain.org`
   - `https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3`
   - `https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5`
+  - `https://opbnb.rpc.grove.city/v1/01fdb492`
 
   For more details, you can refer to [here](network-info.md).
 
