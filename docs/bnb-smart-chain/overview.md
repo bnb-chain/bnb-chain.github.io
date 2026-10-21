@@ -28,3 +28,15 @@ BNB is the native utility token of both BNB Chain and BNB Smart Chain. Within th
 ### Future Prospects
 
 BNB Smart Chain is positioned as a significant player in the blockchain space, particularly in the realm of DeFi and DApps. With its emphasis on high performance, affordability, and interoperability, BSC aims to address some of the most pressing challenges facing blockchain technology today. As the blockchain landscape continues to evolve, BSC's strategic innovations and growing community are likely to drive further advancements and widespread adoption.
+
+## LLMS sync example
+
+Temporary note for a bot check. Marker: `LLMS-SYNC-EXAMPLE-2026-10-21`. Close the pull request that adds this section without merging.
+
+## Issue
+
+This heading is part of the overview page. LLMS sync must keep it inside that page.
+
+## Solution
+
+The overview should appear once in `llms-full.txt`. A later sync with no further edits should not append another copy.
