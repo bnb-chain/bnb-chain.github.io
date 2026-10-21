@@ -12,7 +12,6 @@ New L1's consensus is derived from Parlia, the Proof-of-Staked-Authority protoco
 |---|---|
 | Block interval | 200 ms |
 | Finality | sub-second, via cross-block BLS votes |
-| Epoch | 2,250 blocks (7.5 minutes) |
 | Proposer turn length | 16 blocks |
 | Validator set | up to 64 validators, PoSA |
 

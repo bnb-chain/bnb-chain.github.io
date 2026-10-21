@@ -84,7 +84,7 @@ curl -X POST "$RPC" -H "Content-Type: application/json" \
 ```jsonc
 {
   "head_block": "0x961",
-  "epoch_length": "0x8ca",      // configured blocks per epoch (2,250)
+  "epoch_length": "0x…",        // configured blocks per epoch (hex quantity)
   "turn_length": 16,
   "validators": [
     { "address": "0x…", "tx_rpc_endpoint": "http://10.0.0.1:8545" }

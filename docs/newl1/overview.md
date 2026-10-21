@@ -59,12 +59,11 @@ Start with [Migrating from BSC](./get-started/migrate-from-bsc.md) if you alread
 | Finality | sub-second (BLS fast finality) |
 | Pre-confirmation | ~20 ms (sub-block) |
 | Turn length (blocks per validator, per rotation) | 16 |
-| Epoch length | 2,250 blocks (7.5 minutes) |
-| Consensus | Parlia PoSA, up to 64 validators |
+| Consensus | enhanced-Parlia |
 | Gas asset | BNB (bridged from BSC) |
 
 ## Current Status
 
-New L1 runs today as a multi-validator devnet with real block production, P2P gossip, and end-to-end finality. Public testnet and mainnet are still ahead, and each feature page calls out what's shipped versus still in progress.
+New L1 runs today as a multi-validator devnet with real block production and end-to-end finality. Public testnet and mainnet are still ahead, and each feature page calls out what's shipped versus still in progress.
 
 Every interface in this manual has been exercised against a devnet built from source: the `eth_*`/`newl1_*` RPC surface, the full governance lifecycle, account-abstraction key management and the `0x76` envelope, and the complete shielded-pool flow. The only corrections that came out of it were minor response shapes, already reflected here. The client has moved on since, so the [JSON-RPC Endpoint](./developers/json_rpc/json-rpc-endpoint.md) page is kept current against client source, and its newer methods are documented from the implementation rather than from a live call.

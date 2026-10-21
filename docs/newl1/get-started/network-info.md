@@ -6,7 +6,7 @@ title: Network Information - New L1
 
 | Name | Value |
 |---|---|
-| Network Name | New L1 |
+| Network Name | &lt;TBD&gt; |
 | Description | High-performance EVM Layer 1 in the BNB Chain ecosystem. |
 | RPC Endpoint | Not available yet |
 | Chain ID | Not finalized yet |
@@ -21,10 +21,9 @@ title: Network Information - New L1
 
 | Parameter | Value |
 |---|---|
-| Consensus | Parlia PoSA (turn rotation + BLS fast finality), up to 64 validators |
+| Consensus | enhanced Parlia (turn rotation + BLS fast finality) |
 | Block interval | 200 ms |
 | Turn length (blocks per validator, per rotation) | 16 |
-| Epoch length | 2,250 blocks (7.5 minutes) |
 | EVM | Full Prague from genesis, no fork ramp |
 | Base fee | Pinned to `0` (BEP-222), so the priority fee is the entire price |
 | Fee model | Charged on the declared gas limit, not gas used ([details](./migrate-from-bsc.md#you-pay-for-your-declared-gas-limit)) |
