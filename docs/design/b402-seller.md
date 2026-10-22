@@ -1,0 +1,13 @@
+# B402 seller (the x402 rail): why the design is shaped this way
+
+> Status: the managed Gateway, Relay, and v0.0.6 seller flow were implemented and validated end to end on BSC Testnet (2026-07-31). Binance changed `/settle` to an asynchronous protocol on 2026-07-14; the current `@bnb-chain/b402@0.2.1` runtime does not yet poll pending settlement responses. See "Asynchronous settlement compatibility" before production use. Companion to `decisions.md` §25 to §28 (the decisions) and `docs/guides/x402-selling.md` (operation). This doc records the rationale and wire contracts that the code cannot express: why the paid/FREE public face sits on the platform gateway, how the envelope tunnel restores HTTP semantics, how the B402 Relay supplies fixed facilitator egress, and the B402 facts pinned in `packages/studio-runtime/src/x402/`.
+
+Fact-source policy: the managed Gateway and Relay sections adapt the current production documents [`x402-b402-managed-flow.md`](https://github.com/bnb-chain/bnbaget-api/blob/main/docs/x402-b402-managed-flow.md), [`x402-gateway.md`](https://github.com/bnb-chain/bnbaget-api/blob/main/docs/x402-gateway.md), and [`b402-whitelist-api.md`](https://github.com/bnb-chain/bnbaget-api/blob/main/docs/b402-whitelist-api.md) into Studio operator guidance. They are not copied verbatim because this document also separates managed versus self-hosted responsibilities and incorporates current AWS and Binance protocol changes. The matching production code remains authoritative for managed behavior; official AWS and Binance documentation remains authoritative for their external contracts.
+
+... (existing content) ...
+
+[Binance's 2026-07-14 B402 change](https://developers.binance.com/en/docs/products/onchainpay-x402/change-log) made `/settle` asynchronous. `success: false` with a non-empty transaction is pending, not terminal. A conforming client polls `/settle` with the same settlement payload until success or a terminal result, for at least `maxTimeoutSeconds`.
+
+As of 2026-08-26, Studio uses `@bnb-chain/b402@0.2.1`. It makes one settle call and converts a pending response into the existing outcome-unknown/manual-reconciliation path. Its H02 replay guard blocks duplicate credentials before settlement when backed by the configured atomic store, but it does not implement the required pending poll. The managed Gateway and B402 Relay are already compatible byte transports; the missing behavior is inside the seller's B402 client flow.
+
+Until that runtime behavior is updated, the implemented path is a validated BSC Testnet baseline, not a complete mainnet acceptance result for slow settlements.
