@@ -119,6 +119,18 @@
     margin-top: 14px;
 }
 
+.md-tabs__badge {
+    align-self: center;
+    margin-inline-start: 6px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--doc-support-brand-2);
+    color: var(--doc-light-text-primary);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
 .md-tabs__item--active {
     position: relative;
 }
