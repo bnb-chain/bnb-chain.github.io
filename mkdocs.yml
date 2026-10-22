@@ -395,6 +395,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.extra
 
+hooks:
+  - hooks/agent_docs.py
+
 plugins:
   - search
   - awesome-pages
