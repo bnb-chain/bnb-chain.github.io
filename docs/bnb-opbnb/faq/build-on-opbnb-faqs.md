@@ -50,7 +50,7 @@ provide reliable and secure data feeds for smart contracts.
 
 ### What to do if there is trouble verifying smart contract with all available methods using the <https://opbnbscan.com/verifyContract>
 
-Try using the alternative explorer <https://opbnb-testnet.bscscan.com/> for verifying your smart contracts.
+Try using the alternative explorer <https://testnet.opbnbscan.com/> for verifying your smart contracts.
 
 ### How do we set hardhat verification parameters for opBNB?
 
