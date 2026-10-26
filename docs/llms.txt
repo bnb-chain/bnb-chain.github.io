@@ -18,7 +18,7 @@
 ## BNB Smart Chain
 
 - [BNB Smart Chain Overview](https://docs.bnbchain.org/bnb-smart-chain/): Landing page for BNB Smart Chain developer documentation.
-- [Overview](https://docs.bnbchain.org/bnb-smart-chain/overview/): Architecture overview of BSC: PoSA consensus, 0.45s blocks, EVM compatibility.
+- [Overview](https://docs.bnbchain.org/bnb-smart-chain/overview/): Overview of BSC: EVM-compatible, low fees, fast 0.45s blocks, high-performance DeFi hub.
 - [Introduction](https://docs.bnbchain.org/bnb-smart-chain/introduction/): What is BSC and how it fits in the BNB Chain ecosystem.
 - [Ecosystem](https://dappbay.bnbchain.org/)
 - **Developers**
