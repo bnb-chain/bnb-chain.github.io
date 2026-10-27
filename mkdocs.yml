@@ -62,9 +62,10 @@ nav:
   - Announcements:
     - Announcements: ./announce/index.md
     - Upcoming:
-      - Pasteur Hardfork(BSC): ./announce/pasteur-bsc.md
+      - Jenner Hardfork(BSC): ./announce/jenner-bsc.md
       - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
     - Passed:
+      - Pasteur Hardfork(BSC): ./announce/pasteur-bsc.md
       - Token Recovery Tool Sunset — Phase 2: ./announce/token-recovery-sunset-phase2.md
       - Token Recovery Tool Sunset Plan: ./announce/token-recovery-sunset-plan.md
       - Fjord Hardfork(opBNB): ./announce/fjord-opbnb.md
@@ -153,6 +154,32 @@ nav:
     - Cross Chain Bridge: ./bnb-smart-chain/cross-chain-bridge.md
     - Benchmark: ./bnb-smart-chain/benchmark/design-reference.md
     - FAQ:  ./bnb-smart-chain/faq/index.md
+  - New L1:
+    - New L1: ./newl1/index.md
+    - Overview: ./newl1/overview.md
+    - Get Started:
+      - Network Information: ./newl1/get-started/network-info.md
+      - Migrating from BSC: ./newl1/get-started/migrate-from-bsc.md
+    - Developers:
+      - Quick Guide: ./newl1/developers/quick-guide.md
+      - Transaction Types: ./newl1/developers/transaction-types.md
+      - Transaction Lifecycle: ./newl1/developers/transaction-lifecycle.md
+      - Examples: ./newl1/developers/examples.md
+      - JSON-RPC:
+        - Endpoint: ./newl1/developers/json_rpc/json-rpc-endpoint.md
+        - API List: ./newl1/developers/json_rpc/newl1-api-list.md
+    - Core Concepts:
+      - Consensus: ./newl1/core-concepts/consensus.md
+      - Async Execution: ./newl1/core-concepts/async-execution.md
+      - State DB: ./newl1/core-concepts/state-db.md
+      - Multi-Lane: ./newl1/core-concepts/multi-lane.md
+      - Pre-confirmation: ./newl1/core-concepts/tx-preconfirmation.md
+      - Account Abstraction: ./newl1/core-concepts/account-abstraction.md
+      - Privacy: ./newl1/core-concepts/privacy.md
+    - Governance:
+      - Overview: ./newl1/governance/overview.md
+      - System Contracts: ./newl1/governance/system-contracts.md
+    - FAQ: ./newl1/faq.md
   - opBNB:
     - opBNB: ./bnb-opbnb/index.md
     - Overview: ./bnb-opbnb/overview.md
@@ -305,6 +332,8 @@ nav:
           - Examples: ./developer-kit/bnbagent-sdk/examples.md
           - Security: ./developer-kit/bnbagent-sdk/security.md
           - Troubleshooting: ./developer-kit/bnbagent-sdk/troubleshooting.md
+      - PropAMMs:
+          - Overview: ./propamms/index.md
       - Greenfield SDK:
           - Overview: ./developer-kit/greenfield-sdk/index.md
       - MCP & Ask AI:
@@ -329,7 +358,6 @@ nav:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
-  - '... | faq/**'
 
 markdown_extensions:
   - toc:
@@ -693,6 +721,9 @@ plugins:
         'opbnb-docs/docs/tutorials/run-nodes-best-practices.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-development-environment.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-node.md': 'bnb-opbnb/overview.md'
+        'faq/index.md': 'bnb-smart-chain/faq/index.md'
+        'faq/bsc/index.md': 'bnb-smart-chain/faq/index.md'
+        'faq/opbnb/index.md': 'bnb-opbnb/faq/protocol-faqs.md'
 
 
 extra_css:

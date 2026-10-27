@@ -1590,41 +1590,47 @@ To support gasless transactions on opBNB, the following features have been intro
 
 Combined with these features and a sponsor (paymaster), users can send transactions without holding BNB to pay gas fees.
 
-## BSC
+## BSC FAQs
 > Source: https://docs.bnbchain.org/faq/bsc/
 
-# BNB Smart Chain FAQs
+# BSC FAQs
 
-FAQs for BNB Smart Chain. New questions are added here by the FAQ pipeline.
+- [BSC validator node fails to start with "Missing ancient data file" when using pruned PBSS snapshot](../bsc-validator-node-fails-to-start-with-missing-ancient-data-file-when-using-prun.md)
+- [Refreshing Token Metadata on BscScan After Proxy Upgrade](../refreshing-token-metadata-on-bscscan-after-proxy-upgrade.md)
+- [Prop AMM and Relayer Benefits for Trading](../prop-amm-and-relayer-benefits-for-trading.md)
+- [BEP-675 MEV bundle transaction delay concern](../bep-675-mev-bundle-transaction-delay-concern.md)
+- [v1.8.1 Release Mainnet Compatibility Query](../v181-release-mainnet-compatibility-query.md)
 
-Existing articles:
-
-- [Recovering Tokens Sent to Wrong Chain or Address](../../bnb-smart-chain/faq/recovering-tokens-sent-to-wrong-chain-or-address.md)
-- [Tokens Not Showing in Wallet](../../bnb-smart-chain/faq/tokens-not-showing-in-wallet.md)
-- [Transfer NEXO from Tangem into BSC](../../bnb-smart-chain/faq/transfer-nexo-from-tangem-into-bsc.md)
-- [Lorentz Hard Fork Upgrade](../../bnb-smart-chain/faq/lorentz-hard-fork-upgrade.md)
-
-## FAQ
+## Frequently Asked Questions
 > Source: https://docs.bnbchain.org/faq/
 
-# FAQ
+# Frequently Asked Questions
 
-Support FAQs for BNB Chain, grouped by network.
+## BSC
 
-- [BNB Smart Chain](./bsc/index.md)
-- [opBNB](./opbnb/index.md)
+- [BSC validator node fails to start with "Missing ancient data file" when using pruned PBSS snapshot](./bsc-validator-node-fails-to-start-with-missing-ancient-data-file-when-using-prun.md)
+- [Refreshing Token Metadata on BscScan After Proxy Upgrade](./refreshing-token-metadata-on-bscscan-after-proxy-upgrade.md)
+- [Prop AMM and Relayer Benefits for Trading](./prop-amm-and-relayer-benefits-for-trading.md)
+- [BEP-675 MEV bundle transaction delay concern](./bep-675-mev-bundle-transaction-delay-concern.md)
+- [v1.8.1 Release Mainnet Compatibility Query](./v181-release-mainnet-compatibility-query.md)
 
-## opBNB
-> Source: https://docs.bnbchain.org/faq/opbnb/
+## v1.8.1 Release Mainnet Compatibility Query - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/
 
-# opBNB FAQs
+### v1.8.1 Release Mainnet Compatibility Query
 
-FAQs for opBNB. New questions are added here by the FAQ pipeline.
+### Question
+Do BSC mainnet nodes need to upgrade to v1.8.1 for the Jenner hardfork?
 
-Existing articles:
+### Answer
+No. **BSC v1.8.1 is the Chapel testnet Jenner hardfork release.** BSC mainnet nodes do not need to upgrade to this release for Jenner.
 
-- [Protocol FAQs](../../bnb-opbnb/faq/protocol-faqs.md)
-- [Gas and Fees FAQs](../../bnb-opbnb/faq/gas-and-fees-faqs.md)
-- [opBNB Bridge FAQs](../../bnb-opbnb/faq/opbnb-bridge-faqs.md)
-- [Cross Chain FAQs](../../bnb-opbnb/faq/cross-chain-faqs.md)
-- [Build on opBNB FAQs](../../bnb-opbnb/faq/build-on-opbnb-faqs.md)
+The official release targets Chapel testnet node operators, MEV builders, and sentry operators. Chapel testnet activation is scheduled for **October 29, 2026 at 02:30 UTC**. Mainnet activation is not scheduled in this release.
+
+Mainnet operators should follow the currently recommended mainnet release and wait for a separate official mainnet Jenner upgrade notice. Do not infer a mainnet activation date or required version from the testnet release.
+
+Source: [BSC v1.8.1 release notes](https://github.com/bnb-chain/bsc/releases/tag/v1.8.1).
+
+---
+
+Applies to: v1.8.1
