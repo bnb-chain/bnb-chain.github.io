@@ -284,3 +284,4 @@
 - [Frequently Asked Questions](https://docs.bnbchain.org/faq/): Frequently Asked Questions
 - [BSC FAQs](https://docs.bnbchain.org/faq/bsc/): BSC FAQs
 - [v1.8.1 Release Mainnet Compatibility Query - BSC FAQs](https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/): Explains that BSC v1.8.1 is the Chapel testnet Jenner hardfork release and mainnet nodes do not need to upgrade for Jenner
+- [How do I update my validator node's profile name, logo, and contact information?](https://docs.bnbchain.org/faq/how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information/): How do I update my validator node's profile name, logo, and contact information?
