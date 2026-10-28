@@ -34,11 +34,8 @@ Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../d
 ## Developer Tools
 
 Includes explorers, SDKs, tools, indexing, wallets, oracles, account abstraction, storage, and data analytics resources.
-
 ## Frequently Asked Questions (FAQ)
 > Source: https://docs.bnbchain.org/bnb-smart-chain/faq/
-
-# Frequently Asked Questions (FAQ)
 
 Welcome to the FAQ section for BNB Smart Chain. Below are some common questions and helpful articles to guide you:
 
