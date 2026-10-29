@@ -1654,10 +1654,6 @@ To update your validator's profile information, you must submit a Pull Request (
 ## Examples
 > Source: https://docs.bnbchain.org/newl1/developers/examples/
 
-## Examples
-
-> Source: https://docs.bnbchain.org/newl1/developers/examples/
-
 # Examples
 
 The examples illustrate the proposed New L1 RPC workflow. To run them, use the matching client release and devnet configuration supplied by the protocol team. Set the required endpoint variables and test with a development account before using a funded account:
@@ -1748,12 +1744,7 @@ rpc eth_getProof '[]'                                   # -32004: LtHash, not an
 `newl1_getSystemReceiptsByBlock` is the only way to see system transactions; they never appear in `eth_getBlockReceipts` or the block's transaction list.
 
 Full method list, parameters, and response shapes: [New L1 API List](./json_rpc/newl1-api-list.md).
-
 ## JSON-RPC Endpoint
-> Source: https://docs.bnbchain.org/newl1/developers/json_rpc/json-rpc-endpoint/
-
-## JSON-RPC Endpoint
-
 > Source: https://docs.bnbchain.org/newl1/developers/json_rpc/json-rpc-endpoint/
 
 # JSON-RPC Endpoint
@@ -1816,12 +1807,7 @@ Pool-plane transaction status, a per-sender debug snapshot, and the receipts for
 ### Finality and Other BSC-Compatible APIs
 
 New L1 keeps Parlia's BLS fast finality, and serves the `parlia_*` snapshot methods plus the explicit-finality and batch-receipt methods BSC tooling expects: [Finality API](newl1-api-list.md#finality-api) and [Others](newl1-api-list.md#others).
-
 ## FAQ
-> Source: https://docs.bnbchain.org/newl1/faq/
-
-## FAQ
-
 > Source: https://docs.bnbchain.org/newl1/faq/
 
 # FAQ
@@ -1862,12 +1848,7 @@ Register your contract's address in the `LaneRegistry` system contract with a ba
 ### What asset is used for gas and staking?
 
 BNB, as native token, bridged in from BNB Smart Chain. It is the same gas asset as BSC and opBNB.
-
 ## Migrating from BNB Smart Chain
-> Source: https://docs.bnbchain.org/newl1/get-started/migrate-from-bsc/
-
-## Migrating from BNB Smart Chain
-
 > Source: https://docs.bnbchain.org/newl1/get-started/migrate-from-bsc/
 
 # Migrating from BNB Smart Chain
@@ -1941,12 +1922,7 @@ This is where [async execution](../core-concepts/async-execution.md) shows up, a
 - **`newl1_subscribeNewHeads`** delivers head, justified, and finalized numbers and hashes in one frame per canonical advance.
 
 Once you're ported, the [Quick Guide](../developers/quick-guide.md) covers what New L1 adds on top: pre-confirmation, Multi-Lane, native account abstraction, and the shielded pool.
-
 ## Network Information
-> Source: https://docs.bnbchain.org/newl1/get-started/network-info/
-
-## Network Information
-
 > Source: https://docs.bnbchain.org/newl1/get-started/network-info/
 
 # Network Information
