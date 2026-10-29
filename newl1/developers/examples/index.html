@@ -2223,8 +2223,8 @@
 
 <div><h1 id="examples">Examples<a class="headerlink" href="#examples" title="Link to this section">¶</a></h1>
 <p>The examples illustrate the proposed New L1 RPC workflow. To run them, use the matching client release and devnet configuration supplied by the protocol team. Set the required endpoint variables and test with a development account before using a funded account:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">RPC</span><span class="o">=</span><span class="w">      </span><span class="c1"># node HTTP endpoint</span>
-<span class="nv">WS</span><span class="o">=</span><span class="w">       </span><span class="c1"># node WebSocket endpoint</span>
+<div class="highlight"><pre><span></span><code><span class="nv">RPC</span><span class="o">=</span>https://newl1-devnet-rpc.bnbchain.org/
+<span class="nv">WS</span><span class="o">=</span>wss://newl1-devnet-rpc.bnbchain.org/ws
 <span class="nv">SK</span><span class="o">=</span><span class="w">       </span><span class="c1"># funded private key</span>
 <span class="nv">FROM</span><span class="o">=</span><span class="w">     </span><span class="c1"># its address</span>
 <span class="nv">TO</span><span class="o">=</span><span class="w">       </span><span class="c1"># any recipient</span>
@@ -2235,8 +2235,8 @@ rpc<span class="o">()</span><span class="w"> </span><span class="o">{</span><spa
 </code></pre></div>
 <p>Needs <code>curl</code> and <code>jq</code>. Sending transactions uses Foundry’s <code>cast</code>; the subscription uses any WebSocket client.</p>
 <div class="admonition note">
-<p class="admonition-title">No endpoint yet</p>
-<p>New L1 has no public network, so there is nothing to point <code>RPC</code> at today; see <a href="../../get-started/network-info/">Network Information</a>. These are protocol demonstrations, not an ecosystem showcase.</p>
+<p class="admonition-title">Devnet stage</p>
+<p>The endpoints above connect to the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched. See <a href="../../get-started/network-info/">Network Information</a> for network parameters and the newL1Trace explorer. These are protocol demonstrations, not an ecosystem showcase.</p>
 </div>
 <h2 id="ordering-execution-and-finality-move-separately">Ordering, Execution, and Finality Move Separately<a class="headerlink" href="#ordering-execution-and-finality-move-separately" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>rpc<span class="w"> </span>eth_blockNumber<span class="w">                      </span><span class="c1"># executed tip (no params = "latest")</span>
@@ -2300,7 +2300,7 @@ rpc<span class="w"> </span>eth_getProof<span class="w"> </span><span class="s1">
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 03:32:36 UTC">October 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 29, 2026 13:04:27 UTC">October 29, 2026</span>
   </span>
 
     

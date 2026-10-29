@@ -2225,10 +2225,10 @@
 <p>If you build on any EVM chain, you can build on New L1. Solidity, the toolchain (Foundry, Hardhat, Remix), and the SDKs (ethers.js, viem, web3.py) all work unmodified against a node’s standard JSON-RPC endpoint.</p>
 <div class="admonition note">
 <p class="admonition-title">Devnet stage</p>
-<p>There is no public testnet or mainnet endpoint, no faucet, and no hosted explorer yet. Today you develop against a local devnet built from the client source. Network parameters on these pages reflect the current devnet client and may change before a public launch.</p>
+<p>Hosted devnet endpoints are available. The network is highly unstable and subject to breaking changes; public testnet and mainnet have not launched. Network parameters on these pages reflect the current devnet client and may change before a public launch.</p>
 </div>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Link to this section">¶</a></h2>
-<p>There is no endpoint to connect to yet; <a href="../../get-started/network-info/">Network Information</a> is where one will be published. Until then, read the differences below and work through <a href="../../get-started/migrate-from-bsc/">Migrating from BSC</a> if you’re bringing an existing app, since most of what it lists is decided in your submission path rather than in your contracts.</p>
+<p>Connect using the devnet HTTP or WebSocket endpoint listed in <a href="../../get-started/network-info/">Network Information</a>. The <a href="../json_rpc/json-rpc-endpoint/#transports">JSON-RPC Endpoint</a> page has a request example. Read the differences below and work through <a href="../../get-started/migrate-from-bsc/">Migrating from BSC</a> if you’re bringing an existing app, since most of what it lists is decided in your submission path rather than in your contracts.</p>
 <h2 id="whats-different-from-a-typical-evm-chain">What’s Different from a Typical EVM Chain<a class="headerlink" href="#whats-different-from-a-typical-evm-chain" title="Link to this section">¶</a></h2>
 <p>Five things account for nearly every surprise.</p>
 <table>
@@ -2317,7 +2317,7 @@
 <li>Contracts and testing: <a href="https://book.getfoundry.sh/">Foundry</a>, <a href="https://hardhat.org">Hardhat</a>, <a href="https://remix.ethereum.org">Remix</a></li>
 <li>SDKs: <a href="https://docs.ethers.org">ethers.js</a>, <a href="https://viem.sh">viem</a>, <a href="https://web3py.readthedocs.io">web3.py</a></li>
 </ul>
-<p>Two caveats when you wire them up: set a real <code>maxPriorityFeePerGas</code> (the base fee is pinned to zero, so the tip is the entire price), and don’t pad gas limits (you pay for what you declare). Hosted explorers, indexers, and faucets are not available at this stage.</p></div>
+<p>Two caveats when you wire them up: set a real <code>maxPriorityFeePerGas</code> (the base fee is pinned to zero, so the tip is the entire price), and don’t pad gas limits (you pay for what you declare). Inspect devnet blocks and transactions with <a href="https://3c88a668d99f13eb2b89.com/">newL1Trace</a>. Hosted indexers and faucets are not available at this stage.</p></div>
 
 
 
@@ -2338,7 +2338,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 03:32:36 UTC">October 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 29, 2026 13:04:27 UTC">October 29, 2026</span>
   </span>
 
     
