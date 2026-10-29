@@ -10,7 +10,7 @@ title: Network Information - New L1
 | Description | High-performance EVM Layer 1 in the BNB Chain ecosystem. |
 | Gateway / RPC Endpoint | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
 | WebSocket Endpoint | `wss://newl1-devnet-rpc.bnbchain.org/ws` |
-| Chain ID | Not finalized yet |
+| Chain ID | 1105 (devnet) |
 | Currency Symbol | BNB |
 | Block Explorer | [newL1Trace](https://3c88a668d99f13eb2b89.com/) |
 | Bridge | New L1 ↔ BSC bridge in development |
