@@ -7,11 +7,11 @@ title: Quick Guide - New L1
 If you build on any EVM chain, you can build on New L1. Solidity, the toolchain (Foundry, Hardhat, Remix), and the SDKs (ethers.js, viem, web3.py) all work unmodified against a node's standard JSON-RPC endpoint.
 
 !!! note "Devnet stage"
-    There is no public testnet or mainnet endpoint, no faucet, and no hosted explorer yet. Today you develop against a local devnet built from the client source. Network parameters on these pages reflect the current devnet client and may change before a public launch.
+    Hosted devnet endpoints are available. The network is highly unstable and subject to breaking changes; public testnet and mainnet have not launched. Network parameters on these pages reflect the current devnet client and may change before a public launch.
 
 ## Getting Started
 
-There is no endpoint to connect to yet; [Network Information](../get-started/network-info.md) is where one will be published. Until then, read the differences below and work through [Migrating from BSC](../get-started/migrate-from-bsc.md) if you're bringing an existing app, since most of what it lists is decided in your submission path rather than in your contracts.
+Connect using the devnet HTTP or WebSocket endpoint listed in [Network Information](../get-started/network-info.md). The [JSON-RPC Endpoint](./json_rpc/json-rpc-endpoint.md#transports) page has a request example. Read the differences below and work through [Migrating from BSC](../get-started/migrate-from-bsc.md) if you're bringing an existing app, since most of what it lists is decided in your submission path rather than in your contracts.
 
 ## What's Different from a Typical EVM Chain
 
@@ -57,4 +57,4 @@ Standard EVM tooling connects with no chain-specific client:
 - Contracts and testing: [Foundry](https://book.getfoundry.sh/), [Hardhat](https://hardhat.org), [Remix](https://remix.ethereum.org)
 - SDKs: [ethers.js](https://docs.ethers.org), [viem](https://viem.sh), [web3.py](https://web3py.readthedocs.io)
 
-Two caveats when you wire them up: set a real `maxPriorityFeePerGas` (the base fee is pinned to zero, so the tip is the entire price), and don't pad gas limits (you pay for what you declare). Hosted explorers, indexers, and faucets are not available at this stage.
+Two caveats when you wire them up: set a real `maxPriorityFeePerGas` (the base fee is pinned to zero, so the tip is the entire price), and don't pad gas limits (you pay for what you declare). Inspect devnet blocks and transactions with [newL1Trace](https://3c88a668d99f13eb2b89.com/). Hosted indexers and faucets are not available at this stage.

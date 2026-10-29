@@ -15,7 +15,7 @@ Same Parlia PoSA + BLS fast-finality consensus family, but with a faster block i
 
 ### Is New L1 live on mainnet?
 
-Not yet. It is still under active development, currently runs as an internal multi-validator devnet. Endpoints will be published on [Network Information](./get-started/network-info.md) once a network is available.
+Not yet. It is still under active development and currently runs as a multi-validator devnet. Hosted HTTP and WebSocket endpoints and the newL1Trace explorer are listed on [Network Information](./get-started/network-info.md). The devnet is highly unstable and subject to breaking changes; public testnet and mainnet have not launched.
 
 ### Do I need to use ERC-4337 tooling (bundlers, paymasters) for account abstraction?
 

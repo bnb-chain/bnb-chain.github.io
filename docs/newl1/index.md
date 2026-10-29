@@ -28,7 +28,7 @@ title: New L1 - High-Performance EVM L1
     </a>
     <a href="./get-started/network-info">
         <div>Get Started</div>
-        <p>Run a local devnet and connect over JSON-RPC</p>
+        <p>Connect to the devnet and explore blocks and transactions</p>
     </a>
     <a href="./core-concepts/consensus">
         <div>Consensus</div>

@@ -6,8 +6,8 @@ title: Migrating from BSC - New L1
 
 Same gas asset, same Parlia consensus family, same staking and governance contracts at the same addresses, unmodified EVM. Contracts deploy unchanged and standard tooling connects unchanged. The differences are almost all above the EVM: fees, mempool, block cadence, and how state is committed.
 
-!!! note "No public network yet"
-    There is no public testnet or mainnet endpoint yet, so treat this as a porting checklist to work through ahead of one. A native New L1 ↔ BSC bridge is designed and under development but not live; the `CrossChain` address currently holds a placeholder (see [System Contracts](../governance/system-contracts.md)).
+!!! note "Devnet stage"
+    Use the hosted devnet endpoints in [Network Information](./network-info.md) to work through this porting checklist. The devnet is highly unstable and subject to breaking changes; public testnet and mainnet have not launched. A native New L1 ↔ BSC bridge is designed and under development but not live; the `CrossChain` address currently holds a placeholder (see [System Contracts](../governance/system-contracts.md)).
 
 ## You Pay for Your Declared Gas Limit
 
