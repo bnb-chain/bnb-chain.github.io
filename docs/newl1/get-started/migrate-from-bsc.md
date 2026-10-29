@@ -1,7 +1,3 @@
----
-title: Migrating from BSC - New L1
----
-
 # Migrating from BNB Smart Chain
 
 Same gas asset, same Parlia consensus family, same staking and governance contracts at the same addresses, unmodified EVM. Contracts deploy unchanged and standard tooling connects unchanged. The differences are almost all above the EVM: fees, mempool, block cadence, and how state is committed.

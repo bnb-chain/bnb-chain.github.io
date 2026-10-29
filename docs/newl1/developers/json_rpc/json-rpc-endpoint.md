@@ -1,7 +1,3 @@
----
-title: JSON-RPC Endpoint - New L1
----
-
 # JSON-RPC Endpoint
 
 JSON-RPC endpoints refer to the network location where a program sends its RPC requests to access node data. Once you connect an application to an RPC endpoint, you can read chain state, submit transactions, and subscribe to live events. This section lists the endpoints for connecting to New L1 and explains how its API surface differs from a standard Ethereum client.

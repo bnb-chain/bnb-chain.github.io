@@ -285,3 +285,8 @@
 - [BSC FAQs](https://docs.bnbchain.org/faq/bsc/): BSC FAQs
 - [v1.8.1 Release Mainnet Compatibility Query - BSC FAQs](https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/): Explains that BSC v1.8.1 is the Chapel testnet Jenner hardfork release and mainnet nodes do not need to upgrade for Jenner
 - [How do I update my validator node's profile name, logo, and contact information?](https://docs.bnbchain.org/faq/how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information/): How do I update my validator node's profile name, logo, and contact information?
+- [Examples](https://docs.bnbchain.org/newl1/developers/examples/): Example RPC workflows for New L1: pre-confirmations, transaction lifecycle, gas-limit charging, and chain-specific APIs.
+- [JSON-RPC Endpoint](https://docs.bnbchain.org/newl1/developers/json_rpc/json-rpc-endpoint/): New L1 JSON-RPC endpoints, transports, and API surface compared with Geth.
+- [FAQ](https://docs.bnbchain.org/newl1/faq/): Frequently asked questions about New L1 EVM compatibility, account abstraction, pre-confirmation, shielded pool, and gas.
+- [Migrating from BNB Smart Chain](https://docs.bnbchain.org/newl1/get-started/migrate-from-bsc/): Porting guide from BSC to New L1: gas-limit charging, consensus, contracts, transactions, and RPC differences.
+- [Network Information](https://docs.bnbchain.org/newl1/get-started/network-info/): New L1 devnet endpoints, chain ID, protocol parameters, and explorer.
