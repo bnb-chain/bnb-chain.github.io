@@ -8,8 +8,13 @@ JSON-RPC endpoints refer to the network location where a program sends its RPC r
 
 ## RPC Endpoints for New L1
 
-!!! note "No public endpoint yet"
-    New L1 has no public testnet or mainnet, so there are no hosted RPC endpoints, faucet, or explorer to list here yet. Endpoints and the chain ID will be published on this page and on [Network Information](../../get-started/network-info.md) once a network is deployed.
+| Transport | Devnet endpoint |
+|---|---|
+| HTTP (gateway / RPC) | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
+| WebSocket | `wss://newl1-devnet-rpc.bnbchain.org/ws` |
+
+!!! note "Devnet stage"
+    These endpoints serve the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched. See [Network Information](../../get-started/network-info.md) for network parameters and the newL1Trace explorer.
 
 ## Transports
 
@@ -17,6 +22,7 @@ HTTP and WebSocket serve the same method set, with one exception: subscriptions 
 
 ```bash
 # HTTP
+RPC=https://newl1-devnet-rpc.bnbchain.org/
 curl -X POST "$RPC" -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```

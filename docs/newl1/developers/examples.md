@@ -7,8 +7,8 @@ title: Examples - New L1
 The examples illustrate the proposed New L1 RPC workflow. To run them, use the matching client release and devnet configuration supplied by the protocol team. Set the required endpoint variables and test with a development account before using a funded account:
 
 ```bash
-RPC=      # node HTTP endpoint
-WS=       # node WebSocket endpoint
+RPC=https://newl1-devnet-rpc.bnbchain.org/
+WS=wss://newl1-devnet-rpc.bnbchain.org/ws
 SK=       # funded private key
 FROM=     # its address
 TO=       # any recipient
@@ -20,8 +20,8 @@ rpc() { curl -s $RPC -H 'content-type: application/json' \
 
 Needs `curl` and `jq`. Sending transactions uses Foundry's `cast`; the subscription uses any WebSocket client.
 
-!!! note "No endpoint yet"
-    New L1 has no public network, so there is nothing to point `RPC` at today; see [Network Information](../get-started/network-info.md). These are protocol demonstrations, not an ecosystem showcase.
+!!! note "Devnet stage"
+    The endpoints above connect to the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched. See [Network Information](../get-started/network-info.md) for network parameters and the newL1Trace explorer. These are protocol demonstrations, not an ecosystem showcase.
 
 ## Ordering, Execution, and Finality Move Separately
 
