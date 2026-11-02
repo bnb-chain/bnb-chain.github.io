@@ -38,7 +38,7 @@ BSC remains the broad-base chain for the existing ecosystem. New L1 is a clean-s
 
 ## Role of BNB
 
-BNB is the native asset of New L1, and no new token is issued. It is bridged from BSC and pays for gas, through a native BSC ↔ New L1 bridge that is still in development. Staking it with `StakeHub` mints govBNB 1:1, a non-transferable voting ledger that carries governance weight once it is delegated.
+BNB is the native asset of New L1, and no new token is issued. It pays for gas and moves between BSC and New L1 through the native [Cross-Chain Bridge](./core-concepts/cross-chain-bridge.md). Staking it with `StakeHub` mints govBNB 1:1, a non-transferable voting ledger that carries governance weight once it is delegated.
 
 ## What This Means for Developers
 

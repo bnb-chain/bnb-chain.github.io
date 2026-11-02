@@ -13,10 +13,10 @@ title: Network Information - New L1
 | Chain ID | 1105 (devnet) |
 | Currency Symbol | BNB |
 | Block Explorer | [newL1Trace](https://3c88a668d99f13eb2b89.com/) |
-| Bridge | New L1 ↔ BSC bridge in development |
+| Bridge | [Native bridge](../developers/cross-chain-bridge.md) to BSC Testnet |
 
 !!! note "Devnet stage"
-    These endpoints and newL1Trace connect to the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched, and no faucet is available yet. The values below reflect the current devnet client and may change.
+    These endpoints and newL1Trace connect to the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched. There is no New L1 faucet: to get devnet BNB, bridge tBNB from BSC Testnet with the [Cross-Chain Bridge](../developers/cross-chain-bridge.md). The values below reflect the current devnet client and may change.
 
 ## Protocol Parameters
 

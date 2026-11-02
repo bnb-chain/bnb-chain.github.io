@@ -50,6 +50,10 @@ title: New L1 - High-Performance EVM L1
         <div>Shielded Pool (Privacy)</div>
         <p>Native, opt-in private transfers via zk proofs</p>
     </a>
+    <a href="./developers/cross-chain-bridge">
+        <div>Cross-Chain Bridge</div>
+        <p>Move native BNB between BSC and New L1</p>
+    </a>
     <a href="./governance/overview">
         <div>Governance</div>
         <p>On-chain, token-weighted parameter and validator-set governance</p>

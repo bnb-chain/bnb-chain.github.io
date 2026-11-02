@@ -32,7 +32,7 @@ Two access-control gates make this the only path to change anything governed: ev
 
 ## How to Participate
 
-- **Delegate or stake.** Bridge BNB to New L1, then call `StakeHub.delegate(validatorOperator, delegateVotePower=true)`, which also mints govBNB automatically.
+- **Delegate or stake.** [Bridge BNB](../developers/cross-chain-bridge.md) to New L1, then call `StakeHub.delegate(validatorOperator, delegateVotePower=true)`, which also mints govBNB automatically.
 - **Become a validator.** Register via `StakeHub.createValidator`, which verifies your BLS vote key.
 - **Vote.** Delegate your govBNB, to yourself or to a validator, then cast votes on active proposals through the `Governor` contract.
 - **Propose.** Hold or have delegated enough govBNB to clear the proposal threshold, then submit a proposal via `Governor.propose`.

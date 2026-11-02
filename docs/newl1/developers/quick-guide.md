@@ -57,4 +57,4 @@ Standard EVM tooling connects with no chain-specific client:
 - Contracts and testing: [Foundry](https://book.getfoundry.sh/), [Hardhat](https://hardhat.org), [Remix](https://remix.ethereum.org)
 - SDKs: [ethers.js](https://docs.ethers.org), [viem](https://viem.sh), [web3.py](https://web3py.readthedocs.io)
 
-Two caveats when you wire them up: set a real `maxPriorityFeePerGas` (the base fee is pinned to zero, so the tip is the entire price), and don't pad gas limits (you pay for what you declare). Inspect devnet blocks and transactions with [newL1Trace](https://3c88a668d99f13eb2b89.com/). Hosted indexers and faucets are not available at this stage.
+Two caveats when you wire them up: set a real `maxPriorityFeePerGas` (the base fee is pinned to zero, so the tip is the entire price), and don't pad gas limits (you pay for what you declare). Foundry users should also read [Using Foundry](./foundry.md). Inspect devnet blocks and transactions with [newL1Trace](https://3c88a668d99f13eb2b89.com/). Hosted indexers and faucets are not available at this stage.

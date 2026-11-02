@@ -7,7 +7,7 @@ title: Migrating from BSC - New L1
 Same gas asset, same Parlia consensus family, same staking and governance contracts at the same addresses, unmodified EVM. Contracts deploy unchanged and standard tooling connects unchanged. The differences are almost all above the EVM: fees, mempool, block cadence, and how state is committed.
 
 !!! note "Devnet stage"
-    Use the hosted devnet endpoints in [Network Information](./network-info.md) to work through this porting checklist. The devnet is highly unstable and subject to breaking changes; public testnet and mainnet have not launched. A native New L1 ↔ BSC bridge is designed and under development but not live; the `CrossChain` address currently holds a placeholder (see [System Contracts](../governance/system-contracts.md)).
+    Use the hosted devnet endpoints in [Network Information](./network-info.md) to work through this porting checklist. The devnet is highly unstable and subject to breaking changes; public testnet and mainnet have not launched. The native [Cross-Chain Bridge](../developers/cross-chain-bridge.md) connects the devnet to BSC Testnet.
 
 ## You Pay for Your Declared Gas Limit
 
@@ -45,7 +45,7 @@ Bytecode runs as-is. What changes meaning is anything that reasons about time or
 
 - **`block.number` advances ~5×/second.** Every block-count constant (vesting, `blocksPerDay`, TWAP windows, auction durations) is off by ~3.75× versus BSC. Recompute them, or switch to timestamp math.
 - **`block.timestamp` repeats across roughly five consecutive blocks.** `require(block.timestamp > lastUpdate)`, per-block rate limiting, and timestamp-as-unique-key all break.
-- **`block.prevrandao` is not randomness.** It is the millisecond part of the timestamp, `0–999`. `block.difficulty` is Parlia's `2`/`1`.
+- **`block.prevrandao` is not randomness.** It returns the same value as `block.difficulty`: Parlia's `2` for an in-turn block, `1` for an out-of-turn one.
 - **The fee payer may not be the sender.** One transaction can also carry up to 64 atomic calls (`0x76`).
 - **EIP-7702 and EIP-4844 transactions are rejected.** For smart accounts, use the native [`0x76` envelope](../developers/transaction-types.md) and the `AccountKeychain` precompile instead.
 
