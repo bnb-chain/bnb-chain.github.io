@@ -7,8 +7,8 @@
 ## Upgrade Timeline
 The Jenner upgrade is scheduled at:
 
-- Testnet: Late October 2026 (exact time to be announced)
-- Mainnet: Late November 2026 (exact time to be announced)
+- Testnet: October 29, 2026, at 02:30 UTC.
+- Mainnet: December 8, 2026, at 02:30 UTC.
 
 ## Upgrade BSC Node Before Hardfork
 The hard fork release for the Jenner upgrade has not been published yet; the release version and the exact fork times are still to be announced. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**. Please follow the release notes for the specific version and timing once available.
