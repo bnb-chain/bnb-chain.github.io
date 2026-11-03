@@ -1407,7 +1407,7 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
 Announcements for BNB Chain upgrades and network changes.
 
-- [Jenner Upgrade of BSC](https://docs.bnbchain.org/announce/jenner-bsc/) — 4 BEPs on BSC — 2026 Oct 29 (Testnet) / Dec 8 (Mainnet)
+- [Jenner Upgrade of BSC](https://docs.bnbchain.org/announce/jenner-bsc/) — 3 BEPs on BSC — 2026 Oct 29 (Testnet) / Dec 8 (Mainnet)
 - [Token Recovery Tool: Phase 3 — Self-Service Recovery](https://docs.bnbchain.org/announce/token-recovery-sunset-phase3/) — Hosted tool discontinued; use the open-source self-service tool from 1 July 2026
 - [BNB Beacon Chain Token Recovery Tool: Sunset Plan](https://docs.bnbchain.org/announce/token-recovery-sunset-plan/) — Three-phase sunset with increasing recovery times
 - [Mendel Upgrade of BSC](https://docs.bnbchain.org/announce/mendel-bsc/) — Nine BEPs on BSC Testnet/Mainnet — 2026 Feb 6th
@@ -1653,11 +1653,13 @@ To update your validator's profile information, you must submit a Pull Request (
 ## Jenner Upgrade of BSC
 > Source: https://docs.bnbchain.org/announce/jenner-bsc/
 
-Hardfork upgrade scheduled at:
+## Upgrade Timeline
+The Jenner upgrade is scheduled at:
 
 - Testnet: 2026-10-29 02:30:00 AM UTC
 - Mainnet: 2026-12-08 02:30:00 AM UTC
 
+## Upgrade BSC Node Before Hardfork
 The hard fork release for the Jenner upgrade is [v1.8.2](https://github.com/bnb-chain/bsc/releases/tag/v1.8.2) for BSC Mainnet. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**.
 
 There are 3 BEPs in Jenner:
