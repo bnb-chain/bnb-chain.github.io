@@ -64,7 +64,7 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
 * **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
 
-* **BlockVectra:** <https://docs.blockvectra.com/en/?ref=gh-bnb-chain.github.io>
+* **BlockVectra:** <https://blockvectra.com/en/chains/bsc_mainnet/?ref=gh-bnb-chain.github.io>
 
 ### Starting HTTP JSON-RPC
 
