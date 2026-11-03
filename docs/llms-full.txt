@@ -1405,13 +1405,10 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 ## Announcement
 > Source: https://docs.bnbchain.org/announce/
 
-Announcements for BNB Chain upgrades and network changes.
-
-- Pasteur Upgrade of BSC — 3 BEPs on BSC — 2026 Jul 21st
-- Token Recovery Tool: Phase 3 — Self-Service Recovery — 1 July 2026
-- BNB Beacon Chain Token Recovery Tool: Sunset Plan — 2026 Mar 4th
-- Mendel Upgrade of BSC — Nine BEPs on BSC Testnet/Mainnet — 2026 Feb 6th
-
+- [Jenner Upgrade of BSC](./jenner-bsc/): 4 BEPs on BSC — 2026 Oct 29 (Testnet) / Dec 8 (Mainnet)
+- [Token Recovery Tool: Phase 3 — Self-Service Recovery](./token-recovery-sunset-phase3/): Hosted tool discontinued; use the open-source self-service tool from 1 July 2026 — 2026 Jul 1st
+- [BNB Beacon Chain Token Recovery Tool: Sunset Plan](./token-recovery-sunset-plan/): Three-phase sunset with increasing recovery times — 2026 Mar 4th
+- [Mendel Upgrade of BSC](./mendel-bsc/): Nine BEPs on BSC Testnet/Mainnet — 2026 Feb 6th
 ## Altai Upgrade of Greenfield
 > Source: https://docs.bnbchain.org/announce/altai-gnfd/
 
@@ -1650,3 +1647,39 @@ To update your validator's profile information, you must submit a Pull Request (
 2. Follow the repository's contribution guidelines to update your validator's metadata (e.g., modifying the JSON information or uploading a new logo file).
 3. Submit a Pull Request with your proposed changes.
 4. Once the PR is reviewed and merged by the BNB Chain team, the updated information will be reflected on the staking webpage.
+
+## Jenner Upgrade of BSC
+> Source: https://docs.bnbchain.org/announce/jenner-bsc/
+
+## Upgrade Timeline
+The Jenner upgrade is scheduled at:
+
+- Testnet: 2026-10-29 02:30:00 AM UTC
+- Mainnet: 2026-12-08 02:30:00 AM UTC
+
+## Upgrade BSC Node Before Hardfork
+The hard fork release for the Jenner upgrade is [v1.8.2](https://github.com/bnb-chain/bsc/releases/tag/v1.8.2) for BSC Mainnet. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**.
+
+There are 3 BEPs in Jenner:
+
+- [BEP-702](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-702.md): Compliant Asset Standard on BNB Smart Chain
+- [BEP-703](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-703.md): Payment Lane on BNB Smart Chain
+- [BEP-706](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-706.md): Millisecond-Precision Block Timestamp Precompile
+
+## Key Highlight
+
+- BEP-702 introduces CAS20, a protocol-native fungible token standard for compliant assets (stablecoins and tokenized real-world assets), implemented as stateful precompiled contracts rather than deployed bytecode. Compliance controls — transfer policies backed by shared allow/blocklists, per-feature pause, and role-separated mint, burn and seizure — are built into the protocol.
+
+- BEP-703 reserves a governable fraction (default 5%) of every block's gas as the Payment Lane, dedicated to payment transactions — bare BNB transfers and transactions to governance-listed payment contracts — so that payments remain includable even when the network is congested by general traffic.
+
+- BEP-706 adds a precompile that exposes the block timestamp at millisecond precision to smart contracts, enabling on-chain applications that need sub-second timing on BSC's fast blocks.
+
+- BEP-675 Enhancements (no hard fork required): the same release ships several robustness improvements to builder-proposed blocks introduced in Pasteur: revoking a builder upon cross-validator bad block evidence, a gRPC `SendBidBlock` API, rejecting BidBlocks with a zero state root, and persisting BidBlock revocations across restarts, etc.
+
+## Upgrade Notice
+
+New flag introduced in this release (no hard fork required, related to the BEP-675 enhancements):
+
+- `--mev.grpc.disable`: disables the BEP-675 BidBlock gRPC service (`BidBlockService`). The gRPC transport is enabled by default when MEV is on; set this flag to opt out. The service port defaults to `8552` (configurable via `[Miner.Mev] GRPCPort` in config.toml).
+
+No flags or configuration fields are removed in this release. A simple binary replacement is sufficient to upgrade; any further notices will be listed in the release notes.
