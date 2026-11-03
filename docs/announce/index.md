@@ -1,4 +1,3 @@
-
 # Announcement
 
 <div class="doc-announce">
@@ -7,7 +6,7 @@
             <div class="announce-title">Jenner Upgrade of BSC</div>
             <div class="announce-desc">4 BEPs on BSC</div>
         </div>
-        <span class="announce-date">2026 Late Oct (Testnet) / Late Nov (Mainnet)</span>
+        <span class="announce-date">2026 Late Oct (Testnet) / 2026 Dec 8 (Mainnet)</span>
     </a>
 </div>
 
