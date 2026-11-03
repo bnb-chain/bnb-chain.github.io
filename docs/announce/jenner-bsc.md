@@ -7,11 +7,11 @@
 ## Upgrade Timeline
 The Jenner upgrade is scheduled at:
 
-- Testnet: Late October 2026 (exact time to be announced)
-- Mainnet: Late November 2026 (exact time to be announced)
+- Testnet: 2026-10-29 02:30:00 AM UTC
+- Mainnet: 2026-12-08 02:30:00 AM UTC
 
 ## Upgrade BSC Node Before Hardfork
-The hard fork release for the Jenner upgrade has not been published yet; the release version and the exact fork times are still to be announced. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**. Please follow the release notes for the specific version and timing once available.
+The hard fork release for the Jenner upgrade is [v1.8.2](https://github.com/bnb-chain/bsc/releases/tag/v1.8.2) for BSC Mainnet. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**.
 
 There are 3 BEPs in Jenner:
 
@@ -35,4 +35,4 @@ New flag introduced in this release (no hard fork required, related to the BEP-6
 
 - `--mev.grpc.disable`: disables the BEP-675 BidBlock gRPC service (`BidBlockService`). The gRPC transport is enabled by default when MEV is on; set this flag to opt out. The service port defaults to `8552` (configurable via `[Miner.Mev] GRPCPort` in config.toml).
 
-No flags or configuration fields are removed in this release. Once the hard fork release is published, a simple binary replacement is sufficient to upgrade; any further notices will be listed in the release notes.
+No flags or configuration fields are removed in this release. A simple binary replacement is sufficient to upgrade; any further notices will be listed in the release notes.
