@@ -8,10 +8,10 @@
 The Jenner upgrade is scheduled at:
 
 - Testnet: Late October 2026 (exact time to be announced)
-- Mainnet: Late November 2026 (exact time to be announced)
+- Mainnet: 2026-12-08 02:30:00 AM UTC
 
 ## Upgrade BSC Node Before Hardfork
-The hard fork release for the Jenner upgrade has not been published yet; the release version and the exact fork times are still to be announced. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**. Please follow the release notes for the specific version and timing once available.
+The hard fork release for the Jenner upgrade has not been published yet; the release version and the Testnet fork time are still to be announced. All BSC nodes (both Testnet and Mainnet) **must upgrade to the hard fork release before the hard fork time**. Please follow the release notes for the specific version and timing once available.
 
 There are 3 BEPs in Jenner:
 
