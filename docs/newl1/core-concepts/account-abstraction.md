@@ -131,9 +131,19 @@ A fee payer can cover another account's native gas. The account still advances i
 - Admission requires the sponsor to cover the gas reservation and the account to cover the calls' total native value.
 - Both signing hashes bind the sponsorship to the account and transaction body. See [Signing](#signing).
 
+### Gas Token Fee
+
 An optional `token_fee = {token, recipient, amount}` repays the sponsor on-chain. It is supported only on a root-signed, sponsored AA; `recipient` must be the recovered fee payer, `token` must be a contract, and `amount` must be non-zero. Both signatures commit to the payment, so no allowance or permit is required.
 
 The token payment runs before the user calls and outside their atomic checkpoint. It therefore remains paid if a later user call reverts. If the token payment itself cannot complete, the user calls do not run; the transaction lands failed and the sponsor is still charged the declared gas limit. Sponsors should simulate before signing because admission does not project arbitrary ERC-20 balances.
+
+The following example uses a Paymaster service to quote an accepted Gas Token, review the account-signed transaction, and sign and broadcast it. `GET /get_price` and `POST /sponsor` are illustrative service APIs, not New L1 JSON-RPC methods. The Paymaster chooses which tokens to accept; the protocol does not maintain a Gas Token whitelist.
+
+[![Gas Token fee interaction: the wallet gets a quote and signs first; the Paymaster verifies, simulates, signs, and broadcasts; the node transfers tokens before the atomic user calls. Payment failure skips the calls but still charges gas; user-call failure preserves the token payment.](../../assets/newl1-aa-gas-token-fee.svg)](../../assets/newl1-aa-gas-token-fee.svg)
+
+In this example, `token_fee.amount = gas_limit × quoted token price per gas`, with the quote expressed in the token's smallest units. This is the Paymaster's pricing policy, not a protocol conversion rate. The token fee is a fixed payment with no unused-gas refund; the sponsor separately pays native BNB for the declared `gas_limit`.
+
+The wallet signs with its root key using the sponsored-presence digest before the real `fee_payer_signature` exists. Both digests cover the same `token_fee`, and the Paymaster must verify the quote, recipient, amount, validity window, and account signature before adding its signature. It cannot alter the signed body. A placeholder signature is only for local digest construction; only the completed transaction is broadcast.
 
 ## Validity Windows
 
