@@ -58,7 +58,7 @@ You can attempt token recovery using one of the following methods:
 
 You’ll need the token’s contract address on the network in question.
 
-1. Visit a blockchain explorer like [BscScan](https://bscscan.com).
+1. Visit a blockchain explorer like [BSCTrace](https://bsctrace.com).
 2. Search for the token name (e.g., NEXO, USDT).
 3. Copy the contract address.
 4. In your wallet, select **“Add Token”** and paste the contract address.

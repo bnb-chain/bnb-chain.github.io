@@ -71,10 +71,9 @@ with `WalletConnect`.
 
 ### Q2: Can I delegate/undelegate/redelegate/claim stakes on explorers?
 
-If you want to do the aforementioned delegate/undelegate/redelegate/claim operations on BscScan or BscTrace, 
-you should call the staking hub contract in the following URLs:
-* [BscScan Stake Hub](https://bscscan.com/address/0x0000000000000000000000000000000000002002#writeContract)
-* [BscTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
+If you want to do the aforementioned delegate/undelegate/redelegate/claim operations on BSCTrace,
+you should call the staking hub contract in the following URL:
+* [BSCTrace Stake Hub](https://bsctrace.com/address/0x0000000000000000000000000000000000002002?tab=Contract&p=1&view=contract_write)
 
 ### Q3: What is staking credit (stBNB)?
 

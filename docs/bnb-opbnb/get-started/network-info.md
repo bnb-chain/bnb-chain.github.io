@@ -10,7 +10,7 @@ title: Network Information - opBNB
 | RPC Endpoint    | [See here](#rpc-endpoints)                                                       |
 | Chain ID        | 5611(Testnet), 204(Mainnet)                                                      |
 | Currency Symbol | tBNB(Testnet) BNB(Mainnet)                                                       |
-| Block Explorer  | https://testnet.opbnbscan.com, https://opbnbscan.com, https://opbnb.bscscan.com/ |
+| Block Explorer  | https://testnet.opbnbscan.com, https://opbnbscan.com |
 | Bridge          | https://opbnb-testnet-bridge.bnbchain.org, https://opbnb-bridge.bnbchain.org     |
 
 

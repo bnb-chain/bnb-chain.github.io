@@ -13,7 +13,7 @@ You can use any Ethereum wallet with BSC. For instance, I will show you how to s
    - RPC URL: [https://data-seed-prebsc-1-s1.bnbchain.org:8545](https://data-seed-prebsc-1-s3.bnbchain.org:8545/)
    - ChainID: 97
    - Symbol: tBNB
-   - Explorer: [https://testnet.bscscan.com/](https://testnet.bscscan.com/)
+   - Explorer: [https://testnet.bsctrace.com/](https://testnet.bsctrace.com/)
 
    *Mainnet*
 
@@ -21,7 +21,7 @@ You can use any Ethereum wallet with BSC. For instance, I will show you how to s
    - RPC URL: [https://bsc-dataseed.bnbchain.org](https://bsc-dataseed.bnbchain.org)
    - ChainID: 56
    - Symbol: BNB
-   - Explorer: [https://bscscan.com/](https://bscscan.com/)
+   - Explorer: [https://bsctrace.com/](https://bsctrace.com/)
   
 
 ## References - How to configure Trustwallet or Metamask

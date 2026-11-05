@@ -83,7 +83,7 @@ log('send crosschain tx!');
 const receipt = await waitTx(
     demo.createBucket(bucketName, transferOutAmt, executorData, { value })
 );
-log(`https://testnet.bscscan.com/tx/${receipt.transactionHash}`);
+log(`https://testnet.bsctrace.com/tx/${receipt.transactionHash}`);
 ```
 
 #### get bucket id by name after bucket created
