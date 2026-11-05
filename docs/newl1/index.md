@@ -10,49 +10,6 @@ title: New L1 - High-Performance EVM L1
       display: none;
    }
 
-   .section-body .faq-card {
-      border: 1px solid var(--doc-border-3);
-      background: var(--doc-layer-2);
-      padding: 16px;
-      border-radius: 8px;
-      flex: 32%;
-      width: 32%;
-   }
-
-   .section-body .faq-card h2 {
-      color: var(--doc-text-primary);
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 24px;
-      margin: 0 0 12px;
-   }
-
-   .section-body .faq-card p {
-      color: var(--doc-text-secondary);
-      font-size: 14px;
-      line-height: 20px;
-      margin: 0;
-   }
-
-   .section-body .faq-card p + p {
-      margin-top: 12px;
-   }
-
-   .section-body .faq-card a {
-      border: 0;
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      flex: initial;
-      width: auto;
-   }
-
-   @media (max-width: 767px) {
-      .section-body .faq-card {
-         flex: 100%;
-         width: 100%;
-      }
-   }
 </style>
 
 <div class="section-head">
@@ -102,9 +59,8 @@ title: New L1 - High-Performance EVM L1
         <div>JSON-RPC Reference</div>
         <p>Standard eth_* methods plus New L1 extensions</p>
     </a>
-    <section class="faq-card" aria-labelledby="faq-card-title">
-        <h2 id="faq-card-title">FAQ</h2>
-        <p><a href="./faq/">General FAQ</a><br>Chain basics, network status, BNB, and privacy</p>
-        <p><a href="./partner-faq/">Integration FAQ</a><br>Onboarding, tooling, fees, lanes, and settlement</p>
-    </section>
+    <a href="./faq/">
+        <div>FAQ</div>
+        <p>General questions and technical integration guidance</p>
+    </a>
 </div>

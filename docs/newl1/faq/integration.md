@@ -4,7 +4,7 @@ title: Integration FAQ - New L1
 
 # Integration FAQ
 
-Technical integration and partner-onboarding questions for application teams, infrastructure providers, traders, builders, and validators. For chain positioning, network status, assets, sponsorship basics, and privacy, start with the [General FAQ](./faq.md).
+Technical integration and partner-onboarding questions for application teams, infrastructure providers, traders, builders, and validators. For chain positioning, network status, assets, sponsorship basics, and privacy, start with the [General FAQ](./general.md).
 
 !!! note "Devnet guidance · Reviewed 5 November 2026"
     Devnet behavior can change between releases. Planned and proposed capabilities are identified below. Confirm the client and service version before relying on release-specific behavior.
@@ -13,9 +13,9 @@ Technical integration and partner-onboarding questions for application teams, in
 
 ### How do we get endpoints, chain details, test tokens, and integration support?
 
-Use [Network Information](./get-started/network-info.md) for the current HTTP and WebSocket endpoints, chain ID, explorer, and faucet availability.
+Use [Network Information](../get-started/network-info.md) for the current HTTP and WebSocket endpoints, chain ID, explorer, and faucet availability.
 
-Contact the BNB Chain Solutions Architecture (SA) team for test tokens, integration support, the matching client version, and reset policy. See [General FAQ](./faq.md#is-new-l1-live-on-mainnet) for network status and tentative launch targets.
+Contact the BNB Chain Solutions Architecture (SA) team for test tokens, integration support, the matching client version, and reset policy. See [General FAQ](./general.md#is-new-l1-live-on-mainnet) for network status and tentative launch targets.
 
 ### Can we run our own devnet node? Do we need a snapshot?
 
@@ -35,21 +35,21 @@ Partners interested in either role should raise it with BNB Chain for technical 
 
 Test declared-gas charging, block-number and timestamp assumptions, sequential nonces, delayed receipts, finality, and RPC differences. Native account abstraction uses type `0x76`; shielded transactions use type `0x77`. EIP-4844 and EIP-7702 transactions are not supported.
 
-Execution-layer compatibility does not establish that every SDK, Ethereum RPC, or application assumption works unchanged. Start with [Migrating from BSC](./get-started/migrate-from-bsc.md) and the [Quick Guide](./developers/quick-guide.md), then test your actual integration.
+Execution-layer compatibility does not establish that every SDK, Ethereum RPC, or application assumption works unchanged. Start with [Migrating from BSC](../get-started/migrate-from-bsc.md) and the [Quick Guide](../developers/quick-guide.md), then test your actual integration.
 
 ### Do I need to use ERC-4337 tooling (bundlers, paymasters) for account abstraction?
 
-No. New L1's account abstraction is native, enforced by consensus rather than by a deployed EntryPoint contract, so no bundler or paymaster contract is involved. Use the native `0x76` transaction format and its signing rules. For sponsorship and optional token repayment, see [Account Abstraction](./core-concepts/account-abstraction.md#fee-sponsorship).
+No. New L1's account abstraction is native, enforced by consensus rather than by a deployed EntryPoint contract, so no bundler or paymaster contract is involved. Use the native `0x76` transaction format and its signing rules. For sponsorship and optional token repayment, see [Account Abstraction](../core-concepts/account-abstraction.md#fee-sponsorship).
 
 ### Why doesn't `eth_getProof` work?
 
-New L1 commits state with a cumulative hash accumulator instead of a Merkle-Patricia trie, so there is no trie-based proof to serve. Proof-dependent integrations need a different design; do not assume an Ethereum proof-verification path will work. See [State DB](./core-concepts/state-db.md) and [RPC differences](./developers/json_rpc/newl1-api-list.md#divergences-from-geth).
+New L1 commits state with a cumulative hash accumulator instead of a Merkle-Patricia trie, so there is no trie-based proof to serve. Proof-dependent integrations need a different design; do not assume an Ethereum proof-verification path will work. See [State DB](../core-concepts/state-db.md) and [RPC differences](../developers/json_rpc/newl1-api-list.md#divergences-from-geth).
 
 ### What changes should indexers and explorers expect?
 
 Handle a transaction being ordered before its receipt is available, distinguish ordering finality from execution finality, and support the native transaction types you index. Paginate log queries to the endpoint's configured range.
 
-For `eth_getTransactionReceipt`, `-38004` means ordered but not yet executed and should be retried; `null` means the hash is unknown to that endpoint, not proof of execution lag or transaction failure. See [Transaction Lifecycle](./developers/transaction-lifecycle.md) and [Transaction Types](./developers/transaction-types.md).
+For `eth_getTransactionReceipt`, `-38004` means ordered but not yet executed and should be retried; `null` means the hash is unknown to that endpoint, not proof of execution lag or transaction failure. See [Transaction Lifecycle](../developers/transaction-lifecycle.md) and [Transaction Types](../developers/transaction-types.md).
 
 ## Fees, ordering, and account nonces
 
@@ -57,19 +57,19 @@ For `eth_getTransactionReceipt`, `-38004` means ordered but not yet executed and
 
 For ordinary account transactions with a valid nonce and sufficient balance at execution, the charge is based on the declared gas limit, including when application execution reverts or runs out of gas. Unused gas does not reduce that charge. A larger limit also occupies more lane capacity. At the same effective gas price, declaring 200,000 gas costs twice as much as declaring 100,000, even if execution uses the same amount.
 
-Rejection before inclusion does not charge gas. Execution-time invalidity has separate settlement rules: for example, an invalid nonce causes no charge, while insufficient balance can limit the amount collected. See [Async Execution](./core-concepts/async-execution.md#paying-for-block-space) and [AA failure handling](./core-concepts/account-abstraction.md#when-something-goes-wrong).
+Rejection before inclusion does not charge gas. Execution-time invalidity has separate settlement rules: for example, an invalid nonce causes no charge, while insufficient balance can limit the amount collected. See [Async Execution](../core-concepts/async-execution.md#paying-for-block-space) and [AA failure handling](../core-concepts/account-abstraction.md#when-something-goes-wrong).
 
 ### How should quote publishers, routers, aggregators, and liquidation bots set gas limits?
 
 Estimate against representative current state, test expensive execution branches, and use a workload-specific margin. This is integration guidance, not a fixed protocol formula. An oversized limit increases cost; an undersized limit can fail execution. Variable-path workloads need particular care.
 
-Use `eth_estimateGas` for execution estimates and repeat testing after relevant state, contract, or client changes. For ordinary user transactions, receipt `gasUsed` normally reflects the declared limit rather than actual EVM consumption; execution-time invalidity has the [exceptions described above](#are-fees-charged-on-gas-used-or-the-declared-gas-limit). See [Migrating from BSC](./get-started/migrate-from-bsc.md#you-pay-for-your-declared-gas-limit).
+Use `eth_estimateGas` for execution estimates and repeat testing after relevant state, contract, or client changes. For ordinary user transactions, receipt `gasUsed` normally reflects the declared limit rather than actual EVM consumption; execution-time invalidity has the [exceptions described above](#are-fees-charged-on-gas-used-or-the-declared-gas-limit). See [Migrating from BSC](../get-started/migrate-from-bsc.md#you-pay-for-your-declared-gas-limit).
 
 ### What priority fee should we set, and do lanes offer different prices?
 
 There is no universal tip that guarantees low latency or inclusion. The current devnet's base fee is pinned to zero, so the effective price is `min(maxFeePerGas, maxPriorityFeePerGas)`; a zero tip is rejected. Operator admission floors, competition, and available capacity matter.
 
-Lane-specific minimum prices have been discussed, but a capacity reservation alone does not establish a separate fee entitlement. Confirm supported fee fields, active prices, and lane pricing for the target release. See [RPC fee behavior](./developers/json_rpc/newl1-api-list.md#divergences-from-geth).
+Lane-specific minimum prices have been discussed, but a capacity reservation alone does not establish a separate fee entitlement. Confirm supported fee fields, active prices, and lane pricing for the target release. See [RPC fee behavior](../developers/json_rpc/newl1-api-list.md#divergences-from-geth).
 
 ### Are transactions ordered by gas price, total fee, or arrival time?
 
@@ -89,9 +89,9 @@ A lane reserves gas capacity for eligible traffic so unrelated demand cannot con
 
 ### Who approves a lane, and how do we request reserved capacity?
 
-Identify the top-level destination addresses that need protection and request their registration in `LaneRegistry`, with an appropriate basis-point reservation, through [governance](./governance/overview.md). Registration and governed parameters require approval; a builder cannot override the adopted configuration.
+Identify the top-level destination addresses that need protection and request their registration in `LaneRegistry`, with an appropriate basis-point reservation, through [governance](../governance/overview.md). Registration and governed parameters require approval; a builder cannot override the adopted configuration.
 
-Check the active configuration with [`newl1_laneConfig`](./developers/json_rpc/newl1-api-list.md#newl1_laneconfig). An inert configuration has no activated lanes. Approved changes use a lagged executed-state checkpoint, so do not assume same-block activation. Customization is limited to supported policies and parameters, not arbitrary ordering code. See [Multi-Lane](./core-concepts/multi-lane.md).
+Check the active configuration with [`newl1_laneConfig`](../developers/json_rpc/newl1-api-list.md#newl1_laneconfig). An inert configuration has no activated lanes. Approved changes use a lagged executed-state checkpoint, so do not assume same-block activation. Customization is limited to supported policies and parameters, not arbitrary ordering code. See [Multi-Lane](../core-concepts/multi-lane.md).
 
 ### How is a transaction assigned to a lane? Does an indirect call qualify?
 
@@ -99,7 +99,7 @@ The documented baseline uses the top-level destination address, not the function
 
 ### Will lane transactions always be first in the block?
 
-Do not infer first position or execution priority from a capacity reservation. The public [Multi-Lane reference](./core-concepts/multi-lane.md#guarantees) establishes reserved capacity, but does not specify a universal rule requiring dedicated-lane transactions to execute before General traffic. Confirm release-specific ordering and execution rules before relying on that behavior.
+Do not infer first position or execution priority from a capacity reservation. The public [Multi-Lane reference](../core-concepts/multi-lane.md#guarantees) establishes reserved capacity, but does not specify a universal rule requiring dedicated-lane transactions to execute before General traffic. Confirm release-specific ordering and execution rules before relying on that behavior.
 
 ### What happens when a transaction exceeds the lane's remaining capacity?
 
@@ -107,7 +107,7 @@ A reservation does not guarantee that a particular transaction fits or is includ
 
 ### Can a transaction interact with applications in different lanes?
 
-A transaction is assigned to one lane using its top-level destination; inner calls do not acquire additional lane reservations. That classification alone does not establish whether calls between particular applications are allowed or restricted. Confirm the supported call paths and any enforced restrictions with engineering rather than treating lane assignment as a blanket ban on contract-to-contract interaction. See [Lane Assignment](./core-concepts/multi-lane.md#lane-assignment).
+A transaction is assigned to one lane using its top-level destination; inner calls do not acquire additional lane reservations. That classification alone does not establish whether calls between particular applications are allowed or restricted. Confirm the supported call paths and any enforced restrictions with engineering rather than treating lane assignment as a blanket ban on contract-to-contract interaction. See [Lane Assignment](../core-concepts/multi-lane.md#lane-assignment).
 
 ## Routing, preconfirmation, and settlement
 
@@ -119,7 +119,7 @@ No. Gateways and producers retain local transaction pools. The submission node t
 
 For settlement that depends on execution success, require a successful receipt, wait until the transaction's block number is at or below `eth_blockNumber("finalized")`, and re-check that the canonical block hash matches its `blockHash`.
 
-Track pre-confirmation, ordering, execution, and execution finality separately. Queueing and network delay affect latency, and an ordered transaction can still revert. Raw order finality is sufficient only for decisions that depend on order alone. See [Transaction Lifecycle](./developers/transaction-lifecycle.md#order-execute-and-finalize) and [Transaction Pre-confirmation](./core-concepts/tx-preconfirmation.md).
+Track pre-confirmation, ordering, execution, and execution finality separately. Queueing and network delay affect latency, and an ordered transaction can still revert. Raw order finality is sufficient only for decisions that depend on order alone. See [Transaction Lifecycle](../developers/transaction-lifecycle.md#order-execute-and-finalize) and [Transaction Pre-confirmation](../core-concepts/tx-preconfirmation.md).
 
 ### What if a preconfirmation is withdrawn? Is there a break-rate target or compensation?
 
