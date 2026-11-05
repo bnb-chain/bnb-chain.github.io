@@ -59,7 +59,7 @@ title: New L1 - High-Performance EVM L1
         <p>Standard eth_* methods plus New L1 extensions</p>
     </a>
     <a href="./partner-faq">
-        <div>Partner FAQ</div>
+        <div>Integration FAQ</div>
         <p>Network access, integration behavior, reserved lanes, settlement, and planned MEV services</p>
     </a>
 </div>
