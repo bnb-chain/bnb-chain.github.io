@@ -97,19 +97,21 @@ The examples use Foundry's `cast` to deliver 1 BNB with a 0.0003 BNB fee. Add yo
 
     The first value stays `false` until the destination records an outcome. After that it is `true`, followed by `(present, success, recipient, creditedAmount, deliveredBy, …)`. `success = true` means the transfer was delivered.
 
-A delivered transfer is not always in the recipient's balance yet. In the delivery transaction, the destination `TokenHub` emits one of these events:
+A delivered transfer is not always in the recipient's balance yet. One delivery transaction can carry several transfers, so look for the destination `TokenHub` event with your `messageId`:
 
 | Event | Meaning | What to do |
 |---|---|---|
 | `CreditDelivered` | The BNB was sent to the recipient. | Nothing. The transfer is complete. |
 | `CreditLocked` | The amount is at or above the large-transfer threshold and is held until the lock ends. | Call `matureLockedCredit` after the lock ends. See [Large Transfers](#large-transfers). |
-| `ClaimCredited` | Sending to the recipient failed, so the amount was recorded as a claim. | Call `withdraw`. See [Claims](#claims). |
+| Neither | Sending to the recipient failed, so the amount was recorded as a claim. | Call `withdraw`. See [Claims](#claims). |
+
+Don't use `ClaimCredited` to detect a failed payout. It has no `messageId`, and each delivery also emits one for the executor's share of the fee. To see the recipient's claim, call `claim(recipient)`.
 
 ### Large Transfers
 
 If the amount is at or above `LARGE_TRANSFER_THRESHOLD()` (10 BNB on devnet), the destination holds it for `LARGE_TRANSFER_LOCK()` seconds (10 seconds on devnet) instead of paying it out right away. During the lock, governance can cancel a forged transfer before anyone is paid. Expect a much longer lock on public networks: the design requires at least 48 hours there.
 
-**Relayers don't release locked transfers.** After the lock ends, someone has to call `matureLockedCredit(messageId)` on the destination `TokenHub`. Anyone can call it, and the BNB always goes to the transfer's recipient, never to the caller.
+**Relayers don't release locked transfers.** After the lock ends, someone has to call `matureLockedCredit(messageId)` on the destination `TokenHub`. Anyone can call it, and the BNB always goes to the transfer's recipient, never to the caller. If sending to the recipient fails, the amount becomes a [claim](#claims) instead.
 
 ```sh
 # Seconds left on the lock; 0 means it can be released
@@ -170,9 +172,9 @@ The rate limit only delays transfers. A transfer that doesn't fit now is deliver
 - **Contracts must accept BNB.** A contract recipient needs a `receive` or payable fallback function. If receiving uses more than 10,000 gas, the BNB becomes a [claim](#claims). If the contract can't accept BNB at all, the funds can't be paid out. The same applies to a contract that calls `transferOut`: a refund goes back to it as the sender.
 - **Transfers can't be cancelled.** A locked transfer is either delivered or, through governance, refunded. Transfers don't expire.
 - **Pauses and freezes.** When a chain's bridge is paused, `transferOut` reverts on that chain and deliveries to that chain wait. Claims and expired large-transfer locks can still be withdrawn. A freeze, the emergency stop, also blocks withdrawals and large-transfer releases until it is cleared. In both cases, transfers that are already locked wait. They are never lost.
-- **Blacklists.** Each chain's bridge governance can blacklist addresses. A blacklisted sender or recipient can't use `transferOut`. A transfer whose sender or recipient is blacklisted after it was locked waits on the destination until the address is removed or governance refunds the transfer.
+- **Blacklists.** Each chain's bridge governance can blacklist addresses. A blacklisted sender or recipient can't use `transferOut`. If the sender or recipient is blacklisted after the transfer was locked, the destination skips the transfer and relayers may stop retrying it. Removing the address from the blacklist doesn't restart delivery: the transfer must be delivered again with `executeSingle` on the destination `CrossChainHub`. Otherwise governance can refund the transfer.
 - **Transfers are public.** The sender, recipient, and amount are visible on both chains. Bridging doesn't go through the [shielded pool](../core-concepts/privacy.md).
-- **BSC finality.** If BSC fast finality stalls, the bridge waits for BSC's slower natural finality instead, which adds about a minute and a half to transfers from BSC.
+- **BSC finality.** Transfers from BSC wait until BSC fast finality finalizes the source block. If fast finality stalls, they wait until it recovers, even while BSC keeps producing blocks.
 
 ## Failures and Refunds
 

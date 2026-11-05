@@ -7,7 +7,7 @@ title: Using Foundry - New L1
 Foundry (`forge`, `cast`, `anvil`) works against New L1's standard JSON-RPC. Reading state, fork tests, and `forge script` deployments behave as on other EVM chains. Foundry's local EVM doesn't model how New L1 executes and charges transactions, though, so a few things need configuring or behave differently. This page covers the Foundry-specific parts. For the general differences, see [Migrating from BSC](../get-started/migrate-from-bsc.md).
 
 !!! note "Devnet stage"
-    This page reflects the current devnet client and Foundry 1.8. Both may change.
+    This page reflects the current devnet client and Foundry 1.8 and 1.9. Both may change.
 
 ## Configuration
 
@@ -23,10 +23,14 @@ New L1 runs Prague rules. Recent Foundry versions compile and test for Osaka by 
 RPC=https://newl1-devnet-rpc.bnbchain.org/
 
 anvil --fork-url $RPC --hardfork prague
+# In another terminal, mine one block before using the fork
+cast rpc anvil_mine 0x1 --rpc-url http://127.0.0.1:8545
+
 forge script script/Deploy.s.sol --rpc-url $RPC --broadcast --gas-estimate-multiplier 110
 ```
 
-- `--hardfork prague` is required. Block headers don't include `excessBlobGas`, so without it every call on the fork fails with `Excess blob gas not set`. It also keeps the blocks anvil mines on top of the fork on the chain's rules. `forge test --fork-url` and `forge script` aren't affected.
+- `--hardfork prague` keeps the blocks anvil mines on top of the fork on the chain's rules.
+- Mine one block before using the fork. Block headers don't include `excessBlobGas`, so calls on a fresh fork can fail with `Excess blob gas not set` until anvil mines its own block. On Foundry 1.8 this happens even with `--hardfork prague`. `forge test --fork-url` and `forge script` aren't affected.
 - `--gas-estimate-multiplier 110` replaces Foundry's default of 130. See [Gas](#gas).
 - Sign with `--private-key`, `--account`, or a hardware wallet. The RPC manages no accounts (`eth_accounts` is empty and `eth_sendTransaction` isn't served), so `--unlocked` doesn't work.
 - Foundry doesn't know chain ID 1105 by name, so pass `--rpc-url` instead of a chain alias. Foundry also labels amounts as ETH. On New L1 they are BNB.
