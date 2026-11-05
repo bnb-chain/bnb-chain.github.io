@@ -4,6 +4,8 @@ title: FAQ - New L1
 
 # FAQ
 
+For partner onboarding, fees, reserved lanes, settlement, and planned MEV services, see the [Partner FAQ](./partner-faq.md).
+
 ### Is New L1 EVM-compatible?
 
 Yes, at the execution layer: revm semantics are a hard design invariant, so existing Solidity contracts and standard transaction flows work unmodified. 
