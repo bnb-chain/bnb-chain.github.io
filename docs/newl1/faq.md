@@ -40,3 +40,11 @@ Register your contract's address in the `LaneRegistry` system contract with a ba
 ### What asset is used for gas and staking?
 
 BNB, as native token, bridged in from BNB Smart Chain. It is the same gas asset as BSC and opBNB.
+
+### How do I move BNB between BSC and New L1?
+
+Call `transferOut` on the source chain's `TokenHub` with the recipient and a delivery fee, attaching the amount plus the fee as the transaction value. The BNB usually arrives in a few seconds as native BNB, with no wrapped token. On devnet the bridge connects to BSC Testnet, which is also how you get devnet BNB. See [Cross-Chain Bridge](./developers/cross-chain-bridge.md).
+
+### My bridged BNB hasn't arrived. What should I check?
+
+Check `terminalRecord(messageId)` on the destination `CrossChainHub`. If it shows a delivery but the balance didn't change, the transfer is either a large transfer that needs `matureLockedCredit` after its lock, or a claim that needs `withdraw`. If there is no record yet, the bridge may be paused, rate-limited, or waiting for source finality; the transfer is delivered once that clears. See [Track a Transfer](./developers/cross-chain-bridge.md#track-a-transfer).
