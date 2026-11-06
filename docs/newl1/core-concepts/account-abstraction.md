@@ -54,6 +54,45 @@ Chronological order is not a consensus field. A token-fee workflow may instead c
 
 Submit with the ordinary `eth_sendRawTransaction`. Read the outcome with `eth_getTransactionReceipt`: the receipt has type `0x76`, and its status distinguishes a successful batch from a reverted one. `eth_getTransactionCount` is unchanged: an AA account has one ordinary nonce.
 
+### Receipts and Logs
+
+Each AA transaction has one transaction hash and one receipt. Neither individual `calls[i]` nor the protocol's [token fee payment](#gas-token-fee) has a separate transaction hash or receipt. Query the outer AA hash returned by `eth_sendRawTransaction`:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "eth_getTransactionReceipt",
+  "params": ["0x<AA_TRANSACTION_HASH>"]
+}
+```
+
+Replace the placeholder with the transaction hash. The result is `null` until a receipt is available; inclusion alone does not mean execution has completed. Once available, the receipt has `type: "0x76"`, a transaction-level `status`, and a single `logs` array containing the events that survived execution.
+
+Decode events from `receipt.logs` using each emitting contract's ABI. ERC-20 transfers inside `calls` and the protocol's token fee transfer both appear here when the token emits `Transfer(address,address,uint256)`. For a standard ERC-20, match the expected fee payment using:
+
+- the emitting `log.address` equal to `token_fee.token`;
+- `topics[0]` equal to the `Transfer(address,address,uint256)` event signature hash;
+- decoded `from` equal to the AA account, `to` equal to `token_fee.recipient`, and `value` equal to `token_fee.amount`.
+
+Alternatively, query `eth_getLogs` by block range or block hash, token address, and event topics, then match the returned `transactionHash` to the outer AA hash.
+
+The receipt does not report a status, gas usage, return value, or failure reason for each call. Logs have no `callIndex` or payment-frame marker: one call can emit zero or many events, and identical transfers cannot be distinguished by their event fields alone. Do not associate `logs[i]` with `calls[i]`. Native AA transaction tracing is not currently supported, so `debug_traceTransaction` cannot supply these per-call results.
+
+#### Failed Transactions Can Retain Payment Logs
+
+The token fee payment has a separate rollback boundary from the user-call batch:
+
+| Execution outcome | Receipt `status` | Token fee payment and its logs | User-call effects and logs |
+|---|---|---|---|
+| Payment and all user calls succeed | `0x1` | Retained | Retained |
+| Payment succeeds; a user call reverts or halts | `0x0` | Retained | Entire batch rolled back |
+| Payment fails | `0x0` | Payment frame rolled back | User calls do not run |
+
+A `status: "0x0"` receipt can therefore contain a successful token fee transfer. Indexers must process its surviving logs rather than discard all logs from failed transactions.
+
+Transfer events are emitted by the token contract; the protocol does not synthesize a `Transfer` or `TokenFeePaid` event or expose a separate payment-status field. The event-matching rules above assume standard ERC-20 event behavior. For a nonstandard token, a missing `Transfer` event alone does not prove that payment failed.
+
 ## Signature Schemes
 
 | Scheme | Use | How the key is identified |
@@ -165,7 +204,7 @@ There are two terminal on-chain outcomes to plan for.
 ## For Contracts and Indexers Receiving AA Calls
 
 - **The account remains the execution identity.** `tx.origin` and each top-level user call's `msg.sender` are the account, not the delegated key or sponsor.
-- **Receipts, logs, and block headers retain their standard shapes.** Transaction entries are tagged with type `0x76`; an indexer that decodes transaction bodies must add the `0x76` schema and its batch of calls, while a receipt/log-only indexer needs no special AA path.
+- **Receipts, logs, and block headers retain their standard shapes.** Transaction entries are tagged with type `0x76`; an indexer that decodes transaction bodies must add the `0x76` schema and its batch of calls. Receipt/log indexers can reuse the standard formats, but must retain surviving token fee payment logs even when the receipt reports failure. See [Receipts and Logs](#receipts-and-logs).
 - **A contract can see which key is acting.** The keychain precompile reports the key identifier that signed the current AA, where zero means root, and the account it acts for. The `SignatureVerifier` precompile can also verify a P256/WebAuthn signature or a keychain-wrapped signature from an active key.
 
 ## Contract Creation
