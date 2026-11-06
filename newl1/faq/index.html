@@ -994,6 +994,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1059,6 +1063,34 @@
     
   
     Quick Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/foundry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Foundry
   
 
     
@@ -1162,6 +1194,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../developers/cross-chain-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Chain Bridge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1232,6 +1292,8 @@
   
     
     
+      
+        
       
         
       
@@ -1480,6 +1542,34 @@
     
   
     Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-concepts/cross-chain-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Chain Bridge
   
 
     
@@ -1787,6 +1877,28 @@
     <span class="md-ellipsis">
       
         What asset is used for gas and staking?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-move-bnb-between-bsc-and-new-l1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I move BNB between BSC and New L1?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-bridged-bnb-hasnt-arrived-what-should-i-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My bridged BNB hasn&rsquo;t arrived. What should I check?
       
     </span>
   </a>
@@ -2216,6 +2328,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-do-i-move-bnb-between-bsc-and-new-l1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I move BNB between BSC and New L1?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-bridged-bnb-hasnt-arrived-what-should-i-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My bridged BNB hasn&rsquo;t arrived. What should I check?
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2308,7 +2442,11 @@ The RPC surface above that has a few explicit differences (<em>no <code>eth_getP
 <h3 id="how-do-i-get-my-contract-reserved-capacity">How do I get my contract reserved capacity?<a class="headerlink" href="#how-do-i-get-my-contract-reserved-capacity" title="Link to this section">¶</a></h3>
 <p>Register your contract’s address in the <code>LaneRegistry</code> system contract with a basis-point gas reservation, via <a href="../governance/overview/">governance</a>. See <a href="../core-concepts/multi-lane/">Multi-Lane</a>.</p>
 <h3 id="what-asset-is-used-for-gas-and-staking">What asset is used for gas and staking?<a class="headerlink" href="#what-asset-is-used-for-gas-and-staking" title="Link to this section">¶</a></h3>
-<p>BNB, as native token, bridged in from BNB Smart Chain. It is the same gas asset as BSC and opBNB.</p></div>
+<p>BNB, as native token, bridged in from BNB Smart Chain. It is the same gas asset as BSC and opBNB.</p>
+<h3 id="how-do-i-move-bnb-between-bsc-and-new-l1">How do I move BNB between BSC and New L1?<a class="headerlink" href="#how-do-i-move-bnb-between-bsc-and-new-l1" title="Link to this section">¶</a></h3>
+<p>Call <code>transferOut</code> on the source chain’s <code>TokenHub</code> with the recipient and a delivery fee, attaching the amount plus the fee as the transaction value. The BNB usually arrives in a few seconds as native BNB, with no wrapped token. On devnet the bridge connects to BSC Testnet, which is also how you get devnet BNB. See <a href="../developers/cross-chain-bridge/">Cross-Chain Bridge</a>.</p>
+<h3 id="my-bridged-bnb-hasnt-arrived-what-should-i-check">My bridged BNB hasn’t arrived. What should I check?<a class="headerlink" href="#my-bridged-bnb-hasnt-arrived-what-should-i-check" title="Link to this section">¶</a></h3>
+<p>Check <code>terminalRecord(messageId)</code> on the destination <code>CrossChainHub</code>. If it shows a delivery but the balance didn’t change, the transfer is either a large transfer that needs <code>matureLockedCredit</code> after its lock, or a claim that needs <code>withdraw</code>. If there is no record yet, the bridge may be paused, rate-limited, or waiting for source finality; the transfer is delivered once that clears. See <a href="../developers/cross-chain-bridge/#track-a-transfer">Track a Transfer</a>.</p></div>
 
 
 
@@ -2329,7 +2467,7 @@ The RPC surface above that has a few explicit differences (<em>no <code>eth_getP
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 29, 2026 13:04:27 UTC">October 29, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 6, 2026 08:11:05 UTC">November 6, 2026</span>
   </span>
 
     
