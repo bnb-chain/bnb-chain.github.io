@@ -10,7 +10,7 @@ A proprietary automated market maker (PropAMM) is a market-maker-operated pool t
 ## How it works
 
 1. **Makers send quotes** to the Relayer. Quote updates stay off-chain until a taker transaction needs them.
-2. **Takers simulate and submit trades** through standard EVM JSON-RPC methods such as `eth_call` and `eth_sendRawTransaction`, using the Relayer endpoint.
+2. **Takers simulate and submit trades** through standard EVM JSON-RPC methods such as `eth_call` and `eth_sendRawTransaction`, using the Relayer endpoint. With an account console, taker methods — including the execution reads `eth_call`, `eth_estimateGas` and `eth_simulateV1` — require an approved taker's API key.
 3. **The Relayer builds atomic bundles** containing the required quote updates followed by the taker transaction, then sends them to connected builders for inclusion.
 
 This approach reduces the need to publish continuous quote updates on-chain and lets takers access PropAMM liquidity without constructing bundles themselves. Transactions that cannot be bundled fall back to the ordinary transaction pool.
