@@ -1623,6 +1623,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#receipts-and-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receipts and Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Receipts and Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed-transactions-can-retain-payment-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failed Transactions Can Retain Payment Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1708,6 +1736,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fee Sponsorship">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gas-token-fee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gas Token Fee
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2365,6 +2410,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#receipts-and-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receipts and Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Receipts and Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed-transactions-can-retain-payment-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failed Transactions Can Retain Payment Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2450,6 +2523,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fee Sponsorship">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gas-token-fee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gas Token Fee
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2682,6 +2772,58 @@
 <p>Chronological order is not a consensus field. A token-fee workflow may instead compute the account hash with the sponsored-presence placeholder, obtain the account signature, and let the sponsor simulate, quote, and sign last. Changing whether the fee payer is present after the account signs invalidates the account signature.</p>
 <h3 id="submitting-and-reading-the-result">Submitting and Reading the Result<a class="headerlink" href="#submitting-and-reading-the-result" title="Link to this section">¶</a></h3>
 <p>Submit with the ordinary <code>eth_sendRawTransaction</code>. Read the outcome with <code>eth_getTransactionReceipt</code>: the receipt has type <code>0x76</code>, and its status distinguishes a successful batch from a reverted one. <code>eth_getTransactionCount</code> is unchanged: an AA account has one ordinary nonce.</p>
+<h3 id="receipts-and-logs">Receipts and Logs<a class="headerlink" href="#receipts-and-logs" title="Link to this section">¶</a></h3>
+<p>Each AA transaction has one transaction hash and one receipt. Neither individual <code>calls[i]</code> nor the protocol’s <a href="#gas-token-fee">token fee payment</a> has a separate transaction hash or receipt. Query the outer AA hash returned by <code>eth_sendRawTransaction</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eth_getTransactionReceipt"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"0x&lt;AA_TRANSACTION_HASH&gt;"</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Replace the placeholder with the transaction hash. The result is <code>null</code> until a receipt is available; inclusion alone does not mean execution has completed. Once available, the receipt has <code>type: "0x76"</code>, a transaction-level <code>status</code>, and a single <code>logs</code> array containing the events that survived execution.</p>
+<p>Decode events from <code>receipt.logs</code> using each emitting contract’s ABI. ERC-20 transfers inside <code>calls</code> and the protocol’s token fee transfer both appear here when the token emits <code>Transfer(address,address,uint256)</code>. For a standard ERC-20, match the expected fee payment using:</p>
+<ul>
+<li>the emitting <code>log.address</code> equal to <code>token_fee.token</code>;</li>
+<li><code>topics[0]</code> equal to the <code>Transfer(address,address,uint256)</code> event signature hash;</li>
+<li>decoded <code>from</code> equal to the AA account, <code>to</code> equal to <code>token_fee.recipient</code>, and <code>value</code> equal to <code>token_fee.amount</code>.</li>
+</ul>
+<p>Alternatively, query <code>eth_getLogs</code> by block range or block hash, token address, and event topics, then match the returned <code>transactionHash</code> to the outer AA hash.</p>
+<p>The receipt does not report a status, gas usage, return value, or failure reason for each call. Logs have no <code>callIndex</code> or payment-frame marker: one call can emit zero or many events, and identical transfers cannot be distinguished by their event fields alone. Do not associate <code>logs[i]</code> with <code>calls[i]</code>. Native AA transaction tracing is not currently supported, so <code>debug_traceTransaction</code> cannot supply these per-call results.</p>
+<h4 id="failed-transactions-can-retain-payment-logs">Failed Transactions Can Retain Payment Logs<a class="headerlink" href="#failed-transactions-can-retain-payment-logs" title="Link to this section">¶</a></h4>
+<p>The token fee payment has a separate rollback boundary from the user-call batch:</p>
+<table>
+<thead>
+<tr>
+<th>Execution outcome</th>
+<th>Receipt <code>status</code></th>
+<th>Token fee payment and its logs</th>
+<th>User-call effects and logs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Payment and all user calls succeed</td>
+<td><code>0x1</code></td>
+<td>Retained</td>
+<td>Retained</td>
+</tr>
+<tr>
+<td>Payment succeeds; a user call reverts or halts</td>
+<td><code>0x0</code></td>
+<td>Retained</td>
+<td>Entire batch rolled back</td>
+</tr>
+<tr>
+<td>Payment fails</td>
+<td><code>0x0</code></td>
+<td>Payment frame rolled back</td>
+<td>User calls do not run</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>status: "0x0"</code> receipt can therefore contain a successful token fee transfer. Indexers must process its surviving logs rather than discard all logs from failed transactions.</p>
+<p>Transfer events are emitted by the token contract; the protocol does not synthesize a <code>Transfer</code> or <code>TokenFeePaid</code> event or expose a separate payment-status field. The event-matching rules above assume standard ERC-20 event behavior. For a nonstandard token, a missing <code>Transfer</code> event alone does not prove that payment failed.</p>
 <h2 id="signature-schemes">Signature Schemes<a class="headerlink" href="#signature-schemes" title="Link to this section">¶</a></h2>
 <table>
 <thead>
@@ -2793,8 +2935,13 @@
 <li>Admission requires the sponsor to cover the gas reservation and the account to cover the calls’ total native value.</li>
 <li>Both signing hashes bind the sponsorship to the account and transaction body. See <a href="#signing">Signing</a>.</li>
 </ul>
+<h3 id="gas-token-fee">Gas Token Fee<a class="headerlink" href="#gas-token-fee" title="Link to this section">¶</a></h3>
 <p>An optional <code>token_fee = {token, recipient, amount}</code> repays the sponsor on-chain. It is supported only on a root-signed, sponsored AA; <code>recipient</code> must be the recovered fee payer, <code>token</code> must be a contract, and <code>amount</code> must be non-zero. Both signatures commit to the payment, so no allowance or permit is required.</p>
 <p>The token payment runs before the user calls and outside their atomic checkpoint. It therefore remains paid if a later user call reverts. If the token payment itself cannot complete, the user calls do not run; the transaction lands failed and the sponsor is still charged the declared gas limit. Sponsors should simulate before signing because admission does not project arbitrary ERC-20 balances.</p>
+<p>The following example uses a Paymaster service to quote an accepted Gas Token, review the account-signed transaction, and sign and broadcast it. <code>GET /get_price</code> and <code>POST /sponsor</code> are illustrative service APIs, not New L1 JSON-RPC methods. The Paymaster chooses which tokens to accept; the protocol does not maintain a Gas Token whitelist.</p>
+<p><a href="../../../assets/newl1-aa-gas-token-fee.svg"><img alt="Gas Token fee interaction: the wallet gets a quote and signs first; the Paymaster verifies, simulates, signs, and broadcasts; the node transfers tokens before the atomic user calls. Payment failure skips the calls but still charges gas; user-call failure preserves the token payment." src="../../../assets/newl1-aa-gas-token-fee.svg"></a></p>
+<p>In this example, <code>token_fee.amount = gas_limit × quoted token price per gas</code>, with the quote expressed in the token’s smallest units. This is the Paymaster’s pricing policy, not a protocol conversion rate. The token fee is a fixed payment with no unused-gas refund; the sponsor separately pays native BNB for the declared <code>gas_limit</code>.</p>
+<p>The wallet signs with its root key using the sponsored-presence digest before the real <code>fee_payer_signature</code> exists. Both digests cover the same <code>token_fee</code>, and the Paymaster must verify the quote, recipient, amount, validity window, and account signature before adding its signature. It cannot alter the signed body. A placeholder signature is only for local digest construction; only the completed transaction is broadcast.</p>
 <h2 id="validity-windows">Validity Windows<a class="headerlink" href="#validity-windows" title="Link to this section">¶</a></h2>
 <p>The two optional bounds gate inclusion by block timestamp: <code>valid_after</code> is inclusive, <code>valid_before</code> is exclusive. A not-yet-valid transaction is held and promoted automatically when its window opens; an expired one is dropped.</p>
 <p>Nodes also apply a local acceptance policy: <code>valid_after</code> may be at most 120 seconds in the future, and <code>valid_before</code> must be more than 3 seconds away, or the transaction is refused at submission.</p>
@@ -2809,7 +2956,7 @@
 <h2 id="for-contracts-and-indexers-receiving-aa-calls">For Contracts and Indexers Receiving AA Calls<a class="headerlink" href="#for-contracts-and-indexers-receiving-aa-calls" title="Link to this section">¶</a></h2>
 <ul>
 <li><strong>The account remains the execution identity.</strong> <code>tx.origin</code> and each top-level user call’s <code>msg.sender</code> are the account, not the delegated key or sponsor.</li>
-<li><strong>Receipts, logs, and block headers retain their standard shapes.</strong> Transaction entries are tagged with type <code>0x76</code>; an indexer that decodes transaction bodies must add the <code>0x76</code> schema and its batch of calls, while a receipt/log-only indexer needs no special AA path.</li>
+<li><strong>Receipts, logs, and block headers retain their standard shapes.</strong> Transaction entries are tagged with type <code>0x76</code>; an indexer that decodes transaction bodies must add the <code>0x76</code> schema and its batch of calls. Receipt/log indexers can reuse the standard formats, but must retain surviving token fee payment logs even when the receipt reports failure. See <a href="#receipts-and-logs">Receipts and Logs</a>.</li>
 <li><strong>A contract can see which key is acting.</strong> The keychain precompile reports the key identifier that signed the current AA, where zero means root, and the account it acts for. The <code>SignatureVerifier</code> precompile can also verify a P256/WebAuthn signature or a keychain-wrapped signature from an active key.</li>
 </ul>
 <h2 id="contract-creation">Contract Creation<a class="headerlink" href="#contract-creation" title="Link to this section">¶</a></h2>
@@ -2885,7 +3032,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 03:32:36 UTC">October 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 6, 2026 10:26:18 UTC">November 6, 2026</span>
   </span>
 
     
