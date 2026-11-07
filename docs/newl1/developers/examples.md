@@ -1,7 +1,3 @@
----
-title: Examples - New L1
----
-
 # Examples
 
 The examples illustrate the proposed New L1 RPC workflow. To run them, use the matching client release and devnet configuration supplied by the protocol team. Set the required endpoint variables and test with a development account before using a funded account:

@@ -1,7 +1,3 @@
----
-title: Network Information - New L1
----
-
 # Network Information
 
 | Name | Value |

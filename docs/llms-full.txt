@@ -1650,3 +1650,310 @@ To update your validator's profile information, you must submit a Pull Request (
 2. Follow the repository's contribution guidelines to update your validator's metadata (e.g., modifying the JSON information or uploading a new logo file).
 3. Submit a Pull Request with your proposed changes.
 4. Once the PR is reviewed and merged by the BNB Chain team, the updated information will be reflected on the staking webpage.
+
+## Examples
+> Source: https://docs.bnbchain.org/newl1/developers/examples/
+
+# Examples
+
+The examples illustrate the proposed New L1 RPC workflow. To run them, use the matching client release and devnet configuration supplied by the protocol team. Set the required endpoint variables and test with a development account before using a funded account:
+
+```bash
+RPC=https://newl1-devnet-rpc.bnbchain.org/
+WS=wss://newl1-devnet-rpc.bnbchain.org/ws
+SK=       # funded private key
+FROM=     # its address
+TO=       # any recipient
+
+rpc() { curl -s $RPC -H 'content-type: application/json' \
+  -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"$1\",\"params\":${2:-[]}}" \
+  | jq -c '.result // .error'; }
+```
+
+Needs `curl` and `jq`. Sending transactions uses Foundry's `cast`; the subscription uses any WebSocket client.
+
+!!! note "Devnet stage"
+    The endpoints above connect to the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched. See [Network Information](../get-started/network-info.md) for network parameters and the newL1Trace explorer. These are protocol demonstrations, not an ecosystem showcase.
+
+## Ordering, Execution, and Finality Move Separately
+
+```bash
+rpc eth_blockNumber                      # executed tip (no params = "latest")
+rpc eth_blockNumber '["finalized"]'      # newest commitment under the finalized block
+rpc eth_blockNumber '["safe"]'           # same, under the justified block
+```
+
+Poll them in a loop and they advance independently. For the ordered tip plus both consensus pointers in one frame, subscribe to `newl1_subscribeNewHeads` (below).
+
+## Watch Pre-confirmations Live
+
+Any WebSocket client works; `websocat` here:
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"newl1_subscribePreconfirmations","params":[]}' \
+  | websocat -n $WS
+```
+
+Each notification is a `newl1_preconfirmation` frame: `{txHash, blockNumber, parentHash, subBlockIndex, subBlockHash, position, leader, timestampMs, status}`. Send transactions in another terminal and they appear ~20 ms after submission, well before their block seals. `status` transitions to `aborted` / `superseded` if the promise is withdrawn.
+
+Filter to a single transaction with `"params":[{"txHash":"0x…"}]`. Chain tips instead: `newl1_subscribeNewHeads`, or standard `eth_subscribe` with `["newHeads"]`.
+
+The producer feeds its own published slices to local subscribers as well as gossiping them to peers, so `WS` may point at either a producing or non-producing node.
+
+## Follow One Transaction Through Every Stage
+
+```bash
+TX=$(cast send --private-key $SK --legacy --gas-price 1000000000 --gas-limit 21000 \
+  --rpc-url $RPC $TO --value 1 --async)
+
+rpc newl1_getTransactionPreconfirmation "[\"$TX\"]"   # leader committed to including it
+rpc newl1_getTransactionStatus          "[\"$TX\"]"   # pool-plane state: ready/parked/ordered/…
+rpc eth_getTransactionByHash            "[\"$TX\"]"   # in an ordered block (not execution-gated)
+rpc eth_getTransactionReceipt           "[\"$TX\"]"   # executed - errors -38004 until then
+```
+
+The ladder runs pre-confirmed → ordered → executed → finalized, each stage observable on its own. A `-38004` from the receipt call means "not executed yet, retry", distinct from `null`, which means the transaction is unknown.
+
+## Prove You're Charged for the Gas Limit, Not Gas Used
+
+Send a plain transfer with a deliberately padded limit:
+
+```bash
+TX=$(cast send --private-key $SK --legacy --gas-price 1000000000 --gas-limit 100000 \
+  --rpc-url $RPC $TO --value 1 --async)
+rpc eth_getTransactionReceipt "[\"$TX\"]" | jq '{gasUsed, effectiveGasPrice}'
+```
+
+`gasUsed` comes back as `0x186a0` (100,000), the declared limit, not the 21,000 a transfer actually burns. You paid `effectiveGasPrice × 100000`. Compare against what the work really costs:
+
+```bash
+rpc eth_estimateGas "[{\"from\":\"$FROM\",\"to\":\"$TO\",\"value\":\"0x1\"}]"   # 0x5208 = 21000
+```
+
+Estimation runs with charge-by-limit disabled, so it measures real usage. [Details](../get-started/migrate-from-bsc.md#you-pay-for-your-declared-gas-limit).
+
+## Read the Chain's Own Features
+
+```bash
+rpc newl1_laneConfig                                    # live Multi-Lane quota + routes
+rpc newl1_getKey "[\"$ACCOUNT\",\"$KEY_ID\"]"           # AA delegated-key state
+rpc newl1_getSystemReceiptsByBlock '["latest"]'         # slashing/reward/validator-set txs
+rpc eth_getProof '[]'                                   # -32004: LtHash, not an MPT
+```
+
+`newl1_getSystemReceiptsByBlock` is the only way to see system transactions; they never appear in `eth_getBlockReceipts` or the block's transaction list.
+
+Full method list, parameters, and response shapes: [New L1 API List](./json_rpc/newl1-api-list.md).
+## JSON-RPC Endpoint
+> Source: https://docs.bnbchain.org/newl1/developers/json_rpc/json-rpc-endpoint/
+
+# JSON-RPC Endpoint
+
+JSON-RPC endpoints refer to the network location where a program sends its RPC requests to access node data. Once you connect an application to an RPC endpoint, you can read chain state, submit transactions, and subscribe to live events. This section lists the endpoints for connecting to New L1 and explains how its API surface differs from a standard Ethereum client.
+
+## RPC Endpoints for New L1
+
+| Transport | Devnet endpoint |
+|---|---|
+| HTTP (gateway / RPC) | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
+| WebSocket | `wss://newl1-devnet-rpc.bnbchain.org/ws` |
+
+!!! note "Devnet stage"
+    These endpoints serve the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched. See [Network Information](../../get-started/network-info.md) for network parameters and the newL1Trace explorer.
+
+## Transports
+
+HTTP and WebSocket serve the same method set, with one exception: subscriptions are WebSocket-only. A node operator enables or disables each transport with `--http.addr` / `--ws.addr` (passing `none` disables it).
+
+```bash
+# HTTP
+RPC=https://newl1-devnet-rpc.bnbchain.org/
+curl -X POST "$RPC" -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+```
+
+## JSON-RPC API List
+
+New L1 is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. It also has features of its own (decoupled ordering and execution, transaction pre-confirmation, native account abstraction, Multi-Lane reserved capacity, and a shielded pool) that need their own APIs under a `newl1_*` namespace.
+
+### Geth (Go-Ethereum) API
+
+The standard `eth_*`, `net_*`, and `web3_*` methods behave as in Geth, so existing tooling (ethers.js, viem, web3.py, wallets, explorers) connects without modification. If you're looking for detailed usage of a standard method, you'll most likely find the answer here:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc)
+
+Exceptions and incompatibilities are listed in [Divergences from Geth](newl1-api-list.md#divergences-from-geth). The short version: no `eth_getProof`, no public mempool introspection, no EIP-4844/EIP-7702 transactions, and receipts that report the declared gas limit rather than gas consumed.
+
+### Block Tags
+
+Because ordering and execution are decoupled, the node tracks two heights and `latest` resolves to the executed one. There are no custom tag strings on the wire, but the standard tags do not mean quite what they mean on a synchronous chain, and two extra error codes distinguish "not executed yet" from "no such block". See [Block Tags and the Two Tips](newl1-api-list.md#block-tags-and-the-two-tips).
+
+### Pre-confirmation
+
+A validator-signed, sub-block-level signal that the current block producer has committed to including a transaction, available roughly 20 ms after submission, well before the block itself. It is advisory and revocable; see [Pre-confirmation API](newl1-api-list.md#pre-confirmation-api).
+
+### Account Abstraction
+
+Delegated-key state for the native `0x76` transaction type (session keys, admin keys, passkey signers, spend limits) is readable on chain. See [Account Abstraction API](newl1-api-list.md#account-abstraction-api).
+
+### Multi-Lane
+
+The live, governance-resolved reserved-capacity configuration: [Multi-Lane API](newl1-api-list.md#multi-lane-api).
+
+### Transaction Pool and System Transactions
+
+Pool-plane transaction status, a per-sender debug snapshot, and the receipts for system transactions that never appear in a block's transaction list: [Transaction Pool API](newl1-api-list.md#transaction-pool-api) and [System Transaction API](newl1-api-list.md#system-transaction-api).
+
+### Finality and Other BSC-Compatible APIs
+
+New L1 keeps Parlia's BLS fast finality, and serves the `parlia_*` snapshot methods plus the explicit-finality and batch-receipt methods BSC tooling expects: [Finality API](newl1-api-list.md#finality-api) and [Others](newl1-api-list.md#others).
+## FAQ
+> Source: https://docs.bnbchain.org/newl1/faq/
+
+# FAQ
+
+### Is New L1 EVM-compatible?
+
+Yes, at the execution layer: revm semantics are a hard design invariant, so existing Solidity contracts and standard transaction flows work unmodified. 
+The RPC surface above that has a few explicit differences (*no `eth_getProof`, no global mempool, no EIP-4844/EIP-7702 transactions*) that some wallets or infra tooling may need to account for. See [Overview](./overview.md) and [JSON-RPC Endpoint](./developers/json_rpc/json-rpc-endpoint.md).
+
+### How is it different from BNB Smart Chain?
+
+Same Parlia PoSA + BLS fast-finality consensus family, but with a faster block interval, decoupled ordering/execution, and several new protocol features not present on BSC: [native account abstraction](./core-concepts/account-abstraction.md), [transaction pre-confirmation](./core-concepts/tx-preconfirmation.md), [Multi-Lane](./core-concepts/multi-lane.md), and a native [shielded pool](./core-concepts/privacy.md). See [Overview](./overview.md) for the full comparison.
+
+### Is New L1 live on mainnet?
+
+Not yet. It is still under active development and currently runs as a multi-validator devnet. Hosted HTTP and WebSocket endpoints and the newL1Trace explorer are listed on [Network Information](./get-started/network-info.md). The devnet is highly unstable and subject to breaking changes; public testnet and mainnet have not launched.
+
+### Do I need to use ERC-4337 tooling (bundlers, paymasters) for account abstraction?
+
+No. New L1's account abstraction is native, enforced by consensus rather than by a deployed EntryPoint contract, so no bundler or paymaster contract is involved. See [Account Abstraction](./core-concepts/account-abstraction.md).
+
+### Can I treat a pre-confirmed transaction as final?
+
+No. Pre-confirmation is a fast (~20ms), best-effort signal that can still be revoked before the block finalizes. For anything irreversible, wait for `execution-finalized`. See [Transaction Pre-confirmation](./core-concepts/tx-preconfirmation.md).
+
+### Is the shielded pool safe to use with real funds today?
+
+Not yet. The circuits are unaudited, and the deployment runs on an imported trusted setup rather than a New L1 ceremony. Both are open items before mainnet. See the warning in [Privacy](./core-concepts/privacy.md).
+
+### Why doesn't `eth_getProof` work?
+
+New L1 commits state with a cumulative hash accumulator instead of a Merkle-Patricia trie, so there's no trie-based proof to serve. See [State DB](./core-concepts/state-db.md).
+
+### How do I get my contract reserved capacity?
+
+Register your contract's address in the `LaneRegistry` system contract with a basis-point gas reservation, via [governance](./governance/overview.md). See [Multi-Lane](./core-concepts/multi-lane.md).
+
+### What asset is used for gas and staking?
+
+BNB, as native token, bridged in from BNB Smart Chain. It is the same gas asset as BSC and opBNB.
+## Migrating from BNB Smart Chain
+> Source: https://docs.bnbchain.org/newl1/get-started/migrate-from-bsc/
+
+# Migrating from BNB Smart Chain
+
+Same gas asset, same Parlia consensus family, same staking and governance contracts at the same addresses, unmodified EVM. Contracts deploy unchanged and standard tooling connects unchanged. The differences are almost all above the EVM: fees, mempool, block cadence, and how state is committed.
+
+!!! note "Devnet stage"
+    Use the hosted devnet endpoints in [Network Information](./network-info.md) to work through this porting checklist. The devnet is highly unstable and subject to breaking changes; public testnet and mainnet have not launched. A native New L1 ↔ BSC bridge is designed and under development but not live; the `CrossChain` address currently holds a placeholder (see [System Contracts](../governance/system-contracts.md)).
+
+## You Pay for Your Declared Gas Limit
+
+**New L1 charges the `gas_limit` you declare, not the gas the EVM actually spends.** If a call needs 70,000 gas and you submit `gas_limit = 500,000`, you pay for 500,000.
+
+New L1 orders blocks before execution, so declared gas is the block space reserved at ordering time. The node tracks each account's in-flight fee/value exposure and caps cumulative declared gas and calldata. There is no fixed user reserve floor.
+
+- Do not pad blindly. `estimate * 1.5`, ethers' default padding, and hardcoded `500000` waste money.
+- `eth_estimateGas` still returns simulated EVM usage. Add only the margin your call path needs.
+- Receipts report charged gas: user-transaction `gasUsed` normally equals the declared limit. Use traces for actual EVM consumption.
+- Max per transaction: 16,777,216 gas (2²⁴, BEP-652).
+- The same rule applies to [`0x76` AA transactions](../developers/transaction-types.md), including sponsors and session-key spend limits.
+
+```ts
+const estimated = await provider.estimateGas(tx);
+tx.gasLimit = estimated + estimated / 10n; // example: 10% headroom
+```
+
+For one transaction, `gasUsed` should not exceed its declared limit. If it looks larger, you are probably reading `header.gasUsed`, `cumulativeGasUsed`, or an inner `0x76` call instead of the outer transaction. If execution needs more than the limit, it runs out of gas and fails.
+
+## Carries Over Unchanged
+
+| Area | Notes |
+|---|---|
+| EVM semantics | Full Prague from genesis, no fork ramp. |
+| Gas asset | BNB. |
+| Staking & governance contracts | `ValidatorSet`, `SlashIndicator`, `SystemReward`, `StakeHub`, `StakeCredit`, `Governor`, `GovToken`, `Timelock` at their BSC addresses ([details](../governance/system-contracts.md)). |
+| Consensus | Parlia + BLS fast finality, with `parlia_getSnapshot` / `parlia_getValidators` / `parlia_getJustifiedNumber`. |
+| BSC-flavored RPC | `eth_getFinalizedHeader`, `eth_getFinalizedBlock`, `eth_getTransactionReceiptsByBlockNumber`, `eth_getTransactionsByBlockNumber`. |
+| Millisecond timestamps | As on BSC: seconds in `header.timestamp`, milliseconds in the low 8 bytes of `mixHash`. |
+
+## Contracts
+
+Bytecode runs as-is. What changes meaning is anything that reasons about time or block cadence.
+
+- **`block.number` advances ~5×/second.** Every block-count constant (vesting, `blocksPerDay`, TWAP windows, auction durations) is off by ~3.75× versus BSC. Recompute them, or switch to timestamp math.
+- **`block.timestamp` repeats across roughly five consecutive blocks.** `require(block.timestamp > lastUpdate)`, per-block rate limiting, and timestamp-as-unique-key all break.
+- **`block.prevrandao` is not randomness.** It is the millisecond part of the timestamp, `0–999`. `block.difficulty` is Parlia's `2`/`1`.
+- **The fee payer may not be the sender.** One transaction can also carry up to 64 atomic calls (`0x76`).
+- **EIP-7702 and EIP-4844 transactions are rejected.** For smart accounts, use the native [`0x76` envelope](../developers/transaction-types.md) and the `AccountKeychain` precompile instead.
+
+## Submitting Transactions
+
+- **The base fee is pinned to zero (BEP-222), so the tip is the price:** `min(maxFeePerGas, maxPriorityFeePerGas)`. Tipping `0` pays nothing and is rejected. Fees route through the system address to `ValidatorSet`, with BEP-95 burning its share.
+- **No global mempool.** Transactions go straight to the current and next producer. No `txpool_*`, and `eth_subscribe("newPendingTransactions")` shows only this node's admissions.
+- **Replace-by-fee needs a 10% bump and is local only.** It displaces the incumbent just in the pools holding it.
+- **Pooled transactions expire after 3 hours by default**, and that timeout is operator-configurable. A nonce more than 256 ahead is rejected at submission.
+- **`eth_getTransactionCount(addr, "latest")` returns the ordered-tip nonce and does not look ahead.** Track nonces client-side when pipelining.
+
+## Reading State and Receipts
+
+This is where [async execution](../core-concepts/async-execution.md) shows up, and it is the biggest behavioral gap versus BSC.
+
+- **`latest` means executed, not ordered.** State reads trail the head you see on a `newHeads` subscription. Expected, not a lagging node.
+- **`-38004` is retryable, `-38001` is not.** Ordered-but-unexecuted versus no-such-block. `eth_getTransactionReceipt` uses `-38004` for "block not executed yet" and `null` for "unknown transaction", so keep polling on the former.
+- **`eth_getProof` rejects with `-32004`.** State is committed with an LtHash accumulator, not an MPT ([State DB](../core-concepts/state-db.md)). Light clients, proof-based bridges, and similar need a different design; an accumulator-native proof scheme is planned.
+- **`eth_syncing` is always `false`.** Use `eth_health` plus block-number progress. Snap sync doesn't exist.
+
+## Indexers and Explorers
+
+- **System transactions are invisible in the block body.** Slashing, deposits, finality rewards, validator-set updates, and shielded drains are not in the transaction list and not counted in `header.gasUsed`. Read them via [`newl1_getSystemReceiptsByBlock`](../developers/json_rpc/newl1-api-list.md#newl1_getsystemreceiptsbyblock); they never appear in `eth_getBlockReceipts`.
+- **Blocks carry `systemTransactionsRoot` and `commitments`.** `stateRoot`, `receiptsRoot`, `logsBloom`, and `gasUsed` are `null` while a block is ordered but unexecuted, and strict deserializers fail at the tip.
+- **`newl1_subscribeNewHeads`** delivers head, justified, and finalized numbers and hashes in one frame per canonical advance.
+
+Once you're ported, the [Quick Guide](../developers/quick-guide.md) covers what New L1 adds on top: pre-confirmation, Multi-Lane, native account abstraction, and the shielded pool.
+## Network Information
+> Source: https://docs.bnbchain.org/newl1/get-started/network-info/
+
+# Network Information
+
+| Name | Value |
+|---|---|
+| Network Name | &lt;TBD&gt; |
+| Description | High-performance EVM Layer 1 in the BNB Chain ecosystem. |
+| Gateway / RPC Endpoint | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
+| WebSocket Endpoint | `wss://newl1-devnet-rpc.bnbchain.org/ws` |
+| Chain ID | 1105 (devnet) |
+| Currency Symbol | BNB |
+| Block Explorer | [newL1Trace](https://3c88a668d99f13eb2b89.com/) |
+| Bridge | New L1 ↔ BSC bridge in development |
+
+!!! note "Devnet stage"
+    These endpoints and newL1Trace connect to the devnet, which is highly unstable and subject to breaking changes. Public testnet and mainnet have not launched, and no faucet is available yet. The values below reflect the current devnet client and may change.
+
+## Protocol Parameters
+
+| Parameter | Value |
+|---|---|
+| Consensus | enhanced Parlia (turn rotation + BLS fast finality) |
+| Block interval | 200 ms |
+| Turn length (blocks per validator, per rotation) | 16 |
+| EVM | Full Prague from genesis, no fork ramp |
+| Base fee | Pinned to `0` (BEP-222), so the priority fee is the entire price |
+| Fee model | Charged on the declared gas limit, not gas used ([details](./migrate-from-bsc.md#you-pay-for-your-declared-gas-limit)) |
+| Per-transaction gas cap | 16,777,216 (BEP-652 / EIP-7825) |
+| Block gas limit | 600,000,000 (devnet genesis) |
+
+## Endpoints
+
+Use the gateway / RPC endpoint above for HTTP JSON-RPC requests and the WebSocket endpoint for subscriptions. Use [newL1Trace](https://3c88a668d99f13eb2b89.com/) to inspect devnet blocks and transactions. For transports and the method set a node serves, see the [JSON-RPC Endpoint](../developers/json_rpc/json-rpc-endpoint.md).

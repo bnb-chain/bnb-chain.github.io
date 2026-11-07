@@ -1,7 +1,3 @@
----
-title: FAQ - New L1
----
-
 # FAQ
 
 ### Is New L1 EVM-compatible?
