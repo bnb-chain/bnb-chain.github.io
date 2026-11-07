@@ -61,6 +61,7 @@ nav:
   - Home: index.md
   - Announcements:
     - Announcements: ./announce/index.md
+    - Roadmap: ./announce/roadmap.md
     - Upcoming:
       - Jenner Hardfork(BSC): ./announce/jenner-bsc.md
       - Token Recovery Tool Sunset — Phase 3 (Self-Service): ./announce/token-recovery-sunset-phase3.md
