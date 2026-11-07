@@ -87,7 +87,7 @@ You will be prompted to sign and confirm the transaction, which will be sent to 
 After the transaction is sent, the token recovery dApp will populate a window to indicate that
 the token recovery request is sent successfully.
 
-Finally, you need to wait for 7 days for the BEP2/BEP8 assets to be recovered on BSC and received in your wallet.
+Finally, for recovery requests created after 1 May 2026, the automatic withdrawal service applies an **on-chain 7-day lock** plus an **additional 23-day processing delay** (**approximately 30 days in total**). Completion of the 7-day lock does not mean immediate arrival — the withdrawal bot will automatically release the BEP2/BEP8 assets to your BSC wallet after the ~30-day period. You do not need to submit another recovery request.
 
 !!! info "Having Trouble with Token Recovery?"
     If you encounter any issues during the recovery process, please first double-check that you have followed all the steps correctly. If the problem persists, you can submit a support ticket through our official channels:

@@ -149,7 +149,7 @@ To submit:
 4. Set the gas limit to at least **1,000,000**.
 5. Confirm the transaction in your wallet.
 
-Once the transaction is confirmed on-chain, your tokens will appear in your BSC wallet.
+Once the transaction is confirmed on-chain, your request enters an **on-chain 7-day lock** followed by an **additional 23-day processing delay** (**approximately 30 days in total**). The withdrawal bot will automatically release the tokens to your BSC wallet after that time. Completion of the 7-day lock does **not** mean immediate arrival — you do not need to submit another recovery request.
 
 Both the owner signature and the approval signature must start with `0x`. If either is missing the prefix, add it before submitting.
 
@@ -215,7 +215,7 @@ Some wallet implementations omit the `0x` prefix. Prepend `0x` to the signature 
 3. Select token, enter amount and BSC destination address → sign message with Beacon Chain wallet
 4. Submit signed data → receive Merkle proof and approval signature from server
 5. Build payload → call the `recover` function on the BSC contract with your BSC wallet
-6. Confirm transaction on-chain → tokens arrive in your BSC wallet
+6. Confirm transaction on-chain → tokens are automatically withdrawn to your BSC wallet after ~30 days (7-day on-chain lock + 23-day processing delay)
 
 For the latest updates and known issues, refer to the [GitHub repository](https://github.com/bnb-chain/token-recover-self-service-tools).
 
