@@ -868,7 +868,7 @@ Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#other
 
 ---
 
-## Bsc Api list
+## Bsc API List
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/
 
 ## Finality API
@@ -1074,7 +1074,6 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 ---
 
 ---
-
 ## Faucet
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/
 
