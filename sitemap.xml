@@ -950,7 +950,7 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/faq/</loc>
-         <lastmod>2026-10-28</lastmod>
+         <lastmod>2026-11-09</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/faq/bep-675-mev-bundle-transaction-delay-concern/</loc>
@@ -969,16 +969,28 @@
          <lastmod>2026-10-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/faq/propamm-contract-interface-mismatch-compared-to-ethereum/</loc>
+         <lastmod>2026-11-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/faq/refreshing-token-metadata-on-bscscan-after-proxy-upgrade/</loc>
          <lastmod>2026-10-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/faq/reth-node-crash-with-enospc-datablobstore-reached-ext4-directory-index-limit/</loc>
+         <lastmod>2026-11-09</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/</loc>
          <lastmod>2026-10-27</lastmod>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/faq/when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade/</loc>
+         <lastmod>2026-11-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/faq/bsc/</loc>
-         <lastmod>2026-10-28</lastmod>
+         <lastmod>2026-11-09</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/join-ecosystem/</loc>

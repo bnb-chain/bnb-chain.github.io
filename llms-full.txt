@@ -1601,6 +1601,9 @@ Combined with these features and a sponsor (paymaster), users can send transacti
 - [BEP-675 MEV bundle transaction delay concern](../bep-675-mev-bundle-transaction-delay-concern.md)
 - [v1.8.1 Release Mainnet Compatibility Query](../v181-release-mainnet-compatibility-query.md)
 - [How do I update my validator node's profile name, logo, and contact information?](../how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information.md)
+- [PropAMM Contract Interface Mismatch Compared to Ethereum](../propamm-contract-interface-mismatch-compared-to-ethereum.md)
+- [Reth node crash with ENOSPC: /data/blobstore reached ext4 directory-index limit](../reth-node-crash-with-enospc-datablobstore-reached-ext4-directory-index-limit.md)
+- [When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade?](../when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade.md)
 ## Frequently Asked Questions
 > Source: https://docs.bnbchain.org/faq/
 
@@ -1614,6 +1617,9 @@ Combined with these features and a sponsor (paymaster), users can send transacti
 - [BEP-675 MEV bundle transaction delay concern](./bep-675-mev-bundle-transaction-delay-concern.md)
 - [v1.8.1 Release Mainnet Compatibility Query](./v181-release-mainnet-compatibility-query.md)
 - [How do I update my validator node's profile name, logo, and contact information?](./how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information.md)
+- [PropAMM Contract Interface Mismatch Compared to Ethereum](./propamm-contract-interface-mismatch-compared-to-ethereum.md)
+- [Reth node crash with ENOSPC: /data/blobstore reached ext4 directory-index limit](./reth-node-crash-with-enospc-datablobstore-reached-ext4-directory-index-limit.md)
+- [When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade?](./when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade.md)
 ## v1.8.1 Release Mainnet Compatibility Query - BSC FAQs
 > Source: https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/
 
@@ -1650,3 +1656,62 @@ To update your validator's profile information, you must submit a Pull Request (
 2. Follow the repository's contribution guidelines to update your validator's metadata (e.g., modifying the JSON information or uploading a new logo file).
 3. Submit a Pull Request with your proposed changes.
 4. Once the PR is reviewed and merged by the BNB Chain team, the updated information will be reflected on the staking webpage.
+
+## PropAMM Contract Interface Mismatch Compared to Ethereum - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/propamm-contract-interface-mismatch-compared-to-ethereum/
+
+### PropAMM Contract Interface Mismatch Compared to Ethereum
+
+### Question
+Are the Priority Update Registry and Swap contract interfaces for PropAMM on BSC compatible with the Ethereum interfaces?
+
+### Answer
+No, the Priority Update Registry and Swap contract interfaces on BNB Smart Chain (BSC) do not match the interfaces used on Ethereum. 
+
+BSC does not support the Ethereum-native interfaces for PropAMM. If you are migrating from Ethereum to BSC, you must:
+1.  **Adjust Contracts**: Modify your contracts to align with the BSC-specific PropAMM interfaces.
+2.  **Audit Adjusted Contracts**: Conduct new audits for the adjusted contracts to ensure security and compatibility with the BSC implementation.
+
+Developers can use the official PropAMM dashboard on BSC to monitor activity and performance.
+
+## Reth node crash with ENOSPC: /data/blobstore reached ext4 directory-index limit - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/reth-node-crash-with-enospc-datablobstore-reached-ext4-directory-index-limit/
+
+### Reth node crash with ENOSPC: /data/blobstore reached ext4 directory-index limit
+
+### Problem
+A Reth-BSC node can report `ENOSPC` (No space left on device) while writing to `/data/blobstore`, even when the filesystem still has free disk space. An ext4 directory-size or directory-index limit is one possible cause; confirm it from the node and kernel logs before choosing a workaround.
+
+### Checks and next steps
+1. Check free disk space and inodes on the filesystem containing the blobstore, for example with `df -h /data/blobstore` and `df -i /data/blobstore`. Review kernel logs for an ext4 directory-limit error.
+2. If an ext4 directory limit is confirmed, follow a filesystem- and client-version-specific remediation plan. Increasing `ulimit -n` or `fs.file-max` does not increase the ext4 directory limit.
+3. File-descriptor exhaustion is a separate problem, normally reported as `EMFILE` or `ENFILE`. Investigate process and system open-file limits only when the logs indicate that problem.
+4. Do not delete blobstore files indiscriminately. Confirm the client version, required blob retention and a supported cleanup or migration procedure with the client maintainers before changing stored data. A node restart alone does not establish that the underlying limit has been resolved.
+
+### References
+- [Linux ext4 documentation](https://www.kernel.org/doc/html/latest/admin-guide/ext4.html)
+- [Linux open(2) error definitions](https://man7.org/linux/man-pages/man2/open.2.html)
+
+---
+
+Applies to: Reth-BSC deployments using an ext4 blobstore
+
+## When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade? - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade/
+
+### When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade?
+
+The BSC Mainnet Jenner hardfork is scheduled for **December 8, 2026, at 02:30:00 UTC** (Unix timestamp `1796697000`).
+
+This is a **mandatory upgrade** for all BSC Mainnet node operators, MEV builders, and sentry operators.
+
+### Upgrade requirements
+- Replace the binary with **v1.8.2** and restart your node **before the activation time**. Upgrade in advance so you can check that the node is running correctly before activation.
+- If upgrading from v1.7.x or v1.8.0-alpha, review the [v1.8.0-alpha notes](https://github.com/bnb-chain/bsc/releases/tag/v1.8.0-alpha) and [v1.8.1 notes](https://github.com/bnb-chain/bsc/releases/tag/v1.8.1) for removed configuration fields, RPC changes, and MEV gRPC settings. These non-consensus changes can take effect before the hardfork.
+
+### Official reference
+See the [BSC v1.8.2 release notes](https://github.com/bnb-chain/bsc/releases/tag/v1.8.2) for the activation schedule and upgrade procedure.
+
+---
+
+Applies to: v1.8.2
