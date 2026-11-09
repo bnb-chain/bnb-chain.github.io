@@ -1651,7 +1651,7 @@ To update your validator's profile information, you must submit a Pull Request (
 3. Submit a Pull Request with your proposed changes.
 4. Once the PR is reviewed and merged by the BNB Chain team, the updated information will be reflected on the staking webpage.
 
-## Bsc API List
+## Bsc API List- BSC Develop
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/
 
 ## Finality API
