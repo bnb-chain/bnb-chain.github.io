@@ -27,7 +27,7 @@
   - [Dev-Tools](https://www.bnbchain.org/en/dev-tools)
   - **JSON-RPC**
     - [JSON-RPC-Endpoint](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/): JSON-RPC endpoints for BNB Smart Chain Mainnet and Testnet, provider list, and API compatibility.
-    - [Bsc Api list](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/): Complete list of BSC JSON-RPC API methods and finality APIs.
+    - [Bsc API List- BSC Develop](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/): Complete list of BSC JSON-RPC API methods, including finality, blob, and other RPC APIs.
   - [Faucet](https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/): Get testnet tBNB tokens for BSC development.
   - **Node Operators**
     - [Node Best Practices](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_best_practices/): Choosing and tuning the right BSC node type for your workload.
