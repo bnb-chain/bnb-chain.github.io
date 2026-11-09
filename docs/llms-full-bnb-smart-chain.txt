@@ -868,7 +868,7 @@ Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#other
 
 ---
 
-## Bsc API List
+## Bsc API List- BSC Develop
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/
 
 ## Finality API
