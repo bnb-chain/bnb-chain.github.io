@@ -24,7 +24,7 @@ Use [Network Information](../get-started/network-info.md) for current network de
 
 ### What asset is used for gas and staking?
 
-BNB is the native asset; there is no separate native economic token. The native BSC ↔ New L1 bridge is still under development and is not live. For devnet test tokens, contact the BNB Chain Solutions Architecture (SA) team. See [Role of BNB](../overview.md#role-of-bnb) and the [migration guide](../get-started/migrate-from-bsc.md).
+BNB is the native asset; there is no separate native economic token. The devnet bridge connects New L1 to BSC Testnet. Use testnet BNB (tBNB) only: the bridge contracts are unaudited and the devnet may be reset. Public testnet and mainnet have not launched. See [Role of BNB](../overview.md#role-of-bnb) and the [Integration FAQ](./integration.md#how-do-i-move-bnb-between-bsc-and-new-l1) for bridge instructions.
 
 ### Can users transact without holding BNB?
 

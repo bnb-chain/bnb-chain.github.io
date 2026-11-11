@@ -15,7 +15,7 @@ Technical integration and partner-onboarding questions for application teams, in
 
 Use [Network Information](../get-started/network-info.md) for the current HTTP and WebSocket endpoints, chain ID, explorer, and faucet availability.
 
-Contact the BNB Chain Solutions Architecture (SA) team for test tokens, integration support, the matching client version, and reset policy. See [General FAQ](./general.md#is-new-l1-live-on-mainnet) for network status and tentative launch targets.
+For devnet BNB, bridge tBNB from BSC Testnet using the [Cross-Chain Bridge](../developers/cross-chain-bridge.md). Contact the BNB Chain Solutions Architecture (SA) team for integration support, the matching client version, and reset policy. See [General FAQ](./general.md#is-new-l1-live-on-mainnet) for network status and tentative launch targets.
 
 ### Can we run our own devnet node? Do we need a snapshot?
 
@@ -28,6 +28,16 @@ Read-only partner repository access is under internal review. It is not yet an a
 ### Can we participate as a builder or validator?
 
 Partners interested in either role should raise it with BNB Chain for technical onboarding. Operating a node, providing gateway services, and joining the validator set are separate roles. Requirements, selection arrangements, and commercial terms need to be confirmed for the relevant network stage; expressing interest does not reserve a seat.
+
+## Bridging BNB
+
+### How do I move BNB between BSC and New L1?
+
+Call `transferOut` on the source chain's `TokenHub` with the recipient and a delivery fee, attaching the amount plus the fee as the transaction value. The BNB usually arrives in a few seconds as native BNB, with no wrapped token. On devnet the bridge connects to BSC Testnet, which is also how you get devnet BNB. Use testnet BNB (tBNB) only: the bridge contracts are unaudited and the devnet may be reset. See [Cross-Chain Bridge](../developers/cross-chain-bridge.md).
+
+### My bridged BNB hasn't arrived. What should I check?
+
+Check `terminalRecord(messageId)` on the destination `CrossChainHub`. If it records a successful delivery but the balance did not change, inspect the destination `TokenHub` events for that `messageId`: a large transfer may need `matureLockedCredit` after its lock, or a failed payout may need `withdraw` to collect the recipient's claim. If there is no record yet, the bridge may be paused, rate-limited, or waiting for source finality. A terminal record with `success = false` means governance declared the transfer failed and a refund follows on the source chain. See [Track a Transfer](../developers/cross-chain-bridge.md#track-a-transfer) and [Failures and Refunds](../developers/cross-chain-bridge.md#failures-and-refunds).
 
 ## Contract, account, and tooling integration
 
