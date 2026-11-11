@@ -160,10 +160,10 @@ After the producer seals and proposes the block, ordering, execution, and their 
 
 `eth_getTransactionByHash` also returns transactions still held in the queried node's local pool. A non-null result proves ordering only when `blockHash` and `blockNumber` are populated.
 
-Execution is asynchronous, so an ordered transaction may not have a receipt yet:
+Execution is asynchronous, so an ordered transaction may not have a receipt yet. On devnet2:
 
 - `eth_getTransactionReceipt` returns `-38004` when the transaction is ordered but not yet executed. Retry.
-- It returns `null` when the hash is unknown. This is not an execution-lag signal.
+- It returns `null` when the hash is unknown to that endpoint. This does not establish transaction failure.
 
 New L1 extends `eth_blockNumber` with an optional tag parameter:
 
@@ -213,7 +213,7 @@ Replacement and eviction are local to the nodes that hold the transaction. A loc
 1. Save the hash returned by `eth_sendRawTransaction`.
 2. Optionally watch pre-confirmations for a low-latency, revocable signal.
 3. Poll `eth_getTransactionByHash` until the transaction is ordered.
-4. Poll `eth_getTransactionReceipt`; retry `-38004` while execution catches up.
+4. Poll `eth_getTransactionReceipt`; on devnet2, retry `-38004` while execution catches up.
 5. Wait for the transaction's block to fall at or below `eth_blockNumber("finalized")` before relying irreversibly on its execution result.
 6. Use `newl1_getTransactionStatus` only to explain the local pool path, not as the source of chain finality.
 
