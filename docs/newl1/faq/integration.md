@@ -59,7 +59,7 @@ New L1 commits state with a cumulative hash accumulator instead of a Merkle-Patr
 
 Handle a transaction being ordered before its receipt is available, distinguish ordering finality from execution finality, and support the native transaction types you index. Paginate log queries to the endpoint's configured range.
 
-For `eth_getTransactionReceipt`, `-38004` means ordered but not yet executed and should be retried; `null` means the hash is unknown to that endpoint, not proof of execution lag or transaction failure. See [Transaction Lifecycle](../developers/transaction-lifecycle.md) and [Transaction Types](../developers/transaction-types.md).
+On devnet2, `eth_getTransactionReceipt` returns `-38004` when a transaction is ordered but not yet executed; retry while execution catches up. A `null` response means the hash is unknown to that endpoint and does not establish transaction failure. See [Transaction Lifecycle](../developers/transaction-lifecycle.md) and [Transaction Types](../developers/transaction-types.md).
 
 ## Fees, ordering, and account nonces
 
