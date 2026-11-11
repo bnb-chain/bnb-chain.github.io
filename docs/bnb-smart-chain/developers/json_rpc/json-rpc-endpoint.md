@@ -63,6 +63,7 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
 
 * **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+* **SwiftNodes:** <https://swiftnodes.io/bsc-rpc>
 
 ### Starting HTTP JSON-RPC
 
