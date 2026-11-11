@@ -1010,11 +1010,7 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/</loc>
-         <lastmod>2026-11-06</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.bnbchain.org/newl1/faq/</loc>
-         <lastmod>2026-11-06</lastmod>
+         <lastmod>2026-11-11</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/overview/</loc>
@@ -1058,7 +1054,7 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/developers/examples/</loc>
-         <lastmod>2026-10-29</lastmod>
+         <lastmod>2026-11-11</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/developers/foundry/</loc>
@@ -1066,11 +1062,11 @@
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/developers/quick-guide/</loc>
-         <lastmod>2026-11-06</lastmod>
+         <lastmod>2026-11-11</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/developers/transaction-lifecycle/</loc>
-         <lastmod>2026-10-22</lastmod>
+         <lastmod>2026-11-11</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/developers/transaction-types/</loc>
@@ -1085,8 +1081,20 @@
          <lastmod>2026-10-22</lastmod>
     </url>
     <url>
+         <loc>https://docs.bnbchain.org/newl1/faq/</loc>
+         <lastmod>2026-11-11</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/newl1/faq/general/</loc>
+         <lastmod>2026-11-11</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.bnbchain.org/newl1/faq/integration/</loc>
+         <lastmod>2026-11-11</lastmod>
+    </url>
+    <url>
          <loc>https://docs.bnbchain.org/newl1/get-started/migrate-from-bsc/</loc>
-         <lastmod>2026-11-06</lastmod>
+         <lastmod>2026-11-11</lastmod>
     </url>
     <url>
          <loc>https://docs.bnbchain.org/newl1/get-started/network-info/</loc>
