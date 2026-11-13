@@ -1599,11 +1599,12 @@ Combined with these features and a sponsor (paymaster), users can send transacti
 - [Refreshing Token Metadata on BscScan After Proxy Upgrade](../refreshing-token-metadata-on-bscscan-after-proxy-upgrade.md)
 - [Prop AMM and Relayer Benefits for Trading](../prop-amm-and-relayer-benefits-for-trading.md)
 - [BEP-675 MEV bundle transaction delay concern](../bep-675-mev-bundle-transaction-delay-concern.md)
-- [v1.8.1 Release Mainnet Compatibility Query](../v181-release-mainnet-compatibility-query.md)
 - [How do I update my validator node's profile name, logo, and contact information?](../how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information.md)
 - [PropAMM Contract Interface Mismatch Compared to Ethereum](../propamm-contract-interface-mismatch-compared-to-ethereum.md)
 - [Reth node crash with ENOSPC: /data/blobstore reached ext4 directory-index limit](../reth-node-crash-with-enospc-datablobstore-reached-ext4-directory-index-limit.md)
 - [When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade?](../when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade.md)
+- [Request for offline full block and transaction data](../request-for-offline-full-block-and-transaction-data.md)
+- [Which reth-bsc version should node operators use?](../which-reth-bsc-version-should-node-operators-use.md)
 ## Frequently Asked Questions
 > Source: https://docs.bnbchain.org/faq/
 
@@ -1615,32 +1616,12 @@ Combined with these features and a sponsor (paymaster), users can send transacti
 - [Refreshing Token Metadata on BscScan After Proxy Upgrade](./refreshing-token-metadata-on-bscscan-after-proxy-upgrade.md)
 - [Prop AMM and Relayer Benefits for Trading](./prop-amm-and-relayer-benefits-for-trading.md)
 - [BEP-675 MEV bundle transaction delay concern](./bep-675-mev-bundle-transaction-delay-concern.md)
-- [v1.8.1 Release Mainnet Compatibility Query](./v181-release-mainnet-compatibility-query.md)
 - [How do I update my validator node's profile name, logo, and contact information?](./how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information.md)
 - [PropAMM Contract Interface Mismatch Compared to Ethereum](./propamm-contract-interface-mismatch-compared-to-ethereum.md)
 - [Reth node crash with ENOSPC: /data/blobstore reached ext4 directory-index limit](./reth-node-crash-with-enospc-datablobstore-reached-ext4-directory-index-limit.md)
 - [When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade?](./when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade.md)
-## v1.8.1 Release Mainnet Compatibility Query - BSC FAQs
-> Source: https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/
-
-### v1.8.1 Release Mainnet Compatibility Query
-
-### Question
-Do BSC mainnet nodes need to upgrade to v1.8.1 for the Jenner hardfork?
-
-### Answer
-No. **BSC v1.8.1 is the Chapel testnet Jenner hardfork release.** BSC mainnet nodes do not need to upgrade to this release for Jenner.
-
-The official release targets Chapel testnet node operators, MEV builders, and sentry operators. Chapel testnet activation is scheduled for **October 29, 2026 at 02:30 UTC**. Mainnet activation is not scheduled in this release.
-
-Mainnet operators should follow the currently recommended mainnet release and wait for a separate official mainnet Jenner upgrade notice. Do not infer a mainnet activation date or required version from the testnet release.
-
-Source: [BSC v1.8.1 release notes](https://github.com/bnb-chain/bsc/releases/tag/v1.8.1).
-
----
-
-Applies to: v1.8.1
-
+- [Request for offline full block and transaction data](./request-for-offline-full-block-and-transaction-data.md)
+- [Which reth-bsc version should node operators use?](./which-reth-bsc-version-should-node-operators-use.md)
 ## How do I update my validator node's profile name, logo, and contact information? - BSC FAQs
 > Source: https://docs.bnbchain.org/faq/how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information/
 
@@ -1715,3 +1696,33 @@ See the [BSC v1.8.2 release notes](https://github.com/bnb-chain/bsc/releases/tag
 ---
 
 Applies to: v1.8.2
+
+## Request for offline full block and transaction data - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/request-for-offline-full-block-and-transaction-data/
+
+### Request for offline full block and transaction data
+
+### Question
+How can I access historical BSC block and transaction data for offline analysis?
+
+### Answer
+The [BSC snapshots repository](https://github.com/bnb-chain/bsc-snapshots) lists node snapshots, including historical block files split by year. Review the snapshot descriptions and usage instructions to select the data and node configuration you need. These are node data snapshots, not necessarily a ready-to-use analytical dataset.
+
+For indexed data, you can also use a third-party analytics platform such as [Dune](https://dune.com/), subject to its coverage and export limits. If you need historical state as well as block data, see the [BSC archive node guide](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/archive_node/).
+
+---
+
+Applies to: BSC
+
+## Which reth-bsc version should node operators use? - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/which-reth-bsc-version-should-node-operators-use/
+
+### Which reth-bsc version should node operators use?
+
+As of November 13, 2026, the recommended version for BSC mainnet and testnet reth-bsc operators is **v0.1.4-hotfix**. Upgrade as soon as possible and restart the node. This release fixes an upstream issue that could produce an incorrect state root in the legacy calculation path. The fix does not require a database migration or a hardfork.
+
+Check the [latest releases and upgrade instructions](https://github.com/bnb-chain/reth-bsc/releases) for newer versions, and see the [v0.1.4-hotfix release notes](https://github.com/bnb-chain/reth-bsc/releases/tag/v0.1.4-hotfix) for details.
+
+---
+
+Applies to: reth-bsc nodes

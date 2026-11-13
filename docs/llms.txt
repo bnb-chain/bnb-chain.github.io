@@ -283,5 +283,6 @@
 - [Wright Upgrade of opBNB](https://docs.bnbchain.org/announce/wright-opbnb/): Hardfork announcement for opBNB Wright, including upgrade timeline and gasless transaction support.
 - [Frequently Asked Questions](https://docs.bnbchain.org/faq/): Frequently Asked Questions
 - [BSC FAQs](https://docs.bnbchain.org/faq/bsc/): BSC FAQs
-- [v1.8.1 Release Mainnet Compatibility Query - BSC FAQs](https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/): Explains that BSC v1.8.1 is the Chapel testnet Jenner hardfork release and mainnet nodes do not need to upgrade for Jenner
 - [How do I update my validator node's profile name, logo, and contact information?](https://docs.bnbchain.org/faq/how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information/): How do I update my validator node's profile name, logo, and contact information?
+- [Request for offline full block and transaction data - BSC FAQs](https://docs.bnbchain.org/faq/request-for-offline-full-block-and-transaction-data/): Explains how to access historical BSC block and transaction data for offline analysis
+- [Which reth-bsc version should node operators use? - BSC FAQs](https://docs.bnbchain.org/faq/which-reth-bsc-version-should-node-operators-use/): Recommends reth-bsc v0.1.4-hotfix for BSC mainnet and testnet node operators
