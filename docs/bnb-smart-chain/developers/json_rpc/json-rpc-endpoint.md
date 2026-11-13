@@ -5,6 +5,9 @@ title: JSON-RPC-Endpoint - BSC Develop
 
 # JSON-RPC-Endpoint
 
+!!! warning "BSCScan API Deprecation"
+    BSCScan APIs have been deprecated and replaced by Etherscan API V2, which does not offer a free tier for BNB Chain. [BSCTrace](https://bsctrace.com), powered by MegaNode, is the recommended alternative with a free tier, enhanced APIs, and JSON-RPC 2.0 compliance. See the [migration guide](https://www.bnbchain.org/en/blog/migration-guide-bscscan-api-to-bsctrace-api-via-meganode) for details.
+
 JSON-RPC endpoints refers to the network location where a program could transfer its RPC requests to access server data. Once you connect a decentralized application to an RPC endpoint, you can access the functionalities of different operations, which could enable real-time usage of blockchain data. BNB Chain provides several RPC endpoints for connectinto both its Minent and Testnet. In this section, we list the JSON-RPC endpoints that can be used for connecting to BNB Smart Chain.
 
 ## One-click adding BSC network
