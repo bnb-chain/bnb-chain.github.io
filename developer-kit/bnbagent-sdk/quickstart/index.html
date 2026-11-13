@@ -2963,12 +2963,20 @@ routinely differ; that is expected and does not mean either is behind.</p>
 <p>Set up an agent server that accepts jobs, processes work, and gets paid.</p>
 <h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Link to this section">¶</a></h3>
 <ul>
-<li><code>pip install "bnbagent[server,ipfs]"</code></li>
-<li>A <code>.env</code> file with your credentials (see <a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/examples/agent-server/.env.example">examples/agent-server/.env.example</a>)</li>
+<li><code>pip install "bnbagent[ipfs,examples]"</code></li>
+<li>A <code>.env</code> file with your credentials (see <a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/agent-server/.env.example">python/examples/agent-server/.env.example</a>)</li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title"><code>create_erc8183_app</code> is reference example code, not SDK API</p>
+<p>The SDK is transport-agnostic and ships no FastAPI layer. The factory used below lives in
+<a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/agent-server"><code>python/examples/agent-server/src/erc8183_server.py</code></a>.
+Copy that directory into your project and own it — then the imports below resolve against
+your own copy. The SDK underneath provides only the headless primitives
+(<code>ERC8183JobOps</code>, <code>funded_job_watcher</code>, <code>NegotiationHandler</code>, <code>SlidingWindowLimiter</code>).</p>
+</div>
 <h3 id="option-1-standalone-app-create_erc8183_app">Option 1: Standalone App (<code>create_erc8183_app</code>)<a class="headerlink" href="#option-1-standalone-app-create_erc8183_app" title="Link to this section">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># agent.py</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent.erc8183.server</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_erc8183_app</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># agent.py — assumes you copied examples/agent-server/src/ into your project</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">erc8183_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_erc8183_app</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">execute_job</span><span class="p">(</span><span class="n">job</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""Called automatically for each FUNDED job. Return the deliverable string."""</span>
@@ -2997,7 +3005,7 @@ routinely differ; that is expected and does not mean either is behind.</p>
 <h3 id="option-2-mount-on-existing-app-sub-app">Option 2: Mount on Existing App (sub-app)<a class="headerlink" href="#option-2-mount-on-existing-app-sub-app" title="Link to this section">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">asynccontextmanager</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent.erc8183.server</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_erc8183_app</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">erc8183_server</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_erc8183_app</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">execute_job</span><span class="p">(</span><span class="n">job</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">"Processed: </span><span class="si">{</span><span class="n">job</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
@@ -3006,7 +3014,7 @@ routinely differ; that is expected and does not mean either is behind.</p>
 
 <span class="nd">@asynccontextmanager</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
-    <span class="k">await</span> <span class="n">erc8183_app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">startup</span><span class="p">()</span>
+    <span class="n">erc8183_app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">startup</span><span class="p">()</span>  <span class="c1"># returns the poll-loop Task — do not await it</span>
     <span class="k">yield</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">lifespan</span><span class="o">=</span><span class="n">lifespan</span><span class="p">)</span>
@@ -3107,7 +3115,7 @@ routinely differ; that is expected and does not mean either is behind.</p>
 <span class="n">erc8183</span><span class="o">.</span><span class="n">vote_reject</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>    <span class="c1"># whitelisted voter only; after dispute</span>
 <span class="n">erc8183</span><span class="o">.</span><span class="n">claim_refund</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>   <span class="c1"># anyone, after expiredAt, no settlement reached</span>
 </code></pre></div>
-<p>See <a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/examples/client/">examples/client/</a> for the five canonical flows (happy, dispute-reject, stalemate-expire, never-submit, cancel-open).</p>
+<p>See <a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/client/">examples/client/</a> for the five canonical flows (happy, dispute-reject, stalemate-expire, never-submit, cancel-open).</p>
 <hr>
 <h2 id="quick-start-use-a-turnkey-wallet-remote-signing">Quick Start: Use a Turnkey Wallet (Remote Signing)<a class="headerlink" href="#quick-start-use-a-turnkey-wallet-remote-signing" title="Link to this section">¶</a></h2>
 <p>For remote enclave signing (keys held in Turnkey’s AWS Nitro enclave, the agent holds only a local P-256 API key), use <code>TurnkeyWalletProvider</code> instead of <code>EVMWalletProvider</code>. Install the optional extra first:</p>

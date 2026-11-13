@@ -1667,10 +1667,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bnbagenterc8183server-fastapi-integration" class="md-nav__link">
+  <a href="#http-serving-reference-example-not-sdk-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bnbagent/erc8183/server/ — FastAPI Integration
+        HTTP serving — reference example, not SDK API
       
     </span>
   </a>
@@ -1731,17 +1731,6 @@
     <span class="md-ellipsis">
       
         Public API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Module System
       
     </span>
   </a>
@@ -2821,10 +2810,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bnbagenterc8183server-fastapi-integration" class="md-nav__link">
+  <a href="#http-serving-reference-example-not-sdk-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bnbagent/erc8183/server/ — FastAPI Integration
+        HTTP serving — reference example, not SDK API
       
     </span>
   </a>
@@ -2885,17 +2874,6 @@
     <span class="md-ellipsis">
       
         Public API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#module-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Module System
       
     </span>
   </a>
@@ -3104,8 +3082,8 @@ If you want to familiarize yourself with the codebase, this is a good place
 to start.</p>
 <h2 id="birds-eye-view">Bird’s Eye View<a class="headerlink" href="#birds-eye-view" title="Link to this section">¶</a></h2>
 <p>BNB Agent SDK is a Python toolkit for building <strong>on-chain AI agents</strong> on
-BNB Chain. It provides wallet management, a plugin module system, off-chain
-storage abstraction, and built-in support for the following protocols:</p>
+BNB Chain. It provides wallet management, independent protocol subpackages,
+off-chain storage abstraction, and built-in support for the following protocols:</p>
 <ul>
 <li><strong>ERC-8004</strong> — On-chain identity registry for AI agents (register, discover,
   resolve endpoints).</li>
@@ -3119,33 +3097,26 @@ storage abstraction, and built-in support for the following protocols:</p>
     dispute window is implicit approval; a client can raise a dispute
     that the whitelisted voters resolve by <code>voteReject</code> reaching quorum.</li>
 </ul>
-<p>The SDK is organized as a <strong>plugin system</strong>: each protocol is a self-contained
-module that can be used independently or composed via the <code>BNBAgent</code> facade.
-New protocols can be added as modules without modifying the SDK core.
+<p>The SDK is organized as <strong>independent subpackages</strong>: each protocol is
+self-contained and imported directly. There is no central facade or registry —
+callers compose the pieces they need.
 Wallet signing and off-chain storage are abstracted behind provider interfaces,
 making the SDK backend-agnostic.</p>
-<div class="highlight"><pre><span></span><code>                    ┌─────────────┐
-                    │  BNBAgent   │  optional facade (main.py)
-                    │  from_env() │
-                    └──────┬──────┘
-                           │ discovers &amp; initializes
-              ┌────────────┼────────────┐
-              │            │            │
-        ┌─────▼─────┐ ┌───▼────┐ ┌────▼─────┐
-        │  erc8004  │ │  erc8183  │ │ wallets  │
-        │  Identity │ │  v1    │ │ Signing  │
-        └─────┬─────┘ └───┬────┘ └────┬─────┘
-              │           │           │
-              └────┬──────┘           │
-                   │                  │
-            ┌──────▼──────┐    ┌──────▼──────┐
-            │    core     │    │ storage_    │
-            │ (infra)     │    │ providers   │
-            └─────────────┘    └─────────────┘
+<div class="highlight"><pre><span></span><code>        ┌───────────┐ ┌───────────┐ ┌───────────┐
+        │  erc8004  │ │  erc8183  │ │  wallets  │
+        │ Identity  │ │    v1     │ │  Signing  │
+        └─────┬─────┘ └─────┬─────┘ └─────┬─────┘
+              │             │             │
+              └──────┬──────┘             │
+                     │                    │
+              ┌──────▼──────┐      ┌──────▼──────┐
+              │    core     │      │   storage   │
+              │  (infra)    │      │  providers  │
+              └─────────────┘      └─────────────┘
 </code></pre></div>
 <p>Arrows point <strong>downward</strong> — upper layers depend on lower layers, never the
 reverse. <code>erc8183</code> depends on <code>erc8004</code> (for agent discovery). Both protocol
-modules depend on <code>core</code> for transaction management.</p>
+subpackages depend on <code>core</code> for transaction management.</p>
 <h2 id="code-map">Code Map<a class="headerlink" href="#code-map" title="Link to this section">¶</a></h2>
 <h3 id="bnbagent-main-package"><code>bnbagent/</code> — Main Package<a class="headerlink" href="#bnbagent-main-package" title="Link to this section">¶</a></h3>
 <table>
@@ -3161,12 +3132,8 @@ modules depend on <code>core</code> for transaction management.</p>
 <td>Tier 1 public API (re-exports from subpackages)</td>
 </tr>
 <tr>
-<td><code>main.py</code></td>
-<td><code>BNBAgent</code> — optional high-level facade over the module system</td>
-</tr>
-<tr>
 <td><code>config.py</code></td>
-<td><code>BNBAgentConfig</code>, <code>NetworkConfig</code>, <code>NETWORKS</code> registry, <code>resolve_network()</code></td>
+<td><code>NetworkConfig</code>, <code>NETWORKS</code> registry, <code>resolve_network()</code></td>
 </tr>
 <tr>
 <td><code>constants.py</code></td>
@@ -3179,7 +3146,7 @@ modules depend on <code>core</code> for transaction management.</p>
 </tbody>
 </table>
 <h3 id="bnbagentcore-internal-infrastructure"><code>bnbagent/core/</code> — Internal Infrastructure<a class="headerlink" href="#bnbagentcore-internal-infrastructure" title="Link to this section">¶</a></h3>
-<p>Not part of the public API. Provides shared plumbing for protocol modules.</p>
+<p>Not part of the public API. Provides shared plumbing for the protocol subpackages.</p>
 <table>
 <thead>
 <tr>
@@ -3188,14 +3155,6 @@ modules depend on <code>core</code> for transaction management.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>module.py</code></td>
-<td><code>BNBAgentModule</code> ABC and <code>ModuleInfo</code> dataclass</td>
-</tr>
-<tr>
-<td><code>registry.py</code></td>
-<td><code>ModuleRegistry</code> — discovery (built-in + entry points), dependency validation, topological initialization</td>
-</tr>
 <tr>
 <td><code>contract_mixin.py</code></td>
 <td><code>ContractClientMixin</code> — shared base for <code>CommerceClient</code>, <code>RouterClient</code>, <code>PolicyClient</code>, <code>MinimalERC20Client</code> (tx signing, nonce management, retry with backoff)</td>
@@ -3242,10 +3201,6 @@ modules depend on <code>core</code> for transaction management.</p>
 <tr>
 <td><code>constants.py</code></td>
 <td><code>get_erc8004_config()</code> — per-network contract addresses</td>
-</tr>
-<tr>
-<td><code>module.py</code></td>
-<td><code>ERC8004Module</code> plugin</td>
 </tr>
 </tbody>
 </table>
@@ -3300,30 +3255,18 @@ modules depend on <code>core</code> for transaction management.</p>
 <td><code>get_erc8183_config()</code> — per-network defaults</td>
 </tr>
 <tr>
-<td><code>module.py</code></td>
-<td><code>ERC8183Module</code> plugin</td>
-</tr>
-</tbody>
-</table>
-<h3 id="bnbagenterc8183server-fastapi-integration"><code>bnbagent/erc8183/server/</code> — FastAPI Integration<a class="headerlink" href="#bnbagenterc8183server-fastapi-integration" title="Link to this section">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>routes.py</code></td>
-<td><code>create_erc8183_app()</code> FastAPI factory; <code>ERC8183State</code>; <code>/erc8183/job/{id}</code>, <code>/erc8183/negotiate</code>, <code>/erc8183/status</code>, <code>/erc8183/health</code>; funded-job background poll loop when <code>on_job</code> is provided</td>
-</tr>
-<tr>
 <td><code>job_ops.py</code></td>
-<td><code>ERC8183JobOps</code> — async wrapper over <code>ERC8183Client</code>; incremental scan for newly funded jobs; <code>submit_result</code> for deliverable submission</td>
+<td><code>ERC8183JobOps</code> — async wrapper over <code>ERC8183Client</code>; incremental scan for newly funded jobs; <code>submit_result</code> for deliverable submission. Also exports <code>funded_job_watcher</code></td>
 </tr>
 </tbody>
 </table>
+<h3 id="http-serving-reference-example-not-sdk-api">HTTP serving — reference example, not SDK API<a class="headerlink" href="#http-serving-reference-example-not-sdk-api" title="Link to this section">¶</a></h3>
+<p>The SDK is transport-agnostic and ships <strong>no</strong> FastAPI layer. The <code>create_erc8183_app()</code>
+factory, its routes, and the funded-job poll wiring live in the reference example at
+<a href="https://github.com/bnb-chain/bnbagent-sdk/tree/main/python/examples/agent-server"><code>python/examples/agent-server/src/erc8183_server.py</code></a> —
+copy that directory and own it.</p>
+<p>The SDK underneath provides only the headless primitives the example is built on:
+<code>ERC8183JobOps</code>, <code>funded_job_watcher</code>, <code>NegotiationHandler</code>, and <code>SlidingWindowLimiter</code>.</p>
 <h3 id="bnbagentwallets-wallet-providers"><code>bnbagent/wallets/</code> — Wallet Providers<a class="headerlink" href="#bnbagentwallets-wallet-providers" title="Link to this section">¶</a></h3>
 <table>
 <thead>
@@ -3411,7 +3354,7 @@ services; no live chain calls in CI.</p>
 <h2 id="public-api">Public API<a class="headerlink" href="#public-api" title="Link to this section">¶</a></h2>
 <p><strong>Tier 1</strong> — importable directly from <code>bnbagent</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-    <span class="n">BNBAgent</span><span class="p">,</span> <span class="n">BNBAgentConfig</span><span class="p">,</span> <span class="n">NetworkConfig</span><span class="p">,</span> <span class="n">BNBAgentError</span><span class="p">,</span>
+    <span class="n">NetworkConfig</span><span class="p">,</span> <span class="n">BNBAgentError</span><span class="p">,</span>
     <span class="n">ERC8004Agent</span><span class="p">,</span> <span class="n">AgentEndpoint</span><span class="p">,</span>
     <span class="n">WalletProvider</span><span class="p">,</span> <span class="n">EVMWalletProvider</span><span class="p">,</span>
     <span class="n">ERC8183Client</span><span class="p">,</span> <span class="n">JobStatus</span><span class="p">,</span> <span class="n">Verdict</span><span class="p">,</span>
@@ -3422,26 +3365,9 @@ services; no live chain calls in CI.</p>
     <span class="n">ERC8183Client</span><span class="p">,</span> <span class="n">CommerceClient</span><span class="p">,</span> <span class="n">RouterClient</span><span class="p">,</span> <span class="n">PolicyClient</span><span class="p">,</span>
     <span class="n">JobStatus</span><span class="p">,</span> <span class="n">Verdict</span><span class="p">,</span> <span class="n">Job</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent.erc8183.server</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_erc8183_app</span><span class="p">,</span> <span class="n">ERC8183JobOps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent.erc8183</span><span class="w"> </span><span class="kn">import</span> <span class="n">ERC8183JobOps</span><span class="p">,</span> <span class="n">funded_job_watcher</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent.erc8183.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ERC8183Config</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bnbagent.storage</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalStorageProvider</span><span class="p">,</span> <span class="n">IPFSStorageProvider</span>
-</code></pre></div>
-<h2 id="module-system">Module System<a class="headerlink" href="#module-system" title="Link to this section">¶</a></h2>
-<p>The SDK uses a plugin architecture. Every protocol is a <code>BNBAgentModule</code>
-subclass discovered and managed by <code>ModuleRegistry</code>.</p>
-<p><strong>Lifecycle:</strong></p>
-<ol>
-<li><code>discover()</code> — imports built-in modules (<code>erc8004</code>, <code>erc8183</code>) + scans
-   <code>bnbagent.modules</code> entry-point group for third-party plugins</li>
-<li><code>validate_dependencies()</code> — ensures all declared dependencies are present</li>
-<li><code>_topological_sort()</code> — orders modules so dependencies initialize first</li>
-<li><code>initialize_all(config)</code> — calls <code>module.initialize()</code> in order</li>
-<li><code>shutdown_all()</code> — cleanup in reverse order</li>
-</ol>
-<p><strong>Extending:</strong> implement <code>BNBAgentModule</code>, expose a <code>create_module()</code> factory,
-and register via <code>pyproject.toml</code> entry points:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.</span><span class="s2">"bnbagent.modules"</span><span class="k">]</span>
-<span class="n">my_module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"my_package:create_module"</span>
 </code></pre></div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>NetworkConfig (NETWORKS dict in config.py)
@@ -3450,10 +3376,8 @@ and register via <code>pyproject.toml</code> entry points:</p>
 
 resolve_network(name) + env var overrides
   ↓ (clients assert w3.eth.chain_id == nc.chain_id at init — wrong RPC → ValueError)
-BNBAgentConfig
-  ├── wallet_provider  (explicit or auto-wrapped from private_key)
-  ├── settings         (general key-value)
-  └── modules          (namespaced: {"erc8183": {"commerce_address": "&lt;override&gt;"}})
+ERC8183Config
+  └── wallet_provider  (explicit or auto-wrapped from private_key)
 </code></pre></div>
 <p><strong>Environment variable overrides</strong> (module-scoped):</p>
 <table>
@@ -3499,7 +3423,7 @@ surface self-contained and obvious from the prefix.</p>
 name), env overrides are <strong>not</strong> applied — the object is used as-is.</p>
 <p>Commerce settlement assets are resolved at runtime from the deployed kernel
 via <code>ERC8183Client</code> — not duplicated in this documentation.</p>
-<p>Both <code>BNBAgentConfig</code> and <code>ERC8183Config</code> support the convenience pattern:
+<p><code>ERC8183Config</code> supports the convenience pattern:
 pass <code>private_key</code> + <code>wallet_password</code> and the config auto-wraps them into
 an <code>EVMWalletProvider</code>, then <strong>clears both the plaintext key and password</strong>
 from the config object (the provider keeps its own password copy).</p>
@@ -3509,9 +3433,6 @@ from the config object (the provider keeps its own password copy).</p>
 <li><strong>No plaintext secrets in config after construction.</strong> <code>__post_init__()</code> wraps
   <code>private_key</code> into a <code>WalletProvider</code> and zeros both the <code>private_key</code> and
   <code>wallet_password</code> string fields (the provider retains its own password copy).</li>
-<li><strong>Modules never import each other directly.</strong> Inter-module communication
-  goes through the registry or shared config. Module dependencies are declared
-  in <code>ModuleInfo.dependencies</code> and enforced at initialization.</li>
 <li><strong><code>ContractClientMixin</code> prefers <code>wallet_provider</code> over raw <code>private_key</code>.</strong></li>
 <li><strong>Storage providers are async.</strong> Synchronous callers use <code>upload_sync()</code>
   to avoid blocking the event loop.</li>
@@ -3584,8 +3505,6 @@ Background tasks (when on_job is provided)
   multisig, or MPC signers.</li>
 <li><strong>Custom StorageProvider</strong> — implement the <code>StorageProvider</code> ABC for
   alternative backends (S3, Arweave, etc.).</li>
-<li><strong>Custom Module</strong> — extend <code>BNBAgentModule</code> and register via entry points
-  to add new protocol support without modifying the SDK.</li>
 </ul>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Link to this section">¶</a></h2>
 <table>
@@ -3601,23 +3520,24 @@ Background tasks (when on_job is provided)
 <td><code>web3 ≥ 6.15</code>, <code>eth-account ≥ 0.10</code>, <code>python-dotenv ≥ 1.0</code>, <code>requests ≥ 2.31</code></td>
 </tr>
 <tr>
-<td>Server (optional)</td>
-<td><code>fastapi ≥ 0.104</code>, <code>uvicorn ≥ 0.24</code></td>
+<td><code>examples</code> (extra)</td>
+<td><code>fastapi ≥ 0.104</code>, <code>uvicorn ≥ 0.24</code>, <code>python-dotenv ≥ 1.0</code>, <code>aiosqlite ≥ 0.19</code>, <code>ddgs ≥ 6.0</code></td>
 </tr>
 <tr>
-<td>IPFS (optional)</td>
+<td><code>ipfs</code> (extra)</td>
 <td><code>httpx ≥ 0.25</code></td>
 </tr>
 <tr>
-<td>Turnkey (optional)</td>
+<td><code>turnkey</code> (extra)</td>
 <td><code>cryptography ≥ 42.0</code></td>
 </tr>
 <tr>
-<td>Dev</td>
-<td><code>pytest</code>, <code>pytest-mock</code>, <code>pytest-asyncio</code>, <code>ruff</code></td>
+<td><code>dev</code> (extra)</td>
+<td><code>pytest ≥ 7.4</code>, <code>pytest-mock ≥ 3.11</code>, <code>pytest-asyncio ≥ 0.23</code>, <code>ruff ≥ 0.4</code>, <code>httpx ≥ 0.25</code>, <code>cryptography ≥ 42.0</code></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<p>The extras are exactly <code>examples</code>, <code>ipfs</code>, <code>turnkey</code>, and <code>dev</code> — there is no <code>server</code> extra.</p></div>
 
 
 

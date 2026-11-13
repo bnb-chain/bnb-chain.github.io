@@ -2664,15 +2664,21 @@
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>bnbagent
 </code></pre></div>
 <p>The base package includes ERC-8004 identity registration and the ERC-8183 client stack. Install optional extras for additional features:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># ERC-8183 server components (FastAPI + Uvicorn)</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[server]"</span>
-
-<span class="c1"># IPFS storage (HTTP pinning service backend, e.g. Pinata)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># IPFS storage (HTTP pinning service backend, e.g. Pinata)</span>
 pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[ipfs]"</span>
 
+<span class="c1"># Dependencies used by the runnable examples (FastAPI, Uvicorn, python-dotenv)</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[examples]"</span>
+
 <span class="c1"># All extras</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[server,ipfs]"</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[ipfs,examples]"</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">There is no <code>server</code> extra</p>
+<p>The SDK ships headless primitives only (<code>ERC8183JobOps</code>, <code>funded_job_watcher</code>,
+<code>NegotiationHandler</code>). The FastAPI serving layer is reference example code you copy
+and own — see <a href="quickstart/#quick-start-run-an-erc-8183-agent-server">Run an ERC-8183 Agent Server</a>.</p>
+</div>
 <h2 id="what-is-erc-8004">What is ERC-8004?<a class="headerlink" href="#what-is-erc-8004" title="Link to this section">¶</a></h2>
 <p><a href="https://eips.ethereum.org/EIPS/eip-8004">ERC-8004</a> is a standard for registering AI agent identities on-chain. Each agent gets:</p>
 <ul>
@@ -2851,11 +2857,11 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnba
 </tr>
 <tr>
 <td><a href="configuration/">Configuration</a></td>
-<td>Environment variables and module settings</td>
+<td>Environment variables and client configuration</td>
 </tr>
 <tr>
 <td><a href="architecture/">Architecture</a></td>
-<td>Code map, module system, data flows</td>
+<td>Code map, subpackage layout, data flows</td>
 </tr>
 <tr>
 <td><a href="networks/">Networks &amp; contracts</a></td>
@@ -2879,7 +2885,7 @@ pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnba
 <p><a href="https://github.com/bnb-chain/bnbagent-sdk">https://github.com/bnb-chain/bnbagent-sdk</a></p>
 <h2 id="package">Package<a class="headerlink" href="#package" title="Link to this section">¶</a></h2>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>bnbagent
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[server,ipfs]"</span><span class="w">  </span><span class="c1"># optional extras</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"bnbagent[ipfs,examples]"</span><span class="w">  </span><span class="c1"># optional extras</span>
 </code></pre></div>
 <p><a href="https://pypi.org/project/bnbagent/">PyPI</a></p>
 <p><a href="../">← Developer Kit overview</a></p></div>
