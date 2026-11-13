@@ -12,7 +12,7 @@
         <meta name="author" content="BNB Chain">
       
       
-        <link rel="canonical" href="https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/">
+        <link rel="canonical" href="https://docs.bnbchain.org/faq/request-for-offline-full-block-and-transaction-data/">
       
       
       
@@ -25,7 +25,7 @@
     
     
     
-        <title>v1.8.1 Release Mainnet Compatibility Query - BSC FAQs</title>
+        <title>Request for offline full block and transaction data - BSC FAQs</title>
     
 
     
@@ -142,7 +142,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v181-release-mainnet-compatibility-query" class="md-skip">
+        <a href="#request-for-offline-full-block-and-transaction-data" class="md-skip">
           Skip to content
         </a>
       
@@ -1106,10 +1106,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v181-release-mainnet-compatibility-query" class="md-nav__link">
+  <a href="#request-for-offline-full-block-and-transaction-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v1.8.1 Release Mainnet Compatibility Query
+        Request for offline full block and transaction data
       
     </span>
   </a>
@@ -1163,7 +1163,7 @@
 
 
   
-    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/faq/v181-release-mainnet-compatibility-query.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/bnb-chain/bnb-chain.github.io/edit/main/docs/faq/request-for-offline-full-block-and-transaction-data.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1171,18 +1171,16 @@
   
 
 
-  <h1>v1.8.1 Release Mainnet Compatibility Query - BSC FAQs</h1>
+  <h1>Request for offline full block and transaction data - BSC FAQs</h1>
 
-<div><h3 id="v181-release-mainnet-compatibility-query">v1.8.1 Release Mainnet Compatibility Query<a class="headerlink" href="#v181-release-mainnet-compatibility-query" title="Link to this section">¶</a></h3>
+<div><h3 id="request-for-offline-full-block-and-transaction-data">Request for offline full block and transaction data<a class="headerlink" href="#request-for-offline-full-block-and-transaction-data" title="Link to this section">¶</a></h3>
 <h3 id="question">Question<a class="headerlink" href="#question" title="Link to this section">¶</a></h3>
-<p>Do BSC mainnet nodes need to upgrade to v1.8.1 for the Jenner hardfork?</p>
+<p>How can I access historical BSC block and transaction data for offline analysis?</p>
 <h3 id="answer">Answer<a class="headerlink" href="#answer" title="Link to this section">¶</a></h3>
-<p>No. <strong>BSC v1.8.1 is the Chapel testnet Jenner hardfork release.</strong> BSC mainnet nodes do not need to upgrade to this release for Jenner.</p>
-<p>The official release targets Chapel testnet node operators, MEV builders, and sentry operators. Chapel testnet activation is scheduled for <strong>October 29, 2026 at 02:30 UTC</strong>. Mainnet activation is not scheduled in this release.</p>
-<p>Mainnet operators should follow the currently recommended mainnet release and wait for a separate official mainnet Jenner upgrade notice. Do not infer a mainnet activation date or required version from the testnet release.</p>
-<p>Source: <a href="https://github.com/bnb-chain/bsc/releases/tag/v1.8.1">BSC v1.8.1 release notes</a>.</p>
+<p>The <a href="https://github.com/bnb-chain/bsc-snapshots">BSC snapshots repository</a> lists node snapshots, including historical block files split by year. Review the snapshot descriptions and usage instructions to select the data and node configuration you need. These are node data snapshots, not necessarily a ready-to-use analytical dataset.</p>
+<p>For indexed data, you can also use a third-party analytics platform such as <a href="https://dune.com/">Dune</a>, subject to its coverage and export limits. If you need historical state as well as block data, see the <a href="https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/archive_node/">BSC archive node guide</a>.</p>
 <hr>
-<p>Applies to: v1.8.1</p></div>
+<p>Applies to: BSC</p></div>
 
 
 
@@ -1203,7 +1201,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 27, 2026 06:06:18 UTC">October 27, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 13, 2026 03:16:39 UTC">November 13, 2026</span>
   </span>
 
     
