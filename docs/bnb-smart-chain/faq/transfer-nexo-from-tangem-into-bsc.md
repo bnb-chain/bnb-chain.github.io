@@ -35,7 +35,7 @@ You can export your wallet’s **mnemonic phrase** from Tangem and then import i
 
 Yes. Make sure to use the **correct and official contract address** for NEXO on BNB Smart Chain to ensure your tokens are recognized and not lost.
 
-> **Tip:** You can find the official contract address on trusted sources such as [BNB Smart Chain explorers](https://bscscan.com/).
+> **Tip:** You can find the official contract address on trusted sources such as [BNB Smart Chain explorers](https://bsctrace.com/).
 
 ### What if I don’t feel comfortable handling mnemonic phrases?
 

@@ -28,11 +28,11 @@ transfer their BNBs between Greenfield and BSC. The following cross-chain bridge
 
 ### Mainnet
 - [Greenfield Explorer](https://greenfieldscan.com), developed by TraceReal.
-- [BSC Explorer](https://bscscan.com/)
+- [BSC Explorer](https://bsctrace.com/)
 
 ### Testnet
 - [Greenfield Testnet Explorer](https://testnet.greenfieldscan.com/), developed by TraceReal.
-- [BSC Testnet Explorer](https://testnet.bscscan.com)
+- [BSC Testnet Explorer](https://testnet.bsctrace.com)
 
 ## DCellar
 [DCellar](https://dcellar.io), as the inaugural application built on the BNB Greenfield, serves as an ultimate client of
