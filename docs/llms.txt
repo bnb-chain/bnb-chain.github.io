@@ -264,7 +264,7 @@
   - [Fermi Hardfork(BSC)](https://docs.bnbchain.org/announce/fermi-bsc/): Fermi hardfork — block time reduced to 0.45s on BSC (Jan 2026).
   - [Fourier Upgrade of opBNB](https://docs.bnbchain.org/announce/fourier-opbnb/): Fourier upgrade — latest opBNB network improvements.
 - [BNB Chain](https://docs.bnbchain.org/): BNB Chain documentation hub covering BNB Smart Chain, opBNB, and BNB Greenfield.
-- [Announcement](https://docs.bnbchain.org/announce/): Announcements for BNB Chain hardfork upgrades and network changes.
+- [Announcement](https://docs.bnbchain.org/announce/): Announcements for BNB Chain upgrades and network changes.
 - [Altai Upgrade of Greenfield](https://docs.bnbchain.org/announce/altai-gnfd/): Altai hardfork upgrade of BNB Greenfield with timelines and MetaMask compatibility hotfix.
 - [Bohr Upgrade of BSC](https://docs.bnbchain.org/announce/bohr-bsc/): Bohr hardfork upgrade of BSC with BEP-341, BEP-402, BEP-404, and BEP-410.
 - [Feynman Upgrade of BSC](https://docs.bnbchain.org/announce/feynman-bsc/): Feynman hardfork upgrade of BSC advancing BNB Chain Fusion with BEP-294, BEP-297, and BEP-299.
