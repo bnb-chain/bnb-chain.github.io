@@ -6,12 +6,12 @@
 
 BNB Greenfield is a cutting-edge decentralized storage and blockchain storage solution, designed to harness the power of decentralized technology in the field of data ownership and the data economy. The platform focuses on providing decentralized data management and access and EVM programmability, to revolutionize the data economy by simplifying the process of storing and managing data, while connecting data ownership with the DeFi context of BNB Chain.
 
-- [Get Started](./getting-started/dcellar)
-- [Build on Greenfield](./for-developers/tutorials/overview)
-- [EVM Programmability](./core-concept/programmability/)
-- [Greenfield Blockchain](./for-validator/overview)
-- [Storage Provider](./storage-provider/overview)
-- [Developer Kit](../developer-kit/)
+- [Get Started](./getting-started/dcellar): Dive into what is BNB Greenfield and start the journey with Greenfield.
+- [Build on Greenfield](./for-developers/tutorials/overview): Start building dapps to create value based on the data assets and its related economy.
+- [EVM Programmability](./core-concept/programmability/): The real power of the Greenfield lies in its programmability to support the creation of value based on the data assets and its related economy.
+- [Greenfield Blockchain](./for-validator/overview): Get familiar with the Greenfield Blockchain and explore its main modules.
+- [Storage Provider](./storage-provider/overview): Explore the Storage Provider.
+- [Developer Kit](../developer-kit/): Official tool index — SDK guides, MCP, and demo cards for Greenfield, BSC, and opBNB
 ## Quick Guide - BNB Greenfield Develop
 > Source: https://docs.bnbchain.org/bnb-greenfield/for-developers/get-started-dev/
 
