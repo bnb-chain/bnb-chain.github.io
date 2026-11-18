@@ -24,6 +24,7 @@ Many users don’t realize that cross-chain transfers are possible or easy. BNB 
 * Meson
 * LayerZero
 * Mayan
+* Garden Finance 
 
 > ✅ We help users **see available routes** for transferring assets **into or out of BNB Chain**, but we **do not operate the routes or control token availability**.
 
