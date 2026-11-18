@@ -1,26 +1,26 @@
 ---
-title: Overview - BSC Staking
+название: Обзор - BSC Staking
 ---
 
-# BSC Staking Overview
+# Обзор ставок BSC
 
-![Staking](../img/Staking.png)
+![Ставка](../img/Ставка.png)
 
-BNB Smart Chain (BSC) operates on a Proof-of-Staked-Authority (PoSA) blockchain, with the staking mechanism proposed in [BEP-294](https://github.com/bnb-chain/BEPs/pull/294).
-This enables BNB holders to stake their tokens with specified validators to secure the network and earn staking rewards.
-Here's an overview covering the core staking concepts and operations on BSC.
+BNB Smart Chain (BSC) работает на блокчейне Proof-of-Staked-Authority (PoSA) с механизмомом стейкингой, продложенным в [БЭП-294](https://github.com/bnb-chain/BEPs/pull/294).
+Это позволяет держателям BNB размещать свои токены у определенных валидаторов для защиты сети и получения вознаграждений за стейкинг.
+Ниже представлен обзор основных концепций и операций стейкинга на BSC.
 
-## Basic Concepts
+## Основные понятия
 
-### Consensus Engine
+### Механизм консенсуса
 
-BSC uses a consensus mechanism which combines DPoS and PoA for consensus, in this system:
+В этой сисеме BSC использует механизм консенсуса, кѾторый объединяет DPoS и PoA для достижения консенсуса:
 
-* Blocks are produced by a limited set of validators.
-* Validators take turns to produce blocks in a PoA manner.
-* Validator set are elected in and out based on a staking based governance.
+* Блоки производятся ограниченным набором валидаторов.
+* Валидаторы по очереди создают блоки в ежиме PoA.
+* Набор валидаторов избирается на основе управления, основанного на ставках.
 
-The staking mechanism is essential for determining the eligibility of validators to produce blocks.
+Механизм ставок необходим для определения права валидаторов на производство блоков.
 
 ### Validator Set
 
