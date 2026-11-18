@@ -1,4 +1,4 @@
----
+0xFb9f7D70cB2d41c6331Ba5D3513a39ADc6Ae1FE7---
 title: Wallet Configuration - BNB Smart Chain (BSC)
 ---
 
