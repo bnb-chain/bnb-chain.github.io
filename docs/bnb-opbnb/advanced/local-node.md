@@ -123,14 +123,19 @@ export P2P_BOOTNODES="enr:-KO4QKFOBDW--pF4pFwv3Al_jiLOITj_Y5mr1Ajyy2yxHpFtNcBfkZ
   --syncmode=full \
   --maxpeers=10 \
   --networkid=$CHAIN_ID \
-  --miner.gaslimit=150000000 \
   --triesInMemory=32 \
-  --txpool.globalslots=10000 \
+  --txpool.globalslots=20000 \
   --txpool.globalqueue=5000 \
-  --txpool.accountqueue=200 \
-  --txpool.accountslots=200 \
-  --cache 32000 \
+  --txpool.accountqueue=64 \
+  --txpool.accountslots=16 \
+  --txpool.pricelimit=1 \
+  --txpool.nolocals=true \
+  --pathdb.nodebuffer=list \
+  --pathdb.proposeblock=3600 \
+  --cache 6000 \
   --cache.preimages \
+  --journalfile \
+  --history.transactions=0 \
   --allow-insecure-unlock \
   --authrpc.addr="0.0.0.0" \
   --authrpc.port="8551" \
@@ -177,7 +182,7 @@ export P2P_BOOTNODES="enr:-J24QGQBeMsXOaCCaLWtNFSfb2Gv50DjGOKToH2HUTAIn9yXImowlR
   --sequencer.l1-confs=15 \
   --verifier.l1-confs=15 \
   --l1.http-poll-interval 3s \
-  --l1.epoch-poll-interval 45s \
+  --l1.epoch-poll-interval 3s \
   --l1.rpc-max-batch-size 20 \
   --rollup.config=./rollup.json \
   --rpc.addr=0.0.0.0 \
@@ -196,8 +201,8 @@ export P2P_BOOTNODES="enr:-J24QGQBeMsXOaCCaLWtNFSfb2Gv50DjGOKToH2HUTAIn9yXImowlR
   --l1=${L1_RPC} \
   --l2=${L2_RPC} \
   --l2.jwt-secret=./jwt.txt \
-  --l2.engine-sync=true \
-  --l2.skip-sync-start-check=true \  
+  --syncmode=execution-layer \
+  --l1.max-concurrency=20 \
   --log.level=debug
 ```
 

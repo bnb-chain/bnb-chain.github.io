@@ -57,30 +57,7 @@ Fast node does not need trie data anymore, prune the trie data by the following 
 
 ### Start Fast Node Without Snapshot Verification
 
-You can start Fast Node without snapshot verification by verify nodes.
-
 ```bash
 ## start a fast node
 ./geth --tries-verify-mode none --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
-```
-
-Or start Fast Node With Snapshot Verification
-1. Add verifyNodes peers in config.toml.
-
-```
-[Node.P2P]
-MaxPeers = 1350
-NoDiscovery = false
-BootstrapNodes = ["enode://...", "enode://...", ...]
-VerifyNodes = ["enode://...", "enode://...", ...]
-StaticNodes = ["enode://...", "enode://...", ...]
-ListenAddr = ":30311"
-EnableMsgEvents = false
-```
-
-2. Start your fast node with snapshot verification by verify nodes.
-
-```bash
-## start a fast node
-./geth --tries-verify-mode full --config ./config.toml --datadir ./node  --cache 8000 --rpc.allow-unprotected-txs --history.transactions 0
 ```

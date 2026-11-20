@@ -115,7 +115,7 @@ A sample bls address is `b5fe571aa1b39e33c2735a184885f737a59ba689177f297cba67da9
 Then you can get your bls proof by running the following command.
 
 ```shell
-geth bls account generate-proof --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRESS} ${VOTE_ADDRESS}
+geth bls account generate-proof --datadir ${DATA_DIR} --chain-id ${BSC_CHAIN_ID} ${OPEATOR_ADDRESS} ${VOTE_ADDRESS}
 ```
 
 - `BSC_CHAIN_ID`: `56` for BSC mainnet, and `97` for BSC testnet.
