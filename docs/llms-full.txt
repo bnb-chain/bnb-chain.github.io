@@ -1405,12 +1405,11 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 ## Announcement
 > Source: https://docs.bnbchain.org/announce/
 
-
 <div class="doc-announce">
     <a href="./jenner-bsc/">
         <div>
             <div class="announce-title">Jenner Upgrade of BSC</div>
-            <div class="announce-desc">4 BEPs on BSC</div>
+            <div class="announce-desc">3 BEPs on BSC</div>
         </div>
         <span class="announce-date">2026 Oct 29 (Testnet) / Dec 8 (Mainnet)</span>
     </a>
@@ -1686,6 +1685,10 @@ To update your validator's profile information, you must submit a Pull Request (
 
 ## Jenner Upgrade of BSC
 > Source: https://docs.bnbchain.org/announce/jenner-bsc/
+
+<div class="doc-announce-info">
+    <span class="version-tag">Hardfork</span>
+</div>
 
 ## Upgrade Timeline
 The Jenner upgrade is scheduled at:
