@@ -247,7 +247,7 @@ The maintenance mode for service providers (SPs) is a status in which SPs do not
 
 The SP needs to send a transaction to Greenfield to update its status back `STATUS_IN_SERVICE` before its request duration ends, or Greenfield would do it mandatorily.
 
-There are two restrictions that apply when an SP requests to be in maintenance. These restrictions work with the parameters `num_of_historical_blocks_for_maintenance_records`, `maintenance_duration_quota` and `num_of_lockup_blocks_for_maintenance`.
+There are two restrictions that apply when an SP requests to be in maintenance. These restrictions work with the parameters `num_of_historical_blocks_for_maintenance_records`, `maintenance_duration_quota` and `num_of_lockup_blocks_for_maintenance`. Refer to [Params](https://github.com/bnb-chain/greenfield/blob/doc-refactor/docs/modules/storage-provider.md#params)
 
 * The total maintenance duration for each SP, within the number of blocks defined by `num_of_historical_blocks_for_maintenance_records`, should not exceed the `maintenance_duration_quota`.
 * An SP is not allowed to make two consecutive requests to `STATUS_IN_MAINTENANCE` within `num_of_lockup_blocks_for_maintenance`, even if there are enough quotas for it.
@@ -260,7 +260,7 @@ There are two types of exit based on the behavior and choices of the SP: Gracefu
 
 ### Graceful Exit
 
-At some point, the SP may choose to voluntarily exit the Greenfield storage network for various reasons. Ensuring a graceful exit process is crucial to ensure a seamless transition of responsibilities and data to other SPs. During the exit process, the SP must continue to fulfill user serve user querying requests. Once the exit process is successfully completed, the SP can retrieve all the staked BNB.
+At some point, the SP may choose to voluntarily exit the Greenfield storage network for various reasons. Ensuring a graceful exit process is crucial to ensure a seamless transition of responsibilities and data to other SPs. During the exit process, the SP must continue to fulfill user serve user querying requests, Once the exit process is successfully completed, the SP can retrieve all the staked BNB.
 
 To execute a graceful exit, all its stored data need to be migrated to other successor SPs that are willing to take over. This data migration process involves recovering data from the exiting SP by successor SPs in a secure and efficient manner. After the exit SP sending a `StorageProviderExit` transaction to the Greenfield Blockchain, its status will turn to `STATUS_GRACEFUL_EXITING`. A successor SP can initiate the recovery process by first sending a `ReserveSwapIn` transaction to the Greenfield Blockchain.
 ## opBNB Deployment Configuration Reference
@@ -674,6 +674,10 @@ If your issue is not listed here, please explore our other documentation or open
 # Demo — weather-forecast seller (end to end)
 
 > This walkthrough is out of date — use the Quickstart instead. This page still documents the earlier **Python, two-layer** Studio (Layer A Agent + Layer B keyless Service, `main.py` / `service.py`, `npm i -g @aws/agentcore`). The shipped product is a **TypeScript, single-runtime** tool: see **[Quickstart](quickstart.md)** and [Architecture](architecture.md) for the current flow.
+>
+> It has not been rewritten because a faithful end-to-end walkthrough has to be *executed* to be trustworthy — every command output, wallet prompt, and deploy result verified against a real run — rather than adapted on paper. Rewriting it from inference would produce a confident-looking guide that does not work, which is worse than an openly flagged stale one.
+>
+> Kept for now only as a record of the earlier flow's shape.
 
 This walkthrough follows the full BNB Agent Studio path for a single example: a **weather-forecast seller** on BSC testnet. You install the CLI, scaffold the agent with your AI IDE, set up a wallet, fund it, activate an LLM, run locally, negotiate a sale, register on-chain, and deploy.
 
@@ -690,15 +694,142 @@ This walkthrough follows the full BNB Agent Studio path for a single example: a 
 
 Open the [bnbagent-studio](https://github.com/bnb-chain/bnbagent-studio) repo in your AI IDE and ask it to install the workspace packages. For a one-line production install instead, use `npm install -g @bnbagent/studio-cli` — see [Quickstart](quickstart.md).
 
+```text
+Now working from /Users/username/Desktop/project-directory. What would you like to do?
+
+> install bnbagent-studio-core and bnbagent-studio
+
+Let me check the package structure first.
+
+Listed 1 directory (ctrl+o to expand)
+
+$ cd /Users/username/Desktop/project-directory && uv sync
+Using CPython 3.14.2 interpreter at: /opt/homebrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 265 packages in 1ms
+… +74 lines
+
+Both packages installed successfully. uv sync built and installed all 214 packages including:
+
+- bnbagent-studio==0.0.1 (the bag CLI + MCP + recipes)
+- bnbagent-studio-core==0.0.1 (agent runtime library)
+
+The virtual environment is at .venv. You can activate it with source .venv/bin/activate
+or run commands via uv run <cmd>.
+
+$ bag --help
+```
+
 Install the AgentCore CLI (`npm install -g @aws/agentcore`) and studio skills (`bag skills install --target both --scope user`), then reload your IDE.
 
 ## 2. Start vibe coding
 
 Open your AI tool in an empty workspace folder and describe the agent you want — for example, a default BNB Chain seller with ERC-8183, ERC-8004, and x402 wired in. The scaffolding skill inspects `bag init` and the recipes before recommending a setup.
 
+```text
+# Churned for 48s
+
+I changed my mind, I want to have a default setup for BNB Chain agent that includes
+all onchain services, like ERC8183, ERC8004 identity and x402 so that I can allow my
+agent to serve other people or agents to earn rewards
+
+> Let me read the init command and all relevant recipes before recommending anything.
+
+Searched for 2 patterns, read 1 file (ctrl+o to expand)
+
+$ sed -n '1344,1380p' .../packages/bnbagent-studio/bag/cli/init.py
+  def _render_x402_section() -> str:
+      # x402 payment-signing settings for the agent's Pieverse topup flow.
+      # `expected_recipient` PINS the trusted pay-to address handed to the SDK
+      … +34 lines (ctrl+o to expand)
+
+$ sed -n '990,1070p' .../packages/bnbagent-studio/bag/cli/init.py
+  *"\n# Cursor rules emitted at init (regeneratable via "
+  "`bag install --target cursor`).\n.cursor/rules/\n"
+      }
+  … +58 lines (ctrl+o to expand)
+
+$ sed -n '1089,1165p' .../packages/bnbagent-studio/bag/cli/init.py
+  def _render_agent_studio_toml(
+      name: str,
+      provider: str,
+      … +59 lines (ctrl+o to expand)
+
+$ uv run bag recipe show tools-adk 2>&1 && uv run bag erc8004 --help 2>&1 && uv run bag erc8183 --help 2>&1
+  name:        tools-adk
+  description: ADK FunctionTool wrappers around studio.core.tools.chain_readonly (read-only chain queries the LLM can call).
+  status:      v0.0.1
+  … +30 lines (ctrl+o to expand)
+
+Searched for 4 patterns, read 1 file (ctrl+o to expand)
+
+> Now I have the full picture. Here's what's actually included and what needs to be done after init.
+
+---
+What bag init gives you out of the box
+
+| Protocol                     | Included       | Notes                                                                                          |
+|------------------------------|----------------|------------------------------------------------------------------------------------------------|
+| ERC-8183 (earn from jobs)    | ✅ auto        | Full buy/quote/fulfill/settle flow in studio.toml                                              |
+| x402 (pay for APIs)          | ✅ auto        | Only when --llm-provider pieverse-llm and auto-topup is enabled                                |
+| ERC-8004 (on-chain identity) | ⚡ post-init   | Config is in chain_tools; register with bag erc8004 register after deploy                      |
+| Chain read tools             | ✅ auto        | 15 read-only tools: agent_info, job_status, token_balance, etc. all in chain_tools.py          |
+
+ERC-8004 is not a config section — it's a one-time on-chain registration step. The LLM tools
+for reading identity (agent_info, agent_by_address) are already wired in chain_tools.py by default.
+
+---
+The right init command for your goal
+
+$ cd ~/Desktop && uv run bag init weather-seller \
+    --llm-provider pieverse-llm \
+    --network bsc-testnet \
+    --storage-provider local \
+    --no-auto-topup
+
+- pieverse-llm — gets you x402 buyer + [payments.x402] section (only when auto-topup is enabled)
+- bsc-testnet — safe defaults for the weather-seller walkthrough
+- local storage — skip Pinata for now; upgrade to pinata before public launch
+- --no-auto-topup — you control when wallet is funded
+
+After init, 3 steps to go live
+```
+
+That emits the two-layer workspace (`app/agent/` + `app/service/`). See [Quickstart](quickstart.md) for the emitted layout.
+
 ## 3. Agent wallet setup
 
 `bag init` creates an encrypted keystore at `.studio/wallets/` (workspace root, outside `app/agent/`). Set `WALLET_PASSWORD` in a **separate terminal session** from your AI tool so the password never appears in chat context.
+
+```text
+# ~/Desktop/weather-seller/app/agent/erc8183 --no-deps
+
+Want to start with Step 1 and create the wallet now?
+
+* Cogitated for 1m 18s
+
+> set WALLET_PASSWORD and run bag wallet new
+
+> I shouldn't generate or set a wallet password for you — it encrypts your private key
+> and only you should know it.
+>
+> Please run this yourself in your terminal so the password stays out of the conversation:
+>
+>   cd ~/Desktop/weather-seller/app/agent
+>   echo "WALLET_PASSWORD=<your-password>" >> .env.local
+>   set -a; . ./.env.local; set +a
+>   uv run bag wallet new
+>
+> Or using the ! prefix to run it directly in this session:
+>
+>   ! cd ~/Desktop/weather-seller/app/agent && read -s -p "Wallet password: " WP \
+>       && echo "WALLET_PASSWORD=$WP" >> .env.local
+>
+> Once the wallet is created, share the output (the public address) and I'll continue
+> from there.
+
+> bag wallet new
+```
 
 ```bash
 [username@hostname felt-desktop ~]$ cd ~/Desktop/weather-seller/app/agent
