@@ -286,3 +286,4 @@
 - [How do I update my validator node's profile name, logo, and contact information?](https://docs.bnbchain.org/faq/how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information/): How do I update my validator node's profile name, logo, and contact information?
 - [Request for offline full block and transaction data - BSC FAQs](https://docs.bnbchain.org/faq/request-for-offline-full-block-and-transaction-data/): Explains how to access historical BSC block and transaction data for offline analysis
 - [Which reth-bsc version should node operators use? - BSC FAQs](https://docs.bnbchain.org/faq/which-reth-bsc-version-should-node-operators-use/): Recommends reth-bsc v0.1.4-hotfix for BSC mainnet and testnet node operators
+- [Where can I find the current BSC MEV Sentry release and configure gRPC?](https://docs.bnbchain.org/faq/where-can-i-find-the-current-bsc-mev-sentry-release-and-configure-grpc/): BSC MEV Sentry release and gRPC configuration
