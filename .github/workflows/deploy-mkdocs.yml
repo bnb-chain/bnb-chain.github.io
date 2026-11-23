@@ -30,6 +30,10 @@ jobs:
           pip install mkdocs-redirects
           pip install mkdocs-git-revision-date-localized-plugin
           pip install mkdocs-awesome-pages-plugin==2.10.1
+          pip install markdownify==1.2.3
+
+      - name: Test Markdown exports
+        run: python -m unittest discover -s tests -v
 
       - name: Build MkDocs site
         run: mkdocs build
