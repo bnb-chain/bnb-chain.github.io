@@ -182,7 +182,10 @@ nav:
     - Governance:
       - Overview: ./newl1/governance/overview.md
       - System Contracts: ./newl1/governance/system-contracts.md
-    - FAQ: ./newl1/faq.md
+    - FAQ:
+      - FAQ: ./newl1/faq/index.md
+      - General FAQ: ./newl1/faq/general.md
+      - Integration FAQ: ./newl1/faq/integration.md
   - opBNB:
     - opBNB: ./bnb-opbnb/index.md
     - Overview: ./bnb-opbnb/overview.md
@@ -361,6 +364,7 @@ nav:
           - Merkle Proof Verification: ./bc-fusion/post-fusion/merkle-tree-verify.md
           - Token Recovery: ./bc-fusion/post-fusion/token-recovery.md
           - FAQ: ./bc-fusion/post-fusion/faq.md
+  - FAQ: ./faq/index.md
 
 markdown_extensions:
   - toc:
@@ -724,8 +728,6 @@ plugins:
         'opbnb-docs/docs/tutorials/run-nodes-best-practices.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-development-environment.md': 'bnb-opbnb/overview.md'
         'opbnb-docs/docs/tutorials/running-a-local-node.md': 'bnb-opbnb/overview.md'
-        'faq/index.md': 'bnb-smart-chain/faq/index.md'
-        'faq/bsc/index.md': 'bnb-smart-chain/faq/index.md'
         'faq/opbnb/index.md': 'bnb-opbnb/faq/protocol-faqs.md'
 
 

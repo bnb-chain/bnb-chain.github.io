@@ -62,7 +62,7 @@ Bytecode runs as-is. What changes meaning is anything that reasons about time or
 This is where [async execution](../core-concepts/async-execution.md) shows up, and it is the biggest behavioral gap versus BSC.
 
 - **`latest` means executed, not ordered.** State reads trail the head you see on a `newHeads` subscription. Expected, not a lagging node.
-- **`-38004` is retryable, `-38001` is not.** Ordered-but-unexecuted versus no-such-block. `eth_getTransactionReceipt` uses `-38004` for "block not executed yet" and `null` for "unknown transaction", so keep polling on the former.
+- **`-38004` is retryable, `-38001` is not.** Ordered-but-unexecuted versus no-such-block. On devnet2, `eth_getTransactionReceipt` uses `-38004` for "block not executed yet" and `null` for "unknown transaction", so keep polling on the former. A `null` receipt response does not establish transaction failure.
 - **`eth_getProof` rejects with `-32004`.** State is committed with an LtHash accumulator, not an MPT ([State DB](../core-concepts/state-db.md)). Light clients, proof-based bridges, and similar need a different design; an accumulator-native proof scheme is planned.
 - **`eth_syncing` is always `false`.** Use `eth_health` plus block-number progress. Snap sync doesn't exist.
 

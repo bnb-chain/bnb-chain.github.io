@@ -27,7 +27,7 @@
   - [Dev-Tools](https://www.bnbchain.org/en/dev-tools)
   - **JSON-RPC**
     - [JSON-RPC-Endpoint](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/): JSON-RPC endpoints for BNB Smart Chain Mainnet and Testnet, provider list, and API compatibility.
-    - [Bsc API List- BSC Develop](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/): Complete list of BSC JSON-RPC API methods, including finality, blob, and other RPC APIs.
+    - [Bsc Api list](https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/): Complete list of BSC JSON-RPC API methods, finality APIs, and blob APIs.
   - [Faucet](https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/): Get testnet tBNB tokens for BSC development.
   - **Node Operators**
     - [Node Best Practices](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/node_best_practices/): Choosing and tuning the right BSC node type for your workload.
@@ -215,7 +215,7 @@
 - [BNB Agent SDK](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/): Python SDK for on-chain AI agents (ERC-8004, ERC-8183) on BSC.
   - [Quickstart (Python)](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart/): Register ERC-8004 agents, run ERC-8183 agent servers, use ERC8183Client, Turnkey wallets.
   - [Quickstart (TypeScript)](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/quickstart-typescript/): Same flows in TypeScript; headless provider loop, no HTTP server layer.
-  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/): ERC-8004 identity, ERC-8183 commerce, module system and data flows.
+  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/architecture/): ERC-8004 identity, ERC-8183 commerce, subpackage layout and data flows.
   - [Configuration](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/configuration/): Environment variables for wallet, network, ERC-8183/ERC-8004 contracts, storage, Turnkey.
   - [Networks & contracts](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/networks/): Supported networks and upstream deployment references.
   - [Examples](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/examples/): Client, voter, and agent-server flows.
@@ -283,5 +283,6 @@
 - [Wright Upgrade of opBNB](https://docs.bnbchain.org/announce/wright-opbnb/): Hardfork announcement for opBNB Wright, including upgrade timeline and gasless transaction support.
 - [Frequently Asked Questions](https://docs.bnbchain.org/faq/): Frequently Asked Questions
 - [BSC FAQs](https://docs.bnbchain.org/faq/bsc/): BSC FAQs
-- [v1.8.1 Release Mainnet Compatibility Query - BSC FAQs](https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/): Explains that BSC v1.8.1 is the Chapel testnet Jenner hardfork release and mainnet nodes do not need to upgrade for Jenner
 - [How do I update my validator node's profile name, logo, and contact information?](https://docs.bnbchain.org/faq/how-do-i-update-my-validator-nodes-profile-name-logo-and-contact-information/): How do I update my validator node's profile name, logo, and contact information?
+- [Request for offline full block and transaction data - BSC FAQs](https://docs.bnbchain.org/faq/request-for-offline-full-block-and-transaction-data/): Explains how to access historical BSC block and transaction data for offline analysis
+- [Which reth-bsc version should node operators use? - BSC FAQs](https://docs.bnbchain.org/faq/which-reth-bsc-version-should-node-operators-use/): Recommends reth-bsc v0.1.4-hotfix for BSC mainnet and testnet node operators

@@ -48,7 +48,7 @@ None of these are required to run a standard EVM app. They are additive, and the
 - **[Network Information](../get-started/network-info.md)** holds the network identifiers, protocol parameters, and endpoints.
 - **[System Contracts](../governance/system-contracts.md)** lists every system contract and precompile address, including the BSC carry-overs and the New L1–original ones.
 - **[Governance](../governance/overview.md)** walks the propose → vote → queue → execute lifecycle that controls protocol parameters.
-- **[FAQ](../faq.md)**
+- **[FAQ](../faq/index.md)**
 
 ## Tooling
 

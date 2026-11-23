@@ -57,10 +57,10 @@ TX=$(cast send --private-key $SK --legacy --gas-price 1000000000 --gas-limit 210
 rpc newl1_getTransactionPreconfirmation "[\"$TX\"]"   # leader committed to including it
 rpc newl1_getTransactionStatus          "[\"$TX\"]"   # pool-plane state: ready/parked/ordered/…
 rpc eth_getTransactionByHash            "[\"$TX\"]"   # in an ordered block (not execution-gated)
-rpc eth_getTransactionReceipt           "[\"$TX\"]"   # executed - errors -38004 until then
+rpc eth_getTransactionReceipt           "[\"$TX\"]"   # executed - on devnet2, errors -38004 until then
 ```
 
-The ladder runs pre-confirmed → ordered → executed → finalized, each stage observable on its own. A `-38004` from the receipt call means "not executed yet, retry", distinct from `null`, which means the transaction is unknown.
+The ladder runs pre-confirmed → ordered → executed → finalized, each stage observable on its own. On devnet2, a `-38004` from the receipt call means "not executed yet, retry", distinct from `null`, which means the transaction is unknown to that endpoint. A `null` receipt response does not establish transaction failure.
 
 ## Prove You're Charged for the Gas Limit, Not Gas Used
 

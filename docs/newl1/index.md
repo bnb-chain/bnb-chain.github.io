@@ -9,6 +9,7 @@ title: New L1 - High-Performance EVM L1
    .md-source-file, .md-content__button.md-icon {
       display: none;
    }
+
 </style>
 
 <div class="section-head">
@@ -61,5 +62,9 @@ title: New L1 - High-Performance EVM L1
     <a href="./developers/json_rpc/json-rpc-endpoint">
         <div>JSON-RPC Reference</div>
         <p>Standard eth_* methods plus New L1 extensions</p>
+    </a>
+    <a href="./faq/">
+        <div>FAQ</div>
+        <p>General questions and technical integration guidance</p>
     </a>
 </div>
