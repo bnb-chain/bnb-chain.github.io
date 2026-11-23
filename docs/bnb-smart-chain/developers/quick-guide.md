@@ -30,6 +30,10 @@ For the mainnet, you can withdraw tokens directly from a centralized exchange (C
 Interacting with BSC requires sending requests to specific JSON-RPC API methods. BSC's APIs are compatible with Geth.
 - [JSON-RPC API](json_rpc/json-rpc-endpoint.md)
 
+## Official Developer Kit
+
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/).
+
 ## Developer Tools
 - Explorer
     - [NodeReal BSC Scan](https://bsctrace.com/)

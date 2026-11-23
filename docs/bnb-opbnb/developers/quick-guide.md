@@ -8,6 +8,10 @@ order: 8
 If you're a developer seeking to build on opBNB, you've come to the right place.
 This document provides all the information you need to develop opBNB applications.
 
+## Official Developer Kit
+
+Official tools index (SDK cards, MCP, Ask AI): [BNB Chain Developer Kit](../../developer-kit/).
+
 ## Getting Started 
 
 The opBNB network is the Layer 2 scaling solution for the BNB Smart Chain(BSC) powered by [OP Stack](https://docs.optimism.io/).

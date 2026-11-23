@@ -45,7 +45,7 @@ This dual-layer approach ensures network security and finality guarantees even w
 **BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
-* String "earliest" for the earliest/genesis block
+* String `"earliest"` for the earliest available block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "**finalized**" - for the latest finalized block
@@ -56,7 +56,7 @@ This dual-layer approach ensures network security and finality guarantees even w
 **BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
-* String "earliest" for the earliest/genesis block
+* String `"earliest"` for the earliest available block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "**finalized**" - for the latest finalized block
@@ -64,6 +64,8 @@ This dual-layer approach ensures network security and finality guarantees even w
 **Full_transaction_flag** Boolean
 
 - If true it returns the full transaction objects, if false only the hashes of the transactions.
+
+> For `eth_getBlockByNumber` and `eth_getHeaderByNumber`, `earliest` follows the node’s retained block-history boundary. It resolves to genesis when that boundary is block 0. On a reth-bsc node with block-body pruning, it can resolve to a later block even when the genesis header is still available by its explicit block number.
 
 ### eth_newFinalizedHeaderFilter
 Here are two APIs that can help you trace the latest finalized blocks:
@@ -107,9 +109,9 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
     - `-1` represents at least `len(currentValidators) * 1/2`
     - `-2` represents at least `len(currentValidators) * 2/3`
     - `-3` represents at least `len(currentValidators)`
-* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedHeader` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
+* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedBlock` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
 * If the highest security level is required, you can choose `-3`.
-* This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
+* This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
 * If `fullTx` is true, the block includes all transactions; otherwise, only transaction hashes are included.
 * The height of the returned block is guaranteed to be monotonically increasing.
 For example:
@@ -145,7 +147,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 
 * HEX String - an integer block number
 * HEX String - the hash of the block
-* String "earliest" for the earliest/genesis block
+* String `"earliest"` for the earliest available block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "finalized" - for the latest finalized block
@@ -182,7 +184,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 **BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
-* String "earliest" for the earliest/genesis block
+* String `"earliest"` for the earliest available block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "finalized" - for the latest finalized block

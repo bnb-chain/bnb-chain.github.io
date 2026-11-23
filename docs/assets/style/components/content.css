@@ -101,7 +101,7 @@
 
 .md-main__inner {
     margin-top: 0;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 .md-content {
@@ -125,6 +125,9 @@
 .md-main {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
+    min-height: calc(100vh - var(--doc-header-offset));
+    min-height: calc(100dvh - var(--doc-header-offset));
 }
 
 .doc-announce {

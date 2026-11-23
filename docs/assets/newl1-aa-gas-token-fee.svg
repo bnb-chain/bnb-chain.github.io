@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1330" viewBox="0 0 1120 1330" role="img" aria-labelledby="title desc">
+  <title id="title">Gas Token fee: wallet, Paymaster, node, and token contract</title>
+  <desc id="desc">The wallet requests a quote, builds token_fee, and signs with a root key. The Paymaster verifies and simulates, signs last, and broadcasts. During execution the node charges the Paymaster native gas and runs a token transfer as the account before the user-call checkpoint. Payment failure skips user calls and produces a failed receipt with gas charged. Payment success persists even if the user calls revert. The wallet tracks the receipt.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #172b4d; font-size: 15px; }
+    .heading { font-size: 27px; font-weight: 700; }
+    .label { font-size: 17px; font-weight: 700; }
+    .small { font-size: 13px; fill: #475569; }
+    .phase { font-size: 13px; font-weight: 700; letter-spacing: 1px; fill: #54657b; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
+    .life { stroke: #b7c3d3; stroke-width: 1.5; stroke-dasharray: 5 6; }
+    .message { fill: none; stroke: #475569; stroke-width: 1.7; marker-end: url(#arrow); }
+    .return { stroke-dasharray: 5 4; }
+    .caption { paint-order: stroke; stroke: #ffffff; stroke-width: 6px; stroke-linejoin: round; }
+  </style>
+  <rect width="1120" height="1330" rx="16" fill="#ffffff"/>
+  <text x="40" y="47" class="heading">Pay gas in a token</text>
+  <text x="40" y="76" fill="#475569">Root-signed, sponsored AA (0x76) · Account signs first · Paymaster signs last</text>
+
+  <rect x="40" y="106" width="220" height="62" rx="9" fill="#eff6ff" stroke="#83a9db"/>
+  <text x="150" y="132" text-anchor="middle" class="label">User / wallet</text>
+  <text x="150" y="153" text-anchor="middle" class="small">Builds and root-signs</text>
+  <rect x="340" y="106" width="220" height="62" rx="9" fill="#eaf8f5" stroke="#66ab9d"/>
+  <text x="450" y="132" text-anchor="middle" class="label">Paymaster</text>
+  <text x="450" y="153" text-anchor="middle" class="small">Quotes and pays native gas</text>
+  <rect x="640" y="106" width="220" height="62" rx="9" fill="#f3effa" stroke="#ae94cf"/>
+  <text x="750" y="132" text-anchor="middle" class="label">New L1 node</text>
+  <text x="750" y="153" text-anchor="middle" class="small">RPC and execution</text>
+  <rect x="910" y="106" width="170" height="62" rx="9" fill="#fff8df" stroke="#c7a538"/>
+  <text x="995" y="132" text-anchor="middle" class="label">Gas Token</text>
+  <text x="995" y="153" text-anchor="middle" class="small">ERC-20 contract</text>
+
+  <path d="M150 168V1155 M450 168V1155 M750 168V1155 M995 168V1155" class="life"/>
+  <text x="40" y="200" class="phase">01 / QUOTE AND AUTHORIZE</text>
+  <path d="M150 240H450" class="message"/>
+  <text x="300" y="229" text-anchor="middle" class="caption">1. GET /get_price</text>
+  <path d="M450 294H150" class="message return"/>
+  <text x="300" y="267" text-anchor="middle" class="caption">2. Token, price per gas, Paymaster</text>
+  <text x="300" y="285" text-anchor="middle" class="small caption">priceId + quote expiry</text>
+  <rect x="40" y="318" width="375" height="106" rx="8" fill="#eff6ff" stroke="#83a9db"/>
+  <text x="58" y="343" class="label">3. Build body and sign with root key</text>
+  <text x="58" y="367" class="mono">token_fee = {token, recipient, amount}</text>
+  <text x="58" y="389" class="small">recipient = Paymaster; amount = limit × quote</text>
+  <text x="58" y="411" class="small">Account digest commits to sponsor presence</text>
+  <path d="M150 471H450" class="message"/>
+  <text x="300" y="449" text-anchor="middle" class="caption">4. POST /sponsor</text>
+  <text x="300" y="465" text-anchor="middle" class="small caption">priceId + body + account signature</text>
+  <rect x="335" y="492" width="350" height="103" rx="8" fill="#eaf8f5" stroke="#66ab9d"/>
+  <text x="353" y="517" class="label">5. Verify, simulate, then sign</text>
+  <text x="353" y="541" class="small">Check quote, token_fee, body, account signature</text>
+  <text x="353" y="563" class="small">Add fee_payer_signature; signed body is unchanged</text>
+  <text x="353" y="585" class="small">Declined? Return rejection without broadcasting</text>
+  <path d="M450 635H750" class="message"/>
+  <text x="600" y="623" text-anchor="middle" class="caption mono">6. eth_sendRawTransaction</text>
+  <path d="M750 673H450" class="message return"/>
+  <path d="M450 673H150" class="message return"/>
+  <text x="600" y="663" text-anchor="middle" class="small caption">txHash (accepted for submission)</text>
+  <text x="300" y="663" text-anchor="middle" class="small caption">Return txHash to wallet</text>
+
+  <rect x="28" y="704" width="1064" height="382" rx="10" fill="#f8fafc" stroke="#d6dfe9"/>
+  <text x="46" y="731" class="phase">02 / ON-CHAIN EXECUTION AFTER INCLUSION</text>
+  <path d="M750 742V1070 M995 742V1070" class="life"/>
+  <rect x="625" y="751" width="250" height="52" rx="7" fill="#f3effa" stroke="#ae94cf"/>
+  <text x="750" y="773" text-anchor="middle">7. Charge Paymaster native BNB</text>
+  <text x="750" y="793" text-anchor="middle" class="small">Declared gas_limit; no unused-gas refund</text>
+  <path d="M750 868H995" class="message"/>
+  <text x="864" y="826" text-anchor="middle">8. Protocol payment frame</text>
+  <text x="864" y="846" text-anchor="middle" class="mono">transfer(recipient, amount)</text>
+  <text x="864" y="862" text-anchor="middle" class="small">caller = account</text>
+  <rect x="48" y="755" width="520" height="120" rx="8" fill="#fff8df" stroke="#c7a538"/>
+  <text x="66" y="782" class="label">The payment is outside the user-call checkpoint</text>
+  <text x="66" y="809">Tokens move from the account to the Paymaster.</text>
+  <text x="66" y="835">The signed token_fee authorizes the transfer.</text>
+  <text x="66" y="859" class="small">No allowance / permit; no fee transfer inside user calls.</text>
+  <path d="M995 898H750" class="message return"/>
+  <text x="864" y="890" text-anchor="middle" class="small caption">Payment result</text>
+
+  <rect x="48" y="920" width="500" height="142" rx="8" fill="#fff1f0" stroke="#dca29b"/>
+  <text x="66" y="948" class="label">If payment fails</text>
+  <text x="66" y="975">Skip all user calls.</text>
+  <text x="66" y="1001">Failed receipt; account nonce advances.</text>
+  <text x="66" y="1031" font-weight="700">Paymaster still pays the declared gas limit.</text>
+  <text x="66" y="1051" class="small">Simulation reduces risk; it does not guarantee success.</text>
+
+  <rect x="572" y="920" width="500" height="142" rx="8" fill="#eaf8f5" stroke="#66ab9d"/>
+  <text x="590" y="948" class="label">If payment succeeds</text>
+  <text x="590" y="975">9. Checkpoint → execute user calls atomically.</text>
+  <text x="590" y="1001">All succeed: keep effects. Any fails: revert the batch.</text>
+  <text x="590" y="1031" font-weight="700">Token fee stays paid even if user calls revert.</text>
+  <text x="590" y="1051" class="small">Native gas is charged; account nonce advances.</text>
+
+  <path d="M150 1126H750" class="message"/>
+  <text x="450" y="1115" text-anchor="middle" class="caption mono">10. eth_getTransactionReceipt(txHash)</text>
+  <path d="M750 1166H150" class="message return"/>
+  <text x="450" y="1156" text-anchor="middle" class="caption">Execution receipt: status + declared gas charged</text>
+  <rect x="40" y="1200" width="1040" height="98" rx="8" fill="#f1f5f9"/>
+  <text x="60" y="1228" class="label">Two currencies, one transaction</text>
+  <text x="60" y="1254">Account → Paymaster: fixed quoted Gas Token fee. Paymaster → chain: native BNB gas.</text>
+  <text x="60" y="1280" class="small">Quote and sponsor endpoints are illustrative off-chain APIs. Token acceptance and pricing are Paymaster policy.</text>
+</svg>

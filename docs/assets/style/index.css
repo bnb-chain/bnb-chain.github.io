@@ -75,6 +75,21 @@
     --md-primary-fg-color--dark: var(--doc-dark-layer-2);
     --md-accent-fg-color: var(--doc-text-brand);
     --md-text-font: 'Space Grotesk';
+
+    /* Header only; tabs join the header from 76.25em */
+    --doc-header-offset: 60px;
+}
+
+@media screen and (min-width: 76.25em) {
+    :root {
+        --doc-header-offset: 108px;
+    }
+}
+
+@media screen and (min-width: 1820px) {
+    :root {
+        --doc-header-offset: 120px;
+    }
 }
 
 body {
@@ -136,8 +151,17 @@ body {
     color: var(--doc-text-brand);
 }
 
+/* Inline code inside links inherits dark code color by default — keep link visible */
+.md-typeset a code {
+    color: var(--doc-text-brand);
+}
+
 .md-typeset a:focus, .md-typeset a:hover {
     text-decoration: underline;
+}
+
+.md-typeset a:focus code, .md-typeset a:hover code {
+    color: var(--doc-text-brand);
 }
 
 .md-typeset a.headerlink:focus, .md-typeset a.headerlink:hover {

@@ -217,8 +217,13 @@ For more tools and details, you can refer to [BSC Dev Tools](https://www.bnbchai
 
 ---
 
-## Json Rpc Endpoint
+## JSON-RPC-Endpoint
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/
+
+---
+title: JSON-RPC-Endpoint - BSC Develop
+---
+
 
 # JSON-RPC-Endpoint
 
@@ -243,7 +248,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 * https://bsc-dataseed.ninicoin.io
 * https://bsc.nodereal.io
 * https://bsc-dataseed-public.bnbchain.org
-* https://bnb.rpc.subquery.network/public
+* https://rpc-bnb.blockmachine.io
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
@@ -275,7 +280,550 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
   
 * **dRPC:** <https://drpc.org/chainlist/bsc>
 
-* **SubQuery:** <https://rpc.subquery.network/56>
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+* https://rpc-bnb.blockmachine.io
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
+
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+* https://rpc-bnb.blockmachine.io
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
+
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+* https://rpc-bnb.blockmachine.io
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
+
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+* https://rpc-bnb.blockmachine.io
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
+
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+* https://rpc-bnb.blockmachine.io
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
+
+* **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
+
+* **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
+
+* **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+### Starting HTTP JSON-RPC
+
+You can start the HTTP JSON-RPC with the --http flag
+```bash
+## mainnet
+geth attach https://bsc-dataseed.bnbchain.org
+
+## testnet
+geth attach https://bsc-testnet-dataseed.bnbchain.org
+```
+
+## JSON-RPC API List
+
+BSC (BNB Smart Chain) is EVM-compatible and strives to be as compatible as possible with the Go-Ethereum API. However, BSC also has unique features, such as faster finality and the storage of blob data on the execution layer, which require their own specialized APIs.
+
+### Geth(Go-Ethereum) API
+
+BSC is nearly fully compatible with the Geth APIs. Any exceptions or incompatibilities are explicitly listed. If you're looking for detailed usage of a specific API, you will most likely find the answer in the following link:
+
+[Geth JSON-RPC API documentation](https://geth.ethereum.org/docs/interacting-with-geth/rpc).
+
+### Finality
+
+Ethereum's PoS consensus protocol, known as "Gasper," is built on LMD-GHOST (a fork choice rule) and Casper FFG (a finality gadget). Similarly, BSC's consensus protocol, called "Parlia," is constructed on top of a difficulty-based fork choice mechanism with FFG, as described in [BEP-126](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP126.md). To further enhance BSC's throughput, validators are allowed to produce multiple consecutive blocks, as explained in [BEP-341](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-341.md). These differences result in BSC having a unique finality process compared to Ethereum. For more details, please refer to the the following doc:
+
+[BSC Finality API](bsc-api-list.md#finality-api).
+
+### Blob
+
+Bsc implement EIP-4844, which support Shard Blob Transactions, as described in  [BEP-336](https://github.com/bnb-chain/BEPs/blob/master/BEPs/BEP-336.md). For more details, please refer to the the following doc: [BSC Blob API](bsc-api-list.md#blob-api).
+
+### Other BSC API
+
+Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#others).
+## One-click adding BSC network
+
+Visit the [ChainList](https://chainlist.org/chain/56) and connect to your wallet, it will add alive RPC endpoints.
+
+## RPC Endpoints for BNB Smart Chain 
+
+*The rate limit of BSC endpoint on Testnet and Mainnet is **10K/5min**.*
+
+`eth_getLogs` is disabled on below Mainnet endpoints, please use 3rd party endpoints from **[here](https://chainlist.org/chain/56)**.
+If you need to pull logs frequently, we recommend using WebSockets to push new logs to you when they are available.
+
+### BSC Mainnet (ChainID 0x38, 56 in decimal)
+
+* https://bsc-dataseed.bnbchain.org
+* https://bsc-dataseed.nariox.org
+* https://bsc-dataseed.defibit.io
+* https://bsc-dataseed.ninicoin.io
+* https://bsc.nodereal.io
+* https://bsc-dataseed-public.bnbchain.org
+
+You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
+
+### BSC Testnet (ChainID 0x61, 97 in decimal)
+
+* https://bsc-testnet-dataseed.bnbchain.org
+* https://bsc-testnet.bnbchain.org
+* https://bsc-prebsc-dataseed.bnbchain.org
+
+### RPC Providers
+
+* **Moralis:** <https://moralis.io/nodes/?utm_source=bnb-docs&utm_medium=partner-docs>
+
+* **NodeReal:** <https://docs.nodereal.io/nodereal/meganode/introduction>
+
+* **Ankr:** <https://app.ankr.com/api>
+
+* **Chainstack:** <https://chainstack.com/build-better-with-binance-smart-chain/>
+
+* **GetBlock:** <https://getblock.io/nodes/bsc>
+
+* **QuickNode:** <https://quicknode.com>
+  
+* **BlockVision:** <https://docs.blockvision.org/blockvision/chain-apis/bnb-chain-api>
+
+* **4EVERLAND:** <https://docs.4everland.org/rpc/chains-rpc/bsc-opbnb-rpc>
+
+* **NOWNodes:** <https://nownodes.io/nodes/bsc>
+  
+* **dRPC:** <https://drpc.org/chainlist/bsc>
 
 * **All That Node:** <https://www.allthatnode.com/bsc.dsrv>
 
@@ -320,7 +868,7 @@ Bsc implement some others apis, as described in: [BSC API](bsc-api-list.md#other
 
 ---
 
-## Bsc Api list
+## Bsc API List- BSC Develop
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/
 
 ## Finality API
@@ -366,7 +914,7 @@ This dual-layer approach ensures network security and finality guarantees even w
 **BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
-* String "earliest" for the earliest/genesis block
+* String `"earliest"` for the earliest available block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "**finalized**" - for the latest finalized block
@@ -377,7 +925,7 @@ This dual-layer approach ensures network security and finality guarantees even w
 **BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
-* String "earliest" for the earliest/genesis block
+* String `"earliest"` for the earliest available block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "**finalized**" - for the latest finalized block
@@ -385,6 +933,8 @@ This dual-layer approach ensures network security and finality guarantees even w
 **Full_transaction_flag** Boolean
 
 - If true it returns the full transaction objects, if false only the hashes of the transactions.
+
+> For `eth_getBlockByNumber` and `eth_getHeaderByNumber`, `earliest` follows the node’s retained block-history boundary. It resolves to genesis when that boundary is block 0. On a reth-bsc node with block-body pruning, it can resolve to a later block even when the genesis header is still available by its explicit block number.
 
 ### eth_newFinalizedHeaderFilter
 Here are two APIs that can help you trace the latest finalized blocks:
@@ -428,9 +978,9 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
     - `-1` represents at least `len(currentValidators) * 1/2`
     - `-2` represents at least `len(currentValidators) * 2/3`
     - `-3` represents at least `len(currentValidators)`
-* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedHeader` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
+* Using `-1`, `-2`, or `-3` provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. **Historically, blocks returned by `eth_getFinalizedBlock` with `-1`, `-2`, or `-3` on BSC have never been reverted.**
 * If the highest security level is required, you can choose `-3`.
-* This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block header with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
+* This function calculates `probabilisticFinalizedHeight` as the highest height of the block verified by `verifiedValidatorNum` validators and then returns the block with a height equal to `max(fastFinalizedHeight, probabilisticFinalizedHeight)`.
 * If `fullTx` is true, the block includes all transactions; otherwise, only transaction hashes are included.
 * The height of the returned block is guaranteed to be monotonically increasing.
 For example:
@@ -526,7 +1076,6 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 ---
 
 ---
-
 ## Faucet
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/
 
@@ -4073,3 +4622,15 @@ If your issue is not listed here, please explore our other documentation or open
 ---
 
 ---
+## v1.8.1 Release Mainnet Compatibility Query - BSC FAQs
+> Source: https://docs.bnbchain.org/faq/v181-release-mainnet-compatibility-query/
+### v1.8.1 Release Mainnet Compatibility Query
+### Question
+Do BSC mainnet nodes need to upgrade to v1.8.1 for the Jenner hardfork?
+### Answer
+No. **BSC v1.8.1 is the Chapel testnet Jenner hardfork release.** BSC mainnet nodes do not need to upgrade to this release for Jenner.
+The official release targets Chapel testnet node operators, MEV builders, and sentry operators. Chapel testnet activation is scheduled for **October 29, 2026 at 02:30 UTC**. Mainnet activation is not scheduled in this release.
+Mainnet operators should follow the currently recommended mainnet release and wait for a separate official mainnet Jenner upgrade notice. Do not infer a mainnet activation date or required version from the testnet release.
+Source: [BSC v1.8.1 release notes](https://github.com/bnb-chain/bsc/releases/tag/v1.8.1).
+---
+Applies to: v1.8.1

@@ -152,5 +152,5 @@ To deposit funds into your frozen account and unfreeze it, you can follow these 
      ```
 #### Using the Greenfield Go SDK
 
-   * Refer to the [Go SDK Example](https://docs.bnbchain.org/bnb-greenfield/for-developers/apis-and-sdks/sdk-go) section to set up the environment locally.
+   * Refer to the [Greenfield SDK](https://docs.bnbchain.org/developer-kit/greenfield-sdk/) guide (Go tab) to set up the environment locally.
    * Once set up, use [deposit](https://pkg.go.dev/github.com/bnb-chain/greenfield-go-sdk@v1.7.4/client#Client.Deposit) method to deposit to your account.
