@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/bnb.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
     
@@ -3293,7 +3293,7 @@
 <p><strong>BlockNumber</strong> QUANTITY|TAG</p>
 <ul>
 <li>HEX String - an integer block number</li>
-<li>String “earliest” for the earliest/genesis block</li>
+<li>String <code>"earliest"</code> for the earliest available block</li>
 <li>String “latest” - for the latest mined block</li>
 <li>String “safe” - for the latest justified head block</li>
 <li>String “<strong>finalized</strong>” - for the latest finalized block</li>
@@ -3303,7 +3303,7 @@
 <p><strong>BlockNumber</strong> QUANTITY|TAG</p>
 <ul>
 <li>HEX String - an integer block number</li>
-<li>String “earliest” for the earliest/genesis block</li>
+<li>String <code>"earliest"</code> for the earliest available block</li>
 <li>String “latest” - for the latest mined block</li>
 <li>String “safe” - for the latest justified head block</li>
 <li>String “<strong>finalized</strong>” - for the latest finalized block</li>
@@ -3312,6 +3312,9 @@
 <ul>
 <li>If true it returns the full transaction objects, if false only the hashes of the transactions.</li>
 </ul>
+<blockquote>
+<p>For <code>eth_getBlockByNumber</code> and <code>eth_getHeaderByNumber</code>, <code>earliest</code> follows the node’s retained block-history boundary. It resolves to genesis when that boundary is block 0. On a reth-bsc node with block-body pruning, it can resolve to a later block even when the genesis header is still available by its explicit block number.</p>
+</blockquote>
 <h3 id="eth_newfinalizedheaderfilter">eth_newFinalizedHeaderFilter<a class="headerlink" href="#eth_newfinalizedheaderfilter" title="Link to this section">¶</a></h3>
 <p>Here are two APIs that can help you trace the latest finalized blocks:
 1. Create a finalized header filter:
@@ -3384,7 +3387,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 <ul>
 <li>HEX String - an integer block number</li>
 <li>HEX String - the hash of the block</li>
-<li>String “earliest” for the earliest/genesis block</li>
+<li>String <code>"earliest"</code> for the earliest available block</li>
 <li>String “latest” - for the latest mined block</li>
 <li>String “safe” - for the latest justified head block</li>
 <li>String “finalized” - for the latest finalized block</li>
@@ -3412,7 +3415,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 <p><strong>BlockNumber</strong> QUANTITY|TAG</p>
 <ul>
 <li>HEX String - an integer block number</li>
-<li>String “earliest” for the earliest/genesis block</li>
+<li>String <code>"earliest"</code> for the earliest available block</li>
 <li>String “latest” - for the latest mined block</li>
 <li>String “safe” - for the latest justified head block</li>
 <li>String “finalized” - for the latest finalized block</li>
@@ -3450,7 +3453,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2025 11:25:31 UTC">October 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 23, 2026 04:47:16 UTC">November 23, 2026</span>
   </span>
 
     
