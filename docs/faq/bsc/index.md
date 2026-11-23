@@ -16,3 +16,4 @@ title: "BSC FAQs"
 - [When is the deadline for the BSC v1.8.2 mainnet Jenner hardfork upgrade?](../when-is-the-deadline-for-the-bsc-v182-mainnet-jenner-hardfork-upgrade.md)
 - [Request for offline full block and transaction data](../request-for-offline-full-block-and-transaction-data.md)
 - [Which reth-bsc version should node operators use?](../which-reth-bsc-version-should-node-operators-use.md)
+- [Where can I find the current BSC MEV Sentry release and configure gRPC?](../where-can-i-find-the-current-bsc-mev-sentry-release-and-configure-grpc.md)
