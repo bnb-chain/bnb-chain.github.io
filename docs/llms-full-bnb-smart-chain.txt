@@ -1016,7 +1016,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 
 * HEX String - an integer block number
 * HEX String - the hash of the block
-* String `"earliest"` for the earliest available block
+* String "earliest" for the earliest/genesis block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "finalized" - for the latest finalized block
@@ -1050,7 +1050,7 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 **BlockNumber** QUANTITY|TAG
 
 * HEX String - an integer block number
-* String `"earliest"` for the earliest available block
+* String "earliest" for the earliest/genesis block
 * String "latest" - for the latest mined block
 * String "safe" - for the latest justified head block
 * String "finalized" - for the latest finalized block
@@ -1076,7 +1076,6 @@ curl -X POST "http://localhost:8545/" -H "Content-Type: application/json"  --dat
 ---
 
 ---
-
 ## Faucet
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/faucet/
 
