@@ -3355,9 +3355,9 @@ For example:
 <li><code>-3</code> represents at least <code>len(currentValidators)</code></li>
 </ul>
 </li>
-<li>Using <code>-1</code>, <code>-2</code>, or <code>-3</code> provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. <strong>Historically, blocks returned by <code>eth_getFinalizedHeader</code> with <code>-1</code>, <code>-2</code>, or <code>-3</code> on BSC have never been reverted.</strong></li>
+<li>Using <code>-1</code>, <code>-2</code>, or <code>-3</code> provides a convenient way to select the desired security level according to your application and the corresponding waiting time. When one of these values is used as the parameter, the returned block is increasingly less likely to be reverted. <strong>Historically, blocks returned by <code>eth_getFinalizedBlock</code> with <code>-1</code>, <code>-2</code>, or <code>-3</code> on BSC have never been reverted.</strong></li>
 <li>If the highest security level is required, you can choose <code>-3</code>.</li>
-<li>This function calculates <code>probabilisticFinalizedHeight</code> as the highest height of the block verified by <code>verifiedValidatorNum</code> validators and then returns the block header with a height equal to <code>max(fastFinalizedHeight, probabilisticFinalizedHeight)</code>.</li>
+<li>This function calculates <code>probabilisticFinalizedHeight</code> as the highest height of the block verified by <code>verifiedValidatorNum</code> validators and then returns the block with a height equal to <code>max(fastFinalizedHeight, probabilisticFinalizedHeight)</code>.</li>
 <li>If <code>fullTx</code> is true, the block includes all transactions; otherwise, only transaction hashes are included.</li>
 <li>The height of the returned block is guaranteed to be monotonically increasing.
 For example:
