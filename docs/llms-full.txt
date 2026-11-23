@@ -1727,7 +1727,7 @@ Check the [latest releases and upgrade instructions](https://github.com/bnb-chai
 
 Applies to: reth-bsc nodes
 
-## Bsc Api list
+## Bsc API List- BSC Develop
 > Source: https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/bsc-api-list/
 
 ## Finality API
