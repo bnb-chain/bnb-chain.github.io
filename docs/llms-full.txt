@@ -1407,11 +1407,10 @@ BNB Chain is a leading blockchain ecosystem designed to support the growing dema
 
 Announcements for BNB Chain upgrades and network changes.
 
-- Pasteur Upgrade of BSC — 3 BEPs on BSC — 2026 Jul 21st
-- Token Recovery Tool: Phase 3 — Self-Service Recovery — 1 July 2026
-- BNB Beacon Chain Token Recovery Tool: Sunset Plan — 2026 Mar 4th
-- Mendel Upgrade of BSC — Nine BEPs on BSC Testnet/Mainnet — 2026 Feb 6th
-
+- [Jenner Upgrade of BSC](https://docs.bnbchain.org/announce/jenner-bsc/): 3 BEPs on BSC — 2026 Late Oct (Testnet) / Late Nov (Mainnet)
+- [Token Recovery Tool: Phase 3 — Self-Service Recovery](https://docs.bnbchain.org/announce/token-recovery-sunset-phase3/): Hosted tool discontinued; use the open-source self-service tool from 1 July 2026 — 2026 Jul 1st
+- [BNB Beacon Chain Token Recovery Tool: Sunset Plan](https://docs.bnbchain.org/announce/token-recovery-sunset-plan/): Three-phase sunset with increasing recovery times — 2026 Mar 4th
+- [Mendel Upgrade of BSC](https://docs.bnbchain.org/announce/mendel-bsc/): Nine BEPs on BSC Testnet/Mainnet — 2026 Feb 6th
 ## Altai Upgrade of Greenfield
 > Source: https://docs.bnbchain.org/announce/altai-gnfd/
 
