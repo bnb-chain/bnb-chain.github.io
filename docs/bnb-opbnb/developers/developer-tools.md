@@ -38,7 +38,7 @@ Needless to mention that the stability of RPC nodes is crucial to any blockchain
 
 NodeReal RPC can be accessed through their [API marketplace](https://nodereal.io/api-marketplace/explore?chains=opbnb). For common/public nodes, communities can access[ BNB ChainList](https://www.bnbchainlist.org/). 
 
-[Spectrum Nodes](https://spectrumnodes.com) also serves opBNB Mainnet and Testnet RPC from its own bare metal servers, with archive data and debug tracing.
+[Spectrum Nodes](https://spectrumnodes.com) also serves opBNB Mainnet and Testnet RPC from its self operated Tier III data centers, with archive data and debug tracing.
 
 ## Wallet
 
