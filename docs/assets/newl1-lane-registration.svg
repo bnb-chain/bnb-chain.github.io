@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="476" viewBox="0 0 800 476" role="img" aria-labelledby="title desc">
+  <title id="title">From lane proposal to active reservation</title>
+  <desc id="desc">An application proposes routes, types, gas and scope. Governance votes and executes. LaneRegistry validates and stores the config. The branch adopts it on epoch rotation, and the client verifies the active snapshot.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#536a6c"/></marker></defs>
+  <rect width="800" height="476" rx="12" fill="#fcfdfb"/>
+  <rect x="24" y="20" width="752" height="67" rx="9" fill="#E9EEF9" stroke="#97A8CE" stroke-width="1.5"/>
+  <text x="40" y="47" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Application team prepares the lane</text>
+  <text x="40" y="71" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Pick the admin, routes, transaction types, minimum gas share and optional scope.</text>
+  <polyline points="400,87 400,109" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="112" width="752" height="67" rx="9" fill="#FFF2CE" stroke="#CCA650" stroke-width="1.5"/>
+  <text x="40" y="139" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Governor and Timelock</text>
+  <text x="40" y="163" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Propose addOrUpdateLaneConfig. After the vote and delay, execute through GovHub.</text>
+  <polyline points="400,179 400,201" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="204" width="752" height="67" rx="9" fill="#F1F5F5" stroke="#ACBBBD" stroke-width="1.5"/>
+  <text x="40" y="231" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">LaneRegistry validates and records the change</text>
+  <text x="40" y="255" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Check distinct routes, scope containment, scope overlap and the total reserved share.</text>
+  <polyline points="400,271 400,293" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="296" width="752" height="67" rx="9" fill="#E0F1ED" stroke="#74A99F" stroke-width="1.5"/>
+  <text x="40" y="323" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Epoch rotation adopts the configuration</text>
+  <text x="40" y="347" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Read the executed checkpoint ancestor on this branch into the parent Parlia snapshot.</text>
+  <polyline points="400,363 400,385" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="388" width="752" height="67" rx="9" fill="#E9EEF9" stroke="#97A8CE" stroke-width="1.5"/>
+  <text x="40" y="415" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Application verifies the next block’s configuration</text>
+  <text x="40" y="439" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Read newl1_laneConfig and check the adopted version, route, type filter and scope.</text>
+</svg>

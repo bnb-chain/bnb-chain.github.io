@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="605" viewBox="0 0 800 605" role="img" aria-labelledby="title desc">
+  <title id="title">Wallet to recipient through PrivacyPool</title>
+  <desc id="desc">The wallet identifies finalized notes and proves a spend locally. An aggregator wraps compatible leaf proofs and a payer submits a batch. After verification an eligible member creates shielded outputs or pays a public recipient. Emergency EXIT has an independent one-member wrapper path.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#536a6c"/></marker></defs>
+  <rect width="800" height="605" rx="12" fill="#fcfdfb"/>
+  <rect x="24" y="18" width="752" height="66" rx="9" fill="#E9EEF9" stroke="#97A8CE" stroke-width="1.5"/>
+  <text x="40" y="45" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Fund and scan the wallet</text>
+  <text x="40" y="69" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Deposit BNB or an admitted token, or receive shielded outputs. Wait for finalized insertion.</text>
+  <polyline points="400,84 400,104" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="107" width="752" height="66" rx="9" fill="#E9EEF9" stroke="#97A8CE" stroke-width="1.5"/>
+  <text x="40" y="134" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Wallet chooses notes and creates a leaf proof</text>
+  <text x="40" y="158" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Bind nullifiers, outputs, fees and any public payout. Keep spending secrets and paths local.</text>
+  <polyline points="208,173 208,201" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="592,173 592,201" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="204" width="368" height="102" rx="9" fill="#E0F1ED" stroke="#74A99F" stroke-width="1.5"/>
+  <text x="40" y="231" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Ordinary aggregation</text>
+  <text x="40" y="255" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Combine compatible user proofs.</text>
+  <text x="40" y="276" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Wrap the aggregate in Groth16.</text>
+  <text x="40" y="297" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Submit via applyBatch or native V1.</text>
+  <rect x="408" y="204" width="368" height="102" rx="9" fill="#F1F5F5" stroke="#ACBBBD" stroke-width="1.5"/>
+  <text x="424" y="231" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Emergency EXIT</text>
+  <text x="424" y="255" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Use a single EXIT proof.</text>
+  <text x="424" y="276" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Independent wrapper or self-wrap.</text>
+  <text x="424" y="297" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Submit a note-funded native V2.</text>
+  <polyline points="208,306 208,333" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="592,306 592,333" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="336" width="752" height="76" rx="9" fill="#FFF2CE" stroke="#CCA650" stroke-width="1.5"/>
+  <text x="40" y="363" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">PrivacyPool verifies and settles</text>
+  <text x="40" y="387" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Check program, proof, root and policy. Consume each applied member once.</text>
+  <polyline points="208,412 208,441" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="592,412 592,441" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="444" width="368" height="86" rx="9" fill="#E9EEF9" stroke="#97A8CE" stroke-width="1.5"/>
+  <text x="40" y="471" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Shielded transfer or consolidation</text>
+  <text x="40" y="495" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Queue the new commitments. Scan and</text>
+  <text x="40" y="516" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">verify the output at its finalized leaf.</text>
+  <rect x="408" y="444" width="368" height="86" rx="9" fill="#FFF2CE" stroke="#CCA650" stroke-width="1.5"/>
+  <text x="424" y="471" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Withdrawal or EXIT</text>
+  <text x="424" y="495" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Pay the disclosed recipient. A recoverable</text>
+  <text x="424" y="516" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">payout failure leaves claimable credit.</text>
+  <text x="400" y="573" fill="#233436" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Check the member outcome and the finalized chain before updating the wallet balance.</text>
+</svg>

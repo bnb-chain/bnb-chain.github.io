@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="511" viewBox="0 0 800 511" role="img" aria-labelledby="title desc">
+  <title id="title">One transaction through Multi-Lane</title>
+  <desc id="desc">The pool classifies a transaction. Packing retains it in its lane if it cannot fit. A peer reclassifies the full sealed block. Committed execution checks scope and produces the same result with or without optional parallel speculation.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#536a6c"/></marker></defs>
+  <rect width="800" height="511" rx="12" fill="#fcfdfb"/>
+  <rect x="24" y="20" width="752" height="67" rx="9" fill="#E9EEF9" stroke="#97A8CE" stroke-width="1.5"/>
+  <text x="40" y="47" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Submission and classification</text>
+  <text x="40" y="71" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Match destination and type in the adopted configuration. Assign one lane or General.</text>
+  <polyline points="400,87 400,107" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="110" width="752" height="67" rx="9" fill="#F1F5F5" stroke="#ACBBBD" stroke-width="1.5"/>
+  <text x="40" y="137" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Builder checks nonce, gas and bytes</text>
+  <text x="40" y="161" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Use this lane’s reserved minimum and available public gas. Preserve any streamed prefix.</text>
+  <polyline points="208,177 208,203" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="592,177 592,203" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="206" width="368" height="86" rx="9" fill="#FFF2CE" stroke="#CCA650" stroke-width="1.5"/>
+  <text x="40" y="233" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Does not fit this round</text>
+  <text x="40" y="257" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Keep it in the same lane.</text>
+  <text x="40" y="278" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Other senders can still be packed.</text>
+  <rect x="408" y="206" width="368" height="86" rx="9" fill="#E0F1ED" stroke="#74A99F" stroke-width="1.5"/>
+  <text x="424" y="233" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Fits the budget</text>
+  <text x="424" y="257" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Include it in the ordered block body.</text>
+  <text x="424" y="278" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Lanes and General can interleave.</text>
+  <polyline points="592,292 592,319" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="322" width="752" height="67" rx="9" fill="#F1F5F5" stroke="#ACBBBD" stroke-width="1.5"/>
+  <text x="40" y="349" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Peer validates the complete block</text>
+  <text x="40" y="373" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Reclassify the body and check hard reservations against the same parent snapshot.</text>
+  <polyline points="400,389 400,411" stroke="#536a6c" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="24" y="414" width="752" height="77" rx="9" fill="#E0F1ED" stroke="#74A99F" stroke-width="1.5"/>
+  <text x="40" y="441" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Execute and record the receipt</text>
+  <text x="40" y="465" fill="#233436" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400">Commit in body order and check scope. An escape rolls back user writes and retains the charge.</text>
+</svg>

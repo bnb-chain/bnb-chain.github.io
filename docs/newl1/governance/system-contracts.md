@@ -21,14 +21,14 @@ New L1 predeploys a set of system contracts at genesis, at fixed addresses, cove
 | `Timelock` | `0x0000000000000000000000000000000000002006` | Enforces the mandatory delay between a passed vote and execution. |
 | `BridgeGovHub` | `0x0000000000000000000000000000000000002007` | [Bridge](../core-concepts/cross-chain-bridge.md) governance, pause, and freeze. |
 | `LaneRegistry` | `0x0000000000000000000000000000000000003000` | [Multi-Lane](../core-concepts/multi-lane.md) quotas and address routing. |
+| `TEERegistry` | `0x0000000000000000000000000000000000003001` | [MEV](../core-concepts/mev.md) builder, release, and Gateway key eligibility by epoch. |
 | `AccountKeychain` (precompile) | `0x0000000000000000000000000000000000004000` | [Account abstraction](../core-concepts/account-abstraction.md) key registry for authorizing, revoking, and reading delegated keys. |
 | `SignatureVerifier` (precompile) | `0x0000000000000000000000000000000000004001` | Verifies AA signatures (secp256k1 / P256 / WebAuthn) on behalf of the AA pipeline. |
-| `ShieldedPool` | `0x0000000000000000000000000000000000005000` | [Privacy](../core-concepts/privacy.md) system contract covering deposit, withdraw, transfer, and atomic-call, with an embedded zk-proof verifier. |
-| `ShieldedAuthVerifier` | `0x0000000000000000000000000000000000005003` | Auth-proof verifier used by the shielded pool. |
+| `PrivacyPool` | `0x0000000000000000000000000000000000005000` | [Privacy](../core-concepts/privacy.md) custody, note tree, program registry, and settlement. The pool calls the verifier registered for each program. |
 
 ## Notes
 
 - `ValidatorSet`, `SlashIndicator`, `SystemReward`, `StakeHub`, `StakeCredit`, `GovToken`, `Governor`, and `Timelock` are the staking/governance stack carried over from BNB Smart Chain, kept at the same addresses so their embedded bytecode's internal cross-references remain valid. `Governor`/`Timelock` are recompiled with New L1's own governance-timing constants (voting period, proposal threshold, timelock delay), which are still devnet-only values and not finalized for a public network.
 - `TokenHub`, `CrossChainHub`, and `BridgeGovHub` are the New L1 side of the native BSC bridge. `TokenHub` and `CrossChainHub` sit at the addresses BSC uses for its own `TokenHub` and `CrossChain` contracts, but run new bridge code. All three are initialized at genesis. Bridge governance runs through validator and guardian quorums and a recovery council, not through the token-weighted `Governor` flow.
-- The bridge contracts, `LaneRegistry`, `AccountKeychain`/`SignatureVerifier`, and `ShieldedPool`/`ShieldedAuthVerifier` are New L1–original, with no BNB Smart Chain equivalent.
+- The bridge contracts, `LaneRegistry`, `AccountKeychain`/`SignatureVerifier`, `TEERegistry`, and `PrivacyPool` are New L1–original, with no BNB Smart Chain equivalent.
 - `AccountKeychain` and `SignatureVerifier` are enshrined precompiles (Rust logic compiled directly into the EVM's precompile map) rather than deployed bytecode, which is why they sit in their own reserved address band separate from the deployed system contracts above.

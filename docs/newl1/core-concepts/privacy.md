@@ -2,72 +2,91 @@
 title: Shielded Pool (Privacy) - New L1
 ---
 
-# Shielded Pool: Native Transaction Privacy
+# Shielded Pool
 
-New L1 includes a native shielded pool, a system contract that lets users deposit ("shield") funds, transact inside the pool with sender, recipient, and amount all hidden, and later withdraw ("unshield") back to a normal, transparent address. It sits alongside standard, fully transparent EVM transactions as an opt-in privacy layer, built from the established shielded-pool primitives (notes, commitments, nullifiers, zk-SNARKs).
+A shielded payment hides the sender’s and recipient’s note ownership, the asset, and the amount transferred. A wallet encrypts the recipient’s note and proves in zero knowledge that it can spend its inputs. `PrivacyPool` at `0x5000` verifies that proof and settles BNB or admitted BEP-20 assets. [AtomicCall](#accessing-evm-contracts-with-atomiccall) extends this model to approved public EVM contracts, including swaps.
 
-!!! warning "Not yet audited or production-ready"
-    The shielded pool is an early-phase feature. As detailed below, its zk-SNARKs trusted setup is currently an imported one rather than a ceremony New L1 ran, and the circuits are unaudited. Do not treat it as safe for real value.
+Protecting note contents against future quantum decryption is a design priority. Note delivery combines ML-KEM-768 with X25519. The current on-chain proof still relies on a classical Groth16 verifier. Production use requires reviewed circuits and trusted setup, plus demonstrated spending, recovery and emergency exit with real deposited notes. See [security assumptions](#security-assumptions).
 
-## Why It Matters
+!!! note "Development status"
+    The default genesis requires pool initialization through GovHub. A preinitialized development package installs a registered program and verifier. Real-proof spending of freshly deposited notes, wallet recovery acceptance, and final EXIT gas calibration remain open. Use development assets only.
 
-In a normal transparent EVM transaction, `from`, `to`, `amount`, and asset are always public on-chain. A shielded-pool transaction instead uses zk-SNARKs to prove that it is valid (no funds created from nothing, no double-spend) without revealing which of the pool's notes were spent or where the value went. An observer only learns that some valid shielded-pool transaction occurred.
+## What a shielded payment reveals
 
-## Core Concepts
+Inside the pool, value belongs to **notes**. A standard note commits to its pool, version, owner commitment, asset, value and fresh randomness. The pool records a hash in a Merkle tree. A wallet proves in zero knowledge that it controls notes under an accepted root and that inputs cover the authorized outputs, fees and public withdrawals. The proof reveals a **nullifier** for each real input, derived from a secret key, the commitment and its leaf position. The pool can reject a second spend without revealing which leaf was spent.
 
-- **Note.** A private record of value: an owner commitment, amount, and asset, plus whether it's "open" (see below). Notes are the pool's unit of value, analogous to a UTXO.
-- **Commitment.** A hash of a note's contents, inserted as a leaf into an append-only Merkle tree. Spending a note requires proving Merkle-tree membership without revealing which leaf it is.
-- **Nullifier.** A value published when a note is spent, derived from the note and the owner's spend key, used to prevent double-spending. Every spend burns two: a spend has one or two real inputs, and an unused input slot burns an indistinguishable "phantom" nullifier instead, so the count never reveals how many real inputs a transfer had.
-- **Split proof.** Every spend carries two PLONK proofs. The pool proof covers value conservation (inputs equal outputs plus anything leaving the pool), Merkle membership, nullifier derivation, and knowledge of the spend key. The auth proof covers an EIP-712 signature from the EOA whose public key is committed in the note being spent. Both must verify, and the note's own commitment is what binds them to each other.
-- **Keys.** A single 32-byte seed derives a spend key (spend authority and nullifier derivation), a note-secret seed (per-note blinding, so notes to the same recipient are unlinkable to each other), and a view key (used only to detect and decrypt incoming notes). Your ordinary EOA key is reused as the authorization key and is never mixed into the seed.
-- **Privacy address.** Your view public key. Registering on-chain (`registerPrivacyInfo`) publishes it alongside your spend-key hash and a commitment to your EOA public key, so senders can look you up and encrypt note data to you. This links an EOA to a privacy address; it does not link individual notes to one another.
-- **Open note.** A note whose amount and asset are public (`isOpen=1`) while its owner stays private, produced by the atomic-call reshield path. Standard notes (`isOpen=0`) keep amount and asset hidden as well.
-
-## Flows
-
-- **Shield (deposit).** `privDeposit` is an ordinary EOA-signed call that locks funds into the pool and queues a note. No proof is required, and the depositing address, amount, and asset are public.
-- **Shielded transfer.** A private transfer inside the pool. One or two notes are spent, always publishing two nullifiers, to produce up to three outputs (recipient note, change note, and a fee note), each encrypted to its recipient's view key. Nothing about the transfer itself is public, except the fee on the direct path below.
-- **Unshield (withdraw).** The proof reveals the withdrawal amount, asset, and destination, since real funds are moving on-chain. The spend settles and escrows the payout first, and delivery to the normal address follows; a failed delivery is retryable, not a lost spend.
-- **Atomic call.** Unshield into a public EVM call (a DEX swap, for example) and reshield the measured return into an open note. As with a withdrawal, the spend settles before the call runs: if the call reverts, the spend stands and the escrowed value stays retryable.
-
-Two submission paths reach the same accounting logic:
-
-| Path | How | Fee |
+| Operation | Hidden by the shielded model | Visible on chain |
 |---|---|---|
-| Direct | a native [`0x77` shielded transaction](../developers/transaction-types.md#0x77-shielded-transaction) with no sender, no nonce, and no outer signature; the proofs are the authorization, and any validator or builder can include it | public `feePerGas × gasLimit`, unshielded to the protocol fee pool |
-| Relayer | an ordinary signed transaction calling `transact` on the pool | a private fee note paid to the relayer, with amount and asset hidden |
+| Shielded-to-shielded payment | Input leaves, shielded owners, transferred asset and amount | Operation shape, nullifiers, output commitments, ciphertexts, service fee and any public gas payer |
+| Deposit | The link to a later shielded spend | Depositing account, asset, amount, owner commitment, randomness and insertion history |
+| Withdrawal or EXIT | Which tree leaves funded the payout | Public recipient, asset, amount and fee information |
+| AtomicCall | The link to the input notes | Target, public asset movements, and the resulting Open Note's public asset and amount |
 
-Direct submission is the censorship-resistance backstop: no relayer to depend on, no relayer EOA to expose, and the sender needs no BNB of their own.
+Pool size and timing also affect privacy. A payment between two shielded owners offers little practical ambiguity if only one observable deposit could plausibly fund it. Transaction submission can expose network metadata independently of what the proof hides.
 
-## How to Use It
+## From deposit to spendable note
 
-1. Generate a privacy keypair with the `newl1-shield` CLI (`keygen`), supplying your EOA key so the authorization commitment is derived alongside it.
-2. Register on-chain once (`registerPrivacyInfo`), so others can find you.
-3. Shield funds: call `privDeposit` directly from your EOA.
-4. Send privately: look up the recipient's registered view key, encrypt the outgoing note off-chain, sign the transaction intent as EIP-712 typed data (any `eth_signTypedData_v4` wallet works), and generate both proofs (`prove`).
-5. Submit: broadcast a `0x77` transaction, or hand the call to a relayer.
-6. Discover incoming funds: scan on-chain note ciphertexts and trial-decrypt them with your view key (`scan` / `wallet`). Discovery is immediate, though spendability lags (see below).
-7. Unshield or combine with DeFi: `prove --flow withdraw`, or the atomic-call flow to unshield, execute a public call, and reshield.
+![Public deposit, maturity, tree insertion, and proof-verified spending paths](../../assets/newl1-privacy.svg)
 
-The pool's on-chain address is `0x0000000000000000000000000000000000005000` and the ECDSA auth-proof verifier is at `0x0000000000000000000000000000000000005003`. Both are genesis predeploys, active from the first block with no hardfork gate. See [System Contracts](../governance/system-contracts.md).
+1. Submit an ordinary `deposit` call to the initialized pool. For a token, provide allowance or a supported EIP-2612 permit. A token deposit can also fund a separate BNB reserve note. The depositor, asset, amount, owner commitment, and note randomness are visible even when optional deposit ciphertext is supplied.
+2. Read `DepositQueued` for the deposit ID and its fixed maturity time. The default delay is one day. At maturity the protocol can promote the note into the insertion queue. Even a zero-delay devnet must wait for insertion.
+3. Match `DepositPromoted` to its queue index, then `NoteInserted` to its actual leaf position. A wallet needs the tree path, spending keys, and finalized insertion before treating the note as spendable.
 
-## Current Status
+**Launch accumulation and deposit delay are independent.** After pool initialization, governance can admit deposits while keeping transfer, withdrawal and call switches closed. This lets eligible notes accumulate before opening spending. The contract does not automatically open spending at a given deposit count or guarantee an anonymity-set size. Each deposit keeps the maturity deadline assigned at acceptance, even if governance changes the delay later. A preinitialized devnet can use different switches and a zero delay.
 
-- Native BNB only: the asset field is pinned to native, with no ERC-20/BEP-20 path.
-- Deposit, withdraw, and private transfer, plus open notes and atomic EVM calls.
-- Submission paths: native `0x77` direct submission, and `transact` called from an ordinary signed transaction by a relayer.
-- An on-chain privacy registry for discovering recipients' view keys.
-- Deferred, batched note insertion: new commitments are queued on spend and written into the Merkle tree by `deferBatchInsert`, which runs every 50 blocks (~10 seconds), keeping the dominant per-transaction cost off users. Proof verification and nullifier burn are never deferred. An incoming note is discoverable immediately but only spendable after the next insertion.
-- A minimal pause mechanism that can only halt new deposits.
+## Wallet, prover and aggregator flow
 
-Not yet implemented: ERC-20/BEP-20 shielding, the reserved post-quantum authorization scheme, paymaster/ERC-4337 submission, per-asset compliance hooks (an interface seam only, with no verifier and no call site), recursive proof aggregation, and the richer multi-switch governance model.
+![User journey from deposit and local note discovery through proving, aggregation, submission, private receipt or withdrawal](../../assets/newl1-privacy-wallet.svg)
 
-## Security Assumptions
+1. **Scan and select.** The wallet scans finalized pool history, verifies owned deposits or decrypts incoming shielded outputs, reconstructs their Merkle paths and checks spent nullifiers. It chooses inserted, unspent notes for the asset and any required BNB fee reserve.
+2. **Authorize and prove locally.** For a transfer, the wallet creates a recipient note and any change, encrypts the outgoing note data, and binds the outputs and fee to the intent. For a withdrawal it binds the public recipient, asset and amount. The user's leaf STARK proves ownership, membership and value conservation. The aggregator receives that proof, its public intent and delivery data. The keys, plaintext input notes and Merkle paths stay with the prover.
+3. **Aggregate and submit.** The off-chain aggregator combines compatible leaf proofs recursively and wraps the aggregate in a 384-byte Groth16 proof. A public payer submits the batch through ordinary `applyBatch(bytes)` or signed native V1. Admission by a service is an acknowledgement. The chain verifies the proof and applies each eligible member against current state. The wallet must check its own member outcome, since a member can be skipped even if another member settles.
+4. **Receive or withdraw.** For a private payment the recipient scans and decrypts the output, verifies the commitment, and waits for finalized insertion before spending it. For a withdrawal the pool attempts the public payout during settlement. If delivery fails recoverably, the public recipient has an on-chain credit to collect with `claim(asset, to)`. A withdrawal has no additional maturity timer.
 
-- **Trusted setup.** PLONK's structured reference string (SRS) is universal: one SRS serves every circuit up to its size bound. The current deployment imports an existing public SRS, which inherits that ceremony's honest-contributor assumption rather than establishing one here. A New L1 ceremony and a dedicated third-party circuit audit are both still open before mainnet.
-- **What stays public even in "private" flows.** Deposits reveal sender, amount, and asset. Withdrawals reveal recipient, amount, and asset. Atomic calls reveal the unshielded amount, the call's target and calldata, and the reshielded amount. A `0x77` transaction's fee is public and always native BNB. Only a shielded-to-shielded transfer keeps sender, recipient, amount, and asset all hidden, and on the direct path even that leaves its fee public.
-- **Registration links your EOA to your privacy address.** That is the accepted cost of reusing the EOA key for spend authorization. Individual notes sent to that address remain unlinkable to one another.
-- **The `isOpen` flag is public per note.** Mixing open and standard notes without care can create identifiable patterns.
-- **Some anonymity is set-based, not cryptographic.** For atomic calls and for the public `0x77` fee, what protects you is the set of other users doing the same kind of operation, not a hiding property of the proof.
-- **No network-level anonymity.** The shielded pool hides on-chain data, not network metadata: IP and timing can still deanonymize you regardless of what is hidden on-chain. A relayer necessarily sees both, so it is a trusted party for metadata, even though the proof binding means it can neither move your funds nor redirect its own fee note.
-- **Deposits can be paused, and nothing else.** `ShieldedPool` is immutable, with no admin, no proxy, and no upgrade path, and its only governed action is the deposit pause. No code path checks a pause flag on withdraw, transfer, or atomic call, so funds already in the pool cannot be frozen by governance.
+**Consolidating small notes.** The standard transfer shape has two asset-input slots and a BNB reserve slot. A wallet holding many small notes can first use the consolidation shape: up to four asset inputs plus a BNB reserve input become a consolidated note and BNB change. For fragmented BNB, the wallet can consolidate BNB itself and pay the service fee from those inputs. The consolidation shape is public. The wallet waits for the new note's finalized insertion before using it in a payment.
+
+The wallet, proving and aggregation steps describe the integration expected by the chain. The current development verifier accepts matching proof samples. A matching wallet/prover release and fresh-note end-to-end acceptance are still required.
+
+## Spending paths
+
+| Entry | Network fee and identity | Typical use |
+|---|---|---|
+| Ordinary signed call to `applyBatch(bytes)` | A public sending account pays gas | Submit a proof-verified service batch through the EVM ABI. |
+| Native `0x77` V1 | A public payer signs with an account nonce and declares gas and fee caps | Submit a batch using the native envelope. The proof authorizes the spends. |
+| Native `0x77` V2 EXIT | The notes fund the quoted fee. No outer payer signature or account nonce is required. | Exit using the immutable EXIT profile registered for the program. |
+
+Submit native V1 and V2 to a node RPC with `eth_sendRawTransaction`. The TEE Gateway rejects native privacy envelopes, including bundle members. An encrypted note and a private route to a block builder protect different information.
+
+## Accessing EVM contracts with AtomicCall
+
+A wallet can authorize a public EVM operation from a shielded spend. For example, a user can spend a note to swap tokens through an allowlisted DEX router. The proof binds the call context. The pool checks the target policy, funds a one-use forwarder, and measures the assets returned by the router. Success produces an Open Note for those proceeds. The public can see the target, the asset movements and the Open Note’s amount. Observers see the spend nullifiers while the proof hides which leaves the user consumed. A recoverable target failure rolls back the call's effects and refunds the input principal as an Open Note. The accepted spend and its fee remain consumed. Invalid proofs are rejected before spending. See [native transaction fields and gas estimation](../developers/transaction-types.md#0x77-shielded-transaction).
+
+## Emergency exit when the ordinary service is unavailable
+
+A wallet with finalized spendable notes and enough shielded BNB for the fee can prepare a single EXIT intent for a fixed public recipient. The integration design lets the user hand the same leaf proof to an independent wrapper or wrap it locally. The wrapper produces the registered one-member proof and submits native V2. The proof binds the recipient, spending authority and fee limits. Nullifier and replay checks allow the first successful submission to consume the notes once.
+
+On chain, `quoteExit(bytes)` resolves the registered program's fixed fee. The pool pays the chain fee, credits wrapper compensation and sends the remaining principal and any BNB residue to the designated recipient. EXIT creates no new note and can operate with a full tree. It still requires a valid program and proof, the withdrawal switch, and a permitted public recipient. It provides a path around an unavailable aggregator. It cannot override governance or recover an invalid proof. Self-wrapping tools and independent service availability remain release dependencies.
+
+## Discovery and recovery
+
+Read `newl1_getPrivacyChainConfig("finalized")` to identify the pool, chain, and executed snapshot. For a public deposit, match the published owner commitment locally and verify the note commitment. For encrypted outputs, replay receiving-key registration, rotation, and retirement events from the pool and use the matching private viewing material. `register`, `rotateMlkem`, and `retireMlkem` manage receiving-key versions.
+
+Wallets should reconcile live log notifications against complete finalized ranges, including insertion and spending history. A missing range leaves the recovered balance unknown. Full historical pool logs may require an archive provider.
+
+## Security assumptions
+
+### Post-quantum design and its limits
+
+The note-delivery format is designed to protect recorded ciphertext against future quantum decryption. HNC-1 combines X25519 and ML-KEM-768, derives a key with HKDF-SHA256, and uses AES-256-GCM for authenticated encryption. The wallet keeps viewing and spending secrets separate. The pool uses KoalaBear-based hashes for note and tree commitments. These mechanisms have different jobs: encryption delivers the note, the zero-knowledge proof authorizes spending, and the nullifier prevents reuse.
+
+The on-chain verifier still relies on a BN254 Groth16 wrapper and its trusted setup. Native V1 also uses a classical public-payer signature. End-to-end post-quantum security is therefore not a property of the current system. Production readiness requires reviewed circuits and setup, matched verifier and prover artifacts, and demonstrated recovery and EXIT using real deposited notes.
+
+### Policy at the public boundaries
+
+| Policy | Enforcement point |
+|---|---|
+| Deposit | The pool checks the immediate caller against the on-chain blacklist. Governance can pause deposits and restrict admitted token contracts. |
+| Withdrawal and EXIT | The pool screens the disclosed payout recipient against the blacklist. A later claim of payout credit also checks its destination. Hidden note owners are outside these address checks. |
+| AtomicCall | The call switch must be enabled, the entry-point address allowlisted, and the proof-bound policy ID registered for that target. The check applies to the entry address, including a proxy. It does not pin individual function selectors or the implementation behind a proxy. |
+
+For confidentiality *before ordering* through a TEE, see [MEV and the TEE Gateway](mev.md).

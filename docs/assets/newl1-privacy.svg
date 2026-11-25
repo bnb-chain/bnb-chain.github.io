@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="412" viewBox="0 0 840 412" role="img" aria-labelledby="title desc">
+  <title id="title">Deposit maturity, insertion, and private spending</title>
+  <desc id="desc">A deposit is queued, promoted at maturity, and inserted into the tree. The wallet proves a spend from the finalized leaf. The pool verifies it and settles the outputs.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#536a6c"/></marker></defs>
+  <rect width="100%" height="100%" rx="12" fill="#fcfdfb"/>
+  <rect x="18" y="24" width="242" height="96" rx="8" fill="#e9eef9" stroke="#96a7cf" stroke-width="1.5"/>
+  <text x="34" y="53" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">DepositQueued</text>
+  <text x="34" y="78" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Public deposit ID, amount,</text>
+  <text x="34" y="100" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">asset and maturity time</text>
+  <rect x="299" y="24" width="242" height="96" rx="8" fill="#f2f5f5" stroke="#b3c1c2" stroke-width="1.5"/>
+  <text x="315" y="53" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">DepositPromoted</text>
+  <text x="315" y="78" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Mature note receives its</text>
+  <text x="315" y="100" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">insertion queue index</text>
+  <rect x="580" y="24" width="242" height="96" rx="8" fill="#e0f1ed" stroke="#72aaa0" stroke-width="1.5"/>
+  <text x="596" y="53" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">NoteInserted</text>
+  <text x="596" y="78" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Commitment receives its</text>
+  <text x="596" y="100" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Merkle tree leaf position</text>
+  <polyline points="260,73 296,73" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="541,73 577,73" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="18" y="177" width="370" height="94" rx="8" fill="#fff2ce" stroke="#d7ac52" stroke-width="1.5"/>
+  <text x="34" y="206" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">PrivacyPool verifies the spend</text>
+  <text x="34" y="231" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Check proof and program, then consume</text>
+  <text x="34" y="253" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">accepted nullifiers and replay IDs</text>
+  <rect x="450" y="177" width="372" height="94" rx="8" fill="#e0f1ed" stroke="#72aaa0" stroke-width="1.5"/>
+  <text x="466" y="206" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Wallet constructs a proof</text>
+  <text x="466" y="231" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Use finalized insertion, tree path,</text>
+  <text x="466" y="253" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">note secrets and registered program</text>
+  <polyline points="701,120 701,174" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="450,223 391,223" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <rect x="18" y="332" width="242" height="66" rx="8" fill="#e0f1ed" stroke="#72aaa0" stroke-width="1.5"/>
+  <text x="34" y="361" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Shielded transfer</text>
+  <text x="34" y="386" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">New note commitments</text>
+  <rect x="299" y="332" width="242" height="66" rx="8" fill="#e9eef9" stroke="#96a7cf" stroke-width="1.5"/>
+  <text x="315" y="361" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Public withdrawal</text>
+  <text x="315" y="386" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Public asset payout</text>
+  <rect x="580" y="332" width="242" height="66" rx="8" fill="#f2f5f5" stroke="#b3c1c2" stroke-width="1.5"/>
+  <text x="596" y="361" text-anchor="start" fill="#172528" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">AtomicCall</text>
+  <text x="596" y="386" text-anchor="start" fill="#41565a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400">Proceeds or refund Open Note</text>
+  <polyline points="140,271 140,329" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="204,271 204,301 420,301 420,329" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <polyline points="267,271 267,288 701,288 701,329" fill="none" stroke="#536a6c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+</svg>
