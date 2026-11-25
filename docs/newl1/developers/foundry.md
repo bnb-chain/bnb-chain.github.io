@@ -61,8 +61,9 @@ The base fee is always 0, so the priority fee is the entire gas price. Foundry e
 | Address | Purpose |
 |---|---|
 | `0x66` | BLS vote-key signature verification |
-| `0x67` | Poseidon2 permutation |
 | `0x68` | Double-sign evidence verification |
+| `0x69` | KoalaBear Poseidon2 hash used for shielded note and tree commitments |
+| `0x6a` | Native privacy bridge used by the privacy transaction handler |
 | `0x4000` | `AccountKeychain`, the [account abstraction](../core-concepts/account-abstraction.md) key registry |
 | `0x4001` | `SignatureVerifier` |
 
@@ -70,11 +71,11 @@ Foundry's EVM has none of these, in fork mode too. A call to one reaches an empt
 
 ### Lanes
 
-A transaction routed into a [lane](../core-concepts/multi-lane.md) may read and write only its lane's configured scope and its own sender, recipient, and fee payer. It may also read precompiles. If it touches anything else, it reverts with no revert data, it is charged its full gas limit, and all of its writes are dropped. Foundry can't simulate this, so test lane-routed contracts on the devnet. Transactions to addresses without a lane are unaffected. [`newl1_laneConfig`](./json_rpc/newl1-api-list.md#newl1_laneconfig) returns the current lanes and their scopes.
+A lane with a nonempty scope checks nested account accesses against its scope, authenticated participants, and protocol exceptions. A violation rolls back user writes and retains the declared gas charge. Unscoped lanes have ordinary EVM access. Run simulations against a matching node and inspect [the adopted lane configuration](./json_rpc/newl1-api-list.md#newl1_laneconfig).
 
 ### System Transactions
 
-After the user transactions, a block can run system transactions for slashing, fee deposits, finality rewards, validator-set updates, and shielded-pool inserts. A fork doesn't replay them, so fork tests involving `ValidatorSet`, `StakeHub`, or `ShieldedPool` can drift from the chain.
+After the user transactions, a block can run system transactions for slashing, fee deposits, finality rewards, validator-set updates, and shielded-pool inserts. A fork doesn't replay them, so fork tests involving `ValidatorSet`, `StakeHub`, or `PrivacyPool` can drift from the chain.
 
 Fees never accrue to `block.coinbase`. They are collected at the system address and forwarded to `ValidatorSet` by a system transaction. Foundry's local EVM pays tips to the coinbase after each transaction instead.
 

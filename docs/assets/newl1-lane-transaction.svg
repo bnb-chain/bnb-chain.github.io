@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="581" viewBox="0 0 800 581" role="img" aria-labelledby="title desc">
+  <title id="title">A transaction through Multi-Lane</title>
+  <desc id="desc">The pool classifies a transaction. Packing retains it in its lane if it cannot fit. A peer reclassifies the full sealed block. Committed execution checks scope and produces the same result with or without optional parallel speculation.</desc>
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1f2937; }
+    .title { font-size: 26px; font-weight: bold; }
+    .subtitle { font-size: 15px; fill: #6b7280; }
+    .label { font-size: 16px; font-weight: bold; }
+    .body { font-size: 15px; }
+    .caption { font-size: 15px; fill: #4b5563; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4b5563" />
+    </marker>
+  </defs>
+  <rect width="800" height="581" fill="#ffffff" />
+  <text x="400" y="32" text-anchor="middle" class="title">A transaction through Multi-Lane</text>
+  <text x="400" y="56" text-anchor="middle" class="subtitle">Admission, packing, validation and execution</text>
+  <g transform="translate(0 70)">
+    <rect x="24" y="20" width="752" height="67" rx="9" fill="#ffe6cc" stroke="#d79b00" stroke-width="2" />
+    <text x="400.0" y="48.5" text-anchor="middle" class="label">Submission and classification</text>
+    <text x="400.0" y="68.5" text-anchor="middle" class="body">Match destination and type in the adopted configuration. Assign one lane or General.</text>
+    <rect x="24" y="110" width="752" height="67" rx="9" fill="#eef6ff" stroke="#6c8ebf" stroke-width="2" />
+    <text x="400.0" y="138.5" text-anchor="middle" class="label">Builder checks nonce, gas and bytes</text>
+    <text x="400.0" y="158.5" text-anchor="middle" class="body">Use this lane’s reserved minimum and available public gas. Preserve any streamed prefix.</text>
+    <rect x="24" y="206" width="368" height="86" rx="9" fill="#fff2cc" stroke="#d6b656" stroke-width="2" />
+    <text x="208.0" y="234.0" text-anchor="middle" class="label">Does not fit this round</text>
+    <text x="208.0" y="254.0" text-anchor="middle" class="body">Keep it in the same lane.</text>
+    <text x="208.0" y="274.0" text-anchor="middle" class="body">Other senders can still be packed.</text>
+    <rect x="408" y="206" width="368" height="86" rx="9" fill="#d5e8d4" stroke="#82b366" stroke-width="2" />
+    <text x="592.0" y="234.0" text-anchor="middle" class="label">Fits the budget</text>
+    <text x="592.0" y="254.0" text-anchor="middle" class="body">Include it in the ordered block body.</text>
+    <text x="592.0" y="274.0" text-anchor="middle" class="body">Lanes and General can interleave.</text>
+    <rect x="24" y="322" width="752" height="67" rx="9" fill="#eef6ff" stroke="#6c8ebf" stroke-width="2" />
+    <text x="400.0" y="350.5" text-anchor="middle" class="label">Peer validates the complete block</text>
+    <text x="400.0" y="370.5" text-anchor="middle" class="body">Reclassify the body and check hard reservations against the same parent snapshot.</text>
+    <rect x="24" y="414" width="752" height="77" rx="9" fill="#f1f8ee" stroke="#82b366" stroke-width="2" />
+    <text x="400.0" y="447.5" text-anchor="middle" class="label">Execute and record the receipt</text>
+    <text x="400.0" y="467.5" text-anchor="middle" class="body">Commit in body order and check scope. An escape rolls back user writes and retains the charge.</text>
+    <polyline points="400,87 400,107" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="208,177 208,203" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="592,177 592,203" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="592,292 592,319" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="400,389 400,411" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+  </g>
+</svg>

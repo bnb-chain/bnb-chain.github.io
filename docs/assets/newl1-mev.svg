@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="727" viewBox="0 0 800 727" role="img" aria-labelledby="title desc">
+  <title id="title">MEV transaction lifecycle</title>
+  <desc id="desc">Ordinary RPC traffic tries the TEE first and may fall back to validators. Searchers read published SubBlocks and submit bundles. A validator checks a complete candidate with the permit proof, or builds locally after expiry. Fee policy follows the source block.</desc>
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1f2937; }
+    .title { font-size: 26px; font-weight: bold; }
+    .subtitle { font-size: 15px; fill: #6b7280; }
+    .label { font-size: 16px; font-weight: bold; }
+    .body { font-size: 15px; }
+    .caption { font-size: 15px; fill: #4b5563; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4b5563" />
+    </marker>
+  </defs>
+  <rect width="800" height="727" fill="#ffffff" />
+  <text x="400" y="32" text-anchor="middle" class="title">MEV transaction lifecycle</text>
+  <text x="400" y="56" text-anchor="middle" class="subtitle">Gateway ordering, validator fallback and protocol fee settlement</text>
+  <g transform="translate(0 70)">
+    <rect x="24" y="16" width="367" height="85" rx="9" fill="#ffe6cc" stroke="#d79b00" stroke-width="2" />
+    <text x="207.5" y="43.5" text-anchor="middle" class="label">Wallet via node RPC</text>
+    <text x="207.5" y="63.5" text-anchor="middle" class="body">Ordinary flow tries the TEE first.</text>
+    <text x="207.5" y="83.5" text-anchor="middle" class="body">Private RPC submissions fail closed.</text>
+    <rect x="409" y="16" width="367" height="85" rx="9" fill="#ffe6cc" stroke="#d79b00" stroke-width="2" />
+    <text x="592.5" y="43.5" text-anchor="middle" class="label">Searcher or direct client</text>
+    <text x="592.5" y="63.5" text-anchor="middle" class="body">Pin the registered TLS key.</text>
+    <text x="592.5" y="83.5" text-anchor="middle" class="body">Submit signed transactions or a bundle.</text>
+    <rect x="208" y="143" width="568" height="86" rx="9" fill="#e1d5e7" stroke="#9673a6" stroke-width="2" />
+    <text x="492.0" y="171.0" text-anchor="middle" class="label">TEE Gateway admits and orders</text>
+    <text x="492.0" y="191.0" text-anchor="middle" class="body">Simulate bundles and screen configured pools.</text>
+    <text x="492.0" y="211.0" text-anchor="middle" class="body">Rank eligible items while preserving the published prefix.</text>
+    <rect x="409" y="255" width="367" height="87" rx="9" fill="#e1d5e7" stroke="#9673a6" stroke-width="2" />
+    <text x="592.5" y="283.5" text-anchor="middle" class="label">Signed SubBlocks</text>
+    <text x="592.5" y="303.5" text-anchor="middle" class="body">Publish ordered chunks on a 20/50 ms tick.</text>
+    <text x="592.5" y="323.5" text-anchor="middle" class="body">Searchers can backrun a published trade.</text>
+    <rect x="24" y="255" width="367" height="87" rx="9" fill="#eef6ff" stroke="#6c8ebf" stroke-width="2" />
+    <text x="207.5" y="283.5" text-anchor="middle" class="label">Direct validator forwarding</text>
+    <text x="207.5" y="303.5" text-anchor="middle" class="body">If Gateway submission fails, forward</text>
+    <text x="207.5" y="323.5" text-anchor="middle" class="body">ordinary transactions to validators.</text>
+    <rect x="409" y="373" width="367" height="86" rx="9" fill="#e1d5e7" stroke="#9673a6" stroke-width="2" />
+    <text x="592.5" y="401.0" text-anchor="middle" class="label">Complete Gateway candidate</text>
+    <text x="592.5" y="421.0" text-anchor="middle" class="body">Append signed permit + acknowledgement</text>
+    <text x="592.5" y="441.0" text-anchor="middle" class="body">as the last transaction, to 0x3002.</text>
+    <rect x="24" y="373" width="367" height="86" rx="9" fill="#eef6ff" stroke="#6c8ebf" stroke-width="2" />
+    <text x="207.5" y="401.0" text-anchor="middle" class="label">Local validator candidate</text>
+    <text x="207.5" y="421.0" text-anchor="middle" class="body">With an outstanding permit, wait for its</text>
+    <text x="207.5" y="441.0" text-anchor="middle" class="body">original deadline before building locally.</text>
+    <rect x="24" y="488" width="752" height="67" rx="9" fill="#f1f8ee" stroke="#82b366" stroke-width="2" />
+    <text x="400.0" y="516.5" text-anchor="middle" class="label">Validator checks, seals and broadcasts</text>
+    <text x="400.0" y="536.5" text-anchor="middle" class="body">Check body, nonces, gas reservations and any permit proof. An invalid carrier rejects the block.</text>
+    <rect x="24" y="584" width="752" height="60" rx="9" fill="#f1f8ee" stroke="#82b366" stroke-width="2" />
+    <text x="400.0" y="619.0" text-anchor="middle" class="label">Chain settles protocol fees under the source block’s epoch policy</text>
+    <polyline points="315,101 315,140" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="600,101 600,140" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="600,229 600,252" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="82,101 82,252" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="600,342 600,370" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="207,342 207,370" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="207,459 207,485" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="600,459 600,485" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="400,555 400,581" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+  </g>
+</svg>

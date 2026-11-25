@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="546" viewBox="0 0 800 546" role="img" aria-labelledby="title desc">
+  <title id="title">Registering an application lane</title>
+  <desc id="desc">An application proposes routes, types, gas and scope. Governance votes and executes. LaneRegistry validates and stores the config. The branch adopts it on epoch rotation, and the client verifies the active snapshot.</desc>
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; fill: #1f2937; }
+    .title { font-size: 26px; font-weight: bold; }
+    .subtitle { font-size: 15px; fill: #6b7280; }
+    .label { font-size: 16px; font-weight: bold; }
+    .body { font-size: 15px; }
+    .caption { font-size: 15px; fill: #4b5563; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#4b5563" />
+    </marker>
+  </defs>
+  <rect width="800" height="546" fill="#ffffff" />
+  <text x="400" y="32" text-anchor="middle" class="title">Registering an application lane</text>
+  <text x="400" y="56" text-anchor="middle" class="subtitle">From the governance proposal to the active parent snapshot</text>
+  <g transform="translate(0 70)">
+    <rect x="24" y="20" width="752" height="67" rx="9" fill="#ffe6cc" stroke="#d79b00" stroke-width="2" />
+    <text x="400.0" y="48.5" text-anchor="middle" class="label">Application team prepares the lane</text>
+    <text x="400.0" y="68.5" text-anchor="middle" class="body">Pick the admin, routes, transaction types, minimum gas share and optional scope.</text>
+    <rect x="24" y="112" width="752" height="67" rx="9" fill="#ffe6cc" stroke="#d79b00" stroke-width="2" />
+    <text x="400.0" y="140.5" text-anchor="middle" class="label">Governor and Timelock</text>
+    <text x="400.0" y="160.5" text-anchor="middle" class="body">Propose addOrUpdateLaneConfig. After the vote and delay, execute through GovHub.</text>
+    <rect x="24" y="204" width="752" height="67" rx="9" fill="#eef6ff" stroke="#6c8ebf" stroke-width="2" />
+    <text x="400.0" y="232.5" text-anchor="middle" class="label">LaneRegistry validates and records the change</text>
+    <text x="400.0" y="252.5" text-anchor="middle" class="body">Check distinct routes, scope containment, scope overlap and the total reserved share.</text>
+    <rect x="24" y="296" width="752" height="67" rx="9" fill="#f1f8ee" stroke="#82b366" stroke-width="2" />
+    <text x="400.0" y="324.5" text-anchor="middle" class="label">Epoch rotation adopts the configuration</text>
+    <text x="400.0" y="344.5" text-anchor="middle" class="body">Read the executed checkpoint ancestor on this branch into the parent Parlia snapshot.</text>
+    <rect x="24" y="388" width="752" height="67" rx="9" fill="#f1f8ee" stroke="#82b366" stroke-width="2" />
+    <text x="400.0" y="416.5" text-anchor="middle" class="label">Application verifies the next block’s configuration</text>
+    <text x="400.0" y="436.5" text-anchor="middle" class="body">Read newl1_laneConfig and check the adopted version, route, type filter and scope.</text>
+    <polyline points="400,87 400,109" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="400,179 400,201" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="400,271 400,293" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+    <polyline points="400,363 400,385" stroke="#4b5563" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#arrow)" />
+  </g>
+</svg>

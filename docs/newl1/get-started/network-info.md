@@ -8,7 +8,7 @@ title: Network Information - New L1
 |---|---|
 | Network Name | &lt;TBD&gt; |
 | Description | High-performance EVM Layer 1 in the BNB Chain ecosystem. |
-| Gateway / RPC Endpoint | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
+| Node HTTP RPC Endpoint | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
 | WebSocket Endpoint | `wss://newl1-devnet-rpc.bnbchain.org/ws` |
 | Chain ID | 1105 (devnet) |
 | Currency Symbol | BNB |
@@ -33,4 +33,4 @@ title: Network Information - New L1
 
 ## Endpoints
 
-Use the gateway / RPC endpoint above for HTTP JSON-RPC requests and the WebSocket endpoint for subscriptions. Use [newL1Trace](https://3c88a668d99f13eb2b89.com/) to inspect devnet blocks and transactions. For transports and the method set a node serves, see the [JSON-RPC Endpoint](../developers/json_rpc/json-rpc-endpoint.md).
+Use the node endpoints above for HTTP JSON-RPC and node subscriptions. The [signed SubBlock stream](../core-concepts/tx-preconfirmation.md#how-to-subscribe) requires the separate TEE Gateway WebSocket adapter. Use [newL1Trace](https://3c88a668d99f13eb2b89.com/) to inspect devnet blocks and transactions. For transports and the method set a node serves, see the [JSON-RPC Endpoint](../developers/json_rpc/json-rpc-endpoint.md).
