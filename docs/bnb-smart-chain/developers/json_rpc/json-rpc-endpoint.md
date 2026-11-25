@@ -27,6 +27,7 @@ If you need to pull logs frequently, we recommend using WebSockets to push new l
 * https://bsc.nodereal.io
 * https://bsc-dataseed-public.bnbchain.org
 * https://rpc-bnb.blockmachine.io
+* https://bsc-mainnet.gateway.tatum.io (Tatum, 5 requests per minute without an API key)
 
 You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 
@@ -35,6 +36,7 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * https://bsc-testnet-dataseed.bnbchain.org
 * https://bsc-testnet.bnbchain.org
 * https://bsc-prebsc-dataseed.bnbchain.org
+* https://bsc-testnet.gateway.tatum.io (Tatum, 5 requests per minute without an API key)
 
 ### RPC Providers
 
@@ -63,6 +65,8 @@ You could find more endpoints from **[here](https://chainlist.org/chain/56)**.
 * **Alchemy:** <https://docs.alchemy.com/reference/api-overview>
 
 * **Blockmachine:** <https://blockmachine.io/bnb-chain-rpc>
+
+* **Tatum:** <https://tatum.io/chain/bsc> (free BSC endpoints: <https://freerpc.com/bsc>)
 
 ### Starting HTTP JSON-RPC
 
