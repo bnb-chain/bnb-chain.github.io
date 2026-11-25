@@ -33,8 +33,7 @@ None of these are required to run a standard EVM app. They are additive, and the
 
 | Capability | What it gives you |
 |---|---|
-| [Transaction pre-confirmation](../core-concepts/tx-preconfirmation.md) | An optional signed Gateway stream shows the candidate order before a validator seals the block. |
-| [MEV and the TEE Gateway](../core-concepts/mev.md) | Private submission, bundle simulation, and delegated block ordering. |
+| [Transaction pre-confirmation](../core-concepts/tx-preconfirmation.md) | A validator-signed inclusion signal in ~20 ms, long before the block lands. Advisory and revocable, so never treat it as finality. |
 | [Native account abstraction](../core-concepts/account-abstraction.md) | The `0x76` transaction envelope: atomic call batches, session and admin keys, passkey (WebAuthn/P256) signing, and gas sponsorship, with no bundler and no EntryPoint contract. |
 | [Multi-Lane](../core-concepts/multi-lane.md) | Governance-configured reserved gas quota per traffic class, so latency-sensitive flows aren't crowded out by unrelated load. |
 | [Shielded pool](../core-concepts/privacy.md) | An opt-in native system contract for private transfers, alongside ordinary transparent ones. |

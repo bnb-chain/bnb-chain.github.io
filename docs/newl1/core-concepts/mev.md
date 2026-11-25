@@ -38,7 +38,13 @@ For privacy of note ownership after inclusion, see the [shielded pool](privacy.m
 
 ## Bundle admission and ordering
 
-A searcher can subscribe to the [signed SubBlock stream](tx-preconfirmation.md#how-to-subscribe), evaluate a backrun against a published trade, and submit signed transactions for the remaining suffix. The service exposes a stream of published transactions. It does not give searchers a global feed of pending private orders or guarantee an arbitrage window. An optional built-in backrun strategy is a future design.
+On the Gateway's public WebSocket adapter, a searcher can subscribe to signed SubBlocks with this request:
+
+```json
+{"jsonrpc":"2.0","id":1,"method":"newl1_subscribe","params":["subblocks"]}
+```
+
+Each `newl1_subscription` notification carries a signed chunk. Searchers can evaluate a backrun against a published trade and submit a bundle for the remaining suffix. The service exposes a stream of published transactions. It does not give searchers a global feed of pending private orders or guarantee an arbitrage window. An optional built-in backrun strategy is a future design.
 
 On a Gateway with the public adapter enabled, submit one object to `newl1_sendBundle`. Replace each placeholder with a signed EIP-2718 transaction in execution order.
 
@@ -58,7 +64,7 @@ A builder already chooses how to interleave eligible transactions from different
 
 The validator signs a single-slot permit naming the parent, proposer, Gateway key, policy, and deadline. The Gateway acknowledges that permit and returns one complete candidate. Its last transaction carries the signed permit and acknowledgement to the reserved address `0x3002`. The acknowledgement authenticates the permit. The validator's seal and transaction root bind the published body.
 
-The validator checks the candidate, including the permit proof and [whole-block lane reservations](multi-lane.md#guarantees). If an issued permit fails to produce a valid candidate, the validator waits for its original expiry, then builds a complete local block. Local production can select a different body from the streamed prefix. Use the [Gateway stream](tx-preconfirmation.md) for early visibility and the canonical block and receipt for settlement.
+The validator checks the candidate, including the permit proof and [whole-block lane reservations](multi-lane.md#guarantees). If an issued permit fails to produce a valid candidate, the validator waits for its original expiry, then builds a complete local block. Local production can select a different body from the streamed prefix. Use the [signed SubBlock stream](#bundle-admission-and-ordering) for early visibility and the canonical block and receipt for settlement.
 
 Packing carries nonce, gas, byte and [lane budgets](multi-lane.md#guarantees) across SubBlocks. The builder reserves room for the proof carrier and a finalization interval for assembling and delivering the candidate. It preserves the validator-supplied system transactions. Importers verify the sealed block against New L1 rules independently of any subscription, including the registered key and source-epoch policy for a claimed proof.
 

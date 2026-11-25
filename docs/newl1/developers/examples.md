@@ -35,13 +35,18 @@ Poll them in a loop and they advance independently. For the ordered tip plus bot
 
 ## Watch Pre-confirmations Live
 
-Connect a WebSocket client to the Gateway’s public adapter and send this subscription request.
+Any WebSocket client works; `websocat` here:
 
-```json
-{"jsonrpc":"2.0","id":1,"method":"newl1_subscribe","params":["subblocks"]}
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"newl1_subscribePreconfirmations","params":[]}' \
+  | websocat -n $WS
 ```
 
-Keep the connection open for `newl1_subscription` updates. Match your transaction in the signed chunks, then check its canonical inclusion through the node RPC. See [Transaction Pre-confirmation](../core-concepts/tx-preconfirmation.md).
+Each notification is a `newl1_preconfirmation` frame: `{txHash, blockNumber, parentHash, subBlockIndex, subBlockHash, position, leader, timestampMs, status}`. Send transactions in another terminal and they appear ~20 ms after submission, well before their block seals. `status` transitions to `aborted` / `superseded` if the promise is withdrawn.
+
+Filter to a single transaction with `"params":[{"txHash":"0x…"}]`. Chain tips instead: `newl1_subscribeNewHeads`, or standard `eth_subscribe` with `["newHeads"]`.
+
+The producer feeds its own published slices to local subscribers as well as gossiping them to peers, so `WS` may point at either a producing or non-producing node.
 
 ## Follow One Transaction Through Every Stage
 
@@ -49,12 +54,13 @@ Keep the connection open for `newl1_subscription` updates. Match your transactio
 TX=$(cast send --private-key $SK --legacy --gas-price 1000000000 --gas-limit 21000 \
   --rpc-url $RPC $TO --value 1 --async)
 
+rpc newl1_getTransactionPreconfirmation "[\"$TX\"]"   # leader committed to including it
 rpc newl1_getTransactionStatus          "[\"$TX\"]"   # pool-plane state: ready/parked/ordered/…
 rpc eth_getTransactionByHash            "[\"$TX\"]"   # in an ordered block (not execution-gated)
 rpc eth_getTransactionReceipt           "[\"$TX\"]"   # executed - on devnet2, errors -38004 until then
 ```
 
-Gateway streaming is optional. The node reports ordering, then execution and finality. On devnet2, a `-38004` from the receipt call means "not executed yet, retry", distinct from `null`, which means the transaction is unknown to that endpoint. A `null` receipt response does not establish transaction failure.
+The ladder runs pre-confirmed → ordered → executed → finalized, each stage observable on its own. On devnet2, a `-38004` from the receipt call means "not executed yet, retry", distinct from `null`, which means the transaction is unknown to that endpoint. A `null` receipt response does not establish transaction failure.
 
 ## Prove You're Charged for the Gas Limit, Not Gas Used
 

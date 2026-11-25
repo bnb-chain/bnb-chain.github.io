@@ -43,17 +43,13 @@ title: New L1 - High-Performance EVM L1
         <div>Transaction Pre-confirmation</div>
         <p>Sub-second, best-effort inclusion signals ahead of finality</p>
     </a>
-    <a href="./core-concepts/mev">
-        <div>MEV and the TEE Gateway</div>
-        <p>Auditable ordering, direct submission, and low-latency signed SubBlocks</p>
-    </a>
     <a href="./core-concepts/multi-lane">
         <div>Multi-Lane</div>
-        <p>Application-defined routes, gas reservations, and access scopes</p>
+        <p>Reserved gas capacity for latency-sensitive transaction classes</p>
     </a>
     <a href="./core-concepts/privacy">
         <div>Shielded Pool (Privacy)</div>
-        <p>Shielded payments, post-quantum note encryption, and calls to approved EVM contracts</p>
+        <p>Native, opt-in private transfers via zk proofs</p>
     </a>
     <a href="./developers/cross-chain-bridge">
         <div>Cross-Chain Bridge</div>

@@ -33,4 +33,4 @@ title: Network Information - New L1
 
 ## Endpoints
 
-Use the node endpoints above for HTTP JSON-RPC and node subscriptions. The [signed SubBlock stream](../core-concepts/tx-preconfirmation.md#how-to-subscribe) requires the separate TEE Gateway WebSocket adapter. Use [newL1Trace](https://3c88a668d99f13eb2b89.com/) to inspect devnet blocks and transactions. For transports and the method set a node serves, see the [JSON-RPC Endpoint](../developers/json_rpc/json-rpc-endpoint.md).
+Use the gateway / RPC endpoint above for HTTP JSON-RPC requests and the WebSocket endpoint for subscriptions. Use [newL1Trace](https://3c88a668d99f13eb2b89.com/) to inspect devnet blocks and transactions. For transports and the method set a node serves, see the [JSON-RPC Endpoint](../developers/json_rpc/json-rpc-endpoint.md).

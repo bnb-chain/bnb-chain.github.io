@@ -4,9 +4,9 @@ title: Shielded Pool (Privacy) - New L1
 
 # Shielded Pool
 
-A shielded payment hides the sender’s and recipient’s note ownership, the asset, and the amount transferred. A wallet encrypts the recipient’s note and proves in zero knowledge that it can spend its inputs. `PrivacyPool` at `0x5000` verifies that proof and settles BNB or admitted BEP-20 assets. [AtomicCall](#accessing-evm-contracts-with-atomiccall) extends this model to approved public EVM contracts, including swaps.
+The shielded pool already supports **native BNB and admitted BEP-20 tokens**. A shielded payment hides the sender’s and recipient’s note ownership, the asset, and the amount transferred. A wallet encrypts the recipient’s note and proves in zero knowledge that it can spend its inputs. `PrivacyPool` at `0x5000` verifies the proof and settles the payment. [AtomicCall](#accessing-evm-contracts-with-atomiccall) extends this model to approved public EVM contracts, including swaps.
 
-Protecting note contents against future quantum decryption is a design priority. Note delivery combines ML-KEM-768 with X25519. The current on-chain proof still relies on a classical Groth16 verifier. Production use requires reviewed circuits and trusted setup, plus demonstrated spending, recovery and emergency exit with real deposited notes. See [security assumptions](#security-assumptions).
+Protecting note contents against future quantum decryption is a design priority. Note delivery combines ML-KEM-768 with X25519. Wallets prove spends with zk-STARKs. During the chain’s post-quantum (PQ) migration, an aggregator wraps the aggregated STARK proof in Groth16 for the current on-chain verifier. After the migration, the plan is to submit and verify zk-STARK proofs directly on chain. See [security assumptions](#security-assumptions).
 
 !!! note "Development status"
     The default genesis requires pool initialization through GovHub. A preinitialized development package installs a registered program and verifier. Real-proof spending of freshly deposited notes, wallet recovery acceptance, and final EXIT gas calibration remain open. Use development assets only.
@@ -55,11 +55,11 @@ The wallet, proving and aggregation steps describe the integration expected by t
 | Native `0x77` V1 | A public payer signs with an account nonce and declares gas and fee caps | Submit a batch using the native envelope. The proof authorizes the spends. |
 | Native `0x77` V2 EXIT | The notes fund the quoted fee. No outer payer signature or account nonce is required. | Exit using the immutable EXIT profile registered for the program. |
 
-Submit native V1 and V2 to a node RPC with `eth_sendRawTransaction`. The TEE Gateway rejects native privacy envelopes, including bundle members. An encrypted note and a private route to a block builder protect different information.
+For V1, pass the unsigned `privacyBatch` declaration to `newl1_estimateGas` before signing. For V2, read the registered fee with `quoteExit(bytes)` on the pool. Submit canonical V1 or V2 bytes to a node RPC with `eth_sendRawTransaction`. The TEE Gateway rejects native privacy envelopes, including bundle members. An encrypted note and a private route to a block builder protect different information.
 
 ## Accessing EVM contracts with AtomicCall
 
-A wallet can authorize a public EVM operation from a shielded spend. For example, a user can spend a note to swap tokens through an allowlisted DEX router. The proof binds the call context. The pool checks the target policy, funds a one-use forwarder, and measures the assets returned by the router. Success produces an Open Note for those proceeds. The public can see the target, the asset movements and the Open Note’s amount. Observers see the spend nullifiers while the proof hides which leaves the user consumed. A recoverable target failure rolls back the call's effects and refunds the input principal as an Open Note. The accepted spend and its fee remain consumed. Invalid proofs are rejected before spending. See [native transaction fields and gas estimation](../developers/transaction-types.md#0x77-shielded-transaction).
+A wallet can authorize a public EVM operation from a shielded spend. For example, a user can spend a note to swap tokens through an allowlisted DEX router. The proof binds the call context. The pool checks the target policy, funds a one-use forwarder, and measures the assets returned by the router. Success produces an Open Note for those proceeds. The public can see the target, the asset movements and the Open Note’s amount. Observers see the spend nullifiers while the proof hides which leaves the user consumed. A recoverable target failure rolls back the call's effects and refunds the input principal as an Open Note. The accepted spend and its fee remain consumed. Invalid proofs are rejected before spending.
 
 ## Emergency exit when the ordinary service is unavailable
 
@@ -79,7 +79,7 @@ Wallets should reconcile live log notifications against complete finalized range
 
 The note-delivery format is designed to protect recorded ciphertext against future quantum decryption. HNC-1 combines X25519 and ML-KEM-768, derives a key with HKDF-SHA256, and uses AES-256-GCM for authenticated encryption. The wallet keeps viewing and spending secrets separate. The pool uses KoalaBear-based hashes for note and tree commitments. These mechanisms have different jobs: encryption delivers the note, the zero-knowledge proof authorizes spending, and the nullifier prevents reuse.
 
-The on-chain verifier still relies on a BN254 Groth16 wrapper and its trusted setup. Native V1 also uses a classical public-payer signature. End-to-end post-quantum security is therefore not a property of the current system. Production readiness requires reviewed circuits and setup, matched verifier and prover artifacts, and demonstrated recovery and EXIT using real deposited notes.
+The temporary BN254 Groth16 wrapper introduces a trusted-setup assumption during the migration. Native V1 also uses a classical public-payer signature. Direct on-chain STARK verification is the migration target; the current devnet accepts the wrapped proof. Production readiness requires reviewed circuits and setup, matched verifier and prover artifacts, and demonstrated recovery and EXIT using real deposited notes.
 
 ### Policy at the public boundaries
 

@@ -63,11 +63,14 @@ curl -X POST "$RPC" -H "Content-Type: application/json" \
 
 ## Pre-confirmation API
 
-On the Gateway WebSocket adapter, `newl1_subscribe` with `["subblocks"]` returns signed ordering updates. The node RPC serves validator schedules and canonical head notifications. See [Transaction Pre-confirmation](../../core-concepts/tx-preconfirmation.md).
+Pre-confirmations are soft, revocable advisories, never proofs and never a substitute for finality.
+
+!!! warning "This surface is unauthenticated"
+    `newl1_subscribePreconfirmations`, `newl1_subscribeSubBlocks`, and `newl1_getTransactionPreconfirmation` are unauthenticated by design, and each subscription holds server-side memory. Firewall the RPC bind address, or place this surface behind a separate admin port, on any non-loopback deployment.
 
 ### newl1_getValidatorSchedule
 
-Returns the current validator set and leader schedule, including advertised validator endpoints.
+Returns the current validator set and leader schedule, which is what you need to discover where to send transactions and to independently verify pre-confirmation signers.
 
 **Parameters**
 
@@ -92,6 +95,68 @@ curl -X POST "$RPC" -H "Content-Type: application/json" \
 ```
 
 `tx_rpc_endpoint` is the peer's VDN-advertised endpoint, and is an empty string for a validator that hasn't completed a VDN handshake with this node. Clients only need to re-fetch the full schedule at epoch boundaries; within an epoch the current leader follows from the head block number and `turn_length`.
+
+### newl1_getTransactionPreconfirmation
+
+One-shot lookup of a transaction's last known pre-confirmation status, from a short-lived cache.
+
+**Parameters**
+
+**Hash** String (REQUIRED)
+
+* HEX String - the hash of the transaction
+
+```bash
+curl -X POST "$RPC" -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"newl1_getTransactionPreconfirmation","params":["0x…"],"id":1}'
+```
+
+A `null` result does not mean the transaction was never pre-confirmed, only that it fell outside the retention window or wasn't tracked.
+
+### newl1_subscribePreconfirmations
+
+WebSocket only. Streams node-interpreted pre-confirmation events; notification method is `newl1_preconfirmation`, unsubscribe with `newl1_unsubscribePreconfirmations`.
+
+**Parameters**
+
+**Filter** Object (OPTIONAL)
+
+* `{"txHash": "0x…"}` - stream only this transaction's events. Omitted or `null` streams all. There is no sender-level filter.
+
+```bash
+echo '{"jsonrpc":"2.0","method":"newl1_subscribePreconfirmations","params":[],"id":1}' \
+  | websocat -n "$WS"
+```
+
+Each notification carries:
+
+```jsonc
+{
+  "txHash": "0x…",
+  "blockNumber": "0x961",
+  "parentHash": "0x…",
+  "subBlockIndex": "0x2",
+  "subBlockHash": "0x…",
+  "position": "0x7",
+  "leader": "0x…",
+  "timestampMs": "0x…",
+  "status": "preconfirmed"   // preconfirmed | aborted | superseded
+}
+```
+
+If a subscriber falls behind, the node sends `{"status": "lagged", "dropped": n}` rather than silently dropping a revocation; re-query `newl1_getTransactionPreconfirmation` when you see it.
+
+The producer explicitly feeds its own published slices to local subscribers, so this subscription works against the producer's RPC and on a single-node devnet.
+
+### newl1_subscribeSubBlocks
+
+WebSocket only. Streams the raw signed sub-blocks straight from the gossip mesh, for clients that verify signatures themselves rather than trusting the node's interpretation. Notification method is `newl1_subBlock`; unsubscribe with `newl1_unsubscribeSubBlocks`.
+
+**Parameters**
+
+None.
+
+Each frame carries the sub-block header (`blockNumber`, `parentHash`, `index`, `prevSubBlockHash`, `timestampMs`, `flags`, `txRoot`), its hash, the EIP-2718 encoded transactions, and the 65-byte producer signature.
 
 ### newl1_subscribeNewHeads
 
@@ -158,7 +223,7 @@ This simulates `AccountKeychain.getKey` against executed state, so it accepts th
 
 ### newl1_laneConfig
 
-Returns the [Multi-Lane](../../core-concepts/multi-lane.md) configuration for children of the current canonical head, as adopted in its Parlia snapshot.
+Returns the live, governance-resolved [Multi-Lane](../../core-concepts/multi-lane.md) configuration for the current canonical head: the resolver's view (parent context, anchor depth, branch-aware), not a raw registry dump.
 
 **Parameters**
 
@@ -173,40 +238,17 @@ curl -X POST "$RPC" -H "Content-Type: application/json" \
 {
   "parentNumber": "0x13",
   "parentHash": "0x…",
-  "adopted": false,
-  "version": null,
-  "inert": true,
-  "reservationLimitBps": "0x1f40",
-  "systemGasReserve": "0x1312d00",
-  "laneDefs": [],
-  "laneRoutes": []
+  "anchorNumber": "0xb",        // lagged executed-state checkpoint this config resolved from
+  "anchorHash": "0x…",
+  "configAnchorDepth": "0x8",   // activation-delay depth, in blocks
+  "version": "0x0",             // null until governance has ever set a version
+  "inert": true,                // true until governance has ever set a lane config
+  "laneDefs": [],               // [{ laneId, quotaBps }, …] once configured
+  "laneRoutes": []              // [{ to, laneId }, …] address → lane assignments
 }
 ```
 
-This example precedes the first adoption. `inert` means all traffic routes to General. Once active, each lane definition reports `laneId`, `minGasQuotaBps`, `txTypes`, `filterScopes`, `admin`, `name`, and `description`. Routes pair `to` with `laneId`.
-
-## MEV API
-
-| Method | Endpoint and behavior |
-|---|---|
-| `newl1_getMevConfig` | Node RPC. Returns the head, epoch, snapshot hash, and resolved MEV configuration. |
-| `newl1_sendPrivateTransaction(raw)` | Node RPC. Forwards one signed transaction exclusively to the authenticated Gateway and returns its hash on acknowledgement. |
-| `newl1_sendBundle({transactions: [...]})` | Configured node RPC or public Gateway adapter. Accepts signed transactions in order. The response includes the bundle ID, simulation ancestor, and detection coverage. |
-| `newl1_subscribe("subblocks")` | Gateway WebSocket adapter. Receives the signed chunks for delegated production. |
-
-See [MEV and the TEE Gateway](../../core-concepts/mev.md) for admission limits, ordering and fallback.
-
-## Privacy API
-
-`newl1_getPrivacyChainConfig(blockTag)` accepts a block number, `"latest"`, or `"finalized"`. It returns the chain ID, pool, schema version, block hash and number, maximum system publication delay, and the enabled entry formats. Check the pool's initialization and program policy separately.
-
-For native V1 gas estimation, send `newl1_estimateGas` an unsigned declaration as the first parameter and optionally a block tag as the second. Replace placeholders with the target chain, registered envelope, pool, and payer.
-
-```json
-{"privacyBatch":{"privacyVersion":"0x1","chainId":"0x…","pool":"0x…","envelope":"0x…","from":"0x…","nonce":"0x0","maxFeePerGas":"0x…","maxPriorityFeePerGas":"0x…","accessList":[]}}
-```
-
-The response includes the snapshot block hash and number, `configId`, `gasLimit`, `executionGas`, `gasLimitCeiling`, `privacyVersion`, and `chargeByLimit`. Use `gasLimit` when signing. For V2 EXIT use the pool's `quoteExit(bytes)`. See [Transaction Types](../transaction-types.md#0x77-shielded-transaction).
+`inert: true` with empty `laneDefs` / `laneRoutes` is the genesis default, until a governance proposal activates a lane.
 
 ## Transaction Pool API
 

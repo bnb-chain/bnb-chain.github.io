@@ -28,7 +28,7 @@ Protocol and system parameters: staking and slashing constants, and New L1–spe
 Two access-control gates make this the only path to change anything governed: every governed target only accepts calls from `GovHub`, and `GovHub` only accepts calls from the `Timelock`.
 
 !!! note
-    [Multi-Lane](../core-concepts/multi-lane.md) changes take effect when the delayed epoch rotation adopts the registry state from its branch-specific executed checkpoint. Read the parent snapshot configuration before relying on a new reservation.
+    Some parameters (for example, [Multi-Lane](../core-concepts/multi-lane.md) quota changes) take effect only after an additional short activation delay on top of the timelock delay, since node clients read that configuration from a slightly-lagged executed-state checkpoint rather than the very latest block.
 
 ## How to Participate
 

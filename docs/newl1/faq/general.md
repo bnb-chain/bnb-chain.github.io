@@ -32,15 +32,15 @@ Native fee sponsorship lets another account pay the network fee. A sponsor may s
 
 ### Is private order flow the same as private on-chain transactions?
 
-A [TEE Gateway](../core-concepts/mev.md) protects unpublished flow when clients submit directly over authenticated TLS. Once streamed, those transactions are public. The [shielded pool](../core-concepts/privacy.md#security-assumptions) uses proofs to protect note ownership on chain. Deposits, public payouts, and network fees remain observable.
+No. Proposed TEE ordering protects transaction information before ordering. The optional shielded pool hides supported on-chain transaction information. Integrating one does not automatically provide the other, and ordinary public contract interactions remain public. Deposits, withdrawals, atomic calls, and direct-submission fees have disclosure limits described in [Privacy](../core-concepts/privacy.md#security-assumptions).
 
 ### Can I treat a pre-confirmed transaction as final?
 
-No. A signed Gateway SubBlock is provisional and does not establish execution success. For irreversible actions, wait for a successful, execution-finalized result; see [integration settlement checks](./integration.md#when-should-an-integration-treat-a-transaction-as-settled).
+No. A roughly 20 ms pre-confirmation is revocable and does not establish execution success. For irreversible actions, wait for a successful, execution-finalized result; see [integration settlement checks](./integration.md#when-should-an-integration-treat-a-transaction-as-settled).
 
 ### Is the shielded pool safe to use with real funds today?
 
-Use development assets only. The Brevis development package verifies proof samples. Acceptance for spending freshly deposited notes, complete wallet recovery, and final EXIT gas calibration is still pending. See [Privacy](../core-concepts/privacy.md).
+Not yet. The circuits are unaudited, and the deployment uses an imported trusted setup rather than a New L1 ceremony. Do not treat it as safe for real value. See [Privacy](../core-concepts/privacy.md).
 
 ## Integration topics
 
