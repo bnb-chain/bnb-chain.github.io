@@ -4,41 +4,33 @@ title: Transaction Lifecycle - New L1
 
 # Transaction Lifecycle
 
-A transaction progresses from submission to pool admission, optional pre-confirmation, ordering, execution, and finality. Each milestone has its own RPC signal.
+After submission, a client can track canonical ordering, execution, and finality through node RPC. During delegated production, the Gateway can also stream an early ordering signal.
 
 ![New L1 transaction lifecycle](../../assets/newl1-transaction-lifecycle.svg)
 
-## Submit Through a Gateway
+The diagram labels the earlier pre-confirmation feed. For the current client, subscribe to signed SubBlocks with `newl1_subscribe` and `["subblocks"]` on the [Gateway WebSocket](../core-concepts/tx-preconfirmation.md#how-to-subscribe).
 
-A Gateway is a full node used as a transaction-submission edge. A dApp sends an ordinary signed transaction to its standard JSON-RPC endpoint; there is no Gateway-specific transaction format or client RPC.
+## Submit Through Node RPC
+
+For ordinary transactions, submit signed bytes to a node RPC:
 
 ```bash
 curl -X POST "$RPC" -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":["0xSIGNED_TX"],"id":1}'
 ```
 
-After accepting the transaction, the Gateway keeps custody of it and sends replicas directly to the upcoming block producers selected from the validator schedule. A producer may pack its replica, but does not forward it again. This single-hop routing replaces global mempool broadcast.
-
-From a dApp's perspective, the Gateway is simply the RPC endpoint responsible for delivery:
-
-- Submit once with `eth_sendRawTransaction` and save the returned hash.
-- Use the same transaction-status and chain RPCs described below.
-- Avoid submitting the same transaction to several Gateways by default. Each accepting Gateway becomes an independent custodian, creating duplicate delivery streams rather than making the transaction inherently faster.
-
-The current client exposes no Gateway-specific auction or ordering API. Gateway describes the node's routing role, not an additional on-chain transaction stage.
-
-A transaction that fails validation is rejected immediately. It never enters the pool, and the submission RPC returns the rejection reason.
+When a Gateway is configured, the RPC node tries it first. Ordinary flow can fall back to validator forwarding. Private submissions and bundles require an authenticated Gateway and return an error if it is unavailable. For direct submission and the trust boundary of each path, see [MEV and the TEE Gateway](../core-concepts/mev.md).
 
 ## Pool States
 
-Once accepted, the transaction enters the receiving node's local pool. Its sender nonce determines when it becomes eligible for packing.
+These states describe transactions admitted to the queried node’s local pool. When the Gateway acknowledges a submission, the RPC node returns the transaction hash without adding it to its own pool. Use canonical block and receipt queries to track inclusion and execution.
 
 | Pool state | Meaning |
 |---|---|
 | `pending` | The node has accepted the transaction and is completing admission. This state is normally brief. |
 | `parked` | The transaction cannot be packed yet, usually because of a nonce gap, a future validity window, or insufficient available balance. |
 | `ready` | The transaction is contiguous with the sender's ordered nonce and currently eligible for packing. |
-| `emitted` | The transaction is in a streamed sub-block slice. This is still a local-pool state; use the pre-confirmation API for the signed event. |
+| `emitted` | A local packing state. Check canonical inclusion by hash. |
 | `ordered` | The transaction is in a block known to this node. It remains tracked until finality allows pool cleanup. |
 | `evicted` / `removed` / `rejected` | The transaction left the local pool or failed admission. Check `reason` for the terminal cause. |
 | `unknown` | This node has no retained information. It does not prove that the network never saw the transaction. |
@@ -101,51 +93,7 @@ These are node defaults; operators can change them.
 
 ## Receive a Pre-confirmation
 
-During its turn, the current block producer repeatedly packs ready transactions into signed sub-block slices. When a slice containing your transaction is broadcast, observers report it as `preconfirmed`.
-
-A pre-confirmation provides a fast ordering and inclusion signal, not an execution result or finality guarantee. It may later become:
-
-- `aborted` if the producer withdraws its stream; or
-- `superseded` if another block takes the height.
-
-Treat either event as revocation and continue tracking the transaction. Do not release funds or settle irreversible work from a pre-confirmation alone.
-
-### Subscribe over WebSocket
-
-```json
-{"jsonrpc":"2.0","method":"newl1_subscribePreconfirmations","params":[{"txHash":"0x…"}],"id":1}
-```
-
-The filter is optional; `params: []` subscribes to every transaction. Notifications use method `newl1_preconfirmation` and contain:
-
-```json
-{
-  "txHash": "0x…",
-  "blockNumber": "0x961",
-  "parentHash": "0x…",
-  "subBlockIndex": "0x2",
-  "subBlockHash": "0x…",
-  "position": "0x7",
-  "leader": "0x…",
-  "timestampMs": "0x…",
-  "status": "preconfirmed"
-}
-```
-
-`status` is `preconfirmed`, `aborted`, or `superseded`. If the subscriber falls behind, it receives `{"status":"lagged","dropped":N}`; perform a one-shot lookup to resynchronize.
-
-### One-Shot Lookup
-
-```bash
-curl -X POST "$RPC" -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"newl1_getTransactionPreconfirmation","params":["0x…"],"id":1}'
-```
-
-The cache retains at most 8,192 events spanning at most 80 blocks. A `null` result therefore means "not in this node's current cache", not "never pre-confirmed".
-
-`newl1_subscribeSubBlocks` exposes the raw signed slices for clients that verify the producer signature and transaction root themselves. The producer explicitly feeds its own published slices to local subscribers, so these subscriptions also work against the producer's RPC and on a single-node devnet.
-
-See [Transaction Pre-confirmation](../core-concepts/tx-preconfirmation.md) for the verification flow.
+A [Gateway SubBlock subscription](../core-concepts/tx-preconfirmation.md#how-to-subscribe) shows a signed prefix during delegated production. Treat this as an early ordering signal. A local fallback block can select a different set of transactions. Check canonical inclusion by hash even if the Gateway stream ends normally.
 
 ## Order, Execute, and Finalize
 

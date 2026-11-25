@@ -9,7 +9,7 @@ Standard Ethereum transactions (legacy, EIP-2930, EIP-1559) work exactly as you'
 | Type | Name | Use it for |
 |---|---|---|
 | `0x76` | [Account abstraction](#0x76-account-abstraction) | Atomic call batches, session/admin keys, passkey signing, gas sponsorship |
-| `0x77` | [Shielded transaction](#0x77-shielded-transaction) | Private transfers and withdrawals, submitted without a public sender |
+| `0x77` | [Shielded transaction](#0x77-shielded-transaction) | Signed service batches and proof-funded exits |
 
 Both are submitted through plain `eth_sendRawTransaction` and produce ordinary receipts (with `type` `0x76` / `0x77`). EIP-4844 (`0x03`) and EIP-7702 (`0x04`) are rejected. The two types above sit in a high, self-assigned range so a future upstream type can't collide with them.
 
@@ -52,50 +52,13 @@ One transaction, signed by an account or by a delegated key, carrying a batch of
 
 ## `0x77` Shielded Transaction
 
-A self-authenticating transaction against the [shielded pool](../core-concepts/privacy.md): the two embedded zk-proofs are the authorization, so there is no outer signature and no public sender. Use it when the sender itself must stay private; use a plain `cast send` to the pool contract when it doesn't.
+Two versioned envelopes reach [PrivacyPool](../core-concepts/privacy.md). Submit canonical bytes through `eth_sendRawTransaction`. The complete transaction, including ciphertexts and call context, must fit in 128 KiB.
 
-### Body
+| | V1 signed batch | V2 proof-funded EXIT |
+|---|---|---|
+| Wire format | `0x77` followed by RLP of `[1, chainId, nonce, maxPriorityFeePerGas, maxFeePerGas, gasLimit, pool, envelope, accessList, yParity, r, s]` | `0x77` followed by RLP of `[2, chainId, pool, envelope]` |
+| Authorization | A public account signs the fee-paying transaction. The batch proof authorizes note spends. | The EXIT proof authorizes spending and funds the network fee. |
+| Gas | The payer is charged the declared limit, including for a failed execution. | Pool policy fixes the gas and price. An invalid EXIT is rejected before inclusion. |
+| RPC identity | `from` and `nonce` belong to the payer. | `from` is the last 20 bytes of the transaction hash and `nonce` displays zero. Neither identifies a paying account. |
 
-| Field | Notes |
-|---|---|
-| `chain_id` | Checked at import. |
-| `pool_proof`, `auth_proof` | Two PLONK proof blobs, exactly 864 bytes each (gnark BN254 `MarshalSolidity`). |
-| `pub_signals` | 30 public signals, ABI-identical to the contract's `uint256[30]`. Carries the gas limit, which is why the body has no `gas_limit` field. |
-| `output_note_data` | Three output-note delivery ciphertexts. |
-| `call_data` | Atomic-call payload; empty for transfer and withdraw. |
-
-There is no per-gas fee field and no gas-limit field. Both are public signals, `feePerGas` at `[28]` and `gasLimit` at `[29]`, and the contract unshields their product to the system address. The fee is therefore committed inside the proof, not bid at submission time, and the same proof cannot be re-broadcast under a different limit. `gasFee` itself is deliberately not a signal: the circuit bounds the two factors and the contract re-derives the product, so there is exactly one source of truth for it.
-
-Key public signals: `[0]` Merkle root, `[1..2]` spend nullifiers, `[3..5]` output note bodies, `[12]` operation (`0` transfer, `1` withdraw, `2` atomic call), `[13]`/`[14]` public amount and recipient, `[20]` `intentReplayId`, `[23]` `validUntil` deadline, `[24]` chain id, `[28]`/`[29]` `feePerGas` and `gasLimit`.
-
-### The Public Path (No `0x77` Needed)
-
-Entering and leaving the pool is ordinary contract interaction with `ShieldedPool` at `0x…5000`:
-
-```bash
-# 1. shield funds - queues a note, doesn't insert it yet
-cast send $POOL --value $AMOUNT "privDeposit(uint256,uint8,uint256,bytes)" \
-  $OWNER_COMMITMENT $SCHEME 0 0x
-
-# 2. drain the queue into the Merkle tree (permissionless)
-cast send $POOL "deferBatchInsert(uint256)" 100
-
-# 3. spend - transfer, withdraw, or atomic call
-cast send $POOL "transact(bytes,bytes,uint256[30],bytes[3],bytes)" \
-  $POOL_PROOF $AUTH_PROOF $PUB_SIGNALS "[0x,0x,0x]" 0x
-```
-
-Useful reads: `merkleRoot()`, `nullifierSpent(uint256)`, `pendingCount()` / `pendingHead()`, `getPrivacyInfo(address)`. Recipients publish their viewing keys with `registerPrivacyInfo(...)` so senders can encrypt note ciphertexts to them.
-
-### Gotchas
-
-- **Deposits are deferred.** `privDeposit` only queues the note; until someone calls `deferBatchInsert`, the note is not in the tree and `merkleRoot()` hasn't moved, so a proof built against the new root will fail.
-- **Proofs are pinned to a root, a chain, and a deadline.** A stale `pub_signals[0]` root, a wrong chain id, or an expired `validUntil` is rejected. Rebuild the proof rather than retrying it.
-- **Nullifiers are the replay guard.** Resubmitting a spent proof fails on `nullifierSpent`.
-- **The proof blob length is validated at decode.** Anything other than 864 bytes is rejected before execution, so a truncated proof costs a decode, not a transaction.
-- **`eth_estimateGas` does not apply.** The gas limit is bound inside the proof, so it has to be chosen before proving: read `newl1_shieldedGasConstants` and size it from there. An accepted `0x77` is charged its full declared limit.
-- **An atomic call's payload does not go to `transact`.** The spend settles and escrows the payout first; the call itself runs in a second frame, issued as `deliver`. A reverted call leaves the settlement committed and the escrow retryable; it does not undo the spend or refund the fee.
-
-### Tooling
-
-A `0x77` transaction needs more than an RPC client: note encryption and scanning, PLONK proof generation, and encoding the envelope itself all require the shielded-pool circuit tooling, which ships with the client rather than with any general-purpose SDK.
+For V1, pass an unsigned `privacyBatch` request to `newl1_estimateGas`, then sign with the chosen gas limit. For V2, call the pool's `quoteExit(bytes)` on the envelope. Submit to a node RPC. Direct TEE Gateway ingress rejects type `0x77`. Both versions expose `privacyVersion` and canonical `raw` in transaction queries and count toward General gas. To submit a service batch from an ordinary account, call `applyBatch(bytes)` on the pool. See [Privacy RPC](json_rpc/newl1-api-list.md#privacy-api).

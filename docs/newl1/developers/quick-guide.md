@@ -21,7 +21,7 @@ Five things account for nearly every surprise.
 |---|---|---|
 | You pay for your declared gas limit | Unused gas is never refunded, so SDK gas padding is money spent, and receipts report `gasUsed` equal to the limit. | [Migrating from BSC](../get-started/migrate-from-bsc.md#you-pay-for-your-declared-gas-limit) |
 | `latest` means executed, not ordered | Ordering and execution are decoupled; state reads resolve to the executed tip, and an explicit block number that hasn't executed yet returns `-38004` rather than stale data. | [Async Execution](../core-concepts/async-execution.md) |
-| No global mempool | Transactions route straight to the current and next block producer. No `txpool_*`, no public pending-transaction feed, and replace-by-fee only affects the pools holding the transaction. | [JSON-RPC Endpoint](./json_rpc/json-rpc-endpoint.md) |
+| No global mempool | Node RPC sends ordinary transactions to its configured TEE Gateway first, with validator forwarding as fallback. Pending-transaction subscriptions and replacements are local to the nodes holding the transaction. | [JSON-RPC Endpoint](./json_rpc/json-rpc-endpoint.md) |
 | No `eth_getProof` | State is committed with an LtHash accumulator, not a Merkle-Patricia trie, so there is no trie proof to serve. Anything proof-based needs a different design. | [Async Execution](../core-concepts/async-execution.md) |
 | 200 ms blocks | `block.number` advances about five times a second, and `block.timestamp` (still whole seconds) repeats across consecutive blocks. Block-count and timestamp math both need review. | [Migrating from BSC](../get-started/migrate-from-bsc.md#contracts) |
 
@@ -33,10 +33,11 @@ None of these are required to run a standard EVM app. They are additive, and the
 
 | Capability | What it gives you |
 |---|---|
-| [Transaction pre-confirmation](../core-concepts/tx-preconfirmation.md) | A validator-signed inclusion signal in ~20 ms, long before the block lands. Advisory and revocable, so never treat it as finality. |
+| [Transaction pre-confirmation](../core-concepts/tx-preconfirmation.md) | An optional signed Gateway stream shows the candidate order before a validator seals the block. |
+| [MEV and the TEE Gateway](../core-concepts/mev.md) | Private submission, bundle simulation, and delegated block ordering. |
 | [Native account abstraction](../core-concepts/account-abstraction.md) | The `0x76` transaction envelope: atomic call batches, session and admin keys, passkey (WebAuthn/P256) signing, and gas sponsorship, with no bundler and no EntryPoint contract. |
 | [Multi-Lane](../core-concepts/multi-lane.md) | Governance-configured reserved gas quota per traffic class, so latency-sensitive flows aren't crowded out by unrelated load. |
-| [Shielded pool](../core-concepts/privacy.md) | An opt-in native system contract for private transfers, alongside ordinary transparent ones. |
+| [Shielded pool](../core-concepts/privacy.md) | Shield native BNB or admitted BEP-20 tokens, transfer notes privately, or access an approved EVM contract through AtomicCall. Submit native privacy envelopes through node RPC. |
 | [BLS fast finality](../core-concepts/consensus.md) | Fast finality for transaction ordering. The execution result becomes final only after a later block records it and that block also finalizes. |
 
 ## Reference

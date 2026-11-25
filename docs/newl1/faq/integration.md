@@ -6,7 +6,7 @@ title: Integration FAQ - New L1
 
 Technical integration and partner-onboarding questions for application teams, infrastructure providers, traders, builders, and validators. For chain positioning, network status, assets, sponsorship basics, and privacy, start with the [General FAQ](./general.md).
 
-!!! note "Devnet guidance · Reviewed 5 November 2026"
+!!! note "Devnet guidance · MEV, Multi-Lane and privacy updated 25 November 2026"
     Devnet behavior can change between releases. Planned and proposed capabilities are identified below. Confirm the client and service version before relying on release-specific behavior.
 
 ## Network access and partner onboarding
@@ -79,13 +79,13 @@ Use `eth_estimateGas` for execution estimates and repeat testing after relevant 
 
 There is no universal tip that guarantees low latency or inclusion. The current devnet's base fee is pinned to zero, so the effective price is `min(maxFeePerGas, maxPriorityFeePerGas)`; a zero tip is rejected. Operator admission floors, competition, and available capacity matter.
 
-Lane-specific minimum prices have been discussed, but a capacity reservation alone does not establish a separate fee entitlement. Confirm supported fee fields, active prices, and lane pricing for the target release. See [RPC fee behavior](../developers/json_rpc/newl1-api-list.md#divergences-from-geth).
+The lane registry configures minimum gas capacity. There is no lane-specific gas price. See [Multi-Lane](../core-concepts/multi-lane.md).
 
 ### Are transactions ordered by gas price, total fee, or arrival time?
 
 Ordinary transactions are primarily ordered by effective gas price, subject to nonce and capacity constraints; increasing `gasLimit` alone does not improve rank. FIFO is not guaranteed. Higher fees cannot reorder already-emitted SubBlocks.
 
-Bundle scoring and tie-breaking belong to the enabled service's ruleset. Confirm them in its released specification rather than applying an unversioned draft formula to ordinary transactions or all MEV services.
+The Gateway compares bundles by their declared-gas-weighted effective tip, with arrival sequence and hash as tie-breakers. See [bundle admission and ordering](../core-concepts/mev.md#bundle-admission-and-ordering).
 
 ### Can one account send independent transactions concurrently using nonce_key?
 
@@ -95,35 +95,33 @@ An account's transactions still follow sequential nonce ordering. The `nonce_key
 
 ### What does a dedicated lane guarantee?
 
-A lane reserves gas capacity for eligible traffic so unrelated demand cannot consume that reservation. It does not guarantee that a particular transaction is included, succeeds, or meets a latency deadline. Transactions within the lane still compete for its quota. Reserved-but-unused capacity can serve General traffic.
+A lane retains its minimum share even while idle. General traffic and each lane’s usage above its minimum compete for the public budget. Eligible transactions still need to fit and satisfy nonce and validity checks. See the [worked gas example](../core-concepts/multi-lane.md#guarantees).
 
 ### Who approves a lane, and how do we request reserved capacity?
 
-Identify the top-level destination addresses that need protection and request their registration in `LaneRegistry`, with an appropriate basis-point reservation, through [governance](../governance/overview.md). Registration and governed parameters require approval; a builder cannot override the adopted configuration.
-
-Check the active configuration with [`newl1_laneConfig`](../developers/json_rpc/newl1-api-list.md#newl1_laneconfig). An inert configuration has no activated lanes. Approved changes use a lagged executed-state checkpoint, so do not assume same-block activation. Customization is limited to supported policies and parameters, not arbitrary ordering code. See [Multi-Lane](../core-concepts/multi-lane.md).
+Request entry routes, accepted transaction types, an administrator, and a minimum share through [governance](../governance/overview.md). At epoch rotation the client adopts the configuration from an executed ancestor. Read [`newl1_laneConfig`](../developers/json_rpc/newl1-api-list.md#newl1_laneconfig) to see what governs the next block.
 
 ### How is a transaction assigned to a lane? Does an indirect call qualify?
 
-The documented baseline uses the top-level destination address, not the function selector or the full inner call path. Calling a protected contract through an unregistered router does not inherit its reservation. Map the actual entry addresses and dependencies with engineering. Address-based routing also means different functions on the same entry address share its quota.
+Ordinary calls match the outer transaction type and destination. Calling through an unmatched router leaves the transaction in General. Native AA checks every call and any fee token. Native privacy envelopes always use General. See [Lane assignment](../core-concepts/multi-lane.md#lane-assignment).
 
 ### Will lane transactions always be first in the block?
 
-Do not infer first position or execution priority from a capacity reservation. The public [Multi-Lane reference](../core-concepts/multi-lane.md#guarantees) establishes reserved capacity, but does not specify a universal rule requiring dedicated-lane transactions to execute before General traffic. Confirm release-specific ordering and execution rules before relying on that behavior.
+Builders may interleave lanes and General in a single ordered body. Validators check capacity across the complete block. Lane membership gives no position guarantee.
 
 ### What happens when a transaction exceeds the lane's remaining capacity?
 
-A reservation does not guarantee that a particular transaction fits or is included in the same block. Do not assume automatic spillover into General or another dedicated lane. Confirm the target release's overflow and admission behavior with engineering, and size transactions against the active lane quota and per-transaction gas cap. Reserved-but-unused capacity serving General traffic is a separate rule; it does not establish the reverse fallback behavior.
+It may use available public gas above its own minimum. If it still cannot fit, the packer leaves it in its original lane for a later attempt and can select smaller transactions from other senders.
 
 ### Can a transaction interact with applications in different lanes?
 
-A transaction is assigned to one lane using its top-level destination; inner calls do not acquire additional lane reservations. That classification alone does not establish whether calls between particular applications are allowed or restricted. Confirm the supported call paths and any enforced restrictions with engineering rather than treating lane assignment as a blanket ban on contract-to-contract interaction. See [Lane Assignment](../core-concepts/multi-lane.md#lane-assignment).
+An empty access scope allows ordinary EVM interactions. With a configured scope, the client checks nested accesses against the permitted addresses and protocol exceptions. Escaping the scope reverts user writes and retains the gas charge. Inner calls never acquire another reservation.
 
 ## Routing, preconfirmation, and settlement
 
 ### Does no global mempool mean there are no pending transactions?
 
-No. Gateways and producers retain local transaction pools. The submission node takes custody and forwards to upcoming producers instead of broadcasting every pending transaction across the network. A node's pending feed or transaction-status response is a local view, not a complete network-wide order-flow feed.
+Nodes retain local transaction pools. Ordinary RPC traffic can use the Gateway or validator forwarding. A pending feed or transaction-status response describes only the queried node.
 
 ### When should an integration treat a transaction as settled?
 
@@ -133,39 +131,39 @@ Track pre-confirmation, ordering, execution, and execution finality separately. 
 
 ### What if a preconfirmation is withdrawn? Is there a break-rate target or compensation?
 
-Handle aborted and superseded notifications and continue tracking the transaction. No numerical break-rate SLA or automatic compensation is committed here. The partner discussion describes governance and operator accountability rather than a current per-revocation economic penalty. Proposed incentives for TEE fallback are a separate mechanism.
+A signed Gateway prefix can differ from the block eventually sealed. Reconcile against canonical blocks after a stream interruption or validator fallback. The protocol provides no break-rate or compensation guarantee.
 
 ## MEV, searchers, and bundles
 
-The answers below distinguish the documented client from the public [TEE Gateway proposal](https://forum.bnbchain.org/t/introducing-newl1-mev-solution-tee-gateway/5589). The proposal describes a design, not the current devnet service specification.
+See [MEV and the TEE Gateway](../core-concepts/mev.md) for the client implementation. Endpoint availability and operator terms depend on the deployment.
 
 ### What is the TEE Gateway, and is it already part of the devnet?
 
-The existing gateway routes transactions. The proposed TEE Gateway adds ordering inside a trusted execution environment, with software-identity checks and MEV controls. Validators retain consensus and final-block responsibility. The TEE framework is still under development; ordinary RPC access does not establish that TEE protection is active.
+The client implements an optional TEE Gateway for transaction ordering, bundles, and signed SubBlocks. The validator seals the final block. Check with the deployment operator for its enabled endpoint and eligible registered key.
 
 ### How can searchers or backrunners access order flow?
 
-Coordinate the endpoint and enabled service version with the integration team. The documented client provides ordered SubBlock subscriptions, not a global pending-transaction feed. The public TEE Gateway proposal also describes sender-authorized hints; those proposed services are not established by ordinary RPC access. Confirm supported feeds and disclosure rules for the service you connect to.
+Subscribe to signed, published SubBlocks through the [Gateway stream](../core-concepts/tx-preconfirmation.md#how-to-subscribe). Unpublished private transactions stay inside the selected submission path.
 
 ### Will there be a 100 ms window to search for backruns?
 
-The public TEE Gateway proposal describes a 100 ms opt-in delay window. This is a proposal, not a guaranteed window on the current devnet or a commitment for the first released service. Test searcher latency budgets against the deployed version; do not derive a search window from the roughly 20 ms SubBlock cadence.
+The current Gateway gives searchers no fixed backrun window. Its configurable 20 or 50 ms tick controls when it packs SubBlocks. Searchers can react to a published chunk while the candidate is still open. See [MEV and the TEE Gateway](../core-concepts/mev.md).
 
 ### Are bundles supported, and can they change an earlier SubBlock's order?
 
-Bundle service is planned in the MEV rollout. Proposed bundles preserve an ordered, contiguous group and cannot rewrite an already-emitted SubBlock prefix. Inclusion, revert handling, expiry, simulation, and retry rules require the released service specification; simulation success alone does not guarantee execution success. See the [TEE Gateway proposal](https://forum.bnbchain.org/t/introducing-newl1-mev-solution-tee-gateway/5589), which is not a deployment statement.
+Yes, the Gateway admits bundles after simulation and detection checks. It appends an admitted bundle as a contiguous ordered group. A successful simulation cannot guarantee the same outcome against the eventual execution state.
 
 ### Can a gateway operator run its own backrun strategy? Will independent searchers have equal access?
 
-The public TEE Gateway proposal prohibits ordering-operator self-dealing and hidden identity-based ordering advantages. A TEE by itself does not establish compliance with those rules or identical information, latency, or outcomes for every searcher. Verify the deployed service's admission, disclosure, strategy, and revenue-sharing rules rather than treating an operator's own backrun strategy as an approved entitlement.
+External searchers can submit bundles under the Gateway's published scoring and detection rules. An open-source built-in backrun strategy and explicit profit distribution are future work. The chain already distinguishes proved and local blocks for protocol fees. See [fee distribution and unproved blocks](../core-concepts/mev.md#fee-distribution-and-unproved-blocks).
 
 ### Does no global mempool or TEE ordering eliminate harmful MEV?
 
-No blanket protection should be assumed. The TEE proposal aims to protect pre-order information and constrain harmful ordering; it does not prove that a deployed service blocks every sandwich strategy. Fallback behavior and any proxy in the submission path introduce additional trust assumptions. Confirm the protection mode and disclosure policy of the actual service.
+The Gateway screens individual bundles for sandwich patterns on configured V2/V3 pools. Its admission response reports coverage. Transactions across bundles or pools outside the configured set can escape detection. An RPC intermediary can also see any plaintext submitted through it.
 
 ### Who selects the gateway, and what happens if it fails?
 
-The working design gives validators control over their gateway relationship and final-block production. Operator selection and commercial terms are arranged outside a per-SubBlock builder auction. Fallback is intended to preserve ordinary transaction processing, but protection and bundle availability may differ. The release must state which transactions can downgrade and which services pause.
+The validator selects one eligible registered Gateway key for a specific slot. The on-chain registry records eligibility and the permit binds that proposer and key for the slot. If the candidate is invalid or unavailable, the validator can build locally after the original permit expires. Only ordinary node-RPC traffic can fall back to validator forwarding. Private submissions and bundles return an error.
 
 ## Grants and integration incentives
 

@@ -10,7 +10,7 @@ JSON-RPC endpoints refer to the network location where a program sends its RPC r
 
 | Transport | Devnet endpoint |
 |---|---|
-| HTTP (gateway / RPC) | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
+| Node HTTP RPC | [https://newl1-devnet-rpc.bnbchain.org/](https://newl1-devnet-rpc.bnbchain.org/) |
 | WebSocket | `wss://newl1-devnet-rpc.bnbchain.org/ws` |
 
 !!! note "Devnet stage"
@@ -18,7 +18,7 @@ JSON-RPC endpoints refer to the network location where a program sends its RPC r
 
 ## Transports
 
-HTTP and WebSocket serve the same method set, with one exception: subscriptions are WebSocket-only. A node operator enables or disables each transport with `--http.addr` / `--ws.addr` (passing `none` disables it).
+On a node, HTTP and WebSocket serve the same method set, with one exception: subscriptions are WebSocket-only. A node operator enables or disables each transport with `--http.addr` / `--ws.addr` (passing `none` disables it).
 
 ```bash
 # HTTP
@@ -45,11 +45,15 @@ Because ordering and execution are decoupled, the node tracks two heights and `l
 
 ### Pre-confirmation
 
-A validator-signed, sub-block-level signal that the current block producer has committed to including a transaction, available roughly 20 ms after submission, well before the block itself. It is advisory and revocable; see [Pre-confirmation API](newl1-api-list.md#pre-confirmation-api).
+The Gateway can stream signed SubBlocks during delegated production. Use its optional WebSocket adapter for these updates. Node RPC provides the canonical block feed. See [Pre-confirmation API](newl1-api-list.md#pre-confirmation-api).
 
 ### Account Abstraction
 
 Delegated-key state for the native `0x76` transaction type (session keys, admin keys, passkey signers, spend limits) is readable on chain. See [Account Abstraction API](newl1-api-list.md#account-abstraction-api).
+
+### MEV and privacy
+
+For private submission and bundles, see the [MEV API](newl1-api-list.md#mev-api). For the shielded pool configuration and native V1 gas estimation, see the [Privacy API](newl1-api-list.md#privacy-api).
 
 ### Multi-Lane
 
