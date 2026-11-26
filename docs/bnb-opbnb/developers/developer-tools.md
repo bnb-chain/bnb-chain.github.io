@@ -38,6 +38,8 @@ Needless to mention that the stability of RPC nodes is crucial to any blockchain
 
 NodeReal RPC can be accessed through their [API marketplace](https://nodereal.io/api-marketplace/explore?chains=opbnb). For common/public nodes, communities can access[ BNB ChainList](https://www.bnbchainlist.org/). 
 
+[SolidRPC](https://solidrpc.io/docs/chains/opbnb) provides authenticated HTTPS JSON-RPC access to opBNB Mainnet and [opBNB Testnet](https://solidrpc.io/docs/chains/opbnb-testnet).
+
 ## Wallet
 
 Crypto/Digital wallet serves as an entry point for users to access blockchain. opBNB have known wallets providing access to opBNB such as [Metamask and Trustwallet](../get-started/wallet-configuration.md), leading the front. 
