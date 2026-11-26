@@ -221,14 +221,14 @@
   - [Examples](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/examples/): Client, voter, and agent-server flows.
   - [Security](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/security/): Wallet handling and signing policy.
   - [Troubleshooting](https://docs.bnbchain.org/developer-kit/bnbagent-sdk/troubleshooting/): Common errors and fixes.
-- [BNB Agent Studio](https://docs.bnbchain.org/developer-kit/bnbchain-studio/): Scaffold, run, and deploy two-layer blockchain seller agents (CLI `bag`, ERC-8004/8183, x402) on BNB Chain.
-  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/): End-to-end path from zero to a running two-layer seller on BSC testnet.
-  - [Demo](https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/): End-to-end weather-forecast seller walkthrough.
-  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbchain-studio/architecture/): Six-layer stack and two-layer deploy model.
-  - [Configuration](https://docs.bnbchain.org/developer-kit/bnbchain-studio/configuration/): studio.toml, .env.local, cross-layer sync.
-  - [CLI reference](https://docs.bnbchain.org/developer-kit/bnbchain-studio/cli-reference/): bag command groups and MCP tools.
-  - [Deployment](https://docs.bnbchain.org/developer-kit/bnbchain-studio/deployment/): AgentCore + EC2 two-artifact deploy path.
-  - [Security](https://docs.bnbchain.org/developer-kit/bnbchain-studio/security/): Keystore posture, signing policy, MCP read-only.
+- [BNB Agent Studio](https://docs.bnbchain.org/developer-kit/bnbchain-studio/): Scaffold, run, and deploy a TypeScript seller in one runtime (CLI `bag`, ERC-8004/8183, X402 or MPP). Includes Altana and Turnkey B402 payout support.
+  - [Quickstart](https://docs.bnbchain.org/developer-kit/bnbchain-studio/quickstart/): Guided path to a TypeScript seller on BSC testnet.
+  - [Demo](https://docs.bnbchain.org/developer-kit/bnbchain-studio/demo/): Archived Python/two-layer walkthrough, explicitly out of date; use Quickstart.
+  - [Architecture](https://docs.bnbchain.org/developer-kit/bnbchain-studio/architecture/): One runtime, one wallet authority, composable protocol faces.
+  - [Configuration](https://docs.bnbchain.org/developer-kit/bnbchain-studio/configuration/): Runtime `studio.toml`, workspace `.studio/.env.local`, shared USD seller price, and payout configuration.
+  - [CLI reference](https://docs.bnbchain.org/developer-kit/bnbchain-studio/cli-reference/): Current bag command groups, bounded MCP seller operations, and chain-read tools.
+  - [Deployment](https://docs.bnbchain.org/developer-kit/bnbchain-studio/deployment/): Explicit BNB, AWS, Azure, or CreateOS provider selection and runtime-secret delivery.
+  - [Security](https://docs.bnbchain.org/developer-kit/bnbchain-studio/security/): Wallet custody, signing policy, and the distinction between seller operations and read tools.
   - [Troubleshooting](https://docs.bnbchain.org/developer-kit/bnbchain-studio/troubleshooting/): bag doctor and common errors.
 - [MPP SDK](https://docs.bnbchain.org/developer-kit/mpp-sdk/): EVM Charge implementation of Machine Payments Protocol on BSC and opBNB.
   - [Quickstart](https://docs.bnbchain.org/developer-kit/mpp-sdk/quickstart/): Server + client payment flow.

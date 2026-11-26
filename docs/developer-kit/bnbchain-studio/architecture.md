@@ -10,21 +10,24 @@ from orthogonal recipes.
 
 ## One runtime, one signer
 
-A single deployed process serves every public face you selected and holds the only key.
+A single deployed process serves the selected faces and uses the configured wallet
+authority. Altana supplies a bounded session; Turnkey keeps its signing key remote.
 There is no separate keyless service tier and no cross-service invoke hop.
 
 | Entrypoint | Face | Local surface | Runtimes |
 | --- | --- | --- | --- |
-| `src/unifiedMain.ts` | A2A (+ X402) | agent card and JSON-RPC on `:9000` | AgentCore, Azure Foundry |
+| `src/unifiedMain.ts` | A2A (+ X402 or MPP) | agent card and JSON-RPC on `:9000` | AgentCore, Azure Foundry |
 | `src/mcpMain.ts` | MCP | Streamable HTTP at `:8000/mcp` | AgentCore, Azure Foundry (local only) |
 | `src/dualMain.ts` | A2A-native with tunneled `/mcp` | `:9000` | AgentCore only |
 
-Faces are composable (`--protocols`); one seller core and one wallet serve all of them.
+Faces are composable (`--protocols`); one seller core and one wallet serve them.
+X402 and MPP are alternative B402 faces and cannot coexist. A2A+MCP uses
+`dualMain.ts` on port `9000`, with `/mcp` tunneled through that entrypoint.
 
 ```mermaid
 graph TB
     Buyer["Buyer"]
-    subgraph RT["One deployed runtime · sole key-holder"]
+    subgraph RT["One deployed runtime · configured wallet authority"]
         Face["unifiedMain.ts / mcpMain.ts / dualMain.ts"]
         Seller["sellerCore.ts · runWork()"]
         Sign["signing.ts · fixed code"]
@@ -34,7 +37,7 @@ graph TB
     SDK["@bnbagent/sdk"]
     Chain["BSC · ERC-8004 · ERC-8183 · B402"]
 
-    Buyer -->|"negotiate / notify_funded / x402"| Face
+    Buyer -->|"negotiate / notify_funded / x402 or mpp"| Face
     Face --> Seller
     Seller --> LLM
     Face --> Sign
@@ -49,15 +52,16 @@ graph TB
 The ERC-8183 rail exposes exactly two operations — deliberately narrow, so neither the
 LLM nor a buyer can widen them.
 
-**`negotiate`** — a rule-based price clamp against `studio.toml`, then an EIP-191
-signature. **No LLM touches money**: pricing is deterministic code.
+**`negotiate`** resolves the shared `[payments.seller]` USD price for the selected
+asset, then produces an EIP-191 signature. **No LLM touches money**: pricing is
+deterministic code.
 
 **`notify_funded`** — verify the funded job on-chain (signed terms, assigned provider,
 status, budget, funded state) **before** doing paid work, produce the deliverable, then
 submit its reference on-chain. A2A acknowledges first and delivers in the background;
 MCP delivers synchronously inside the tool call.
 
-The optional x402 rail adds an anonymous HTTP request at `/x402`. A positive price
+The optional B402 rail serves X402 at `/x402` or MPP at `/mpp`. A positive price
 settles through B402 before work starts; an explicit zero is FREE passthrough and
 bypasses the facilitator entirely.
 
@@ -67,7 +71,7 @@ auto-settles a buyer's job.
 ## Signing boundary
 
 All signing is fixed entrypoint code in `app/agent/src/signing.ts`, or the runtime's
-bounded x402 payment handler. It is **never** an LLM-callable tool, and no general
+bounded B402 payment handler. It is **never** an LLM-callable tool, and no general
 signing tool is exposed. The LLM's chain tools are read-only.
 
 The encrypted keystore lives at the workspace root in `.studio/wallets/` — outside the
@@ -80,7 +84,7 @@ deployed runtime only through the selected provider's delegated secret channel.
 |-------|------|
 | **L1 — your code** | `app/agent/src/*` — emitted by recipes, you own and edit |
 | **L2 — IDE** | Claude Code / Cursor — reads the skill, drives the CLI, edits your files |
-| **L3 — Studio surfaces** | `bag` CLI, `bag mcp serve` (15 read-only tools), skills, recipes |
+| **L3: Studio surfaces** | `bag` CLI, skills, recipes, and the agent's selected protocol faces |
 | **L4 — `@bnbagent/studio-runtime`** | Seller runtime, wallet loader, signing policy, x402 payment handler, audit log |
 | **L5 — `@bnbagent/sdk`** | Protocol clients — `ERC8004Agent`, `ERC8183Client`, `EVMWalletProvider` |
 | **L6 — chain** | BSC testnet/mainnet — ERC-8004 registry, ERC-8183, B402 |
@@ -96,7 +100,7 @@ generated project depends on `@bnbagent/studio-runtime`, **not** on the CLI.
 ```text
 recipes/
 ├── agent/                    signing.ts
-├── wallet/                   wallet selection (evm-local · twak · altana)
+├── wallet/                   wallet selection (evm-local · twak · turnkey · altana)
 ├── runtimes/agentcore/       AWS Bedrock AgentCore entrypoints + Dockerfile
 ├── runtimes/azure-foundry/   Azure AI Foundry entrypoints + Dockerfile
 ├── providers/pieverse-llm/   Pieverse LLM wiring + funding playbook
@@ -163,7 +167,7 @@ Two boundaries do the security work:
 ```text
 Buyer                          Runtime (sole signer)              BNB Chain
   │  negotiate                        │                               │
-  │ ─────────────────────────────────►│ clamp price, EIP-191 sign      │
+  │ ─────────────────────────────────►│ resolve price, EIP-191 sign    │
   │ ◄─────────────────────────────────│ signed quote                   │
   │                                   │                               │
   │  createJob · setBudget · fund ────────────────────────────────────►│
@@ -183,14 +187,15 @@ Settlement stays with the buyer. Operator-side settle is a manual
 
 ## Core design principles
 
-1. **Studio is not the intelligence** — Claude Code / Cursor is; Studio provides
-   recipes, the CLI, read-only MCP, and skills.
+1. **Studio is not the intelligence.** Claude Code / Cursor drives the workflow;
+   Studio provides recipes, the CLI, protocol entrypoints, and skills.
 2. **No wallet abstraction of its own** — Studio selects a `WalletProvider` from the
    SDK; it wraps nothing.
-3. **Money is deterministic** — pricing clamps and signing are fixed code, never LLM
+3. **Money is deterministic.** Price conversion and signing are fixed code, never LLM
    tool calls.
-4. **Rails and faces are independent choices** — ERC-8183 and B402 are rails; A2A, MCP
-   and X402 are faces. One runtime serves any combination.
+4. **Rails and faces are independent choices.** ERC-8183 and B402 are rails; A2A,
+   MCP, X402, and MPP are faces. X402 and MPP are alternatives; provider compatibility
+   gates still apply.
 5. **The generated project is yours** — ordinary TypeScript, no closed-source runtime
    and no lock-in.
 
@@ -198,8 +203,8 @@ Settlement stays with the buyer. Operator-side settle is a manual
 
 - [Quickstart](quickstart.md) — install, scaffold, run, deploy
 - [Configuration](configuration.md) — `studio.toml` and `.env.local`
-- [Deployment](deployment.md) — the three deploy targets
-- [Security](security.md) — keystore posture, signing policy, MCP read-only guarantee
+- [Deployment](deployment.md): provider choices and compatibility constraints
+- [Security](security.md): wallet custody, signing policy, and bounded MCP operations
 - [BNB Agent SDK architecture](../bnbagent-sdk/architecture.md) — the protocol layer underneath
 
 [← BNB Agent Studio overview](index.md)

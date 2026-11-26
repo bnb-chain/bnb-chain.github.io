@@ -90,14 +90,15 @@ Depending on the faces you chose, `bag dev` serves:
 | Face | Local surface |
 | --- | --- |
 | A2A | agent card + JSON-RPC on port `9000` |
-| MCP | Streamable HTTP at `http://localhost:8000/mcp` |
+| MCP | MCP-only at `http://localhost:8000/mcp`; A2A+MCP uses port `9000` |
 | X402 | `/x402` on the same runtime |
+| MPP | Alternative B402 face at `/mpp`, selected with `--payment-protocol mpp`; cannot coexist with X402 |
 
 ## 5. Deploy
 
 ```bash
 bag deploy prepare                  # storage, provider and tooling readiness gates
-bag deploy --provider bnb           # or: aws | azure
+bag deploy --provider bnb           # or: aws | azure | nodeops
 bag deploy verify --provider bnb    # reconcile ERC-8004 identity with the live endpoint
 ```
 
@@ -109,9 +110,11 @@ as an explicit update, never used as a silent default.
 | `bnb` | Managed 48-hour **testnet** trial | Runs in the operator's cloud, so signing material leaves your control. Use a throwaway wallet (`bag wallet new`) and never reuse it on mainnet. Disabled after expiry. |
 | `aws` | AWS Bedrock AgentCore in **your** account | Runtime material is injected into your own infrastructure. |
 | `azure` | Azure AI Foundry hosted agents | Container-only, delegated to the pinned deploy engine. **A2A scaffolds only** — an MCP entrypoint is rejected before deploy. |
+| `nodeops` | CreateOS hosting | Account or wallet mode; hosting payment is separate from seller revenue. Check the [provider guide](https://github.com/bnb-chain/bnbagent-studio/blob/v0.0.16/docs/guides/createos-deploy.md) before choosing the runtime wallet or enabling B402 selling. |
 
-Local deliverable storage **fails deployment readiness** by design; switch to IPFS
-before deploying.
+Local deliverable storage **fails deployment readiness** by design. Configure
+IPFS, S3, Azure Blob, or the managed platform's supported deliverable storage before
+deploying.
 
 ## 6. Earn and settle
 

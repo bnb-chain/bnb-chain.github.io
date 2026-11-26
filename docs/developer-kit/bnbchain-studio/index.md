@@ -7,6 +7,9 @@ title: BNB Agent Studio
 Describe the agent you want in Claude Code or Cursor; Studio scaffolds a working
 **TypeScript** project that you own, then helps you run, diagnose, and deploy it.
 
+These pages describe Studio CLI **0.0.16**. For newer releases, check the installed
+`bag --help` and bundled skills for changed commands and capabilities.
+
 A seller agent earns on-chain by offering services over **ERC-8004** (identity),
 **ERC-8183** (escrowed commerce), and **x402/B402** (per-request payments), built on
 the [BNB Agent SDK](../bnbagent-sdk/index.md).
@@ -37,7 +40,7 @@ bag skills install
 | **Agent runtime** | [`@bnbagent/studio-runtime`](https://www.npmjs.com/package/@bnbagent/studio-runtime) | Imported by the generated agent code. The generated project depends on this, **not** on the CLI — removing the global CLI does not disable an already-generated agent. |
 | **Deploy engine** | [`@bnbagent/deploy-cli`](https://www.npmjs.com/package/@bnbagent/deploy-cli) | Pinned; all cloud lifecycle mutations are delegated to it |
 | **IDE skill** | bundled in the CLI | The `/bnbagent-studio` router plus its on-demand playbooks, installed by `bag skills install` |
-| **MCP server** | `bag mcp serve` | 15 read-only chain tools for your IDE — it never signs |
+| **Chain-read tools** | `@bnbagent/studio-runtime/tools` | 15 read/usage functions; the agent's MCP seller face also exposes bounded commerce operations |
 
 The bundled skill is the primary interface: it turns your intent into a reviewable
 workflow and drives `bag` for you. `bag` remains available for automation and for
@@ -45,37 +48,39 @@ anyone who prefers direct control.
 
 ## One runtime, one signer
 
-A single deployed process serves every selected public face and holds the only key.
+A single deployed process serves the selected faces using one configured wallet
+authority: a local key, remote signer, or bounded Altana session.
 There is no separate keyless service tier.
 
 - **Faces are composable** (`--protocols`): **A2A** (agent card + JSON-RPC on `:9000`),
-  **MCP** (Streamable HTTP at `:8000/mcp`), and **X402** (`/x402`). One seller core and
-  one wallet serve all of them.
+  **MCP** (MCP-only at `:8000/mcp`; A2A+MCP at `:9000/mcp`), and either
+  **X402** (`/x402`) or **MPP** (`/mpp`). One seller core and one wallet serve them.
 - **Signing is fixed code**, never an LLM-callable tool. It lives in
   `app/agent/src/signing.ts`. The LLM's chain tools are read-only, and no LLM
   participates in pricing.
 - **The keystore lives at the workspace root** in `.studio/wallets/` — outside
   `app/agent/`, so no packaging path can bundle it into a deploy artifact.
 
-The ERC-8183 rail exposes exactly two bounded operations: `negotiate` (a rule-based
-price clamp plus a signed quote) and `notify_funded` (verify the funded job on-chain,
-produce the deliverable, submit it).
+The ERC-8183 rail exposes exactly two bounded operations: `negotiate` (resolve the
+configured USD price for the selected asset and sign a quote) and `notify_funded`
+(verify the funded job on-chain, produce the deliverable, submit it).
 
 ## The choices you make
 
 | Dimension | Choices | Notes |
 | --- | --- | --- |
 | Network | `bsc-testnet`, `bsc-mainnet` | Start on testnet. The managed BNB trial is always testnet. |
-| Wallet | `evm-local` (default), `twak`, `altana` | Local encrypted keystore; Trust Wallet Agent Kit custody; or a budget- and time-bounded Altana session. |
+| Wallet | `evm-local` (default), `twak`, `turnkey`, `altana` | Local encrypted keystore; Trust Wallet Agent Kit; Turnkey remote signer; or a bounded Altana session. All four support paid B402 seller payout. |
 | LLM | Pieverse (default), OpenRouter, OpenAI, Anthropic, Bedrock | Pieverse `auto/free` starts at $0/token. Others use your own credentials. |
 | Commerce rails | ERC-8183, B402, or both | ERC-8183 is job escrow; B402 settles x402 requests. Rails and faces are separate choices. |
-| Public faces | A2A, MCP, X402, or a combination | One runtime serves every selected face. |
-| Deployment | BNB managed trial, AWS AgentCore, Azure Foundry | Every deploy explicitly selects a target; a previous deployment is never a silent default. |
-| Deliverable storage | local or IPFS | Local is for offline development and **fails deployment readiness**. IPFS is durable and deploy-ready. |
+| Public faces | A2A, MCP, and either X402 or MPP | X402 and MPP are alternative B402 adapters and cannot coexist. |
+| Deployment | BNB managed trial, AWS AgentCore, Azure Foundry, CreateOS (`nodeops`) | Every deploy explicitly selects a target; provider compatibility gates still apply. |
+| Deliverable storage | local, IPFS, S3, or Azure Blob | Local is for offline development and **fails deployment readiness**. Configure durable storage before deploying. |
 
-Some combinations are rejected before the project changes — Altana does not support
-paid B402 selling, and Azure Foundry currently deploys **A2A scaffolds only**
-(the MCP entrypoint is rejected before a Foundry deploy).
+Compatibility limits are separate from payout support: Altana cannot use Pieverse
+SIWE, and Azure Foundry deploys **A2A scaffolds only** (an MCP entrypoint is rejected).
+Altana's outbound payments require a separately armed session; receiving seller
+revenue does not require that buyer authority.
 
 ## What gets generated
 
@@ -106,20 +111,29 @@ Ordinary TypeScript that you own — edit, fork, or move it whenever you want.
 ## How a seller gets paid
 
 **ERC-8183 — negotiated work with escrow.** A buyer calls `negotiate`; fixed code
-clamps the configured list price and signs a quote. The buyer creates the job, sets a
-budget, and funds escrow, then sends `notify_funded`. The seller verifies the signed
+resolves the configured USD price for the selected asset and signs a quote. The
+buyer creates the job, sets a budget, and funds escrow, then sends `notify_funded`.
+The seller verifies the signed
 terms, assigned provider, status, budget, and funded state **on-chain before doing paid
 work**, stores the deliverable, and submits its reference. The buyer then manually
 chooses approve, reject, or dispute — Studio never silently auto-settles a buyer's job.
 
-`price = "0"` is an explicit **FREE** ERC-8183 job: it skips token escrow, though
-state-changing calls still need gas or a sponsored path.
+`[payments.seller]` `price_usd = "0"` explicitly selects a **FREE** ERC-8183 job:
+it skips token escrow, though state-changing calls still need gas or a sponsored path.
 
 **x402 — pay per HTTP request.** The X402 face exposes `/x402`. A positive
 `price_usd` returns a payment challenge and settles through B402 *before* work starts;
 `price_usd = "0"` is anonymous FREE passthrough that bypasses B402 entirely. Paid mode
-needs a complete per-agent B402 merchant setup and an `evm-local` or `twak` payout
-wallet. Payment settles before work, so a later work failure has no automatic refund.
+needs a complete per-agent B402 merchant setup and a supported payout wallet:
+`evm-local`, `twak`, `turnkey`, or `altana`. The recipient is the configured `pay_to`
+or, by default, `[wallet].address`. For Altana's EIP-7702 account, that address is
+the admin EOA; the locally held admin key can move the revenue. Register the B402
+merchant for that exact payout address. Payment settles before work, so a later
+work failure has no automatic refund.
+
+MPP is an alternative B402 payment face at `/mpp`, selected with
+`--payment-protocol mpp`. It shares the seller price and payout configuration;
+it cannot be enabled alongside X402.
 
 ## Next
 
