@@ -9,48 +9,69 @@ BNB Agent Studio is designed around five commitments. The security model follows
 ## Core commitments
 
 1. **Agent project code is user-owned** — recipe-emitted files are yours; studio never silently rewrites them.
-2. **Private keys live only in user-controlled environments** — the keystore never leaves your Agent via public channels; the keyless Service never holds it.
-3. **MCP is read-only** — no signing, no on-chain state change (exception: domain-locked SIWE `personal_sign`, never persisted).
+2. **Runtime custody is explicit.** Review which provider receives the credentials needed to use the selected wallet before deploying.
+3. **Signing stays in bounded handlers.** Seller operations validate the job or payment before signing or doing paid work. The LLM has no general signing tool.
 4. **The SDK protocol layer stays pure** — studio opinions never pollute `bnbagent-sdk`.
 5. **You can jump ship** — emitted code is yours to fork; no closed-source SaaS or OAuth lock-in.
 
 ## Keystore posture
 
-| Location | Who reads it | Deploy path |
-|----------|--------------|-------------|
-| Workspace root `.studio/wallets/` | Layer A Agent only | Injected via AWS Secrets Manager (`WALLET_KEYSTORE_JSON`) |
-| `app/service/` | Never | Service zip excludes all `.env*` and keystore paths |
+| Wallet | Local material | Deployed authority |
+| --- | --- | --- |
+| `evm-local` | Encrypted keystore and `WALLET_PASSWORD` | The runtime receives both through the provider's secret channel and can unlock the wallet |
+| `twak` | Project-dedicated TWAK wallet state | The container receives the wallet material and credentials needed by TWAK |
+| `turnkey` | Turnkey API credentials and account configuration | The runtime can request signatures under the configured Turnkey policy; the wallet key stays in Turnkey |
+| `altana` | Admin keystore and bounded session file | Only `ALTANA_SESSION` is sent; the admin key and password stay local |
 
 The keystore sits **outside** `app/agent/` (the AgentCore codeLocation) so no packaging path — including raw `agentcore deploy` — can bundle it into an artifact.
 
-`WALLET_PASSWORD` lives in environment variables only (`.env.local` for local dev, Secrets Manager injection for deploy). It is never written to `studio.toml`.
+Local secrets live in workspace `.studio/.env.local`, never in `studio.toml`.
+AWS uses Secrets Manager by default; Azure uses Foundry CustomKeys. BNB trial and
+CreateOS runtimes run on third-party infrastructure. A runtime receiving both an
+encrypted keystore and its password can use that wallet. Use a dedicated deployment
+wallet and review its funding and custody limits.
+
+Altana sessions expire and require explicit renewal or revocation. Altana can
+receive paid B402 seller revenue at its admin EOA address; receiving payment does
+not require the session to sign. Register the merchant for the exact payout address.
 
 ## Signing boundary
 
-All on-chain signing is **fixed entrypoint code** in `app/agent/signing.py` — never an LLM-callable tool. The Agent:
+ERC-8183 signing is fixed code in `app/agent/src/signing.ts`. The single runtime:
 
-- Receives action envelopes (`quote` / `fulfill` / `settle`) from the keyless Service
-- Clamps prices to `[min_price, max_price]` in `studio.toml` before signing
-- Re-validates chain state before every submission
+- Resolves the configured seller price and asset and signs the `negotiate` quote without an LLM
+- Verifies the signed terms and funded on-chain job in `notify_funded` before work and submission
+- Keeps signing out of the LLM's tool set
 
-The keyless Service can only *request* signatures via `InvokeAgentRuntime`; it cannot sign directly.
+X402 or MPP seller handlers settle paid B402 requests before work. Explicit FREE
+mode bypasses settlement. A later work failure does not automatically refund the
+payment; reconcile uncertain payment outcomes before paying again.
 
 ## SigningPolicy (EIP-712)
 
-`EVMWalletProvider.sign_typed_data` is policy-gated by default:
+The local EVM wallet applies the SDK's strict signing policy:
 
-- **Allowed by default:** EIP-3009 `TransferWithAuthorization` / `ReceiveWithAuthorization` against network-default deployments
-- **Denied by default:** ERC-2612 `Permit`, Permit2 `PermitSingle`/`PermitBatch` — even if your code mistakenly allowlists them
+- EIP-3009 authorizations are limited to approved network, domain, primary type, and validity bounds.
+- Other wallet kinds have their own signing boundaries; receiving seller payout does not grant outbound payment authority.
 
 Extend signing for new contracts or primary types via `app/agent/studio.toml`:
 
 ```toml
 [wallet.signing]
-extra_domains = [...]
-extra_primary_types = [...]
+extra_domains = []       # add only reviewed [chain_id, contract_address] pairs
+extra_primary_types = [] # add only reviewed EIP-712 types
 ```
 
-Also configure `[payments.x402].allowed_hosts` before the x402 buyer fetches from new servers. Both gates require editing toml + restart.
+The outbound x402 buyer also checks host and recipient trust under
+`[payments.x402]`. Prefer `bag x402 trust <merchant-url>` to inspect and pin a
+merchant, then review the resulting configuration. Changing the host allowlist
+alone does not authorize its signing domain or recipient.
+
+Local and Turnkey x402 buyers use EIP-3009. Altana uses a separately armed, bounded
+Permit2 Exact session; TWAK is rejected for paid Studio x402 buying. These buyer
+limits do not restrict seller payout. Read the
+[Altana playbook](https://github.com/bnb-chain/bnbagent-studio/blob/v0.0.16/packages/studio-cli/skills/references/bnbagent-studio-using-altana-wallet.md)
+before granting or re-arming a session.
 
 Diagnose policy issues:
 
@@ -58,32 +79,39 @@ Diagnose policy issues:
 bag wallet policy show
 ```
 
-## MCP read-only guarantee
+## MCP seller operations and read tools
 
-The MCP server (`bag mcp serve`) exposes 15 tools — all read-only:
+The agent's MCP face exposes bounded `negotiate` and `notify_funded` operations.
+They can sign and submit transactions through fixed code, so the whole face is
+not read-only. Run it with `bag dev` after selecting MCP at initialization;
+Studio CLI 0.0.16 has no separate `bag mcp serve` command.
+
+The 15 functions in `@bnbagent/studio-runtime/tools` provide reads:
 
 - Wallet address and balances (no transfer)
 - Network, block, and transaction queries
 - ERC-8004 and ERC-8183 job reads
 - Pieverse usage visibility
 
-`WALLET_PASSWORD` is used only to resolve the keystore address for balance queries — the MCP server **never signs**.
+`pieverseUsage` authenticates through a domain-locked SIWE message, without an
+on-chain transaction. The generated LLM tool set exposes no general signing tool.
 
 ## Budget and auto-topup
 
 `bag budget enable` opts into **wallet-funded** LLM credit renewal via x402 — it lets the Agent
 auto-pay $U from your wallet when credits run low. It is **off by default**: a non-interactive
 `bag init` records no `[budget]` section, so wallet-funded renewal stays off until you enable it
-explicitly. Note that an *interactive* `bag init` does ask (`Enable auto-topup? [Y/n]`) and treats a
-bare Enter as yes — run `bag budget show` if you are unsure which path you took. This is separate
-from the managed-model auto-renew hook (`[llm.auto_renew]`, on by default), which never spends from
-your wallet — it only reallocates credit already sitting in your Pieverse Account Balance. Requires:
+explicitly. Run `bag budget show` to inspect the recorded consent and caps. This is separate
+from the model-credit renewal hook (`[llm.auto_renew]`, on by default), which
+allocates existing Pieverse Account Balance unless wallet-funded top-ups have
+been explicitly enabled through the budget policy. Wallet-funded top-ups require:
 
 - Funded BSC **mainnet** U balance for auto-renew flows (Pieverse settles on mainnet only —
   testnet U cannot pay for LLM credits)
-- `WALLET_PASSWORD` injected at Agent runtime deploy time
+- Runtime credentials for a wallet that supports the Pieverse payment path; Altana cannot authenticate Pieverse SIWE
 
-Without runtime password injection, the Agent falls back to allocate-only mode — no wallet spend, no error. Disable with `bag budget disable`.
+Disable wallet-funded renewal with `bag budget disable`. Altana agents should use
+OpenRouter, OpenAI, or Anthropic instead of Pieverse.
 
 ## Audit log
 
@@ -98,7 +126,7 @@ Deploying provisions resources in **your** AWS account. Published IAM reference 
 - Start on **BSC testnet** until you understand the signing and deploy flow
 - Run `bag doctor` before every deploy
 - Use `--secrets-mode secretsmanager` (default) on any network with real funds
-- Keep the Service zip free of Agent secrets — `bag deploy package` enforces this
+- Keep `.studio/`, secrets, and wallet files outside the packaged `app/agent/` code
 - Review `[wallet.signing]` before extending beyond default EIP-3009 allowlist
 
 [← BNB Agent Studio overview](index.md)

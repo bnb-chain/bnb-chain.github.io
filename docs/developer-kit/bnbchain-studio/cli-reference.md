@@ -4,27 +4,30 @@ title: BNB Agent Studio CLI Reference
 
 # CLI Reference
 
-The `bag` CLI exposes 19 command groups. Run `bag --help` or `bag <group> --help` for full flag lists.
+This reference follows Studio CLI 0.0.16. Run `bag --help` or
+`bag <group> --help` for the installed version's full flag lists.
 
 ## Command groups
 
 | Group | Purpose | Key subcommands |
 |-------|---------|-----------------|
-| `init` | Scaffold a seller agent workspace | `bag init <name> [--runtime agentcore\|azure-foundry] [--llm-provider pieverse-llm] [--network bsc-testnet] [--wallet-kind evm-local\|twak\|altana] [--protocols A2A,MCP,X402] [--storage-provider local\|ipfs] [--no-onboard] [--ide claude-code\|cursor\|both]` |
+| `init` | Scaffold a seller agent workspace | `bag init <name> [--runtime agentcore\|azure-foundry] [--network bsc-testnet] [--wallet-kind evm-local\|twak\|turnkey\|altana] [--protocols A2A,MCP,X402] [--payment-protocol x402\|mpp] [--seller-price-usd 0.10] [--storage-provider local\|ipfs\|s3\|azure-blob] [--no-onboard]` |
 | `scan` | Detect project type + manifest | `bag scan` |
 | `recipe` | Print recipe code/files | `list` / `show` / `code` |
 | `skills` | Install IDE skills | `list` / `install --target {claude-code,cursor,both}` / `uninstall` |
-| `wallet` | Local keystore helpers | `new` / `show` / `list` / `sign` |
+| `wallet` | Wallet and Altana-session operations | `new` / `twak-init` / `show` / `list` / `sign` / `balance` / `fund` / `policy` / `session` |
 | `erc8004` | ERC-8004 identity | `register` / `show` / `resolve` / `update-endpoint` |
-| `erc8183` | ERC-8183 commerce | `publish` / `list` / `status` / `buy` / `submit` / `fetch` / `settle` |
-| `x402` | x402 payment client | `quote` / `buy` |
+| `erc8183` | ERC-8183 commerce | `list` / `status` / `buy` / `submit` / `fetch` / `settle` |
+| `x402` | x402 buyer and B402 seller configuration | `trust` / `quote` / `buy` / `sell init` / `sell status` |
+| `mpp` | Native MPP+B402 buyer | `trust` / `quote` / `buy` |
 | `agents` | Global agent-project registry | `list` / `show` / `forget` / `register` |
 | `config` | `studio.toml` CRUD | `show` / `get` / `set` / `list-keys` |
 | `env` | `.env.local` editor | `set` / `get` |
-| `dev` | Run both layers locally | `bag dev [--agent-only] [--service-only] [--port N] [--service-port N]` |
+| `dev` | Run the selected faces in one local runtime | `bag dev [--port N] [--host HOST] [--reload] [--in-process\|--container]` |
 | `doctor` | Diagnose project + environment | `bag doctor` |
-| `deploy` | Two-artifact deploy | `prepare` / `agent` / `package` / `verify` / `status` / `destroy` / `logs` |
-| `mcp` | Read-only MCP server | `serve` / `tools` |
+| `deploy` | Deploy one runtime to an explicit provider | `--provider bnb\|aws\|azure\|nodeops`; `prepare` / `verify` / `status` / `info` / `logs` / `destroy` / `list` / `wallet` |
+| `platform` | Managed BNB trial account | `login` / `logout` / `whoami` / `agents` / `credit` / `token` |
+| `feedback` | Create a redacted local diagnostic bundle | `bag feedback --help` |
 | `bundle` | Offline agent tarball | `bag bundle` |
 | `budget` | Auto-topup policy | `show` / `enable` / `disable` |
 | `audit` | On-chain action audit log | `ls` / `tail` / `show` |
@@ -35,7 +38,7 @@ The `bag` CLI exposes 19 command groups. Run `bag --help` or `bag <group> --help
 ### Scaffold and onboard
 
 ```bash
-bag init my-seller --network bsc-testnet
+bag init myseller --network bsc-testnet
 bag wallet show
 bag llm status --full
 ```
@@ -51,8 +54,8 @@ bag erc8004 show
 
 ```bash
 bag erc8183 list
-bag erc8183 status --job-id 42
-bag erc8183 settle --job-id 42
+bag erc8183 status 42
+bag erc8183 settle 42
 ```
 
 ### Local development
@@ -66,33 +69,46 @@ bag doctor
 
 ```bash
 bag deploy prepare
-bag deploy agent
-bag deploy package                               # build the deploy artifact → dist/
-bag deploy verify --endpoint https://my-service.example.com
-bag deploy status
+bag deploy --provider bnb
+bag deploy verify --provider bnb
+bag deploy status --provider bnb
 ```
 
-## MCP tools (read-only)
+`bag deploy agent` is a deprecated compatibility alias. `bag deploy package` is
+not a command in 0.0.16. Packaging is part of the selected deployment flow.
 
-Run `bag mcp tools` for the live list. All 15 tools are read-only — no signing, no on-chain state change:
+## MCP seller face and read tools
+
+Select MCP with `bag init <name> --protocols MCP`, then run it with `bag dev`.
+Its `negotiate` and `notify_funded` tools sign quotes and submit verified funded
+jobs through fixed handlers. There is no `bag mcp` command in 0.0.16.
+
+The runtime library also provides 15 read/usage functions under
+`@bnbagent/studio-runtime/tools`:
 
 | Category | Tools |
 |----------|-------|
-| Wallet | `wallet_info`, `wallet_list`, `wallet_address` |
-| Balances | `balance_native`, on-chain ERC-20 balance |
-| Network | `network_info`, `tx_status`, `block_info`, `contract_call_view` |
-| ERC-8004 | `agent_info`, `agent_by_address` |
-| ERC-8183 | `job_status`, `job_list`, `job_count` |
-| LLM | `pieverse_usage` |
+| Wallet | `walletInfo`, `walletList`, `walletAddress` |
+| Balances | `balanceNative`, `balanceU` |
+| Network | `networkInfo`, `txStatus`, `blockInfo`, `contractCallView` |
+| ERC-8004 | `agentInfo`, `agentByAddress` |
+| ERC-8183 | `jobStatus`, `jobList`, `jobCount` |
+| LLM | `pieverseUsage` |
+
+The Pieverse usage function authenticates with a domain-locked SIWE message;
+it does not send an on-chain transaction. See [Security](security.md) for the
+distinction between these reads, the seller handlers, and LLM tools.
 
 ## Project resolution
 
-Agent-side commands (`wallet`, `llm`, `deploy`, `budget`, `audit`, `x402`) resolve from:
+Project commands (`wallet`, `llm`, `deploy`, `budget`, `audit`, `x402`, `mpp`) resolve from:
 
-- Inside `app/agent/` — cwd finds `app/agent/studio.toml` directly, or
-- Workspace root — `find_project_root()` fallback resolves to `app/agent/`
+- Inside `app/agent/`, where `studio.toml` is present, or
+- The workspace root, which resolves to `app/agent/`
 
-Cross-layer commands (`doctor`, `scan`, `erc8004 register`) operate on whichever layer they need. Use `--project-root` on `config` and `env` to target a specific layer without `cd`.
+There is no separate Service config. Use `--project-root app/agent` on `config`
+and `env` to select the runtime explicitly. Environment edits target workspace
+`.studio/.env.local` by default.
 
 ## Runtime name rules
 

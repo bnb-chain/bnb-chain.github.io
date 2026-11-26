@@ -4,7 +4,8 @@ title: BNB Agent Studio Troubleshooting
 
 # Troubleshooting
 
-Start every diagnosis with `bag doctor`. It checks both layers, config sync, import style, runtime name validity, and environment prerequisites.
+Start every diagnosis with `bag doctor`. It checks the single runtime's config,
+wallet, network, dependencies, and readiness conditions.
 
 ```bash
 bag doctor
@@ -21,14 +22,21 @@ deploy target expect.
 bag config set network.default bsc-testnet --project-root app/agent
 ```
 
-### Provider address mismatch
+### Wallet address or Altana session mismatch
 
-`[wallet].address` (agent) and `[provider].address` (service) must match.
+`[wallet].address` must match the selected wallet and, for Altana, its session's
+admin address. There is no Service `[provider].address` to synchronize.
 
 ```bash
 bag wallet show
-bag doctor   # re-check sync
+bag doctor
 ```
+
+For Altana, also run `bag wallet session status`. Paid B402 seller payout is
+supported; ensure the merchant credentials were registered for the configured
+`pay_to` or default wallet address. Outbound Altana buying requires separate
+session setup. Altana cannot use Pieverse SIWE; select OpenRouter, OpenAI, or
+Anthropic instead. See [Configuration](configuration.md).
 
 ### Generated code will not build
 
@@ -37,7 +45,9 @@ then reinstall from the workspace root before re-running `bag dev`.
 
 ### AgentCore runtime name invalid
 
-Runtime names must match `^[A-Za-z][A-Za-z0-9]{0,22}$`. No hyphens, underscores, or dots. Re-run `agentcore configure` with a valid name if `bag doctor` fails.
+Runtime names must match `^[A-Za-z][A-Za-z0-9]{0,22}$`. No hyphens, underscores, or
+dots. Use a valid project name such as `weatheragent` at `bag init`; Studio renders
+the deployment descriptor itself.
 
 ### Wrong Node version
 
@@ -51,8 +61,8 @@ AgentCore quota check in `bag deploy prepare`.
 ### Funded jobs are not being picked up
 
 1. Confirm the runtime is up: `bag dev`, or `bag deploy status --provider <target>`
-2. Verify `[payments.erc8183]` in `app/agent/studio.toml`
-3. Probe the runtime: `curl <endpoint>/readiness`
+2. Verify `[payments.erc8183]` and `[payments.seller]` in `app/agent/studio.toml`
+3. Confirm the buyer sent `notify_funded`; the runtime verifies the funded job before work
 4. Remember `settle` is manual — `bag erc8183 settle <jobId>`
 
 ### `PolicyViolation` / `X402PolicyError` at runtime
@@ -63,14 +73,18 @@ The wallet refused an EIP-712 signature. Check:
 bag wallet policy show
 ```
 
-Extend `[wallet.signing]` and `[payments.x402].allowed_hosts` in `app/agent/studio.toml` if integrating a new service. See [Security](security.md).
+Review `[wallet.signing]` and the outbound `[payments.x402]` host and recipient
+trust in `app/agent/studio.toml`. Use `bag x402 trust <merchant-url>` to inspect and
+pin the intended merchant. Wallet capabilities differ; expanding an allowlist does
+not make an unsupported signing method available. See [Security](security.md).
 
 ### MCP tools return errors
 
-- Set `WALLET_PASSWORD` in the MCP server environment
-- Set CWD to workspace root or `app/agent/`
-- Reload IDE after MCP config changes
-- Run `bag mcp tools` to verify the server starts
+- Select MCP at initialization and run the seller with `bag dev`
+- Use workspace root or `app/agent/` as the working directory
+- Check wallet-specific runtime credentials and `bag doctor`
+- For MCP-only, connect to `http://localhost:8000/mcp`; A2A+MCP uses the dual entrypoint on port `9000`
+- Azure deployment rejects MCP entrypoints; there is no `bag mcp tools` command in 0.0.16
 
 ### Pieverse / LLM errors
 
@@ -80,18 +94,20 @@ bag llm test
 bag llm activate          # re-activate if key missing
 ```
 
-For non-Pieverse providers, set the API key in `app/agent/.env.local`:
+For non-Pieverse providers, enter the API key privately in workspace
+`.studio/.env.local`. Studio loads this file automatically; do not paste secrets
+into chat or command-line arguments. Check presence without exposing the value:
 
 ```bash
-bag env set OPENROUTER_API_KEY sk-or-... --project-root app/agent
+bag env get OPENROUTER_API_KEY --project-root app/agent
 ```
 
 ### Deploy blocked on IAM notice
 
-First `bag deploy agent` requires explicit risk acceptance:
+The first deployment can require explicit provider-risk acceptance:
 
 ```bash
-bag deploy agent --accept-risk
+bag deploy --provider aws --accept-risk
 ```
 
 Or accept interactively when prompted.

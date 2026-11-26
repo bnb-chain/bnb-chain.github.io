@@ -4,8 +4,8 @@ title: BNB Agent Studio Deployment
 
 # Deployment
 
-A Studio project deploys as **one runtime** — the same process that holds the key and
-serves your selected faces. There is no second keyless artifact to ship.
+A Studio project deploys as **one runtime** serving the selected faces with its
+configured wallet authority. There is no second keyless artifact to ship.
 
 Every deploy **explicitly selects a target**. A recorded deployment is only ever offered
 as an explicit update; it is never used as a silent default.
@@ -20,13 +20,14 @@ not shell out to `azd` or the Azure CLI, and the scaffold contains no `azure.yam
     review. Published IAM reference policies are provided as-is — scoping, costs, and
     security remain yours. Start on BSC testnet.
 
-## The three targets
+## Deployment targets
 
 | Target | What it is | Key constraint |
 | --- | --- | --- |
 | `bnb` | Managed **48-hour testnet** trial | Runs in the **operator's** cloud, so signing material leaves your control. Use a throwaway wallet (`bag wallet new`) and never reuse it on mainnet. Disabled after expiry. |
 | `aws` | AWS Bedrock AgentCore in your account | Keystore injected via **AWS Secrets Manager** as `WALLET_KEYSTORE_JSON` — never in the code zip. |
 | `azure` | Azure AI Foundry hosted agents | **Container-only**, and **A2A scaffolds only** — `bag init` and provider selection reject an MCP entrypoint for Foundry. Secrets injected through a Foundry **CustomKeys** connection. |
+| `nodeops` | CreateOS hosting | Account or wallet mode. Hosting payment and seller payout are separate. B402-only business services are currently rejected by readiness; see the [provider guide](https://github.com/bnb-chain/bnbagent-studio/blob/v0.0.16/docs/guides/createos-deploy.md) for wallet, runtime, and serving constraints. |
 
 ## Prerequisites
 
@@ -42,20 +43,17 @@ not shell out to `azd` or the Azure CLI, and the scaffold contains no `azure.yam
 
 ```bash
 bag deploy prepare                    # readiness gates: storage, provider, tooling
-bag deploy --provider bnb             # or: aws | azure
+bag deploy --provider bnb             # or: aws | azure | nodeops
 bag deploy verify --provider bnb      # reconcile ERC-8004 identity with the live endpoint
 bag deploy status --provider bnb      # liveness and inventory
 ```
 
 `bag deploy prepare` gates on storage, provider, and deploy-tooling readiness. **Local
-deliverable storage fails readiness by design** — switch to IPFS before deploying, since
-a local path is unreachable from a deployed runtime.
+deliverable storage fails readiness by design**. Configure IPFS, S3, Azure Blob,
+or the managed platform's supported deliverable storage before deploying.
 
-For AWS, an inbound-auth step may be required before the first deploy:
-
-```bash
-bag deploy provision-cognito
-```
+AWS inbound authentication is handled through the pinned deploy engine's guided
+flow. There is no `bag deploy provision-cognito` subcommand in Studio CLI 0.0.16.
 
 ## Operating a deployment
 
@@ -66,8 +64,8 @@ bag deploy info    --provider azure   # resolved deployment details
 bag deploy destroy --provider aws     # teardown
 ```
 
-`bag deploy --help` lists the full surface. `bag deploy agent` remains available as the
-agent-scoped form.
+`bag deploy --help` lists the full surface. `bag deploy agent` is a deprecated
+compatibility alias; prefer `bag deploy --provider <target>`.
 
 ## Keystore posture
 
@@ -81,10 +79,15 @@ secret channel:
 | `aws` | AWS Secrets Manager (`WALLET_KEYSTORE_JSON`) |
 | `azure` | Foundry CustomKeys connection |
 | `bnb` | the operator's managed secret store — material leaves your control |
+| `nodeops` | Separate runtime variables; for `evm-local`, the provider receives both the encrypted keystore and unlock password |
 
 An **Altana** deployment is different in kind: it sends only a budget- and time-bounded
 runtime session rather than a keystore. Keep the budget and expiry tight, and renew or
 revoke explicitly.
+
+That session-only transport does not establish compatibility with CreateOS wallet
+authentication or hosting payment. Check the provider guide before choosing Altana
+for a CreateOS deployment.
 
 ## ERC-8004 registration
 
@@ -103,9 +106,9 @@ bag erc8004 show
 | Local | Deployed |
 | --- | --- |
 | A2A on `:9000` | the runtime's A2A face |
-| MCP on `:8000/mcp` | the runtime's MCP face (not available on Azure) |
-| `/x402` on the same process | the runtime's x402 face |
-| local storage path | IPFS |
+| MCP-only on `:8000/mcp`; A2A+MCP on `:9000/mcp` | the runtime's MCP face (not available on Azure) |
+| `/x402` or `/mpp` on the same process | the selected B402 face, subject to provider readiness |
+| local storage path | configured durable deliverable storage |
 
 ## Earning after deploy
 
